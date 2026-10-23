@@ -1,0 +1,550 @@
+{
+  "schemaVersion": 1,
+  "completedUtc": "2026-10-20T16:34:11.881154+00:00",
+  "passed": true,
+  "checks": {
+    "formalPlanAndOracleToolPinsUnchanged": true,
+    "copy0AllFrozenSourceSha": true,
+    "copy1AllFrozenSourceSha": true,
+    "copy2AllFrozenSourceSha": true,
+    "declaredRuntimeStableAtFreeze": true,
+    "windows:allEightFormalStages": true,
+    "windows:exactStageIdentities": true,
+    "windows:basePassed": true,
+    "windows:allTestsNoSkip": true,
+    "windows:nativeAllTrue": true,
+    "windows:statisticsNativeChecks": true,
+    "windows:usageAllTrue": true,
+    "windows:runtimeAndAssembliesStable": true,
+    "windows:allBasePayloadsStillEqualAfterBenchmark": true,
+    "windows:runtimeInputsMatchFrozen": true,
+    "windows:releaseZeroWarningsErrors": true,
+    "windows:function:allConsumerChecks": true,
+    "windows:themes:allConsumerChecks": true,
+    "windows:exactTwoFreshConsumers": true,
+    "windows:consumerBuildsZeroWarningsErrors": true,
+    "windows:independentNumerics": true,
+    "windows:numericsBoundToRawAndProtocol": true,
+    "windows:numericLoadedAssemblyBytesMatch": true,
+    "windows:numericAndBaseUseSameCorePayload": true,
+    "windows:independentNativePixels": true,
+    "windows:pixelsBoundToPngAndProtocol": true,
+    "windows:allEightRetainedDiffsMatch": true,
+    "windows:exactTenNativeStatisticsRecords": true,
+    "windows:native-raw:light:box:canonical-source-observations": true,
+    "windows:native-raw:light:box:error-raw-distances": true,
+    "windows:native-raw:light:box:histogram-independent-boundaries-count-density": true,
+    "windows:native-raw:light:box:kde-independent-gaussian-knots": true,
+    "windows:native-raw:light:box:original-hit-index": true,
+    "windows:native-raw:light:error:canonical-source-observations": true,
+    "windows:native-raw:light:error:error-raw-distances": true,
+    "windows:native-raw:light:error:histogram-independent-boundaries-count-density": true,
+    "windows:native-raw:light:error:kde-independent-gaussian-knots": true,
+    "windows:native-raw:light:error:original-hit-index": true,
+    "windows:native-raw:light:hist:canonical-source-observations": true,
+    "windows:native-raw:light:hist:error-raw-distances": true,
+    "windows:native-raw:light:hist:histogram-independent-boundaries-count-density": true,
+    "windows:native-raw:light:hist:kde-independent-gaussian-knots": true,
+    "windows:native-raw:light:hist:original-hit-index": true,
+    "windows:native-raw:light:density:canonical-source-observations": true,
+    "windows:native-raw:light:density:error-raw-distances": true,
+    "windows:native-raw:light:density:histogram-independent-boundaries-count-density": true,
+    "windows:native-raw:light:density:kde-independent-gaussian-knots": true,
+    "windows:native-raw:light:density:original-hit-index": true,
+    "windows:native-raw:light:board:image": true,
+    "windows:native-raw:dark:box:canonical-source-observations": true,
+    "windows:native-raw:dark:box:error-raw-distances": true,
+    "windows:native-raw:dark:box:histogram-independent-boundaries-count-density": true,
+    "windows:native-raw:dark:box:kde-independent-gaussian-knots": true,
+    "windows:native-raw:dark:box:original-hit-index": true,
+    "windows:native-raw:dark:error:canonical-source-observations": true,
+    "windows:native-raw:dark:error:error-raw-distances": true,
+    "windows:native-raw:dark:error:histogram-independent-boundaries-count-density": true,
+    "windows:native-raw:dark:error:kde-independent-gaussian-knots": true,
+    "windows:native-raw:dark:error:original-hit-index": true,
+    "windows:native-raw:dark:hist:canonical-source-observations": true,
+    "windows:native-raw:dark:hist:error-raw-distances": true,
+    "windows:native-raw:dark:hist:histogram-independent-boundaries-count-density": true,
+    "windows:native-raw:dark:hist:kde-independent-gaussian-knots": true,
+    "windows:native-raw:dark:hist:original-hit-index": true,
+    "windows:native-raw:dark:density:canonical-source-observations": true,
+    "windows:native-raw:dark:density:error-raw-distances": true,
+    "windows:native-raw:dark:density:histogram-independent-boundaries-count-density": true,
+    "windows:native-raw:dark:density:kde-independent-gaussian-knots": true,
+    "windows:native-raw:dark:density:original-hit-index": true,
+    "windows:native-raw:dark:board:image": true,
+    "linux:allEightFormalStages": true,
+    "linux:exactStageIdentities": true,
+    "linux:basePassed": true,
+    "linux:allTestsNoSkip": true,
+    "linux:nativeAllTrue": true,
+    "linux:statisticsNativeChecks": true,
+    "linux:usageAllTrue": true,
+    "linux:runtimeAndAssembliesStable": true,
+    "linux:allBasePayloadsStillEqualAfterBenchmark": true,
+    "linux:runtimeInputsMatchFrozen": true,
+    "linux:releaseZeroWarningsErrors": true,
+    "linux:function:allConsumerChecks": true,
+    "linux:themes:allConsumerChecks": true,
+    "linux:exactTwoFreshConsumers": true,
+    "linux:consumerBuildsZeroWarningsErrors": true,
+    "linux:independentNumerics": true,
+    "linux:numericsBoundToRawAndProtocol": true,
+    "linux:numericLoadedAssemblyBytesMatch": true,
+    "linux:numericAndBaseUseSameCorePayload": true,
+    "linux:independentNativePixels": true,
+    "linux:pixelsBoundToPngAndProtocol": true,
+    "linux:allEightRetainedDiffsMatch": true,
+    "linux:exactTenNativeStatisticsRecords": true,
+    "linux:native-raw:light:box:canonical-source-observations": true,
+    "linux:native-raw:light:box:error-raw-distances": true,
+    "linux:native-raw:light:box:histogram-independent-boundaries-count-density": true,
+    "linux:native-raw:light:box:kde-independent-gaussian-knots": true,
+    "linux:native-raw:light:box:original-hit-index": true,
+    "linux:native-raw:light:error:canonical-source-observations": true,
+    "linux:native-raw:light:error:error-raw-distances": true,
+    "linux:native-raw:light:error:histogram-independent-boundaries-count-density": true,
+    "linux:native-raw:light:error:kde-independent-gaussian-knots": true,
+    "linux:native-raw:light:error:original-hit-index": true,
+    "linux:native-raw:light:hist:canonical-source-observations": true,
+    "linux:native-raw:light:hist:error-raw-distances": true,
+    "linux:native-raw:light:hist:histogram-independent-boundaries-count-density": true,
+    "linux:native-raw:light:hist:kde-independent-gaussian-knots": true,
+    "linux:native-raw:light:hist:original-hit-index": true,
+    "linux:native-raw:light:density:canonical-source-observations": true,
+    "linux:native-raw:light:density:error-raw-distances": true,
+    "linux:native-raw:light:density:histogram-independent-boundaries-count-density": true,
+    "linux:native-raw:light:density:kde-independent-gaussian-knots": true,
+    "linux:native-raw:light:density:original-hit-index": true,
+    "linux:native-raw:light:board:image": true,
+    "linux:native-raw:dark:box:canonical-source-observations": true,
+    "linux:native-raw:dark:box:error-raw-distances": true,
+    "linux:native-raw:dark:box:histogram-independent-boundaries-count-density": true,
+    "linux:native-raw:dark:box:kde-independent-gaussian-knots": true,
+    "linux:native-raw:dark:box:original-hit-index": true,
+    "linux:native-raw:dark:error:canonical-source-observations": true,
+    "linux:native-raw:dark:error:error-raw-distances": true,
+    "linux:native-raw:dark:error:histogram-independent-boundaries-count-density": true,
+    "linux:native-raw:dark:error:kde-independent-gaussian-knots": true,
+    "linux:native-raw:dark:error:original-hit-index": true,
+    "linux:native-raw:dark:hist:canonical-source-observations": true,
+    "linux:native-raw:dark:hist:error-raw-distances": true,
+    "linux:native-raw:dark:hist:histogram-independent-boundaries-count-density": true,
+    "linux:native-raw:dark:hist:kde-independent-gaussian-knots": true,
+    "linux:native-raw:dark:hist:original-hit-index": true,
+    "linux:native-raw:dark:density:canonical-source-observations": true,
+    "linux:native-raw:dark:density:error-raw-distances": true,
+    "linux:native-raw:dark:density:histogram-independent-boundaries-count-density": true,
+    "linux:native-raw:dark:density:kde-independent-gaussian-knots": true,
+    "linux:native-raw:dark:density:original-hit-index": true,
+    "linux:native-raw:dark:board:image": true,
+    "publicApiBothPlatformsExactlyEqual": true,
+    "all173PreviousPublicTypesAndMembersRetained": true,
+    "all98HistoricalDocumentsUnchanged": true,
+    "fiveExactTaskInitialMetadataCopies": true,
+    "fiveTaskInitialMetadataFilesRetainedInFrozenSource": true,
+    "syntheticNumericOracle12Cases": true,
+    "syntheticPixelOracle7Cases": true
+  },
+  "sourceCandidate": "c5-statistics-distributions-source-v1",
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\source-snapshot-v1.json",
+    "sha256": "7D6365F709C9740C4C8EFDABB1D454F231329DB951D5CBDD47D51D464ECD3D92",
+    "bytes": 358917
+  },
+  "frozenSourceFiles": 1538,
+  "runtimeInputFiles": 868,
+  "historicalDocumentPins": 98,
+  "platforms": {
+    "windows": {
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\verification\\functional-v1\\results.json",
+        "sha256": "513B011DE31F37E6D0BEEB1AEC8D57A1DF6E051C3A477CF56AF26C41FBC23201",
+        "bytes": 22301
+      },
+      "formalRun": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\formal-run-v1.json",
+        "sha256": "6C1BA196BB1EEF4C381B19146F4258DE5F373B2AEDD4B86FBECC49A7B5FAF52E",
+        "bytes": 11169
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\verification\\functional-v1\\charts-smoke.json",
+        "sha256": "3F9CB847FB07B8660BB2462ECB6F3159F4340428495B678FB1F5F67E5F9FB9FE",
+        "bytes": 4988913
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\verification\\functional-v1\\charts-usage.json",
+        "sha256": "C8F462D87ADFC1FD48E8A6A3485F31863685C4E6DA77CB3846242BE70809B71C",
+        "bytes": 65892
+      },
+      "headlessTests": 2027,
+      "demoChecks": 1470,
+      "statisticsDemoChecks": 56,
+      "usageChecks": 410,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 574,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\package-consumers\\20261020T162006623Z-dffb8491e68c4897b017114eca03de42\\function\\consumer-result.json",
+            "sha256": "4DE8AAACF0C8F90A3B86A6934C6DDA0A3A81BB352BC21BEB1FEFCC55A7EF4726",
+            "bytes": 100957
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 574,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\package-consumers\\20261020T162006623Z-dffb8491e68c4897b017114eca03de42\\themes\\consumer-result.json",
+            "sha256": "8A6E6E0EE45F0FA07661AF5AD2E2913FC87F90DAB680018EA6018244816D284E",
+            "bytes": 101008
+          }
+        }
+      ],
+      "pngCount": 767,
+      "statisticsPngCount": 30,
+      "numericRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\statistics\\raw.json",
+        "sha256": "07E3C9E281C64F7AF94BABE63EC3F8FFAF5C4C9B42A3C333FB9F27F3B18BE219",
+        "bytes": 67541
+      },
+      "independentNumerics": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\statistics\\independent-numeric-result.json",
+        "sha256": "21CB84DFDF905E3499BAA5EA9D8935CBC630D4B511528C76741038A0A4C6AF15",
+        "bytes": 91448
+      },
+      "numericChecks": 1660,
+      "pixelResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\statistics\\independent-pixel-result.json",
+        "sha256": "02FF30110231526197779D62A5C6100C8A57CA571853FADAA8BCE2D99EC4C599",
+        "bytes": 90954
+      },
+      "pixelChecks": 247,
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\api-v1\\api.txt",
+        "sha256": "A801E90F57D70320EE5F2732DA07A12A53ADEF0ACFF99B1F0523A9E598BDEFA7",
+        "bytes": 459590
+      },
+      "validatedInputs": 784,
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\verification\\functional-v1\\validated-input-manifest.json",
+        "sha256": "7A27527708F3729A97691FD219848045C5C06F4D083BF7C4D19771836147DD70",
+        "bytes": 138568
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\verification\\functional-v1\\assembly-manifest.json",
+        "sha256": "5B83438C4B48AEE28A8F807D796A31A1D2F5C9C681F34189DE86697FD8E50110",
+        "bytes": 1956
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\verification\\functional-v1\\environment.json",
+        "sha256": "F768847D08B19DB9089E394174A4BB83B66383B367E9AF0A77F0D705006A2430",
+        "bytes": 8742
+      },
+      "diagnosticPerformance": [
+        {
+          "id": "perf-box-100k",
+          "elapsedTicks": 243585,
+          "threadAllocatedBytes": 7410928,
+          "inputFormula": "((i*37)%997-498)*0.125+(i%251==0?128:0); i=0..99999",
+          "inputCount": 100000,
+          "inputSha256": "73425EE58568E841EA39DD7626DDF259B939A10700E6BA503F53766948FE41D0"
+        },
+        {
+          "id": "perf-histogram-100k",
+          "elapsedTicks": 178755,
+          "threadAllocatedBytes": 6598088,
+          "inputFormula": "((i*37)%997-498)*0.125+(i%251==0?128:0); i=0..99999",
+          "inputCount": 100000,
+          "inputSha256": "73425EE58568E841EA39DD7626DDF259B939A10700E6BA503F53766948FE41D0"
+        },
+        {
+          "id": "perf-density-2048",
+          "elapsedTicks": 27871,
+          "threadAllocatedBytes": 116232,
+          "inputFormula": "((i*29)%257-128)*0.03125+(i%13==0?4:0); i=0..2047",
+          "inputCount": 2048,
+          "inputSha256": "7BD5B76C97E6FC486CEE918D189D8317B8F9EB74B9CBA256264736C542244558"
+        }
+      ],
+      "diagnosticStopwatchFrequency": 10000000,
+      "formalSlaEvaluated": false,
+      "physicalInputValidated": false
+    },
+    "linux": {
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\verification\\functional-v1\\results.json",
+        "sha256": "16D5A4EFE69BDE321F2D6E425D00FE7A1B79FDA7181FF6136282672A12E6244F",
+        "bytes": 14789
+      },
+      "formalRun": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\formal-run-v1.json",
+        "sha256": "4D3F0A5D3A9DA77F1B516F19BF59120DA08329B0C381543E66A9AEB3A7E1DD4D",
+        "bytes": 11760
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\verification\\functional-v1\\charts-smoke.json",
+        "sha256": "7C71CAE87B001691702835EF09B2AC23314B59B65A4EDBEBCE8E37C164762BF6",
+        "bytes": 4785526
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\verification\\functional-v1\\charts-usage.json",
+        "sha256": "166D59F868E68B4569C449781CE5658BA8CEF247F26E69375C7C192D25F9233B",
+        "bytes": 63752
+      },
+      "headlessTests": 2027,
+      "demoChecks": 1470,
+      "statisticsDemoChecks": 56,
+      "usageChecks": 410,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 574,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\package-consumers\\20261020T163036159Z-e800908958e448ada6ec7b9b3279407e\\function\\consumer-result.json",
+            "sha256": "EFE126E0D04C58BC91FD00A5D669944ADF430A675AA436E577213CA3DA5A4C8D",
+            "bytes": 98235
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 574,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\package-consumers\\20261020T163036159Z-e800908958e448ada6ec7b9b3279407e\\themes\\consumer-result.json",
+            "sha256": "DD4ED1CF1469370039C40C5A2A62E3C0F12F08ED6C258D7591C8AE7597EEDAAF",
+            "bytes": 98287
+          }
+        }
+      ],
+      "pngCount": 767,
+      "statisticsPngCount": 30,
+      "numericRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\statistics\\raw.json",
+        "sha256": "1EBA3708725A88BC415F2B9CA8000EA27D69CCCFB1814E5ECC4B7B6436931FF6",
+        "bytes": 64880
+      },
+      "independentNumerics": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\statistics\\independent-numeric-result.json",
+        "sha256": "9F2E58B3E7A7B6ACE8171052F985DB4A9A26AE0A5DB2F410B30F9A26606C2EB4",
+        "bytes": 89737
+      },
+      "numericChecks": 1660,
+      "pixelResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\statistics\\independent-pixel-result.json",
+        "sha256": "5A861ECF4616BE1A9445EB5A30A470529BFB4AEAF5210ABFB185C9884A2B20E2",
+        "bytes": 87125
+      },
+      "pixelChecks": 247,
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\api-v1\\api.txt",
+        "sha256": "3DFED05B0078A4A13064E615D6F860AF312E30601DDFD76EBF8999A96BDFB5E4",
+        "bytes": 459590
+      },
+      "validatedInputs": 784,
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\verification\\functional-v1\\validated-input-manifest.json",
+        "sha256": "848345CD3E270191E7DACB1950D1BEA5F99908AE113ECD6F0CB1CDE36B7BF2C0",
+        "bytes": 135430
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\verification\\functional-v1\\assembly-manifest.json",
+        "sha256": "27D3A4B098D9C02F7C5B8347729C5B488A7C068F29C8E97D1FB4BCAF447681A3",
+        "bytes": 1906
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\verification\\functional-v1\\environment.json",
+        "sha256": "A3BFDD478A86826504215B8EF9D8DC8AE62AFDB12CDBB25C45FBB3DD069C9CC8",
+        "bytes": 6208
+      },
+      "diagnosticPerformance": [
+        {
+          "id": "perf-box-100k",
+          "elapsedTicks": 34113006,
+          "threadAllocatedBytes": 7403952,
+          "inputFormula": "((i*37)%997-498)*0.125+(i%251==0?128:0); i=0..99999",
+          "inputCount": 100000,
+          "inputSha256": "73425EE58568E841EA39DD7626DDF259B939A10700E6BA503F53766948FE41D0"
+        },
+        {
+          "id": "perf-histogram-100k",
+          "elapsedTicks": 25674835,
+          "threadAllocatedBytes": 6604280,
+          "inputFormula": "((i*37)%997-498)*0.125+(i%251==0?128:0); i=0..99999",
+          "inputCount": 100000,
+          "inputSha256": "73425EE58568E841EA39DD7626DDF259B939A10700E6BA503F53766948FE41D0"
+        },
+        {
+          "id": "perf-density-2048",
+          "elapsedTicks": 2656934,
+          "threadAllocatedBytes": 116232,
+          "inputFormula": "((i*29)%257-128)*0.03125+(i%13==0?4:0); i=0..2047",
+          "inputCount": 2048,
+          "inputSha256": "7BD5B76C97E6FC486CEE918D189D8317B8F9EB74B9CBA256264736C542244558"
+        }
+      ],
+      "diagnosticStopwatchFrequency": 1000000000,
+      "formalSlaEvaluated": false,
+      "physicalInputValidated": false
+    }
+  },
+  "apiDelta": {
+    "oldTypes": 173,
+    "newTypes": 188,
+    "addedTypes": [
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BoxPlotSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartBoxPlotSummary",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartDensityResult",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartErrorInterval",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartErrorMode",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartHistogramBin",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartHistogramNormalization",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartHistogramResult",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartSampleSummary",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartStatisticalObservation",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartStatistics",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.DensitySeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ErrorBarSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.HistogramSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.StatisticalSeries"
+    ],
+    "removedTypes": [],
+    "removedMembers": {},
+    "changedTypeHeaders": {},
+    "allowedDelta": "additions only; removed or changed existing declarations rejected",
+    "addedExistingMembers": {
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartDataPoint": [
+        "  Property: NT.AvaloniaControl.Charts.ChartBoxPlotSummary BoxPlot [get=True, set=True]"
+      ],
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartPointHit": [
+        "  Property: NT.AvaloniaControl.Charts.ChartBoxPlotSummary BoxPlot [get=True, set=True]",
+        "  Property: System.Nullable`1[NT.AvaloniaControl.Charts.ChartErrorInterval] ErrorInterval [get=True, set=True]"
+      ]
+    },
+    "old": {
+      "path": "<REPO_ROOT>\\docs\\charts-c4-ci-performance-gates-api.txt",
+      "sha256": "16721ADD967DFDE15A374D7A73841300AA4B87140C697759EA719C8EC1B2DDD7",
+      "bytes": 437604
+    },
+    "windows": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\windows\\run-v1\\api-v1\\api.txt",
+      "sha256": "A801E90F57D70320EE5F2732DA07A12A53ADEF0ACFF99B1F0523A9E598BDEFA7",
+      "bytes": 459590
+    },
+    "linux": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\linux\\run-v1\\api-v1\\api.txt",
+      "sha256": "3DFED05B0078A4A13064E615D6F860AF312E30601DDFD76EBF8999A96BDFB5E4",
+      "bytes": 459590
+    }
+  },
+  "numericProtocol": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\numeric-protocol-v3.json",
+    "sha256": "6E37E8E2B85875B2BBA39B3FF88BD87C503275CD3B72E77975B48A1988B14690",
+    "bytes": 11683
+  },
+  "pixelProtocol": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\native-pixel-protocol-v1.json",
+    "sha256": "C7EF2E6F01918611D3C4DA68E4E6159B965FA89733748B2701A4D3803709FB9D",
+    "bytes": 40028
+  },
+  "numericOracle": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\StatisticsOracle-v3.py",
+    "sha256": "6921C0F3BBBC86ED92FC72A4935FA49B92AD54202496500EDDF225F103122476",
+    "bytes": 16570
+  },
+  "pixelOracle": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\StatisticsPixelOracle-v1.py",
+    "sha256": "44547C602463C9E9D0B23D62657F836D5A57AC8532AB5545B77EE4ACB76C00F2",
+    "bytes": 9434
+  },
+  "pixelDecoder": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\charts_png_oracle.py",
+    "sha256": "2C05338338984B1D5C818997AAB22E6C8C34331CEC24C8CED65AAE32503C44FF",
+    "bytes": 12612
+  },
+  "numericSyntheticTests": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\numeric-oracle-unit-v2\\result.json",
+    "sha256": "1C7A5BD8AF37922F487BEEE71D74617B54D4A10E9E8301EC18575E89C1204CF9",
+    "bytes": 5254
+  },
+  "pixelSyntheticTests": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\pixel-oracle-unit-v1\\result.json",
+    "sha256": "938BA98935DB4E65B711F8C87D132A3E4725A74EA77948B195D1069020CB70F8",
+    "bytes": 3299
+  },
+  "collector": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\Collect-C501Evidence-v3.py",
+    "sha256": "6C91DC81E555351345E821ACE78DD1DE0FB1027C5983D48441942D15814181B2",
+    "bytes": 14602
+  },
+  "formalPlan": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\formal-plan-v1.json",
+    "sha256": "F8DC6C0D7FCB220E01C9AD072727BE7D14B595C2A160D224EA5F4EC42B0B70BC",
+    "bytes": 3375
+  },
+  "c408PerformanceGateReexecuted": false,
+  "githubActionsRunExecuted": false,
+  "physicalDesktopQualified": false,
+  "compositorPresentValidated": false,
+  "formalSlaEvaluated": false,
+  "stage": "C5-01",
+  "nextWorkItem": "C5-02",
+  "fullC5StageComplete": false,
+  "softwareFunctionalSubsetPassed": true,
+  "report": {
+    "path": "<REPO_ROOT>\\docs\\charts-c5-statistics-distributions.md",
+    "sha256": "8D9EB48C05EF030B43054D4403825E1C585FB462965255215C4CE21B44F7DEFF",
+    "bytes": 12625
+  },
+  "apiSnapshot": {
+    "path": "<REPO_ROOT>\\docs\\charts-c5-statistics-distributions-api.txt",
+    "sha256": "A801E90F57D70320EE5F2732DA07A12A53ADEF0ACFF99B1F0523A9E598BDEFA7",
+    "bytes": 459590
+  },
+  "primaryAlgorithmReferences": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-statistics-distributions-20261020\\primary-algorithm-references-v1.json",
+    "sha256": "3C33B173F4E9E5B095859FD63BE8EA534A18C7D2A04A2950515973DEBCA7906E",
+    "bytes": 1022
+  },
+  "openItems": [
+    {
+      "id": "STAT-CATALOG-01",
+      "status": "open",
+      "scope": "ST01/03/06-10, other statistics and engineering catalog entries; complete C5 and official API/runtime equivalence"
+    },
+    {
+      "id": "STAT-NUMERICS-01",
+      "status": "open",
+      "scope": "Weighted/2D/boundary-corrected KDE, Student-t/bootstrap intervals, asynchronous/incremental statistics and inner-observation selection"
+    },
+    {
+      "id": "STAT-PERFORMANCE-01",
+      "status": "open",
+      "scope": "100k/2048 elapsed/allocation values are one-shot diagnostics; statistics formal SLA, native/GPU/process memory and long soak not qualified; C408 not rerun"
+    },
+    {
+      "id": "STAT-EXPORT-MATRIX-01",
+      "status": "partial-software-validation",
+      "scope": "Four base families have 96 DPI native/export equality; only density adds 144/192 DPI exports; zoom and secondary-axis variants are native probes, not exhaustive export combinations"
+    },
+    {
+      "id": "PLATFORM-PHYSICAL-01",
+      "status": "open",
+      "scope": "Physical Linux/Windows devices, compositor present/GPU fence, native Wayland/ARM/domestic distributions/multiscreen DPI, remote GitHub Actions runner execution"
+    },
+    {
+      "id": "HIT-MILLION-TAIL-01",
+      "status": "deferred-by-user",
+      "scope": "Historical million-point hit p95 0.7649 to 1.1235 ms; not closed by statistical diagnostics"
+    },
+    {
+      "id": "A11Y-NATIVE-01",
+      "status": "deferred-by-user",
+      "scope": "Windows UIA / Linux AT-SPI native selected-item enumeration; AX06/four old PixelProbe DLL and real screen readers remain open"
+    },
+    {
+      "id": "HISTORICAL-TIMING-PATH-01",
+      "status": "open-no-fix-claim",
+      "scope": "Prior C4-03/C4-06 animation precondition timing and libHarfBuzzSharp long path failures remain preserved"
+    }
+  ]
+}

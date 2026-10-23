@@ -1,0 +1,625 @@
+using System.ComponentModel;
+using System.Buffers.Binary;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Text.Json;
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Headless;
+using Avalonia.Interactivity;
+using Avalonia.Markup.Xaml;
+using Avalonia.Styling;
+using Avalonia.VisualTree;
+using PdfViewerSamples;
+using NT.AvaloniaControl.PdfViewer;
+using NT.AvaloniaControl.PdfViewer.Editing;
+using ReaderControl = NT.AvaloniaControl.PdfViewer.PdfViewer;
+
+namespace PdfPackageConsumer;
+
+internal static class Program
+{
+    private static readonly Dictionary<string, bool> Checks = [];
+    private static readonly Dictionary<string, object?> Observations = [];
+
+    public static int Main(string[] args)
+    {
+        var mode = args.Single();
+        var passed = false;
+        string? failure = null;
+        try
+        {
+            using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(60));
+            using var session = HeadlessUnitTestSession.StartNew(typeof(ConsumerApp));
+            session.Dispatch<int>(async () =>
+            {
+                await RunAsync(mode, timeout.Token);
+                return 0;
+            }, timeout.Token).GetAwaiter().GetResult();
+            passed = true;
+            Console.WriteLine($"PASS: PdfViewer {mode} isolated NuGet consumer: native reading, production embedded-font FreeText writing, compiled AXAML, TwoWay binding, layout and theme independence.");
+        }
+        catch (Exception exception)
+        {
+            failure = exception.ToString();
+            Console.Error.WriteLine(failure);
+        }
+        finally
+        {
+            File.WriteAllText(Path.Combine(AppContext.BaseDirectory, "consumer-result.json"), JsonSerializer.Serialize(new
+            {
+                Passed = passed, Mode = mode, TimestampUtc = DateTimeOffset.UtcNow,
+                ProductVersion = "__PRODUCT_VERSION__", AvaloniaVersion = "__AVALONIA_VERSION__",
+                Framework = "__TARGET_FRAMEWORK__", RuntimeIdentifier = RuntimeInformation.RuntimeIdentifier,
+                Architecture = RuntimeInformation.ProcessArchitecture.ToString(),
+                FunctionalAssembly = typeof(ReaderControl).Assembly.FullName,
+                Checks, Observations, Failure = failure,
+                Validation = "Isolated NuGet packages, actual PDFium reading, production FreeText writing/reopen/save with explicit embedded CJK font, compiled AXAML and headless control layout.",
+                NativeDesktopWindowVerified = false, PhysicalInputVerified = false, ClipboardVerified = false,
+            }, new JsonSerializerOptions { WriteIndented = true }));
+        }
+        return passed ? 0 : 1;
+    }
+
+    private static async Task RunAsync(string mode, CancellationToken cancellation)
+    {
+        var firstPath = Path.Combine(AppContext.BaseDirectory, "consumer-sample.pdf");
+        var secondPath = Path.Combine(AppContext.BaseDirectory, "consumer-rebound.pdf");
+        var sample = SamplePdf.Create();
+        await File.WriteAllBytesAsync(firstPath, sample, cancellation);
+        await File.WriteAllBytesAsync(secondPath, sample, cancellation);
+
+        // This validates runtime assets from the restored nupkg before exercising the control.
+        using (var native = await PdfDocument.LoadAsync(sample, cancellationToken: cancellation))
+        {
+            Check(native.Pages.Count == 3 && native.Bookmarks.Count == 3, "nativeDocumentAndOutline");
+            var raster = await native.RenderAsync(0, 256, 362, cancellationToken: cancellation);
+            Check(raster.Width == 256 && raster.Height == 362 && raster.Pixels.Length == raster.Stride * raster.Height && raster.Pixels.Any(value => value != 255), "nativeRasterHasContent");
+            var nativeMatches = await native.SearchAsync("Avalonia", cancellationToken: cancellation);
+            Check(nativeMatches.Count >= 5 && nativeMatches.Select(result => result.PageIndex).Distinct().Count() == 3, "nativeSearchAcrossThreePages");
+            Observations["nativeMatches"] = nativeMatches.Count;
+            Observations["nativeRasterBytes"] = raster.Pixels.Length;
+            Check(native.Metadata.SignatureCount == 0 && native.Permissions.CanCopy && native.Capabilities.CanRead, "nativeMetadataAndPermissionContract");
+        }
+
+        var ownedSource = PdfDocumentSource.FromBytes(sample, "Captured package source");
+        var captured = await PdfDocument.LoadAsync(ownedSource, cancellationToken: cancellation);
+        Check(captured.Pages.Count == 3 && captured.Capabilities.CanSearch, "typedSourceFromRestoredPackage");
+        await captured.DisposeAsync();
+        var disposedRejected = false;
+        try { await captured.GetTextAsync(0, cancellation); }
+        catch (ObjectDisposedException) { disposedRejected = true; }
+        Check(disposedRejected, "asyncDisposeRejectsSubsequentOperations");
+
+        // P3-01 random-access / staging contract: file loads read blocks on demand, non-seekable
+        // streams stage transparently, and an external truncation surfaces the locked change error.
+        var randomPath = Path.Combine(AppContext.BaseDirectory, "随机访问-消费者.pdf");
+        await File.WriteAllBytesAsync(randomPath, sample, cancellation);
+        try
+        {
+            using (var random = await PdfDocument.LoadFromFileAsync(randomPath, cancellationToken: cancellation))
+            {
+                var randomText = await random.GetTextAsync(0, cancellation);
+                Check(random.Pages.Count == 3 && randomText.Text.Contains("Avalonia", StringComparison.Ordinal), "p3FileRandomAccessLoad");
+            }
+        }
+        finally { File.Delete(randomPath); }
+
+        await using (var staged = await PdfDocument.LoadAsync(new NonSeekableStream(sample), leaveOpen: true, cancellationToken: cancellation))
+        {
+            var stagedText = await staged.GetTextAsync(0, cancellation);
+            Check(stagedText.Text.Contains("Avalonia", StringComparison.Ordinal), "p3NonSeekableStreamStaging");
+        }
+
+        var truncPath = Path.Combine(AppContext.BaseDirectory, "consumer-truncate.pdf");
+        await File.WriteAllBytesAsync(truncPath, sample, cancellation);
+        try
+        {
+            using (var truncated = await PdfDocument.LoadFromFileAsync(truncPath, cancellationToken: cancellation))
+            {
+                using (var file = new FileStream(truncPath, FileMode.Open, FileAccess.Write, FileShare.ReadWrite | FileShare.Delete))
+                    file.SetLength(64);
+                PdfDocumentException? truncError = null;
+                try { await truncated.RenderAsync(2, 200, 200, cancellationToken: cancellation); }
+                catch (PdfDocumentException exception) { truncError = exception; }
+                Check(truncError is { Kind: PdfErrorKind.FileAccess } && truncError.Message == PdfViewerStrings.ErrorFileChanged,
+                    "p3ExternalTruncationError");
+            }
+        }
+        finally { File.Delete(truncPath); }
+
+        await VerifyProductionWriterAsync(sample, cancellation);
+
+        var model = new ConsumerViewModel { DocumentPath = firstPath };
+        var window = new ConsumerWindow { DataContext = model };
+        var reader = window.FindControl<ReaderControl>("Reader") ?? throw new InvalidOperationException("Compiled AXAML reader is missing.");
+        try
+        {
+            window.Show();
+            await UntilAsync(() => reader.HasDocument || !string.IsNullOrWhiteSpace(reader.ErrorMessage), window, cancellation);
+            await IdleAsync(reader, window, cancellation);
+            Check(reader.HasDocument && reader.PageCount == 3 && string.IsNullOrEmpty(reader.ErrorMessage), "compiledAxamlSourceLoaded");
+            Check(reader.Source == firstPath && reader.DocumentName == Path.GetFileName(firstPath), "sourcePathBinding");
+            Check(reader.DocumentState == PdfViewerDocumentState.Ready && reader.DocumentSessionId is not null && reader.Metadata is not null, "bindableDocumentStateFromPackage");
+            Check(reader.IsReadOnly && reader.Capabilities.CanCopy && reader.Capabilities.CanSearch && !reader.Capabilities.CanSave && !reader.Capabilities.CanPrint, "readOnlyDoesNotDisableReadingOrClaimFutureFeatures");
+            reader.AllowCopy = false;
+            Check(!reader.CopyCommand.CanExecute(null) && !reader.SelectAllCommand.CanExecute(null), "hostCopyPolicyControlsPublicCommands");
+            reader.AllowCopy = true;
+            Check(reader.DocumentPresenter is not null && reader.Bounds.Width > 0 && reader.Bounds.Height > 0, "templatePresenterAttachedAndArranged");
+            Check(reader.RenderedPageCount > 0 && reader.CachedPageCount > 0 && reader.CachedBytes > 0, "visiblePagesDecodedFromNativeRuntime");
+            // P3-02 cache budgeting contract: clean accounting across the budgeted pools,
+            // configurable budgets / pre-render depth, thumbnail retention under a small
+            // budget and process-wide quota reporting.
+            var cacheStats = reader.CacheStatistics;
+            Check(cacheStats.BudgetedBytes == cacheStats.PageBitmapBytes + cacheStats.ThumbnailBitmapBytes + cacheStats.TextBytes
+                && cacheStats.TrackedBytes == cacheStats.BudgetedBytes + cacheStats.InputBytes + cacheStats.DecodeBufferBytes
+                && cacheStats.InputBytes == new FileInfo(firstPath).Length
+                && cacheStats.PageBitmapBytes == reader.CachedBytes
+                && cacheStats.DecodeBufferPeakBytes > 0, "p3CacheStatisticsAccounting");
+            reader.PrerenderRows = 3;
+            Check(reader.PrerenderRows == 3 && reader.PageCacheBudget == ReaderControl.DefaultPageCacheBudget
+                && reader.ThumbnailCacheBudget == ReaderControl.DefaultThumbnailCacheBudget
+                && reader.TextCacheBudget == ReaderControl.DefaultTextCacheBudget, "p3CacheBudgetConfiguration");
+            reader.PrerenderRows = 1;
+            var smokeThumbnailBudget = reader.ThumbnailCacheBudget;
+            reader.ThumbnailCacheBudget = ReaderControl.MinimumCacheBudget;
+            await IdleAsync(reader, window, cancellation);
+            Check(reader.CacheStatistics.ThumbnailBitmapBytes <= ReaderControl.MinimumCacheBudget, "p3ThumbnailBudgetEnforced");
+            reader.ThumbnailCacheBudget = smokeThumbnailBudget;
+            ReaderControl.GlobalCacheBudget = 4L * 1024 * 1024;
+            try
+            {
+                Check(ReaderControl.GlobalCacheBytes >= reader.CacheStatistics.BudgetedBytes, "p3GlobalQuotaReporting");
+            }
+            finally { ReaderControl.GlobalCacheBudget = 0; }
+            // P3-03 render-quality contract: configurable decode caps with coercion, region
+            // tiles that reproduce the full render (tiling feasibility), and the quality-state
+            // counters after the settle pass.
+            Check(ReaderControl.DefaultMaxRenderDimension == 8192 && ReaderControl.DefaultMaxRenderPixels == 30_000_000
+                && ReaderControl.DefaultMaxRenderScale == 8
+                && reader.MaxRenderDimension == ReaderControl.DefaultMaxRenderDimension
+                && reader.MaxRenderPixels == ReaderControl.DefaultMaxRenderPixels
+                && reader.MaxRenderScale == ReaderControl.DefaultMaxRenderScale, "p3MaxRenderConfiguration");
+            reader.MaxRenderDimension = 10;
+            reader.MaxRenderPixels = 1;
+            reader.MaxRenderScale = 0;
+            Check(reader.MaxRenderDimension == 256 && reader.MaxRenderPixels == 65_536 && reader.MaxRenderScale == 1,
+                "p3MaxRenderCoercion");
+            reader.MaxRenderDimension = ReaderControl.DefaultMaxRenderDimension;
+            reader.MaxRenderPixels = ReaderControl.DefaultMaxRenderPixels;
+            reader.MaxRenderScale = ReaderControl.DefaultMaxRenderScale;
+            await IdleAsync(reader, window, cancellation);
+            await using (var regionDoc = await PdfDocument.LoadFromFileAsync(firstPath, cancellationToken: cancellation))
+            {
+                var regionFull = await regionDoc.RenderAsync(0, 200, 267, cancellationToken: cancellation);
+                var regionTile = await regionDoc.RenderPageRegionAsync(0, 200, 267, 0, 0, 200, 120, cancellationToken: cancellation);
+                var regionTilesMatch = regionTile.Width == 200 && regionTile.Height == 120;
+                for (var y = 0; regionTilesMatch && y < regionTile.Height; y += 2)
+                    for (var x = 0; regionTilesMatch && x < regionTile.Width; x += 2)
+                        for (var channel = 0; channel < 4; channel++)
+                            regionTilesMatch &= regionFull.Pixels[y * regionFull.Stride + x * 4 + channel]
+                                == regionTile.Pixels[y * regionTile.Stride + x * 4 + channel];
+                Check(regionTilesMatch, "p3RenderRegionTiles");
+            }
+            Check(reader.PreviewPageCount >= 0 && reader.DegradedPageCount == 0
+                && reader.PreviewPageCount + reader.DegradedPageCount <= reader.CachedPageCount, "p3QualityStateCounters");
+            Check(reader.GetVisualDescendants().OfType<ScrollViewer>().Any(scroll => scroll.Name == "PART_ScrollViewer" && scroll.Viewport.Height > 0 && scroll.Extent.Height > scroll.Viewport.Height), "continuousScrollLayout");
+            Check(!typeof(ReaderControl).Assembly.GetReferencedAssemblies().Any(assembly => assembly.Name == "NT.AvaloniaControl.PdfViewer.Themes"), "functionalAssemblyIndependentOfThemes");
+            if (mode == "FunctionOnly")
+            {
+                Check(!File.Exists(Path.Combine(AppContext.BaseDirectory, "NT.AvaloniaControl.PdfViewer.Themes.dll")), "functionOnlyHasNoThemeAssembly");
+                Check(!reader.GetVisualDescendants().OfType<Button>().Any(button => button.Name == "PART_NextPage"), "customTemplateUsedWithoutThemePackage");
+            }
+            else
+            {
+                Check(File.Exists(Path.Combine(AppContext.BaseDirectory, "NT.AvaloniaControl.PdfViewer.Themes.dll")), "defaultThemeAssemblyRestored");
+                var next = reader.GetVisualDescendants().OfType<Button>().Single(button => button.Name == "PART_NextPage");
+                Check(next.IsEnabled && reader.GetVisualDescendants().OfType<TextBox>().Any(box => box.Name == "PART_SearchBox"), "defaultThemeToolbarAndSearch");
+                next.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                await IdleAsync(reader, window, cancellation);
+                Check(reader.CurrentPage == 2, "defaultThemeButtonNavigation");
+                Check(reader.Outline.Count == 3 && reader.Thumbnails.Count == 3, "defaultThemeSidebarData");
+                window.RequestedThemeVariant = ThemeVariant.Dark;
+                await IdleAsync(reader, window, cancellation);
+                Check(window.ActualThemeVariant == ThemeVariant.Dark, "defaultThemeDarkResourcesLoad");
+            }
+
+            model.Page = 2;
+            await IdleAsync(reader, window, cancellation);
+            Check(reader.CurrentPage == 2, "viewModelToCurrentPage");
+            reader.GoToPage(3);
+            await IdleAsync(reader, window, cancellation);
+            Check(model.Page == 3 && reader.CurrentPage == 3, "currentPageToViewModel");
+            await reader.SelectAllAsync().WaitAsync(cancellation);
+            Check(reader.SelectedText.Contains("Avalonia", StringComparison.Ordinal), "nativeTextSelection");
+            reader.AllowTextSelection = false;
+            Check(reader.SelectedText.Length == 0, "disableSelectionClearsText");
+            reader.AllowTextSelection = true;
+
+            // Stabilize the editable field's debounce before making an explicit awaited search.
+            reader.SearchQuery = "Avalonia";
+            await Task.Delay(375, cancellation);
+            var matches = await reader.SearchAsync("Avalonia", cancellation);
+            Check(matches.Count >= 5 && reader.SearchResultCount == matches.Count, "controlSearchLoadedFromPackage");
+            var firstResult = reader.CurrentSearchResultIndex;
+            reader.FindNext();
+            Check(reader.CurrentSearchResultIndex != firstResult, "searchResultNavigation");
+            await reader.SearchAsync(null, cancellation);
+            reader.AllowSearch = false;
+            Check(!reader.SearchCommand.CanExecute("Avalonia") && (await reader.SearchAsync("Avalonia", cancellation)).Count == 0, "disabledSearchDoesNotRunFromPublicApi");
+            reader.AllowSearch = true;
+
+            reader.RotateRight();
+            Check(reader.Rotation == 90, "rotation");
+            reader.RotateLeft();
+            reader.FitWidth();
+            await IdleAsync(reader, window, cancellation);
+            Check(reader.ZoomMode == PdfZoomMode.FitWidth && reader.ZoomLevel > 0, "fitWidth");
+
+            await VerifyP2ContractAsync(reader, window, mode, sample, cancellation);
+
+            model.DocumentPath = secondPath;
+            await UntilAsync(() => reader.HasDocument && !reader.IsLoading && reader.DocumentName == Path.GetFileName(secondPath), window, cancellation);
+            await IdleAsync(reader, window, cancellation);
+            Check(reader.Source == secondPath && reader.PageCount == 3 && model.Page == 1, "sourceBindingSurvivesInternalUpdatesAndReload");
+            Observations["renderedPages"] = reader.RenderedPageCount;
+            Observations["cachedPages"] = reader.CachedPageCount;
+            Observations["cachedBytes"] = reader.CachedBytes;
+            await reader.CloseDocumentAsync();
+            Check(!reader.HasDocument && reader.PageCount == 0 && reader.CachedBytes == 0, "closeReleasesNativeDocumentAndRasterCache");
+        }
+        finally
+        {
+            await reader.DisposeAsync();
+            window.Close();
+        }
+    }
+
+    /// <summary>
+    /// Exercises the P2 contract surface from the restored packages: page display layout, user
+    /// bookmarks, reading position capture/restore, progressive search results with progress and
+    /// completion, page PNG export with independent decode, the password prompt retry/cancel flow,
+    /// selection state, and the shortcut kill switch.
+    /// </summary>
+    private static async Task VerifyP2ContractAsync(ReaderControl reader, Window window, string mode, byte[] sample, CancellationToken cancellation)
+    {
+        // Page display layout and cover rules are bindable view state.
+        reader.PageDisplayMode = PdfPageDisplayMode.SinglePage;
+        await IdleAsync(reader, window, cancellation);
+        Check(reader.PageDisplayMode == PdfPageDisplayMode.SinglePage, "p2PageDisplayModeSinglePage");
+        reader.PageDisplayMode = PdfPageDisplayMode.TwoPage;
+        reader.ShowCoverPage = false;
+        await IdleAsync(reader, window, cancellation);
+        Check(reader.PageDisplayMode == PdfPageDisplayMode.TwoPage && !reader.ShowCoverPage, "p2TwoPageWithoutCover");
+        reader.PageDisplayMode = PdfPageDisplayMode.Continuous;
+        reader.ShowCoverPage = true;
+        await IdleAsync(reader, window, cancellation);
+
+        // User bookmarks are a session collection with rename/flag notification.
+        var bookmark = reader.AddUserBookmark("P2 bookmark", pageNumber: 2, flags: PdfUserBookmarkFlags.Bold);
+        Check(reader.UserBookmarks.Count == 1 && bookmark.PageNumber == 2 && bookmark.IsBold, "p2UserBookmarkAdd");
+        var notified = new List<string>();
+        bookmark.PropertyChanged += (_, change) => notified.Add(change.PropertyName ?? "");
+        Check(reader.RenameUserBookmark(bookmark.Id, "Renamed") && bookmark.Title == "Renamed", "p2UserBookmarkRename");
+        Check(reader.SetUserBookmarkFlags(bookmark.Id, PdfUserBookmarkFlags.Italic) && bookmark.IsItalic && !bookmark.IsBold, "p2UserBookmarkFlags");
+        Check(notified.Contains("Title") && notified.Contains("Flags") && notified.Contains("Weight") && notified.Contains("Style"),
+            "p2UserBookmarkBindingNotifications");
+        reader.ClearUserBookmarks();
+        Check(reader.UserBookmarks.Count == 0, "p2UserBookmarkClear");
+
+        // Reading position round-trip through the public record (manual zoom is deterministic).
+        reader.GoToPage(1);
+        reader.ZoomIn();
+        reader.ZoomIn();
+        await IdleAsync(reader, window, cancellation);
+        var position = reader.CaptureReadingPosition();
+        Check(position is not null && position.PageIndex == 0 && position.ZoomMode == PdfZoomMode.Manual, "p2CaptureReadingPosition");
+        reader.GoToPage(3);
+        await IdleAsync(reader, window, cancellation);
+        reader.RestoreReadingPosition(position!);
+        await IdleAsync(reader, window, cancellation);
+        Check(reader.CurrentPage == 1 && Math.Abs(reader.ZoomLevel - position!.ZoomLevel) < 0.01, "p2RestoreReadingPosition");
+
+        // Progressive search: per-page publishing, progress, completion payload, truncation.
+        var completions = new List<PdfSearchCompletedEventArgs>();
+        reader.SearchCompleted += (_, args) => completions.Add(args);
+        var matches = await reader.SearchAsync("Avalonia", cancellation);
+        Check(matches.Count >= 5 && reader.SearchResultCount == matches.Count, "p2ProgressiveSearchResults");
+        Check(reader.SearchProgress == 1 && !reader.SearchResultsTruncated, "p2SearchProgressCompletes");
+        Check(completions.Count == 1 && completions[0].ResultCount == matches.Count && !completions[0].Truncated, "p2SearchCompletedPayload");
+        reader.SearchResultLimit = 2;
+        var limited = await reader.SearchAsync("Avalonia", cancellation);
+        Check(limited.Count == 2 && reader.SearchResultsTruncated, "p2SearchResultLimitTruncates");
+        Check(completions.Count == 2 && completions[1].Truncated && completions[1].ResultCount == 2, "p2SearchCompletedTruncated");
+        reader.SearchResultLimit = 10000;
+        await reader.SearchAsync(null, cancellation);
+        reader.ClearSearch();
+        Check(reader.SearchResultCount == 0 && reader.SearchProgress == 0, "p2ClearSearchResets");
+
+        // Page PNG export: signature, IHDR dimensions and CRC of the first chunk.
+        var png = await reader.ExportPageImageAsync(0, 96, cancellation);
+        Check(png.Length > 100 && png[0] == 0x89 && png[1] == 0x50 && png[2] == 0x4E && png[3] == 0x47, "p2ExportPagePngSignature");
+        var width = BinaryPrimitives.ReadUInt32BigEndian(png.AsSpan(16, 4));
+        var height = BinaryPrimitives.ReadUInt32BigEndian(png.AsSpan(20, 4));
+        Check(width > 0 && height > 0, "p2ExportPagePngDimensions");
+        var ihdrCrc = BinaryPrimitives.ReadUInt32BigEndian(png.AsSpan(29, 4));
+        Check(ihdrCrc == Crc32(png.AsSpan(12, 17)), "p2ExportPagePngChunkCrc");
+        Observations["p2ExportPngBytes"] = png.Length;
+        Observations["p2ExportPngSize"] = $"{width}x{height}";
+
+        // Selection state and the public clear entry.
+        await reader.SelectAllAsync().WaitAsync(cancellation);
+        Check(reader.IsTextSelected && reader.ClearSelectionCommand.CanExecute(null), "p2SelectionStatePublic");
+        reader.ClearSelection();
+        Check(!reader.IsTextSelected && !reader.ClearSelectionCommand.CanExecute(null), "p2ClearSelectionEntry");
+
+        // Shortcut kill switch is host-settable and observable.
+        reader.AllowShortcuts = false;
+        Check(!reader.AllowShortcuts, "p2AllowShortcutsToggle");
+        reader.AllowShortcuts = true;
+
+        // Sidebar presentation enum is settable in both consumer modes.
+        reader.SidebarPresentation = PdfSidebarPresentation.Overlay;
+        Check(reader.SidebarPresentation == PdfSidebarPresentation.Overlay, "p2SidebarPresentationOverlay");
+        reader.SidebarPresentation = PdfSidebarPresentation.Offset;
+
+        // Password prompt: failure offers the prompt, wrong password re-offers, cancel keeps the
+        // error, and a later SubmitPassword still opens the document.
+        var protectedPath = Path.Combine(AppContext.BaseDirectory, "consumer-protected.pdf");
+        await File.WriteAllBytesAsync(protectedPath, SamplePdf.CreatePasswordProtected("reader"), cancellation);
+        var load = reader.LoadDocumentAsync(protectedPath, cancellationToken: cancellation);
+        var loadError = await RecordLoadErrorAsync(load);
+        Check(loadError is PdfDocumentException { Kind: PdfErrorKind.PasswordRequiredOrIncorrect }, "p2PasswordLoadReportsKind");
+        Check(reader.IsPasswordPromptVisible, "p2PasswordPromptShown");
+        reader.SubmitPassword("wrong-password");
+        await UntilAsync(() => reader.IsPasswordPromptVisible || reader.HasDocument, window, cancellation);
+        await IdleAsync(reader, window, cancellation);
+        Check(reader.IsPasswordPromptVisible && !reader.HasDocument, "p2PasswordWrongRetriesPrompt");
+        reader.CancelPasswordPrompt();
+        Check(!reader.IsPasswordPromptVisible && !reader.HasDocument, "p2PasswordCancelHidesPrompt");
+        reader.SubmitPassword("reader");
+        await UntilAsync(() => reader.HasDocument, window, cancellation);
+        await IdleAsync(reader, window, cancellation);
+        Check(reader.HasDocument && reader.PageCount == 1 && string.IsNullOrEmpty(reader.ErrorMessage), "p2PasswordSubmitOpensDocument");
+        await reader.CloseDocumentAsync();
+    }
+
+    private static async Task<Exception?> RecordLoadErrorAsync(Task load)
+    {
+        try { await load; return null; }
+        catch (Exception exception) { return exception; }
+    }
+
+    /// <summary>Forward-only input: the staging path must accept streams without Length or Seek.</summary>
+    private sealed class NonSeekableStream(byte[] payload) : Stream
+    {
+        private int _position;
+
+        public override bool CanRead => true;
+        public override bool CanSeek => false;
+        public override bool CanWrite => false;
+        public override long Length => throw new NotSupportedException();
+        public override long Position { get => throw new NotSupportedException(); set => throw new NotSupportedException(); }
+        public override void Flush() { }
+        public override long Seek(long offset, SeekOrigin origin) => throw new NotSupportedException();
+        public override void SetLength(long value) => throw new NotSupportedException();
+        public override void Write(byte[] buffer, int offset, int count) => throw new NotSupportedException();
+
+        public override int Read(byte[] buffer, int offset, int count)
+        {
+            var read = Math.Min(count, payload.Length - _position);
+            Array.Copy(payload, _position, buffer, offset, read);
+            _position += read;
+            return read;
+        }
+
+        public override ValueTask<int> ReadAsync(Memory<byte> buffer, CancellationToken cancellationToken = default)
+        {
+            var read = Math.Min(buffer.Length, payload.Length - _position);
+            payload.AsSpan(_position, read).CopyTo(buffer.Span);
+            _position += read;
+            return ValueTask.FromResult(read);
+        }
+    }
+
+    private static uint Crc32(ReadOnlySpan<byte> data)
+    {
+        var crc = 0xFFFFFFFFu;
+        foreach (var value in data)
+        {
+            crc ^= value;
+            for (var bit = 0; bit < 8; bit++) crc = (crc & 1) != 0 ? (crc >> 1) ^ 0xEDB88320u : crc >> 1;
+        }
+        return ~crc;
+    }
+
+    private static async Task VerifyProductionWriterAsync(byte[] source, CancellationToken cancellation)
+    {
+        var fontPath = Path.Combine(AppContext.BaseDirectory, "P0AnnotationCjk.ttf");
+        var licensePath = Path.Combine(AppContext.BaseDirectory, "Noto-CJK-COPYRIGHT.txt");
+        Check(File.Exists(fontPath) && File.Exists(licensePath) &&
+            (await File.ReadAllTextAsync(licensePath, cancellation)).Contains("SIL OPEN FONT LICENSE", StringComparison.Ordinal),
+            "writerExplicitFontAndLicensePresent");
+        var fontBytes = await File.ReadAllBytesAsync(fontPath, cancellation);
+        var font = new PdfEmbeddedTrueTypeFont(fontBytes);
+        Observations["writerFontSHA256"] = Convert.ToHexString(SHA256.HashData(fontBytes));
+        Observations["writerFontLicenseSHA256"] = Convert.ToHexString(SHA256.HashData(await File.ReadAllBytesAsync(licensePath, cancellation)));
+        Observations["writerFontPolicy"] = "Explicit licensed static TrueType fixture; automatic glyph/composite subsetting, NoSubsetting honored, no system fallback.";
+        Check(font.EmbeddingMode == PdfFontEmbeddingMode.AutomaticSubset, "writerDefaultsToAutomaticSubset");
+        var bounds = new PdfEditRectangle(48, 180, 400, 60);
+        await using var writer = await PdfEditSession.OpenAsync(source, cancellation);
+        Check(writer.PageCount == 3 && writer.Revision == 0 && !writer.IsDirty, "writerInitialState");
+        var created = await writer.AddFreeTextAsync(0, bounds, "中文批注 ABC 123", font, 18, cancellation);
+        Check(created.Id != Guid.Empty && created.Text == "中文批注 ABC 123" && writer.Revision == 1 && writer.IsDirty,
+            "writerAddCjkAndDirty");
+        var createdBytes = await writer.ExportAsync(cancellation);
+        Check(writer.IsDirty && writer.Revision == 1 && createdBytes.Length > 0 && !createdBytes.SequenceEqual(source), "writerExportRetainsDirty");
+        await File.WriteAllBytesAsync(Path.Combine(AppContext.BaseDirectory, "writer-created.pdf"), createdBytes, cancellation);
+        await using var reopened = await PdfEditSession.OpenAsync(createdBytes, cancellation);
+        var annotations = await reopened.GetFreeTextAnnotationsAsync(0, cancellation);
+        Check(annotations.Count == 1 && annotations[0] == created && reopened.Revision == 0 && !reopened.IsDirty,
+            "writerReopenSameIdAndCjk");
+        var updated = await reopened.UpdateFreeTextAsync(created.Id, 0, bounds, "中文批注 编辑后 ABC 123", font, 18, cancellation);
+        annotations = await reopened.GetFreeTextAnnotationsAsync(0, cancellation);
+        Check(updated.Id == created.Id && annotations.Count == 1 && annotations[0] == updated && reopened.Revision == 1 && reopened.IsDirty,
+            "writerUpdateSameIdAndDirty");
+        var updatedBytes = await reopened.ExportAsync(cancellation);
+        using (var native = await PdfDocument.LoadAsync(updatedBytes, cancellationToken: cancellation))
+        {
+            Check(native.Pages.Count == 3 && native.Bookmarks.Count == 3 &&
+                (await native.GetTextAsync(0, cancellation)).Text.Contains("Welcome to the Avalonia PDF Viewer sample.", StringComparison.Ordinal),
+                "writerNativePreservesOriginal");
+            var raster = await native.RenderAsync(0, 595, 842, cancellationToken: cancellation);
+            var cjkInk = 0;
+            // These pixels cover only the first four CJK characters, in a previously blank region.
+            for (var y = 604; y < 630; y++)
+            for (var x = 50; x < 126; x++)
+            {
+                var offset = y * raster.Stride + x * 4;
+                if (raster.Pixels[offset] < 140 && raster.Pixels[offset + 1] < 140 && raster.Pixels[offset + 2] < 140) cjkInk++;
+            }
+            Check(cjkInk > 50, "writerUpdatedCjkAppearanceVisible");
+            Observations["writerCjkDarkPixels"] = cjkInk;
+        }
+        using var saved = new MemoryStream();
+        await reopened.SaveAsync(saved, cancellation);
+        Check(saved.CanWrite && !reopened.IsDirty && reopened.Revision == 1 && saved.ToArray().SequenceEqual(updatedBytes),
+            "writerMemorySaveClearsDirty");
+        await using var final = await PdfEditSession.OpenAsync(saved.ToArray(), cancellation);
+        annotations = await final.GetFreeTextAnnotationsAsync(0, cancellation);
+        Check(annotations.Count == 1 && annotations[0] == updated && !final.IsDirty, "writerSavedBytesReopenSameAnnotation");
+        await File.WriteAllBytesAsync(Path.Combine(AppContext.BaseDirectory, "writer-edited.pdf"), updatedBytes, cancellation);
+        Observations["writerCreatedPDFSHA256"] = Convert.ToHexString(SHA256.HashData(createdBytes));
+        Observations["writerUpdatedPDFSHA256"] = Convert.ToHexString(SHA256.HashData(updatedBytes));
+        Observations["writerPersistedAnnotationId"] = updated.Id;
+
+        var embeddedSubset = ReadAppearanceFont(createdBytes);
+        var complete = new PdfEmbeddedTrueTypeFont(fontBytes, PdfFontEmbeddingMode.Full);
+        Check(complete.EmbeddingMode == PdfFontEmbeddingMode.Full, "writerSupportsExplicitFullEmbedding");
+        await using (var full = await PdfEditSession.OpenAsync(source, cancellation))
+        {
+            await full.AddFreeTextAsync(0, bounds, "中文批注 ABC 123", complete, 18, cancellation);
+            var embeddedFull = ReadAppearanceFont(await full.ExportAsync(cancellation));
+            Check(embeddedFull.SequenceEqual(fontBytes), "writerFullEmbedsExactSuppliedFont");
+            Check(embeddedSubset.Length < embeddedFull.Length && !embeddedSubset.SequenceEqual(embeddedFull), "writerActuallyEmbedsSmallerSubset");
+            Observations["writerSubsetFontBytes"] = embeddedSubset.Length;
+            Observations["writerFullFontBytes"] = embeddedFull.Length;
+        }
+        var noSubsetBytes = (byte[])fontBytes.Clone();
+        for (var i = 0; i < System.Buffers.Binary.BinaryPrimitives.ReadUInt16BigEndian(noSubsetBytes.AsSpan(4, 2)); i++)
+        {
+            var entry = 12 + i * 16;
+            if (!noSubsetBytes.AsSpan(entry, 4).SequenceEqual("OS/2"u8)) continue;
+            var offset = checked((int)System.Buffers.Binary.BinaryPrimitives.ReadUInt32BigEndian(noSubsetBytes.AsSpan(entry + 8, 4)));
+            System.Buffers.Binary.BinaryPrimitives.WriteUInt16BigEndian(noSubsetBytes.AsSpan(offset + 8, 2), 0x0100);
+            break;
+        }
+        await using (var noSubset = await PdfEditSession.OpenAsync(source, cancellation))
+        {
+            await noSubset.AddFreeTextAsync(0, bounds, "中文批注 ABC 123", new PdfEmbeddedTrueTypeFont(noSubsetBytes), 18, cancellation);
+            Check(ReadAppearanceFont(await noSubset.ExportAsync(cancellation)).SequenceEqual(noSubsetBytes), "writerHonorsNoSubsettingPermission");
+        }
+
+        // Exercise the destructive policy by name, through the packed public API.
+        await using var cleaned = await PdfEditSession.OpenAsync(updatedBytes, cancellation);
+        var cleanup = await cleaned.SanitizeAsync(PdfHiddenInformationPolicy.RemoveAllNonPageData, cancellation);
+        Check(cleanup.Revision == 1 && cleanup.RedactionRegionCount == 0 && cleaned.IsDirty &&
+            (await cleaned.GetFreeTextAnnotationsAsync(0, cancellation)).Count == 0, "sanitizerRemovesAnnotationsAndCommits");
+        using (var native = await PdfDocument.LoadAsync(await cleaned.ExportAsync(cancellation), cancellationToken: cancellation))
+            Check(native.Bookmarks.Count == 0 && native.Pages.Count == 3 &&
+                (await native.GetTextAsync(0, cancellation)).Text.Contains("Welcome to the Avalonia PDF Viewer sample.", StringComparison.Ordinal),
+                "sanitizerDropsOutlinesAndPreservesPageContent");
+        var deletion = await cleaned.ApplyRedactionsAsync(
+            [new PdfRedactionRegion(0, new PdfEditRectangle(-1, -1, 597, 844))],
+            PdfHiddenInformationPolicy.RemoveAllNonPageData, cancellation);
+        var redactedBytes = await cleaned.ExportAsync(cancellation);
+        Check(deletion.Revision == 2 && deletion.RedactionRegionCount == 1 && cleaned.IsDirty &&
+            deletion.OutputSha256 == Convert.ToHexString(SHA256.HashData(redactedBytes)), "redactionCommitsAuditedBytes");
+        using (var native = await PdfDocument.LoadAsync(redactedBytes, cancellationToken: cancellation))
+            Check(string.IsNullOrWhiteSpace((await native.GetTextAsync(0, cancellation)).Text) &&
+                (await native.GetTextAsync(1, cancellation)).Text.Contains("Avalonia", StringComparison.Ordinal),
+                "redactionActuallyRemovesTargetPageAndRetainsOtherPage");
+        using var redactedSave = new MemoryStream();
+        await cleaned.SaveAsync(redactedSave, cancellation);
+        Check(!cleaned.IsDirty && redactedSave.ToArray().SequenceEqual(redactedBytes), "redactionSavePersistsCommittedSnapshot");
+        await File.WriteAllBytesAsync(Path.Combine(AppContext.BaseDirectory, "writer-redacted.pdf"), redactedBytes, cancellation);
+        Observations["redactionOutputSHA256"] = deletion.OutputSha256;
+    }
+
+    private static byte[] ReadAppearanceFont(byte[] pdf)
+    {
+        using var bytes = new MemoryStream(pdf, writable: false);
+        using var document = PdfSharp.Pdf.IO.PdfReader.Open(bytes, PdfSharp.Pdf.IO.PdfDocumentOpenMode.Import);
+        var annotation = document.Pages[0].Elements.GetArray("/Annots")!.Elements.GetDictionary(0)!;
+        var fonts = annotation.Elements.GetDictionary("/AP")!.Elements.GetDictionary("/N")!
+            .Elements.GetDictionary("/Resources")!.Elements.GetDictionary("/Font")!;
+        var font = fonts.Elements.GetDictionary(fonts.Elements.KeyNames.Single().Value)!;
+        return font.Elements.GetArray("/DescendantFonts")!.Elements.GetDictionary(0)!
+            .Elements.GetDictionary("/FontDescriptor")!.Elements.GetDictionary("/FontFile2")!.Stream.UnfilteredValue;
+    }
+
+    private static async Task UntilAsync(Func<bool> predicate, Window window, CancellationToken cancellation)
+    {
+        while (true)
+        {
+            window.UpdateLayout();
+            if (predicate()) return;
+            await Task.Delay(20, cancellation);
+        }
+    }
+
+    private static async Task IdleAsync(ReaderControl reader, Window window, CancellationToken cancellation)
+    {
+        window.UpdateLayout();
+        await Task.Delay(40, cancellation);
+        await reader.WaitForIdleAsync(cancellation);
+        window.UpdateLayout();
+        await Task.Delay(40, cancellation);
+    }
+
+    private static void Check(bool condition, string name)
+    {
+        Checks[name] = condition;
+        if (!condition) throw new InvalidOperationException(name);
+    }
+}
+
+public sealed partial class ConsumerApp : Application
+{
+    public override void Initialize() => AvaloniaXamlLoader.Load(this);
+    public static AppBuilder BuildAvaloniaApp() => AppBuilder.Configure<ConsumerApp>()
+        .UseHeadless(new AvaloniaHeadlessPlatformOptions());
+}
+
+public sealed partial class ConsumerWindow : Window
+{
+    public ConsumerWindow() => AvaloniaXamlLoader.Load(this);
+}
+
+public sealed class ConsumerViewModel : INotifyPropertyChanged
+{
+    private string? _documentPath;
+    private int _page = 1;
+
+    public string? DocumentPath
+    {
+        get => _documentPath;
+        set
+        {
+            if (_documentPath == value) return;
+            _documentPath = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DocumentPath)));
+        }
+    }
+    public int Page
+    {
+        get => _page;
+        set
+        {
+            if (_page == value) return;
+            _page = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Page)));
+        }
+    }
+    public event PropertyChangedEventHandler? PropertyChanged;
+}

@@ -1,0 +1,485 @@
+{
+  "schemaVersion": 1,
+  "stage": "C3-03 XY scatter, ScatterLine and Bubble point encodings",
+  "completedUtc": "2026-10-18T06:10:03.989672+00:00",
+  "clientExecutionDate": "2026-10-18",
+  "finalCandidateVersion": "c3-scatter-bubble-source-v2",
+  "softwareFunctionalSubsetPassed": true,
+  "functionalSubsetPassed": true,
+  "fullC2StageComplete": false,
+  "fullC3StageComplete": false,
+  "fullC4StageComplete": false,
+  "windows": {
+    "platform": "windows",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\windows\\windows-final-v2\\results.json",
+      "sha256": "C0DFF256F802FEDD2B18C476B531ED18A750A15F930E7378837F10AF00AD24C6",
+      "bytes": 20380
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\windows\\windows-final-v2\\results.json",
+      "sha256": "C0DFF256F802FEDD2B18C476B531ED18A750A15F930E7378837F10AF00AD24C6",
+      "bytes": 20380
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\windows\\windows-final-v2\\charts-smoke.json",
+      "sha256": "B89743C4FD6493BA53DE420A0C90E6F12DEC2FEEBDC759003365EC0C1E1F5EBC",
+      "bytes": 1179400
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\windows\\windows-final-v2\\charts-usage.json",
+      "sha256": "3FB3C7147FFA5FA1C5F448B4F4F012EDDAC54305544ED76D78FB55BAC86DCF77",
+      "bytes": 19192
+    },
+    "headlessTests": 1145,
+    "demoChecks": 804,
+    "usageChecks": 229,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 321,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\windows\\package-consumers-v2\\20261018T060331980Z-61ff0d16f79b46ddb2410328f9a056cd\\function\\consumer-result.json",
+          "sha256": "19E3BA707D18BFAF6F9D9915E4CEB14C66C6DB88B35FE7D5C0F8A649FBE0EF99",
+          "bytes": 49962
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\windows\\package-consumers-v2\\20261018T060331980Z-61ff0d16f79b46ddb2410328f9a056cd\\function\\packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 321,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\windows\\package-consumers-v2\\20261018T060331980Z-61ff0d16f79b46ddb2410328f9a056cd\\themes\\consumer-result.json",
+          "sha256": "8CA400F97E3862B5E4963E829C7D0B98D501FDCAC42EBE8628138882D8E0FC3B",
+          "bytes": 49982
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\windows\\package-consumers-v2\\20261018T060331980Z-61ff0d16f79b46ddb2410328f9a056cd\\themes\\packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\windows\\windows-final-v2\\validated-input-manifest.json",
+      "sha256": "1D01273EC32B601D0FBDF55FAB5E80763F0C94CCAA470DC33384A64D8DE6C292",
+      "bytes": 111967
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\windows\\windows-final-v2\\assembly-manifest.json",
+      "sha256": "E39BFD9D0F5E8FFFC759A39BF436CC223ECAB1EE4155078863AEC6AD0E781FB4",
+      "bytes": 1955
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\windows\\windows-final-v2\\environment.json",
+      "sha256": "A99B15588DBBCADD3765C7B6520A6299BD99BB5BB207895D09B28963162C6F29",
+      "bytes": 9133
+    },
+    "coreSha256": "B07ED74F342B2502607306E27B910F683CE7B9D64165915C6FCCCFD57A0253D0",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false
+  },
+  "linux": {
+    "platform": "linux",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\results.json",
+      "sha256": "8D84E046200EE0FC4B7FC36426D92CF840AF1732FF4BE9FEE2CFE1D649181A62",
+      "bytes": 14718
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\results.json",
+      "sha256": "8D84E046200EE0FC4B7FC36426D92CF840AF1732FF4BE9FEE2CFE1D649181A62",
+      "bytes": 14718
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\charts-smoke.json",
+      "sha256": "89481DAA7476EDF6D4C20309EAC1ECC3AA7A9FB6D9C2BCE3A3BED8EDE746E61F",
+      "bytes": 1134270
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\charts-usage.json",
+      "sha256": "50F7730110F0832F8F38AEDAEBABFA783EE546D9936C531E83B7323206142388",
+      "bytes": 18764
+    },
+    "headlessTests": 1145,
+    "demoChecks": 804,
+    "usageChecks": 229,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 321,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\linux\\run-v2\\package-consumers\\20261018T060619852Z-c4ffc02177cb4888983c95f4834bf103\\function\\consumer-result.json",
+          "sha256": "1CCCF2B7F15124C6DED9388467AC49B65F899CBCDB202F33E18D2C798E2A07E9",
+          "bytes": 48558
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c3-scatter-bubble-20261018/linux/run-v2/package-consumers/20261018T060619852Z-c4ffc02177cb4888983c95f4834bf103/function/packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 321,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\linux\\run-v2\\package-consumers\\20261018T060619852Z-c4ffc02177cb4888983c95f4834bf103\\themes\\consumer-result.json",
+          "sha256": "26E1AE149D939A170A8878B0BE0D92C7374473086B6595D4DB227E1617773201",
+          "bytes": 48575
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c3-scatter-bubble-20261018/linux/run-v2/package-consumers/20261018T060619852Z-c4ffc02177cb4888983c95f4834bf103/themes/packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\validated-input-manifest.json",
+      "sha256": "AF9E06DFF2051A311ABE91F6AAE186AB491430B5D093E18068116282D256364D",
+      "bytes": 109473
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\assembly-manifest.json",
+      "sha256": "FB30B15DB465BBD6E118AD16FA472F2D25CB8584764171663E525535DF9379AA",
+      "bytes": 1905
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\environment.json",
+      "sha256": "4FFAD85EB0A3EE4A9FB74F4D207F75BE2780161E03682FD6A8A23D9666060590",
+      "bytes": 6369
+    },
+    "coreSha256": "95EC454B822F02F29EE33894FFAEAC218F8B3E9AAE2EF9887844DD26A1B07DC0",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false
+  },
+  "sourceSnapshotRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\source-snapshot-v2.json",
+    "sha256": "E885113129065205E9E4673D766EF7D9B7E4D73BC9332582FB0BAE184D63B7D4",
+    "bytes": 264623
+  },
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\source-snapshot-v2.json",
+    "sha256": "E885113129065205E9E4673D766EF7D9B7E4D73BC9332582FB0BAE184D63B7D4",
+    "bytes": 264623
+  },
+  "frozenSourceFiles": 1320,
+  "declaredValidatedInputsPerPlatform": 623,
+  "declaredInputsMatchBetweenPlatforms": true,
+  "declaredLiveInputsStillMatch": true,
+  "frozenSourceHashesStillMatch": true,
+  "liveFullRepositoryEqualityClaimed": false,
+  "sourceScope": "All declared runtime/harness inputs match frozen source-v2; later general documentation/status metadata updates are outside that runtime set.",
+  "windowsApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\api-windows-final-v2\\api.txt",
+    "sha256": "6144FF7C79E065AD27E750D51BFB31A70B9E50DC2E31C605B5855657C66BB8C1",
+    "bytes": 825214
+  },
+  "linuxApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\linux\\api-linux-final-v2\\api.txt",
+    "sha256": "37135A57EAB0D35959D40C533E3F6F1719A32704C05C6B1CD5B4B42C584C50F0",
+    "bytes": 267682
+  },
+  "publicApiDocument": {
+    "path": "<REPO_ROOT>\\docs\\charts-c3-scatter-bubble-api.txt",
+    "sha256": "6144FF7C79E065AD27E750D51BFB31A70B9E50DC2E31C605B5855657C66BB8C1",
+    "bytes": 825214
+  },
+  "localApiDeclarationsMatchBetweenPlatforms": true,
+  "apiDelta": {
+    "oldTypes": 110,
+    "newTypes": 115,
+    "oldNamedChartsTypes": 108,
+    "newNamedChartsTypes": 113,
+    "oldLegacyDistinctTypeNames": 110,
+    "newLegacyDistinctTypeNames": 115,
+    "addedTypes": [
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BubbleSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartPointDrawOrder",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartSizeScale",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PointSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterLineSeries"
+    ],
+    "addedMembersOnExistingTypes": [
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartDataPoint",
+        "member": "  Property: System.Object ColorValue [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartDataPoint",
+        "member": "  Property: System.Nullable`1[System.Double] MarkerDiameter [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartDataPoint",
+        "member": "  Property: Avalonia.Media.IBrush PointFill [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartDataPoint",
+        "member": "  Property: System.Nullable`1[System.Double] SizeValue [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartPointHit",
+        "member": "  Property: System.Object ColorValue [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartPointHit",
+        "member": "  Property: System.Nullable`1[System.Double] MarkerDiameter [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartPointHit",
+        "member": "  Property: Avalonia.Media.IBrush PointFill [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartPointHit",
+        "member": "  Property: System.Nullable`1[System.Double] SizeValue [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Interface: NT.AvaloniaControl.Charts.IChartPointSeries"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.Nullable`1[System.Double]] ColorMaximumProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.Nullable`1[System.Double]] ColorMinimumProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.String] ColorPathProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.Charts.ChartPointDrawOrder] DrawOrderProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[Avalonia.Media.Color] MaximumColorProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.Double] MaximumSizeProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[Avalonia.Media.Color] MinimumColorProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.Double] MinimumSizeProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.Nullable`1[System.Double]] SizeMaximumProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.Nullable`1[System.Double]] SizeMinimumProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.String] SizePathProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.Charts.ChartSizeScale] SizeScaleProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Property: System.Nullable`1[System.Double] ColorMaximum [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Property: System.Nullable`1[System.Double] ColorMinimum [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Property: System.String ColorPath [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Property: NT.AvaloniaControl.Charts.ChartPointDrawOrder DrawOrder [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Property: Avalonia.Media.Color MaximumColor [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Property: System.Double MaximumSize [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Property: Avalonia.Media.Color MinimumColor [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Property: System.Double MinimumSize [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Property: System.Nullable`1[System.Double] SizeMaximum [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Property: System.Nullable`1[System.Double] SizeMinimum [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Property: System.String SizePath [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ScatterSeries",
+        "member": "  Property: NT.AvaloniaControl.Charts.ChartSizeScale SizeScale [get=True, set=True]"
+      }
+    ],
+    "removedTypes": [],
+    "changedExistingTypeDeclarations": [],
+    "removedMembersOnExistingTypes": [],
+    "binaryCompatibilityQualified": false,
+    "officialCompatibilityQualified": false
+  },
+  "apiComparisonScope": "All exported declarations in both local product assemblies keyed by assembly+type, including generated XAML types; namespace and legacy distinct-name counts reported separately.",
+  "completePublicApiReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\independent-full-public-api-v2.json",
+    "sha256": "422FF77B8F428C12621AD96F81E72251CC9C33637B7DD753F768E2079B416C91",
+    "bytes": 8785
+  },
+  "independentReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\collected-evidence-v2.json",
+    "sha256": "0CAA489C9770C3C65766069216229857CDE1CBB60603561D09A8B59817871468",
+    "bytes": 660558
+  },
+  "independentRasterReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\independent-scatter-bubble-raster-v3.json",
+    "sha256": "DE9B7CF1157CC329EACC7D3F7689BABA058C3190DFE61C0B4C73FEB9A2E322E6",
+    "bytes": 131806
+  },
+  "rasterOraclePreregistrationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\scatter-bubble-oracle-preregistered.json",
+    "sha256": "870D1917A890CE2D81596F3928CE749075FCCCFB57A541FB40BB280F68AA8D8C",
+    "bytes": 3668
+  },
+  "rasterOracleAddendumRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\scatter-bubble-oracle-preregistered-addendum.json",
+    "sha256": "04C3D903FA83A2B4BE7FE99CC0F87ECDCF8365390A1E113206CE911E165FE057",
+    "bytes": 2922
+  },
+  "independentReviewCounts": {
+    "sourceAndPlatformChecks": 3912,
+    "rasterChecks": 640,
+    "decodedImages": 80,
+    "countsOverlapAndAreNotProductTestCounts": true
+  },
+  "historicalAndRendererPinsVerified": true,
+  "historicalDocumentPinCount": 35,
+  "historicalRendererVersionCount": 3,
+  "historicalRendererPreservationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\historical-renderer-preservation-v1.json",
+    "sha256": "4BC40D7E871B935C445DBE27526880A6C51D255124703C24A360D83A9F689B6F",
+    "bytes": 1970
+  },
+  "generalMetadataBeforeRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\metadata-before.json",
+    "sha256": "8F6891BF23EFE4E7018C980D8D03A3CF182870CB64A61FD97911432A7F15130C",
+    "bytes": 3095
+  },
+  "dependencyReuse": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\dependency-reuse.json",
+    "sha256": "F38AAA8461D8314B3DFA13D5C05B2938136DE317437C44CE39590231BC250363",
+    "bytes": 5687
+  },
+  "productPackagesReused": false,
+  "nugetAuditOrWarningPolicyChanged": false,
+  "nativeAccessibilityEnumerationRetested": false,
+  "deferredNativeAccessibilityWorkstream": "A11Y-NATIVE-01",
+  "completeNativeBridgeGatePassed": false,
+  "previousNativeBridgeEvidence": {
+    "path": "<REPO_ROOT>\\docs\\charts-c2-accessibility-validation.json",
+    "sha256": "BC80F3A743AD610E5B419D87D00A753755265A12F434F08654A06A59ABD72A8D",
+    "bytes": 1405510
+  },
+  "performanceQualified": false,
+  "performanceMeasured": false,
+  "memoryRegressionMeasured": false,
+  "millionHitTailDeferredTo": "C4",
+  "officialRuntimeReferenceIncluded": false,
+  "physicalKeyboardValidated": false,
+  "physicalDesktopCertified": false,
+  "implementationContracts": [
+    "公开新增 PointSeries、ScatterLineSeries、BubbleSeries、ChartSizeScale 和 ChartPointDrawOrder；既有 ScatterSeries 通过新增属性接入编码。未配置 SizePath/ColorPath 且 DrawOrder=Source 的普通 Scatter 保留原渲染路径和原命中距离规则。",
+    "SizePath 优先；仅 Bubble 在没有 SizePath 时回退 WeightPath。两者均未配置则使用 MarkerSize。SizeValue/ColorValue 保留源映射原值，MarkerDiameter/PointFill 是当前显示场景的派生值，源快照不被改写。",
+    "MinimumSize/MaximumSize 为 DIP 直径，范围0..1024且下限不大于上限。有限非负业务值经域内clamp得到t；Diameter为Dmin+(Dmax-Dmin)t，Area为sqrt(Dmin²+(Dmax²-Dmin²)t)。默认Area；Bubble默认Dmin=0、Dmax=60，PointSeries/Scatter为4、40。",
+    "大小自动域下界为0，上界为全部轴域有效XY样本中的最大有限非负大小；颜色自动域取同一批有效XY样本的有限数值min/max，均不随Viewport改变。自动退化域取t=0；用户显式边界解析为max≤min时抛InvalidOperationException。",
+    "负值、缺失和非有限大小只隐藏marker，XY仍可用于键盘、共享读数和线段；0映射到MinimumSize，因此默认Bubble零直径不可见，显式非零MinimumSize可显示零值。发布快照中的有限IsEmpty仍在显示场景保持gap，发布源本身保留。",
+    "ColorPath 接受有限数值、Color、IBrush和可解析颜色字符串；数值按MinimumColor/MaximumColor的sRGBA通道线性插值并量化。无效颜色回退MarkerFill、Fill及系列调色板；原ColorValue仍可供模板读取。",
+    "DrawOrder按源序或当前显示直径稳定升/降序，不改Item/StableId/SourceIndex。新/encoded点renderer按可见marker几何外缘及描边计算距离，内部为0，等距选后绘制项；透明fill保留几何命中。混合其他renderer继续遵循各自DistanceSquared协议，不承诺跨全部系列恒选全局最顶图形。",
+    "新marker按十种形状、round描边、plot外框及本系列实际X/Y轴断轴可见区计算裁剪命中，中心在可见区外而部分可见时仍可命中；完全不可见形状不产生容差命中，plot外或断轴空白查询不返回点。共享范围选择仍按XY中心语义。",
+    "ScatterLine按原快照物理源顺序作直线连接，保留非单调X、相邻真实源端点和插值元数据；XY gap断开，大小缺失不把线段断开。ShowLine与ShowMarkers独立，ShowLine=false或StrokeThickness=0时不提供线段命中/插值读数。",
+    "动画按当前显示直径、坐标和solid颜色/Opacity插值；SizeValue/ColorValue继续指向目标源值，MarkerDiameter/PointFill与当前绘制帧一致。非solid IBrush在动画期间直接取目标brush。",
+    "标签、Tooltip、Trackball、选择、键盘和辅助语义复用共享底座并携带大小/颜色/当前样式；基础标签默认仍显示XY值，Demo主动格式化业务大小。缩放保持DIP尺寸；PNG/JPEG复用既有导出管线，本批新增PNG三DPI精确像素检查。"
+  ],
+  "implementationContractsRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\implementation-contracts-final-v1.json",
+    "sha256": "7946778688E3E81F057C2663773A93E7B2F40F81EFEFC7247BF399585FC4E2F8",
+    "bytes": 4867
+  },
+  "remaining": [
+    "本批沿用系列级图例，未增加独立尺寸图例或连续色标控件；点编码、排序及几何命中以本库API提供，尚未认证完整官方API/运行时等价。",
+    "共享范围选择仍按XY中心，默认旧Scatter与混合renderer保留原距离协议；这些边界不等同于新encoded marker内部的paint-order命中规则。",
+    "新点样式派生、稳定大小排序、全量绘制/命中、动画和多图的规模、分配、增量、内存与尾延迟回归仍在C4；本批未建立性能资格。",
+    "无轴Bubble cloud、Packed bubble、Circle packing与碰撞布局仍在C6；C3-04圆形及其余常用图族继续按计划推进，完整C2/C3/C4/C7仍开放。",
+    "官方许可参考宿主、物理Windows/Linux、实际backend/GPU/compositor呈现、多屏DPI、Ubuntu22/24、原生Wayland、ARM及目标国产Linux仍待独立验证。",
+    "Windows UIA/Linux AT-SPI原生选中项枚举、Linux嵌套点选择写入、点系统焦点和真实读屏器按用户决定保留到A11Y-NATIVE-01；本批未重验或改为通过。",
+    "百万点命中p95历史回退0.7649→1.1235ms按用户决定保留到C4；既有AX06标题/末刻度布局和4个历史PixelProbe DLL缺口保持开放，未用新证据替换。"
+  ],
+  "retainedInterruptedFormalCandidate": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\retained-interrupted-v1.json",
+    "sha256": "3F18B8484D50F3C6882718A6109C02C190F003F4C673A6A96CB41D05B631270C",
+    "bytes": 2692
+  },
+  "retainedRasterReaderFailure": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\independent-scatter-bubble-raster-v2.json",
+    "sha256": "941EBF509D2E7FDA15C10A1D428A69E26E12414F872BF97B503D7F1D22148D8A",
+    "bytes": 10869
+  },
+  "rasterReaderCorrection": "Initial reader recognized hexadecimal colors only and stopped on Avalonia named Blue/Purple/Red after47 passing checks; added equivalent standard-name parsing. Preregistered business expectations, alpha/RGB thresholds, coordinates and negative gates unchanged; failed record retained.",
+  "retainedDevelopmentRuns": {
+    "nativeV1": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\development\\demo-v1.json",
+      "sha256": "3B4DB0BB87C631C735CC665886892636F2AC2308E6C6C288E7FF076F8F562EF3",
+      "bytes": 1169929
+    },
+    "nativeV1Passed": 802,
+    "nativeV1Total": 804,
+    "nativeV2": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\development\\demo-v2.json",
+      "sha256": "3CD7489D9EB93B8796F8DECE983EB7F52ACAB493B89D99CBD76BD3DB27DCD7D4",
+      "bytes": 1169965
+    },
+    "nativeV2Passed": 804,
+    "nativeV2Total": 804,
+    "correction": "Chart height increased275->295; original PlotArea.Height>100 gate retained (approximately98->118).",
+    "thresholdsRelaxed": false,
+    "earlierEvidenceOverwritten": false
+  },
+  "manualWindowsVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\manual-windows-scatter-bubble-visual-v2.json",
+    "sha256": "60F930A8D0BE1F18ACDB4A9D9C9075AFD61429A6D891A10AC4FC85977401ADB0",
+    "bytes": 3468
+  },
+  "manualLinuxVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-scatter-bubble-20261018\\manual-linux-scatter-bubble-visual-v2.json",
+    "sha256": "40F8886225C54E64DEA1733087F4D21BF100997E50BDFDF07F2698DEC701C027",
+    "bytes": 4398
+  }
+}

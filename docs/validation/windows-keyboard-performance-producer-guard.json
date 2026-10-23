@@ -1,0 +1,37 @@
+{
+  "Passed": true,
+  "TimestampUtc": "2026-10-13T06:17:29.0976341+00:00",
+  "Baseline": "<REPO_ROOT>\\docs\\validation\\virtualkeyboard-performance-baseline.json",
+  "BaselineValid": true,
+  "Scope": "Local Windows/X64 Release regression guard for the recorded 960x530 DIP, 100 percent scaling and default font/theme fixture",
+  "Results": [
+    {
+      "Report": "<REPO_ROOT>\\docs\\validation\\windows-keyboard-performance-producer-check.json",
+      "Passed": true,
+      "Checks": {
+        "semanticChecks": true,
+        "expectedFixture": true,
+        "firstHitReady": true,
+        "character-insertion:samples": true,
+        "character-insertion:releaseP95": true,
+        "character-insertion:releaseMax": true,
+        "selection-replacement:samples": true,
+        "selection-replacement:releaseP95": true,
+        "selection-replacement:releaseMax": true,
+        "default-500-70:cancelDuration": true,
+        "default-500-70:cancelStopsInput": true,
+        "default-500-70:firstRepeatLateness": true,
+        "default-500-70:repeatSampleCount": true,
+        "default-500-70:intervalP95": true,
+        "short-100-40:cancelDuration": true,
+        "short-100-40:cancelStopsInput": true,
+        "short-100-40:firstRepeatLateness": true,
+        "short-100-40:repeatSampleCount": true,
+        "short-100-40:intervalP95": true
+      },
+      "Error": null
+    }
+  ],
+  "PhysicalInputLatencyValidated": false,
+  "Notes": "Same-fixture regression alarms recomputed from validated raw observations. Does not certify device delivery, rendered-frame latency, other platforms or load conditions."
+}

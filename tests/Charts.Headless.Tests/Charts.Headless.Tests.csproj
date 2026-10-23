@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Headless.XUnit" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Charts.Themes/NT.AvaloniaControl.Charts.Themes.csproj" />
+  </ItemGroup>
+</Project>

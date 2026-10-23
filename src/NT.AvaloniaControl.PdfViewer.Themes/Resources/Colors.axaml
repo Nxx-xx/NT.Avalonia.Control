@@ -1,0 +1,25 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <CornerRadius x:Key="PdfViewerCornerRadius">8</CornerRadius>
+  <x:Double x:Key="PdfViewerSidebarWidth">208</x:Double>
+  <ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Light">
+      <SolidColorBrush x:Key="PdfViewerBackgroundBrush">#FFFFFF</SolidColorBrush>
+      <SolidColorBrush x:Key="PdfViewerForegroundBrush">#1D2939</SolidColorBrush>
+      <SolidColorBrush x:Key="PdfViewerMutedForegroundBrush">#667085</SolidColorBrush>
+      <SolidColorBrush x:Key="PdfViewerBorderBrush">#D9E0EA</SolidColorBrush>
+      <SolidColorBrush x:Key="PdfViewerToolbarBrush">#F8FAFD</SolidColorBrush>
+      <SolidColorBrush x:Key="PdfViewerCanvasBrush">#E6EBF2</SolidColorBrush>
+      <SolidColorBrush x:Key="PdfViewerErrorBrush">#B42318</SolidColorBrush>
+    </ResourceDictionary>
+    <ResourceDictionary x:Key="Dark">
+      <SolidColorBrush x:Key="PdfViewerBackgroundBrush">#1D2532</SolidColorBrush>
+      <SolidColorBrush x:Key="PdfViewerForegroundBrush">#E5ECF5</SolidColorBrush>
+      <SolidColorBrush x:Key="PdfViewerMutedForegroundBrush">#A6B3C6</SolidColorBrush>
+      <SolidColorBrush x:Key="PdfViewerBorderBrush">#3C495C</SolidColorBrush>
+      <SolidColorBrush x:Key="PdfViewerToolbarBrush">#232E3E</SolidColorBrush>
+      <SolidColorBrush x:Key="PdfViewerCanvasBrush">#111822</SolidColorBrush>
+      <SolidColorBrush x:Key="PdfViewerErrorBrush">#FFB4AB</SolidColorBrush>
+    </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>

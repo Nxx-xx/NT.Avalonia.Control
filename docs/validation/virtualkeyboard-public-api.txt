@@ -1,0 +1,85 @@
+NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboard : Avalonia.Controls.Primitives.TemplatedControl [abstract=False, sealed=False]
+  Constructor: Void .ctor() [public, abstract=False, virtual=False]
+  Event: System.EventHandler`1[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardTargetEventArgs] NextRequested
+  Event: System.EventHandler`1[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardTargetEventArgs] ReturnRequested
+  Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboard,System.Boolean] IsCapsLockActiveProperty
+  Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboard,System.Boolean] IsInputAvailableProperty
+  Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboard,System.Boolean] IsShiftActiveProperty
+  Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboard,System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardRow]] RowsProperty
+  Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboard,System.String] TemplateDiagnosticProperty
+  Field: Avalonia.StyledProperty`1[Avalonia.Input.IInputElement] TargetProperty
+  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardLayout] LayoutProperty
+  Field: Avalonia.StyledProperty`1[System.Boolean] ShowDecimalPointProperty
+  Field: Avalonia.StyledProperty`1[System.Boolean] ShowNegativeSignProperty
+  Field: Avalonia.StyledProperty`1[System.TimeSpan] RepeatDelayProperty
+  Field: Avalonia.StyledProperty`1[System.TimeSpan] RepeatIntervalProperty
+  Method: Void CancelInput() [public, abstract=False, virtual=False]
+  Method: Void OnApplyTemplate(Avalonia.Controls.Primitives.TemplateAppliedEventArgs) [protected, abstract=False, virtual=True]
+  Method: Void OnAttachedToVisualTree(Avalonia.VisualTreeAttachmentEventArgs) [protected, abstract=False, virtual=True]
+  Method: Void OnDetachedFromVisualTree(Avalonia.VisualTreeAttachmentEventArgs) [protected, abstract=False, virtual=True]
+  Method: Void OnPropertyChanged(Avalonia.AvaloniaPropertyChangedEventArgs) [protected, abstract=False, virtual=True]
+  Property: Avalonia.Input.IInputElement Target [get=public, set=public]
+  Property: Boolean IsCapsLockActive [get=public, set=none]
+  Property: Boolean IsInputAvailable [get=public, set=none]
+  Property: Boolean IsShiftActive [get=public, set=none]
+  Property: Boolean ShowDecimalPoint [get=public, set=public]
+  Property: Boolean ShowNegativeSign [get=public, set=public]
+  Property: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardLayout Layout [get=public, set=public]
+  Property: System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardRow] Rows [get=public, set=none]
+  Property: System.String TemplateDiagnostic [get=public, set=none]
+  Property: System.TimeSpan RepeatDelay [get=public, set=public]
+  Property: System.TimeSpan RepeatInterval [get=public, set=public]
+NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKey : System.Object [abstract=False, sealed=True]
+  Property: Boolean IsRepeatable [get=public, set=none]
+  Property: Double Width [get=public, set=none]
+  Property: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind Kind [get=public, set=none]
+  Property: System.String Id [get=public, set=none]
+  Property: System.String Label [get=public, set=none]
+  Property: System.String ShiftLabel [get=public, set=none]
+  Property: System.String ShiftText [get=public, set=none]
+  Property: System.String Text [get=public, set=none]
+NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyButton : Avalonia.Controls.Primitives.TemplatedControl [abstract=False, sealed=False]
+  Constructor: Void .ctor() [public, abstract=False, virtual=False]
+  Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyButton,System.Boolean] IsLockedProperty
+  Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyButton,System.String] LabelProperty
+  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKey] KeyProperty
+  Method: Avalonia.Automation.Peers.AutomationPeer OnCreateAutomationPeer() [protected, abstract=False, virtual=True]
+  Method: Void OnAttachedToVisualTree(Avalonia.VisualTreeAttachmentEventArgs) [protected, abstract=False, virtual=True]
+  Method: Void OnDetachedFromVisualTree(Avalonia.VisualTreeAttachmentEventArgs) [protected, abstract=False, virtual=True]
+  Method: Void OnPointerCaptureLost(Avalonia.Input.PointerCaptureLostEventArgs) [protected, abstract=False, virtual=True]
+  Method: Void OnPointerMoved(Avalonia.Input.PointerEventArgs) [protected, abstract=False, virtual=True]
+  Method: Void OnPointerPressed(Avalonia.Input.PointerPressedEventArgs) [protected, abstract=False, virtual=True]
+  Method: Void OnPointerReleased(Avalonia.Input.PointerReleasedEventArgs) [protected, abstract=False, virtual=True]
+  Method: Void OnPropertyChanged(Avalonia.AvaloniaPropertyChangedEventArgs) [protected, abstract=False, virtual=True]
+  Property: Boolean IsLocked [get=public, set=none]
+  Property: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKey Key [get=public, set=public]
+  Property: System.String Label [get=public, set=none]
+NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind : System.Enum [abstract=False, sealed=True]
+  Field: Int32 value__
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind Backspace = 3
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind CapsLock = 2
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind Character = 0
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind Delete = 4
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind End = 8
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind Home = 7
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind Left = 5
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind Return = 10
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind Right = 6
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind SelectAll = 9
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind Shift = 1
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind Tab = 11
+NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardLayout : System.Enum [abstract=False, sealed=True]
+  Field: Int32 value__
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardLayout English = 1
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardLayout Numeric = 0
+NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardRow : System.Object [abstract=False, sealed=True]
+  Property: System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKey] Keys [get=public, set=none]
+NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardRowPanel : Avalonia.Controls.Panel [abstract=False, sealed=False]
+  Constructor: Void .ctor() [public, abstract=False, virtual=False]
+  Field: Avalonia.StyledProperty`1[System.Double] SpacingProperty
+  Method: Avalonia.Size ArrangeOverride(Avalonia.Size) [protected, abstract=False, virtual=True]
+  Method: Avalonia.Size MeasureOverride(Avalonia.Size) [protected, abstract=False, virtual=True]
+  Property: Double Spacing [get=public, set=public]
+NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardTargetEventArgs : System.EventArgs [abstract=False, sealed=True]
+  Constructor: Void .ctor(Avalonia.Input.IInputElement) [public, abstract=False, virtual=False]
+  Property: Avalonia.Input.IInputElement Target [get=public, set=none]

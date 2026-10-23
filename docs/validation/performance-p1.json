@@ -1,0 +1,79 @@
+{
+  "Baseline": "P1 diagnostic budget; compare on the same host, Release, without debugger",
+  "TimestampUtc": "2026-10-12T02:55:56.7175271+00:00",
+  "Runtime": ".NET 10.0.12",
+  "OperatingSystem": "Microsoft Windows 10.0.26200",
+  "Architecture": "X64",
+  "ProcessorCount": 16,
+  "Seed": 1729,
+  "LayoutViewport": {
+    "Width": 1200,
+    "Height": 700
+  },
+  "Measurements": [
+    {
+      "Scenario": "flat-100k-create",
+      "Milliseconds": 112.5788,
+      "AllocatedBytes": 64714160,
+      "BudgetMilliseconds": 3000,
+      "Passed": true
+    },
+    {
+      "Scenario": "flat-100k-refresh",
+      "Milliseconds": 133.3573,
+      "AllocatedBytes": 79560584,
+      "BudgetMilliseconds": 1500,
+      "Passed": true
+    },
+    {
+      "Scenario": "layout-100k-100columns-variable-height",
+      "Milliseconds": 4.0726,
+      "AllocatedBytes": 801832,
+      "BudgetMilliseconds": 500,
+      "Passed": true
+    },
+    {
+      "Scenario": "layout-1000-scroll-hit-tests",
+      "Milliseconds": 7.4894,
+      "AllocatedBytes": 64,
+      "BudgetMilliseconds": 100,
+      "Passed": true
+    },
+    {
+      "Scenario": "identity-100k-lookups",
+      "Milliseconds": 7.6532,
+      "AllocatedBytes": 40,
+      "BudgetMilliseconds": 500,
+      "Passed": true
+    },
+    {
+      "Scenario": "wide-tree-100001-collapsed-create",
+      "Milliseconds": 93.1129,
+      "AllocatedBytes": 56559720,
+      "BudgetMilliseconds": 4000,
+      "Passed": true
+    },
+    {
+      "Scenario": "wide-tree-expand-100k-children",
+      "Milliseconds": 69.4412,
+      "AllocatedBytes": 50307432,
+      "BudgetMilliseconds": 1500,
+      "Passed": true
+    },
+    {
+      "Scenario": "wide-tree-collapse-100k-children",
+      "Milliseconds": 67.9962,
+      "AllocatedBytes": 39757848,
+      "BudgetMilliseconds": 1500,
+      "Passed": true
+    },
+    {
+      "Scenario": "deep-tree-100k-depth100-collapsed-create",
+      "Milliseconds": 216.1787,
+      "AllocatedBytes": 100638608,
+      "BudgetMilliseconds": 8000,
+      "Passed": true
+    }
+  ],
+  "Passed": true
+}

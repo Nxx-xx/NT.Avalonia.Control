@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Headless.XUnit" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.TreeDataGrid.Themes/NT.AvaloniaControl.TreeDataGrid.Themes.csproj" />
+  </ItemGroup>
+</Project>

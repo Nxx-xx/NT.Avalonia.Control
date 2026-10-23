@@ -1,0 +1,283 @@
+{
+  "Date": "2026-10-13",
+  "TimestampUtc": "2026-10-13T06:20:24.8653816+00:00",
+  "SDK": "10.0.401",
+  "TargetFramework": "net10.0",
+  "Avalonia": "12.0.3",
+  "ProductVersion": "0.2.0-preview.2",
+  "VirtualKeyboardSoftwareVerificationPassed": true,
+  "FullPlanReleaseAccepted": false,
+  "Tests": [
+    {
+      "Project": "TreeDataGrid.Core.Tests",
+      "Total": 127,
+      "Errors": 0,
+      "Failed": 0,
+      "Skipped": 0,
+      "NotRun": 0
+    },
+    {
+      "Project": "TreeDataGrid.Headless.Tests",
+      "Total": 177,
+      "Errors": 0,
+      "Failed": 0,
+      "Skipped": 0,
+      "NotRun": 0
+    },
+    {
+      "Project": "TreeDataGrid.Themes.Tests",
+      "Total": 24,
+      "Errors": 0,
+      "Failed": 0,
+      "Skipped": 0,
+      "NotRun": 0
+    },
+    {
+      "Project": "VirtualKeyboard.Core.Tests",
+      "Total": 25,
+      "Errors": 0,
+      "Failed": 0,
+      "Skipped": 0,
+      "NotRun": 0
+    },
+    {
+      "Project": "VirtualKeyboard.Headless.Tests",
+      "Total": 52,
+      "Errors": 0,
+      "Failed": 0,
+      "Skipped": 0,
+      "NotRun": 0
+    },
+    {
+      "Project": "VirtualKeyboard.Themes.Tests",
+      "Total": 11,
+      "Errors": 0,
+      "Failed": 0,
+      "Skipped": 0,
+      "NotRun": 0
+    }
+  ],
+  "VirtualKeyboardTestTotal": 88,
+  "TreeDataGridTestTotal": 328,
+  "TotalDotNetTests": 416,
+  "TestRunner": "xUnit v3 direct DLL runner",
+  "FullSolutionVerification": {
+    "Passed": true,
+    "LockedRestorePassed": true,
+    "ReleaseBuildPassed": true,
+    "BuildWarnings": 0,
+    "ProductPackCount": 4,
+    "IndependentConsumerCount": 4,
+    "ScriptGuardCases": 41,
+    "Log": "artifacts/platform/virtualkeyboard-verify-final.log",
+    "Status": "Final unified Verify passed including offline performance data and guard regression tests."
+  },
+  "FreshNuGetConsumers": [
+    {
+      "Control": "TreeDataGrid",
+      "Mode": "DefaultTheme",
+      "Passed": true,
+      "Directory": "artifacts/consumer/a18d36403cce440a97f35ab36e046a26",
+      "SourceProjectReferences": false
+    },
+    {
+      "Control": "VirtualKeyboard",
+      "Mode": "FunctionOnly",
+      "Passed": true,
+      "Directory": "artifacts/consumer/deb91cd70ca541d3af2f7c53b3de8b00",
+      "SourceProjectReferences": false,
+      "DefaultThemeInstalled": false
+    },
+    {
+      "Control": "VirtualKeyboard",
+      "Mode": "DefaultTheme",
+      "Passed": true,
+      "Directory": "artifacts/consumer/45dbfc625229421c865e8f9839c6eae6",
+      "SourceProjectReferences": false
+    },
+    {
+      "Control": "TreeDataGrid",
+      "Mode": "FunctionOnly",
+      "Passed": true,
+      "Directory": "artifacts/consumer/treedatagrid-function-9b43e90fb6c24c1299953857be60e256",
+      "SourceProjectReferences": false,
+      "DefaultThemeInstalled": false
+    }
+  ],
+  "PackageEntryPoint": "scripts/Test-PackageConsumer.ps1 -Control VirtualKeyboard",
+  "Packages": [
+    {
+      "PackageId": "NT.AvaloniaControl.VirtualKeyboard",
+      "Version": "0.2.0-preview.2",
+      "File": "artifacts/packages/NT.AvaloniaControl.VirtualKeyboard.0.2.0-preview.2.nupkg",
+      "SHA256": "5223F4B7AAFA8F2520BA44326806690DDEABC33F32E8D2DE961CD8BD3D249BD7",
+      "ReadmeIncluded": true,
+      "Dependencies": [
+        {
+          "Id": "Avalonia",
+          "Version": "12.0.3"
+        }
+      ]
+    },
+    {
+      "PackageId": "NT.AvaloniaControl.VirtualKeyboard.Themes",
+      "Version": "0.2.0-preview.2",
+      "File": "artifacts/packages/NT.AvaloniaControl.VirtualKeyboard.Themes.0.2.0-preview.2.nupkg",
+      "SHA256": "6BA07894CE451BD56B6F04490D9216F9CF97A1AD9FD959CE5EBD55FDCDBAC012",
+      "ReadmeIncluded": true,
+      "Dependencies": [
+        {
+          "Id": "NT.AvaloniaControl.VirtualKeyboard",
+          "Version": "0.2.0-preview.2"
+        }
+      ]
+    }
+  ],
+  "NativeProbes": [
+    {
+      "Name": "Windows Usage",
+      "Passed": true,
+      "Report": "docs/validation/windows-keyboard-usage-smoke.json",
+      "Image": "docs/validation/windows-keyboard-usage.png",
+      "CheckCount": 29,
+      "PointerCoordinateChecks": 21,
+      "NativeEditingFocusValidated": true,
+      "RenderScaling": 1,
+      "PhysicalPointerValidated": false,
+      "NativeTouchValidated": false,
+      "NativeImeValidated": false,
+      "DpiMatrixValidated": false,
+      "KylinValidated": false
+    },
+    {
+      "Name": "Windows unified Demo",
+      "Passed": true,
+      "Report": "docs/validation/windows-keyboard-demo-smoke.json",
+      "Image": "docs/validation/windows-keyboard-demo.png",
+      "CheckCount": 29,
+      "PointerCoordinateChecks": 18,
+      "NativeEditingFocusValidated": true,
+      "RenderScaling": 1,
+      "PhysicalPointerValidated": false,
+      "NativeTouchValidated": false,
+      "NativeImeValidated": false,
+      "DpiMatrixValidated": false,
+      "KylinValidated": false
+    },
+    {
+      "Name": "Windows lifecycle",
+      "Passed": true,
+      "Report": "docs/validation/windows-keyboard-lifecycle-smoke.json",
+      "Image": "docs/validation/windows-keyboard-lifecycle.png",
+      "CheckCount": 81,
+      "PointerCoordinateChecks": 37,
+      "NativeEditingFocusValidated": true,
+      "RenderScaling": 1,
+      "PhysicalPointerValidated": false,
+      "NativeTouchValidated": false,
+      "NativeImeValidated": false,
+      "DpiMatrixValidated": false,
+      "KylinValidated": false
+    },
+    {
+      "Name": "Ubuntu WSLg Usage",
+      "Passed": true,
+      "Report": "docs/validation/ubuntu-wsl-keyboard-smoke.json",
+      "Image": "docs/validation/ubuntu-wsl-keyboard-smoke.png",
+      "CheckCount": 29,
+      "PointerCoordinateChecks": 21,
+      "NativeEditingFocusValidated": true,
+      "RenderScaling": 1,
+      "PhysicalPointerValidated": false,
+      "NativeTouchValidated": false,
+      "NativeImeValidated": false,
+      "DpiMatrixValidated": false,
+      "KylinValidated": false
+    }
+  ],
+  "LegacyTreeDataGridNativeProbes": [
+    {
+      "Report": "docs/validation/windows-keyboard-treedatagrid-regression.json",
+      "Passed": true,
+      "CheckCount": 36
+    },
+    {
+      "Report": "docs/validation/windows-keyboard-mvvm-regression.json",
+      "Passed": true,
+      "CheckCount": 29
+    }
+  ],
+  "LinuxEnvironment": {
+    "Report": "docs/validation/ubuntu-wsl-keyboard-environment.json",
+    "UbuntuVersion": "26.04",
+    "Wslg": true,
+    "Backend": "Avalonia.X11",
+    "Runtime": "10.0.12",
+    "ManagedAssemblyOrigin": "Windows Release net10.0 IL; no Linux SDK build",
+    "SystemPackagesInstalled": false,
+    "UserSettingsModified": false,
+    "ChineseFontVisualPassed": true,
+    "PhysicalLinuxDesktopValidated": false
+  },
+  "Performance": {
+    "WindowsBaseline": "docs/validation/virtualkeyboard-performance-baseline.json",
+    "ValidatedWindowsBaselineRounds": 3,
+    "WindowsBaselineSamples": 600,
+    "AdditionalFinalProducerSamples": 200,
+    "SameFixtureGuardsPassed": true,
+    "WindowsGuard": "docs/validation/windows-keyboard-performance-guard.json",
+    "ProducerGuard": "docs/validation/windows-keyboard-performance-producer-guard.json",
+    "Fixture": {
+      "OS": "Microsoft Windows 10.0.26200",
+      "Architecture": "X64",
+      "Runtime": "10.0.12",
+      "AvaloniaVersion": "12.0.3.0",
+      "BuildConfiguration": "Release",
+      "WindowWidthDip": 960,
+      "WindowHeightDip": 530,
+      "RenderScaling": 1,
+      "NativeHitScenePollingIntervalMs": 16,
+      "StopwatchFrequencyHz": 10000000,
+      "VisualFixture": {
+        "ActualThemeVariant": "Dark",
+        "KeyFontFamily": "compositefont:fonts:Inter#Inter, $Default#Inter, $Default",
+        "KeyFontSize": 18,
+        "KeyMinimumWidthDip": 32,
+        "KeyMinimumHeightDip": 44
+      }
+    },
+    "FixedRegressionGuards": {
+      "Scope": "Local Windows/X64 Release regression guard for the recorded 960x530 DIP, 100 percent scaling and default font/theme fixture",
+      "ReleaseRouteP95Ms": 1.0,
+      "ReleaseRouteMaxMs": 20.0,
+      "FirstNativeHitReadyMs": 2000.0,
+      "CancelCallMs": 10.0,
+      "FirstRepeatLatenessMs": 100.0,
+      "RepeatIntervalP95ExtraMs": 40.0,
+      "Basis": "Fixed after three valid fresh-process runs (600 input samples). Input p95 uses a 5x margin rounded up to 0.5ms; input max uses 3x rounded up to 5ms; first-hit readiness uses 3x rounded up to 500ms; cancel uses 5x rounded up to 5ms; first-repeat lateness uses 5x rounded up to 25ms; interval p95 lateness uses 3x rounded up to 10ms. These are regression alarms for the same fixture, not physical input or general product latency guarantees."
+    },
+    "GuardRegressionTests": {
+      "Passed": true,
+      "Cases": 41,
+      "ExpectedRejectCases": 39,
+      "Summary": "docs/validation/virtualkeyboard-performance-guard-tests.json",
+      "CaseArtifacts": "artifacts/guard-tests/480f64385fc64e9f8382eb770f3fd48e"
+    },
+    "UbuntuBenchmark": "docs/validation/ubuntu-wsl-keyboard-benchmark.json",
+    "UbuntuSamples": 200,
+    "UbuntuSemanticChecksPassed": true,
+    "WindowsThresholdsAppliedToUbuntu": false,
+    "PhysicalInputLatencyValidated": false,
+    "RenderedFrameLatencyValidated": false,
+    "GeneralReleaseLatencyGuaranteeDefined": false
+  },
+  "Unverified": [
+    "Physical mouse/keyboard/touch device delivery and multiple touch contacts",
+    "System IME commit/cancel handoff and physical/virtual input alternation",
+    "Actual DPI 100/125/150/200 percent matrix",
+    "Kylin target devices and physical Linux desktop",
+    "Full platform screen reader tooling",
+    "Physical input, presented-frame and general supported-platform latency guarantees"
+  ],
+  "NextAcceptanceChecklist": "docs/virtualkeyboard-platform-acceptance.md"
+}

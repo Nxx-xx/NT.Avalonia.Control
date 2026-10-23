@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.PdfViewer/NT.AvaloniaControl.PdfViewer.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.PdfViewer.Themes/NT.AvaloniaControl.PdfViewer.Themes.csproj" />
+    <Compile Include="../../tests/PdfViewer.Core.Tests/PdfFixture.cs" Link="PdfFixture.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "charts-c1-retention-comparison-v1",
+  "verifiedUtc": "2026-10-15T09:38:20.5641416+00:00",
+  "passed": true,
+  "scope": "20 replacement cycles, full GC and drained Headless render frames; managed retention and obsolete-reference release only",
+  "limits": {
+    "clearedResidualBytes": 16777216,
+    "plateauGrowthBytes": 16777216
+  },
+  "before": {
+    "report": "artifacts/charts-memory/C1-20261015-before/raw.json",
+    "sha256": "BA534C8358CCABB5069804AEE5B30E7D29118B85697DBD37E16C6206A2CB7E50",
+    "passed": true,
+    "cycles": 20,
+    "points": 1000000,
+    "sources": [
+      {
+        "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C1-20261015-before\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+        "sha256": "DB866302C9675BB8CB95FD4CE5BD6C4BB1CF7E60DAB382F5DA0B56EB8D0C9E3F"
+      },
+      {
+        "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C1-20261015-before\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+        "sha256": "DABCDB32CAB9BB18A1C9D173147194DC4525A6AE63917B2133C4CBD156F753F5"
+      },
+      {
+        "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C1-20261015-before\\frozen-host\\Charts.Benchmarks.dll",
+        "sha256": "5DA2E701C96F2CE04BDD94419F2C0F040F83C992D9263BE3BED3DD30FF36503A"
+      }
+    ],
+    "baselineManagedBytes": 756024,
+    "steadyManagedBytes": 249941200,
+    "clearedManagedBytes": 9154888,
+    "detachedManagedBytes": 9175384,
+    "plateauGrowthBytes": 28976,
+    "clearedResidualBytes": 8398864,
+    "sourceSurvivors": 0,
+    "snapshotSurvivors": 0,
+    "maxObservedCheckpointPrivateBytes": 680808448.0
+  },
+  "after": {
+    "report": "artifacts/charts-memory/C1-20261015-after-v3/raw.json",
+    "sha256": "7AC10FB48957B3E7AD509A140D3F7CFF40B2CDB8CBB08ABFD838335B9D8205C8",
+    "passed": true,
+    "cycles": 20,
+    "points": 1000000,
+    "sources": [
+      {
+        "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C1-20261015-after-v3\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+        "sha256": "6C30F456DC038192D260B7F84F7786A29B7CE633F5335619B35DA1FFC9694F33"
+      },
+      {
+        "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C1-20261015-after-v3\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+        "sha256": "A50CFD46E06DD55EC3F60876902893A8A157B564E789A281AD5938A5A2861DDC"
+      },
+      {
+        "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C1-20261015-after-v3\\frozen-host\\Charts.Benchmarks.dll",
+        "sha256": "5DA2E701C96F2CE04BDD94419F2C0F040F83C992D9263BE3BED3DD30FF36503A"
+      }
+    ],
+    "baselineManagedBytes": 747456,
+    "steadyManagedBytes": 33552624,
+    "clearedManagedBytes": 773920,
+    "detachedManagedBytes": 786424,
+    "plateauGrowthBytes": 29272,
+    "clearedResidualBytes": 26464,
+    "sourceSurvivors": 0,
+    "snapshotSurvivors": 0,
+    "maxObservedCheckpointPrivateBytes": 160690176.0
+  },
+  "formalPerformancePassed": null,
+  "performanceQualification": "pending-C4",
+  "nativePresentValidated": false,
+  "longSoakValidated": false,
+  "linuxExecuted": false
+}

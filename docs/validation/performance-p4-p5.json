@@ -1,0 +1,432 @@
+{
+  "Version": "0.2.0-preview.1",
+  "BuildConfiguration": "Release",
+  "TimestampUtc": "2026-10-12T04:59:31.8904160+00:00",
+  "Sampling": "Five independent diagnostic runs after development builds stopped; flat model warmup only; other paths may include first JIT. Timing is not UI frame latency.",
+  "Runtime": ".NET 10.0.12",
+  "OperatingSystem": "Microsoft Windows 10.0.26200",
+  "Architecture": "X64",
+  "ProcessorCount": 16,
+  "Seed": 1729,
+  "LayoutViewport": {
+    "Width": 1200,
+    "Height": 700
+  },
+  "Measurements": [
+    {
+      "Scenario": "flat-100k-create",
+      "MedianMilliseconds": 78.4285,
+      "MinMilliseconds": 78.1168,
+      "MaxMilliseconds": 79.5372,
+      "MedianAllocatedBytes": 65509120,
+      "BudgetMilliseconds": 3000,
+      "Passed": true,
+      "Milliseconds": [
+        78.1168,
+        78.4285,
+        79.5372,
+        78.3509,
+        78.6358
+      ],
+      "AllocatedBytes": [
+        65509104,
+        65509128,
+        65509120,
+        65509112,
+        65509136
+      ]
+    },
+    {
+      "Scenario": "flat-100k-refresh",
+      "MedianMilliseconds": 105.9572,
+      "MinMilliseconds": 104.4978,
+      "MaxMilliseconds": 110.5595,
+      "MedianAllocatedBytes": 80360536,
+      "BudgetMilliseconds": 1500,
+      "Passed": true,
+      "Milliseconds": [
+        104.4978,
+        105.8337,
+        105.9572,
+        109.6825,
+        110.5595
+      ],
+      "AllocatedBytes": [
+        80360536,
+        80360536,
+        80366728,
+        80360536,
+        80360536
+      ]
+    },
+    {
+      "Scenario": "layout-100k-100columns-variable-height",
+      "MedianMilliseconds": 5.8176,
+      "MinMilliseconds": 5.5409,
+      "MaxMilliseconds": 6.2682,
+      "MedianAllocatedBytes": 801888,
+      "BudgetMilliseconds": 500,
+      "Passed": true,
+      "Milliseconds": [
+        5.8899,
+        5.8176,
+        5.5409,
+        5.7253,
+        6.2682
+      ],
+      "AllocatedBytes": [
+        801888,
+        801888,
+        801888,
+        801888,
+        801888
+      ]
+    },
+    {
+      "Scenario": "layout-1000-scroll-hit-tests",
+      "MedianMilliseconds": 1.6696,
+      "MinMilliseconds": 1.6469,
+      "MaxMilliseconds": 1.7679,
+      "MedianAllocatedBytes": 64,
+      "BudgetMilliseconds": 100,
+      "Passed": true,
+      "Milliseconds": [
+        1.6845,
+        1.6469,
+        1.7679,
+        1.6564,
+        1.6696
+      ],
+      "AllocatedBytes": [
+        64,
+        64,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "Scenario": "identity-100k-lookups",
+      "MedianMilliseconds": 9.9179,
+      "MinMilliseconds": 9.7445,
+      "MaxMilliseconds": 11.241,
+      "MedianAllocatedBytes": 40,
+      "BudgetMilliseconds": 500,
+      "Passed": true,
+      "Milliseconds": [
+        9.8645,
+        11.241,
+        10.9294,
+        9.7445,
+        9.9179
+      ],
+      "AllocatedBytes": [
+        40,
+        40,
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "Scenario": "flat-100k-sort-ascending",
+      "MedianMilliseconds": 66.0229,
+      "MinMilliseconds": 64.2127,
+      "MaxMilliseconds": 74.1784,
+      "MedianAllocatedBytes": 45507568,
+      "BudgetMilliseconds": 2000,
+      "Passed": true,
+      "Milliseconds": [
+        67.1854,
+        64.9296,
+        64.2127,
+        66.0229,
+        74.1784
+      ],
+      "AllocatedBytes": [
+        45507568,
+        45507568,
+        45507568,
+        45507568,
+        45507568
+      ]
+    },
+    {
+      "Scenario": "flat-100k-sort-descending",
+      "MedianMilliseconds": 67.9334,
+      "MinMilliseconds": 65.8988,
+      "MaxMilliseconds": 68.5342,
+      "MedianAllocatedBytes": 45507568,
+      "BudgetMilliseconds": 2000,
+      "Passed": true,
+      "Milliseconds": [
+        65.8988,
+        68.5342,
+        65.9988,
+        67.9401,
+        67.9334
+      ],
+      "AllocatedBytes": [
+        45507568,
+        45507568,
+        45507568,
+        45507568,
+        45507568
+      ]
+    },
+    {
+      "Scenario": "flat-100k-filter-half-sorted",
+      "MedianMilliseconds": 72.1423,
+      "MinMilliseconds": 71.6072,
+      "MaxMilliseconds": 79.8081,
+      "MedianAllocatedBytes": 40078672,
+      "BudgetMilliseconds": 2000,
+      "Passed": true,
+      "Milliseconds": [
+        71.767,
+        79.8081,
+        71.6072,
+        73.069,
+        72.1423
+      ],
+      "AllocatedBytes": [
+        40078672,
+        40078672,
+        40078672,
+        40078672,
+        40078672
+      ]
+    },
+    {
+      "Scenario": "flat-100k-clear-sort-and-filter-batch",
+      "MedianMilliseconds": 101.9767,
+      "MinMilliseconds": 100.2372,
+      "MaxMilliseconds": 102.834,
+      "MedianAllocatedBytes": 126292576,
+      "BudgetMilliseconds": 2500,
+      "Passed": true,
+      "Milliseconds": [
+        100.2372,
+        102.834,
+        101.9767,
+        101.3732,
+        102.7297
+      ],
+      "AllocatedBytes": [
+        126292576,
+        126292576,
+        126294560,
+        126294360,
+        126292568
+      ]
+    },
+    {
+      "Scenario": "wide-tree-100001-collapsed-create",
+      "MedianMilliseconds": 44.6206,
+      "MinMilliseconds": 44.3019,
+      "MaxMilliseconds": 50.2326,
+      "MedianAllocatedBytes": 57360256,
+      "BudgetMilliseconds": 4000,
+      "Passed": true,
+      "Milliseconds": [
+        44.6206,
+        50.2326,
+        44.3019,
+        46.4886,
+        44.5171
+      ],
+      "AllocatedBytes": [
+        57360256,
+        57360256,
+        57360256,
+        57360256,
+        57360256
+      ]
+    },
+    {
+      "Scenario": "wide-tree-expand-100k-children",
+      "MedianMilliseconds": 22.6959,
+      "MinMilliseconds": 22.49,
+      "MaxMilliseconds": 28.1681,
+      "MedianAllocatedBytes": 43908464,
+      "BudgetMilliseconds": 1500,
+      "Passed": true,
+      "Milliseconds": [
+        22.6959,
+        28.1681,
+        22.5886,
+        22.49,
+        24.9199
+      ],
+      "AllocatedBytes": [
+        43908464,
+        43908464,
+        43908464,
+        43908464,
+        43908464
+      ]
+    },
+    {
+      "Scenario": "wide-tree-collapse-100k-children",
+      "MedianMilliseconds": 16.15,
+      "MinMilliseconds": 15.622,
+      "MaxMilliseconds": 18.5814,
+      "MedianAllocatedBytes": 33358792,
+      "BudgetMilliseconds": 1500,
+      "Passed": true,
+      "Milliseconds": [
+        16.0583,
+        18.5814,
+        15.622,
+        16.15,
+        16.894
+      ],
+      "AllocatedBytes": [
+        33358792,
+        33358792,
+        33358792,
+        33358792,
+        33358792
+      ]
+    },
+    {
+      "Scenario": "wide-tree-expand-all-single-projection",
+      "MedianMilliseconds": 40.8915,
+      "MinMilliseconds": 40.2594,
+      "MaxMilliseconds": 44.663,
+      "MedianAllocatedBytes": 50746384,
+      "BudgetMilliseconds": 2000,
+      "Passed": true,
+      "Milliseconds": [
+        40.2594,
+        44.663,
+        42.3098,
+        40.8915,
+        40.5075
+      ],
+      "AllocatedBytes": [
+        50746384,
+        50746384,
+        50746384,
+        50746384,
+        50746384
+      ]
+    },
+    {
+      "Scenario": "wide-tree-collapse-all-single-projection",
+      "MedianMilliseconds": 44.3178,
+      "MinMilliseconds": 43.4126,
+      "MaxMilliseconds": 45.665,
+      "MedianAllocatedBytes": 49796712,
+      "BudgetMilliseconds": 2000,
+      "Passed": true,
+      "Milliseconds": [
+        43.7658,
+        45.665,
+        44.3178,
+        44.5005,
+        43.4126
+      ],
+      "AllocatedBytes": [
+        49796712,
+        49796712,
+        49796712,
+        49796712,
+        49796712
+      ]
+    },
+    {
+      "Scenario": "wide-tree-100k-sort-siblings",
+      "MedianMilliseconds": 62.8858,
+      "MinMilliseconds": 61.7134,
+      "MaxMilliseconds": 65.2626,
+      "MedianAllocatedBytes": 45507784,
+      "BudgetMilliseconds": 2000,
+      "Passed": true,
+      "Milliseconds": [
+        65.2626,
+        63.5454,
+        62.7059,
+        61.7134,
+        62.8858
+      ],
+      "AllocatedBytes": [
+        45507784,
+        45507784,
+        45507784,
+        45507784,
+        45507784
+      ]
+    },
+    {
+      "Scenario": "wide-tree-100k-filter-half",
+      "MedianMilliseconds": 66.7972,
+      "MinMilliseconds": 64.2151,
+      "MaxMilliseconds": 71.4784,
+      "MedianAllocatedBytes": 40078896,
+      "BudgetMilliseconds": 2000,
+      "Passed": true,
+      "Milliseconds": [
+        64.2151,
+        71.4784,
+        66.7972,
+        64.2258,
+        69.0291
+      ],
+      "AllocatedBytes": [
+        40078896,
+        40078896,
+        40078896,
+        40078896,
+        40078896
+      ]
+    },
+    {
+      "Scenario": "deep-tree-100k-depth100-collapsed-create",
+      "MedianMilliseconds": 195.6079,
+      "MinMilliseconds": 184.1227,
+      "MaxMilliseconds": 201.3403,
+      "MedianAllocatedBytes": 102935000,
+      "BudgetMilliseconds": 8000,
+      "Passed": true,
+      "Milliseconds": [
+        201.3403,
+        184.1227,
+        201.2898,
+        195.6079,
+        190.1576
+      ],
+      "AllocatedBytes": [
+        103164304,
+        101844632,
+        103131824,
+        102935000,
+        102022432
+      ]
+    },
+    {
+      "Scenario": "deep-tree-100k-expand-all",
+      "MedianMilliseconds": 108.6658,
+      "MinMilliseconds": 104.4887,
+      "MaxMilliseconds": 109.5312,
+      "MedianAllocatedBytes": 91588360,
+      "BudgetMilliseconds": 5000,
+      "Passed": true,
+      "Milliseconds": [
+        109.0178,
+        104.4887,
+        108.6658,
+        109.5312,
+        106.8396
+      ],
+      "AllocatedBytes": [
+        91588472,
+        91588360,
+        91588472,
+        91588248,
+        91588360
+      ]
+    }
+  ],
+  "Passed": true
+}

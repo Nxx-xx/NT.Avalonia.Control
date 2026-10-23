@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>Markdown.NativeBenchmarks</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <ProjectReference Include="../../../src/NT.AvaloniaControl.Markdown/NT.AvaloniaControl.Markdown.csproj" />
+    <ProjectReference Include="../../../src/NT.AvaloniaControl.Markdown.Themes/NT.AvaloniaControl.Markdown.Themes.csproj" />
+    <ProjectReference Include="../../../src/NT.AvaloniaControl.Markdown.TextMate/NT.AvaloniaControl.Markdown.TextMate.csproj" />
+  </ItemGroup>
+</Project>

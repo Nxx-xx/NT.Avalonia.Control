@@ -1,0 +1,29 @@
+Captured upstream build recipe, not a generated dependency license bundle.
+Source: https://github.com/bblanchon/pdfium-binaries/blob/5453f3afc4785cbad82c05f6ceb4dabea0cb81a0/steps/10-pack.sh
+Git blob SHA: 2d21aa8e6e442cd55cbb3eb13891f60de01ec0ea
+Repository license: MIT (pdfium-binaries-LICENSE.txt)
+Fetched as UTF-8 text through the GitHub connector on 2026-10-15.
+The original source follows, unchanged.
+
+#!/bin/bash -eux
+
+IS_DEBUG=${PDFium_IS_DEBUG:-false}
+ENABLE_V8=${PDFium_ENABLE_V8:-false}
+OS=${PDFium_TARGET_OS:?}
+TARGET_ENVIRONMENT=${PDFium_TARGET_ENVIRONMENT:-}
+CPU=${PDFium_TARGET_CPU:?}
+BUILD_TYPE=${PDFium_BUILD_TYPE:-shared}
+STAGING="$PWD/staging"
+
+ARTIFACT_BASE="$PWD/pdfium"
+[ "$ENABLE_V8" == "true" ] && ARTIFACT_BASE="$ARTIFACT_BASE-v8"
+[ "$OS" != "emscripten" ] && ARTIFACT_BASE="$ARTIFACT_BASE-$OS"
+[ -n "$TARGET_ENVIRONMENT" ] && ARTIFACT_BASE="$ARTIFACT_BASE-$TARGET_ENVIRONMENT"
+ARTIFACT_BASE="$ARTIFACT_BASE-$CPU"
+[ "$BUILD_TYPE" == "static" ] && ARTIFACT_BASE="$ARTIFACT_BASE-static"
+[ "$IS_DEBUG" == "true" ] && ARTIFACT_BASE="$ARTIFACT_BASE-debug"
+ARTIFACT="$ARTIFACT_BASE.tgz"
+
+pushd "$STAGING"
+tar cvzf "$ARTIFACT" -- *
+popd

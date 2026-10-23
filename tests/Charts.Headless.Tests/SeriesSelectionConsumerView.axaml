@@ -1,0 +1,11 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:charts="using:NT.AvaloniaControl.Charts" xmlns:local="using:Charts.Headless.Tests"
+             x:Class="Charts.Headless.Tests.SeriesSelectionConsumerView"
+             x:DataType="local:SeriesSelectionConsumerModel" x:CompileBindings="True">
+  <charts:CartesianChart x:Name="BoundSeriesChart" ShowLegend="False" SelectionMode="None"
+                         SeriesSource="{Binding Series}" SeriesSelectionMode="{Binding Mode}"
+                         SelectedSeries="{Binding Selection, Mode=TwoWay}" UnselectedSeriesOpacity="{Binding Opacity}">
+    <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="10" /></charts:CartesianChart.XAxis>
+    <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+  </charts:CartesianChart>
+</UserControl>

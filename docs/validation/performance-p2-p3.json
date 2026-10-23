@@ -1,0 +1,294 @@
+{
+  "Version": "0.1.0-preview.2",
+  "BuildConfiguration": "Release",
+  "TimestampUtc": "2026-10-12T04:07:33.1391949+00:00",
+  "Sampling": "Five independent diagnostic runs; flat model warmup only; other paths may include first JIT. Timing is not UI frame latency.",
+  "Runtime": ".NET 10.0.12",
+  "OperatingSystem": "Microsoft Windows 10.0.26200",
+  "Architecture": "X64",
+  "ProcessorCount": 16,
+  "Seed": 1729,
+  "LayoutViewport": {
+    "Width": 1200,
+    "Height": 700
+  },
+  "Measurements": [
+    {
+      "Scenario": "flat-100k-create",
+      "MedianMilliseconds": 78.0677,
+      "MinMilliseconds": 75.7748,
+      "MaxMilliseconds": 81.5454,
+      "MedianAllocatedBytes": 65515088,
+      "BudgetMilliseconds": 3000,
+      "Passed": true,
+      "Milliseconds": [
+        78.0677,
+        81.5454,
+        81.1795,
+        75.7748,
+        76.9792
+      ],
+      "AllocatedBytes": [
+        65515096,
+        65515088,
+        65508888,
+        65515088,
+        65508928
+      ]
+    },
+    {
+      "Scenario": "flat-100k-refresh",
+      "MedianMilliseconds": 106.4602,
+      "MinMilliseconds": 101.7554,
+      "MaxMilliseconds": 109.436,
+      "MedianAllocatedBytes": 80360456,
+      "BudgetMilliseconds": 1500,
+      "Passed": true,
+      "Milliseconds": [
+        101.7554,
+        108.1644,
+        109.436,
+        106.4602,
+        103.3652
+      ],
+      "AllocatedBytes": [
+        80360448,
+        80360456,
+        80360456,
+        80360456,
+        80360448
+      ]
+    },
+    {
+      "Scenario": "layout-100k-100columns-variable-height",
+      "MedianMilliseconds": 5.8337,
+      "MinMilliseconds": 5.7105,
+      "MaxMilliseconds": 5.9383,
+      "MedianAllocatedBytes": 801888,
+      "BudgetMilliseconds": 500,
+      "Passed": true,
+      "Milliseconds": [
+        5.7105,
+        5.9383,
+        5.8337,
+        5.8712,
+        5.8183
+      ],
+      "AllocatedBytes": [
+        801888,
+        801888,
+        801888,
+        801888,
+        801888
+      ]
+    },
+    {
+      "Scenario": "layout-1000-scroll-hit-tests",
+      "MedianMilliseconds": 1.8469,
+      "MinMilliseconds": 1.6778,
+      "MaxMilliseconds": 1.9596,
+      "MedianAllocatedBytes": 64,
+      "BudgetMilliseconds": 100,
+      "Passed": true,
+      "Milliseconds": [
+        1.7266,
+        1.8469,
+        1.9596,
+        1.8696,
+        1.6778
+      ],
+      "AllocatedBytes": [
+        64,
+        64,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "Scenario": "identity-100k-lookups",
+      "MedianMilliseconds": 10.2761,
+      "MinMilliseconds": 10.1572,
+      "MaxMilliseconds": 10.4566,
+      "MedianAllocatedBytes": 40,
+      "BudgetMilliseconds": 500,
+      "Passed": true,
+      "Milliseconds": [
+        10.4566,
+        10.2308,
+        10.3517,
+        10.2761,
+        10.1572
+      ],
+      "AllocatedBytes": [
+        40,
+        40,
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "Scenario": "wide-tree-100001-collapsed-create",
+      "MedianMilliseconds": 39.012,
+      "MinMilliseconds": 37.605,
+      "MaxMilliseconds": 40.1267,
+      "MedianAllocatedBytes": 57360000,
+      "BudgetMilliseconds": 4000,
+      "Passed": true,
+      "Milliseconds": [
+        39.42,
+        40.1267,
+        38.9246,
+        37.605,
+        39.012
+      ],
+      "AllocatedBytes": [
+        57360000,
+        57360000,
+        57360000,
+        57360000,
+        57360000
+      ]
+    },
+    {
+      "Scenario": "wide-tree-expand-100k-children",
+      "MedianMilliseconds": 21.998,
+      "MinMilliseconds": 20.1461,
+      "MaxMilliseconds": 23.2705,
+      "MedianAllocatedBytes": 43908344,
+      "BudgetMilliseconds": 1500,
+      "Passed": true,
+      "Milliseconds": [
+        21.998,
+        23.2705,
+        22.8009,
+        20.1461,
+        20.5789
+      ],
+      "AllocatedBytes": [
+        43908344,
+        43908344,
+        43908344,
+        43908344,
+        43908344
+      ]
+    },
+    {
+      "Scenario": "wide-tree-collapse-100k-children",
+      "MedianMilliseconds": 11.3091,
+      "MinMilliseconds": 11.203,
+      "MaxMilliseconds": 11.6811,
+      "MedianAllocatedBytes": 33358672,
+      "BudgetMilliseconds": 1500,
+      "Passed": true,
+      "Milliseconds": [
+        11.293,
+        11.3091,
+        11.6811,
+        11.203,
+        11.3519
+      ],
+      "AllocatedBytes": [
+        33358672,
+        33358672,
+        33358672,
+        33358672,
+        33358672
+      ]
+    },
+    {
+      "Scenario": "wide-tree-expand-all-single-projection",
+      "MedianMilliseconds": 37.8887,
+      "MinMilliseconds": 36.784,
+      "MaxMilliseconds": 40.297,
+      "MedianAllocatedBytes": 50746264,
+      "BudgetMilliseconds": 2000,
+      "Passed": true,
+      "Milliseconds": [
+        37.8887,
+        40.297,
+        38.1042,
+        36.784,
+        37.5346
+      ],
+      "AllocatedBytes": [
+        50746264,
+        50746264,
+        50746264,
+        50746264,
+        50746264
+      ]
+    },
+    {
+      "Scenario": "wide-tree-collapse-all-single-projection",
+      "MedianMilliseconds": 42.3569,
+      "MinMilliseconds": 41.2035,
+      "MaxMilliseconds": 43.1232,
+      "MedianAllocatedBytes": 49796592,
+      "BudgetMilliseconds": 2000,
+      "Passed": true,
+      "Milliseconds": [
+        41.2035,
+        42.9936,
+        41.5428,
+        42.3569,
+        43.1232
+      ],
+      "AllocatedBytes": [
+        49796592,
+        49796592,
+        49796592,
+        49796592,
+        49796592
+      ]
+    },
+    {
+      "Scenario": "deep-tree-100k-depth100-collapsed-create",
+      "MedianMilliseconds": 216.0962,
+      "MinMilliseconds": 186.145,
+      "MaxMilliseconds": 294.0289,
+      "MedianAllocatedBytes": 101438880,
+      "BudgetMilliseconds": 8000,
+      "Passed": true,
+      "Milliseconds": [
+        186.6329,
+        216.0962,
+        294.0289,
+        186.145,
+        229.6164
+      ],
+      "AllocatedBytes": [
+        101438840,
+        101438880,
+        101442312,
+        101438840,
+        101438880
+      ]
+    },
+    {
+      "Scenario": "deep-tree-100k-expand-all",
+      "MedianMilliseconds": 109.8721,
+      "MinMilliseconds": 108.1744,
+      "MaxMilliseconds": 199.0396,
+      "MedianAllocatedBytes": 91588280,
+      "BudgetMilliseconds": 5000,
+      "Passed": true,
+      "Milliseconds": [
+        109.8721,
+        108.7399,
+        199.0396,
+        108.1744,
+        114.4675
+      ],
+      "AllocatedBytes": [
+        91588280,
+        91588280,
+        91588504,
+        91588280,
+        91588280
+      ]
+    }
+  ],
+  "Passed": true
+}

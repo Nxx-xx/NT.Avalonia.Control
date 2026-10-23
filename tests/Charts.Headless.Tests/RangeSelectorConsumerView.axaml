@@ -1,0 +1,7 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:charts="using:NT.AvaloniaControl.Charts" xmlns:local="using:Charts.Headless.Tests"
+             x:Class="Charts.Headless.Tests.RangeSelectorConsumerView" x:DataType="local:RangeSelectorConsumerModel" x:CompileBindings="True">
+  <UserControl.Resources><SolidColorBrush x:Key="RangeAccent" Color="SteelBlue" /></UserControl.Resources>
+  <charts:ChartRangeSelector x:Name="BoundRangeSelector" Range="{Binding Range}" MinimumSpan="0.05"
+                            SmallChange="0.01" LargeChange="0.1" Orientation="Horizontal" SelectionBrush="{DynamicResource RangeAccent}" />
+</UserControl>

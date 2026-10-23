@@ -1,0 +1,445 @@
+{
+  "schemaVersion": 1,
+  "completedUtc": "2026-10-20T13:19:54.269585+00:00",
+  "passed": true,
+  "checks": {
+    "frozenCopy0AllSourceHashes": true,
+    "frozenCopy1AllSourceHashes": true,
+    "frozenCopy2AllSourceHashes": true,
+    "windowsBasePassed": true,
+    "windowsSourceAssemblyStable": true,
+    "windowsAllTestsNoSkip": true,
+    "windowsNativeAllTrue": true,
+    "windowsUsageAllTrue": true,
+    "windowsReleaseBuildZeroWarningsErrors": true,
+    "windowsValidatedInputsMatchFrozen": true,
+    "windowsfunctionConsumerAllTrue": true,
+    "windowsthemesConsumerAllTrue": true,
+    "windowsExactlyTwoPackageConsumers": true,
+    "windowsBothConsumerBuildsZeroWarningsErrors": true,
+    "windowslayer-cachePassed": true,
+    "windowsvisible-clippingPassed": true,
+    "windowslevel-of-detailPassed": true,
+    "windowsefficient-hitPassed": true,
+    "windowsincremental-streamingPassed": true,
+    "windowsrender-resource-budgetsPassed": true,
+    "windowsmultichart-layoutPassed": true,
+    "linuxBasePassed": true,
+    "linuxSourceAssemblyStable": true,
+    "linuxAllTestsNoSkip": true,
+    "linuxNativeAllTrue": true,
+    "linuxUsageAllTrue": true,
+    "linuxReleaseBuildZeroWarningsErrors": true,
+    "linuxValidatedInputsMatchFrozen": true,
+    "linuxfunctionConsumerAllTrue": true,
+    "linuxthemesConsumerAllTrue": true,
+    "linuxExactlyTwoPackageConsumers": true,
+    "linuxBothConsumerBuildsZeroWarningsErrors": true,
+    "linuxlayer-cachePassed": true,
+    "linuxvisible-clippingPassed": true,
+    "linuxlevel-of-detailPassed": true,
+    "linuxefficient-hitPassed": true,
+    "linuxincremental-streamingPassed": true,
+    "linuxrender-resource-budgetsPassed": true,
+    "linuxmultichart-layoutPassed": true,
+    "CompletePublicApiBothPlatformsEqual": true,
+    "NoOldPublicTypesOrMembersRemoved": true,
+    "HistoricalDocsUnchanged": true
+  },
+  "sourceCandidate": "c4-multichart-background-layout-source-v2",
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\source-snapshot-v2.json",
+    "sha256": "D30E2B3DB1A96FFFA58A48E1DCB1D9E865DD46B8DA4CE774A2E527479D3D0B22",
+    "bytes": 353938
+  },
+  "frozenSourceFiles": 1514,
+  "runtimeInputFiles": 790,
+  "historicalDocPins": 94,
+  "platforms": {
+    "windows": {
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\windows-final-v1\\results.json",
+        "sha256": "7BC4D7B4D7AE71D6E34F7D281390AB076A03550B36DE93A1BAFAECFE1E87B464",
+        "bytes": 21426
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\windows-final-v1\\charts-smoke.json",
+        "sha256": "0660C86F15E5A2C5AEB2A3E805FADFE02993B12BC41DDF737F059397E9924D20",
+        "bytes": 4943463
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\windows-final-v1\\charts-usage.json",
+        "sha256": "9B5C54A329A641371E458B62B41D6C8CDE5407BCC9A042903C9313315CA4B05E",
+        "bytes": 64118
+      },
+      "headlessTests": 1939,
+      "demoChecks": 1414,
+      "usageChecks": 393,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 553,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\package-consumers-v1\\20261020T130308375Z-17f27a1f077c4c1cb596be46d616541a\\function\\consumer-result.json",
+            "sha256": "F93AFCB05A5189C6C0A31568E8C67B27F6D7033FBBB028587440C2F61ECF7544",
+            "bytes": 98117
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 553,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\package-consumers-v1\\20261020T130308375Z-17f27a1f077c4c1cb596be46d616541a\\themes\\consumer-result.json",
+            "sha256": "AD9CA7022DE33F6913C63084E6120208FA0F17DBF496463DD4B44405876DFDD1",
+            "bytes": 98172
+          }
+        }
+      ],
+      "stages": {
+        "layer-cache": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\layer-cache-v1\\supervisor.json",
+            "sha256": "C8B2590FE90682085B93CFA20096F31567EA9F29D871A049C300EF1DA1004726",
+            "bytes": 2145
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\layer-cache-v1\\raw.json",
+            "sha256": "5D14BFF9AEEB022F652818333536E2FE7C6C50C4A3F2AB65737A197F4A99F531",
+            "bytes": 911157
+          }
+        },
+        "visible-clipping": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\visible-clipping-v1\\supervisor.json",
+            "sha256": "83D339A97DBBDB26B3D76275E4CEE0B4F23D944DF09A0ED2789BD28B4D6C9405",
+            "bytes": 2160
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\visible-clipping-v1\\raw.json",
+            "sha256": "C2D3AF63049517AC506E37C0014795BDDB2F6736AEB60220B6B39CB3889039EA",
+            "bytes": 606661
+          }
+        },
+        "level-of-detail": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\level-of-detail-v1\\supervisor.json",
+            "sha256": "300838BF4BFCF24EEBA2FA8C7B4F9E95A0D3D6DEA83216A70DCF973242270B0A",
+            "bytes": 2157
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\level-of-detail-v1\\raw.json",
+            "sha256": "C5FDDED20CF47A2224D0C89516231038B28E404833833A6594F062A8F1DD0B90",
+            "bytes": 11868557
+          }
+        },
+        "efficient-hit": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\efficient-hit-v1\\supervisor.json",
+            "sha256": "F5724A3868760997C31B5C941248E98BB7E7479587817F83E7910350037FD295",
+            "bytes": 2151
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\efficient-hit-v1\\raw.json",
+            "sha256": "F69A73A1011DE22D9B7C8713E17C9B79200EC873B5982A563FFEA26F338B8993",
+            "bytes": 903113
+          }
+        },
+        "incremental-streaming": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\incremental-streaming-v1\\supervisor.json",
+            "sha256": "5652BA6381C3C71D957230BB02AAFCBD05D84958EB0B0CBFA571F04BCC1E9796",
+            "bytes": 2175
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\incremental-streaming-v1\\raw.json",
+            "sha256": "9092F20D67299CDEC6F55B3125F64D29ADDD891C52C1CA74FA035666253636E0",
+            "bytes": 1329270
+          }
+        },
+        "render-resource-budgets": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\render-resource-budgets-v1\\supervisor.json",
+            "sha256": "9088CF1970BB19FA061C44E7B810181C68C477E1E52CCFE2A02F95423C1F1033",
+            "bytes": 2332
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\render-resource-budgets-v1\\raw.json",
+            "sha256": "CB6E250D674502FA4E9CA119300552C709E870A4D10E3D58EACEF2F5D3F03B80",
+            "bytes": 1593864
+          }
+        },
+        "multichart-layout": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\multichart-layout-v1\\supervisor.json",
+            "sha256": "F3C696BD13BBCA99432C906C5A177D0BB2D2F1212789168820B861A27B96589B",
+            "bytes": 2240
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\multichart-layout-v1\\raw.json",
+            "sha256": "D1C02F33B312A21FC0C2DC17870853DF80CBD24CE55C5948FDD94F01C6129F87",
+            "bytes": 33463
+          }
+        }
+      },
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\api-windows-final-v1\\api.txt",
+        "sha256": "44ECD49BB41264300223F7A7B77D223E8BA905490C1140A5C67BA0F9CE09E999",
+        "bytes": 437604
+      },
+      "pngCount": 737,
+      "newPngCount": 12,
+      "validatedInputs": 774,
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\windows-final-v1\\validated-input-manifest.json",
+        "sha256": "6EC31D691794362E182003CD818E19868BA7EFABBAB8EAD542BE92AFE8459938",
+        "bytes": 136895
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\windows-final-v1\\assembly-manifest.json",
+        "sha256": "DB56C10CA22C120178CAACC07F6D149E35F6D50A10B5AD1906114A20E983C06D",
+        "bytes": 1956
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\windows\\windows-final-v1\\environment.json",
+        "sha256": "0F441161A35012E9C4E522D87F2ED42D16BE817667EA332D330561A52451EF7A",
+        "bytes": 8745
+      }
+    },
+    "linux": {
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\results.json",
+        "sha256": "F5DC61D5E11B61F00EC118CC773F7282C1B62431BFFEF08DF69A4D8760DB3A33",
+        "bytes": 14817
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\charts-smoke.json",
+        "sha256": "B7AE9126008BE5958AC2EBCC74B68BDED040040B7A45D2F9929E774EB2EEC617",
+        "bytes": 4758164
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\charts-usage.json",
+        "sha256": "000544B350D36F5C1F9728F4DD39B0B32BE22AE92E6A59947CEA9DE78F7C513B",
+        "bytes": 62016
+      },
+      "headlessTests": 1939,
+      "demoChecks": 1414,
+      "usageChecks": 393,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 553,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\package-consumers\\20261020T131248975Z-9bd5e9def3be47548e3d79ae33cbd075\\function\\consumer-result.json",
+            "sha256": "5B6E885B9CD540A7353875735C58C20E218E5BBB8FABD54AD76450014C9E6301",
+            "bytes": 95473
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 553,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\package-consumers\\20261020T131248975Z-9bd5e9def3be47548e3d79ae33cbd075\\themes\\consumer-result.json",
+            "sha256": "9DAE40D4546EFADABE92B7524545E092295D084CAC37D6B5948D978362C2D86C",
+            "bytes": 95525
+          }
+        }
+      ],
+      "stages": {
+        "layer-cache": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\layer-cache-v1\\supervisor.json",
+            "sha256": "7EF0E7099D08A4A6A7E1137BB1CC202714EFAC230C933AEC8E5D565C9DF22A3E",
+            "bytes": 2268
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\layer-cache-v1\\raw.json",
+            "sha256": "04FF211F6D13557A529ECB6BAF197F5A6FB1A6A9F59EAD86D9CFDA04A7A407EB",
+            "bytes": 882877
+          }
+        },
+        "visible-clipping": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\visible-clipping-v1\\supervisor.json",
+            "sha256": "6DDAFA1980728D64E0F14964A28F4196B88EAEB8BDEA312ACBFFB3AC1283061E",
+            "bytes": 2283
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\visible-clipping-v1\\raw.json",
+            "sha256": "A4F0760F784E0655D1BEA2E59067C39BD68B4F44C837F00252DE8F566C4E9E9A",
+            "bytes": 587341
+          }
+        },
+        "level-of-detail": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\level-of-detail-v1\\supervisor.json",
+            "sha256": "5860C8B29DD0B2AF1837AB74E4F2C1F919257DF90E65A4A69C5C81348BEE9AA8",
+            "bytes": 2280
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\level-of-detail-v1\\raw.json",
+            "sha256": "E52E786F06B5B3D4D9102512E18260567F350F81249F5ED1F6DE899A44FA0A41",
+            "bytes": 11333780
+          }
+        },
+        "efficient-hit": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\efficient-hit-v1\\supervisor.json",
+            "sha256": "49A9D68731613318CB8FCB9E8A158638F132B1CFC272B8EB0729E53E0A5D0CFC",
+            "bytes": 2274
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\efficient-hit-v1\\raw.json",
+            "sha256": "6CB24B653B9269BF489506524392C8224A4A73E763BCF063E7A37B3A3E0DEFED",
+            "bytes": 882446
+          }
+        },
+        "incremental-streaming": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\incremental-streaming-v1\\supervisor.json",
+            "sha256": "4DF01975A946B8D6EA48D0129BB77F7139A005960088C7E2EFCD33B73587A93A",
+            "bytes": 2298
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\incremental-streaming-v1\\raw.json",
+            "sha256": "45E68C98F50F5734A36D244B8BDCDCCCFD5E833519655F28F13A57CC8222BD9E",
+            "bytes": 1292640
+          }
+        },
+        "render-resource-budgets": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\render-resource-budgets-v1\\supervisor.json",
+            "sha256": "14E7EC309A752415AFA239651D1753D9BA578FB3C9A45A35770C0B19BEEEBF55",
+            "bytes": 2451
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\render-resource-budgets-v1\\raw.json",
+            "sha256": "552E42E735218357EA858D0D247E2F4C634FF54FADDF604A8833368021467DF1",
+            "bytes": 1518858
+          }
+        },
+        "multichart-layout": {
+          "supervisor": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\multichart-layout-v1\\supervisor.json",
+            "sha256": "DC5B2C259ED0B4E0F9CDDF71FEE88E713CFBB4208DFC6C81584262B18E05CDA9",
+            "bytes": 2361
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\multichart-layout-v1\\raw.json",
+            "sha256": "7D6BE64B601A09560F7CDEB02EDE51ADD26F5C6FF85F0EB986EC43105700074F",
+            "bytes": 35079
+          }
+        }
+      },
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\api-linux-final-v1\\api.txt",
+        "sha256": "1F8DC0E46033F7524307A1937C34938C21B21CC7A9C9976B166792ABE26ADD3D",
+        "bytes": 437604
+      },
+      "pngCount": 737,
+      "newPngCount": 12,
+      "validatedInputs": 774,
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\validated-input-manifest.json",
+        "sha256": "F6D2B4AAC89C19558AC357B7DDCDB6765ABAC50C11F5E6660C532A5B1E094429",
+        "bytes": 133797
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\assembly-manifest.json",
+        "sha256": "B2273B5ABCDAC84F98304AFEBED97932FC537B981677056FBCBF975CA8E00A6F",
+        "bytes": 1906
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\environment.json",
+        "sha256": "DE0A396692741CE53758FB667DA498F9F31D971C37FB6F6CEDBAF70C971AA75A",
+        "bytes": 6216
+      }
+    }
+  },
+  "apiDelta": {
+    "oldTypes": 169,
+    "newTypes": 173,
+    "addedTypes": [
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartBackgroundLayoutInfo",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartSchedulingInfo",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartWorkBudgetInfo",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartWorkScheduler"
+    ],
+    "removedTypes": [],
+    "removedMembers": {},
+    "addedExistingMembers": {
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CartesianChart": [
+        "  Field: Avalonia.StyledProperty`1[System.Boolean] UseBackgroundLayoutProperty [static=True, readonly=True]",
+        "  Method: NT.AvaloniaControl.Charts.ChartBackgroundLayoutInfo GetBackgroundLayoutInfo() [static=False, abstract=False, virtual=False]",
+        "  Method: NT.AvaloniaControl.Charts.ChartSchedulingInfo GetWorkSchedulingInfo() [static=False, abstract=False, virtual=False]",
+        "  Method: System.Threading.Tasks.Task`1[System.Boolean] PrepareBackgroundLayoutAsync(System.Threading.CancellationToken) [optional: cancellationToken=null] [static=False, abstract=False, virtual=False]",
+        "  Method: System.Void CancelBackgroundLayout() [static=False, abstract=False, virtual=False]",
+        "  Method: System.Void RequestRender() [static=False, abstract=False, virtual=False]",
+        "  Property: System.Boolean UseBackgroundLayout [get=True, set=True]"
+      ]
+    },
+    "old": {
+      "path": "<REPO_ROOT>\\docs\\charts-c4-render-resource-budgets-api.txt",
+      "sha256": "AC9314BF9EE8DDC73CFF6459183E9AC56499B9A783A080654B31ECCAEB30948E",
+      "bytes": 429451
+    },
+    "windows": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\api-windows-final-v1\\api.txt",
+      "sha256": "44ECD49BB41264300223F7A7B77D223E8BA905490C1140A5C67BA0F9CE09E999",
+      "bytes": 437604
+    },
+    "linux": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\linux\\api-linux-final-v1\\api.txt",
+      "sha256": "1F8DC0E46033F7524307A1937C34938C21B21CC7A9C9976B166792ABE26ADD3D",
+      "bytes": 437604
+    }
+  },
+  "physicalDesktopQualified": false,
+  "compositorPresentValidated": false,
+  "nativeGpuMemoryQualified": false,
+  "longSoakValidated": false,
+  "stage": "C4-07 multi-chart and background numeric layout",
+  "softwareFunctionalSubsetPassed": true,
+  "functionalSubsetPassed": true,
+  "multiChartMechanismValidated": true,
+  "backgroundNumericLayoutValidated": true,
+  "fullC2StageComplete": false,
+  "fullC3StageComplete": false,
+  "fullC4StageComplete": false,
+  "fullC7StageComplete": false,
+  "nextWorkItem": "C4-08",
+  "nativePixelReviews": {
+    "windows": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\independent-multichart-native-windows-v1.json",
+      "sha256": "A954356CC461D127739771FD88A51B0657F7C37BF53B6651F150B6DE21145EF7",
+      "checks": 38
+    },
+    "linux": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\independent-multichart-native-linux-v1.json",
+      "sha256": "E5992F24D81D96C1CFF35FD740349EA58D786488F077D0C54D205DDE8657AF5F",
+      "checks": 38
+    }
+  },
+  "mechanismReviews": {
+    "windows": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\independent-multichart-mechanism-windows-v1.json",
+    "linux": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-multichart-background-layout-20261020\\independent-multichart-mechanism-linux-v1.json"
+  },
+  "formalSlaEvaluated": false,
+  "actualProcessMemoryBudgetQualified": false,
+  "officialRuntimeCompared": false,
+  "openItems": [
+    "下一项 C4-08 自动化性能门禁；完整 C2/C3/C4/C7、C5/C6 图族及官方许可运行时/API/二进制对照仍开放。",
+    "公平性约束 RequestRender 失效请求的 FIFO 合并与调度轮次，不切分整图 CPU 时间；数据映射、可见查询、极值/索引、投影、坐标轴、原生几何、绘制和 compositor present 仍未取得全后台或帧时限资格。",
+    "后台默认关闭；仅对内置稳定 Cartesian 的非线性折线、面积、范围面积、ScatterLine 和兼容平滑堆叠路径生成纯数字路径部件。普通线性 LineSeries 及其 MinMax 路径、自定义、无支持路径、动画及超预算情形同步回退；支持路径待发布时会暂缺，需 await PrepareBackgroundLayoutAsync。导出强制同步以避免输出缺图。",
+    "隐藏/卸载按自身及祖先 IsVisible/视觉树连接判断，不检测滚动视口外或被其他窗口遮挡；停止自动调度和正在准备的后台工作，并释放可重建本地缓存。显式查询、CreateSnapshot、Prepare 请求的同步回退或导出仍可能主动准备数据，不承诺隐藏对象任意调用都零 CPU。",
+    "进程预算只覆盖注册的五层本地缓存估算和在途数字任务的固定权重估算，不覆盖共享 source/index/LOD/PreparedPaths 等 CWT、已发布路径、调用方业务对象/旧快照、临时工作、原生/GPU或实际进程堆。未建立实际内存硬上限。",
+    "最多两 worker、默认16项预约、默认64MiB数字载荷预算；硬上限128个支持系列/131072原始顶点，另按2304B/源顶点加固定量保守准入。降低任务预算会取消工作，但正在运行的载荷继续计费，合作取消完成前可能临时超过新预算；不抹去运行中的账目。",
+    "本轮固定四图2048点与六图512点验证是机制/正确性检查，不代表百万点首次可用、完整 UI 帧公平性、CPU/FPS/尾延迟、实际峰值、持续吞吐或30分钟/8小时长稳资格。",
+    "Windows 原生合成与 Ubuntu26.04 WSL2/WSLg 的功能验证不代表物理 Windows/Linux 桌面、原生 Wayland、ARM64、国产 Linux、GPU/backend、DPI/触摸设备、读屏器或 compositor present 验收。",
+    "百万点 hit p95 历史 0.7649→1.1235 ms 按用户决定后置；A11Y-NATIVE-01 原生 UIA/AT-SPI 选中枚举专项、AX06及四份历史 PixelProbe DLL 缺口仍开放。",
+    "C4-03 Linux 历史导出/动画暂停前置状态的三项时序失败、C4-06 Windows旧动画 viewport错过中间帧及原长路径 libHarfBuzzSharp OS0x800700CE 问题保留；当前短路径与通过结果不视为修复加载器或动画时序稳健性。"
+  ],
+  "apiSnapshot": {
+    "path": "<REPO_ROOT>\\docs\\charts-c4-multichart-background-layout-api.txt",
+    "sha256": "44ECD49BB41264300223F7A7B77D223E8BA905490C1140A5C67BA0F9CE09E999"
+  }
+}

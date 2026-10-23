@@ -1,0 +1,21 @@
+name: treedatagrid-native
+on: [push, pull_request]
+jobs:
+  windows-native:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Probe native window and run three TreeDataGrid checks
+        shell: pwsh
+        run: ./scripts/Test-TreeDataGridNative.ps1 -OutputDirectory artifacts/platform/treedatagrid-ci
+      - name: Preserve results, environment and rendered images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: treedatagrid-windows-native
+          path: artifacts/platform/treedatagrid-ci
+          if-no-files-found: error

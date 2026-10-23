@@ -1,0 +1,8 @@
+<Application xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vk="clr-namespace:NT.AvaloniaControl.VirtualKeyboard;assembly=NT.AvaloniaControl.VirtualKeyboard"
+             x:Class="KeyboardPackageConsumer.ConsumerApp" x:CompileBindings="False">
+  <Application.Styles>
+    <FluentTheme />
+    __KEYBOARD_STYLES__
+  </Application.Styles>
+</Application>

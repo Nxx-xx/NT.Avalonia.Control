@@ -1,0 +1,1075 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Charts.Usage"
+        xmlns:charts="using:NT.AvaloniaControl.Charts"
+        x:Class="Charts.Usage.MainWindow" x:DataType="vm:ChartUsageViewModel"
+        x:CompileBindings="True" Title="Charts · AXAML / MVVM 接入"
+        Width="1140" Height="900" MinWidth="850" MinHeight="650">
+  <Window.Resources>
+    <DataTemplate x:Key="ScatterBubbleTooltip" x:DataType="charts:ChartTooltipContext">
+      <StackPanel Spacing="3">
+        <TextBlock Text="{Binding Primary.Series.Title}" FontWeight="SemiBold" />
+        <TextBlock Name="UsageScatterBubbleSizeValue" Text="{Binding Primary.SizeValue, StringFormat='原始大小：{0}'}" />
+        <TextBlock Name="UsageScatterBubbleDiameter" Text="{Binding Primary.MarkerDiameter, StringFormat='显示直径 DIP：{0}'}" />
+        <TextBlock Text="{Binding Primary.ColorValue, StringFormat='原始颜色值：{0}'}" />
+        <TextBlock Text="{Binding Primary.Index, StringFormat='源索引：{0}'}" />
+      </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="BarComparisonRawTooltip" x:DataType="charts:ChartTooltipContext">
+      <StackPanel Spacing="3">
+        <TextBlock Text="{Binding Primary.Series.Title}" FontWeight="SemiBold" />
+        <TextBlock Name="UsageBarRawValue" Text="{Binding Primary.RawPoint, StringFormat='原始类别和值：{0}'}" />
+        <TextBlock Text="{Binding Primary.Index, StringFormat='原始源索引：{0}'}" />
+      </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="AnnotationPlotTemplate" x:DataType="charts:ChartPlotAreaContext">
+      <Canvas>
+        <Border Name="UsageAnnotationPlotCard" Canvas.Left="12" Canvas.Top="10" Padding="8,5" CornerRadius="5" Background="{DynamicResource UsageTooltipBackground}" BorderBrush="#9C247A" BorderThickness="1">
+          <ContentControl Name="UsageAnnotationPlotText" Content="{Binding Content}" Foreground="{DynamicResource UsageControlTemplateForeground}" />
+        </Border>
+      </Canvas>
+    </DataTemplate>
+    <SolidColorBrush x:Key="UsageSeriesBrush" Color="#19A798" />
+    <SolidColorBrush x:Key="UsageAxisBrush" Color="#F2A33A" />
+    <SolidColorBrush x:Key="UsageTooltipBackground" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="UsageTooltipForeground" Color="#172238" />
+    <SolidColorBrush x:Key="UsageTooltipBadgeBrush" Color="#D7259F" />
+    <SolidColorBrush x:Key="UsageControlTemplateAccent" Color="#9C247A" />
+    <SolidColorBrush x:Key="UsageControlTemplateForeground" Color="#172238" />
+    <DataTemplate x:Key="ControlLegendTemplate" x:DataType="charts:ChartLegendItem">
+      <Border Name="UsageLegendCard" Background="{DynamicResource UsageTooltipBackground}" Padding="7,5" CornerRadius="5">
+        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
+          <Border Width="9" Height="28" CornerRadius="3" Background="{Binding Brush}" />
+          <StackPanel Grid.Column="1" Spacing="2" MaxWidth="164">
+            <TextBlock Name="UsageLegendTitle" Text="{Binding Series.Title}" Foreground="{DynamicResource UsageControlTemplateForeground}" FontWeight="SemiBold" TextWrapping="Wrap" />
+            <TextBlock Name="UsageLegendVisible" Text="已显示 · 点击隐藏" IsVisible="{Binding Series.IsVisible}" FontSize="11" Foreground="{DynamicResource UsageControlTemplateForeground}" Opacity="0.75" />
+            <TextBlock Name="UsageLegendHidden" Text="已隐藏 · 点击显示" IsVisible="{Binding !Series.IsVisible}" FontSize="11" Foreground="{DynamicResource UsageControlTemplateForeground}" Opacity="0.75" />
+          </StackPanel>
+        </Grid>
+      </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="ControlDataLabelTemplate" x:DataType="charts:ChartDataLabelContext">
+      <Border Name="UsageDataLabelCard" Background="{DynamicResource UsageTooltipBackground}" BorderBrush="{DynamicResource UsageControlTemplateAccent}" BorderThickness="1" Padding="6,4" CornerRadius="5">
+        <StackPanel Spacing="2">
+          <TextBlock Name="UsageDataLabelText" Text="{Binding Text}" Foreground="{DynamicResource UsageControlTemplateAccent}" FontWeight="SemiBold" />
+          <ContentControl Content="{Binding Data.Item}">
+            <ContentControl.ContentTemplate>
+              <DataTemplate x:DataType="vm:TemplateUsageRecord">
+                <StackPanel Spacing="1">
+                  <TextBlock Name="UsageDataLabelRecordName" Text="{Binding Name}" Foreground="{DynamicResource UsageControlTemplateForeground}" />
+                  <TextBlock Name="UsageDataLabelRecordId" Text="{Binding Id}" Foreground="{DynamicResource UsageControlTemplateAccent}" FontSize="11" />
+                  <TextBlock Name="UsageDataLabelValue" Text="{Binding Value, StringFormat={}{0:0} 单}" Foreground="{DynamicResource UsageControlTemplateForeground}" />
+                </StackPanel>
+              </DataTemplate>
+            </ContentControl.ContentTemplate>
+          </ContentControl>
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="TrackballBusinessTemplate" x:DataType="charts:ChartTooltipContext">
+      <Border Name="UsageTrackballCard" Background="{DynamicResource UsageTooltipBackground}" Padding="8" CornerRadius="6" MaxWidth="325">
+        <StackPanel Spacing="5">
+          <TextBlock Text="追踪读数 · 估算与原始端点" FontWeight="SemiBold" Foreground="{DynamicResource UsageControlTemplateAccent}" />
+          <ItemsControl ItemsSource="{Binding Readings}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate x:DataType="charts:ChartTrackballReading">
+                <Border Name="UsageTrackballReading" Padding="3">
+                  <StackPanel Spacing="2">
+                    <TextBlock Text="{Binding Original.Series.Title}" FontWeight="SemiBold" Foreground="{DynamicResource UsageTooltipForeground}" />
+                    <TextBlock Text="插值估算 · 非原始采样" IsVisible="{Binding IsInterpolated}" Foreground="{DynamicResource UsageControlTemplateAccent}" />
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                      <TextBlock Name="UsageTrackballValueX" Text="{Binding Point.X, StringFormat={}X {0:0.00}}" Foreground="{DynamicResource UsageTooltipForeground}" />
+                      <TextBlock Name="UsageTrackballValueY" Text="{Binding Point.Y, StringFormat={}Y {0:0.00}}" Foreground="{DynamicResource UsageTooltipForeground}" />
+                    </StackPanel>
+                    <ContentControl Content="{Binding Original.Item}" IsVisible="{Binding !IsInterpolated}">
+                      <ContentControl.ContentTemplate>
+                        <DataTemplate x:DataType="vm:TrackballUsageRecord">
+                          <TextBlock Name="UsageTrackballOriginalId" Text="{Binding Id}" Foreground="{DynamicResource UsageTooltipForeground}" />
+                        </DataTemplate>
+                      </ContentControl.ContentTemplate>
+                    </ContentControl>
+                    <ContentControl Content="{Binding Segment}" IsVisible="{Binding IsInterpolated}">
+                      <ContentControl.ContentTemplate>
+                        <DataTemplate x:DataType="charts:ChartSegmentHit">
+                          <StackPanel Spacing="2">
+                            <ContentControl Content="{Binding Start.Item}">
+                              <ContentControl.ContentTemplate>
+                                <DataTemplate x:DataType="vm:TrackballUsageRecord">
+                                  <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Text="起点" Foreground="{DynamicResource UsageTooltipForeground}" /><TextBlock Name="UsageTrackballLeftId" Text="{Binding Id}" Foreground="{DynamicResource UsageControlTemplateAccent}" /><TextBlock Text="{Binding Caption}" Foreground="{DynamicResource UsageTooltipForeground}" /></StackPanel>
+                                </DataTemplate>
+                              </ContentControl.ContentTemplate>
+                            </ContentControl>
+                            <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Text="{Binding Start.Point.X, StringFormat={}X {0:0.00}}" Foreground="{DynamicResource UsageTooltipForeground}" /><TextBlock Text="{Binding Start.Point.Y, StringFormat={}Y {0:0.00}}" Foreground="{DynamicResource UsageTooltipForeground}" /></StackPanel>
+                            <ContentControl Content="{Binding End.Item}">
+                              <ContentControl.ContentTemplate>
+                                <DataTemplate x:DataType="vm:TrackballUsageRecord">
+                                  <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Text="终点" Foreground="{DynamicResource UsageTooltipForeground}" /><TextBlock Name="UsageTrackballRightId" Text="{Binding Id}" Foreground="{DynamicResource UsageControlTemplateAccent}" /><TextBlock Text="{Binding Caption}" Foreground="{DynamicResource UsageTooltipForeground}" /></StackPanel>
+                                </DataTemplate>
+                              </ContentControl.ContentTemplate>
+                            </ContentControl>
+                            <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Text="{Binding End.Point.X, StringFormat={}X {0:0.00}}" Foreground="{DynamicResource UsageTooltipForeground}" /><TextBlock Text="{Binding End.Point.Y, StringFormat={}Y {0:0.00}}" Foreground="{DynamicResource UsageTooltipForeground}" /><TextBlock Text="{Binding Fraction, StringFormat={}比例 {0:0.00}}" Foreground="{DynamicResource UsageTooltipForeground}" /></StackPanel>
+                          </StackPanel>
+                        </DataTemplate>
+                      </ContentControl.ContentTemplate>
+                    </ContentControl>
+                  </StackPanel>
+                </Border>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+          <TextBlock Name="UsageTrackballSummary" Text="{Binding Text}" TextWrapping="Wrap" FontSize="11" Foreground="{DynamicResource UsageTooltipForeground}" />
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="ReadingTooltipTemplate" x:DataType="charts:ChartTooltipContext">
+      <Border Name="UsageTooltipCard" Background="{DynamicResource UsageTooltipBackground}" Padding="10" CornerRadius="7" MaxWidth="330">
+        <StackPanel Spacing="7">
+          <Border Name="UsageTooltipBadge" Background="{DynamicResource UsageTooltipBadgeBrush}" Padding="7,3" CornerRadius="4" HorizontalAlignment="Left">
+            <TextBlock Text="业务数据详情" Foreground="White" FontWeight="SemiBold" />
+          </Border>
+          <TextBlock Name="UsageTooltipHeader" Text="{Binding Text}" Foreground="{DynamicResource UsageTooltipForeground}" TextWrapping="Wrap" />
+          <ItemsControl ItemsSource="{Binding Hits}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate x:DataType="charts:ChartPointHit">
+                <StackPanel Margin="0,3" Spacing="2">
+                  <TextBlock Text="{Binding Series.Title}" FontWeight="SemiBold" Foreground="{DynamicResource UsageTooltipForeground}" />
+                  <ContentControl Content="{Binding Item}">
+                    <ContentControl.ContentTemplate>
+                      <DataTemplate x:DataType="vm:ChartUsageRecord">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                          <TextBlock Name="UsageTooltipRecordId" Text="{Binding Id}" Foreground="{DynamicResource UsageTooltipForeground}" />
+                          <TextBlock Text="{Binding Month}" Foreground="{DynamicResource UsageTooltipForeground}" />
+                          <TextBlock Text="{Binding Value, StringFormat={}{0:0.00}}" Foreground="{DynamicResource UsageTooltipForeground}" />
+                        </StackPanel>
+                      </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                  </ContentControl>
+                </StackPanel>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+  </Window.Resources>
+  <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+  <Grid Margin="22" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="12">
+    <StackPanel Spacing="5">
+      <TextBlock Text="Charts · 真实业务对象绑定" FontSize="24" FontWeight="SemiBold" />
+      <TextBlock Text="修改属性、追加数据或替换系列集合；滚轮缩放、左键拖动，重置后查看全部数据。" TextWrapping="Wrap" Opacity="0.7" />
+    </StackPanel>
+    <WrapPanel Grid.Row="1">
+      <Button Content="修改一月数值" Command="{Binding UpdateValueCommand}" Margin="0,0,8,6" />
+      <Button Content="追加月份" Command="{Binding AppendCommand}" Margin="0,0,8,6" />
+      <Button Content="切换折线 / 柱状系列" Command="{Binding ReplaceSeriesCommand}" Margin="0,0,8,6" />
+      <Button Content="重置视图" Command="{Binding ResetViewportCommand}" Margin="0,0,8,6" />
+      <Button Content="切换亮 / 暗主题" Click="ToggleTheme" Margin="0,0,8,6" />
+      <CheckBox Content="显示门店" IsChecked="{Binding IsStoreVisible}" Margin="0,0,12,6" />
+      <CheckBox Content="十字线" IsChecked="{Binding ShowCrosshair}" Margin="0,0,12,6" />
+      <CheckBox Content="数据标签" IsChecked="{Binding ShowDataLabels}" Margin="0,0,12,6" />
+      <CheckBox Content="浮动图例" IsChecked="{Binding IsLegendFloating}" Margin="0,0,12,6" />
+      <Button Content="切换选择模式" Command="{Binding ChangeSelectionModeCommand}" Margin="0,0,8,6" />
+    </WrapPanel>
+    <Grid Grid.Row="2" Height="340" ColumnDefinitions="*,*" ColumnSpacing="16">
+      <charts:CartesianChart x:Name="BoundSeriesChart" Title="ViewModel 系列集合"
+                             SeriesSource="{Binding SeriesSource}"
+                             Viewport="{Binding Viewport, Mode=TwoWay}"
+                             IsZoomEnabled="True" IsPanEnabled="True">
+        <charts:CartesianChart.XAxis><charts:CategoryAxis Title="月份" /></charts:CartesianChart.XAxis>
+        <charts:CartesianChart.YAxis><charts:NumericAxis Title="{Binding AxisTitle}" Minimum="0" /></charts:CartesianChart.YAxis>
+      </charts:CartesianChart>
+      <charts:CartesianChart x:Name="InheritedSeriesChart" Grid.Column="1" Title="AXAML 系列与继承绑定"
+                             Viewport="{Binding Viewport, Mode=TwoWay}"
+                             SelectedPoint="{Binding SelectedPoint, Mode=TwoWay}" PointInvokedCommand="{Binding PointInvokedCommand}"
+                             SelectionMode="{Binding SelectionMode}" SelectedPoints="{Binding SelectedPoints, Mode=TwoWay}"
+                             ShowCrosshair="{Binding ShowCrosshair}" IsKeyboardNavigationEnabled="True"
+                             IsLegendFloating="{Binding IsLegendFloating}" LegendHorizontalAlignment="Center" FloatingLegendMargin="6"
+                             IsZoomEnabled="True" IsPanEnabled="True">
+        <charts:CartesianChart.XAxis><charts:CategoryAxis Title="月份" /></charts:CartesianChart.XAxis>
+        <charts:CartesianChart.YAxis><charts:NumericAxis Title="{Binding AxisTitle}" Minimum="0" /></charts:CartesianChart.YAxis>
+        <charts:CartesianChart.Series>
+          <charts:LineSeries Title="{Binding SeriesTitle}" ItemsSource="{Binding Records}"
+                             CategoryPath="Month" ValuePath="Value" IdPath="Id"
+                             IsVisible="{Binding IsStoreVisible, Mode=TwoWay}" ShowDataLabels="{Binding ShowDataLabels}" DataLabelFormat="0"
+                             MarkerShape="Diamond"
+                             Stroke="{DynamicResource UsageSeriesBrush}" StrokeThickness="3" />
+        </charts:CartesianChart.Series>
+        <charts:CartesianChart.Annotations>
+          <charts:TextAnnotation X="8" Y="8" CoordinateUnit="Pixel" Text="{Binding AxisTitle}" Foreground="{DynamicResource UsageSeriesBrush}" />
+          <charts:RectangleAnnotation X1="8" Y1="32" X2="52" Y2="54" CoordinateUnit="Pixel" Stroke="{DynamicResource UsageSeriesBrush}" />
+          <charts:EllipseAnnotation X1="65" Y1="32" X2="109" Y2="54" CoordinateUnit="Pixel" Stroke="{DynamicResource UsageSeriesBrush}" />
+          <charts:ArrowAnnotation X1="122" Y1="43" X2="175" Y2="43" CoordinateUnit="Pixel" Stroke="{DynamicResource UsageSeriesBrush}" />
+        </charts:CartesianChart.Annotations>
+      </charts:CartesianChart>
+    </Grid>
+    <Expander x:Name="AxisExamples" Grid.Row="3" Header="轴配置绑定：断轴、重复区间与独立成功率视图" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <WrapPanel>
+          <CheckBox Content="显示次网格" IsChecked="{Binding ShowMinorGrid}" Margin="0,0,14,0" />
+          <Button Content="聚焦成功率" Command="{Binding FocusSecondaryCommand}" />
+        </WrapPanel>
+        <charts:CartesianChart x:Name="AxisFeaturesChart" Height="280" IsZoomEnabled="True" IsPanEnabled="True">
+          <charts:CartesianChart.XAxis>
+            <charts:NumericAxis Title="观察时段" Minimum="0" Maximum="4" Interval="1" MinorTickCount="3"
+                                ShowMinorGridLines="{Binding ShowMinorGrid}" MaximumZoom="8" LabelMode="Auto" ScaleBreaksSource="{Binding AxisBreaks}">
+              <charts:NumericAxis.PlotBands>
+                <charts:ChartPlotBand Start="{Binding BandStart}" End="1.3" RepeatInterval="1" RepeatCount="3" Text="巡检"
+                                      Fill="#224385F4" Foreground="{DynamicResource UsageAxisBrush}" />
+              </charts:NumericAxis.PlotBands>
+            </charts:NumericAxis>
+          </charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis>
+            <charts:NumericAxis Title="负载 / %" Minimum="0" Maximum="100" MinorInterval="5" MaximumZoom="4">
+              <charts:NumericAxis.ScaleBreaks>
+                <charts:ChartScaleBreak Start="{Binding BreakStart}" End="60" CompressionRatio="0.08" />
+              </charts:NumericAxis.ScaleBreaks>
+            </charts:NumericAxis>
+          </charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Axes>
+            <charts:NumericAxis Key="quality" Title="成功率" Minimum="0" Maximum="1" Position="Far" LabelFormat="P0"
+                                LabelBrush="{DynamicResource UsageAxisBrush}" TitleBrush="{DynamicResource UsageAxisBrush}"
+                                ShowGridLines="False" MaximumZoom="10"
+                                ViewMinimum="{Binding SecondaryMinimum, Mode=TwoWay}" ViewMaximum="{Binding SecondaryMaximum, Mode=TwoWay}" />
+          </charts:CartesianChart.Axes>
+          <charts:CartesianChart.Series>
+            <charts:LineSeries Title="负载" ItemsSource="{Binding AxisValues}" Stroke="#4385F4" />
+            <charts:ScatterSeries Title="成功率" ItemsSource="{Binding QualityValues}" YAxisKey="quality" Fill="#F2A33A" Stroke="#F2A33A" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="TooltipReadingExamples" Grid.Row="4" Header="提示卡模板、共享 Y 与多轴读数" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <WrapPanel>
+          <CheckBox Content="业务提示卡" IsChecked="{Binding UseRichReadingTooltip}" Margin="0,0,12,0" />
+          <CheckBox Content="参考线" IsChecked="{Binding ShowReadingCrosshair}" Margin="0,0,12,0" />
+          <CheckBox Content="轴上读数" IsChecked="{Binding ShowReadingLabels}" Margin="0,0,12,0" />
+          <ComboBox ItemsSource="{Binding ReadingTooltipModes}" SelectedItem="{Binding ReadingTooltipMode}" MinWidth="125" Margin="0,0,8,0" />
+          <ComboBox ItemsSource="{Binding ReadingCrosshairDirections}" SelectedItem="{Binding ReadingCrosshairDirection}" MinWidth="125" />
+        </WrapPanel>
+        <charts:CartesianChart x:Name="TooltipReadingChart" Height="320" Title="响应时间与任务量"
+                               TooltipContentTemplate="{Binding ReadingTooltipTemplate}" TooltipMode="{Binding ReadingTooltipMode}"
+                               CrosshairDirection="{Binding ReadingCrosshairDirection}" ShowCrosshairLabels="{Binding ShowReadingLabels}"
+                               ShowCrosshair="{Binding ShowReadingCrosshair}" IsTooltipEnabled="True">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Title="观察时间 / 小时" Minimum="0" Maximum="10" LabelFormat="0.0" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Title="响应 / ms" Minimum="0" Maximum="100" LabelFormat="0.0" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Axes><charts:LogarithmicAxis Key="reading-volume" Title="任务量" Minimum="1" Maximum="10000" Position="Far" ShowGridLines="False" LabelFormat="0.00" /></charts:CartesianChart.Axes>
+          <charts:CartesianChart.Series>
+            <charts:LineSeries Title="响应时间" ItemsSource="{Binding ReadingRecords}" CategoryPath="Position" ValuePath="Value" IdPath="Id" Stroke="#4385F4" MarkerSize="9" />
+            <charts:ScatterSeries Title="任务量" ItemsSource="{Binding ReadingVolumeRecords}" CategoryPath="Position" ValuePath="Value" IdPath="Id" YAxisKey="reading-volume" Fill="#19A798" Stroke="#19A798" MarkerSize="10" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <ItemsControl ItemsSource="{Binding AxisReadings, ElementName=TooltipReadingChart}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="charts:ChartAxisReading">
+              <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Text="{Binding Axis.Title}" /><TextBlock Text="{Binding Text}" /></StackPanel>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="ControlTemplateExamples" Grid.Row="5" Header="图例与数据标签：渠道滚动与订单明细" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="滚动右侧渠道列表，点击整行显示或隐藏系列；订单标签保留原业务对象。" TextWrapping="Wrap" Opacity="0.75" />
+        <WrapPanel>
+          <CheckBox Content="渠道图例卡" IsChecked="{Binding UseLegendControlTemplate}" Margin="0,0,14,0" />
+          <CheckBox Content="业务数据标签" IsChecked="{Binding UseDataLabelControlTemplate}" Margin="0,0,14,0" />
+          <Button Content="更新直营订单" Command="{Binding UpdateTemplateValueCommand}" />
+        </WrapPanel>
+        <charts:CartesianChart x:Name="ControlTemplateChart" Title="渠道订单与计划" Height="420"
+                               LegendItemTemplate="{Binding ActiveLegendTemplate}" IsLegendScrollable="True"
+                               LegendPosition="Right" LegendOrientation="Vertical" LegendMaxWidth="230" LegendMaxHeight="205"
+                               IsLegendInteractive="True" IsZoomEnabled="True" IsPanEnabled="True">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Title="观察时段" Minimum="0" Maximum="6" Interval="1" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Title="订单数" Minimum="0" Maximum="100" Interval="20" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:BarSeries Title="{Binding TemplateSeriesTitle}" ItemsSource="{Binding TemplateRecords}" CategoryPath="Position" ValuePath="Value" IdPath="Id"
+                              Fill="#4385F4" Stroke="#4385F4" ShowDataLabels="True" DataLabelFormat="0" DataLabelPosition="Above" DataLabelTemplate="{Binding ActiveDataLabelTemplate}" />
+            <charts:LineSeries Title="履约目标" ItemsSource="{Binding TemplateTargets}" Stroke="#19A798" StrokeThickness="2" />
+            <charts:ScatterSeries Title="渠道观察" ItemsSource="{Binding TemplateObservations}" Fill="#F2A33A" Stroke="#F2A33A" MarkerSize="9" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="TrackballExamples" Grid.Row="6" Header="Trackball：线段估算与两端真实业务记录" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="垂直追踪比较同一时间，水平追踪比较同一响应值；插值不会生成新的业务记录。关闭追踪后可比较普通提示模式。" TextWrapping="Wrap" Opacity="0.75" />
+        <WrapPanel>
+          <ComboBox ItemsSource="{Binding TrackballModes}" SelectedItem="{Binding TrackballMode}" MinWidth="125" Margin="0,0,8,6" />
+          <ComboBox ItemsSource="{Binding TrackballDisplayModes}" SelectedItem="{Binding TrackballDisplayMode}" MinWidth="170" Margin="0,0,8,6" />
+          <ComboBox ItemsSource="{Binding TrackballSnapModes}" SelectedItem="{Binding TrackballSnapMode}" MinWidth="175" Margin="0,0,8,6" />
+          <ComboBox ItemsSource="{Binding TrackballTooltipModes}" SelectedItem="{Binding TrackballTooltipMode}" MinWidth="155" Margin="0,0,8,6" />
+          <CheckBox Content="业务追踪卡" IsChecked="{Binding UseBusinessTrackball}" Margin="0,0,12,6" />
+          <Button Content="更新 09:40 端点" Command="{Binding TrackballUpdateCommand}" Margin="0,0,8,6" />
+        </WrapPanel>
+        <charts:CartesianChart x:Name="UsageTrackballChart" Height="520" Title="业务采样与线段估算"
+                               TrackballMode="{Binding TrackballMode}" TrackballDisplayMode="{Binding TrackballDisplayMode}" TrackballSnapMode="{Binding TrackballSnapMode}"
+                               TrackballContentTemplate="{Binding ActiveTrackballTemplate}" TooltipContentTemplate="{Binding ActiveTrackballTemplate}"
+                               TooltipMode="{Binding TrackballTooltipMode}" IsTooltipEnabled="{Binding IsTrackballTooltipEnabled}"
+                               TrackballLineStroke="#D7259F" TrackballMarkerStroke="#D7259F" TrackballMarkerFill="Transparent">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Title="观察时间" Minimum="0" Maximum="10" Interval="2" LabelFormat="0.0" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Title="响应值" Minimum="0" Maximum="100" Interval="20" LabelFormat="0.0" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:LineSeries Title="响应采样" ItemsSource="{Binding TrackballPrimaryRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" Stroke="#4385F4" StrokeThickness="3" MarkerSize="8" />
+            <charts:LineSeries Title="任务采样" ItemsSource="{Binding TrackballSecondaryRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" Stroke="#19A798" StrokeThickness="3" MarkerSize="8" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="SelectionRangeExamples" Grid.Row="7" Header="系列选择、范围条与多图联动" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="10">
+        <WrapPanel>
+          <CheckBox Content="触摸导航" IsChecked="{Binding InputTouchEnabled}" Margin="0,0,12,0" />
+          <ComboBox ItemsSource="{Binding InputWheelModes}" SelectedItem="{Binding InputWheelMode}" Width="130" Margin="0,0,12,0" />
+          <ComboBox ItemsSource="{Binding InputRoutingModes}" SelectedItem="{Binding InputRoutingMode}" Width="150" />
+        </WrapPanel>
+        <TextBlock Text="输入 Auto 模式：普通滚动交给外层页面，Ctrl/Meta 缩放图表。触摸单指拖移、双指捏合；Chart 路由优先图表，边界可交给页面。" TextWrapping="Wrap" />
+        <TextBlock Text="点击选择系列，Ctrl 切换多选；拖动范围条或用键盘调整。上图 X 为 0–100，下图 X 为 0–1000，默认按比例同步 X。" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageSelectionPrimary" Height="280" Title="主图 · 编译绑定系列选择"
+                               SeriesSelectionMode="{Binding SeriesSelectionMode}" SelectedSeries="{Binding SelectedSeries, Mode=TwoWay}"
+                               UnselectedSeriesOpacity="0.18" IsZoomEnabled="True" IsPanEnabled="True" InteractionAxes="X" IsKeyboardNavigationEnabled="True"
+                               IsTouchEnabled="{Binding InputTouchEnabled}" TouchPanThreshold="{Binding InputTouchThreshold}"
+                               WheelMode="{Binding InputWheelMode}" InputRoutingMode="{Binding InputRoutingMode}"
+                               WheelPanSensitivity="{Binding InputPanSensitivity}" WheelZoomSensitivity="{Binding InputZoomSensitivity}">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:LineSeries Title="趋势" ItemsSource="{Binding SelectionLinePoints}" Stroke="#4385F4" StrokeThickness="3" MarkerSize="8" />
+            <charts:ScatterSeries Title="事件" ItemsSource="{Binding SelectionScatterPoints}" Fill="#F2A33A" MarkerSize="12" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <charts:ChartRangeSelector x:Name="UsageRangeSelector" Height="44" Chart="{Binding #UsageSelectionPrimary}" Axis="X"
+                                   Range="{Binding SelectionRange, Mode=TwoWay}" MinimumSpan="0.05" SmallChange="0.02" LargeChange="0.1" />
+        <charts:CartesianChart x:Name="UsageSelectionSecondary" Height="280" Title="从图 · 比例联动 X" IsZoomEnabled="True" InteractionAxes="X">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="1000" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series><charts:LineSeries Title="负载" ItemsSource="{Binding SelectionSecondaryPoints}" Stroke="#19A798" StrokeThickness="3" MarkerSize="7" /></charts:CartesianChart.Series>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="AnnotationCompletionExamples" Grid.Row="8" Header="标注和参考元素 · 多轴、圆角、标签与绘图区内容" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="右轴不需要占位系列。参考线、区间、数据半径椭圆与圆角矩形跟随当前窗口；固定提示位于绘图区内，并参与 PNG 导出。" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageAnnotationCompletion" Height="360" Title="响应趋势与压力参考" IsZoomEnabled="True" IsPanEnabled="True"
+                               PlotAreaContent="{Binding AnnotationOverlayMessage}" PlotAreaContentTemplate="{StaticResource AnnotationPlotTemplate}">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" Title="响应 / ms" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Axes><charts:NumericAxis Key="reference" Minimum="1000" Maximum="2000" Position="Far" Title="压力 / kPa" /></charts:CartesianChart.Axes>
+          <charts:CartesianChart.Series><charts:LineSeries Title="响应" ItemsSource="{Binding SelectionLinePoints}" Stroke="#4385F4" MarkerSize="6" /></charts:CartesianChart.Series>
+          <charts:CartesianChart.Annotations>
+            <charts:BandAnnotation YAxisKey="reference" FromValue="1400" ToValue="1800" Fill="#1819A798" Label="参考范围" Layer="BehindSeries" />
+            <charts:LineAnnotation YAxisKey="reference" Value="1500" Label="压力参考 1500" Stroke="#9C247A" />
+            <charts:RectangleAnnotation YAxisKey="reference" X1="20" X2="40" Y1="1200" Y2="1600" CornerRadius="{Binding AnnotationCornerRadius}"
+                                        Label="{Binding AnnotationShapeLabel}" LabelPosition="Bottom" Fill="#284385F4" Stroke="#4385F4" Layer="BehindSeries" />
+            <charts:EllipseAnnotation YAxisKey="reference" GeometryMode="CenterRadius" X="65" Y="1600" RadiusX="{Binding AnnotationRadiusX}" RadiusY="{Binding AnnotationRadiusY}"
+                                      Label="数据半径" Fill="#28F2A33A" Stroke="#F2A33A" />
+          </charts:CartesianChart.Annotations>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="AnimationExamples" Grid.Row="9" Header="动画 · 入场、数据变化、视图变化与减少动态效果" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <WrapPanel>
+          <CheckBox Content="启用动画" IsChecked="{Binding AnimationEnabled}" Margin="0,0,12,0" />
+          <CheckBox Content="暂停" IsChecked="{Binding AnimationPaused, Mode=TwoWay}" Margin="0,0,12,0" />
+          <CheckBox Content="减少动态效果" IsChecked="{Binding AnimationReduceMotion}" Margin="0,0,12,0" />
+          <TextBlock Text="时长" VerticalAlignment="Center" Margin="0,0,5,0" />
+          <ComboBox ItemsSource="{Binding AnimationDurations}" SelectedItem="{Binding AnimationDuration}" Width="140" Margin="0,0,12,0" />
+          <TextBlock Text="延迟" VerticalAlignment="Center" Margin="0,0,5,0" />
+          <ComboBox ItemsSource="{Binding AnimationDelays}" SelectedItem="{Binding AnimationDelay}" Width="140" />
+        </WrapPanel>
+        <WrapPanel>
+          <Button Content="重播入场" Click="ReplayAnimation" Margin="0,0,8,0" />
+          <Button Content="更新数据" Command="{Binding AnimationUpdateCommand}" Margin="0,0,8,0" />
+          <Button Content="切换视图" Command="{Binding AnimationViewCommand}" Margin="0,0,8,0" />
+          <Button Content="取消并显示最终状态" Click="CancelAnimation" />
+        </WrapPanel>
+        <TextBlock Text="默认关闭；三个触发器可分别配置。暂停冻结当前帧，取消显示最新目标。超过点数上限或减少动态效果时直接更新。" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageAnimationChart" Height="340" Title="折线、柱状与散点的动画"
+                               AnimationTriggers="{Binding AnimationTriggers}" AnimationDuration="{Binding AnimationDuration}" AnimationDelay="{Binding AnimationDelay}"
+                               AnimationEasing="{Binding AnimationEasing}" IsAnimationPaused="{Binding AnimationPaused, Mode=TwoWay}" ReduceMotion="{Binding AnimationReduceMotion}"
+                               AnimationPointLimit="{Binding AnimationPointLimit}" Viewport="{Binding AnimationViewport, Mode=TwoWay}">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="10" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:BarSeries Title="分组值" ItemsSource="{Binding AnimationBarPoints}" Fill="#4019A798" Stroke="#19A798" />
+            <charts:LineSeries Title="趋势" ItemsSource="{Binding AnimationLinePoints}" Stroke="#4385F4" MarkerSize="8" />
+            <charts:ScatterSeries Title="采样" ItemsSource="{Binding AnimationScatterPoints}" Fill="#F2A33A" MarkerSize="12" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="ExportExamples" Grid.Row="10" Header="导出 · PNG、JPEG、尺寸与异步取消" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <WrapPanel>
+          <TextBlock Text="格式" VerticalAlignment="Center" Margin="0,0,5,0" />
+          <ComboBox x:Name="UsageExportFormatSelector" ItemsSource="{Binding ExportFormats}" SelectedItem="{Binding ExportFormat, Mode=TwoWay}" Width="90" Margin="0,0,12,0" />
+          <TextBlock Text="像素宽/高" VerticalAlignment="Center" Margin="0,0,5,0" />
+          <NumericUpDown x:Name="UsageExportWidth" Value="{Binding ExportPixelWidth, Mode=TwoWay}" Minimum="1" Maximum="32768" Increment="100" Width="110" Margin="0,0,5,0" />
+          <NumericUpDown x:Name="UsageExportHeight" Value="{Binding ExportPixelHeight, Mode=TwoWay}" Minimum="1" Maximum="32768" Increment="100" Width="110" Margin="0,0,12,0" />
+          <CheckBox x:Name="UsageExportInferred" Content="按布局与 DPI 推导" IsChecked="{Binding ExportInferredSize, Mode=TwoWay}" Margin="0,0,12,0" />
+          <TextBlock Text="DPI" VerticalAlignment="Center" Margin="0,0,5,0" />
+          <ComboBox x:Name="UsageExportDpi" ItemsSource="{Binding ExportDpis}" SelectedItem="{Binding ExportDpi, Mode=TwoWay}" Width="90" />
+        </WrapPanel>
+        <WrapPanel>
+          <TextBlock Text="背景" VerticalAlignment="Center" Margin="0,0,5,0" />
+          <ComboBox x:Name="UsageExportBackgroundSelector" ItemsSource="{Binding ExportBackgrounds}" SelectedItem="{Binding ExportBackground, Mode=TwoWay}" Width="180" Margin="0,0,12,0" />
+          <TextBlock Text="JPEG 质量" VerticalAlignment="Center" Margin="0,0,5,0" />
+          <ComboBox x:Name="UsageExportQuality" ItemsSource="{Binding ExportQualities}" SelectedItem="{Binding ExportQuality, Mode=TwoWay}" Width="90" Margin="0,0,12,0" />
+          <Button x:Name="UsageExportSave" Content="异步保存…" Click="SaveExport" IsEnabled="{Binding ExportCanStart}" Margin="0,0,8,0" />
+          <Button x:Name="UsageExportCancel" Content="取消" Click="CancelExport" IsEnabled="{Binding ExportIsBusy}" />
+        </WrapPanel>
+        <TextBlock Text="TransparentOrWhite：PNG 保留透明，JPEG 合成白底。显式像素尺寸不受 DPI 改变；仅推导尺寸按布局 × DPI / 96 计算。图表在 UI 线程捕获，后台编码和写入；取消在可观察的阶段边界生效。" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageExportChart" Height="300" Title="导出绑定示例" Background="Transparent"
+                               IsZoomEnabled="True" IsPanEnabled="True" PlotAreaContent="{Binding AnnotationOverlayMessage}" PlotAreaContentTemplate="{StaticResource AnnotationPlotTemplate}">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series><charts:LineSeries Title="监测" ItemsSource="{Binding SelectionLinePoints}" Stroke="#4385F4" MarkerSize="7" ShowDataLabels="True" /></charts:CartesianChart.Series>
+          <charts:CartesianChart.Annotations><charts:RectangleAnnotation X1="35" X2="60" Y1="40" Y2="70" CornerRadius="8" Fill="#30F2A33A" Stroke="#F2A33A" Label="导出范围" /></charts:CartesianChart.Annotations>
+        </charts:CartesianChart>
+        <TextBlock x:Name="UsageExportStatus" Text="{Binding ExportStatus}" TextWrapping="Wrap" />
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="AccessibilityExamples" Grid.Row="11" Header="辅助功能 · 点级语义、键盘浏览与高对比" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <WrapPanel>
+          <CheckBox x:Name="UsageAccessibilityKeyboard" Content="启用键盘浏览" IsChecked="{Binding AccessibilityKeyboardEnabled, Mode=TwoWay}" Margin="0,0,12,0" />
+          <CheckBox x:Name="UsageAccessibilityPointBrowsing" Content="独立浏览当前点" IsChecked="{Binding AccessibilityPointBrowsing, Mode=TwoWay}" Margin="0,0,12,0" />
+          <ComboBox x:Name="UsageAccessibilityContrast" ItemsSource="{Binding AccessibilityContrasts}" SelectedItem="{Binding AccessibilityContrast, Mode=TwoWay}" Width="110" Margin="0,0,12,0" />
+          <Button Content="聚焦图表" Click="FocusAccessibilityChart" Margin="0,0,8,0" />
+          <Button Content="更新业务数值" Click="UpdateAccessibilityValue" />
+        </WrapPanel>
+        <TextBlock Text="Tab 聚焦图表后用方向键逐点浏览。数据摘要与当前点使用编译绑定；业务记录包含缺失值，点级辅助节点保留源索引和稳定编号。" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageAccessibilityChart" Height="350" Title="辅助功能绑定示例" IsKeyboardNavigationEnabled="{Binding AccessibilityKeyboardEnabled}"
+                               IsPointBrowsingEnabled="{Binding AccessibilityPointBrowsing}" HighContrastMode="{Binding AccessibilityContrast}"
+                               PointInvokedCommand="{Binding AccessibilityPointInvokedCommand}"
+                               SelectionMode="Multiple" IsZoomEnabled="True" IsPanEnabled="True" LegendPosition="Bottom">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="100" Title="时间 / 分钟" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" Title="负载 / %" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Axes><charts:NumericAxis Key="usage-accessibility-pressure" Minimum="1000" Maximum="2000" Position="Far" Title="压力 / kPa" /></charts:CartesianChart.Axes>
+          <charts:CartesianChart.Series>
+            <charts:LineSeries Title="负载" ItemsSource="{Binding AccessibilityRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" StrokeThickness="3" MarkerSize="10" MarkerShape="Circle" />
+            <charts:BarSeries Title="任务" ItemsSource="{Binding AccessibilityBars}" />
+            <charts:ScatterSeries Title="压力" YAxisKey="usage-accessibility-pressure" ItemsSource="{Binding AccessibilityScatter}" MarkerSize="14" MarkerShape="Diamond" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <TextBlock x:Name="UsageAccessibilitySummary" Text="{Binding #UsageAccessibilityChart.AccessibilitySummaryText}" TextWrapping="Wrap" />
+        <TextBlock x:Name="UsageAccessibilityCurrent" Text="{Binding #UsageAccessibilityChart.CurrentPoint.Point.Y, StringFormat='当前点 Y：{0:0.###}'}" TextWrapping="Wrap" />
+        <TextBlock x:Name="UsageAccessibilityStatus" Text="{Binding AccessibilityStatus}" TextWrapping="Wrap" />
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="LineAreaExamples" Grid.Row="12" Header="折线与面积 · 插值、范围和堆叠绑定" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <WrapPanel>
+          <TextBlock Text="插值" VerticalAlignment="Center" Margin="0,0,6,0" />
+          <ComboBox x:Name="UsageLineAreaInterpolation" ItemsSource="{Binding LineAreaInterpolations}" SelectedItem="{Binding LineAreaInterpolation, Mode=TwoWay}" Width="145" Margin="0,0,12,0" />
+          <TextBlock Text="堆叠" VerticalAlignment="Center" Margin="0,0,6,0" />
+          <ComboBox x:Name="UsageLineAreaStackMode" ItemsSource="{Binding LineAreaStackModes}" SelectedItem="{Binding LineAreaStackMode, Mode=TwoWay}" Width="120" Margin="0,0,12,0" />
+          <TextBlock Text="非堆叠基线" VerticalAlignment="Center" Margin="0,0,6,0" />
+          <ComboBox x:Name="UsageLineAreaBaseline" ItemsSource="{Binding LineAreaBaselines}" SelectedItem="{Binding LineAreaBaseline, Mode=TwoWay}" Width="90" Margin="0,0,12,0" />
+          <CheckBox x:Name="UsageLineAreaGap" Content="第二贡献保留缺失点" IsChecked="{Binding LineAreaGap, Mode=TwoWay}" />
+        </WrapPanel>
+        <TextBlock Text="同组面积按实际 X 对齐，正负分别累计；Percent 正负分别归一到 ±100。折线使用独立 StackGroup，基线仅在 None 模式生效。范围面积直接绑定 High/Low 业务属性，无需重复提供 ValuePath。" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageLineAreaChart" Height="320" Title="面积与折线 · 编译绑定" SelectionMode="Multiple" IsZoomEnabled="True" IsPanEnabled="True" LegendPosition="Bottom">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="6" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="-120" Maximum="120" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:AreaSeries Title="第一贡献" ItemsSource="{Binding LineAreaPrimaryPoints}" Interpolation="{Binding LineAreaInterpolation}" StackMode="{Binding LineAreaStackMode}" StackGroup="usage-area" Baseline="{Binding LineAreaBaseline}" Fill="#804385F4" Stroke="#4385F4" MarkerSize="8" />
+            <charts:AreaSeries Title="第二贡献" ItemsSource="{Binding LineAreaSecondaryPoints}" Interpolation="{Binding LineAreaInterpolation}" StackMode="{Binding LineAreaStackMode}" StackGroup="usage-area" Baseline="{Binding LineAreaBaseline}" Fill="#8019A798" Stroke="#19A798" MarkerSize="8" />
+            <charts:LineSeries Title="独立折线组" ItemsSource="{Binding LineAreaLinePoints}" Interpolation="{Binding LineAreaInterpolation}" StackMode="{Binding LineAreaStackMode}" StackGroup="usage-line" Stroke="#D7259F" MarkerSize="6" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <charts:CartesianChart x:Name="UsageRangeAreaChart" Height="300" Title="业务上下界 · 范围面积" IsZoomEnabled="True" IsPanEnabled="True" LegendPosition="Bottom">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="6" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:RangeAreaSeries Title="业务范围" ItemsSource="{Binding LineAreaRangeRecords}" CategoryPath="X" IdPath="Id" HighPath="High" LowPath="Low" Interpolation="{Binding LineAreaInterpolation}" Fill="#70F2A33A" Stroke="#F2A33A" MarkerSize="7" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="BarComparisonExamples" Grid.Row="13" Header="柱条与比较 · 方向、堆叠、范围和原始身份绑定" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <WrapPanel>
+          <ComboBox x:Name="UsageBarOrientation" ItemsSource="{Binding BarOrientations}" SelectedItem="{Binding BarOrientation, Mode=TwoWay}" Width="120" Margin="0,0,10,0" />
+          <ComboBox x:Name="UsageBarStackMode" ItemsSource="{Binding BarStackModes}" SelectedItem="{Binding BarStackMode, Mode=TwoWay}" Width="110" Margin="0,0,10,0" />
+          <ComboBox x:Name="UsageBarSortMode" ItemsSource="{Binding BarSortModes}" SelectedItem="{Binding BarSortMode, Mode=TwoWay}" Width="160" Margin="0,0,10,0" />
+          <ComboBox x:Name="UsageBarWidth" ItemsSource="{Binding BarWidths}" SelectedItem="{Binding BarWidth, Mode=TwoWay}" Width="90" Margin="0,0,10,0" />
+          <CheckBox x:Name="UsageBarLabels" Content="显示原始值标签" IsChecked="{Binding BarLabels, Mode=TwoWay}" />
+        </WrapPanel>
+        <TextBlock Text="横向显示坐标与原始类别/值分开；提示和标签读取 RawPoint，业务身份与原始源索引保留。百分比按正负分别归一到 ±100，范围柱使用 High/Low，瀑布总计行读取 IsTotal。" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageBarComparisonChart" Height="300" Title="柱 / 横条 · 方向与堆叠绑定" SelectionMode="Multiple" IsZoomEnabled="True" IsPanEnabled="True" LegendPosition="Bottom" TooltipContentTemplate="{StaticResource BarComparisonRawTooltip}" XAxis="{Binding BarXAxis}" YAxis="{Binding BarYAxis}">
+          <charts:CartesianChart.Series>
+            <charts:BarSeries Title="第一贡献" ItemsSource="{Binding BarRecords}" CategoryPath="Category" ValuePath="Value" IdPath="Id" Orientation="{Binding BarOrientation}" StackMode="{Binding BarStackMode}" StackGroup="usage-bars" SortMode="{Binding BarSortMode}" BarWidth="{Binding BarWidth}" ShowDataLabels="{Binding BarLabels}" Fill="#4385F4" Stroke="#4385F4" />
+            <charts:BarSeries Title="第二贡献" ItemsSource="{Binding BarSecondPoints}" Orientation="{Binding BarOrientation}" StackMode="{Binding BarStackMode}" StackGroup="usage-bars" SortMode="{Binding BarSortMode}" BarWidth="{Binding BarWidth}" ShowDataLabels="{Binding BarLabels}" Fill="#19A798" Stroke="#19A798" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <charts:CartesianChart x:Name="UsageBarRangeChart" Height="280" Title="范围、Dot、Lollipop 和 Variance" IsZoomEnabled="True" IsPanEnabled="True" LegendPosition="Bottom" TooltipContentTemplate="{StaticResource BarComparisonRawTooltip}">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="6" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:RangeBarSeries Title="范围" ItemsSource="{Binding BarRangeRecords}" CategoryPath="X" HighPath="High" LowPath="Low" IdPath="Id" Fill="#F2A33A" Stroke="#F2A33A" ShowDataLabels="{Binding BarLabels}" />
+            <charts:DotSeries Title="Dot" ItemsSource="{Binding DotPoints}" MarkerSize="10" Fill="#4385F4" Stroke="#4385F4" />
+            <charts:LollipopSeries Title="Lollipop" ItemsSource="{Binding LollipopPoints}" MarkerSize="10" StrokeThickness="3" Fill="#19A798" Stroke="#19A798" />
+            <charts:VarianceSeries Title="Variance" ItemsSource="{Binding VarianceRecords}" CategoryPath="X" HighPath="High" LowPath="Low" IdPath="Id" MarkerSize="10" StrokeThickness="3" Stroke="#D7259F" Fill="#D7259F" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <charts:CartesianChart x:Name="UsageWaterfallChart" Height="280" Title="瀑布 · 原始总计行绑定" IsZoomEnabled="True" IsPanEnabled="True" LegendPosition="Bottom" TooltipContentTemplate="{StaticResource BarComparisonRawTooltip}">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="5" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="60" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:WaterfallSeries Title="余额" ItemsSource="{Binding WaterfallRecords}" CategoryPath="Category" ValuePath="Value" IdPath="Id" TotalPath="IsTotal" PositiveFill="#19A798" NegativeFill="#D7256A" TotalFill="#4385F4" ConnectorStroke="#8A94A5" ShowDataLabels="{Binding BarLabels}" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <charts:CartesianChart x:Name="UsageParetoChart" Height="280" Title="Pareto · 值降序与累计占比" IsZoomEnabled="True" IsPanEnabled="True" LegendPosition="Bottom" TooltipContentTemplate="{StaticResource BarComparisonRawTooltip}">
+          <charts:CartesianChart.XAxis><charts:CategoryAxis Minimum="-0.5" Maximum="2.5" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="60" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:ParetoSeries Title="贡献与累计" ItemsSource="{Binding ParetoPoints}" Fill="#4385F4" Stroke="#4385F4" CumulativeStroke="#F2A33A" CumulativeStrokeThickness="3" ShowDataLabels="{Binding BarLabels}" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="ScatterBubbleExamples" Grid.Row="14" Header="散点与气泡 · 大小、颜色、顺序和业务身份绑定" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <WrapPanel>
+          <ComboBox x:Name="UsageScatterBubbleSizeScale" ItemsSource="{Binding ScatterBubbleSizeScales}" SelectedItem="{Binding ScatterBubbleSizeScale, Mode=TwoWay}" Width="120" Margin="0,0,10,0" />
+          <ComboBox x:Name="UsageScatterBubbleDrawOrder" ItemsSource="{Binding ScatterBubbleDrawOrders}" SelectedItem="{Binding ScatterBubbleDrawOrder, Mode=TwoWay}" Width="160" Margin="0,0,10,0" />
+          <CheckBox x:Name="UsageScatterBubbleLabels" Content="业务大小标签" IsChecked="{Binding ScatterBubbleLabels, Mode=TwoWay}" Margin="0,0,10,0" />
+          <CheckBox x:Name="UsageScatterBubbleShowLine" Content="源顺序连线" IsChecked="{Binding ScatterBubbleShowLine, Mode=TwoWay}" />
+        </WrapPanel>
+        <TextBlock Text="大小和颜色读取业务路径，XY、源索引与业务身份保持不变；气泡复用 WeightPath，显式 SizePath 优先。Area 在直径平方之间插值，Diameter 直接插值；绘制排序不改写业务源顺序。" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageEncodedScatterChart" Height="280" Title="散点 · 数值大小与颜色" IsZoomEnabled="True" IsPanEnabled="True" SelectionMode="Multiple" IsKeyboardNavigationEnabled="True" LegendPosition="Bottom" TooltipContentTemplate="{StaticResource ScatterBubbleTooltip}">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="10" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:ScatterSeries Title="规模和热度" ItemsSource="{Binding ScatterBubbleRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" SizePath="Weight" ColorPath="Color" SizeMinimum="0" SizeMaximum="100" MinimumSize="20" MaximumSize="60" SizeScale="{Binding ScatterBubbleSizeScale}" ColorMinimum="0" ColorMaximum="100" MinimumColor="Blue" MaximumColor="Red" DrawOrder="{Binding ScatterBubbleDrawOrder}" ShowDataLabels="{Binding ScatterBubbleLabels}" MarkerStrokeThickness="0" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <charts:CartesianChart x:Name="UsageBubbleChart" Height="280" Title="XY 气泡 · 兼容 WeightPath" IsZoomEnabled="True" IsPanEnabled="True" SelectionMode="Multiple" IsKeyboardNavigationEnabled="True" LegendPosition="Bottom" TooltipContentTemplate="{StaticResource ScatterBubbleTooltip}">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="10" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:BubbleSeries Title="真实 XY 与规模" ItemsSource="{Binding ScatterBubbleRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" WeightPath="Weight" ColorPath="Color" SizeMinimum="0" SizeMaximum="100" MinimumSize="20" MaximumSize="60" SizeScale="{Binding ScatterBubbleSizeScale}" ColorMinimum="0" ColorMaximum="100" MinimumColor="Blue" MaximumColor="Red" DrawOrder="{Binding ScatterBubbleDrawOrder}" ShowDataLabels="{Binding ScatterBubbleLabels}" MarkerStrokeThickness="0" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <charts:CartesianChart x:Name="UsageScatterLineChart" Height="280" Title="Scatter line · 非单调源顺序与 Gap" IsZoomEnabled="True" IsPanEnabled="True" TrackballMode="Vertical" TrackballSnapMode="LinearInterpolation" LegendPosition="Bottom" TooltipContentTemplate="{StaticResource ScatterBubbleTooltip}">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="10" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:ScatterLineSeries Title="源序轨迹" ItemsSource="{Binding ScatterLinePoints}" ShowLine="{Binding ScatterBubbleShowLine}" ShowDataLabels="{Binding ScatterBubbleLabels}" MarkerSize="8" Stroke="#19A798" Fill="#19A798" StrokeThickness="3" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="CircularExamples" Grid.Row="15" Header="圆形图 · 份额、选择、负值与过渡绑定" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="10">
+        <WrapPanel>
+          <TextBlock Text="内半径" VerticalAlignment="Center" Margin="0,0,6,0" />
+          <ComboBox x:Name="UsageCircularInnerRadius" ItemsSource="{Binding CircularInnerRadii}" SelectedItem="{Binding CircularInnerRadius, Mode=TwoWay}" Width="90" Margin="0,0,10,0" />
+          <TextBlock Text="角度" VerticalAlignment="Center" Margin="0,0,6,0" />
+          <ComboBox x:Name="UsageCircularSweep" ItemsSource="{Binding CircularSweeps}" SelectedItem="{Binding CircularSweep, Mode=TwoWay}" Width="90" Margin="0,0,10,0" />
+          <ComboBox x:Name="UsageCircularNegativeMode" ItemsSource="{Binding CircularNegativeModes}" SelectedItem="{Binding CircularNegativeMode, Mode=TwoWay}" Width="120" Margin="0,0,10,0" />
+          <CheckBox x:Name="UsageCircularLabels" Content="外标签与连线" IsChecked="{Binding CircularLabels, Mode=TwoWay}" Margin="0,0,10,0" />
+          <CheckBox x:Name="UsageCircularReduceMotion" Content="减少动态效果" IsChecked="{Binding CircularReduceMotion, Mode=TwoWay}" Margin="0,0,10,0" />
+          <CheckBox x:Name="UsageCircularPaused" Content="暂停" IsChecked="{Binding CircularPaused, Mode=TwoWay}" />
+        </WrapPanel>
+        <charts:CircularChart x:Name="UsageCircularPieChart" Height="300" Title="饼图 · 业务标签与负值策略" ShowLegend="True" ShowDataLabels="{Binding CircularLabels}" LabelPosition="Outside" SelectionMode="Multiple" ReduceMotion="{Binding CircularReduceMotion}" IsAnimationPaused="{Binding CircularPaused}" AnimationTriggers="All" AnimationDuration="0:0:0.6">
+          <charts:CircularChart.Series>
+            <charts:PieSeries Title="渠道份额" ItemsSource="{Binding CircularRecords}" CategoryPath="Label" ValuePath="Value" IdPath="Id" ColorPath="Color" NegativeValueMode="{Binding CircularNegativeMode}" />
+          </charts:CircularChart.Series>
+        </charts:CircularChart>
+        <charts:CircularChart x:Name="UsageCircularDonutChart" Height="300" Title="环 / 部分环 · 编译绑定" CenterText="渠道总览" ShowLegend="True" ShowDataLabels="{Binding CircularLabels}" LabelPosition="Outside" SelectionMode="Multiple" ReduceMotion="{Binding CircularReduceMotion}" IsAnimationPaused="{Binding CircularPaused}" AnimationTriggers="All" AnimationDuration="0:0:0.6">
+          <charts:CircularChart.Series>
+            <charts:DonutSeries Title="环图" ItemsSource="{Binding CircularRecords}" CategoryPath="Label" ValuePath="Value" IdPath="Id" ColorPath="Color" InnerRadius="{Binding CircularInnerRadius}" SweepAngle="{Binding CircularSweep}" NegativeValueMode="{Binding CircularNegativeMode}" SliceGap="2" />
+          </charts:CircularChart.Series>
+        </charts:CircularChart>
+        <charts:CircularChart x:Name="UsageCircularSemiChart" Height="260" Title="半环 · 原始源身份" ShowLegend="True" ShowDataLabels="{Binding CircularLabels}" LabelPosition="Outside" ReduceMotion="{Binding CircularReduceMotion}">
+          <charts:CircularChart.Series>
+            <charts:SemiDonutSeries Title="半环" ItemsSource="{Binding CircularRecords}" CategoryPath="Label" ValuePath="Value" IdPath="Id" ColorPath="Color" NegativeValueMode="{Binding CircularNegativeMode}" />
+          </charts:CircularChart.Series>
+        </charts:CircularChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="PolarExamples" Grid.Row="16" Header="极坐标与雷达 · 角轴、半径轴和编译绑定" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <WrapPanel>
+          <ComboBox x:Name="UsagePolarUnit" ItemsSource="{Binding PolarUnits}" SelectedItem="{Binding PolarUnit, Mode=TwoWay}" Width="100" Margin="0,0,10,0" />
+          <ComboBox x:Name="UsagePolarGrid" ItemsSource="{Binding PolarGrids}" SelectedItem="{Binding PolarGrid, Mode=TwoWay}" Width="100" Margin="0,0,10,0" />
+          <ComboBox x:Name="UsagePolarStart" ItemsSource="{Binding PolarStarts}" SelectedItem="{Binding PolarStartAngle, Mode=TwoWay}" Width="80" Margin="0,0,10,0" />
+          <ComboBox x:Name="UsagePolarSweep" ItemsSource="{Binding PolarSweeps}" SelectedItem="{Binding PolarSweep, Mode=TwoWay}" Width="80" Margin="0,0,10,0" />
+          <CheckBox x:Name="UsagePolarClockwise" Content="顺时针" IsChecked="{Binding PolarClockwise, Mode=TwoWay}" Margin="0,0,10,0" />
+          <CheckBox x:Name="UsagePolarClosed" Content="闭合" IsChecked="{Binding PolarClosed, Mode=TwoWay}" Margin="0,0,10,0" />
+          <CheckBox x:Name="UsagePolarLabels" Content="数据标签" IsChecked="{Binding PolarLabels, Mode=TwoWay}" />
+          <CheckBox x:Name="UsagePolarMixedReference" Content="叠加折线（r/R 参考轴）" IsChecked="{Binding PolarMixedReference, Mode=TwoWay}" Margin="10,0,0,0" />
+        </WrapPanel>
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="8">
+          <charts:PolarChart x:Name="UsagePolarLineChart" Grid.Column="0" Grid.Row="0" Height="310" Padding="4" Title="极坐标线 · 源顺序" ShowLegend="True" ShowDataLabels="{Binding PolarLabels}" AngleUnit="{Binding PolarUnit}" StartAngle="{Binding PolarStartAngle}" SweepAngle="{Binding PolarSweep}" Clockwise="{Binding PolarClockwise}" SelectionMode="Multiple" GridShape="{Binding PolarGrid}" SelectedPoint="{Binding PolarSelectedPoint, Mode=TwoWay}">
+              <charts:PolarChart.AngularAxis><charts:NumericAxis Minimum="0" Maximum="{Binding PolarAngleMaximum}" Interval="{Binding PolarAngleInterval}" /></charts:PolarChart.AngularAxis>
+              <charts:PolarChart.RadialAxis><charts:NumericAxis Minimum="0" Maximum="100" Interval="25" /></charts:PolarChart.RadialAxis>
+              <charts:PolarChart.Series><charts:PolarLineSeries Title="极坐标线 · 源顺序" ItemsSource="{Binding PolarRecords}" AnglePath="Angle" RadiusPath="Value" IdPath="Id" ColorPath="Color" Stroke="#4385F4" IsClosed="{Binding PolarClosed}" /></charts:PolarChart.Series>
+          </charts:PolarChart>
+          <charts:PolarChart x:Name="UsagePolarScatterChart" Grid.Column="1" Grid.Row="0" Height="310" Padding="4" Title="极坐标散点 · 业务颜色" ShowLegend="True" ShowDataLabels="{Binding PolarLabels}" AngleUnit="{Binding PolarUnit}" StartAngle="{Binding PolarStartAngle}" SweepAngle="{Binding PolarSweep}" Clockwise="{Binding PolarClockwise}" SelectionMode="Multiple" GridShape="{Binding PolarGrid}" >
+              <charts:PolarChart.AngularAxis><charts:NumericAxis Minimum="0" Maximum="{Binding PolarAngleMaximum}" Interval="{Binding PolarAngleInterval}" /></charts:PolarChart.AngularAxis>
+              <charts:PolarChart.RadialAxis><charts:NumericAxis Minimum="0" Maximum="100" Interval="25" /></charts:PolarChart.RadialAxis>
+              <charts:PolarChart.Series><charts:PolarScatterSeries Title="极坐标散点 · 业务颜色" ItemsSource="{Binding PolarRecords}" AnglePath="Angle" RadiusPath="Value" IdPath="Id" ColorPath="Color" MarkerSize="12" /></charts:PolarChart.Series>
+          </charts:PolarChart>
+          <charts:PolarChart x:Name="UsagePolarFilledChart" Grid.Column="0" Grid.Row="1" Height="310" Padding="4" Title="极坐标面积 · 数值角度" ShowLegend="True" ShowDataLabels="{Binding PolarLabels}" AngleUnit="{Binding PolarUnit}" StartAngle="{Binding PolarStartAngle}" SweepAngle="{Binding PolarSweep}" Clockwise="{Binding PolarClockwise}" SelectionMode="Multiple" GridShape="{Binding PolarGrid}" >
+              <charts:PolarChart.AngularAxis><charts:NumericAxis Minimum="0" Maximum="{Binding PolarAngleMaximum}" Interval="{Binding PolarAngleInterval}" /></charts:PolarChart.AngularAxis>
+              <charts:PolarChart.RadialAxis><charts:NumericAxis Minimum="0" Maximum="100" Interval="25" /></charts:PolarChart.RadialAxis>
+              <charts:PolarChart.Series><charts:PolarFilledSeries Title="极坐标面积 · 数值角度" ItemsSource="{Binding PolarRecords}" AnglePath="Angle" RadiusPath="Value" IdPath="Id" Stroke="#19A798" Fill="#19A798" IsClosed="{Binding PolarClosed}" /><charts:PolarScatterSeries Title="原始测量" ItemsSource="{Binding PolarRecords}" AnglePath="Angle" RadiusPath="Value" IdPath="Id" ColorPath="Color" MarkerSize="8" /></charts:PolarChart.Series>
+          </charts:PolarChart>
+          <charts:RadarChart x:Name="UsageRadarChart" Grid.Column="1" Grid.Row="1" Height="310" Padding="4" Title="雷达 · 共享类别" ShowLegend="True" ShowDataLabels="{Binding PolarLabels}" AngleUnit="{Binding PolarUnit}" StartAngle="{Binding PolarStartAngle}" SweepAngle="{Binding PolarSweep}" Clockwise="{Binding PolarClockwise}" SelectionMode="Multiple"  >
+              <charts:PolarChart.AngularAxis><charts:NumericAxis Minimum="0" Maximum="{Binding PolarAngleMaximum}" Interval="{Binding PolarAngleInterval}" /></charts:PolarChart.AngularAxis>
+              <charts:PolarChart.RadialAxis><charts:NumericAxis Minimum="0" Maximum="100" Interval="25" /></charts:PolarChart.RadialAxis>
+              <charts:PolarChart.Series><charts:RadarSeries Title="雷达 · 共享类别" ItemsSource="{Binding RadarRecords}" CategoryPath="Label" ValuePath="Value" IdPath="Id" ColorPath="Color" Stroke="#4385F4" Fill="#4385F4" IsClosed="{Binding PolarClosed}" />
+                <charts:RadarSeries Title="上期 · 类别重排" ItemsSource="{Binding RadarComparisonRecords}" CategoryPath="Label" ValuePath="Value" IdPath="Id" Stroke="#19A798" Fill="#19A798" FillOpacity="0.15" IsClosed="{Binding PolarClosed}" /></charts:PolarChart.Series>
+          </charts:RadarChart>
+          <charts:PolarChart x:Name="UsageRadialLineChart" Grid.Column="0" Grid.Row="2" Height="310" Padding="4" Title="径向线 · 分类角度" ShowLegend="True" ShowDataLabels="{Binding PolarLabels}" AngleUnit="{Binding PolarUnit}" StartAngle="{Binding PolarStartAngle}" SweepAngle="{Binding PolarSweep}" Clockwise="{Binding PolarClockwise}" SelectionMode="Multiple" GridShape="{Binding PolarGrid}" >
+              <charts:PolarChart.AngularAxis><charts:NumericAxis Minimum="0" Maximum="{Binding PolarAngleMaximum}" Interval="{Binding PolarAngleInterval}" /></charts:PolarChart.AngularAxis>
+              <charts:PolarChart.RadialAxis><charts:NumericAxis Minimum="0" Maximum="100" Interval="25" /></charts:PolarChart.RadialAxis>
+              <charts:PolarChart.Series><charts:RadialLineSeries Title="径向线 · 分类角度" ItemsSource="{Binding RadarRecords}" CategoryPath="Label" ValuePath="Value" IdPath="Id" Stroke="#19A798" IsClosed="{Binding PolarClosed}" /></charts:PolarChart.Series>
+          </charts:PolarChart>
+          <charts:PolarChart x:Name="UsagePolarAreaChart" Grid.Column="1" Grid.Row="2" Height="310" Padding="4" Title="极面积 · 面积尺度" ShowLegend="True" ShowDataLabels="{Binding PolarLabels}" AngleUnit="{Binding PolarUnit}" StartAngle="{Binding PolarStartAngle}" SweepAngle="{Binding PolarSweep}" Clockwise="{Binding PolarClockwise}" SelectionMode="Multiple" GridShape="{Binding PolarGrid}" >
+              <charts:PolarChart.AngularAxis><charts:NumericAxis Minimum="0" Maximum="{Binding PolarAngleMaximum}" Interval="{Binding PolarAngleInterval}" /></charts:PolarChart.AngularAxis>
+              <charts:PolarChart.RadialAxis><charts:NumericAxis Minimum="0" Maximum="100" Interval="25" /></charts:PolarChart.RadialAxis>
+              <charts:PolarChart.Series><charts:PolarAreaSeries Title="极面积 · 面积尺度" ItemsSource="{Binding RadarRecords}" CategoryPath="Label" ValuePath="Value" IdPath="Id" ColorPath="Color" InnerRadius="0.15" SectorGap="3" /><charts:PolarLineSeries Title="异构数值折线 · r/R 参考" IsVisible="{Binding PolarMixedReference}" ItemsSource="{Binding PolarRecords}" AnglePath="Angle" RadiusPath="Value" IdPath="Id" Stroke="#D7259F" ShowMarkers="False" IsClosed="{Binding PolarClosed}" /></charts:PolarChart.Series>
+          </charts:PolarChart>
+          <charts:PolarChart x:Name="UsageRoseChart" Grid.Column="0" Grid.Row="3" Height="310" Padding="4" Title="玫瑰图 · 半径尺度" ShowLegend="True" ShowDataLabels="{Binding PolarLabels}" AngleUnit="{Binding PolarUnit}" StartAngle="{Binding PolarStartAngle}" SweepAngle="{Binding PolarSweep}" Clockwise="{Binding PolarClockwise}" SelectionMode="Multiple" GridShape="{Binding PolarGrid}" >
+              <charts:PolarChart.AngularAxis><charts:NumericAxis Minimum="0" Maximum="{Binding PolarAngleMaximum}" Interval="{Binding PolarAngleInterval}" /></charts:PolarChart.AngularAxis>
+              <charts:PolarChart.RadialAxis><charts:NumericAxis Minimum="0" Maximum="100" Interval="25" /></charts:PolarChart.RadialAxis>
+              <charts:PolarChart.Series><charts:NightingaleRoseSeries Title="玫瑰图 · 半径尺度" ItemsSource="{Binding RadarRecords}" CategoryPath="Label" ValuePath="Value" IdPath="Id" ColorPath="Color" InnerRadius="0.15" SectorGap="3" /></charts:PolarChart.Series>
+          </charts:PolarChart>
+          <charts:PolarChart x:Name="UsageRadialBarChart" Grid.Column="1" Grid.Row="3" Height="310" Padding="4" Title="径向条 · 弧长尺度" ShowLegend="True" ShowDataLabels="{Binding PolarLabels}" AngleUnit="{Binding PolarUnit}" StartAngle="{Binding PolarStartAngle}" SweepAngle="{Binding PolarSweep}" Clockwise="{Binding PolarClockwise}" SelectionMode="Multiple" GridShape="{Binding PolarGrid}" >
+              <charts:PolarChart.AngularAxis><charts:NumericAxis Minimum="0" Maximum="{Binding PolarAngleMaximum}" Interval="{Binding PolarAngleInterval}" /></charts:PolarChart.AngularAxis>
+              <charts:PolarChart.RadialAxis><charts:NumericAxis Minimum="0" Maximum="100" Interval="25" /></charts:PolarChart.RadialAxis>
+              <charts:PolarChart.Series><charts:RadialBarSeries Title="径向条 · 弧长尺度" ItemsSource="{Binding RadarRecords}" CategoryPath="Label" ValuePath="Value" IdPath="Id" ColorPath="Color" InnerRadius="0.15" SectorGap="3" /></charts:PolarChart.Series>
+          </charts:PolarChart>
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="GaugeMicroExamples" Grid.Row="17" Header="仪表与微图 · 数值、目标和业务数据绑定" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <WrapPanel>
+          <TextBlock Text="仪表值" VerticalAlignment="Center" Margin="0,0,8,0" />
+          <Slider x:Name="UsageGaugeValue" Minimum="-200" Maximum="200" Value="{Binding GaugeValue, Mode=TwoWay}" Width="180" Margin="0,0,12,0" />
+          <ComboBox x:Name="UsageGaugeOrientation" ItemsSource="{Binding GaugeOrientations}" SelectedItem="{Binding GaugeOrientation, Mode=TwoWay}" Width="120" Margin="0,0,12,0" />
+          <ComboBox x:Name="UsageGaugeLiquidShape" ItemsSource="{Binding GaugeLiquidShapes}" SelectedItem="{Binding GaugeLiquidShape, Mode=TwoWay}" Width="120" Margin="0,0,12,0" />
+          <CheckBox x:Name="UsageGaugeWave" Content="液体波动" IsChecked="{Binding GaugeWave, Mode=TwoWay}" Margin="0,0,12,0" />
+          <CheckBox x:Name="UsageGaugeReduceMotion" Content="减少动态效果" IsChecked="{Binding GaugeReduceMotion, Mode=TwoWay}" Margin="0,0,12,0" />
+          <CheckBox x:Name="UsageGaugePaused" Content="暂停" IsChecked="{Binding GaugePaused, Mode=TwoWay}" />
+        </WrapPanel>
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="8">
+          <charts:CircularGaugeChart x:Name="UsageCircularGauge" Grid.Row="0" Grid.Column="0" Height="250" Title="圆形仪表 · 270°" Minimum="{Binding GaugeMinimum}" Maximum="{Binding GaugeMaximum}" Value="{Binding GaugeValue}" TargetValue="{Binding GaugeTarget}" RangesSource="{Binding GaugeRanges}" />
+          <charts:GaugeChart x:Name="UsageSemiGauge" Grid.Row="0" Grid.Column="1" Height="250" Title="半圆仪表 · 区间" Minimum="{Binding GaugeMinimum}" Maximum="{Binding GaugeMaximum}" Value="{Binding GaugeValue}" TargetValue="{Binding GaugeTarget}" RangesSource="{Binding GaugeRanges}" />
+          <charts:GradientRingChart x:Name="UsageGradientRing" Grid.Row="1" Grid.Column="0" Height="250" Title="多环仪表 · 独立业务值" Minimum="{Binding GaugeMinimum}" Maximum="{Binding GaugeMaximum}" Value="{Binding GaugeValue}" TargetValue="{Binding GaugeTarget}" ValuesSource="{Binding GaugeRings}" />
+          <charts:LinearGaugeChart x:Name="UsageLinearGauge" Grid.Row="1" Grid.Column="1" Height="250" Title="线性仪表 · 方向绑定" Minimum="{Binding GaugeMinimum}" Maximum="{Binding GaugeMaximum}" Value="{Binding GaugeValue}" TargetValue="{Binding GaugeTarget}" RangesSource="{Binding GaugeRanges}" Orientation="{Binding GaugeOrientation}" />
+          <charts:LiquidFillGaugeChart x:Name="UsageLiquidGauge" Grid.Row="2" Grid.Column="0" Height="250" Title="液体仪表 · 动态效果绑定" Minimum="{Binding GaugeMinimum}" Maximum="{Binding GaugeMaximum}" Value="{Binding GaugeValue}" TargetValue="{Binding GaugeTarget}" Shape="{Binding GaugeLiquidShape}" IsWaveAnimationEnabled="{Binding GaugeWave}" ReduceMotion="{Binding GaugeReduceMotion}" IsPaused="{Binding GaugePaused}" />
+          <charts:ProgressDonutChart x:Name="UsageProgressDonut" Grid.Row="2" Grid.Column="1" Height="250" Title="进度环 · 目标与边界" Minimum="{Binding GaugeMinimum}" Maximum="{Binding GaugeMaximum}" Value="{Binding GaugeValue}" TargetValue="{Binding GaugeTarget}"  />
+          <StackPanel Grid.Row="3" Grid.Column="0" Spacing="4"><TextBlock Text="Line 微图 · 真实业务源" />
+            <charts:SparklineChart x:Name="UsageMicroLine" SparklineType="Line" Height="150" ItemsSource="{Binding MicroRecords}" ValuePath="Value" CategoryPath="Label" IdPath="Id" ShowMarkers="True" ShowFirstLast="True" ShowMinMax="True" ShowBaseline="True" />
+          </StackPanel>
+          <StackPanel Grid.Row="3" Grid.Column="1" Spacing="4"><TextBlock Text="Area 微图 · 真实业务源" />
+            <charts:SparklineChart x:Name="UsageMicroArea" SparklineType="Area" Height="150" ItemsSource="{Binding MicroRecords}" ValuePath="Value" CategoryPath="Label" IdPath="Id" ShowMarkers="True" ShowFirstLast="True" ShowMinMax="True" ShowBaseline="True" />
+          </StackPanel>
+          <StackPanel Grid.Row="4" Grid.Column="0" Spacing="4"><TextBlock Text="Bar 微图 · 真实业务源" />
+            <charts:SparklineChart x:Name="UsageMicroBar" SparklineType="Bar" Height="150" ItemsSource="{Binding MicroRecords}" ValuePath="Value" CategoryPath="Label" IdPath="Id" ShowMarkers="True" ShowFirstLast="True" ShowMinMax="True" ShowBaseline="True" />
+          </StackPanel>
+          <StackPanel Grid.Row="4" Grid.Column="1" Spacing="4"><TextBlock Text="WinLoss 微图 · 真实业务源" />
+            <charts:SparklineChart x:Name="UsageMicroWinLoss" SparklineType="WinLoss" Height="150" ItemsSource="{Binding MicroRecords}" ValuePath="Value" CategoryPath="Label" IdPath="Id" ShowMarkers="True" ShowFirstLast="True" ShowMinMax="True" ShowBaseline="True" />
+          </StackPanel>
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="AnalysisExamples" Grid.Row="18" Header="基础分析图 · 漏斗、金字塔、Heatmap、Pictorial 与 Theme river" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="共享业务项保留源 ID；矩阵区分整数 1 与字符串 1，灰色为显式缺失、留白为未提供的组合。主题河流使用透明居中堆叠底座。" TextWrapping="Wrap" Opacity="0.75" />
+        <WrapPanel>
+          <CheckBox x:Name="UsageAnalysisLabels" Content="分类和值" IsChecked="{Binding AnalysisLabels, Mode=TwoWay}" Margin="0,0,12,0" />
+          <CheckBox x:Name="UsageAnalysisSelection" Content="点击选择" IsChecked="{Binding AnalysisSelection, Mode=TwoWay}" Margin="0,0,12,0" />
+          <TextBlock Text="间距" VerticalAlignment="Center" /><Slider x:Name="UsageAnalysisGap" Minimum="0" Maximum="20" Value="{Binding AnalysisGap, Mode=TwoWay}" Width="140" Margin="0,0,12,0" />
+          <TextBlock Text="颈宽" VerticalAlignment="Center" /><Slider x:Name="UsageAnalysisNeck" Minimum="0" Maximum="1" Value="{Binding AnalysisNeck, Mode=TwoWay}" Width="140" Margin="0,0,12,0" />
+          <CheckBox x:Name="UsageAnalysisRiverVariant" Content="更新河流业务数据" IsChecked="{Binding AnalysisRiverVariant, Mode=TwoWay}" />
+        </WrapPanel>
+        <TextBlock Text="{Binding AnalysisSelectionText}" Opacity="0.8" />
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="8">
+          <charts:FunnelChart x:Name="UsageAnalysisFunnel" Grid.Row="0" Grid.Column="0" Height="250" Title="漏斗 · 源顺序与颈宽" ItemsSource="{Binding AnalysisRecords}" CategoryPath="Category" ValuePath="Value" IdPath="Id" SegmentGap="{Binding AnalysisGap}" NeckWidth="{Binding AnalysisNeck}" ShowLabels="{Binding AnalysisLabels}" ShowValues="{Binding AnalysisLabels}" IsSelectionEnabled="{Binding AnalysisSelection}" SelectedIndex="{Binding AnalysisSelectedIndex, Mode=TwoWay}" />
+          <charts:PyramidChart x:Name="UsageAnalysisPyramid" Grid.Row="0" Grid.Column="1" Height="250" Title="金字塔 · 正值面积占比" ItemsSource="{Binding AnalysisRecords}" CategoryPath="Category" ValuePath="Value" IdPath="Id" SegmentGap="{Binding AnalysisGap}" ShowLabels="{Binding AnalysisLabels}" ShowValues="{Binding AnalysisLabels}" IsSelectionEnabled="{Binding AnalysisSelection}" />
+          <charts:HeatmapChart x:Name="UsageAnalysisHeatmap" Grid.Row="1" Grid.Column="0" Height="250" Title="Heatmap · 离散行列" ItemsSource="{Binding AnalysisCells}" RowPath="Row" ColumnPath="Column" ValuePath="Value" IdPath="Id" Minimum="0" Maximum="100" CellGap="{Binding AnalysisGap}" LowColor="#DDEBFF" HighColor="#2455B5" MissingBrush="#559AA7B8" ShowLabels="{Binding AnalysisLabels}" ShowValues="{Binding AnalysisLabels}" IsSelectionEnabled="{Binding AnalysisSelection}" />
+          <charts:CartesianChart x:Name="UsageAnalysisStretch" Grid.Row="1" Grid.Column="1" Height="250" Title="Pictorial · Stretch" ShowLegend="False" SelectionMode="{Binding AnalysisCartesianSelection}">
+            <charts:CartesianChart.XAxis><charts:CategoryAxis PlotMode="BetweenTicks" /></charts:CartesianChart.XAxis><charts:CartesianChart.YAxis><charts:NumericAxis Minimum="-100" Maximum="100" /></charts:CartesianChart.YAxis>
+            <charts:CartesianChart.Series><charts:PictorialBarSeries ItemsSource="{Binding AnalysisSymbols}" CategoryPath="Category" ValuePath="Value" IdPath="Id" Geometry="{Binding AnalysisSymbolGeometry}" RenderMode="Stretch" BarWidth="48" Fill="#4385F4" StrokeThickness="0" ShowDataLabels="{Binding AnalysisLabels}" /></charts:CartesianChart.Series>
+          </charts:CartesianChart>
+          <charts:CartesianChart x:Name="UsageAnalysisClip" Grid.Row="2" Grid.Column="0" Height="250" Title="Pictorial · Clip" ShowLegend="False" SelectionMode="{Binding AnalysisCartesianSelection}">
+            <charts:CartesianChart.XAxis><charts:CategoryAxis PlotMode="BetweenTicks" /></charts:CartesianChart.XAxis><charts:CartesianChart.YAxis><charts:NumericAxis Minimum="-100" Maximum="100" /></charts:CartesianChart.YAxis>
+            <charts:CartesianChart.Series><charts:PictorialBarSeries ItemsSource="{Binding AnalysisSymbols}" CategoryPath="Category" ValuePath="Value" IdPath="Id" Geometry="{Binding AnalysisSymbolGeometry}" RenderMode="Clip" SymbolSize="100" BarWidth="48" Fill="#19A798" StrokeThickness="0" ShowDataLabels="{Binding AnalysisLabels}" /></charts:CartesianChart.Series>
+          </charts:CartesianChart>
+          <charts:CartesianChart x:Name="UsageAnalysisRepeat" Grid.Row="2" Grid.Column="1" Height="250" Title="Pictorial · Repeat" ShowLegend="False" SelectionMode="{Binding AnalysisCartesianSelection}">
+            <charts:CartesianChart.XAxis><charts:CategoryAxis PlotMode="BetweenTicks" /></charts:CartesianChart.XAxis><charts:CartesianChart.YAxis><charts:NumericAxis Minimum="-100" Maximum="100" /></charts:CartesianChart.YAxis>
+            <charts:CartesianChart.Series><charts:PictorialBarSeries ItemsSource="{Binding AnalysisSymbols}" CategoryPath="Category" ValuePath="Value" IdPath="Id" Geometry="{Binding AnalysisSymbolGeometry}" RenderMode="Repeat" SymbolSize="20" SymbolSpacing="5" BarWidth="48" Fill="#F2A33A" StrokeThickness="0" ShowDataLabels="{Binding AnalysisLabels}" /></charts:CartesianChart.Series>
+          </charts:CartesianChart>
+          <charts:CartesianChart x:Name="UsageAnalysisRiver" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Height="250" Title="Theme river · 透明居中堆叠底座" IsLegendInteractive="False" IsTooltipEnabled="False" SelectionMode="None" SeriesSelectionMode="None" IsPointBrowsingEnabled="False" IsKeyboardNavigationEnabled="False">
+            <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="6" /></charts:CartesianChart.XAxis><charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+            <charts:CartesianChart.Series>
+              <charts:AreaSeries Title="居中底座" ItemsSource="{Binding AnalysisRiverBaseline}" Fill="Transparent" Stroke="Transparent" StrokeThickness="0" ShowMarkers="False" ShowInLegend="False" StackMode="Stacked" StackGroup="usage-analysis-river" />
+              <charts:AreaSeries Title="搜索" ItemsSource="{Binding AnalysisRiverFirst}" Fill="#4385F4" Stroke="#4385F4" StrokeThickness="0" ShowMarkers="False" StackMode="Stacked" StackGroup="usage-analysis-river" />
+              <charts:AreaSeries Title="推荐" ItemsSource="{Binding AnalysisRiverSecond}" Fill="#19A798" Stroke="#19A798" StrokeThickness="0" ShowMarkers="False" StackMode="Stacked" StackGroup="usage-analysis-river" />
+            </charts:CartesianChart.Series>
+          </charts:CartesianChart>
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="LevelOfDetailExamples" Grid.Row="19" Header="保真抽样与层级细节 · 原始数据与选择绑定" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="10,000 条原始业务记录。单采样点峰谷与缺失断点保留；抽样只改变绘制顶点，Tooltip 和选择继续读取原始源索引与 ID。放大后恢复原始细节。" TextWrapping="Wrap" Opacity="0.75" />
+        <WrapPanel>
+          <CheckBox x:Name="UsageLodEnabled" Content="启用 MinMax 保真抽样" IsChecked="{Binding LodEnabled, Mode=TwoWay}" Margin="0,0,12,0" />
+          <TextBlock Text="每桶物理像素" VerticalAlignment="Center" Margin="0,0,8,0" />
+          <ComboBox x:Name="UsageLodPixelWidth" ItemsSource="{Binding LodPixelWidths}" SelectedItem="{Binding LodPixelWidth, Mode=TwoWay}" Width="80" Margin="0,0,12,0" />
+          <Button Content="全量概览" Command="{Binding LodOverviewCommand}" Margin="0,0,8,0" />
+          <Button Content="单点峰值细节" Command="{Binding LodDetailCommand}" Margin="0,0,8,0" />
+          <Button Content="缺失断点细节" Command="{Binding LodGapCommand}" />
+        </WrapPanel>
+        <TextBlock Text="{Binding LodSelectionText}" TextWrapping="Wrap" Opacity="0.8" />
+        <charts:CartesianChart x:Name="UsageLevelOfDetailChart" Height="340" ShowLegend="False" IsZoomEnabled="True" IsPanEnabled="True" InteractionAxes="X" SelectionMode="Multiple" Viewport="{Binding LodViewport, Mode=TwoWay}" SelectedPoint="{Binding LodSelectedPoint, Mode=TwoWay}">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="9999" Title="原始采样序号" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="-110" Maximum="110" Title="原始信号值" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:LineSeries ItemsSource="{Binding LodRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" Stroke="#4385F4" StrokeThickness="2" ShowMarkers="False" MarkerSize="0" SamplingMode="{Binding LodSamplingMode}" SamplingPixelWidth="{Binding LodPixelWidth}" />
+          </charts:CartesianChart.Series>
+          <charts:CartesianChart.TooltipContentTemplate>
+            <DataTemplate x:DataType="charts:ChartTooltipContext">
+              <StackPanel Spacing="3">
+                <TextBlock Text="原始业务采样记录" FontWeight="SemiBold" />
+                <TextBlock x:Name="UsageLodTooltipId" Text="{Binding Primary.StableId}" />
+                <TextBlock Text="{Binding Primary.Index, StringFormat='原始源索引：{0}'}" />
+                <TextBlock Text="{Binding Primary.Point.Y, StringFormat='原始值：{0:0.000}'}" />
+              </StackPanel>
+            </DataTemplate>
+          </charts:CartesianChart.TooltipContentTemplate>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="EfficientHitExamples" Grid.Row="20" Header="高效命中 · 重叠、相同 X、多轴和原始数据绑定" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="相同位置按绘制顺序确定，重复 X 按屏幕距离确定。独立右轴保留原始值；MinMax 显示省略的点仍可命中、选择和插值。" TextWrapping="Wrap" />
+        <TextBlock Text="{Binding HitSelectionText}" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageEfficientHitPoints" Height="240" SelectedPoint="{Binding HitSelectedPoint, Mode=TwoWay}" SelectionMode="Multiple">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="10" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="10" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Axes><charts:NumericAxis Key="hit-right" Minimum="0" Maximum="1000" Position="Far" Title="右轴原始值" ShowGridLines="False" /></charts:CartesianChart.Axes>
+          <charts:CartesianChart.Series>
+            <charts:ScatterSeries Title="底层" ItemsSource="{Binding HitBackRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" Fill="#4385F4" MarkerSize="13" />
+            <charts:ScatterSeries Title="重叠与同 X" ItemsSource="{Binding HitFrontRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" Fill="#19A798" MarkerSize="13" />
+            <charts:ScatterSeries Title="右轴" ItemsSource="{Binding HitRightRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" Fill="#F2A33A" MarkerSize="13" YAxisKey="hit-right" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <WrapPanel><Button Content="概览" Command="{Binding HitOverviewCommand}" Margin="0,0,8,0" /><Button Content="原始段细节" Command="{Binding HitDetailCommand}" Margin="0,0,8,0" /><Button Content="替换同坐标记录" Command="{Binding HitReplaceCommand}" /></WrapPanel>
+        <charts:CartesianChart x:Name="UsageEfficientHitDense" Height="240" ShowLegend="False" SelectionMode="Multiple" IsZoomEnabled="True" IsPanEnabled="True" Viewport="{Binding HitViewport, Mode=TwoWay}" SelectedPoint="{Binding HitDenseSelectedPoint, Mode=TwoWay}">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="4999" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series><charts:LineSeries ItemsSource="{Binding HitDenseRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" Stroke="#4385F4" ShowMarkers="False" MarkerSize="0" SamplingMode="MinMax" SamplingPixelWidth="8" /></charts:CartesianChart.Series>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="IncrementalStreamingExamples" Grid.Row="21" Header="增量与实时调度 · 有限窗口、背压与跟随绑定" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="后台每批32条，UI合并提交；源只保留最新256条。暂停提交与跟随最新数据分别控制，拖动后可重新勾选跟随。" TextWrapping="Wrap" />
+        <WrapPanel>
+          <Button Content="开始" Command="{Binding StreamingStartCommand}" Margin="0,0,8,0" />
+          <Button Content="暂停提交" Command="{Binding StreamingPauseCommand}" Margin="0,0,8,0" />
+          <Button Content="恢复提交" Command="{Binding StreamingResumeCommand}" Margin="0,0,8,0" />
+          <Button Content="停止" Command="{Binding StreamingStopCommand}" Margin="0,0,8,0" />
+          <Button Content="追加一批" Command="{Binding StreamingAppendCommand}" Margin="0,0,8,0" />
+          <CheckBox Content="跟随最新数据" IsChecked="{Binding StreamingFollowLatest, Mode=TwoWay}" />
+        </WrapPanel>
+        <TextBlock Text="{Binding StreamingStatus}" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageIncrementalStreamingChart" Height="300" ShowLegend="False" IsZoomEnabled="True" IsPanEnabled="True" InteractionAxes="X" FollowLatestData="{Binding StreamingFollowLatest, Mode=TwoWay}" FollowLatestWindow="64" Viewport="{Binding StreamingViewport, Mode=TwoWay}" SelectedPoint="{Binding StreamingSelectedPoint, Mode=TwoWay}" SelectionMode="Multiple">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Title="绝对采样序号" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="80" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series><charts:LineSeries ItemsSource="{Binding StreamingRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" Stroke="#4385F4" ShowMarkers="False" MarkerSize="0" SamplingMode="MinMax" /></charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <TextBlock Text="{Binding StreamingSelectionText}" TextWrapping="Wrap" />
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="RenderResourceExamples" Grid.Row="22" Header="绘图与资源预算 · 公开预算绑定、清理与数据页压实" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="预算为本图五层缓存的估算模型，未计原生/GPU和共享数据索引。降低或禁用缓存后仍完整绘图；Compact显式复制保留行以压实碎片页。" TextWrapping="Wrap" />
+        <WrapPanel>
+          <Button Content="128KiB" Command="{Binding ResourceNormalBudgetCommand}" Margin="0,0,8,0" />
+          <Button Content="4KiB" Command="{Binding ResourceSmallBudgetCommand}" Margin="0,0,8,0" />
+          <Button Content="禁用缓存" Command="{Binding ResourceDisableCacheCommand}" Margin="0,0,8,0" />
+          <Button Content="清理缓存" Click="TrimResourceCache" Margin="0,0,8,0" />
+          <Button Content="刷新统计" Click="RefreshResourceCache" Margin="0,0,8,0" />
+          <Button Content="切换可变画刷" Command="{Binding ResourceBrushCommand}" Margin="0,0,8,0" />
+          <Button Content="压实数据页" Command="{Binding ResourceCompactCommand}" />
+        </WrapPanel>
+        <TextBlock Text="{Binding ResourceBudgetSummary}" TextWrapping="Wrap" />
+        <TextBlock x:Name="UsageResourceCacheSummary" Text="{Binding ResourceCacheSummary}" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageRenderResourceChart" Height="300" ShowLegend="False" ResourceCacheBudgetBytes="{Binding ResourceBudgetBytes, Mode=TwoWay}" SelectedPoint="{Binding ResourceSelectedPoint, Mode=TwoWay}" SelectionMode="Multiple">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="128" Title="原始记录序号" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="80" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series><charts:LineSeries ItemsSource="{Binding ResourceRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" Stroke="{Binding ResourceStroke}" ShowMarkers="False" MarkerSize="0" SamplingMode="None" /></charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <TextBlock Text="{Binding ResourceSelectionText}" TextWrapping="Wrap" />
+        <TextBlock x:Name="UsageResourcePageSummary" Text="{Binding ResourcePageSummary}" TextWrapping="Wrap" />
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="MultiChartExamples" Grid.Row="23" Header="多图与后台布局 · 两图编译绑定、公平请求与版本隔离" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <WrapPanel><CheckBox Content="后台数字布局" IsChecked="{Binding MultiChartBackground, Mode=TwoWay}" Margin="0,0,12,0" /><Button Content="替换最新数据" Command="{Binding MultiChartRetargetCommand}" Margin="0,0,8,0" /><Button Content="刷新两图与状态" Click="RefreshMultiCharts" /></WrapPanel>
+        <TextBlock x:Name="UsageMultiChartSummary" Text="{Binding MultiChartStatus}" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageMultiChartA" Height="250" ShowLegend="False" AnimationTriggers="None" UseBackgroundLayout="{Binding MultiChartBackground, Mode=TwoWay}">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="255" /></charts:CartesianChart.XAxis><charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="80" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series><charts:LineSeries ItemsSource="{Binding MultiChartRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" Interpolation="Smooth" Stroke="#4385F4" ShowMarkers="False" MarkerSize="0" SamplingMode="None" /></charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <charts:CartesianChart x:Name="UsageMultiChartB" Height="250" ShowLegend="False" AnimationTriggers="None" UseBackgroundLayout="{Binding MultiChartBackground, Mode=TwoWay}">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="255" /></charts:CartesianChart.XAxis><charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="80" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series><charts:LineSeries ItemsSource="{Binding MultiChartRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" Interpolation="Smooth" Stroke="#19A798" ShowMarkers="False" MarkerSize="0" SamplingMode="None" /></charts:CartesianChart.Series>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="StatisticsExamples" Grid.Row="24" Header="统计与分布 · 箱线、误差、直方图与密度" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="箱体使用 Type 7 四分位和 Tukey 1.5×IQR 须；离群点保留组内原始索引。误差为绝对距离；直方图归一化由数值 API 计算，Gaussian KDE 只显示有限域，不强制面积为 1。" TextWrapping="Wrap" />
+        <WrapPanel>
+          <Button Content="切换数据" Command="{Binding StatisticsUpdateCommand}" Margin="0,0,12,0" />
+          <CheckBox x:Name="UsageStatisticsOutliers" Content="显示离群点" IsChecked="{Binding StatisticsShowOutliers, Mode=TwoWay}" Margin="0,0,12,0" />
+          <TextBlock Text="误差方向" VerticalAlignment="Center" Margin="0,0,6,0" />
+          <ComboBox x:Name="UsageStatisticsErrorMode" ItemsSource="{Binding StatisticsErrorModes}" SelectedItem="{Binding StatisticsErrorMode, Mode=TwoWay}" Margin="0,0,12,0" />
+          <TextBlock Text="带宽" VerticalAlignment="Center" Margin="0,0,6,0" />
+          <ComboBox x:Name="UsageStatisticsBandwidth" ItemsSource="{Binding StatisticsBandwidths}" SelectedItem="{Binding StatisticsBandwidth, Mode=TwoWay}" Margin="0,0,12,0" />
+          <ComboBox ItemsSource="{Binding StatisticsNormalizations}" SelectedItem="{Binding StatisticsNormalization, Mode=TwoWay}" />
+        </WrapPanel>
+        <charts:CartesianChart x:Name="UsageStatisticsBox" Height="260" AnimationTriggers="None" SelectedPoint="{Binding StatisticsSelectedPoint, Mode=TwoWay}" SelectionMode="Single">
+          <charts:CartesianChart.XAxis><charts:CategoryAxis PlotMode="BetweenTicks" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" Title="样本分布" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series><charts:BoxPlotSeries Title="箱线与离群" ItemsSource="{Binding StatisticsGroups}" CategoryPath="Name" SamplesPath="Samples" IdPath="Id" ShowOutliers="{Binding StatisticsShowOutliers}" ShowMean="True" Fill="#82B5F0" Stroke="#155CC1" StrokeThickness="2" /></charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <TextBlock Text="{Binding StatisticsSelectionText}" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageStatisticsError" Height="240" AnimationTriggers="None">
+          <charts:CartesianChart.XAxis><charts:CategoryAxis PlotMode="BetweenTicks" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="80" Title="中心与非对称误差" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series><charts:ErrorBarSeries Title="绝对误差" ItemsSource="{Binding StatisticsErrors}" CategoryPath="Name" ValuePath="Center" LowerErrorPath="Lower" UpperErrorPath="Upper" IdPath="Id" ErrorMode="{Binding StatisticsErrorMode}" CapSize="20" ShowMarkers="True" Stroke="#C26616" StrokeThickness="2" /></charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <charts:CartesianChart x:Name="UsageStatisticsDistribution" Height="260" AnimationTriggers="None" IsZoomEnabled="True" IsPanEnabled="True">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="-3" Maximum="6" Title="观测值" /></charts:CartesianChart.XAxis>
+          <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Title="直方图高度 / 密度" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:HistogramSeries Title="直方图" ItemsSource="{Binding StatisticsBins}" Fill="#B7CBEA" Stroke="#155CC1" />
+            <charts:DensitySeries Title="Gaussian KDE" ItemsSource="{Binding StatisticsDensity}" Fill="#3050A684" Stroke="#1C8869" StrokeThickness="2" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="FinancialExamples" Grid.Row="25" Header="金融价格 · 交易槽、OHLC、Heikin-Ashi 与 X/O" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="周五与周一相邻交易槽；日期保留真实 UTC 时间。派生图仅使用收盘价；显示价与原始 OHLC 在命中元数据中分开，成交量轴独立。" TextWrapping="Wrap" />
+        <WrapPanel><Button Content="更新第二笔收盘价" Command="{Binding FinancialUpdateCommand}" Margin="0,0,12,0" /><Button Content="刷新宿主快照" Click="RefreshFinancialHost" Margin="0,0,12,0" /><TextBlock Text="X/O 固定箱大小" VerticalAlignment="Center" Margin="0,0,6,0" /><ComboBox x:Name="UsageFinancialBoxSize" ItemsSource="{Binding FinancialBoxSizes}" SelectedItem="{Binding FinancialBoxSize, Mode=TwoWay}" /></WrapPanel>
+        <charts:CartesianChart x:Name="UsageFinancialRaw" Height="250" AnimationTriggers="None" SelectionMode="Single" SelectedPoint="{Binding FinancialSelectedPoint, Mode=TwoWay}" IsZoomEnabled="True" IsPanEnabled="True">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="-1" Maximum="7" Title="等距交易槽" /></charts:CartesianChart.XAxis><charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="20" Title="真实 OHLC" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series><charts:CandlestickSeries Title="蜡烛" ItemsSource="{Binding FinancialRecords}" TimePath="Time" OpenPath="Open" HighPath="High" LowPath="Low" ClosePath="Close" VolumePath="Volume" IdPath="Id" /><charts:OhlcSeries Title="OHLC 短横" ItemsSource="{Binding FinancialRecords}" TimePath="Time" OpenPath="Open" HighPath="High" LowPath="Low" ClosePath="Close" VolumePath="Volume" IdPath="Id" RisingBrush="#3E67B8" FallingBrush="#7955AE" WidthRatio="1" /></charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <TextBlock Text="{Binding FinancialSelectionText}" TextWrapping="Wrap" />
+        <charts:CartesianChart x:Name="UsageFinancialHeikin" Height="230" AnimationTriggers="None"><charts:CartesianChart.XAxis><charts:NumericAxis Minimum="-1" Maximum="7" /></charts:CartesianChart.XAxis><charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="20" Title="Heikin-Ashi 派生价" /></charts:CartesianChart.YAxis><charts:CartesianChart.Series><charts:HeikinAshiSeries Title="Heikin-Ashi" ItemsSource="{Binding FinancialRecords}" TimePath="Time" OpenPath="Open" HighPath="High" LowPath="Low" ClosePath="Close" VolumePath="Volume" IdPath="Id" /></charts:CartesianChart.Series></charts:CartesianChart>
+        <charts:CartesianChart x:Name="UsageFinancialPointFigure" Height="230" AnimationTriggers="None"><charts:CartesianChart.XAxis><charts:NumericAxis Minimum="-1" Maximum="5" /></charts:CartesianChart.XAxis><charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="20" Title="Point &amp; Figure · 3 箱反转" /></charts:CartesianChart.YAxis><charts:CartesianChart.Series><charts:PointAndFigureSeries Title="X/O 列" ItemsSource="{Binding FinancialRecords}" TimePath="Time" OpenPath="Open" HighPath="High" LowPath="Low" ClosePath="Close" VolumePath="Volume" IdPath="Id" BoxSize="{Binding FinancialBoxSize}" ReversalBoxes="3" /></charts:CartesianChart.Series></charts:CartesianChart>
+        <charts:FinancialChart x:Name="UsageFinancialHost" Height="270" />
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="TechnicalTrendsExamples" Grid.Row="26" Header="技术指标与趋势 · 完整历史、均线周期和拟合" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="均线在完整历史上计算；缺失值会重启预热，缩放只改变视图。EMA 使用 SMA 种子，Bollinger 使用总体标准差。拟合曲线为合成样本，独立于原始业务记录。" TextWrapping="Wrap" />
+        <WrapPanel>
+          <TextBlock Text="周期" VerticalAlignment="Center" Margin="0,0,6,0" /><ComboBox x:Name="UsageTechnicalPeriod" ItemsSource="{Binding TechnicalPeriods}" SelectedItem="{Binding TechnicalPeriod, Mode=TwoWay}" Margin="0,0,12,0" />
+          <TextBlock Text="均线" VerticalAlignment="Center" Margin="0,0,6,0" /><ComboBox x:Name="UsageTechnicalAverageType" ItemsSource="{Binding TechnicalAverageTypes}" SelectedItem="{Binding TechnicalAverageType, Mode=TwoWay}" Margin="0,0,12,0" />
+          <TextBlock Text="趋势" VerticalAlignment="Center" Margin="0,0,6,0" /><ComboBox x:Name="UsageTechnicalTrendType" ItemsSource="{Binding TechnicalTrendTypes}" SelectedItem="{Binding TechnicalTrendType, Mode=TwoWay}" Margin="0,0,12,0" />
+          <Button Content="修改第二条记录" Command="{Binding TechnicalUpdateCommand}" Margin="0,0,8,0" /><Button Content="追加记录" Command="{Binding TechnicalAppendCommand}" Margin="0,0,8,0" /><Button Content="替换数据源" Command="{Binding TechnicalReplaceCommand}" />
+        </WrapPanel>
+        <charts:CartesianChart x:Name="UsageTechnicalAverage" Height="270" AnimationTriggers="None" IsZoomEnabled="True" IsPanEnabled="True">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="14" Title="原始采样坐标" /></charts:CartesianChart.XAxis><charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="45" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series>
+            <charts:LineSeries Title="原始值" ItemsSource="{Binding TechnicalRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" Stroke="#71819C" ShowMarkers="True" />
+            <charts:MovingAverageSeries Title="可选均线" Period="{Binding TechnicalPeriod}" Type="{Binding TechnicalAverageType}" Stroke="#155CC1" StrokeThickness="3" />
+            <charts:ChartTrendlineSeries Title="回归趋势" Type="{Binding TechnicalTrendType}" Period="{Binding TechnicalPeriod}" PolynomialDegree="2" SampleCount="64" Stroke="#B73587" StrokeThickness="2" />
+          </charts:CartesianChart.Series>
+        </charts:CartesianChart>
+        <charts:CartesianChart x:Name="UsageTechnicalIndicators" Height="270" AnimationTriggers="None" IsZoomEnabled="True" IsPanEnabled="True">
+          <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="14" /></charts:CartesianChart.XAxis><charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="45" Title="SMA / EMA / WMA / Bollinger" /></charts:CartesianChart.YAxis>
+          <charts:CartesianChart.Series><charts:LineSeries Title="原始值" ItemsSource="{Binding TechnicalRecords}" CategoryPath="X" ValuePath="Y" IdPath="Id" Stroke="#71819C" ShowMarkers="False" /></charts:CartesianChart.Series>
+          <charts:CartesianChart.TechnicalIndicators>
+            <charts:SMAIndicator Title="SMA" Period="{Binding TechnicalPeriod}" Stroke="#155CC1" />
+            <charts:EMAIndicator Title="EMA" Period="{Binding TechnicalPeriod}" Stroke="#C26616" />
+            <charts:WMAIndicator Title="WMA" Period="{Binding TechnicalPeriod}" Stroke="#178568" />
+            <charts:BollingerBandsIndicator Title="Bollinger" Period="{Binding TechnicalPeriod}" StandardDeviationMultiplier="2" Stroke="#874FB0" />
+          </charts:CartesianChart.TechnicalIndicators>
+        </charts:CartesianChart>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="EngineeringExamples" Grid.Row="27" Header="工程与专业坐标 · 参数网格、六边形、Smith、三元与风玫瑰" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="工程业务数据：曲面温度、传感器负荷、天线阻抗、土壤组分与风频率。点击标记查看原始记录；滚轮缩放、拖动平移、Home 复位。六边形与风扇区保留全部成员。" TextWrapping="Wrap" />
+        <WrapPanel>
+          <TextBlock Text="参数偏移" VerticalAlignment="Center" Margin="0,0,6,0" /><ComboBox x:Name="UsageEngineeringOffset" ItemsSource="{Binding EngineeringCarpetOffsets}" SelectedItem="{Binding EngineeringCarpetOffset, Mode=TwoWay}" Margin="0,0,12,0" />
+          <TextBlock Text="六边形 DIP" VerticalAlignment="Center" Margin="0,0,6,0" /><ComboBox x:Name="UsageEngineeringHexRadius" ItemsSource="{Binding EngineeringHexRadii}" SelectedItem="{Binding EngineeringHexRadius, Mode=TwoWay}" Margin="0,0,12,0" />
+          <ComboBox x:Name="UsageEngineeringHexAggregation" ItemsSource="{Binding EngineeringHexAggregations}" SelectedItem="{Binding EngineeringHexAggregation, Mode=TwoWay}" Margin="0,0,12,0" />
+          <TextBlock Text="参考阻抗 Ω" VerticalAlignment="Center" Margin="0,0,6,0" /><ComboBox x:Name="UsageEngineeringReference" ItemsSource="{Binding EngineeringReferenceImpedances}" SelectedItem="{Binding EngineeringReferenceImpedance, Mode=TwoWay}" Margin="0,0,12,0" />
+          <TextBlock Text="风向扇区" VerticalAlignment="Center" Margin="0,0,6,0" /><ComboBox x:Name="UsageEngineeringSectors" ItemsSource="{Binding EngineeringSectorCounts}" SelectedItem="{Binding EngineeringSectorCount, Mode=TwoWay}" Margin="0,0,12,0" />
+          <Button Content="更新五组业务数据" Command="{Binding EngineeringUpdateCommand}" />
+        </WrapPanel>
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="10">
+          <charts:CarpetPlot x:Name="UsageEngineeringCarpet" Height="270" Title="Carpet · 曲面温度" ItemsSource="{Binding EngineeringCarpetRecords}" APath="ParameterA" BPath="ParameterB" YPath="Temperature" IdPath="Id" LabelPath="Id" Offset="{Binding EngineeringCarpetOffset}" />
+          <charts:HexbinChart x:Name="UsageEngineeringHexbin" Grid.Column="1" Height="270" Title="Hexbin · 传感器负荷" ItemsSource="{Binding EngineeringHexRecords}" XPath="Easting" YPath="Northing" ValuePath="Load" IdPath="Id" LabelPath="Id" BinRadius="{Binding EngineeringHexRadius}" Aggregation="{Binding EngineeringHexAggregation}" />
+          <charts:SmithChart x:Name="UsageEngineeringSmith" Grid.Row="1" Height="285" Title="Smith · 天线阻抗 Ω" ItemsSource="{Binding EngineeringSmithRecords}" ResistancePath="Resistance" ReactancePath="Reactance" IdPath="Id" LabelPath="Id" ReferenceImpedance="{Binding EngineeringReferenceImpedance}" SelectedIndex="{Binding EngineeringSelectedIndex, Mode=TwoWay}" />
+          <charts:TernaryChart x:Name="UsageEngineeringTernary" Grid.Row="1" Grid.Column="1" Height="285" Title="Ternary · 土壤组分" ItemsSource="{Binding EngineeringMixtureRecords}" APath="Sand" BPath="Clay" CPath="Silt" ALabel="砂" BLabel="黏土" CLabel="粉土" IdPath="Id" LabelPath="Id" />
+          <charts:WindRoseChart x:Name="UsageEngineeringWind" Grid.Row="2" Grid.ColumnSpan="2" Height="310" Title="Wind rose · 风向与速度频率" ItemsSource="{Binding EngineeringWindRecords}" DirectionPath="Direction" SpeedPath="Speed" FrequencyPath="Frequency" IdPath="Id" LabelPath="Id" SectorCount="{Binding EngineeringSectorCount}" SpeedUpperBounds="{Binding EngineeringSpeedBounds}" />
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="AdvancedComparisonExamples" Grid.Row="28" Header="进阶比较 · 发散、哑铃、Mekko、镜像、人口、龙卷风与 Venn" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="统一中心与幅值尺度比较两侧数据；Mekko 宽度为市场权重、分段高度为内部占比。Venn 输入为包含交集的集合总量，点击区域显示原始汇总来源。" TextWrapping="Wrap" />
+        <WrapPanel>
+          <ComboBox x:Name="UsageAdvancedSort" ItemsSource="{Binding AdvancedSortOptions}" SelectedItem="{Binding AdvancedSort, Mode=TwoWay}" Margin="0,0,10,0" />
+          <ComboBox x:Name="UsageAdvancedOrientation" ItemsSource="{Binding AdvancedOrientationOptions}" SelectedItem="{Binding AdvancedOrientation, Mode=TwoWay}" Margin="0,0,10,0" />
+          <TextBlock Text="基线" VerticalAlignment="Center" Margin="0,0,5,0" /><ComboBox x:Name="UsageAdvancedBaseline" ItemsSource="{Binding AdvancedBaselineOptions}" SelectedItem="{Binding AdvancedBaseline, Mode=TwoWay}" Margin="0,0,10,0" />
+          <TextBlock Text="中心间隙" VerticalAlignment="Center" Margin="0,0,5,0" /><ComboBox x:Name="UsageAdvancedCenterGap" ItemsSource="{Binding AdvancedCenterGapOptions}" SelectedItem="{Binding AdvancedCenterGap, Mode=TwoWay}" Margin="0,0,10,0" />
+          <TextBlock Text="列间隙" VerticalAlignment="Center" Margin="0,0,5,0" /><ComboBox x:Name="UsageAdvancedColumnGap" ItemsSource="{Binding AdvancedColumnGapOptions}" SelectedItem="{Binding AdvancedColumnGap, Mode=TwoWay}" Margin="0,0,10,0" />
+          <CheckBox Content="显示标签" IsChecked="{Binding AdvancedShowLabels, Mode=TwoWay}" Margin="0,0,10,0" />
+          <CheckBox x:Name="UsageAdvancedUseMasks" Content="使用 MaskPath" IsChecked="{Binding AdvancedUseMasks, Mode=TwoWay}" Margin="0,0,10,0" />
+          <Button Content="更新比较数据" Command="{Binding AdvancedUpdateCommand}" />
+        </WrapPanel>
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="10">
+          <charts:DivergingBarChart x:Name="UsageAdvancedDiverging" Height="270" Title="发散 · 业务盈亏" ItemsSource="{Binding AdvancedSignedRecords}" ValuePath="Amount" IdPath="Id" LabelPath="Name" Baseline="{Binding AdvancedBaseline}" Orientation="{Binding AdvancedOrientation}" Sort="{Binding AdvancedSort}" ShowLabels="{Binding AdvancedShowLabels}" />
+          <charts:DumbbellChart x:Name="UsageAdvancedDumbbell" Grid.Column="1" Height="270" Title="哑铃 · 变更前后" ItemsSource="{Binding AdvancedPairRecords}" LowValuePath="Before" HighValuePath="After" IdPath="Id" LabelPath="Name" Orientation="{Binding AdvancedOrientation}" Sort="{Binding AdvancedSort}" SelectedIndex="{Binding AdvancedSelectedIndex, Mode=TwoWay}" ShowLabels="{Binding AdvancedShowLabels}" />
+          <charts:MekkoChart x:Name="UsageAdvancedMekko" Grid.Row="1" Height="290" Title="Mekko · 渠道占比" ItemsSource="{Binding AdvancedMekkoRecords}" WidthPath="Weight" SegmentsPath="Parts" SegmentValuePath="Amount" SegmentLabelPath="Name" SegmentIdPath="Id" IdPath="Id" LabelPath="Name" ColumnGap="{Binding AdvancedColumnGap}" ShowLabels="{Binding AdvancedShowLabels}" />
+          <charts:MirrorBarChart x:Name="UsageAdvancedMirror" Grid.Row="1" Grid.Column="1" Height="290" Title="镜像 · 前后对比" ItemsSource="{Binding AdvancedPairRecords}" LeftValuePath="Before" RightValuePath="After" LeftTitle="前" RightTitle="后" IdPath="Id" LabelPath="Name" CenterGap="{Binding AdvancedCenterGap}" Sort="{Binding AdvancedSort}" ShowLabels="{Binding AdvancedShowLabels}" />
+          <charts:PopulationPyramidChart x:Name="UsageAdvancedPopulation" Grid.Row="2" Height="290" Title="人口 · 区域两组" ItemsSource="{Binding AdvancedPairRecords}" MaleValuePath="Before" FemaleValuePath="After" AgeLabelPath="Name" IdPath="Id" CenterGap="{Binding AdvancedCenterGap}" ShowLabels="{Binding AdvancedShowLabels}" />
+          <charts:TornadoChart x:Name="UsageAdvancedTornado" Grid.Row="2" Grid.Column="1" Height="290" Title="龙卷风 · 按总跨度排序" ItemsSource="{Binding AdvancedPairRecords}" LeftValuePath="Before" RightValuePath="After" IdPath="Id" LabelPath="Name" CenterGap="{Binding AdvancedCenterGap}" ShowLabels="{Binding AdvancedShowLabels}" />
+          <charts:VennDiagramChart x:Name="UsageAdvancedVenn" Grid.Row="3" Grid.ColumnSpan="2" Height="350" Title="Venn · 渠道覆盖" ItemsSource="{Binding AdvancedVennRecords}" SetsPath="Sets" MaskPath="{Binding AdvancedMaskPath}" ValuePath="Amount" NamePath="Name" SetCount="2" SetNames="{Binding AdvancedSetNames}" IdPath="Id" ShowLabels="{Binding AdvancedShowLabels}" />
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="HierarchyExamples" Grid.Row="29" Header="层级和打包 · 六类布局、钻取与展开折叠" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="业务模型使用 Nodes / Weight / Name 路径。分支由叶节点汇总，保留源身份；圆形父容器包含打包空隙。" TextWrapping="Wrap" />
+        <WrapPanel><Button Content="更新叶节点" Command="{Binding HierarchyUpdateCommand}" Margin="0,0,8,0" /><Button Content="钻取北区" Click="HierarchyDrill" Margin="0,0,8,0" /><Button Content="返回上层" Click="HierarchyBack" Margin="0,0,8,0" /><Button Content="展开 / 折叠北区" Click="HierarchyToggle" Margin="0,0,8,0" /><CheckBox Content="标签" IsChecked="{Binding HierarchyLabels}" Margin="0,0,8,0" /><CheckBox Content="减少动态效果" IsChecked="{Binding HierarchyReduceMotion}" Margin="0,0,8,0" /><ComboBox ItemsSource="{Binding HierarchyDepthOptions}" SelectedItem="{Binding HierarchyDepth, Mode=TwoWay}" /></WrapPanel>
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="10">
+          <charts:TreemapChart x:Name="UsageHierarchyTreemap" Grid.Row="0" Grid.Column="0" Title="Treemap" Height="260" ItemsSource="{Binding HierarchyRecords}" ChildrenPath="Nodes" ValuePath="Weight" LabelPath="Name" IdPath="Id" ShowLabels="{Binding HierarchyLabels}" MaximumVisibleDepth="{Binding HierarchyDepth}" ReduceMotion="{Binding HierarchyReduceMotion}" AnimationTriggers="All" />
+          <charts:SunburstChart x:Name="UsageHierarchySunburst" Grid.Row="0" Grid.Column="1" Title="Sunburst" Height="260" ItemsSource="{Binding HierarchyRecords}" ChildrenPath="Nodes" ValuePath="Weight" LabelPath="Name" IdPath="Id" ShowLabels="{Binding HierarchyLabels}" MaximumVisibleDepth="{Binding HierarchyDepth}" ReduceMotion="{Binding HierarchyReduceMotion}" AnimationTriggers="All" />
+          <charts:OrganizationChart x:Name="UsageHierarchyTree" Grid.Row="1" Grid.Column="0" Title="Organization" Height="260" ItemsSource="{Binding HierarchyRecords}" ChildrenPath="Nodes" ValuePath="Weight" LabelPath="Name" IdPath="Id" SelectedIndex="{Binding HierarchySelectedIndex, Mode=TwoWay}" ShowLabels="{Binding HierarchyLabels}" MaximumVisibleDepth="{Binding HierarchyDepth}" ReduceMotion="{Binding HierarchyReduceMotion}" AnimationTriggers="All" />
+          <charts:BubbleCloudChart x:Name="UsageHierarchyCloud" GroupPath="Group" ShowLegend="True" Grid.Row="1" Grid.Column="1" Title="Bubble cloud" Height="260" ItemsSource="{Binding HierarchyRecords}" ChildrenPath="Nodes" ValuePath="Weight" LabelPath="Name" IdPath="Id" ShowLabels="{Binding HierarchyLabels}" MaximumVisibleDepth="{Binding HierarchyDepth}" ReduceMotion="{Binding HierarchyReduceMotion}" AnimationTriggers="All" />
+          <charts:PackedBubbleChart x:Name="UsageHierarchyPacked" GroupPath="Group" ShowLegend="True" Grid.Row="2" Grid.Column="0" Title="Packed bubble" Height="260" ItemsSource="{Binding HierarchyRecords}" ChildrenPath="Nodes" ValuePath="Weight" LabelPath="Name" IdPath="Id" ShowLabels="{Binding HierarchyLabels}" MaximumVisibleDepth="{Binding HierarchyDepth}" ReduceMotion="{Binding HierarchyReduceMotion}" AnimationTriggers="All" />
+          <charts:CirclePackingChart x:Name="UsageHierarchyCircles" Grid.Row="2" Grid.Column="1" Title="Circle packing" Height="260" ItemsSource="{Binding HierarchyRecords}" ChildrenPath="Nodes" ValuePath="Weight" LabelPath="Name" IdPath="Id" ShowLabels="{Binding HierarchyLabels}" MaximumVisibleDepth="{Binding HierarchyDepth}" ReduceMotion="{Binding HierarchyReduceMotion}" AnimationTriggers="All" />
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="RelationsExamples" Grid.Row="30" Header="流向和关系 · 循环、平行边、节点和边身份" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="节点和边独立绑定业务集合。Alluvial保留阶段；流程节点形状、位置和分组独立于边权重。循环和自环保留原始边，不合并平行关系。" TextWrapping="Wrap" />
+        <WrapPanel><Button Content="修改流量" Command="{Binding RelationsUpdateCommand}" Margin="0,0,8,0" /><Button Content="换种子" Command="{Binding RelationsSeedCommand}" Margin="0,0,8,0" /><Button Content="后台重排" Click="RunRelationsLayout" Margin="0,0,8,0" /><Button Content="取消布局" Click="CancelRelationsLayout" Margin="0,0,8,0" /><CheckBox Content="标签" IsChecked="{Binding RelationsLabels}" /></WrapPanel>
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="10">
+          <charts:SankeyChart x:Name="UsageRelationSankey" Grid.Row="0" Grid.Column="0" Title="Sankey" Height="250"  ItemsSource="{Binding RelationNodes}" EdgesSource="{Binding RelationEdges}" IdPath="Id" LabelPath="Name" NodeWeightPath="Metric" GroupPath="Category" ShapePath="Shape" StagePath="Stage" WidthPath="Width" HeightPath="Height" SourcePath="From" TargetPath="To" WeightPath="Amount" EdgeIdPath="Id" EdgeLabelPath="Name" ShowLabels="{Binding RelationsLabels}" />
+          <charts:SankeyChart x:Name="UsageRelationAlluvial" Grid.Row="0" Grid.Column="1" Title="Alluvial" Height="250" Mode="Alluvial" ItemsSource="{Binding RelationNodes}" EdgesSource="{Binding RelationEdges}" IdPath="Id" LabelPath="Name" NodeWeightPath="Metric" GroupPath="Category" ShapePath="Shape" StagePath="Stage" WidthPath="Width" HeightPath="Height" SourcePath="From" TargetPath="To" WeightPath="Amount" EdgeIdPath="Id" EdgeLabelPath="Name" ShowLabels="{Binding RelationsLabels}" />
+          <charts:NetworkChart x:Name="UsageRelationNetwork" Grid.Row="1" Grid.Column="0" Title="Network" Height="250" Mode="Circular" ItemsSource="{Binding RelationNodes}" EdgesSource="{Binding RelationEdges}" IdPath="Id" LabelPath="Name" NodeWeightPath="Metric" GroupPath="Category" ShapePath="Shape" StagePath="Stage" WidthPath="Width" HeightPath="Height" SourcePath="From" TargetPath="To" WeightPath="Amount" EdgeIdPath="Id" EdgeLabelPath="Name" ShowLabels="{Binding RelationsLabels}" />
+          <charts:NetworkChart x:Name="UsageRelationForce" Grid.Row="1" Grid.Column="1" Title="Force-directed" Height="250" Mode="ForceDirected" Seed="{Binding RelationsSeed}" ItemsSource="{Binding RelationNodes}" EdgesSource="{Binding RelationEdges}" IdPath="Id" LabelPath="Name" NodeWeightPath="Metric" GroupPath="Category" ShapePath="Shape" StagePath="Stage" WidthPath="Width" HeightPath="Height" SourcePath="From" TargetPath="To" WeightPath="Amount" EdgeIdPath="Id" EdgeLabelPath="Name" ShowLabels="{Binding RelationsLabels}" />
+          <charts:NetworkChart x:Name="UsageRelationArc" Grid.Row="2" Grid.Column="0" Title="Arc" Height="250" Mode="Arc" ItemsSource="{Binding RelationNodes}" EdgesSource="{Binding RelationEdges}" IdPath="Id" LabelPath="Name" NodeWeightPath="Metric" GroupPath="Category" ShapePath="Shape" StagePath="Stage" WidthPath="Width" HeightPath="Height" SourcePath="From" TargetPath="To" WeightPath="Amount" EdgeIdPath="Id" EdgeLabelPath="Name" ShowLabels="{Binding RelationsLabels}" />
+          <charts:ChordDiagramChart x:Name="UsageRelationChord" Grid.Row="2" Grid.Column="1" Title="Chord" Height="250"  ItemsSource="{Binding RelationNodes}" EdgesSource="{Binding RelationEdges}" IdPath="Id" LabelPath="Name" NodeWeightPath="Metric" GroupPath="Category" ShapePath="Shape" StagePath="Stage" WidthPath="Width" HeightPath="Height" SourcePath="From" TargetPath="To" WeightPath="Amount" EdgeIdPath="Id" EdgeLabelPath="Name" ShowLabels="{Binding RelationsLabels}" />
+          <charts:FlowChart x:Name="UsageRelationFlow" Grid.Row="3" Grid.Column="0" Title="Flow" Height="250" Mode="Explicit" XPath="X" YPath="Y" SelectedIndex="{Binding RelationsSelectedIndex, Mode=TwoWay}" ItemsSource="{Binding RelationNodes}" EdgesSource="{Binding RelationEdges}" IdPath="Id" LabelPath="Name" NodeWeightPath="Metric" GroupPath="Category" ShapePath="Shape" StagePath="Stage" WidthPath="Width" HeightPath="Height" SourcePath="From" TargetPath="To" WeightPath="Amount" EdgeIdPath="Id" EdgeLabelPath="Name" ShowLabels="{Binding RelationsLabels}" />
+          <charts:FlowChart x:Name="UsageRelationProcess" Grid.Row="3" Grid.Column="1" Title="Process" Height="250" Mode="Process" ItemsSource="{Binding RelationNodes}" EdgesSource="{Binding RelationEdges}" IdPath="Id" LabelPath="Name" NodeWeightPath="Metric" GroupPath="Category" ShapePath="Shape" StagePath="Stage" WidthPath="Width" HeightPath="Height" SourcePath="From" TargetPath="To" WeightPath="Amount" EdgeIdPath="Id" EdgeLabelPath="Name" ShowLabels="{Binding RelationsLabels}" />
+          <charts:FlowChart x:Name="UsageRelationMindmap" Grid.Row="4" Grid.Column="0" Title="Mindmap" Height="250" Mode="Mindmap" ItemsSource="{Binding RelationNodes}" EdgesSource="{Binding RelationEdges}" IdPath="Id" LabelPath="Name" NodeWeightPath="Metric" GroupPath="Category" ShapePath="Shape" StagePath="Stage" WidthPath="Width" HeightPath="Height" SourcePath="From" TargetPath="To" WeightPath="Amount" EdgeIdPath="Id" EdgeLabelPath="Name" ShowLabels="{Binding RelationsLabels}" />
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="MapExamples" Grid.Row="31" Header="地图 · 区域、气泡、热力、自定义形状与平面座位" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="独立图层继承地图 DataContext；业务路径 Region / Amount / East / North / Score 映射到 GeoJSON 区域和经纬坐标。未匹配数据保留诊断，空洞不命中。" TextWrapping="Wrap" />
+        <WrapPanel><Button Content="更新业务指标" Command="{Binding MapUpdateCommand}" Margin="0,0,8,0" /><Button Content="切换座位画刷" Command="{Binding MapSeatCommand}" Margin="0,0,8,0" /><ComboBox ItemsSource="{Binding MapProjections}" SelectedItem="{Binding MapProjection, Mode=TwoWay}" Margin="0,0,8,0" /><CheckBox Content="标签" IsChecked="{Binding MapLabels}" /></WrapPanel>
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="10">
+          <charts:ShapeMap x:Name="UsageMapShape" Grid.Row="0" Grid.Column="0" Height="260" Title="Shape · 原始区域和空洞" FeaturesSource="{Binding MapFeatures}" Projection="{Binding MapProjection}" ShowLabels="{Binding MapLabels}" SelectedIndex="{Binding MapSelectedIndex, Mode=TwoWay}">
+            <charts:ShapeMap.Layers><charts:ShapeLayer ItemsSource="{Binding MapRegions}" IdPath="Id" RegionPath="Region" ValuePath="Amount" LabelPath="Name" /></charts:ShapeMap.Layers>
+          </charts:ShapeMap>
+          <charts:ShapeMap x:Name="UsageMapChoropleth" Grid.Row="0" Grid.Column="1" Height="260" Title="Choropleth · 未匹配区域" FeaturesSource="{Binding MapFeatures}" Projection="{Binding MapProjection}" ShowLabels="{Binding MapLabels}">
+            <charts:ShapeMap.Layers><charts:ShapeLayer ItemsSource="{Binding MapRegions}" IdPath="Id" RegionPath="Region" ValuePath="Amount" LabelPath="Name" MinimumColor="#D8EEF2" MaximumColor="#087C98" /></charts:ShapeMap.Layers>
+          </charts:ShapeMap>
+          <charts:ShapeMap x:Name="UsageMapBubble" Grid.Row="1" Grid.Column="0" Height="260" Title="Bubble · 面积比例" FeaturesSource="{Binding MapFeatures}" Projection="{Binding MapProjection}" ShowLabels="{Binding MapLabels}">
+            <charts:ShapeMap.Layers><charts:ShapeLayer /><charts:BubbleLayer ItemsSource="{Binding MapPoints}" IdPath="Id" LongitudePath="East" LatitudePath="North" ValuePath="Score" SizePath="Score" LabelPath="Name" MaximumRadius="0.08" Fill="#D25573" /></charts:ShapeMap.Layers>
+          </charts:ShapeMap>
+          <charts:ShapeMap x:Name="UsageMapHeat" Grid.Row="1" Grid.Column="1" Height="260" Title="Heatmap · 原始贡献成员" FeaturesSource="{Binding MapFeatures}" Projection="{Binding MapProjection}" ShowLabels="{Binding MapLabels}">
+            <charts:ShapeMap.Layers><charts:ShapeLayer /><charts:HeatmapLayer ItemsSource="{Binding MapPoints}" IdPath="Id" LongitudePath="East" LatitudePath="North" ValuePath="Score" LabelPath="Name" Columns="12" Rows="8" Radius="1" /></charts:ShapeMap.Layers>
+          </charts:ShapeMap>
+          <charts:SeatMap x:Name="UsageMapSeat" Grid.Row="2" Grid.ColumnSpan="2" Height="260" Title="Seat · 平面坐标及逐项业务画刷" FeaturesSource="{Binding MapFeatures}" ShowLabels="{Binding MapLabels}" ShowLegend="False">
+            <charts:ShapeMap.Layers><charts:ShapeLayer ItemsSource="{Binding MapRegions}" IdPath="Id" RegionPath="Region" ValuePath="Amount" LabelPath="Name" FillPath="Color" /></charts:ShapeMap.Layers>
+          </charts:SeatMap>
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="C6CompletionExamples" Grid.Row="32" Header="C6 主项 · 排程、运营分析、剩余层级和地图图层" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="26 个可绑定示例：真实业务 DTO、自定义路径、标量卡片与进度、条件表列、原始来源选择和地图多选。" TextWrapping="Wrap" />
+        <Button Content="更新业务数据" Command="{Binding C6UpdateCommand}" HorizontalAlignment="Left" />
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="10">
+          <charts:GanttChart x:Name="UsageC6Gantt" Grid.Row="0" Grid.Column="0" Height="240" Title="Gantt" ItemsSource="{Binding C6Tasks}" IdPath="Id" LabelPath="Name" StartPath="Open" EndPath="Close" ProgressPath="Complete" DependenciesPath="Links" LanePath="Team" SelectedIndex="{Binding C6SelectedIndex, Mode=TwoWay}" />
+          <charts:SwimlaneChart x:Name="UsageC6Swimlane" Grid.Row="0" Grid.Column="1" Height="240" Title="Swimlane" ItemsSource="{Binding C6Spans}" IdPath="Id" LabelPath="Name" StartPath="Open" EndPath="Close" LanePath="Resource" />
+          <charts:EventTimelineChart x:Name="UsageC6Event" Grid.Row="1" Grid.Column="0" Height="240" Title="Event" ItemsSource="{Binding C6Events}" IdPath="Id" LabelPath="Name" DatePath="When" ValuePath="Intensity" DescriptionPath="Details" />
+          <charts:SpiralTimelineChart x:Name="UsageC6Spiral" Grid.Row="1" Grid.Column="1" Height="240" Title="Spiral" ItemsSource="{Binding C6Events}" IdPath="Id" LabelPath="Name" DatePath="When" ValuePath="Intensity" Turns="2" InnerRadius="15" />
+          <charts:BulletChart x:Name="UsageC6Bullet" Grid.Row="2" Grid.Column="0" Height="240" Title="Bullet" Value="{Binding C6Headline.Amount}" Target="{Binding C6Headline.Goal}" MinValue="0" MaxValue="100" Ranges="{Binding C6BulletRanges}" Label="Revenue" />
+          <charts:KpiCard x:Name="UsageC6Kpi" Grid.Row="2" Grid.Column="1" Height="240" Title="Kpi" Value="{Binding C6Headline.Amount}" Previous="{Binding C6Headline.Prior}" Delta="12.5" DeltaType="Percentage" SparklineData="{Binding C6Trend}" Unit="$" Subtitle="vs last month" Label="Revenue" />
+          <charts:CalendarHeatmapChart x:Name="UsageC6Calendar" Grid.Row="3" Grid.Column="0" Height="240" Title="Calendar" ItemsSource="{Binding C6Calendar}" IdPath="Id" LabelPath="Name" DatePath="Day" ValuePath="Amount" FirstDayOfWeek="Monday" />
+          <charts:MatrixChart x:Name="UsageC6Matrix" Grid.Row="3" Grid.Column="1" Height="240" Title="Matrix" ItemsSource="{Binding C6Matrix}" IdPath="Id" LabelPath="Name" RowPath="Row" ColumnPath="Column" ValuePath="Amount" />
+          <charts:TableChart x:Name="UsageC6Table" Grid.Row="4" Grid.Column="0" Height="240" Title="Table" ItemsSource="{Binding C6TableRows}" Columns="{Binding C6Columns}" IdPath="Id" LabelPath="Name" />
+          <charts:WaffleChart x:Name="UsageC6Waffle" Grid.Row="4" Grid.Column="1" Height="240" Title="Waffle" Value="{Binding C6Headline.Amount}" MaxValue="100" Rows="10" Columns="10" Label="Completion" FilledBrush="#1598B6" EmptyBrush="#99A3AF" />
+          <charts:WordCloudChart x:Name="UsageC6Words" Grid.Row="5" Grid.Column="0" Height="240" Title="Words" ItemsSource="{Binding C6Words}" IdPath="Id" TextPath="Name" ValuePath="Amount" MinFontSize="12" MaxFontSize="24" />
+          <charts:BumpChart x:Name="UsageC6Bump" Grid.Row="5" Grid.Column="1" Height="240" Title="Bump" ItemsSource="{Binding C6Ranks}" IdPath="Id" LabelPath="Name" ValuePath="Amount" EntityPath="Entity" PeriodPath="Period" />
+          <charts:SlopeChart x:Name="UsageC6Slope" Grid.Row="6" Grid.Column="0" Height="240" Title="Slope" ItemsSource="{Binding C6Slopes}" IdPath="Id" LabelPath="Name" ValuePath="Amount" EntityPath="Entity" PeriodPath="Period" />
+          <charts:ParliamentChart x:Name="UsageC6Parliament" Grid.Row="6" Grid.Column="1" Height="240" Title="Parliament" ItemsSource="{Binding C6Parties}" IdPath="Id" LabelPath="Name" ValuePath="Amount" Rows="3" />
+          <charts:ThemeRiverChart x:Name="UsageC6River" Grid.Row="7" Grid.Column="0" Height="240" Title="River" ItemsSource="{Binding C6River}" IdPath="Id" LabelPath="Name" ValuePath="Amount" RowPath="Row" ColumnPath="Column" />
+          <charts:IcicleChart x:Name="UsageC6Icicle" Grid.Row="7" Grid.Column="1" Height="240" Title="Icicle" ItemsSource="{Binding C6Roots}" IdPath="Id" LabelPath="Name" ChildrenPath="Branches" ValuePath="Cost" ReduceMotion="True" />
+          <charts:FlameGraph x:Name="UsageC6Flame" Grid.Row="8" Grid.Column="0" Height="240" Title="Flame" ItemsSource="{Binding C6Roots}" IdPath="Id" LabelPath="Name" ChildrenPath="Branches" ValuePath="Cost" ReduceMotion="True" />
+          <charts:IndentedTreeChart x:Name="UsageC6Indented" Grid.Row="8" Grid.Column="1" Height="240" Title="Indented" ItemsSource="{Binding C6Roots}" IdPath="Id" LabelPath="Name" ChildrenPath="Branches" ValuePath="Cost" ReduceMotion="True" />
+          <charts:RadialTreeChart x:Name="UsageC6Radial" Grid.Row="9" Grid.Column="0" Height="240" Title="Radial" ItemsSource="{Binding C6Roots}" IdPath="Id" LabelPath="Name" ChildrenPath="Branches" ValuePath="Cost" ReduceMotion="True" />
+          <charts:DendrogramChart x:Name="UsageC6Dendrogram" Grid.Row="9" Grid.Column="1" Height="240" Title="Dendrogram" ItemsSource="{Binding C6Roots}" IdPath="Id" LabelPath="Name" ChildrenPath="Branches" DistancePath="Distance" ReduceMotion="True" />
+          <charts:ShapeMap x:Name="UsageC6Marker" Grid.Row="10" Grid.Column="0" Height="240" Title="Marker" FeaturesSource="{Binding MapFeatures}" ShowLabels="False">
+            <charts:ShapeMap.Layers><charts:ShapeLayer /><charts:MarkerLayer ItemsSource="{Binding C6MapPoints}" IdPath="Id" LabelPath="Name" LongitudePath="East" LatitudePath="North" ValuePath="Metric" MarkerSize="12" MarkerType="Diamond" /></charts:ShapeMap.Layers>
+          </charts:ShapeMap>
+          <charts:ShapeMap x:Name="UsageC6Connection" Grid.Row="10" Grid.Column="1" Height="240" Title="Connection" FeaturesSource="{Binding MapFeatures}" ShowLabels="False">
+            <charts:ShapeMap.Layers><charts:ShapeLayer /><charts:LineLayer ItemsSource="{Binding C6MapPoints}" IdPath="Id" LabelPath="Name" FromLongitudePath="East" FromLatitudePath="North" ToLongitudePath="EndEast" ToLatitudePath="EndNorth" ValuePath="Metric" IsCurved="True" /></charts:ShapeMap.Layers>
+          </charts:ShapeMap>
+          <charts:ShapeMap x:Name="UsageC6Vector" Grid.Row="11" Grid.Column="0" Height="240" Title="Vector" FeaturesSource="{Binding MapFeatures}" ShowLabels="False">
+            <charts:ShapeMap.Layers><charts:ShapeLayer /><charts:VectorLayer ItemsSource="{Binding C6Vectors}" /></charts:ShapeMap.Layers>
+          </charts:ShapeMap>
+          <charts:ShapeMap x:Name="UsageC6Pie" Grid.Row="11" Grid.Column="1" Height="240" Title="Pie" FeaturesSource="{Binding MapFeatures}" ShowLabels="False">
+            <charts:ShapeMap.Layers><charts:ShapeLayer /><charts:PieLayer ItemsSource="{Binding C6MapPoints}" IdPath="Id" LabelPath="Name" LongitudePath="East" LatitudePath="North" SlicesPath="Parts" SliceValuePath="Amount" SliceLabelPath="Name" Radius="15" /></charts:ShapeMap.Layers>
+          </charts:ShapeMap>
+          <charts:ShapeMap x:Name="UsageC6Category" Grid.Row="12" Grid.Column="0" Height="240" Title="Category" FeaturesSource="{Binding MapFeatures}" ShowLabels="False">
+            <charts:ShapeMap.Layers><charts:ShapeLayer ItemsSource="{Binding C6MapRegions}" IdPath="Id" RegionPath="Region" ValuePath="Metric" LabelPath="Name" ColorMode="Categorical" CategoryPath="Status" CategoryColors="{Binding C6CategoryColors}" /></charts:ShapeMap.Layers>
+          </charts:ShapeMap>
+          <charts:SeatMap x:Name="UsageC6MultiSeat" Grid.Row="12" Grid.Column="1" Height="240" Title="MultiSeat" FeaturesSource="{Binding MapFeatures}" ShowLabels="False" ShowLegend="False" IsMultiSelectionEnabled="True" SelectedItems="{Binding C6SelectedSeats, Mode=TwoWay}">
+            <charts:ShapeMap.Layers><charts:ShapeLayer ItemsSource="{Binding C6MapRegions}" IdPath="Id" RegionPath="Region" ValuePath="Metric" LabelPath="Name" FillPath="Tint" /></charts:ShapeMap.Layers>
+          </charts:SeatMap>
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <TextBlock Grid.Row="33" Text="{Binding ViewportSummary}" Opacity="0.75" TextWrapping="Wrap" />
+    <TextBlock Grid.Row="34" Text="{Binding Status}" Opacity="0.75" TextWrapping="Wrap" />
+    <Expander x:Name="C5CompletionExamples" Grid.Row="35" Header="C5 补齐 · 分布、等值线、列联与多维比较" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="七个 compiled binding 示例：真实业务路径和原始数据选择、可观察样本、等值级别和多维坐标轴。密集点和 KDE 数值结果保留来源与明确诊断。" TextWrapping="Wrap" />
+        <WrapPanel>
+          <Button Content="更新业务数据" Command="{Binding C5CompletionUpdateCommand}" Margin="0,0,12,0" />
+          <CheckBox Content="类别标签" IsChecked="{Binding C5Labels}" Margin="0,0,12,0" />
+          <CheckBox Content="均值线" IsChecked="{Binding C5Mean}" />
+        </WrapPanel>
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="10">
+          <charts:BeeswarmChart x:Name="UsageC5Beeswarm" Grid.Row="0" Grid.Column="0" Height="260" Title="Beeswarm · 原始样本" ItemsSource="{Binding C5Samples}" IdPath="Id" LabelPath="Name" ValuePath="Amount" CategoryPath="Group" PointRadius="{Binding C5PointRadius}" JitterAmount="{Binding C5Jitter}" ShowCategoryLabels="{Binding C5Labels}" ShowMeanLine="{Binding C5Mean}" SelectedIndex="{Binding C5SwarmSelected, Mode=TwoWay}" />
+          <charts:StripPlot x:Name="UsageC5Strip" Grid.Row="0" Grid.Column="1" Height="260" Title="Strip · 确定性 Jitter" ItemsSource="{Binding C5Samples}" IdPath="Id" LabelPath="Name" ValuePath="Amount" CategoryPath="Group" PointRadius="{Binding C5PointRadius}" JitterAmount="{Binding C5Jitter}" JitterSeed="17" ShowCategoryLabels="{Binding C5Labels}" ShowMeanLine="{Binding C5Mean}" SelectedIndex="{Binding C5StripSelected, Mode=TwoWay}" />
+          <charts:ViolinPlot x:Name="UsageC5Violin" Grid.Row="1" Grid.Column="0" Height="260" Title="Violin · 自定义样本路径" ItemsSource="{Binding C5Profiles}" IdPath="Id" LabelPath="Name" SamplesPath="Observations" SampleCount="48" Bandwidth="{Binding C5Bandwidth}" ShowLabels="{Binding C5Labels}" SelectedIndex="{Binding C5ViolinSelected, Mode=TwoWay}" />
+          <charts:RidgelineChart x:Name="UsageC5Ridge" Grid.Row="1" Grid.Column="1" Height="260" Title="Ridgeline · Typed samples" ItemsSource="{Binding C5Ridges}" SampleCount="48" Bandwidth="{Binding C5Bandwidth}" ShowLabels="{Binding C5Labels}" SelectedIndex="{Binding C5RidgeSelected, Mode=TwoWay}" />
+          <charts:ContourPlot x:Name="UsageC5Contour" Grid.Row="2" Grid.Column="0" Height="260" Title="Contour · 可观察网格和级别" ItemsSource="{Binding C5Grid}" IdPath="Id" XPath="East" YPath="North" ValuePath="Reading" Levels="{Binding C5Levels}" SelectedIndex="{Binding C5ContourSelected, Mode=TwoWay}" />
+          <charts:MosaicChart x:Name="UsageC5Mosaic" Grid.Row="2" Grid.Column="1" Height="260" Title="Mosaic · 重复列联项保留来源" ItemsSource="{Binding C5Mosaic}" ShowLabels="{Binding C5Labels}" SelectedIndex="{Binding C5MosaicSelected, Mode=TwoWay}" />
+          <charts:ParallelCoordinatesChart x:Name="UsageC5Parallel" Grid.Row="3" Grid.ColumnSpan="2" Height="260" Title="Parallel · 可观察坐标轴和原始行" ItemsSource="{Binding C5Parallel}" Axes="{Binding C5ParallelAxes}" ShowLabels="{Binding C5Labels}" SelectedIndex="{Binding C5ParallelSelected, Mode=TwoWay}" />
+        </Grid>
+      </StackPanel>
+    </Expander>
+  </Grid>
+  </ScrollViewer>
+</Window>

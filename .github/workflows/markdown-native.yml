@@ -1,0 +1,104 @@
+name: markdown-native
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      formal_platform:
+        description: Stable desktop runners for five full formal processes (not hosted/Xvfb performance certification)
+        type: choice
+        options: [both, Windows, Linux]
+        default: both
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    if: github.event_name != 'workflow_dispatch'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Linux X11 smoke prerequisites
+        if: runner.os == 'Linux'
+        run: >-
+          sudo apt-get update && sudo apt-get install -y
+          xvfb xauth fonts-noto-cjk fonts-noto-color-emoji fonts-dejavu-core
+          libx11-6 libice6 libsm6 libfontconfig1 libfreetype6 libxcb1
+          libxrandr2 libxi6 libxcursor1 libxrender1 libxext6 libgl1 libegl1 libdbus-1-3
+      - name: Windows native smoke
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: ./scripts/Test-MarkdownNative.ps1 -Mode Smoke -OutputDirectory artifacts/markdown-native/pr-windows
+      - name: Linux native Xvfb smoke (not formal performance)
+        if: runner.os == 'Linux'
+        run: >-
+          xvfb-run -a --server-args="-screen 0 1600x1000x24 -dpi 96"
+          pwsh -NoLogo -NoProfile -File ./scripts/Test-MarkdownNative.ps1
+          -Mode Smoke -OutputDirectory artifacts/markdown-native/pr-linux
+      - name: Preserve native results, failures, supervision and source identities
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdown-native-smoke-${{ matrix.os }}
+          path: |
+            artifacts/markdown-native/**/result.json
+            artifacts/markdown-native/**/source-*.json
+            artifacts/markdown-native/**/environment.json
+            artifacts/markdown-native/**/report*.json
+            artifacts/markdown-native/**/supervisor-result.json
+            artifacts/markdown-native/**/runtime-*.log
+            artifacts/markdown-native/**/preview.png
+            artifacts/markdown-native/**/app/NT.AvaloniaControl.Markdown*.dll
+            artifacts/markdown-native/**/app/NT.AvaloniaControl.Demo.dll
+          if-no-files-found: warn
+
+  formal:
+    if: github.event_name == 'workflow_dispatch'
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: ${{ fromJSON(inputs.formal_platform == 'both' && '["Windows","Linux"]' || inputs.formal_platform == 'Windows' && '["Windows"]' || '["Linux"]') }}
+    # Register dedicated interactive desktop runners with these labels. Linux needs an
+    # existing native X11 DISPLAY; this job does not create Xvfb or invoke WSL. Keep
+    # scaling=1, the desktop unlocked/visible and other CPU loads off during sampling.
+    runs-on: [self-hosted, "${{ matrix.platform }}", X64, markdown-native-desktop]
+    timeout-minutes: 150
+    concurrency:
+      group: markdown-native-formal-${{ matrix.platform }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Five independent native formal processes and independent guard
+        shell: pwsh
+        run: ./scripts/Test-MarkdownNative.ps1 -Mode Formal -OutputDirectory artifacts/markdown-native/formal
+      - name: Preserve every raw verdict and frozen policy/source evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdown-native-formal-${{ matrix.platform }}
+          path: |
+            artifacts/markdown-native/**/result.json
+            artifacts/markdown-native/**/source-*.json
+            artifacts/markdown-native/**/environment.json
+            artifacts/markdown-native/**/report*.json
+            artifacts/markdown-native/**/guard*.json
+            artifacts/markdown-native/**/guard-under-test.ps1
+            artifacts/markdown-native/**/invoke-frozen-guard.ps1
+            artifacts/markdown-native/**/supervisor-result.json
+            artifacts/markdown-native/**/runtime-*.log
+            artifacts/markdown-native/**/app/NT.AvaloniaControl.Markdown*.dll
+            artifacts/markdown-native/**/app/Markdown.NativeBenchmarks.dll
+          if-no-files-found: warn

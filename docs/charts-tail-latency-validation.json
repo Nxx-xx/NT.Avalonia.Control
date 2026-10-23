@@ -1,0 +1,1502 @@
+{
+  "schemaVersion": "charts-tail-latency-v1",
+  "updatedDate": "2026-10-16",
+  "candidate": "v15",
+  "status": "targeted-tail-platform-functional-and-bar-circle-pixels-validated",
+  "report": "docs/charts-tail-latency.md",
+  "fullC2StageComplete": false,
+  "fullC4StageComplete": false,
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\source-snapshot-v15.json",
+    "sha256": "2ADDFFE5458E49CBEF041C9DEE94E5F52C7649DA19BEBFDE9C93311A7A3FB36B",
+    "repository": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\frozen-repo-v15",
+    "fileCount": 1186,
+    "overlayCount": 9,
+    "unchangedParentFiles": 1177,
+    "liveChartsInputCount": 135,
+    "liveFullRepositoryMatchClaimed": false,
+    "scope": "Complete frozen parent plus nine declared overlays. Separately guard 135 live Charts inputs; unrelated live Markdown/PDF is outside the identity claim.",
+    "finalGuard": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\test-review\\v15-source-after-final-validation-v1.json",
+      "sha256": "580D32F345F165BB0F28014E79EDBECB02AD4EFA776FF445BAB93E28FE8B82AD"
+    }
+  },
+  "hostFreeze": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\candidate-v15-freeze\\freeze.json",
+    "sha256": "383ED0C22988B73D61D76D12D917163DAC1E348F716D76E815D5659E3A9FFEB9"
+  },
+  "windows": {
+    "report": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\windows-final-summary.json",
+      "sha256": "D18E0D554F4677AD518B690808CF8D2C3F4C47E6DB4F6C56321977FEC0806D8F"
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\windows\\final-v1\\results.json",
+      "sha256": "8CA263A8D684F762501ABE665ED2215161A0F7292BB467E326380B3AD87A4908"
+    },
+    "coreSha256": "83720ED1D4AD828AA5B8A6E4CB50A9CE503101B25EA143B138CFAAFA46AE2911",
+    "themesSha256": "D0BF6A3A8AA372A1E08605FB16DE2A76112B1006F4C4224516293F82223B41AC",
+    "headless": {
+      "status": "passed",
+      "inputKind": "headless-injection",
+      "total": 504,
+      "passed": 504,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "notRun": 0,
+      "result": "../platform-final-v15/windows/final-v1/Charts.Headless.Tests.xml"
+    },
+    "nativeChecks": 134,
+    "usageChecks": 51,
+    "packageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\windows-package-consumers\\20261016T045311786Z-eea5d5fbbf5f47889aa9332a2cf3be92\\results.json",
+      "sha256": "2F64FA868B42EEB12196BA110FBDB03FBBC0D55366446217BF2794758E8DAE54"
+    },
+    "isolatedConsumers": [
+      {
+        "kind": "function",
+        "passed": true,
+        "checks": 55,
+        "noProjectReferences": true,
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\windows-package-consumers\\20261016T045311786Z-eea5d5fbbf5f47889aa9332a2cf3be92\\function\\packages",
+        "coreAssemblySha256": "83720ED1D4AD828AA5B8A6E4CB50A9CE503101B25EA143B138CFAAFA46AE2911",
+        "report": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\windows-package-consumers\\20261016T045311786Z-eea5d5fbbf5f47889aa9332a2cf3be92\\function\\consumer-result.json",
+        "reportSha256": "253D451806968C6F21CC517B80586D75B35A01C36B4A9B9AD4C0D1EC6EE6AA2F",
+        "nativeWindowValidated": false
+      },
+      {
+        "kind": "themes",
+        "passed": true,
+        "checks": 55,
+        "noProjectReferences": true,
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\windows-package-consumers\\20261016T045311786Z-eea5d5fbbf5f47889aa9332a2cf3be92\\themes\\packages",
+        "coreAssemblySha256": "83720ED1D4AD828AA5B8A6E4CB50A9CE503101B25EA143B138CFAAFA46AE2911",
+        "report": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\windows-package-consumers\\20261016T045311786Z-eea5d5fbbf5f47889aa9332a2cf3be92\\themes\\consumer-result.json",
+        "reportSha256": "C28BA5052177FD1591A123CECF39B7756878BA0D4E3BDB459C2B897B6DC550C0",
+        "nativeWindowValidated": false
+      }
+    ],
+    "validatedInputCount": 521,
+    "validatedInputsStable": true,
+    "publishedAssemblyCount": 8,
+    "publishedAssembliesStable": true,
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "warningSummary": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\windows-warning-summary.json",
+      "sha256": "25F705EA45C63D0A59A73697D32FC8354126D494B53D765F91CEC5CCFCA70549"
+    },
+    "visualReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\windows\\final-v1\\visual-review-v15-root.json",
+      "sha256": "055D93241B097AF48523E0146969D894E5EDC31A8946AB1C3827D650391FEA7A"
+    },
+    "inputKind": "synthetic-routed-events-and-programmatic-native-window-checks",
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "dedicatedPixels": {
+      "passed": true,
+      "themeCount": 2,
+      "totalPairs": 948,
+      "barPairs": 696,
+      "circlePairs": 252,
+      "summary": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\pixel-v5-final-evidence\\pixel-final-summary-v1.json",
+        "sha256": "DC287568441837908AAFAF8A86BF00FCD1483DADF203FCBDDA066A48C1ED3E62"
+      },
+      "physicalInputValidated": false,
+      "compositorPresentValidated": false
+    }
+  },
+  "linux": {
+    "report": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\linux\\final-v1\\linux-final-summary.json",
+      "sha256": "369C498F923C85B1EEEABD836B6660EAD47E5DAD372B1A79A8E36595B3434977"
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\linux\\final-v1\\verification\\wslg\\results.json",
+      "sha256": "37E1D170588CC8F6E31D8B493310802D5BA3797C3C314366349DF2DD1CBEF188"
+    },
+    "coreSha256": "80667916E70BA56ABDA625A0A569D86908ED76DAD056D9EDEDA9902C20BE7846",
+    "themesSha256": "84D8A6BB1343FB31474BF89D077CED210287AA47B51858E9B3E10A44D720D964",
+    "headless": {
+      "status": "passed",
+      "inputKind": "headless-injection",
+      "total": 504,
+      "passed": 504,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "notRun": 0,
+      "result": "verification/wslg/Charts.Headless.Tests.xml"
+    },
+    "nativeChecks": 134,
+    "usageChecks": 51,
+    "packageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\linux\\final-v1\\package-consumers\\20261016T045908955Z-36c0888d54ec4ed98bd4129198d4250c\\results.json",
+      "sha256": "168AE3B5E3DEDA3FABF8F627099C549D8761C63F119127CF1A3021B4AECEC85E"
+    },
+    "isolatedConsumers": [
+      {
+        "kind": "function-only-application-style",
+        "passed": true,
+        "checks": 55,
+        "noProjectReferences": true,
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/platform-final-v15/linux/final-v1/package-consumers/20261016T045908955Z-36c0888d54ec4ed98bd4129198d4250c/function/packages",
+        "coreAssemblySha256": "80667916E70BA56ABDA625A0A569D86908ED76DAD056D9EDEDA9902C20BE7846",
+        "coreMatchesBuiltAssembly": true,
+        "report": "package-consumers/20261016T045908955Z-36c0888d54ec4ed98bd4129198d4250c/function/consumer-result.json",
+        "resultSha256": "BB2E7F58D189D318923C4E2C4BE1A864AB351D542CB8E9C12138A12634241ECD",
+        "nativeWindowValidated": false,
+        "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+      },
+      {
+        "kind": "function-and-themes",
+        "passed": true,
+        "checks": 55,
+        "noProjectReferences": true,
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/platform-final-v15/linux/final-v1/package-consumers/20261016T045908955Z-36c0888d54ec4ed98bd4129198d4250c/themes/packages",
+        "coreAssemblySha256": "80667916E70BA56ABDA625A0A569D86908ED76DAD056D9EDEDA9902C20BE7846",
+        "coreMatchesBuiltAssembly": true,
+        "report": "package-consumers/20261016T045908955Z-36c0888d54ec4ed98bd4129198d4250c/themes/consumer-result.json",
+        "resultSha256": "EC052D050AFF8E3AC567A12489BE467E00BB7CADE0C2CB88EB6B1667348E2FEE",
+        "nativeWindowValidated": false,
+        "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+      }
+    ],
+    "validatedInputCount": 521,
+    "crossPlatformInputsMatch": true,
+    "frozenSourceFiles": 1186,
+    "declaredLiveChartsInputs": 135,
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "warningSummary": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\linux\\final-v1\\build-warning-summary-v3.json",
+      "sha256": "48B77FBCCC62E1AFE3EEDA60DF3F92642DB66E8BEC60B041436B6365DBD0CE20"
+    },
+    "visualReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\linux\\final-v1\\visual-review.json",
+      "sha256": "3C81C6C22D5023DDD36507914B38016B4C363F4D44F25836520889051DA48FED"
+    },
+    "environmentKind": "Ubuntu 26.04 WSL2/WSLg",
+    "kernel": "6.6.114.1-microsoft-standard-WSL2",
+    "requestedBackend": "x11-via-wslg-xwayland",
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "physicalDesktopCertified": false,
+    "nativeWaylandValidated": false,
+    "performanceMeasured": false,
+    "dedicatedPixels": {
+      "passed": true,
+      "themeCount": 2,
+      "totalPairs": 948,
+      "barPairs": 696,
+      "circlePairs": 252,
+      "summary": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\pixel-v5-final-evidence\\pixel-final-summary-v1.json",
+        "sha256": "DC287568441837908AAFAF8A86BF00FCD1483DADF203FCBDDA066A48C1ED3E62"
+      },
+      "physicalInputValidated": false,
+      "compositorPresentValidated": false
+    }
+  },
+  "api": {
+    "path": "<REPO_ROOT>\\docs\\charts-tail-api.txt",
+    "sha256": "75E69DDB03A2058AAE062AF52E2D3294E58E86797D046110D1D8EC50A217FEE3",
+    "capture": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\api\\final-v1\\baseline.json",
+      "sha256": "266561FB293872A026B8C637FA8924926832AC1C354F02ABFC2E942649F8F4B9"
+    },
+    "equivalence": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\platform-final-v15\\api\\api-equivalence.json",
+      "sha256": "731E715433E0F3440181300D075A586EAE172545EF36AF589D1EC47CF8E981FB"
+    },
+    "localExportedTypes": [
+      69,
+      3
+    ],
+    "normalizedDeclarationTextEquivalentToPrior1F49": true,
+    "normalization": "Only RunId and assembly SHA256 header lines excluded. Full API file headers retain actual Windows product hashes.",
+    "linuxActualMetadataCapture": {
+      "report": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v4-linux-driver\\linux-api-summary-v1.json",
+        "sha256": "ED467C241BA40365E26371B09FDE564EA78DB75E895F389C1B39252AD11D55E2"
+      },
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v4-linux-driver\\api-actual-linux-v1\\api.txt",
+        "sha256": "AD8AC73D443801EFC6CBBF2F3D684303FF07FBE61508469D43ED08AA802070B0"
+      },
+      "capture": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v4-linux-driver\\api-actual-linux-v1\\baseline.json",
+        "sha256": "04157DB91ED8ED28E50B58232A2675F74B0D41C4D6CF617AB51E16C9ADBF6A7D"
+      },
+      "equivalence": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v4-linux-driver\\api-equivalence.json",
+        "sha256": "6A0D15FF66B2A5AACBD8557F6747A3701897A0EF36D156A9E5D6C2638D46D113"
+      },
+      "coreSha256": "80667916E70BA56ABDA625A0A569D86908ED76DAD056D9EDEDA9902C20BE7846",
+      "themesSha256": "84D8A6BB1343FB31474BF89D077CED210287AA47B51858E9B3E10A44D720D964",
+      "localExportedTypes": [
+        69,
+        3
+      ],
+      "normalizedDeclarationsEqualWindowsAndPrior": true,
+      "officialRuntimeExecuted": false
+    },
+    "officialMetadataOnly": true,
+    "officialExportedTypes": 282,
+    "officialRuntimeExecuted": false
+  },
+  "performance": {
+    "qualification": "controlled-prototype",
+    "formalPerformancePassed": null,
+    "formalSlaEvaluated": false,
+    "performanceQualification": "pending-C4",
+    "presentStatus": "blocked-present",
+    "referenceStatus": "blocked-reference",
+    "policy": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\tail-regression-policy-v1.json",
+      "sha256": "F6D2796A7299427E8204BB726A058D700BD4BE2BEFF7D0EDA3AF09453A772302"
+    },
+    "summary": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\candidate-v15-formal-v1\\reports-v1\\summary.json",
+      "sha256": "D784F9A222DD24EA2A0547AB0357FD3036753DF3A9130C1669444E665995380E"
+    },
+    "gate": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\candidate-v15-formal-v1\\reports-v1\\prototype-tail-gate.json",
+      "sha256": "992D8D163550EAB810C5F0CC78832A8024FD12252F7A4F5D2A62BE3B4D413BA2"
+    },
+    "acceptedTargetSummary": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\v15-formal-accepted-target-summary-v1.json",
+      "sha256": "E17A318050C90E5AA1D20511DBF4CB8FF40F0C26E1005241F11554649AB73DDE"
+    },
+    "targetedGatePassed": true,
+    "targetedChecks": 100,
+    "targetedPassed": 100,
+    "targetedFailed": 0,
+    "targetedPending": 0,
+    "full8Checks": 64,
+    "millionImprovementChecks": 2,
+    "scatterRetentionChecks": 34,
+    "independentTimingProcesses": 80,
+    "comparisonReports": 12,
+    "independentMemorySides": 3,
+    "warmupSamplesRetained": true,
+    "outliersDeleted": false,
+    "runtimeSettingsChanged": false,
+    "acceptanceHostRebuilt": false,
+    "hostSha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E",
+    "millionFull8P95ms": {
+      "before087Record": 51.7989,
+      "afterRecord": 26.2218,
+      "recordImprovementPercent": 49.377689,
+      "before087First": 76.9736,
+      "afterFirst": 47.9239,
+      "firstImprovementPercent": 37.739822
+    },
+    "scatterRecordP50ImprovementVsCdb6Percent": {
+      "full8": 2.35395,
+      "isolatedScatter": 7.04506
+    },
+    "allAdverseMetricCount": 297,
+    "descriptiveMaterialFlagCount": 75,
+    "nonTargetRegressionReviewPassed": null,
+    "completeRegressionPassed": null,
+    "nonTargetReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\v15-formal-nontarget-review-v1\\review-zh.md",
+      "sha256": "8E736891C2AB043195D0AD9F7DB34E6A9638DDB1BBA2C7174E58A1C681D64F33"
+    },
+    "nonTargetAnalysis": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\v15-formal-nontarget-review-v1\\analysis.json",
+      "sha256": "B9B3349E291F0C887D7B2527C331A190EDCC342C615D9ED963037B11BC2A6978"
+    },
+    "nativeProvenance": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\native-8372-v1\\native-provenance.json",
+      "sha256": "6317C9E31CDB7C33DB2B8396AAB8301DF1065228E4E6A06393D95F1D27DE44B7"
+    },
+    "nativeBodyReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\v15-native-body-review-v1\\analysis.json",
+      "sha256": "BF781C500DC1BEB4E0B736AF1F7C5E1A6E319D490058223D9A439C1327F7C81B"
+    },
+    "memory": [
+      {
+        "side": "cdb6",
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\candidate-v15-formal-v1\\memory\\cdb6\\raw.json",
+        "sha256": "7EA6304D253EADAA8AE3102D4FFAD4AA2414A5186C5D7FC54B9ED4F365AFE085",
+        "cycles": 20,
+        "points": 1000000,
+        "plateauGrowthBytes": 4632,
+        "clearedResidualBytes": 1824,
+        "sourceSurvivors": 0,
+        "snapshotSurvivors": 0,
+        "passed": true
+      },
+      {
+        "side": "before087",
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\candidate-v15-formal-v1\\memory\\before087\\raw.json",
+        "sha256": "EBB755AB982B3D2D4C5121F76EFF3309B8969EFAF7A7FF764A5395D71D896829",
+        "cycles": 20,
+        "points": 1000000,
+        "plateauGrowthBytes": 29176,
+        "clearedResidualBytes": 26368,
+        "sourceSurvivors": 0,
+        "snapshotSurvivors": 0,
+        "passed": true
+      },
+      {
+        "side": "after",
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\candidate-v15-formal-v1\\memory\\after\\raw.json",
+        "sha256": "73C7B890937953CAD3CD68F4038D2FF1762EFB2EED614BE791397F18ACBD7ECD",
+        "cycles": 20,
+        "points": 1000000,
+        "plateauGrowthBytes": 4632,
+        "clearedResidualBytes": 1050960,
+        "sourceSurvivors": 0,
+        "snapshotSurvivors": 0,
+        "passed": true
+      }
+    ],
+    "memoryHostSha256": "5DA2E701C96F2CE04BDD94419F2C0F040F83C992D9263BE3BED3DD30FF36503A",
+    "memoryClearResidualIncreaseVsCdb6Bytes": 1049136,
+    "unchangedBudgets": {
+      "path": "<REPO_ROOT>\\docs\\charts-performance-budgets.json",
+      "sha256": "3E7149E6C4538993CBFEBAD2542E154DC8EBEBD06A72259EF345B3E3A07DEEA2"
+    },
+    "remainingSampledPrivate": {
+      "scope": "FULL8 maximum sampled current-private reading, not chart-exclusive native bytes or OS peak/leak",
+      "barBefore087Bytes": 62185472,
+      "barAfterBytes": 72257536,
+      "line100kBefore087Bytes": 71733248,
+      "line100kAfterBytes": 92012544
+    },
+    "remainingPrepareAllocation": {
+      "pool": "FULL8",
+      "scenario": "S100-L",
+      "statistics": [
+        "p95",
+        "max"
+      ],
+      "before087Bytes": 12840,
+      "afterBytes": 16360
+    }
+  },
+  "dedicatedPixels": {
+    "status": "passed-four-native-window-bar-circle-runs",
+    "passed": true,
+    "productSourceChangesPermitted": false,
+    "v4Failure": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v4-runs\\windows-final-light-v1\\results.json",
+      "sha256": "5496AC4F4492598E5C293E8F067591348B648C9F119C0B38399FCAEE7ABB3231"
+    },
+    "v4FailureKind": "Four CS8604 nullable Dashes compile errors in new independent fixture; no native run; preserved original source and failed logs.",
+    "historicalV11WindowsPixelsReused": false,
+    "fixtureV5": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5\\prepared-manifest.json",
+      "sha256": "A0783A09F04C6B26A79B4C07C030E99CDD6D4F5DE0793B3D26B773A1F8421061"
+    },
+    "windowsLight": {
+      "report": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\results.json",
+        "sha256": "162F2E393D9ADB41CCD67B0EC6A799D9BAEFD7AB39C8A1827DB7219040C411FB"
+      },
+      "native": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\native-result.json",
+        "sha256": "0060C854F4AA404D6ACABAB5F63BADFDAF33AB40FC607ECFF1CC3C1FA758338D"
+      },
+      "passed": true,
+      "barPairs": 348,
+      "circlePairs": 126,
+      "totalPairs": 474,
+      "freshPenChecks": 54,
+      "retainedPenChecks": 9,
+      "sourceStable": true,
+      "productStable": true,
+      "coreSha256": "83720ED1D4AD828AA5B8A6E4CB50A9CE503101B25EA143B138CFAAFA46AE2911",
+      "themesSha256": "D0BF6A3A8AA372A1E08605FB16DE2A76112B1006F4C4224516293F82223B41AC"
+    },
+    "windowsDarkInterruption": {
+      "runDirectory": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v1",
+      "resultsBytes": 0,
+      "validReport": false,
+      "productBuildOrNativeRun": false,
+      "reason": "C volume full, failed while writing final receipt; preserve partial logs and use new RunDirectory for retry."
+    },
+    "summary": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\pixel-v5-final-evidence\\pixel-final-summary-v1.json",
+      "sha256": "DC287568441837908AAFAF8A86BF00FCD1483DADF203FCBDDA066A48C1ED3E62"
+    },
+    "evidenceIndex": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\pixel-v5-final-evidence\\pixel-evidence-index.json",
+      "sha256": "6B46B14FF4114FC9D91492E32FE7958B708BC17B9B481D5C556F52C135B5B6D8"
+    },
+    "sourceAndAssemblyClosure": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\pixel-v5-final-evidence\\source-assembly-final.json",
+      "sha256": "4D71B54A820D71643D98AC7159369074D677177E07484823AD9362333EFA79C2"
+    },
+    "visualReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\pixel-v5-final-evidence\\visual-review.json",
+      "sha256": "1F5C589500A1B508BA91F4971567609243F389885FB2D1F490DEE5F5488F42C9"
+    },
+    "rootVisualReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\test-review\\pixel-v5-visual-review-root-v1.json",
+      "sha256": "0722F66DB2D1C0244174E74D801F5510C0E4D1FCCDF5340DCDA21A271AA7D7E4"
+    },
+    "rootConsistencyReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\test-review\\pixel-v5-four-run-review-root-v1.json",
+      "sha256": "6B40E52CAA6C60F7CCA3FE312001AB68CA9AD7E0604CCCAFB3B85975CD6C98A0"
+    },
+    "heavyCleanup": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\pixel-v5-final-evidence\\heavy-cleanup.json",
+      "sha256": "F8C2B2E1CD97BF7C61F2DD0FEBC74097AB77EF8267FEA62937849C384DA23C9A"
+    },
+    "runs": [
+      {
+        "platform": "Windows",
+        "theme": "Light",
+        "passed": true,
+        "run": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1",
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\results.json",
+          "sha256": "162F2E393D9ADB41CCD67B0EC6A799D9BAEFD7AB39C8A1827DB7219040C411FB"
+        },
+        "native": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\native-result.json",
+          "sha256": "0060C854F4AA404D6ACABAB5F63BADFDAF33AB40FC607ECFF1CC3C1FA758338D"
+        },
+        "coreSha256": "83720ED1D4AD828AA5B8A6E4CB50A9CE503101B25EA143B138CFAAFA46AE2911",
+        "themesSha256": "D0BF6A3A8AA372A1E08605FB16DE2A76112B1006F4C4224516293F82223B41AC",
+        "productSourceReceiptSha256": "2ADDFFE5458E49CBEF041C9DEE94E5F52C7649DA19BEBFDE9C93311A7A3FB36B",
+        "exactExpectedProducts": true,
+        "nativeWindowCreated": true,
+        "actualPairs": 474,
+        "barPairs": 348,
+        "circlePairs": 126,
+        "directPairs": 162,
+        "recordedPairs": 312,
+        "barModes": [
+          {
+            "mode": "Direct",
+            "comparisonPairs": 117,
+            "failedPairs": 0
+          },
+          {
+            "mode": "Recorded",
+            "comparisonPairs": 231,
+            "failedPairs": 0
+          }
+        ],
+        "circleModes": [
+          {
+            "mode": "Direct",
+            "comparisonPairs": 45,
+            "failedPairs": 0
+          },
+          {
+            "mode": "Recorded",
+            "comparisonPairs": 81,
+            "failedPairs": 0
+          }
+        ],
+        "dpiValues": [
+          96,
+          144,
+          192
+        ],
+        "actualPngCount": 948,
+        "allPngHashesMatchReceipts": true,
+        "zeroDifferentRasterBytes": true,
+        "failedPairCount": 0,
+        "barMinimumInk": 258.0,
+        "circleMinimumStrokeInk": 53.0,
+        "freshPenFrames": 54,
+        "retainedPenSelections": 9,
+        "allCurrentBrushReferencesAndIPenValues": true,
+        "allReadOnlyBarCacheObservations": true,
+        "reflectionScope": "Read-only CartesianSeriesRenderer.BarGeometries CWT TryGetValue, cache.Entries array and CachedBar.Geometry identity; never internal projection construction or private geometry mutation. Only publicly returned DrawingGroup child Geometry wrappers are mutated.",
+        "retainedDrawingAndOldPenOraclesPassed": true,
+        "barPhaseCounts": [
+          {
+            "phase": "first",
+            "count": 54
+          },
+          {
+            "phase": "mutable-solid-color-opacity",
+            "count": 54
+          },
+          {
+            "phase": "old-DG-transform-next-frame",
+            "count": 27
+          },
+          {
+            "phase": "old-public-geometry-transform-next-frame",
+            "count": 27
+          },
+          {
+            "phase": "retained-DG-transformed",
+            "count": 27
+          },
+          {
+            "phase": "retained-public-geometry-transformed",
+            "count": 27
+          },
+          {
+            "phase": "second-cache-reuse",
+            "count": 27
+          },
+          {
+            "phase": "second-direct-no-cache",
+            "count": 27
+          },
+          {
+            "phase": "single-point-mutation",
+            "count": 54
+          },
+          {
+            "phase": "spatial-paint-clears-cache",
+            "count": 12
+          },
+          {
+            "phase": "transition-direct-to-recorded-cache-rebuilt",
+            "count": 3
+          },
+          {
+            "phase": "transition-old-DG-after",
+            "count": 3
+          },
+          {
+            "phase": "transition-old-DG-before",
+            "count": 3
+          },
+          {
+            "phase": "transition-recorded-to-direct-cache-cleared",
+            "count": 3
+          }
+        ],
+        "circlePhaseCounts": [
+          {
+            "phase": "current-stroke-thickness",
+            "count": 18
+          },
+          {
+            "phase": "first",
+            "count": 18
+          },
+          {
+            "phase": "fresh-after-old-DG-transform",
+            "count": 9
+          },
+          {
+            "phase": "old-DG-after-replaced-brush-thickness",
+            "count": 9
+          },
+          {
+            "phase": "old-DG-before-style-changes",
+            "count": 9
+          },
+          {
+            "phase": "old-DG-transformed",
+            "count": 9
+          },
+          {
+            "phase": "point-mutation",
+            "count": 18
+          },
+          {
+            "phase": "repeat",
+            "count": 18
+          },
+          {
+            "phase": "replace-stroke-color-alpha",
+            "count": 18
+          }
+        ],
+        "buildWarnings": 0,
+        "buildErrors": 0,
+        "warningOrErrorDiagnostics": 0,
+        "sourceStable": true,
+        "productStable": true,
+        "copiedInputsStable": true,
+        "productSourceReceiptStable": true,
+        "probeAssembly": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\source\\bin\\Release\\net10.0\\BarCache.PixelProbe.dll",
+          "sha256": "46922DD1B9FD9FE2906E1082CFEF5E43682A34C851171004A7180B134147B8AB"
+        },
+        "lock": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\source\\packages.lock.json",
+          "sha256": "57C7E39C66F6908DE9935F671700108B23CC11776977640283611B2C9CBC3A62"
+        },
+        "httpCacheSeed": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\http-cache-seed.json",
+          "sha256": "E236B66B935A035B567D2E45C2C3A3869AEA84C5826D5222CE18C51F68BEE053"
+        },
+        "processSteps": [
+          {
+            "name": "restore",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 30568,
+            "logStdout": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\restore.stdout.log",
+              "sha256": "88BD47B71F4610EE5A05273FDB62296661764CF68099F7197972F2053E068935"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\restore.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          },
+          {
+            "name": "locked-restore",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 50544,
+            "logStdout": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\locked-restore.stdout.log",
+              "sha256": "DED5D4B5D05E5693D5F3E7394AA9A684D48FF2557CE1EE28A557839E58BAEFA8"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\locked-restore.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          },
+          {
+            "name": "build",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 53836,
+            "logStdout": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\build.stdout.log",
+              "sha256": "0E95CBED36786F0F16A4ACB9823CBED0D65169DD642877812A5ADF150587A5D7"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\build.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          },
+          {
+            "name": "native",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 11952,
+            "logStdout": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\native.stdout.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-light-v1\\native.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          }
+        ],
+        "actualBackend": null,
+        "actualGpu": null,
+        "scope": "Windows native desktop; RenderTargetBitmap of attached native-window controls; no compositor or performance claim"
+      },
+      {
+        "platform": "Windows",
+        "theme": "Dark",
+        "passed": true,
+        "run": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2",
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2\\results.json",
+          "sha256": "30FB179ACD72EDF0488AFEB90C0F253622BE9AC3726AF1FE5DA64C3CCD0F5B31"
+        },
+        "native": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2\\native-result.json",
+          "sha256": "A9638EF202DC8FD6092AA13660EDC596BFE0A12F1F0D7F8C2CB9E54C9A724DDD"
+        },
+        "coreSha256": "83720ED1D4AD828AA5B8A6E4CB50A9CE503101B25EA143B138CFAAFA46AE2911",
+        "themesSha256": "D0BF6A3A8AA372A1E08605FB16DE2A76112B1006F4C4224516293F82223B41AC",
+        "productSourceReceiptSha256": "2ADDFFE5458E49CBEF041C9DEE94E5F52C7649DA19BEBFDE9C93311A7A3FB36B",
+        "exactExpectedProducts": true,
+        "nativeWindowCreated": true,
+        "actualPairs": 474,
+        "barPairs": 348,
+        "circlePairs": 126,
+        "directPairs": 162,
+        "recordedPairs": 312,
+        "barModes": [
+          {
+            "mode": "Direct",
+            "comparisonPairs": 117,
+            "failedPairs": 0
+          },
+          {
+            "mode": "Recorded",
+            "comparisonPairs": 231,
+            "failedPairs": 0
+          }
+        ],
+        "circleModes": [
+          {
+            "mode": "Direct",
+            "comparisonPairs": 45,
+            "failedPairs": 0
+          },
+          {
+            "mode": "Recorded",
+            "comparisonPairs": 81,
+            "failedPairs": 0
+          }
+        ],
+        "dpiValues": [
+          96,
+          144,
+          192
+        ],
+        "actualPngCount": 948,
+        "allPngHashesMatchReceipts": true,
+        "zeroDifferentRasterBytes": true,
+        "failedPairCount": 0,
+        "barMinimumInk": 258.0,
+        "circleMinimumStrokeInk": 49.0,
+        "freshPenFrames": 54,
+        "retainedPenSelections": 9,
+        "allCurrentBrushReferencesAndIPenValues": true,
+        "allReadOnlyBarCacheObservations": true,
+        "reflectionScope": "Read-only CartesianSeriesRenderer.BarGeometries CWT TryGetValue, cache.Entries array and CachedBar.Geometry identity; never internal projection construction or private geometry mutation. Only publicly returned DrawingGroup child Geometry wrappers are mutated.",
+        "retainedDrawingAndOldPenOraclesPassed": true,
+        "barPhaseCounts": [
+          {
+            "phase": "first",
+            "count": 54
+          },
+          {
+            "phase": "mutable-solid-color-opacity",
+            "count": 54
+          },
+          {
+            "phase": "old-DG-transform-next-frame",
+            "count": 27
+          },
+          {
+            "phase": "old-public-geometry-transform-next-frame",
+            "count": 27
+          },
+          {
+            "phase": "retained-DG-transformed",
+            "count": 27
+          },
+          {
+            "phase": "retained-public-geometry-transformed",
+            "count": 27
+          },
+          {
+            "phase": "second-cache-reuse",
+            "count": 27
+          },
+          {
+            "phase": "second-direct-no-cache",
+            "count": 27
+          },
+          {
+            "phase": "single-point-mutation",
+            "count": 54
+          },
+          {
+            "phase": "spatial-paint-clears-cache",
+            "count": 12
+          },
+          {
+            "phase": "transition-direct-to-recorded-cache-rebuilt",
+            "count": 3
+          },
+          {
+            "phase": "transition-old-DG-after",
+            "count": 3
+          },
+          {
+            "phase": "transition-old-DG-before",
+            "count": 3
+          },
+          {
+            "phase": "transition-recorded-to-direct-cache-cleared",
+            "count": 3
+          }
+        ],
+        "circlePhaseCounts": [
+          {
+            "phase": "current-stroke-thickness",
+            "count": 18
+          },
+          {
+            "phase": "first",
+            "count": 18
+          },
+          {
+            "phase": "fresh-after-old-DG-transform",
+            "count": 9
+          },
+          {
+            "phase": "old-DG-after-replaced-brush-thickness",
+            "count": 9
+          },
+          {
+            "phase": "old-DG-before-style-changes",
+            "count": 9
+          },
+          {
+            "phase": "old-DG-transformed",
+            "count": 9
+          },
+          {
+            "phase": "point-mutation",
+            "count": 18
+          },
+          {
+            "phase": "repeat",
+            "count": 18
+          },
+          {
+            "phase": "replace-stroke-color-alpha",
+            "count": 18
+          }
+        ],
+        "buildWarnings": 0,
+        "buildErrors": 0,
+        "warningOrErrorDiagnostics": 0,
+        "sourceStable": true,
+        "productStable": true,
+        "copiedInputsStable": true,
+        "productSourceReceiptStable": true,
+        "probeAssembly": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2\\source\\bin\\Release\\net10.0\\BarCache.PixelProbe.dll",
+          "sha256": "C2ADB95C45C0AFC8C12F55B7EA517B0B4BE48647472FBC5ACA700195DB157C6B"
+        },
+        "lock": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2\\source\\packages.lock.json",
+          "sha256": "57C7E39C66F6908DE9935F671700108B23CC11776977640283611B2C9CBC3A62"
+        },
+        "httpCacheSeed": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2\\http-cache-seed.json",
+          "sha256": "17E06A706E015EC376E7F8F424CD09B094296A03DE7F1F87E0C80E264D350E23"
+        },
+        "processSteps": [
+          {
+            "name": "restore",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 26492,
+            "logStdout": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2\\restore.stdout.log",
+              "sha256": "A84ACDDBE957AA1D5915668D94DA60BE396B741DAF3D5EE0E42A679091525E57"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2\\restore.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          },
+          {
+            "name": "locked-restore",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 54884,
+            "logStdout": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2\\locked-restore.stdout.log",
+              "sha256": "834060110B5FC4BB9A0745D7B3344563A59AA5A0B31C9A64CE5BFDFAF30086D0"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2\\locked-restore.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          },
+          {
+            "name": "build",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 36192,
+            "logStdout": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2\\build.stdout.log",
+              "sha256": "985C29DBF5CB16FCFC205121ADE0D05D612E5B00D6C7E4A72641DE5353F5963A"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2\\build.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          },
+          {
+            "name": "native",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 37732,
+            "logStdout": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2\\native.stdout.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-runs\\windows-final-dark-v2\\native.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          }
+        ],
+        "actualBackend": null,
+        "actualGpu": null,
+        "scope": "Windows native desktop; RenderTargetBitmap of attached native-window controls; no compositor or performance claim"
+      },
+      {
+        "platform": "Linux-WSLg",
+        "theme": "Light",
+        "passed": true,
+        "run": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-linux-driver\\runs\\pixel-light-v1",
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-linux-driver\\runs\\pixel-light-v1\\results.json",
+          "sha256": "3BDC158FD70D1D9B14030AC795389D204E078A71950B64DB7EFB27FCEF2B956F"
+        },
+        "native": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-linux-driver\\runs\\pixel-light-v1\\native-result.json",
+          "sha256": "A657A271B79DD2EC16CBCBA3FA230FFB0FA6AF3338911DFB88981E6556DBDDBE"
+        },
+        "coreSha256": "80667916E70BA56ABDA625A0A569D86908ED76DAD056D9EDEDA9902C20BE7846",
+        "themesSha256": "84D8A6BB1343FB31474BF89D077CED210287AA47B51858E9B3E10A44D720D964",
+        "productSourceReceiptSha256": "2ADDFFE5458E49CBEF041C9DEE94E5F52C7649DA19BEBFDE9C93311A7A3FB36B",
+        "exactExpectedProducts": true,
+        "nativeWindowCreated": true,
+        "actualPairs": 474,
+        "barPairs": 348,
+        "circlePairs": 126,
+        "directPairs": 162,
+        "recordedPairs": 312,
+        "barModes": [
+          {
+            "mode": "Direct",
+            "comparisonPairs": 117,
+            "failedPairs": 0
+          },
+          {
+            "mode": "Recorded",
+            "comparisonPairs": 231,
+            "failedPairs": 0
+          }
+        ],
+        "circleModes": [
+          {
+            "mode": "Direct",
+            "comparisonPairs": 45,
+            "failedPairs": 0
+          },
+          {
+            "mode": "Recorded",
+            "comparisonPairs": 81,
+            "failedPairs": 0
+          }
+        ],
+        "dpiValues": [
+          96,
+          144,
+          192
+        ],
+        "actualPngCount": 948,
+        "allPngHashesMatchReceipts": true,
+        "zeroDifferentRasterBytes": true,
+        "failedPairCount": 0,
+        "barMinimumInk": 258.0,
+        "circleMinimumStrokeInk": 53.0,
+        "freshPenFrames": 54,
+        "retainedPenSelections": 9,
+        "allCurrentBrushReferencesAndIPenValues": true,
+        "allReadOnlyBarCacheObservations": true,
+        "reflectionScope": "Read-only CartesianSeriesRenderer.BarGeometries CWT TryGetValue, cache.Entries array and CachedBar.Geometry identity; never internal projection construction or private geometry mutation. Only publicly returned DrawingGroup child Geometry wrappers are mutated.",
+        "retainedDrawingAndOldPenOraclesPassed": true,
+        "barPhaseCounts": [
+          {
+            "phase": "first",
+            "count": 54
+          },
+          {
+            "phase": "mutable-solid-color-opacity",
+            "count": 54
+          },
+          {
+            "phase": "old-DG-transform-next-frame",
+            "count": 27
+          },
+          {
+            "phase": "old-public-geometry-transform-next-frame",
+            "count": 27
+          },
+          {
+            "phase": "retained-DG-transformed",
+            "count": 27
+          },
+          {
+            "phase": "retained-public-geometry-transformed",
+            "count": 27
+          },
+          {
+            "phase": "second-cache-reuse",
+            "count": 27
+          },
+          {
+            "phase": "second-direct-no-cache",
+            "count": 27
+          },
+          {
+            "phase": "single-point-mutation",
+            "count": 54
+          },
+          {
+            "phase": "spatial-paint-clears-cache",
+            "count": 12
+          },
+          {
+            "phase": "transition-direct-to-recorded-cache-rebuilt",
+            "count": 3
+          },
+          {
+            "phase": "transition-old-DG-after",
+            "count": 3
+          },
+          {
+            "phase": "transition-old-DG-before",
+            "count": 3
+          },
+          {
+            "phase": "transition-recorded-to-direct-cache-cleared",
+            "count": 3
+          }
+        ],
+        "circlePhaseCounts": [
+          {
+            "phase": "current-stroke-thickness",
+            "count": 18
+          },
+          {
+            "phase": "first",
+            "count": 18
+          },
+          {
+            "phase": "fresh-after-old-DG-transform",
+            "count": 9
+          },
+          {
+            "phase": "old-DG-after-replaced-brush-thickness",
+            "count": 9
+          },
+          {
+            "phase": "old-DG-before-style-changes",
+            "count": 9
+          },
+          {
+            "phase": "old-DG-transformed",
+            "count": 9
+          },
+          {
+            "phase": "point-mutation",
+            "count": 18
+          },
+          {
+            "phase": "repeat",
+            "count": 18
+          },
+          {
+            "phase": "replace-stroke-color-alpha",
+            "count": 18
+          }
+        ],
+        "buildWarnings": 0,
+        "buildErrors": 0,
+        "warningOrErrorDiagnostics": 0,
+        "sourceStable": true,
+        "productStable": true,
+        "copiedInputsStable": true,
+        "productSourceReceiptStable": true,
+        "probeAssembly": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-linux-driver\\runs\\pixel-light-v1\\source\\bin\\Release\\net10.0\\BarCache.PixelProbe.dll",
+          "sha256": "7AF81B3F7C4BD8DAB027FF75A97CAB42540002D9C59F0428BB28CB786FCFAD23"
+        },
+        "lock": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-linux-driver\\runs\\pixel-light-v1\\source\\packages.lock.json",
+          "sha256": "DEAB8A88C3435E98834C45CF228A277FEBD5B609C7D74A7896D87A9849115C34"
+        },
+        "httpCacheSeed": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-linux-driver\\runs\\pixel-light-v1\\http-cache-seed.json",
+          "sha256": "3F6632237EA75C6B5753F891F1EE82431255987F964A66E4410729551E616533"
+        },
+        "processSteps": [
+          {
+            "name": "restore",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 474,
+            "logStdout": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-light-v1/restore.stdout.log",
+              "sha256": "4EBB622ABAAC9880F601F7998B7C3346FBFE488F3F8AC7B49960BD38B47DE994"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-light-v1/restore.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          },
+          {
+            "name": "locked-restore",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 590,
+            "logStdout": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-light-v1/locked-restore.stdout.log",
+              "sha256": "B743EA568560034ADE35074E4F18CD4266A71D683F7FD76B09876AC9E547D085"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-light-v1/locked-restore.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          },
+          {
+            "name": "build",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 614,
+            "logStdout": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-light-v1/build.stdout.log",
+              "sha256": "3D12112CB0ED6B2B7BA852CFBA0D2CBBE9C3A0EF4A8101AF7CF6ACB5CC0E91B2"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-light-v1/build.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          },
+          {
+            "name": "native",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 701,
+            "logStdout": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-light-v1/native.stdout.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-light-v1/native.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          }
+        ],
+        "actualBackend": null,
+        "actualGpu": null,
+        "scope": "WSL2 Ubuntu 26.04 / WSLg native-window-attached RTBM, not physical Linux desktop or compositor present"
+      },
+      {
+        "platform": "Linux-WSLg",
+        "theme": "Dark",
+        "passed": true,
+        "run": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-linux-driver\\runs\\pixel-dark-v1",
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-linux-driver\\runs\\pixel-dark-v1\\results.json",
+          "sha256": "A6E690C8C03E8A910FF095CFBB2143CAD1D1939804C9350F3042BE06FCB0B221"
+        },
+        "native": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-linux-driver\\runs\\pixel-dark-v1\\native-result.json",
+          "sha256": "AC1A64842778C25C089341C1799654CF4A67C63F0F506C9C661004EEB8C8B2D0"
+        },
+        "coreSha256": "80667916E70BA56ABDA625A0A569D86908ED76DAD056D9EDEDA9902C20BE7846",
+        "themesSha256": "84D8A6BB1343FB31474BF89D077CED210287AA47B51858E9B3E10A44D720D964",
+        "productSourceReceiptSha256": "2ADDFFE5458E49CBEF041C9DEE94E5F52C7649DA19BEBFDE9C93311A7A3FB36B",
+        "exactExpectedProducts": true,
+        "nativeWindowCreated": true,
+        "actualPairs": 474,
+        "barPairs": 348,
+        "circlePairs": 126,
+        "directPairs": 162,
+        "recordedPairs": 312,
+        "barModes": [
+          {
+            "mode": "Direct",
+            "comparisonPairs": 117,
+            "failedPairs": 0
+          },
+          {
+            "mode": "Recorded",
+            "comparisonPairs": 231,
+            "failedPairs": 0
+          }
+        ],
+        "circleModes": [
+          {
+            "mode": "Direct",
+            "comparisonPairs": 45,
+            "failedPairs": 0
+          },
+          {
+            "mode": "Recorded",
+            "comparisonPairs": 81,
+            "failedPairs": 0
+          }
+        ],
+        "dpiValues": [
+          96,
+          144,
+          192
+        ],
+        "actualPngCount": 948,
+        "allPngHashesMatchReceipts": true,
+        "zeroDifferentRasterBytes": true,
+        "failedPairCount": 0,
+        "barMinimumInk": 258.0,
+        "circleMinimumStrokeInk": 49.0,
+        "freshPenFrames": 54,
+        "retainedPenSelections": 9,
+        "allCurrentBrushReferencesAndIPenValues": true,
+        "allReadOnlyBarCacheObservations": true,
+        "reflectionScope": "Read-only CartesianSeriesRenderer.BarGeometries CWT TryGetValue, cache.Entries array and CachedBar.Geometry identity; never internal projection construction or private geometry mutation. Only publicly returned DrawingGroup child Geometry wrappers are mutated.",
+        "retainedDrawingAndOldPenOraclesPassed": true,
+        "barPhaseCounts": [
+          {
+            "phase": "first",
+            "count": 54
+          },
+          {
+            "phase": "mutable-solid-color-opacity",
+            "count": 54
+          },
+          {
+            "phase": "old-DG-transform-next-frame",
+            "count": 27
+          },
+          {
+            "phase": "old-public-geometry-transform-next-frame",
+            "count": 27
+          },
+          {
+            "phase": "retained-DG-transformed",
+            "count": 27
+          },
+          {
+            "phase": "retained-public-geometry-transformed",
+            "count": 27
+          },
+          {
+            "phase": "second-cache-reuse",
+            "count": 27
+          },
+          {
+            "phase": "second-direct-no-cache",
+            "count": 27
+          },
+          {
+            "phase": "single-point-mutation",
+            "count": 54
+          },
+          {
+            "phase": "spatial-paint-clears-cache",
+            "count": 12
+          },
+          {
+            "phase": "transition-direct-to-recorded-cache-rebuilt",
+            "count": 3
+          },
+          {
+            "phase": "transition-old-DG-after",
+            "count": 3
+          },
+          {
+            "phase": "transition-old-DG-before",
+            "count": 3
+          },
+          {
+            "phase": "transition-recorded-to-direct-cache-cleared",
+            "count": 3
+          }
+        ],
+        "circlePhaseCounts": [
+          {
+            "phase": "current-stroke-thickness",
+            "count": 18
+          },
+          {
+            "phase": "first",
+            "count": 18
+          },
+          {
+            "phase": "fresh-after-old-DG-transform",
+            "count": 9
+          },
+          {
+            "phase": "old-DG-after-replaced-brush-thickness",
+            "count": 9
+          },
+          {
+            "phase": "old-DG-before-style-changes",
+            "count": 9
+          },
+          {
+            "phase": "old-DG-transformed",
+            "count": 9
+          },
+          {
+            "phase": "point-mutation",
+            "count": 18
+          },
+          {
+            "phase": "repeat",
+            "count": 18
+          },
+          {
+            "phase": "replace-stroke-color-alpha",
+            "count": 18
+          }
+        ],
+        "buildWarnings": 0,
+        "buildErrors": 0,
+        "warningOrErrorDiagnostics": 0,
+        "sourceStable": true,
+        "productStable": true,
+        "copiedInputsStable": true,
+        "productSourceReceiptStable": true,
+        "probeAssembly": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-linux-driver\\runs\\pixel-dark-v1\\source\\bin\\Release\\net10.0\\BarCache.PixelProbe.dll",
+          "sha256": "136E5288072304961A7AC275A1829E7C6B162985B315FC6A29331FBA4445AA07"
+        },
+        "lock": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-linux-driver\\runs\\pixel-dark-v1\\source\\packages.lock.json",
+          "sha256": "DEAB8A88C3435E98834C45CF228A277FEBD5B609C7D74A7896D87A9849115C34"
+        },
+        "httpCacheSeed": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\bar-cache-pixel-v5-linux-driver\\runs\\pixel-dark-v1\\http-cache-seed.json",
+          "sha256": "0BB5699E40A877A83384DA3FE982F33D8980134DD8A0AEEF9C2443F822FB3DA9"
+        },
+        "processSteps": [
+          {
+            "name": "restore",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 470,
+            "logStdout": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-dark-v1/restore.stdout.log",
+              "sha256": "95A31A4AABF30733558B8FAF2DF9CEAAB1D80D5DA1432FE740101451D86A887C"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-dark-v1/restore.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          },
+          {
+            "name": "locked-restore",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 541,
+            "logStdout": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-dark-v1/locked-restore.stdout.log",
+              "sha256": "D5E4E7D74565ADEE29EEF30B449ACCC5D558C330F23868C1AE57B0CC554FD49C"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-dark-v1/locked-restore.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          },
+          {
+            "name": "build",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 563,
+            "logStdout": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-dark-v1/build.stdout.log",
+              "sha256": "8A7E4110588D798DF3F79625F274353CC0EB5541251B38476917780A0CF2A9BD"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-dark-v1/build.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          },
+          {
+            "name": "native",
+            "exitCode": 0,
+            "timedOut": false,
+            "processId": 679,
+            "logStdout": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-dark-v1/native.stdout.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            },
+            "logStderr": {
+              "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-tail-20261016/bar-cache-pixel-v5-linux-driver/runs/pixel-dark-v1/native.stderr.log",
+              "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+            }
+          }
+        ],
+        "actualBackend": null,
+        "actualGpu": null,
+        "scope": "WSL2 Ubuntu 26.04 / WSLg native-window-attached RTBM, not physical Linux desktop or compositor present"
+      }
+    ],
+    "runCount": 4,
+    "totalPairs": 1896,
+    "totalPngs": 3792,
+    "scope": "Skia RenderTargetBitmap of native-window-attached controls; Direct and public DrawingGroup Recorded replay compared within the same backend"
+  },
+  "failedHistory": {
+    "completeDraft": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\tail-report-draft-v5.md",
+      "sha256": "D062CB640DAD9A55F450E26D8E8B53242BC29F8FF9ACB08FCA5B5FAC783E9243"
+    },
+    "v8Formal": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\candidate-v8-formal-v1\\reports-v1\\prototype-tail-gate.json",
+      "sha256": "F961D76149EAEC454BC80AE67F1507C203661F37050D5FFD333CEE81C5896CDB"
+    },
+    "v11Formal": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\candidate-v11-formal-v1\\reports-v1\\prototype-tail-gate.json",
+      "sha256": "F3EA51B8555E1B2920EF100F5F0CBAD080EE5D91C992BEEFF27F7B7803FE5DA0"
+    },
+    "v12Pilot": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\candidate-v12-pilot-v1\\reports-v1\\prototype-tail-gate.json",
+      "sha256": "1CBB8F5B13952EA5F4D8106110C8D72E5081594A1D5B9D02D4ECA23CE3300DE7"
+    },
+    "v13Pilot": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\candidate-v13-pilot-v1\\reports-v1\\prototype-tail-gate.json",
+      "sha256": "82CE43F8DDFBF5A6C63B9ABA17F66038B18FC4A63ACB3FA1143C2033EB18C4E3"
+    },
+    "v14TestFailure": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\headless\\candidate-v14-network-v1\\results.json",
+      "sha256": "F1BD2CB35DD751CD6DB4A3BEF4EF93D49F1C61B47D8191A4946F4DEA54A20D5F"
+    },
+    "v14TestOracleRepair": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\test-review\\v14-diamond-oracle-repair-v1\\inputs.json",
+      "sha256": "B2C1C43F28CF9AA04E52B2FABEE6249DA729B9DCC146A978A9B57A0FE5229EF7"
+    },
+    "v15Pilot": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\candidate-v15-pilot-v1\\reports-v1\\prototype-tail-gate.json",
+      "sha256": "176188106FAD7F8B54ADCC04DFA10C972EDF8AE492686DEAE29EBB4A977A9826"
+    },
+    "failedPilotRemainsFailed": true,
+    "repeatedSameCandidateFormalPoolForSelection": false,
+    "notes": "Keep all earlier failed candidates, build/network failures, source-only drafts, parser errors and every warmup. New larger preplanned formal pool does not revoke v15 pilot failures."
+  },
+  "historicalPreviousValidation": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\historical-docs-before-tail\\docs\\charts-c2-templates-readings-validation.json",
+    "sha256": "10A30439BE4106C14A38D576C7A817004149A2A1470B46B04D85C94DC22B15D8"
+  },
+  "remaining": [
+    "Non-target complete regression remains open: 297 increasing metrics, 75 descriptive material flags; isolated million hit p95 0.7649 -> 1.1235 ms vs 087.",
+    "FULL8 100k apply/prepare p95 1.4716 -> 1.9999 / 0.7238 -> 0.8986 ms; million prepare p95 4.8472 -> 5.3829 ms.",
+    "First-observed warmup first p50 bar 38.7958 -> 59.4373 ms, gap 2.5584 -> 3.8236, RT 0.9074 -> 1.7445; these are not complete application cold start.",
+    "Global staging pool adds bounded managed retention; bar total native/managed byte budgets, backend rebind, live Series visibility/empty-source lifetime combinations and long-soak remain.",
+    "C2 templates/additional tracker modes/series and range selection/touch/animation/JPEG/point-level accessibility remain.",
+    "C4 incremental/LOD/SharedY first-index/random-data retention/long-text budgets/multi-chart/8h soak and full performance regression remain.",
+    "Physical Windows and Ubuntu22.04/24.04 desktops, native Wayland/ARM/Kylin/UOS, device input/DPI/multimonitor/UIA/AT-SPI and present remain.",
+    "Licensed official reference blocked AVLIC0001. No official runtime performance, cross-OS timing or formal SLA acceptance claimed."
+  ],
+  "documentationIntegrity": {
+    "status": "see-independent-final-receipt",
+    "report": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\test-review\\tail-documentation-final-v2.json",
+    "selfReferenceHashIntentionallyOmitted": true,
+    "checker": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-tail-20261016\\test-review\\Verify-TailDocumentation-v2.ps1",
+      "sha256": "8CC1E47BA43802FDA2FF6D3033D832B0EDF75CC75DBF0075D57A07F0F6AD4FC1"
+    },
+    "scope": "Explicit reference SHA, selected schema-rooted current closures, nine entrypoints/local links, immutable C0/200 IDs/54 source URLs and actual Windows/Linux API. Independent final receipt hashes this document; self hash omitted to avoid a cycle."
+  },
+  "environmentMaintenance": {
+    "report": {
+      "path": "<REPO_ROOT>\\artifacts\\maintenance\\disk-cleanup-20261016\\cleanup-summary.json",
+      "sha256": "97E461B20F47D35FCD5CB34CE14ADF502E13C8E680CEFE8D6689A71C3C1B5281"
+    },
+    "sourceGuard": {
+      "path": "<REPO_ROOT>\\artifacts\\maintenance\\disk-cleanup-20261016\\charts-source-after-cleanup.json",
+      "sha256": "2F01E3C91DFDDBDF88874EABF4FD5AC9A0F189FF5ABAB19A2AEAF5E371F37575"
+    },
+    "afterFinalTimingPool": true,
+    "timingPoolRerun": false,
+    "chartSourceOrProductBytesChanged": false,
+    "scope": "C global download caches and D live project bin/obj cleared; all task evidence/private package HTTP seed and frozen sources/products retained with lossless NTFS compression."
+  }
+}

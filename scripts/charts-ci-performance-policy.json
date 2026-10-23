@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "charts-hosted-ci-policy-v1",
+  "policyVersion": "2026-10-20-v2",
+  "previousPolicySha256": "84FAF70D632CAA7569DF15663FC540E98776EE84B8307B804B3135B8B69BB032",
+  "revisionReason": "Make native tiered-compilation configuration explicit and verifiable after a same-source paired control failed p50 with different slow-to-fast transition positions. The cause was not proven; timing/allocation limits, ratios, sample counts and warmups are unchanged. Previous failures remain immutable.",
+  "scope": "Hosted CI regression and native controlled raster-readback guards; not fixed-hardware frame/present SLA, official parity or long-soak qualification.",
+  "changesRequire": "New version, review reason, and retention of failed raw evidence. Never auto-update from a candidate result.",
+  "requiredStages": ["layer-cache", "visible-clipping", "level-of-detail", "efficient-hit", "incremental-streaming", "render-resource-budget", "multichart-background-layout", "generic-benchmark", "native-window"],
+  "mechanismContracts": "charts-ci-mechanism-contracts.json",
+  "maximumFailedStageRate": 0,
+  "maximumFailedNativeSampleRate": 0,
+  "generic": {
+    "scenarios": ["S10-L", "S10-S", "S10-B"],
+    "samples": 5,
+    "warmups": 1,
+    "maximumP95Milliseconds": {"sourceApply": 1000, "scenePrepare": 5000, "renderRecord": 1000, "firstUsableToRecord": 10000, "hitQuery": 100},
+    "maximumP95AllocatedBytes": {"scenePrepare": 134217728, "renderRecord": 67108864, "firstUsableToRecord": 268435456}
+  },
+  "native": {
+    "scenarios": ["line-10k", "scatter-10k", "bar-10k", "multi-4x512"],
+    "samples": 12,
+    "warmups": 2,
+    "sampleChecks": ["visible-native-window", "nonempty-raster", "business-ink-in-every-plot", "retained-cold-tree-pixels-equal", "raw-original-point-hits", "routed-key-handled", "data-revision", "product-source-version", "native-window-still-visible"],
+    "minimumPlotBluePixels": 10,
+    "maximumP95Milliseconds": {"apply": 1000, "layout": 1000, "captureReadback": 3000, "requestToCapture": 5000, "hit": 200},
+    "maximumP95AllocatedBytes": {"uiApplyLayout": 134217728, "captureReadback": 134217728, "hit": 67108864},
+    "baselineRequired": true,
+    "relativeP50MaximumRatio": 1.5,
+    "relativeP50NoiseAllowanceMilliseconds": 5,
+    "relativeP95MaximumRatio": 2.0,
+    "relativeP95NoiseAllowanceMilliseconds": 20,
+    "relativeP95AllocationMaximumRatio": 1.25,
+    "relativeP95AllocationNoiseAllowanceBytes": 1048576,
+    "maximumDifferentPixels": 0,
+    "requiredTieredCompilation": false,
+    "comparableEnvironmentFields": ["os", "osArchitecture", "processArchitecture", "runtime", "runtimeVersion", "cpuCount", "renderScaling", "rasterDpi", "pixelFormat", "theme", "culture", "defaultFont", "fontFamilies", "backend", "nativeHandleDescriptor", "tieredCompilation", "tieredCompilationSwitchPresent", "tieredCompilationSwitchValue", "dotnetTieredCompilationOverride", "comPlusTieredCompilationOverride"]
+  },
+  "formalSlaEvaluated": false,
+  "presentQualified": false,
+  "actualProcessMemoryQualified": false
+}

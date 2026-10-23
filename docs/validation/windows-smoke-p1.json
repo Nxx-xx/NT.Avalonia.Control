@@ -1,0 +1,73 @@
+{
+  "Passed": true,
+  "TimestampUtc": "2026-10-12T03:08:16.5363099+00:00",
+  "OS": "Microsoft Windows 10.0.26200",
+  "Architecture": "X64",
+  "Runtime": "10.0.12",
+  "AvaloniaVersion": "12.0.3.0",
+  "WindowWidthDip": 1180,
+  "WindowHeightDip": 780,
+  "RenderScaling": 1,
+  "GridFontSize": 14,
+  "GridFontFamily": "Inter",
+  "PlatformDefaultFontFamily": "Segoe UI",
+  "FirstLayoutMilliseconds": 958,
+  "BuildConfiguration": "Release",
+  "Checks": {
+    "nativeWindowCreated": true,
+    "nonzeroLayout": true,
+    "rowsVirtualized": true,
+    "chineseTextRoundTrip": true,
+    "sourcePathMapping": true,
+    "scrollAndRecycle": true,
+    "scrollKeepsBoundedRows": true,
+    "themePreservesSource": true,
+    "treeProjection": true
+  },
+  "Snapshots": [
+    {
+      "Name": "100k-flat-initial",
+      "ProjectionRows": 100000,
+      "Columns": 20,
+      "FrozenColumnCount": 0,
+      "RealizedRows": 18,
+      "CreatedRows": 19,
+      "RecycledRows": 0,
+      "VisualControlCount": 460
+    },
+    {
+      "Name": "scrolled-and-frozen",
+      "ProjectionRows": 100000,
+      "Columns": 20,
+      "FrozenColumnCount": 2,
+      "RealizedRows": 20,
+      "CreatedRows": 20,
+      "RecycledRows": 19,
+      "VisualControlCount": 502
+    },
+    {
+      "Name": "variable-row-heights",
+      "ProjectionRows": 100000,
+      "Columns": 20,
+      "FrozenColumnCount": 2,
+      "RealizedRows": 18,
+      "CreatedRows": 20,
+      "RecycledRows": 37,
+      "VisualControlCount": 460
+    },
+    {
+      "Name": "tree-projection",
+      "ProjectionRows": 124,
+      "Columns": 6,
+      "FrozenColumnCount": 2,
+      "RealizedRows": 16,
+      "CreatedRows": 36,
+      "RecycledRows": 37,
+      "VisualControlCount": 180
+    }
+  ],
+  "NativeImeValidated": false,
+  "KylinValidated": false,
+  "Notes": "Real native window smoke probe; programmatic Chinese TextBox round-trip does not exercise IME preedit, candidate window, commit or cancellation. FirstLayoutMilliseconds includes the initial 350 ms settle delay; it is not a rendering benchmark.",
+  "Error": null
+}

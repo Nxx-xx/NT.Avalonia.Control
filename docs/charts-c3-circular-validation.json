@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 1,
+  "stage": "C3-04 pie, donut, semi-donut and circular variants",
+  "completedUtc": "2026-10-18T08:14:53.299239+00:00",
+  "clientExecutionDate": "2026-10-18",
+  "finalCandidateVersion": "c3-circular-source-v3",
+  "softwareFunctionalSubsetPassed": true,
+  "functionalSubsetPassed": true,
+  "fullC2StageComplete": false,
+  "fullC3StageComplete": false,
+  "fullC4StageComplete": false,
+  "windows": {
+    "platform": "windows",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\windows\\windows-final-v3\\results.json",
+      "sha256": "0263F020D0627A85B43D0ADBACC392FB8DA914493F413586DD962A5D6F1A5E87",
+      "bytes": 19976
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\windows\\windows-final-v3\\results.json",
+      "sha256": "0263F020D0627A85B43D0ADBACC392FB8DA914493F413586DD962A5D6F1A5E87",
+      "bytes": 19976
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\windows\\windows-final-v3\\charts-smoke.json",
+      "sha256": "1B8DFED32C8D4AC1517C17269B93BEF75B2A7087C290DACAED6562E6FB85527B",
+      "bytes": 1315946
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\windows\\windows-final-v3\\charts-usage.json",
+      "sha256": "B760281FD1E7F8A493072B641708FB053359F3059B388062431BB5208702D5E8",
+      "bytes": 21719
+    },
+    "headlessTests": 1214,
+    "demoChecks": 890,
+    "usageChecks": 250,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 354,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\windows\\package-consumers-v3\\20261018T080836707Z-88290ff1ce6c4620924484a8beadef88\\function\\consumer-result.json",
+          "sha256": "D642415CC75A4829B7FAADFC43F20625AA67EEC118FCBB5D91FD1F0EE0DEA851",
+          "bytes": 54124
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\windows\\package-consumers-v3\\20261018T080836707Z-88290ff1ce6c4620924484a8beadef88\\function\\packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 354,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\windows\\package-consumers-v3\\20261018T080836707Z-88290ff1ce6c4620924484a8beadef88\\themes\\consumer-result.json",
+          "sha256": "8D79AC9EEF495BB8DFB5138480A0131F352E355B767B7C6BAE416B3312E42100",
+          "bytes": 54153
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\windows\\package-consumers-v3\\20261018T080836707Z-88290ff1ce6c4620924484a8beadef88\\themes\\packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\windows\\windows-final-v3\\validated-input-manifest.json",
+      "sha256": "D07F74ED7290FA34EDCEA0DD43B48FFE1D71657D52CCE5ADCEB8F047759044CF",
+      "bytes": 114273
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\windows\\windows-final-v3\\assembly-manifest.json",
+      "sha256": "C0A7841C7DB9676684F31C8FAFA5327434128471C6F09C10BEBBB06D16873E49",
+      "bytes": 1955
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\windows\\windows-final-v3\\environment.json",
+      "sha256": "131DC76EFD835F7E3E433FA05F3AC19F4E4BC721E2605EA07568A687224FCCE2",
+      "bytes": 9133
+    },
+    "coreSha256": "A3A94AC8E5F668061ADA3859AA3FEF701B66283627582913B171C50897A0B214",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false
+  },
+  "linux": {
+    "platform": "linux",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\linux\\run-v3\\verification\\wslg-final-v3\\results.json",
+      "sha256": "D821724AA5EF2B4DD504830E8871E4E143FF9F33B0375776553052A4A4FF5771",
+      "bytes": 14676
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\linux\\run-v3\\verification\\wslg-final-v3\\results.json",
+      "sha256": "D821724AA5EF2B4DD504830E8871E4E143FF9F33B0375776553052A4A4FF5771",
+      "bytes": 14676
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\linux\\run-v3\\verification\\wslg-final-v3\\charts-smoke.json",
+      "sha256": "ED9F2A1BC5D429A34875B000433ABC9B9516D402D8C10C37E5EEE3462679BD8A",
+      "bytes": 1266309
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\linux\\run-v3\\verification\\wslg-final-v3\\charts-usage.json",
+      "sha256": "B3529D2B35EE5530663FB2FE509238B490A78899A1725E282B8508D70096C8FF",
+      "bytes": 21223
+    },
+    "headlessTests": 1214,
+    "demoChecks": 890,
+    "usageChecks": 250,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 354,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\linux\\run-v3\\package-consumers\\20261018T081132739Z-dd4d644c050f46a9bf390e42fa78f851\\function\\consumer-result.json",
+          "sha256": "6A709ECC7829CB88BDD3AE070E82C54B24AB16DFF698C11EFBE628B287E825DB",
+          "bytes": 52606
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c3-circular-20261018/linux/run-v3/package-consumers/20261018T081132739Z-dd4d644c050f46a9bf390e42fa78f851/function/packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 354,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\linux\\run-v3\\package-consumers\\20261018T081132739Z-dd4d644c050f46a9bf390e42fa78f851\\themes\\consumer-result.json",
+          "sha256": "40938DF89BD5298040729D701DCD3110B569C59B750AA5C290CFB64AEFFCC359",
+          "bytes": 52612
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c3-circular-20261018/linux/run-v3/package-consumers/20261018T081132739Z-dd4d644c050f46a9bf390e42fa78f851/themes/packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\linux\\run-v3\\verification\\wslg-final-v3\\validated-input-manifest.json",
+      "sha256": "9AB1B1889C23A6EBA8CEBCB89648DDDE2B7D069BE15865614DFFA29A493E5455",
+      "bytes": 111723
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\linux\\run-v3\\verification\\wslg-final-v3\\assembly-manifest.json",
+      "sha256": "CC5597CB76BE22A8246C10C26F6A64D4E466B539648DA4F074D9FB1EB2474363",
+      "bytes": 1905
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\linux\\run-v3\\verification\\wslg-final-v3\\environment.json",
+      "sha256": "FFD7A080D49BD2B6688A3AEEFDD7EC90F34B45D53E69746B6FF8AC9F0C857E46",
+      "bytes": 6363
+    },
+    "coreSha256": "54FE0E45120D6D377C6D7261CC3EAF3B5567A81ABE64CD16A2C434C88C1E15A7",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false
+  },
+  "sourceSnapshotRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\source-snapshot-v3.json",
+    "sha256": "C7409D772FE51E4704D4D0EACE765CBFEB5C7F9B4F65742AEC9F0C0F1772BE05",
+    "bytes": 267889
+  },
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\source-snapshot-v3.json",
+    "sha256": "C7409D772FE51E4704D4D0EACE765CBFEB5C7F9B4F65742AEC9F0C0F1772BE05",
+    "bytes": 267889
+  },
+  "frozenSourceFiles": 1337,
+  "declaredValidatedInputsPerPlatform": 637,
+  "declaredInputsMatchBetweenPlatforms": true,
+  "declaredLiveInputsStillMatch": true,
+  "frozenSourceHashesStillMatch": true,
+  "liveFullRepositoryEqualityClaimed": false,
+  "sourceScope": "Declared runtime/harness inputs match the frozen candidate; later general documentation/status updates are outside the runtime set.",
+  "windowsApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\api-windows-final-v3\\api.txt",
+    "sha256": "AA250228274C8CB08BEE2FB681F72695E9B0204D0621A663504244A477616100",
+    "bytes": 857583
+  },
+  "linuxApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\linux\\api-linux-final-v3\\api.txt",
+    "sha256": "4B5459B6B062ED04205C42D9E95F048C49C354F2841F5DAD90466301D5EFE0B5",
+    "bytes": 300051
+  },
+  "publicApiDocument": {
+    "path": "<REPO_ROOT>\\docs\\charts-c3-circular-api.txt",
+    "sha256": "AA250228274C8CB08BEE2FB681F72695E9B0204D0621A663504244A477616100",
+    "bytes": 857583
+  },
+  "localApiDeclarationsMatchBetweenPlatforms": true,
+  "apiDelta": {
+    "oldTypes": 115,
+    "newTypes": 125,
+    "oldNamedChartsTypes": 113,
+    "newNamedChartsTypes": 123,
+    "oldLegacyDistinctTypeNames": 115,
+    "newLegacyDistinctTypeNames": 125,
+    "addedTypes": [
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartCircularNegativeValueMode",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartCircularSmallSliceMode",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CircularChart",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CircularLabelInfo",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CircularLabelPosition",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CircularSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CircularSliceInfo",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.DonutSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PieSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.SemiDonutSeries"
+    ],
+    "addedMembersOnExistingTypes": [],
+    "removedTypes": [],
+    "changedExistingTypeDeclarations": [],
+    "removedMembersOnExistingTypes": [],
+    "binaryCompatibilityQualified": false,
+    "officialCompatibilityQualified": false
+  },
+  "apiComparisonScope": "Complete exported declarations in both local product assemblies keyed by assembly plus type, including generated XAML types; no official assembly included.",
+  "completePublicApiReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\independent-full-public-api-v3.json",
+    "sha256": "BE1A60163653541280C775A5763BFE0D1FD4BA0A87E98B73121CC7B4C1E37B15",
+    "bytes": 2477
+  },
+  "independentReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\collected-evidence-v3.json",
+    "sha256": "6337F8D860228D541841E9CF6281298EB0C2BF4A50E3EB12B57ED19981B3A7D4",
+    "bytes": 665585
+  },
+  "independentRasterReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\independent-circular-raster-v3.json",
+    "sha256": "51EA981F85D0B52946AEA9D3B99721F094F65F9E81506390ADA16C0E85A9BFE4",
+    "bytes": 180245
+  },
+  "rasterOraclePreregistrationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\circular-oracle-preregistered-v1.json",
+    "sha256": "41F1064D33A9056A74B8DCDE1FAF3F57A61E8ABF63D1EA22718543CD65CA9853",
+    "bytes": 5957
+  },
+  "independentReviewCounts": {
+    "sourceAndPlatformChecks": 3989,
+    "rasterChecks": 712,
+    "decodedImages": 120,
+    "countsOverlapAndAreNotProductTestCounts": true
+  },
+  "historicalAndRendererPinsVerified": true,
+  "historicalDocumentPinCount": 38,
+  "historicalRendererVersionCount": 4,
+  "historicalRendererPreservationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\historical-renderer-preservation-v1.json",
+    "sha256": "4865D82F9207AA85FAB502D2479A6CDD822B940E69B19C0ED4344F1D692E3C0D",
+    "bytes": 2603
+  },
+  "generalMetadataBeforeRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\metadata-before.json",
+    "sha256": "4983A87A5AAA0A8D4CBDB2B2412D78D6FCDA9A1AAA819EB1377289041A0750FF",
+    "bytes": 3053
+  },
+  "dependencyReuse": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\dependency-reuse.json",
+    "sha256": "CC6A69B661D86779B615C9D083FA6398A1B4A1A13CED795E0C442A1664587278",
+    "bytes": 5592
+  },
+  "productPackagesReused": false,
+  "nugetAuditOrWarningPolicyChanged": false,
+  "nativeAccessibilityEnumerationRetested": false,
+  "deferredNativeAccessibilityWorkstream": "A11Y-NATIVE-01",
+  "completeNativeBridgeGatePassed": false,
+  "previousNativeBridgeEvidence": {
+    "path": "<REPO_ROOT>\\docs\\charts-c2-accessibility-validation.json",
+    "sha256": "BC80F3A743AD610E5B419D87D00A753755265A12F434F08654A06A59ABD72A8D",
+    "bytes": 1405510
+  },
+  "performanceQualified": false,
+  "performanceMeasured": false,
+  "memoryRegressionMeasured": false,
+  "millionHitTailDeferredTo": "C4",
+  "officialRuntimeReferenceIncluded": false,
+  "physicalKeyboardValidated": false,
+  "physicalDesktopCertified": false,
+  "implementationContracts": [
+    "CircularChart 是独立投影，PieSeries、DonutSeries、SemiDonutSeries 复用 ChartSeries 的数据映射、原始项身份与生命周期；每个可见系列独立归一化，多个系列可设置 Radius/InnerRadius 组成同心环。",
+    "默认仅映射快照中的有限正值创建扇区；零、非有限值和显式 IsEmpty 不分配角度。显式共享 EmptyPointMode 可先填充缺失值，填充后的贡献仍保留 WasEmpty 元数据。负值模式 Ignore 忽略、Absolute 使用绝对贡献但保留原始负值、Throw 明确拒绝有限负值。先除以最大贡献再进行补偿求和，避免 MaxValue 总和溢出并支持次正规数；不可表示的微小份额保持零，不制造最小假份额。",
+    "默认起点 -90°、顺时针 360°；SemiDonut 默认从 180° 顺时针走 180°，内半径为 0.6。StartAngle 接受有限角度并归一化，SweepAngle 为 0..360，Radius 为 0..1，InnerRadius 为 0..<1。部分圆按实际角度范围适配布局，半环使用可用高度。",
+    "SliceGap 仅减少边界两侧绘制角度；MinimumSliceAngle 与 SmallSliceMode.Keep/Hide 决定小扇区保留或隐藏，均不合并、扩张、重新归一化原始占比。隐藏小扇区保留源身份和 Fraction，但不参与绘制、标签或选择。",
+    "完整单值饼和环使用两个半圆弧；完整环的内外轮廓方向相反且不增加径向描边接缝。命中按当前显示的填充扇区、内洞、角度间隙及分离中心计算，边界包含并仅作机器精度修正；重叠取后绘制项，退出扇区不可命中。描边外沿和透明度像素采样不扩展命中区。",
+    "ColorPath 接受直接 Color、IBrush 或可解析颜色字符串；无效值回退系列 Fill 与类别调色板。SourceIndex、StableId、Item、Category 和原始数值不随角度布局、分离、选择或动画改写。",
+    "GetSlices 返回当前场景；Data、Fraction、RawStartAngle/RawSweepAngle 在过渡期间指向目标业务贡献，StartAngle/SweepAngle、Center、InnerRadius/OuterRadius、Fill 和 Hit.Position 对应当前显示帧。退出项以 IsExiting 标识，完成后移除。",
+    "外标签按左右分组，按可用容量优先保留较大贡献，再沿锚点高度布局；无法放入的标签省略，换行压成单行并可截断。每个保留外标签有三点连线。内标签在弧长、环宽、画布或碰撞约束不满足时省略，不保证文字矩形逐像素包含于扇区内部。",
+    "中心文字与 unparented CenterContent 分别支持常规文本和控件；中心控件通过单独宿主裁剪到环洞内接方框与绘图区交集，超大内容保留自身尺寸并受宿主裁剪。无内洞时不显示中心内容，部分环不自动产生额外扇区。",
+    "点选择支持 None、Single、SingleDeselect、Multiple、双向 SelectedPoint/SelectedPoints、可取消前置事件、重入防护和按稳定身份更新/清除；选择分离与固定 ExplodedIndex 分离叠加。键盘支持左右、Home/End、Space/Enter 与 Escape，Tooltip 使用圆形图自身的 formatter。",
+    "入场、数据和视图变化支持时长、缓动、延迟、暂停、继续、取消、重播、ReduceMotion 和点数上限；角度、中心、半径与 solid 颜色/Opacity 按当前帧插值，非 solid brush 直接切到目标。移除项收拢退出且不再参与交互；取消和隐藏/卸载结算到最新目标。",
+    "PNG/JPEG、同步/异步、尺寸、背景、DPI、预算、取消与失败事件通过共享导出管线提供；固定 PixelSize 保持相同像素外观，DPI 写入密度元数据。导出当前暂停帧及中心控件，真实原生像素与导出一致性由本批双平台探针验证。 中心控件采用同一 DrawingContext 的公共可视子树直绘，无中间位图或 VisualBrush 离屏面；按自身变换后的边界与裁剪区相交情况决定是否绘制；即使父项自身不绘制仍递归子项，行为对齐当前 Avalonia 12 捕获路径。",
+    "IBrush 实例由调用方持有。solid 颜色插值依赖可用的前后帧；原地修改同一个可变 brush 不保证保留旧颜色，也不保证自动触发系列数据变化，应用可替换 brush 或显式更新数据。"
+  ],
+  "implementationContractsRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\implementation-contracts-final-v3.json",
+    "sha256": "75161EFBB6690AE0ADA6ED524B1272460F94058433B869A59E330DFF120D0518",
+    "bytes": 6969
+  },
+  "remaining": [
+    "CircularChart 本批采用本库 API；官方许可运行时、完整官方属性/样式/行为与二进制兼容尚未认证。圆形图仍为系列级参数，未增加逐扇区独立圆角、半径、描边、分离集合和自定义可视模板等扩展。",
+    "圆形图的类别图例当前是绘制式单行展示，空间不足会截断后续项目；可交互图例、虚拟化、独立滚动及全部 Cartesian 标签/Tooltip 模板契约仍待后续适配。外标签容量不足时省略，不提供人工拖动或全局最优连线布局。",
+    "内标签采用弧长、环宽和画布/碰撞近似约束，文字矩形仍可能跨过内洞或外弧；与中心文字/中心控件的严格避让、完整扇区内包含和更高级布局仍开放，不能视为完整标签功能等价。",
+    "CircularSeries 的共享数据底座不使 Cartesian 坐标轴、缩放平移、Trackball、范围选择、多图联动、标注或原生点级 automation 自动适用。圆形点级辅助语义与真实读屏器仍属于后续图族无障碍适配；本批未宣称完整 C2 功能等价。",
+    "中心控件导出覆盖公共可视子树的位置、变换/镜像、裁剪、透明度/遮罩、文本/绘制选项及稳定 Z 顺序；复杂 Effect、compositor 特殊 visual、分组透明度、平台材质/缓存和自定义绘制的完整等价仍待专项，不宣称任意可视效果均已认证。",
+    "圆形场景、动画、标签、选择查询与身份匹配的规模、分配、增量、内存、吞吐和尾延迟尚未建立 C4 性能资格；本批没有性能或百万点内存回归实测。",
+    "C3-05 极坐标/雷达为下一项；C3-05～C3-07、C5/C6 其余图族和完整 C2/C3/C4/C7 仍开放。此前散点的专属大小图例/连续色标和 C6 无轴云/紧凑打包继续保留。",
+    "物理 Windows/Linux、实际 backend/GPU/compositor present、多屏 DPI、Ubuntu 22.04/24.04、原生 Wayland、ARM 和目标国产 Linux，以及真实保存对话框和读屏器工作流仍待独立验证。",
+    "Windows UIA/Linux AT-SPI 原生选中集合枚举、Linux 嵌套点选择写入、点系统焦点及真实读屏器按用户决定保留到 A11Y-NATIVE-01；原失败门禁不改为通过，本批未重验。",
+    "百万点命中 p95 历史回退 0.7649→1.1235 ms 按用户决定保留到 C4；AX06 标题/末刻度布局及四个历史 PixelProbe DLL 缺口保持开放，未用本批新证据替换。"
+  ],
+  "manualWindowsVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\manual-windows-circular-visual-v3.json",
+    "sha256": "9A65734908BEEEC44DE4B2558ACB61B595A69BB0F4A76589DC6CF4A474D3CA99",
+    "bytes": 3360
+  },
+  "manualLinuxVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\manual-linux-circular-visual-v3.json",
+    "sha256": "3E005117C4E99BD4C62109E7BDC87CCE596B2C2D9DA874632D041729539CB149",
+    "bytes": 3449
+  },
+  "rootSupplementalVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\root-supplemental-visual-v3.json",
+    "sha256": "17EC90D2815C873608636A86EC81BE7F869CC08C5D20298FC97467F559CFF066",
+    "bytes": 1258
+  },
+  "rasterOracleAddendumRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\circular-oracle-preregistered-addendum-v1.json",
+    "sha256": "C3F3EDAF53BD250A6CFBDAB295E9424263699BFC3D7D72417ED448550342C24B",
+    "bytes": 1903
+  },
+  "rasterLargeLayoutRegressionRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\circular-oracle-large-layout-regression-preregistered-v1.json",
+    "sha256": "23E5148516CA6F0C2D54E0E0B0931C6F92E0BFCEEB28C23F060851DE1D09A89D",
+    "bytes": 2805
+  },
+  "warningPolicyClaimScope": "NuGet audit, restore and project-level warning gates; explicit local legacy API compatibility pragmas are listed separately.",
+  "localLegacyApiCompatibilityPragmas": [
+    {
+      "code": "CS0618",
+      "source": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\linux\\physical-source-v3\\src\\NT.AvaloniaControl.Charts\\CircularChart.Export.cs",
+        "sha256": "6A3B5C30E9B168C96662F6FCA327CD36F29885C8D4B4A2C79D78EF77129DBA86",
+        "bytes": 6604
+      },
+      "purpose": "Match the installed renderer legacy RenderOptions in the public visual-tree export traversal."
+    }
+  ],
+  "retainedDevelopmentAndInterruptedEvidence": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\retained-development-and-interrupted-v1.json",
+    "sha256": "014EE0E7BD607A74F78ECCC1DC33A0CF1DFA0DF805B1E062555D679435C3706E",
+    "bytes": 16192
+  },
+  "retainedFailedAndInterruptedFormalSourceV1": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\retained-formal-source-v1.json",
+    "sha256": "59CBB0B674BE337A2E9BB5789913B3F5E7040D40D279E7014F12BF3E86164889",
+    "bytes": 22550
+  },
+  "retainedRepairDevelopmentEvidence": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\retained-repair-development-v2.json",
+    "sha256": "2DCF1A693DF88CECE3D77ABFDC45E4326AA2371F372760E31B6FCAC677767A3A",
+    "bytes": 7919
+  },
+  "retainedPartiallyPassedFormalSourceV2": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\retained-formal-source-v2.json",
+    "sha256": "2E65515493BCDB9B8243A3A0BF996B2FFEAD138D6CC6F19659CEB893D64CCCCC",
+    "bytes": 33626
+  },
+  "retainedRepairDevelopmentSourceV3": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-circular-20261018\\retained-repair-development-v3.json",
+    "sha256": "751CACB6FA22DD279F693C7F8F47A164207E6B3867362AC8457DEA0CFC1F1245",
+    "bytes": 8059
+  },
+  "circularBusinessScenariosPerTheme": 16,
+  "largeLayoutExplicitRegressionPixelSize": [
+    1160,
+    1160
+  ],
+  "centerContentExportImplementation": "Direct chart Render plus public visual subtree traversal in the same DrawingContext; no intermediate bitmap or VisualBrush surface."
+}

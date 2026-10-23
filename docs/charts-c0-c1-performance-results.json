@@ -1,0 +1,3136 @@
+{
+  "schemaVersion": "charts-c0-c1-performance-comparison-v1",
+  "createdUtc": "2026-10-15T16:04:15.823875+08:00",
+  "comparisonQualification": "diagnostic-only-no-formal-native-performance-gate",
+  "integrityPassed": true,
+  "errors": [],
+  "sourceComparisonScope": "Only the two named immutable raw reports are compared; later product builds/native tests are not performance evidence for these exact DLLs.",
+  "evidence": {
+    "c0": {
+      "directory": "artifacts/charts-performance/abe88085e7f045aaa1f40ccf99c09c33",
+      "runId": "abe88085e7f045aaa1f40ccf99c09c33",
+      "phase": "C0-before-C1",
+      "startedUtc": "2026-10-15T15:31:46.3557608+08:00",
+      "finishedUtc": "2026-10-15T15:31:47.9509066+08:00",
+      "rawSchema": "charts-c0-headless-v1",
+      "guardSchema": "charts-c0-guard-v1",
+      "rawSha256": "F2EF0D75D8646D34F02AA65BB9040D613ADE0F4643F22DF4DCA0B36755808BF9",
+      "guardSha256": "F030FEEF94F0CCC740352BE9658F0C55E9C706EE0AEA85804190526EEA9DCE6A",
+      "guardRawShaMatches": true,
+      "sourceManifestSha256": "FCF9BA5A20A2314A87B339F9DF1B44C51A3988504172FFE1C48C252DCA5F58CB",
+      "supervisorSha256": "FE9EEFACF1ECA04D9D0E8480D3AF20FCFC56332B03719BDC1E9D004AF1409895",
+      "guardPassed": true,
+      "supervisorPassed": true,
+      "timedOut": false,
+      "processExitCode": 0,
+      "assemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\benchmarks\\Charts.Benchmarks\\bin\\Release\\net10.0\\Charts.Benchmarks.dll",
+          "sha256": "0669473BB09EE9AFB23B0A984EB4962F4442AEA17A80478ED3393DCF94BD0EB6"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\benchmarks\\Charts.Benchmarks\\bin\\Release\\net10.0\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "B3989A070EFAAF48BC0D283501BB472DF9CF6C082E3C39C37801C73291A1C27A"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\benchmarks\\Charts.Benchmarks\\bin\\Release\\net10.0\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "B607697E804EE44BCA777E00C1C24FCCC1E6EA9B6ABFC24D269BA09641FE15FE"
+        }
+      },
+      "performanceQualification": "pending-C4",
+      "presentStatus": "blocked-present",
+      "referenceStatus": "blocked-reference",
+      "framePipelineMs": null,
+      "presentMs": null,
+      "submitMs": null,
+      "configuration": {
+        "quick": true,
+        "samples": 2,
+        "warmups": 1,
+        "hitQueries": 5,
+        "sceneTimeoutSeconds": 120,
+        "scenarios": [
+          "S-RT-POC",
+          "S10-B",
+          "S10-L",
+          "S10-L-GAP",
+          "S10-L-NONMONOTONIC",
+          "S10-S",
+          "S100-L",
+          "S1M-L"
+        ],
+        "widthDip": 1200,
+        "heightDip": 650,
+        "dpi": 1,
+        "fontSizeDip": 12,
+        "strokeThicknessDip": 2,
+        "quality": "current-runtime-full-data; dense-line-markers-off; no-downsampling",
+        "budgetVersion": "C0-diagnostic-only-not-frozen",
+        "timeoutKind": "cooperative-between-operations; supervisor enforces process wall timeout"
+      }
+    },
+    "c1": {
+      "directory": "artifacts/charts-performance/C1-20261015-after-v2",
+      "runId": "3d9a4fa4c8ad43698a9c6142c8ee0df6",
+      "phase": "C1-after-contracts",
+      "startedUtc": "2026-10-15T15:59:19.3715981+08:00",
+      "finishedUtc": "2026-10-15T15:59:22.3767081+08:00",
+      "rawSchema": "charts-c0-headless-v1",
+      "guardSchema": "charts-c0-guard-v1",
+      "rawSha256": "51EDD67C1AD8A2AC200589F2BBF8B8C25ABE02079811DEBC97CC2DE992791E4C",
+      "guardSha256": "CC749F07E1973240E40F036E4FF966DA8864985F589C14B2BD58B17D950A6837",
+      "guardRawShaMatches": true,
+      "sourceManifestSha256": "9B280561933E77709B6C65EAC973EFC2A708DC478524C0E890F0CCFFE22B1BD1",
+      "supervisorSha256": "E11315D2922FFE7C07500248B21014C2208CCE9887975D4C547F9FCEDC413597",
+      "guardPassed": true,
+      "supervisorPassed": true,
+      "timedOut": false,
+      "processExitCode": 0,
+      "assemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\benchmarks\\Charts.Benchmarks\\bin\\Release\\net10.0\\Charts.Benchmarks.dll",
+          "sha256": "2EC2B6DAD7E8217F463B7FCB80F692B0B722BC1E8408C6F2094EA994EB576EBC"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\benchmarks\\Charts.Benchmarks\\bin\\Release\\net10.0\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "FA690CDA35E8C612B912E4C362C8F6D20121B3EEE42E9D975CDA08CCAFDCB50A"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\benchmarks\\Charts.Benchmarks\\bin\\Release\\net10.0\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "1544C206F5CA9F2B7B2F4CDC91626CD657BCCC5690CCE791E2C95A6B29E77B23"
+        }
+      },
+      "performanceQualification": "pending-C4",
+      "presentStatus": "blocked-present",
+      "referenceStatus": "blocked-reference",
+      "framePipelineMs": null,
+      "presentMs": null,
+      "submitMs": null,
+      "configuration": {
+        "quick": true,
+        "samples": 2,
+        "warmups": 1,
+        "hitQueries": 5,
+        "sceneTimeoutSeconds": 120,
+        "scenarios": [
+          "S-RT-POC",
+          "S10-B",
+          "S10-L",
+          "S10-L-GAP",
+          "S10-L-NONMONOTONIC",
+          "S10-S",
+          "S100-L",
+          "S1M-L"
+        ],
+        "widthDip": 1200,
+        "heightDip": 650,
+        "dpi": 1,
+        "fontSizeDip": 12,
+        "strokeThicknessDip": 2,
+        "quality": "current-runtime-full-data; dense-line-markers-off; no-downsampling",
+        "budgetVersion": "charts-engineering-targets-v1",
+        "targetStatus": "frozen-targets-not-performance-acceptance",
+        "timeoutKind": "cooperative-between-operations; supervisor enforces process wall timeout"
+      }
+    }
+  },
+  "comparability": {
+    "commonScenarioCount": 8,
+    "scenarioOrderIdentical": true,
+    "seedAndDatasetManifestsIdentical": true,
+    "measurementAndGeneratorSourceIdentical": true,
+    "nominalPerformanceConfigurationEquivalent": true,
+    "measuredLayerEquivalent": "headless-source-apply-scene-getter-render-record-hit-query",
+    "allowedMetadataDifferences": [
+      {
+        "field": "budgetVersion",
+        "c0": "C0-diagnostic-only-not-frozen",
+        "c1": "charts-engineering-targets-v1",
+        "equal": false,
+        "allowedMetadataDifference": true
+      },
+      {
+        "field": "targetStatus",
+        "c0": null,
+        "c1": "frozen-targets-not-performance-acceptance",
+        "equal": false,
+        "allowedMetadataDifference": true
+      }
+    ],
+    "configurationChecks": [
+      {
+        "field": "budgetVersion",
+        "c0": "C0-diagnostic-only-not-frozen",
+        "c1": "charts-engineering-targets-v1",
+        "equal": false,
+        "allowedMetadataDifference": true
+      },
+      {
+        "field": "dpi",
+        "c0": 1,
+        "c1": 1,
+        "equal": true,
+        "allowedMetadataDifference": false
+      },
+      {
+        "field": "fontSizeDip",
+        "c0": 12,
+        "c1": 12,
+        "equal": true,
+        "allowedMetadataDifference": false
+      },
+      {
+        "field": "heightDip",
+        "c0": 650,
+        "c1": 650,
+        "equal": true,
+        "allowedMetadataDifference": false
+      },
+      {
+        "field": "hitQueries",
+        "c0": 5,
+        "c1": 5,
+        "equal": true,
+        "allowedMetadataDifference": false
+      },
+      {
+        "field": "quality",
+        "c0": "current-runtime-full-data; dense-line-markers-off; no-downsampling",
+        "c1": "current-runtime-full-data; dense-line-markers-off; no-downsampling",
+        "equal": true,
+        "allowedMetadataDifference": false
+      },
+      {
+        "field": "quick",
+        "c0": true,
+        "c1": true,
+        "equal": true,
+        "allowedMetadataDifference": false
+      },
+      {
+        "field": "samples",
+        "c0": 2,
+        "c1": 2,
+        "equal": true,
+        "allowedMetadataDifference": false
+      },
+      {
+        "field": "scenarios",
+        "c0": [
+          "S-RT-POC",
+          "S10-B",
+          "S10-L",
+          "S10-L-GAP",
+          "S10-L-NONMONOTONIC",
+          "S10-S",
+          "S100-L",
+          "S1M-L"
+        ],
+        "c1": [
+          "S-RT-POC",
+          "S10-B",
+          "S10-L",
+          "S10-L-GAP",
+          "S10-L-NONMONOTONIC",
+          "S10-S",
+          "S100-L",
+          "S1M-L"
+        ],
+        "equal": true,
+        "allowedMetadataDifference": false
+      },
+      {
+        "field": "sceneTimeoutSeconds",
+        "c0": 120,
+        "c1": 120,
+        "equal": true,
+        "allowedMetadataDifference": false
+      },
+      {
+        "field": "strokeThicknessDip",
+        "c0": 2,
+        "c1": 2,
+        "equal": true,
+        "allowedMetadataDifference": false
+      },
+      {
+        "field": "targetStatus",
+        "c0": null,
+        "c1": "frozen-targets-not-performance-acceptance",
+        "equal": false,
+        "allowedMetadataDifference": true
+      },
+      {
+        "field": "timeoutKind",
+        "c0": "cooperative-between-operations; supervisor enforces process wall timeout",
+        "c1": "cooperative-between-operations; supervisor enforces process wall timeout",
+        "equal": true,
+        "allowedMetadataDifference": false
+      },
+      {
+        "field": "warmups",
+        "c0": 1,
+        "c1": 1,
+        "equal": true,
+        "allowedMetadataDifference": false
+      },
+      {
+        "field": "widthDip",
+        "c0": 1200,
+        "c1": 1200,
+        "equal": true,
+        "allowedMetadataDifference": false
+      }
+    ],
+    "environmentChecks": [
+      {
+        "field": "executionOs",
+        "c0": "Microsoft Windows 10.0.26200",
+        "c1": "Microsoft Windows 10.0.26200",
+        "equal": true
+      },
+      {
+        "field": "processArchitecture",
+        "c0": "X64",
+        "c1": "X64",
+        "equal": true
+      },
+      {
+        "field": "framework",
+        "c0": ".NET 10.0.12",
+        "c1": ".NET 10.0.12",
+        "equal": true
+      },
+      {
+        "field": "avaloniaVersion",
+        "c0": "12.0.3.0",
+        "c1": "12.0.3.0",
+        "equal": true
+      },
+      {
+        "field": "processorCount",
+        "c0": 16,
+        "c1": 16,
+        "equal": true
+      },
+      {
+        "field": "gcServer",
+        "c0": false,
+        "c1": false,
+        "equal": true
+      },
+      {
+        "field": "backend",
+        "c0": "Avalonia.Headless",
+        "c1": "Avalonia.Headless",
+        "equal": true
+      },
+      {
+        "field": "rendering",
+        "c0": "DrawingGroup render-record only; no GPU or compositor present",
+        "c1": "DrawingGroup render-record only; no GPU or compositor present",
+        "equal": true
+      },
+      {
+        "field": "privateMeasurementKind",
+        "c0": "Process.PrivateMemorySize64-private-commit",
+        "c1": "Process.PrivateMemorySize64-private-commit",
+        "equal": true
+      },
+      {
+        "field": "fontQualification",
+        "c0": "headless-test-font; real CJK/font hashes pending native harness",
+        "c1": "headless-test-font; real CJK/font hashes pending native harness",
+        "equal": true
+      }
+    ],
+    "actualPlotAreasIdentical": false,
+    "plotAreaDifference": "C0 has 588 DIP plot height; C1 v2 has 582 DIP. Both nominal chart sizes are 1200x650 DIP and plot widths are 1054 DIP. This 6 DIP layout difference is recorded rather than claimed to be pixel-identical quality.",
+    "stageInterpretation": "C1 observation/materialization work moves into sourceApply; scenePrepare additionally projects immutable data. Compare sourceApply, scenePrepare and firstUsableToRecord together, not scenePrepare alone."
+  },
+  "sourceFiles": [
+    {
+      "path": "benchmarks/Charts.Benchmarks/BenchmarkModels.cs",
+      "c0Sha256": "73F906AEAF15FA3CC96763899ED88C1E106E4194A1E8C55716CAE658B4788126",
+      "c1Sha256": "A0C39548F5D08079568AABD71FEDCD02D3094B63DC1029BD09455094AE7AC033",
+      "equal": false,
+      "changeKind": "changed"
+    },
+    {
+      "path": "benchmarks/Charts.Benchmarks/BenchmarkRunner.cs",
+      "c0Sha256": "A29F5C85ABCDEBCB34AFB369390063CEAAAE7C51CB12FAC63204239A84C6F11E",
+      "c1Sha256": "A29F5C85ABCDEBCB34AFB369390063CEAAAE7C51CB12FAC63204239A84C6F11E",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "benchmarks/Charts.Benchmarks/Charts.Benchmarks.csproj",
+      "c0Sha256": "643533921014F20F85C95CAF6BDDAEF02175C3885BD34AEF80C2C3FEB937574E",
+      "c1Sha256": "643533921014F20F85C95CAF6BDDAEF02175C3885BD34AEF80C2C3FEB937574E",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "benchmarks/Charts.Benchmarks/DatasetFactory.cs",
+      "c0Sha256": "20D577E8AC9C782F7C03167190B731AB6DB0FAAE5E7F3BD9905368C99B7BEE00",
+      "c1Sha256": "20D577E8AC9C782F7C03167190B731AB6DB0FAAE5E7F3BD9905368C99B7BEE00",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "benchmarks/Charts.Benchmarks/packages.lock.json",
+      "c0Sha256": "90EC64C1288E02B84DC9483A86A0AC6CBA27B3BDD01978309A289428B9E55C7A",
+      "c1Sha256": "90EC64C1288E02B84DC9483A86A0AC6CBA27B3BDD01978309A289428B9E55C7A",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "benchmarks/Charts.Benchmarks/Program.cs",
+      "c0Sha256": "B60A563F5FF3F81D9CB0FBCD2A63614A2867A687010A5A861BB8982025C92B5E",
+      "c1Sha256": "B60A563F5FF3F81D9CB0FBCD2A63614A2867A687010A5A861BB8982025C92B5E",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "benchmarks/Charts.Benchmarks/README.md",
+      "c0Sha256": "939A0875AC1C35C83F46705ED9B8756FACE752325141A3AB05DDA5019ACC5CC8",
+      "c1Sha256": "939A0875AC1C35C83F46705ED9B8756FACE752325141A3AB05DDA5019ACC5CC8",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "Directory.Packages.props",
+      "c0Sha256": "9D1607E65506D8A7AA7CB722C7CED8F2306740B65D2619C8CECD1AB5375B9454",
+      "c1Sha256": "9D1607E65506D8A7AA7CB722C7CED8F2306740B65D2619C8CECD1AB5375B9454",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "global.json",
+      "c0Sha256": "4E7D5022B2A5A8D02BB951BB264A4C8613EABC332572A0AF5F9743D23F23D84E",
+      "c1Sha256": "4E7D5022B2A5A8D02BB951BB264A4C8613EABC332572A0AF5F9743D23F23D84E",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "scripts/Run-ChartsBenchmarks.ps1",
+      "c0Sha256": "460478AA8578DE2EF36E386B8425141327D81C92B6226394708FB3A739158F01",
+      "c1Sha256": "460478AA8578DE2EF36E386B8425141327D81C92B6226394708FB3A739158F01",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "scripts/Test-ChartsPerformance.ps1",
+      "c0Sha256": "59566E48E53E7133B5A0DB70EA69E2A81B24981F174082FF48455B6B73A15035",
+      "c1Sha256": "59566E48E53E7133B5A0DB70EA69E2A81B24981F174082FF48455B6B73A15035",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts.Themes/ChartsTheme.cs",
+      "c0Sha256": "576FC5CE0E10FB00CD0DE1F823D5184CD05BABF791CDAC9D6F1D0DFB21A1E5A3",
+      "c1Sha256": "576FC5CE0E10FB00CD0DE1F823D5184CD05BABF791CDAC9D6F1D0DFB21A1E5A3",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts.Themes/packages.lock.json",
+      "c0Sha256": "ECA700BCD9C7A557090DC4747B9E91BF5544F88F5F88BDDC4B1058F3AF38BC96",
+      "c1Sha256": "ECA700BCD9C7A557090DC4747B9E91BF5544F88F5F88BDDC4B1058F3AF38BC96",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts.Themes/README.md",
+      "c0Sha256": "6C93F9521BCD8F243C42E155ECD4EEF856762D4F98121C72AA0A737E70621F91",
+      "c1Sha256": "6C93F9521BCD8F243C42E155ECD4EEF856762D4F98121C72AA0A737E70621F91",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts.Themes/NT.AvaloniaControl.Charts.Themes.csproj",
+      "c0Sha256": "DB862E283734014F875FDBF6EA3E953B9045F14AE83EFBE03EB144DAD2CE3AA8",
+      "c1Sha256": "DB862E283734014F875FDBF6EA3E953B9045F14AE83EFBE03EB144DAD2CE3AA8",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts.Themes/Themes/Generic.axaml",
+      "c0Sha256": "31A2128E66EED748D55EF3E7BCCE190026738CB2D111B16ECD2852AB6C26E241",
+      "c1Sha256": "31A2128E66EED748D55EF3E7BCCE190026738CB2D111B16ECD2852AB6C26E241",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/CartesianChart.cs",
+      "c0Sha256": "1341F2A3224D34B3EBDA7BF54CA403164F4C3DB1B55634594FA46F25FD7ED455",
+      "c1Sha256": "C9A46693BE856359877CD4CC15DE9AFB675428BB78E72AC45CB43A3C6861384C",
+      "equal": false,
+      "changeKind": "changed"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Interaction.cs",
+      "c0Sha256": "C42E8779E082EE79E3CA895A9A8E18C6EC1CF4F8C3237180BE9D2E6A12B277B9",
+      "c1Sha256": "05E7724CDA468E757B9C369143484AB914DF9F7CD9B5AFF27F335E45107FEC3C",
+      "equal": false,
+      "changeKind": "changed"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/ChartAxis.cs",
+      "c0Sha256": "0C7D86F3C0A566BA008F56C8A4D7755C204ED3D3047A6BC7239C848CE97DCD5F",
+      "c1Sha256": "CDE9E80FD51251E2FF883B5CD26E28877678F2849A5B7F0BBEE630EF5AFEB3DC",
+      "equal": false,
+      "changeKind": "changed"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/ChartBase.cs",
+      "c0Sha256": null,
+      "c1Sha256": "F09D5FEF61E3CB74BB330E4F7EA57AD22C65F570866609576558BBB436AB8E3F",
+      "equal": false,
+      "changeKind": "added"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/ChartDataAccessor.cs",
+      "c0Sha256": null,
+      "c1Sha256": "9513B87B86F92967B23FFE374A57A0A089B0FA9198C727E6405981C03EC6D283",
+      "equal": false,
+      "changeKind": "added"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/ChartDataSnapshot.cs",
+      "c0Sha256": null,
+      "c1Sha256": "A141EF6BE9DFF45A69310D595AA6CD8E6235E043E07B9C81D6F309F700A15C9B",
+      "equal": false,
+      "changeKind": "added"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/ChartInteractionAxes.cs",
+      "c0Sha256": "3599FB3F8837320C919AC11D1C4C58AF40F0988B663F1537BAD75AD5AEC65698",
+      "c1Sha256": "3599FB3F8837320C919AC11D1C4C58AF40F0988B663F1537BAD75AD5AEC65698",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/ChartPoint.cs",
+      "c0Sha256": "E5B8393C1562C0F0501872D2BE337477CF9E767C90300932973910AC1B3BD3D5",
+      "c1Sha256": "E5B8393C1562C0F0501872D2BE337477CF9E767C90300932973910AC1B3BD3D5",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/ChartPointHit.cs",
+      "c0Sha256": "23FA88297A5DF590E990C2E68E551E29B2EF71BC8EB391ACDBF1BE89ED33CF7B",
+      "c1Sha256": "2A4D66E9DC7707660218E9983DEAEB7CBC1CA7ECF24D0A34B2B2E1C1D3D2A2E3",
+      "equal": false,
+      "changeKind": "changed"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/ChartScale.cs",
+      "c0Sha256": "89642DA86270AF407EFF47AEEC9D2352C4326B487911C7A64DC6D1CEAC691B87",
+      "c1Sha256": "33ECE7FA269C46BC3F2A8767F99E0123EC9D93F452CD7436EED80A1EF360AD6E",
+      "equal": false,
+      "changeKind": "changed"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/ChartSeries.cs",
+      "c0Sha256": "5D5CCCADEEC67A0C6A598BF09BBF45E41EA118B7E1B084BFA9A901D5FAD15A22",
+      "c1Sha256": "4915407CC390E5329F3AB6801C9BB3AFDE53417094FABE0897A4D8868E91DA52",
+      "equal": false,
+      "changeKind": "changed"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/ChartSeriesRenderer.cs",
+      "c0Sha256": null,
+      "c1Sha256": "84D20A2A87B6432EDFE9076954FD021E3F7BDAB05B932AA62F008D7C9EE6ADDE",
+      "equal": false,
+      "changeKind": "added"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/ChartViewport.cs",
+      "c0Sha256": "B3E47E781ACDF1A801147F4A4EEF8BB67E42C925F74E11FC401643D3FD9E19B0",
+      "c1Sha256": "B3E47E781ACDF1A801147F4A4EEF8BB67E42C925F74E11FC401643D3FD9E19B0",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/packages.lock.json",
+      "c0Sha256": "0F17371506FD5CA0F53D281973FD2387D8F10EC4EB95F405233AAD40001EE794",
+      "c1Sha256": "0F17371506FD5CA0F53D281973FD2387D8F10EC4EB95F405233AAD40001EE794",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/Properties/AssemblyInfo.cs",
+      "c0Sha256": "5127F1EE8B9186A2F65C0C344193E9AFB72570EC589ADE6F1DCBE535A82138F0",
+      "c1Sha256": "5127F1EE8B9186A2F65C0C344193E9AFB72570EC589ADE6F1DCBE535A82138F0",
+      "equal": true,
+      "changeKind": "unchanged"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/README.md",
+      "c0Sha256": "CAF9837AB6F72D3099B63FACC5E9E866215FC9AC664E7E39884955F48C50D193",
+      "c1Sha256": "AA37844A792E443331FEF2010D90AEF096AA53B50637DEB88AC2876C9C1093E5",
+      "equal": false,
+      "changeKind": "changed"
+    },
+    {
+      "path": "src/NT.AvaloniaControl.Charts/NT.AvaloniaControl.Charts.csproj",
+      "c0Sha256": "0584A0F82A910603D5DA111CCE7DB76AD3F8472E86FA9C24898F12DCD6832690",
+      "c1Sha256": "0584A0F82A910603D5DA111CCE7DB76AD3F8472E86FA9C24898F12DCD6832690",
+      "equal": true,
+      "changeKind": "unchanged"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S10-L",
+      "order": 0,
+      "datasetManifestsIdentical": true,
+      "datasets": [
+        {
+          "id": "S10-L",
+          "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+          "distribution": "triangle-noise-isolated-spikes-candidate",
+          "seedHex": "1020304050607081",
+          "sha256": "7C9499A72605725ADD8F4011F0B5FC0900842C41AF886C9E172D53E10150DF86",
+          "inputPointCount": 10000,
+          "validPointCount": 10000,
+          "seriesPointCounts": [
+            10000
+          ],
+          "seriesSha256": [
+            "A63546DB64E05EAFE1073F79C2CBA9092301834C5EAB0C51F2532DD375E8605F"
+          ],
+          "monotonicX": true,
+          "containsGaps": false,
+          "realtimePoc": false,
+          "revision": 0,
+          "markerSize": 0,
+          "downsampling": "none-current-runtime",
+          "pendingScope": [
+            "complete-C4-corpus",
+            "quality-golden",
+            "physical-input",
+            "native-frame-present",
+            "official-reference"
+          ]
+        }
+      ],
+      "measuredSamplesC0": 2,
+      "measuredSamplesC1": 2,
+      "warmupsC0": 1,
+      "warmupsC1": 1,
+      "actualPlotAreaC0": [
+        124,
+        20,
+        1054,
+        588
+      ],
+      "actualPlotAreaC1": [
+        124,
+        20,
+        1054,
+        582
+      ],
+      "plotAreasEqual": false,
+      "visibleRangesEqual": true,
+      "metrics": [
+        {
+          "metric": "harnessSourceSnapshot",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0541,
+            "p95Milliseconds": 0.0851,
+            "maximumMilliseconds": 0.0851,
+            "p95AllocatedBytes": 160144.0,
+            "rawMilliseconds": [
+              0.0851,
+              0.0541
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0381,
+            "p95Milliseconds": 0.0698,
+            "maximumMilliseconds": 0.0698,
+            "p95AllocatedBytes": 160144.0,
+            "rawMilliseconds": [
+              0.0698,
+              0.0381
+            ]
+          },
+          "deltaP95Milliseconds": -0.015299999999999994,
+          "ratioP95C1OverC0": 0.8202115158636898,
+          "deltaP95Percent": -17.97884841363102,
+          "arithmeticDirection": "improvement-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "sourceApply",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0074,
+            "p95Milliseconds": 0.0165,
+            "maximumMilliseconds": 0.0165,
+            "p95AllocatedBytes": 120.0,
+            "rawMilliseconds": [
+              0.0165,
+              0.0074
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.4857,
+            "p95Milliseconds": 0.788,
+            "maximumMilliseconds": 0.788,
+            "p95AllocatedBytes": 960504.0,
+            "rawMilliseconds": [
+              0.788,
+              0.4857
+            ]
+          },
+          "deltaP95Milliseconds": 0.7715000000000001,
+          "ratioP95C1OverC0": 47.75757575757576,
+          "deltaP95Percent": 4675.757575757576,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "scenePrepare",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.9011,
+            "p95Milliseconds": 1.0656,
+            "maximumMilliseconds": 1.0656,
+            "p95AllocatedBytes": 336208.0,
+            "rawMilliseconds": [
+              1.0656,
+              0.9011
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 4.0575,
+            "p95Milliseconds": 5.0694,
+            "maximumMilliseconds": 5.0694,
+            "p95AllocatedBytes": 2260968.0,
+            "rawMilliseconds": [
+              5.0694,
+              4.0575
+            ]
+          },
+          "deltaP95Milliseconds": 4.0038,
+          "ratioP95C1OverC0": 4.757319819819819,
+          "deltaP95Percent": 375.7319819819819,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "cachedSceneGetter",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0001,
+            "p95Milliseconds": 0.0002,
+            "maximumMilliseconds": 0.0002,
+            "p95AllocatedBytes": 104.0,
+            "rawMilliseconds": [
+              0.0002,
+              0.0001
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0015,
+            "p95Milliseconds": 0.0016,
+            "maximumMilliseconds": 0.0016,
+            "p95AllocatedBytes": 232.0,
+            "rawMilliseconds": [
+              0.0016,
+              0.0015
+            ]
+          },
+          "deltaP95Milliseconds": 0.0014,
+          "ratioP95C1OverC0": 8.0,
+          "deltaP95Percent": 700.0,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "renderRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 1.2899,
+            "p95Milliseconds": 1.3228,
+            "maximumMilliseconds": 1.3228,
+            "p95AllocatedBytes": 663232.0,
+            "rawMilliseconds": [
+              1.3228,
+              1.2899
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 1.9936,
+            "p95Milliseconds": 2.0806,
+            "maximumMilliseconds": 2.0806,
+            "p95AllocatedBytes": 668528.0,
+            "rawMilliseconds": [
+              2.0806,
+              1.9936
+            ]
+          },
+          "deltaP95Milliseconds": 0.7578,
+          "ratioP95C1OverC0": 1.5728757181735713,
+          "deltaP95Percent": 57.28757181735713,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "firstUsableToRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 2.6879,
+            "p95Milliseconds": 2.9399,
+            "maximumMilliseconds": 2.9399,
+            "p95AllocatedBytes": 1161952.0,
+            "rawMilliseconds": [
+              2.9399,
+              2.6879
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 7.4302,
+            "p95Milliseconds": 8.8875,
+            "maximumMilliseconds": 8.8875,
+            "p95AllocatedBytes": 4052824.0,
+            "rawMilliseconds": [
+              8.8875,
+              7.4302
+            ]
+          },
+          "deltaP95Milliseconds": 5.9475999999999996,
+          "ratioP95C1OverC0": 3.023062008911867,
+          "deltaP95Percent": 202.3062008911867,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "hitQuery",
+          "c0": {
+            "count": 10,
+            "p50Milliseconds": 0.4294,
+            "p95Milliseconds": 0.4958,
+            "maximumMilliseconds": 0.4958,
+            "p95AllocatedBytes": 1608.0,
+            "rawMilliseconds": [
+              0.4448,
+              0.4294,
+              0.4157,
+              0.4096,
+              0.4273,
+              0.4313,
+              0.4058,
+              0.4795,
+              0.4958,
+              0.4564
+            ]
+          },
+          "c1": {
+            "count": 10,
+            "p50Milliseconds": 0.8524,
+            "p95Milliseconds": 0.9281,
+            "maximumMilliseconds": 0.9281,
+            "p95AllocatedBytes": 1736.0,
+            "rawMilliseconds": [
+              0.8738,
+              0.8458,
+              0.8524,
+              0.8793,
+              0.9281,
+              0.8496,
+              0.8378,
+              0.842,
+              0.8535,
+              0.8668
+            ]
+          },
+          "deltaP95Milliseconds": 0.4323,
+          "ratioP95C1OverC0": 1.8719241629689392,
+          "deltaP95Percent": 87.19241629689391,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        }
+      ],
+      "memoryC0": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 27234304,
+        "maxPrivateObservedMiB": 25.97265625,
+        "maxWorkingSetObservedBytes": 66904064,
+        "maxManagedHeapObservedBytes": 6393184,
+        "firstMeasuredPrivateBeforeBytes": 24829952,
+        "lastMeasuredPrivateAfterBytes": 27234304,
+        "lastMeasuredManagedAfterBytes": 6393184,
+        "processPeakWorkingSetBytes": 66904064
+      },
+      "memoryC1": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 33779712,
+        "maxPrivateObservedMiB": 32.21484375,
+        "maxWorkingSetObservedBytes": 74141696,
+        "maxManagedHeapObservedBytes": 7213280,
+        "firstMeasuredPrivateBeforeBytes": 27987968,
+        "lastMeasuredPrivateAfterBytes": 33779712,
+        "lastMeasuredManagedAfterBytes": 6143808,
+        "processPeakWorkingSetBytes": 74141696
+      },
+      "deltaMaxPrivateObservedBytes": 6545408,
+      "ratioMaxPrivateObserved": 1.2403368927658294,
+      "processCarryoverCaveat": true,
+      "qualification": "C0-diagnostic-only"
+    },
+    {
+      "id": "S10-S",
+      "order": 1,
+      "datasetManifestsIdentical": true,
+      "datasets": [
+        {
+          "id": "S10-S",
+          "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+          "distribution": "uniform-fixed-grid-candidate",
+          "seedHex": "1020304050607082",
+          "sha256": "F5B6A6EFE192E19A45668E7BBCA650A01A17F8F45C0E8B63742C8E5A4FA48304",
+          "inputPointCount": 10000,
+          "validPointCount": 10000,
+          "seriesPointCounts": [
+            10000
+          ],
+          "seriesSha256": [
+            "F122AB26CE1318E0B63748598656BB2FD80DA4AEBC5E7FAA1EB8162CFA996039"
+          ],
+          "monotonicX": true,
+          "containsGaps": false,
+          "realtimePoc": false,
+          "revision": 0,
+          "markerSize": 4,
+          "downsampling": "none-current-runtime",
+          "pendingScope": [
+            "complete-C4-corpus",
+            "quality-golden",
+            "physical-input",
+            "native-frame-present",
+            "official-reference"
+          ]
+        }
+      ],
+      "measuredSamplesC0": 2,
+      "measuredSamplesC1": 2,
+      "warmupsC0": 1,
+      "warmupsC1": 1,
+      "actualPlotAreaC0": [
+        124,
+        20,
+        1054,
+        588
+      ],
+      "actualPlotAreaC1": [
+        124,
+        20,
+        1054,
+        582
+      ],
+      "plotAreasEqual": false,
+      "visibleRangesEqual": true,
+      "metrics": [
+        {
+          "metric": "harnessSourceSnapshot",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0289,
+            "p95Milliseconds": 0.0305,
+            "maximumMilliseconds": 0.0305,
+            "p95AllocatedBytes": 160144.0,
+            "rawMilliseconds": [
+              0.0305,
+              0.0289
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0284,
+            "p95Milliseconds": 0.0297,
+            "maximumMilliseconds": 0.0297,
+            "p95AllocatedBytes": 160144.0,
+            "rawMilliseconds": [
+              0.0297,
+              0.0284
+            ]
+          },
+          "deltaP95Milliseconds": -0.0007999999999999986,
+          "ratioP95C1OverC0": 0.9737704918032787,
+          "deltaP95Percent": -2.622950819672132,
+          "arithmeticDirection": "improvement-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "sourceApply",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0172,
+            "p95Milliseconds": 0.0183,
+            "maximumMilliseconds": 0.0183,
+            "p95AllocatedBytes": 120.0,
+            "rawMilliseconds": [
+              0.0172,
+              0.0183
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.7857,
+            "p95Milliseconds": 0.8308,
+            "maximumMilliseconds": 0.8308,
+            "p95AllocatedBytes": 960504.0,
+            "rawMilliseconds": [
+              0.8308,
+              0.7857
+            ]
+          },
+          "deltaP95Milliseconds": 0.8125,
+          "ratioP95C1OverC0": 45.39890710382514,
+          "deltaP95Percent": 4439.890710382514,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "scenePrepare",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 1.0098,
+            "p95Milliseconds": 1.0352,
+            "maximumMilliseconds": 1.0352,
+            "p95AllocatedBytes": 339232.0,
+            "rawMilliseconds": [
+              1.0098,
+              1.0352
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 1.6269,
+            "p95Milliseconds": 2.2828,
+            "maximumMilliseconds": 2.2828,
+            "p95AllocatedBytes": 2271792.0,
+            "rawMilliseconds": [
+              1.6269,
+              2.2828
+            ]
+          },
+          "deltaP95Milliseconds": 1.2476,
+          "ratioP95C1OverC0": 2.205177743431221,
+          "deltaP95Percent": 120.5177743431221,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "cachedSceneGetter",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0003,
+            "p95Milliseconds": 0.0004,
+            "maximumMilliseconds": 0.0004,
+            "p95AllocatedBytes": 104.0,
+            "rawMilliseconds": [
+              0.0003,
+              0.0004
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0014,
+            "p95Milliseconds": 0.0015,
+            "maximumMilliseconds": 0.0015,
+            "p95AllocatedBytes": 232.0,
+            "rawMilliseconds": [
+              0.0015,
+              0.0014
+            ]
+          },
+          "deltaP95Milliseconds": 0.0011,
+          "ratioP95C1OverC0": 3.75,
+          "deltaP95Percent": 275.0,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "renderRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 15.1181,
+            "p95Milliseconds": 22.4746,
+            "maximumMilliseconds": 22.4746,
+            "p95AllocatedBytes": 10734216.0,
+            "rawMilliseconds": [
+              22.4746,
+              15.1181
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 15.4962,
+            "p95Milliseconds": 18.631,
+            "maximumMilliseconds": 18.631,
+            "p95AllocatedBytes": 10738392.0,
+            "rawMilliseconds": [
+              18.631,
+              15.4962
+            ]
+          },
+          "deltaP95Milliseconds": -3.8435999999999986,
+          "ratioP95C1OverC0": 0.828980271061554,
+          "deltaP95Percent": -17.101972893844597,
+          "arithmeticDirection": "improvement-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "firstUsableToRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 16.7193,
+            "p95Milliseconds": 24.054,
+            "maximumMilliseconds": 24.054,
+            "p95AllocatedBytes": 11235512.0,
+            "rawMilliseconds": [
+              24.054,
+              16.7193
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 19.5607,
+            "p95Milliseconds": 22.025,
+            "maximumMilliseconds": 22.025,
+            "p95AllocatedBytes": 14133128.0,
+            "rawMilliseconds": [
+              22.025,
+              19.5607
+            ]
+          },
+          "deltaP95Milliseconds": -2.029,
+          "ratioP95C1OverC0": 0.9156481250519664,
+          "deltaP95Percent": -8.435187494803365,
+          "arithmeticDirection": "improvement-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "hitQuery",
+          "c0": {
+            "count": 10,
+            "p50Milliseconds": 0.4664,
+            "p95Milliseconds": 0.5143,
+            "maximumMilliseconds": 0.5143,
+            "p95AllocatedBytes": 648.0,
+            "rawMilliseconds": [
+              0.5143,
+              0.4731,
+              0.4702,
+              0.4631,
+              0.4664,
+              0.5091,
+              0.4591,
+              0.4633,
+              0.4739,
+              0.4553
+            ]
+          },
+          "c1": {
+            "count": 10,
+            "p50Milliseconds": 0.8605,
+            "p95Milliseconds": 0.9596,
+            "maximumMilliseconds": 0.9596,
+            "p95AllocatedBytes": 1016.0,
+            "rawMilliseconds": [
+              0.8978,
+              0.8605,
+              0.9333,
+              0.8813,
+              0.8414,
+              0.9596,
+              0.8303,
+              0.8334,
+              0.8446,
+              0.8762
+            ]
+          },
+          "deltaP95Milliseconds": 0.44530000000000003,
+          "ratioP95C1OverC0": 1.8658370600816645,
+          "deltaP95Percent": 86.58370600816644,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        }
+      ],
+      "memoryC0": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 53874688,
+        "maxPrivateObservedMiB": 51.37890625,
+        "maxWorkingSetObservedBytes": 91418624,
+        "maxManagedHeapObservedBytes": 20572448,
+        "firstMeasuredPrivateBeforeBytes": 42053632,
+        "lastMeasuredPrivateAfterBytes": 53874688,
+        "lastMeasuredManagedAfterBytes": 20572448,
+        "processPeakWorkingSetBytes": 91418624
+      },
+      "memoryC1": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 61001728,
+        "maxPrivateObservedMiB": 58.17578125,
+        "maxWorkingSetObservedBytes": 98807808,
+        "maxManagedHeapObservedBytes": 25685432,
+        "firstMeasuredPrivateBeforeBytes": 45400064,
+        "lastMeasuredPrivateAfterBytes": 57495552,
+        "lastMeasuredManagedAfterBytes": 16375600,
+        "processPeakWorkingSetBytes": 101826560
+      },
+      "deltaMaxPrivateObservedBytes": 7127040,
+      "ratioMaxPrivateObserved": 1.1322892115867103,
+      "processCarryoverCaveat": true,
+      "qualification": "C0-diagnostic-only"
+    },
+    {
+      "id": "S10-B",
+      "order": 2,
+      "datasetManifestsIdentical": true,
+      "datasets": [
+        {
+          "id": "S10-B",
+          "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+          "distribution": "triangle-noise-isolated-spikes-candidate",
+          "seedHex": "1020304050607083",
+          "sha256": "364E61FC8705F7B6BE7402F942D6D1A7BD456D51891E62D4018E4ECFA67EE46B",
+          "inputPointCount": 10000,
+          "validPointCount": 10000,
+          "seriesPointCounts": [
+            5000,
+            5000
+          ],
+          "seriesSha256": [
+            "41A74A231E4508264DE08ABFE37C2442C60CF5584287A5801E79DA6D50723996",
+            "9914F740E86F9B061D0D486379202DAC9234E2C0E692B283F2235E86F03436ED"
+          ],
+          "monotonicX": true,
+          "containsGaps": false,
+          "realtimePoc": false,
+          "revision": 0,
+          "markerSize": 0,
+          "downsampling": "none-current-runtime",
+          "pendingScope": [
+            "complete-C4-corpus",
+            "quality-golden",
+            "physical-input",
+            "native-frame-present",
+            "official-reference"
+          ]
+        }
+      ],
+      "measuredSamplesC0": 2,
+      "measuredSamplesC1": 2,
+      "warmupsC0": 1,
+      "warmupsC1": 1,
+      "actualPlotAreaC0": [
+        124,
+        20,
+        1054,
+        588
+      ],
+      "actualPlotAreaC1": [
+        124,
+        20,
+        1054,
+        582
+      ],
+      "plotAreasEqual": false,
+      "visibleRangesEqual": true,
+      "metrics": [
+        {
+          "metric": "harnessSourceSnapshot",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0244,
+            "p95Milliseconds": 0.0249,
+            "maximumMilliseconds": 0.0249,
+            "p95AllocatedBytes": 160176.0,
+            "rawMilliseconds": [
+              0.0244,
+              0.0249
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0199,
+            "p95Milliseconds": 0.0291,
+            "maximumMilliseconds": 0.0291,
+            "p95AllocatedBytes": 160176.0,
+            "rawMilliseconds": [
+              0.0199,
+              0.0291
+            ]
+          },
+          "deltaP95Milliseconds": 0.004200000000000002,
+          "ratioP95C1OverC0": 1.1686746987951808,
+          "deltaP95Percent": 16.867469879518083,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "sourceApply",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0137,
+            "p95Milliseconds": 0.0146,
+            "maximumMilliseconds": 0.0146,
+            "p95AllocatedBytes": 200.0,
+            "rawMilliseconds": [
+              0.0146,
+              0.0137
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.5431,
+            "p95Milliseconds": 2.6891,
+            "maximumMilliseconds": 2.6891,
+            "p95AllocatedBytes": 960968.0,
+            "rawMilliseconds": [
+              2.6891,
+              0.5431
+            ]
+          },
+          "deltaP95Milliseconds": 2.6744999999999997,
+          "ratioP95C1OverC0": 184.1849315068493,
+          "deltaP95Percent": 18318.493150684928,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "scenePrepare",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 2.312,
+            "p95Milliseconds": 2.3433,
+            "maximumMilliseconds": 2.3433,
+            "p95AllocatedBytes": 756904.0,
+            "rawMilliseconds": [
+              2.3433,
+              2.312
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 7.1375,
+            "p95Milliseconds": 7.8097,
+            "maximumMilliseconds": 7.8097,
+            "p95AllocatedBytes": 3530712.0,
+            "rawMilliseconds": [
+              7.1375,
+              7.8097
+            ]
+          },
+          "deltaP95Milliseconds": 5.4664,
+          "ratioP95C1OverC0": 3.3327785601502153,
+          "deltaP95Percent": 233.27785601502154,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "cachedSceneGetter",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0001,
+            "p95Milliseconds": 0.0003,
+            "maximumMilliseconds": 0.0003,
+            "p95AllocatedBytes": 104.0,
+            "rawMilliseconds": [
+              0.0003,
+              0.0001
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0013,
+            "p95Milliseconds": 0.0013,
+            "maximumMilliseconds": 0.0013,
+            "p95AllocatedBytes": 232.0,
+            "rawMilliseconds": [
+              0.0013,
+              0.0013
+            ]
+          },
+          "deltaP95Milliseconds": 0.001,
+          "ratioP95C1OverC0": 4.333333333333334,
+          "deltaP95Percent": 333.33333333333337,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "renderRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 15.3549,
+            "p95Milliseconds": 20.0236,
+            "maximumMilliseconds": 20.0236,
+            "p95AllocatedBytes": 10300304.0,
+            "rawMilliseconds": [
+              20.0236,
+              15.3549
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 12.1555,
+            "p95Milliseconds": 19.9767,
+            "maximumMilliseconds": 19.9767,
+            "p95AllocatedBytes": 9879344.0,
+            "rawMilliseconds": [
+              19.9767,
+              12.1555
+            ]
+          },
+          "deltaP95Milliseconds": -0.04689999999999728,
+          "ratioP95C1OverC0": 0.9976577638386706,
+          "deltaP95Percent": -0.23422361613294473,
+          "arithmeticDirection": "improvement-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "firstUsableToRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 20.2897,
+            "p95Milliseconds": 25.1168,
+            "maximumMilliseconds": 25.1168,
+            "p95AllocatedBytes": 11645176.0,
+            "rawMilliseconds": [
+              25.1168,
+              20.2897
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 22.6586,
+            "p95Milliseconds": 31.8845,
+            "maximumMilliseconds": 31.8845,
+            "p95AllocatedBytes": 14537696.0,
+            "rawMilliseconds": [
+              31.8845,
+              22.6586
+            ]
+          },
+          "deltaP95Milliseconds": 6.767699999999998,
+          "ratioP95C1OverC0": 1.2694491336475984,
+          "deltaP95Percent": 26.944913364759838,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "hitQuery",
+          "c0": {
+            "count": 10,
+            "p50Milliseconds": 2.6556,
+            "p95Milliseconds": 10.5459,
+            "maximumMilliseconds": 10.5459,
+            "p95AllocatedBytes": 427256.0,
+            "rawMilliseconds": [
+              2.7028,
+              2.6626,
+              2.6373,
+              2.6126,
+              2.9399,
+              2.577,
+              2.5243,
+              2.6556,
+              2.9241,
+              10.5459
+            ]
+          },
+          "c1": {
+            "count": 10,
+            "p50Milliseconds": 2.0532,
+            "p95Milliseconds": 2.1345,
+            "maximumMilliseconds": 2.1345,
+            "p95AllocatedBytes": 5160.0,
+            "rawMilliseconds": [
+              2.0532,
+              2.0582,
+              1.9224,
+              1.9731,
+              2.076,
+              2.1145,
+              1.9043,
+              2.0419,
+              2.1345,
+              2.0818
+            ]
+          },
+          "deltaP95Milliseconds": -8.4114,
+          "ratioP95C1OverC0": 0.20240093306403437,
+          "deltaP95Percent": -79.75990669359656,
+          "arithmeticDirection": "improvement-observed",
+          "formalGateEvaluated": false
+        }
+      ],
+      "memoryC0": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 53493760,
+        "maxPrivateObservedMiB": 51.015625,
+        "maxWorkingSetObservedBytes": 92971008,
+        "maxManagedHeapObservedBytes": 24031664,
+        "firstMeasuredPrivateBeforeBytes": 49192960,
+        "lastMeasuredPrivateAfterBytes": 53493760,
+        "lastMeasuredManagedAfterBytes": 11784992,
+        "processPeakWorkingSetBytes": 99758080
+      },
+      "memoryC1": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 65556480,
+        "maxPrivateObservedMiB": 62.51953125,
+        "maxWorkingSetObservedBytes": 106287104,
+        "maxManagedHeapObservedBytes": 34468344,
+        "firstMeasuredPrivateBeforeBytes": 65556480,
+        "lastMeasuredPrivateAfterBytes": 56324096,
+        "lastMeasuredManagedAfterBytes": 14988648,
+        "processPeakWorkingSetBytes": 106295296
+      },
+      "deltaMaxPrivateObservedBytes": 12062720,
+      "ratioMaxPrivateObserved": 1.2254977029096479,
+      "processCarryoverCaveat": true,
+      "qualification": "C0-diagnostic-only"
+    },
+    {
+      "id": "S100-L",
+      "order": 3,
+      "datasetManifestsIdentical": true,
+      "datasets": [
+        {
+          "id": "S100-L",
+          "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+          "distribution": "triangle-noise-isolated-spikes-candidate",
+          "seedHex": "1020304050607084",
+          "sha256": "FE2B1CDE582C5B08F5DE082EA35A170829B6596559642673DDBE4B47C00202A5",
+          "inputPointCount": 100000,
+          "validPointCount": 100000,
+          "seriesPointCounts": [
+            100000
+          ],
+          "seriesSha256": [
+            "EC74D6D5B9DB33219C6B3D5F519AA07189DEEE19D2A64ED2CF720BF68ABE62E6"
+          ],
+          "monotonicX": true,
+          "containsGaps": false,
+          "realtimePoc": false,
+          "revision": 0,
+          "markerSize": 0,
+          "downsampling": "none-current-runtime",
+          "pendingScope": [
+            "complete-C4-corpus",
+            "quality-golden",
+            "physical-input",
+            "native-frame-present",
+            "official-reference"
+          ]
+        }
+      ],
+      "measuredSamplesC0": 2,
+      "measuredSamplesC1": 2,
+      "warmupsC0": 1,
+      "warmupsC1": 1,
+      "actualPlotAreaC0": [
+        124,
+        20,
+        1054,
+        588
+      ],
+      "actualPlotAreaC1": [
+        124,
+        20,
+        1054,
+        582
+      ],
+      "plotAreasEqual": false,
+      "visibleRangesEqual": true,
+      "metrics": [
+        {
+          "metric": "harnessSourceSnapshot",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.2043,
+            "p95Milliseconds": 0.2897,
+            "maximumMilliseconds": 0.2897,
+            "p95AllocatedBytes": 1600144.0,
+            "rawMilliseconds": [
+              0.2897,
+              0.2043
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.2883,
+            "p95Milliseconds": 0.2932,
+            "maximumMilliseconds": 0.2932,
+            "p95AllocatedBytes": 1600144.0,
+            "rawMilliseconds": [
+              0.2932,
+              0.2883
+            ]
+          },
+          "deltaP95Milliseconds": 0.003500000000000003,
+          "ratioP95C1OverC0": 1.0120814635830169,
+          "deltaP95Percent": 1.2081463583016872,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "sourceApply",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0154,
+            "p95Milliseconds": 0.0175,
+            "maximumMilliseconds": 0.0175,
+            "p95AllocatedBytes": 120.0,
+            "rawMilliseconds": [
+              0.0154,
+              0.0175
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 4.6947,
+            "p95Milliseconds": 17.9129,
+            "maximumMilliseconds": 17.9129,
+            "p95AllocatedBytes": 9600504.0,
+            "rawMilliseconds": [
+              4.6947,
+              17.9129
+            ]
+          },
+          "deltaP95Milliseconds": 17.895400000000002,
+          "ratioP95C1OverC0": 1023.5942857142857,
+          "deltaP95Percent": 102259.42857142857,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "scenePrepare",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 6.5334,
+            "p95Milliseconds": 6.8101,
+            "maximumMilliseconds": 6.8101,
+            "p95AllocatedBytes": 3217768.0,
+            "rawMilliseconds": [
+              6.8101,
+              6.5334
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 16.0985,
+            "p95Milliseconds": 20.7488,
+            "maximumMilliseconds": 20.7488,
+            "p95AllocatedBytes": 22420984.0,
+            "rawMilliseconds": [
+              20.7488,
+              16.0985
+            ]
+          },
+          "deltaP95Milliseconds": 13.938699999999999,
+          "ratioP95C1OverC0": 3.0467687699152726,
+          "deltaP95Percent": 204.67687699152725,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "cachedSceneGetter",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0004,
+            "p95Milliseconds": 0.0004,
+            "maximumMilliseconds": 0.0004,
+            "p95AllocatedBytes": 104.0,
+            "rawMilliseconds": [
+              0.0004,
+              0.0004
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0014,
+            "p95Milliseconds": 0.0016,
+            "maximumMilliseconds": 0.0016,
+            "p95AllocatedBytes": 232.0,
+            "rawMilliseconds": [
+              0.0016,
+              0.0014
+            ]
+          },
+          "deltaP95Milliseconds": 0.0012000000000000001,
+          "ratioP95C1OverC0": 4.0,
+          "deltaP95Percent": 300.0,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "renderRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 5.341,
+            "p95Milliseconds": 6.1196,
+            "maximumMilliseconds": 6.1196,
+            "p95AllocatedBytes": 4333336.0,
+            "rawMilliseconds": [
+              5.341,
+              6.1196
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 11.9997,
+            "p95Milliseconds": 14.1849,
+            "maximumMilliseconds": 14.1849,
+            "p95AllocatedBytes": 4338632.0,
+            "rawMilliseconds": [
+              11.9997,
+              14.1849
+            ]
+          },
+          "deltaP95Milliseconds": 8.0653,
+          "ratioP95C1OverC0": 2.317945617360612,
+          "deltaP95Percent": 131.79456173606118,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "firstUsableToRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 15.5954,
+            "p95Milliseconds": 15.8314,
+            "maximumMilliseconds": 15.8314,
+            "p95AllocatedBytes": 9154320.0,
+            "rawMilliseconds": [
+              15.5954,
+              15.8314
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 44.9543,
+            "p95Milliseconds": 53.0058,
+            "maximumMilliseconds": 53.0058,
+            "p95AllocatedBytes": 37963424.0,
+            "rawMilliseconds": [
+              44.9543,
+              53.0058
+            ]
+          },
+          "deltaP95Milliseconds": 37.1744,
+          "ratioP95C1OverC0": 3.3481435627929304,
+          "deltaP95Percent": 234.81435627929304,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "hitQuery",
+          "c0": {
+            "count": 10,
+            "p50Milliseconds": 3.042,
+            "p95Milliseconds": 3.1713,
+            "maximumMilliseconds": 3.1713,
+            "p95AllocatedBytes": 2376.0,
+            "rawMilliseconds": [
+              3.1292,
+              2.9094,
+              3.1713,
+              2.9947,
+              3.042,
+              2.9472,
+              3.0787,
+              3.0254,
+              3.1432,
+              3.0799
+            ]
+          },
+          "c1": {
+            "count": 10,
+            "p50Milliseconds": 4.5074,
+            "p95Milliseconds": 7.3694,
+            "maximumMilliseconds": 7.3694,
+            "p95AllocatedBytes": 2312.0,
+            "rawMilliseconds": [
+              7.2068,
+              6.7854,
+              7.1778,
+              7.1235,
+              7.3694,
+              4.5074,
+              4.1227,
+              3.9535,
+              4.1059,
+              3.9186
+            ]
+          },
+          "deltaP95Milliseconds": 4.1981,
+          "ratioP95C1OverC0": 2.3237788919370606,
+          "deltaP95Percent": 132.37788919370607,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        }
+      ],
+      "memoryC0": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 69939200,
+        "maxPrivateObservedMiB": 66.69921875,
+        "maxWorkingSetObservedBytes": 109998080,
+        "maxManagedHeapObservedBytes": 16588736,
+        "firstMeasuredPrivateBeforeBytes": 64258048,
+        "lastMeasuredPrivateAfterBytes": 69939200,
+        "lastMeasuredManagedAfterBytes": 14345800,
+        "processPeakWorkingSetBytes": 109998080
+      },
+      "memoryC1": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 117731328,
+        "maxPrivateObservedMiB": 112.27734375,
+        "maxWorkingSetObservedBytes": 149983232,
+        "maxManagedHeapObservedBytes": 83808240,
+        "firstMeasuredPrivateBeforeBytes": 87773184,
+        "lastMeasuredPrivateAfterBytes": 102350848,
+        "lastMeasuredManagedAfterBytes": 69385136,
+        "processPeakWorkingSetBytes": 171188224
+      },
+      "deltaMaxPrivateObservedBytes": 47792128,
+      "ratioMaxPrivateObserved": 1.6833382137628112,
+      "processCarryoverCaveat": true,
+      "qualification": "C0-diagnostic-only"
+    },
+    {
+      "id": "S1M-L",
+      "order": 4,
+      "datasetManifestsIdentical": true,
+      "datasets": [
+        {
+          "id": "S1M-L",
+          "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+          "distribution": "triangle-noise-isolated-spikes-candidate",
+          "seedHex": "1020304050607085",
+          "sha256": "B5DDAB0C4F17595ABD629369BC850C07A3D999A3BEAA8154AEE08EEE909ACBED",
+          "inputPointCount": 1000000,
+          "validPointCount": 1000000,
+          "seriesPointCounts": [
+            1000000
+          ],
+          "seriesSha256": [
+            "221CA25AE92DE5EBD64B274343B734350488F271916C59251342FC6B2C2D3741"
+          ],
+          "monotonicX": true,
+          "containsGaps": false,
+          "realtimePoc": false,
+          "revision": 0,
+          "markerSize": 0,
+          "downsampling": "none-current-runtime",
+          "pendingScope": [
+            "complete-C4-corpus",
+            "quality-golden",
+            "physical-input",
+            "native-frame-present",
+            "official-reference"
+          ]
+        }
+      ],
+      "measuredSamplesC0": 2,
+      "measuredSamplesC1": 2,
+      "warmupsC0": 1,
+      "warmupsC1": 1,
+      "actualPlotAreaC0": [
+        124,
+        20,
+        1054,
+        588
+      ],
+      "actualPlotAreaC1": [
+        124,
+        20,
+        1054,
+        582
+      ],
+      "plotAreasEqual": false,
+      "visibleRangesEqual": true,
+      "metrics": [
+        {
+          "metric": "harnessSourceSnapshot",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 2.6135,
+            "p95Milliseconds": 2.9541,
+            "maximumMilliseconds": 2.9541,
+            "p95AllocatedBytes": 16000144.0,
+            "rawMilliseconds": [
+              2.6135,
+              2.9541
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 2.4979,
+            "p95Milliseconds": 2.733,
+            "maximumMilliseconds": 2.733,
+            "p95AllocatedBytes": 16000144.0,
+            "rawMilliseconds": [
+              2.733,
+              2.4979
+            ]
+          },
+          "deltaP95Milliseconds": -0.22109999999999985,
+          "ratioP95C1OverC0": 0.9251548695034021,
+          "deltaP95Percent": -7.484513049659791,
+          "arithmeticDirection": "improvement-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "sourceApply",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0172,
+            "p95Milliseconds": 0.0231,
+            "maximumMilliseconds": 0.0231,
+            "p95AllocatedBytes": 120.0,
+            "rawMilliseconds": [
+              0.0231,
+              0.0172
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 164.766,
+            "p95Milliseconds": 167.4765,
+            "maximumMilliseconds": 167.4765,
+            "p95AllocatedBytes": 96000504.0,
+            "rawMilliseconds": [
+              164.766,
+              167.4765
+            ]
+          },
+          "deltaP95Milliseconds": 167.4534,
+          "ratioP95C1OverC0": 7250.064935064935,
+          "deltaP95Percent": 724906.4935064935,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "scenePrepare",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 23.2318,
+            "p95Milliseconds": 24.2495,
+            "maximumMilliseconds": 24.2495,
+            "p95AllocatedBytes": 32016208.0,
+            "rawMilliseconds": [
+              23.2318,
+              24.2495
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 117.0499,
+            "p95Milliseconds": 154.032,
+            "maximumMilliseconds": 154.032,
+            "p95AllocatedBytes": 224019704.0,
+            "rawMilliseconds": [
+              154.032,
+              117.0499
+            ]
+          },
+          "deltaP95Milliseconds": 129.7825,
+          "ratioP95C1OverC0": 6.351966019917937,
+          "deltaP95Percent": 535.1966019917936,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "cachedSceneGetter",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0007,
+            "p95Milliseconds": 0.0008,
+            "maximumMilliseconds": 0.0008,
+            "p95AllocatedBytes": 104.0,
+            "rawMilliseconds": [
+              0.0007,
+              0.0008
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0013,
+            "p95Milliseconds": 0.0015,
+            "maximumMilliseconds": 0.0015,
+            "p95AllocatedBytes": 232.0,
+            "rawMilliseconds": [
+              0.0015,
+              0.0013
+            ]
+          },
+          "deltaP95Milliseconds": 0.0007,
+          "ratioP95C1OverC0": 1.875,
+          "deltaP95Percent": 87.5,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "renderRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 26.8544,
+            "p95Milliseconds": 28.4379,
+            "maximumMilliseconds": 28.4379,
+            "p95AllocatedBytes": 33693584.0,
+            "rawMilliseconds": [
+              28.4379,
+              26.8544
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 44.698,
+            "p95Milliseconds": 44.8471,
+            "maximumMilliseconds": 44.8471,
+            "p95AllocatedBytes": 33692992.0,
+            "rawMilliseconds": [
+              44.8471,
+              44.698
+            ]
+          },
+          "deltaP95Milliseconds": 16.4092,
+          "ratioP95C1OverC0": 1.577018696879868,
+          "deltaP95Percent": 57.70186968798681,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "firstUsableToRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 71.6884,
+            "p95Milliseconds": 72.5443,
+            "maximumMilliseconds": 72.5443,
+            "p95AllocatedBytes": 81717424.0,
+            "rawMilliseconds": [
+              71.6884,
+              72.5443
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 369.3225,
+            "p95Milliseconds": 410.0589,
+            "maximumMilliseconds": 410.0589,
+            "p95AllocatedBytes": 369719864.0,
+            "rawMilliseconds": [
+              410.0589,
+              369.3225
+            ]
+          },
+          "deltaP95Milliseconds": 337.5146,
+          "ratioP95C1OverC0": 5.652530936269286,
+          "deltaP95Percent": 465.25309362692855,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "hitQuery",
+          "c0": {
+            "count": 10,
+            "p50Milliseconds": 17.8182,
+            "p95Milliseconds": 20.0033,
+            "maximumMilliseconds": 20.0033,
+            "p95AllocatedBytes": 6408.0,
+            "rawMilliseconds": [
+              17.3659,
+              19.2574,
+              16.6326,
+              16.8677,
+              20.0033,
+              18.4486,
+              18.842,
+              18.0783,
+              17.8182,
+              17.5138
+            ]
+          },
+          "c1": {
+            "count": 10,
+            "p50Milliseconds": 41.2742,
+            "p95Milliseconds": 45.4544,
+            "maximumMilliseconds": 45.4544,
+            "p95AllocatedBytes": 5336.0,
+            "rawMilliseconds": [
+              43.6577,
+              41.7009,
+              45.4544,
+              41.2742,
+              42.0815,
+              37.5837,
+              40.2323,
+              40.0294,
+              41.0281,
+              42.0637
+            ]
+          },
+          "deltaP95Milliseconds": 25.4511,
+          "ratioP95C1OverC0": 2.2723450630645945,
+          "deltaP95Percent": 127.23450630645945,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        }
+      ],
+      "memoryC0": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 331476992,
+        "maxPrivateObservedMiB": 316.12109375,
+        "maxWorkingSetObservedBytes": 368631808,
+        "maxManagedHeapObservedBytes": 296095544,
+        "firstMeasuredPrivateBeforeBytes": 168157184,
+        "lastMeasuredPrivateAfterBytes": 331476992,
+        "lastMeasuredManagedAfterBytes": 296095544,
+        "processPeakWorkingSetBytes": 368746496
+      },
+      "memoryC1": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 1075556352,
+        "maxPrivateObservedMiB": 1025.73046875,
+        "maxWorkingSetObservedBytes": 1101602816,
+        "maxManagedHeapObservedBytes": 1030255528,
+        "firstMeasuredPrivateBeforeBytes": 468582400,
+        "lastMeasuredPrivateAfterBytes": 1075556352,
+        "lastMeasuredManagedAfterBytes": 1030255528,
+        "processPeakWorkingSetBytes": 1101680640
+      },
+      "deltaMaxPrivateObservedBytes": 744079360,
+      "ratioMaxPrivateObserved": 3.2447390858427965,
+      "processCarryoverCaveat": true,
+      "qualification": "C0-diagnostic-only"
+    },
+    {
+      "id": "S10-L-NONMONOTONIC",
+      "order": 5,
+      "datasetManifestsIdentical": true,
+      "datasets": [
+        {
+          "id": "S10-L-NONMONOTONIC",
+          "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+          "distribution": "triangle-noise-isolated-spikes-candidate",
+          "seedHex": "1020304050607086",
+          "sha256": "3233FDA1A58CBCEE2FF0BB79F1346D563A8F0D5F13A99CE2EE8649B2B41485B9",
+          "inputPointCount": 10000,
+          "validPointCount": 10000,
+          "seriesPointCounts": [
+            10000
+          ],
+          "seriesSha256": [
+            "EC889019AEF25A3E437C8829548D7A03D9CBF77CE34BF6C4792AF26A135E5D72"
+          ],
+          "monotonicX": false,
+          "containsGaps": false,
+          "realtimePoc": false,
+          "revision": 0,
+          "markerSize": 0,
+          "downsampling": "none-current-runtime",
+          "pendingScope": [
+            "complete-C4-corpus",
+            "quality-golden",
+            "physical-input",
+            "native-frame-present",
+            "official-reference"
+          ]
+        }
+      ],
+      "measuredSamplesC0": 2,
+      "measuredSamplesC1": 2,
+      "warmupsC0": 1,
+      "warmupsC1": 1,
+      "actualPlotAreaC0": [
+        124,
+        20,
+        1054,
+        588
+      ],
+      "actualPlotAreaC1": [
+        124,
+        20,
+        1054,
+        582
+      ],
+      "plotAreasEqual": false,
+      "visibleRangesEqual": true,
+      "metrics": [
+        {
+          "metric": "harnessSourceSnapshot",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0595,
+            "p95Milliseconds": 0.0628,
+            "maximumMilliseconds": 0.0628,
+            "p95AllocatedBytes": 160144.0,
+            "rawMilliseconds": [
+              0.0595,
+              0.0628
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0368,
+            "p95Milliseconds": 0.0542,
+            "maximumMilliseconds": 0.0542,
+            "p95AllocatedBytes": 160144.0,
+            "rawMilliseconds": [
+              0.0542,
+              0.0368
+            ]
+          },
+          "deltaP95Milliseconds": -0.008599999999999997,
+          "ratioP95C1OverC0": 0.8630573248407644,
+          "deltaP95Percent": -13.694267515923563,
+          "arithmeticDirection": "improvement-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "sourceApply",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0095,
+            "p95Milliseconds": 0.0101,
+            "maximumMilliseconds": 0.0101,
+            "p95AllocatedBytes": 120.0,
+            "rawMilliseconds": [
+              0.0095,
+              0.0101
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.5393,
+            "p95Milliseconds": 0.6113,
+            "maximumMilliseconds": 0.6113,
+            "p95AllocatedBytes": 960504.0,
+            "rawMilliseconds": [
+              0.6113,
+              0.5393
+            ]
+          },
+          "deltaP95Milliseconds": 0.6012,
+          "ratioP95C1OverC0": 60.524752475247524,
+          "deltaP95Percent": 5952.475247524752,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "scenePrepare",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.5338,
+            "p95Milliseconds": 0.5377,
+            "maximumMilliseconds": 0.5377,
+            "p95AllocatedBytes": 334928.0,
+            "rawMilliseconds": [
+              0.5377,
+              0.5338
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 1.0592,
+            "p95Milliseconds": 46.0396,
+            "maximumMilliseconds": 46.0396,
+            "p95AllocatedBytes": 2259688.0,
+            "rawMilliseconds": [
+              1.0592,
+              46.0396
+            ]
+          },
+          "deltaP95Milliseconds": 45.5019,
+          "ratioP95C1OverC0": 85.62320996838386,
+          "deltaP95Percent": 8462.320996838385,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "cachedSceneGetter",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0003,
+            "p95Milliseconds": 0.0004,
+            "maximumMilliseconds": 0.0004,
+            "p95AllocatedBytes": 104.0,
+            "rawMilliseconds": [
+              0.0004,
+              0.0003
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0006,
+            "p95Milliseconds": 0.0016,
+            "maximumMilliseconds": 0.0016,
+            "p95AllocatedBytes": 232.0,
+            "rawMilliseconds": [
+              0.0006,
+              0.0016
+            ]
+          },
+          "deltaP95Milliseconds": 0.0012000000000000001,
+          "ratioP95C1OverC0": 4.0,
+          "deltaP95Percent": 300.0,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "renderRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.6763,
+            "p95Milliseconds": 0.6954,
+            "maximumMilliseconds": 0.6954,
+            "p95AllocatedBytes": 656320.0,
+            "rawMilliseconds": [
+              0.6763,
+              0.6954
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.7587,
+            "p95Milliseconds": 0.8163,
+            "maximumMilliseconds": 0.8163,
+            "p95AllocatedBytes": 660480.0,
+            "rawMilliseconds": [
+              0.7587,
+              0.8163
+            ]
+          },
+          "deltaP95Milliseconds": 0.12090000000000001,
+          "ratioP95C1OverC0": 1.1738567730802416,
+          "deltaP95Percent": 17.38567730802416,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "firstUsableToRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 1.5024,
+            "p95Milliseconds": 1.5143,
+            "maximumMilliseconds": 1.5143,
+            "p95AllocatedBytes": 1153440.0,
+            "rawMilliseconds": [
+              1.5024,
+              1.5143
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 2.9352,
+            "p95Milliseconds": 47.866,
+            "maximumMilliseconds": 47.866,
+            "p95AllocatedBytes": 4043208.0,
+            "rawMilliseconds": [
+              2.9352,
+              47.866
+            ]
+          },
+          "deltaP95Milliseconds": 46.3517,
+          "ratioP95C1OverC0": 31.60932444033547,
+          "deltaP95Percent": 3060.932444033547,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "hitQuery",
+          "c0": {
+            "count": 10,
+            "p50Milliseconds": 0.2023,
+            "p95Milliseconds": 0.2131,
+            "maximumMilliseconds": 0.2131,
+            "p95AllocatedBytes": 904.0,
+            "rawMilliseconds": [
+              0.2131,
+              0.2015,
+              0.202,
+              0.2005,
+              0.2076,
+              0.2066,
+              0.2079,
+              0.2031,
+              0.2023,
+              0.2022
+            ]
+          },
+          "c1": {
+            "count": 10,
+            "p50Milliseconds": 0.44,
+            "p95Milliseconds": 0.4651,
+            "maximumMilliseconds": 0.4651,
+            "p95AllocatedBytes": 1208.0,
+            "rawMilliseconds": [
+              0.4457,
+              0.44,
+              0.4474,
+              0.4573,
+              0.4651,
+              0.4269,
+              0.4235,
+              0.4414,
+              0.432,
+              0.4314
+            ]
+          },
+          "deltaP95Milliseconds": 0.252,
+          "ratioP95C1OverC0": 2.1825434068512437,
+          "deltaP95Percent": 118.25434068512438,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        }
+      ],
+      "memoryC0": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 335908864,
+        "maxPrivateObservedMiB": 320.34765625,
+        "maxWorkingSetObservedBytes": 373067776,
+        "maxManagedHeapObservedBytes": 300667384,
+        "firstMeasuredPrivateBeforeBytes": 333570048,
+        "lastMeasuredPrivateAfterBytes": 335908864,
+        "lastMeasuredManagedAfterBytes": 300667384,
+        "processPeakWorkingSetBytes": 373067776
+      },
+      "memoryC1": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 1089368064,
+        "maxPrivateObservedMiB": 1038.90234375,
+        "maxWorkingSetObservedBytes": 1123835904,
+        "maxManagedHeapObservedBytes": 1041570048,
+        "firstMeasuredPrivateBeforeBytes": 1079681024,
+        "lastMeasuredPrivateAfterBytes": 1089368064,
+        "lastMeasuredManagedAfterBytes": 1041570048,
+        "processPeakWorkingSetBytes": 1123835904
+      },
+      "deltaMaxPrivateObservedBytes": 753459200,
+      "ratioMaxPrivateObserved": 3.2430464948969018,
+      "processCarryoverCaveat": true,
+      "qualification": "C0-diagnostic-only"
+    },
+    {
+      "id": "S10-L-GAP",
+      "order": 6,
+      "datasetManifestsIdentical": true,
+      "datasets": [
+        {
+          "id": "S10-L-GAP",
+          "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+          "distribution": "triangle-noise-isolated-spikes-candidate",
+          "seedHex": "1020304050607087",
+          "sha256": "F514D98DA11E5ED5B90E76C1E24DE4DD0F093A2935A99E2C03A87A7968B5B65D",
+          "inputPointCount": 10000,
+          "validPointCount": 9961,
+          "seriesPointCounts": [
+            10000
+          ],
+          "seriesSha256": [
+            "230BED2723BFFDA0BCB25DCDD0F61D3D33DCCD38FEFEB0F4F1BE3DEE3F3C67BB"
+          ],
+          "monotonicX": true,
+          "containsGaps": true,
+          "realtimePoc": false,
+          "revision": 0,
+          "markerSize": 0,
+          "downsampling": "none-current-runtime",
+          "pendingScope": [
+            "complete-C4-corpus",
+            "quality-golden",
+            "physical-input",
+            "native-frame-present",
+            "official-reference"
+          ]
+        }
+      ],
+      "measuredSamplesC0": 2,
+      "measuredSamplesC1": 2,
+      "warmupsC0": 1,
+      "warmupsC1": 1,
+      "actualPlotAreaC0": [
+        124,
+        20,
+        1054,
+        588
+      ],
+      "actualPlotAreaC1": [
+        124,
+        20,
+        1054,
+        582
+      ],
+      "plotAreasEqual": false,
+      "visibleRangesEqual": true,
+      "metrics": [
+        {
+          "metric": "harnessSourceSnapshot",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0519,
+            "p95Milliseconds": 0.0682,
+            "maximumMilliseconds": 0.0682,
+            "p95AllocatedBytes": 160144.0,
+            "rawMilliseconds": [
+              0.0519,
+              0.0682
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0561,
+            "p95Milliseconds": 0.0651,
+            "maximumMilliseconds": 0.0651,
+            "p95AllocatedBytes": 160144.0,
+            "rawMilliseconds": [
+              0.0561,
+              0.0651
+            ]
+          },
+          "deltaP95Milliseconds": -0.0030999999999999917,
+          "ratioP95C1OverC0": 0.9545454545454547,
+          "deltaP95Percent": -4.545454545454531,
+          "arithmeticDirection": "improvement-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "sourceApply",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0064,
+            "p95Milliseconds": 0.0066,
+            "maximumMilliseconds": 0.0066,
+            "p95AllocatedBytes": 120.0,
+            "rawMilliseconds": [
+              0.0066,
+              0.0064
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.317,
+            "p95Milliseconds": 0.3295,
+            "maximumMilliseconds": 0.3295,
+            "p95AllocatedBytes": 960504.0,
+            "rawMilliseconds": [
+              0.3295,
+              0.317
+            ]
+          },
+          "deltaP95Milliseconds": 0.3229,
+          "ratioP95C1OverC0": 49.92424242424243,
+          "deltaP95Percent": 4892.424242424243,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "scenePrepare",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.48,
+            "p95Milliseconds": 0.5089,
+            "maximumMilliseconds": 0.5089,
+            "p95AllocatedBytes": 334304.0,
+            "rawMilliseconds": [
+              0.5089,
+              0.48
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 1.4562,
+            "p95Milliseconds": 1.4813,
+            "maximumMilliseconds": 1.4813,
+            "p95AllocatedBytes": 4180032.0,
+            "rawMilliseconds": [
+              1.4813,
+              1.4562
+            ]
+          },
+          "deltaP95Milliseconds": 0.9724,
+          "ratioP95C1OverC0": 2.9107879740617015,
+          "deltaP95Percent": 191.07879740617017,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "cachedSceneGetter",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0003,
+            "p95Milliseconds": 0.0003,
+            "maximumMilliseconds": 0.0003,
+            "p95AllocatedBytes": 104.0,
+            "rawMilliseconds": [
+              0.0003,
+              0.0003
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0007,
+            "p95Milliseconds": 0.0007,
+            "maximumMilliseconds": 0.0007,
+            "p95AllocatedBytes": 232.0,
+            "rawMilliseconds": [
+              0.0007,
+              0.0007
+            ]
+          },
+          "deltaP95Milliseconds": 0.0004,
+          "ratioP95C1OverC0": 2.3333333333333335,
+          "deltaP95Percent": 133.33333333333334,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "renderRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 1.4991,
+            "p95Milliseconds": 1.7203,
+            "maximumMilliseconds": 1.7203,
+            "p95AllocatedBytes": 656320.0,
+            "rawMilliseconds": [
+              1.7203,
+              1.4991
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 1.8692,
+            "p95Milliseconds": 2.03,
+            "maximumMilliseconds": 2.03,
+            "p95AllocatedBytes": 660480.0,
+            "rawMilliseconds": [
+              1.8692,
+              2.03
+            ]
+          },
+          "deltaP95Milliseconds": 0.30969999999999986,
+          "ratioP95C1OverC0": 1.1800267395221762,
+          "deltaP95Percent": 18.00267395221762,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "firstUsableToRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 2.2342,
+            "p95Milliseconds": 2.472,
+            "maximumMilliseconds": 2.472,
+            "p95AllocatedBytes": 1153328.0,
+            "rawMilliseconds": [
+              2.472,
+              2.2342
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 4.2005,
+            "p95Milliseconds": 4.4098,
+            "maximumMilliseconds": 4.4098,
+            "p95AllocatedBytes": 5963936.0,
+            "rawMilliseconds": [
+              4.2005,
+              4.4098
+            ]
+          },
+          "deltaP95Milliseconds": 1.9377999999999997,
+          "ratioP95C1OverC0": 1.7838996763754045,
+          "deltaP95Percent": 78.38996763754045,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "hitQuery",
+          "c0": {
+            "count": 10,
+            "p50Milliseconds": 0.18,
+            "p95Milliseconds": 0.2022,
+            "maximumMilliseconds": 0.2022,
+            "p95AllocatedBytes": 1352.0,
+            "rawMilliseconds": [
+              0.1804,
+              0.1881,
+              0.2022,
+              0.198,
+              0.1959,
+              0.1771,
+              0.1769,
+              0.1763,
+              0.18,
+              0.1772
+            ]
+          },
+          "c1": {
+            "count": 10,
+            "p50Milliseconds": 0.4631,
+            "p95Milliseconds": 0.5356,
+            "maximumMilliseconds": 0.5356,
+            "p95AllocatedBytes": 1544.0,
+            "rawMilliseconds": [
+              0.4576,
+              0.452,
+              0.4815,
+              0.4631,
+              0.46,
+              0.5356,
+              0.5037,
+              0.4826,
+              0.4454,
+              0.4849
+            ]
+          },
+          "deltaP95Milliseconds": 0.3334,
+          "ratioP95C1OverC0": 2.648862512363996,
+          "deltaP95Percent": 164.8862512363996,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        }
+      ],
+      "memoryC0": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 340287488,
+        "maxPrivateObservedMiB": 324.5234375,
+        "maxWorkingSetObservedBytes": 377229312,
+        "maxManagedHeapObservedBytes": 305035064,
+        "firstMeasuredPrivateBeforeBytes": 337948672,
+        "lastMeasuredPrivateAfterBytes": 340287488,
+        "lastMeasuredManagedAfterBytes": 305035064,
+        "processPeakWorkingSetBytes": 377229312
+      },
+      "memoryC1": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 1103224832,
+        "maxPrivateObservedMiB": 1052.1171875,
+        "maxWorkingSetObservedBytes": 1137491968,
+        "maxManagedHeapObservedBytes": 1060400928,
+        "firstMeasuredPrivateBeforeBytes": 1094418432,
+        "lastMeasuredPrivateAfterBytes": 1103224832,
+        "lastMeasuredManagedAfterBytes": 1060400928,
+        "processPeakWorkingSetBytes": 1137491968
+      },
+      "deltaMaxPrivateObservedBytes": 762937344,
+      "ratioMaxPrivateObserved": 3.2420376032162546,
+      "processCarryoverCaveat": true,
+      "qualification": "C0-diagnostic-only"
+    },
+    {
+      "id": "S-RT-POC",
+      "order": 7,
+      "datasetManifestsIdentical": true,
+      "datasets": [
+        {
+          "id": "S-RT-POC",
+          "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+          "distribution": "triangle-noise-isolated-spikes-candidate",
+          "seedHex": "1020304050607088",
+          "sha256": "CE6A5A4993CE0CBB483AB196916334CE17B511137C048A34B97AA74F68BD2952",
+          "inputPointCount": 1000,
+          "validPointCount": 1000,
+          "seriesPointCounts": [
+            250,
+            250,
+            250,
+            250
+          ],
+          "seriesSha256": [
+            "3ED4CAF3C0746AEAA0DC2D690C717BF827401E9C088EFD8907F7B36B2A39B327",
+            "5FD5E686C514EB4434D99D803BE6132107FF8885128D6ABB1920FD07C4ABE3C4",
+            "98748CA9CDE265A9DE3FF45F7E5DAC7AED0735442BE0C8FEA9C38C5C141FA731",
+            "70B66F99F208519E23FC30E061C601728D0A3FBF72C7CAA2008FA23D177E70A0"
+          ],
+          "monotonicX": true,
+          "containsGaps": false,
+          "realtimePoc": true,
+          "revision": 0,
+          "markerSize": 0,
+          "downsampling": "none-current-runtime",
+          "pendingScope": [
+            "paced-10000-points-per-second",
+            "INCC-streaming-cost",
+            "ring-buffer",
+            "30-minute-soak",
+            "8-hour-soak"
+          ]
+        },
+        {
+          "id": "S-RT-POC",
+          "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+          "distribution": "triangle-noise-isolated-spikes-candidate",
+          "seedHex": "1020304050607088",
+          "sha256": "F1E016A9CDCE38C1E2998345FE9961A8D6EE4A7DA7E83C1244EA600219858130",
+          "inputPointCount": 1100,
+          "validPointCount": 1100,
+          "seriesPointCounts": [
+            275,
+            275,
+            275,
+            275
+          ],
+          "seriesSha256": [
+            "98514A9A63180ECE629C35696EAA074AC029EC6016B5B9204531D3B5E203920B",
+            "71F5291DF19665E59C0BFA9C31092B0F8581F977B545D929225E22952E1C684D",
+            "BF86935C431C5CA8DA1722D4DB5F076CC7A691932247CF104EA4F6666022F594",
+            "60C06617F0EFEBD0DA73B30034E4C1E84DF1B805ABE8CDF6EBD567E866172E64"
+          ],
+          "monotonicX": true,
+          "containsGaps": false,
+          "realtimePoc": true,
+          "revision": 1,
+          "markerSize": 0,
+          "downsampling": "none-current-runtime",
+          "pendingScope": [
+            "paced-10000-points-per-second",
+            "INCC-streaming-cost",
+            "ring-buffer",
+            "30-minute-soak",
+            "8-hour-soak"
+          ]
+        },
+        {
+          "id": "S-RT-POC",
+          "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+          "distribution": "triangle-noise-isolated-spikes-candidate",
+          "seedHex": "1020304050607088",
+          "sha256": "ABC98E78A853A798834BA486AAA0472AE3E4DF3D75A033E436C227F43822C769",
+          "inputPointCount": 1200,
+          "validPointCount": 1200,
+          "seriesPointCounts": [
+            300,
+            300,
+            300,
+            300
+          ],
+          "seriesSha256": [
+            "63031E0D50796F894249C912391C6FD8DE0F6861AB84169105AA85A57CF459A0",
+            "551D62E2E82912CAC6CE84CA6EE1FD9BFBBDE19CC75C8B0A63B1E0A77D49953A",
+            "EFEEDDE0DCB613B888AAC92154BA5A14553846C36B3CA668ACF411C438CD9524",
+            "ED32B5CE7D7C22D7565279DAAD54112315C99B13EC9AA31B22BE6819479320BE"
+          ],
+          "monotonicX": true,
+          "containsGaps": false,
+          "realtimePoc": true,
+          "revision": 2,
+          "markerSize": 0,
+          "downsampling": "none-current-runtime",
+          "pendingScope": [
+            "paced-10000-points-per-second",
+            "INCC-streaming-cost",
+            "ring-buffer",
+            "30-minute-soak",
+            "8-hour-soak"
+          ]
+        }
+      ],
+      "measuredSamplesC0": 2,
+      "measuredSamplesC1": 2,
+      "warmupsC0": 1,
+      "warmupsC1": 1,
+      "actualPlotAreaC0": [
+        124,
+        20,
+        1054,
+        588
+      ],
+      "actualPlotAreaC1": [
+        124,
+        20,
+        1054,
+        582
+      ],
+      "plotAreasEqual": false,
+      "visibleRangesEqual": true,
+      "metrics": [
+        {
+          "metric": "harnessSourceSnapshot",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0041,
+            "p95Milliseconds": 0.0144,
+            "maximumMilliseconds": 0.0144,
+            "p95AllocatedBytes": 19440.0,
+            "rawMilliseconds": [
+              0.0144,
+              0.0041
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0126,
+            "p95Milliseconds": 0.0134,
+            "maximumMilliseconds": 0.0134,
+            "p95AllocatedBytes": 19440.0,
+            "rawMilliseconds": [
+              0.0134,
+              0.0126
+            ]
+          },
+          "deltaP95Milliseconds": -0.0009999999999999992,
+          "ratioP95C1OverC0": 0.9305555555555556,
+          "deltaP95Percent": -6.944444444444442,
+          "arithmeticDirection": "improvement-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "sourceApply",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0057,
+            "p95Milliseconds": 0.0065,
+            "maximumMilliseconds": 0.0065,
+            "p95AllocatedBytes": 360.0,
+            "rawMilliseconds": [
+              0.0065,
+              0.0057
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0951,
+            "p95Milliseconds": 0.1085,
+            "maximumMilliseconds": 0.1085,
+            "p95AllocatedBytes": 117096.0,
+            "rawMilliseconds": [
+              0.1085,
+              0.0951
+            ]
+          },
+          "deltaP95Milliseconds": 0.102,
+          "ratioP95C1OverC0": 16.692307692307693,
+          "deltaP95Percent": 1569.2307692307693,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "scenePrepare",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.2388,
+            "p95Milliseconds": 0.269,
+            "maximumMilliseconds": 0.269,
+            "p95AllocatedBytes": 56488.0,
+            "rawMilliseconds": [
+              0.269,
+              0.2388
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.364,
+            "p95Milliseconds": 0.3709,
+            "maximumMilliseconds": 0.3709,
+            "p95AllocatedBytes": 294608.0,
+            "rawMilliseconds": [
+              0.364,
+              0.3709
+            ]
+          },
+          "deltaP95Milliseconds": 0.10189999999999999,
+          "ratioP95C1OverC0": 1.378810408921933,
+          "deltaP95Percent": 37.881040892193305,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "cachedSceneGetter",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.0002,
+            "p95Milliseconds": 0.0002,
+            "maximumMilliseconds": 0.0002,
+            "p95AllocatedBytes": 104.0,
+            "rawMilliseconds": [
+              0.0002,
+              0.0002
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.0006,
+            "p95Milliseconds": 0.0007,
+            "maximumMilliseconds": 0.0007,
+            "p95AllocatedBytes": 232.0,
+            "rawMilliseconds": [
+              0.0007,
+              0.0006
+            ]
+          },
+          "deltaP95Milliseconds": 0.0005,
+          "ratioP95C1OverC0": 3.5,
+          "deltaP95Percent": 250.0,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "renderRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.27,
+            "p95Milliseconds": 0.2744,
+            "maximumMilliseconds": 0.2744,
+            "p95AllocatedBytes": 205672.0,
+            "rawMilliseconds": [
+              0.27,
+              0.2744
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.3606,
+            "p95Milliseconds": 0.3656,
+            "maximumMilliseconds": 0.3656,
+            "p95AllocatedBytes": 207248.0,
+            "rawMilliseconds": [
+              0.3656,
+              0.3606
+            ]
+          },
+          "deltaP95Milliseconds": 0.0912,
+          "ratioP95C1OverC0": 1.3323615160349855,
+          "deltaP95Percent": 33.236151603498556,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "firstUsableToRecord",
+          "c0": {
+            "count": 2,
+            "p50Milliseconds": 0.5706,
+            "p95Milliseconds": 0.6058,
+            "maximumMilliseconds": 0.6058,
+            "p95AllocatedBytes": 283800.0,
+            "rawMilliseconds": [
+              0.6058,
+              0.5706
+            ]
+          },
+          "c1": {
+            "count": 2,
+            "p50Milliseconds": 0.9331,
+            "p95Milliseconds": 0.9389,
+            "maximumMilliseconds": 0.9389,
+            "p95AllocatedBytes": 640928.0,
+            "rawMilliseconds": [
+              0.9331,
+              0.9389
+            ]
+          },
+          "deltaP95Milliseconds": 0.33309999999999995,
+          "ratioP95C1OverC0": 1.5498514361175304,
+          "deltaP95Percent": 54.98514361175304,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        },
+        {
+          "metric": "hitQuery",
+          "c0": {
+            "count": 10,
+            "p50Milliseconds": 0.0387,
+            "p95Milliseconds": 0.0447,
+            "maximumMilliseconds": 0.0447,
+            "p95AllocatedBytes": 584.0,
+            "rawMilliseconds": [
+              0.0429,
+              0.0395,
+              0.0386,
+              0.0387,
+              0.0387,
+              0.0447,
+              0.041,
+              0.0406,
+              0.0372,
+              0.0358
+            ]
+          },
+          "c1": {
+            "count": 10,
+            "p50Milliseconds": 0.0956,
+            "p95Milliseconds": 0.1147,
+            "maximumMilliseconds": 0.1147,
+            "p95AllocatedBytes": 1136.0,
+            "rawMilliseconds": [
+              0.0777,
+              0.0782,
+              0.0999,
+              0.0851,
+              0.0843,
+              0.0956,
+              0.1147,
+              0.1036,
+              0.107,
+              0.105
+            ]
+          },
+          "deltaP95Milliseconds": 0.07,
+          "ratioP95C1OverC0": 2.5659955257270695,
+          "deltaP95Percent": 156.59955257270695,
+          "arithmeticDirection": "regression-observed",
+          "formalGateEvaluated": false
+        }
+      ],
+      "memoryC0": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 341184512,
+        "maxPrivateObservedMiB": 325.37890625,
+        "maxWorkingSetObservedBytes": 378134528,
+        "maxManagedHeapObservedBytes": 306557120,
+        "firstMeasuredPrivateBeforeBytes": 341184512,
+        "lastMeasuredPrivateAfterBytes": 341184512,
+        "lastMeasuredManagedAfterBytes": 306557120,
+        "processPeakWorkingSetBytes": 378134528
+      },
+      "memoryC1": {
+        "measurementKind": "same-process-observed-before-after-captures-not-isolated-chart-peak",
+        "maxPrivateObservedBytes": 1105047552,
+        "maxPrivateObservedMiB": 1053.85546875,
+        "maxWorkingSetObservedBytes": 1139306496,
+        "maxManagedHeapObservedBytes": 1062944904,
+        "firstMeasuredPrivateBeforeBytes": 1103736832,
+        "lastMeasuredPrivateAfterBytes": 1105047552,
+        "lastMeasuredManagedAfterBytes": 1062944904,
+        "processPeakWorkingSetBytes": 1139306496
+      },
+      "deltaMaxPrivateObservedBytes": 763863040,
+      "ratioMaxPrivateObserved": 3.238856141277597,
+      "processCarryoverCaveat": true,
+      "qualification": "batch-replace-poc-only-not-rate-qualified"
+    }
+  ],
+  "findings": [
+    "C1 has substantial diagnostic regressions at large scale; S1M-L scenePrepare p95=154.032ms, hitQuery p95=45.4544ms and observed process private memory=1075556352 bytes. These values must remain visible and drive C4 work.",
+    "S1M-L render-record p95=44.8471ms and sourceApply p95=167.4765ms; render-record is not render completion, framePipeline, present or achieved FPS.",
+    "SourceApply/scenePrepare costs include the new C1 immutable projection/identity/data contract. Correctness passing does not imply performance acceptance.",
+    "Later small scenarios execute after S1M-L in the same process; their high private memory is affected by retained allocator/GC state and cannot be attributed solely to their datasets."
+  ],
+  "limitations": [
+    "One process per report, fixed scenario order, one warmup and only two measured samples per scene. Scene p95 is therefore the maximum of two values; hit p95 uses ten queries across those samples.",
+    "No randomized/ABBA run order, five-process distribution, full corpus, confidence interval, isolated per-scene process, steady-state memory/CPU trace, or peak private-memory sampler.",
+    "Memory is process before/after observation, including earlier scenarios and GC/allocator effects; it is not an isolated control allocation or continuous private peak.",
+    "Headless DrawingGroup recording has no GPU/compositor/present evidence. framePipelineMs, submitMs and presentMs remain null/blocked-present.",
+    "No licensed same-host official reference. Reference ratios are blocked-reference; the numeric C1/C0 diagnostic ratios do not evaluate the 1.25x official-reference target.",
+    "S-RT-POC is small batch replacement, not paced 10000-points/s, a 30-minute/8-hour soak, or a bounded ring-buffer qualification.",
+    "Actual plot height changed by 6 DIP. The nominal profile and measurement sources match, but strict same-pixel rendering quality equivalence has not been established."
+  ],
+  "formalPerformanceTargetsStatus": "frozen-targets-not-evaluated-by-this-headless-prototype",
+  "officialReferenceGateEvaluated": false,
+  "frameOrPresentGateEvaluated": false
+}

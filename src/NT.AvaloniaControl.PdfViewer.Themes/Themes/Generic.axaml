@@ -1,0 +1,240 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pdf="clr-namespace:NT.AvaloniaControl.PdfViewer;assembly=NT.AvaloniaControl.PdfViewer"
+        x:CompileBindings="False">
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://NT.AvaloniaControl.PdfViewer.Themes/Resources/Colors.axaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <ControlTheme x:Key="{x:Type pdf:PdfViewer}" TargetType="pdf:PdfViewer">
+        <Setter Property="Background" Value="{DynamicResource PdfViewerBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource PdfViewerForegroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource PdfViewerBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="{DynamicResource PdfViewerCornerRadius}" />
+        <Setter Property="SidebarWidth" Value="{DynamicResource PdfViewerSidebarWidth}" />
+        <Setter Property="Template">
+          <ControlTemplate>
+            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}"
+                    ClipToBounds="True">
+              <Grid RowDefinitions="Auto,*,Auto">
+                <Border Background="{DynamicResource PdfViewerToolbarBrush}" BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="0,0,0,1" IsVisible="{TemplateBinding IsToolbarVisible}" Padding="8">
+                  <StackPanel Spacing="7">
+                    <WrapPanel Orientation="Horizontal">
+                      <Button Name="PART_Open" Content="{x:Static pdf:PdfViewerStrings.OpenText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.OpenText}"
+                              IsVisible="{TemplateBinding IsOpenToolVisible}" ToolTip.Tip="{x:Static pdf:PdfViewerStrings.OpenTooltip}" />
+                      <ToggleButton Content="{x:Static pdf:PdfViewerStrings.SidebarToggleText}"
+                                    AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.SidebarToggleText}"
+                                    IsVisible="{TemplateBinding IsSidebarToggleVisible}"
+                                    IsChecked="{Binding IsSidebarVisible, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
+                      <Button Name="PART_PreviousPage" Content="{x:Static pdf:PdfViewerStrings.PreviousPageText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.PreviousPageText}"
+                              IsVisible="{TemplateBinding IsNavigationToolVisible}"
+                              IsEnabled="{TemplateBinding HasDocument}" ToolTip.Tip="{x:Static pdf:PdfViewerStrings.PreviousPageText}" />
+                      <NumericUpDown Name="PART_PageNumber" Width="64" ShowButtonSpinner="False" Minimum="1" Maximum="{TemplateBinding PageCount}"
+                                     Value="{Binding CurrentPage, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                     FormatString="0" IsEnabled="{TemplateBinding HasDocument}"
+                                     IsVisible="{TemplateBinding IsNavigationToolVisible}"
+                                     AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.PageNumberAccessibleName}"
+                                     ToolTip.Tip="{x:Static pdf:PdfViewerStrings.PageNumberTooltip}" />
+                      <TextBlock Text="/" VerticalAlignment="Center" Margin="2,0,4,4" IsVisible="{TemplateBinding IsNavigationToolVisible}" />
+                      <TextBlock Text="{TemplateBinding PageCount}" VerticalAlignment="Center" Margin="0,0,8,4" IsVisible="{TemplateBinding IsNavigationToolVisible}" />
+                      <Button Name="PART_NextPage" Content="{x:Static pdf:PdfViewerStrings.NextPageText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.NextPageText}"
+                              IsVisible="{TemplateBinding IsNavigationToolVisible}"
+                              IsEnabled="{TemplateBinding HasDocument}" ToolTip.Tip="{x:Static pdf:PdfViewerStrings.NextPageText}" />
+                      <Button Name="PART_ZoomOut" Content="−" IsEnabled="{TemplateBinding HasDocument}"
+                              IsVisible="{TemplateBinding IsZoomToolVisible}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.ZoomOutAccessibleName}"
+                              ToolTip.Tip="{x:Static pdf:PdfViewerStrings.ZoomOutTooltip}" />
+                      <TextBlock Text="{TemplateBinding ZoomText}" MinWidth="48" VerticalAlignment="Center" TextAlignment="Center"
+                                 Margin="2,0,4,4" IsVisible="{TemplateBinding IsZoomToolVisible}" />
+                      <Button Name="PART_ZoomIn" Content="+" IsEnabled="{TemplateBinding HasDocument}"
+                              IsVisible="{TemplateBinding IsZoomToolVisible}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.ZoomInAccessibleName}"
+                              ToolTip.Tip="{x:Static pdf:PdfViewerStrings.ZoomInTooltip}" />
+                      <Button Name="PART_FitWidth" Content="{x:Static pdf:PdfViewerStrings.FitWidthText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.FitWidthText}"
+                              IsVisible="{TemplateBinding IsFitToolVisible}" IsEnabled="{TemplateBinding HasDocument}" />
+                      <Button Name="PART_FitPage" Content="{x:Static pdf:PdfViewerStrings.FitPageText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.FitPageText}"
+                              IsVisible="{TemplateBinding IsFitToolVisible}" IsEnabled="{TemplateBinding HasDocument}" />
+                      <Button Name="PART_FitHeight" Content="{x:Static pdf:PdfViewerStrings.FitHeightText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.FitHeightText}"
+                              IsVisible="{TemplateBinding IsFitToolVisible}" IsEnabled="{TemplateBinding HasDocument}" />
+                      <Button Name="PART_RotateLeft" Content="↶" IsEnabled="{TemplateBinding HasDocument}"
+                              IsVisible="{TemplateBinding IsRotateToolVisible}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.RotateLeftAccessibleName}"
+                              ToolTip.Tip="{x:Static pdf:PdfViewerStrings.RotateLeftTooltip}" />
+                      <Button Name="PART_RotateRight" Content="↷" IsEnabled="{TemplateBinding HasDocument}"
+                              IsVisible="{TemplateBinding IsRotateToolVisible}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.RotateRightAccessibleName}"
+                              ToolTip.Tip="{x:Static pdf:PdfViewerStrings.RotateRightTooltip}" />
+                      <Button Name="PART_Copy" Content="{x:Static pdf:PdfViewerStrings.CopyText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.CopyText}"
+                              IsVisible="{TemplateBinding IsCopyToolVisible}"
+                              IsEnabled="{TemplateBinding HasDocument}" ToolTip.Tip="{x:Static pdf:PdfViewerStrings.CopyTooltip}" />
+                      <Button Name="PART_Close" Content="{x:Static pdf:PdfViewerStrings.CloseText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.CloseText}"
+                              IsVisible="{TemplateBinding IsCloseToolVisible}" IsEnabled="{TemplateBinding HasDocument}" />
+                      <ComboBox Name="PART_DisplayMode" MinWidth="96" Margin="8,0,5,4"
+                                IsVisible="{TemplateBinding IsDisplayModeToolVisible}"
+                                AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.DisplayModeTooltip}"
+                                ToolTip.Tip="{x:Static pdf:PdfViewerStrings.DisplayModeTooltip}">
+                        <ComboBoxItem Content="{x:Static pdf:PdfViewerStrings.DisplayModeContinuousText}" />
+                        <ComboBoxItem Content="{x:Static pdf:PdfViewerStrings.DisplayModeSinglePageText}" />
+                        <ComboBoxItem Content="{x:Static pdf:PdfViewerStrings.DisplayModeTwoPageContinuousText}" />
+                        <ComboBoxItem Content="{x:Static pdf:PdfViewerStrings.DisplayModeTwoPageText}" />
+                      </ComboBox>
+                      <CheckBox Content="{x:Static pdf:PdfViewerStrings.ShowCoverPageText}"
+                                AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.ShowCoverPageText}"
+                                IsVisible="{TemplateBinding IsDisplayModeToolVisible}"
+                                Margin="4,0,8,0" VerticalAlignment="Center"
+                                IsChecked="{Binding ShowCoverPage, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                ToolTip.Tip="{x:Static pdf:PdfViewerStrings.ShowCoverPageTooltip}" />
+                      <Button Name="PART_AddUserBookmark" Content="{x:Static pdf:PdfViewerStrings.AddBookmarkText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.AddBookmarkText}"
+                              IsVisible="{TemplateBinding IsBookmarkToolVisible}"
+                              IsEnabled="{TemplateBinding HasDocument}" ToolTip.Tip="{x:Static pdf:PdfViewerStrings.AddBookmarkTooltip}" />
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal" IsVisible="{TemplateBinding IsSearchToolVisible}">
+                      <TextBox Name="PART_SearchBox" Width="220" PlaceholderText="{x:Static pdf:PdfViewerStrings.SearchPlaceholder}"
+                               AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.SearchAccessibleName}"
+                               Text="{Binding SearchQuery, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
+                      <Button Name="PART_FindPrevious" Content="{x:Static pdf:PdfViewerStrings.FindPreviousText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.FindPreviousText}"
+                              IsEnabled="{TemplateBinding HasDocument}" ToolTip.Tip="{x:Static pdf:PdfViewerStrings.FindPreviousTooltip}" />
+                      <Button Name="PART_FindNext" Content="{x:Static pdf:PdfViewerStrings.FindNextText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.FindNextText}"
+                              IsEnabled="{TemplateBinding HasDocument}" ToolTip.Tip="{x:Static pdf:PdfViewerStrings.FindNextTooltip}" />
+                      <CheckBox Content="{x:Static pdf:PdfViewerStrings.SearchMatchCaseText}"
+                                AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.SearchMatchCaseText}"
+                                Margin="8,0,8,0" IsChecked="{Binding SearchMatchCase, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
+                      <CheckBox Content="{x:Static pdf:PdfViewerStrings.SearchWholeWordText}"
+                                AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.SearchWholeWordText}"
+                                IsChecked="{Binding SearchWholeWord, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
+                      <TextBlock Text="{TemplateBinding SearchResultCount}" VerticalAlignment="Center" Margin="12,0,4,0" />
+                      <TextBlock Text="{x:Static pdf:PdfViewerStrings.SearchMatchCountSuffix}" VerticalAlignment="Center"
+                                 Foreground="{DynamicResource PdfViewerMutedForegroundBrush}" />
+                    </WrapPanel>
+                  </StackPanel>
+                </Border>
+                <Grid Name="PART_BodyGrid" Grid.Row="1" ColumnDefinitions="Auto,*">
+                  <Border Name="PART_Sidebar" Width="{TemplateBinding SidebarWidth}" IsVisible="{TemplateBinding IsSidebarVisible}"
+                          Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0,0,1,0">
+                    <TabControl>
+                      <TabItem Header="{x:Static pdf:PdfViewerStrings.ThumbnailsTabText}">
+                        <ListBox Name="PART_Thumbnails" ItemsSource="{TemplateBinding Thumbnails}" Background="Transparent">
+                          <ListBox.ItemTemplate>
+                            <DataTemplate x:DataType="pdf:PdfThumbnail">
+                              <StackPanel Margin="6,8" Spacing="6" HorizontalAlignment="Center">
+                                <Border Background="White" BorderBrush="{DynamicResource PdfViewerBorderBrush}" BorderThickness="1" Padding="1">
+                                  <Image Source="{Binding Image}" Width="140" Height="180" Stretch="Uniform" />
+                                </Border>
+                                <TextBlock Text="{Binding PageNumber}" HorizontalAlignment="Center" />
+                              </StackPanel>
+                            </DataTemplate>
+                          </ListBox.ItemTemplate>
+                        </ListBox>
+                      </TabItem>
+                      <TabItem Header="{x:Static pdf:PdfViewerStrings.OutlineTabText}">
+                        <TreeView Name="PART_Outline" ItemsSource="{TemplateBinding Outline}" Background="Transparent" Margin="4">
+                          <TreeView.ItemTemplate>
+                            <TreeDataTemplate x:DataType="pdf:PdfBookmark" ItemsSource="{Binding Children}">
+                              <TextBlock Text="{Binding Title}" TextWrapping="Wrap" />
+                            </TreeDataTemplate>
+                          </TreeView.ItemTemplate>
+                        </TreeView>
+                      </TabItem>
+                      <TabItem Header="{x:Static pdf:PdfViewerStrings.BookmarksTabText}">
+                        <Grid RowDefinitions="*,Auto" Margin="4">
+                          <ListBox Name="PART_UserBookmarks" ItemsSource="{TemplateBinding UserBookmarks}" Background="Transparent">
+                            <ListBox.ItemTemplate>
+                              <DataTemplate x:DataType="pdf:PdfUserBookmark">
+                                <StackPanel Margin="4,6" Spacing="2">
+                                  <TextBlock Text="{Binding Title}" TextWrapping="Wrap"
+                                             FontWeight="{Binding Weight}" FontStyle="{Binding Style}" />
+                                  <TextBlock Text="{Binding PageNumber, StringFormat={x:Static pdf:PdfViewerStrings.BookmarkPageTitleFormat}}" FontSize="11"
+                                             Foreground="{DynamicResource PdfViewerMutedForegroundBrush}" />
+                                </StackPanel>
+                              </DataTemplate>
+                            </ListBox.ItemTemplate>
+                          </ListBox>
+                          <Button Name="PART_RemoveUserBookmark" Grid.Row="1" Content="{x:Static pdf:PdfViewerStrings.RemoveBookmarkText}" Margin="0,6,0,0"
+                                  AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.RemoveBookmarkText}"
+                                  HorizontalAlignment="Stretch" />
+                        </Grid>
+                      </TabItem>
+                    </TabControl>
+                  </Border>
+                  <Grid Name="PART_CanvasGrid" Grid.Column="1" Background="{DynamicResource PdfViewerCanvasBrush}" ClipToBounds="True">
+                    <ScrollViewer Name="PART_ScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"
+                                  IsVisible="{TemplateBinding HasDocument}">
+                      <pdf:PdfDocumentPresenter Name="PART_DocumentPresenter" />
+                    </ScrollViewer>
+                    <StackPanel IsVisible="{Binding !HasDocument, RelativeSource={RelativeSource TemplatedParent}}"
+                                VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="460" Margin="24" Spacing="12">
+                      <TextBlock Text="{x:Static pdf:PdfViewerStrings.EmptyTitle}" FontSize="28" FontWeight="SemiBold" HorizontalAlignment="Center" />
+                      <TextBlock Text="{x:Static pdf:PdfViewerStrings.EmptyMessage}" TextWrapping="Wrap" TextAlignment="Center"
+                                 Foreground="{DynamicResource PdfViewerMutedForegroundBrush}" />
+                      <TextBlock Text="{x:Static pdf:PdfViewerStrings.EmptyHint}" TextWrapping="Wrap" TextAlignment="Center"
+                                 Foreground="{DynamicResource PdfViewerMutedForegroundBrush}" />
+                    </StackPanel>
+                    <Border IsVisible="{TemplateBinding IsLoading}" Background="{TemplateBinding Background}" Padding="24,14"
+                            CornerRadius="8" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="16">
+                      <StackPanel Spacing="8"><TextBlock Text="{x:Static pdf:PdfViewerStrings.LoadingText}" /><ProgressBar IsIndeterminate="True" Width="180" /></StackPanel>
+                    </Border>
+                    <!-- Full-cover password prompt: the canvas brush hides the empty state behind it. -->
+                    <Border IsVisible="{TemplateBinding IsPasswordPromptVisible}" Background="{DynamicResource PdfViewerCanvasBrush}">
+                      <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1"
+                              CornerRadius="8" Padding="24,20" MinWidth="320" MaxWidth="420"
+                              VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <StackPanel Spacing="10">
+                          <TextBlock Text="{x:Static pdf:PdfViewerStrings.PasswordPromptTitle}" FontSize="18" FontWeight="SemiBold" />
+                          <TextBlock Text="{x:Static pdf:PdfViewerStrings.PasswordPromptMessage}" TextWrapping="Wrap"
+                                     Foreground="{DynamicResource PdfViewerMutedForegroundBrush}" />
+                          <TextBox Name="PART_PasswordBox" PasswordChar="●"
+                                   PlaceholderText="{x:Static pdf:PdfViewerStrings.PasswordPromptAccessibleName}"
+                                   AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.PasswordPromptAccessibleName}" />
+                          <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                            <Button Name="PART_PasswordCancel" Content="{x:Static pdf:PdfViewerStrings.PasswordPromptCancelText}"
+                                    AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.PasswordPromptCancelText}" />
+                            <Button Name="PART_PasswordSubmit" Content="{x:Static pdf:PdfViewerStrings.PasswordPromptSubmitText}"
+                                    AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.PasswordPromptSubmitText}" />
+                          </StackPanel>
+                        </StackPanel>
+                      </Border>
+                    </Border>
+                  </Grid>
+                </Grid>
+                <Border Grid.Row="2" Background="{DynamicResource PdfViewerToolbarBrush}" BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="0,1,0,0" Padding="10,6">
+                  <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                    <TextBlock Text="{TemplateBinding StatusText}" Foreground="{DynamicResource PdfViewerMutedForegroundBrush}" TextTrimming="CharacterEllipsis" />
+                    <TextBlock Grid.Column="1" Text="{TemplateBinding DocumentName}" MaxWidth="280" Margin="12,0,0,0" TextTrimming="CharacterEllipsis" />
+                    <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{TemplateBinding ErrorMessage}" TextWrapping="Wrap" Foreground="{DynamicResource PdfViewerErrorBrush}" />
+                  </Grid>
+                </Border>
+              </Grid>
+            </Border>
+          </ControlTemplate>
+        </Setter>
+        <Style Selector="^ /template/ Button, ^ /template/ ToggleButton">
+          <Setter Property="Margin" Value="0,0,5,4" />
+          <Setter Property="Padding" Value="10,5" />
+          <Setter Property="MinHeight" Value="32" />
+        </Style>
+        <Style Selector="^ /template/ NumericUpDown">
+          <Setter Property="Margin" Value="0,0,4,4" />
+        </Style>
+        <Style Selector="^ /template/ TextBox">
+          <Setter Property="Margin" Value="0,0,5,0" />
+        </Style>
+      </ControlTheme>
+    </ResourceDictionary>
+  </Styles.Resources>
+</Styles>

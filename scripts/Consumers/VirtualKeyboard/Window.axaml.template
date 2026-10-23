@@ -1,0 +1,10 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vk="clr-namespace:NT.AvaloniaControl.VirtualKeyboard;assembly=NT.AvaloniaControl.VirtualKeyboard"
+        xmlns:local="clr-namespace:KeyboardPackageConsumer"
+        x:Class="KeyboardPackageConsumer.ConsumerWindow" x:DataType="local:ConsumerViewModel"
+        Width="1100" Height="520">
+  <StackPanel Spacing="12" Margin="16">
+    <TextBox x:Name="Editor" Text="{Binding Value, Mode=TwoWay}" />
+    <vk:VirtualKeyboard x:Name="Keyboard" Target="{Binding #Editor}" Layout="English" />
+  </StackPanel>
+</Window>

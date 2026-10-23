@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>NT.AvaloniaControl.Markdown</PackageId>
+    <AssemblyName>NT.AvaloniaControl.Markdown</AssemblyName>
+    <RootNamespace>NT.AvaloniaControl.Markdown</RootNamespace>
+    <Description>Independent native read-only Markdown control for Avalonia.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Markdig" />
+    <None Update="README.md" Pack="true" PackagePath="/README.md" />
+    <None Update="THIRD-PARTY-NOTICES.md" Pack="true" PackagePath="/THIRD-PARTY-NOTICES.md" />
+    <None Update="Licenses/**/*" Pack="true" PackagePath="/Licenses/%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

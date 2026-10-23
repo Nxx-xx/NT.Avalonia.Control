@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TreeDataGrid.Headless.Tests"
+             xmlns:tg="clr-namespace:NT.AvaloniaControl.TreeDataGrid;assembly=NT.AvaloniaControl.TreeDataGrid"
+             x:Class="TreeDataGrid.Headless.Tests.CompiledBindingConsumerView"
+             x:DataType="local:CompiledBindingItem">
+  <tg:TreeDataGrid x:Name="CompiledGrid">
+    <tg:TreeDataGrid.Columns>
+      <tg:TreeDataGridTextColumn Header="Name" Width="140" Binding="{CompiledBinding Name}" />
+      <tg:TreeDataGridTextColumn Header="Nested" Width="140" Binding="{CompiledBinding Details.Name}" />
+      <tg:TreeDataGridTextColumn Header="Quantity" Width="80" Binding="{CompiledBinding Quantity}" />
+    </tg:TreeDataGrid.Columns>
+    <tg:TreeDataGrid.Template>
+      <ControlTemplate>
+        <ScrollViewer x:Name="PART_ScrollViewer"
+                      HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+          <tg:TreeDataGridRowsPresenter x:Name="PART_RowsPresenter" />
+        </ScrollViewer>
+      </ControlTemplate>
+    </tg:TreeDataGrid.Template>
+  </tg:TreeDataGrid>
+</UserControl>

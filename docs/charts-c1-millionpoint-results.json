@@ -1,0 +1,941 @@
+{
+  "schemaVersion": "charts-prototype-regression-v1",
+  "status": "comparable-prototype-statistics",
+  "comparable": true,
+  "performanceQualification": "pending-C4",
+  "presentStatus": "blocked-present",
+  "referenceStatus": "blocked-reference",
+  "formalSlaEvaluated": false,
+  "formalPerformancePassed": null,
+  "generatedUtc": "2026-10-15T09:27:35.3253925+00:00",
+  "comparisonScript": {
+    "path": "<REPO_ROOT>\\scripts\\Compare-ChartsRegression.ps1",
+    "sha256": "E3AAD460702513C0FD999B91103A32B08A21FFC78198CBE898375488898D7F96"
+  },
+  "guardScript": {
+    "path": "<REPO_ROOT>\\scripts\\Test-ChartsPerformance.ps1",
+    "sha256": "59566E48E53E7133B5A0DB70EA69E2A81B24981F174082FF48455B6B73A15035"
+  },
+  "evidenceDirectory": "<REPO_ROOT>\\docs\\charts-c1-millionpoint-results.json.evidence",
+  "requestedBeforeProcesses": 5,
+  "requestedAfterProcesses": 5,
+  "requestedInputs": {
+    "before": [
+      "artifacts/charts-performance/C1-axis-complete-before-perf/matched-isolated/run1/raw.json",
+      "artifacts/charts-performance/C1-axis-complete-before-perf/matched-isolated/run2/raw.json",
+      "artifacts/charts-performance/C1-axis-complete-before-perf/matched-isolated/run3/raw.json",
+      "artifacts/charts-performance/C1-axis-complete-before-perf/matched-isolated/run4/raw.json",
+      "artifacts/charts-performance/C1-axis-complete-before-perf/matched-isolated/run5/raw.json"
+    ],
+    "after": [
+      "artifacts/charts-performance/C1-axes-compact-final-v2/isolated/run1/raw.json",
+      "artifacts/charts-performance/C1-axes-compact-final-v2/isolated/run2/raw.json",
+      "artifacts/charts-performance/C1-axes-compact-final-v2/isolated/run3/raw.json",
+      "artifacts/charts-performance/C1-axes-compact-final-v2/isolated/run4/raw.json",
+      "artifacts/charts-performance/C1-axes-compact-final-v2/isolated/run5/raw.json"
+    ]
+  },
+  "reports": [
+    {
+      "side": "before",
+      "ordinal": 1,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run1\\raw.json",
+      "reportSha256": "94FD3CBFA3BEADFB4009510C0940174D89C6909306B78FDA70761D981016B424",
+      "runId": "a987b47dbb8b49e39bdcf1ccd1197d7b",
+      "phase": "C1-matched-isolated-before",
+      "startedUtc": "2026-10-15T17:18:20.2446584+08:00",
+      "finishedUtc": "2026-10-15T17:18:24.9058257+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c1-millionpoint-results.json.evidence\\before-001.guard.json",
+        "sha256": "574CD759EB13307BCD899FB35F8D493A3C847C19F501E4ECB5D495A4F09041D8",
+        "reportSha256": "94FD3CBFA3BEADFB4009510C0940174D89C6909306B78FDA70761D981016B424",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "DB866302C9675BB8CB95FD4CE5BD6C4BB1CF7E60DAB382F5DA0B56EB8D0C9E3F"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "DABCDB32CAB9BB18A1C9D173147194DC4525A6AE63917B2133C4CBD156F753F5"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run1\\supervisor.json",
+        "sha256": "26BDBB5941CD1943209937AC4A76427E23A08EBF1D332E5075B505DCC9E1A56D",
+        "runId": "a987b47dbb8b49e39bdcf1ccd1197d7b",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "before",
+      "ordinal": 2,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run2\\raw.json",
+      "reportSha256": "8CA1A04F9CEB1E98149809C646871EFA07FBDC99A9C37F72F94BDAB7680F30DD",
+      "runId": "4095c52e970f483c935bf9f70c70cd5b",
+      "phase": "C1-matched-isolated-before",
+      "startedUtc": "2026-10-15T17:18:25.8882354+08:00",
+      "finishedUtc": "2026-10-15T17:18:30.4605681+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c1-millionpoint-results.json.evidence\\before-002.guard.json",
+        "sha256": "71648C75201948D93C3C0D08F08508F20DB8C5B4BA5B415B22F4C2461C7C2826",
+        "reportSha256": "8CA1A04F9CEB1E98149809C646871EFA07FBDC99A9C37F72F94BDAB7680F30DD",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "DB866302C9675BB8CB95FD4CE5BD6C4BB1CF7E60DAB382F5DA0B56EB8D0C9E3F"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "DABCDB32CAB9BB18A1C9D173147194DC4525A6AE63917B2133C4CBD156F753F5"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run2\\supervisor.json",
+        "sha256": "A9F8B0CCFAA0266DA35A53BA33DB9EEFACCCFEFE463FA25A66C62C510C1BA1FC",
+        "runId": "4095c52e970f483c935bf9f70c70cd5b",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "before",
+      "ordinal": 3,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run3\\raw.json",
+      "reportSha256": "6F8A52F6EF73CFC2A434F5971E562F23FD63CDC475974694DB53F60ED4D2C3AE",
+      "runId": "ac909ad28390478e9746a032212930a2",
+      "phase": "C1-matched-isolated-before",
+      "startedUtc": "2026-10-15T17:18:31.4135658+08:00",
+      "finishedUtc": "2026-10-15T17:18:35.8741789+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c1-millionpoint-results.json.evidence\\before-003.guard.json",
+        "sha256": "CCDC80D52996B04D1312350C32F38667ABA77736FE4673954DC6954F253CA559",
+        "reportSha256": "6F8A52F6EF73CFC2A434F5971E562F23FD63CDC475974694DB53F60ED4D2C3AE",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "DB866302C9675BB8CB95FD4CE5BD6C4BB1CF7E60DAB382F5DA0B56EB8D0C9E3F"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "DABCDB32CAB9BB18A1C9D173147194DC4525A6AE63917B2133C4CBD156F753F5"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run3\\supervisor.json",
+        "sha256": "420D5A89F5334317821743BEB74E6A3E2E043D0DE0318E28CF0140311FB7EA96",
+        "runId": "ac909ad28390478e9746a032212930a2",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "before",
+      "ordinal": 4,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run4\\raw.json",
+      "reportSha256": "D165E1665743DC75B07E76469D120B409E3CC51F1026AA00094B3D1CB86669D9",
+      "runId": "38d0e4a3dc484a52b4adbc0cec5318a1",
+      "phase": "C1-matched-isolated-before",
+      "startedUtc": "2026-10-15T17:18:36.8045526+08:00",
+      "finishedUtc": "2026-10-15T17:18:41.269639+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c1-millionpoint-results.json.evidence\\before-004.guard.json",
+        "sha256": "1B48DEF3A2B8504902C473236C8AA09CC2EEEE20997276AB1123A800F8A3DF97",
+        "reportSha256": "D165E1665743DC75B07E76469D120B409E3CC51F1026AA00094B3D1CB86669D9",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "DB866302C9675BB8CB95FD4CE5BD6C4BB1CF7E60DAB382F5DA0B56EB8D0C9E3F"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "DABCDB32CAB9BB18A1C9D173147194DC4525A6AE63917B2133C4CBD156F753F5"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run4\\supervisor.json",
+        "sha256": "60597C09BAE47F88A92AD8114386E8C8B9A9C4FC61691334EF06B5B8CBAB7841",
+        "runId": "38d0e4a3dc484a52b4adbc0cec5318a1",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "before",
+      "ordinal": 5,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run5\\raw.json",
+      "reportSha256": "868AA135C4A692C601B57178ED26DBB1A6204FDF155E5824054187A634BED967",
+      "runId": "3327bbdad12e48af90f00aa9268ee7c7",
+      "phase": "C1-matched-isolated-before",
+      "startedUtc": "2026-10-15T17:18:42.1899537+08:00",
+      "finishedUtc": "2026-10-15T17:18:46.5845017+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c1-millionpoint-results.json.evidence\\before-005.guard.json",
+        "sha256": "F328869E7B66EA58AEF6C56BB4A79A137FF8AC5D6887C86FDA8BD6B85B2621E5",
+        "reportSha256": "868AA135C4A692C601B57178ED26DBB1A6204FDF155E5824054187A634BED967",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "DB866302C9675BB8CB95FD4CE5BD6C4BB1CF7E60DAB382F5DA0B56EB8D0C9E3F"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "DABCDB32CAB9BB18A1C9D173147194DC4525A6AE63917B2133C4CBD156F753F5"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run5\\supervisor.json",
+        "sha256": "13CB9E38FA089C65CFB8A8ABBC6A629F665EEA667B18B641E53A2A123B1D0BC4",
+        "runId": "3327bbdad12e48af90f00aa9268ee7c7",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "after",
+      "ordinal": 1,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run1\\raw.json",
+      "reportSha256": "B9EE5B605C6CFBBDB29A7E8C7D16F0DACF159153C1A4D60A0A5353960A658F99",
+      "runId": "9465ac40e6824088beed8904158d1c21",
+      "phase": "C1-axes-compact-isolated-final-v2",
+      "startedUtc": "2026-10-15T17:26:22.2515949+08:00",
+      "finishedUtc": "2026-10-15T17:26:23.3224272+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c1-millionpoint-results.json.evidence\\after-001.guard.json",
+        "sha256": "D6AD950DA7EBBA9B32A052295B6E6CFE64FC1737ABC12B36E16F17FEAB7E7B79",
+        "reportSha256": "B9EE5B605C6CFBBDB29A7E8C7D16F0DACF159153C1A4D60A0A5353960A658F99",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "2DA9BC30C9DFF65345BAF3686D3A5329EFFF432E0A349BCC144F8C709DDA6493"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "A50CFD46E06DD55EC3F60876902893A8A157B564E789A281AD5938A5A2861DDC"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run1\\supervisor.json",
+        "sha256": "2143C9201A0404CBA43C2AFF6FD92B45A7087C10100DA0B1C6495BD679F971B0",
+        "runId": "9465ac40e6824088beed8904158d1c21",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "after",
+      "ordinal": 2,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run2\\raw.json",
+      "reportSha256": "BCBD4B212F28B42C3DBA66E5DEE96E34B77400F261E24365E8436697AAEE0D98",
+      "runId": "ff9f49391d2c4174ab70215ef5833477",
+      "phase": "C1-axes-compact-isolated-final-v2",
+      "startedUtc": "2026-10-15T17:26:24.2606628+08:00",
+      "finishedUtc": "2026-10-15T17:26:25.3257887+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c1-millionpoint-results.json.evidence\\after-002.guard.json",
+        "sha256": "9B3A6F8C52722B0930702442F6FC0063BDE95DF849042BB352B0577682B34086",
+        "reportSha256": "BCBD4B212F28B42C3DBA66E5DEE96E34B77400F261E24365E8436697AAEE0D98",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "2DA9BC30C9DFF65345BAF3686D3A5329EFFF432E0A349BCC144F8C709DDA6493"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "A50CFD46E06DD55EC3F60876902893A8A157B564E789A281AD5938A5A2861DDC"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run2\\supervisor.json",
+        "sha256": "400900482F8D6B68D06C1F58EB590BA976F6AE016150BEC439E8E7BB47F023B4",
+        "runId": "ff9f49391d2c4174ab70215ef5833477",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "after",
+      "ordinal": 3,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run3\\raw.json",
+      "reportSha256": "315DEC6AFF7AB5FC1F283D32A168419197629743C64D13D3AD0349868A60433B",
+      "runId": "fb437306d50b4d00852acea6532d484c",
+      "phase": "C1-axes-compact-isolated-final-v2",
+      "startedUtc": "2026-10-15T17:26:26.2662913+08:00",
+      "finishedUtc": "2026-10-15T17:26:27.4556746+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c1-millionpoint-results.json.evidence\\after-003.guard.json",
+        "sha256": "B07DA9EF7B5B04C293CB135597778026CB6B03C0BA789829920784361A30DA29",
+        "reportSha256": "315DEC6AFF7AB5FC1F283D32A168419197629743C64D13D3AD0349868A60433B",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "2DA9BC30C9DFF65345BAF3686D3A5329EFFF432E0A349BCC144F8C709DDA6493"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "A50CFD46E06DD55EC3F60876902893A8A157B564E789A281AD5938A5A2861DDC"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run3\\supervisor.json",
+        "sha256": "03D0E6C0DF09FDE691AAAC8B68CC50354A7C687725AFD3945C6EDB58F090D186",
+        "runId": "fb437306d50b4d00852acea6532d484c",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "after",
+      "ordinal": 4,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run4\\raw.json",
+      "reportSha256": "350EBD3F536EDC653AEC4DA601B5B64B86426DAB41560132B13DD8496771E225",
+      "runId": "4051a1a1024c4de9a52faf1c01a40e1c",
+      "phase": "C1-axes-compact-isolated-final-v2",
+      "startedUtc": "2026-10-15T17:26:28.4387946+08:00",
+      "finishedUtc": "2026-10-15T17:26:29.5376701+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c1-millionpoint-results.json.evidence\\after-004.guard.json",
+        "sha256": "B263D199FC11B0168298B0A0C1B8CCC9E0C3DDF3F25EB4CD4FB45A92AE6D1C69",
+        "reportSha256": "350EBD3F536EDC653AEC4DA601B5B64B86426DAB41560132B13DD8496771E225",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "2DA9BC30C9DFF65345BAF3686D3A5329EFFF432E0A349BCC144F8C709DDA6493"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "A50CFD46E06DD55EC3F60876902893A8A157B564E789A281AD5938A5A2861DDC"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run4\\supervisor.json",
+        "sha256": "F20F97BB4A57E1775D62026A9433352314AF6A33F7617ED531C42426EAE0D791",
+        "runId": "4051a1a1024c4de9a52faf1c01a40e1c",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "after",
+      "ordinal": 5,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run5\\raw.json",
+      "reportSha256": "815E52AACC1A7EF1EF3893E3B1152DF3F7D7E50C796F9DA02A0BE325572897CA",
+      "runId": "9764e959a5df424e9bb77cfd22ce7709",
+      "phase": "C1-axes-compact-isolated-final-v2",
+      "startedUtc": "2026-10-15T17:26:30.4886806+08:00",
+      "finishedUtc": "2026-10-15T17:26:31.5896329+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c1-millionpoint-results.json.evidence\\after-005.guard.json",
+        "sha256": "C1CDA7112F7C6DAECD96F03AE4FCBCBD7FE9C4D7AED3D90AADD68519A154A22C",
+        "reportSha256": "815E52AACC1A7EF1EF3893E3B1152DF3F7D7E50C796F9DA02A0BE325572897CA",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "2DA9BC30C9DFF65345BAF3686D3A5329EFFF432E0A349BCC144F8C709DDA6493"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "A50CFD46E06DD55EC3F60876902893A8A157B564E789A281AD5938A5A2861DDC"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run5\\supervisor.json",
+        "sha256": "6E5E962F0F468BC1607DA53294996281A1BD9935BCAC58B5B3EC9313D4EB8432",
+        "runId": "9764e959a5df424e9bb77cfd22ce7709",
+        "processExitCode": 0
+      }
+    }
+  ],
+  "qualityFingerprints": [
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run1\\raw.json",
+      "globalSha256": "09B2BEB7E9863A703FAAEBC75354D5742751F150E114C3DB9B425201ADF68F12",
+      "scenarios": {
+        "S1M-L": "C9867F88919770D2BB0EC136B8871DF08D469C2B1729521EDDEA9B8BEF8B311D"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run2\\raw.json",
+      "globalSha256": "09B2BEB7E9863A703FAAEBC75354D5742751F150E114C3DB9B425201ADF68F12",
+      "scenarios": {
+        "S1M-L": "C9867F88919770D2BB0EC136B8871DF08D469C2B1729521EDDEA9B8BEF8B311D"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run3\\raw.json",
+      "globalSha256": "09B2BEB7E9863A703FAAEBC75354D5742751F150E114C3DB9B425201ADF68F12",
+      "scenarios": {
+        "S1M-L": "C9867F88919770D2BB0EC136B8871DF08D469C2B1729521EDDEA9B8BEF8B311D"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run4\\raw.json",
+      "globalSha256": "09B2BEB7E9863A703FAAEBC75354D5742751F150E114C3DB9B425201ADF68F12",
+      "scenarios": {
+        "S1M-L": "C9867F88919770D2BB0EC136B8871DF08D469C2B1729521EDDEA9B8BEF8B311D"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-isolated\\run5\\raw.json",
+      "globalSha256": "09B2BEB7E9863A703FAAEBC75354D5742751F150E114C3DB9B425201ADF68F12",
+      "scenarios": {
+        "S1M-L": "C9867F88919770D2BB0EC136B8871DF08D469C2B1729521EDDEA9B8BEF8B311D"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run1\\raw.json",
+      "globalSha256": "09B2BEB7E9863A703FAAEBC75354D5742751F150E114C3DB9B425201ADF68F12",
+      "scenarios": {
+        "S1M-L": "C9867F88919770D2BB0EC136B8871DF08D469C2B1729521EDDEA9B8BEF8B311D"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run2\\raw.json",
+      "globalSha256": "09B2BEB7E9863A703FAAEBC75354D5742751F150E114C3DB9B425201ADF68F12",
+      "scenarios": {
+        "S1M-L": "C9867F88919770D2BB0EC136B8871DF08D469C2B1729521EDDEA9B8BEF8B311D"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run3\\raw.json",
+      "globalSha256": "09B2BEB7E9863A703FAAEBC75354D5742751F150E114C3DB9B425201ADF68F12",
+      "scenarios": {
+        "S1M-L": "C9867F88919770D2BB0EC136B8871DF08D469C2B1729521EDDEA9B8BEF8B311D"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run4\\raw.json",
+      "globalSha256": "09B2BEB7E9863A703FAAEBC75354D5742751F150E114C3DB9B425201ADF68F12",
+      "scenarios": {
+        "S1M-L": "C9867F88919770D2BB0EC136B8871DF08D469C2B1729521EDDEA9B8BEF8B311D"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\isolated\\run5\\raw.json",
+      "globalSha256": "09B2BEB7E9863A703FAAEBC75354D5742751F150E114C3DB9B425201ADF68F12",
+      "scenarios": {
+        "S1M-L": "C9867F88919770D2BB0EC136B8871DF08D469C2B1729521EDDEA9B8BEF8B311D"
+      }
+    }
+  ],
+  "qualityReference": {
+    "global": {
+      "configuration": {
+        "widthDip": 1200,
+        "heightDip": 650,
+        "dpi": 1,
+        "fontSizeDip": 12,
+        "strokeThicknessDip": 2,
+        "quality": "current-runtime-full-data; dense-line-markers-off; no-downsampling",
+        "warmups": 1,
+        "hitQueries": 5,
+        "budgetVersion": "charts-engineering-targets-v1",
+        "targetStatus": "frozen-targets-not-performance-acceptance"
+      },
+      "environment": {
+        "executionOs": "Microsoft Windows 10.0.26200",
+        "processArchitecture": "X64",
+        "framework": ".NET 10.0.12",
+        "avaloniaVersion": "12.0.3.0",
+        "processorCount": 16,
+        "gcServer": false,
+        "backend": "Avalonia.Headless",
+        "rendering": "DrawingGroup render-record only; no GPU or compositor present",
+        "privateMeasurementKind": "Process.PrivateMemorySize64-private-commit",
+        "fontQualification": "headless-test-font; real CJK/font hashes pending native harness"
+      },
+      "harnessSha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E",
+      "budgetSha256": "3E7149E6C4538993CBFEBAD2542E154DC8EBEBD06A72259EF345B3E3A07DEEA2",
+      "scopes": [
+        "pending-C4",
+        "blocked-present",
+        "blocked-reference"
+      ],
+      "boundaries": [
+        "harnessSourceSnapshot is host ToArray preparation, not an isolated runtime-internal snapshot metric.",
+        "sourceEnumeration is a nested instrumented IEnumerable consumption interval; scenePrepare includes it. Do not add nested timings.",
+        "scenePrepare is the public PlotArea/VisibleRange getter including current internal snapshot/range/text preparation.",
+        "renderRecord is chart.Render into DrawingGroup, not composition/render completion, framePipeline, actual present or FPS.",
+        "firstUsableToRecord includes host snapshot, source assignment, scene preparation, record and query correctness; it is not firstUsableToRender/present.",
+        "Quick mode is a prototype, not formal 5-process or long-soak acceptance. No absolute C4 budget is evaluated."
+      ]
+    },
+    "scenarios": [
+      {
+        "id": "S1M-L",
+        "qualification": "C0-diagnostic-only",
+        "datasets": [
+          {
+            "manifest": {
+              "id": "S1M-L",
+              "revision": 0,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607085",
+              "sha256": "B5DDAB0C4F17595ABD629369BC850C07A3D999A3BEAA8154AEE08EEE909ACBED",
+              "inputPointCount": 1000000,
+              "validPointCount": 1000000,
+              "seriesPointCounts": [
+                1000000
+              ],
+              "seriesSha256": [
+                "221CA25AE92DE5EBD64B274343B734350488F271916C59251342FC6B2C2D3741"
+              ],
+              "monotonicX": true,
+              "containsGaps": false,
+              "realtimePoc": false,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "complete-C4-corpus",
+                "quality-golden",
+                "physical-input",
+                "native-frame-present",
+                "official-reference"
+              ],
+              "seriesCount": 1
+            },
+            "sampleQuality": {
+              "datasetSha256": "B5DDAB0C4F17595ABD629369BC850C07A3D999A3BEAA8154AEE08EEE909ACBED",
+              "inputPointCount": 1000000,
+              "primitiveCount": 31,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                1000000,
+                -1.99609375,
+                193.37109375
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 302.1668418331582,
+                  "screenY": 505.6636573009557,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 166666,
+                  "probeXBits": "4104585000000000",
+                  "probeYBits": "403EE10000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 166666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 166666,
+                  "actualXBits": "4104585000000000",
+                  "actualYBits": "403EE10000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 477.33368366631635,
+                  "screenY": 413.02119562772424,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 333333,
+                  "probeXBits": "4114585400000000",
+                  "probeYBits": "404EF00000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 333333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 333333,
+                  "actualXBits": "4114585400000000",
+                  "actualYBits": "404EF00000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 652.5005254994745,
+                  "screenY": 488.4894845068381,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 500000,
+                  "probeXBits": "411E848000000000",
+                  "probeYBits": "4042500000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 500000,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 500000,
+                  "actualXBits": "411E848000000000",
+                  "actualYBits": "4042500000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 827.6663163336837,
+                  "screenY": 582.1943865092774,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 666666,
+                  "probeXBits": "4124585400000000",
+                  "probeYBits": "4015180000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 666666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 666666,
+                  "actualXBits": "4124585400000000",
+                  "actualYBits": "4015180000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 1002.8331581668418,
+                  "screenY": 520.8530514580917,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 833333,
+                  "probeXBits": "41296E6A00000000",
+                  "probeYBits": "4039CC0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 833333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 833333,
+                  "actualXBits": "41296E6A00000000",
+                  "actualYBits": "4039CC0000000000"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "S1M-L",
+      "comparable": true,
+      "before": {
+        "processCount": 5,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 25,
+        "hitQueryCount": 125,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 25,
+            "p50Milliseconds": 2.4471,
+            "p95Milliseconds": 2.8406,
+            "p95AllocatedBytes": 16000144,
+            "maximumMilliseconds": 3.2021,
+            "maximumAllocatedBytes": 16000144.0
+          },
+          "sourceApply": {
+            "count": 25,
+            "p50Milliseconds": 157.6844,
+            "p95Milliseconds": 225.0585,
+            "p95AllocatedBytes": 96000520,
+            "maximumMilliseconds": 266.2289,
+            "maximumAllocatedBytes": 96000528.0
+          },
+          "scenePrepare": {
+            "count": 25,
+            "p50Milliseconds": 173.5487,
+            "p95Milliseconds": 194.6519,
+            "p95AllocatedBytes": 240070368,
+            "maximumMilliseconds": 197.4705,
+            "maximumAllocatedBytes": 240070368.0
+          },
+          "cachedSceneGetter": {
+            "count": 25,
+            "p50Milliseconds": 0.0012,
+            "p95Milliseconds": 0.0035,
+            "p95AllocatedBytes": 152,
+            "maximumMilliseconds": 0.0036,
+            "maximumAllocatedBytes": 152.0
+          },
+          "renderRecord": {
+            "count": 25,
+            "p50Milliseconds": 57.9642,
+            "p95Milliseconds": 114.6592,
+            "p95AllocatedBytes": 33694488,
+            "maximumMilliseconds": 115.7344,
+            "maximumAllocatedBytes": 33695160.0
+          },
+          "firstUsableToRecord": {
+            "count": 25,
+            "p50Milliseconds": 444.9341,
+            "p95Milliseconds": 506.7502,
+            "p95AllocatedBytes": 385771928,
+            "maximumMilliseconds": 511.4643,
+            "maximumAllocatedBytes": 385771928.0
+          }
+        },
+        "hitQuery": {
+          "count": 125,
+          "p50Milliseconds": 44.8913,
+          "p95Milliseconds": 52.6165,
+          "p95AllocatedBytes": 5320,
+          "maximumMilliseconds": 56.2298,
+          "maximumAllocatedBytes": 5320.0
+        },
+        "maxObservedCurrentPrivateBytes": 1119240192.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 1119240192.0,
+        "processes": [
+          {
+            "runId": "a987b47dbb8b49e39bdcf1ccd1197d7b",
+            "reportSha256": "94FD3CBFA3BEADFB4009510C0940174D89C6909306B78FDA70761D981016B424",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 809906176.0
+          },
+          {
+            "runId": "4095c52e970f483c935bf9f70c70cd5b",
+            "reportSha256": "8CA1A04F9CEB1E98149809C646871EFA07FBDC99A9C37F72F94BDAB7680F30DD",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 1067343872.0
+          },
+          {
+            "runId": "ac909ad28390478e9746a032212930a2",
+            "reportSha256": "6F8A52F6EF73CFC2A434F5971E562F23FD63CDC475974694DB53F60ED4D2C3AE",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 1070813184.0
+          },
+          {
+            "runId": "38d0e4a3dc484a52b4adbc0cec5318a1",
+            "reportSha256": "D165E1665743DC75B07E76469D120B409E3CC51F1026AA00094B3D1CB86669D9",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 1119240192.0
+          },
+          {
+            "runId": "3327bbdad12e48af90f00aa9268ee7c7",
+            "reportSha256": "868AA135C4A692C601B57178ED26DBB1A6204FDF155E5824054187A634BED967",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 723861504.0
+          }
+        ]
+      },
+      "after": {
+        "processCount": 5,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 25,
+        "hitQueryCount": 125,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 25,
+            "p50Milliseconds": 2.5594,
+            "p95Milliseconds": 2.8266,
+            "p95AllocatedBytes": 16000144,
+            "maximumMilliseconds": 2.9252,
+            "maximumAllocatedBytes": 16000144.0
+          },
+          "sourceApply": {
+            "count": 25,
+            "p50Milliseconds": 7.1344,
+            "p95Milliseconds": 10.77,
+            "p95AllocatedBytes": 32256208,
+            "maximumMilliseconds": 11.4853,
+            "maximumAllocatedBytes": 32256672.0
+          },
+          "scenePrepare": {
+            "count": 25,
+            "p50Milliseconds": 5.6626,
+            "p95Milliseconds": 6.9465,
+            "p95AllocatedBytes": 70816,
+            "maximumMilliseconds": 6.9905,
+            "maximumAllocatedBytes": 70816.0
+          },
+          "cachedSceneGetter": {
+            "count": 25,
+            "p50Milliseconds": 0.0014,
+            "p95Milliseconds": 0.0024,
+            "p95AllocatedBytes": 264,
+            "maximumMilliseconds": 0.0039,
+            "maximumAllocatedBytes": 264.0
+          },
+          "renderRecord": {
+            "count": 25,
+            "p50Milliseconds": 63.809,
+            "p95Milliseconds": 79.5904,
+            "p95AllocatedBytes": 33694512,
+            "maximumMilliseconds": 82.83,
+            "maximumAllocatedBytes": 33694512.0
+          },
+          "firstUsableToRecord": {
+            "count": 25,
+            "p50Milliseconds": 80.0186,
+            "p95Milliseconds": 97.3539,
+            "p95AllocatedBytes": 82023520,
+            "maximumMilliseconds": 102.2872,
+            "maximumAllocatedBytes": 82023984.0
+          }
+        },
+        "hitQuery": {
+          "count": 125,
+          "p50Milliseconds": 1.3142,
+          "p95Milliseconds": 2.2673,
+          "p95AllocatedBytes": 640,
+          "maximumMilliseconds": 4.7006,
+          "maximumAllocatedBytes": 640.0
+        },
+        "maxObservedCurrentPrivateBytes": 429953024.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 429953024.0,
+        "processes": [
+          {
+            "runId": "9465ac40e6824088beed8904158d1c21",
+            "reportSha256": "B9EE5B605C6CFBBDB29A7E8C7D16F0DACF159153C1A4D60A0A5353960A658F99",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 353914880.0
+          },
+          {
+            "runId": "ff9f49391d2c4174ab70215ef5833477",
+            "reportSha256": "BCBD4B212F28B42C3DBA66E5DEE96E34B77400F261E24365E8436697AAEE0D98",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 396894208.0
+          },
+          {
+            "runId": "fb437306d50b4d00852acea6532d484c",
+            "reportSha256": "315DEC6AFF7AB5FC1F283D32A168419197629743C64D13D3AD0349868A60433B",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 429953024.0
+          },
+          {
+            "runId": "4051a1a1024c4de9a52faf1c01a40e1c",
+            "reportSha256": "350EBD3F536EDC653AEC4DA601B5B64B86426DAB41560132B13DD8496771E225",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 397152256.0
+          },
+          {
+            "runId": "9764e959a5df424e9bb77cfd22ce7709",
+            "reportSha256": "815E52AACC1A7EF1EF3893E3B1152DF3F7D7E50C796F9DA02A0BE325572897CA",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 396906496.0
+          }
+        ]
+      },
+      "afterOverBefore": {
+        "stages": {
+          "harnessSourceSnapshot": {
+            "p50Milliseconds": 1.0458910547178293,
+            "p95Milliseconds": 0.9950714637752588,
+            "p95AllocatedBytes": 1.0
+          },
+          "sourceApply": {
+            "p50Milliseconds": 0.04524480544682923,
+            "p95Milliseconds": 0.04785422456827891,
+            "p95AllocatedBytes": 0.3360003466647889
+          },
+          "scenePrepare": {
+            "p50Milliseconds": 0.03262830548428194,
+            "p95Milliseconds": 0.03568678240489818,
+            "p95AllocatedBytes": 0.00029498017847833684
+          },
+          "cachedSceneGetter": {
+            "p50Milliseconds": 1.1666666666666667,
+            "p95Milliseconds": 0.6857142857142856,
+            "p95AllocatedBytes": 1.736842105263158
+          },
+          "renderRecord": {
+            "p50Milliseconds": 1.1008346531134734,
+            "p95Milliseconds": 0.6941475258854065,
+            "p95AllocatedBytes": 1.0000007122826737
+          },
+          "firstUsableToRecord": {
+            "p50Milliseconds": 0.17984371168674193,
+            "p95Milliseconds": 0.19211418170135897,
+            "p95AllocatedBytes": 0.21262179553925448
+          }
+        },
+        "hitQuery": {
+          "p50Milliseconds": 0.0292751602203545,
+          "p95Milliseconds": 0.04309104558455998,
+          "p95AllocatedBytes": 0.12030075187969924
+        },
+        "maxObservedCurrentPrivateBytes": 0.3841472340550115,
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 0.3841472340550115
+      }
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "Each raw report is validated by a fresh child invocation of Test-ChartsPerformance; original guard files are not overwritten.",
+    "Pooled percentiles use all non-warmup samples across distinct report/run IDs; hit percentiles pool non-warmup query timings. This is not a percentile of per-process percentiles.",
+    "Nearest-rank percentiles match the raw guard. Ratios are after/before; a zero before denominator produces null, not Infinity or an improvement claim.",
+    "Allocated bytes are reported current-thread stage deltas. Stage intervals can nest: firstUsable includes other work, source enumeration belongs to scene preparation; do not sum them.",
+    "Current private values are sampled at recorded memoryBefore/memoryAfter boundaries; their maximum is not measured peak private, retained memory, or native allocations.",
+    "Distinct run IDs and successful supervisor receipts identify process invocations; this raw schema does not include OS PID, CPU model, power state, or concurrent-process audit.",
+    "Matching recorded manifests/primitive counts/probes does not constitute full image-golden or complete C4 quality-corpus acceptance. Native present, GPU, Linux, official reference and SLA acceptance remain outside scope.",
+    "Known trace diagnostic reports are rejected. The caller remains responsible for providing untraced runs with externally verified isolated execution.",
+    "Only recorded known quality fields are compared; no rendering data is downsampled or silently omitted to make reports comparable."
+  ]
+}

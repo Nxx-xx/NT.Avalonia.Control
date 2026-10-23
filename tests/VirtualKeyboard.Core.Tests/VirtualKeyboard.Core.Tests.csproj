@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../../src/NT.AvaloniaControl.VirtualKeyboard/NT.AvaloniaControl.VirtualKeyboard.csproj" />
+  </ItemGroup>
+</Project>

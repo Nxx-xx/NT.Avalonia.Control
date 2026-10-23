@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VirtualKeyboard.Usage</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.VirtualKeyboard/NT.AvaloniaControl.VirtualKeyboard.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.VirtualKeyboard.Themes/NT.AvaloniaControl.VirtualKeyboard.Themes.csproj" />
+  </ItemGroup>
+</Project>

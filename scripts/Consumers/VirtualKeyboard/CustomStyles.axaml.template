@@ -1,0 +1,31 @@
+<Style Selector="vk|VirtualKeyboard">
+  <Setter Property="Template">
+    <ControlTemplate>
+      <ItemsControl x:Name="PART_RowsPresenter">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate DataType="vk:VirtualKeyboardRow">
+            <ItemsControl ItemsSource="{ReflectionBinding Keys}">
+              <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate><StackPanel Orientation="Horizontal" Spacing="2" /></ItemsPanelTemplate>
+              </ItemsControl.ItemsPanel>
+              <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="vk:VirtualKeyboardKey">
+                  <vk:VirtualKeyboardKeyButton Key="{ReflectionBinding}" Width="42" Height="42" />
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </ControlTemplate>
+  </Setter>
+</Style>
+<Style Selector="vk|VirtualKeyboardKeyButton">
+  <Setter Property="Template">
+    <ControlTemplate>
+      <Border Background="LightGray" Padding="4">
+        <TextBlock Text="{TemplateBinding Label}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+      </Border>
+    </ControlTemplate>
+  </Setter>
+</Style>

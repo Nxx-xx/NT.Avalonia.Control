@@ -1,0 +1,48 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/NT.AvaloniaControl.PdfViewer/NT.AvaloniaControl.PdfViewer.csproj" />
+    <Project Path="src/NT.AvaloniaControl.PdfViewer.Themes/NT.AvaloniaControl.PdfViewer.Themes.csproj" />
+    <Project Path="src/NT.AvaloniaControl.Charts/NT.AvaloniaControl.Charts.csproj" />
+    <Project Path="src/NT.AvaloniaControl.Charts.Themes/NT.AvaloniaControl.Charts.Themes.csproj" />
+    <Project Path="src/NT.AvaloniaControl.Markdown/NT.AvaloniaControl.Markdown.csproj" />
+    <Project Path="src/NT.AvaloniaControl.Markdown.Themes/NT.AvaloniaControl.Markdown.Themes.csproj" />
+    <Project Path="src/NT.AvaloniaControl.Markdown.TextMate/NT.AvaloniaControl.Markdown.TextMate.csproj" />
+    <Project Path="src/NT.AvaloniaControl.TreeDataGrid/NT.AvaloniaControl.TreeDataGrid.csproj" />
+    <Project Path="src/NT.AvaloniaControl.TreeDataGrid.Themes/NT.AvaloniaControl.TreeDataGrid.Themes.csproj" />
+    <Project Path="src/NT.AvaloniaControl.VirtualKeyboard/NT.AvaloniaControl.VirtualKeyboard.csproj" />
+    <Project Path="src/NT.AvaloniaControl.VirtualKeyboard.Themes/NT.AvaloniaControl.VirtualKeyboard.Themes.csproj" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/Charts.Usage/Charts.Usage.csproj" />
+    <Project Path="samples/PdfViewer.Usage/PdfViewer.Usage.csproj" />
+    <Project Path="samples/Markdown.Usage/Markdown.Usage.csproj" />
+    <Project Path="samples/NT.AvaloniaControl.Demo/NT.AvaloniaControl.Demo.csproj" />
+    <Project Path="samples/TreeDataGrid.Usage/TreeDataGrid.Usage.csproj" />
+    <Project Path="samples/VirtualKeyboard.Usage/VirtualKeyboard.Usage.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Demo.Headless.Tests/Demo.Headless.Tests.csproj" />
+    <Project Path="tests/PdfViewer.Core.Tests/PdfViewer.Core.Tests.csproj" />
+    <Project Path="tests/PdfViewer.Headless.Tests/PdfViewer.Headless.Tests.csproj" />
+    <Project Path="tests/Charts.Headless.Tests/Charts.Headless.Tests.csproj" />
+    <Project Path="tests/Markdown.Core.Tests/Markdown.Core.Tests.csproj" />
+    <Project Path="tests/Markdown.Streaming.Tests/Markdown.Streaming.Tests.csproj" />
+    <Project Path="tests/Markdown.Headless.Tests/Markdown.Headless.Tests.csproj" />
+    <Project Path="tests/Markdown.TextMate.Tests/Markdown.TextMate.Tests.csproj" />
+    <Project Path="tests/Markdown.Themes.Tests/Markdown.Themes.Tests.csproj" />
+    <Project Path="tests/TreeDataGrid.Core.Tests/TreeDataGrid.Core.Tests.csproj" />
+    <Project Path="tests/TreeDataGrid.Headless.Tests/TreeDataGrid.Headless.Tests.csproj" />
+    <Project Path="tests/TreeDataGrid.Themes.Tests/TreeDataGrid.Themes.Tests.csproj" />
+    <Project Path="tests/VirtualKeyboard.Core.Tests/VirtualKeyboard.Core.Tests.csproj" />
+    <Project Path="tests/VirtualKeyboard.Headless.Tests/VirtualKeyboard.Headless.Tests.csproj" />
+    <Project Path="tests/VirtualKeyboard.Themes.Tests/VirtualKeyboard.Themes.Tests.csproj" />
+  </Folder>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/Charts.Benchmarks/Charts.Benchmarks.csproj" />
+    <Project Path="benchmarks/Charts.NativeBenchmarks/Charts.NativeBenchmarks.csproj" />
+    <Project Path="benchmarks/PdfViewer.P0/PdfViewer.P0.csproj" />
+    <Project Path="benchmarks/Markdown.Benchmarks/Markdown.Benchmarks.csproj" />
+    <Project Path="benchmarks/Markdown.Benchmarks/NativeHost/Markdown.NativeBenchmarks.csproj" />
+    <Project Path="benchmarks/TreeDataGrid.Benchmarks/TreeDataGrid.Benchmarks.csproj" />
+  </Folder>
+</Solution>

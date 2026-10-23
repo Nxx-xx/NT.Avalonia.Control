@@ -1,0 +1,86 @@
+{
+  "Scope": "Synthetic renamed OFL font derivatives for regression tests, not additional real-family compatibility or runtime default fonts.",
+  "Preparation": "prepare_font_subset_corpus.py derive(); P0CompositeGlyph same Gowun text as no-subsetting case, fsType=0. P0AliasGlyph from Gowun; all Unicode cmap B entries point to A glyph.",
+  "UpstreamSources": {
+    "GoogleFontsCommit": "d47d546884f75bbf718d3ddbb8d4627c68b9c782",
+    "SchemaVersion": 1,
+    "Files": [
+      {
+        "Family": "LXGW WenKai",
+        "Version": "v1.522",
+        "File": "LXGWWenKai-Regular.ttf",
+        "SHA256": "39AD71264B588165B469E35E6AFB162A378DACD1F95348160240BA9038AC3009",
+        "Url": "https://github.com/lxgw/LxgwWenKai/releases/download/v1.522/LXGWWenKai-Regular.ttf",
+        "Bytes": 25575676
+      },
+      {
+        "Url": "https://raw.githubusercontent.com/lxgw/LxgwWenKai/e8b5b48b79f19f29aa68b0a178eab3472ea9f7e8/OFL.txt",
+        "Bytes": 4448,
+        "SHA256": "C38B1994A5E48AC30AC7D1DA7D0409FD8FD8127DFE28A13D6E787D5B1EF34A5E",
+        "File": "LXGW-OFL.txt"
+      },
+      {
+        "Family": "Zen Kaku Gothic New",
+        "Version": "d47d546884f75bbf718d3ddbb8d4627c68b9c782",
+        "File": "ZenKakuGothicNew-Regular.ttf",
+        "SHA256": "B840CD07A67D89CACCA44249AE49AA99EE7640EB5CE623BE8D8983D6AABAC801",
+        "Url": "https://raw.githubusercontent.com/google/fonts/d47d546884f75bbf718d3ddbb8d4627c68b9c782/ofl/zenkakugothicnew/ZenKakuGothicNew-Regular.ttf",
+        "Bytes": 2360248
+      },
+      {
+        "Url": "https://raw.githubusercontent.com/google/fonts/d47d546884f75bbf718d3ddbb8d4627c68b9c782/ofl/zenkakugothicnew/OFL.txt",
+        "Bytes": 4401,
+        "SHA256": "0FAC78A235C98D640CB06332EB5362C211D86FA03C011DF438C35005D22AD2C7",
+        "File": "ZenKakuGothicNew-OFL.txt"
+      },
+      {
+        "Family": "Gowun Dodum",
+        "Version": "d47d546884f75bbf718d3ddbb8d4627c68b9c782",
+        "File": "GowunDodum-Regular.ttf",
+        "SHA256": "A6E457933227483A11758FD0947BC74422A106D46F0BF057FDAA5AF94A30067D",
+        "Url": "https://raw.githubusercontent.com/google/fonts/d47d546884f75bbf718d3ddbb8d4627c68b9c782/ofl/gowundodum/GowunDodum-Regular.ttf",
+        "Bytes": 7229088
+      },
+      {
+        "Url": "https://raw.githubusercontent.com/google/fonts/d47d546884f75bbf718d3ddbb8d4627c68b9c782/ofl/gowundodum/OFL.txt",
+        "Bytes": 4395,
+        "SHA256": "A7C73F9521CD646BBDFB6684C99A62311BBD7BCE11898DC11EF0B3C69EDA1ACA",
+        "File": "GowunDodum-OFL.txt"
+      }
+    ],
+    "LxgwTagCommit": "e8b5b48b79f19f29aa68b0a178eab3472ea9f7e8",
+    "CapturedAtUtc": "2026-10-15T10:56:09.0574741+00:00"
+  },
+  "Files": [
+    {
+      "File": "GowunDodum-OFL.txt",
+      "SHA256": "A7C73F9521CD646BBDFB6684C99A62311BBD7BCE11898DC11EF0B3C69EDA1ACA",
+      "Bytes": 4395
+    },
+    {
+      "File": "LXGW-OFL.txt",
+      "SHA256": "C38B1994A5E48AC30AC7D1DA7D0409FD8FD8127DFE28A13D6E787D5B1EF34A5E",
+      "Bytes": 4448
+    },
+    {
+      "File": "P0Cmap12Only.ttf",
+      "SHA256": "A12A8891CF8E1E90826F0644BD11209041C69AF68F77295EF8CAB128342E5573",
+      "Bytes": 3988
+    },
+    {
+      "File": "P0CompositeGlyph.ttf",
+      "SHA256": "345A810982A2BBC10CD6BB1650D212A8E86A5F2D781C9D75657238D7B7718B7D",
+      "Bytes": 4868
+    },
+    {
+      "File": "P0NoSubsetting.ttf",
+      "SHA256": "8958C71DEA4699FF3DED4E5D9DA0274BE4CA5DDCDF8A907F651E9A7252BD4585",
+      "Bytes": 4860
+    },
+    {
+      "File": "P0AliasGlyph.ttf",
+      "SHA256": "41D8A0440084EE7CB5A0B44CE84E1137D4FC24D202A15C00C363E851806EBB05",
+      "Bytes": 3960
+    }
+  ]
+}

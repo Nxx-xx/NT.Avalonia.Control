@@ -1,0 +1,141 @@
+{
+  "Date": "2026-10-13",
+  "Platform": "Windows 10.0.26200 / X64",
+  "Build": "Release",
+  "Runtime": "10.0.12",
+  "Avalonia": "12.0.3",
+  "WindowDip": "960 x 530",
+  "RenderScaling": 1,
+  "ValidatedRounds": 3,
+  "TotalInputSamples": 600,
+  "Passed": true,
+  "Groups": [
+    {
+      "Scenario": "character-insertion",
+      "ReleaseRouteToTextPropertyMs": {
+        "Count": 300,
+        "P50": 0.1038,
+        "P95": 0.126305,
+        "Max": 0.2221
+      },
+      "PreparedPointerRouteToTextPropertyMs": {
+        "Count": 300,
+        "P50": 0.19829999999999998,
+        "P95": 0.237655,
+        "Max": 0.4125
+      }
+    },
+    {
+      "Scenario": "selection-replacement",
+      "ReleaseRouteToTextPropertyMs": {
+        "Count": 300,
+        "P50": 0.0998,
+        "P95": 0.14034500000000003,
+        "Max": 5.8731
+      },
+      "PreparedPointerRouteToTextPropertyMs": {
+        "Count": 300,
+        "P50": 0.1898,
+        "P95": 0.26815,
+        "Max": 5.9535
+      }
+    }
+  ],
+  "RepeatProfiles": [
+    {
+      "Name": "default-500-70",
+      "Rounds": 3,
+      "FirstRepeatLatenessMs": [
+        14.264900000000011,
+        18.055500000000052,
+        7.13130000000001
+      ],
+      "SubsequentIntervalsMs": {
+        "Count": 78,
+        "P50": 78.30055000000004,
+        "P95": 85.08639000000008,
+        "Max": 94.68239999999992
+      },
+      "CancelCallMs": [
+        0.3703,
+        0.4591,
+        0.1835
+      ],
+      "PostCancelTextChanges": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "Name": "short-100-40",
+      "Rounds": 3,
+      "FirstRepeatLatenessMs": [
+        7.346099999999993,
+        16.603700000000003,
+        8.432299999999998
+      ],
+      "SubsequentIntervalsMs": {
+        "Count": 73,
+        "P50": 47.543899999999894,
+        "P95": 53.690539999999984,
+        "Max": 61.05669999999998
+      },
+      "CancelCallMs": [
+        0.7687,
+        0.271,
+        0.1212
+      ],
+      "PostCancelTextChanges": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "NativeHitReadyFromConstructionMs": [
+    616.7886,
+    632.8106,
+    616.0733
+  ],
+  "RawReports": [
+    "windows-keyboard-performance-1.json",
+    "windows-keyboard-performance-2.json",
+    "windows-keyboard-performance-3.json"
+  ],
+  "ExcludedReport": "windows-keyboard-performance-interrupted.json",
+  "ExcludedReason": "Native window and editor lost focus during observation; strict final focus gate rejected the run.",
+  "PhysicalInputMeasured": false,
+  "RenderedFrameLatencyMeasured": false,
+  "ReleaseThresholdsDefined": false,
+  "Interpretation": "Input percentiles start after preparation, immediately before an application PointerReleased route, and end at synchronous TextBox.TextProperty change. Repetition uses actual DispatcherTimer actions. No physical device, frame-presentation or supported-platform latency guarantee is inferred.",
+  "RegressionGuards": {
+    "Scope": "Local Windows/X64 Release regression guard for the recorded 960x530 DIP, 100 percent scaling and default font/theme fixture",
+    "ReleaseRouteP95Ms": 1.0,
+    "ReleaseRouteMaxMs": 20.0,
+    "FirstNativeHitReadyMs": 2000.0,
+    "CancelCallMs": 10.0,
+    "FirstRepeatLatenessMs": 100.0,
+    "RepeatIntervalP95ExtraMs": 40.0,
+    "Basis": "Fixed after three valid fresh-process runs (600 input samples). Input p95 uses a 5x margin rounded up to 0.5ms; input max uses 3x rounded up to 5ms; first-hit readiness uses 3x rounded up to 500ms; cancel uses 5x rounded up to 5ms; first-repeat lateness uses 5x rounded up to 25ms; interval p95 lateness uses 3x rounded up to 10ms. These are regression alarms for the same fixture, not physical input or general product latency guarantees."
+  },
+  "Fixture": {
+    "OS": "Microsoft Windows 10.0.26200",
+    "Architecture": "X64",
+    "Runtime": "10.0.12",
+    "AvaloniaVersion": "12.0.3.0",
+    "BuildConfiguration": "Release",
+    "WindowWidthDip": 960,
+    "WindowHeightDip": 530,
+    "RenderScaling": 1,
+    "NativeHitScenePollingIntervalMs": 16,
+    "StopwatchFrequencyHz": 10000000,
+    "VisualFixture": {
+      "ActualThemeVariant": "Dark",
+      "KeyFontFamily": "compositefont:fonts:Inter#Inter, $Default#Inter, $Default",
+      "KeyFontSize": 18,
+      "KeyMinimumWidthDip": 32,
+      "KeyMinimumHeightDip": 44
+    }
+  }
+}

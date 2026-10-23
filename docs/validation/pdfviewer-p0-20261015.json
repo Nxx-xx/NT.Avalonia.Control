@@ -1,0 +1,786 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-15",
+  "runId": "20261015T072111Z-p0",
+  "exportedUtc": "2026-10-15T07:57:48.497912+00:00",
+  "exporterSHA256": "548F17B1C07E5E0A45EB4FC8F7EEB6F1B13363E7CB7E5F851B9E158B9335C956",
+  "status": "P0 feasibility experiments verified; G0 remains open",
+  "G0Complete": false,
+  "productEditingReady": false,
+  "baseline": {
+    "CapturedUtc": "2026-10-15T07:24:29.1105731+00:00",
+    "GitCommit": "2a8199b65157952b8bbb52220f467efbc8e4e273",
+    "SDK": "10.0.401",
+    "OS": "Microsoft Windows 10.0.26200",
+    "ProcessArchitecture": "X64",
+    "Processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "LogicalProcessorCount": 16,
+    "SourceFileCount": 257,
+    "SourceManifestSHA256": "67256AB841AB546686A1551571E5DF9D491F30985F73BA9370BC2A5A3C31485B",
+    "SnapshotSHA256": "BDE9B89246C3D5111BEEF06B4778217242DB343626BCAA81218C3CAD1D322684"
+  },
+  "frozenProductSourceUnchanged": true,
+  "executionAssemblySHA256": "08330511FCCE651F1768ECA01335F12E6D07B918EABC7D5CC3F0CF257BA8039B",
+  "native": {
+    "CapturedUtc": "2026-10-15T07:46:06.2739209+00:00",
+    "Pdfium": "155.0.8044",
+    "Assets": [
+      {
+        "RID": "win-arm64",
+        "PackagePath": "bblanchon.pdfium.win32/155.0.8044/runtimes/win-arm64/native/pdfium.dll",
+        "ExpectedSHA256": "963307405023898d887f76a54ed59eae0462e25cd6b50716cbc2be10a8a6f6ed",
+        "ActualSHA256": "963307405023898d887f76a54ed59eae0462e25cd6b50716cbc2be10a8a6f6ed",
+        "Matches": true
+      },
+      {
+        "RID": "win-x64",
+        "PackagePath": "bblanchon.pdfium.win32/155.0.8044/runtimes/win-x64/native/pdfium.dll",
+        "ExpectedSHA256": "04100c03e41cac1f979e36e5e26fb860bcb5a7461f53830d3c098716624a27a9",
+        "ActualSHA256": "04100c03e41cac1f979e36e5e26fb860bcb5a7461f53830d3c098716624a27a9",
+        "Matches": true
+      },
+      {
+        "RID": "win-x86",
+        "PackagePath": "bblanchon.pdfium.win32/155.0.8044/runtimes/win-x86/native/pdfium.dll",
+        "ExpectedSHA256": "352d54b8c1629d18df1f39457cd9f60e0b2926d4ff79cc4316274d29f6ac2db4",
+        "ActualSHA256": "352d54b8c1629d18df1f39457cd9f60e0b2926d4ff79cc4316274d29f6ac2db4",
+        "Matches": true
+      },
+      {
+        "RID": "linux-arm",
+        "PackagePath": "bblanchon.pdfium.linux/155.0.8044/runtimes/linux-arm/native/libpdfium.so",
+        "ExpectedSHA256": "5e084819fa6615f29b57adb2d5726b393d657ce2f4892bebedd5746262d0072b",
+        "ActualSHA256": "5e084819fa6615f29b57adb2d5726b393d657ce2f4892bebedd5746262d0072b",
+        "Matches": true
+      },
+      {
+        "RID": "linux-arm64",
+        "PackagePath": "bblanchon.pdfium.linux/155.0.8044/runtimes/linux-arm64/native/libpdfium.so",
+        "ExpectedSHA256": "794a43ec86642d48ed69becb6923022cd0b34d23c81c524452d6f0549398d710",
+        "ActualSHA256": "794a43ec86642d48ed69becb6923022cd0b34d23c81c524452d6f0549398d710",
+        "Matches": true
+      },
+      {
+        "RID": "linux-x64",
+        "PackagePath": "bblanchon.pdfium.linux/155.0.8044/runtimes/linux-x64/native/libpdfium.so",
+        "ExpectedSHA256": "b0361f8ba0bc6ffeb2325949a88f08b09356f46abe257ffdf846202999daa27b",
+        "ActualSHA256": "b0361f8ba0bc6ffeb2325949a88f08b09356f46abe257ffdf846202999daa27b",
+        "Matches": true
+      },
+      {
+        "RID": "linux-x86",
+        "PackagePath": "bblanchon.pdfium.linux/155.0.8044/runtimes/linux-x86/native/libpdfium.so",
+        "ExpectedSHA256": "25f190fe922712f69e9ff896c5343ae7fb0b22a0f7e59c84a494a3e16a906735",
+        "ActualSHA256": "25f190fe922712f69e9ff896c5343ae7fb0b22a0f7e59c84a494a3e16a906735",
+        "Matches": true
+      },
+      {
+        "RID": "linux-musl-arm64",
+        "PackagePath": "bblanchon.pdfium.linux/155.0.8044/runtimes/linux-musl-arm64/native/libpdfium.so",
+        "ExpectedSHA256": "06308ea4362ccf398687940151e4a651b751e8b6a8810577f4684395451e260f",
+        "ActualSHA256": "06308ea4362ccf398687940151e4a651b751e8b6a8810577f4684395451e260f",
+        "Matches": true
+      },
+      {
+        "RID": "linux-musl-x64",
+        "PackagePath": "bblanchon.pdfium.linux/155.0.8044/runtimes/linux-musl-x64/native/libpdfium.so",
+        "ExpectedSHA256": "d13c6f26813208d4e4c2e29bd07828987ce201eeb149c61a6dcc0bd07a68aba2",
+        "ActualSHA256": "d13c6f26813208d4e4c2e29bd07828987ce201eeb149c61a6dcc0bd07a68aba2",
+        "Matches": true
+      },
+      {
+        "RID": "linux-musl-x86",
+        "PackagePath": "bblanchon.pdfium.linux/155.0.8044/runtimes/linux-musl-x86/native/libpdfium.so",
+        "ExpectedSHA256": "0dcb5216c0b351b9b0cf76917f8540f1e8947efd88ce52a581df50cf36728ac7",
+        "ActualSHA256": "0dcb5216c0b351b9b0cf76917f8540f1e8947efd88ce52a581df50cf36728ac7",
+        "Matches": true
+      },
+      {
+        "RID": "osx-arm64",
+        "PackagePath": "bblanchon.pdfium.macos/155.0.8044/runtimes/osx-arm64/native/libpdfium.dylib",
+        "ExpectedSHA256": "f151baf68cf7c4ebee7e7b9263bdce065436b8df7008fb174d89dd2a97fac124",
+        "ActualSHA256": "f151baf68cf7c4ebee7e7b9263bdce065436b8df7008fb174d89dd2a97fac124",
+        "Matches": true
+      },
+      {
+        "RID": "osx-x64",
+        "PackagePath": "bblanchon.pdfium.macos/155.0.8044/runtimes/osx-x64/native/libpdfium.dylib",
+        "ExpectedSHA256": "34df27218f55104e1465ec48f69b98c233f0cf41700378849f4e337f695bb342",
+        "ActualSHA256": "34df27218f55104e1465ec48f69b98c233f0cf41700378849f4e337f695bb342",
+        "Matches": true
+      }
+    ],
+    "Headers": [
+      {
+        "Name": "fpdfview.h",
+        "SHA256": "78E1ACC61AFEB6060CACEE973A654C8F875854EF99D22A9C997773EB327B8CA2"
+      },
+      {
+        "Name": "fpdf_save.h",
+        "SHA256": "96A78A3E3EB8A387DC4A35C1E87B430618E9EE8E7CEAE9FEA424BAF1DE6B497A"
+      },
+      {
+        "Name": "fpdf_edit.h",
+        "SHA256": "069366CBC64B3CEA6B75331E55160C13BD3095DD91CC2CB57585D201DFF4CEC4"
+      },
+      {
+        "Name": "fpdf_annot.h",
+        "SHA256": "40ADD618DA4D09EE1F8EAA2C1FF301DAB90EC8315D94AF673FEABDB67ABFCE3B"
+      },
+      {
+        "Name": "fpdf_formfill.h",
+        "SHA256": "8792ED53DF3F5852F1A8B98D2B6E140898AB595888DF8A2F70BC8C165D188C12"
+      },
+      {
+        "Name": "fpdf_signature.h",
+        "SHA256": "EADFABC91722D1247321D31DAB6A94F8284E36717C0019CC38F54B7C51EC826B"
+      },
+      {
+        "Name": "fpdf_text.h",
+        "SHA256": "4682F8553DC1D29BBEE95CDCDDEFEBBD96522C5BE654807906240F8571593726"
+      },
+      {
+        "Name": "fpdf_fwlevent.h",
+        "SHA256": "60585B9C92227790D7DCCE482B2B8F8EBABC810C24AEBC83CF6564FC140F06DB"
+      }
+    ]
+  },
+  "officialDocuments": [
+    {
+      "URL": "https://docs.avaloniaui.net/controls/data-display/pdfviewer/",
+      "RetrievedUtc": "2026-10-15T07:33:27.7405576+00:00",
+      "File": "index.html",
+      "SHA256": "4B4C3294A96990AC9088D9FACB9B9E619437E620D9D454F5A1009EEC3C0F0355",
+      "Bytes": 86860,
+      "HttpStatus": 200,
+      "Scope": "Public documentation snapshot; not a commercial assembly/version freeze"
+    },
+    {
+      "URL": "https://docs.avaloniaui.net/controls/data-display/pdfviewer/loading-and-saving",
+      "RetrievedUtc": "2026-10-15T07:33:30.6039473+00:00",
+      "File": "loading-and-saving.html",
+      "SHA256": "A9103610409A11EE2C6A3EA9128D6670D2CAFCDF0682FC11B740FAB7B84A6F64",
+      "Bytes": 55527,
+      "HttpStatus": 200,
+      "Scope": "Public documentation snapshot; not a commercial assembly/version freeze"
+    },
+    {
+      "URL": "https://docs.avaloniaui.net/controls/data-display/pdfviewer/navigation-and-search",
+      "RetrievedUtc": "2026-10-15T07:33:33.3671854+00:00",
+      "File": "navigation-and-search.html",
+      "SHA256": "3C7472894A6BEA679150448E43FDC2B79D5AF8AEF882EA21F96032F931029FE7",
+      "Bytes": 60448,
+      "HttpStatus": 200,
+      "Scope": "Public documentation snapshot; not a commercial assembly/version freeze"
+    },
+    {
+      "URL": "https://docs.avaloniaui.net/controls/data-display/pdfviewer/annotations",
+      "RetrievedUtc": "2026-10-15T07:33:36.2456989+00:00",
+      "File": "annotations.html",
+      "SHA256": "B9AE86D28EA05215B1CDE7C8EDD5BBCD8E20881CC253F46CC2BD3A58D8FF2134",
+      "Bytes": 61087,
+      "HttpStatus": 200,
+      "Scope": "Public documentation snapshot; not a commercial assembly/version freeze"
+    },
+    {
+      "URL": "https://docs.avaloniaui.net/controls/data-display/pdfviewer/printing-and-sharing",
+      "RetrievedUtc": "2026-10-15T07:33:38.0374647+00:00",
+      "File": "printing-and-sharing.html",
+      "SHA256": "FCC88919AFCAF2D2FB6C0655EBF2A979FEF1FE3257FAB9E4D56EBCF55240B63E",
+      "Bytes": 38228,
+      "HttpStatus": 200,
+      "Scope": "Public documentation snapshot; not a commercial assembly/version freeze"
+    },
+    {
+      "URL": "https://docs.avaloniaui.net/controls/data-display/pdfviewer/theming-and-localization",
+      "RetrievedUtc": "2026-10-15T07:33:40.1900737+00:00",
+      "File": "theming-and-localization.html",
+      "SHA256": "DDCC4757227DA113FE629B05E3F97657217B15914B96F7308CDE29011FD84D3C",
+      "Bytes": 71500,
+      "HttpStatus": 200,
+      "Scope": "Public documentation snapshot; not a commercial assembly/version freeze"
+    },
+    {
+      "URL": "https://docs.avaloniaui.net/controls/data-display/pdfviewer/platforms-and-performance",
+      "RetrievedUtc": "2026-10-15T07:33:42.2377340+00:00",
+      "File": "platforms-and-performance.html",
+      "SHA256": "2796A4CA11F71B0452EEF2646AC17CDB5808766B74397B6C36EE5ACE53642865",
+      "Bytes": 48020,
+      "HttpStatus": 200,
+      "Scope": "Public documentation snapshot; not a commercial assembly/version freeze"
+    }
+  ],
+  "officialRuntime": {
+    "package": "Avalonia.Controls.PdfViewer",
+    "version": null,
+    "status": "licensed-runnable-reference-not-available"
+  },
+  "tools": {
+    "python": "3.12.14",
+    "pypdf": "6.10.0",
+    "cryptography": "50.0.2",
+    "openssl": "OpenSSL 3.2.1 30 Jan 2024 (Library: OpenSSL 3.2.1 30 Jan 2024)",
+    "poppler": "pdftoppm version 26.07.0"
+  },
+  "independentChecks": {
+    "passed": 49,
+    "total": 49,
+    "ids": [
+      "frozen-manifest-hash",
+      "frozen-archive-hash",
+      "archive-matches-every-source-file",
+      "baseline-product-source-unchanged",
+      "twelve-native-assets-frozen",
+      "seven-official-document-snapshots",
+      "save-actual-native-module",
+      "save-actual-managed-assembly",
+      "save-native-probe-expectations",
+      "forms-actual-native-module",
+      "forms-actual-managed-assembly",
+      "forms-native-probe-expectations",
+      "fonts-actual-native-module",
+      "fonts-actual-managed-assembly",
+      "fonts-native-probe-expectations",
+      "redaction-actual-native-module",
+      "redaction-actual-managed-assembly",
+      "baseline-actual-native-module",
+      "baseline-actual-managed-assembly",
+      "full-independent-content",
+      "incremental-independent-content",
+      "atomic-target-independent-content",
+      "encrypted-save-independent",
+      "signed-input-cms-expected-result",
+      "signed-incremental-cms-expected-result",
+      "signed-full-cms-expected-result",
+      "signature-original-byte-prefix",
+      "forms-canonical-fields",
+      "forms-widget-state-and-selection",
+      "forms-interactive-ap-preserved",
+      "native-stamp-cjk-annotation-ap-font",
+      "native-stamp-cjk-poppler-clean",
+      "native-stamp-cjk-poppler-exit",
+      "native-stamp-cjk-edited-annotation-ap-font",
+      "native-stamp-cjk-edited-poppler-clean",
+      "native-stamp-cjk-edited-poppler-exit",
+      "bridge-freetext-cjk-annotation-ap-font",
+      "bridge-freetext-cjk-poppler-clean",
+      "bridge-freetext-cjk-poppler-exit",
+      "bridge-freetext-cjk-edited-annotation-ap-font",
+      "bridge-freetext-cjk-edited-poppler-clean",
+      "bridge-freetext-cjk-edited-poppler-exit",
+      "font-bridge-raster-equality",
+      "font-raster-not-blank",
+      "font-bridge-raster-equality-edited",
+      "font-raster-not-blank-edited",
+      "freetext-negative-control-detected",
+      "forms-poppler-exit",
+      "redaction-independent-expectations"
+    ]
+  },
+  "save": {
+    "status": "limited-feasible",
+    "checks": [
+      {
+        "Id": "full-callback",
+        "Passed": true,
+        "Detail": "bytes=1948"
+      },
+      {
+        "Id": "full-roundtrip",
+        "Passed": true,
+        "Detail": "Edited page and original text survive save/reopen."
+      },
+      {
+        "Id": "full-original-prefix",
+        "Passed": true,
+        "Detail": "Incremental must preserve every original byte; full rewrite must replace the file."
+      },
+      {
+        "Id": "incremental-callback",
+        "Passed": true,
+        "Detail": "bytes=3224"
+      },
+      {
+        "Id": "incremental-roundtrip",
+        "Passed": true,
+        "Detail": "Edited page and original text survive save/reopen."
+      },
+      {
+        "Id": "incremental-original-prefix",
+        "Passed": true,
+        "Detail": "Incremental must preserve every original byte; full rewrite must replace the file."
+      },
+      {
+        "Id": "callback-failure-classification",
+        "Passed": true,
+        "Detail": "NativeSuccess=True; callback exception must override native BOOL."
+      },
+      {
+        "Id": "callback-io-error-original-unchanged",
+        "Passed": true,
+        "Detail": "Injected WriteBlock I/O failure is captured outside native code; original hash unchanged."
+      },
+      {
+        "Id": "cancel-original-unchanged",
+        "Passed": true,
+        "Detail": "Cancellation in native callback returns false; source remains intact."
+      },
+      {
+        "Id": "locked-target-original-unchanged",
+        "Passed": true,
+        "Detail": "Windows denies replacement of this open target; clean temp and preserve source."
+      },
+      {
+        "Id": "atomic-commit",
+        "Passed": true,
+        "Detail": "Same-directory temporary file, Flush(true), re-open validation, File.Replace."
+      },
+      {
+        "Id": "temp-cleanup",
+        "Passed": true,
+        "Detail": "No temporary files left by success, failure or cancellation."
+      },
+      {
+        "Id": "encryption-retained",
+        "Passed": true,
+        "Detail": "R2/RC4 fixture retains encryption and user password. This is a compatibility fixture, not a production encryption recommendation."
+      },
+      {
+        "Id": "signature-detected",
+        "Passed": true,
+        "Detail": "Genuine detached CMS fixture; independent checker verifies cryptography."
+      },
+      {
+        "Id": "signed-full-save",
+        "Passed": true,
+        "Detail": "original-prefix=False; independent CMS validation required; modified-document policy separate."
+      },
+      {
+        "Id": "signed-incremental-save",
+        "Passed": true,
+        "Detail": "original-prefix=True; independent CMS validation required; modified-document policy separate."
+      }
+    ],
+    "signatures": [
+      {
+        "crypto_integrity": true,
+        "expected_integrity": true,
+        "signed_revision_length": 33802,
+        "file_length": 33802,
+        "covers_latest_revision": true,
+        "openssl_exit": 0,
+        "trust_and_DocMDP": "not-validated",
+        "file": "signed-input.pdf"
+      },
+      {
+        "crypto_integrity": true,
+        "expected_integrity": true,
+        "signed_revision_length": 33802,
+        "file_length": 68225,
+        "covers_latest_revision": false,
+        "openssl_exit": 0,
+        "trust_and_DocMDP": "not-validated",
+        "file": "signed-incremental.pdf"
+      },
+      {
+        "crypto_integrity": false,
+        "expected_integrity": false,
+        "signed_revision_length": 33802,
+        "file_length": 34429,
+        "covers_latest_revision": false,
+        "openssl_exit": 4,
+        "trust_and_DocMDP": "not-validated",
+        "file": "signed-full.pdf"
+      }
+    ]
+  },
+  "fonts": {
+    "status": "limited-feasible",
+    "nativeStamp": "embedded CJK AP, reopen/edit/save validated",
+    "freeTextNative": "AppendObject unsupported; SetAP cannot by itself provide the embedded font resource",
+    "freeTextBridge": "pypdf resource-preserving writer experiment passed; no production writer implemented",
+    "fixture": {
+      "file": "P0AnnotationCjk.ttf",
+      "sha256": "95936c1aaa400ce69fcc002b9f8f1af52ad20fcfc1d8de8645d6ed30991c7978",
+      "bytes": 7092,
+      "license": "SIL Open Font License 1.1; see Noto-CJK-COPYRIGHT.txt",
+      "sourceFamily": "Noto Sans CJK SC",
+      "sourceFile": "NotoSansCJK-Regular.ttc, font index 2",
+      "sourceSHA256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+      "source": "Ubuntu fonts-noto-cjk package; upstream https://github.com/notofonts/noto-cjk",
+      "derivedFamily": "P0 Annotation CJK",
+      "derivation": "prepare_annotation_font.py: Unicode subset, rename reserved family, convert CFF outlines to TrueType with maximum quadratic error of 1 font unit",
+      "usage": "Synthetic P0 test fixture only; not included in either product package. Not a production font fallback or shaping implementation."
+    }
+  },
+  "forms": {
+    "status": "limited-feasible",
+    "checks": [
+      {
+        "Id": "acroform-detected",
+        "Passed": true,
+        "Detail": "FPDF_GetFormType == FORMTYPE_ACRO_FORM"
+      },
+      {
+        "Id": "native-host-initialized",
+        "Passed": true,
+        "Detail": "FPDFDOC_InitFormFillEnvironment(version=1), FORM_OnAfterLoadPage"
+      },
+      {
+        "Id": "text-via-onchar",
+        "Passed": true,
+        "Detail": "FORM_OnChar accepted 16/16; focused text=P0 focused input"
+      },
+      {
+        "Id": "text-canonical-value-in-memory",
+        "Passed": true,
+        "Detail": "Text /V = P0 focused input"
+      },
+      {
+        "Id": "checkbox-mouse-toggle",
+        "Passed": true,
+        "Detail": "Checkbox /V=Yes, checked=True"
+      },
+      {
+        "Id": "combo-keyboard-selection",
+        "Passed": true,
+        "Detail": "Combo /V=Beta; selected=[1]"
+      },
+      {
+        "Id": "text-save-roundtrip",
+        "Passed": true,
+        "Detail": "P0 focused input"
+      },
+      {
+        "Id": "checkbox-save-roundtrip",
+        "Passed": true,
+        "Detail": "Yes"
+      },
+      {
+        "Id": "combo-save-roundtrip",
+        "Passed": true,
+        "Detail": "Beta"
+      },
+      {
+        "Id": "widgets-retained",
+        "Passed": true,
+        "Detail": "Text, checkbox and combobox widget types survive; no flattening."
+      },
+      {
+        "Id": "normal-appearances-retained",
+        "Passed": true,
+        "Detail": "Each widget retains a non-empty normal /AP stream after reopening."
+      }
+    ],
+    "routing": "keydown Return alone did not commit combobox; OnChar(Return) required",
+    "scope": "ASCII text, checkbox, non-editable combobox; no OS IME/UI claim"
+  },
+  "redaction": {
+    "status": "restricted-primitives-only; general-redaction-blocked",
+    "cases": [
+      {
+        "Name": "whole-text",
+        "Classification": "allowed-primitive-fixture",
+        "ExpectedResultObserved": true
+      },
+      {
+        "Name": "whole-image",
+        "Classification": "allowed-primitive-fixture",
+        "ExpectedResultObserved": true
+      },
+      {
+        "Name": "whole-form",
+        "Classification": "allowed-primitive-fixture",
+        "ExpectedResultObserved": true
+      },
+      {
+        "Name": "hidden-and-previous-revision",
+        "Classification": "unsafe-native-candidate",
+        "ExpectedResultObserved": true
+      },
+      {
+        "Name": "shared-nested-form",
+        "Classification": "unsafe-native-candidate",
+        "ExpectedResultObserved": true
+      },
+      {
+        "Name": "partial-character",
+        "Classification": "explicitly-rejected",
+        "ExpectedResultObserved": true
+      },
+      {
+        "Name": "partial-image",
+        "Classification": "explicitly-rejected",
+        "ExpectedResultObserved": true
+      }
+    ],
+    "hiddenStructuralBridgePassed": true,
+    "scope": "Synthetic text/image/whole-exclusive-Form object deletion verified. Hidden/native and nested/shared Form child-edit counterexamples confirmed; partial text/image explicitly refused. Python bridge only proves a restricted fresh-catalog cleanup route."
+  },
+  "backendTiming": {
+    "kind": "exploratory-backend-only",
+    "rows": [
+      {
+        "corpus": "reading-2",
+        "samples": 6,
+        "LoadMsMedian": 0.07600000000000001,
+        "RenderMsMedian": 1.7037,
+        "SearchMsMedian": 0.1113,
+        "DisposeMsMedian": 0.06615,
+        "privateBytesMax": 34480128
+      },
+      {
+        "corpus": "text-1000",
+        "samples": 6,
+        "LoadMsMedian": 6.58925,
+        "RenderMsMedian": 1.82565,
+        "SearchMsMedian": 19.849600000000002,
+        "DisposeMsMedian": 1.1912,
+        "privateBytesMax": 20959232
+      }
+    ],
+    "p95_SLA_official_comparison": "not-measured"
+  },
+  "regression": [
+    {
+      "suite": "Core",
+      "total": "18",
+      "passed": "18",
+      "failed": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.194",
+      "xmlSHA256": "FC85A1A2099A3923C483E5FA624DEF41F5E196D926B778F2A91FDA27687D0E7D"
+    },
+    {
+      "suite": "Headless",
+      "total": "19",
+      "passed": "19",
+      "failed": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "1.574",
+      "xmlSHA256": "00910FDAC0B1F02E20D772760EECFE054D46D490DFA41CEB071285C85653F747"
+    }
+  ],
+  "corpus": [
+    {
+      "path": "baseline/reading-2.pdf",
+      "bytes": 1284,
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    },
+    {
+      "path": "baseline/text-1000.pdf",
+      "bytes": 272037,
+      "sha256": "22B71A69E14A0B31BC729252456B239ED4C21C32163AE82BF4C11553E651CD65",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    },
+    {
+      "path": "save/input.pdf",
+      "bytes": 1284,
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    },
+    {
+      "path": "save/encrypted-input.pdf",
+      "bytes": 913,
+      "sha256": "E9AC6BFD5851099D81C06EB75B0CC016B3AB80D0AA0F27E0F3109175A75BA7C7",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    },
+    {
+      "path": "fixtures/signed-input.pdf",
+      "bytes": 33802,
+      "sha256": "DB0B03EB335599A821CF43AFE281EEF37F38FCC907E570499D68325187BEE934",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    },
+    {
+      "path": "forms/forms-input.pdf",
+      "bytes": 2702,
+      "sha256": "EE6D53612FF22C1E2DBC23A7FA998389A8DBE62D1E7A69BF6C2D20606E05C735",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    },
+    {
+      "path": "fonts/native-stamp-cjk.pdf",
+      "bytes": 7363,
+      "sha256": "BB86046476275FD60CB33A298D60863BF2B52F3DF3E758C45C56FBE1380164E8",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    },
+    {
+      "path": "redaction/hidden-revision.input.pdf",
+      "bytes": 2261,
+      "sha256": "27A7397B3ED9A50E9951289AE0332442D26B2714240284C99FB30AF8F4907968",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    },
+    {
+      "path": "redaction/partial-character.input.pdf",
+      "bytes": 655,
+      "sha256": "FC0515494CD6DB3A396F96C28B1CD09E2A3A8CCA99314D4061B46BBC8475924F",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    },
+    {
+      "path": "redaction/partial-image.input.pdf",
+      "bytes": 883,
+      "sha256": "AC342CCC1C77A203221BBB527F905AD38B1FD400C04C57632D94F5492DEEC4C5",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    },
+    {
+      "path": "redaction/shared-nested-form.input.pdf",
+      "bytes": 1615,
+      "sha256": "87AD7242487A713B574E0F734262E11CA77C66D2F3BB43064AC9A128814A6EF1",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    },
+    {
+      "path": "redaction/whole-form.input.pdf",
+      "bytes": 1150,
+      "sha256": "DCF0322D55BBC69BDC058CC3633449E133A23CA6D933D34472FD6FF7054FB2F7",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    },
+    {
+      "path": "redaction/whole-image.input.pdf",
+      "bytes": 883,
+      "sha256": "AC342CCC1C77A203221BBB527F905AD38B1FD400C04C57632D94F5492DEEC4C5",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    },
+    {
+      "path": "redaction/whole-text.input.pdf",
+      "bytes": 684,
+      "sha256": "AC883D4049EB03CFDDA98B46569EFEDEAE4E235F1771B61B45690033647D3CB0",
+      "source": "Synthetic fixture generated by repository P0 code; no user document data",
+      "scope": "Research/replay only; not representative production corpus"
+    }
+  ],
+  "openG0Items": [
+    "Commercial reference package/version and actual official performance comparison",
+    "Ubuntu 24.04 x64 native desktop evidence and exact environment",
+    "Kylin x64/ARM64 exact images, devices and physical acceptance",
+    "Representative production-size/scanned/vector/shaping corpus and UI performance protocol calibration",
+    "Production FreeText/font-resource/subsetting writer choice",
+    "Character-level redaction, shared/nested object rewrite and complete hidden-data sanitizer proof"
+  ],
+  "evidence": [
+    {
+      "path": "baseline/baseline.json",
+      "sha256": "3C5218CE9EAFF671849E65AE1CE730407145A03B5F57C90903B9983A853BB917",
+      "bytes": 1660
+    },
+    {
+      "path": "baseline/source-manifest.json",
+      "sha256": "67256AB841AB546686A1551571E5DF9D491F30985F73BA9370BC2A5A3C31485B",
+      "bytes": 53533
+    },
+    {
+      "path": "baseline/source-snapshot.zip",
+      "sha256": "BDE9B89246C3D5111BEEF06B4778217242DB343626BCAA81218C3CAD1D322684",
+      "bytes": 677791
+    },
+    {
+      "path": "baseline/native-assets.json",
+      "sha256": "E95F7AAFFECABD6A54E8DB9D0B53FEF14CCC65300DD258A6C3F89C9A92049F66",
+      "bytes": 5363
+    },
+    {
+      "path": "baseline/targets.json",
+      "sha256": "2E2BAEBBBB9429FC2487CAF10833340A873B2C26694D89EC175C8B651F31A367",
+      "bytes": 1102
+    },
+    {
+      "path": "baseline/official-documents/manifest.json",
+      "sha256": "1EB8CE0CE240F593DFDE0C6B6087A7B5873BE46C288328C1D092575EE7A6BA8D",
+      "bytes": 2929
+    },
+    {
+      "path": "execution-manifest.json",
+      "sha256": "85B8CD2AE7DDEC8E256D4F2E7AB9DEEFE7CC50E3BEED2EECF66641A2D9B52F5C",
+      "bytes": 3699
+    },
+    {
+      "path": "save/result.json",
+      "sha256": "F7932A743F16AD09866FA420C6D616014389A15BFA24E71C9EA198869771FC36",
+      "bytes": 3976
+    },
+    {
+      "path": "save/crypto/result.json",
+      "sha256": "2AEC28DBFE501054E2CB568D3CEA4C85645569CE523E54D9DE7A15F22840D101",
+      "bytes": 1742
+    },
+    {
+      "path": "fonts/result.json",
+      "sha256": "50774A4AB74922551AFE0FE0CF2ECA8C0EC987B212A313F66426A9F9B7EDFBE3",
+      "bytes": 3737
+    },
+    {
+      "path": "fonts/bridge-result.json",
+      "sha256": "39D9699D29ADF6A4CF2915C59F0A01D7909A6D3AAB99C831EF29EB440854A99B",
+      "bytes": 1256
+    },
+    {
+      "path": "forms/result.json",
+      "sha256": "C7BCD76748B0FA81C4440A67A4EBECDB531469A9BD7BF950E2B52E916DD596F5",
+      "bytes": 7222
+    },
+    {
+      "path": "redaction/result.json",
+      "sha256": "723606CEBE184212BF29D92DAB68A2E650E05A111EF9C6FF5A5C83A46B06539C",
+      "bytes": 11734
+    },
+    {
+      "path": "redaction/independent-audit.json",
+      "sha256": "2EB5022784AD6DC1A74E99265072698B920FB4AFBAD4BEA779830EB159C941CB",
+      "bytes": 28595
+    },
+    {
+      "path": "baseline/result.json",
+      "sha256": "98FD9BBDF2AC3E20AA418F95674A1A76541ECCA4769B2F8BDB55881AB9DEE9A3",
+      "bytes": 7941
+    },
+    {
+      "path": "baseline/timing-summary.json",
+      "sha256": "36AB123DD961909F135A1A05625B284DEE1DE8F2E4934827AC89ECDE8731E591",
+      "bytes": 602
+    },
+    {
+      "path": "independent-verification.json",
+      "sha256": "DBB03896E0EC5E09D37E539C5383DA5DE90FC4B460DF9885A92B6063C695254A",
+      "bytes": 12805
+    },
+    {
+      "path": "p0-run.json",
+      "sha256": "525D8105ECBEBE402D91FC6B34D6D79F7805AD727ED4E1953FF8E500BFC13A08",
+      "bytes": 6323
+    },
+    {
+      "path": "baseline-guard-results.json",
+      "sha256": "58A42F1F09DF3A869B070230E1C0003C4634A8A83A3467A35509759A3EFBE396",
+      "bytes": 7830
+    },
+    {
+      "path": "redaction/negative-control-results.json",
+      "sha256": "E7C803E6E3375490D6AE8CF7AA08771DCA07218E1CE886E1EF3A3EE4EF463301",
+      "bytes": 2521
+    },
+    {
+      "path": "redaction/visual-review.json",
+      "sha256": "EE668D1EAB07271978DE486BF63B546089D89E256FCBAE8E7F23E2290956F70F",
+      "bytes": 5862
+    },
+    {
+      "path": "fonts/render-verification.json",
+      "sha256": "94F42AB7227CD9D9A1EEC2F35F2B612A992908262A6D3594802CD6C28EE3C5D2",
+      "bytes": 2349
+    }
+  ]
+}

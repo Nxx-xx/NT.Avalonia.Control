@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Charts.Usage</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Charts/NT.AvaloniaControl.Charts.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Charts.Themes/NT.AvaloniaControl.Charts.Themes.csproj" />
+  </ItemGroup>
+</Project>

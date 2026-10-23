@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Markdown/NT.AvaloniaControl.Markdown.csproj" />
+    <Compile Include="../../benchmarks/Markdown.Benchmarks/NativeHost/CorpusFactory.cs" Link="Fixtures/NativeCorpusFactory.cs" />
+  </ItemGroup>
+</Project>

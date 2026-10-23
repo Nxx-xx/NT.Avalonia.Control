@@ -1,0 +1,17 @@
+<Style Selector="pdf|PdfViewer">
+  <Setter Property="Template">
+    <ControlTemplate>
+      <Border Background="#E7EDF5" BorderBrush="#B7C5D7" BorderThickness="1">
+        <Grid RowDefinitions="Auto,*">
+          <Border Padding="10" Background="#FFFFFF">
+            <TextBlock Text="{TemplateBinding StatusText}" />
+          </Border>
+          <ScrollViewer Name="PART_ScrollViewer" Grid.Row="1"
+                        HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <pdf:PdfDocumentPresenter Name="PART_DocumentPresenter" />
+          </ScrollViewer>
+        </Grid>
+      </Border>
+    </ControlTemplate>
+  </Setter>
+</Style>

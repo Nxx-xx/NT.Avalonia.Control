@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>NT.AvaloniaControl.Demo</AssemblyName>
+    <RootNamespace>NT.AvaloniaControl.Demo</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.TreeDataGrid.Themes/NT.AvaloniaControl.TreeDataGrid.Themes.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.VirtualKeyboard/NT.AvaloniaControl.VirtualKeyboard.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.VirtualKeyboard.Themes/NT.AvaloniaControl.VirtualKeyboard.Themes.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Markdown/NT.AvaloniaControl.Markdown.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Markdown.Themes/NT.AvaloniaControl.Markdown.Themes.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Markdown.TextMate/NT.AvaloniaControl.Markdown.TextMate.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Charts/NT.AvaloniaControl.Charts.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Charts.Themes/NT.AvaloniaControl.Charts.Themes.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.PdfViewer/NT.AvaloniaControl.PdfViewer.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.PdfViewer.Themes/NT.AvaloniaControl.PdfViewer.Themes.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Assets/MarkdownSmoke.png" />
+    <AvaloniaResource Include="Assets/Maps/natural-earth-110m.geojson" />
+    <AvaloniaResource Include="Assets/Maps/provenance.json" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Compile Include="../PdfViewer.Core.Tests/ContractFixture.cs" Link="ContractFixture.cs" />
+    <PackageReference Include="Avalonia.Headless.XUnit" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.PdfViewer/NT.AvaloniaControl.PdfViewer.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.PdfViewer.Themes/NT.AvaloniaControl.PdfViewer.Themes.csproj" />
+    <Compile Include="../PdfViewer.Core.Tests/PdfFixture.cs" Link="PdfFixture.cs" />
+  </ItemGroup>
+</Project>

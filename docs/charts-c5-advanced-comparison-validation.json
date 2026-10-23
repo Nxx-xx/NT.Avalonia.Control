@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "completedUtc": "2026-10-21T11:42:30.013174+00:00",
+  "passed": true,
+  "checks": {
+    "selected-source-candidate": true,
+    "source-runtime-stable-at-freeze": true,
+    "all-formal-tools-protocol-pins-retained": true,
+    "freeze-copy-0-all-sha": true,
+    "freeze-copy-1-all-sha": true,
+    "freeze-copy-2-all-sha": true,
+    "windows:all-nine-supervised-stages": true,
+    "windows:full-tests-no-skip": true,
+    "windows:base-passed": true,
+    "windows:full-native-demo": true,
+    "windows:all-new-demo-checks": true,
+    "windows:compiled-usage": true,
+    "windows:sources-and-assemblies-stable": true,
+    "windows:validated-inputs-match-freeze": true,
+    "windows:base-assembly-bytes-retained": true,
+    "windows:release-zero-warnings-errors": true,
+    "windows:function:fresh-consumer-all-checks": true,
+    "windows:themes:fresh-consumer-all-checks": true,
+    "windows:two-consumers": true,
+    "windows:consumer-zero-warnings-errors": true,
+    "windows:all-independent-numeric-checks": true,
+    "windows:numeric-tool-source-bindings": true,
+    "windows:loaded-numeric-payloads-retained": true,
+    "windows:numeric-native-same-core": true,
+    "windows:all-independent-pixel-checks": true,
+    "windows:pixel-image-tool-bindings": true,
+    "windows:18-native-export96-zero-diffs": true,
+    "windows:all-original-summary-and-child-metadata": true,
+    "windows:metadata-source-tool-bindings": true,
+    "windows:40-comparison-pngs": true,
+    "linux:all-nine-supervised-stages": true,
+    "linux:full-tests-no-skip": true,
+    "linux:base-passed": true,
+    "linux:full-native-demo": true,
+    "linux:all-new-demo-checks": true,
+    "linux:compiled-usage": true,
+    "linux:sources-and-assemblies-stable": true,
+    "linux:validated-inputs-match-freeze": true,
+    "linux:base-assembly-bytes-retained": true,
+    "linux:release-zero-warnings-errors": true,
+    "linux:function:fresh-consumer-all-checks": true,
+    "linux:themes:fresh-consumer-all-checks": true,
+    "linux:two-consumers": true,
+    "linux:consumer-zero-warnings-errors": true,
+    "linux:all-independent-numeric-checks": true,
+    "linux:numeric-tool-source-bindings": true,
+    "linux:loaded-numeric-payloads-retained": true,
+    "linux:numeric-native-same-core": true,
+    "linux:all-independent-pixel-checks": true,
+    "linux:pixel-image-tool-bindings": true,
+    "linux:18-native-export96-zero-diffs": true,
+    "linux:all-original-summary-and-child-metadata": true,
+    "linux:metadata-source-tool-bindings": true,
+    "linux:40-comparison-pngs": true,
+    "api-both-platforms-identical": true,
+    "all-243-existing-types-and-members-retained": true,
+    "all-110-historical-documents-unchanged": true
+  },
+  "sourceCandidate": "c5-advanced-comparison-source-v1",
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\source-snapshot-v1.json",
+    "sha256": "54D0AABE7FC41D39862A2D25EA90836CA87F1EE6DD96650194E455E96E0A182F",
+    "bytes": 378511
+  },
+  "formalPlan": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\formal-plan-v1.json",
+    "sha256": "5695FA6C126A673E0F54E8667E7B62051A254A2F9B7FEFFB5F07B695F8E4C484",
+    "bytes": 7659
+  },
+  "platformPlanVersions": {
+    "windows": "v1",
+    "linux": "v1"
+  },
+  "sourceFiles": 1624,
+  "runtimeInputFiles": 934,
+  "platforms": {
+    "windows": {
+      "formalRun": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\formal-run-v1.json",
+        "sha256": "D63FBA223B55D6D59388957E1817310906EB9E383CD989AA0D11300E4AC2292D",
+        "bytes": 12806
+      },
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\verification\\functional-v1\\results.json",
+        "sha256": "91FA038706B34994EF7424F1C38996CAE3ABF29EDDEB7FFF74497FD83633E726",
+        "bytes": 21967
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\verification\\functional-v1\\charts-smoke.json",
+        "sha256": "7BDB76EE549D367B0F0920F12956426D1772B536917AE0A94C6E950ECFFC4272",
+        "bytes": 6390628
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\verification\\functional-v1\\charts-usage.json",
+        "sha256": "D8879D763A07DC739A332024EEED7D16A318064C3422E4F662F041B761833FA7",
+        "bytes": 77094
+      },
+      "headlessTests": 2288,
+      "demoChecks": 2300,
+      "comparisonDemoChecks": 440,
+      "usageChecks": 491,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 676,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\package-consumers\\20261021T112529113Z-32242e2fac3649adb9e65e3ad4f9b19f\\function\\consumer-result.json",
+            "sha256": "FBCDD1F49B3B64B6411D6737B97ABBD1A6F7F656588E2AC70CFD25CC62F787A6",
+            "bytes": 119234
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 676,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\package-consumers\\20261021T112529113Z-32242e2fac3649adb9e65e3ad4f9b19f\\themes\\consumer-result.json",
+            "sha256": "F85855CE91C7E2BBA2CB2D2813DC664574841B8A3B55DC4C3C78F828A82AF391",
+            "bytes": 119287
+          }
+        }
+      ],
+      "pngCount": 905,
+      "comparisonPngCount": 40,
+      "numericRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\advanced-comparison\\raw.json",
+        "sha256": "8613D8A883CFC946DAB761E3C646DFE36D5205168FACC8A7D413085074CD1449",
+        "bytes": 86100288
+      },
+      "numericResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\advanced-comparison\\independent-numeric-result.json",
+        "sha256": "07AB59B5770F6CDD721773B721162524B0C9160AC6AD8B2CAC8F04A9C6EC1F47",
+        "bytes": 80314
+      },
+      "numericChecks": 1493,
+      "pixelResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\advanced-comparison\\independent-pixel-result.json",
+        "sha256": "63E5CBFB978DE9CB4248FBAA9320D6F9E3499055501D1BCF1B41E8611C83305D",
+        "bytes": 149571
+      },
+      "pixelChecks": 562,
+      "metadataResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\advanced-comparison\\independent-metadata-result.json",
+        "sha256": "B400B518716B1BF16626989DE94C7CFC547C14390B62D9615586949AE8FC66A9",
+        "bytes": 851051
+      },
+      "metadataChecks": 11992,
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\api-v1\\api.txt",
+        "sha256": "FF4755F0906BC76A517009468812C329A40CF657506CA748A88D720E17902EDC",
+        "bytes": 612678
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\verification\\functional-v1\\environment.json",
+        "sha256": "A871CC129A5B07A981397BC24377A84CC4F37313A30ABCAABA2F2650DF266964",
+        "bytes": 8836
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\verification\\functional-v1\\assembly-manifest.json",
+        "sha256": "71F214FC62F5475590A588F61BCBE061B6A64CF02387D7B7AF9A84C6540207B2",
+        "bytes": 1956
+      },
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\windows\\run-v1\\verification\\functional-v1\\validated-input-manifest.json",
+        "sha256": "31B8573BCEAB41D31E742CDFB0446D07CC6565087D8373F74CF9C1DF0BEE8BE5",
+        "bytes": 148833
+      },
+      "performance": [
+        {
+          "id": "perf-diverging-100k",
+          "elapsedTicks": 95676,
+          "threadAllocatedBytes": 14201448,
+          "inputCount": 100000,
+          "inputFormula": "Value=((i*37)%997)-498",
+          "inputSha256": "38DC9611A26F270B86F0C3001A2E83FDC7AE9BAFE8946229867EE1314AC134E0"
+        },
+        {
+          "id": "perf-mekko-100k",
+          "elapsedTicks": 399550,
+          "threadAllocatedBytes": 30097744,
+          "inputCount": 100000,
+          "inputFormula": "Width=1+i%5;Segments=[1+i%7,2+i%11]",
+          "inputSha256": "936288543C7426134CBD52679DB4002D935809E48D7AE22141594D419B8537C1"
+        }
+      ],
+      "stopwatchFrequency": 10000000,
+      "formalSlaEvaluated": false,
+      "physicalInputValidated": false
+    },
+    "linux": {
+      "formalRun": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\formal-run-v1.json",
+        "sha256": "B11C4ED44BBD408F29F1E1B80D955A42DFA3DEBCCC0F1FD161ABDB733F656B6D",
+        "bytes": 13250
+      },
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\verification\\functional-v1\\results.json",
+        "sha256": "7620AE008AAAEE6DA16A8CCC74DE3D1A407B844D45EB0EC979C4118A523EE2A7",
+        "bytes": 14754
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\verification\\functional-v1\\charts-smoke.json",
+        "sha256": "AD47AF1E8504FF832B408475D3E934026669ED7D33602F49FFE89B6D3341B70A",
+        "bytes": 6131511
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\verification\\functional-v1\\charts-usage.json",
+        "sha256": "65427DC46EE6F195ECCF04EE775AE846537F28181F2EF49AF029C7E097D3B65D",
+        "bytes": 74685
+      },
+      "headlessTests": 2288,
+      "demoChecks": 2300,
+      "comparisonDemoChecks": 440,
+      "usageChecks": 491,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 676,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\package-consumers\\20261021T113718188Z-a872653e030c43759157e79f4089d5d4\\function\\consumer-result.json",
+            "sha256": "476D630F448057EA39C7046435701A675BDB712267CBCAD2FD1DDC388503D9AB",
+            "bytes": 115995
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 676,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\package-consumers\\20261021T113718188Z-a872653e030c43759157e79f4089d5d4\\themes\\consumer-result.json",
+            "sha256": "67E07177B2AB898A6A7563DEB1F4D89F797814734F6C4296D0BF4B1D4D32879E",
+            "bytes": 116037
+          }
+        }
+      ],
+      "pngCount": 905,
+      "comparisonPngCount": 40,
+      "numericRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\advanced-comparison\\raw.json",
+        "sha256": "A42F88FE5EF30F335D2A59E1B01480917247387E305B3D13263F02F19E293864",
+        "bytes": 83198213
+      },
+      "numericResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\advanced-comparison\\independent-numeric-result.json",
+        "sha256": "4992B8B833F1C24AFCE5D4AA9B4D2ED4CD80F536B4FA3C371D880890DBCEC8D2",
+        "bytes": 78777
+      },
+      "numericChecks": 1493,
+      "pixelResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\advanced-comparison\\independent-pixel-result.json",
+        "sha256": "9EC0C4F7F671D44CBA1BEDE0FB968805DE783DAF68DF05AC5CBFB65EF3C292D8",
+        "bytes": 143493
+      },
+      "pixelChecks": 562,
+      "metadataResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\advanced-comparison\\independent-metadata-result.json",
+        "sha256": "22B71234C9B327070CCEBBFFE237143108016FA2CC0FD33D17FA4C16C9AB30D0",
+        "bytes": 839004
+      },
+      "metadataChecks": 11992,
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\api-v1\\api.txt",
+        "sha256": "F8D528E09A529FBA40E65AF33D52C1E9E230486E859DE61F73436BD3680C077A",
+        "bytes": 612678
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\verification\\functional-v1\\environment.json",
+        "sha256": "F5F24588C804C8FB55FC4A5AEC4EA57835C156008441AE1D4A1C3C8233FEDB3C",
+        "bytes": 6198
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\verification\\functional-v1\\assembly-manifest.json",
+        "sha256": "8E9C3708B963E7EF0A0913F93A351FD14BDA571C85D8E2FF741EEBD66AD032E0",
+        "bytes": 1906
+      },
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\linux\\run-v1\\verification\\functional-v1\\validated-input-manifest.json",
+        "sha256": "0E5953FB627FE66351D1042CDE0DE211BC40F5216C8D6856BD921BC28F621234",
+        "bytes": 145447
+      },
+      "performance": [
+        {
+          "id": "perf-diverging-100k",
+          "elapsedTicks": 11540761,
+          "threadAllocatedBytes": 14195256,
+          "inputCount": 100000,
+          "inputFormula": "Value=((i*37)%997)-498",
+          "inputSha256": "38DC9611A26F270B86F0C3001A2E83FDC7AE9BAFE8946229867EE1314AC134E0"
+        },
+        {
+          "id": "perf-mekko-100k",
+          "elapsedTicks": 46880342,
+          "threadAllocatedBytes": 30097744,
+          "inputCount": 100000,
+          "inputFormula": "Width=1+i%5;Segments=[1+i%7,2+i%11]",
+          "inputSha256": "936288543C7426134CBD52679DB4002D935809E48D7AE22141594D419B8537C1"
+        }
+      ],
+      "stopwatchFrequency": 1000000000,
+      "formalSlaEvaluated": false,
+      "physicalInputValidated": false
+    }
+  },
+  "api": {
+    "path": "<REPO_ROOT>\\docs\\charts-c5-advanced-comparison-api.txt",
+    "sha256": "FF4755F0906BC76A517009468812C329A40CF657506CA748A88D720E17902EDC",
+    "bytes": 612678
+  },
+  "formalSlaEvaluated": false,
+  "physicalInputValidated": false,
+  "compositorPresentValidated": false,
+  "githubActionsRunExecuted": false,
+  "historicalStandaloneOraclesRerun": false,
+  "report": "<REPO_ROOT>\\docs\\charts-c5-advanced-comparison.md",
+  "numericToolRecovery": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\numeric-tool-recovery-v1.json",
+    "sha256": "DD23C1A335F6F1A4CF065F415B0AD1157187E62639194CA3816B5BC1D9529EF1",
+    "bytes": 4189
+  },
+  "preObservationContractHistory": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\pre-observation-contract-history-v1.json",
+    "sha256": "9174FAA95C09EF189C84CC11E93BF1DA8F6EAB64489A7B5D4295BA477A0BF921",
+    "bytes": 3511
+  },
+  "developmentEvidenceIndex": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\development-evidence-index-v1.json",
+    "sha256": "A037402A1DBB5633722483BB387EED7EDEDE3BBCA9004C5DC4EBAB684FB5810B",
+    "bytes": 50290
+  },
+  "allHistoricalChartsDocumentsPreserved": true,
+  "rollingMetadataInitialBytes": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-advanced-comparison-20261021\\rolling-metadata-task-initial-v1.json",
+    "sha256": "79105C0D387E9C1072F964655014CE79C00FA95D5E7CB3FA00E2601D8B6A0CC0",
+    "bytes": 1193
+  },
+  "completeC5": false,
+  "nextMainStage": "C6-01",
+  "remainingIssues": [
+    "ST01/03/06–10 and other unfinished statistics remain open.",
+    "Three-circle Venn is approximate, may hide positive exclusive atoms when circles have no usable interior; disclosed errors are relative to maximum singleton total.",
+    "Venn members are inclusive summary dependencies, not actual set elements.",
+    "Mapped source updates and layout may synchronously traverse/snapshot full sources; no incremental/background or sustained-throughput claim.",
+    "Custom INPC/INCC event add/remove accessors that actively reenter source replacement or unload have not been hardened/qualified; ordinary ObservableCollection/INPC and normal unload/reattach are verified.",
+    "Full C2 interactions, Cartesian multi-axis/trackball/annotation/animation integration for new custom projections remain an explicitly scoped extension.",
+    "Formal performance/C4-08 new-family SLA, process/native/GPU memory and long-soak qualification remain open.",
+    "Physical Windows/Linux devices, native Wayland/ARM/distributions/multi-screen DPI and real assistive technology remain open.",
+    "Million-point hit p95 and A11Y-NATIVE-01 remain deferred by user.",
+    "Historical AX06, PixelProbe DLL, animation timing, long path and default-JIT/previous performance issues remain unresolved."
+  ]
+}

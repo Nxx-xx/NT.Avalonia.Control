@@ -1,0 +1,16 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:VirtualKeyboard.Usage"
+        xmlns:vk="clr-namespace:NT.AvaloniaControl.VirtualKeyboard;assembly=NT.AvaloniaControl.VirtualKeyboard"
+        x:Class="VirtualKeyboard.Usage.MainWindow" x:DataType="vm:InputViewModel"
+        x:CompileBindings="True" Title="VirtualKeyboard · 最小接入" Width="960" Height="530"
+        MinWidth="760" MinHeight="480">
+  <StackPanel Margin="20" Spacing="16">
+    <TextBlock Text="英文虚拟键盘" FontSize="24" />
+    <TextBox Name="Editor" Text="{Binding Text, Mode=TwoWay}" GotFocus="EditorGotFocus" />
+    <TextBlock Text="{Binding Text, StringFormat='ViewModel.Text: {0}'}" />
+    <vk:VirtualKeyboard Name="Keyboard" Layout="English" />
+    <TextBlock Text="先点击输入框。输入框建立焦点后，宿主才更新键盘 Target。撤销分组沿用 TextBox 原生规则。"
+               TextWrapping="Wrap" Opacity="0.7" />
+  </StackPanel>
+</Window>

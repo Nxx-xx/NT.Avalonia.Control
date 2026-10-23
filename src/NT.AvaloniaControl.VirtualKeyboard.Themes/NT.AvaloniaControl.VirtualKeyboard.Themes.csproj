@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>NT.AvaloniaControl.VirtualKeyboard.Themes</PackageId>
+    <AssemblyName>NT.AvaloniaControl.VirtualKeyboard.Themes</AssemblyName>
+    <RootNamespace>NT.AvaloniaControl.VirtualKeyboard.Themes</RootNamespace>
+    <Description>Default light and dark templates for NT.AvaloniaControl.VirtualKeyboard.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../NT.AvaloniaControl.VirtualKeyboard/NT.AvaloniaControl.VirtualKeyboard.csproj" />
+    <None Update="README.md" Pack="true" PackagePath="/README.md" />
+  </ItemGroup>
+</Project>

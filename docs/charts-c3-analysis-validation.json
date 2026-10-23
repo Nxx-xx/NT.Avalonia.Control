@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 1,
+  "stage": "C3-07 funnel, pyramid, heatmap, pictorial bars and centered river stack foundation",
+  "completedUtc": "2026-10-18T12:52:10.831041+00:00",
+  "clientExecutionDate": "2026-10-18",
+  "finalCandidateVersion": "c3-analysis-source-v1",
+  "softwareFunctionalSubsetPassed": true,
+  "functionalSubsetPassed": true,
+  "fullC2StageComplete": false,
+  "fullC3StageComplete": false,
+  "fullC4StageComplete": false,
+  "fullC7StageComplete": false,
+  "nextWorkItem": "C4-01",
+  "windows": {
+    "platform": "windows",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\windows\\windows-final-v1\\results.json",
+      "sha256": "9161F8CB4A955C88374F0AA7051AE399D33B7BBD44DFC77E632C1B4E4084EF3C",
+      "bytes": 19976
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\windows\\windows-final-v1\\results.json",
+      "sha256": "9161F8CB4A955C88374F0AA7051AE399D33B7BBD44DFC77E632C1B4E4084EF3C",
+      "bytes": 19976
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\windows\\windows-final-v1\\charts-smoke.json",
+      "sha256": "3180FA0B8E80A9E9F5F5887D797A5BB89B68ACF6CCC11155DC26370CCF676697",
+      "bytes": 1684573
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\windows\\windows-final-v1\\charts-usage.json",
+      "sha256": "8355FED6844EF68C80323D30E47264F01F8F8003BAB6F21845B77419AE8DC18E",
+      "bytes": 45618
+    },
+    "headlessTests": 1500,
+    "demoChecks": 1188,
+    "usageChecks": 318,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 470,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\windows\\package-consumers-v1\\20261018T124531904Z-5103d518a7ed43b58949ad966d0fd637\\function\\consumer-result.json",
+          "sha256": "B1A67626D812934138847C3EF76EB44E05E09F27954C02C2A7FAD6C43645A720",
+          "bytes": 78178
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\windows\\package-consumers-v1\\20261018T124531904Z-5103d518a7ed43b58949ad966d0fd637\\function\\packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 470,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\windows\\package-consumers-v1\\20261018T124531904Z-5103d518a7ed43b58949ad966d0fd637\\themes\\consumer-result.json",
+          "sha256": "1BD937E58F0D702A7CC4EAE720FF75F9863F6E883F3B5866681FAE69DEC3D20F",
+          "bytes": 78212
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\windows\\package-consumers-v1\\20261018T124531904Z-5103d518a7ed43b58949ad966d0fd637\\themes\\packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\windows\\windows-final-v1\\validated-input-manifest.json",
+      "sha256": "C0871738E6DDFA8F6FFDCD723B49CC2FE85D1F0657B90AD1D7B60ADB5E028D46",
+      "bytes": 122994
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\windows\\windows-final-v1\\assembly-manifest.json",
+      "sha256": "765908AFFD92B646028E216DA42234DE83E555FE08AEB26782A371ED50A14944",
+      "bytes": 1955
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\windows\\windows-final-v1\\environment.json",
+      "sha256": "A8FC1CB663C63EAE9FF4DA1E8C06AB179093141A23DE79B8C6D4458DBCD46789",
+      "bytes": 9133
+    },
+    "coreSha256": "3AB8860715C273B7B59022B8489EA96AD4A2261600BF872187CEE07E2DFF3C92",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false
+  },
+  "linux": {
+    "platform": "linux",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\results.json",
+      "sha256": "FE18B8AFF1B57ECD402EA345C8197A8D506D470F733F2157D3EDDF158BC09972",
+      "bytes": 14677
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\results.json",
+      "sha256": "FE18B8AFF1B57ECD402EA345C8197A8D506D470F733F2157D3EDDF158BC09972",
+      "bytes": 14677
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\charts-smoke.json",
+      "sha256": "65A2182F828D626DD5F6FC8B69658A3C28F1FE18D8961E58EB8E045F7A7D4445",
+      "bytes": 1625530
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\charts-usage.json",
+      "sha256": "A75696D9EF866BF2BAEAD292A5DB01A24A18A988AFDA714FC60853989B0CCD95",
+      "bytes": 44043
+    },
+    "headlessTests": 1500,
+    "demoChecks": 1188,
+    "usageChecks": 318,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 470,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\linux\\run-v1\\package-consumers\\20261018T124901369Z-e213fede2c2643e0b803be1d9f362205\\function\\consumer-result.json",
+          "sha256": "5A2E7EA1E39C819E218980BF4E150C5A326822D8480F0578768D09EF4F4D630B",
+          "bytes": 76058
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c3-analysis-20261018/linux/run-v1/package-consumers/20261018T124901369Z-e213fede2c2643e0b803be1d9f362205/function/packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 470,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\linux\\run-v1\\package-consumers\\20261018T124901369Z-e213fede2c2643e0b803be1d9f362205\\themes\\consumer-result.json",
+          "sha256": "CD704BB43A944D1DCE8AB1147C2A9701D1F92F226180CAC7F6A6549A8BABCB22",
+          "bytes": 76104
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c3-analysis-20261018/linux/run-v1/package-consumers/20261018T124901369Z-e213fede2c2643e0b803be1d9f362205/themes/packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\validated-input-manifest.json",
+      "sha256": "74DD677CA85A79F9FF4090CBE9ABD62DCE375252BA9C449B46AD3487AEACE022",
+      "bytes": 120228
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\assembly-manifest.json",
+      "sha256": "E6F7F4AFD7A2209D09ECDFE7AF6BFB26CC964C5A747D0852E143AD29E1B0E4A6",
+      "bytes": 1905
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\environment.json",
+      "sha256": "4D7DA3EEEFC8BC877DA192A4F6437F06D6A4E20EDA4E898EF27A3521D339EFD9",
+      "bytes": 6363
+    },
+    "coreSha256": "D5E58C1A4B868DF6960BD7C9D2A67F93056174FAAD2BB6D5C127175CD4886726",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false
+  },
+  "sourceSnapshotRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\source-snapshot-v1.json",
+    "sha256": "B6DE82731C93A1B7D331CC4A950A0C3236B91D5B198C1CC1FDADDB1404D94E49",
+    "bytes": 279844
+  },
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\source-snapshot-v1.json",
+    "sha256": "B6DE82731C93A1B7D331CC4A950A0C3236B91D5B198C1CC1FDADDB1404D94E49",
+    "bytes": 279844
+  },
+  "frozenSourceFiles": 1400,
+  "declaredValidatedInputsPerPlatform": 691,
+  "declaredInputsMatchBetweenPlatforms": true,
+  "declaredLiveInputsStillMatch": true,
+  "frozenSourceHashesStillMatch": true,
+  "liveFullRepositoryEqualityClaimed": false,
+  "sourceScope": "Declared runtime/harness inputs match the frozen candidate. Later documentation/status updates are outside the runtime set.",
+  "windowsApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\api-windows-final-v1\\api.txt",
+    "sha256": "ECE53695247ECF99DB67B3A88EBB45114E08887AB7AEDBB794399399630F1A51",
+    "bytes": 973600
+  },
+  "linuxApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\linux\\api-linux-final-v1\\api.txt",
+    "sha256": "F6A51FC9A97CED2012CE4DFAB9B16A5ADDA26009B3E4C066B5371FA2D52F467E",
+    "bytes": 416068
+  },
+  "publicApiDocument": {
+    "path": "<REPO_ROOT>\\docs\\charts-c3-analysis-api.txt",
+    "sha256": "ECE53695247ECF99DB67B3A88EBB45114E08887AB7AEDBB794399399630F1A51",
+    "bytes": 973600
+  },
+  "localApiDeclarationsMatchBetweenPlatforms": true,
+  "apiDelta": {
+    "oldTypes": 154,
+    "newTypes": 163,
+    "oldNamedChartsTypes": 152,
+    "newNamedChartsTypes": 161,
+    "oldLegacyDistinctTypeNames": 154,
+    "newLegacyDistinctTypeNames": 163,
+    "addedTypes": [
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.AnalysisChartBase",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.AnalysisMarkInfo",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.AnalysisSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.FunnelChart",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.HeatmapChart",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PictorialBarRenderMode",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PictorialBarSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PyramidChart",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ThemeRiverStack"
+    ],
+    "addedMembersOnExistingTypes": [],
+    "removedTypes": [],
+    "changedExistingTypeDeclarations": [],
+    "removedMembersOnExistingTypes": [],
+    "binaryCompatibilityQualified": false,
+    "officialCompatibilityQualified": false
+  },
+  "apiComparisonScope": "Complete exported declarations in both local product assemblies keyed by assembly plus type, including generated XAML types; official assemblies excluded.",
+  "completePublicApiReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\independent-full-public-api-v1.json",
+    "sha256": "5318A84117B96279EC137B9C1B71812873AFFB1DD2AE772BD288C0F5DD57E40C",
+    "bytes": 2380
+  },
+  "independentReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\collected-evidence-v1.json",
+    "sha256": "09A74D96E6C856B1DF250ACA7181C169F95BA4395A7B494BD333FB06E66DBBC5",
+    "bytes": 709760
+  },
+  "independentRasterReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\independent-analysis-raster-v1.json",
+    "sha256": "AC75773A4CDD922CACFACEF3E55F9C5BEDD48FAC481537DDC29F23B35B3FA320",
+    "bytes": 245377
+  },
+  "independentPackagePayloadReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\independent-package-payload-v1.json",
+    "sha256": "B953C4B5A06F5B2DCECD0652F908756606C068A7320AA97D1537318B25CEA1CB",
+    "bytes": 8537
+  },
+  "rasterOraclePreregistrationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\analysis-oracle-preregistered-v1.json",
+    "sha256": "28248043908BE341459FE7FD9C15F388694C16173F20BAE4AE24F130B6EC9A4F",
+    "bytes": 17848
+  },
+  "independentReviewCounts": {
+    "sourceAndPlatformChecks": 4280,
+    "rasterChecks": 981,
+    "decodedImages": 168,
+    "packagePayloadChecks": 14,
+    "countsOverlapAndAreNotProductTestCounts": true
+  },
+  "analysisBusinessScenariosPerTheme": 18,
+  "explicitProbeControlDip": [
+    420,
+    280
+  ],
+  "pixelThresholdsRelaxed": false,
+  "productionGeometryUsedAsPixelExpectations": false,
+  "historicalAndRendererPinsVerified": true,
+  "historicalDocumentPinCount": 47,
+  "historicalRendererVersionCount": 7,
+  "historicalRendererPreservationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\historical-renderer-preservation-v1.json",
+    "sha256": "5527EE316602DEEA7446909FEAFAA1AA45DF0BDC87A407665BCE72F1A4953C89",
+    "bytes": 4548
+  },
+  "generalMetadataBeforeRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\metadata-before.json",
+    "sha256": "37957074C8FA7FCA535CD306235C77644C29194A1497F3AA139F22453491BE30",
+    "bytes": 3053
+  },
+  "dependencyReuse": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\dependency-reuse.json",
+    "sha256": "CC6A69B661D86779B615C9D083FA6398A1B4A1A13CED795E0C442A1664587278",
+    "bytes": 5592
+  },
+  "productPackagesReused": false,
+  "nugetAuditOrWarningPolicyChanged": false,
+  "nativeAccessibilityEnumerationRetested": false,
+  "deferredNativeAccessibilityWorkstream": "A11Y-NATIVE-01",
+  "completeNativeBridgeGatePassed": false,
+  "previousNativeBridgeEvidence": {
+    "path": "<REPO_ROOT>\\docs\\charts-c2-accessibility-validation.json",
+    "sha256": "BC80F3A743AD610E5B419D87D00A753755265A12F434F08654A06A59ABD72A8D",
+    "bytes": 1405510
+  },
+  "performanceQualified": false,
+  "performanceMeasured": false,
+  "memoryRegressionMeasured": false,
+  "millionHitTailDeferredTo": "C4",
+  "officialRuntimeReferenceIncluded": false,
+  "physicalKeyboardValidated": false,
+  "physicalDesktopCertified": false,
+  "implementationContracts": [
+    "本批新增 FunnelChart、PyramidChart、HeatmapChart，AnalysisChartBase/AnalysisSeries/AnalysisMarkInfo 公共底座，PictorialBarSeries/PictorialBarRenderMode，以及 ThemeRiverStack 居中堆叠辅助算法。这是本库公开 API 与组合契约，不是官方同名程序集、属性、默认值或二进制替代。",
+    "AnalysisChartBase 的单一 Series 复用 ItemsSource、CategoryPath（LabelPath 为 CLR 别名）、ValuePath、IdPath 与共享 EmptyPointMode；快照保留真实 Item、SourceIndex、StableId、原始值和缺失元数据。数据源与嵌套属性观察在视觉挂载时订阅、换源和卸载时解除；Heatmap 的 RowPath/ColumnPath 也参加嵌套观察。临时继承父级、挂载修订和同步收敛处理绑定回调中立即卸载、重挂载与换源，未挂载查询不长期持有外部观察者。源变更应发生在 UI 线程。",
+    "FunnelChart 仅将有限正值生成阶段，保留源顺序与源序号，不自动按值排序；每个有效阶段使用相等高度槽。边界宽度为 W×(NeckWidth+(1-NeckWidth)×value/max)，末边界使用 NeckWidth；默认 NeckWidth=0.3，范围 0～1。SegmentGap 默认 2 DIP，只裁掉相邻阶段内部边缘，间隔按阶段高度限制，不改变业务值。非正、缺失、非有限或无可表示面积的阶段不制造可命中几何。",
+    "PyramidChart 是向下展开的直立三角形。无间隔时，边界高度为 H×sqrt(累计正数贡献/总贡献)，宽度随三角形高度线性增长，因此每层面积按有效正值成比例。先按最大值缩放并补偿累加，避免直接求和溢出；保留源顺序，默认 SegmentGap=2 DIP。间隔删除实际绘制面积，不再宣称带间隔层面积严格相等于原始比例；小到没有可表示面积的正数不人为膨胀。",
+    "HeatmapChart 的 RowPath/ColumnPath 必须解析到非 null 键；缺路径或 null 键只跳过该源项。行列保持首次出现的顺序，并以 CLR 类型加值相等区分类别，数值 1、字符串 1 与 double 1 分开。NaN 源项仍保留有效行列键，未出现的矩阵组合不会生成业务项。重复单元最后源项胜出，包括最后源项无效时默认留空；颜色域只统计实际胜出的有效数值。共享 EmptyPointMode 的显式填补仍可改变显示投影，原始缺失元数据继续保留。MissingBrush 仅为明确提供的无效源单元提供可选填充，不填满缺失组合。",
+    "Heatmap 自动颜色域来自胜出有限值，零和负数有效；自动相等域使用颜色中点，色标也显示单一中点色。可选 Minimum/Maximum 必须有限；显式相等或反向域令 IsColorDomainValid=false 并清空有限值单元，绑定恢复可重绘。LowColor/HighColor 按 ARGB 通道线性插值，越界颜色 clamp 而不改原值；支持相反 MaxDouble 及相邻巨大有限端点。CellGap 默认 2 DIP，以半间隔内缩槽位并限制到槽尺寸，无正面积则无绘制和命中。",
+    "Heatmap 的 ShowAxes/ShowColorScale 为行列文字与真实颜色标尺预留空间；单元文字由 ShowValues 控制，ShowLabels 单独开启不制造源 ordinal 标签。有效单元按填充亮度选黑/白标签，缺失占位没有伪造数值文字。Tooltip 保留行/列上下文和真实原值，命中仍返回原始 Item 与 SourceIndex。标题、文字和色标只实现单行省略及边界约束，没有高级碰撞避让或复杂模板。",
+    "分析图的 GetMarks 返回与绘制一致的形状和原始数据，HitTest 只接受真实填充区域；漏斗斜边外、阶段间隔、Heatmap 缺失与槽间空白不回退为矩形或近点命中。Left/Right/Up/Down/Home/End 按实际可见源项浏览，Enter/Space 选择，Escape 清除浏览与选择。SelectedIndex 默认 TwoWay，SelectedPoint 在源变更后按稳定身份重查。几何构建与对外状态发布分离：Render 冻结当前数组并只计算本帧显示状态，不从绘制调用对外 SetAndRaise；最多一个待执行 UI 任务在绘制后按最新 revision 汇合 ActivePoint/SelectedPoint/跟随后的索引。回调中新源或显式选择优先，dirty 几何等下一版重建后才发布，避免旧快照回写；绘制中的 Reset/Active 变更也排到安全发布点。卸载解除观察和清除 ActivePoint，完整 C2 选择/取消事件体系仍未统一适配。",
+    "PictorialBarSeries 继承 ComparisonSeries，复用 Cartesian 分组、方向、宽度/间隔、轴投影、源顺序/排序、标签、选择及导出。正负值从真实基线分别向两侧绘制；零值没有符号主体。Stretch 将一个轮廓缩放至完整数值柱；Clip 将一个 SymbolSize DIP 轮廓放在基线并按数值柱裁剪；Repeat 从基线按 SymbolSize+SymbolSpacing 重复，最后一个轮廓只显示实际剩余范围。SymbolSize 默认 20 DIP（1～4096），SymbolSpacing 默认 4 DIP（0～4096），两者相对当前像素布局而非业务数值单位。 Demo/Usage 的类别轴显式使用 CategoryPlotMode.BetweenTicks，为首尾符号留出至少半个类别槽；OnTicks 保留端点并按 plot 边缘裁剪是既有轴契约，不靠扩张生产几何遮蔽。",
+    "Pictorial 几何按含用户变换的 bounds 归一，克隆几何并组合变换，不改调用方对象；Geometry=null 使用单位矩形，空或非有限 bounds 不绘制。所有模式裁剪到真实数值柱与 plot；命中按符号实际填充、洞、重复间隔和裁剪判断，较大 tolerance 不填平空白。矩形/椭圆/线段多边形/布尔组合提供可在 Headless 使用的几何判断，曲线路径仍依赖原生填充规则。替换 Geometry 或原地修改后调用 Refresh；独立符号描边与点标记属性未用于此主体。Cartesian 源通知先恢复规范源坐标，投影后的 RawPoint/选择元数据在后续场景/UI 任务发布。",
+    "ThemeRiverStack.CreateBaseline 接受相同有序槽位、有限非负贡献。默认 Center 为最大总量的一半，底座为 Center-当前总量/2，故可见堆叠总量围绕 Center；显式 Center 至少为最大总量的一半且必须有限非负。总量和最终端点必须可用有限 double 表示，否则明确抛 OverflowException；空流或空槽返回空/对应槽位，不自动补缺失、排序或对齐源。结果是供既有堆叠 AreaSeries 组合的透明正向 spacer；Demo/Usage 的图例只读，避免隐藏某条贡献后沿用旧底座。该辅助算法不订阅源变化，调用方更新时重新计算。",
+    "AnalysisChartBase 与现有 Cartesian 图共用有界 PNG/JPEG 同步/异步导出管线，支持流/路径、尺寸、DPI、背景、预算、取消与实际图表发送者失败事件，绘制入口直接变换至目标像素。包消费者的 Headless 后端若不产 PNG，只验证精确 NotSupportedException、零输出与一次正确 owner/UI 线程失败事件；不将此分支记为像素成功。原生窗口导出和独立 PNG 解码另行核对尺寸、画面与 DPI。"
+  ],
+  "implementationContractsRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\implementation-contracts-final-v1.json",
+    "sha256": "09547D5BAC858D5CEA3B056DCDF595DD906F104D27EA0777611070670283238E",
+    "bytes": 13209
+  },
+  "remaining": [
+    "C3-01～C3-07 的当前软件子集均不等于完整 C3 结束；下一主项为 C4-01 数据与视图分层失效。本批不自动开始 C4，也不关闭完整 C2/C3/C4/C7、C5 高级统计比较与 C6 无轴云/紧凑打包，旧图族已记录问题保持有效。",
+    "未使用官方许可运行时作逐项参考，完整官方 API、默认值、视觉、组合及二进制等价仍未验收。漏斗本库源顺序/颈宽公式、面积比例金字塔、类型敏感 Heatmap 键和 ThemeRiverStack 辅助接口均为本库明确契约。",
+    "Funnel/Pyramid/Heatmap 新分析控件尚未完整适配 Cartesian 的多系列图例、Trackball、范围选择器/联动、触摸缩放平移、多轴/标注、可取消选择事件和标准入场/数据/视图动画时间线；目前为基本形状命中、源项选择、键盘、Tooltip 及导出。",
+    "分析图密集/极小尺寸标签、漏斗外标签/连接线、复杂色标布局、任意控件模板、RTL/国际化布局以及高级碰撞避让仍待专项。Heatmap 目前为离散矩阵，不含连续二维 binning/插值热力、复杂颜色空间/分段尺度或矩阵虚拟化。",
+    "Pictorial 目前为 Geometry 轮廓和本库 Stretch/Clip/Repeat 语义，不含图片/任意控件符号、独立符号边框、完整逐点样式或所有官方排列组合。大量重复几何、曲线/布尔组合、复杂轴断裂和多种交互组合仍需更广专项；原地修改几何必须 Refresh。",
+    "ThemeRiverStack 只是居中非负堆叠底座；居中底座采用 Center-总量/2 的 silhouette 式居中规则；没有完整 Theme river 控件，wiggle、优化流顺序及更多基线算法未验收，也没有正负流混合、自动稀疏对齐/缺失策略及隐藏系列后自动重算。透明底座是辅助系列，调用方应从业务命中和可交互图例排除；Demo 使用受控组合。",
+    "本批未建立新的正式性能或内存回归 SLA。大 Heatmap、重复符号、动态堆叠、复杂几何的吞吐/尾延迟/分配仍归 C4；用户延期的百万点命中 p95 历史回退 0.7649→1.1235 ms 保持开放，不因功能通过而关闭。",
+    "新图族尚未完成点级辅助语义/原生焦点及系统偏好整合；Windows UIA/Linux AT-SPI 原生选中项枚举继续由用户延期到 A11Y-NATIVE-01，完整原生桥接门禁仍为 false。物理 Windows/Linux、真实触摸/触控板/读屏器、实际 backend/GPU/compositor present 未由合成窗口认证。AX06 标题/末刻度布局与四个历史 PixelProbe DLL 缺口继续开放。"
+  ],
+  "officialDocumentationReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\official-documentation-review-v1.json",
+    "sha256": "0130DCCC0AAC5311994AEC9F68D64E0266F42B16C8039C130EBD36FDB64601ED",
+    "bytes": 960
+  },
+  "officialPublicDocumentationSources": [
+    {
+      "title": "Funnel",
+      "url": "https://docs.avaloniaui.net/controls/data-display/charts/analytics/funnel-chart"
+    },
+    {
+      "title": "Pyramid",
+      "url": "https://docs.avaloniaui.net/controls/data-display/charts/analytics/pyramid-chart"
+    },
+    {
+      "title": "Heatmap",
+      "url": "https://docs.avaloniaui.net/controls/data-display/charts/analytics/heatmap-chart"
+    },
+    {
+      "title": "Pictorial bar",
+      "url": "https://docs.avaloniaui.net/controls/data-display/charts/analytics/pictorial-bar-chart"
+    },
+    {
+      "title": "Theme river",
+      "url": "https://docs.avaloniaui.net/controls/data-display/charts/analytics/theme-river-chart"
+    }
+  ],
+  "manualWindowsVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\manual-windows-analysis-visual-v1.json",
+    "sha256": "85898F6B2BC8974075C2DA6E4179C631221B9C8F92CF30123D92A3348D279D93",
+    "bytes": 2795
+  },
+  "manualLinuxVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\manual-linux-analysis-visual-v1.json",
+    "sha256": "7DD9EB40F437FE700C3BB16CB77BEF31740E51B8FDC6B0118D58E39CCBED89A1",
+    "bytes": 3500
+  },
+  "retainedEarlierDevelopmentAndFormalEvidence": [
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-analysis-20261018\\retained-development-v1.json",
+      "sha256": "FE7DB4D75217D7809685AD2C4D12749259EE67DBD948F1D7D112F83362134051",
+      "bytes": 1085809
+    }
+  ]
+}

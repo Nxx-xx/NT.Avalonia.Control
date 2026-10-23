@@ -1,0 +1,1633 @@
+{
+  "schemaVersion": 1,
+  "stage": "C4-03 fidelity-preserving sampling and level of detail",
+  "completedUtc": "2026-10-19T02:39:44.463515+00:00",
+  "clientExecutionDate": "2026-10-19",
+  "finalCandidateVersion": "c4-level-of-detail-source-v1",
+  "softwareFunctionalSubsetPassed": true,
+  "functionalSubsetPassed": true,
+  "lodMechanismValidated": true,
+  "visibilityMechanismValidated": true,
+  "cacheMechanismValidated": true,
+  "lodScope": "Explicit MinMax LineSeries with monotonic X, linear unstacked geometry, hidden/zero-size markers and labels off, solid paint, valid stable built-in Cartesian domains without axis breaks; all other paths retain original geometry and report conservative fallback.",
+  "fullC2StageComplete": false,
+  "fullC3StageComplete": false,
+  "fullC4StageComplete": false,
+  "fullC7StageComplete": false,
+  "nextWorkItem": "C4-04",
+  "windows": {
+    "platform": "windows",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\windows-final-v1\\results.json",
+      "sha256": "F6E3A0A47162D073BD17C5C4C93062B2FD30043BC1FFB3F4439D7386DF9B1D79",
+      "bytes": 20447
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\windows-final-v1\\results.json",
+      "sha256": "F6E3A0A47162D073BD17C5C4C93062B2FD30043BC1FFB3F4439D7386DF9B1D79",
+      "bytes": 20447
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\windows-final-v1\\charts-smoke.json",
+      "sha256": "CE3D47448F6B90B3A20E5215D43263DD55449A9E3C6E7DBBEA0610E61BCACD50",
+      "bytes": 1807490
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\windows-final-v1\\charts-usage.json",
+      "sha256": "716B247EAF83D72F5B2232B3A322C5430ECED996049700E951DA75AE917E76E9",
+      "bytes": 48657
+    },
+    "headlessTests": 1730,
+    "demoChecks": 1232,
+    "usageChecks": 332,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 486,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\package-consumers-v2\\20261019T020544182Z-4d0db8a5fff14e4181f52e56af7e49d5\\function\\consumer-result.json",
+          "sha256": "05B8DB3E49854DC5A5B1814CEE6C747DAFC1D2A776141D32B15E025C16D05CD2",
+          "bytes": 81496
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\package-consumers-v2\\20261019T020544182Z-4d0db8a5fff14e4181f52e56af7e49d5\\function\\packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 486,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\package-consumers-v2\\20261019T020544182Z-4d0db8a5fff14e4181f52e56af7e49d5\\themes\\consumer-result.json",
+          "sha256": "EAAA28290F544345656602133EAB5099D75B3559715EFBACE48D2383D90C8A6A",
+          "bytes": 81530
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\package-consumers-v2\\20261019T020544182Z-4d0db8a5fff14e4181f52e56af7e49d5\\themes\\packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\windows-final-v1\\validated-input-manifest.json",
+      "sha256": "1316CEADC138B6341092B5CF52D03885B20B8EB304F6F0127A735E5CE83D740F",
+      "bytes": 129156
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\windows-final-v1\\assembly-manifest.json",
+      "sha256": "7FC5B0938DE5B291C9F84F954F3DCE9FE4A44115944DB9E0A7550687E6EE1B47",
+      "bytes": 1955
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\windows-final-v1\\environment.json",
+      "sha256": "C65B25B7CC024CBF3C4B8B114A06F28AC749CA0A857D254BAA0A8FBBB029D3A0",
+      "bytes": 9133
+    },
+    "coreSha256": "EE48ACF078725208C8FF17D121E077EE19CD90AB2A4D975FDF723605A836E588",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false,
+    "lodSupervisor": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\level-of-detail-v1\\supervisor.json",
+      "sha256": "25CE8DC0D5661A985346185951E70089F460689D01C3049918278593F6EEF7F9",
+      "bytes": 2059
+    },
+    "lodRaw": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\level-of-detail-v1\\raw.json",
+      "sha256": "BC20301B9AA40CDA2691DAD5A30052681310B59D738A916E6B5852472CCEC569",
+      "bytes": 11868456
+    },
+    "visibleClippingSupervisor": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\visible-clipping-v1\\supervisor.json",
+      "sha256": "3D5B2641C3841063D3A603746698873F77670ED8BA8EA8657B81DC21604D414C",
+      "bytes": 2062
+    },
+    "visibleClippingRaw": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\visible-clipping-v1\\raw.json",
+      "sha256": "596E630B210E901F8A61A84FFFDB5C96F851BD4AED794D89845F22269482CE47",
+      "bytes": 606403
+    },
+    "screenshotDirectory": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\windows-final-v1",
+    "pngCount": 695,
+    "newLodPngCount": 34,
+    "representativeScreenshots": {
+      "overview": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\windows-final-v1\\charts-light-lod-light-overview.png",
+        "sha256": "8E1F4D36409CDA84C163783946F091BA894B4E3FB3278DECD590F4ECB05B69A5",
+        "bytes": 61965
+      },
+      "gap": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\windows-final-v1\\charts-light-lod-dark-gap-detail.png",
+        "sha256": "8CF62B8BECA1E731A0019AB8E18508378077050F240929C77811B6DC7F976247",
+        "bytes": 41793
+      },
+      "originalTooltip": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\windows-final-v1\\charts-light-lod-light-original-tooltip.png",
+        "sha256": "1B4E54453C42EEA5287448466A40D57667EC1BAA874DD770F87B9B75972B521A",
+        "bytes": 67118
+      }
+    },
+    "executionUsesCompositeReceipt": true,
+    "initialLauncher": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\launcher-v1-exit.json",
+      "sha256": "6C9D984064E97A00ADEA3C7038E5B1F607E8DED3D9E5BD1B6BB69562F91873AB",
+      "bytes": 767
+    },
+    "compositeLauncher": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows\\launcher-v1-continuation-v2-exit.json",
+      "sha256": "4BD1DF4F23CDCA909CF3E6B22729C0612CF5ACB0CC0080FB654BC9D1B07F0315",
+      "bytes": 1036
+    },
+    "continuationRepair": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\windows-continuation-repair-v2.json",
+      "sha256": "B370C5527E7D08160DEFFEC3219BC915B5DA5F7718991EF49F0C36200D29C339",
+      "bytes": 817
+    }
+  },
+  "linux": {
+    "platform": "linux",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\verification\\wslg-final-v3\\results.json",
+      "sha256": "05A86E8B4AE4B2C657F28A4E48026C32C257992AA4029C6061929049138F813F",
+      "bytes": 14721
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\verification\\wslg-final-v3\\results.json",
+      "sha256": "05A86E8B4AE4B2C657F28A4E48026C32C257992AA4029C6061929049138F813F",
+      "bytes": 14721
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\verification\\wslg-final-v3\\charts-smoke.json",
+      "sha256": "BC436600A069751461355DC6DAA8E61AA8507584255EA40CB23A31D7F974F374",
+      "bytes": 1744796
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\verification\\wslg-final-v3\\charts-usage.json",
+      "sha256": "AAB09EE3AC47E347B4929F0942F951B7C7F7779432A3AF24C769F290A5DAE59F",
+      "bytes": 46994
+    },
+    "headlessTests": 1730,
+    "demoChecks": 1232,
+    "usageChecks": 332,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 486,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\package-consumers\\20261019T023450557Z-d7e07a863e9e4736a9608503f42eef0c\\function\\consumer-result.json",
+          "sha256": "31CC7416E85FFF1F851B1D82058B75F4824F5537E98A86C16B1A51ECC7AEC088",
+          "bytes": 79274
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-level-of-detail-20261019/linux/run-v3/package-consumers/20261019T023450557Z-d7e07a863e9e4736a9608503f42eef0c/function/packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 486,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\package-consumers\\20261019T023450557Z-d7e07a863e9e4736a9608503f42eef0c\\themes\\consumer-result.json",
+          "sha256": "DF0694141BBA7416A235CADC2537B36DD2111434F3EBFF9F496CE39310585645",
+          "bytes": 79333
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-level-of-detail-20261019/linux/run-v3/package-consumers/20261019T023450557Z-d7e07a863e9e4736a9608503f42eef0c/themes/packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\verification\\wslg-final-v3\\validated-input-manifest.json",
+      "sha256": "E4BBA309B56EEA7574C5000D7FCF9E501D3D48DC9A4591AA53524EA3B7369B86",
+      "bytes": 126242
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\verification\\wslg-final-v3\\assembly-manifest.json",
+      "sha256": "A04F1BA8044608839EB0A57159D73CC2589109DD1FC7684DAB4314181A02CFE1",
+      "bytes": 1905
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\verification\\wslg-final-v3\\environment.json",
+      "sha256": "27AF6B2467E5DF2288D64A0D410A02B0541606A473626063884297652390377B",
+      "bytes": 6279
+    },
+    "coreSha256": "264F08135BDD6F3CC8841384039A2F7491D773036B19E3BD674F117FA1E0C312",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false,
+    "lodSupervisor": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\level-of-detail-v3\\supervisor.json",
+      "sha256": "8E26FF727376577750C7154F896CA4611BE1ED437B48A435EF3906C23FFBCBFF",
+      "bytes": 2228
+    },
+    "lodRaw": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\level-of-detail-v3\\raw.json",
+      "sha256": "0F0FD2A91303557F649799F78D4CCAED4BD45B2BD37F81F632A4957F652F7902",
+      "bytes": 11333730
+    },
+    "visibleClippingSupervisor": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\visible-clipping-v3\\supervisor.json",
+      "sha256": "CB20883A3A7164DAE2EA22EEC1FC64CF26FBB09E871A498F55D473C31143E2D7",
+      "bytes": 2231
+    },
+    "visibleClippingRaw": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\visible-clipping-v3\\raw.json",
+      "sha256": "B2841F1A2E7E006A45A669C47EA984CABA3E907FEB9E5448387D9CA265E5C1D2",
+      "bytes": 587147
+    },
+    "screenshotDirectory": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\verification\\wslg-final-v3",
+    "pngCount": 695,
+    "newLodPngCount": 34,
+    "representativeScreenshots": {
+      "overview": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\verification\\wslg-final-v3\\charts-light-lod-light-overview.png",
+        "sha256": "1CD907274BE4FFECF303C06E1D64981068B178D0E6AA01A047C15622D181D355",
+        "bytes": 90069
+      },
+      "gap": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\verification\\wslg-final-v3\\charts-light-lod-dark-gap-detail.png",
+        "sha256": "50745AE9077C6C0602927D59D1D968C67BC53BEB504476C5AD9ADF8F6A983047",
+        "bytes": 66936
+      },
+      "originalTooltip": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\verification\\wslg-final-v3\\charts-light-lod-light-original-tooltip.png",
+        "sha256": "808D7B39BEEA356B0AC23DBF01C749966A7F7ECEC3DD1E906EBB3DFCF570827E",
+        "bytes": 96776
+      }
+    },
+    "launcher": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\run-v3\\launcher-exit.json",
+      "sha256": "B354D7A78516DE14DD86ABB01DE4BBBCC76F1A4F9BCA63305B2324A379C5F3AD",
+      "bytes": 490
+    },
+    "preFormalEnvironmentRepair": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux-environment-repair-v1.json",
+      "sha256": "A42FF130EC46574D4A4030C1D4041335F41FC1EDE19DD371AEF1F42054285673",
+      "bytes": 3815
+    },
+    "restoredToolchainDownloads": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux-toolchain-v1\\download-manifest.json",
+      "sha256": "D99BB907964787435DB2992F527EBEF5D273E22D047BC117E64FD89C84269FD4",
+      "bytes": 2336
+    },
+    "restoredToolchainBinaries": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux-toolchain-v1\\restored-binary-sha256.txt",
+      "sha256": "381D46BB07EAE25265A3A80AA32DF406695D6BB228F31045AACD51DFF59C59F6",
+      "bytes": 1647
+    },
+    "projectDependencyFeed": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\project-dependency-feed-v1.json",
+      "sha256": "79DF67E47DDD9C23914DD46E92D65386DEDC67E97AB3F8A15F1FC25BBE9152E0",
+      "bytes": 100166
+    },
+    "projectDependencyDuplicateCheck": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\project-dependency-feed-existing14-check-v1.json",
+      "sha256": "0A0547A68248B5963577759A982C0604189366DCB51C583201899A7A30C99C4F",
+      "bytes": 12883
+    }
+  },
+  "sourceSnapshotRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\source-snapshot-v1.json",
+    "sha256": "C263E7DCE1DF906CAD78599E8FD7A970358E2AD7AFFB120BFFF8E95C6DD5F965",
+    "bytes": 289344
+  },
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\source-snapshot-v1.json",
+    "sha256": "C263E7DCE1DF906CAD78599E8FD7A970358E2AD7AFFB120BFFF8E95C6DD5F965",
+    "bytes": 289344
+  },
+  "frozenSourceFiles": 1449,
+  "declaredValidatedInputsPerPlatform": 728,
+  "declaredInputsMatchBetweenPlatforms": true,
+  "declaredLiveInputsStillMatch": true,
+  "frozenSourceHashesStillMatch": true,
+  "liveFullRepositoryEqualityClaimed": false,
+  "sourceScope": "Declared runtime/harness inputs match the frozen candidate. Later status/document edits are outside the runtime set.",
+  "windowsApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\api-windows-final-v1\\api.txt",
+    "sha256": "8A0F973004B64B9B6D8DF8CDEDCD36AD464D8E35E2F5897FDCA0A560422E85BF",
+    "bytes": 977178
+  },
+  "linuxApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux\\api-linux-final-v3\\api.txt",
+    "sha256": "0C17D0392F133AB7F23438E194E71F6BC0E38BB3694E304AAD726912CE5AC389",
+    "bytes": 419646
+  },
+  "publicApiDocument": {
+    "path": "<REPO_ROOT>\\docs\\charts-c4-level-of-detail-api.txt",
+    "sha256": "8A0F973004B64B9B6D8DF8CDEDCD36AD464D8E35E2F5897FDCA0A560422E85BF",
+    "bytes": 977178
+  },
+  "localApiDeclarationsMatchBetweenPlatforms": true,
+  "apiDelta": {
+    "oldTypes": 163,
+    "newTypes": 165,
+    "oldNamedChartsTypes": 161,
+    "newNamedChartsTypes": 163,
+    "oldLegacyDistinctTypeNames": 163,
+    "newLegacyDistinctTypeNames": 165,
+    "addedTypes": [
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartSamplingInfo",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartSamplingMode"
+    ],
+    "addedMembersOnExistingTypes": [
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.LineSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.Charts.ChartSamplingMode] SamplingModeProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.LineSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.Int32] SamplingPixelWidthProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.LineSeries",
+        "member": "  Property: NT.AvaloniaControl.Charts.ChartSamplingMode SamplingMode [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.LineSeries",
+        "member": "  Property: System.Int32 SamplingPixelWidth [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CartesianChart",
+        "member": "  Method: NT.AvaloniaControl.Charts.ChartSamplingInfo GetSamplingInfo(NT.AvaloniaControl.Charts.ChartSeries, System.Threading.CancellationToken) [optional: cancellationToken=null] [static=False, abstract=False, virtual=False]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartSeriesRenderContext",
+        "member": "  Property: System.Double RenderScaling [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartExportOptions",
+        "member": "  Property: System.Boolean UseSampling [get=True, set=True]"
+      }
+    ],
+    "removedTypes": [],
+    "changedExistingTypeDeclarations": [],
+    "removedMembersOnExistingTypes": [],
+    "binaryCompatibilityQualified": false,
+    "officialCompatibilityQualified": false
+  },
+  "completePublicApiReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\independent-full-public-api-v1.json",
+    "sha256": "21F74DD4046971D23B4398B01A766557460C85D22D607B44EBA79EA9491D8899",
+    "bytes": 3436
+  },
+  "independentReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\collected-evidence-v1.json",
+    "sha256": "EE437221092DE684790877D8AE5A48F8505B877753689347247B8A29DF589326",
+    "bytes": 749006
+  },
+  "independentRasterReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\independent-preserved-raster-v1.json",
+    "sha256": "CAFC92153D93739833CDFE384B866B281759167A66A80E3565FC71A315978186",
+    "bytes": 246640
+  },
+  "independentPackagePayloadReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\independent-package-payload-v1.json",
+    "sha256": "5153E375D172DFB9CF7B54DB5E4AC5D388399F3F17EC42A3F9D180B31601A19A",
+    "bytes": 8649
+  },
+  "cacheMechanismReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\cache-mechanism-review-v1.json",
+    "sha256": "E6D5120223F8A2F1BE14E31D52203F1043FC216BA5B87364504E82E8A604D2ED",
+    "bytes": 840955
+  },
+  "visibilityMechanismReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\visibility-mechanism-review-v1.json",
+    "sha256": "EAFD8A629F5694C4337974F60C16F953D9D943619E238B7E4C12041CEB7F6B43",
+    "bytes": 780997
+  },
+  "lodMechanismReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\lod-mechanism-review-v1.json",
+    "sha256": "107FECAB3E3C188890C5AE328733A9880803C38D2944DA8405E028620FA6A33C",
+    "bytes": 596028
+  },
+  "preservedBusinessOracleRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\preserved-business-oracle-v1.json",
+    "sha256": "152D9345F54B5416E34EC64B3E0BE9D12689B8A0145CEF2F7E236AED4062844F",
+    "bytes": 640
+  },
+  "lodOracleRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\lod-oracle-preregistered-v2.json",
+    "sha256": "596213E1C18F748B943B70DD4DB3B595669BC56D835A0A4CFB59D322C694BFE6",
+    "bytes": 3312
+  },
+  "independentReviewCounts": {
+    "sourceAndPlatformChecks": 4503,
+    "rasterChecks": 981,
+    "decodedImages": 168,
+    "packagePayloadChecks": 14,
+    "cacheMechanismChecks": 5693,
+    "visibilityMechanismChecks": 4967,
+    "lodMechanismChecks": 3853,
+    "countsOverlapAndAreNotProductTestCounts": true
+  },
+  "historicalAndRendererPinsVerified": true,
+  "historicalDocumentPinCount": 56,
+  "historicalRendererVersionCount": 10,
+  "historicalRendererPreservationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\historical-renderer-preservation-v1.json",
+    "sha256": "A448820BDEF3D935A6293C0130AA6B1B063660406F351A5AB8D7EB3CECECD050",
+    "bytes": 10433
+  },
+  "generalMetadataBeforeRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\metadata-before.json",
+    "sha256": "38F39B3E932930099ED634636557B1A3BEB44725EF9DD554BB81F9A39D2B839D",
+    "bytes": 3102
+  },
+  "dependencyReuse": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\dependency-reuse.json",
+    "sha256": "1D2CDC02B92F345625D61B9C237272AA0D6E830C72362EAC1FEDFD6028254286",
+    "bytes": 6289
+  },
+  "productPackagesReused": false,
+  "nugetAuditOrWarningPolicyChanged": false,
+  "nativeAccessibilityEnumerationRetested": false,
+  "deferredNativeAccessibilityWorkstream": "A11Y-NATIVE-01",
+  "completeNativeBridgeGatePassed": false,
+  "previousNativeBridgeEvidence": {
+    "path": "<REPO_ROOT>\\docs\\charts-c2-accessibility-validation.json",
+    "sha256": "BC80F3A743AD610E5B419D87D00A753755265A12F434F08654A06A59ABD72A8D",
+    "bytes": 1405510
+  },
+  "previousVisibleClippingEvidence": {
+    "path": "<REPO_ROOT>\\docs\\charts-c4-visible-clipping-validation.json",
+    "sha256": "FEDE696B568A20019BBB44F147F64FDD8C98CB9901B7BB882D0711F3238F2961",
+    "bytes": 48455
+  },
+  "performanceQualified": false,
+  "performanceMeasured": true,
+  "memoryRegressionMeasured": false,
+  "formalSlaEvaluated": false,
+  "millionHitTailDeferredTo": "C4 later optimization",
+  "officialRuntimeReferenceIncluded": false,
+  "physicalKeyboardValidated": false,
+  "physicalDesktopCertified": false,
+  "implementationContracts": [
+    "LineSeries 新增 SamplingMode=None/MinMax，默认 None，沿用 C4-02 的原始细节/可见裁剪路径；SamplingPixelWidth 为每桶 1～64 物理像素，默认1。显式 MinMax 只减少显示几何，不改 ItemsSource、不可变坐标/元数据快照、SourceIndex、StableId、Item 或 RawPoint。",
+    "按不可变坐标所有者复用分块极值层级，在物理屏幕像素桶内保留首点、末点、最小 Y 和最大 Y，按原物理序号输出；极值并列取最早原始序号。缩放、平移、轴方向和 DPI 变化重新选择合适屏幕桶，数据层级继续复用。屏幕密度以 TopLevel.RenderScaling 为准，导出以统一布局比例为准；任意祖先 RenderTransform/Viewbox 的缩放/旋转尚未纳入密度资格。",
+    "分段跟随既有 EmptyPointMode 映射/补值后的坐标：仍非有限时保留断点，Zero/Average/Interpolate 等已经补成有限值时沿用原有连续语义；legacy 线中带 IsEmpty 但坐标有限的点仍按既有规则绘制。每个有效有限连续段独立抽样，有意抽掉的点保持同一 figure，不因序号跳跃错误断开。查询保留范围前后原始邻点及没有中心点时穿越边界的相邻两端。",
+    "桶边界使用实际折线原有前向投影算术；数值快速路径与一般路径不混用，保留数值端点与 FMA 语义。查询范围按描边 miter 和抗锯齿裕量扩张（5×约束描边厚度+max(1,1/输出比例) DIP，抗锯齿至少保留1物理像素），随后仍使用原绘图裁剪。",
+    "GetSamplingInfo 在 UI 线程返回当前模式、是否应用、源/候选/绘制顶点数、连续段、物理桶预算、DPI 比率及回退原因；VisibleCount 含边界所需邻点，PixelBucketCount 是整个受保护绘图区的桶预算，并非每连续段实际占用桶总数。",
+    "非有序 X、平滑/阶梯、堆叠、标记/标签、空间画刷、轴断裂、无效域、未知投影或投影饱和等路径保守使用原几何并给出明确原因。未将柱状/散点密度聚合伪装成无损原始项绘制。",
+    "Tooltip、点命中与点/矩形选择继续查询完整原始数据；测试刻意命中未被绘制的原始点，并独立检查 RawPoint、源序号、稳定身份及 Item 引用。抽样索引不替代交互原始数据索引。",
+    "导出默认使用原始折线几何，ChartExportOptions.UseSampling 显式开启时按目标输出像素比例重新选择桶；不同尺寸/DPI 不复用屏幕桶结果，取消不会发布部分抽样计划。",
+    "Demo 提供密集峰谷/间隙折线、原始与 MinMax、像素宽度切换和缩放/重置，展示原始候选与绘制顶点计数并保留原始交互。",
+    "独立诊断分开记录冷源映射/层级构建与10次预热后稠密视口变化；原始扫描 oracle 在计数区间之后重新计算每连续段、每物理桶的首末峰谷及邻点，比较完整原始序号/figure 起点集合与 SHA。计时和线程分配仅作诊断，非 FPS、present、正式延迟或长期内存 SLA。完整序号对照的是新反射 sampler 查询，并非单独截取实际 renderer 的序号数组；共用 planner/map/保护边界的渲染集成另由源码审阅及原生峰谷/间隙/导出 PNG 覆盖。"
+  ],
+  "implementationContractsRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\implementation-contracts-final-v2.json",
+    "sha256": "AF887F1717BB694D9756C211E156EA561927A4DE34A7D9B04C168103CD09F2DB",
+    "bytes": 6593
+  },
+  "remaining": [
+    "下一项 C4-04 高效命中：百万点 hit p95 历史回退 0.7649→1.1235 ms 按用户决定保留后续专项；本批保留原始交互身份，不声称完成高效点/线段查询资格。",
+    "MinMax 只对明确适用的单调线性折线减少几何；非有序数据、平滑/阶梯/堆叠、面积/范围、标记/标签、空间画刷及独立图族保守使用原数据。柱状/散点密度聚合尚无公开聚合语义或质量声明，未实现。",
+    "极端断点数可令每连续段必留点和占用桶总数接近 N；无损保留首末峰谷并不保证所有数据 O(像素宽度)。图像与原始折线逐像素相同不是 MinMax 契约，官方性能比较须使用相同可比较画质与采样配置。",
+    "首次源映射、极值/层级及空间索引仍可能扫描全量；每数据层级保留分块索引数组，当前窗口结果按视图缓存。缓存字节预算、原生/GPU资源、异常回收及30分钟/8小时长稳仍留 C4-05～C4-08。",
+    "类别组距 LayoutCategoryGroups 的全局间距计算、编码排序及不适用系列候选仍有与 N/K 对应的成本；未取得全部图族 O(visible) 或 O(1) 绘制资格。",
+    "Windows 合成原生窗口、Headless 包消费者与 Ubuntu26.04 WSL2/WSLg 软件验证不代表物理 Windows/Linux、原生 Wayland、国产 Linux、多屏 DPI、真实触摸/触控板/读屏器或 backend/GPU/compositor present 资格。",
+    "完整 C2/C3/C4/C7、C5/C6 图族、官方许可运行时功能/默认值/API/二进制等价继续开放；既有图族标签/模板/交互限制不被抽样关闭。",
+    "Windows UIA/Linux AT-SPI 原生选中集合枚举继续留用户延期的 A11Y-NATIVE-01；AX06 标题/末刻度和四份历史 PixelProbe DLL 证据缺口原样保留。",
+    "任意祖先或控件 RenderTransform/Viewbox 的缩放、旋转及组合变换未计入屏幕物理像素桶密度；当前仅验证 TopLevel.RenderScaling 和显式导出布局比例，物理多 DPI 仍待专项。",
+    "历史外部源目录被清理后，本批只按初始化清单核对保留 renderer 副本的字节和 SHA，不能独立证明已删除的历史原始路径仍可用；此前已记录的四份 PixelProbe DLL 缺口没有补证。",
+    "既有原生导出动画夹具在 Linux run-v2 的亮色检查出现3项时序失败：首次导出前已为 progress1/Idle，未达到部分暂停状态；冷执行/Flush耗时或布局取消仅为推测，缺少区分轨迹。同一冻结候选一次预热重试通过不视为修复，此夹具的时序鲁棒性仍待后续处理。"
+  ],
+  "lodProbeMeasurements": {
+    "windows": [
+      {
+        "id": "ordered-line-1m",
+        "sourceCount": 1000000,
+        "supported": true,
+        "visibleRange": [
+          918840,
+          918840
+        ],
+        "renderedRange": [
+          4200,
+          4215
+        ],
+        "visitedRange": [
+          57575,
+          57644
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "descending-line-100k",
+        "sourceCount": 100000,
+        "supported": true,
+        "visibleRange": [
+          91884,
+          91884
+        ],
+        "renderedRange": [
+          4171,
+          4176
+        ],
+        "visitedRange": [
+          47586,
+          47651
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "gaps-line-100k",
+        "sourceCount": 100000,
+        "supported": true,
+        "visibleRange": [
+          91876,
+          91876
+        ],
+        "renderedRange": [
+          4184,
+          4191
+        ],
+        "visitedRange": [
+          47977,
+          48076
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "duplicate-x-100k",
+        "sourceCount": 100000,
+        "supported": true,
+        "visibleRange": [
+          91882,
+          91882
+        ],
+        "renderedRange": [
+          4159,
+          4164
+        ],
+        "visitedRange": [
+          44371,
+          44500
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "log-inverse-100k",
+        "sourceCount": 100000,
+        "supported": true,
+        "visibleRange": [
+          93126,
+          93725
+        ],
+        "renderedRange": [
+          3363,
+          3496
+        ],
+        "visitedRange": [
+          39677,
+          43126
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "multi-axis-100k",
+        "sourceCount": 100000,
+        "supported": true,
+        "visibleRange": [
+          92108,
+          92108
+        ],
+        "renderedRange": [
+          3763,
+          3773
+        ],
+        "visitedRange": [
+          42833,
+          42961
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "four-pixel-100k",
+        "sourceCount": 100000,
+        "supported": true,
+        "visibleRange": [
+          91884,
+          91884
+        ],
+        "renderedRange": [
+          1052,
+          1058
+        ],
+        "visitedRange": [
+          13556,
+          13592
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "unordered-fallback-100k",
+        "sourceCount": 100000,
+        "supported": false,
+        "visibleRange": [
+          91888,
+          91888
+        ],
+        "renderedRange": [
+          91888,
+          91888
+        ],
+        "visitedRange": [
+          0,
+          0
+        ],
+        "fallbackReasons": [
+          "UnorderedX"
+        ],
+        "coldIndexBuilds": 0
+      },
+      {
+        "id": "smooth-fallback-10k",
+        "sourceCount": 10000,
+        "supported": false,
+        "visibleRange": [
+          9192,
+          9192
+        ],
+        "renderedRange": [
+          9192,
+          9192
+        ],
+        "visitedRange": [
+          0,
+          0
+        ],
+        "fallbackReasons": [
+          "InterpolationRequiresOriginalData"
+        ],
+        "coldIndexBuilds": 0
+      },
+      {
+        "id": "markers-fallback-10k",
+        "sourceCount": 10000,
+        "supported": false,
+        "visibleRange": [
+          9192,
+          9192
+        ],
+        "renderedRange": [
+          9192,
+          9192
+        ],
+        "visitedRange": [
+          0,
+          0
+        ],
+        "fallbackReasons": [
+          "MarkersRequireOriginalData"
+        ],
+        "coldIndexBuilds": 0
+      }
+    ],
+    "linux": [
+      {
+        "id": "ordered-line-1m",
+        "sourceCount": 1000000,
+        "supported": true,
+        "visibleRange": [
+          918840,
+          918840
+        ],
+        "renderedRange": [
+          4200,
+          4215
+        ],
+        "visitedRange": [
+          57575,
+          57644
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "descending-line-100k",
+        "sourceCount": 100000,
+        "supported": true,
+        "visibleRange": [
+          91884,
+          91884
+        ],
+        "renderedRange": [
+          4171,
+          4176
+        ],
+        "visitedRange": [
+          47586,
+          47651
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "gaps-line-100k",
+        "sourceCount": 100000,
+        "supported": true,
+        "visibleRange": [
+          91876,
+          91876
+        ],
+        "renderedRange": [
+          4184,
+          4191
+        ],
+        "visitedRange": [
+          47977,
+          48076
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "duplicate-x-100k",
+        "sourceCount": 100000,
+        "supported": true,
+        "visibleRange": [
+          91882,
+          91882
+        ],
+        "renderedRange": [
+          4159,
+          4164
+        ],
+        "visitedRange": [
+          44371,
+          44500
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "log-inverse-100k",
+        "sourceCount": 100000,
+        "supported": true,
+        "visibleRange": [
+          93126,
+          93725
+        ],
+        "renderedRange": [
+          3363,
+          3496
+        ],
+        "visitedRange": [
+          39677,
+          43126
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "multi-axis-100k",
+        "sourceCount": 100000,
+        "supported": true,
+        "visibleRange": [
+          92108,
+          92108
+        ],
+        "renderedRange": [
+          3763,
+          3773
+        ],
+        "visitedRange": [
+          42833,
+          42961
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "four-pixel-100k",
+        "sourceCount": 100000,
+        "supported": true,
+        "visibleRange": [
+          91884,
+          91884
+        ],
+        "renderedRange": [
+          1052,
+          1058
+        ],
+        "visitedRange": [
+          13556,
+          13592
+        ],
+        "fallbackReasons": [],
+        "coldIndexBuilds": 1
+      },
+      {
+        "id": "unordered-fallback-100k",
+        "sourceCount": 100000,
+        "supported": false,
+        "visibleRange": [
+          91888,
+          91888
+        ],
+        "renderedRange": [
+          91888,
+          91888
+        ],
+        "visitedRange": [
+          0,
+          0
+        ],
+        "fallbackReasons": [
+          "UnorderedX"
+        ],
+        "coldIndexBuilds": 0
+      },
+      {
+        "id": "smooth-fallback-10k",
+        "sourceCount": 10000,
+        "supported": false,
+        "visibleRange": [
+          9192,
+          9192
+        ],
+        "renderedRange": [
+          9192,
+          9192
+        ],
+        "visitedRange": [
+          0,
+          0
+        ],
+        "fallbackReasons": [
+          "InterpolationRequiresOriginalData"
+        ],
+        "coldIndexBuilds": 0
+      },
+      {
+        "id": "markers-fallback-10k",
+        "sourceCount": 10000,
+        "supported": false,
+        "visibleRange": [
+          9192,
+          9192
+        ],
+        "renderedRange": [
+          9192,
+          9192
+        ],
+        "visitedRange": [
+          0,
+          0
+        ],
+        "fallbackReasons": [
+          "MarkersRequireOriginalData"
+        ],
+        "coldIndexBuilds": 0
+      }
+    ]
+  },
+  "visibilityProbeMeasurements": {
+    "windows": [
+      {
+        "id": "ordered-line-1m",
+        "sourceCount": 1000000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 1571.9232,
+        "coldAllocatedBytes": 1406673024,
+        "projectedMinimum": 107,
+        "projectedMaximum": 107,
+        "visitedMinimum": 40,
+        "visitedMaximum": 40,
+        "candidateMinimum": 107,
+        "candidateMaximum": 107,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 115.9982,
+        "sampleMedianAllocatedBytes": 259048
+      },
+      {
+        "id": "unordered-line-100k",
+        "sourceCount": 100000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 190.7888,
+        "coldAllocatedBytes": 143118816,
+        "projectedMinimum": 108,
+        "projectedMaximum": 108,
+        "visitedMinimum": 170,
+        "visitedMaximum": 195,
+        "candidateMinimum": 108,
+        "candidateMaximum": 108,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 3.0939,
+        "sampleMedianAllocatedBytes": 249008
+      },
+      {
+        "id": "scatter-2d-100k",
+        "sourceCount": 100000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 249.1857,
+        "coldAllocatedBytes": 143269880,
+        "projectedMinimum": 110,
+        "projectedMaximum": 121,
+        "visitedMinimum": 222,
+        "visitedMaximum": 222,
+        "candidateMinimum": 110,
+        "candidateMaximum": 121,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 3.4729,
+        "sampleMedianAllocatedBytes": 342752
+      },
+      {
+        "id": "scatter-footprint-10k",
+        "sourceCount": 10000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 54.5888,
+        "coldAllocatedBytes": 14907688,
+        "projectedMinimum": 110,
+        "projectedMaximum": 121,
+        "visitedMinimum": 242,
+        "visitedMaximum": 306,
+        "candidateMinimum": 110,
+        "candidateMaximum": 121,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 1.0307,
+        "sampleMedianAllocatedBytes": 342752
+      },
+      {
+        "id": "gaps-duplicates-10k",
+        "sourceCount": 10000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 21.5404,
+        "coldAllocatedBytes": 14741136,
+        "projectedMinimum": 46,
+        "projectedMaximum": 46,
+        "visitedMinimum": 78,
+        "visitedMaximum": 114,
+        "candidateMinimum": 46,
+        "candidateMaximum": 46,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 0.7774,
+        "sampleMedianAllocatedBytes": 195560
+      },
+      {
+        "id": "log-inverse-10k",
+        "sourceCount": 10000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 28.476,
+        "coldAllocatedBytes": 14544656,
+        "projectedMinimum": 107,
+        "projectedMaximum": 107,
+        "visitedMinimum": 26,
+        "visitedMaximum": 28,
+        "candidateMinimum": 107,
+        "candidateMaximum": 107,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 1.8805,
+        "sampleMedianAllocatedBytes": 226000
+      },
+      {
+        "id": "smooth-line-10k",
+        "sourceCount": 10000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 24.1582,
+        "coldAllocatedBytes": 14668120,
+        "projectedMinimum": 107,
+        "projectedMaximum": 107,
+        "visitedMinimum": 26,
+        "visitedMaximum": 28,
+        "candidateMinimum": 107,
+        "candidateMaximum": 107,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 1.1732,
+        "sampleMedianAllocatedBytes": 303528
+      },
+      {
+        "id": "range-area-10k",
+        "sourceCount": 10000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 31.5949,
+        "coldAllocatedBytes": 16556800,
+        "projectedMinimum": 210,
+        "projectedMaximum": 210,
+        "visitedMinimum": 26,
+        "visitedMaximum": 28,
+        "candidateMinimum": 105,
+        "candidateMaximum": 105,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 1.0232,
+        "sampleMedianAllocatedBytes": 345344
+      },
+      {
+        "id": "multi-axis-10k",
+        "sourceCount": 10000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 26.1782,
+        "coldAllocatedBytes": 14750248,
+        "projectedMinimum": 107,
+        "projectedMaximum": 107,
+        "visitedMinimum": 26,
+        "visitedMaximum": 28,
+        "candidateMinimum": 107,
+        "candidateMaximum": 107,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 1.1254,
+        "sampleMedianAllocatedBytes": 310328
+      }
+    ],
+    "linux": [
+      {
+        "id": "ordered-line-1m",
+        "sourceCount": 1000000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 1644.115632,
+        "coldAllocatedBytes": 1406674960,
+        "projectedMinimum": 107,
+        "projectedMaximum": 107,
+        "visitedMinimum": 40,
+        "visitedMaximum": 40,
+        "candidateMinimum": 107,
+        "candidateMaximum": 107,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 46.858047,
+        "sampleMedianAllocatedBytes": 258992
+      },
+      {
+        "id": "unordered-line-100k",
+        "sourceCount": 100000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 204.690638,
+        "coldAllocatedBytes": 143119184,
+        "projectedMinimum": 108,
+        "projectedMaximum": 108,
+        "visitedMinimum": 170,
+        "visitedMaximum": 195,
+        "candidateMinimum": 108,
+        "candidateMaximum": 108,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 3.325358,
+        "sampleMedianAllocatedBytes": 242480
+      },
+      {
+        "id": "scatter-2d-100k",
+        "sourceCount": 100000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 250.076144,
+        "coldAllocatedBytes": 143269808,
+        "projectedMinimum": 110,
+        "projectedMaximum": 121,
+        "visitedMinimum": 222,
+        "visitedMaximum": 222,
+        "candidateMinimum": 110,
+        "candidateMaximum": 121,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 3.498919,
+        "sampleMedianAllocatedBytes": 335648
+      },
+      {
+        "id": "scatter-footprint-10k",
+        "sourceCount": 10000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 49.292403,
+        "coldAllocatedBytes": 14905984,
+        "projectedMinimum": 110,
+        "projectedMaximum": 121,
+        "visitedMinimum": 242,
+        "visitedMaximum": 306,
+        "candidateMinimum": 110,
+        "candidateMaximum": 121,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 1.361319,
+        "sampleMedianAllocatedBytes": 335648
+      },
+      {
+        "id": "gaps-duplicates-10k",
+        "sourceCount": 10000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 21.44137,
+        "coldAllocatedBytes": 14741136,
+        "projectedMinimum": 46,
+        "projectedMaximum": 46,
+        "visitedMinimum": 78,
+        "visitedMaximum": 114,
+        "candidateMinimum": 46,
+        "candidateMaximum": 46,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 0.862523,
+        "sampleMedianAllocatedBytes": 192808
+      },
+      {
+        "id": "log-inverse-10k",
+        "sourceCount": 10000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 21.536435,
+        "coldAllocatedBytes": 14542248,
+        "projectedMinimum": 107,
+        "projectedMaximum": 107,
+        "visitedMinimum": 26,
+        "visitedMaximum": 28,
+        "candidateMinimum": 107,
+        "candidateMaximum": 107,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 1.081392,
+        "sampleMedianAllocatedBytes": 219472
+      },
+      {
+        "id": "smooth-line-10k",
+        "sourceCount": 10000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 22.486559,
+        "coldAllocatedBytes": 14668120,
+        "projectedMinimum": 107,
+        "projectedMaximum": 107,
+        "visitedMinimum": 26,
+        "visitedMaximum": 28,
+        "candidateMinimum": 107,
+        "candidateMaximum": 107,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 0.951792,
+        "sampleMedianAllocatedBytes": 297160
+      },
+      {
+        "id": "range-area-10k",
+        "sourceCount": 10000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 30.145824,
+        "coldAllocatedBytes": 16556432,
+        "projectedMinimum": 210,
+        "projectedMaximum": 210,
+        "visitedMinimum": 26,
+        "visitedMaximum": 28,
+        "candidateMinimum": 105,
+        "candidateMaximum": 105,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 0.804662,
+        "sampleMedianAllocatedBytes": 338816
+      },
+      {
+        "id": "multi-axis-10k",
+        "sourceCount": 10000,
+        "viewportChanges": 10,
+        "coldMilliseconds": 20.944177,
+        "coldAllocatedBytes": 14750248,
+        "projectedMinimum": 107,
+        "projectedMaximum": 107,
+        "visitedMinimum": 26,
+        "visitedMaximum": 28,
+        "candidateMinimum": 107,
+        "candidateMaximum": 107,
+        "warmSourceEnumerations": 0,
+        "warmSourceVisitedItems": 0,
+        "warmIndexBuilds": 0,
+        "identityQueries": 10,
+        "sampleMedianMilliseconds": 1.4005,
+        "sampleMedianAllocatedBytes": 303800
+      }
+    ]
+  },
+  "cacheProbeMeasurements": {
+    "windows": [
+      {
+        "id": "line-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.5593,
+        "hoverP95Milliseconds": 0.8645,
+        "hoverMaximumMilliseconds": 3.6211,
+        "hoverMedianAllocatedBytes": 220056,
+        "hoverP95AllocatedBytes": 225624,
+        "hoverMaximumAllocatedBytes": 264528,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 104
+      },
+      {
+        "id": "line-1m",
+        "pointCount": 1000000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 1.6759,
+        "hoverP95Milliseconds": 2.1851,
+        "hoverMaximumMilliseconds": 5.106,
+        "hoverMedianAllocatedBytes": 220176,
+        "hoverP95AllocatedBytes": 223648,
+        "hoverMaximumAllocatedBytes": 264760,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 111
+      },
+      {
+        "id": "scatter-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 20.1222,
+        "hoverP95Milliseconds": 28.6315,
+        "hoverMaximumMilliseconds": 31.9564,
+        "hoverMedianAllocatedBytes": 10798072,
+        "hoverP95AllocatedBytes": 10802528,
+        "hoverMaximumAllocatedBytes": 10836152,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 183
+      },
+      {
+        "id": "shared-y-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.4324,
+        "hoverP95Milliseconds": 0.5496,
+        "hoverMaximumMilliseconds": 2.2644,
+        "hoverMedianAllocatedBytes": 243336,
+        "hoverP95AllocatedBytes": 243336,
+        "hoverMaximumAllocatedBytes": 249304,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 103
+      },
+      {
+        "id": "encoded-bubble-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 19.1734,
+        "hoverP95Milliseconds": 27.445,
+        "hoverMaximumMilliseconds": 32.1989,
+        "hoverMedianAllocatedBytes": 10799472,
+        "hoverP95AllocatedBytes": 10799544,
+        "hoverMaximumAllocatedBytes": 10840680,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 175
+      },
+      {
+        "id": "interpolate-x-1k",
+        "pointCount": 1000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.4623,
+        "hoverP95Milliseconds": 0.7061,
+        "hoverMaximumMilliseconds": 2.3293,
+        "hoverMedianAllocatedBytes": 232704,
+        "hoverP95AllocatedBytes": 232704,
+        "hoverMaximumAllocatedBytes": 244808,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 103
+      },
+      {
+        "id": "category-1k",
+        "pointCount": 1000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.3746,
+        "hoverP95Milliseconds": 0.6633,
+        "hoverMaximumMilliseconds": 7.4685,
+        "hoverMedianAllocatedBytes": 434040,
+        "hoverP95AllocatedBytes": 434040,
+        "hoverMaximumAllocatedBytes": 434464,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 104
+      },
+      {
+        "id": "stacked-2x1k",
+        "pointCount": 1000,
+        "seriesCount": 2,
+        "hoverMedianMilliseconds": 0.3759,
+        "hoverP95Milliseconds": 0.5314,
+        "hoverMaximumMilliseconds": 3.8946,
+        "hoverMedianAllocatedBytes": 250400,
+        "hoverP95AllocatedBytes": 250400,
+        "hoverMaximumAllocatedBytes": 261536,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 204
+      },
+      {
+        "id": "range-band-1k",
+        "pointCount": 1000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.2829,
+        "hoverP95Milliseconds": 0.4603,
+        "hoverMaximumMilliseconds": 3.4568,
+        "hoverMedianAllocatedBytes": 235952,
+        "hoverP95AllocatedBytes": 235952,
+        "hoverMaximumAllocatedBytes": 236376,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 102
+      }
+    ],
+    "linux": [
+      {
+        "id": "line-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.596632,
+        "hoverP95Milliseconds": 0.925951,
+        "hoverMaximumMilliseconds": 3.101599,
+        "hoverMedianAllocatedBytes": 222544,
+        "hoverP95AllocatedBytes": 228112,
+        "hoverMaximumAllocatedBytes": 271992,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 104
+      },
+      {
+        "id": "line-1m",
+        "pointCount": 1000000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 1.632453,
+        "hoverP95Milliseconds": 2.162162,
+        "hoverMaximumMilliseconds": 6.696909,
+        "hoverMedianAllocatedBytes": 222680,
+        "hoverP95AllocatedBytes": 225728,
+        "hoverMaximumAllocatedBytes": 272248,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 111
+      },
+      {
+        "id": "scatter-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 18.473518,
+        "hoverP95Milliseconds": 26.276005,
+        "hoverMaximumMilliseconds": 29.240359,
+        "hoverMedianAllocatedBytes": 10797520,
+        "hoverP95AllocatedBytes": 10802096,
+        "hoverMaximumAllocatedBytes": 10807616,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 171
+      },
+      {
+        "id": "shared-y-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.276875,
+        "hoverP95Milliseconds": 0.441608,
+        "hoverMaximumMilliseconds": 1.871729,
+        "hoverMedianAllocatedBytes": 251240,
+        "hoverP95AllocatedBytes": 251240,
+        "hoverMaximumAllocatedBytes": 256784,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 102
+      },
+      {
+        "id": "encoded-bubble-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 16.802905,
+        "hoverP95Milliseconds": 21.443572,
+        "hoverMaximumMilliseconds": 24.855898,
+        "hoverMedianAllocatedBytes": 10802304,
+        "hoverP95AllocatedBytes": 10847608,
+        "hoverMaximumAllocatedBytes": 10848576,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 162
+      },
+      {
+        "id": "interpolate-x-1k",
+        "pointCount": 1000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.250335,
+        "hoverP95Milliseconds": 0.311932,
+        "hoverMaximumMilliseconds": 1.70254,
+        "hoverMedianAllocatedBytes": 240480,
+        "hoverP95AllocatedBytes": 240480,
+        "hoverMaximumAllocatedBytes": 252584,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 102
+      },
+      {
+        "id": "category-1k",
+        "pointCount": 1000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.230482,
+        "hoverP95Milliseconds": 0.315794,
+        "hoverMaximumMilliseconds": 2.23261,
+        "hoverMedianAllocatedBytes": 441912,
+        "hoverP95AllocatedBytes": 441912,
+        "hoverMaximumAllocatedBytes": 442336,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 102
+      },
+      {
+        "id": "stacked-2x1k",
+        "pointCount": 1000,
+        "seriesCount": 2,
+        "hoverMedianMilliseconds": 0.222527,
+        "hoverP95Milliseconds": 0.311724,
+        "hoverMaximumMilliseconds": 7.001974,
+        "hoverMedianAllocatedBytes": 258144,
+        "hoverP95AllocatedBytes": 258144,
+        "hoverMaximumAllocatedBytes": 269280,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 204
+      },
+      {
+        "id": "range-band-1k",
+        "pointCount": 1000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.18168,
+        "hoverP95Milliseconds": 0.271188,
+        "hoverMaximumMilliseconds": 2.381685,
+        "hoverMedianAllocatedBytes": 243728,
+        "hoverP95AllocatedBytes": 243728,
+        "hoverMaximumAllocatedBytes": 244152,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 102
+      }
+    ]
+  },
+  "counterEvidenceScope": "Complete before/after sampling counters end before independent raw pixel extrema/gap and original identity oracles; cold construction reported separately.",
+  "independentNativeLodRasterReviews": {
+    "windows": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\independent-native-lod-raster-windows-v1.json",
+      "sha256": "25A9FA3050AC007CE738CC8F39867DAE93C0C5DFA2D1CFCE255C5F2B74FD1176",
+      "bytes": 133885
+    },
+    "linux": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\independent-native-lod-raster-linux-authoritative-v1.json",
+      "sha256": "3D8B2863ADC184635B806C312205BA2D67C6A0DE588F7A6FE5BE307720D1CC16",
+      "bytes": 134752
+    }
+  },
+  "independentNativeLodRasterCheckCounts": {
+    "windows": {
+      "checks": 230,
+      "decodedImages": 34
+    },
+    "linux": {
+      "checks": 232,
+      "decodedImages": 34
+    }
+  },
+  "nativeLodPixelOracle": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\native-lod-pixel-oracle-v1.json",
+    "sha256": "DAD3AE95B1C0855E634E328B24486F40756487B3424EE5A8E88395897B2E40E6",
+    "bytes": 2479
+  },
+  "nativePixelOracleRegistrationScope": "New independent decoder configuration was recorded after Windows capture and before its decode and Linux capture. The unchanged frozen native harness and its quality thresholds predate the formal captures.",
+  "linuxAuthoritativeAttempt": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux-authoritative-v2.json",
+    "sha256": "B86D08CD9A4EBCBFE04A2C78D20B85C3DF048236AD17DF6AF970F15AED996F06",
+    "bytes": 5200
+  },
+  "linuxDesktopLibraries": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux-toolchain-v1\\desktop-libraries-restoration-v3.json",
+    "sha256": "0C953145C237DB4DC389D0084373F15165997C21D290A5EC891AFAB48B51B7AE",
+    "bytes": 38081
+  },
+  "linuxLegacyExportPausedPreconditionReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\linux-v2-export-paused-precondition-review-v1.json",
+    "sha256": "2FCB767C470861759443C85C1B3B6760D0CCA1084783F697CCB94A304FE981B3",
+    "bytes": 11105
+  },
+  "linuxLegacyAnimationFixtureTimingRobustnessResolved": false,
+  "dependencySourceRepair": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\dependency-source-repair-v1.json",
+    "sha256": "BAAAC1DC333521851A48F697B76342992D90CC4AB0E002A02EA38821AE58EA87",
+    "bytes": 10918
+  },
+  "historicalRendererOriginAvailability": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\historical-renderer-origin-repair-v1.json",
+    "sha256": "676D4401232B1D6D78366DA28789EA1F5103A5DBCA1F40589625C4DB3C5C6EEE",
+    "bytes": 12695
+  },
+  "samplerOrdinalOracleScope": "Independent full raw scan is compared to a fresh reflected ChartSamplingIndex.TryQuery result. Actual renderer-selected ordinal arrays are not separately captured; shared planner/map/guard integration is reviewed statically and native PNG extrema/gap/export tests cover rendering.",
+  "retainedDevelopmentEvidence": [
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\retained-development-evidence-v1.json",
+      "sha256": "2AA82A51A0359439CBBA0CCB118D26E455731F2F737056F6CF7AA54530078239",
+      "bytes": 40108
+    }
+  ],
+  "manualWindowsVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\manual-windows-c403-visual-v1.json",
+    "sha256": "2511C4FEEC40C7FE6BE8681A808FC2EFB3A03ED0640D370793BD87F97BB377DA",
+    "bytes": 1940
+  },
+  "manualLinuxVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-level-of-detail-20261019\\manual-linux-c403-visual-v1.json",
+    "sha256": "C4FCE40CD772CF8B4CFF653442D3B85D4FFFD63730DD0519B10D21BD7FE782D7",
+    "bytes": 2137
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "Version": "0.2.0-preview.1",
+  "VerifiedAtUtc": "2026-10-12T13:10:22.9270642+08:00",
+  "BuildConfiguration": "Release",
+  "BuildWarnings": 0,
+  "BuildErrors": 0,
+  "VerifyScriptExitCode": 0,
+  "Tests": {
+    "Core": 92,
+    "Headless": 50,
+    "Themes": 18,
+    "Total": 160,
+    "Failed": 0,
+    "Skipped": 0
+  },
+  "NativeChecks": 36,
+  "NativePassed": true,
+  "NativeTimestampUtc": "2026-10-12T05:03:35.6061382+00:00",
+  "PackageConsumer": "artifacts/consumer/0794238beb7c4bc584309e2beb36111f",
+  "Assemblies": [
+    {
+      "Name": "NT.AvaloniaControl",
+      "Sha256": "83A4FAB1EA671BF0EDC561657EEC37E7AA78CA3279C7103C25C8F2512ADDD41A",
+      "MatchesBuildPublishAndPackageConsumer": true
+    },
+    {
+      "Name": "NT.AvaloniaControl.Themes",
+      "Sha256": "0A1D7C0B065439AC02B8EADE39B217DE569C3C854D3EA153963D9FA0000D2F8C",
+      "MatchesBuildPublishAndPackageConsumer": true
+    }
+  ],
+  "Packages": [
+    {
+      "File": "artifacts/packages/NT.AvaloniaControl.0.2.0-preview.1.nupkg",
+      "Sha256": "782310D8A2924CB55EEE5389D4D04E621E4E85C828B51831BF4E4E90EBCBA304"
+    },
+    {
+      "File": "artifacts/packages/NT.AvaloniaControl.Themes.0.2.0-preview.1.nupkg",
+      "Sha256": "72ACCEC37A89DE35F34277A3FA445512C51AB1CCAE83FFED486C2D0519FB218D"
+    }
+  ],
+  "ApiSnapshotSha256": "76AD7222944C122B9E7DCCB298B51D5ED52F9666B2A28EF2700C246FF8914487",
+  "PerformanceRecord": "performance-p4-p5.json",
+  "PlatformRecord": "windows-smoke-p4-p5.json",
+  "Unverified": [
+    "Real Chinese IME and candidate window",
+    "Kylin and other Linux runtime",
+    "DPI matrix",
+    "Full accessibility"
+  ]
+}

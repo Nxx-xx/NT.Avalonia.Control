@@ -1,0 +1,461 @@
+[
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.asciidoc.package.json",
+    "Name": "asciidoc",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "Matt Neuburg",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.bat.package.json",
+    "Name": "bat",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.clojure.package.json",
+    "Name": "clojure",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.coffeescript.package.json",
+    "Name": "coffeescript",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.cpp.package.json",
+    "Name": "cpp",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.csharp.package.json",
+    "Name": "csharp",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.css.package.json",
+    "Name": "css",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.dart.package.json",
+    "Name": "dart",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": null
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.diff.package.json",
+    "Name": "diff",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": null
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.docker.package.json",
+    "Name": "docker",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.fsharp.package.json",
+    "Name": "fsharp",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.git.package.json",
+    "Name": "git",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.go.package.json",
+    "Name": "go",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.groovy.package.json",
+    "Name": "groovy",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.handlebars.package.json",
+    "Name": "handlebars",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.hlsl.package.json",
+    "Name": "hlsl",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.html.package.json",
+    "Name": "html",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.ini.package.json",
+    "Name": "ini",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.java.package.json",
+    "Name": "java",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.javascript.package.json",
+    "Name": "javascript",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.json.package.json",
+    "Name": "json",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.julia.package.json",
+    "Name": "julia",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": null
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.latex.package.json",
+    "Name": "latex",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.less.package.json",
+    "Name": "less",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.log.package.json",
+    "Name": "log",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.lua.package.json",
+    "Name": "lua",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.make.package.json",
+    "Name": "make",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.markdownbasics.package.json",
+    "Name": "markdown",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.markdownmath.package.json",
+    "Name": "markdown-math",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.objectivec.package.json",
+    "Name": "objective-c",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.pascal.package.json",
+    "Name": "pascal",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/AnsonYeung/vscode-pascal-language-basics"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.perl.package.json",
+    "Name": "perl",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.php.package.json",
+    "Name": "php",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.powershell.package.json",
+    "Name": "powershell",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.pug.package.json",
+    "Name": "pug",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.python.package.json",
+    "Name": "python",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.r.package.json",
+    "Name": "r",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.razor.package.json",
+    "Name": "razor",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.ruby.package.json",
+    "Name": "ruby",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.rust.package.json",
+    "Name": "rust",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.scss.package.json",
+    "Name": "scss",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.shaderlab.package.json",
+    "Name": "shaderlab",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.shellscript.package.json",
+    "Name": "shellscript",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.sql.package.json",
+    "Name": "sql",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.swift.package.json",
+    "Name": "swift",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.typescriptbasics.package.json",
+    "Name": "typescript",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": "vscode",
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.typst.package.json",
+    "Name": "tinymist",
+    "Version": "0.12.18",
+    "License": "Apache-2.0",
+    "Publisher": "myriad-dreamin",
+    "Author": "Myriad-Dreamin",
+    "Repository": "https://github.com/Myriad-Dreamin/tinymist.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.vb.package.json",
+    "Name": "vb",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.x86asm.package.json",
+    "Name": "x86asm",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "RysteQ",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.xml.package.json",
+    "Name": "xml",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  },
+  {
+    "Resource": "TextMateSharp.Grammars.Resources.Grammars.yaml.package.json",
+    "Name": "yaml",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Publisher": "vscode",
+    "Author": null,
+    "Repository": "https://github.com/microsoft/vscode.git"
+  }
+]

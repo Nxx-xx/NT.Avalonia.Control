@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>Charts.Reference</AssemblyName>
+    <RootNamespace>Charts.Reference</RootNamespace>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Controls.Charts" Version="[12.3.0]" />
+    <PackageReference Include="Avalonia.Desktop" Version="[12.0.3]" />
+    <PackageReference Include="Avalonia.Headless" Version="[12.0.3]" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="[12.0.3]" />
+    <Compile Include="../Charts.Benchmarks/DatasetFactory.cs" Link="Fixtures/DatasetFactory.cs" />
+    <Compile Include="../../src/NT.AvaloniaControl.Charts/ChartPoint.cs" Link="Fixtures/ChartPoint.cs" />
+  </ItemGroup>
+  <Target Name="RequireExplicitReferenceOptIn" BeforeTargets="Restore;PrepareForBuild"
+          Condition="'$(EnableOfficialChartsReference)' != 'true'">
+    <Error Text="Official Charts reference is opt-in. Pass -p:EnableOfficialChartsReference=true. It is excluded from the normal solution." />
+  </Target>
+</Project>

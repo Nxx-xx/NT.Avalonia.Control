@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 1,
+  "stage": "C3-02 Cartesian bars and comparison family",
+  "completedUtc": "2026-10-18T04:27:08.615634+00:00",
+  "clientExecutionDate": "2026-10-18",
+  "finalCandidateVersion": "c3-bar-comparison-source-v1",
+  "softwareFunctionalSubsetPassed": true,
+  "functionalSubsetPassed": true,
+  "fullC2StageComplete": false,
+  "fullC3StageComplete": false,
+  "fullC4StageComplete": false,
+  "windows": {
+    "platform": "windows",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\windows\\windows-final-v1\\results.json",
+      "sha256": "A360D8A5CC95CFCB62A0FD6E0062B4F8EC6044B68CD5BE1C2B38076C4E2D478D",
+      "bytes": 20377
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\windows\\windows-final-v1\\results.json",
+      "sha256": "A360D8A5CC95CFCB62A0FD6E0062B4F8EC6044B68CD5BE1C2B38076C4E2D478D",
+      "bytes": 20377
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\windows\\windows-final-v1\\charts-smoke.json",
+      "sha256": "15E5B6F90B1B732BA7F3AB544811D5BD07FFDA3E7793EFA892C2A8E30E3EA394",
+      "bytes": 1063005
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\windows\\windows-final-v1\\charts-usage.json",
+      "sha256": "6AA83D64CE81320EB5A58D14636131E0331532CA123871943D68599574388FC9",
+      "bytes": 16905
+    },
+    "headlessTests": 1083,
+    "demoChecks": 744,
+    "usageChecks": 206,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 284,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\windows\\package-consumers-v1\\20261018T042118003Z-7e60df8ee1444404a1d1c5dd457f1ff2\\function\\consumer-result.json",
+          "sha256": "5E8E1DCD7F7239A5CFA2A7DF5999828F5588A3793BDE978EC2BEE2CA0FF7540F",
+          "bytes": 46044
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\windows\\package-consumers-v1\\20261018T042118003Z-7e60df8ee1444404a1d1c5dd457f1ff2\\function\\packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 284,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\windows\\package-consumers-v1\\20261018T042118003Z-7e60df8ee1444404a1d1c5dd457f1ff2\\themes\\consumer-result.json",
+          "sha256": "DB39CD467653259F17BD1A9DB6DF5F96C79A776CA266F80DF5628A0C62A9BB9C",
+          "bytes": 46060
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\windows\\package-consumers-v1\\20261018T042118003Z-7e60df8ee1444404a1d1c5dd457f1ff2\\themes\\packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\windows\\windows-final-v1\\validated-input-manifest.json",
+      "sha256": "E305DB4D7A9AE0DB61EBF5FA01F3D2D0A2AF114F38C6FACF4B4EFEBBCA59B839",
+      "bytes": 110125
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\windows\\windows-final-v1\\assembly-manifest.json",
+      "sha256": "2EF1DFAB3B521A40B5A1F1B7F4BED86BFF0ED81AFA41C3D81EAEE97D8FCE06DB",
+      "bytes": 1955
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\windows\\windows-final-v1\\environment.json",
+      "sha256": "DF0698D37E1D54EF096A196702B59386466910C5C770B4E4270090F16671A0D9",
+      "bytes": 9133
+    },
+    "coreSha256": "FE9BB3C0E719C401FD3BC6E54E89E7FAF8B5A4DFFFC7DC3760A9B17323762356",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false
+  },
+  "linux": {
+    "platform": "linux",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\results.json",
+      "sha256": "780C8C827107E77BFA8B9CC18C7C16C1F54AF760033C0FDA451FFD69DE65B216",
+      "bytes": 14718
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\results.json",
+      "sha256": "780C8C827107E77BFA8B9CC18C7C16C1F54AF760033C0FDA451FFD69DE65B216",
+      "bytes": 14718
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\charts-smoke.json",
+      "sha256": "4261E20F7B18B68DFE25CC9D58A9746524D32B8F9D3BEF0AF3C4887C0962A91A",
+      "bytes": 1023579
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\charts-usage.json",
+      "sha256": "8C86D921B33A4FEC43F8DA15161DA14C99F409DD6C97E81B49F7FD0D3F5026E3",
+      "bytes": 16526
+    },
+    "headlessTests": 1083,
+    "demoChecks": 744,
+    "usageChecks": 206,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 284,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\linux\\run-v1\\package-consumers\\20261018T042403378Z-05b241cf121c416e84cc7db9358f1e5a\\function\\consumer-result.json",
+          "sha256": "02015B13642949F00826D8F5232714FF84080E14FC2C1F2FB37A530712001295",
+          "bytes": 44725
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c3-bar-comparison-20261018/linux/run-v1/package-consumers/20261018T042403378Z-05b241cf121c416e84cc7db9358f1e5a/function/packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 284,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\linux\\run-v1\\package-consumers\\20261018T042403378Z-05b241cf121c416e84cc7db9358f1e5a\\themes\\consumer-result.json",
+          "sha256": "D8DDCAE579D22C7D7406009BCD1405994094F175013FAC0A59F47EE4A1EDC9CC",
+          "bytes": 44742
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c3-bar-comparison-20261018/linux/run-v1/package-consumers/20261018T042403378Z-05b241cf121c416e84cc7db9358f1e5a/themes/packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\validated-input-manifest.json",
+      "sha256": "D01A94CD79DE0ED15847513BF3AF65EE9C1531684B6260A09485194116034112",
+      "bytes": 107675
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\assembly-manifest.json",
+      "sha256": "DEF6D17E1E388A890FFD03944DCE99C50ABB59BCF7F98B3AEAA04A10F63E24BB",
+      "bytes": 1905
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\environment.json",
+      "sha256": "53C8220280D1B5EEB763AA63468B8D8D48D0661D7E42F2FF72B7F9DAE1DC8DA5",
+      "bytes": 6369
+    },
+    "coreSha256": "C316420455A8756E0A537B99FC6F42EA5186EF9CA7F2FACCB56E4463E4F66276",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false
+  },
+  "sourceSnapshotRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\source-snapshot-v1.json",
+    "sha256": "9358BB83515B62FDEC26918FD3D7B53588D3E76F56B43A3F6694944F72ECA861",
+    "bytes": 261910
+  },
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\source-snapshot-v1.json",
+    "sha256": "9358BB83515B62FDEC26918FD3D7B53588D3E76F56B43A3F6694944F72ECA861",
+    "bytes": 261910
+  },
+  "frozenSourceFiles": 1306,
+  "declaredValidatedInputsPerPlatform": 612,
+  "declaredInputsMatchBetweenPlatforms": true,
+  "declaredLiveInputsStillMatch": true,
+  "frozenSourceHashesStillMatch": true,
+  "liveFullRepositoryEqualityClaimed": false,
+  "sourceScope": "All declared runtime/harness inputs match the frozen candidate; later documentation and metadata changes are outside that runtime set.",
+  "windowsApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\api-windows-final-v1\\api.txt",
+    "sha256": "9C3418C75811A5E1B68BEB97DC260F16EC9B5003A5767F589325B2C7151CD44B",
+    "bytes": 809570
+  },
+  "linuxApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\linux\\api-linux-final-v1\\api.txt",
+    "sha256": "5CD99587A53BFD8518889D1FB667AE6C8AA9F96888C522FE1D2195F0E7E81B75",
+    "bytes": 252038
+  },
+  "publicApiDocument": {
+    "path": "<REPO_ROOT>\\docs\\charts-c3-bar-comparison-api.txt",
+    "sha256": "9C3418C75811A5E1B68BEB97DC260F16EC9B5003A5767F589325B2C7151CD44B",
+    "bytes": 809570
+  },
+  "localApiDeclarationsMatchBetweenPlatforms": true,
+  "apiDelta": {
+    "oldTypes": 102,
+    "newTypes": 110,
+    "oldNamedChartsTypes": 100,
+    "newNamedChartsTypes": 108,
+    "oldLegacyDistinctTypeNames": 102,
+    "newLegacyDistinctTypeNames": 110,
+    "addedTypes": [
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartSeriesSortMode",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ComparisonSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.DotSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.LollipopSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ParetoSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.RangeBarSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.VarianceSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.WaterfallSeries"
+    ],
+    "addedMembersOnExistingTypes": [
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartSeriesRenderContext",
+        "member": "  Property: NT.AvaloniaControl.Charts.ChartDataSnapshot SecondaryData [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartSeriesRenderContext",
+        "member": "  Property: NT.AvaloniaControl.Charts.IChartProjection SecondaryProjection [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Interface: NT.AvaloniaControl.Charts.IChartComparisonSeries"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.Nullable`1[System.Double]] BarWidthProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.Double] BaselineProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[Avalonia.Layout.Orientation] OrientationProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.Charts.ChartSeriesSortMode] SortModeProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.String] StackGroupProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.Charts.ChartStackMode] StackModeProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.Double] WidthRatioProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Property: System.Nullable`1[System.Double] BarWidth [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Property: System.Double Baseline [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Property: Avalonia.Layout.Orientation Orientation [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Property: NT.AvaloniaControl.Charts.ChartSeriesSortMode SortMode [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Property: System.String StackGroup [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Property: NT.AvaloniaControl.Charts.ChartStackMode StackMode [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.BarSeries",
+        "member": "  Property: System.Double WidthRatio [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartPointHit",
+        "member": "  Property: System.Nullable`1[System.Double] CumulativeValue [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartPointHit",
+        "member": "  Property: System.Boolean IsTotal [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartDataPoint",
+        "member": "  Property: System.Nullable`1[System.Double] CumulativeValue [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartDataPoint",
+        "member": "  Property: System.Boolean IsTotal [get=True, set=True]"
+      }
+    ],
+    "removedTypes": [],
+    "changedExistingTypeDeclarations": [],
+    "removedMembersOnExistingTypes": [],
+    "binaryCompatibilityQualified": false,
+    "officialCompatibilityQualified": false
+  },
+  "apiComparisonScope": "All exported declarations in both local product assemblies keyed by assembly+type, including generated XAML types; namespace and legacy distinct-name counts reported separately.",
+  "completePublicApiReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\independent-full-public-api-v1.json",
+    "sha256": "B37079E2B633CBE42DE4DD36E1425259FB2288E6B70B4B142CD716EFBE5BD42D",
+    "bytes": 6535
+  },
+  "independentReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\collected-evidence-v1.json",
+    "sha256": "5ABA5C96866B9F15654B5A7C0C0C3FBA7B59C6343F3D835683148712576BEA9C",
+    "bytes": 648245
+  },
+  "independentRasterReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\independent-bar-comparison-raster-v1.json",
+    "sha256": "29AF9BB64FF8F0384F6E83F7F8982DFE60189A39E14D7EAA1DF3988F2648010F",
+    "bytes": 161176
+  },
+  "rasterOraclePreregistrationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\bar-comparison-oracle-preregistered.json",
+    "sha256": "1475745423EAB10E557128F9A217F9EB2AA2BD448D9C360233ECC1CD521EDC78",
+    "bytes": 2167
+  },
+  "rasterOracleAddendumRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\bar-comparison-oracle-preregistered-addendum.json",
+    "sha256": "FED69BB29E2395C2B101BA84E02253EDAFBF5E1D21FF4FA243B03A8BFA78EB76",
+    "bytes": 956
+  },
+  "rasterOracleGroupingRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\bar-comparison-oracle-preregistered-grouping.json",
+    "sha256": "D3A8707197DF18AF5E818D3091251162F2DA997F2AA0634419D97F86045A706E",
+    "bytes": 852
+  },
+  "independentReviewCounts": {
+    "sourceAndPlatformChecks": 3850,
+    "rasterChecks": 853,
+    "decodedImages": 100,
+    "countsOverlapAndAreNotProductTestCounts": true
+  },
+  "historicalAndRendererPinsVerified": true,
+  "historicalDocumentPinCount": 32,
+  "historicalRendererVersionCount": 2,
+  "historicalRendererPreservationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\historical-renderer-preservation-v1.json",
+    "sha256": "EB19A5CD5DB2A998B80FA58E8DF0E260B29744557891C369D85D537667534C23",
+    "bytes": 1313
+  },
+  "generalMetadataBeforeRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\metadata-before.json",
+    "sha256": "649405135318C5A1458368BE4D73FDFA7AC8D93E791D8A915D97BB3DFCE378B9",
+    "bytes": 3095
+  },
+  "dependencyReuse": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\dependency-reuse.json",
+    "sha256": "F38AAA8461D8314B3DFA13D5C05B2938136DE317437C44CE39590231BC250363",
+    "bytes": 5687
+  },
+  "productPackagesReused": false,
+  "nugetAuditOrWarningPolicyChanged": false,
+  "nativeAccessibilityEnumerationRetested": false,
+  "deferredNativeAccessibilityWorkstream": "A11Y-NATIVE-01",
+  "completeNativeBridgeGatePassed": false,
+  "previousNativeBridgeEvidence": {
+    "path": "<REPO_ROOT>\\docs\\charts-c2-accessibility-validation.json",
+    "sha256": "BC80F3A743AD610E5B419D87D00A753755265A12F434F08654A06A59ABD72A8D",
+    "bytes": 1405510
+  },
+  "performanceQualified": false,
+  "performanceMeasured": false,
+  "memoryRegressionMeasured": false,
+  "millionHitTailDeferredTo": "C4",
+  "officialRuntimeReferenceIncluded": false,
+  "physicalKeyboardValidated": false,
+  "physicalDesktopCertified": false,
+  "remaining": [
+    "本批比较形状的点选择依托原数据项；区间两端和Pareto辅助累计线没有单独的第二项身份。进阶比较交互与更多标签布局仍按后续计划扩展。",
+    "值排序当前要求自动标签CategoryAxis，不支持在自定义固定标签轴上任意重排；共享分类轴采用首排序系列驱动规则。",
+    "新比较几何与命中、排序/派生数据和堆叠的规模、分配、增量、内存及尾延迟回归留到 C4；本批未建立性能资格。",
+    "官方许可运行时行为/API 对照、物理 Windows/Linux、实际 GPU/backend/compositor、多屏 DPI、Ubuntu 22/24、原生 Wayland 和 ARM 继续待验。",
+    "原生 UIA/AT-SPI 选中项枚举、Linux 嵌套点写入、点系统焦点及真实读屏器按用户要求留到 A11Y-NATIVE-01；保留原失败，本批未重验。",
+    "直方图分箱和进阶比较仍在 C5；C3-03 及其余图族继续按计划开发，C2/C3/C4 和 C7 完整阶段未关闭。",
+    "既有 AX06 标题/末刻度布局问题和四个历史 PixelProbe DLL 缺口保留，未用新文件替代原证据。"
+  ],
+  "retainedEarlierRuns": {
+    "developmentNativeV1": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\development\\demo-agent-v1\\demo.json",
+      "sha256": "65DB5173D299E2E219A25D36CF875E9C65E93197CAE63D2AED9EA4F1718177C4",
+      "bytes": 1038142
+    },
+    "developmentNativeV1Total": 744,
+    "developmentNativeV1Passed": 742,
+    "failedGateNames": [
+      "柱条比较亮色六图在原生窗口实际布局",
+      "柱条比较暗色六图在原生窗口实际布局"
+    ],
+    "thresholdsRelaxed": false,
+    "correction": "Board chart height increased245->285 and window height1000->1140; original plotHeight>100 native gate retained. Final board minimum plot height108.037.",
+    "developmentTestsV1": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\development\\root-tests-v1\\development-v1.trx",
+      "sha256": "90DE4F795F8C11F153231D93F040A6D1F4DC2A99BC6E6F032C97987A9F18A154",
+      "bytes": 1585984
+    },
+    "developmentTestsV1Passed": 1079,
+    "earlierEvidenceOverwritten": false
+  },
+  "manualWindowsVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\manual-windows-bar-comparison-visual-v1.json",
+    "sha256": "CB6924DC2EBACAA4ECBF47C2B2B232ACCB59BBB256FA5EF2106C7AEE9AEE1EF0",
+    "bytes": 3124
+  },
+  "manualLinuxVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\manual-linux-bar-comparison-visual-v1.json",
+    "sha256": "FB8DAD53B08653E1E1A218242E52E56242D557822C0D50650CCA9E971BE0453A",
+    "bytes": 3194
+  },
+  "implementationContracts": [
+    "BarWidth 为非空时是显式 DIP 宽度（至少0.5），可大于分组槽；为空则按槽和 WidthRatio（(0,1]，默认0.86）计算。未设置新增配置的纵向Bar仍走既有绘制路径。",
+    "数值升/降序要求自动标签 CategoryAxis；同一分类轴由第一个排序系列确定共享顺序，其余系列按标签和源序第N次出现对齐。XAscending按原始数值X稳定排序，非按标签字母排序；分类轴仍应用自身标签映射；Waterfall只支持Source排序，Pareto只支持ValueDescending。",
+    "RangeBar 对有限 High/Low 规范化绘制 min/max 上下界并保留原始 High/Low；Variance 保留 Low→High 的方向及正负颜色。它们无需 ValuePath。",
+    "Waterfall 普通行从当前累计值增加有符号原值；TotalPath=true 行从Baseline绘制显式总计并重置累计。累计溢出后有限delta保持gap，直到有限total重置；缺失行不产生额外业务值。",
+    "Bar堆叠按解析X/Y轴、方向、StackGroup、StackMode和Baseline隔离，正负分别累计；Percent要求Baseline=0，各符号侧末层为±100。RawPoint保留原始源坐标；StackValue在Stacked中是有符号原贡献，在Percent中是有符号百分比份额。",
+    "Pareto跳过负值，稳定降序并保留源索引、Item、StableId；累计使用最大值缩放分母以避免有限原值求和溢出，正总量时最后有效点为100，全零总量的累计值为0。默认私有百分比轴0..100，CumulativeAxisKey需唯一、独立线性数值轴。",
+    "Pareto累计线使用独立投影和断轴裁剪；普通Tooltip、Trackball与辅助点语义返回本项累计值，未为辅助累计线建立第二套独立点/线段选择身份。",
+    "本库数据标签默认显示Point端点值（横向取X、纵向取Y）。Demo的“显示原始值标签”主动使用RawPoint格式化，所以百分比堆叠可显示原贡献20、30；应用可按公共label context自定义格式。范围/Variance/Waterfall的业务字段与显示端点分开。"
+  ],
+  "implementationContractsRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-bar-comparison-20261018\\implementation-contracts-final-v2.json",
+    "sha256": "0F0EADFBFCFA47C1E61F301D2F11CBB9158E7ADF4742DC731E138CE5F097324F",
+    "bytes": 2467
+  },
+  "documentationContractCorrection": "Corrected documentation only: default labels use displayed Point endpoint; Demo explicitly formats RawPoint. WidthRatio=(0,1], XAscending sorts raw numeric X before category mapping, Percent StackValue is a signed percentage share, all-zero Pareto cumulative=0. Runtime inputs/results unchanged."
+}

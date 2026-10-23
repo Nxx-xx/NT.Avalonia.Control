@@ -1,0 +1,2522 @@
+{
+  "schemaVersion": 7,
+  "date": "2026-10-15",
+  "runId": "20261015T130500Z-p0-real-corpus",
+  "artifactRoot": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d45-c96e-78a0-81df-3fc930f9db6f/pdfviewer/20261015T130500Z-p0-real-corpus",
+  "exportedUtc": "2026-10-15T12:57:55.559130+00:00",
+  "exporterSHA256": "08D098278E23093F1E26B32FD596BFAE5AD5F3A0BBA0D0E33C7AC35D49DFFA5E",
+  "phase": "P0 published corpus, operation boundaries and finite feasibility closeout",
+  "status": "initial real-corpus feasibility independently verified; official reference and device baseline dependencies remain open",
+  "G0Complete": false,
+  "P0TechnicalFeasibilityEvidenceComplete": true,
+  "productionPartialRedactionImplemented": false,
+  "productionFormsImplemented": false,
+  "productEditingReady": false,
+  "baseline": {
+    "CapturedUtc": "2026-10-15T12:53:27.8189598+00:00",
+    "GitCommit": "6337717d17e1b2b4c670107664ac3dd2b3f35829",
+    "SDK": "10.0.401",
+    "OS": "Microsoft Windows 10.0.26200",
+    "ProcessArchitecture": "X64",
+    "SourceManifestSHA256": "7E1BD9023BD993CFF6E253FDB3CB72B407D1EA11329E90A716B2C14A3800B5DD",
+    "SnapshotSHA256": "E5564F42E7516DFAED8D7497EB96AF5DA8BB1B4E48EEA1BCA8C0628C60060A4D",
+    "SourceFileCount": 345
+  },
+  "productSourceUnchangedSinceParent": true,
+  "executionAssemblySHA256": "72DF6353A3D1A469EF3CEF8B3F73A4621B848B378E6328B74C1EF870CFAA96E5",
+  "functionalAssemblySHA256": "82AA7459A0FECAB2C8340EF6707A528BF2EC4A1BE9103FCA420D4B6574AEB895",
+  "nativeLibrarySHA256": "04100C03E41CAC1F979E36E5E26FB860BCB5A7461F53830D3C098716624A27A9",
+  "parentRecord": {
+    "path": "docs/validation/pdfviewer-p0-partial-redaction-20261015.json",
+    "sha256": "DB7FCC23152EDE1D280C77A657F2B3371228D190D68C39223FD6F4E5991359B0",
+    "runId": "20261015T121500Z-p0-partial-redaction",
+    "scope": "Identical product source and DLL. Font/form/partial-redaction matrices, package consumers, Demo/Usage builds and dependency audit are historical evidence, not re-executed or counted as current coverage."
+  },
+  "corpus": {
+    "sources": 6,
+    "pages": 314,
+    "bytes": 6154810,
+    "manifestSHA256": "696EF0410AE2CE616C357059B5C71E990B6D6F6FB263F0AFCD977E19A0AF1D7E",
+    "nativeCheckCount": 117,
+    "operations": [
+      {
+        "source": "gnu-make",
+        "operation": "open-edit",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "gnu-make",
+        "operation": "snapshot-export",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "gnu-make",
+        "operation": "save-unmodified",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "gnu-make",
+        "operation": "freetext",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "gnu-make",
+        "operation": "sanitize",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "gnu-make",
+        "operation": "redact-whole-first-page",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "gnu-make",
+        "operation": "redact-tiny-region",
+        "outcome": "refused",
+        "exceptionType": "NotSupportedException",
+        "reason": "A redaction region partially intersects a page object. This pipeline removes only fully covered text, image, path or Form objects.",
+        "expectationMatched": true
+      },
+      {
+        "source": "irs-w4-en",
+        "operation": "open-edit",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "irs-w4-en",
+        "operation": "snapshot-export",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "irs-w4-en",
+        "operation": "save-unmodified",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "irs-w4-en",
+        "operation": "freetext",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "irs-w4-en",
+        "operation": "sanitize",
+        "outcome": "refused",
+        "exceptionType": "NotSupportedException",
+        "reason": "Unsupported painting operator 'Dictionary'.",
+        "expectationMatched": true
+      },
+      {
+        "source": "irs-w4-en",
+        "operation": "redact-tiny-region",
+        "outcome": "refused",
+        "exceptionType": "NotSupportedException",
+        "reason": "Unsupported painting operator 'Dictionary'.",
+        "expectationMatched": true
+      },
+      {
+        "source": "irs-w4-zhs",
+        "operation": "open-edit",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "irs-w4-zhs",
+        "operation": "snapshot-export",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "irs-w4-zhs",
+        "operation": "save-unmodified",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "irs-w4-zhs",
+        "operation": "freetext",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "irs-w4-zhs",
+        "operation": "sanitize",
+        "outcome": "refused",
+        "exceptionType": "NotSupportedException",
+        "reason": "Unsupported painting operator 'Dictionary'.",
+        "expectationMatched": true
+      },
+      {
+        "source": "irs-w4-zhs",
+        "operation": "redact-tiny-region",
+        "outcome": "refused",
+        "exceptionType": "NotSupportedException",
+        "reason": "Unsupported painting operator 'Dictionary'.",
+        "expectationMatched": true
+      },
+      {
+        "source": "japan-pdl",
+        "operation": "open-edit",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "japan-pdl",
+        "operation": "snapshot-export",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "japan-pdl",
+        "operation": "save-unmodified",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "japan-pdl",
+        "operation": "freetext",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "japan-pdl",
+        "operation": "sanitize",
+        "outcome": "refused",
+        "exceptionType": "NotSupportedException",
+        "reason": "Unsupported painting operator 'Dictionary'.",
+        "expectationMatched": true
+      },
+      {
+        "source": "japan-pdl",
+        "operation": "redact-tiny-region",
+        "outcome": "refused",
+        "exceptionType": "NotSupportedException",
+        "reason": "Unsupported painting operator 'Dictionary'.",
+        "expectationMatched": true
+      },
+      {
+        "source": "plos-citation",
+        "operation": "open-edit",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "plos-citation",
+        "operation": "snapshot-export",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "plos-citation",
+        "operation": "save-unmodified",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "plos-citation",
+        "operation": "freetext",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "plos-citation",
+        "operation": "sanitize",
+        "outcome": "refused",
+        "exceptionType": "NotSupportedException",
+        "reason": "Only device and indexed color spaces are supported by the strict sanitizer.",
+        "expectationMatched": true
+      },
+      {
+        "source": "plos-citation",
+        "operation": "redact-tiny-region",
+        "outcome": "refused",
+        "exceptionType": "NotSupportedException",
+        "reason": "Only device and indexed color spaces are supported by the strict sanitizer.",
+        "expectationMatched": true
+      },
+      {
+        "source": "nist-scan",
+        "operation": "open-edit",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "nist-scan",
+        "operation": "snapshot-export",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "nist-scan",
+        "operation": "save-unmodified",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "nist-scan",
+        "operation": "freetext",
+        "outcome": "accepted",
+        "exceptionType": null,
+        "reason": null,
+        "expectationMatched": true
+      },
+      {
+        "source": "nist-scan",
+        "operation": "sanitize",
+        "outcome": "refused",
+        "exceptionType": "NotSupportedException",
+        "reason": "JPEG, JPEG2000, JBIG2 and other opaque image containers are not supported by the strict sanitizer.",
+        "expectationMatched": true
+      },
+      {
+        "source": "nist-scan",
+        "operation": "redact-tiny-region",
+        "outcome": "refused",
+        "exceptionType": "NotSupportedException",
+        "reason": "JPEG, JPEG2000, JBIG2 and other opaque image containers are not supported by the strict sanitizer.",
+        "expectationMatched": true
+      }
+    ],
+    "accepted": 26,
+    "refused": 11,
+    "readSamples": [
+      {
+        "Outcome": "accepted",
+        "PageCount": 229,
+        "BookmarkCount": 22,
+        "Pages": [
+          {
+            "Index": 0,
+            "Width": 612,
+            "Height": 792,
+            "TextFile": "gnu-make/input-page-1.txt",
+            "TextSHA256": "36A23CC3FE8CC809C110AFE6C90239D7E2FB80D91FD080C751A4BC8FA59B082C",
+            "TextLength": 8,
+            "Characters": 8,
+            "RenderFile": "gnu-make/input-page-1.png",
+            "RenderSHA256": "70FE9D2241E8CCB843A25D001A1692830F1388665D86A99FBD82EF626192B1C6",
+            "PixelSHA256": "610BCC9E027CF68B44345797F728E9A85773646EE1AD3CE9B094295AF0E5C871",
+            "RenderWidth": 386,
+            "RenderHeight": 500
+          },
+          {
+            "Index": 114,
+            "Width": 612,
+            "Height": 792,
+            "TextFile": "gnu-make/input-page-115.txt",
+            "TextSHA256": "13BA1609E6D04F0FC13F85AE294764F84D06CF55D87B8430F855667639BF1592",
+            "TextLength": 1709,
+            "Characters": 1709,
+            "RenderFile": "gnu-make/input-page-115.png",
+            "RenderSHA256": "DB613565A46D3018542BC062CDB4A9441A060D048D8F36DBE3C743F7A6CE865E",
+            "PixelSHA256": "AE2A6BB8E03FE96743875D99AD11BEE260529597DC9C1BDF9BE750F1344577E8",
+            "RenderWidth": 386,
+            "RenderHeight": 500
+          }
+        ]
+      },
+      {
+        "Outcome": "accepted",
+        "PageCount": 5,
+        "BookmarkCount": 0,
+        "Pages": [
+          {
+            "Index": 0,
+            "Width": 611.9760131835938,
+            "Height": 791.968017578125,
+            "TextFile": "irs-w4-en/input-page-1.txt",
+            "TextSHA256": "6F4FFBF443D1113115B0E8ABE68F5B853FC504A165BF83F38D67232821BD048A",
+            "TextLength": 4865,
+            "Characters": 4865,
+            "RenderFile": "irs-w4-en/input-page-1.png",
+            "RenderSHA256": "D92742CF9CCED2338041FA6E3E4DD3456E81609F195360C54ACD549E84187320",
+            "PixelSHA256": "3D01C1E7A0BA829F434F375040AF5E7432F2A7D58EE2BB659B9F8FE60E279961",
+            "RenderWidth": 386,
+            "RenderHeight": 500
+          },
+          {
+            "Index": 2,
+            "Width": 611.9760131835938,
+            "Height": 791.968017578125,
+            "TextFile": "irs-w4-en/input-page-3.txt",
+            "TextSHA256": "E8D573385E89539A53E95667F7F626BE3FDFD03F33EDC5785A44D2FDBFD7EB37",
+            "TextLength": 2562,
+            "Characters": 2562,
+            "RenderFile": "irs-w4-en/input-page-3.png",
+            "RenderSHA256": "A720302E69CE08F1CACA46DBDD18ED4C07E163F115D83C39853BE2BBB1F3339D",
+            "PixelSHA256": "5095516B4F5F1F1B32478AEE507CD2913349DC1A441B8DFD4F8E5D01775AD276",
+            "RenderWidth": 386,
+            "RenderHeight": 500
+          }
+        ]
+      },
+      {
+        "Outcome": "accepted",
+        "PageCount": 5,
+        "BookmarkCount": 0,
+        "Pages": [
+          {
+            "Index": 0,
+            "Width": 611.9760131835938,
+            "Height": 791.968017578125,
+            "TextFile": "irs-w4-zhs/input-page-1.txt",
+            "TextSHA256": "9DCBA2B1BFA28D73DA85DC98E9607A9153725B8EDB945E3EBB07F3AF818806A4",
+            "TextLength": 2069,
+            "Characters": 2069,
+            "RenderFile": "irs-w4-zhs/input-page-1.png",
+            "RenderSHA256": "2D092866C78C6155CC5BF0AEEE314A7209DB4CF9352FA546FFC4ED12D58B4D9C",
+            "PixelSHA256": "B949FF5DF72D95AE012566454B2F1297B0D97E83C63C86F58B090D871616EEE5",
+            "RenderWidth": 386,
+            "RenderHeight": 500
+          },
+          {
+            "Index": 2,
+            "Width": 611.9760131835938,
+            "Height": 791.968017578125,
+            "TextFile": "irs-w4-zhs/input-page-3.txt",
+            "TextSHA256": "0DDD589FB16D3AE957F5BB0862D6FBE04CE03FC380A5006DA1EFA349CCD38547",
+            "TextLength": 1103,
+            "Characters": 1103,
+            "RenderFile": "irs-w4-zhs/input-page-3.png",
+            "RenderSHA256": "3AEFD44B22F3B7D4F42206000D2F05A4C712F514648B15415B418FEC5C031BE4",
+            "PixelSHA256": "F18644AA201D4EF791E4DE1B503FBE0C8AD4796BF47147CC42B7BA2BCC28225C",
+            "RenderWidth": 386,
+            "RenderHeight": 500
+          }
+        ]
+      },
+      {
+        "Outcome": "accepted",
+        "PageCount": 3,
+        "BookmarkCount": 0,
+        "Pages": [
+          {
+            "Index": 0,
+            "Width": 595.3200073242188,
+            "Height": 841.9199829101562,
+            "TextFile": "japan-pdl/input-page-1.txt",
+            "TextSHA256": "82B9EF2AB2CC36183428C3C17712CEF360258465847E1027AFD65D9C7D8B453D",
+            "TextLength": 1291,
+            "Characters": 1291,
+            "RenderFile": "japan-pdl/input-page-1.png",
+            "RenderSHA256": "744B8B1321E1CC98366455AFA0E8C6792ACE21B2A390886293F8C55B1E2DEC8B",
+            "PixelSHA256": "9F8E3BFAF10CDD0B20A251F03A1673DF643B2A9C3811576F279FD703E2A4553E",
+            "RenderWidth": 354,
+            "RenderHeight": 500
+          },
+          {
+            "Index": 1,
+            "Width": 595.3200073242188,
+            "Height": 841.9199829101562,
+            "TextFile": "japan-pdl/input-page-2.txt",
+            "TextSHA256": "7E7EF3F8D2A92940965284C71C80B99E6B5F1FB8EC3E972105C477DB9897EC4B",
+            "TextLength": 1297,
+            "Characters": 1297,
+            "RenderFile": "japan-pdl/input-page-2.png",
+            "RenderSHA256": "E9B3BC4947B46B0BB52601BCEF5C1FD0C7E909551436F4528F4435BB2759DB26",
+            "PixelSHA256": "C77CC801667C78892FE110565D995B331417D5121DFE6D1720322F5858896450",
+            "RenderWidth": 354,
+            "RenderHeight": 500
+          }
+        ]
+      },
+      {
+        "Outcome": "accepted",
+        "PageCount": 34,
+        "BookmarkCount": 0,
+        "Pages": [
+          {
+            "Index": 0,
+            "Width": 612,
+            "Height": 792,
+            "TextFile": "plos-citation/input-page-1.txt",
+            "TextSHA256": "0128C05AA9AF37D9CAA87E01C75150E10694F67719D34631A19735B6EE0C00AA",
+            "TextLength": 4050,
+            "Characters": 4050,
+            "RenderFile": "plos-citation/input-page-1.png",
+            "RenderSHA256": "874211BCB07C6451CE4F90C02F9E3EA9049BF3E0EC3766F6B2884943C1B8C8C5",
+            "PixelSHA256": "D093676F4ADD3F4F42173D91CB9A5AC80A6D6C2DEE3FCEB7C515013E88224522",
+            "RenderWidth": 386,
+            "RenderHeight": 500
+          },
+          {
+            "Index": 17,
+            "Width": 612,
+            "Height": 792,
+            "TextFile": "plos-citation/input-page-18.txt",
+            "TextSHA256": "DF07776BE41868A121000CAD98ECA5BAAEBA3E2E42888092CD51311C49057DA4",
+            "TextLength": 2988,
+            "Characters": 2988,
+            "RenderFile": "plos-citation/input-page-18.png",
+            "RenderSHA256": "67B3F767268382404203C41C42A6C65C008C0D3F475B22F722B55B31A1494A91",
+            "PixelSHA256": "B72C9750DE7F61C8B9C2432EA2BF851E2CC5EB67878846E3A6DAA2F1E01B4AA0",
+            "RenderWidth": 386,
+            "RenderHeight": 500
+          }
+        ]
+      },
+      {
+        "Outcome": "accepted",
+        "PageCount": 38,
+        "BookmarkCount": 0,
+        "Pages": [
+          {
+            "Index": 0,
+            "Width": 568,
+            "Height": 749,
+            "TextFile": "nist-scan/input-page-1.txt",
+            "TextSHA256": "2E561FF2355C06484EFC416619B5B7F7FC055ACDB4E5B6DB7A4BC0A5016B19E3",
+            "TextLength": 2,
+            "Characters": 2,
+            "RenderFile": "nist-scan/input-page-1.png",
+            "RenderSHA256": "9325A7E7AD602D948AB1DBC38678295A9026ED084365A8F4EF6EDF30742FDDB8",
+            "PixelSHA256": "CF793F71DE794A99EA80B4FDBEDED0F8CDE0028538D46E9F12463A1820206E24",
+            "RenderWidth": 379,
+            "RenderHeight": 500
+          },
+          {
+            "Index": 19,
+            "Width": 534,
+            "Height": 732,
+            "TextFile": "nist-scan/input-page-20.txt",
+            "TextSHA256": "791E2CF64AB160F81475B118A92AE1140CF38EB07CCEF60047289A47780C56C9",
+            "TextLength": 2946,
+            "Characters": 2946,
+            "RenderFile": "nist-scan/input-page-20.png",
+            "RenderSHA256": "41CCB47BAFE3838F37EC9E109383AC50CAE87897DACFC0C6384EDF67265AAA37",
+            "PixelSHA256": "D4DEBCACF3DA5C9F992F3BB7722CA94BDCA45A83BFD1C0BE04D7F5D287441DF0",
+            "RenderWidth": 365,
+            "RenderHeight": 500
+          }
+        ]
+      }
+    ]
+  },
+  "independent": {
+    "checkCount": 645,
+    "auditSHA256": "5CFA759A2653F58BF4E0A32C614BB87465C6C93A327CD286C00C897E6CD85744",
+    "negativeControls": [
+      {
+        "id": "forged-provenance",
+        "passed": true,
+        "exit": 1,
+        "expectedRejectionDetected": true,
+        "rejectedChecks": [
+          "gnu-make:published-provenance-and-capability-pins"
+        ],
+        "error": "ValueError: Independent provenance, operation or PDF semantics rejected the candidate",
+        "report": "negative-controls/forged-provenance.json",
+        "reportSHA256": "E1B986CBBA03E9BD8F17CF7542F96507C9E6059A56E3A2772CC5CDEB9F3E869E",
+        "mutatedPdf": null
+      },
+      {
+        "id": "forged-local-source-hash",
+        "passed": true,
+        "exit": 1,
+        "expectedRejectionDetected": true,
+        "rejectedChecks": [
+          "gnu-make:published-provenance-and-capability-pins",
+          "gnu-make:input-bytes-and-source-identity"
+        ],
+        "error": "ValueError: Independent provenance, operation or PDF semantics rejected the candidate",
+        "report": "negative-controls/forged-local-source-hash.json",
+        "reportSHA256": "20DD5568F72533AEEC335141DD95FA62118177B1B72AB0F77FEC4D757D485073",
+        "mutatedPdf": null
+      },
+      {
+        "id": "omitted-source",
+        "passed": true,
+        "exit": 1,
+        "expectedRejectionDetected": true,
+        "rejectedChecks": [
+          "fixed-published-revision-matrix"
+        ],
+        "error": "ValueError: Independent provenance, operation or PDF semantics rejected the candidate",
+        "report": "negative-controls/omitted-source.json",
+        "reportSHA256": "2DC88A3F215C1251E19E1B7B1950286E4E843034BF2F3F49CA992A111C6A4F6F",
+        "mutatedPdf": null
+      },
+      {
+        "id": "unexpected-pass",
+        "passed": true,
+        "exit": 1,
+        "expectedRejectionDetected": true,
+        "rejectedChecks": [
+          "gnu-make:redact-tiny-region:locked-outcome-and-specific-reason"
+        ],
+        "error": "TypeError: 'NoneType' object is not subscriptable",
+        "report": "negative-controls/unexpected-pass.json",
+        "reportSHA256": "E55F4748D437152DEFE92DE354F1B490B4FE9A821D9F953525386A53F20614CF",
+        "mutatedPdf": null
+      },
+      {
+        "id": "wrong-refusal-cause",
+        "passed": true,
+        "exit": 1,
+        "expectedRejectionDetected": true,
+        "rejectedChecks": [
+          "gnu-make:redact-tiny-region:locked-outcome-and-specific-reason"
+        ],
+        "error": "ValueError: Independent provenance, operation or PDF semantics rejected the candidate",
+        "report": "negative-controls/wrong-refusal-cause.json",
+        "reportSHA256": "DCD710C7D2DBA23D53550849F3BCBAEC5089E4DA835581CCAB31C03AB7961001",
+        "mutatedPdf": null
+      },
+      {
+        "id": "read-promoted-to-write",
+        "passed": true,
+        "exit": 1,
+        "expectedRejectionDetected": true,
+        "rejectedChecks": [
+          "no-read-to-edit-or-production-overclaim"
+        ],
+        "error": "ValueError: Independent provenance, operation or PDF semantics rejected the candidate",
+        "report": "negative-controls/read-promoted-to-write.json",
+        "reportSHA256": "29DB4EF91DBCCDFDFE5A51F09D8348606D3F5B07AF0E22700D32805CF775E330",
+        "mutatedPdf": null
+      },
+      {
+        "id": "lost-atomic-refusal",
+        "passed": true,
+        "exit": 1,
+        "expectedRejectionDetected": true,
+        "rejectedChecks": [
+          "gnu-make:redact-tiny-region:atomic-refusal-and-no-output"
+        ],
+        "error": "ValueError: Independent provenance, operation or PDF semantics rejected the candidate",
+        "report": "negative-controls/lost-atomic-refusal.json",
+        "reportSHA256": "141366EDC2B7CB72E5908EBC47CBFC58605D3CF0AA1BEB234AEC8D377A47E971",
+        "mutatedPdf": null
+      },
+      {
+        "id": "missing-output",
+        "passed": true,
+        "exit": 1,
+        "expectedRejectionDetected": true,
+        "rejectedChecks": [],
+        "error": "FileNotFoundError: [Errno 2] No such file or directory: '<USER_HOME>\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\15\\\\01a13d45-c96e-78a0-81df-3fc930f9db6f\\\\pdfviewer\\\\20261015T130500Z-p0-real-corpus\\\\real-corpus\\\\negative-output-that-does-not-exist.pdf'",
+        "report": "negative-controls/missing-output.json",
+        "reportSHA256": "633FC5B09A55663392FA7775626AF6D3C9316A4BA26F4FEF905411590AA3E5EC",
+        "mutatedPdf": null
+      },
+      {
+        "id": "retained-body-removed",
+        "passed": true,
+        "exit": 1,
+        "expectedRejectionDetected": true,
+        "rejectedChecks": [
+          "gnu-make:freetext:all-page-body-streams-retained"
+        ],
+        "error": "ValueError: Independent provenance, operation or PDF semantics rejected the candidate",
+        "report": "negative-controls/retained-body-removed.json",
+        "reportSHA256": "FDE48E2486E5F63E87D29D0FEACACD813FA5FA38444DF4DE0CAF82A77E077F32",
+        "mutatedPdf": {
+          "file": "negative-4a94380454dc4aea80ddbf83a244ced7.pdf",
+          "sha256": "187928EFBA93DFD8214D8F670E03D5FDEC02FE1BA3D517FC1B34BAC572F731DC"
+        }
+      },
+      {
+        "id": "stale-CJK-appearance",
+        "passed": true,
+        "exit": 1,
+        "expectedRejectionDetected": true,
+        "rejectedChecks": [
+          "gnu-make:freetext:actual-CJK-AP-and-embedded-font"
+        ],
+        "error": "ValueError: Independent provenance, operation or PDF semantics rejected the candidate",
+        "report": "negative-controls/stale-CJK-appearance.json",
+        "reportSHA256": "BF6CA8E5C9399EBF77A5FEB32CDF29F43C6376A17120965EED9096B977F6B568",
+        "mutatedPdf": {
+          "file": "negative-9f46b447c3924155b6dd4b2ddf79c0b7.pdf",
+          "sha256": "B5B6E2D6D7834A261A4CBD4D7A5488E88369E3FF1E6629C6CF270EB0C823C1D1"
+        }
+      },
+      {
+        "id": "whole-page-deletion-is-fake",
+        "passed": true,
+        "exit": 1,
+        "expectedRejectionDetected": true,
+        "rejectedChecks": [
+          "gnu-make:whole-first-page:first-page-has-no-text-or-painting",
+          "gnu-make:redact-whole-first-page:no-unreachable-stream-remnants"
+        ],
+        "error": "ValueError: Independent provenance, operation or PDF semantics rejected the candidate",
+        "report": "negative-controls/whole-page-deletion-is-fake.json",
+        "reportSHA256": "985FCD54B089566671D3D1583CBBF556B8573D6833ED12BD902A07F19CFAFD43",
+        "mutatedPdf": {
+          "file": "negative-fe5fd1d5b7694972b1be8fa5445a8e2b.pdf",
+          "sha256": "7375F5DC2395F59121AC8D8AD57779272901C3FAC26206DE9F83CD0C1AAEF232"
+        }
+      },
+      {
+        "id": "hybrid-XFA-damaged",
+        "passed": true,
+        "exit": 1,
+        "expectedRejectionDetected": true,
+        "rejectedChecks": [
+          "irs-w4-en:freetext:hybrid-XFA-packets-retained"
+        ],
+        "error": "ValueError: Independent provenance, operation or PDF semantics rejected the candidate",
+        "report": "negative-controls/hybrid-XFA-damaged.json",
+        "reportSHA256": "B4D3279408B0BC3FD33121B349D8B4803C71038CBF2FD2F4C9802D5C2749D3E1",
+        "mutatedPdf": {
+          "file": "negative-acf5519f4a2d476abb31930c125783ac.pdf",
+          "sha256": "E57FB73827163B8E5427CFD1390E6455963C3B134058D8071CBFD8BAB9305AAF"
+        }
+      }
+    ],
+    "rasterCount": 30,
+    "limitations": [
+      "Six exact published PDF revisions and representative pages are a compatibility sample, not a population guarantee.",
+      "Read/render, byte-copy export/save, FreeText structural rewrite, strict cleanup and a concrete tiny-region redaction have distinct outcomes.",
+      "Existing CFF/CID resources retained by an annotation rewrite do not prove CFF font creation, shaping or new text authoring.",
+      "Pixel equivalence is between independently rendered source/output on this Poppler installation; cross-engine reading parity needs manual review.",
+      "Actual refusal exception/reason is recorded separately from other document features; feature co-presence alone is not causal evidence.",
+      "No Linux/Kylin, physical input/IME, general partial deletion, arbitrary PDF preservation or official performance-parity claim."
+    ],
+    "visualReview": {
+      "schemaVersion": 1,
+      "passed": true,
+      "reviewedUtc": "2026-10-15T12:57:39.387715+00:00",
+      "reviewer": "Codex independent verification agent real_corpus_independent; visual interpretation of actual tool-displayed pixels, not a human reviewer claim.",
+      "method": "All 30 current Poppler PNGs were individually loaded through view_image(detail=original) and inspected as full 566-619 by 800 pixel pages in six batches of five. Corresponding source/derived pages were compared visually; hashes below bind exactly those viewed images.",
+      "nativeReportSHA256": "92FAC6B4BC4F9B253892DCE693ABCBD9952739104ABFDCA56D4F7722495F81A3",
+      "independentAuditSHA256": "5CFA759A2653F58BF4E0A32C614BB87465C6C93A327CD286C00C897E6CD85744",
+      "reviewedImageCount": 30,
+      "images": [
+        {
+          "file": "gnu-make-input-page-1-poppler.png",
+          "sha256": "875D92AC853229D92CD8EE477240FC75DE21081517FF5A39001CDBC28EB4FF06",
+          "pdf": "sources/gnu-make.pdf",
+          "pdfSHA256": "A4BC06026984382815E392159E60A4BC356CAC6C5B81E5AE84FA4F58F621F4D3",
+          "pageIndex": 0,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Centered GNU Make title is sharp on a white cover, with broad empty margins and no visible missing-glyph boxes."
+        },
+        {
+          "file": "gnu-make-freetext-page-1-poppler.png",
+          "sha256": "EB4B71103BF7FEF38B6C2C9622E09D3E149DAB5B7FCDB361C6974BD1F1467B7A",
+          "pdf": "gnu-make/freetext.pdf",
+          "pdfSHA256": "4899CDB17623F988583069B1FC0F5AB1904AADC42ADD7D0802A315A43DF82900",
+          "pageIndex": 0,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Original centered cover title stays in position; the added Chinese/ABC/123 line appears at the lower left on white background without clipping."
+        },
+        {
+          "file": "gnu-make-input-page-115-poppler.png",
+          "sha256": "F5516778604D216DF73C7D7672993657BD0A67F1C0B0425ACBDDAE8711325E78",
+          "pdf": "sources/gnu-make.pdf",
+          "pdfSHA256": "A4BC06026984382815E392159E60A4BC356CAC6C5B81E5AE84FA4F58F621F4D3",
+          "pageIndex": 114,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Chapter 8 header, page number 103, bold section 8.10 and mixed roman/italic/monospace paragraphs remain separated and readable."
+        },
+        {
+          "file": "gnu-make-freetext-page-115-poppler.png",
+          "sha256": "F5516778604D216DF73C7D7672993657BD0A67F1C0B0425ACBDDAE8711325E78",
+          "pdf": "gnu-make/freetext.pdf",
+          "pdfSHA256": "4899CDB17623F988583069B1FC0F5AB1904AADC42ADD7D0802A315A43DF82900",
+          "pageIndex": 114,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "The chapter header, bold section title and every visible paragraph line match the source sample; no annotation was added to this middle page."
+        },
+        {
+          "file": "gnu-make-redact-whole-first-page-page-1-poppler.png",
+          "sha256": "C4681F981D77B43C1878ECEB7B20BC9C7FF9DF0E106F0BF0716D9BAC32B2D9C0",
+          "pdf": "gnu-make/redact-whole-first-page.pdf",
+          "pdfSHA256": "9D45ECC1AF7D5B1780BD9F1C1B82D7F411922DC87B004570A8CAE02B0C1A62F6",
+          "pageIndex": 0,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "The full first page is uniformly white; the original central title is gone, consistent with the independently verified empty content stream."
+        },
+        {
+          "file": "gnu-make-redact-whole-first-page-page-115-poppler.png",
+          "sha256": "F5516778604D216DF73C7D7672993657BD0A67F1C0B0425ACBDDAE8711325E78",
+          "pdf": "gnu-make/redact-whole-first-page.pdf",
+          "pdfSHA256": "9D45ECC1AF7D5B1780BD9F1C1B82D7F411922DC87B004570A8CAE02B0C1A62F6",
+          "pageIndex": 114,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "The original header, section title, line wrapping and whitespace of middle page 115 remain intact after deleting page 1 content."
+        },
+        {
+          "file": "gnu-make-input-page-229-poppler.png",
+          "sha256": "430152564AD7CBC840CACE85BD8DB55FC4AD72A76B520F5DDB4D3343ABE4A20C",
+          "pdf": "sources/gnu-make.pdf",
+          "pdfSHA256": "A4BC06026984382815E392159E60A4BC356CAC6C5B81E5AE84FA4F58F621F4D3",
+          "pageIndex": 228,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Two-column function/variable index has clear letter headings, dotted leaders and aligned page references with the original page-217 header."
+        },
+        {
+          "file": "gnu-make-redact-whole-first-page-page-229-poppler.png",
+          "sha256": "430152564AD7CBC840CACE85BD8DB55FC4AD72A76B520F5DDB4D3343ABE4A20C",
+          "pdf": "gnu-make/redact-whole-first-page.pdf",
+          "pdfSHA256": "9D45ECC1AF7D5B1780BD9F1C1B82D7F411922DC87B004570A8CAE02B0C1A62F6",
+          "pageIndex": 228,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Both index columns, dotted leaders, letter headings and references match source page 229; deletion of first-page objects did not visibly disturb this last page."
+        },
+        {
+          "file": "gnu-make-sanitize-page-1-poppler.png",
+          "sha256": "875D92AC853229D92CD8EE477240FC75DE21081517FF5A39001CDBC28EB4FF06",
+          "pdf": "gnu-make/sanitize.pdf",
+          "pdfSHA256": "5519497E8A2BA6256194CA60A90BABBF97F74E8FA38C26A673882DF81E93C679",
+          "pageIndex": 0,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Strict cleanup preserves the single centered cover title and all cover whitespace; visible page painting matches the original."
+        },
+        {
+          "file": "gnu-make-sanitize-page-115-poppler.png",
+          "sha256": "F5516778604D216DF73C7D7672993657BD0A67F1C0B0425ACBDDAE8711325E78",
+          "pdf": "gnu-make/sanitize.pdf",
+          "pdfSHA256": "5519497E8A2BA6256194CA60A90BABBF97F74E8FA38C26A673882DF81E93C679",
+          "pageIndex": 114,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Strict cleanup preserves header, number 103, section heading, italic words and paragraph placement; no visible shift or missing text appears."
+        },
+        {
+          "file": "irs-w4-en-input-page-1-poppler.png",
+          "sha256": "4BCC2CEF75801BA159ED859F563807E3BFAF59FE0F79F5E619059EEAA96AD6ED",
+          "pdf": "sources/irs-w4-en.pdf",
+          "pdfSHA256": "92444D8856CE55D9E25DCA8B6D1420634FC68B11E1AB1F760916EA29DDD312B2",
+          "pageIndex": 0,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "2026 W-4 heading, empty personal-information fields, checkboxes, step labels, shaded amount column and signature/employer rows render consistently."
+        },
+        {
+          "file": "irs-w4-en-freetext-page-1-poppler.png",
+          "sha256": "133DD0407A19D23C7A37702125A66E9675FB064FCD86B454F3CE7920207A767F",
+          "pdf": "irs-w4-en/freetext.pdf",
+          "pdfSHA256": "098D251B531BA22CDB0E0AA331169AE4C27C7079A8BC8B910295FF06F16D7F6B",
+          "pageIndex": 0,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Original W-4 rows, checkboxes and amount cells retain their positions. The test CJK line is present but its fixed bottom-left rectangle visibly overprints part of the Employer area and a border; this is a placement limitation, not an automatic layout pass."
+        },
+        {
+          "file": "irs-w4-en-input-page-3-poppler.png",
+          "sha256": "43756388F4A87F69D69F1902F4CCDC04906B7972E4276A23B1A2D98E95728C8B",
+          "pdf": "sources/irs-w4-en.pdf",
+          "pdfSHA256": "92444D8856CE55D9E25DCA8B6D1420634FC68B11E1AB1F760916EA29DDD312B2",
+          "pageIndex": 2,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Multiple Jobs Worksheet title, instruction paragraphs, numbered questions, dollar lines and bottom rule are visible without malformed symbols."
+        },
+        {
+          "file": "irs-w4-en-freetext-page-3-poppler.png",
+          "sha256": "43756388F4A87F69D69F1902F4CCDC04906B7972E4276A23B1A2D98E95728C8B",
+          "pdf": "irs-w4-en/freetext.pdf",
+          "pdfSHA256": "098D251B531BA22CDB0E0AA331169AE4C27C7079A8BC8B910295FF06F16D7F6B",
+          "pageIndex": 2,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Worksheet title, questions and amount lines match the original third page; the first-page annotation introduces no visible middle-page change."
+        },
+        {
+          "file": "irs-w4-zhs-input-page-1-poppler.png",
+          "sha256": "5CE42AA0CD2581596A66D9288720E8C8CCAC3C1B4567E9076545F75E626CCB47",
+          "pdf": "sources/irs-w4-zhs.pdf",
+          "pdfSHA256": "A8D29D643D6F1C23E43E9F033B25D6EFC8A8E20684A15D8D8B665CF314DA54BE",
+          "pageIndex": 0,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Chinese W-4 heading and dense CJK instructions render with recognizable Chinese glyphs, intact checkboxes, amount grid and employer/signature rows."
+        },
+        {
+          "file": "irs-w4-zhs-freetext-page-1-poppler.png",
+          "sha256": "3A8CF8A0C57A70BD7FC3C09FBA926F8BB1D128B2785D47B034C4505BE9AD37B3",
+          "pdf": "irs-w4-zhs/freetext.pdf",
+          "pdfSHA256": "338A4BE5689781C4FFACBCD23432EA3831C4B417A893C3B216E0B07DDE7CC884",
+          "pageIndex": 0,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Original Chinese form glyphs and table positions remain stable. The added CJK/ABC/123 test line crosses the lower-left employer table boundary because the probe supplies a fixed rectangle; no automatic collision avoidance is established."
+        },
+        {
+          "file": "irs-w4-zhs-input-page-3-poppler.png",
+          "sha256": "84CEE026F4481E4E8297DA013F914994622ABBA948E843D5073EE6CB39D6BAAD",
+          "pdf": "sources/irs-w4-zhs.pdf",
+          "pdfSHA256": "A8D29D643D6F1C23E43E9F033B25D6EFC8A8E20684A15D8D8B665CF314DA54BE",
+          "pageIndex": 2,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Chinese Multiple Jobs Worksheet has intact bold heading, CJK paragraphs, numbered calculation prompts, amount lines and bottom rule."
+        },
+        {
+          "file": "irs-w4-zhs-freetext-page-3-poppler.png",
+          "sha256": "84CEE026F4481E4E8297DA013F914994622ABBA948E843D5073EE6CB39D6BAAD",
+          "pdf": "irs-w4-zhs/freetext.pdf",
+          "pdfSHA256": "338A4BE5689781C4FFACBCD23432EA3831C4B417A893C3B216E0B07DDE7CC884",
+          "pageIndex": 2,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Chinese worksheet line breaks, headings, dollar lines and lower whitespace match the source third page, with no annotation or visible alteration here."
+        },
+        {
+          "file": "japan-pdl-input-page-1-poppler.png",
+          "sha256": "E82D456B2B6C402DE5BF0926A29EC6F6306A5CF05DDFAB32F78C124690F7D213",
+          "pdf": "sources/japan-pdl.pdf",
+          "pdfSHA256": "48153B4BF7130D07FF58EC620D05F24D8402A0A5C18F1583287CFE8EA93F3A5A",
+          "pageIndex": 0,
+          "size": [
+            566,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Japanese PDL title, red introductory notice, black section headings, bullet marks and underlined example links render without visible missing-glyph boxes."
+        },
+        {
+          "file": "japan-pdl-freetext-page-1-poppler.png",
+          "sha256": "3C5EE0E68D00446FA120908336CD770F3F6B889FB5E722DB1523D3500364BEEB",
+          "pdf": "japan-pdl/freetext.pdf",
+          "pdfSHA256": "645F90EB0E1BE8CE9BED6FD486F03549BBBB8B9F5F516B9D194755ED8D96449D",
+          "pageIndex": 0,
+          "size": [
+            566,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Japanese source layout and red notice are unchanged; the added Chinese/ABC/123 line is visible in the lower white margin without clipping."
+        },
+        {
+          "file": "japan-pdl-input-page-2-poppler.png",
+          "sha256": "B901ECBBAB814DA8D37645B8768F004652F43DE3855C444E35EC4CD23B8FC4E1",
+          "pdf": "sources/japan-pdl.pdf",
+          "pdfSHA256": "48153B4BF7130D07FF58EC620D05F24D8402A0A5C18F1583287CFE8EA93F3A5A",
+          "pageIndex": 1,
+          "size": [
+            566,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Japanese sections 2 through 5, indented bullet paragraphs and underlined passages retain a consistent baseline and clear separation."
+        },
+        {
+          "file": "japan-pdl-freetext-page-2-poppler.png",
+          "sha256": "B901ECBBAB814DA8D37645B8768F004652F43DE3855C444E35EC4CD23B8FC4E1",
+          "pdf": "japan-pdl/freetext.pdf",
+          "pdfSHA256": "645F90EB0E1BE8CE9BED6FD486F03549BBBB8B9F5F516B9D194755ED8D96449D",
+          "pageIndex": 1,
+          "size": [
+            566,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Japanese section headings, bullet indentation, underlines and paragraph wrapping match original page 2; the first-page annotation has no visible effect here."
+        },
+        {
+          "file": "plos-citation-input-page-1-poppler.png",
+          "sha256": "5E6FD741330782A7849E7D4729689D84AD5B7CD9B5B6E5D6262A987ABE1BDB05",
+          "pdf": "sources/plos-citation.pdf",
+          "pdfSHA256": "0407A78331D28C92B900117067DDA35BE8F17F844451A195D9D6A899B03E2B02",
+          "pageIndex": 0,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "PLOS logo, orange rule, article title, author block, left publication/license column, abstract and introduction are intact and visibly ordered."
+        },
+        {
+          "file": "plos-citation-freetext-page-1-poppler.png",
+          "sha256": "8515241D7AF5C5B793A964190F9BCC28A26E96300FEAF9DE1A8CEF0EA6476C48",
+          "pdf": "plos-citation/freetext.pdf",
+          "pdfSHA256": "B16B15A2D822AC5DC5C7F4B37A66E6A90ED2C2E90EBBD2D563788535EB0BC422",
+          "pageIndex": 0,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "The title/abstract/sidebar retain their original positions and colors; added Chinese/ABC/123 text sits in the lower white margin above the footer and is not clipped."
+        },
+        {
+          "file": "plos-citation-input-page-18-poppler.png",
+          "sha256": "FCD15BF45BE9432E97266B1AA894A2F548257BFBCB11B64F09A1E4905ADF9BE5",
+          "pdf": "sources/plos-citation.pdf",
+          "pdfSHA256": "0407A78331D28C92B900117067DDA35BE8F17F844451A195D9D6A899B03E2B02",
+          "pageIndex": 17,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Large pale-blue striped coefficient table, black grid/labels, numerical columns, notes, lower body text and footer all render visibly."
+        },
+        {
+          "file": "plos-citation-freetext-page-18-poppler.png",
+          "sha256": "FCD15BF45BE9432E97266B1AA894A2F548257BFBCB11B64F09A1E4905ADF9BE5",
+          "pdf": "plos-citation/freetext.pdf",
+          "pdfSHA256": "B16B15A2D822AC5DC5C7F4B37A66E6A90ED2C2E90EBBD2D563788535EB0BC422",
+          "pageIndex": 17,
+          "size": [
+            619,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Blue row fills, coefficient columns, note text and the lower body paragraph match source page 18; no visible color or geometry damage accompanies FreeText on page 1."
+        },
+        {
+          "file": "nist-scan-input-page-1-poppler.png",
+          "sha256": "D7F0A8FC9E412E9D4581F16A0CCAB7E16B2BF91AA14A2A5DBD417B6733335406",
+          "pdf": "sources/nist-technical-note1.pdf",
+          "pdfSHA256": "5ACD22F35F77052F215DAFF8BEF537C82933A841EA0ECBB9BAE6F20BAAFBE070",
+          "pageIndex": 0,
+          "size": [
+            607,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Dark-green textured scanned cover, upper-left barcode and NIST PUBLICATIONS labels remain visible with the original scan texture and shading."
+        },
+        {
+          "file": "nist-scan-freetext-page-1-poppler.png",
+          "sha256": "17DA084CCA984BFA175B7086B5EB7CC4F7A4BE50F9FE6E2AFABC65000E459D54",
+          "pdf": "nist-scan/freetext.pdf",
+          "pdfSHA256": "611210F5901ABAA97CFA2C607CB94D3BA7F696E9141CF98A4FE67A0CFD659815",
+          "pageIndex": 0,
+          "size": [
+            607,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "The scanned cover texture and labels are preserved. The added black test annotation is faint against the dark-green lower cover; its low contrast is a known foreground/background limitation rather than evidence of missing CJK glyphs."
+        },
+        {
+          "file": "nist-scan-input-page-20-poppler.png",
+          "sha256": "1D5A0B9CF532C2B9AF3935CB74DCDDF7E732B89DE58F17B6A5A6C4D150FD7035",
+          "pdf": "sources/nist-technical-note1.pdf",
+          "pdfSHA256": "5ACD22F35F77052F215DAFF8BEF537C82933A841EA0ECBB9BAE6F20BAAFBE070",
+          "pageIndex": 19,
+          "size": [
+            584,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Yellowed typewritten scan shows page number 10, long scientific paragraphs and centered 5.2 Efficiency heading, including original uneven scan/print texture."
+        },
+        {
+          "file": "nist-scan-freetext-page-20-poppler.png",
+          "sha256": "1D5A0B9CF532C2B9AF3935CB74DCDDF7E732B89DE58F17B6A5A6C4D150FD7035",
+          "pdf": "nist-scan/freetext.pdf",
+          "pdfSHA256": "611210F5901ABAA97CFA2C607CB94D3BA7F696E9141CF98A4FE67A0CFD659815",
+          "pageIndex": 19,
+          "size": [
+            584,
+            800
+          ],
+          "actuallyViewed": true,
+          "findings": "Typewritten lines, section heading, yellow paper shading and original right-edge scan boundary match source page 20 with no visible added crop or image distortion."
+        }
+      ],
+      "acceptanceScope": "Pass confirms this P0 sampled compatibility review: retained document painting, CJK appearance existence, and the deliberate blank first-page deletion agree with the independent structural/pixel audit. It does not accept automatic annotation placement, contrast choice, editable-form interaction or a production UX.",
+      "knownVisibleLimitations": [
+        {
+          "id": "fixed-form-placement-overlap",
+          "affectedImages": [
+            "irs-w4-en-freetext-page-1-poppler.png",
+            "irs-w4-zhs-freetext-page-1-poppler.png"
+          ],
+          "finding": "The fixed (20,20,300,45) probe annotation rectangle crosses existing employer-form content/borders. The original content is preserved but the added foreground can overprint it.",
+          "followUpPhase": "P4 annotation placement, preview and user-controlled layout; do not claim automatic collision avoidance."
+        },
+        {
+          "id": "dark-scan-annotation-contrast",
+          "affectedImages": [
+            "nist-scan-freetext-page-1-poppler.png"
+          ],
+          "finding": "Fixed black text has low contrast against the dark-green scanned cover. The AP is present and the scan is preserved, but readability is poor on this background.",
+          "followUpPhase": "P4 annotation foreground/background choices and preview; no automatic contrast selection is validated."
+        }
+      ],
+      "limitations": [
+        "Only the 30 named Poppler samples were visually inspected. All 314 pages were not visually reviewed; GNU non-target 228-page preservation is an automated semantic check.",
+        "800-pixel page renders support layout and gross glyph checks, not high-resolution print quality or every small font contour.",
+        "Native PDFium renders were produced and hash-checked by the independent audit, but this report does not claim an individual visual comparison of all native PNGs.",
+        "XFA packet retention is structural evidence only; no XFA filling, script execution, dynamic reflow, real IME, physical keyboard, Linux/Kylin or official-reference performance is validated.",
+        "The intentionally generated PDFs are compatibility evidence, not polished end-user deliverables; known annotation placement and contrast findings are retained rather than concealed."
+      ]
+    }
+  },
+  "regression": [
+    {
+      "suite": "Core",
+      "total": 67,
+      "passed": 67,
+      "xmlSHA256": "474F994DF729DCC2B4585DA162AEE03C972BBACB8A89B3A9042AA86E6685B6A9"
+    },
+    {
+      "suite": "Headless",
+      "total": 19,
+      "passed": 19,
+      "xmlSHA256": "BC276FBC156F87D308F97A710739D51BDBA0479A91776AE7A1A87BEDB1CDF122"
+    }
+  ],
+  "phaseAssignments": {
+    "P1": "Public contracts, lifetime/scheduling, Ubuntu native/CI",
+    "P3": "Large corpus, UI/present/peak and official performance comparison",
+    "P4": "Unified save transactions and bounded undo/history",
+    "P5": "Complete annotations, new font formats/fallback/shaping and external editors",
+    "P6": "Production form host, focus/virtualization/timers, input font/caret, layout/validation/IME",
+    "P7": "Production partial redaction, selection/preview and broader painting/encoding compatibility",
+    "P8": "Printing/sharing and devices",
+    "P9": "Full platform, compatibility, stability and release acceptance"
+  },
+  "openG0Items": [
+    "Licensed runnable official reference package/version and reference host",
+    "Exact Ubuntu/Kylin images, patch/display/hardware availability baseline"
+  ],
+  "platform": {
+    "executed": "Current Windows x64 backend and Headless regression",
+    "UbuntuLtsX64": "not executed",
+    "KylinX64Arm64": "not executed",
+    "officialPerformance": "not compared"
+  },
+  "evidence": [
+    {
+      "path": "baseline/baseline.json",
+      "sha256": "A88D9E2E4EFA224F98CBC80F3E8B47BDA19B5AD83A8BDA2A1235D569E187D529",
+      "bytes": 400
+    },
+    {
+      "path": "baseline/native-assets.json",
+      "sha256": "89669E077A3407669738EF771D144C8D48753905F9863E673C04D3D84A618D67",
+      "bytes": 5363
+    },
+    {
+      "path": "baseline/official-documents/annotations.html",
+      "sha256": "B9AE86D28EA05215B1CDE7C8EDD5BBCD8E20881CC253F46CC2BD3A58D8FF2134",
+      "bytes": 61087
+    },
+    {
+      "path": "baseline/official-documents/index.html",
+      "sha256": "4B4C3294A96990AC9088D9FACB9B9E619437E620D9D454F5A1009EEC3C0F0355",
+      "bytes": 86860
+    },
+    {
+      "path": "baseline/official-documents/loading-and-saving.html",
+      "sha256": "A9103610409A11EE2C6A3EA9128D6670D2CAFCDF0682FC11B740FAB7B84A6F64",
+      "bytes": 55527
+    },
+    {
+      "path": "baseline/official-documents/manifest.json",
+      "sha256": "1EB8CE0CE240F593DFDE0C6B6087A7B5873BE46C288328C1D092575EE7A6BA8D",
+      "bytes": 2929
+    },
+    {
+      "path": "baseline/official-documents/navigation-and-search.html",
+      "sha256": "3C7472894A6BEA679150448E43FDC2B79D5AF8AEF882EA21F96032F931029FE7",
+      "bytes": 60448
+    },
+    {
+      "path": "baseline/official-documents/platforms-and-performance.html",
+      "sha256": "2796A4CA11F71B0452EEF2646AC17CDB5808766B74397B6C36EE5ACE53642865",
+      "bytes": 48020
+    },
+    {
+      "path": "baseline/official-documents/printing-and-sharing.html",
+      "sha256": "FCC88919AFCAF2D2FB6C0655EBF2A979FEF1FE3257FAB9E4D56EBCF55240B63E",
+      "bytes": 38228
+    },
+    {
+      "path": "baseline/official-documents/theming-and-localization.html",
+      "sha256": "DDCC4757227DA113FE629B05E3F97657217B15914B96F7308CDE29011FD84D3C",
+      "bytes": 71500
+    },
+    {
+      "path": "baseline/reading-2.pdf",
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "bytes": 1284
+    },
+    {
+      "path": "baseline/result.json",
+      "sha256": "9A5F88790A288ECAB30C61CF0F5C97F0A23FBD75B82012659F8B9CCFE82B487A",
+      "bytes": 7945
+    },
+    {
+      "path": "baseline/source-manifest.json",
+      "sha256": "7E1BD9023BD993CFF6E253FDB3CB72B407D1EA11329E90A716B2C14A3800B5DD",
+      "bytes": 69538
+    },
+    {
+      "path": "baseline/source-snapshot.zip",
+      "sha256": "E5564F42E7516DFAED8D7497EB96AF5DA8BB1B4E48EEA1BCA8C0628C60060A4D",
+      "bytes": 1324211
+    },
+    {
+      "path": "baseline/targets.json",
+      "sha256": "6031019F65002E022407E3193EAB5DF3D93DE76678B04EB9F36075A52CC26285",
+      "bytes": 1102
+    },
+    {
+      "path": "baseline/text-1000.pdf",
+      "sha256": "22B71A69E14A0B31BC729252456B239ED4C21C32163AE82BF4C11553E651CD65",
+      "bytes": 272037
+    },
+    {
+      "path": "baseline/timing-summary.json",
+      "sha256": "1DD5D2E1087EFF71EA54055A842AFE533054AA65BD507420464E3139A1F7ABF7",
+      "bytes": 599
+    },
+    {
+      "path": "execution-manifest.json",
+      "sha256": "749FD06C4564F76D96A9C92767AAC0B34480FAF7B7804C71766BFEF8BA67B605",
+      "bytes": 10150
+    },
+    {
+      "path": "fixtures/signed-input.json",
+      "sha256": "6745FFE3BE2268EE02A3B8AD1416024E9C9F404C80BB3657F5841A42FCB1CCF3",
+      "bytes": 324
+    },
+    {
+      "path": "fixtures/signed-input.pdf",
+      "sha256": "D23C7AEEE0C90B810DA8094F8D614F1F1FE53CA7BD654305942D5C94D9CF6EA5",
+      "bytes": 33802
+    },
+    {
+      "path": "fixtures/signer-public.pem",
+      "sha256": "517F535222145C70693188E7956355251FD42BDE8660AFB48725FAC9E4190D29",
+      "bytes": 1054
+    },
+    {
+      "path": "fonts/bridge-freetext-cjk-edited-poppler.png",
+      "sha256": "75EB7AE1EE406CC96FDAB63A5EF8B7B1FC1FFB3C221CFD545A347AC179A19EEB",
+      "bytes": 18255
+    },
+    {
+      "path": "fonts/bridge-freetext-cjk-edited-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "fonts/bridge-freetext-cjk-edited.pdf",
+      "sha256": "927398030BECCFA29CE8A3ED65BE9369B8DB63ED68CD92DA1B631B16A6BC33F9",
+      "bytes": 14306
+    },
+    {
+      "path": "fonts/bridge-freetext-cjk-poppler.png",
+      "sha256": "8D35A3C2428CB8D42DCDDB01260F39F0DDE25254D0FDE6746107239793CD8905",
+      "bytes": 19158
+    },
+    {
+      "path": "fonts/bridge-freetext-cjk-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "fonts/bridge-freetext-cjk.pdf",
+      "sha256": "10FBF3D46CD94244A158EF06D02B04E5463F8EA5D63377CAF10B9B676D5DE480",
+      "bytes": 7553
+    },
+    {
+      "path": "fonts/bridge-result.json",
+      "sha256": "41BA21DF5C9025CBC0EEB9DAE784322AFAC41984BB5F4313C235EA561349555D",
+      "bytes": 1382
+    },
+    {
+      "path": "fonts/font-provenance.json",
+      "sha256": "0342070491E6AF97FE3F52A5039E2DEA9F9C74EF6842362F69888C8E80A2593D",
+      "bytes": 825
+    },
+    {
+      "path": "fonts/native-freetext-negative-control-poppler.png",
+      "sha256": "962492C23DAB5F51A0B436541E04E98A0EDCCA4B8976DE526441741FA8A7109A",
+      "bytes": 4962
+    },
+    {
+      "path": "fonts/native-freetext-negative-control-poppler.stderr.txt",
+      "sha256": "C034264AB510046BE09FA7B2917264D352EF1772579DE6669A0E1784E0C47668",
+      "bytes": 118
+    },
+    {
+      "path": "fonts/native-freetext-negative-control.pdf",
+      "sha256": "151368006BB44C3326DFD18357B0B57F914613E5C658547D11040462387069E0",
+      "bytes": 7165
+    },
+    {
+      "path": "fonts/native-stamp-cjk-edited-poppler.png",
+      "sha256": "75EB7AE1EE406CC96FDAB63A5EF8B7B1FC1FFB3C221CFD545A347AC179A19EEB",
+      "bytes": 18255
+    },
+    {
+      "path": "fonts/native-stamp-cjk-edited-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "fonts/native-stamp-cjk-edited.pdf",
+      "sha256": "5D07140EB9C1164EAC1C1D68878562EE8C5E95EBF438F3D1762E71C6B2B9C792",
+      "bytes": 7366
+    },
+    {
+      "path": "fonts/native-stamp-cjk-edited.ppm",
+      "sha256": "DF1A09C40A627A916DE95A6E4D1B01E9E8D0ECA1B6212F1ADBE29CD97D92C6C1",
+      "bytes": 1872016
+    },
+    {
+      "path": "fonts/native-stamp-cjk-poppler.png",
+      "sha256": "8D35A3C2428CB8D42DCDDB01260F39F0DDE25254D0FDE6746107239793CD8905",
+      "bytes": 19158
+    },
+    {
+      "path": "fonts/native-stamp-cjk-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "fonts/native-stamp-cjk.pdf",
+      "sha256": "DB8F79A7F04BD6D817297815511F8E37811BE10484FCA1CB900DFB295134A6CA",
+      "bytes": 7363
+    },
+    {
+      "path": "fonts/native-stamp-cjk.ppm",
+      "sha256": "367EEF5DB485CF303474B869C01573B146B2D959FC7EE41450FEA469A231110C",
+      "bytes": 1872016
+    },
+    {
+      "path": "fonts/Noto-CJK-COPYRIGHT.txt",
+      "sha256": "849F4EA9C214FA4AC3593B770C699F387534B11CE671264C1B10D85BDCB5997B",
+      "bytes": 14712
+    },
+    {
+      "path": "fonts/P0AnnotationCjk.ttf",
+      "sha256": "95936C1AAA400CE69FCC002B9F8F1AF52AD20FCFC1D8DE8645D6ED30991C7978",
+      "bytes": 7092
+    },
+    {
+      "path": "fonts/result.json",
+      "sha256": "81B1380DDA77D24AD7C1D327F4A0AECA5A5943944948B34E98E022A07A7A80B4",
+      "bytes": 3989
+    },
+    {
+      "path": "forms/forms-input.pdf",
+      "sha256": "EE6D53612FF22C1E2DBC23A7FA998389A8DBE62D1E7A69BF6C2D20606E05C735",
+      "bytes": 2702
+    },
+    {
+      "path": "forms/forms-saved-poppler.png",
+      "sha256": "5869570EB180A2F98086687AB8BA68F67026BEA9024A903DF0B7DB7F3BBCB410",
+      "bytes": 24708
+    },
+    {
+      "path": "forms/forms-saved-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "forms/forms-saved.pdf",
+      "sha256": "61D1AFF2D0EA67B67DEBB7C168C4503D1088EAC9DCC9881D44336CDA13FF473E",
+      "bytes": 2884
+    },
+    {
+      "path": "forms/result.json",
+      "sha256": "1EEDC5562D54CC8327F855973CBBF434957CB4B94583EBD6216488B97BF1AFE5",
+      "bytes": 7348
+    },
+    {
+      "path": "independent-verification.json",
+      "sha256": "8E41E9E5BE2A4E947E808A7D6FEC00C21805C2CE78D5119A5AAF9081FB627B99",
+      "bytes": 12994
+    },
+    {
+      "path": "logs/baseline.log",
+      "sha256": "57C680217B4B223164EE6A8F4FAAEEF45C4D911397319D0403384DF1E0F2499C",
+      "bytes": 7947
+    },
+    {
+      "path": "logs/build-tests-Core.log",
+      "sha256": "D134003A8CFB6074A13BF0D309EF1C473F1FA1F467107991BC929D6487B12839",
+      "bytes": 362
+    },
+    {
+      "path": "logs/build-tests-Headless.log",
+      "sha256": "5020585FF8E7454F7803FC9C08D9E744752D0AF74E1B2B39C2CDBA08D5CE665B",
+      "bytes": 545
+    },
+    {
+      "path": "logs/build.log",
+      "sha256": "CF2A4E850348C3878DFED29EC0202C4B3B3C465566B84F4BCCADE666FB5DF860",
+      "bytes": 343
+    },
+    {
+      "path": "logs/font-bridge.log",
+      "sha256": "7A0F75953BC115F57FCB784B2CAB899DDE01C221BF004C5BE66E6A4B8B41E13E",
+      "bytes": 893
+    },
+    {
+      "path": "logs/fonts.log",
+      "sha256": "2E82D908A61D771FF8520CCFBEE2785FC81F15C4B6E91871E15DE70782D44CFD",
+      "bytes": 3991
+    },
+    {
+      "path": "logs/forms.log",
+      "sha256": "C498F160D84D982A5FF0C32443380971B82C0EAFFA6639A0B1E3A896B1768971",
+      "bytes": 7350
+    },
+    {
+      "path": "logs/independent.log",
+      "sha256": "D8101806CD791C44DB71171ED1C2433E08998EFC7638267E3B530774499CD0DA",
+      "bytes": 227
+    },
+    {
+      "path": "logs/prepare-fixtures.log",
+      "sha256": "136457F1E46B9F22A2AD37DFF98B03A2C8D67AD9D5530CB18B0D2132B52C32EA",
+      "bytes": 154
+    },
+    {
+      "path": "logs/prepare-real-corpus.log",
+      "sha256": "B1CAAB46E9AFCB805D60F400821370D7079F0658FEE38B228A5816E5C0047B73",
+      "bytes": 210
+    },
+    {
+      "path": "logs/real-corpus-independent.log",
+      "sha256": "0AB139E0F0FBEA889BB64183301FBAE49F012B513F53F7D15A65E85279F36D04",
+      "bytes": 249
+    },
+    {
+      "path": "logs/real-corpus.log",
+      "sha256": "AC5DA4DA574F6F7FB36F56863382DB4ACEE7873880F88AA12181D2F0B78FA588",
+      "bytes": 88443
+    },
+    {
+      "path": "logs/redaction-independent.log",
+      "sha256": "AB4D8FAE0014FFDC019516C0356D611C059031F08D3FD8EF459A07B7181FAB02",
+      "bytes": 1238
+    },
+    {
+      "path": "logs/redaction.log",
+      "sha256": "3D53C0ECC1184A6D045F74EE6FEA5E4738EABE010B1E8B1789BF0B2985FAE815",
+      "bytes": 12492
+    },
+    {
+      "path": "logs/regression-Core.log",
+      "sha256": "570551F67FBE0DF5AB391781AD8D88D19AD867D8631279E1DFE3635EE0AE0A72",
+      "bytes": 350
+    },
+    {
+      "path": "logs/regression-Core.xml",
+      "sha256": "474F994DF729DCC2B4585DA162AEE03C972BBACB8A89B3A9042AA86E6685B6A9",
+      "bytes": 40045
+    },
+    {
+      "path": "logs/regression-Headless.log",
+      "sha256": "37CEC78C5A8D8976CD743DE2FD966C949D1013D166D7E1DE51A7519B1BD2B955",
+      "bytes": 370
+    },
+    {
+      "path": "logs/regression-Headless.xml",
+      "sha256": "BC276FBC156F87D308F97A710739D51BDBA0479A91776AE7A1A87BEDB1CDF122",
+      "bytes": 11526
+    },
+    {
+      "path": "logs/restore-tests-Core.log",
+      "sha256": "0A5293E62D3BB4D8819D8D749F51206D3AA424744E622337BEE96070823F245B",
+      "bytes": 86
+    },
+    {
+      "path": "logs/restore-tests-Headless.log",
+      "sha256": "0A5293E62D3BB4D8819D8D749F51206D3AA424744E622337BEE96070823F245B",
+      "bytes": 86
+    },
+    {
+      "path": "logs/restore.log",
+      "sha256": "0A5293E62D3BB4D8819D8D749F51206D3AA424744E622337BEE96070823F245B",
+      "bytes": 86
+    },
+    {
+      "path": "logs/save.log",
+      "sha256": "01BECE5EEC9BB06C9FC0CDBA4E5ECCB38F265E6500EBC2C148F54220BBF05777",
+      "bytes": 3978
+    },
+    {
+      "path": "p0-run.json",
+      "sha256": "AC5995D50CA7D56CCF563B00C64D862A5CD9E8A9D17B2CBEE8FA7ED09EB49272",
+      "bytes": 9081
+    },
+    {
+      "path": "real-corpus/corpus.json",
+      "sha256": "C3B7308742AEA6A5BE094313FEC6F0B196BE908720332A884104F8A182B88908",
+      "bytes": 16518
+    },
+    {
+      "path": "real-corpus/gnu-make/freetext-page-1.png",
+      "sha256": "7541CFA34D3A99097D191DDFE0148D82D06C3123C60B133D978C9FC8ED2CB06A",
+      "bytes": 4082
+    },
+    {
+      "path": "real-corpus/gnu-make/freetext-page-1.txt",
+      "sha256": "36A23CC3FE8CC809C110AFE6C90239D7E2FB80D91FD080C751A4BC8FA59B082C",
+      "bytes": 8
+    },
+    {
+      "path": "real-corpus/gnu-make/freetext-page-115.png",
+      "sha256": "DB613565A46D3018542BC062CDB4A9441A060D048D8F36DBE3C743F7A6CE865E",
+      "bytes": 32327
+    },
+    {
+      "path": "real-corpus/gnu-make/freetext-page-115.txt",
+      "sha256": "13BA1609E6D04F0FC13F85AE294764F84D06CF55D87B8430F855667639BF1592",
+      "bytes": 1719
+    },
+    {
+      "path": "real-corpus/gnu-make/freetext.pdf",
+      "sha256": "4899CDB17623F988583069B1FC0F5AB1904AADC42ADD7D0802A315A43DF82900",
+      "bytes": 1334496
+    },
+    {
+      "path": "real-corpus/gnu-make/input-page-1.png",
+      "sha256": "70FE9D2241E8CCB843A25D001A1692830F1388665D86A99FBD82EF626192B1C6",
+      "bytes": 2893
+    },
+    {
+      "path": "real-corpus/gnu-make/input-page-1.txt",
+      "sha256": "36A23CC3FE8CC809C110AFE6C90239D7E2FB80D91FD080C751A4BC8FA59B082C",
+      "bytes": 8
+    },
+    {
+      "path": "real-corpus/gnu-make/input-page-115.png",
+      "sha256": "DB613565A46D3018542BC062CDB4A9441A060D048D8F36DBE3C743F7A6CE865E",
+      "bytes": 32327
+    },
+    {
+      "path": "real-corpus/gnu-make/input-page-115.txt",
+      "sha256": "13BA1609E6D04F0FC13F85AE294764F84D06CF55D87B8430F855667639BF1592",
+      "bytes": 1719
+    },
+    {
+      "path": "real-corpus/gnu-make/redact-whole-first-page-page-1.png",
+      "sha256": "E76BAB2BC48FE38831A5A3E95F3627DB3FB4754A614F24EECC69402A199786B5",
+      "bytes": 1644
+    },
+    {
+      "path": "real-corpus/gnu-make/redact-whole-first-page-page-1.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/gnu-make/redact-whole-first-page-page-115.png",
+      "sha256": "DB613565A46D3018542BC062CDB4A9441A060D048D8F36DBE3C743F7A6CE865E",
+      "bytes": 32327
+    },
+    {
+      "path": "real-corpus/gnu-make/redact-whole-first-page-page-115.txt",
+      "sha256": "13BA1609E6D04F0FC13F85AE294764F84D06CF55D87B8430F855667639BF1592",
+      "bytes": 1719
+    },
+    {
+      "path": "real-corpus/gnu-make/redact-whole-first-page-page-229.png",
+      "sha256": "0287A6E5DC75B70BB0AB84641E59464CC691CB4F2D20DA13D123C41E1410FD58",
+      "bytes": 23703
+    },
+    {
+      "path": "real-corpus/gnu-make/redact-whole-first-page-page-229.txt",
+      "sha256": "F8B21744BCA1B01EBDFFA77D8A76BD9C0991AE0F4255C75096F8777B248A4522",
+      "bytes": 5975
+    },
+    {
+      "path": "real-corpus/gnu-make/redact-whole-first-page.pdf",
+      "sha256": "9D45ECC1AF7D5B1780BD9F1C1B82D7F411922DC87B004570A8CAE02B0C1A62F6",
+      "bytes": 2874663
+    },
+    {
+      "path": "real-corpus/gnu-make/sanitize-page-1.png",
+      "sha256": "70FE9D2241E8CCB843A25D001A1692830F1388665D86A99FBD82EF626192B1C6",
+      "bytes": 2893
+    },
+    {
+      "path": "real-corpus/gnu-make/sanitize-page-1.txt",
+      "sha256": "36A23CC3FE8CC809C110AFE6C90239D7E2FB80D91FD080C751A4BC8FA59B082C",
+      "bytes": 8
+    },
+    {
+      "path": "real-corpus/gnu-make/sanitize.pdf",
+      "sha256": "5519497E8A2BA6256194CA60A90BABBF97F74E8FA38C26A673882DF81E93C679",
+      "bytes": 2875154
+    },
+    {
+      "path": "real-corpus/gnu-make-freetext-page-1-poppler.png",
+      "sha256": "EB4B71103BF7FEF38B6C2C9622E09D3E149DAB5B7FCDB361C6974BD1F1467B7A",
+      "bytes": 6439
+    },
+    {
+      "path": "real-corpus/gnu-make-freetext-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/gnu-make-freetext-page-115-poppler.png",
+      "sha256": "F5516778604D216DF73C7D7672993657BD0A67F1C0B0425ACBDDAE8711325E78",
+      "bytes": 70396
+    },
+    {
+      "path": "real-corpus/gnu-make-freetext-page-115-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/gnu-make-input-page-1-poppler.png",
+      "sha256": "875D92AC853229D92CD8EE477240FC75DE21081517FF5A39001CDBC28EB4FF06",
+      "bytes": 4426
+    },
+    {
+      "path": "real-corpus/gnu-make-input-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/gnu-make-input-page-115-poppler.png",
+      "sha256": "F5516778604D216DF73C7D7672993657BD0A67F1C0B0425ACBDDAE8711325E78",
+      "bytes": 70396
+    },
+    {
+      "path": "real-corpus/gnu-make-input-page-115-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/gnu-make-input-page-229-poppler.png",
+      "sha256": "430152564AD7CBC840CACE85BD8DB55FC4AD72A76B520F5DDB4D3343ABE4A20C",
+      "bytes": 56437
+    },
+    {
+      "path": "real-corpus/gnu-make-input-page-229-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/gnu-make-redact-whole-first-page-page-1-poppler.png",
+      "sha256": "C4681F981D77B43C1878ECEB7B20BC9C7FF9DF0E106F0BF0716D9BAC32B2D9C0",
+      "bytes": 2552
+    },
+    {
+      "path": "real-corpus/gnu-make-redact-whole-first-page-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/gnu-make-redact-whole-first-page-page-115-poppler.png",
+      "sha256": "F5516778604D216DF73C7D7672993657BD0A67F1C0B0425ACBDDAE8711325E78",
+      "bytes": 70396
+    },
+    {
+      "path": "real-corpus/gnu-make-redact-whole-first-page-page-115-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/gnu-make-redact-whole-first-page-page-229-poppler.png",
+      "sha256": "430152564AD7CBC840CACE85BD8DB55FC4AD72A76B520F5DDB4D3343ABE4A20C",
+      "bytes": 56437
+    },
+    {
+      "path": "real-corpus/gnu-make-redact-whole-first-page-page-229-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/gnu-make-sanitize-page-1-poppler.png",
+      "sha256": "875D92AC853229D92CD8EE477240FC75DE21081517FF5A39001CDBC28EB4FF06",
+      "bytes": 4426
+    },
+    {
+      "path": "real-corpus/gnu-make-sanitize-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/gnu-make-sanitize-page-115-poppler.png",
+      "sha256": "F5516778604D216DF73C7D7672993657BD0A67F1C0B0425ACBDDAE8711325E78",
+      "bytes": 70396
+    },
+    {
+      "path": "real-corpus/gnu-make-sanitize-page-115-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/independent-audit.json",
+      "sha256": "5CFA759A2653F58BF4E0A32C614BB87465C6C93A327CD286C00C897E6CD85744",
+      "bytes": 564786
+    },
+    {
+      "path": "real-corpus/irs-w4-en/freetext-page-1.png",
+      "sha256": "977133514455E4C292EADC48F67BA177CAB9CCD2934CF7FED1DD0A85C331FA54",
+      "bytes": 88253
+    },
+    {
+      "path": "real-corpus/irs-w4-en/freetext-page-1.txt",
+      "sha256": "6F4FFBF443D1113115B0E8ABE68F5B853FC504A165BF83F38D67232821BD048A",
+      "bytes": 4883
+    },
+    {
+      "path": "real-corpus/irs-w4-en/freetext-page-3.png",
+      "sha256": "A720302E69CE08F1CACA46DBDD18ED4C07E163F115D83C39853BE2BBB1F3339D",
+      "bytes": 40209
+    },
+    {
+      "path": "real-corpus/irs-w4-en/freetext-page-3.txt",
+      "sha256": "E8D573385E89539A53E95667F7F626BE3FDFD03F33EDC5785A44D2FDBFD7EB37",
+      "bytes": 2590
+    },
+    {
+      "path": "real-corpus/irs-w4-en/freetext.pdf",
+      "sha256": "098D251B531BA22CDB0E0AA331169AE4C27C7079A8BC8B910295FF06F16D7F6B",
+      "bytes": 532264
+    },
+    {
+      "path": "real-corpus/irs-w4-en/input-page-1.png",
+      "sha256": "D92742CF9CCED2338041FA6E3E4DD3456E81609F195360C54ACD549E84187320",
+      "bytes": 87467
+    },
+    {
+      "path": "real-corpus/irs-w4-en/input-page-1.txt",
+      "sha256": "6F4FFBF443D1113115B0E8ABE68F5B853FC504A165BF83F38D67232821BD048A",
+      "bytes": 4883
+    },
+    {
+      "path": "real-corpus/irs-w4-en/input-page-3.png",
+      "sha256": "A720302E69CE08F1CACA46DBDD18ED4C07E163F115D83C39853BE2BBB1F3339D",
+      "bytes": 40209
+    },
+    {
+      "path": "real-corpus/irs-w4-en/input-page-3.txt",
+      "sha256": "E8D573385E89539A53E95667F7F626BE3FDFD03F33EDC5785A44D2FDBFD7EB37",
+      "bytes": 2590
+    },
+    {
+      "path": "real-corpus/irs-w4-en-freetext-page-1-poppler.png",
+      "sha256": "133DD0407A19D23C7A37702125A66E9675FB064FCD86B454F3CE7920207A767F",
+      "bytes": 179475
+    },
+    {
+      "path": "real-corpus/irs-w4-en-freetext-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/irs-w4-en-freetext-page-3-poppler.png",
+      "sha256": "43756388F4A87F69D69F1902F4CCDC04906B7972E4276A23B1A2D98E95728C8B",
+      "bytes": 85665
+    },
+    {
+      "path": "real-corpus/irs-w4-en-freetext-page-3-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/irs-w4-en-input-page-1-poppler.png",
+      "sha256": "4BCC2CEF75801BA159ED859F563807E3BFAF59FE0F79F5E619059EEAA96AD6ED",
+      "bytes": 177993
+    },
+    {
+      "path": "real-corpus/irs-w4-en-input-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/irs-w4-en-input-page-3-poppler.png",
+      "sha256": "43756388F4A87F69D69F1902F4CCDC04906B7972E4276A23B1A2D98E95728C8B",
+      "bytes": 85665
+    },
+    {
+      "path": "real-corpus/irs-w4-en-input-page-3-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs/freetext-page-1.png",
+      "sha256": "7AAC42177E479A4879FA3E416BEAC755202FE21C9F60EE24A2C8BB32F5A1DC61",
+      "bytes": 105190
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs/freetext-page-1.txt",
+      "sha256": "9DCBA2B1BFA28D73DA85DC98E9607A9153725B8EDB945E3EBB07F3AF818806A4",
+      "bytes": 4707
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs/freetext-page-3.png",
+      "sha256": "3AEFD44B22F3B7D4F42206000D2F05A4C712F514648B15415B418FEC5C031BE4",
+      "bytes": 46703
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs/freetext-page-3.txt",
+      "sha256": "0DDD589FB16D3AE957F5BB0862D6FBE04CE03FC380A5006DA1EFA349CCD38547",
+      "bytes": 2407
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs/freetext.pdf",
+      "sha256": "338A4BE5689781C4FFACBCD23432EA3831C4B417A893C3B216E0B07DDE7CC884",
+      "bytes": 728377
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs/input-page-1.png",
+      "sha256": "2D092866C78C6155CC5BF0AEEE314A7209DB4CF9352FA546FFC4ED12D58B4D9C",
+      "bytes": 104295
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs/input-page-1.txt",
+      "sha256": "9DCBA2B1BFA28D73DA85DC98E9607A9153725B8EDB945E3EBB07F3AF818806A4",
+      "bytes": 4707
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs/input-page-3.png",
+      "sha256": "3AEFD44B22F3B7D4F42206000D2F05A4C712F514648B15415B418FEC5C031BE4",
+      "bytes": 46703
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs/input-page-3.txt",
+      "sha256": "0DDD589FB16D3AE957F5BB0862D6FBE04CE03FC380A5006DA1EFA349CCD38547",
+      "bytes": 2407
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs-freetext-page-1-poppler.png",
+      "sha256": "3A8CF8A0C57A70BD7FC3C09FBA926F8BB1D128B2785D47B034C4505BE9AD37B3",
+      "bytes": 233177
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs-freetext-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs-freetext-page-3-poppler.png",
+      "sha256": "84CEE026F4481E4E8297DA013F914994622ABBA948E843D5073EE6CB39D6BAAD",
+      "bytes": 110953
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs-freetext-page-3-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs-input-page-1-poppler.png",
+      "sha256": "5CE42AA0CD2581596A66D9288720E8C8CCAC3C1B4567E9076545F75E626CCB47",
+      "bytes": 231465
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs-input-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs-input-page-3-poppler.png",
+      "sha256": "84CEE026F4481E4E8297DA013F914994622ABBA948E843D5073EE6CB39D6BAAD",
+      "bytes": 110953
+    },
+    {
+      "path": "real-corpus/irs-w4-zhs-input-page-3-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/japan-pdl/freetext-page-1.png",
+      "sha256": "94E6B853AF2A7BC7B9466A742F08387682C2BE3F8078EC788393064897CC2532",
+      "bytes": 73958
+    },
+    {
+      "path": "real-corpus/japan-pdl/freetext-page-1.txt",
+      "sha256": "82B9EF2AB2CC36183428C3C17712CEF360258465847E1027AFD65D9C7D8B453D",
+      "bytes": 3577
+    },
+    {
+      "path": "real-corpus/japan-pdl/freetext-page-2.png",
+      "sha256": "E9B3BC4947B46B0BB52601BCEF5C1FD0C7E909551436F4528F4435BB2759DB26",
+      "bytes": 77584
+    },
+    {
+      "path": "real-corpus/japan-pdl/freetext-page-2.txt",
+      "sha256": "7E7EF3F8D2A92940965284C71C80B99E6B5F1FB8EC3E972105C477DB9897EC4B",
+      "bytes": 3601
+    },
+    {
+      "path": "real-corpus/japan-pdl/freetext.pdf",
+      "sha256": "645F90EB0E1BE8CE9BED6FD486F03549BBBB8B9F5F516B9D194755ED8D96449D",
+      "bytes": 184107
+    },
+    {
+      "path": "real-corpus/japan-pdl/input-page-1.png",
+      "sha256": "744B8B1321E1CC98366455AFA0E8C6792ACE21B2A390886293F8C55B1E2DEC8B",
+      "bytes": 73117
+    },
+    {
+      "path": "real-corpus/japan-pdl/input-page-1.txt",
+      "sha256": "82B9EF2AB2CC36183428C3C17712CEF360258465847E1027AFD65D9C7D8B453D",
+      "bytes": 3577
+    },
+    {
+      "path": "real-corpus/japan-pdl/input-page-2.png",
+      "sha256": "E9B3BC4947B46B0BB52601BCEF5C1FD0C7E909551436F4528F4435BB2759DB26",
+      "bytes": 77584
+    },
+    {
+      "path": "real-corpus/japan-pdl/input-page-2.txt",
+      "sha256": "7E7EF3F8D2A92940965284C71C80B99E6B5F1FB8EC3E972105C477DB9897EC4B",
+      "bytes": 3601
+    },
+    {
+      "path": "real-corpus/japan-pdl-freetext-page-1-poppler.png",
+      "sha256": "3C5EE0E68D00446FA120908336CD770F3F6B889FB5E722DB1523D3500364BEEB",
+      "bytes": 167063
+    },
+    {
+      "path": "real-corpus/japan-pdl-freetext-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/japan-pdl-freetext-page-2-poppler.png",
+      "sha256": "B901ECBBAB814DA8D37645B8768F004652F43DE3855C444E35EC4CD23B8FC4E1",
+      "bytes": 171632
+    },
+    {
+      "path": "real-corpus/japan-pdl-freetext-page-2-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/japan-pdl-input-page-1-poppler.png",
+      "sha256": "E82D456B2B6C402DE5BF0926A29EC6F6306A5CF05DDFAB32F78C124690F7D213",
+      "bytes": 165269
+    },
+    {
+      "path": "real-corpus/japan-pdl-input-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/japan-pdl-input-page-2-poppler.png",
+      "sha256": "B901ECBBAB814DA8D37645B8768F004652F43DE3855C444E35EC4CD23B8FC4E1",
+      "bytes": 171632
+    },
+    {
+      "path": "real-corpus/japan-pdl-input-page-2-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/manual-visual-review.json",
+      "sha256": "1D072D4D9628FE5D42D1F8A684313A66241109F4CD49CA849C4130F86FA0B3AE",
+      "bytes": 20165
+    },
+    {
+      "path": "real-corpus/native-visual-review.json",
+      "sha256": "3B15ACC79353C237443A6A4E17EE21CDE91323431DF5065B49F23C5CDB344478",
+      "bytes": 6046
+    },
+    {
+      "path": "real-corpus/negative-4a94380454dc4aea80ddbf83a244ced7.pdf",
+      "sha256": "187928EFBA93DFD8214D8F670E03D5FDEC02FE1BA3D517FC1B34BAC572F731DC",
+      "bytes": 1391837
+    },
+    {
+      "path": "real-corpus/negative-9f46b447c3924155b6dd4b2ddf79c0b7.pdf",
+      "sha256": "B5B6E2D6D7834A261A4CBD4D7A5488E88369E3FF1E6629C6CF270EB0C823C1D1",
+      "bytes": 1391648
+    },
+    {
+      "path": "real-corpus/negative-acf5519f4a2d476abb31930c125783ac.pdf",
+      "sha256": "E57FB73827163B8E5427CFD1390E6455963C3B134058D8071CBFD8BAB9305AAF",
+      "bytes": 525289
+    },
+    {
+      "path": "real-corpus/negative-controls/forged-local-source-hash.json",
+      "sha256": "20DD5568F72533AEEC335141DD95FA62118177B1B72AB0F77FEC4D757D485073",
+      "bytes": 9366
+    },
+    {
+      "path": "real-corpus/negative-controls/forged-provenance.json",
+      "sha256": "E1B986CBBA03E9BD8F17CF7542F96507C9E6059A56E3A2772CC5CDEB9F3E869E",
+      "bytes": 9362
+    },
+    {
+      "path": "real-corpus/negative-controls/hybrid-XFA-damaged.json",
+      "sha256": "B4D3279408B0BC3FD33121B349D8B4803C71038CBF2FD2F4C9802D5C2749D3E1",
+      "bytes": 320090
+    },
+    {
+      "path": "real-corpus/negative-controls/lost-atomic-refusal.json",
+      "sha256": "141366EDC2B7CB72E5908EBC47CBFC58605D3CF0AA1BEB234AEC8D377A47E971",
+      "bytes": 216177
+    },
+    {
+      "path": "real-corpus/negative-controls/missing-output.json",
+      "sha256": "633FC5B09A55663392FA7775626AF6D3C9316A4BA26F4FEF905411590AA3E5EC",
+      "bytes": 22804
+    },
+    {
+      "path": "real-corpus/negative-controls/omitted-source.json",
+      "sha256": "2DC88A3F215C1251E19E1B7B1950286E4E843034BF2F3F49CA992A111C6A4F6F",
+      "bytes": 7725
+    },
+    {
+      "path": "real-corpus/negative-controls/read-promoted-to-write.json",
+      "sha256": "29DB4EF91DBCCDFDFE5A51F09D8348606D3F5B07AF0E22700D32805CF775E330",
+      "bytes": 7749
+    },
+    {
+      "path": "real-corpus/negative-controls/retained-body-removed.json",
+      "sha256": "FDE48E2486E5F63E87D29D0FEACACD813FA5FA38444DF4DE0CAF82A77E077F32",
+      "bytes": 140410
+    },
+    {
+      "path": "real-corpus/negative-controls/stale-CJK-appearance.json",
+      "sha256": "BF6CA8E5C9399EBF77A5FEB32CDF29F43C6376A17120965EED9096B977F6B568",
+      "bytes": 140378
+    },
+    {
+      "path": "real-corpus/negative-controls/unexpected-pass.json",
+      "sha256": "E55F4748D437152DEFE92DE354F1B490B4FE9A821D9F953525386A53F20614CF",
+      "bytes": 142398
+    },
+    {
+      "path": "real-corpus/negative-controls/whole-page-deletion-is-fake.json",
+      "sha256": "985FCD54B089566671D3D1583CBBF556B8573D6833ED12BD902A07F19CFAFD43",
+      "bytes": 216584
+    },
+    {
+      "path": "real-corpus/negative-controls/wrong-refusal-cause.json",
+      "sha256": "DCD710C7D2DBA23D53550849F3BCBAEC5089E4DA835581CCAB31C03AB7961001",
+      "bytes": 215868
+    },
+    {
+      "path": "real-corpus/negative-fe5fd1d5b7694972b1be8fa5445a8e2b.pdf",
+      "sha256": "7375F5DC2395F59121AC8D8AD57779272901C3FAC26206DE9F83CD0C1AAEF232",
+      "bytes": 2882088
+    },
+    {
+      "path": "real-corpus/nist-scan/freetext-page-1.png",
+      "sha256": "F34010BB1A845328814C1770F570287930CB0EBBE1FF1781F51B18A33D6B7A94",
+      "bytes": 358846
+    },
+    {
+      "path": "real-corpus/nist-scan/freetext-page-1.txt",
+      "sha256": "2E561FF2355C06484EFC416619B5B7F7FC055ACDB4E5B6DB7A4BC0A5016B19E3",
+      "bytes": 2
+    },
+    {
+      "path": "real-corpus/nist-scan/freetext-page-20.png",
+      "sha256": "41CCB47BAFE3838F37EC9E109383AC50CAE87897DACFC0C6384EDF67265AAA37",
+      "bytes": 223495
+    },
+    {
+      "path": "real-corpus/nist-scan/freetext-page-20.txt",
+      "sha256": "791E2CF64AB160F81475B118A92AE1140CF38EB07CCEF60047289A47780C56C9",
+      "bytes": 2948
+    },
+    {
+      "path": "real-corpus/nist-scan/freetext.pdf",
+      "sha256": "611210F5901ABAA97CFA2C607CB94D3BA7F696E9141CF98A4FE67A0CFD659815",
+      "bytes": 1910696
+    },
+    {
+      "path": "real-corpus/nist-scan/input-page-1.png",
+      "sha256": "9325A7E7AD602D948AB1DBC38678295A9026ED084365A8F4EF6EDF30742FDDB8",
+      "bytes": 358621
+    },
+    {
+      "path": "real-corpus/nist-scan/input-page-1.txt",
+      "sha256": "2E561FF2355C06484EFC416619B5B7F7FC055ACDB4E5B6DB7A4BC0A5016B19E3",
+      "bytes": 2
+    },
+    {
+      "path": "real-corpus/nist-scan/input-page-20.png",
+      "sha256": "41CCB47BAFE3838F37EC9E109383AC50CAE87897DACFC0C6384EDF67265AAA37",
+      "bytes": 223495
+    },
+    {
+      "path": "real-corpus/nist-scan/input-page-20.txt",
+      "sha256": "791E2CF64AB160F81475B118A92AE1140CF38EB07CCEF60047289A47780C56C9",
+      "bytes": 2948
+    },
+    {
+      "path": "real-corpus/nist-scan-freetext-page-1-poppler.png",
+      "sha256": "17DA084CCA984BFA175B7086B5EB7CC4F7A4BE50F9FE6E2AFABC65000E459D54",
+      "bytes": 780037
+    },
+    {
+      "path": "real-corpus/nist-scan-freetext-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/nist-scan-freetext-page-20-poppler.png",
+      "sha256": "1D5A0B9CF532C2B9AF3935CB74DCDDF7E732B89DE58F17B6A5A6C4D150FD7035",
+      "bytes": 431395
+    },
+    {
+      "path": "real-corpus/nist-scan-freetext-page-20-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/nist-scan-input-page-1-poppler.png",
+      "sha256": "D7F0A8FC9E412E9D4581F16A0CCAB7E16B2BF91AA14A2A5DBD417B6733335406",
+      "bytes": 779636
+    },
+    {
+      "path": "real-corpus/nist-scan-input-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/nist-scan-input-page-20-poppler.png",
+      "sha256": "1D5A0B9CF532C2B9AF3935CB74DCDDF7E732B89DE58F17B6A5A6C4D150FD7035",
+      "bytes": 431395
+    },
+    {
+      "path": "real-corpus/nist-scan-input-page-20-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/plos-citation/freetext-page-1.png",
+      "sha256": "ED0757C2A31ED71FF9C0534FBBEA7BB75566618BC14009C40D0C958FD15E80F1",
+      "bytes": 69821
+    },
+    {
+      "path": "real-corpus/plos-citation/freetext-page-1.txt",
+      "sha256": "0128C05AA9AF37D9CAA87E01C75150E10694F67719D34631A19735B6EE0C00AA",
+      "bytes": 4059
+    },
+    {
+      "path": "real-corpus/plos-citation/freetext-page-18.png",
+      "sha256": "67B3F767268382404203C41C42A6C65C008C0D3F475B22F722B55B31A1494A91",
+      "bytes": 56664
+    },
+    {
+      "path": "real-corpus/plos-citation/freetext-page-18.txt",
+      "sha256": "DF07776BE41868A121000CAD98ECA5BAAEBA3E2E42888092CD51311C49057DA4",
+      "bytes": 2995
+    },
+    {
+      "path": "real-corpus/plos-citation/freetext.pdf",
+      "sha256": "B16B15A2D822AC5DC5C7F4B37A66E6A90ED2C2E90EBBD2D563788535EB0BC422",
+      "bytes": 2477717
+    },
+    {
+      "path": "real-corpus/plos-citation/input-page-1.png",
+      "sha256": "874211BCB07C6451CE4F90C02F9E3EA9049BF3E0EC3766F6B2884943C1B8C8C5",
+      "bytes": 68888
+    },
+    {
+      "path": "real-corpus/plos-citation/input-page-1.txt",
+      "sha256": "0128C05AA9AF37D9CAA87E01C75150E10694F67719D34631A19735B6EE0C00AA",
+      "bytes": 4059
+    },
+    {
+      "path": "real-corpus/plos-citation/input-page-18.png",
+      "sha256": "67B3F767268382404203C41C42A6C65C008C0D3F475B22F722B55B31A1494A91",
+      "bytes": 56664
+    },
+    {
+      "path": "real-corpus/plos-citation/input-page-18.txt",
+      "sha256": "DF07776BE41868A121000CAD98ECA5BAAEBA3E2E42888092CD51311C49057DA4",
+      "bytes": 2995
+    },
+    {
+      "path": "real-corpus/plos-citation-freetext-page-1-poppler.png",
+      "sha256": "8515241D7AF5C5B793A964190F9BCC28A26E96300FEAF9DE1A8CEF0EA6476C48",
+      "bytes": 155517
+    },
+    {
+      "path": "real-corpus/plos-citation-freetext-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/plos-citation-freetext-page-18-poppler.png",
+      "sha256": "FCD15BF45BE9432E97266B1AA894A2F548257BFBCB11B64F09A1E4905ADF9BE5",
+      "bytes": 132529
+    },
+    {
+      "path": "real-corpus/plos-citation-freetext-page-18-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/plos-citation-input-page-1-poppler.png",
+      "sha256": "5E6FD741330782A7849E7D4729689D84AD5B7CD9B5B6E5D6262A987ABE1BDB05",
+      "bytes": 153718
+    },
+    {
+      "path": "real-corpus/plos-citation-input-page-1-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/plos-citation-input-page-18-poppler.png",
+      "sha256": "FCD15BF45BE9432E97266B1AA894A2F548257BFBCB11B64F09A1E4905ADF9BE5",
+      "bytes": 132529
+    },
+    {
+      "path": "real-corpus/plos-citation-input-page-18-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "real-corpus/result.json",
+      "sha256": "92FAC6B4BC4F9B253892DCE693ABCBD9952739104ABFDCA56D4F7722495F81A3",
+      "bytes": 88441
+    },
+    {
+      "path": "real-corpus/sources/digital-agency-copyright.html",
+      "sha256": "5E4D3B455DC4C859B6B29A6011C95FB8BAE43E394BDBD3E489C1083E65D06535",
+      "bytes": 52056
+    },
+    {
+      "path": "real-corpus/sources/digital-agency-pdl.html",
+      "sha256": "9B8AEF3A7107E4A8B66888B38E34D49031070363DCB9EAC50782AE6BDCE3B111",
+      "bytes": 58106
+    },
+    {
+      "path": "real-corpus/sources/gnu-make-license.html",
+      "sha256": "8112DE01E25BA628D5E160E9C37FEF13FB2878C43B0361099981D6B1C6BD72D0",
+      "bytes": 1064614
+    },
+    {
+      "path": "real-corpus/sources/gnu-make.pdf",
+      "sha256": "A4BC06026984382815E392159E60A4BC356CAC6C5B81E5AE84FA4F58F621F4D3",
+      "bytes": 952174
+    },
+    {
+      "path": "real-corpus/sources/irs-content-policy.html",
+      "sha256": "337D0817284CF76660F1FC0FB3FF6F4455EE62D9EA0FF0BB6CC1994BA9205DEB",
+      "bytes": 96950
+    },
+    {
+      "path": "real-corpus/sources/irs-w4-en.pdf",
+      "sha256": "92444D8856CE55D9E25DCA8B6D1420634FC68B11E1AB1F760916EA29DDD312B2",
+      "bytes": 208845
+    },
+    {
+      "path": "real-corpus/sources/irs-w4-zhs.pdf",
+      "sha256": "A8D29D643D6F1C23E43E9F033B25D6EFC8A8E20684A15D8D8B665CF314DA54BE",
+      "bytes": 405814
+    },
+    {
+      "path": "real-corpus/sources/japan-pdl.pdf",
+      "sha256": "48153B4BF7130D07FF58EC620D05F24D8402A0A5C18F1583287CFE8EA93F3A5A",
+      "bytes": 207095
+    },
+    {
+      "path": "real-corpus/sources/manifest.json",
+      "sha256": "696EF0410AE2CE616C357059B5C71E990B6D6F6FB263F0AFCD977E19A0AF1D7E",
+      "bytes": 15557
+    },
+    {
+      "path": "real-corpus/sources/nist-copyright.html",
+      "sha256": "AD402ECD4692B7C1C51484F0FC80C73295218E70DD4CCF8C9111F6F06385177F",
+      "bytes": 79187
+    },
+    {
+      "path": "real-corpus/sources/nist-technical-note1.pdf",
+      "sha256": "5ACD22F35F77052F215DAFF8BEF537C82933A841EA0ECBB9BAE6F20BAAFBE070",
+      "bytes": 1910200
+    },
+    {
+      "path": "real-corpus/sources/plos-citation-article.html",
+      "sha256": "8B709978A95FEB4437CA2C7201CDFDB957BD81D4C52A3A90B29030482618629F",
+      "bytes": 265204
+    },
+    {
+      "path": "real-corpus/sources/plos-citation.pdf",
+      "sha256": "0407A78331D28C92B900117067DDA35BE8F17F844451A195D9D6A899B03E2B02",
+      "bytes": 2470682
+    },
+    {
+      "path": "redaction/hidden-revision.input.pdf",
+      "sha256": "27A7397B3ED9A50E9951289AE0332442D26B2714240284C99FB30AF8F4907968",
+      "bytes": 2261
+    },
+    {
+      "path": "redaction/hidden-revision.native-candidate.pdf",
+      "sha256": "586329F9AF7481476ED9008A4161EE2CCE1AF72876510A70A568BD1324FF6FFC",
+      "bytes": 2171
+    },
+    {
+      "path": "redaction/hidden-revision.structural-bridge.pdf",
+      "sha256": "C96FA3C12ACA9D8F0ABE9248E4D7B0560E66D86C686AF279C9F7370C820263C7",
+      "bytes": 829
+    },
+    {
+      "path": "redaction/independent-audit.json",
+      "sha256": "E48C42E6A0D9608CA5A2B228E6D4FDEC882B812881A233F6B4D9BE5354CE7CAE",
+      "bytes": 28014
+    },
+    {
+      "path": "redaction/partial-character.input.pdf",
+      "sha256": "FC0515494CD6DB3A396F96C28B1CD09E2A3A8CCA99314D4061B46BBC8475924F",
+      "bytes": 655
+    },
+    {
+      "path": "redaction/partial-image.input.pdf",
+      "sha256": "AC342CCC1C77A203221BBB527F905AD38B1FD400C04C57632D94F5492DEEC4C5",
+      "bytes": 883
+    },
+    {
+      "path": "redaction/result.json",
+      "sha256": "52CC18C509FD97DBD0FBD7F6656AD675D2F01F1379DAEBDCCFD8357BABC95DBE",
+      "bytes": 12490
+    },
+    {
+      "path": "redaction/shared-nested-form.input.pdf",
+      "sha256": "87AD7242487A713B574E0F734262E11CA77C66D2F3BB43064AC9A128814A6EF1",
+      "bytes": 1615
+    },
+    {
+      "path": "redaction/shared-nested-form.native-candidate.pdf",
+      "sha256": "F53C3CF7FC98AEBEE5E016ACB55473FEABBCBFAA3E3FA31867D84D6FE59BABFC",
+      "bytes": 1724
+    },
+    {
+      "path": "redaction/whole-form.input.pdf",
+      "sha256": "DCF0322D55BBC69BDC058CC3633449E133A23CA6D933D34472FD6FF7054FB2F7",
+      "bytes": 1150
+    },
+    {
+      "path": "redaction/whole-form.native-candidate.pdf",
+      "sha256": "89E1ECF34CA0F0E6557AACD4B7C8328F870643220E1844EE1E886B04F762C5EC",
+      "bytes": 866
+    },
+    {
+      "path": "redaction/whole-image.input.pdf",
+      "sha256": "AC342CCC1C77A203221BBB527F905AD38B1FD400C04C57632D94F5492DEEC4C5",
+      "bytes": 883
+    },
+    {
+      "path": "redaction/whole-image.native-candidate.pdf",
+      "sha256": "CE7C109D466B303D14B7226B2123C293282F76631E1BEB51D89A4CE3BED0CC02",
+      "bytes": 865
+    },
+    {
+      "path": "redaction/whole-text.input.pdf",
+      "sha256": "AC883D4049EB03CFDDA98B46569EFEDEAE4E235F1771B61B45690033647D3CB0",
+      "bytes": 684
+    },
+    {
+      "path": "redaction/whole-text.native-candidate.pdf",
+      "sha256": "E49B79820EC4C0FB70634720ED68F68A2FC52975FF724CA23A27F5420BB68EB7",
+      "bytes": 848
+    },
+    {
+      "path": "save/atomic-target.pdf",
+      "sha256": "B715D2BE5668AEBECE0C38C6C173A834E1110536CF4C76883740CB5B4087EDB7",
+      "bytes": 1948
+    },
+    {
+      "path": "save/crypto/result.json",
+      "sha256": "F63BD25C7F8E993718DD9981A5C2E3E5CE979A1EB324B2DA3673EF214F5544C3",
+      "bytes": 1931
+    },
+    {
+      "path": "save/crypto/signed-full.der",
+      "sha256": "A309F2869B124DDAEF70E5DCF7A6BA9687D5454F7E72673BFB4A1E4B04A4828F",
+      "bytes": 1330
+    },
+    {
+      "path": "save/crypto/signed-full.signed-bytes",
+      "sha256": "8C92D4002859B1CBFB26F2F1220874BE1DB2091301B809F36BE3F4B74F8523D5",
+      "bytes": 1032
+    },
+    {
+      "path": "save/crypto/signed-full.verified-bytes",
+      "sha256": "8C92D4002859B1CBFB26F2F1220874BE1DB2091301B809F36BE3F4B74F8523D5",
+      "bytes": 1032
+    },
+    {
+      "path": "save/crypto/signed-incremental.der",
+      "sha256": "A309F2869B124DDAEF70E5DCF7A6BA9687D5454F7E72673BFB4A1E4B04A4828F",
+      "bytes": 1330
+    },
+    {
+      "path": "save/crypto/signed-incremental.signed-bytes",
+      "sha256": "BDC98CE3B5475F1A9002D558950CC44DB484B3EAE69B5A0522450FCA7D0779DB",
+      "bytes": 1032
+    },
+    {
+      "path": "save/crypto/signed-incremental.verified-bytes",
+      "sha256": "BDC98CE3B5475F1A9002D558950CC44DB484B3EAE69B5A0522450FCA7D0779DB",
+      "bytes": 1032
+    },
+    {
+      "path": "save/crypto/signed-input.der",
+      "sha256": "A309F2869B124DDAEF70E5DCF7A6BA9687D5454F7E72673BFB4A1E4B04A4828F",
+      "bytes": 1330
+    },
+    {
+      "path": "save/crypto/signed-input.signed-bytes",
+      "sha256": "BDC98CE3B5475F1A9002D558950CC44DB484B3EAE69B5A0522450FCA7D0779DB",
+      "bytes": 1032
+    },
+    {
+      "path": "save/crypto/signed-input.verified-bytes",
+      "sha256": "BDC98CE3B5475F1A9002D558950CC44DB484B3EAE69B5A0522450FCA7D0779DB",
+      "bytes": 1032
+    },
+    {
+      "path": "save/encrypted-full.pdf",
+      "sha256": "244A729E64125A8195B22B13382911C8A5DD076EC314891109AFE68D8C4F3F36",
+      "bytes": 1501
+    },
+    {
+      "path": "save/encrypted-input.pdf",
+      "sha256": "E9AC6BFD5851099D81C06EB75B0CC016B3AB80D0AA0F27E0F3109175A75BA7C7",
+      "bytes": 913
+    },
+    {
+      "path": "save/full.pdf",
+      "sha256": "3C97D272E29E4EDCD6BD44D95856575BD52E02D48642EECC562659B4A6F84476",
+      "bytes": 1948
+    },
+    {
+      "path": "save/incremental.pdf",
+      "sha256": "3DCAA26158A03B605430F3B9F7A2AEB2A8EB4699E372E918EF2E901E147F3842",
+      "bytes": 3224
+    },
+    {
+      "path": "save/input.pdf",
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "bytes": 1284
+    },
+    {
+      "path": "save/result.json",
+      "sha256": "96F980829AB9C2A2007A2CB8435CE6E14760EAF0BA3C049E1E7A5FC0CE75DE68",
+      "bytes": 3976
+    },
+    {
+      "path": "save/signed-full.pdf",
+      "sha256": "F60F73A2E4896CAEFFB6615A5BE922211219A2A4CF86EA0508A4F61F6B176C40",
+      "bytes": 34429
+    },
+    {
+      "path": "save/signed-incremental.pdf",
+      "sha256": "B93F9943FEA70DD4AB1D28F70FE38E2CFF734BA1746E430AC275F866FC1FEE9B",
+      "bytes": 68225
+    }
+  ]
+}

@@ -1,0 +1,4581 @@
+{
+  "schemaVersion": 5,
+  "date": "2026-10-15",
+  "runId": "20261015T114530Z-p0-forms",
+  "exportedUtc": "2026-10-15T11:53:08.199794+00:00",
+  "exporterSHA256": "CF7A137DB73206DDFEC064D43CFDE5F931B13516FA103DA0BF6603DEC4D43828",
+  "phase": "P0-C03 advanced AcroForm native host and CJK editable font-resource scheme",
+  "status": "bounded field and font experiments independently verified; full G0 remains open",
+  "G0Complete": false,
+  "productionFormsImplemented": false,
+  "productEditingReady": false,
+  "baseline": {
+    "CapturedUtc": "2026-10-15T11:47:38.1930241+00:00",
+    "GitCommit": "6337717d17e1b2b4c670107664ac3dd2b3f35829",
+    "SDK": "10.0.401",
+    "OS": "Microsoft Windows 10.0.26200",
+    "ProcessArchitecture": "X64",
+    "SourceManifestSHA256": "AD59B4F1BC1AB1F4151BF1106811E32AD529618B9ACE1EDC8A5A4307E6FE62C8",
+    "SnapshotSHA256": "D68F1E197491AE96B2A9CDA30950FC749DBC948D1BA2564812B3837C1FA98A97"
+  },
+  "frozenProductSourceUnchanged": true,
+  "productSourceUnchangedSinceParent": true,
+  "executionAssemblySHA256": "95DF7F522BAD0382E7C8896A3AFF10D64C80F06747DA520315A522063B9C69FE",
+  "functionalAssemblySHA256": "82AA7459A0FECAB2C8340EF6707A528BF2EC4A1BE9103FCA420D4B6574AEB895",
+  "nativeLibrarySHA256": "04100C03E41CAC1F979E36E5E26FB860BCB5A7461F53830D3C098716624A27A9",
+  "parentRecord": {
+    "path": "docs/validation/pdfviewer-p0-font-subset-20261015.json",
+    "sha256": "5F4FAEA71757A5165B5E07C518F191B4CF36128D83977C0076C73E62804E5E9A",
+    "runId": "20261015T111230Z-p0-font-subset",
+    "scope": "Prior production package consumers, builds and dependency audit for identical product source/binary; not rerun or counted as new forms coverage"
+  },
+  "advancedAcroForms": {
+    "result": {
+      "Id": "POC-03-advanced",
+      "Status": "bounded-native-host-verified",
+      "Description": "Radio parent/kids, multiline translated Return, list export/display options, read-only and required flags through native focus/mouse/key/character/blur, two full saves and reopen.",
+      "FixtureOwnership": "Hand-authored by AdvancedFormsProbe; no third-party document data.",
+      "Outputs": [
+        {
+          "File": "input.pdf",
+          "SHA256": "99C4626D799A82D6928F2C209DF48AB1C8CF441FCE077060B0D417AC401D8448"
+        },
+        {
+          "File": "focused-saved.pdf",
+          "SHA256": "F3FF8A7E2814A1C3B700B8DD20E8528EF8D5D9E0D0C82D92C322336407D288C2"
+        },
+        {
+          "File": "second-saved.pdf",
+          "SHA256": "C4FC42F9AFDF01E07EB9F25B2A54BC3B1B6A6B36BCEBFF6F2435E6C7F3695021"
+        }
+      ],
+      "Before": [
+        {
+          "Name": "Radio",
+          "Type": 3,
+          "Value": "Off",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 102,
+          "Flags": 49152
+        },
+        {
+          "Name": "Radio",
+          "Type": 3,
+          "Value": "Off",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 102,
+          "Flags": 49152
+        },
+        {
+          "Name": "Multiline",
+          "Type": 6,
+          "Value": "",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 118,
+          "Flags": 4096
+        },
+        {
+          "Name": "SingleList",
+          "Type": 5,
+          "Value": "R",
+          "Checked": false,
+          "SelectedIndices": [
+            0
+          ],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 454,
+          "Flags": 0
+        },
+        {
+          "Name": "MultiList",
+          "Type": 5,
+          "Value": "R",
+          "Checked": false,
+          "SelectedIndices": [
+            0
+          ],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 454,
+          "Flags": 2097152
+        },
+        {
+          "Name": "ReadOnly",
+          "Type": 6,
+          "Value": "FIXED RO",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 202,
+          "Flags": 1
+        },
+        {
+          "Name": "Required",
+          "Type": 6,
+          "Value": "",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 114,
+          "Flags": 2
+        }
+      ],
+      "AfterCommit": [
+        {
+          "Name": "Radio",
+          "Type": 3,
+          "Value": "Blue",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 102,
+          "Flags": 49152
+        },
+        {
+          "Name": "Radio",
+          "Type": 3,
+          "Value": "Blue",
+          "Checked": true,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 140,
+          "Flags": 49152
+        },
+        {
+          "Name": "Multiline",
+          "Type": 6,
+          "Value": "first line\r\nsecond line",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 350,
+          "Flags": 4096
+        },
+        {
+          "Name": "SingleList",
+          "Type": 5,
+          "Value": "G",
+          "Checked": false,
+          "SelectedIndices": [
+            1
+          ],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 752,
+          "Flags": 0
+        },
+        {
+          "Name": "MultiList",
+          "Type": 5,
+          "Value": "R",
+          "Checked": false,
+          "SelectedIndices": [
+            0,
+            2
+          ],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 858,
+          "Flags": 2097152
+        },
+        {
+          "Name": "ReadOnly",
+          "Type": 6,
+          "Value": "FIXED RO",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 202,
+          "Flags": 1
+        },
+        {
+          "Name": "Required",
+          "Type": 6,
+          "Value": "provided",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 282,
+          "Flags": 2
+        }
+      ],
+      "AfterReopen": [
+        {
+          "Name": "Radio",
+          "Type": 3,
+          "Value": "Blue",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 102,
+          "Flags": 49152
+        },
+        {
+          "Name": "Radio",
+          "Type": 3,
+          "Value": "Blue",
+          "Checked": true,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 140,
+          "Flags": 49152
+        },
+        {
+          "Name": "Multiline",
+          "Type": 6,
+          "Value": "first line\r\nsecond line",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 350,
+          "Flags": 4096
+        },
+        {
+          "Name": "SingleList",
+          "Type": 5,
+          "Value": "G",
+          "Checked": false,
+          "SelectedIndices": [
+            1
+          ],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 752,
+          "Flags": 0
+        },
+        {
+          "Name": "MultiList",
+          "Type": 5,
+          "Value": "R",
+          "Checked": false,
+          "SelectedIndices": [
+            0,
+            2
+          ],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 858,
+          "Flags": 2097152
+        },
+        {
+          "Name": "ReadOnly",
+          "Type": 6,
+          "Value": "FIXED RO",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 202,
+          "Flags": 1
+        },
+        {
+          "Name": "Required",
+          "Type": 6,
+          "Value": "provided",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 282,
+          "Flags": 2
+        }
+      ],
+      "AfterSecondCommit": [
+        {
+          "Name": "Radio",
+          "Type": 3,
+          "Value": "Red",
+          "Checked": true,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 140,
+          "Flags": 49152
+        },
+        {
+          "Name": "Radio",
+          "Type": 3,
+          "Value": "Red",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 102,
+          "Flags": 49152
+        },
+        {
+          "Name": "Multiline",
+          "Type": 6,
+          "Value": "changed line\r\nfinal line",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 352,
+          "Flags": 4096
+        },
+        {
+          "Name": "SingleList",
+          "Type": 5,
+          "Value": "K",
+          "Checked": false,
+          "SelectedIndices": [
+            3
+          ],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 754,
+          "Flags": 0
+        },
+        {
+          "Name": "MultiList",
+          "Type": 5,
+          "Value": "G",
+          "Checked": false,
+          "SelectedIndices": [
+            1,
+            3
+          ],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 856,
+          "Flags": 2097152
+        },
+        {
+          "Name": "ReadOnly",
+          "Type": 6,
+          "Value": "FIXED RO",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 202,
+          "Flags": 1
+        },
+        {
+          "Name": "Required",
+          "Type": 6,
+          "Value": "",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 148,
+          "Flags": 2
+        }
+      ],
+      "AfterSecondReopen": [
+        {
+          "Name": "Radio",
+          "Type": 3,
+          "Value": "Red",
+          "Checked": true,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 140,
+          "Flags": 49152
+        },
+        {
+          "Name": "Radio",
+          "Type": 3,
+          "Value": "Red",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 102,
+          "Flags": 49152
+        },
+        {
+          "Name": "Multiline",
+          "Type": 6,
+          "Value": "changed line\r\nfinal line",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 352,
+          "Flags": 4096
+        },
+        {
+          "Name": "SingleList",
+          "Type": 5,
+          "Value": "K",
+          "Checked": false,
+          "SelectedIndices": [
+            3
+          ],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 754,
+          "Flags": 0
+        },
+        {
+          "Name": "MultiList",
+          "Type": 5,
+          "Value": "G",
+          "Checked": false,
+          "SelectedIndices": [
+            1,
+            3
+          ],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 856,
+          "Flags": 2097152
+        },
+        {
+          "Name": "ReadOnly",
+          "Type": 6,
+          "Value": "FIXED RO",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 202,
+          "Flags": 1
+        },
+        {
+          "Name": "Required",
+          "Type": 6,
+          "Value": "",
+          "Checked": false,
+          "SelectedIndices": [],
+          "HasAppearance": true,
+          "AppearanceUtf16Bytes": 148,
+          "Flags": 2
+        }
+      ],
+      "Checks": [
+        {
+          "Id": "widget-type-matrix",
+          "Passed": true,
+          "Detail": "3,3,6,5,5,6,6"
+        },
+        {
+          "Id": "native-readonly-required-flags",
+          "Passed": true,
+          "Detail": "ReadOnly bit0 and Required bit1 preserved."
+        },
+        {
+          "Id": "first-commit-radio-exclusive",
+          "Passed": true,
+          "Detail": "Blue:checked=False;Blue:checked=True"
+        },
+        {
+          "Id": "first-commit-multiline-value",
+          "Passed": true,
+          "Detail": "Value=first line<CR><LF>second line"
+        },
+        {
+          "Id": "first-commit-single-list-export-index",
+          "Passed": true,
+          "Detail": "/V=G; selected=[1]"
+        },
+        {
+          "Id": "first-commit-multi-list-exports-indices",
+          "Passed": true,
+          "Detail": "Native first /V=R; selected=[0,2]; canonical array independently checked."
+        },
+        {
+          "Id": "first-commit-required-value",
+          "Passed": true,
+          "Detail": "Required /V=provided"
+        },
+        {
+          "Id": "readonly-input-refused",
+          "Passed": true,
+          "Detail": "Typing at read-only widget leaves canonical value unchanged."
+        },
+        {
+          "Id": "first-reopen-radio-exclusive",
+          "Passed": true,
+          "Detail": "Blue:checked=False;Blue:checked=True"
+        },
+        {
+          "Id": "first-reopen-multiline-value",
+          "Passed": true,
+          "Detail": "Value=first line<CR><LF>second line"
+        },
+        {
+          "Id": "first-reopen-single-list-export-index",
+          "Passed": true,
+          "Detail": "/V=G; selected=[1]"
+        },
+        {
+          "Id": "first-reopen-multi-list-exports-indices",
+          "Passed": true,
+          "Detail": "Native first /V=R; selected=[0,2]; canonical array independently checked."
+        },
+        {
+          "Id": "first-reopen-required-value",
+          "Passed": true,
+          "Detail": "Required /V=provided"
+        },
+        {
+          "Id": "normal-appearances-after-first-save",
+          "Passed": true,
+          "Detail": "Every widget retains its normal appearance; radio AP uses state dictionaries."
+        },
+        {
+          "Id": "second-commit-radio-exclusive",
+          "Passed": true,
+          "Detail": "Red:checked=True;Red:checked=False"
+        },
+        {
+          "Id": "second-commit-multiline-value",
+          "Passed": true,
+          "Detail": "Value=changed line<CR><LF>final line"
+        },
+        {
+          "Id": "second-commit-single-list-export-index",
+          "Passed": true,
+          "Detail": "/V=K; selected=[3]"
+        },
+        {
+          "Id": "second-commit-multi-list-exports-indices",
+          "Passed": true,
+          "Detail": "Native first /V=G; selected=[1,3]; canonical array independently checked."
+        },
+        {
+          "Id": "second-commit-required-value",
+          "Passed": true,
+          "Detail": "Required /V="
+        },
+        {
+          "Id": "required-does-not-validate-automatically",
+          "Passed": true,
+          "Detail": "Native editing permits an empty required field; application submission validation remains separate."
+        },
+        {
+          "Id": "second-reopen-radio-exclusive",
+          "Passed": true,
+          "Detail": "Red:checked=True;Red:checked=False"
+        },
+        {
+          "Id": "second-reopen-multiline-value",
+          "Passed": true,
+          "Detail": "Value=changed line<CR><LF>final line"
+        },
+        {
+          "Id": "second-reopen-single-list-export-index",
+          "Passed": true,
+          "Detail": "/V=K; selected=[3]"
+        },
+        {
+          "Id": "second-reopen-multi-list-exports-indices",
+          "Passed": true,
+          "Detail": "Native first /V=G; selected=[1,3]; canonical array independently checked."
+        },
+        {
+          "Id": "second-reopen-required-value",
+          "Passed": true,
+          "Detail": "Required /V="
+        },
+        {
+          "Id": "flags-and-widget-count-after-second-save",
+          "Passed": true,
+          "Detail": "All widget flags survive second native focus/input/blur/save/reopen."
+        }
+      ],
+      "Events": [
+        {
+          "Operation": "focus-and-mouse-click",
+          "Target": "radio-Blue",
+          "X": 110,
+          "Y": 600,
+          "FocusResult": 1,
+          "DownResult": 1,
+          "UpResult": 1
+        },
+        {
+          "Operation": "focus-and-mouse-click",
+          "Target": "multiline",
+          "X": 60,
+          "Y": 520,
+          "FocusResult": 1,
+          "DownResult": 1,
+          "UpResult": 1
+        },
+        {
+          "Operation": "multiline-focused-text",
+          "Input": "first line\r\nsecond line",
+          "Translation": "CRLF is one Return keydown plus translated CR character",
+          "Text": "first line\r\nsecond line"
+        },
+        {
+          "Operation": "focus-and-mouse-click",
+          "Target": "single-list",
+          "X": 80,
+          "Y": 390,
+          "FocusResult": 1,
+          "DownResult": 1,
+          "UpResult": 1
+        },
+        {
+          "Operation": "single-list-key-down",
+          "NativeResult": 1
+        },
+        {
+          "Operation": "focus-and-mouse-click",
+          "Target": "multi-list-row0",
+          "X": 340,
+          "Y": 390,
+          "FocusResult": 1,
+          "DownResult": 1,
+          "UpResult": 1
+        },
+        {
+          "Operation": "mouse-click",
+          "Target": "multi-list-control-row2",
+          "X": 340,
+          "Y": 366,
+          "Modifier": 2,
+          "DownResult": 1,
+          "UpResult": 1
+        },
+        {
+          "Operation": "focus-and-mouse-click",
+          "Target": "readonly",
+          "X": 80,
+          "Y": 215,
+          "FocusResult": 0,
+          "DownResult": 0,
+          "UpResult": 0
+        },
+        {
+          "Operation": "focus-and-mouse-click",
+          "Target": "required",
+          "X": 80,
+          "Y": 155,
+          "FocusResult": 1,
+          "DownResult": 1,
+          "UpResult": 1
+        },
+        {
+          "Operation": "focus-and-mouse-click",
+          "Target": "second-radio-Red",
+          "X": 50,
+          "Y": 600,
+          "FocusResult": 1,
+          "DownResult": 1,
+          "UpResult": 1
+        },
+        {
+          "Operation": "focus-and-mouse-click",
+          "Target": "second-multiline",
+          "X": 60,
+          "Y": 520,
+          "FocusResult": 1,
+          "DownResult": 1,
+          "UpResult": 1
+        },
+        {
+          "Operation": "focus-and-mouse-click",
+          "Target": "second-single-list",
+          "X": 80,
+          "Y": 390,
+          "FocusResult": 1,
+          "DownResult": 1,
+          "UpResult": 1
+        },
+        {
+          "Operation": "focus-and-mouse-click",
+          "Target": "second-multi-list-row1",
+          "X": 340,
+          "Y": 378,
+          "FocusResult": 1,
+          "DownResult": 1,
+          "UpResult": 1
+        },
+        {
+          "Operation": "mouse-click",
+          "Target": "second-multi-list-control-row3",
+          "X": 340,
+          "Y": 354,
+          "Modifier": 2,
+          "DownResult": 1,
+          "UpResult": 1
+        },
+        {
+          "Operation": "focus-and-mouse-click",
+          "Target": "second-required-empty",
+          "X": 80,
+          "Y": 155,
+          "FocusResult": 1,
+          "DownResult": 1,
+          "UpResult": 1
+        }
+      ],
+      "Callbacks": {
+        "Invalidations": 158,
+        "Changes": 5,
+        "FocusNotifications": 4,
+        "TimersCreated": 2,
+        "TimersKilled": 2
+      },
+      "Limitations": [
+        "Native PDFium host experiment only. No production form session, Avalonia keyboard/pointer/focus routing, accessibility, dispatcher timer loop or physical IME acceptance.",
+        "Required is a persisted field flag; this probe demonstrates that native editing does not itself enforce submit-time required validation.",
+        "JavaScript, validation/calculation actions, XFA, signatures, encrypted input and arbitrary appearance styling are outside this matrix.",
+        "Independent pypdf canonical tree/values/options/appearances and Poppler rendering are required in the surrounding workflow."
+      ]
+    },
+    "nativeReportSHA256": "228EC4083AB0E2B9E41A3ECC25A72D772288B5FD0DB0B97B8EB4C84B2EEC6132",
+    "independentCheckCount": 69,
+    "independentCheckIds": [
+      "native-event-host-evidence",
+      "fixed-output-matrix",
+      "input.pdf:native-output-binding",
+      "input.pdf:canonical-field-widget-graph",
+      "input.pdf:retained-page-content-and-geometry",
+      "input.pdf:readonly-required-flags-and-values",
+      "input.pdf:radio-parent-and-distinct-export-states",
+      "input.pdf:multiline-flag",
+      "input.pdf:SingleList:export-display-options-and-flags",
+      "input.pdf:MultiList:export-display-options-and-flags",
+      "focused-saved.pdf:native-output-binding",
+      "focused-saved.pdf:canonical-field-widget-graph",
+      "focused-saved.pdf:retained-page-content-and-geometry",
+      "focused-saved.pdf:readonly-required-flags-and-values",
+      "focused-saved.pdf:radio-parent-and-distinct-export-states",
+      "focused-saved.pdf:multiline-flag",
+      "focused-saved.pdf:SingleList:export-display-options-and-flags",
+      "focused-saved.pdf:MultiList:export-display-options-and-flags",
+      "focused-saved.pdf:radio-canonical-V-AS-exclusive",
+      "focused-saved.pdf:SingleList:canonical-selection-V-I",
+      "focused-saved.pdf:SingleList:actual-AP-displays-labels",
+      "focused-saved.pdf:MultiList:canonical-selection-V-I",
+      "focused-saved.pdf:MultiList:actual-AP-displays-labels",
+      "focused-saved.pdf:multiline-canonical-and-actual-AP-text",
+      "focused-saved.pdf:multiline-AP-lines-have-distinct-descending-baselines",
+      "focused-saved.pdf:readonly-appearance-stays-fixed",
+      "focused-saved.pdf:required-appearance-agrees-with-value",
+      "second-saved.pdf:native-output-binding",
+      "second-saved.pdf:canonical-field-widget-graph",
+      "second-saved.pdf:retained-page-content-and-geometry",
+      "second-saved.pdf:readonly-required-flags-and-values",
+      "second-saved.pdf:radio-parent-and-distinct-export-states",
+      "second-saved.pdf:multiline-flag",
+      "second-saved.pdf:SingleList:export-display-options-and-flags",
+      "second-saved.pdf:MultiList:export-display-options-and-flags",
+      "second-saved.pdf:radio-canonical-V-AS-exclusive",
+      "second-saved.pdf:SingleList:canonical-selection-V-I",
+      "second-saved.pdf:SingleList:actual-AP-displays-labels",
+      "second-saved.pdf:MultiList:canonical-selection-V-I",
+      "second-saved.pdf:MultiList:actual-AP-displays-labels",
+      "second-saved.pdf:multiline-canonical-and-actual-AP-text",
+      "second-saved.pdf:multiline-AP-lines-have-distinct-descending-baselines",
+      "second-saved.pdf:readonly-appearance-stays-fixed",
+      "second-saved.pdf:required-appearance-agrees-with-value",
+      "input.pdf:independent-render",
+      "focused-saved.pdf:independent-render",
+      "second-saved.pdf:independent-render",
+      "input:readonly-AP-is-visible-text",
+      "focused-saved.pdf:SingleList:visible-highlight-matches-canonical-selection",
+      "focused-saved.pdf:MultiList:visible-highlight-matches-canonical-selection",
+      "focused-saved.pdf:radio:Red:visible-dot-matches-AS",
+      "focused-saved.pdf:radio:Blue:visible-dot-matches-AS",
+      "focused-saved.pdf:retained-pixels-outside-fields",
+      "focused-saved.pdf:header-pixels-exact",
+      "focused-saved.pdf:footer-pixels-exact",
+      "focused-saved.pdf:readonly-pixels-exact",
+      "second-saved.pdf:SingleList:visible-highlight-matches-canonical-selection",
+      "second-saved.pdf:MultiList:visible-highlight-matches-canonical-selection",
+      "second-saved.pdf:radio:Red:visible-dot-matches-AS",
+      "second-saved.pdf:radio:Blue:visible-dot-matches-AS",
+      "second-saved.pdf:retained-pixels-outside-fields",
+      "second-saved.pdf:header-pixels-exact",
+      "second-saved.pdf:footer-pixels-exact",
+      "second-saved.pdf:readonly-pixels-exact",
+      "second-edit:radio-appearance-visibly-updated",
+      "second-edit:multiline-appearance-visibly-updated",
+      "second-edit:single-list-appearance-visibly-updated",
+      "second-edit:multi-list-appearance-visibly-updated",
+      "semantic-negative-controls-and-stale-pass-protection"
+    ],
+    "negativeControls": [
+      {
+        "id": "missing-output",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [],
+        "error": "FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\Procedure\\\\AvaloniaControl\\\\artifacts\\\\pdfviewer\\\\20261015T114530Z-p0-forms\\\\forms-advanced\\\\self-tests\\\\290194cd89bd4c8d87c59c0f3fd77e80\\\\missing-output\\\\focused-saved.pdf'",
+        "report": "self-tests\\290194cd89bd4c8d87c59c0f3fd77e80\\missing-output\\independent-audit.json",
+        "reportSHA256": "4FAB084A5D26833A181C1A77843E2545C4B0F0DFCCED3499A7EF26B9E9F09ACE"
+      },
+      {
+        "id": "orphan-widget",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [],
+        "error": "ValueError: Widget /Parent does not match its terminal field",
+        "report": "self-tests\\290194cd89bd4c8d87c59c0f3fd77e80\\orphan-widget\\independent-audit.json",
+        "reportSHA256": "3EBA81D0806CEFDED2D461A574621B3906C85EC0A3BEC95D2C8B698FFE675CCD"
+      },
+      {
+        "id": "stale-multiline-AP",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [
+          "focused-saved.pdf:multiline-canonical-and-actual-AP-text",
+          "focused-saved.pdf:multiline-AP-lines-have-distinct-descending-baselines"
+        ],
+        "error": "ValueError: Negative control rejected by AcroForm semantic checks",
+        "report": "self-tests\\290194cd89bd4c8d87c59c0f3fd77e80\\stale-multiline-AP\\independent-audit.json",
+        "reportSHA256": "6748162A4FFD098E451520C12E19E2873B2C04A8A208763896B57097A7F9B4EC"
+      },
+      {
+        "id": "stale-list-AP",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [
+          "focused-saved.pdf:SingleList:visible-highlight-matches-canonical-selection"
+        ],
+        "error": null,
+        "report": "self-tests\\290194cd89bd4c8d87c59c0f3fd77e80\\stale-list-AP\\independent-audit.json",
+        "reportSHA256": "BD94D13D41FF58BF60D9F04DC693548418FF488FE54CB1E34FD7A830AFFC932A"
+      },
+      {
+        "id": "wrong-radio-AS",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [
+          "focused-saved.pdf:radio-canonical-V-AS-exclusive"
+        ],
+        "error": "ValueError: Negative control rejected by AcroForm semantic checks",
+        "report": "self-tests\\290194cd89bd4c8d87c59c0f3fd77e80\\wrong-radio-AS\\independent-audit.json",
+        "reportSHA256": "A779CA2F4A93B48CC9BFDE3198AA1DF7A1AFDDADE5592FD6DAE80C0BA366B877"
+      },
+      {
+        "id": "wrong-choice-I",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [
+          "focused-saved.pdf:MultiList:canonical-selection-V-I"
+        ],
+        "error": "ValueError: Negative control rejected by AcroForm semantic checks",
+        "report": "self-tests\\290194cd89bd4c8d87c59c0f3fd77e80\\wrong-choice-I\\independent-audit.json",
+        "reportSHA256": "587D2010EE9E0DD5A70521817390CE9E082C9E0D0B30DBFDB7659F2F6A3F4C93"
+      },
+      {
+        "id": "retained-content-changed",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [
+          "focused-saved.pdf:retained-page-content-and-geometry"
+        ],
+        "error": "ValueError: Negative control rejected by AcroForm semantic checks",
+        "report": "self-tests\\290194cd89bd4c8d87c59c0f3fd77e80\\retained-content-changed\\independent-audit.json",
+        "reportSHA256": "BC5B9BECCA23C15380FD5431B775AA65DC873E1A7F1607C0DDAB2ABA21519B66"
+      }
+    ],
+    "visualReview": {
+      "schemaVersion": 1,
+      "passed": true,
+      "reviewedUtc": "2026-10-15T11:51:20.556667+00:00",
+      "reviewer": "Codex /root/forms_native_matrix",
+      "nativeReportSHA256": "228EC4083AB0E2B9E41A3ECC25A72D772288B5FD0DB0B97B8EB4C84B2EEC6132",
+      "independentAuditSHA256": "949486C610E15079B4CAD156035C80C4EFE2CE9E2EDFF94A2EEE2C08A91D8108",
+      "images": [
+        {
+          "file": "forms-advanced-contact-sheet.png",
+          "sha256": "5FFB82C0C18387A65F6B1FF43268F0C5F3D56A3D797215A61C4CA2AFB2DCD4FC",
+          "size": [
+            1800,
+            740
+          ],
+          "actuallyViewed": true,
+          "method": "functions.view_image, full returned image",
+          "findings": "Viewed the three-stage comparison: initial off/off radio, Blue first then Red second; both multiline values and exact list highlight transitions agree with the intended stages."
+        },
+        {
+          "file": "input-poppler.png",
+          "sha256": "B709E68AF36E6590C0CE0617DC6BD9136A749372E23C4BF5A20C7DA69C7273E0",
+          "size": [
+            1200,
+            1400
+          ],
+          "actuallyViewed": true,
+          "method": "functions.view_image, full returned image",
+          "findings": "Viewed full-size input: both radio widgets off, multiline empty, both lists select Red, FIXED RO visible, Required empty; header and footer readable."
+        },
+        {
+          "file": "focused-saved-poppler.png",
+          "sha256": "A4E2D4FCBA47357706B9C36C23CB16C1440B54985D17C6BAA3668F10AF67B7C7",
+          "size": [
+            1200,
+            1400
+          ],
+          "actuallyViewed": true,
+          "method": "functions.view_image, full returned image",
+          "findings": "Viewed full-size first save: Blue exclusive, first line / second line on distinct baselines, Single Green, Multi Red+Blue, FIXED RO visible, Required provided; original page labels, header and footer remain correct."
+        },
+        {
+          "file": "second-saved-poppler.png",
+          "sha256": "14815A420C6BB14D37626590C80D9B7A128DF4C74EB3DD5B7320FAC45C08B245",
+          "size": [
+            1200,
+            1400
+          ],
+          "actuallyViewed": true,
+          "method": "functions.view_image, full returned image",
+          "findings": "Viewed full-size second save: Red exclusive, changed line / final line on distinct baselines, Single Black, Multi Green+Black, FIXED RO visible, Required empty; no missing glyphs, text overflow or unexpected content changes visible."
+        }
+      ],
+      "pdfs": [
+        {
+          "file": "input.pdf",
+          "sha256": "99C4626D799A82D6928F2C209DF48AB1C8CF441FCE077060B0D417AC401D8448",
+          "inspection": "Automatic hash binding to native report and inspected Poppler raster; PDF bytes were not separately opened in an interactive viewer."
+        },
+        {
+          "file": "focused-saved.pdf",
+          "sha256": "F3FF8A7E2814A1C3B700B8DD20E8528EF8D5D9E0D0C82D92C322336407D288C2",
+          "inspection": "Automatic hash binding to native report and inspected Poppler raster; PDF bytes were not separately opened in an interactive viewer."
+        },
+        {
+          "file": "second-saved.pdf",
+          "sha256": "C4FC42F9AFDF01E07EB9F25B2A54BC3B1B6A6B36BCEBFF6F2435E6C7F3695021",
+          "inspection": "Automatic hash binding to native report and inspected Poppler raster; PDF bytes were not separately opened in an interactive viewer."
+        }
+      ],
+      "checks": [
+        {
+          "id": "radio-state-transition-visible",
+          "passed": true
+        },
+        {
+          "id": "multiline-line-break-and-second-edit-visible",
+          "passed": true
+        },
+        {
+          "id": "single-and-multi-list-highlight-transitions-visible",
+          "passed": true
+        },
+        {
+          "id": "readonly-value-visible-and-stable",
+          "passed": true
+        },
+        {
+          "id": "required-provided-then-empty-visible",
+          "passed": true
+        },
+        {
+          "id": "retained-content-legible-and-layout-clean",
+          "passed": true
+        }
+      ],
+      "limitations": [
+        "This is a manual review of the three fixed one-page AcroForm fixtures and their Poppler rendering. It does not validate Avalonia UI integration, physical input, accessibility, IME or Linux execution.",
+        "Canonical field tree, values, appearance font/text, exact pixel retention and negative controls are established by the separately bound independent audit; visual inspection alone is not their oracle."
+      ]
+    },
+    "limitations": [
+      "Windows native API event injection, not physical keyboard, Avalonia UI or IME integration.",
+      "One fixed AcroForm corpus, no XFA, validation/calculation JavaScript or general form preservation guarantee.",
+      "Linux/Kylin and official reference performance remain unverified."
+    ]
+  },
+  "cjkFormFonts": {
+    "result": {
+      "Status": "native-canonical-managed-appearance-acroform-experiment",
+      "NativeAutomaticAppearanceStatus": "rejected-unembedded-fallback",
+      "FontSourceManifestSHA256": "8AFF3539DB8E6895BCFF702A30F69CB099E526C4FB15100C5AEA248D3E7C65FD",
+      "Checks": [
+        {
+          "Id": "lxgw:saved:characters-accepted",
+          "Passed": true,
+          "Detail": {
+            "AcceptedText": 7,
+            "AcceptedMultiline": 11
+          }
+        },
+        {
+          "Id": "lxgw:saved:canonical-values",
+          "Passed": true,
+          "Detail": {
+            "Fields": [
+              {
+                "Name": "CjkText",
+                "Type": 6,
+                "Value": "中文日本ABC",
+                "SelectedIndices": [],
+                "HasAppearance": true
+              },
+              {
+                "Name": "CjkMultiline",
+                "Type": 6,
+                "Value": "中文第一行\r\n日本第二行",
+                "SelectedIndices": [],
+                "HasAppearance": true
+              },
+              {
+                "Name": "CjkList",
+                "Type": 5,
+                "Value": "日本",
+                "SelectedIndices": [
+                  1
+                ],
+                "HasAppearance": true
+              }
+            ],
+            "NativeListResult": 1
+          }
+        },
+        {
+          "Id": "lxgw:saved:native-fallback-counterexample",
+          "Passed": true,
+          "Detail": [
+            {
+              "Field": "CjkText",
+              "Resource": "/SimSun_86",
+              "BaseFont": "/SimSun",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkText",
+              "Resource": "/Cjk",
+              "BaseFont": "/LXGWWenKai-Regular",
+              "Embedded": true
+            },
+            {
+              "Field": "CjkMultiline",
+              "Resource": "/SimSun_86",
+              "BaseFont": "/SimSun",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkList",
+              "Resource": "/SimSun_86",
+              "BaseFont": "/SimSun",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkList",
+              "Resource": "/Cjk",
+              "BaseFont": "/LXGWWenKai-Regular",
+              "Embedded": true
+            }
+          ]
+        },
+        {
+          "Id": "lxgw:saved:reopen-values",
+          "Passed": true,
+          "Detail": [
+            {
+              "Name": "CjkText",
+              "Type": 6,
+              "Value": "中文日本ABC",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkMultiline",
+              "Type": 6,
+              "Value": "中文第一行\r\n日本第二行",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkList",
+              "Type": 5,
+              "Value": "日本",
+              "SelectedIndices": [
+                1
+              ],
+              "HasAppearance": true
+            }
+          ]
+        },
+        {
+          "Id": "lxgw:saved:appearances",
+          "Passed": true,
+          "Detail": [
+            {
+              "Name": "CjkText",
+              "Type": 6,
+              "Value": "中文日本ABC",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkMultiline",
+              "Type": 6,
+              "Value": "中文第一行\r\n日本第二行",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkList",
+              "Type": 5,
+              "Value": "日本",
+              "SelectedIndices": [
+                1
+              ],
+              "HasAppearance": true
+            }
+          ]
+        },
+        {
+          "Id": "lxgw:reedited:characters-accepted",
+          "Passed": true,
+          "Detail": {
+            "AcceptedText": 7,
+            "AcceptedMultiline": 10
+          }
+        },
+        {
+          "Id": "lxgw:reedited:canonical-values",
+          "Passed": true,
+          "Detail": {
+            "Fields": [
+              {
+                "Name": "CjkText",
+                "Type": 6,
+                "Value": "兼容汉字ABC",
+                "SelectedIndices": [],
+                "HasAppearance": true
+              },
+              {
+                "Name": "CjkMultiline",
+                "Type": 6,
+                "Value": "第二次中文\r\n日本兼容",
+                "SelectedIndices": [],
+                "HasAppearance": true
+              },
+              {
+                "Name": "CjkList",
+                "Type": 5,
+                "Value": "ABC",
+                "SelectedIndices": [
+                  2
+                ],
+                "HasAppearance": true
+              }
+            ],
+            "NativeListResult": 1
+          }
+        },
+        {
+          "Id": "lxgw:reedited:native-fallback-counterexample",
+          "Passed": true,
+          "Detail": [
+            {
+              "Field": "CjkText",
+              "Resource": "/SimSun_86",
+              "BaseFont": "/SimSun",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkText",
+              "Resource": "/Cjk",
+              "BaseFont": "/LXGWWenKai-Regular",
+              "Embedded": true
+            },
+            {
+              "Field": "CjkMultiline",
+              "Resource": "/SimSun_86",
+              "BaseFont": "/SimSun",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkList",
+              "Resource": "/SimSun_86",
+              "BaseFont": "/SimSun",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkList",
+              "Resource": "/Cjk",
+              "BaseFont": "/LXGWWenKai-Regular",
+              "Embedded": true
+            }
+          ]
+        },
+        {
+          "Id": "lxgw:reedited:reopen-values",
+          "Passed": true,
+          "Detail": [
+            {
+              "Name": "CjkText",
+              "Type": 6,
+              "Value": "兼容汉字ABC",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkMultiline",
+              "Type": 6,
+              "Value": "第二次中文\r\n日本兼容",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkList",
+              "Type": 5,
+              "Value": "ABC",
+              "SelectedIndices": [
+                2
+              ],
+              "HasAppearance": true
+            }
+          ]
+        },
+        {
+          "Id": "lxgw:reedited:appearances",
+          "Passed": true,
+          "Detail": [
+            {
+              "Name": "CjkText",
+              "Type": 6,
+              "Value": "兼容汉字ABC",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkMultiline",
+              "Type": 6,
+              "Value": "第二次中文\r\n日本兼容",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkList",
+              "Type": 5,
+              "Value": "ABC",
+              "SelectedIndices": [
+                2
+              ],
+              "HasAppearance": true
+            }
+          ]
+        },
+        {
+          "Id": "zen:saved:characters-accepted",
+          "Passed": true,
+          "Detail": {
+            "AcceptedText": 7,
+            "AcceptedMultiline": 11
+          }
+        },
+        {
+          "Id": "zen:saved:canonical-values",
+          "Passed": true,
+          "Detail": {
+            "Fields": [
+              {
+                "Name": "CjkText",
+                "Type": 6,
+                "Value": "中文日本ABC",
+                "SelectedIndices": [],
+                "HasAppearance": true
+              },
+              {
+                "Name": "CjkMultiline",
+                "Type": 6,
+                "Value": "中文第一行\r\n日本第二行",
+                "SelectedIndices": [],
+                "HasAppearance": true
+              },
+              {
+                "Name": "CjkList",
+                "Type": 5,
+                "Value": "日本",
+                "SelectedIndices": [
+                  1
+                ],
+                "HasAppearance": true
+              }
+            ],
+            "NativeListResult": 1
+          }
+        },
+        {
+          "Id": "zen:saved:native-fallback-counterexample",
+          "Passed": true,
+          "Detail": [
+            {
+              "Field": "CjkText",
+              "Resource": "/SimSun_86",
+              "BaseFont": "/SimSun",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkText",
+              "Resource": "/Cjk",
+              "BaseFont": "/ZenKakuGothicNew-Regular",
+              "Embedded": true
+            },
+            {
+              "Field": "CjkMultiline",
+              "Resource": "/SimSun_86",
+              "BaseFont": "/SimSun",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkList",
+              "Resource": "/SimSun_86",
+              "BaseFont": "/SimSun",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkList",
+              "Resource": "/Cjk",
+              "BaseFont": "/ZenKakuGothicNew-Regular",
+              "Embedded": true
+            }
+          ]
+        },
+        {
+          "Id": "zen:saved:reopen-values",
+          "Passed": true,
+          "Detail": [
+            {
+              "Name": "CjkText",
+              "Type": 6,
+              "Value": "中文日本ABC",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkMultiline",
+              "Type": 6,
+              "Value": "中文第一行\r\n日本第二行",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkList",
+              "Type": 5,
+              "Value": "日本",
+              "SelectedIndices": [
+                1
+              ],
+              "HasAppearance": true
+            }
+          ]
+        },
+        {
+          "Id": "zen:saved:appearances",
+          "Passed": true,
+          "Detail": [
+            {
+              "Name": "CjkText",
+              "Type": 6,
+              "Value": "中文日本ABC",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkMultiline",
+              "Type": 6,
+              "Value": "中文第一行\r\n日本第二行",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkList",
+              "Type": 5,
+              "Value": "日本",
+              "SelectedIndices": [
+                1
+              ],
+              "HasAppearance": true
+            }
+          ]
+        },
+        {
+          "Id": "zen:reedited:characters-accepted",
+          "Passed": true,
+          "Detail": {
+            "AcceptedText": 7,
+            "AcceptedMultiline": 10
+          }
+        },
+        {
+          "Id": "zen:reedited:canonical-values",
+          "Passed": true,
+          "Detail": {
+            "Fields": [
+              {
+                "Name": "CjkText",
+                "Type": 6,
+                "Value": "互換漢字ABC",
+                "SelectedIndices": [],
+                "HasAppearance": true
+              },
+              {
+                "Name": "CjkMultiline",
+                "Type": 6,
+                "Value": "第二次中文\r\n日本兼容",
+                "SelectedIndices": [],
+                "HasAppearance": true
+              },
+              {
+                "Name": "CjkList",
+                "Type": 5,
+                "Value": "ABC",
+                "SelectedIndices": [
+                  2
+                ],
+                "HasAppearance": true
+              }
+            ],
+            "NativeListResult": 1
+          }
+        },
+        {
+          "Id": "zen:reedited:native-fallback-counterexample",
+          "Passed": true,
+          "Detail": [
+            {
+              "Field": "CjkText",
+              "Resource": "/SimSun_86",
+              "BaseFont": "/SimSun",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkText",
+              "Resource": "/Cjk",
+              "BaseFont": "/ZenKakuGothicNew-Regular",
+              "Embedded": true
+            },
+            {
+              "Field": "CjkMultiline",
+              "Resource": "/SimSun_86",
+              "BaseFont": "/SimSun",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkList",
+              "Resource": "/SimSun_86",
+              "BaseFont": "/SimSun",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkList",
+              "Resource": "/Cjk",
+              "BaseFont": "/ZenKakuGothicNew-Regular",
+              "Embedded": true
+            }
+          ]
+        },
+        {
+          "Id": "zen:reedited:reopen-values",
+          "Passed": true,
+          "Detail": [
+            {
+              "Name": "CjkText",
+              "Type": 6,
+              "Value": "互換漢字ABC",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkMultiline",
+              "Type": 6,
+              "Value": "第二次中文\r\n日本兼容",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkList",
+              "Type": 5,
+              "Value": "ABC",
+              "SelectedIndices": [
+                2
+              ],
+              "HasAppearance": true
+            }
+          ]
+        },
+        {
+          "Id": "zen:reedited:appearances",
+          "Passed": true,
+          "Detail": [
+            {
+              "Name": "CjkText",
+              "Type": 6,
+              "Value": "互換漢字ABC",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkMultiline",
+              "Type": 6,
+              "Value": "第二次中文\r\n日本兼容",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkList",
+              "Type": 5,
+              "Value": "ABC",
+              "SelectedIndices": [
+                2
+              ],
+              "HasAppearance": true
+            }
+          ]
+        },
+        {
+          "Id": "gowun:saved:characters-accepted",
+          "Passed": true,
+          "Detail": {
+            "AcceptedText": 7,
+            "AcceptedMultiline": 9
+          }
+        },
+        {
+          "Id": "gowun:saved:canonical-values",
+          "Passed": true,
+          "Detail": {
+            "Fields": [
+              {
+                "Name": "CjkText",
+                "Type": 6,
+                "Value": "한글입력ABC",
+                "SelectedIndices": [],
+                "HasAppearance": true
+              },
+              {
+                "Name": "CjkMultiline",
+                "Type": 6,
+                "Value": "첫째 줄\r\n둘째 줄",
+                "SelectedIndices": [],
+                "HasAppearance": true
+              },
+              {
+                "Name": "CjkList",
+                "Type": 5,
+                "Value": "글꼴",
+                "SelectedIndices": [
+                  1
+                ],
+                "HasAppearance": true
+              }
+            ],
+            "NativeListResult": 1
+          }
+        },
+        {
+          "Id": "gowun:saved:native-fallback-counterexample",
+          "Passed": true,
+          "Detail": [
+            {
+              "Field": "CjkText",
+              "Resource": "/_81",
+              "BaseFont": "/Ebrima",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkText",
+              "Resource": "/Cjk",
+              "BaseFont": "/GowunDodum-Regular",
+              "Embedded": true
+            },
+            {
+              "Field": "CjkMultiline",
+              "Resource": "/_81",
+              "BaseFont": "/Ebrima",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkMultiline",
+              "Resource": "/Cjk",
+              "BaseFont": "/GowunDodum-Regular",
+              "Embedded": true
+            },
+            {
+              "Field": "CjkList",
+              "Resource": "/_81",
+              "BaseFont": "/Ebrima",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkList",
+              "Resource": "/Cjk",
+              "BaseFont": "/GowunDodum-Regular",
+              "Embedded": true
+            }
+          ]
+        },
+        {
+          "Id": "gowun:saved:reopen-values",
+          "Passed": true,
+          "Detail": [
+            {
+              "Name": "CjkText",
+              "Type": 6,
+              "Value": "한글입력ABC",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkMultiline",
+              "Type": 6,
+              "Value": "첫째 줄\r\n둘째 줄",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkList",
+              "Type": 5,
+              "Value": "글꼴",
+              "SelectedIndices": [
+                1
+              ],
+              "HasAppearance": true
+            }
+          ]
+        },
+        {
+          "Id": "gowun:saved:appearances",
+          "Passed": true,
+          "Detail": [
+            {
+              "Name": "CjkText",
+              "Type": 6,
+              "Value": "한글입력ABC",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkMultiline",
+              "Type": 6,
+              "Value": "첫째 줄\r\n둘째 줄",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkList",
+              "Type": 5,
+              "Value": "글꼴",
+              "SelectedIndices": [
+                1
+              ],
+              "HasAppearance": true
+            }
+          ]
+        },
+        {
+          "Id": "gowun:reedited:characters-accepted",
+          "Passed": true,
+          "Detail": {
+            "AcceptedText": 8,
+            "AcceptedMultiline": 11
+          }
+        },
+        {
+          "Id": "gowun:reedited:canonical-values",
+          "Passed": true,
+          "Detail": {
+            "Fields": [
+              {
+                "Name": "CjkText",
+                "Type": 6,
+                "Value": "새문자검증ABC",
+                "SelectedIndices": [],
+                "HasAppearance": true
+              },
+              {
+                "Name": "CjkMultiline",
+                "Type": 6,
+                "Value": "다시 한글\r\n글꼴 확인",
+                "SelectedIndices": [],
+                "HasAppearance": true
+              },
+              {
+                "Name": "CjkList",
+                "Type": 5,
+                "Value": "ABC",
+                "SelectedIndices": [
+                  2
+                ],
+                "HasAppearance": true
+              }
+            ],
+            "NativeListResult": 1
+          }
+        },
+        {
+          "Id": "gowun:reedited:native-fallback-counterexample",
+          "Passed": true,
+          "Detail": [
+            {
+              "Field": "CjkText",
+              "Resource": "/_81",
+              "BaseFont": "/Ebrima",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkText",
+              "Resource": "/Cjk",
+              "BaseFont": "/GowunDodum-Regular",
+              "Embedded": true
+            },
+            {
+              "Field": "CjkMultiline",
+              "Resource": "/_81",
+              "BaseFont": "/Ebrima",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkMultiline",
+              "Resource": "/Cjk",
+              "BaseFont": "/GowunDodum-Regular",
+              "Embedded": true
+            },
+            {
+              "Field": "CjkList",
+              "Resource": "/_81",
+              "BaseFont": "/Ebrima",
+              "Embedded": false
+            },
+            {
+              "Field": "CjkList",
+              "Resource": "/Cjk",
+              "BaseFont": "/GowunDodum-Regular",
+              "Embedded": true
+            }
+          ]
+        },
+        {
+          "Id": "gowun:reedited:reopen-values",
+          "Passed": true,
+          "Detail": [
+            {
+              "Name": "CjkText",
+              "Type": 6,
+              "Value": "새문자검증ABC",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkMultiline",
+              "Type": 6,
+              "Value": "다시 한글\r\n글꼴 확인",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkList",
+              "Type": 5,
+              "Value": "ABC",
+              "SelectedIndices": [
+                2
+              ],
+              "HasAppearance": true
+            }
+          ]
+        },
+        {
+          "Id": "gowun:reedited:appearances",
+          "Passed": true,
+          "Detail": [
+            {
+              "Name": "CjkText",
+              "Type": 6,
+              "Value": "새문자검증ABC",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkMultiline",
+              "Type": 6,
+              "Value": "다시 한글\r\n글꼴 확인",
+              "SelectedIndices": [],
+              "HasAppearance": true
+            },
+            {
+              "Name": "CjkList",
+              "Type": 5,
+              "Value": "ABC",
+              "SelectedIndices": [
+                2
+              ],
+              "HasAppearance": true
+            }
+          ]
+        }
+      ],
+      "Cases": [
+        {
+          "Id": "lxgw",
+          "FontFile": "LXGWWenKai-Regular.ttf",
+          "FontPath": "<REPO_ROOT>\\artifacts\\pdfviewer\\20261015T114530Z-p0-forms\\font-subset\\sources\\LXGWWenKai-Regular.ttf",
+          "SourceSHA256": "39AD71264B588165B469E35E6AFB162A378DACD1F95348160240BA9038AC3009",
+          "SourceBytes": 25575676,
+          "MappedBmpScalars": 43478,
+          "Options": [
+            "中文",
+            "日本",
+            "ABC"
+          ],
+          "InputFile": "lxgw-input.pdf",
+          "Stages": [
+            {
+              "Id": "saved",
+              "File": "lxgw-saved.pdf",
+              "NativeFile": "lxgw-native-saved.pdf",
+              "NativeFonts": [
+                {
+                  "Field": "CjkText",
+                  "Resource": "/SimSun_86",
+                  "BaseFont": "/SimSun",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkText",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/LXGWWenKai-Regular",
+                  "Embedded": true
+                },
+                {
+                  "Field": "CjkMultiline",
+                  "Resource": "/SimSun_86",
+                  "BaseFont": "/SimSun",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkList",
+                  "Resource": "/SimSun_86",
+                  "BaseFont": "/SimSun",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkList",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/LXGWWenKai-Regular",
+                  "Embedded": true
+                }
+              ],
+              "Expected": [
+                {
+                  "Name": "CjkText",
+                  "Value": "中文日本ABC"
+                },
+                {
+                  "Name": "CjkMultiline",
+                  "Value": "中文第一行\r日本第二行"
+                },
+                {
+                  "Name": "CjkList",
+                  "Value": "日本"
+                }
+              ],
+              "Fields": [
+                {
+                  "Name": "CjkText",
+                  "Type": 6,
+                  "Value": "中文日本ABC",
+                  "SelectedIndices": [],
+                  "HasAppearance": true
+                },
+                {
+                  "Name": "CjkMultiline",
+                  "Type": 6,
+                  "Value": "中文第一行\r\n日本第二行",
+                  "SelectedIndices": [],
+                  "HasAppearance": true
+                },
+                {
+                  "Name": "CjkList",
+                  "Type": 5,
+                  "Value": "日本",
+                  "SelectedIndices": [
+                    1
+                  ],
+                  "HasAppearance": true
+                }
+              ]
+            },
+            {
+              "Id": "reedited",
+              "File": "lxgw-reedited.pdf",
+              "NativeFile": "lxgw-native-reedited.pdf",
+              "NativeFonts": [
+                {
+                  "Field": "CjkText",
+                  "Resource": "/SimSun_86",
+                  "BaseFont": "/SimSun",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkText",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/LXGWWenKai-Regular",
+                  "Embedded": true
+                },
+                {
+                  "Field": "CjkMultiline",
+                  "Resource": "/SimSun_86",
+                  "BaseFont": "/SimSun",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkList",
+                  "Resource": "/SimSun_86",
+                  "BaseFont": "/SimSun",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkList",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/LXGWWenKai-Regular",
+                  "Embedded": true
+                }
+              ],
+              "Expected": [
+                {
+                  "Name": "CjkText",
+                  "Value": "兼容汉字ABC"
+                },
+                {
+                  "Name": "CjkMultiline",
+                  "Value": "第二次中文\r日本兼容"
+                },
+                {
+                  "Name": "CjkList",
+                  "Value": "ABC"
+                }
+              ],
+              "Fields": [
+                {
+                  "Name": "CjkText",
+                  "Type": 6,
+                  "Value": "兼容汉字ABC",
+                  "SelectedIndices": [],
+                  "HasAppearance": true
+                },
+                {
+                  "Name": "CjkMultiline",
+                  "Type": 6,
+                  "Value": "第二次中文\r\n日本兼容",
+                  "SelectedIndices": [],
+                  "HasAppearance": true
+                },
+                {
+                  "Name": "CjkList",
+                  "Type": 5,
+                  "Value": "ABC",
+                  "SelectedIndices": [
+                    2
+                  ],
+                  "HasAppearance": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "zen",
+          "FontFile": "ZenKakuGothicNew-Regular.ttf",
+          "FontPath": "<REPO_ROOT>\\artifacts\\pdfviewer\\20261015T114530Z-p0-forms\\font-subset\\sources\\ZenKakuGothicNew-Regular.ttf",
+          "SourceSHA256": "B840CD07A67D89CACCA44249AE49AA99EE7640EB5CE623BE8D8983D6AABAC801",
+          "SourceBytes": 2360248,
+          "MappedBmpScalars": 7737,
+          "Options": [
+            "中文",
+            "日本",
+            "ABC"
+          ],
+          "InputFile": "zen-input.pdf",
+          "Stages": [
+            {
+              "Id": "saved",
+              "File": "zen-saved.pdf",
+              "NativeFile": "zen-native-saved.pdf",
+              "NativeFonts": [
+                {
+                  "Field": "CjkText",
+                  "Resource": "/SimSun_86",
+                  "BaseFont": "/SimSun",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkText",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/ZenKakuGothicNew-Regular",
+                  "Embedded": true
+                },
+                {
+                  "Field": "CjkMultiline",
+                  "Resource": "/SimSun_86",
+                  "BaseFont": "/SimSun",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkList",
+                  "Resource": "/SimSun_86",
+                  "BaseFont": "/SimSun",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkList",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/ZenKakuGothicNew-Regular",
+                  "Embedded": true
+                }
+              ],
+              "Expected": [
+                {
+                  "Name": "CjkText",
+                  "Value": "中文日本ABC"
+                },
+                {
+                  "Name": "CjkMultiline",
+                  "Value": "中文第一行\r日本第二行"
+                },
+                {
+                  "Name": "CjkList",
+                  "Value": "日本"
+                }
+              ],
+              "Fields": [
+                {
+                  "Name": "CjkText",
+                  "Type": 6,
+                  "Value": "中文日本ABC",
+                  "SelectedIndices": [],
+                  "HasAppearance": true
+                },
+                {
+                  "Name": "CjkMultiline",
+                  "Type": 6,
+                  "Value": "中文第一行\r\n日本第二行",
+                  "SelectedIndices": [],
+                  "HasAppearance": true
+                },
+                {
+                  "Name": "CjkList",
+                  "Type": 5,
+                  "Value": "日本",
+                  "SelectedIndices": [
+                    1
+                  ],
+                  "HasAppearance": true
+                }
+              ]
+            },
+            {
+              "Id": "reedited",
+              "File": "zen-reedited.pdf",
+              "NativeFile": "zen-native-reedited.pdf",
+              "NativeFonts": [
+                {
+                  "Field": "CjkText",
+                  "Resource": "/SimSun_86",
+                  "BaseFont": "/SimSun",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkText",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/ZenKakuGothicNew-Regular",
+                  "Embedded": true
+                },
+                {
+                  "Field": "CjkMultiline",
+                  "Resource": "/SimSun_86",
+                  "BaseFont": "/SimSun",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkList",
+                  "Resource": "/SimSun_86",
+                  "BaseFont": "/SimSun",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkList",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/ZenKakuGothicNew-Regular",
+                  "Embedded": true
+                }
+              ],
+              "Expected": [
+                {
+                  "Name": "CjkText",
+                  "Value": "互換漢字ABC"
+                },
+                {
+                  "Name": "CjkMultiline",
+                  "Value": "第二次中文\r日本兼容"
+                },
+                {
+                  "Name": "CjkList",
+                  "Value": "ABC"
+                }
+              ],
+              "Fields": [
+                {
+                  "Name": "CjkText",
+                  "Type": 6,
+                  "Value": "互換漢字ABC",
+                  "SelectedIndices": [],
+                  "HasAppearance": true
+                },
+                {
+                  "Name": "CjkMultiline",
+                  "Type": 6,
+                  "Value": "第二次中文\r\n日本兼容",
+                  "SelectedIndices": [],
+                  "HasAppearance": true
+                },
+                {
+                  "Name": "CjkList",
+                  "Type": 5,
+                  "Value": "ABC",
+                  "SelectedIndices": [
+                    2
+                  ],
+                  "HasAppearance": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "gowun",
+          "FontFile": "GowunDodum-Regular.ttf",
+          "FontPath": "<REPO_ROOT>\\artifacts\\pdfviewer\\20261015T114530Z-p0-forms\\font-subset\\sources\\GowunDodum-Regular.ttf",
+          "SourceSHA256": "A6E457933227483A11758FD0947BC74422A106D46F0BF057FDAA5AF94A30067D",
+          "SourceBytes": 7229088,
+          "MappedBmpScalars": 12467,
+          "Options": [
+            "한글",
+            "글꼴",
+            "ABC"
+          ],
+          "InputFile": "gowun-input.pdf",
+          "Stages": [
+            {
+              "Id": "saved",
+              "File": "gowun-saved.pdf",
+              "NativeFile": "gowun-native-saved.pdf",
+              "NativeFonts": [
+                {
+                  "Field": "CjkText",
+                  "Resource": "/_81",
+                  "BaseFont": "/Ebrima",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkText",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/GowunDodum-Regular",
+                  "Embedded": true
+                },
+                {
+                  "Field": "CjkMultiline",
+                  "Resource": "/_81",
+                  "BaseFont": "/Ebrima",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkMultiline",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/GowunDodum-Regular",
+                  "Embedded": true
+                },
+                {
+                  "Field": "CjkList",
+                  "Resource": "/_81",
+                  "BaseFont": "/Ebrima",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkList",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/GowunDodum-Regular",
+                  "Embedded": true
+                }
+              ],
+              "Expected": [
+                {
+                  "Name": "CjkText",
+                  "Value": "한글입력ABC"
+                },
+                {
+                  "Name": "CjkMultiline",
+                  "Value": "첫째 줄\r둘째 줄"
+                },
+                {
+                  "Name": "CjkList",
+                  "Value": "글꼴"
+                }
+              ],
+              "Fields": [
+                {
+                  "Name": "CjkText",
+                  "Type": 6,
+                  "Value": "한글입력ABC",
+                  "SelectedIndices": [],
+                  "HasAppearance": true
+                },
+                {
+                  "Name": "CjkMultiline",
+                  "Type": 6,
+                  "Value": "첫째 줄\r\n둘째 줄",
+                  "SelectedIndices": [],
+                  "HasAppearance": true
+                },
+                {
+                  "Name": "CjkList",
+                  "Type": 5,
+                  "Value": "글꼴",
+                  "SelectedIndices": [
+                    1
+                  ],
+                  "HasAppearance": true
+                }
+              ]
+            },
+            {
+              "Id": "reedited",
+              "File": "gowun-reedited.pdf",
+              "NativeFile": "gowun-native-reedited.pdf",
+              "NativeFonts": [
+                {
+                  "Field": "CjkText",
+                  "Resource": "/_81",
+                  "BaseFont": "/Ebrima",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkText",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/GowunDodum-Regular",
+                  "Embedded": true
+                },
+                {
+                  "Field": "CjkMultiline",
+                  "Resource": "/_81",
+                  "BaseFont": "/Ebrima",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkMultiline",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/GowunDodum-Regular",
+                  "Embedded": true
+                },
+                {
+                  "Field": "CjkList",
+                  "Resource": "/_81",
+                  "BaseFont": "/Ebrima",
+                  "Embedded": false
+                },
+                {
+                  "Field": "CjkList",
+                  "Resource": "/Cjk",
+                  "BaseFont": "/GowunDodum-Regular",
+                  "Embedded": true
+                }
+              ],
+              "Expected": [
+                {
+                  "Name": "CjkText",
+                  "Value": "새문자검증ABC"
+                },
+                {
+                  "Name": "CjkMultiline",
+                  "Value": "다시 한글\r글꼴 확인"
+                },
+                {
+                  "Name": "CjkList",
+                  "Value": "ABC"
+                }
+              ],
+              "Fields": [
+                {
+                  "Name": "CjkText",
+                  "Type": 6,
+                  "Value": "새문자검증ABC",
+                  "SelectedIndices": [],
+                  "HasAppearance": true
+                },
+                {
+                  "Name": "CjkMultiline",
+                  "Type": 6,
+                  "Value": "다시 한글\r\n글꼴 확인",
+                  "SelectedIndices": [],
+                  "HasAppearance": true
+                },
+                {
+                  "Name": "CjkList",
+                  "Type": 5,
+                  "Value": "ABC",
+                  "SelectedIndices": [
+                    2
+                  ],
+                  "HasAppearance": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "Outputs": [
+        {
+          "File": "gowun-input.pdf",
+          "SHA256": "07C11C83F92C6EA1FB731EDBB86E1310A87A1313759E9C7C34FC17FFF8D7722B",
+          "Bytes": 1773379
+        },
+        {
+          "File": "gowun-native-reedited.pdf",
+          "SHA256": "39A35C37D712E8E90AB684374A7770FEC418206542B60A2CF773CB1DB28AA334",
+          "Bytes": 1779066
+        },
+        {
+          "File": "gowun-native-saved.pdf",
+          "SHA256": "8CAFCFAB9019377C4CFB1D1727A602F1B9659D98B1F5E3F5F4439F20A95AC16D",
+          "Bytes": 1779058
+        },
+        {
+          "File": "gowun-reedited.pdf",
+          "SHA256": "6A24007D03E82067AEAB2D5517F20103A878AF7F72E76ED3F4DE32C327988B05",
+          "Bytes": 1775252
+        },
+        {
+          "File": "gowun-saved.pdf",
+          "SHA256": "F31524F86691C826CB4338AC4CCE1A22252A00ADEEFF0871DEC3CB3C154202BB",
+          "Bytes": 1775237
+        },
+        {
+          "File": "lxgw-input.pdf",
+          "SHA256": "1398C1AF7ACD8D6FD0C86D71B3818E83A168C1445DD8EA5687C8C16A30BEBB3D",
+          "Bytes": 13239599
+        },
+        {
+          "File": "lxgw-native-reedited.pdf",
+          "SHA256": "F2DB72D0A917D13B313E6F6DACDCA015A0F5ED534023B9BD3FD9C1DDDF602B2F",
+          "Bytes": 13243109
+        },
+        {
+          "File": "lxgw-native-saved.pdf",
+          "SHA256": "71CB732CA3EA80F03B64ABED063464E67F1D2D73C13E9A5AE9A064DA12E48FE1",
+          "Bytes": 13243125
+        },
+        {
+          "File": "lxgw-reedited.pdf",
+          "SHA256": "26C4EC24C767EFC6F2A87A13075C32E4DEEC397882E1260E0E5A747053C55559",
+          "Bytes": 13241456
+        },
+        {
+          "File": "lxgw-saved.pdf",
+          "SHA256": "739B85AB2BFB6EFA1D1C1E0DDB7A827BDC7909EC260A8C80E3786A5CDE55D1F1",
+          "Bytes": 13241473
+        },
+        {
+          "File": "zen-input.pdf",
+          "SHA256": "C573C96C2FEC9B082FFFA27ECB191933B67426E066E38729B8044988D396D020",
+          "Bytes": 1832436
+        },
+        {
+          "File": "zen-native-reedited.pdf",
+          "SHA256": "CF655932E615765BD253D17ABBA0BDB6517B240EAC369B48F9C5EC0416239AE3",
+          "Bytes": 1835948
+        },
+        {
+          "File": "zen-native-saved.pdf",
+          "SHA256": "A92948E4CA1E53B37CFF46A697D605EF9FE9E53743416B693C5BC47822EB9ADE",
+          "Bytes": 1835965
+        },
+        {
+          "File": "zen-reedited.pdf",
+          "SHA256": "76811290F289F6BE19D0E87A1D97142EF0569D7A05A178F8DAC49BBAD2752946",
+          "Bytes": 1834293
+        },
+        {
+          "File": "zen-saved.pdf",
+          "SHA256": "9AB7F08683796015A0F7CE4A3CE6793F577B1FB7909B9F5FE3A37B0D26A7BDA3",
+          "Bytes": 1834310
+        }
+      ],
+      "Limitations": [
+        "This is a headless native form-host feasibility probe, not a production form editor or an Avalonia IME implementation.",
+        "Full static TrueType font with BMP identity CID coverage; supplementary Unicode, shaping, vertical writing, CFF and TTC are not covered.",
+        "Native form input commits correct canonical values but regenerates CJK appearance with unembedded system-font fallback. A bounded managed appearance bridge is required after every commit; native automatic font compatibility is rejected.",
+        "The managed bridge supports this fixture's fixed size, left aligned single line, explicit newline text and fully visible single-choice list only. Auto wrapping, scrolling, rotation, text fitting and arbitrary existing form layouts are not implemented.",
+        "A value-only annotation subset is insufficient for arbitrary later input; the full licensed font is retained in AcroForm default resources.",
+        "Independent pypdf canonical field, default-resource and appearance checks plus Poppler rendering are required."
+      ]
+    },
+    "nativeReportSHA256": "D86119133253E8A3A4776A5398EB76336B09FB94AA35982DFA3D960B5735D078",
+    "independentCheckCount": 229,
+    "independentCheckIds": [
+      "fixed-native-font-and-event-matrix",
+      "complete-output-matrix",
+      "font-source-manifest-binding-and-explicit-bridge-status",
+      "lxgw:frozen-real-full-font-source",
+      "lxgw:reopened-edit-introduces-new-glyphs",
+      "lxgw:fixed-stage-matrix",
+      "lxgw-input.pdf:native-output-binding",
+      "lxgw-input.pdf:canonical-interactive-field-widget-graph",
+      "lxgw-input.pdf:retained-content-and-page-geometry",
+      "lxgw-input.pdf:full-embedded-default-CID-TrueType",
+      "lxgw-input.pdf:options-display-and-export-values",
+      "lxgw-input.pdf:multiline-field-flag",
+      "lxgw-input.pdf:CjkText:editable-font-DA-and-geometry",
+      "lxgw-input.pdf:CjkMultiline:editable-font-DA-and-geometry",
+      "lxgw-input.pdf:CjkList:editable-font-DA-and-geometry",
+      "lxgw-saved.pdf:native-output-binding",
+      "lxgw-saved.pdf:canonical-interactive-field-widget-graph",
+      "lxgw-saved.pdf:retained-content-and-page-geometry",
+      "lxgw-saved.pdf:full-embedded-default-CID-TrueType",
+      "lxgw-saved.pdf:options-display-and-export-values",
+      "lxgw-saved.pdf:multiline-field-flag",
+      "lxgw-saved.pdf:CjkText:editable-font-DA-and-geometry",
+      "lxgw-saved.pdf:CjkText:canonical-value-and-actual-ToUnicode-AP",
+      "lxgw-saved.pdf:CjkText:AP-font-closure-is-embedded-AcroForm-font",
+      "lxgw-saved.pdf:CjkMultiline:editable-font-DA-and-geometry",
+      "lxgw-saved.pdf:CjkMultiline:canonical-value-and-actual-ToUnicode-AP",
+      "lxgw-saved.pdf:CjkMultiline:AP-font-closure-is-embedded-AcroForm-font",
+      "lxgw-saved.pdf:multiline-AP-descending-line-baselines",
+      "lxgw-saved.pdf:CjkList:editable-font-DA-and-geometry",
+      "lxgw-saved.pdf:CjkList:canonical-value-and-actual-ToUnicode-AP",
+      "lxgw-saved.pdf:CjkList:AP-font-closure-is-embedded-AcroForm-font",
+      "lxgw-saved.pdf:list-canonical-index",
+      "lxgw-reedited.pdf:native-output-binding",
+      "lxgw-reedited.pdf:canonical-interactive-field-widget-graph",
+      "lxgw-reedited.pdf:retained-content-and-page-geometry",
+      "lxgw-reedited.pdf:full-embedded-default-CID-TrueType",
+      "lxgw-reedited.pdf:options-display-and-export-values",
+      "lxgw-reedited.pdf:multiline-field-flag",
+      "lxgw-reedited.pdf:CjkText:editable-font-DA-and-geometry",
+      "lxgw-reedited.pdf:CjkText:canonical-value-and-actual-ToUnicode-AP",
+      "lxgw-reedited.pdf:CjkText:AP-font-closure-is-embedded-AcroForm-font",
+      "lxgw-reedited.pdf:CjkMultiline:editable-font-DA-and-geometry",
+      "lxgw-reedited.pdf:CjkMultiline:canonical-value-and-actual-ToUnicode-AP",
+      "lxgw-reedited.pdf:CjkMultiline:AP-font-closure-is-embedded-AcroForm-font",
+      "lxgw-reedited.pdf:multiline-AP-descending-line-baselines",
+      "lxgw-reedited.pdf:CjkList:editable-font-DA-and-geometry",
+      "lxgw-reedited.pdf:CjkList:canonical-value-and-actual-ToUnicode-AP",
+      "lxgw-reedited.pdf:CjkList:AP-font-closure-is-embedded-AcroForm-font",
+      "lxgw-reedited.pdf:list-canonical-index",
+      "lxgw-native-saved.pdf:native-counterexample-output-binding",
+      "lxgw-native-saved.pdf:native-automatic-AP-unembedded-fallback-observed",
+      "lxgw-native-reedited.pdf:native-counterexample-output-binding",
+      "lxgw-native-reedited.pdf:native-automatic-AP-unembedded-fallback-observed",
+      "zen:frozen-real-full-font-source",
+      "zen:reopened-edit-introduces-new-glyphs",
+      "zen:fixed-stage-matrix",
+      "zen-input.pdf:native-output-binding",
+      "zen-input.pdf:canonical-interactive-field-widget-graph",
+      "zen-input.pdf:retained-content-and-page-geometry",
+      "zen-input.pdf:full-embedded-default-CID-TrueType",
+      "zen-input.pdf:options-display-and-export-values",
+      "zen-input.pdf:multiline-field-flag",
+      "zen-input.pdf:CjkText:editable-font-DA-and-geometry",
+      "zen-input.pdf:CjkMultiline:editable-font-DA-and-geometry",
+      "zen-input.pdf:CjkList:editable-font-DA-and-geometry",
+      "zen-saved.pdf:native-output-binding",
+      "zen-saved.pdf:canonical-interactive-field-widget-graph",
+      "zen-saved.pdf:retained-content-and-page-geometry",
+      "zen-saved.pdf:full-embedded-default-CID-TrueType",
+      "zen-saved.pdf:options-display-and-export-values",
+      "zen-saved.pdf:multiline-field-flag",
+      "zen-saved.pdf:CjkText:editable-font-DA-and-geometry",
+      "zen-saved.pdf:CjkText:canonical-value-and-actual-ToUnicode-AP",
+      "zen-saved.pdf:CjkText:AP-font-closure-is-embedded-AcroForm-font",
+      "zen-saved.pdf:CjkMultiline:editable-font-DA-and-geometry",
+      "zen-saved.pdf:CjkMultiline:canonical-value-and-actual-ToUnicode-AP",
+      "zen-saved.pdf:CjkMultiline:AP-font-closure-is-embedded-AcroForm-font",
+      "zen-saved.pdf:multiline-AP-descending-line-baselines",
+      "zen-saved.pdf:CjkList:editable-font-DA-and-geometry",
+      "zen-saved.pdf:CjkList:canonical-value-and-actual-ToUnicode-AP",
+      "zen-saved.pdf:CjkList:AP-font-closure-is-embedded-AcroForm-font",
+      "zen-saved.pdf:list-canonical-index",
+      "zen-reedited.pdf:native-output-binding",
+      "zen-reedited.pdf:canonical-interactive-field-widget-graph",
+      "zen-reedited.pdf:retained-content-and-page-geometry",
+      "zen-reedited.pdf:full-embedded-default-CID-TrueType",
+      "zen-reedited.pdf:options-display-and-export-values",
+      "zen-reedited.pdf:multiline-field-flag",
+      "zen-reedited.pdf:CjkText:editable-font-DA-and-geometry",
+      "zen-reedited.pdf:CjkText:canonical-value-and-actual-ToUnicode-AP",
+      "zen-reedited.pdf:CjkText:AP-font-closure-is-embedded-AcroForm-font",
+      "zen-reedited.pdf:CjkMultiline:editable-font-DA-and-geometry",
+      "zen-reedited.pdf:CjkMultiline:canonical-value-and-actual-ToUnicode-AP",
+      "zen-reedited.pdf:CjkMultiline:AP-font-closure-is-embedded-AcroForm-font",
+      "zen-reedited.pdf:multiline-AP-descending-line-baselines",
+      "zen-reedited.pdf:CjkList:editable-font-DA-and-geometry",
+      "zen-reedited.pdf:CjkList:canonical-value-and-actual-ToUnicode-AP",
+      "zen-reedited.pdf:CjkList:AP-font-closure-is-embedded-AcroForm-font",
+      "zen-reedited.pdf:list-canonical-index",
+      "zen-native-saved.pdf:native-counterexample-output-binding",
+      "zen-native-saved.pdf:native-automatic-AP-unembedded-fallback-observed",
+      "zen-native-reedited.pdf:native-counterexample-output-binding",
+      "zen-native-reedited.pdf:native-automatic-AP-unembedded-fallback-observed",
+      "gowun:frozen-real-full-font-source",
+      "gowun:reopened-edit-introduces-new-glyphs",
+      "gowun:fixed-stage-matrix",
+      "gowun-input.pdf:native-output-binding",
+      "gowun-input.pdf:canonical-interactive-field-widget-graph",
+      "gowun-input.pdf:retained-content-and-page-geometry",
+      "gowun-input.pdf:full-embedded-default-CID-TrueType",
+      "gowun-input.pdf:options-display-and-export-values",
+      "gowun-input.pdf:multiline-field-flag",
+      "gowun-input.pdf:CjkText:editable-font-DA-and-geometry",
+      "gowun-input.pdf:CjkMultiline:editable-font-DA-and-geometry",
+      "gowun-input.pdf:CjkList:editable-font-DA-and-geometry",
+      "gowun-saved.pdf:native-output-binding",
+      "gowun-saved.pdf:canonical-interactive-field-widget-graph",
+      "gowun-saved.pdf:retained-content-and-page-geometry",
+      "gowun-saved.pdf:full-embedded-default-CID-TrueType",
+      "gowun-saved.pdf:options-display-and-export-values",
+      "gowun-saved.pdf:multiline-field-flag",
+      "gowun-saved.pdf:CjkText:editable-font-DA-and-geometry",
+      "gowun-saved.pdf:CjkText:canonical-value-and-actual-ToUnicode-AP",
+      "gowun-saved.pdf:CjkText:AP-font-closure-is-embedded-AcroForm-font",
+      "gowun-saved.pdf:CjkMultiline:editable-font-DA-and-geometry",
+      "gowun-saved.pdf:CjkMultiline:canonical-value-and-actual-ToUnicode-AP",
+      "gowun-saved.pdf:CjkMultiline:AP-font-closure-is-embedded-AcroForm-font",
+      "gowun-saved.pdf:multiline-AP-descending-line-baselines",
+      "gowun-saved.pdf:CjkList:editable-font-DA-and-geometry",
+      "gowun-saved.pdf:CjkList:canonical-value-and-actual-ToUnicode-AP",
+      "gowun-saved.pdf:CjkList:AP-font-closure-is-embedded-AcroForm-font",
+      "gowun-saved.pdf:list-canonical-index",
+      "gowun-reedited.pdf:native-output-binding",
+      "gowun-reedited.pdf:canonical-interactive-field-widget-graph",
+      "gowun-reedited.pdf:retained-content-and-page-geometry",
+      "gowun-reedited.pdf:full-embedded-default-CID-TrueType",
+      "gowun-reedited.pdf:options-display-and-export-values",
+      "gowun-reedited.pdf:multiline-field-flag",
+      "gowun-reedited.pdf:CjkText:editable-font-DA-and-geometry",
+      "gowun-reedited.pdf:CjkText:canonical-value-and-actual-ToUnicode-AP",
+      "gowun-reedited.pdf:CjkText:AP-font-closure-is-embedded-AcroForm-font",
+      "gowun-reedited.pdf:CjkMultiline:editable-font-DA-and-geometry",
+      "gowun-reedited.pdf:CjkMultiline:canonical-value-and-actual-ToUnicode-AP",
+      "gowun-reedited.pdf:CjkMultiline:AP-font-closure-is-embedded-AcroForm-font",
+      "gowun-reedited.pdf:multiline-AP-descending-line-baselines",
+      "gowun-reedited.pdf:CjkList:editable-font-DA-and-geometry",
+      "gowun-reedited.pdf:CjkList:canonical-value-and-actual-ToUnicode-AP",
+      "gowun-reedited.pdf:CjkList:AP-font-closure-is-embedded-AcroForm-font",
+      "gowun-reedited.pdf:list-canonical-index",
+      "gowun-native-saved.pdf:native-counterexample-output-binding",
+      "gowun-native-saved.pdf:native-automatic-AP-unembedded-fallback-observed",
+      "gowun-native-reedited.pdf:native-counterexample-output-binding",
+      "gowun-native-reedited.pdf:native-automatic-AP-unembedded-fallback-observed",
+      "lxgw:independent-full-font-cmap-coverage-and-checksums",
+      "zen:independent-full-font-cmap-coverage-and-checksums",
+      "gowun:independent-full-font-cmap-coverage-and-checksums",
+      "lxgw-input.pdf:CIDToGIDMap-and-ToUnicode-match-source-cmap",
+      "lxgw-input.pdf:CID-widths-match-source-hmtx",
+      "lxgw-saved.pdf:CIDToGIDMap-and-ToUnicode-match-source-cmap",
+      "lxgw-saved.pdf:CID-widths-match-source-hmtx",
+      "lxgw-reedited.pdf:CIDToGIDMap-and-ToUnicode-match-source-cmap",
+      "lxgw-reedited.pdf:CID-widths-match-source-hmtx",
+      "zen-input.pdf:CIDToGIDMap-and-ToUnicode-match-source-cmap",
+      "zen-input.pdf:CID-widths-match-source-hmtx",
+      "zen-saved.pdf:CIDToGIDMap-and-ToUnicode-match-source-cmap",
+      "zen-saved.pdf:CID-widths-match-source-hmtx",
+      "zen-reedited.pdf:CIDToGIDMap-and-ToUnicode-match-source-cmap",
+      "zen-reedited.pdf:CID-widths-match-source-hmtx",
+      "gowun-input.pdf:CIDToGIDMap-and-ToUnicode-match-source-cmap",
+      "gowun-input.pdf:CID-widths-match-source-hmtx",
+      "gowun-saved.pdf:CIDToGIDMap-and-ToUnicode-match-source-cmap",
+      "gowun-saved.pdf:CID-widths-match-source-hmtx",
+      "gowun-reedited.pdf:CIDToGIDMap-and-ToUnicode-match-source-cmap",
+      "gowun-reedited.pdf:CID-widths-match-source-hmtx",
+      "gowun-input.pdf:independent-render",
+      "gowun-native-reedited.pdf:independent-render",
+      "gowun-native-saved.pdf:independent-render",
+      "gowun-reedited.pdf:independent-render",
+      "gowun-saved.pdf:independent-render",
+      "lxgw-input.pdf:independent-render",
+      "lxgw-native-reedited.pdf:independent-render",
+      "lxgw-native-saved.pdf:independent-render",
+      "lxgw-reedited.pdf:independent-render",
+      "lxgw-saved.pdf:independent-render",
+      "zen-input.pdf:independent-render",
+      "zen-native-reedited.pdf:independent-render",
+      "zen-native-saved.pdf:independent-render",
+      "zen-reedited.pdf:independent-render",
+      "zen-saved.pdf:independent-render",
+      "lxgw-saved.pdf:list-visible-highlight-matches-canonical-selection",
+      "lxgw-saved.pdf:retained-pixels-outside-fields",
+      "lxgw-saved.pdf:baseline-header-pixels-exact",
+      "lxgw-saved.pdf:CjkText:visible-generated-AP",
+      "lxgw-saved.pdf:CjkMultiline:visible-generated-AP",
+      "lxgw-reedited.pdf:list-visible-highlight-matches-canonical-selection",
+      "lxgw-reedited.pdf:retained-pixels-outside-fields",
+      "lxgw-reedited.pdf:baseline-header-pixels-exact",
+      "lxgw-reedited.pdf:CjkText:visible-generated-AP",
+      "lxgw-reedited.pdf:CjkMultiline:visible-generated-AP",
+      "lxgw:reopened-edit:CjkList:visibly-changed",
+      "lxgw:reopened-edit:CjkText:visibly-changed",
+      "lxgw:reopened-edit:CjkMultiline:visibly-changed",
+      "zen-saved.pdf:list-visible-highlight-matches-canonical-selection",
+      "zen-saved.pdf:retained-pixels-outside-fields",
+      "zen-saved.pdf:baseline-header-pixels-exact",
+      "zen-saved.pdf:CjkText:visible-generated-AP",
+      "zen-saved.pdf:CjkMultiline:visible-generated-AP",
+      "zen-reedited.pdf:list-visible-highlight-matches-canonical-selection",
+      "zen-reedited.pdf:retained-pixels-outside-fields",
+      "zen-reedited.pdf:baseline-header-pixels-exact",
+      "zen-reedited.pdf:CjkText:visible-generated-AP",
+      "zen-reedited.pdf:CjkMultiline:visible-generated-AP",
+      "zen:reopened-edit:CjkList:visibly-changed",
+      "zen:reopened-edit:CjkText:visibly-changed",
+      "zen:reopened-edit:CjkMultiline:visibly-changed",
+      "gowun-saved.pdf:list-visible-highlight-matches-canonical-selection",
+      "gowun-saved.pdf:retained-pixels-outside-fields",
+      "gowun-saved.pdf:baseline-header-pixels-exact",
+      "gowun-saved.pdf:CjkText:visible-generated-AP",
+      "gowun-saved.pdf:CjkMultiline:visible-generated-AP",
+      "gowun-reedited.pdf:list-visible-highlight-matches-canonical-selection",
+      "gowun-reedited.pdf:retained-pixels-outside-fields",
+      "gowun-reedited.pdf:baseline-header-pixels-exact",
+      "gowun-reedited.pdf:CjkText:visible-generated-AP",
+      "gowun-reedited.pdf:CjkMultiline:visible-generated-AP",
+      "gowun:reopened-edit:CjkList:visibly-changed",
+      "gowun:reopened-edit:CjkText:visibly-changed",
+      "gowun:reopened-edit:CjkMultiline:visibly-changed",
+      "semantic-negative-controls-and-stale-pass-protection"
+    ],
+    "negativeControls": [
+      {
+        "id": "missing-output",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [],
+        "error": "FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\Procedure\\\\AvaloniaControl\\\\artifacts\\\\pdfviewer\\\\20261015T114530Z-p0-forms\\\\cjk-forms\\\\self-tests\\\\1f24dd773dc74da894f26b41d2f9699d\\\\missing-output\\\\lxgw-saved.pdf'",
+        "report": "self-tests\\1f24dd773dc74da894f26b41d2f9699d\\missing-output\\independent-audit.json",
+        "reportSHA256": "9B8779047F2A1622F9A843088741FF62733D24CB8960FEE690E02ECC6368A412"
+      },
+      {
+        "id": "removed-font-program",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [],
+        "error": "KeyError: '/FontFile2'",
+        "report": "self-tests\\1f24dd773dc74da894f26b41d2f9699d\\removed-font-program\\independent-audit.json",
+        "reportSHA256": "16E859D4BB27B84236D900D812F28F9931CCDCD5AA4A75C545729C8824CBAAE8"
+      },
+      {
+        "id": "wrong-ToUnicode",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [
+          "lxgw-saved.pdf:CjkText:canonical-value-and-actual-ToUnicode-AP",
+          "lxgw-saved.pdf:CjkMultiline:canonical-value-and-actual-ToUnicode-AP",
+          "lxgw-saved.pdf:CjkList:canonical-value-and-actual-ToUnicode-AP"
+        ],
+        "error": "ValueError: Negative control rejected by canonical/font/AP checks",
+        "report": "self-tests\\1f24dd773dc74da894f26b41d2f9699d\\wrong-ToUnicode\\independent-audit.json",
+        "reportSHA256": "82BB4F750C3839E1A2285C502747A97978AAAC30D1DF71B706CF4AC56E5444B9"
+      },
+      {
+        "id": "wrong-CID-to-GID",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [
+          "lxgw-saved.pdf:CIDToGIDMap-and-ToUnicode-match-source-cmap"
+        ],
+        "error": "ValueError: Negative control rejected by independent cmap/CID glyph checks",
+        "report": "self-tests\\1f24dd773dc74da894f26b41d2f9699d\\wrong-CID-to-GID\\independent-audit.json",
+        "reportSHA256": "CD8C4663D47713AB570558767CC8ACE0596622AD7F4F01B5EF6142FDE975DABE"
+      },
+      {
+        "id": "wrong-CID-widths",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [
+          "lxgw-saved.pdf:CID-widths-match-source-hmtx"
+        ],
+        "error": "ValueError: Negative control rejected by independent cmap/CID glyph checks",
+        "report": "self-tests\\1f24dd773dc74da894f26b41d2f9699d\\wrong-CID-widths\\independent-audit.json",
+        "reportSHA256": "325288E7212B7BF2B575A34B9B4992653BAAA58F567B7856EEF26FA3EFDC0E4C"
+      },
+      {
+        "id": "stale-CJK-AP",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [
+          "lxgw-saved.pdf:CjkText:canonical-value-and-actual-ToUnicode-AP"
+        ],
+        "error": "ValueError: Negative control rejected by canonical/font/AP checks",
+        "report": "self-tests\\1f24dd773dc74da894f26b41d2f9699d\\stale-CJK-AP\\independent-audit.json",
+        "reportSHA256": "1AFADABA8CB93F89160FCE7279A4C5722023B0F49D3F054D6DD0EC4729046180"
+      },
+      {
+        "id": "stale-list-AP",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [
+          "lxgw-saved.pdf:list-visible-highlight-matches-canonical-selection",
+          "lxgw:reopened-edit:CjkList:visibly-changed"
+        ],
+        "error": null,
+        "report": "self-tests\\1f24dd773dc74da894f26b41d2f9699d\\stale-list-AP\\independent-audit.json",
+        "reportSHA256": "934238D3F7657FB30D0BB08C7798742DFDA282B8165A45595BA8790CA975DC00"
+      },
+      {
+        "id": "orphan-field",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [],
+        "error": "ValueError: Field /Parent does not match canonical /Kids owner",
+        "report": "self-tests\\1f24dd773dc74da894f26b41d2f9699d\\orphan-field\\independent-audit.json",
+        "reportSHA256": "BECCCA7F6459E55006E4D175F2BC4C9A0872ED376494D4D7B88A3C6E75688411"
+      },
+      {
+        "id": "wrong-list-index",
+        "passed": true,
+        "expectedRejectionDetected": true,
+        "exit": 1,
+        "rejectedChecks": [
+          "lxgw-saved.pdf:list-canonical-index"
+        ],
+        "error": "ValueError: Negative control rejected by canonical/font/AP checks",
+        "report": "self-tests\\1f24dd773dc74da894f26b41d2f9699d\\wrong-list-index\\independent-audit.json",
+        "reportSHA256": "E90C50FA19365CDD8AE6E1415B9A80691E097B4B278BB5E3B75A413109A1EA51"
+      }
+    ],
+    "visualReview": {
+      "schemaVersion": 1,
+      "passed": true,
+      "reviewedUtc": "2026-10-15T11:52:41.165043+00:00",
+      "reviewer": "Codex visual inspection",
+      "scope": "Final three-family fixed-layout managed AP bridge after native canonical commit. Native automatic CJK appearance compatibility remains rejected. This review does not establish UI, IME, Linux, or arbitrary-form support.",
+      "nativeReportSHA256": "D86119133253E8A3A4776A5398EB76336B09FB94AA35982DFA3D960B5735D078",
+      "independentAuditSHA256": "15D28200DE61EBE848EAE472319FB151FE2CF033D8667C8D0CDA0C348A3BD86B",
+      "images": [
+        {
+          "file": "cjk-forms-contact-sheet.png",
+          "sha256": "78F9B0F6C985613C9145D1BE5252F3B4D3D054517B997ECD832B31B18EE0E3FC",
+          "actuallyViewed": true,
+          "role": "Overview of three families and all nine input/final stages; complete final pages additionally inspected individually."
+        },
+        {
+          "file": "lxgw-saved-poppler.png",
+          "sha256": "3D08819320A71D9C5EF09E9CE139A167CD7EA891212C5E868FF65A917D17085B",
+          "actuallyViewed": true,
+          "role": "Complete final page inspected individually; bridged embedded-font appearance.",
+          "acceptedOutput": true,
+          "sourcePdf": "lxgw-saved.pdf",
+          "sourcePdfSHA256": "739B85AB2BFB6EFA1D1C1E0DDB7A827BDC7909EC260A8C80E3786A5CDE55D1F1"
+        },
+        {
+          "file": "lxgw-reedited-poppler.png",
+          "sha256": "26193AD6CF9B6F35697C952AE9014C2ECFA76FC790F01F11D57273F1C9E98C6A",
+          "actuallyViewed": true,
+          "role": "Complete final page inspected individually; bridged embedded-font appearance.",
+          "acceptedOutput": true,
+          "sourcePdf": "lxgw-reedited.pdf",
+          "sourcePdfSHA256": "26C4EC24C767EFC6F2A87A13075C32E4DEEC397882E1260E0E5A747053C55559"
+        },
+        {
+          "file": "zen-saved-poppler.png",
+          "sha256": "832EFDBA7B8AE8124A44192A25F689671736E4941C53D797A10F56CE06899026",
+          "actuallyViewed": true,
+          "role": "Complete final page inspected individually; bridged embedded-font appearance.",
+          "acceptedOutput": true,
+          "sourcePdf": "zen-saved.pdf",
+          "sourcePdfSHA256": "9AB7F08683796015A0F7CE4A3CE6793F577B1FB7909B9F5FE3A37B0D26A7BDA3"
+        },
+        {
+          "file": "zen-reedited-poppler.png",
+          "sha256": "F780902032FFE23B32B15E86A1C3CE1129F5BE7A9E5587B51AD90678C445B615",
+          "actuallyViewed": true,
+          "role": "Complete final page inspected individually; bridged embedded-font appearance.",
+          "acceptedOutput": true,
+          "sourcePdf": "zen-reedited.pdf",
+          "sourcePdfSHA256": "76811290F289F6BE19D0E87A1D97142EF0569D7A05A178F8DAC49BBAD2752946"
+        },
+        {
+          "file": "gowun-saved-poppler.png",
+          "sha256": "A4D53C0725471BA868373ACD57D1403464A829F804A2A167BDC117E665E6A252",
+          "actuallyViewed": true,
+          "role": "Complete final page inspected individually; bridged embedded-font appearance.",
+          "acceptedOutput": true,
+          "sourcePdf": "gowun-saved.pdf",
+          "sourcePdfSHA256": "F31524F86691C826CB4338AC4CCE1A22252A00ADEEFF0871DEC3CB3C154202BB"
+        },
+        {
+          "file": "gowun-reedited-poppler.png",
+          "sha256": "35A05EA7F3B4FC9673B54A36864B97420451B170058B38C37369D19CF10FE870",
+          "actuallyViewed": true,
+          "role": "Complete final page inspected individually; bridged embedded-font appearance.",
+          "acceptedOutput": true,
+          "sourcePdf": "gowun-reedited.pdf",
+          "sourcePdfSHA256": "6A24007D03E82067AEAB2D5517F20103A878AF7F72E76ED3F4DE32C327988B05"
+        },
+        {
+          "file": "gowun-native-reedited-poppler.png",
+          "sha256": "707B7579929CE5787EDAAABEC07CA2982C48847A25C0767A511DA32A0094ECD9",
+          "actuallyViewed": true,
+          "role": "Rejected native appearance counterexample; Hangul appears as missing-glyph boxes.",
+          "acceptedOutput": false
+        }
+      ],
+      "automaticallyBoundImages": [
+        {
+          "file": "gowun-input-poppler.png",
+          "sha256": "966D9D9AE1E98BE61880F85E87703156DDD5BD3D3166B329B9E25BD4C0947CC9",
+          "actuallyViewedIndividually": false,
+          "basis": "Bound to independent audit only; input overview is visible in the inspected contact sheet."
+        },
+        {
+          "file": "gowun-native-saved-poppler.png",
+          "sha256": "9880C68B553BE729FC2464BFE7914BDEDA0610C10A75125D13CF1AA954B32804",
+          "actuallyViewedIndividually": false,
+          "basis": "Bound to independent audit only; input overview is visible in the inspected contact sheet."
+        },
+        {
+          "file": "lxgw-input-poppler.png",
+          "sha256": "9D377AE058BCBB2F35E62EDB1D777D313413881C80D1DAF905D489A937ECF84C",
+          "actuallyViewedIndividually": false,
+          "basis": "Bound to independent audit only; input overview is visible in the inspected contact sheet."
+        },
+        {
+          "file": "lxgw-native-reedited-poppler.png",
+          "sha256": "B3A80BCD1F43E694CAEE64552A3CB5F66E29A1F1F29CCE828958D61A4D1DAA84",
+          "actuallyViewedIndividually": false,
+          "basis": "Bound to independent audit only; input overview is visible in the inspected contact sheet."
+        },
+        {
+          "file": "lxgw-native-saved-poppler.png",
+          "sha256": "946C6BE52B8E6D65B5885D29C523E1501B44C0A59E1581B45B726EC7467511C8",
+          "actuallyViewedIndividually": false,
+          "basis": "Bound to independent audit only; input overview is visible in the inspected contact sheet."
+        },
+        {
+          "file": "zen-input-poppler.png",
+          "sha256": "66903AD9C9D61F51886379E9EE495A951E8E2F4343F77B1E8713B389E41FF27E",
+          "actuallyViewedIndividually": false,
+          "basis": "Bound to independent audit only; input overview is visible in the inspected contact sheet."
+        },
+        {
+          "file": "zen-native-reedited-poppler.png",
+          "sha256": "1AF27C8EF25EA4D5DD5D0779D05570F10B8E22D5D87CB22DBF6B667BF19A1FE5",
+          "actuallyViewedIndividually": false,
+          "basis": "Bound to independent audit only; input overview is visible in the inspected contact sheet."
+        },
+        {
+          "file": "zen-native-saved-poppler.png",
+          "sha256": "EAE8AF374C08FD2A5B4238AA874656DDE4822E2E62938D5A2C8B4E9AA49E6F3B",
+          "actuallyViewedIndividually": false,
+          "basis": "Bound to independent audit only; input overview is visible in the inspected contact sheet."
+        }
+      ],
+      "observations": [
+        "All six complete saved/reedited final pages were individually inspected after the final unified run. Latin baseline text and field borders remain clear.",
+        "LXGW Chinese, Zen Japanese/Traditional Han, and Gowun precomposed Hangul render distinct readable glyphs with no missing-glyph squares, overlap, or clipping in final bridged outputs.",
+        "Both explicit multiline rows are visible with adequate spacing. The first save selects the second list row; reedited outputs select the third ABC row with blue background and white glyphs. All other list rows remain visible.",
+        "Gowun native reedited counterexample was individually inspected: canonical Hangul values survive, but displayed Hangul is replaced by missing-glyph squares. That raw PDF is evidence of rejected native fallback, never a passing output.",
+        "Three input pages and the other raw native pages were not individually inspected during this final review; only hashes/independent checks bind those images, with inputs additionally visible in the inspected overview."
+      ],
+      "rawNativeFallbackCounterexample": {
+        "file": "gowun-native-reedited.pdf",
+        "sha256": "39A35C37D712E8E90AB684374A7770FEC418206542B60A2CF773CB1DB28AA334",
+        "image": "gowun-native-reedited-poppler.png",
+        "acceptedOutput": false,
+        "observedExpectedFailure": true
+      },
+      "acceptanceMeaning": "passed applies to visual inspection of the six managed-bridge final outputs and faithful recording of the expected rejected counterexample; it does not change NativeAutomaticAppearanceStatus."
+    },
+    "limitations": [
+      "The C# bridge regenerates fixed-size single-line, explicit multiline and fully visible list appearances after native canonical commit; this is not a product form editing API.",
+      "Full static TrueType BMP repertoire for future editing, not a current-value subset; CJK-font coverage differs by source family.",
+      "Windows x64 native API input and repeat edit, not Avalonia IME/clipboard/accessibility or physical keyboard acceptance.",
+      "No Linux/Kylin, arbitrary third-party forms, CFF/TTC/variable fonts, shaping or official performance parity claim."
+    ]
+  },
+  "regression": [
+    {
+      "suite": "Core",
+      "total": "67",
+      "passed": "67",
+      "failed": "0",
+      "errors": "0",
+      "skipped": "0",
+      "xmlSHA256": "F3272EDB881486887ECCB3857E0618E43A5ABE60C3D3626CD70B54EDA9AA7693"
+    },
+    {
+      "suite": "Headless",
+      "total": "19",
+      "passed": "19",
+      "failed": "0",
+      "errors": "0",
+      "skipped": "0",
+      "xmlSHA256": "B5E37BEA9DD8887200BD3B0106BA1C7902F017758E8C71A977945E55DC101520"
+    }
+  ],
+  "platform": {
+    "executed": "Windows x64 headless native input, pypdf/fontTools structure and Poppler rendering",
+    "UbuntuLtsX64": "not executed",
+    "KylinX64Arm64": "not executed",
+    "physicalIME": "not executed",
+    "officialRuntimePerformance": "not compared"
+  },
+  "openG0Items": [
+    "Production form-session/UI lifecycle, physical IME and external interactive editor validation",
+    "Representative real-world corpus and remaining font/layout compatibility",
+    "Character/glyph-cluster and partial-image redaction; broader complex painting",
+    "Ubuntu/Kylin native devices and runnable official reference/UI performance"
+  ],
+  "evidence": [
+    {
+      "path": "baseline/baseline.json",
+      "sha256": "255AF24965EE4D27A7F192CCC3F4DC42BC783CE8D602AF6F77EAFBC2DD8B726B",
+      "bytes": 400
+    },
+    {
+      "path": "baseline/native-assets.json",
+      "sha256": "7433749787D540D49DD153CB51E3632897F864E7C7D939F6185B07B5709BD01E",
+      "bytes": 5363
+    },
+    {
+      "path": "baseline/official-documents/manifest.json",
+      "sha256": "1EB8CE0CE240F593DFDE0C6B6087A7B5873BE46C288328C1D092575EE7A6BA8D",
+      "bytes": 2929
+    },
+    {
+      "path": "baseline/result.json",
+      "sha256": "AA61D14D069866C517D5CC8F41F62AAC0A76888687091FC9E4A333013770B5A8",
+      "bytes": 7949
+    },
+    {
+      "path": "baseline/source-manifest.json",
+      "sha256": "AD59B4F1BC1AB1F4151BF1106811E32AD529618B9ACE1EDC8A5A4307E6FE62C8",
+      "bytes": 66818
+    },
+    {
+      "path": "baseline/source-snapshot.zip",
+      "sha256": "D68F1E197491AE96B2A9CDA30950FC749DBC948D1BA2564812B3837C1FA98A97",
+      "bytes": 1185571
+    },
+    {
+      "path": "baseline/targets.json",
+      "sha256": "FB4473CDD803F1BD71A4A1916A13D6D6BBF3CC3552626DBE54855856C7238D3B",
+      "bytes": 1102
+    },
+    {
+      "path": "cjk-forms/cjk-forms-contact-sheet.png",
+      "sha256": "78F9B0F6C985613C9145D1BE5252F3B4D3D054517B997ECD832B31B18EE0E3FC",
+      "bytes": 77425
+    },
+    {
+      "path": "cjk-forms/fonttools-analysis.json",
+      "sha256": "B04E992063BCD0F53ED0B852A18A80C7167B3B177A23697AD9EF73627CBAEE97",
+      "bytes": 20440
+    },
+    {
+      "path": "cjk-forms/fonttools-jobs.json",
+      "sha256": "7F88932DCC0F97039344C766CDB53B8CEFF6A3746F5DC3E67E92B0C681FC36A9",
+      "bytes": 1360
+    },
+    {
+      "path": "cjk-forms/gowun-input-poppler.png",
+      "sha256": "966D9D9AE1E98BE61880F85E87703156DDD5BD3D3166B329B9E25BD4C0947CC9",
+      "bytes": 14739
+    },
+    {
+      "path": "cjk-forms/gowun-input-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/gowun-input.pdf",
+      "sha256": "07C11C83F92C6EA1FB731EDBB86E1310A87A1313759E9C7C34FC17FFF8D7722B",
+      "bytes": 1773379
+    },
+    {
+      "path": "cjk-forms/gowun-native-reedited-poppler.png",
+      "sha256": "707B7579929CE5787EDAAABEC07CA2982C48847A25C0767A511DA32A0094ECD9",
+      "bytes": 13921
+    },
+    {
+      "path": "cjk-forms/gowun-native-reedited-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "cjk-forms/gowun-native-reedited.pdf",
+      "sha256": "39A35C37D712E8E90AB684374A7770FEC418206542B60A2CF773CB1DB28AA334",
+      "bytes": 1779066
+    },
+    {
+      "path": "cjk-forms/gowun-native-saved-poppler.png",
+      "sha256": "9880C68B553BE729FC2464BFE7914BDEDA0610C10A75125D13CF1AA954B32804",
+      "bytes": 13825
+    },
+    {
+      "path": "cjk-forms/gowun-native-saved-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "cjk-forms/gowun-native-saved.pdf",
+      "sha256": "8CAFCFAB9019377C4CFB1D1727A602F1B9659D98B1F5E3F5F4439F20A95AC16D",
+      "bytes": 1779058
+    },
+    {
+      "path": "cjk-forms/gowun-reedited-poppler.png",
+      "sha256": "35A05EA7F3B4FC9673B54A36864B97420451B170058B38C37369D19CF10FE870",
+      "bytes": 26171
+    },
+    {
+      "path": "cjk-forms/gowun-reedited-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/gowun-reedited.pdf",
+      "sha256": "6A24007D03E82067AEAB2D5517F20103A878AF7F72E76ED3F4DE32C327988B05",
+      "bytes": 1775252
+    },
+    {
+      "path": "cjk-forms/gowun-saved-poppler.png",
+      "sha256": "A4D53C0725471BA868373ACD57D1403464A829F804A2A167BDC117E665E6A252",
+      "bytes": 25436
+    },
+    {
+      "path": "cjk-forms/gowun-saved-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/gowun-saved.pdf",
+      "sha256": "F31524F86691C826CB4338AC4CCE1A22252A00ADEEFF0871DEC3CB3C154202BB",
+      "bytes": 1775237
+    },
+    {
+      "path": "cjk-forms/independent-audit.json",
+      "sha256": "15D28200DE61EBE848EAE472319FB151FE2CF033D8667C8D0CDA0C348A3BD86B",
+      "bytes": 96916
+    },
+    {
+      "path": "cjk-forms/lxgw-input-poppler.png",
+      "sha256": "9D377AE058BCBB2F35E62EDB1D777D313413881C80D1DAF905D489A937ECF84C",
+      "bytes": 15668
+    },
+    {
+      "path": "cjk-forms/lxgw-input-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/lxgw-input.pdf",
+      "sha256": "1398C1AF7ACD8D6FD0C86D71B3818E83A168C1445DD8EA5687C8C16A30BEBB3D",
+      "bytes": 13239599
+    },
+    {
+      "path": "cjk-forms/lxgw-native-reedited-poppler.png",
+      "sha256": "B3A80BCD1F43E694CAEE64552A3CB5F66E29A1F1F29CCE828958D61A4D1DAA84",
+      "bytes": 28258
+    },
+    {
+      "path": "cjk-forms/lxgw-native-reedited-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "cjk-forms/lxgw-native-reedited.pdf",
+      "sha256": "F2DB72D0A917D13B313E6F6DACDCA015A0F5ED534023B9BD3FD9C1DDDF602B2F",
+      "bytes": 13243109
+    },
+    {
+      "path": "cjk-forms/lxgw-native-saved-poppler.png",
+      "sha256": "946C6BE52B8E6D65B5885D29C523E1501B44C0A59E1581B45B726EC7467511C8",
+      "bytes": 25870
+    },
+    {
+      "path": "cjk-forms/lxgw-native-saved-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "cjk-forms/lxgw-native-saved.pdf",
+      "sha256": "71CB732CA3EA80F03B64ABED063464E67F1D2D73C13E9A5AE9A064DA12E48FE1",
+      "bytes": 13243125
+    },
+    {
+      "path": "cjk-forms/lxgw-reedited-poppler.png",
+      "sha256": "26193AD6CF9B6F35697C952AE9014C2ECFA76FC790F01F11D57273F1C9E98C6A",
+      "bytes": 30090
+    },
+    {
+      "path": "cjk-forms/lxgw-reedited-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/lxgw-reedited.pdf",
+      "sha256": "26C4EC24C767EFC6F2A87A13075C32E4DEEC397882E1260E0E5A747053C55559",
+      "bytes": 13241456
+    },
+    {
+      "path": "cjk-forms/lxgw-saved-poppler.png",
+      "sha256": "3D08819320A71D9C5EF09E9CE139A167CD7EA891212C5E868FF65A917D17085B",
+      "bytes": 28135
+    },
+    {
+      "path": "cjk-forms/lxgw-saved-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/lxgw-saved.pdf",
+      "sha256": "739B85AB2BFB6EFA1D1C1E0DDB7A827BDC7909EC260A8C80E3786A5CDE55D1F1",
+      "bytes": 13241473
+    },
+    {
+      "path": "cjk-forms/manual-visual-review.json",
+      "sha256": "EF1ECC43739232B470F590251190699ED465BA8DF3397FE18998DFCD26FDF48F",
+      "bytes": 7828
+    },
+    {
+      "path": "cjk-forms/result.json",
+      "sha256": "D86119133253E8A3A4776A5398EB76336B09FB94AA35982DFA3D960B5735D078",
+      "bytes": 43344
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/gowun-input.pdf",
+      "sha256": "07C11C83F92C6EA1FB731EDBB86E1310A87A1313759E9C7C34FC17FFF8D7722B",
+      "bytes": 1773379
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/gowun-native-reedited.pdf",
+      "sha256": "39A35C37D712E8E90AB684374A7770FEC418206542B60A2CF773CB1DB28AA334",
+      "bytes": 1779066
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/gowun-native-saved.pdf",
+      "sha256": "8CAFCFAB9019377C4CFB1D1727A602F1B9659D98B1F5E3F5F4439F20A95AC16D",
+      "bytes": 1779058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/gowun-reedited.pdf",
+      "sha256": "6A24007D03E82067AEAB2D5517F20103A878AF7F72E76ED3F4DE32C327988B05",
+      "bytes": 1775252
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/gowun-saved.pdf",
+      "sha256": "F31524F86691C826CB4338AC4CCE1A22252A00ADEEFF0871DEC3CB3C154202BB",
+      "bytes": 1775237
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/independent-audit.json",
+      "sha256": "9B8779047F2A1622F9A843088741FF62733D24CB8960FEE690E02ECC6368A412",
+      "bytes": 6478
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/lxgw-input.pdf",
+      "sha256": "1398C1AF7ACD8D6FD0C86D71B3818E83A168C1445DD8EA5687C8C16A30BEBB3D",
+      "bytes": 13239599
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/lxgw-native-reedited.pdf",
+      "sha256": "F2DB72D0A917D13B313E6F6DACDCA015A0F5ED534023B9BD3FD9C1DDDF602B2F",
+      "bytes": 13243109
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/lxgw-native-saved.pdf",
+      "sha256": "71CB732CA3EA80F03B64ABED063464E67F1D2D73C13E9A5AE9A064DA12E48FE1",
+      "bytes": 13243125
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/lxgw-reedited.pdf",
+      "sha256": "26C4EC24C767EFC6F2A87A13075C32E4DEEC397882E1260E0E5A747053C55559",
+      "bytes": 13241456
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/result.json",
+      "sha256": "D86119133253E8A3A4776A5398EB76336B09FB94AA35982DFA3D960B5735D078",
+      "bytes": 43344
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/zen-input.pdf",
+      "sha256": "C573C96C2FEC9B082FFFA27ECB191933B67426E066E38729B8044988D396D020",
+      "bytes": 1832436
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/zen-native-reedited.pdf",
+      "sha256": "CF655932E615765BD253D17ABBA0BDB6517B240EAC369B48F9C5EC0416239AE3",
+      "bytes": 1835948
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/zen-native-saved.pdf",
+      "sha256": "A92948E4CA1E53B37CFF46A697D605EF9FE9E53743416B693C5BC47822EB9ADE",
+      "bytes": 1835965
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/zen-reedited.pdf",
+      "sha256": "76811290F289F6BE19D0E87A1D97142EF0569D7A05A178F8DAC49BBAD2752946",
+      "bytes": 1834293
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/missing-output/zen-saved.pdf",
+      "sha256": "9AB7F08683796015A0F7CE4A3CE6793F577B1FB7909B9F5FE3A37B0D26A7BDA3",
+      "bytes": 1834310
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/gowun-input.pdf",
+      "sha256": "07C11C83F92C6EA1FB731EDBB86E1310A87A1313759E9C7C34FC17FFF8D7722B",
+      "bytes": 1773379
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/gowun-native-reedited.pdf",
+      "sha256": "39A35C37D712E8E90AB684374A7770FEC418206542B60A2CF773CB1DB28AA334",
+      "bytes": 1779066
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/gowun-native-saved.pdf",
+      "sha256": "8CAFCFAB9019377C4CFB1D1727A602F1B9659D98B1F5E3F5F4439F20A95AC16D",
+      "bytes": 1779058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/gowun-reedited.pdf",
+      "sha256": "6A24007D03E82067AEAB2D5517F20103A878AF7F72E76ED3F4DE32C327988B05",
+      "bytes": 1775252
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/gowun-saved.pdf",
+      "sha256": "F31524F86691C826CB4338AC4CCE1A22252A00ADEEFF0871DEC3CB3C154202BB",
+      "bytes": 1775237
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/independent-audit.json",
+      "sha256": "BECCCA7F6459E55006E4D175F2BC4C9A0872ED376494D4D7B88A3C6E75688411",
+      "bytes": 6685
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/lxgw-input.pdf",
+      "sha256": "1398C1AF7ACD8D6FD0C86D71B3818E83A168C1445DD8EA5687C8C16A30BEBB3D",
+      "bytes": 13239599
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/lxgw-native-reedited.pdf",
+      "sha256": "F2DB72D0A917D13B313E6F6DACDCA015A0F5ED534023B9BD3FD9C1DDDF602B2F",
+      "bytes": 13243109
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/lxgw-native-saved.pdf",
+      "sha256": "71CB732CA3EA80F03B64ABED063464E67F1D2D73C13E9A5AE9A064DA12E48FE1",
+      "bytes": 13243125
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/lxgw-reedited.pdf",
+      "sha256": "26C4EC24C767EFC6F2A87A13075C32E4DEEC397882E1260E0E5A747053C55559",
+      "bytes": 13241456
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/lxgw-saved.pdf",
+      "sha256": "ABC0591CF5435017312201F300A8BC0EDD2D60F3F614E32F5AED252006BF126F",
+      "bytes": 13240434
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/result.json",
+      "sha256": "66B9240CE25357551F6C0823CF205658E7D76711F25E45BACAAB29244A8F7151",
+      "bytes": 42058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/zen-input.pdf",
+      "sha256": "C573C96C2FEC9B082FFFA27ECB191933B67426E066E38729B8044988D396D020",
+      "bytes": 1832436
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/zen-native-reedited.pdf",
+      "sha256": "CF655932E615765BD253D17ABBA0BDB6517B240EAC369B48F9C5EC0416239AE3",
+      "bytes": 1835948
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/zen-native-saved.pdf",
+      "sha256": "A92948E4CA1E53B37CFF46A697D605EF9FE9E53743416B693C5BC47822EB9ADE",
+      "bytes": 1835965
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/zen-reedited.pdf",
+      "sha256": "76811290F289F6BE19D0E87A1D97142EF0569D7A05A178F8DAC49BBAD2752946",
+      "bytes": 1834293
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/orphan-field/zen-saved.pdf",
+      "sha256": "9AB7F08683796015A0F7CE4A3CE6793F577B1FB7909B9F5FE3A37B0D26A7BDA3",
+      "bytes": 1834310
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/gowun-input.pdf",
+      "sha256": "07C11C83F92C6EA1FB731EDBB86E1310A87A1313759E9C7C34FC17FFF8D7722B",
+      "bytes": 1773379
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/gowun-native-reedited.pdf",
+      "sha256": "39A35C37D712E8E90AB684374A7770FEC418206542B60A2CF773CB1DB28AA334",
+      "bytes": 1779066
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/gowun-native-saved.pdf",
+      "sha256": "8CAFCFAB9019377C4CFB1D1727A602F1B9659D98B1F5E3F5F4439F20A95AC16D",
+      "bytes": 1779058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/gowun-reedited.pdf",
+      "sha256": "6A24007D03E82067AEAB2D5517F20103A878AF7F72E76ED3F4DE32C327988B05",
+      "bytes": 1775252
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/gowun-saved.pdf",
+      "sha256": "F31524F86691C826CB4338AC4CCE1A22252A00ADEEFF0871DEC3CB3C154202BB",
+      "bytes": 1775237
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/independent-audit.json",
+      "sha256": "16E859D4BB27B84236D900D812F28F9931CCDCD5AA4A75C545729C8824CBAAE8",
+      "bytes": 7035
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/lxgw-input.pdf",
+      "sha256": "1398C1AF7ACD8D6FD0C86D71B3818E83A168C1445DD8EA5687C8C16A30BEBB3D",
+      "bytes": 13239599
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/lxgw-native-reedited.pdf",
+      "sha256": "F2DB72D0A917D13B313E6F6DACDCA015A0F5ED534023B9BD3FD9C1DDDF602B2F",
+      "bytes": 13243109
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/lxgw-native-saved.pdf",
+      "sha256": "71CB732CA3EA80F03B64ABED063464E67F1D2D73C13E9A5AE9A064DA12E48FE1",
+      "bytes": 13243125
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/lxgw-reedited.pdf",
+      "sha256": "26C4EC24C767EFC6F2A87A13075C32E4DEEC397882E1260E0E5A747053C55559",
+      "bytes": 13241456
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/lxgw-saved.pdf",
+      "sha256": "3525761B0860EAFE390FF0BBC2FA45D0F21D6CD774AA49701445F6F82E4828B2",
+      "bytes": 13240402
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/result.json",
+      "sha256": "6BF809B3C893632BE9D5FC730FEB2C791E077B77344A7C72B89C095AB13F8126",
+      "bytes": 42058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/zen-input.pdf",
+      "sha256": "C573C96C2FEC9B082FFFA27ECB191933B67426E066E38729B8044988D396D020",
+      "bytes": 1832436
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/zen-native-reedited.pdf",
+      "sha256": "CF655932E615765BD253D17ABBA0BDB6517B240EAC369B48F9C5EC0416239AE3",
+      "bytes": 1835948
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/zen-native-saved.pdf",
+      "sha256": "A92948E4CA1E53B37CFF46A697D605EF9FE9E53743416B693C5BC47822EB9ADE",
+      "bytes": 1835965
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/zen-reedited.pdf",
+      "sha256": "76811290F289F6BE19D0E87A1D97142EF0569D7A05A178F8DAC49BBAD2752946",
+      "bytes": 1834293
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/removed-font-program/zen-saved.pdf",
+      "sha256": "9AB7F08683796015A0F7CE4A3CE6793F577B1FB7909B9F5FE3A37B0D26A7BDA3",
+      "bytes": 1834310
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/gowun-input.pdf",
+      "sha256": "07C11C83F92C6EA1FB731EDBB86E1310A87A1313759E9C7C34FC17FFF8D7722B",
+      "bytes": 1773379
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/gowun-native-reedited.pdf",
+      "sha256": "39A35C37D712E8E90AB684374A7770FEC418206542B60A2CF773CB1DB28AA334",
+      "bytes": 1779066
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/gowun-native-saved.pdf",
+      "sha256": "8CAFCFAB9019377C4CFB1D1727A602F1B9659D98B1F5E3F5F4439F20A95AC16D",
+      "bytes": 1779058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/gowun-reedited.pdf",
+      "sha256": "6A24007D03E82067AEAB2D5517F20103A878AF7F72E76ED3F4DE32C327988B05",
+      "bytes": 1775252
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/gowun-saved.pdf",
+      "sha256": "F31524F86691C826CB4338AC4CCE1A22252A00ADEEFF0871DEC3CB3C154202BB",
+      "bytes": 1775237
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/independent-audit.json",
+      "sha256": "1AFADABA8CB93F89160FCE7279A4C5722023B0F49D3F054D6DD0EC4729046180",
+      "bytes": 58036
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/lxgw-input.pdf",
+      "sha256": "1398C1AF7ACD8D6FD0C86D71B3818E83A168C1445DD8EA5687C8C16A30BEBB3D",
+      "bytes": 13239599
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/lxgw-native-reedited.pdf",
+      "sha256": "F2DB72D0A917D13B313E6F6DACDCA015A0F5ED534023B9BD3FD9C1DDDF602B2F",
+      "bytes": 13243109
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/lxgw-native-saved.pdf",
+      "sha256": "71CB732CA3EA80F03B64ABED063464E67F1D2D73C13E9A5AE9A064DA12E48FE1",
+      "bytes": 13243125
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/lxgw-reedited.pdf",
+      "sha256": "26C4EC24C767EFC6F2A87A13075C32E4DEEC397882E1260E0E5A747053C55559",
+      "bytes": 13241456
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/lxgw-saved.pdf",
+      "sha256": "0C4B2633DE60A51BAF6AE062176283DB835327A13A7933D2F9AED5E3C37EBD33",
+      "bytes": 13240419
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/result.json",
+      "sha256": "D46D4D00BDBB989DF0F556E7535A222F3A7B01C00EEE551D7F385F4C06346C6B",
+      "bytes": 42058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/zen-input.pdf",
+      "sha256": "C573C96C2FEC9B082FFFA27ECB191933B67426E066E38729B8044988D396D020",
+      "bytes": 1832436
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/zen-native-reedited.pdf",
+      "sha256": "CF655932E615765BD253D17ABBA0BDB6517B240EAC369B48F9C5EC0416239AE3",
+      "bytes": 1835948
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/zen-native-saved.pdf",
+      "sha256": "A92948E4CA1E53B37CFF46A697D605EF9FE9E53743416B693C5BC47822EB9ADE",
+      "bytes": 1835965
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/zen-reedited.pdf",
+      "sha256": "76811290F289F6BE19D0E87A1D97142EF0569D7A05A178F8DAC49BBAD2752946",
+      "bytes": 1834293
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-CJK-AP/zen-saved.pdf",
+      "sha256": "9AB7F08683796015A0F7CE4A3CE6793F577B1FB7909B9F5FE3A37B0D26A7BDA3",
+      "bytes": 1834310
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/cjk-forms-contact-sheet.png",
+      "sha256": "925BCA5D49224239D68CE0B60DB75985A76D8FAD8D9A4A14B33002D1297681FF",
+      "bytes": 76227
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/fonttools-analysis.json",
+      "sha256": "B04E992063BCD0F53ED0B852A18A80C7167B3B177A23697AD9EF73627CBAEE97",
+      "bytes": 20440
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/fonttools-jobs.json",
+      "sha256": "7F88932DCC0F97039344C766CDB53B8CEFF6A3746F5DC3E67E92B0C681FC36A9",
+      "bytes": 1360
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-input-poppler.png",
+      "sha256": "966D9D9AE1E98BE61880F85E87703156DDD5BD3D3166B329B9E25BD4C0947CC9",
+      "bytes": 14739
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-input-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-input.pdf",
+      "sha256": "07C11C83F92C6EA1FB731EDBB86E1310A87A1313759E9C7C34FC17FFF8D7722B",
+      "bytes": 1773379
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-native-reedited-poppler.png",
+      "sha256": "707B7579929CE5787EDAAABEC07CA2982C48847A25C0767A511DA32A0094ECD9",
+      "bytes": 13921
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-native-reedited-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-native-reedited.pdf",
+      "sha256": "39A35C37D712E8E90AB684374A7770FEC418206542B60A2CF773CB1DB28AA334",
+      "bytes": 1779066
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-native-saved-poppler.png",
+      "sha256": "9880C68B553BE729FC2464BFE7914BDEDA0610C10A75125D13CF1AA954B32804",
+      "bytes": 13825
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-native-saved-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-native-saved.pdf",
+      "sha256": "8CAFCFAB9019377C4CFB1D1727A602F1B9659D98B1F5E3F5F4439F20A95AC16D",
+      "bytes": 1779058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-reedited-poppler.png",
+      "sha256": "35A05EA7F3B4FC9673B54A36864B97420451B170058B38C37369D19CF10FE870",
+      "bytes": 26171
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-reedited-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-reedited.pdf",
+      "sha256": "6A24007D03E82067AEAB2D5517F20103A878AF7F72E76ED3F4DE32C327988B05",
+      "bytes": 1775252
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-saved-poppler.png",
+      "sha256": "A4D53C0725471BA868373ACD57D1403464A829F804A2A167BDC117E665E6A252",
+      "bytes": 25436
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-saved-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/gowun-saved.pdf",
+      "sha256": "F31524F86691C826CB4338AC4CCE1A22252A00ADEEFF0871DEC3CB3C154202BB",
+      "bytes": 1775237
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/independent-audit.json",
+      "sha256": "934238D3F7657FB30D0BB08C7798742DFDA282B8165A45595BA8790CA975DC00",
+      "bytes": 86917
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-input-poppler.png",
+      "sha256": "9D377AE058BCBB2F35E62EDB1D777D313413881C80D1DAF905D489A937ECF84C",
+      "bytes": 15668
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-input-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-input.pdf",
+      "sha256": "1398C1AF7ACD8D6FD0C86D71B3818E83A168C1445DD8EA5687C8C16A30BEBB3D",
+      "bytes": 13239599
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-native-reedited-poppler.png",
+      "sha256": "B3A80BCD1F43E694CAEE64552A3CB5F66E29A1F1F29CCE828958D61A4D1DAA84",
+      "bytes": 28258
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-native-reedited-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-native-reedited.pdf",
+      "sha256": "F2DB72D0A917D13B313E6F6DACDCA015A0F5ED534023B9BD3FD9C1DDDF602B2F",
+      "bytes": 13243109
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-native-saved-poppler.png",
+      "sha256": "946C6BE52B8E6D65B5885D29C523E1501B44C0A59E1581B45B726EC7467511C8",
+      "bytes": 25870
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-native-saved-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-native-saved.pdf",
+      "sha256": "71CB732CA3EA80F03B64ABED063464E67F1D2D73C13E9A5AE9A064DA12E48FE1",
+      "bytes": 13243125
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-reedited-poppler.png",
+      "sha256": "26193AD6CF9B6F35697C952AE9014C2ECFA76FC790F01F11D57273F1C9E98C6A",
+      "bytes": 30090
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-reedited-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-reedited.pdf",
+      "sha256": "26C4EC24C767EFC6F2A87A13075C32E4DEEC397882E1260E0E5A747053C55559",
+      "bytes": 13241456
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-saved-poppler.png",
+      "sha256": "6117AA919E2825552481DD6DA7E1CDD38612E3E1C0C249784587C1A3B8DBDD76",
+      "bytes": 28028
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-saved-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/lxgw-saved.pdf",
+      "sha256": "2B6B7441C7BCE450EDB99AD782CEC434A976F2419AE22581AC2B64506632672A",
+      "bytes": 13240419
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/result.json",
+      "sha256": "D0BB56C2D650F04C6BEC3A51467F08261DC1A853C17966D3169CF390A0F57194",
+      "bytes": 42058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-input-poppler.png",
+      "sha256": "66903AD9C9D61F51886379E9EE495A951E8E2F4343F77B1E8713B389E41FF27E",
+      "bytes": 12542
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-input-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-input.pdf",
+      "sha256": "C573C96C2FEC9B082FFFA27ECB191933B67426E066E38729B8044988D396D020",
+      "bytes": 1832436
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-native-reedited-poppler.png",
+      "sha256": "1AF27C8EF25EA4D5DD5D0779D05570F10B8E22D5D87CB22DBF6B667BF19A1FE5",
+      "bytes": 25788
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-native-reedited-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-native-reedited.pdf",
+      "sha256": "CF655932E615765BD253D17ABBA0BDB6517B240EAC369B48F9C5EC0416239AE3",
+      "bytes": 1835948
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-native-saved-poppler.png",
+      "sha256": "EAE8AF374C08FD2A5B4238AA874656DDE4822E2E62938D5A2C8B4E9AA49E6F3B",
+      "bytes": 23838
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-native-saved-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-native-saved.pdf",
+      "sha256": "A92948E4CA1E53B37CFF46A697D605EF9FE9E53743416B693C5BC47822EB9ADE",
+      "bytes": 1835965
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-reedited-poppler.png",
+      "sha256": "F780902032FFE23B32B15E86A1C3CE1129F5BE7A9E5587B51AD90678C445B615",
+      "bytes": 24020
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-reedited-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-reedited.pdf",
+      "sha256": "76811290F289F6BE19D0E87A1D97142EF0569D7A05A178F8DAC49BBAD2752946",
+      "bytes": 1834293
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-saved-poppler.png",
+      "sha256": "832EFDBA7B8AE8124A44192A25F689671736E4941C53D797A10F56CE06899026",
+      "bytes": 21927
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-saved-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/stale-list-AP/zen-saved.pdf",
+      "sha256": "9AB7F08683796015A0F7CE4A3CE6793F577B1FB7909B9F5FE3A37B0D26A7BDA3",
+      "bytes": 1834310
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/fonttools-analysis.json",
+      "sha256": "B04E992063BCD0F53ED0B852A18A80C7167B3B177A23697AD9EF73627CBAEE97",
+      "bytes": 20440
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/fonttools-jobs.json",
+      "sha256": "7F88932DCC0F97039344C766CDB53B8CEFF6A3746F5DC3E67E92B0C681FC36A9",
+      "bytes": 1360
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/gowun-input.pdf",
+      "sha256": "07C11C83F92C6EA1FB731EDBB86E1310A87A1313759E9C7C34FC17FFF8D7722B",
+      "bytes": 1773379
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/gowun-native-reedited.pdf",
+      "sha256": "39A35C37D712E8E90AB684374A7770FEC418206542B60A2CF773CB1DB28AA334",
+      "bytes": 1779066
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/gowun-native-saved.pdf",
+      "sha256": "8CAFCFAB9019377C4CFB1D1727A602F1B9659D98B1F5E3F5F4439F20A95AC16D",
+      "bytes": 1779058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/gowun-reedited.pdf",
+      "sha256": "6A24007D03E82067AEAB2D5517F20103A878AF7F72E76ED3F4DE32C327988B05",
+      "bytes": 1775252
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/gowun-saved.pdf",
+      "sha256": "F31524F86691C826CB4338AC4CCE1A22252A00ADEEFF0871DEC3CB3C154202BB",
+      "bytes": 1775237
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/independent-audit.json",
+      "sha256": "CD8C4663D47713AB570558767CC8ACE0596622AD7F4F01B5EF6142FDE975DABE",
+      "bytes": 63871
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/lxgw-input.pdf",
+      "sha256": "1398C1AF7ACD8D6FD0C86D71B3818E83A168C1445DD8EA5687C8C16A30BEBB3D",
+      "bytes": 13239599
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/lxgw-native-reedited.pdf",
+      "sha256": "F2DB72D0A917D13B313E6F6DACDCA015A0F5ED534023B9BD3FD9C1DDDF602B2F",
+      "bytes": 13243109
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/lxgw-native-saved.pdf",
+      "sha256": "71CB732CA3EA80F03B64ABED063464E67F1D2D73C13E9A5AE9A064DA12E48FE1",
+      "bytes": 13243125
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/lxgw-reedited.pdf",
+      "sha256": "26C4EC24C767EFC6F2A87A13075C32E4DEEC397882E1260E0E5A747053C55559",
+      "bytes": 13241456
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/lxgw-saved.pdf",
+      "sha256": "DB120116A1B4DCF063BDABCA8035FE55726427E7FEF581CDF43B1E20183CD3D0",
+      "bytes": 13240402
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/result.json",
+      "sha256": "A9482D9A91BE380D1CC7BF9F3E80D728FFCE170646C8C595487A999E24F021EB",
+      "bytes": 42058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/zen-input.pdf",
+      "sha256": "C573C96C2FEC9B082FFFA27ECB191933B67426E066E38729B8044988D396D020",
+      "bytes": 1832436
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/zen-native-reedited.pdf",
+      "sha256": "CF655932E615765BD253D17ABBA0BDB6517B240EAC369B48F9C5EC0416239AE3",
+      "bytes": 1835948
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/zen-native-saved.pdf",
+      "sha256": "A92948E4CA1E53B37CFF46A697D605EF9FE9E53743416B693C5BC47822EB9ADE",
+      "bytes": 1835965
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/zen-reedited.pdf",
+      "sha256": "76811290F289F6BE19D0E87A1D97142EF0569D7A05A178F8DAC49BBAD2752946",
+      "bytes": 1834293
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-to-GID/zen-saved.pdf",
+      "sha256": "9AB7F08683796015A0F7CE4A3CE6793F577B1FB7909B9F5FE3A37B0D26A7BDA3",
+      "bytes": 1834310
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/fonttools-analysis.json",
+      "sha256": "B04E992063BCD0F53ED0B852A18A80C7167B3B177A23697AD9EF73627CBAEE97",
+      "bytes": 20440
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/fonttools-jobs.json",
+      "sha256": "7F88932DCC0F97039344C766CDB53B8CEFF6A3746F5DC3E67E92B0C681FC36A9",
+      "bytes": 1360
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/gowun-input.pdf",
+      "sha256": "07C11C83F92C6EA1FB731EDBB86E1310A87A1313759E9C7C34FC17FFF8D7722B",
+      "bytes": 1773379
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/gowun-native-reedited.pdf",
+      "sha256": "39A35C37D712E8E90AB684374A7770FEC418206542B60A2CF773CB1DB28AA334",
+      "bytes": 1779066
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/gowun-native-saved.pdf",
+      "sha256": "8CAFCFAB9019377C4CFB1D1727A602F1B9659D98B1F5E3F5F4439F20A95AC16D",
+      "bytes": 1779058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/gowun-reedited.pdf",
+      "sha256": "6A24007D03E82067AEAB2D5517F20103A878AF7F72E76ED3F4DE32C327988B05",
+      "bytes": 1775252
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/gowun-saved.pdf",
+      "sha256": "F31524F86691C826CB4338AC4CCE1A22252A00ADEEFF0871DEC3CB3C154202BB",
+      "bytes": 1775237
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/independent-audit.json",
+      "sha256": "325288E7212B7BF2B575A34B9B4992653BAAA58F567B7856EEF26FA3EFDC0E4C",
+      "bytes": 64207
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/lxgw-input.pdf",
+      "sha256": "1398C1AF7ACD8D6FD0C86D71B3818E83A168C1445DD8EA5687C8C16A30BEBB3D",
+      "bytes": 13239599
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/lxgw-native-reedited.pdf",
+      "sha256": "F2DB72D0A917D13B313E6F6DACDCA015A0F5ED534023B9BD3FD9C1DDDF602B2F",
+      "bytes": 13243109
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/lxgw-native-saved.pdf",
+      "sha256": "71CB732CA3EA80F03B64ABED063464E67F1D2D73C13E9A5AE9A064DA12E48FE1",
+      "bytes": 13243125
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/lxgw-reedited.pdf",
+      "sha256": "26C4EC24C767EFC6F2A87A13075C32E4DEEC397882E1260E0E5A747053C55559",
+      "bytes": 13241456
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/lxgw-saved.pdf",
+      "sha256": "64F55A4AE3DC8B82D1D655212709871ED51D9F45D44CEF88AB295A6E4859ADA6",
+      "bytes": 13240432
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/result.json",
+      "sha256": "D71EEAFC4EF96A84036076A17A16071730F89CE8EE42EFEFCBB48D393E2B84E5",
+      "bytes": 42058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/zen-input.pdf",
+      "sha256": "C573C96C2FEC9B082FFFA27ECB191933B67426E066E38729B8044988D396D020",
+      "bytes": 1832436
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/zen-native-reedited.pdf",
+      "sha256": "CF655932E615765BD253D17ABBA0BDB6517B240EAC369B48F9C5EC0416239AE3",
+      "bytes": 1835948
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/zen-native-saved.pdf",
+      "sha256": "A92948E4CA1E53B37CFF46A697D605EF9FE9E53743416B693C5BC47822EB9ADE",
+      "bytes": 1835965
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/zen-reedited.pdf",
+      "sha256": "76811290F289F6BE19D0E87A1D97142EF0569D7A05A178F8DAC49BBAD2752946",
+      "bytes": 1834293
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-CID-widths/zen-saved.pdf",
+      "sha256": "9AB7F08683796015A0F7CE4A3CE6793F577B1FB7909B9F5FE3A37B0D26A7BDA3",
+      "bytes": 1834310
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/gowun-input.pdf",
+      "sha256": "07C11C83F92C6EA1FB731EDBB86E1310A87A1313759E9C7C34FC17FFF8D7722B",
+      "bytes": 1773379
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/gowun-native-reedited.pdf",
+      "sha256": "39A35C37D712E8E90AB684374A7770FEC418206542B60A2CF773CB1DB28AA334",
+      "bytes": 1779066
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/gowun-native-saved.pdf",
+      "sha256": "8CAFCFAB9019377C4CFB1D1727A602F1B9659D98B1F5E3F5F4439F20A95AC16D",
+      "bytes": 1779058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/gowun-reedited.pdf",
+      "sha256": "6A24007D03E82067AEAB2D5517F20103A878AF7F72E76ED3F4DE32C327988B05",
+      "bytes": 1775252
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/gowun-saved.pdf",
+      "sha256": "F31524F86691C826CB4338AC4CCE1A22252A00ADEEFF0871DEC3CB3C154202BB",
+      "bytes": 1775237
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/independent-audit.json",
+      "sha256": "E90C50FA19365CDD8AE6E1415B9A80691E097B4B278BB5E3B75A413109A1EA51",
+      "bytes": 58036
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/lxgw-input.pdf",
+      "sha256": "1398C1AF7ACD8D6FD0C86D71B3818E83A168C1445DD8EA5687C8C16A30BEBB3D",
+      "bytes": 13239599
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/lxgw-native-reedited.pdf",
+      "sha256": "F2DB72D0A917D13B313E6F6DACDCA015A0F5ED534023B9BD3FD9C1DDDF602B2F",
+      "bytes": 13243109
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/lxgw-native-saved.pdf",
+      "sha256": "71CB732CA3EA80F03B64ABED063464E67F1D2D73C13E9A5AE9A064DA12E48FE1",
+      "bytes": 13243125
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/lxgw-reedited.pdf",
+      "sha256": "26C4EC24C767EFC6F2A87A13075C32E4DEEC397882E1260E0E5A747053C55559",
+      "bytes": 13241456
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/lxgw-saved.pdf",
+      "sha256": "2DB527B498B2718358AF337D2608868AAD8BDF7CE1BE536A9A96673F73A30EC8",
+      "bytes": 13240419
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/result.json",
+      "sha256": "163037CAF3FD5AB821FD27D3CBFF6E0C18A614C777616E81F97D8CA775D90378",
+      "bytes": 42058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/zen-input.pdf",
+      "sha256": "C573C96C2FEC9B082FFFA27ECB191933B67426E066E38729B8044988D396D020",
+      "bytes": 1832436
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/zen-native-reedited.pdf",
+      "sha256": "CF655932E615765BD253D17ABBA0BDB6517B240EAC369B48F9C5EC0416239AE3",
+      "bytes": 1835948
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/zen-native-saved.pdf",
+      "sha256": "A92948E4CA1E53B37CFF46A697D605EF9FE9E53743416B693C5BC47822EB9ADE",
+      "bytes": 1835965
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/zen-reedited.pdf",
+      "sha256": "76811290F289F6BE19D0E87A1D97142EF0569D7A05A178F8DAC49BBAD2752946",
+      "bytes": 1834293
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-list-index/zen-saved.pdf",
+      "sha256": "9AB7F08683796015A0F7CE4A3CE6793F577B1FB7909B9F5FE3A37B0D26A7BDA3",
+      "bytes": 1834310
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/gowun-input.pdf",
+      "sha256": "07C11C83F92C6EA1FB731EDBB86E1310A87A1313759E9C7C34FC17FFF8D7722B",
+      "bytes": 1773379
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/gowun-native-reedited.pdf",
+      "sha256": "39A35C37D712E8E90AB684374A7770FEC418206542B60A2CF773CB1DB28AA334",
+      "bytes": 1779066
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/gowun-native-saved.pdf",
+      "sha256": "8CAFCFAB9019377C4CFB1D1727A602F1B9659D98B1F5E3F5F4439F20A95AC16D",
+      "bytes": 1779058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/gowun-reedited.pdf",
+      "sha256": "6A24007D03E82067AEAB2D5517F20103A878AF7F72E76ED3F4DE32C327988B05",
+      "bytes": 1775252
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/gowun-saved.pdf",
+      "sha256": "F31524F86691C826CB4338AC4CCE1A22252A00ADEEFF0871DEC3CB3C154202BB",
+      "bytes": 1775237
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/independent-audit.json",
+      "sha256": "82BB4F750C3839E1A2285C502747A97978AAAC30D1DF71B706CF4AC56E5444B9",
+      "bytes": 58038
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/lxgw-input.pdf",
+      "sha256": "1398C1AF7ACD8D6FD0C86D71B3818E83A168C1445DD8EA5687C8C16A30BEBB3D",
+      "bytes": 13239599
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/lxgw-native-reedited.pdf",
+      "sha256": "F2DB72D0A917D13B313E6F6DACDCA015A0F5ED534023B9BD3FD9C1DDDF602B2F",
+      "bytes": 13243109
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/lxgw-native-saved.pdf",
+      "sha256": "71CB732CA3EA80F03B64ABED063464E67F1D2D73C13E9A5AE9A064DA12E48FE1",
+      "bytes": 13243125
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/lxgw-reedited.pdf",
+      "sha256": "26C4EC24C767EFC6F2A87A13075C32E4DEEC397882E1260E0E5A747053C55559",
+      "bytes": 13241456
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/lxgw-saved.pdf",
+      "sha256": "0C5EBB21B6B4B1822D97AC1EE0CB90C8893FA9C2E9A07C77CF0C92786E317C33",
+      "bytes": 13240386
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/result.json",
+      "sha256": "72AA3F24A8F50FE41AB0930BF7AD434AF78350657919254EF5BCBE9AEE66D38E",
+      "bytes": 42058
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/zen-input.pdf",
+      "sha256": "C573C96C2FEC9B082FFFA27ECB191933B67426E066E38729B8044988D396D020",
+      "bytes": 1832436
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/zen-native-reedited.pdf",
+      "sha256": "CF655932E615765BD253D17ABBA0BDB6517B240EAC369B48F9C5EC0416239AE3",
+      "bytes": 1835948
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/zen-native-saved.pdf",
+      "sha256": "A92948E4CA1E53B37CFF46A697D605EF9FE9E53743416B693C5BC47822EB9ADE",
+      "bytes": 1835965
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/zen-reedited.pdf",
+      "sha256": "76811290F289F6BE19D0E87A1D97142EF0569D7A05A178F8DAC49BBAD2752946",
+      "bytes": 1834293
+    },
+    {
+      "path": "cjk-forms/self-tests/1f24dd773dc74da894f26b41d2f9699d/wrong-ToUnicode/zen-saved.pdf",
+      "sha256": "9AB7F08683796015A0F7CE4A3CE6793F577B1FB7909B9F5FE3A37B0D26A7BDA3",
+      "bytes": 1834310
+    },
+    {
+      "path": "cjk-forms/zen-input-poppler.png",
+      "sha256": "66903AD9C9D61F51886379E9EE495A951E8E2F4343F77B1E8713B389E41FF27E",
+      "bytes": 12542
+    },
+    {
+      "path": "cjk-forms/zen-input-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/zen-input.pdf",
+      "sha256": "C573C96C2FEC9B082FFFA27ECB191933B67426E066E38729B8044988D396D020",
+      "bytes": 1832436
+    },
+    {
+      "path": "cjk-forms/zen-native-reedited-poppler.png",
+      "sha256": "1AF27C8EF25EA4D5DD5D0779D05570F10B8E22D5D87CB22DBF6B667BF19A1FE5",
+      "bytes": 25788
+    },
+    {
+      "path": "cjk-forms/zen-native-reedited-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "cjk-forms/zen-native-reedited.pdf",
+      "sha256": "CF655932E615765BD253D17ABBA0BDB6517B240EAC369B48F9C5EC0416239AE3",
+      "bytes": 1835948
+    },
+    {
+      "path": "cjk-forms/zen-native-saved-poppler.png",
+      "sha256": "EAE8AF374C08FD2A5B4238AA874656DDE4822E2E62938D5A2C8B4E9AA49E6F3B",
+      "bytes": 23838
+    },
+    {
+      "path": "cjk-forms/zen-native-saved-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "cjk-forms/zen-native-saved.pdf",
+      "sha256": "A92948E4CA1E53B37CFF46A697D605EF9FE9E53743416B693C5BC47822EB9ADE",
+      "bytes": 1835965
+    },
+    {
+      "path": "cjk-forms/zen-reedited-poppler.png",
+      "sha256": "F780902032FFE23B32B15E86A1C3CE1129F5BE7A9E5587B51AD90678C445B615",
+      "bytes": 24020
+    },
+    {
+      "path": "cjk-forms/zen-reedited-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/zen-reedited.pdf",
+      "sha256": "76811290F289F6BE19D0E87A1D97142EF0569D7A05A178F8DAC49BBAD2752946",
+      "bytes": 1834293
+    },
+    {
+      "path": "cjk-forms/zen-saved-poppler.png",
+      "sha256": "832EFDBA7B8AE8124A44192A25F689671736E4941C53D797A10F56CE06899026",
+      "bytes": 21927
+    },
+    {
+      "path": "cjk-forms/zen-saved-poppler.stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "cjk-forms/zen-saved.pdf",
+      "sha256": "9AB7F08683796015A0F7CE4A3CE6793F577B1FB7909B9F5FE3A37B0D26A7BDA3",
+      "bytes": 1834310
+    },
+    {
+      "path": "execution-manifest.json",
+      "sha256": "09975C1274509E1368F3E9BE5EF14EA8CBBFE308C5D19798A46865FD62FF7417",
+      "bytes": 8287
+    },
+    {
+      "path": "font-subset/independent-audit.json",
+      "sha256": "6993D60EF1144F40D0B93C0648F2CB3E224C23C21A367CB84455615E27098FD6",
+      "bytes": 529886
+    },
+    {
+      "path": "font-subset/result.json",
+      "sha256": "0C7F9F78E74046D18BCE19570AFAC14B5CE99ACA017561A632CA2F27EB834DA1",
+      "bytes": 40826
+    },
+    {
+      "path": "font-subset/sources/GowunDodum-OFL.txt",
+      "sha256": "A7C73F9521CD646BBDFB6684C99A62311BBD7BCE11898DC11EF0B3C69EDA1ACA",
+      "bytes": 4395
+    },
+    {
+      "path": "font-subset/sources/GowunDodum-Regular.ttf",
+      "sha256": "A6E457933227483A11758FD0947BC74422A106D46F0BF057FDAA5AF94A30067D",
+      "bytes": 7229088
+    },
+    {
+      "path": "font-subset/sources/LXGW-OFL.txt",
+      "sha256": "C38B1994A5E48AC30AC7D1DA7D0409FD8FD8127DFE28A13D6E787D5B1EF34A5E",
+      "bytes": 4448
+    },
+    {
+      "path": "font-subset/sources/LXGWWenKai-Regular.ttf",
+      "sha256": "39AD71264B588165B469E35E6AFB162A378DACD1F95348160240BA9038AC3009",
+      "bytes": 25575676
+    },
+    {
+      "path": "font-subset/sources/P0AliasGlyph.ttf",
+      "sha256": "41D8A0440084EE7CB5A0B44CE84E1137D4FC24D202A15C00C363E851806EBB05",
+      "bytes": 3960
+    },
+    {
+      "path": "font-subset/sources/P0Cmap12Only.ttf",
+      "sha256": "A12A8891CF8E1E90826F0644BD11209041C69AF68F77295EF8CAB128342E5573",
+      "bytes": 3988
+    },
+    {
+      "path": "font-subset/sources/P0NoSubsetting.ttf",
+      "sha256": "8958C71DEA4699FF3DED4E5D9DA0274BE4CA5DDCDF8A907F651E9A7252BD4585",
+      "bytes": 4860
+    },
+    {
+      "path": "font-subset/sources/source-manifest.json",
+      "sha256": "8AFF3539DB8E6895BCFF702A30F69CB099E526C4FB15100C5AEA248D3E7C65FD",
+      "bytes": 2244
+    },
+    {
+      "path": "font-subset/sources/ZenKakuGothicNew-OFL.txt",
+      "sha256": "0FAC78A235C98D640CB06332EB5362C211D86FA03C011DF438C35005D22AD2C7",
+      "bytes": 4401
+    },
+    {
+      "path": "font-subset/sources/ZenKakuGothicNew-Regular.ttf",
+      "sha256": "B840CD07A67D89CACCA44249AE49AA99EE7640EB5CE623BE8D8983D6AABAC801",
+      "bytes": 2360248
+    },
+    {
+      "path": "fonts/result.json",
+      "sha256": "2FF8055CDFBE62E0FD950BCE8FB6F29C9E3030E0241CB0F837E84A2CC8DD15A9",
+      "bytes": 3762
+    },
+    {
+      "path": "forms/result.json",
+      "sha256": "505E562E04A005AD58B1C87D78539EF914C5D2F6D41F175393624E9C40831073",
+      "bytes": 7234
+    },
+    {
+      "path": "forms-advanced/focused-saved-poppler.png",
+      "sha256": "A4E2D4FCBA47357706B9C36C23CB16C1440B54985D17C6BAA3668F10AF67B7C7",
+      "bytes": 80039
+    },
+    {
+      "path": "forms-advanced/focused-saved-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "forms-advanced/focused-saved.pdf",
+      "sha256": "F3FF8A7E2814A1C3B700B8DD20E8528EF8D5D9E0D0C82D92C322336407D288C2",
+      "bytes": 5081
+    },
+    {
+      "path": "forms-advanced/forms-advanced-contact-sheet.png",
+      "sha256": "5FFB82C0C18387A65F6B1FF43268F0C5F3D56A3D797215A61C4CA2AFB2DCD4FC",
+      "bytes": 65664
+    },
+    {
+      "path": "forms-advanced/independent-audit.json",
+      "sha256": "949486C610E15079B4CAD156035C80C4EFE2CE9E2EDFF94A2EEE2C08A91D8108",
+      "bytes": 37174
+    },
+    {
+      "path": "forms-advanced/input-poppler.png",
+      "sha256": "B709E68AF36E6590C0CE0617DC6BD9136A749372E23C4BF5A20C7DA69C7273E0",
+      "bytes": 64356
+    },
+    {
+      "path": "forms-advanced/input-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "forms-advanced/input.pdf",
+      "sha256": "99C4626D799A82D6928F2C209DF48AB1C8CF441FCE077060B0D417AC401D8448",
+      "bytes": 5105
+    },
+    {
+      "path": "forms-advanced/manual-visual-review.json",
+      "sha256": "8A5D80DC111FA08372E85AEBDE95F3D5E61873CFDF8E708E9742D3BCDEE55705",
+      "bytes": 4293
+    },
+    {
+      "path": "forms-advanced/result.json",
+      "sha256": "228EC4083AB0E2B9E41A3ECC25A72D772288B5FD0DB0B97B8EB4C84B2EEC6132",
+      "bytes": 18678
+    },
+    {
+      "path": "forms-advanced/second-saved-poppler.png",
+      "sha256": "14815A420C6BB14D37626590C80D9B7A128DF4C74EB3DD5B7320FAC45C08B245",
+      "bytes": 72818
+    },
+    {
+      "path": "forms-advanced/second-saved-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "forms-advanced/second-saved.pdf",
+      "sha256": "C4FC42F9AFDF01E07EB9F25B2A54BC3B1B6A6B36BCEBFF6F2435E6C7F3695021",
+      "bytes": 5019
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/missing-output/independent-audit.json",
+      "sha256": "4FAB084A5D26833A181C1A77843E2545C4B0F0DFCCED3499A7EF26B9E9F09ACE",
+      "bytes": 4346
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/missing-output/input.pdf",
+      "sha256": "99C4626D799A82D6928F2C209DF48AB1C8CF441FCE077060B0D417AC401D8448",
+      "bytes": 5105
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/missing-output/result.json",
+      "sha256": "228EC4083AB0E2B9E41A3ECC25A72D772288B5FD0DB0B97B8EB4C84B2EEC6132",
+      "bytes": 18678
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/missing-output/second-saved.pdf",
+      "sha256": "C4FC42F9AFDF01E07EB9F25B2A54BC3B1B6A6B36BCEBFF6F2435E6C7F3695021",
+      "bytes": 5019
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/orphan-widget/focused-saved.pdf",
+      "sha256": "A8C8990B4C0420B8E49287533BB1E3CBF4AE57563CFE6344CEF33ADC11784C90",
+      "bytes": 5459
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/orphan-widget/independent-audit.json",
+      "sha256": "3EBA81D0806CEFDED2D461A574621B3906C85EC0A3BEC95D2C8B698FFE675CCD",
+      "bytes": 4541
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/orphan-widget/input.pdf",
+      "sha256": "99C4626D799A82D6928F2C209DF48AB1C8CF441FCE077060B0D417AC401D8448",
+      "bytes": 5105
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/orphan-widget/result.json",
+      "sha256": "33E8DAE6C10800334DD6129DAA0511FCF52134221A2571B0087AF0F6F622C4BD",
+      "bytes": 18598
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/orphan-widget/second-saved.pdf",
+      "sha256": "C4FC42F9AFDF01E07EB9F25B2A54BC3B1B6A6B36BCEBFF6F2435E6C7F3695021",
+      "bytes": 5019
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/retained-content-changed/focused-saved.pdf",
+      "sha256": "878AF235C19BF241CDCF290A1BBDF596FAE25EBA8DA302932F36E2A697AADEF2",
+      "bytes": 6027
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/retained-content-changed/independent-audit.json",
+      "sha256": "BC5B9BECCA23C15380FD5431B775AA65DC873E1A7F1607C0DDAB2ABA21519B66",
+      "bytes": 16451
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/retained-content-changed/input.pdf",
+      "sha256": "99C4626D799A82D6928F2C209DF48AB1C8CF441FCE077060B0D417AC401D8448",
+      "bytes": 5105
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/retained-content-changed/result.json",
+      "sha256": "5686EE282B4145DBE962D0927E368598FC3AB96E8747FF6977B27FEC4239D0B2",
+      "bytes": 18598
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/retained-content-changed/second-saved.pdf",
+      "sha256": "C4FC42F9AFDF01E07EB9F25B2A54BC3B1B6A6B36BCEBFF6F2435E6C7F3695021",
+      "bytes": 5019
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-list-AP/focused-saved-poppler.png",
+      "sha256": "0852FF6CE2D7C721416C1CF3AD41E1370AEBF2CEB1255F72537B64C7BC34BB0B",
+      "bytes": 79046
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-list-AP/focused-saved-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-list-AP/focused-saved.pdf",
+      "sha256": "39E021A47A5424D3C9697D2812F3C7BA4B1510242AF2175237B05BE3E9B5CE81",
+      "bytes": 5408
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-list-AP/forms-advanced-contact-sheet.png",
+      "sha256": "48DE393A6E24053656DD09865DE7B9B990CB9C2B82CD18074B4C39D0B84583D6",
+      "bytes": 65723
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-list-AP/independent-audit.json",
+      "sha256": "BD94D13D41FF58BF60D9F04DC693548418FF488FE54CB1E34FD7A830AFFC932A",
+      "bytes": 29313
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-list-AP/input-poppler.png",
+      "sha256": "B709E68AF36E6590C0CE0617DC6BD9136A749372E23C4BF5A20C7DA69C7273E0",
+      "bytes": 64356
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-list-AP/input-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-list-AP/input.pdf",
+      "sha256": "99C4626D799A82D6928F2C209DF48AB1C8CF441FCE077060B0D417AC401D8448",
+      "bytes": 5105
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-list-AP/result.json",
+      "sha256": "B534BE0D5B6FE6108F992053671521B728C7D743BD7CFB59557F176C8E7C6908",
+      "bytes": 18598
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-list-AP/second-saved-poppler.png",
+      "sha256": "14815A420C6BB14D37626590C80D9B7A128DF4C74EB3DD5B7320FAC45C08B245",
+      "bytes": 72818
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-list-AP/second-saved-poppler.stderr.txt",
+      "sha256": "6B76DEDF9FEFB6759A7C6EF6ED89EA38F6B993E297A0ACDCBD6C6C84B47B8B17",
+      "bytes": 94
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-list-AP/second-saved.pdf",
+      "sha256": "C4FC42F9AFDF01E07EB9F25B2A54BC3B1B6A6B36BCEBFF6F2435E6C7F3695021",
+      "bytes": 5019
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-multiline-AP/focused-saved.pdf",
+      "sha256": "85EF2DA8D51E5C09E1197599FE2596DF56CA0DD534C5FCDEF623EDA279DC7346",
+      "bytes": 5377
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-multiline-AP/independent-audit.json",
+      "sha256": "6748162A4FFD098E451520C12E19E2873B2C04A8A208763896B57097A7F9B4EC",
+      "bytes": 16319
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-multiline-AP/input.pdf",
+      "sha256": "99C4626D799A82D6928F2C209DF48AB1C8CF441FCE077060B0D417AC401D8448",
+      "bytes": 5105
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-multiline-AP/result.json",
+      "sha256": "CF4E9BC8315D0467AE2A07A034082BB3EDEF31F904D281366E5FC93B750FDA21",
+      "bytes": 18598
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/stale-multiline-AP/second-saved.pdf",
+      "sha256": "C4FC42F9AFDF01E07EB9F25B2A54BC3B1B6A6B36BCEBFF6F2435E6C7F3695021",
+      "bytes": 5019
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/wrong-choice-I/focused-saved.pdf",
+      "sha256": "241273E3C58EF24BBB2937C0F2F85D83A537292FA3E31874C7F69DD1F3FF65B3",
+      "bytes": 5456
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/wrong-choice-I/independent-audit.json",
+      "sha256": "587D2010EE9E0DD5A70521817390CE9E082C9E0D0B30DBFDB7659F2F6A3F4C93",
+      "bytes": 16438
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/wrong-choice-I/input.pdf",
+      "sha256": "99C4626D799A82D6928F2C209DF48AB1C8CF441FCE077060B0D417AC401D8448",
+      "bytes": 5105
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/wrong-choice-I/result.json",
+      "sha256": "F4A2703E36C4FD985519BF930AEF497582C4AA9A6E86491876411A3D70B5E65E",
+      "bytes": 18598
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/wrong-choice-I/second-saved.pdf",
+      "sha256": "C4FC42F9AFDF01E07EB9F25B2A54BC3B1B6A6B36BCEBFF6F2435E6C7F3695021",
+      "bytes": 5019
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/wrong-radio-AS/focused-saved.pdf",
+      "sha256": "F6FB43343099C4B0A7C3616AD1FA7C9A048252D36A708E47827181B6B105C7B2",
+      "bytes": 5457
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/wrong-radio-AS/independent-audit.json",
+      "sha256": "A779CA2F4A93B48CC9BFDE3198AA1DF7A1AFDDADE5592FD6DAE80C0BA366B877",
+      "bytes": 16451
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/wrong-radio-AS/input.pdf",
+      "sha256": "99C4626D799A82D6928F2C209DF48AB1C8CF441FCE077060B0D417AC401D8448",
+      "bytes": 5105
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/wrong-radio-AS/result.json",
+      "sha256": "69982E495E2C41A5A404F137510E7727C67875C29FC42571FB7FEE1450B1A183",
+      "bytes": 18598
+    },
+    {
+      "path": "forms-advanced/self-tests/290194cd89bd4c8d87c59c0f3fd77e80/wrong-radio-AS/second-saved.pdf",
+      "sha256": "C4FC42F9AFDF01E07EB9F25B2A54BC3B1B6A6B36BCEBFF6F2435E6C7F3695021",
+      "bytes": 5019
+    },
+    {
+      "path": "forms-native-research/branch-commit.json",
+      "sha256": "4C02DA72B28D9E85D862FEB1A8186664D81BCE62E9953C576A7DB7F95B23C587",
+      "bytes": 2000
+    },
+    {
+      "path": "forms-native-research/cpdf_bafontmap.cpp",
+      "sha256": "44DE7F043394D602EA101E0FB71F4D737DC9F60D27F7C9D896FEFD243768AC92",
+      "bytes": 14639
+    },
+    {
+      "path": "forms-native-research/research.json",
+      "sha256": "30004F24370FB158429AEFC9B836149C686835E4DE5A8DF460FCCAED1A8370A5",
+      "bytes": 2833
+    },
+    {
+      "path": "independent-verification.json",
+      "sha256": "1AD465582F810500801D6A98C80D32F06AD04CB2B113C474496BBC65D7890145",
+      "bytes": 12823
+    },
+    {
+      "path": "logs/regression-Core.xml",
+      "sha256": "F3272EDB881486887ECCB3857E0618E43A5ABE60C3D3626CD70B54EDA9AA7693",
+      "bytes": 40041
+    },
+    {
+      "path": "logs/regression-Headless.xml",
+      "sha256": "B5E37BEA9DD8887200BD3B0106BA1C7902F017758E8C71A977945E55DC101520",
+      "bytes": 11525
+    },
+    {
+      "path": "p0-run.json",
+      "sha256": "F4C2BBAC505EFA60CC9F18ED64D0407922DCF60D6E9CFE297CA4FA76D7FAFCFD",
+      "bytes": 11630
+    },
+    {
+      "path": "production/independent-audit.json",
+      "sha256": "07F704BA0458AF83E93360C370D4F2CDAF678F889826B50E3F06CA32745E68FB",
+      "bytes": 21886
+    },
+    {
+      "path": "production/result.json",
+      "sha256": "7C6F644A239070B33A6864AEB7159F17FD6EC80962741A05A3D6615AE4B637E2",
+      "bytes": 3844
+    },
+    {
+      "path": "production-redaction/independent-audit.json",
+      "sha256": "0C75EBD0C479B812059F5F981B38DADB7DA443F012521CFBBD01FAA9FB38169A",
+      "bytes": 40523
+    },
+    {
+      "path": "production-redaction/result.json",
+      "sha256": "133EC62FE72B18FD3758BE69ABD87929A98F2EA09F653E15F3EDF766FED1D914",
+      "bytes": 5523
+    },
+    {
+      "path": "redaction/result.json",
+      "sha256": "FD8690D171B51F7E739F1F2AC02577F44C47FDBD4C8F914A9FCE65AA9EEAEE98",
+      "bytes": 11806
+    },
+    {
+      "path": "redaction-advanced/independent-audit.json",
+      "sha256": "B9B64F70BDA3104B9862BD855943BCFF939C0BDAACF5F61A3B3846905DE15197",
+      "bytes": 28162
+    },
+    {
+      "path": "redaction-advanced/result.json",
+      "sha256": "D3348C1C981587D388C38DEAB09CF9830212C276F28CA89DF4E1E22576932AED",
+      "bytes": 13064
+    },
+    {
+      "path": "save/result.json",
+      "sha256": "127C4C7EE3614638A5C0C9ECCF204D52601507AB32E7705AAB139FAE1CA5059C",
+      "bytes": 3976
+    }
+  ]
+}

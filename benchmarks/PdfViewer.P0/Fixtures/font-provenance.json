@@ -1,0 +1,13 @@
+{
+  "file": "P0AnnotationCjk.ttf",
+  "sha256": "95936c1aaa400ce69fcc002b9f8f1af52ad20fcfc1d8de8645d6ed30991c7978",
+  "bytes": 7092,
+  "license": "SIL Open Font License 1.1; see Noto-CJK-COPYRIGHT.txt",
+  "sourceFamily": "Noto Sans CJK SC",
+  "sourceFile": "NotoSansCJK-Regular.ttc, font index 2",
+  "sourceSHA256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+  "source": "Ubuntu fonts-noto-cjk package; upstream https://github.com/notofonts/noto-cjk",
+  "derivedFamily": "P0 Annotation CJK",
+  "derivation": "prepare_annotation_font.py: Unicode subset, rename reserved family, convert CFF outlines to TrueType with maximum quadratic error of 1 font unit",
+  "usage": "Synthetic P0 test fixture only; not included in either product package. Not a production font fallback or shaping implementation."
+}

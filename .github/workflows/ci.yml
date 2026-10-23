@@ -1,0 +1,36 @@
+name: build-and-contracts
+on: [push, pull_request]
+jobs:
+  verify:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Markdown native runner contracts (synthetic, no native sampling)
+        shell: pwsh
+        run: ./scripts/Tests/Test-MarkdownNative.Tests.ps1
+      - name: Build, test, pack and consume packages
+        shell: pwsh
+        run: ./scripts/Verify.ps1
+      - name: Preserve verification and consumer evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verification-${{ matrix.os }}
+          path: |
+            artifacts/verification/**
+            artifacts/guard-tests/**/results.json
+            artifacts/guard-tests/**/guard.json
+            artifacts/guard-tests/markdown-native-*/**
+            artifacts/markdown-package-consumer-results.json
+            artifacts/consumer/**/consumer-result.json
+            artifacts/consumer/**/result.json
+            artifacts/consumer/**/supervisor-result.json
+            artifacts/consumer/**/runtime-stdout.log
+            artifacts/consumer/**/runtime-stderr.log
+          if-no-files-found: warn

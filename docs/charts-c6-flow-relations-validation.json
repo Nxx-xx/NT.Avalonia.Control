@@ -1,0 +1,871 @@
+{
+  "collector": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\Collect-C602Evidence-v6.py",
+    "sha256": "798590E69CCE135AF8C6FCD7499764CEB2546F7609E85A600D4D56C36E7E35DF",
+    "bytes": 16069
+  },
+  "collectorPathResolutions": [
+    {
+      "platform": "windows",
+      "recorded": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-flow-relations-20261022/windows/run-v4/verification/functional-v4/Charts.Headless.Tests.xml",
+      "sourceDirectory": "<REPO_ROOT>\\artifacts\\c602\\windows-source-v3-final-v4",
+      "resolved": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\verification\\functional-v4\\Charts.Headless.Tests.xml",
+      "sha256": "E847BD50A848EAC87AF0B682CEA780DC5DD19FF10D4F7DFF9CE8454D2666B849"
+    },
+    {
+      "platform": "linux",
+      "recorded": "../run-v4/verification/functional-v4/Charts.Headless.Tests.xml",
+      "sourceDirectory": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-flow-relations-20261022/linux/physical-source-v3",
+      "resolved": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\verification\\functional-v4\\Charts.Headless.Tests.xml",
+      "sha256": "9CD83ABC71453A0BDEE13D7DB3DF8ABBCB7BCF7CE69BBA8563BACDFCB7FAB484"
+    }
+  ],
+  "testIdentityDisplayAdaptations": [
+    {
+      "rawLinuxName": "Charts.Headless.Tests.HierarchyMathTests.Invalid_values_are_rejected_even_on_nonleaf_nodes(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.HierarchyMathTests.Invalid_values_are_rejected_even_on_nonleaf_nodes(value: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.HierarchyMathTests",
+      "method": "Invalid_values_are_rejected_even_on_nonleaf_nodes",
+      "source-line": "254",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/HierarchyMathTests.cs",
+      "sourceSha256": "7083771590C8D26149568CEF18C446B0BBFEF65309B85D04472439B7ACE5E2BB",
+      "declaredMethodLine": 259,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.HierarchyMathTests.Invalid_values_are_rejected_even_on_nonleaf_nodes(value: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.HierarchyMathTests.Invalid_values_are_rejected_even_on_nonleaf_nodes(value: -∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.HierarchyMathTests",
+      "method": "Invalid_values_are_rejected_even_on_nonleaf_nodes",
+      "source-line": "254",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/HierarchyMathTests.cs",
+      "sourceSha256": "7083771590C8D26149568CEF18C446B0BBFEF65309B85D04472439B7ACE5E2BB",
+      "declaredMethodLine": 259,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.ChartExportCompletionTests.Invalid_jpeg_density_is_rejected_before_destination_write(dpi: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ChartExportCompletionTests.Invalid_jpeg_density_is_rejected_before_destination_write(dpi: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.ChartExportCompletionTests",
+      "method": "Invalid_jpeg_density_is_rejected_before_destination_write",
+      "source-line": "57",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/ChartExportCompletionTests.cs",
+      "sourceSha256": "64FBC9AC2F10F53193CEAE583BF8DE90AA783D506660119E2E333D491F289B25",
+      "declaredMethodLine": 62,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.GaugeControlTests.Invalid_domains_and_nonfinite_values_render_a_track_without_throwing(minimum: 0, maximum: Infinity, value: 50)",
+      "canonicalWindowsName": "Charts.Headless.Tests.GaugeControlTests.Invalid_domains_and_nonfinite_values_render_a_track_without_throwing(minimum: 0, maximum: ∞, value: 50)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.GaugeControlTests",
+      "method": "Invalid_domains_and_nonfinite_values_render_a_track_without_throwing",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/GaugeControlTests.cs",
+      "sourceSha256": "6B80AB5CF97DBDF120D69892E5C862BD5DA0A6A9F860D1F3EF28DB3594D590CC",
+      "declaredMethodLine": 30,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.GaugeControlTests.Invalid_domains_and_nonfinite_values_render_a_track_without_throwing(minimum: 0, maximum: 100, value: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.GaugeControlTests.Invalid_domains_and_nonfinite_values_render_a_track_without_throwing(minimum: 0, maximum: 100, value: -∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.GaugeControlTests",
+      "method": "Invalid_domains_and_nonfinite_values_render_a_track_without_throwing",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/GaugeControlTests.cs",
+      "sourceSha256": "6B80AB5CF97DBDF120D69892E5C862BD5DA0A6A9F860D1F3EF28DB3594D590CC",
+      "declaredMethodLine": 30,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.HierarchyChartTests.Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals(invalid: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.HierarchyChartTests.Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals(invalid: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.HierarchyChartTests",
+      "method": "Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/HierarchyChartTests.cs",
+      "sourceSha256": "30FEFB9C99733F5DA22D2C3F1FE6891D70840E8F3B273DC07271CE553A3CBF69",
+      "declaredMethodLine": 212,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.HierarchyChartTests.Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals(invalid: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.HierarchyChartTests.Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals(invalid: -∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.HierarchyChartTests",
+      "method": "Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/HierarchyChartTests.cs",
+      "sourceSha256": "30FEFB9C99733F5DA22D2C3F1FE6891D70840E8F3B273DC07271CE553A3CBF69",
+      "declaredMethodLine": 212,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions(invalid: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions(invalid: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.AnnotationShapeCompletionTests",
+      "method": "Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/AnnotationShapeCompletionTests.cs",
+      "sourceSha256": "5DFF63D9226CCB2D284DB6582CA49F3C00198EB712578F4590EEE70CBD6A12B5",
+      "declaredMethodLine": 48,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions(invalid: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions(invalid: -∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.AnnotationShapeCompletionTests",
+      "method": "Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/AnnotationShapeCompletionTests.cs",
+      "sourceSha256": "5DFF63D9226CCB2D284DB6582CA49F3C00198EB712578F4590EEE70CBD6A12B5",
+      "declaredMethodLine": 48,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Invalid_or_overflowing_data_center_extrema_are_not_drawn(center: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Invalid_or_overflowing_data_center_extrema_are_not_drawn(center: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.AnnotationShapeCompletionTests",
+      "method": "Invalid_or_overflowing_data_center_extrema_are_not_drawn",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/AnnotationShapeCompletionTests.cs",
+      "sourceSha256": "5DFF63D9226CCB2D284DB6582CA49F3C00198EB712578F4590EEE70CBD6A12B5",
+      "declaredMethodLine": 86,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Invalid_or_overflowing_data_center_extrema_are_not_drawn(center: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Invalid_or_overflowing_data_center_extrema_are_not_drawn(center: -∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.AnnotationShapeCompletionTests",
+      "method": "Invalid_or_overflowing_data_center_extrema_are_not_drawn",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/AnnotationShapeCompletionTests.cs",
+      "sourceSha256": "5DFF63D9226CCB2D284DB6582CA49F3C00198EB712578F4590EEE70CBD6A12B5",
+      "declaredMethodLine": 86,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.ThemeRiverStackTests.Invalid_contributions_are_rejected_without_inventing_gaps(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ThemeRiverStackTests.Invalid_contributions_are_rejected_without_inventing_gaps(value: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.ThemeRiverStackTests",
+      "method": "Invalid_contributions_are_rejected_without_inventing_gaps",
+      "source-line": "23",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/ThemeRiverStackTests.cs",
+      "sourceSha256": "B36D8A85943C2E3531BB466E5A84FDFFE4D59C9FFB574BFC6E741F9F95A5FC4A",
+      "declaredMethodLine": 25,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.ScatterBubbleDataTests.Missing_negative_and_nonfinite_sizes_hide_glyphs_but_keep_canonical_XY_available(size: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ScatterBubbleDataTests.Missing_negative_and_nonfinite_sizes_hide_glyphs_but_keep_canonical_XY_available(size: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.ScatterBubbleDataTests",
+      "method": "Missing_negative_and_nonfinite_sizes_hide_glyphs_but_keep_canonical_XY_available",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/ScatterBubbleDataTests.cs",
+      "sourceSha256": "3A8D84FD992378859579D7EB90615EBCAF3276BAAB9899C79754024394787E3E",
+      "declaredMethodLine": 110,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.ChartScaleTests.Degenerate_or_invalid_explicit_bounds_cannot_break_scale_generation(minimum: NaN, maximum: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ChartScaleTests.Degenerate_or_invalid_explicit_bounds_cannot_break_scale_generation(minimum: NaN, maximum: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.ChartScaleTests",
+      "method": "Degenerate_or_invalid_explicit_bounds_cannot_break_scale_generation",
+      "source-line": "119",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/ChartScaleTests.cs",
+      "sourceSha256": "D6ACD2887C55B03D7425BDB52C4E79353523FF6FE1B0483802B8EE7261CCF5AD",
+      "declaredMethodLine": 123,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.FinancialMathTests.Invalid_volume_is_rejected(volume: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.FinancialMathTests.Invalid_volume_is_rejected(volume: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.FinancialMathTests",
+      "method": "Invalid_volume_is_rejected",
+      "source-line": "176",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/FinancialMathTests.cs",
+      "sourceSha256": "A990ED94E9638B5CE07A9DD7A243A7B87E1ABE5450FEC8AEA15733972876274C",
+      "declaredMethodLine": 178,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.FinancialMathTests.Invalid_box_sizes_and_reversal_amounts_are_rejected(size: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.FinancialMathTests.Invalid_box_sizes_and_reversal_amounts_are_rejected(size: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.FinancialMathTests",
+      "method": "Invalid_box_sizes_and_reversal_amounts_are_rejected",
+      "source-line": "196",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/FinancialMathTests.cs",
+      "sourceSha256": "A990ED94E9638B5CE07A9DD7A243A7B87E1ABE5450FEC8AEA15733972876274C",
+      "declaredMethodLine": 198,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.FinancialMathTests.Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping(open: 9, high: Infinity, low: 8, close: 10)",
+      "canonicalWindowsName": "Charts.Headless.Tests.FinancialMathTests.Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping(open: 9, high: ∞, low: 8, close: 10)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.FinancialMathTests",
+      "method": "Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping",
+      "source-line": "166",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/FinancialMathTests.cs",
+      "sourceSha256": "A990ED94E9638B5CE07A9DD7A243A7B87E1ABE5450FEC8AEA15733972876274C",
+      "declaredMethodLine": 170,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.FinancialMathTests.Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping(open: 9, high: 10, low: -Infinity, close: 10)",
+      "canonicalWindowsName": "Charts.Headless.Tests.FinancialMathTests.Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping(open: 9, high: 10, low: -∞, close: 10)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.FinancialMathTests",
+      "method": "Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping",
+      "source-line": "166",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/FinancialMathTests.cs",
+      "sourceSha256": "A990ED94E9638B5CE07A9DD7A243A7B87E1ABE5450FEC8AEA15733972876274C",
+      "declaredMethodLine": 170,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.LineInterpolationTests.Invalid_data_separates_figures_and_is_not_bridged_by_segment_hit_testing(missing: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.LineInterpolationTests.Invalid_data_separates_figures_and_is_not_bridged_by_segment_hit_testing(missing: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.LineInterpolationTests",
+      "method": "Invalid_data_separates_figures_and_is_not_bridged_by_segment_hit_testing",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/LineInterpolationTests.cs",
+      "sourceSha256": "2E54BDC1452F1711CCDF0E5A0F678AA36CDFCF6E7E113078C36C12CA1523DB2A",
+      "declaredMethodLine": 89,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.StatisticsMathTests.Quantile_rejects_invalid_probabilities(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.StatisticsMathTests.Quantile_rejects_invalid_probabilities(value: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.StatisticsMathTests",
+      "method": "Quantile_rejects_invalid_probabilities",
+      "source-line": "318",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+      "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+      "declaredMethodLine": 324,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.StatisticsMathTests.Quantile_rejects_invalid_probabilities(value: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.StatisticsMathTests.Quantile_rejects_invalid_probabilities(value: -∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.StatisticsMathTests",
+      "method": "Quantile_rejects_invalid_probabilities",
+      "source-line": "318",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+      "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+      "declaredMethodLine": 324,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.StatisticsMathTests.Nonnegative_numeric_parameters_reject_invalid_values(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.StatisticsMathTests.Nonnegative_numeric_parameters_reject_invalid_values(value: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.StatisticsMathTests",
+      "method": "Nonnegative_numeric_parameters_reject_invalid_values",
+      "source-line": "327",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+      "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+      "declaredMethodLine": 332,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.StatisticsMathTests.Nonnegative_numeric_parameters_reject_invalid_values(value: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.StatisticsMathTests.Nonnegative_numeric_parameters_reject_invalid_values(value: -∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.StatisticsMathTests",
+      "method": "Nonnegative_numeric_parameters_reject_invalid_values",
+      "source-line": "327",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+      "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+      "declaredMethodLine": 332,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.StatisticsMathTests.Confidence_level_is_finite_and_strictly_between_zero_and_one(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.StatisticsMathTests.Confidence_level_is_finite_and_strictly_between_zero_and_one(value: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.StatisticsMathTests",
+      "method": "Confidence_level_is_finite_and_strictly_between_zero_and_one",
+      "source-line": "340",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+      "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+      "declaredMethodLine": 345,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.ChartShapeAnnotationTests.Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ChartShapeAnnotationTests.Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend(value: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.ChartShapeAnnotationTests",
+      "method": "Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/ChartShapeAnnotationTests.cs",
+      "sourceSha256": "3C337A861866A9AAA5138B5F7B30F86AB582B8FC34B48C8A7E9B7FFD9F2E1916",
+      "declaredMethodLine": 85,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.ChartShapeAnnotationTests.Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend(value: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ChartShapeAnnotationTests.Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend(value: -∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.ChartShapeAnnotationTests",
+      "method": "Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/ChartShapeAnnotationTests.cs",
+      "sourceSha256": "3C337A861866A9AAA5138B5F7B30F86AB582B8FC34B48C8A7E9B7FFD9F2E1916",
+      "declaredMethodLine": 85,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.ChartShapeAnnotationTests.Arrow_head_dimensions_reject_invalid_or_unbounded_sizes(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ChartShapeAnnotationTests.Arrow_head_dimensions_reject_invalid_or_unbounded_sizes(value: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.ChartShapeAnnotationTests",
+      "method": "Arrow_head_dimensions_reject_invalid_or_unbounded_sizes",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/ChartShapeAnnotationTests.cs",
+      "sourceSha256": "3C337A861866A9AAA5138B5F7B30F86AB582B8FC34B48C8A7E9B7FFD9F2E1916",
+      "declaredMethodLine": 73,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.RelationMathTests.Snapshot_rejects_invalid_node_and_edge_weights(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.RelationMathTests.Snapshot_rejects_invalid_node_and_edge_weights(value: ∞)",
+      "category": "new",
+      "type": "Charts.Headless.Tests.RelationMathTests",
+      "method": "Snapshot_rejects_invalid_node_and_edge_weights",
+      "source-line": "66",
+      "sourceFileReported": true,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/RelationMathTests.cs",
+      "sourceSha256": "5241A2BF337E3D870203C813F59455D62504C7E5FA0D3F721BAF467F27273F74",
+      "declaredMethodLine": 70,
+      "lineEvidence": "xunit reported line compared verbatim plus frozen source declaration"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.TouchInputTests.Invalid_native_pinch_scale_is_not_consumed_and_does_not_change_the_view(scale: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.TouchInputTests.Invalid_native_pinch_scale_is_not_consumed_and_does_not_change_the_view(scale: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.TouchInputTests",
+      "method": "Invalid_native_pinch_scale_is_not_consumed_and_does_not_change_the_view",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/TouchInputTests.cs",
+      "sourceSha256": "9903A96E27F8D941AE24B12BE2D096F1F517125C8DA0A982C9B1501E887BDE18",
+      "declaredMethodLine": 403,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.ChartExportTests.Invalid_resolution_reports_one_failure_without_writing_or_closing_stream(dpi: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ChartExportTests.Invalid_resolution_reports_one_failure_without_writing_or_closing_stream(dpi: ∞)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.ChartExportTests",
+      "method": "Invalid_resolution_reports_one_failure_without_writing_or_closing_stream",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/ChartExportTests.cs",
+      "sourceSha256": "8B0D72E23653C7FEC1036C59EA5D2D5C5EBD183C1D623C88479500D669684024",
+      "declaredMethodLine": 66,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    },
+    {
+      "rawLinuxName": "Charts.Headless.Tests.InRangeLinearProjectionTests.Proven_bar_group_parameter_edges_keep_per_primitive_general_bits(groupWidth: Infinity, groupCount: 3, groupIndex: 2)",
+      "canonicalWindowsName": "Charts.Headless.Tests.InRangeLinearProjectionTests.Proven_bar_group_parameter_edges_keep_per_primitive_general_bits(groupWidth: ∞, groupCount: 3, groupIndex: 2)",
+      "category": "old",
+      "type": "Charts.Headless.Tests.InRangeLinearProjectionTests",
+      "method": "Proven_bar_group_parameter_edges_keep_per_primitive_general_bits",
+      "source-line": null,
+      "sourceFileReported": false,
+      "sourceRelativePath": "tests/Charts.Headless.Tests/InRangeLinearProjectionTests.cs",
+      "sourceSha256": "482A92CE355F3DC4A39E290DE4E4293FC5F9B5E341F5DA6D3A871EC8F59235C6",
+      "declaredMethodLine": 310,
+      "lineEvidence": "xunit line absent on both platforms; unique frozen source declaration derived independently"
+    }
+  ],
+  "postProcessingToolAmendments": [
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\collector-path-amendment-v5.json",
+      "sha256": "EDB4C1EC3B4070FACCEE366335B124234FA94E998A0BA7F3F14868E001963E71",
+      "bytes": 2636
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\collector-test-identity-amendment-v6.json",
+      "sha256": "0CC9ED81A2E062FA8A75205FF8C9A6E9B572BE948C7AD0C6F3131331C1F53079",
+      "bytes": 29670
+    }
+  ],
+  "schemaVersion": 1,
+  "completedUtc": "2026-10-22T10:46:29.079696+00:00",
+  "passed": true,
+  "checks": {
+    "selected-stable-frozen-candidate": true,
+    "all-tools-and-protocols-sha-retained": true,
+    "freeze-copy-0-all-sha": true,
+    "freeze-copy-1-all-sha": true,
+    "freeze-copy-2-all-sha": true,
+    "final-windows-fresh-source-clone-sha": true,
+    "v3-native-fatal-and-diagnostics-retained": true,
+    "superseded-v1-source-copy-0-all-sha": true,
+    "superseded-v1-source-copy-1-all-sha": true,
+    "superseded-v1-source-copy-2-all-sha": true,
+    "superseded-v2-source-copy-0-all-sha": true,
+    "superseded-v2-source-copy-1-all-sha": true,
+    "superseded-v2-source-copy-2-all-sha": true,
+    "windows:all-nine-supervised-stages": true,
+    "windows:all-full-tests-no-skip": true,
+    "windows:headless-report-exact-path": true,
+    "windows:all-old-test-identities-and-exact-new-union": true,
+    "windows:full-demo-and-usage": true,
+    "windows:new-relations-checks": true,
+    "windows:stable-sources-assemblies": true,
+    "windows:validated-inputs-match-freeze": true,
+    "windows:native-assembly-bytes-retained": true,
+    "windows:zero-warning-error-release-builds": true,
+    "windows:function:fresh-consumer-checks": true,
+    "windows:themes:fresh-consumer-checks": true,
+    "windows:two-package-consumers": true,
+    "windows:consumer-clean-builds": true,
+    "windows:independent-numeric": true,
+    "windows:numeric-bindings": true,
+    "windows:loaded-numeric-payloads-retained": true,
+    "windows:native-numeric-same-core": true,
+    "windows:all-fixed-pixel-rois": true,
+    "windows:pixel-sha-bindings": true,
+    "windows:18-native-export96-zero-diffs": true,
+    "windows:all-original-graph-metadata-and-layout-async": true,
+    "windows:metadata-sha-bindings": true,
+    "windows:40-new-relations-pngs": true,
+    "linux:all-nine-supervised-stages": true,
+    "linux:all-full-tests-no-skip": true,
+    "linux:headless-report-exact-path": true,
+    "linux:all-old-test-identities-and-exact-new-union": true,
+    "linux:full-demo-and-usage": true,
+    "linux:new-relations-checks": true,
+    "linux:stable-sources-assemblies": true,
+    "linux:validated-inputs-match-freeze": true,
+    "linux:native-assembly-bytes-retained": true,
+    "linux:zero-warning-error-release-builds": true,
+    "linux:function:fresh-consumer-checks": true,
+    "linux:themes:fresh-consumer-checks": true,
+    "linux:two-package-consumers": true,
+    "linux:consumer-clean-builds": true,
+    "linux:independent-numeric": true,
+    "linux:numeric-bindings": true,
+    "linux:loaded-numeric-payloads-retained": true,
+    "linux:native-numeric-same-core": true,
+    "linux:all-fixed-pixel-rois": true,
+    "linux:pixel-sha-bindings": true,
+    "linux:18-native-export96-zero-diffs": true,
+    "linux:all-original-graph-metadata-and-layout-async": true,
+    "linux:metadata-sha-bindings": true,
+    "linux:40-new-relations-pngs": true,
+    "api-platforms-identical": true,
+    "all-290-existing-public-types-and-members-retained": true,
+    "superseded-v1-evidence-and-tools-retained": true,
+    "superseded-v2-evidence-and-tools-retained": true,
+    "prior-c601-root-evidence-unchanged": true,
+    "historical-documents-unchanged": true
+  },
+  "sourceCandidate": "c6-flow-relations-source-v3",
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\source-snapshot-v3.json",
+    "sha256": "C47709D63B7A4E5E4A98F7570B6AB3E22A3F16BD5E79BA780598A67C7AD0F937",
+    "bytes": 391225
+  },
+  "formalPlan": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\formal-plan-v4.json",
+    "sha256": "E9A2614BCCDA91CA01E959D34D8D6A643CF5C947075C6B25D206DBD2758951C1",
+    "bytes": 17952
+  },
+  "sourceFiles": 1680,
+  "runtimeInputFiles": 979,
+  "platforms": {
+    "windows": {
+      "formalRun": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\formal-run-v4.json",
+        "sha256": "A765A12AA0DB39C8B61404BF5C0A219F777948BB9F1367B24A4BDB986A4C6CCE",
+        "bytes": 12666
+      },
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\verification\\functional-v4\\results.json",
+        "sha256": "141848A6943113D83A4929961984F1E7F5CA3DF8E2F1DD50A805B3BF4A3848D3",
+        "bytes": 21659
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\verification\\functional-v4\\charts-smoke.json",
+        "sha256": "6AF38826AE2CBB4580BBD6207DB3D475FE4DE7BA14B045134DCE7096C78A9215",
+        "bytes": 7691113
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\verification\\functional-v4\\charts-usage.json",
+        "sha256": "A253D558527C4D1FBD84D4965552A67ACBC5D5BD0DD7643D19A57EF04C179255",
+        "bytes": 84813
+      },
+      "headlessTests": 2515,
+      "demoChecks": 3044,
+      "relationsDemoChecks": 400,
+      "usageChecks": 557,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 756,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\package-consumers\\20261022T102427692Z-8e56d4f02306406e854d80d37828d3ce\\function\\consumer-result.json",
+            "sha256": "851C69AC71AD60C1A07AE0919998F81429B506C114E8018A098995D1ECA72374",
+            "bytes": 129421
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 756,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\package-consumers\\20261022T102427692Z-8e56d4f02306406e854d80d37828d3ce\\themes\\consumer-result.json",
+            "sha256": "1C71B719B943A7CCC2216FC8A7A47B17B3F21705743621F0882EA241595D8D3D",
+            "bytes": 129473
+          }
+        }
+      ],
+      "pngCount": 973,
+      "relationsPngCount": 40,
+      "numericRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\relations\\raw.json",
+        "sha256": "E5BE37026F480AEEFD9D006ED8D6802F3B865D7027683028CB4A1025F7066468",
+        "bytes": 14230304
+      },
+      "numericResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\relations\\independent-numeric-result.json",
+        "sha256": "2D720162502006A2C795BBDFFB4529517A7D87EC68C30524208AD777F4C98F60",
+        "bytes": 8895086
+      },
+      "numericChecks": 134745,
+      "pixelResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\relations\\independent-pixel-result.json",
+        "sha256": "82CFE5AD6E5DCE39A38BD36BD0F04B7BD31FF97D319A8461468ADFB97B1DCCF9",
+        "bytes": 76027
+      },
+      "pixelChecks": 247,
+      "metadataResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\relations\\independent-metadata-result.json",
+        "sha256": "2AAE31C3570933F10AF8624D54972FFF30219ED917FB3CAF45687E85BBCCC7CB",
+        "bytes": 1122339
+      },
+      "metadataChecks": 15912,
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\api-v4\\api.txt",
+        "sha256": "ED46FDB4354C5847D74052D434551B2DF21E43BE2923BDAD91E6C09CF75424A9",
+        "bytes": 696232
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\verification\\functional-v4\\environment.json",
+        "sha256": "94E57982135073012F299100692501E6240E5BFF5055D10F5B74E3410360567C",
+        "bytes": 8840
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\verification\\functional-v4\\assembly-manifest.json",
+        "sha256": "FB47F1BA6D7838EC8074B6DA678BCF949D3D1D9758EC9BD9D1B6830610565540",
+        "bytes": 1956
+      },
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\windows\\run-v4\\verification\\functional-v4\\validated-input-manifest.json",
+        "sha256": "3927AA4386FE81F0B2273107E13256BBCB8ED5653806E5463CF22789DE689ACE",
+        "bytes": 155894
+      },
+      "performance": [
+        {
+          "id": "perf-sankey-1000-1997",
+          "nodes": 1000,
+          "edges": 1997,
+          "elapsedMilliseconds": 15.0708,
+          "threadAllocatedBytes": 4532816,
+          "formalSlaEvaluated": false
+        },
+        {
+          "id": "perf-force-300-597",
+          "nodes": 300,
+          "edges": 597,
+          "elapsedMilliseconds": 37.4206,
+          "threadAllocatedBytes": 596912,
+          "formalSlaEvaluated": false
+        }
+      ],
+      "formalSlaEvaluated": false,
+      "physicalInputValidated": false
+    },
+    "linux": {
+      "formalRun": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\formal-run-v4.json",
+        "sha256": "6393E95BBD39904CA7443434F199399EF87AB546ED708994175FB62346786C5C",
+        "bytes": 12955
+      },
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\verification\\functional-v4\\results.json",
+        "sha256": "A424CC938298877E0612EE638E30093B7900FFD435C103D8C15D6EAFB72B4F10",
+        "bytes": 14720
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\verification\\functional-v4\\charts-smoke.json",
+        "sha256": "CF8D48C7CA3C2226C45D12FC3F8A1EEB93B249A0A4E058B586203A246E17E8DA",
+        "bytes": 7381006
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\verification\\functional-v4\\charts-usage.json",
+        "sha256": "960913B58CC0ECD9DA70697C5D45A50DB0FAC22ADB17AE29CB4F18ECD17DDCA9",
+        "bytes": 82154
+      },
+      "headlessTests": 2515,
+      "demoChecks": 3044,
+      "relationsDemoChecks": 400,
+      "usageChecks": 557,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 756,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\package-consumers\\20261022T103740648Z-8ea0c3c3079d4bfbb3e7d58178fd3866\\function\\consumer-result.json",
+            "sha256": "EED81E19F4295F4E0F8AE2515540FB33FE734E8B1DB2727CE743C4FEE81331D9",
+            "bytes": 125890
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 756,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\package-consumers\\20261022T103740648Z-8ea0c3c3079d4bfbb3e7d58178fd3866\\themes\\consumer-result.json",
+            "sha256": "889B4AB56774256AD1FD674D567E77988C4526DF3AD38BF5DA6498145310E12D",
+            "bytes": 125932
+          }
+        }
+      ],
+      "pngCount": 973,
+      "relationsPngCount": 40,
+      "numericRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\relations\\raw.json",
+        "sha256": "115DBC43E18BD597D12AEB6A1BD2A0C62B156E0773BD9A3A5BAA753E7E309E92",
+        "bytes": 13721018
+      },
+      "numericResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\relations\\independent-numeric-result.json",
+        "sha256": "06A90955839D2B0D5A5BFC4A4F5B37F832D6CE4FE8500602BF33B963259EDA66",
+        "bytes": 8760282
+      },
+      "numericChecks": 134745,
+      "pixelResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\relations\\independent-pixel-result.json",
+        "sha256": "33F54540489359EBC69738205B3B8255D040274EA20F38D9F3B15FBF0D82B8B8",
+        "bytes": 72764
+      },
+      "pixelChecks": 247,
+      "metadataResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\relations\\independent-metadata-result.json",
+        "sha256": "248251D6C275206F439DA9099DAA12A2FFC509A3217835AF2B734C41839AB9C3",
+        "bytes": 1106361
+      },
+      "metadataChecks": 15912,
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\api-v4\\api.txt",
+        "sha256": "A53B9F1A9D5B73190A23B0021A2D3197C4E7830BB9F9BBE83635B6A18427777B",
+        "bytes": 696232
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\verification\\functional-v4\\environment.json",
+        "sha256": "11604E1DB51B942A008DE3D013559D2FA1A3741C2D86C49D7AD061597C58B2A3",
+        "bytes": 8433
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\verification\\functional-v4\\assembly-manifest.json",
+        "sha256": "35172D3DDC209E3BD0BC8909EBBC75822A90C948A0BE48D966F97DA28693F833",
+        "bytes": 1906
+      },
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\verification\\functional-v4\\validated-input-manifest.json",
+        "sha256": "17784213253911993D38AF6EB2494AF627C3869401AA9196B86E60787FD1EBC6",
+        "bytes": 152336
+      },
+      "performance": [
+        {
+          "id": "perf-sankey-1000-1997",
+          "nodes": 1000,
+          "edges": 1997,
+          "elapsedMilliseconds": 15.36801,
+          "threadAllocatedBytes": 4532816,
+          "formalSlaEvaluated": false
+        },
+        {
+          "id": "perf-force-300-597",
+          "nodes": 300,
+          "edges": 597,
+          "elapsedMilliseconds": 35.611743,
+          "threadAllocatedBytes": 596912,
+          "formalSlaEvaluated": false
+        }
+      ],
+      "formalSlaEvaluated": false,
+      "physicalInputValidated": false
+    }
+  },
+  "api": {
+    "path": "<REPO_ROOT>\\docs\\charts-c6-flow-relations-api.txt",
+    "sha256": "ED46FDB4354C5847D74052D434551B2DF21E43BE2923BDAD91E6C09CF75424A9",
+    "bytes": 696232
+  },
+  "formalSlaEvaluated": false,
+  "physicalInputValidated": false,
+  "compositorPresentValidated": false,
+  "githubActionsRunExecuted": false,
+  "historicalStandaloneOraclesRerun": false,
+  "unresolvedLegacyLodNativeAv": true,
+  "priorNativeFatal": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\candidate-v3-failure-pins-v1.json",
+    "sha256": "973DC9ADADC1A9390C0EDDDBAE8C2414BE05E827CB1DA88F34C0D6E4CB9FEEBE",
+    "bytes": 298221
+  },
+  "nativeDiagnosticConclusion": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\development\\lod-native-diagnostic-conclusion-v1.json",
+    "sha256": "46887198F1368BE7D5F2C76EE6116EAB1F042358CD9E23CEFA24B42309ECD358",
+    "bytes": 3136
+  },
+  "nativeDiagnosticPins": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\native-diagnostic-pins-v4.json",
+    "sha256": "AA4130D157227D2B1536147B25D9D4D8750F93E5608100F7C65DC4A33EF6BDAA",
+    "bytes": 24676
+  },
+  "relationsSoftwarePassed": true,
+  "nativeLodCrashUnresolved": true,
+  "physicalAndNativeQualification": false,
+  "openIssueRegistry": {
+    "C7-NATIVE-LOD-AV-01": {
+      "status": "open",
+      "rootCauseConfirmed": false,
+      "productFixClaimed": false,
+      "firstFailure": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\candidate-v3-failure-pins-v1.json",
+        "sha256": "973DC9ADADC1A9390C0EDDDBAE8C2414BE05E827CB1DA88F34C0D6E4CB9FEEBE",
+        "bytes": 298221
+      },
+      "diagnostic": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\development\\lod-native-diagnostic-conclusion-v1.json",
+        "sha256": "46887198F1368BE7D5F2C76EE6116EAB1F042358CD9E23CEFA24B42309ECD358",
+        "bytes": 3136
+      },
+      "gcProbeDoesNotExcludeRace": true,
+      "startupProbeDumpIsFormalAvDump": false,
+      "followUp": "C7/native qualification"
+    }
+  },
+  "collectorIdentityGuards": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\collector-identity-guards-v6.json",
+    "sha256": "22D60AA00937C30E5E6B67A3BC3F9BA5DAEFE36861356383896FA4B0F90DC8BA",
+    "bytes": 955
+  },
+  "boundedFinalAttemptPlan": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\formal-plan-v4.json",
+    "sha256": "E9A2614BCCDA91CA01E959D34D8D6A643CF5C947075C6B25D206DBD2758951C1",
+    "bytes": 17952
+  },
+  "supersededCandidateEvidence": [
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\superseded-candidate-v1-pins.json",
+      "sha256": "1AC0509457A9EFAEC5320443653D412121726B6D9B82F0BF013F76B72E3A6110",
+      "bytes": 478978
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\superseded-candidate-v2-pins.json",
+      "sha256": "83558C66DBB9177538B33F8B72AE9A7CED5A77007F472BC480E1E08CD49225DF",
+      "bytes": 481990
+    }
+  ],
+  "report": "<REPO_ROOT>\\docs\\charts-c6-flow-relations.md",
+  "wslgEnvironment": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\linux\\run-v4\\wslg-environment.json",
+    "sha256": "AF795ECC3AFF1ABFC4CD59B44D54F5F93AC7D6D930008B3C954FDAADD1B37524",
+    "bytes": 3470
+  },
+  "finalBoardVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\final-board-visual-review-v4.json",
+    "sha256": "2C537432C40E712B6CF82050BC19714649556C803308FD5BDDB735333EC58F77",
+    "bytes": 3930
+  },
+  "metadataProtocolAmendment": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\metadata-protocol-amendment-v2.json",
+    "sha256": "3C3D254EBEEE92A1CB2A4BB7A1845B2E6C05E7AA2B36BA96AA79F6C3BCEC07AA",
+    "bytes": 1127
+  },
+  "numericProtocolAmendment": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\numeric-protocol-amendment-v6.json",
+    "sha256": "FE51313B9291959A94160D8FB9BF32F350C84C388CDA2D8D41BE5F10F747C91E",
+    "bytes": 3982
+  },
+  "preObservationProtocolPins": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\pre-observation-protocol-pins-v3.json",
+    "sha256": "C9EDB622237D11F53F051A376F24CD3A13A12D5996CC1BFBE599239DD9E9FC19",
+    "bytes": 14560
+  },
+  "developmentEvidenceIndex": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\development-evidence-index-v4.json",
+    "sha256": "284BA489A234D14227D128396F37EA29B2A78DBD1792216AA31D5153E442FC43",
+    "bytes": 86719
+  },
+  "rollingMetadataInitialBytes": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\rolling-metadata-task-initial-v1.json",
+    "sha256": "9B26B3BE88DE543F23421BD61EC318CD184991A15C1A61CE5DDC097544188ACC",
+    "bytes": 1193
+  },
+  "completeC6": false,
+  "nextMainStage": "C6-03",
+  "remainingIssues": [
+    "C7-NATIVE-LOD-AV-01: Unresolved prior native LOD original-export fatal0xC0000005 remains open for C7/native qualification. Targeted44-check replay and32 fixed GC rounds did not reproduce it; no product AV fix is claimed, and the final bounded software pass does not prove the fault resolved.",
+    "Force layout publishes only a bounded final result; continuous physical simulation and intermediate iteration-frame animation remain open.",
+    "This stage implements nine catalog modes using four numeric layout engines; complete C6, full official API/binary/default behavior and licensed vendor runtime comparison remain open.",
+    "Graph source budgets are 2000 nodes / 10000 edges; force layout is capped at 400 nodes and 300 iterations; crossing sweeps are capped at 32. UI source mapping, snapshot capture, native geometry and export rendering remain synchronous.",
+    "Sankey SCC return lanes and barycentric sweeps are bounded heuristics, not optimal crossing minimization or collision-free routing. Non-conserving interior nodes are explicit diagnostics unless strict mode rejects them.",
+    "Force layout can retain caller-pinned overlaps or use deterministic grid fallback; convergence and final displacement are diagnostics, not proof of globally optimal force energy or animation smoothness.",
+    "Flow groups are named-node enclosures. Arbitrary group DTO bounds/style, node icons/templates/per-item brushes, individual edge arrow options, professional label routing and graph-editing interactions remain open.",
+    "Zero-weight edges retain snapshot/numeric identity and are omitted by rendering; positive-flow chord nodes with no incident mass retain zero sectors and are omitted by rendering. Extreme positive ratios may underflow or become subpixel; business data are retained.",
+    "New-family formal C4-08 performance, percentile latency, process/native/GPU memory, physical Windows/Linux input, native Wayland/ARM/distributions/multi-DPI and 30-minute/8-hour long-soak qualification remain open.",
+    "C2 professional shared interactions, complete C5/statistical follow-up and C6-06 catalog audit remain open where not explicitly tested.",
+    "Million-point hit p95 and A11Y-NATIVE-01 remain deferred by user; historical AX06/PixelProbe/animation/long-path/default-JIT issues remain retained."
+  ]
+}

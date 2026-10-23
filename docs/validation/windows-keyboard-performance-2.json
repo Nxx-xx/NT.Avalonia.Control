@@ -1,0 +1,2314 @@
+{
+  "Passed": true,
+  "Mode": "keyboard-benchmark",
+  "TimestampUtc": "2026-10-13T05:57:45.370522+00:00",
+  "OS": "Microsoft Windows 10.0.26200",
+  "Architecture": "X64",
+  "Runtime": "10.0.12",
+  "AvaloniaVersion": "12.0.3.0",
+  "BuildConfiguration": "Release",
+  "WindowWidthDip": 960,
+  "WindowHeightDip": 530,
+  "RenderScaling": 1,
+  "VisualFixture": {
+    "ActualThemeVariant": "Dark",
+    "KeyFontFamily": "compositefont:fonts:Inter#Inter, $Default#Inter, $Default",
+    "KeyFontSize": 18,
+    "KeyMinimumWidthDip": 32,
+    "KeyMinimumHeightDip": 44
+  },
+  "StopwatchFrequencyHz": 10000000,
+  "NativeHitScenePollingIntervalMs": 16,
+  "Checks": {
+    "nativeWindowCreated": true,
+    "nativeWindowActive": true,
+    "editorFocusEstablished": true,
+    "actualEditingFocus": true,
+    "defaultTemplateLoaded": true,
+    "firstKeyCoordinateHit": true,
+    "character-insertion:100ValidSamples": true,
+    "selection-replacement:100ValidSamples": true,
+    "default-500-70:initialAndRepeatedActionsObserved": true,
+    "default-500-70:cancelReleasesCapture": true,
+    "default-500-70:noInputAfterCancelOrStaleRelease": true,
+    "short-100-40:initialAndRepeatedActionsObserved": true,
+    "short-100-40:cancelReleasesCapture": true,
+    "short-100-40:noInputAfterCancelOrStaleRelease": true,
+    "focusPreservedThroughBenchmark": true
+  },
+  "FirstObservations": {
+    "focusAvailableFromWindowConstructionMs": 488.4284,
+    "keyboardLayoutObservedFromWindowConstructionMs": 488.4608,
+    "firstKeyCoordinateHitFromWindowConstructionMs": 632.8106,
+    "firstKeyPreparationMs": 143.0298,
+    "firstNativeHitSceneWaitMs": 141.8529
+  },
+  "FocusObservations": [
+    {
+      "Stage": "initial",
+      "WindowIsActive": true,
+      "EditorIsFocused": true,
+      "IsInputAvailable": true
+    },
+    {
+      "Stage": "completed",
+      "WindowIsActive": true,
+      "EditorIsFocused": true,
+      "IsInputAvailable": true
+    }
+  ],
+  "SampleGroups": [
+    {
+      "Scenario": "character-insertion",
+      "DiscardedWarmupCount": 20,
+      "SampleCount": 100,
+      "PreparationTotalMs": {
+        "Count": 100,
+        "P50": 0.41385,
+        "P95": 0.5020349999999999,
+        "Max": 0.6254
+      },
+      "PreparationBeforeSceneWaitMs": {
+        "Count": 100,
+        "P50": 0.37544999999999995,
+        "P95": 0.45689499999999994,
+        "Max": 0.5721
+      },
+      "SceneWaitMs": {
+        "Count": 100,
+        "P50": 0.0368,
+        "P95": 0.0485,
+        "Max": 0.0533
+      },
+      "PreparedPointerRouteToTextPropertyMs": {
+        "Count": 100,
+        "P50": 0.2003,
+        "P95": 0.23477499999999998,
+        "Max": 0.2642
+      },
+      "ReleaseRouteToTextPropertyMs": {
+        "Count": 100,
+        "P50": 0.10544999999999999,
+        "P95": 0.12124499999999999,
+        "Max": 0.1364
+      },
+      "Samples": [
+        {
+          "Iteration": 0,
+          "PreparationTotalMs": 0.3926,
+          "PreparationBeforeSceneWaitMs": 0.3603,
+          "SceneWaitMs": 0.0323,
+          "PreparedPointerRouteToTextPropertyMs": 0.1737,
+          "ReleaseRouteToTextPropertyMs": 0.0942,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 1,
+          "PreparationTotalMs": 0.3766,
+          "PreparationBeforeSceneWaitMs": 0.346,
+          "SceneWaitMs": 0.0306,
+          "PreparedPointerRouteToTextPropertyMs": 0.1683,
+          "ReleaseRouteToTextPropertyMs": 0.0896,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 2,
+          "PreparationTotalMs": 0.4226,
+          "PreparationBeforeSceneWaitMs": 0.389,
+          "SceneWaitMs": 0.0336,
+          "PreparedPointerRouteToTextPropertyMs": 0.2167,
+          "ReleaseRouteToTextPropertyMs": 0.1095,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 3,
+          "PreparationTotalMs": 0.4546,
+          "PreparationBeforeSceneWaitMs": 0.4085,
+          "SceneWaitMs": 0.0461,
+          "PreparedPointerRouteToTextPropertyMs": 0.2174,
+          "ReleaseRouteToTextPropertyMs": 0.113,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 4,
+          "PreparationTotalMs": 0.4656,
+          "PreparationBeforeSceneWaitMs": 0.42,
+          "SceneWaitMs": 0.0456,
+          "PreparedPointerRouteToTextPropertyMs": 0.2157,
+          "ReleaseRouteToTextPropertyMs": 0.1112,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 5,
+          "PreparationTotalMs": 0.489,
+          "PreparationBeforeSceneWaitMs": 0.4412,
+          "SceneWaitMs": 0.0478,
+          "PreparedPointerRouteToTextPropertyMs": 0.2272,
+          "ReleaseRouteToTextPropertyMs": 0.1177,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 6,
+          "PreparationTotalMs": 0.533,
+          "PreparationBeforeSceneWaitMs": 0.4845,
+          "SceneWaitMs": 0.0485,
+          "PreparedPointerRouteToTextPropertyMs": 0.2271,
+          "ReleaseRouteToTextPropertyMs": 0.1184,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 7,
+          "PreparationTotalMs": 0.494,
+          "PreparationBeforeSceneWaitMs": 0.4455,
+          "SceneWaitMs": 0.0485,
+          "PreparedPointerRouteToTextPropertyMs": 0.2206,
+          "ReleaseRouteToTextPropertyMs": 0.1165,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 8,
+          "PreparationTotalMs": 0.4387,
+          "PreparationBeforeSceneWaitMs": 0.3976,
+          "SceneWaitMs": 0.0411,
+          "PreparedPointerRouteToTextPropertyMs": 0.1998,
+          "ReleaseRouteToTextPropertyMs": 0.1086,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 9,
+          "PreparationTotalMs": 0.4197,
+          "PreparationBeforeSceneWaitMs": 0.3828,
+          "SceneWaitMs": 0.0369,
+          "PreparedPointerRouteToTextPropertyMs": 0.1864,
+          "ReleaseRouteToTextPropertyMs": 0.0987,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 10,
+          "PreparationTotalMs": 0.3897,
+          "PreparationBeforeSceneWaitMs": 0.3549,
+          "SceneWaitMs": 0.0348,
+          "PreparedPointerRouteToTextPropertyMs": 0.1778,
+          "ReleaseRouteToTextPropertyMs": 0.0933,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 11,
+          "PreparationTotalMs": 0.4534,
+          "PreparationBeforeSceneWaitMs": 0.4111,
+          "SceneWaitMs": 0.0423,
+          "PreparedPointerRouteToTextPropertyMs": 0.2214,
+          "ReleaseRouteToTextPropertyMs": 0.1191,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 12,
+          "PreparationTotalMs": 0.3813,
+          "PreparationBeforeSceneWaitMs": 0.3483,
+          "SceneWaitMs": 0.033,
+          "PreparedPointerRouteToTextPropertyMs": 0.1766,
+          "ReleaseRouteToTextPropertyMs": 0.0943,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 13,
+          "PreparationTotalMs": 0.4428,
+          "PreparationBeforeSceneWaitMs": 0.4055,
+          "SceneWaitMs": 0.0373,
+          "PreparedPointerRouteToTextPropertyMs": 0.2028,
+          "ReleaseRouteToTextPropertyMs": 0.1109,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 14,
+          "PreparationTotalMs": 0.477,
+          "PreparationBeforeSceneWaitMs": 0.44,
+          "SceneWaitMs": 0.037,
+          "PreparedPointerRouteToTextPropertyMs": 0.2122,
+          "ReleaseRouteToTextPropertyMs": 0.113,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 15,
+          "PreparationTotalMs": 0.6254,
+          "PreparationBeforeSceneWaitMs": 0.5721,
+          "SceneWaitMs": 0.0533,
+          "PreparedPointerRouteToTextPropertyMs": 0.2607,
+          "ReleaseRouteToTextPropertyMs": 0.1364,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 16,
+          "PreparationTotalMs": 0.4801,
+          "PreparationBeforeSceneWaitMs": 0.4383,
+          "SceneWaitMs": 0.0418,
+          "PreparedPointerRouteToTextPropertyMs": 0.209,
+          "ReleaseRouteToTextPropertyMs": 0.1097,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 17,
+          "PreparationTotalMs": 0.3731,
+          "PreparationBeforeSceneWaitMs": 0.3392,
+          "SceneWaitMs": 0.0339,
+          "PreparedPointerRouteToTextPropertyMs": 0.1778,
+          "ReleaseRouteToTextPropertyMs": 0.0914,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 18,
+          "PreparationTotalMs": 0.3534,
+          "PreparationBeforeSceneWaitMs": 0.3222,
+          "SceneWaitMs": 0.0312,
+          "PreparedPointerRouteToTextPropertyMs": 0.1998,
+          "ReleaseRouteToTextPropertyMs": 0.1201,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 19,
+          "PreparationTotalMs": 0.3821,
+          "PreparationBeforeSceneWaitMs": 0.3498,
+          "SceneWaitMs": 0.0323,
+          "PreparedPointerRouteToTextPropertyMs": 0.167,
+          "ReleaseRouteToTextPropertyMs": 0.0888,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 20,
+          "PreparationTotalMs": 0.3621,
+          "PreparationBeforeSceneWaitMs": 0.331,
+          "SceneWaitMs": 0.0311,
+          "PreparedPointerRouteToTextPropertyMs": 0.1731,
+          "ReleaseRouteToTextPropertyMs": 0.0904,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 21,
+          "PreparationTotalMs": 0.3665,
+          "PreparationBeforeSceneWaitMs": 0.3232,
+          "SceneWaitMs": 0.0433,
+          "PreparedPointerRouteToTextPropertyMs": 0.2304,
+          "ReleaseRouteToTextPropertyMs": 0.1188,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 22,
+          "PreparationTotalMs": 0.3666,
+          "PreparationBeforeSceneWaitMs": 0.3325,
+          "SceneWaitMs": 0.0341,
+          "PreparedPointerRouteToTextPropertyMs": 0.1753,
+          "ReleaseRouteToTextPropertyMs": 0.0926,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 23,
+          "PreparationTotalMs": 0.4266,
+          "PreparationBeforeSceneWaitMs": 0.3874,
+          "SceneWaitMs": 0.0392,
+          "PreparedPointerRouteToTextPropertyMs": 0.1968,
+          "ReleaseRouteToTextPropertyMs": 0.1023,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 24,
+          "PreparationTotalMs": 0.4066,
+          "PreparationBeforeSceneWaitMs": 0.3735,
+          "SceneWaitMs": 0.0331,
+          "PreparedPointerRouteToTextPropertyMs": 0.1807,
+          "ReleaseRouteToTextPropertyMs": 0.0957,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 25,
+          "PreparationTotalMs": 0.3536,
+          "PreparationBeforeSceneWaitMs": 0.3239,
+          "SceneWaitMs": 0.0297,
+          "PreparedPointerRouteToTextPropertyMs": 0.1729,
+          "ReleaseRouteToTextPropertyMs": 0.0883,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 26,
+          "PreparationTotalMs": 0.3698,
+          "PreparationBeforeSceneWaitMs": 0.3354,
+          "SceneWaitMs": 0.0344,
+          "PreparedPointerRouteToTextPropertyMs": 0.1892,
+          "ReleaseRouteToTextPropertyMs": 0.1015,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 27,
+          "PreparationTotalMs": 0.4125,
+          "PreparationBeforeSceneWaitMs": 0.3747,
+          "SceneWaitMs": 0.0378,
+          "PreparedPointerRouteToTextPropertyMs": 0.2075,
+          "ReleaseRouteToTextPropertyMs": 0.1093,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 28,
+          "PreparationTotalMs": 0.3515,
+          "PreparationBeforeSceneWaitMs": 0.3218,
+          "SceneWaitMs": 0.0297,
+          "PreparedPointerRouteToTextPropertyMs": 0.1824,
+          "ReleaseRouteToTextPropertyMs": 0.103,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 29,
+          "PreparationTotalMs": 0.4129,
+          "PreparationBeforeSceneWaitMs": 0.3762,
+          "SceneWaitMs": 0.0367,
+          "PreparedPointerRouteToTextPropertyMs": 0.2258,
+          "ReleaseRouteToTextPropertyMs": 0.1211,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 30,
+          "PreparationTotalMs": 0.4844,
+          "PreparationBeforeSceneWaitMs": 0.4469,
+          "SceneWaitMs": 0.0375,
+          "PreparedPointerRouteToTextPropertyMs": 0.2075,
+          "ReleaseRouteToTextPropertyMs": 0.1086,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 31,
+          "PreparationTotalMs": 0.4809,
+          "PreparationBeforeSceneWaitMs": 0.4427,
+          "SceneWaitMs": 0.0382,
+          "PreparedPointerRouteToTextPropertyMs": 0.2121,
+          "ReleaseRouteToTextPropertyMs": 0.1112,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 32,
+          "PreparationTotalMs": 0.4148,
+          "PreparationBeforeSceneWaitMs": 0.3792,
+          "SceneWaitMs": 0.0356,
+          "PreparedPointerRouteToTextPropertyMs": 0.2166,
+          "ReleaseRouteToTextPropertyMs": 0.1254,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 33,
+          "PreparationTotalMs": 0.4236,
+          "PreparationBeforeSceneWaitMs": 0.3804,
+          "SceneWaitMs": 0.0432,
+          "PreparedPointerRouteToTextPropertyMs": 0.2115,
+          "ReleaseRouteToTextPropertyMs": 0.1084,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 34,
+          "PreparationTotalMs": 0.4247,
+          "PreparationBeforeSceneWaitMs": 0.3804,
+          "SceneWaitMs": 0.0443,
+          "PreparedPointerRouteToTextPropertyMs": 0.2133,
+          "ReleaseRouteToTextPropertyMs": 0.1062,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 35,
+          "PreparationTotalMs": 0.4698,
+          "PreparationBeforeSceneWaitMs": 0.4261,
+          "SceneWaitMs": 0.0437,
+          "PreparedPointerRouteToTextPropertyMs": 0.1897,
+          "ReleaseRouteToTextPropertyMs": 0.098,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 36,
+          "PreparationTotalMs": 0.4043,
+          "PreparationBeforeSceneWaitMs": 0.3683,
+          "SceneWaitMs": 0.036,
+          "PreparedPointerRouteToTextPropertyMs": 0.193,
+          "ReleaseRouteToTextPropertyMs": 0.1018,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 37,
+          "PreparationTotalMs": 0.3597,
+          "PreparationBeforeSceneWaitMs": 0.3279,
+          "SceneWaitMs": 0.0318,
+          "PreparedPointerRouteToTextPropertyMs": 0.1734,
+          "ReleaseRouteToTextPropertyMs": 0.0914,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 38,
+          "PreparationTotalMs": 0.4481,
+          "PreparationBeforeSceneWaitMs": 0.4118,
+          "SceneWaitMs": 0.0363,
+          "PreparedPointerRouteToTextPropertyMs": 0.2037,
+          "ReleaseRouteToTextPropertyMs": 0.1073,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 39,
+          "PreparationTotalMs": 0.3409,
+          "PreparationBeforeSceneWaitMs": 0.3113,
+          "SceneWaitMs": 0.0296,
+          "PreparedPointerRouteToTextPropertyMs": 0.1927,
+          "ReleaseRouteToTextPropertyMs": 0.112,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 40,
+          "PreparationTotalMs": 0.3628,
+          "PreparationBeforeSceneWaitMs": 0.3319,
+          "SceneWaitMs": 0.0309,
+          "PreparedPointerRouteToTextPropertyMs": 0.1694,
+          "ReleaseRouteToTextPropertyMs": 0.0904,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 41,
+          "PreparationTotalMs": 0.4252,
+          "PreparationBeforeSceneWaitMs": 0.3901,
+          "SceneWaitMs": 0.0351,
+          "PreparedPointerRouteToTextPropertyMs": 0.2003,
+          "ReleaseRouteToTextPropertyMs": 0.1066,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 42,
+          "PreparationTotalMs": 0.3539,
+          "PreparationBeforeSceneWaitMs": 0.3253,
+          "SceneWaitMs": 0.0286,
+          "PreparedPointerRouteToTextPropertyMs": 0.1816,
+          "ReleaseRouteToTextPropertyMs": 0.1034,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 43,
+          "PreparationTotalMs": 0.3523,
+          "PreparationBeforeSceneWaitMs": 0.3227,
+          "SceneWaitMs": 0.0296,
+          "PreparedPointerRouteToTextPropertyMs": 0.1699,
+          "ReleaseRouteToTextPropertyMs": 0.0897,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 44,
+          "PreparationTotalMs": 0.4196,
+          "PreparationBeforeSceneWaitMs": 0.3896,
+          "SceneWaitMs": 0.03,
+          "PreparedPointerRouteToTextPropertyMs": 0.1773,
+          "ReleaseRouteToTextPropertyMs": 0.0955,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 45,
+          "PreparationTotalMs": 0.4247,
+          "PreparationBeforeSceneWaitMs": 0.387,
+          "SceneWaitMs": 0.0377,
+          "PreparedPointerRouteToTextPropertyMs": 0.2362,
+          "ReleaseRouteToTextPropertyMs": 0.1145,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 46,
+          "PreparationTotalMs": 0.4336,
+          "PreparationBeforeSceneWaitMs": 0.3903,
+          "SceneWaitMs": 0.0433,
+          "PreparedPointerRouteToTextPropertyMs": 0.2076,
+          "ReleaseRouteToTextPropertyMs": 0.1055,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 47,
+          "PreparationTotalMs": 0.4287,
+          "PreparationBeforeSceneWaitMs": 0.3884,
+          "SceneWaitMs": 0.0403,
+          "PreparedPointerRouteToTextPropertyMs": 0.2018,
+          "ReleaseRouteToTextPropertyMs": 0.1049,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 48,
+          "PreparationTotalMs": 0.4267,
+          "PreparationBeforeSceneWaitMs": 0.3863,
+          "SceneWaitMs": 0.0404,
+          "PreparedPointerRouteToTextPropertyMs": 0.207,
+          "ReleaseRouteToTextPropertyMs": 0.1087,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 49,
+          "PreparationTotalMs": 0.4167,
+          "PreparationBeforeSceneWaitMs": 0.3652,
+          "SceneWaitMs": 0.0515,
+          "PreparedPointerRouteToTextPropertyMs": 0.214,
+          "ReleaseRouteToTextPropertyMs": 0.1093,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 50,
+          "PreparationTotalMs": 0.3986,
+          "PreparationBeforeSceneWaitMs": 0.3634,
+          "SceneWaitMs": 0.0352,
+          "PreparedPointerRouteToTextPropertyMs": 0.222,
+          "ReleaseRouteToTextPropertyMs": 0.1206,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 51,
+          "PreparationTotalMs": 0.3623,
+          "PreparationBeforeSceneWaitMs": 0.3302,
+          "SceneWaitMs": 0.0321,
+          "PreparedPointerRouteToTextPropertyMs": 0.1734,
+          "ReleaseRouteToTextPropertyMs": 0.0916,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 52,
+          "PreparationTotalMs": 0.4261,
+          "PreparationBeforeSceneWaitMs": 0.3885,
+          "SceneWaitMs": 0.0376,
+          "PreparedPointerRouteToTextPropertyMs": 0.2003,
+          "ReleaseRouteToTextPropertyMs": 0.1054,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 53,
+          "PreparationTotalMs": 0.3385,
+          "PreparationBeforeSceneWaitMs": 0.308,
+          "SceneWaitMs": 0.0305,
+          "PreparedPointerRouteToTextPropertyMs": 0.1668,
+          "ReleaseRouteToTextPropertyMs": 0.0887,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 54,
+          "PreparationTotalMs": 0.3861,
+          "PreparationBeforeSceneWaitMs": 0.3503,
+          "SceneWaitMs": 0.0358,
+          "PreparedPointerRouteToTextPropertyMs": 0.1994,
+          "ReleaseRouteToTextPropertyMs": 0.1078,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 55,
+          "PreparationTotalMs": 0.4011,
+          "PreparationBeforeSceneWaitMs": 0.3641,
+          "SceneWaitMs": 0.037,
+          "PreparedPointerRouteToTextPropertyMs": 0.2021,
+          "ReleaseRouteToTextPropertyMs": 0.1058,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 56,
+          "PreparationTotalMs": 0.3664,
+          "PreparationBeforeSceneWaitMs": 0.3359,
+          "SceneWaitMs": 0.0305,
+          "PreparedPointerRouteToTextPropertyMs": 0.1689,
+          "ReleaseRouteToTextPropertyMs": 0.0905,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 57,
+          "PreparationTotalMs": 0.4118,
+          "PreparationBeforeSceneWaitMs": 0.3776,
+          "SceneWaitMs": 0.0342,
+          "PreparedPointerRouteToTextPropertyMs": 0.2022,
+          "ReleaseRouteToTextPropertyMs": 0.1066,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 58,
+          "PreparationTotalMs": 0.4438,
+          "PreparationBeforeSceneWaitMs": 0.402,
+          "SceneWaitMs": 0.0418,
+          "PreparedPointerRouteToTextPropertyMs": 0.2135,
+          "ReleaseRouteToTextPropertyMs": 0.1096,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 59,
+          "PreparationTotalMs": 0.4282,
+          "PreparationBeforeSceneWaitMs": 0.3866,
+          "SceneWaitMs": 0.0416,
+          "PreparedPointerRouteToTextPropertyMs": 0.2038,
+          "ReleaseRouteToTextPropertyMs": 0.1075,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 60,
+          "PreparationTotalMs": 0.4063,
+          "PreparationBeforeSceneWaitMs": 0.3701,
+          "SceneWaitMs": 0.0362,
+          "PreparedPointerRouteToTextPropertyMs": 0.198,
+          "ReleaseRouteToTextPropertyMs": 0.1038,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 61,
+          "PreparationTotalMs": 0.4117,
+          "PreparationBeforeSceneWaitMs": 0.3676,
+          "SceneWaitMs": 0.0441,
+          "PreparedPointerRouteToTextPropertyMs": 0.2082,
+          "ReleaseRouteToTextPropertyMs": 0.1058,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 62,
+          "PreparationTotalMs": 0.4467,
+          "PreparationBeforeSceneWaitMs": 0.4037,
+          "SceneWaitMs": 0.043,
+          "PreparedPointerRouteToTextPropertyMs": 0.2086,
+          "ReleaseRouteToTextPropertyMs": 0.1066,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 63,
+          "PreparationTotalMs": 0.5217,
+          "PreparationBeforeSceneWaitMs": 0.4739,
+          "SceneWaitMs": 0.0478,
+          "PreparedPointerRouteToTextPropertyMs": 0.2642,
+          "ReleaseRouteToTextPropertyMs": 0.1322,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 64,
+          "PreparationTotalMs": 0.4522,
+          "PreparationBeforeSceneWaitMs": 0.4062,
+          "SceneWaitMs": 0.046,
+          "PreparedPointerRouteToTextPropertyMs": 0.2188,
+          "ReleaseRouteToTextPropertyMs": 0.1131,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 65,
+          "PreparationTotalMs": 0.4192,
+          "PreparationBeforeSceneWaitMs": 0.3807,
+          "SceneWaitMs": 0.0385,
+          "PreparedPointerRouteToTextPropertyMs": 0.1884,
+          "ReleaseRouteToTextPropertyMs": 0.1036,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 66,
+          "PreparationTotalMs": 0.3946,
+          "PreparationBeforeSceneWaitMs": 0.3579,
+          "SceneWaitMs": 0.0367,
+          "PreparedPointerRouteToTextPropertyMs": 0.2018,
+          "ReleaseRouteToTextPropertyMs": 0.1031,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 67,
+          "PreparationTotalMs": 0.4306,
+          "PreparationBeforeSceneWaitMs": 0.3862,
+          "SceneWaitMs": 0.0444,
+          "PreparedPointerRouteToTextPropertyMs": 0.2132,
+          "ReleaseRouteToTextPropertyMs": 0.1104,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 68,
+          "PreparationTotalMs": 0.4674,
+          "PreparationBeforeSceneWaitMs": 0.4208,
+          "SceneWaitMs": 0.0466,
+          "PreparedPointerRouteToTextPropertyMs": 0.2399,
+          "ReleaseRouteToTextPropertyMs": 0.1284,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 69,
+          "PreparationTotalMs": 0.501,
+          "PreparationBeforeSceneWaitMs": 0.456,
+          "SceneWaitMs": 0.045,
+          "PreparedPointerRouteToTextPropertyMs": 0.2347,
+          "ReleaseRouteToTextPropertyMs": 0.1128,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 70,
+          "PreparationTotalMs": 0.4249,
+          "PreparationBeforeSceneWaitMs": 0.3826,
+          "SceneWaitMs": 0.0423,
+          "PreparedPointerRouteToTextPropertyMs": 0.1982,
+          "ReleaseRouteToTextPropertyMs": 0.1033,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 71,
+          "PreparationTotalMs": 0.3573,
+          "PreparationBeforeSceneWaitMs": 0.3229,
+          "SceneWaitMs": 0.0344,
+          "PreparedPointerRouteToTextPropertyMs": 0.1864,
+          "ReleaseRouteToTextPropertyMs": 0.1027,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 72,
+          "PreparationTotalMs": 0.5242,
+          "PreparationBeforeSceneWaitMs": 0.4855,
+          "SceneWaitMs": 0.0387,
+          "PreparedPointerRouteToTextPropertyMs": 0.2036,
+          "ReleaseRouteToTextPropertyMs": 0.1064,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 73,
+          "PreparationTotalMs": 0.4194,
+          "PreparationBeforeSceneWaitMs": 0.3679,
+          "SceneWaitMs": 0.0515,
+          "PreparedPointerRouteToTextPropertyMs": 0.1913,
+          "ReleaseRouteToTextPropertyMs": 0.0974,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 74,
+          "PreparationTotalMs": 0.3899,
+          "PreparationBeforeSceneWaitMs": 0.3572,
+          "SceneWaitMs": 0.0327,
+          "PreparedPointerRouteToTextPropertyMs": 0.1911,
+          "ReleaseRouteToTextPropertyMs": 0.1013,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 75,
+          "PreparationTotalMs": 0.3909,
+          "PreparationBeforeSceneWaitMs": 0.3619,
+          "SceneWaitMs": 0.029,
+          "PreparedPointerRouteToTextPropertyMs": 0.1797,
+          "ReleaseRouteToTextPropertyMs": 0.0991,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 76,
+          "PreparationTotalMs": 0.4531,
+          "PreparationBeforeSceneWaitMs": 0.4175,
+          "SceneWaitMs": 0.0356,
+          "PreparedPointerRouteToTextPropertyMs": 0.2039,
+          "ReleaseRouteToTextPropertyMs": 0.1056,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 77,
+          "PreparationTotalMs": 0.3458,
+          "PreparationBeforeSceneWaitMs": 0.3177,
+          "SceneWaitMs": 0.0281,
+          "PreparedPointerRouteToTextPropertyMs": 0.1701,
+          "ReleaseRouteToTextPropertyMs": 0.0907,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 78,
+          "PreparationTotalMs": 0.431,
+          "PreparationBeforeSceneWaitMs": 0.3858,
+          "SceneWaitMs": 0.0452,
+          "PreparedPointerRouteToTextPropertyMs": 0.23,
+          "ReleaseRouteToTextPropertyMs": 0.1159,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 79,
+          "PreparationTotalMs": 0.4606,
+          "PreparationBeforeSceneWaitMs": 0.4114,
+          "SceneWaitMs": 0.0492,
+          "PreparedPointerRouteToTextPropertyMs": 0.2563,
+          "ReleaseRouteToTextPropertyMs": 0.1204,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 80,
+          "PreparationTotalMs": 0.4789,
+          "PreparationBeforeSceneWaitMs": 0.4305,
+          "SceneWaitMs": 0.0484,
+          "PreparedPointerRouteToTextPropertyMs": 0.2173,
+          "ReleaseRouteToTextPropertyMs": 0.1079,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 81,
+          "PreparationTotalMs": 0.4682,
+          "PreparationBeforeSceneWaitMs": 0.4207,
+          "SceneWaitMs": 0.0475,
+          "PreparedPointerRouteToTextPropertyMs": 0.2275,
+          "ReleaseRouteToTextPropertyMs": 0.1149,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 82,
+          "PreparationTotalMs": 0.4194,
+          "PreparationBeforeSceneWaitMs": 0.3798,
+          "SceneWaitMs": 0.0396,
+          "PreparedPointerRouteToTextPropertyMs": 0.1931,
+          "ReleaseRouteToTextPropertyMs": 0.1023,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 83,
+          "PreparationTotalMs": 0.3922,
+          "PreparationBeforeSceneWaitMs": 0.3539,
+          "SceneWaitMs": 0.0383,
+          "PreparedPointerRouteToTextPropertyMs": 0.2008,
+          "ReleaseRouteToTextPropertyMs": 0.1034,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 84,
+          "PreparationTotalMs": 0.4222,
+          "PreparationBeforeSceneWaitMs": 0.3859,
+          "SceneWaitMs": 0.0363,
+          "PreparedPointerRouteToTextPropertyMs": 0.2008,
+          "ReleaseRouteToTextPropertyMs": 0.1045,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 85,
+          "PreparationTotalMs": 0.383,
+          "PreparationBeforeSceneWaitMs": 0.3385,
+          "SceneWaitMs": 0.0445,
+          "PreparedPointerRouteToTextPropertyMs": 0.217,
+          "ReleaseRouteToTextPropertyMs": 0.124,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 86,
+          "PreparationTotalMs": 0.3476,
+          "PreparationBeforeSceneWaitMs": 0.3167,
+          "SceneWaitMs": 0.0309,
+          "PreparedPointerRouteToTextPropertyMs": 0.1717,
+          "ReleaseRouteToTextPropertyMs": 0.0903,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 87,
+          "PreparationTotalMs": 0.3628,
+          "PreparationBeforeSceneWaitMs": 0.3314,
+          "SceneWaitMs": 0.0314,
+          "PreparedPointerRouteToTextPropertyMs": 0.1712,
+          "ReleaseRouteToTextPropertyMs": 0.0897,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 88,
+          "PreparationTotalMs": 0.3687,
+          "PreparationBeforeSceneWaitMs": 0.336,
+          "SceneWaitMs": 0.0327,
+          "PreparedPointerRouteToTextPropertyMs": 0.1859,
+          "ReleaseRouteToTextPropertyMs": 0.0976,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 89,
+          "PreparationTotalMs": 0.3553,
+          "PreparationBeforeSceneWaitMs": 0.3225,
+          "SceneWaitMs": 0.0328,
+          "PreparedPointerRouteToTextPropertyMs": 0.1896,
+          "ReleaseRouteToTextPropertyMs": 0.101,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 90,
+          "PreparationTotalMs": 0.3987,
+          "PreparationBeforeSceneWaitMs": 0.3604,
+          "SceneWaitMs": 0.0383,
+          "PreparedPointerRouteToTextPropertyMs": 0.1986,
+          "ReleaseRouteToTextPropertyMs": 0.1048,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 91,
+          "PreparationTotalMs": 0.5222,
+          "PreparationBeforeSceneWaitMs": 0.4811,
+          "SceneWaitMs": 0.0411,
+          "PreparedPointerRouteToTextPropertyMs": 0.2115,
+          "ReleaseRouteToTextPropertyMs": 0.1098,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 92,
+          "PreparationTotalMs": 0.4581,
+          "PreparationBeforeSceneWaitMs": 0.4105,
+          "SceneWaitMs": 0.0476,
+          "PreparedPointerRouteToTextPropertyMs": 0.226,
+          "ReleaseRouteToTextPropertyMs": 0.1128,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 93,
+          "PreparationTotalMs": 0.3765,
+          "PreparationBeforeSceneWaitMs": 0.3427,
+          "SceneWaitMs": 0.0338,
+          "PreparedPointerRouteToTextPropertyMs": 0.1746,
+          "ReleaseRouteToTextPropertyMs": 0.0914,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 94,
+          "PreparationTotalMs": 0.3488,
+          "PreparationBeforeSceneWaitMs": 0.3159,
+          "SceneWaitMs": 0.0329,
+          "PreparedPointerRouteToTextPropertyMs": 0.1722,
+          "ReleaseRouteToTextPropertyMs": 0.0897,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 95,
+          "PreparationTotalMs": 0.3797,
+          "PreparationBeforeSceneWaitMs": 0.3467,
+          "SceneWaitMs": 0.033,
+          "PreparedPointerRouteToTextPropertyMs": 0.1872,
+          "ReleaseRouteToTextPropertyMs": 0.0961,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 96,
+          "PreparationTotalMs": 0.3506,
+          "PreparationBeforeSceneWaitMs": 0.3209,
+          "SceneWaitMs": 0.0297,
+          "PreparedPointerRouteToTextPropertyMs": 0.173,
+          "ReleaseRouteToTextPropertyMs": 0.0915,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 97,
+          "PreparationTotalMs": 0.3547,
+          "PreparationBeforeSceneWaitMs": 0.324,
+          "SceneWaitMs": 0.0307,
+          "PreparedPointerRouteToTextPropertyMs": 0.1693,
+          "ReleaseRouteToTextPropertyMs": 0.0901,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 98,
+          "PreparationTotalMs": 0.3553,
+          "PreparationBeforeSceneWaitMs": 0.3215,
+          "SceneWaitMs": 0.0338,
+          "PreparedPointerRouteToTextPropertyMs": 0.1828,
+          "ReleaseRouteToTextPropertyMs": 0.095,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 99,
+          "PreparationTotalMs": 0.3903,
+          "PreparationBeforeSceneWaitMs": 0.3561,
+          "SceneWaitMs": 0.0342,
+          "PreparedPointerRouteToTextPropertyMs": 0.1921,
+          "ReleaseRouteToTextPropertyMs": 0.1019,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        }
+      ]
+    },
+    {
+      "Scenario": "selection-replacement",
+      "DiscardedWarmupCount": 20,
+      "SampleCount": 100,
+      "PreparationTotalMs": {
+        "Count": 100,
+        "P50": 0.37985,
+        "P95": 0.47974,
+        "Max": 0.5168
+      },
+      "PreparationBeforeSceneWaitMs": {
+        "Count": 100,
+        "P50": 0.34285,
+        "P95": 0.4342,
+        "Max": 0.4669
+      },
+      "SceneWaitMs": {
+        "Count": 100,
+        "P50": 0.034,
+        "P95": 0.05295,
+        "Max": 0.084
+      },
+      "PreparedPointerRouteToTextPropertyMs": {
+        "Count": 100,
+        "P50": 0.18345,
+        "P95": 0.240865,
+        "Max": 5.7307
+      },
+      "ReleaseRouteToTextPropertyMs": {
+        "Count": 100,
+        "P50": 0.09575,
+        "P95": 0.12522499999999998,
+        "Max": 5.6503
+      },
+      "Samples": [
+        {
+          "Iteration": 0,
+          "PreparationTotalMs": 0.3425,
+          "PreparationBeforeSceneWaitMs": 0.3131,
+          "SceneWaitMs": 0.0294,
+          "PreparedPointerRouteToTextPropertyMs": 0.1723,
+          "ReleaseRouteToTextPropertyMs": 0.0914,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 1,
+          "PreparationTotalMs": 0.442,
+          "PreparationBeforeSceneWaitMs": 0.393,
+          "SceneWaitMs": 0.049,
+          "PreparedPointerRouteToTextPropertyMs": 0.2263,
+          "ReleaseRouteToTextPropertyMs": 0.1049,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 2,
+          "PreparationTotalMs": 0.454,
+          "PreparationBeforeSceneWaitMs": 0.4109,
+          "SceneWaitMs": 0.0431,
+          "PreparedPointerRouteToTextPropertyMs": 0.2203,
+          "ReleaseRouteToTextPropertyMs": 0.1122,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 3,
+          "PreparationTotalMs": 0.3989,
+          "PreparationBeforeSceneWaitMs": 0.3644,
+          "SceneWaitMs": 0.0345,
+          "PreparedPointerRouteToTextPropertyMs": 0.1926,
+          "ReleaseRouteToTextPropertyMs": 0.1107,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 4,
+          "PreparationTotalMs": 0.3533,
+          "PreparationBeforeSceneWaitMs": 0.3224,
+          "SceneWaitMs": 0.0309,
+          "PreparedPointerRouteToTextPropertyMs": 0.1745,
+          "ReleaseRouteToTextPropertyMs": 0.0917,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 5,
+          "PreparationTotalMs": 0.4762,
+          "PreparationBeforeSceneWaitMs": 0.4418,
+          "SceneWaitMs": 0.0344,
+          "PreparedPointerRouteToTextPropertyMs": 0.2127,
+          "ReleaseRouteToTextPropertyMs": 0.1121,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 6,
+          "PreparationTotalMs": 0.4797,
+          "PreparationBeforeSceneWaitMs": 0.4365,
+          "SceneWaitMs": 0.0432,
+          "PreparedPointerRouteToTextPropertyMs": 0.2235,
+          "ReleaseRouteToTextPropertyMs": 0.1067,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 7,
+          "PreparationTotalMs": 0.4444,
+          "PreparationBeforeSceneWaitMs": 0.3905,
+          "SceneWaitMs": 0.0539,
+          "PreparedPointerRouteToTextPropertyMs": 0.2746,
+          "ReleaseRouteToTextPropertyMs": 0.1369,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 8,
+          "PreparationTotalMs": 0.3646,
+          "PreparationBeforeSceneWaitMs": 0.336,
+          "SceneWaitMs": 0.0286,
+          "PreparedPointerRouteToTextPropertyMs": 5.7307,
+          "ReleaseRouteToTextPropertyMs": 5.6503,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 9,
+          "PreparationTotalMs": 0.489,
+          "PreparationBeforeSceneWaitMs": 0.4361,
+          "SceneWaitMs": 0.0529,
+          "PreparedPointerRouteToTextPropertyMs": 0.2357,
+          "ReleaseRouteToTextPropertyMs": 0.1155,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 10,
+          "PreparationTotalMs": 0.4145,
+          "PreparationBeforeSceneWaitMs": 0.3764,
+          "SceneWaitMs": 0.0381,
+          "PreparedPointerRouteToTextPropertyMs": 0.1864,
+          "ReleaseRouteToTextPropertyMs": 0.0977,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 11,
+          "PreparationTotalMs": 0.3772,
+          "PreparationBeforeSceneWaitMs": 0.3416,
+          "SceneWaitMs": 0.0356,
+          "PreparedPointerRouteToTextPropertyMs": 0.1776,
+          "ReleaseRouteToTextPropertyMs": 0.0944,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 12,
+          "PreparationTotalMs": 0.3711,
+          "PreparationBeforeSceneWaitMs": 0.3385,
+          "SceneWaitMs": 0.0326,
+          "PreparedPointerRouteToTextPropertyMs": 0.2408,
+          "ReleaseRouteToTextPropertyMs": 0.1365,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 13,
+          "PreparationTotalMs": 0.3568,
+          "PreparationBeforeSceneWaitMs": 0.3264,
+          "SceneWaitMs": 0.0304,
+          "PreparedPointerRouteToTextPropertyMs": 0.1711,
+          "ReleaseRouteToTextPropertyMs": 0.0918,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 14,
+          "PreparationTotalMs": 0.3493,
+          "PreparationBeforeSceneWaitMs": 0.3196,
+          "SceneWaitMs": 0.0297,
+          "PreparedPointerRouteToTextPropertyMs": 0.1754,
+          "ReleaseRouteToTextPropertyMs": 0.0939,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 15,
+          "PreparationTotalMs": 0.4512,
+          "PreparationBeforeSceneWaitMs": 0.4179,
+          "SceneWaitMs": 0.0333,
+          "PreparedPointerRouteToTextPropertyMs": 0.1998,
+          "ReleaseRouteToTextPropertyMs": 0.1058,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 16,
+          "PreparationTotalMs": 0.3424,
+          "PreparationBeforeSceneWaitMs": 0.3142,
+          "SceneWaitMs": 0.0282,
+          "PreparedPointerRouteToTextPropertyMs": 0.1632,
+          "ReleaseRouteToTextPropertyMs": 0.0879,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 17,
+          "PreparationTotalMs": 0.3615,
+          "PreparationBeforeSceneWaitMs": 0.332,
+          "SceneWaitMs": 0.0295,
+          "PreparedPointerRouteToTextPropertyMs": 0.176,
+          "ReleaseRouteToTextPropertyMs": 0.0938,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 18,
+          "PreparationTotalMs": 0.4416,
+          "PreparationBeforeSceneWaitMs": 0.4048,
+          "SceneWaitMs": 0.0368,
+          "PreparedPointerRouteToTextPropertyMs": 0.2304,
+          "ReleaseRouteToTextPropertyMs": 0.1227,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 19,
+          "PreparationTotalMs": 0.5168,
+          "PreparationBeforeSceneWaitMs": 0.4669,
+          "SceneWaitMs": 0.0499,
+          "PreparedPointerRouteToTextPropertyMs": 0.244,
+          "ReleaseRouteToTextPropertyMs": 0.1196,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 20,
+          "PreparationTotalMs": 0.4385,
+          "PreparationBeforeSceneWaitMs": 0.3947,
+          "SceneWaitMs": 0.0438,
+          "PreparedPointerRouteToTextPropertyMs": 0.2135,
+          "ReleaseRouteToTextPropertyMs": 0.1105,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 21,
+          "PreparationTotalMs": 0.4611,
+          "PreparationBeforeSceneWaitMs": 0.4223,
+          "SceneWaitMs": 0.0388,
+          "PreparedPointerRouteToTextPropertyMs": 0.2272,
+          "ReleaseRouteToTextPropertyMs": 0.1234,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 22,
+          "PreparationTotalMs": 0.3614,
+          "PreparationBeforeSceneWaitMs": 0.3264,
+          "SceneWaitMs": 0.035,
+          "PreparedPointerRouteToTextPropertyMs": 0.18,
+          "ReleaseRouteToTextPropertyMs": 0.0952,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 23,
+          "PreparationTotalMs": 0.3589,
+          "PreparationBeforeSceneWaitMs": 0.3268,
+          "SceneWaitMs": 0.0321,
+          "PreparedPointerRouteToTextPropertyMs": 0.1713,
+          "ReleaseRouteToTextPropertyMs": 0.0901,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 24,
+          "PreparationTotalMs": 0.3894,
+          "PreparationBeforeSceneWaitMs": 0.3383,
+          "SceneWaitMs": 0.0511,
+          "PreparedPointerRouteToTextPropertyMs": 0.1921,
+          "ReleaseRouteToTextPropertyMs": 0.0991,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 25,
+          "PreparationTotalMs": 0.3475,
+          "PreparationBeforeSceneWaitMs": 0.3187,
+          "SceneWaitMs": 0.0288,
+          "PreparedPointerRouteToTextPropertyMs": 0.1683,
+          "ReleaseRouteToTextPropertyMs": 0.0896,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 26,
+          "PreparationTotalMs": 0.3466,
+          "PreparationBeforeSceneWaitMs": 0.316,
+          "SceneWaitMs": 0.0306,
+          "PreparedPointerRouteToTextPropertyMs": 0.1748,
+          "ReleaseRouteToTextPropertyMs": 0.0945,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 27,
+          "PreparationTotalMs": 0.4192,
+          "PreparationBeforeSceneWaitMs": 0.3885,
+          "SceneWaitMs": 0.0307,
+          "PreparedPointerRouteToTextPropertyMs": 0.1771,
+          "ReleaseRouteToTextPropertyMs": 0.0947,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 28,
+          "PreparationTotalMs": 0.3418,
+          "PreparationBeforeSceneWaitMs": 0.3128,
+          "SceneWaitMs": 0.029,
+          "PreparedPointerRouteToTextPropertyMs": 0.1693,
+          "ReleaseRouteToTextPropertyMs": 0.0897,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 29,
+          "PreparationTotalMs": 0.4145,
+          "PreparationBeforeSceneWaitMs": 0.3803,
+          "SceneWaitMs": 0.0342,
+          "PreparedPointerRouteToTextPropertyMs": 0.2008,
+          "ReleaseRouteToTextPropertyMs": 0.106,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 30,
+          "PreparationTotalMs": 0.4348,
+          "PreparationBeforeSceneWaitMs": 0.393,
+          "SceneWaitMs": 0.0418,
+          "PreparedPointerRouteToTextPropertyMs": 0.2229,
+          "ReleaseRouteToTextPropertyMs": 0.114,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 31,
+          "PreparationTotalMs": 0.4649,
+          "PreparationBeforeSceneWaitMs": 0.4215,
+          "SceneWaitMs": 0.0434,
+          "PreparedPointerRouteToTextPropertyMs": 0.2191,
+          "ReleaseRouteToTextPropertyMs": 0.1139,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 32,
+          "PreparationTotalMs": 0.3504,
+          "PreparationBeforeSceneWaitMs": 0.3161,
+          "SceneWaitMs": 0.0343,
+          "PreparedPointerRouteToTextPropertyMs": 0.1699,
+          "ReleaseRouteToTextPropertyMs": 0.0915,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 33,
+          "PreparationTotalMs": 0.3549,
+          "PreparationBeforeSceneWaitMs": 0.3217,
+          "SceneWaitMs": 0.0332,
+          "PreparedPointerRouteToTextPropertyMs": 0.1718,
+          "ReleaseRouteToTextPropertyMs": 0.0929,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 34,
+          "PreparationTotalMs": 0.3642,
+          "PreparationBeforeSceneWaitMs": 0.3314,
+          "SceneWaitMs": 0.0328,
+          "PreparedPointerRouteToTextPropertyMs": 0.1764,
+          "ReleaseRouteToTextPropertyMs": 0.0946,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 35,
+          "PreparationTotalMs": 0.3408,
+          "PreparationBeforeSceneWaitMs": 0.312,
+          "SceneWaitMs": 0.0288,
+          "PreparedPointerRouteToTextPropertyMs": 0.186,
+          "ReleaseRouteToTextPropertyMs": 0.107,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 36,
+          "PreparationTotalMs": 0.4053,
+          "PreparationBeforeSceneWaitMs": 0.371,
+          "SceneWaitMs": 0.0343,
+          "PreparedPointerRouteToTextPropertyMs": 0.2019,
+          "ReleaseRouteToTextPropertyMs": 0.107,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 37,
+          "PreparationTotalMs": 0.3553,
+          "PreparationBeforeSceneWaitMs": 0.3248,
+          "SceneWaitMs": 0.0305,
+          "PreparedPointerRouteToTextPropertyMs": 0.1754,
+          "ReleaseRouteToTextPropertyMs": 0.0924,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 38,
+          "PreparationTotalMs": 0.3912,
+          "PreparationBeforeSceneWaitMs": 0.3545,
+          "SceneWaitMs": 0.0367,
+          "PreparedPointerRouteToTextPropertyMs": 0.2067,
+          "ReleaseRouteToTextPropertyMs": 0.1115,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 39,
+          "PreparationTotalMs": 0.3493,
+          "PreparationBeforeSceneWaitMs": 0.3214,
+          "SceneWaitMs": 0.0279,
+          "PreparedPointerRouteToTextPropertyMs": 0.1619,
+          "ReleaseRouteToTextPropertyMs": 0.0874,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 40,
+          "PreparationTotalMs": 0.3529,
+          "PreparationBeforeSceneWaitMs": 0.3213,
+          "SceneWaitMs": 0.0316,
+          "PreparedPointerRouteToTextPropertyMs": 0.1722,
+          "ReleaseRouteToTextPropertyMs": 0.091,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 41,
+          "PreparationTotalMs": 0.4246,
+          "PreparationBeforeSceneWaitMs": 0.3867,
+          "SceneWaitMs": 0.0379,
+          "PreparedPointerRouteToTextPropertyMs": 0.2093,
+          "ReleaseRouteToTextPropertyMs": 0.1116,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 42,
+          "PreparationTotalMs": 0.4391,
+          "PreparationBeforeSceneWaitMs": 0.3836,
+          "SceneWaitMs": 0.0555,
+          "PreparedPointerRouteToTextPropertyMs": 0.2257,
+          "ReleaseRouteToTextPropertyMs": 0.1155,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 43,
+          "PreparationTotalMs": 0.4262,
+          "PreparationBeforeSceneWaitMs": 0.3878,
+          "SceneWaitMs": 0.0384,
+          "PreparedPointerRouteToTextPropertyMs": 0.2061,
+          "ReleaseRouteToTextPropertyMs": 0.1094,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 44,
+          "PreparationTotalMs": 0.3511,
+          "PreparationBeforeSceneWaitMs": 0.3185,
+          "SceneWaitMs": 0.0326,
+          "PreparedPointerRouteToTextPropertyMs": 0.1714,
+          "ReleaseRouteToTextPropertyMs": 0.092,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 45,
+          "PreparationTotalMs": 0.4246,
+          "PreparationBeforeSceneWaitMs": 0.3901,
+          "SceneWaitMs": 0.0345,
+          "PreparedPointerRouteToTextPropertyMs": 0.1824,
+          "ReleaseRouteToTextPropertyMs": 0.0963,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 46,
+          "PreparationTotalMs": 0.3551,
+          "PreparationBeforeSceneWaitMs": 0.3257,
+          "SceneWaitMs": 0.0294,
+          "PreparedPointerRouteToTextPropertyMs": 0.2043,
+          "ReleaseRouteToTextPropertyMs": 0.1074,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 47,
+          "PreparationTotalMs": 0.3444,
+          "PreparationBeforeSceneWaitMs": 0.3141,
+          "SceneWaitMs": 0.0303,
+          "PreparedPointerRouteToTextPropertyMs": 0.1661,
+          "ReleaseRouteToTextPropertyMs": 0.0893,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 48,
+          "PreparationTotalMs": 0.3569,
+          "PreparationBeforeSceneWaitMs": 0.3258,
+          "SceneWaitMs": 0.0311,
+          "PreparedPointerRouteToTextPropertyMs": 0.1761,
+          "ReleaseRouteToTextPropertyMs": 0.0933,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 49,
+          "PreparationTotalMs": 0.3538,
+          "PreparationBeforeSceneWaitMs": 0.3248,
+          "SceneWaitMs": 0.029,
+          "PreparedPointerRouteToTextPropertyMs": 0.1997,
+          "ReleaseRouteToTextPropertyMs": 0.0995,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 50,
+          "PreparationTotalMs": 0.3456,
+          "PreparationBeforeSceneWaitMs": 0.3167,
+          "SceneWaitMs": 0.0289,
+          "PreparedPointerRouteToTextPropertyMs": 0.1659,
+          "ReleaseRouteToTextPropertyMs": 0.0896,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 51,
+          "PreparationTotalMs": 0.3846,
+          "PreparationBeforeSceneWaitMs": 0.3499,
+          "SceneWaitMs": 0.0347,
+          "PreparedPointerRouteToTextPropertyMs": 0.1954,
+          "ReleaseRouteToTextPropertyMs": 0.1039,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 52,
+          "PreparationTotalMs": 0.4051,
+          "PreparationBeforeSceneWaitMs": 0.3737,
+          "SceneWaitMs": 0.0314,
+          "PreparedPointerRouteToTextPropertyMs": 0.1826,
+          "ReleaseRouteToTextPropertyMs": 0.0957,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 53,
+          "PreparationTotalMs": 0.4343,
+          "PreparationBeforeSceneWaitMs": 0.3901,
+          "SceneWaitMs": 0.0442,
+          "PreparedPointerRouteToTextPropertyMs": 0.2276,
+          "ReleaseRouteToTextPropertyMs": 0.1087,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 54,
+          "PreparationTotalMs": 0.4725,
+          "PreparationBeforeSceneWaitMs": 0.3885,
+          "SceneWaitMs": 0.084,
+          "PreparedPointerRouteToTextPropertyMs": 0.2783,
+          "ReleaseRouteToTextPropertyMs": 0.1335,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 55,
+          "PreparationTotalMs": 0.4041,
+          "PreparationBeforeSceneWaitMs": 0.3645,
+          "SceneWaitMs": 0.0396,
+          "PreparedPointerRouteToTextPropertyMs": 0.1836,
+          "ReleaseRouteToTextPropertyMs": 0.0957,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 56,
+          "PreparationTotalMs": 0.3828,
+          "PreparationBeforeSceneWaitMs": 0.3488,
+          "SceneWaitMs": 0.034,
+          "PreparedPointerRouteToTextPropertyMs": 0.1833,
+          "ReleaseRouteToTextPropertyMs": 0.0963,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 57,
+          "PreparationTotalMs": 0.4163,
+          "PreparationBeforeSceneWaitMs": 0.3803,
+          "SceneWaitMs": 0.036,
+          "PreparedPointerRouteToTextPropertyMs": 0.2232,
+          "ReleaseRouteToTextPropertyMs": 0.1295,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 58,
+          "PreparationTotalMs": 0.3939,
+          "PreparationBeforeSceneWaitMs": 0.3615,
+          "SceneWaitMs": 0.0324,
+          "PreparedPointerRouteToTextPropertyMs": 0.1901,
+          "ReleaseRouteToTextPropertyMs": 0.1032,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 59,
+          "PreparationTotalMs": 0.3993,
+          "PreparationBeforeSceneWaitMs": 0.369,
+          "SceneWaitMs": 0.0303,
+          "PreparedPointerRouteToTextPropertyMs": 0.1723,
+          "ReleaseRouteToTextPropertyMs": 0.0913,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 60,
+          "PreparationTotalMs": 0.341,
+          "PreparationBeforeSceneWaitMs": 0.3121,
+          "SceneWaitMs": 0.0289,
+          "PreparedPointerRouteToTextPropertyMs": 0.1699,
+          "ReleaseRouteToTextPropertyMs": 0.0922,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 61,
+          "PreparationTotalMs": 0.3586,
+          "PreparationBeforeSceneWaitMs": 0.3284,
+          "SceneWaitMs": 0.0302,
+          "PreparedPointerRouteToTextPropertyMs": 0.1706,
+          "ReleaseRouteToTextPropertyMs": 0.0905,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 62,
+          "PreparationTotalMs": 0.357,
+          "PreparationBeforeSceneWaitMs": 0.3279,
+          "SceneWaitMs": 0.0291,
+          "PreparedPointerRouteToTextPropertyMs": 0.1709,
+          "ReleaseRouteToTextPropertyMs": 0.0911,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 63,
+          "PreparationTotalMs": 0.3437,
+          "PreparationBeforeSceneWaitMs": 0.3147,
+          "SceneWaitMs": 0.029,
+          "PreparedPointerRouteToTextPropertyMs": 0.1709,
+          "ReleaseRouteToTextPropertyMs": 0.0919,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 64,
+          "PreparationTotalMs": 0.3839,
+          "PreparationBeforeSceneWaitMs": 0.3489,
+          "SceneWaitMs": 0.035,
+          "PreparedPointerRouteToTextPropertyMs": 0.2143,
+          "ReleaseRouteToTextPropertyMs": 0.125,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 65,
+          "PreparationTotalMs": 0.4722,
+          "PreparationBeforeSceneWaitMs": 0.4339,
+          "SceneWaitMs": 0.0383,
+          "PreparedPointerRouteToTextPropertyMs": 0.1985,
+          "ReleaseRouteToTextPropertyMs": 0.0962,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 66,
+          "PreparationTotalMs": 0.3532,
+          "PreparationBeforeSceneWaitMs": 0.3218,
+          "SceneWaitMs": 0.0314,
+          "PreparedPointerRouteToTextPropertyMs": 0.1704,
+          "ReleaseRouteToTextPropertyMs": 0.0915,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 67,
+          "PreparationTotalMs": 0.3434,
+          "PreparationBeforeSceneWaitMs": 0.3125,
+          "SceneWaitMs": 0.0309,
+          "PreparedPointerRouteToTextPropertyMs": 0.1678,
+          "ReleaseRouteToTextPropertyMs": 0.0903,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 68,
+          "PreparationTotalMs": 0.3834,
+          "PreparationBeforeSceneWaitMs": 0.3517,
+          "SceneWaitMs": 0.0317,
+          "PreparedPointerRouteToTextPropertyMs": 0.1787,
+          "ReleaseRouteToTextPropertyMs": 0.0927,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 69,
+          "PreparationTotalMs": 0.3375,
+          "PreparationBeforeSceneWaitMs": 0.3084,
+          "SceneWaitMs": 0.0291,
+          "PreparedPointerRouteToTextPropertyMs": 0.1632,
+          "ReleaseRouteToTextPropertyMs": 0.0885,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 70,
+          "PreparationTotalMs": 0.4549,
+          "PreparationBeforeSceneWaitMs": 0.4176,
+          "SceneWaitMs": 0.0373,
+          "PreparedPointerRouteToTextPropertyMs": 0.2072,
+          "ReleaseRouteToTextPropertyMs": 0.1104,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 71,
+          "PreparationTotalMs": 0.3471,
+          "PreparationBeforeSceneWaitMs": 0.3164,
+          "SceneWaitMs": 0.0307,
+          "PreparedPointerRouteToTextPropertyMs": 0.1723,
+          "ReleaseRouteToTextPropertyMs": 0.0922,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 72,
+          "PreparationTotalMs": 0.4342,
+          "PreparationBeforeSceneWaitMs": 0.4028,
+          "SceneWaitMs": 0.0314,
+          "PreparedPointerRouteToTextPropertyMs": 0.1797,
+          "ReleaseRouteToTextPropertyMs": 0.0928,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 73,
+          "PreparationTotalMs": 0.3343,
+          "PreparationBeforeSceneWaitMs": 0.3061,
+          "SceneWaitMs": 0.0282,
+          "PreparedPointerRouteToTextPropertyMs": 0.1689,
+          "ReleaseRouteToTextPropertyMs": 0.0914,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 74,
+          "PreparationTotalMs": 0.3583,
+          "PreparationBeforeSceneWaitMs": 0.3279,
+          "SceneWaitMs": 0.0304,
+          "PreparedPointerRouteToTextPropertyMs": 0.1765,
+          "ReleaseRouteToTextPropertyMs": 0.0914,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 75,
+          "PreparationTotalMs": 0.4495,
+          "PreparationBeforeSceneWaitMs": 0.4097,
+          "SceneWaitMs": 0.0398,
+          "PreparedPointerRouteToTextPropertyMs": 0.2355,
+          "ReleaseRouteToTextPropertyMs": 0.1177,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 76,
+          "PreparationTotalMs": 0.4321,
+          "PreparationBeforeSceneWaitMs": 0.3917,
+          "SceneWaitMs": 0.0404,
+          "PreparedPointerRouteToTextPropertyMs": 0.2106,
+          "ReleaseRouteToTextPropertyMs": 0.1098,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 77,
+          "PreparationTotalMs": 0.3479,
+          "PreparationBeforeSceneWaitMs": 0.3156,
+          "SceneWaitMs": 0.0323,
+          "PreparedPointerRouteToTextPropertyMs": 0.1755,
+          "ReleaseRouteToTextPropertyMs": 0.0945,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 78,
+          "PreparationTotalMs": 0.3444,
+          "PreparationBeforeSceneWaitMs": 0.3139,
+          "SceneWaitMs": 0.0305,
+          "PreparedPointerRouteToTextPropertyMs": 0.1791,
+          "ReleaseRouteToTextPropertyMs": 0.0958,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 79,
+          "PreparationTotalMs": 0.4805,
+          "PreparationBeforeSceneWaitMs": 0.4242,
+          "SceneWaitMs": 0.0563,
+          "PreparedPointerRouteToTextPropertyMs": 0.1807,
+          "ReleaseRouteToTextPropertyMs": 0.0934,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 80,
+          "PreparationTotalMs": 0.3604,
+          "PreparationBeforeSceneWaitMs": 0.3254,
+          "SceneWaitMs": 0.035,
+          "PreparedPointerRouteToTextPropertyMs": 0.1871,
+          "ReleaseRouteToTextPropertyMs": 0.1001,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 81,
+          "PreparationTotalMs": 0.3658,
+          "PreparationBeforeSceneWaitMs": 0.3281,
+          "SceneWaitMs": 0.0377,
+          "PreparedPointerRouteToTextPropertyMs": 0.1872,
+          "ReleaseRouteToTextPropertyMs": 0.0916,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 82,
+          "PreparationTotalMs": 0.3566,
+          "PreparationBeforeSceneWaitMs": 0.3207,
+          "SceneWaitMs": 0.0359,
+          "PreparedPointerRouteToTextPropertyMs": 0.1751,
+          "ReleaseRouteToTextPropertyMs": 0.0899,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 83,
+          "PreparationTotalMs": 0.398,
+          "PreparationBeforeSceneWaitMs": 0.3634,
+          "SceneWaitMs": 0.0346,
+          "PreparedPointerRouteToTextPropertyMs": 0.1861,
+          "ReleaseRouteToTextPropertyMs": 0.0962,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 84,
+          "PreparationTotalMs": 0.3503,
+          "PreparationBeforeSceneWaitMs": 0.3185,
+          "SceneWaitMs": 0.0318,
+          "PreparedPointerRouteToTextPropertyMs": 0.1763,
+          "ReleaseRouteToTextPropertyMs": 0.0922,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 85,
+          "PreparationTotalMs": 0.3791,
+          "PreparationBeforeSceneWaitMs": 0.3441,
+          "SceneWaitMs": 0.035,
+          "PreparedPointerRouteToTextPropertyMs": 0.1839,
+          "ReleaseRouteToTextPropertyMs": 0.0956,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 86,
+          "PreparationTotalMs": 0.4666,
+          "PreparationBeforeSceneWaitMs": 0.4285,
+          "SceneWaitMs": 0.0381,
+          "PreparedPointerRouteToTextPropertyMs": 0.2085,
+          "ReleaseRouteToTextPropertyMs": 0.1116,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 87,
+          "PreparationTotalMs": 0.4815,
+          "PreparationBeforeSceneWaitMs": 0.4341,
+          "SceneWaitMs": 0.0474,
+          "PreparedPointerRouteToTextPropertyMs": 0.2287,
+          "ReleaseRouteToTextPropertyMs": 0.1174,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 88,
+          "PreparationTotalMs": 0.4521,
+          "PreparationBeforeSceneWaitMs": 0.3973,
+          "SceneWaitMs": 0.0548,
+          "PreparedPointerRouteToTextPropertyMs": 0.217,
+          "ReleaseRouteToTextPropertyMs": 0.109,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 89,
+          "PreparationTotalMs": 0.3536,
+          "PreparationBeforeSceneWaitMs": 0.3196,
+          "SceneWaitMs": 0.034,
+          "PreparedPointerRouteToTextPropertyMs": 0.1655,
+          "ReleaseRouteToTextPropertyMs": 0.0876,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 90,
+          "PreparationTotalMs": 0.3529,
+          "PreparationBeforeSceneWaitMs": 0.3169,
+          "SceneWaitMs": 0.036,
+          "PreparedPointerRouteToTextPropertyMs": 0.1782,
+          "ReleaseRouteToTextPropertyMs": 0.0938,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 91,
+          "PreparationTotalMs": 0.389,
+          "PreparationBeforeSceneWaitMs": 0.3521,
+          "SceneWaitMs": 0.0369,
+          "PreparedPointerRouteToTextPropertyMs": 0.2083,
+          "ReleaseRouteToTextPropertyMs": 0.1079,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 92,
+          "PreparationTotalMs": 0.3806,
+          "PreparationBeforeSceneWaitMs": 0.3514,
+          "SceneWaitMs": 0.0292,
+          "PreparedPointerRouteToTextPropertyMs": 0.1757,
+          "ReleaseRouteToTextPropertyMs": 0.0925,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 93,
+          "PreparationTotalMs": 0.3948,
+          "PreparationBeforeSceneWaitMs": 0.3605,
+          "SceneWaitMs": 0.0343,
+          "PreparedPointerRouteToTextPropertyMs": 0.2019,
+          "ReleaseRouteToTextPropertyMs": 0.1089,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 94,
+          "PreparationTotalMs": 0.3588,
+          "PreparationBeforeSceneWaitMs": 0.3283,
+          "SceneWaitMs": 0.0305,
+          "PreparedPointerRouteToTextPropertyMs": 0.174,
+          "ReleaseRouteToTextPropertyMs": 0.0934,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 95,
+          "PreparationTotalMs": 0.3534,
+          "PreparationBeforeSceneWaitMs": 0.3236,
+          "SceneWaitMs": 0.0298,
+          "PreparedPointerRouteToTextPropertyMs": 0.1967,
+          "ReleaseRouteToTextPropertyMs": 0.0965,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 96,
+          "PreparationTotalMs": 0.357,
+          "PreparationBeforeSceneWaitMs": 0.3253,
+          "SceneWaitMs": 0.0317,
+          "PreparedPointerRouteToTextPropertyMs": 0.1715,
+          "ReleaseRouteToTextPropertyMs": 0.0912,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 97,
+          "PreparationTotalMs": 0.3353,
+          "PreparationBeforeSceneWaitMs": 0.3055,
+          "SceneWaitMs": 0.0298,
+          "PreparedPointerRouteToTextPropertyMs": 0.1703,
+          "ReleaseRouteToTextPropertyMs": 0.0911,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 98,
+          "PreparationTotalMs": 0.4934,
+          "PreparationBeforeSceneWaitMs": 0.4505,
+          "SceneWaitMs": 0.0429,
+          "PreparedPointerRouteToTextPropertyMs": 0.2421,
+          "ReleaseRouteToTextPropertyMs": 0.1218,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        },
+        {
+          "Iteration": 99,
+          "PreparationTotalMs": 0.4121,
+          "PreparationBeforeSceneWaitMs": 0.3604,
+          "SceneWaitMs": 0.0517,
+          "PreparedPointerRouteToTextPropertyMs": 0.2068,
+          "ReleaseRouteToTextPropertyMs": 0.1053,
+          "TextChanges": 1,
+          "ViewModelMatched": true
+        }
+      ]
+    }
+  ],
+  "RepeatProfiles": [
+    {
+      "Name": "default-500-70",
+      "ConfiguredDelayMs": 500,
+      "ConfiguredIntervalMs": 70,
+      "PreparationTotalMs": 3.7199,
+      "SceneWaitMs": 0.0532,
+      "HoldObservationWindowMs": 2606.6287,
+      "InitialActionFromPreparedPressMs": 4.8996,
+      "FirstRepeatFromPreparedPressMs": 522.9551,
+      "FirstRepeatLatenessMs": 18.055500000000052,
+      "TextChangeTimesFromPreparedPressMs": [
+        4.8996,
+        522.9551,
+        610.9207,
+        694.5224,
+        783.1958,
+        858.5852,
+        935.4343,
+        1014.3929,
+        1092.4643,
+        1169.7738,
+        1246.7293,
+        1324.5744,
+        1402.3179,
+        1484.1418,
+        1558.141,
+        1641.0448,
+        1719.5235,
+        1792.7918,
+        1870.6651,
+        1949.1778,
+        2028.0084,
+        2112.6111,
+        2183.9709,
+        2261.7247,
+        2341.8498,
+        2419.2196,
+        2499.2945,
+        2577.5407
+      ],
+      "SubsequentIntervalsMs": [
+        87.9656,
+        83.60169999999994,
+        88.67340000000002,
+        75.38940000000002,
+        76.84910000000002,
+        78.95860000000005,
+        78.07140000000004,
+        77.30949999999984,
+        76.95550000000003,
+        77.8451,
+        77.74350000000004,
+        81.8239000000001,
+        73.99919999999997,
+        82.90379999999982,
+        78.47870000000012,
+        73.26829999999995,
+        77.87329999999997,
+        78.5127,
+        78.8306,
+        84.60270000000014,
+        71.35979999999972,
+        77.75380000000041,
+        80.12509999999975,
+        77.36979999999994,
+        80.07490000000007,
+        78.24620000000004
+      ],
+      "SubsequentIntervalStatisticsMs": {
+        "Count": 26,
+        "P50": 78.15880000000004,
+        "P95": 87.12487500000003,
+        "Max": 88.67340000000002
+      },
+      "CancelCallMs": 0.4591,
+      "CaptureReleasedByCancel": true,
+      "PostCancelObservationWindowMs": 919.89,
+      "TextChangesAfterCancel": 0,
+      "TextAndViewModelStableAfterCancel": true
+    },
+    {
+      "Name": "short-100-40",
+      "ConfiguredDelayMs": 100,
+      "ConfiguredIntervalMs": 40,
+      "PreparationTotalMs": 0.5057,
+      "SceneWaitMs": 0.0708,
+      "HoldObservationWindowMs": 1301.1005,
+      "InitialActionFromPreparedPressMs": 0.4611,
+      "FirstRepeatFromPreparedPressMs": 117.0648,
+      "FirstRepeatLatenessMs": 16.603700000000003,
+      "TextChangeTimesFromPreparedPressMs": [
+        0.4611,
+        117.0648,
+        164.258,
+        208.7041,
+        256.3408,
+        303.5035,
+        353.2447,
+        398.3535,
+        445.907,
+        494.7413,
+        539.9744,
+        587.9086,
+        636.0877,
+        685.7727,
+        746.8294,
+        788.5958,
+        836.2886,
+        884.7607,
+        929.1378,
+        977.8035,
+        1021.1705,
+        1072.363,
+        1116.9802,
+        1166.3872,
+        1209.6668,
+        1255.9795
+      ],
+      "SubsequentIntervalsMs": [
+        47.193200000000004,
+        44.4461,
+        47.63669999999999,
+        47.16269999999997,
+        49.74120000000005,
+        45.108799999999974,
+        47.553499999999985,
+        48.83430000000004,
+        45.23309999999992,
+        47.93420000000003,
+        48.17910000000006,
+        49.684999999999945,
+        61.05669999999998,
+        41.76640000000009,
+        47.69279999999992,
+        48.47210000000007,
+        44.37709999999993,
+        48.665700000000015,
+        43.36699999999996,
+        51.19250000000011,
+        44.61719999999991,
+        49.406999999999925,
+        43.27960000000007,
+        46.31269999999995
+      ],
+      "SubsequentIntervalStatisticsMs": {
+        "Count": 24,
+        "P50": 47.59509999999999,
+        "P95": 50.974805000000096,
+        "Max": 61.05669999999998
+      },
+      "CancelCallMs": 0.271,
+      "CaptureReleasedByCancel": true,
+      "PostCancelObservationWindowMs": 340.8615,
+      "TextChangesAfterCancel": 0,
+      "TextAndViewModelStableAfterCancel": true
+    }
+  ],
+  "Error": null,
+  "NativeEditingFocusValidated": true,
+  "PhysicalPointerValidated": false,
+  "PhysicalKeyboardValidated": false,
+  "NativeTouchValidated": false,
+  "NativeImeValidated": false,
+  "RenderedFrameLatencyValidated": false,
+  "DpiMatrixValidated": false,
+  "KylinValidated": false,
+  "PerformanceReleaseThresholdsDefined": false,
+  "ImageOutput": null,
+  "ImageCaptureKind": "Avalonia RenderTargetBitmap of the visible native Window; not a desktop screenshot.",
+  "MeasurementDefinitions": {
+    "Preparation": "Key lookup, BringIntoView and native InputHitTest readiness are timed separately from input routing. Scene wait includes layout, coordinate checks and 16 ms polling; it is an observation, not an actual presented-frame timestamp.",
+    "PointerRoute": "After the key coordinate hits its native visual, time from raising PointerPressed to the first TextBox.TextProperty change. PointerReleased is raised synchronously for each ordinary key. Release-route timing starts immediately before PointerReleased. Neither includes key preparation or physical input delivery.",
+    "Samples": "Each scenario has 20 discarded warmup iterations and 100 validated recorded iterations. Text/caret/selection setup occurs before preparation; one TextProperty change and a matching TwoWay ViewModel value are required. Percentiles use linear interpolation between sorted observations.",
+    "Repeat": "TextProperty change timestamps begin at the prepared Backspace PointerPressed route. First repeat lateness is the gap from initial TextProperty change to the second change minus configured RepeatDelay. Subsequent intervals omit the initial-to-first-repeat gap. No scheduler catch-up or latency guarantee is inferred.",
+    "Cancellation": "CancelInput is called while the pointer is held. Capture state, all later TextProperty changes, text and TwoWay model stability are observed through a wait of RepeatDelay \u002B 3 * RepeatInterval, a stale pointer release, and a further wait of 3 * RepeatInterval.",
+    "Thresholds": "This mode gathers a repeatable baseline and validates input/count/cancellation semantics. It sets no arbitrary performance release thresholds; compare repeated runs on the same platform, window size, font, theme and build configuration before selecting thresholds."
+  }
+}

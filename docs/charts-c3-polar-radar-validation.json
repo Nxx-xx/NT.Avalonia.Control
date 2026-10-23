@@ -1,0 +1,422 @@
+{
+  "schemaVersion": 1,
+  "stage": "C3-05 polar, radar, radial and related variants",
+  "completedUtc": "2026-10-18T09:09:23.195105+00:00",
+  "clientExecutionDate": "2026-10-18",
+  "finalCandidateVersion": "c3-polar-radar-source-v2",
+  "softwareFunctionalSubsetPassed": true,
+  "functionalSubsetPassed": true,
+  "fullC2StageComplete": false,
+  "fullC3StageComplete": false,
+  "fullC4StageComplete": false,
+  "windows": {
+    "platform": "windows",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\windows\\windows-final-v2\\results.json",
+      "sha256": "EEC36C49DF0ED4FA67260FF59E4D106A02E424B2684D4A1A0504A5C569BFFDDD",
+      "bytes": 20176
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\windows\\windows-final-v2\\results.json",
+      "sha256": "EEC36C49DF0ED4FA67260FF59E4D106A02E424B2684D4A1A0504A5C569BFFDDD",
+      "bytes": 20176
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\windows\\windows-final-v2\\charts-smoke.json",
+      "sha256": "D4B5E8C77B26867F4C24449AB580F64E5F0DCF16FABBEE2B21B19506716C148D",
+      "bytes": 1439577
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\windows\\windows-final-v2\\charts-usage.json",
+      "sha256": "E5F5F69F799FE4D77C4849E9B44DD761C33AD1683CE2382E0E71A998F61FAEB1",
+      "bytes": 37458
+    },
+    "headlessTests": 1292,
+    "demoChecks": 954,
+    "usageChecks": 275,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 396,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\windows\\package-consumers-v2\\20261018T090137546Z-509fb9a907684405b7bbae644dbac4a3\\function\\consumer-result.json",
+          "sha256": "4E32C0A03794D8C1F26466D5276AC91A9D0C14F21B6E289EF48B160C545FE2B9",
+          "bytes": 61558
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\windows\\package-consumers-v2\\20261018T090137546Z-509fb9a907684405b7bbae644dbac4a3\\function\\packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 396,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\windows\\package-consumers-v2\\20261018T090137546Z-509fb9a907684405b7bbae644dbac4a3\\themes\\consumer-result.json",
+          "sha256": "4A0B121D30F4DAD3344BB4EB08B4F370806EF47F04619779BAD72D58E6284392",
+          "bytes": 61582
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\windows\\package-consumers-v2\\20261018T090137546Z-509fb9a907684405b7bbae644dbac4a3\\themes\\packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\windows\\windows-final-v2\\validated-input-manifest.json",
+      "sha256": "E438B2736040D2FE10472B23E82E985625464B1F568D324F15E8C70A36619C62",
+      "bytes": 116857
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\windows\\windows-final-v2\\assembly-manifest.json",
+      "sha256": "88E35FA4E9C671A507F7A5AE39E47CFEF048AB1A355706E4093FBA596D1064B8",
+      "bytes": 1955
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\windows\\windows-final-v2\\environment.json",
+      "sha256": "0EE04D7DBCC047462B38DCDF212206DFCC0C26A4B03E0C21C66893150C29D291",
+      "bytes": 9133
+    },
+    "coreSha256": "7BA3B9620ADBE81221F4B9540C656917A2D37DD14CB1D18E4302DA56BD4267FC",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false
+  },
+  "linux": {
+    "platform": "linux",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\results.json",
+      "sha256": "E8D80CBCBAA57089D5D2C93A9F130274C565B4D59D34ADC464ED9603217CF256",
+      "bytes": 14697
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\results.json",
+      "sha256": "E8D80CBCBAA57089D5D2C93A9F130274C565B4D59D34ADC464ED9603217CF256",
+      "bytes": 14697
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\charts-smoke.json",
+      "sha256": "1DED74D3954935A2CC1E105375EA8E04F222CED97944BC318315CED46DF39AA8",
+      "bytes": 1386665
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\charts-usage.json",
+      "sha256": "077136C0317C329BEBA0E2CC927303B57F447D77D807EFE1D99E15C4BC928AFA",
+      "bytes": 36131
+    },
+    "headlessTests": 1292,
+    "demoChecks": 954,
+    "usageChecks": 275,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 396,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\linux\\run-v2\\package-consumers\\20261018T090441028Z-81ccd77a966141c18c7b3d51a51bbd67\\function\\consumer-result.json",
+          "sha256": "9572829652EEA5DDC2A8B754EB256F048D636001460421B75CEAA9D662C5A537",
+          "bytes": 59831
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c3-polar-radar-20261018/linux/run-v2/package-consumers/20261018T090441028Z-81ccd77a966141c18c7b3d51a51bbd67/function/packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 396,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\linux\\run-v2\\package-consumers\\20261018T090441028Z-81ccd77a966141c18c7b3d51a51bbd67\\themes\\consumer-result.json",
+          "sha256": "74984CF1F12E63237F87F33E9220B4D858129B9951236DDD501DA530D177A943",
+          "bytes": 59869
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c3-polar-radar-20261018/linux/run-v2/package-consumers/20261018T090441028Z-81ccd77a966141c18c7b3d51a51bbd67/themes/packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\validated-input-manifest.json",
+      "sha256": "542C4AE073DA0B3B88CE542E5E9398733B8A99456BC3FF7649D32CB11BCA8DF8",
+      "bytes": 114243
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\assembly-manifest.json",
+      "sha256": "E1B82209F7C13E28B11919E0EB0D66F164746FADAFA3811DBFDC5561D13482E8",
+      "bytes": 1905
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\linux\\run-v2\\verification\\wslg-final-v2\\environment.json",
+      "sha256": "E3623DD9881B4EBA7D7473A0E7E2D8EC87CC85D102BF6B550777D950E8445F7F",
+      "bytes": 6366
+    },
+    "coreSha256": "402E514424AAB9212D6CFB1C0FED48AA1482FF99CE258C71643EEF59F78BAEDE",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false
+  },
+  "sourceSnapshotRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\source-snapshot-v2.json",
+    "sha256": "1F4FE40C8A0EBA31A4E7DE4ADE231B3B4D2FB17E418368D3DA7B4ABF971E1957",
+    "bytes": 271485
+  },
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\source-snapshot-v2.json",
+    "sha256": "1F4FE40C8A0EBA31A4E7DE4ADE231B3B4D2FB17E418368D3DA7B4ABF971E1957",
+    "bytes": 271485
+  },
+  "frozenSourceFiles": 1356,
+  "declaredValidatedInputsPerPlatform": 653,
+  "declaredInputsMatchBetweenPlatforms": true,
+  "declaredLiveInputsStillMatch": true,
+  "frozenSourceHashesStillMatch": true,
+  "liveFullRepositoryEqualityClaimed": false,
+  "sourceScope": "Declared runtime/harness inputs match the frozen candidate; later general documentation/status updates are outside the runtime set.",
+  "windowsApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\api-windows-final-v2\\api.txt",
+    "sha256": "BD3C6B24C8B261748CBFF6F65340B091E7A1EAAD58092627D9D995409004F14A",
+    "bytes": 891546
+  },
+  "linuxApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\linux\\api-linux-final-v2\\api.txt",
+    "sha256": "8AF35D3AD80D493F960ECAFC014DA32412CAA622862F49837743DF57C20FBDBC",
+    "bytes": 334014
+  },
+  "publicApiDocument": {
+    "path": "<REPO_ROOT>\\docs\\charts-c3-polar-radar-api.txt",
+    "sha256": "BD3C6B24C8B261748CBFF6F65340B091E7A1EAAD58092627D9D995409004F14A",
+    "bytes": 891546
+  },
+  "localApiDeclarationsMatchBetweenPlatforms": true,
+  "apiDelta": {
+    "oldTypes": 125,
+    "newTypes": 140,
+    "oldNamedChartsTypes": 123,
+    "newNamedChartsTypes": 138,
+    "oldLegacyDistinctTypeNames": 125,
+    "newLegacyDistinctTypeNames": 140,
+    "addedTypes": [
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartAngleUnit",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.NightingaleRoseSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PolarAreaSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PolarChart",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PolarFilledSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PolarGridShape",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PolarLineSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PolarPointInfo",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PolarScatterSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PolarSectorInfo",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.PolarSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.RadarChart",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.RadarSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.RadialBarSeries",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.RadialLineSeries"
+    ],
+    "addedMembersOnExistingTypes": [],
+    "removedTypes": [],
+    "changedExistingTypeDeclarations": [],
+    "removedMembersOnExistingTypes": [],
+    "binaryCompatibilityQualified": false,
+    "officialCompatibilityQualified": false
+  },
+  "apiComparisonScope": "Complete exported declarations in both local product assemblies keyed by assembly plus type, including generated XAML types; official assemblies excluded.",
+  "completePublicApiReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\independent-full-public-api-v2.json",
+    "sha256": "A13783F2D38C4FBC6F690D29F6FEC1B68C420B2ADB6BF6198408FB925056E354",
+    "bytes": 2824
+  },
+  "independentReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\collected-evidence-v2.json",
+    "sha256": "AFECB9CFBBA5730715374A93AF5EE76E3CF1DAA43415BAC74D3E5D766508D269",
+    "bytes": 679450
+  },
+  "independentRasterReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\independent-polar-radar-raster-v2.json",
+    "sha256": "2123DD86850C8CDCCB0C1E8ADCBB0A01619E6D268269811602F8023452833388",
+    "bytes": 174945
+  },
+  "rasterOraclePreregistrationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\polar-radar-oracle-preregistered-v1.json",
+    "sha256": "FAA850FC10B5031BD5C0118EFB5A8FFE5755A4D47C8DACBB0E34199829CBB893",
+    "bytes": 10536
+  },
+  "independentReviewCounts": {
+    "sourceAndPlatformChecks": 4076,
+    "rasterChecks": 864,
+    "decodedImages": 96,
+    "countsOverlapAndAreNotProductTestCounts": true,
+    "packagePayloadChecks": 14
+  },
+  "polarBusinessScenariosPerTheme": 15,
+  "explicitProbeControlDip": [
+    700,
+    520
+  ],
+  "historicalAndRendererPinsVerified": true,
+  "historicalDocumentPinCount": 41,
+  "historicalRendererVersionCount": 5,
+  "historicalRendererPreservationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\historical-renderer-preservation-v1.json",
+    "sha256": "08F0724A2C1AD2DD235C0BE4F7954083B470D7D90E11146AB80C945C8E18B0B0",
+    "bytes": 3263
+  },
+  "generalMetadataBeforeRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\metadata-before.json",
+    "sha256": "06F2D4CD9F7DC03B86FF4E292A82BB4A5C9CD60AFC20EAABC279DEC0D6C87138",
+    "bytes": 3074
+  },
+  "dependencyReuse": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\dependency-reuse.json",
+    "sha256": "CC6A69B661D86779B615C9D083FA6398A1B4A1A13CED795E0C442A1664587278",
+    "bytes": 5592
+  },
+  "productPackagesReused": false,
+  "nugetAuditOrWarningPolicyChanged": false,
+  "nativeAccessibilityEnumerationRetested": false,
+  "deferredNativeAccessibilityWorkstream": "A11Y-NATIVE-01",
+  "completeNativeBridgeGatePassed": false,
+  "previousNativeBridgeEvidence": {
+    "path": "<REPO_ROOT>\\docs\\charts-c2-accessibility-validation.json",
+    "sha256": "BC80F3A743AD610E5B419D87D00A753755265A12F434F08654A06A59ABD72A8D",
+    "bytes": 1405510
+  },
+  "performanceQualified": false,
+  "performanceMeasured": false,
+  "memoryRegressionMeasured": false,
+  "millionHitTailDeferredTo": "C4",
+  "officialRuntimeReferenceIncluded": false,
+  "physicalKeyboardValidated": false,
+  "physicalDesktopCertified": false,
+  "implementationContracts": [
+    "PolarChart 是独立角度/半径投影，RadarChart 默认多边形网格并复用同一实现。八个公开系列为 PolarLine、PolarScatter、PolarFilled、Radar、RadialLine、PolarArea、NightingaleRose 与 RadialBar，复用 ChartSeries 的 ItemsSource、Category/Value/Id/EmptyPoint 数据映射、原始对象与生命周期。AnglePath 和 RadiusPath 分别是 CategoryPath 与 ValuePath 的别名。",
+    "AngularAxis、RadialAxis 接受 ChartAxis 或 NumericAxis 的线性数值域；类别/日期/对数轴和 scale breaks 明确拒绝。角域默认 0..360° 或 0..2π 弧度，径向默认 Minimum=0；自动共享 Maximum 收集有限非负源值与 RadarSeries 显式 MaxValue。RadarSeries.MaxValue 默认 100，设 null 时使用图表共享径向域；非 null 时覆盖该系列的有效径向最大值。同构兼容投影的原值网格使用同一有效域；不同有效域或映射混合时改为明确的显示位置参考，不把共享原值刻度套到异构数据上。图表径向 Minimum 必须非负，显式 Maximum 必须大于 Minimum。",
+    "先按角域归一化，再以 StartAngle、SweepAngle、Clockwise 映射显示角。StartAngle 是显示度数，默认 -90；SweepAngle 为 0<值≤360。AngleUnit 只改变数值角域及原始角度解释，不改 StartAngle 的显示度单位。WrapAngles 只循环域外值，恰好在 Maximum 的值仍位于 Sweep 终点；两个轴可分别反转。 几何先将 StartAngle 归一到 0..360 再加显示 sweep；返回的 PolarPointInfo.Angle 不承诺规范区间（例如 495° 与 135° 表示同一方向），Position 使用等价方向。",
+    "Radar、RadialLine、PolarArea、NightingaleRose、RadialBar 共用本图各类别系列 first-seen Equals 类别并集，每个类别位置为 i/N；原始项不排序或重写。数值角系列按原始源序连接，不隐式按角度排序。缺失类别、负/非有限/空半径、超出径向有效域的点，以及 WrapAngles=false 时超出角域的点形成断线；零半径点仍可位于内基线，未设置 InnerRadius 时为中心。共享 EmptyPointMode 先填充的值保留 WasEmpty 元数据。",
+    "PolarLine 支持开口或闭合轮廓；PolarScatter 只绘制圆形标记；PolarFilled 与 Radar 填充完整闭合顶点多边形，有断点或非闭合时不跨空白补填。InnerRadius 是点半径映射的内界，填充多边形不自动形成内洞。RadialLine 使用类别位置连接，图表网格形状独立于系列可选。",
+    "PolarArea 与 NightingaleRose 为等角类别扇区，SectorGap 从两侧对称收缩绘制角度。t 是按半径域归一化的贡献，inner=R*InnerRadius：PolarArea outer=sqrt(inner²+(R²-inner²)*t)，使环带面积成比例；Rose outer=inner+(R-inner)*t，使半径长度成比例。零、负、非有限或空贡献不绘制扇区；反转径向域不把原始零值变成有面积贡献。",
+    "RadialBar 按类别分配同心轨道，laneWidth=(R-inner)/N；第 i 轨内外界为 inner+(i+.04)*laneWidth 与 inner+(i+.96)*laneWidth，保留轨道间隙。所有轨从同一起点按 t 占用 SweepAngle*t 的角度，SectorGap 同样仅影响绘制，不改原始业务值。",
+    "数据裁剪到外圆；命中依当前投影检查扇区角度/内外半径、圆形标记或线段，重叠按后绘制系列优先。扇区系列只枚举可见扇区进行键盘/选择，不重复枚举点，也不命中不可见零扇区、轨道洞或间隙。线段命中返回最近真实端点身份，不制造插值业务项。",
+    "GetPoints 与 GetSectors 分别返回点图族或扇区图族快照。Data、Point、SourceIndex、StableId、Item 与 Category 保留原始业务数据；Position、Angle、Radius、Center、Inner/OuterRadius 和扇区角度为显示投影。ColorPath 支持直接 Color、IBrush 或可解析颜色字符串，缺省回退系列和调色板。FillOpacity 应用于 polygon/sector fill；公共默认值为 1，PolarFilled 为 .25，Radar 为 .3；轮廓与选择强调独立绘制，不随填充透明度衰减。",
+    "轴展示按实际投影选择：同构兼容点/Rose 的径向刻度使用 inner+(1-inner)*t，Area 使用 sqrt(inner²+(1-inner²)*t)；同心 RadialBar 类别标签放在相应 lane 的起始位置，业务值刻度按进度角分布。混合不同映射、InnerRadius、有效最大值或类别语义时显示 r/R=百分比、物理 θ=度数，并外显“归一半径参考”，不伪装成原值轴或类别轴。Area/Rose 的值网格、Bar 的 lane 网格及归一 r/R 网格始终为真圆或部分圆弧；GridShape.Polygon 仅用于点图族的指定角位参考顶点，不能作为任意角度的连续等值线。GridLevels 或显式 Interval 提供基础刻度（显式间隔最多 100 个中间刻度）；轴标签单行截断并钳制到图表边界，不提供全局碰撞消解；数据标签超出或相撞时省略。ShowAxisLabels=false、ShowLegend=false、无标题与 Padding=0 时 PlotArea=(8,8,w-16,h-16)，中心为图表中点，外半径 min(w-16,h-16)/2。",
+    "None/Single/SingleDeselect/Multiple 选择支持双向属性、前置可取消事件、源更新按稳定身份跟随、失效项清理与重入保护。键盘支持左右、Home/End、Space/Enter 与 Escape；Tooltip 和标签使用自己的 formatter。",
+    "PNG/JPEG、同步/异步、尺寸、背景、DPI、编码预算、取消和失败事件使用共享导出管线。背景参数是 canvas backdrop，图表自身 Background 仍绘制；显式 PixelSize 保持相同像素外观，DPI 写入密度元数据。导出为当前静态投影，正式原生窗口像素、96/144/192 DPI 和异步编码由本批双平台检查。"
+  ],
+  "implementationContractsRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\implementation-contracts-final-v4.json",
+    "sha256": "73113F2E665A3C72F6D416BD521072DA09C9C672F5EF00E43E3FAB27CD331502",
+    "bytes": 9065
+  },
+  "remaining": [
+    "本批采用本库公共 API 和自有图族组合；官方许可参考运行时、完整官方属性/样式/模板/行为和二进制兼容尚未认证，不以相同图名宣布官方等价。",
+    "本批未加入 Polar/Radar 入场、数据或视图变化动画 timeline；C2 的完整动画、Trackball、缩放平移、范围选择、多图同步、标注、交互式图例与模板契约需逐图族适配。旧 Cartesian/Circular 已有功能不自动构成新投影的完整 C2 等价。",
+    "极坐标轴目前为非负径向线性域与数值角域；对数/日期/类别轴对象、scale breaks、逐轴复杂样式/标签布局、所有 ChartAxis 选项的完整适配仍开放。类别径向系列使用自身共享类别并集，不能替代 CategoryAxis 的完整语义。GridShape 是点图族的参考网格偏好；Area/Rose、Bar 和异构参考轴为保证真实半径语义强制使用圆弧，不宣称完整 C1 任意网格/投影组合等价。",
+    "圆形标记以外的逐点形状、边框/模板、填充纹理、平滑或阶梯极坐标线、range/stack/percent 极坐标扩展、逐类独立径向域、复杂重叠及高密度标签路由仍开放。Filled/Radar 的多边形填充不会自动切出 InnerRadius 内洞，数据缺失时不补闭合面。",
+    "绘制式单行图例可能省略超宽内容，轴标签仅单行截断与边界钳制，数据标签采用基础边界/碰撞策略；可交互/滚动/虚拟化图例、完整格式模板、复杂轴标题/刻度布局、轴标签全局碰撞消解和高密度可读性尚未获完整资格。",
+    "极坐标点级辅助语义与原生 automation、真实读屏器、系统高对比偏好以及跨图族无障碍完整适配仍在后续专项。Windows UIA/Linux AT-SPI 原生选中集合枚举、Linux 嵌套点选择写入、点系统焦点与真实读屏器按用户决定留 A11Y-NATIVE-01；原失败门禁未改为通过，本批未重验。",
+    "新投影的类别并集/身份查找、布局、绘制、命中、标签与多图的规模、增量、分配、内存、吞吐及尾延迟尚未建立 C4 性能资格，本批未实测百万点性能或内存回归。百万点命中 p95 历史回退 0.7649→1.1235 ms 按用户决定留 C4。",
+    "C3-06 仪表和微图为下一项；C3-06～C3-07、C5/C6 其余图族和完整 C2/C3/C4/C7 仍开放。此前散点大小图例/连续色标、C6 无轴云/紧凑打包、圆形高级标签/模板与中心内容复杂视觉导出边界继续保留。",
+    "物理 Windows/Linux、实际 backend/GPU/compositor present、多屏 DPI、Ubuntu 22.04/24.04、原生 Wayland、ARM、目标国产 Linux及真实设备输入/保存对话框/读屏器工作流仍待独立验证。",
+    "AX06 标题/末刻度布局及四个历史 PixelProbe DLL 证据缺口保持开放，未用本批新证据替换。",
+    "ColorPath 与系列画刷实例由调用方持有；原地修改同一可变 IBrush 不保证触发源数据版本更新，应用可替换画刷或显式更新数据。本批不提供颜色过渡历史或极坐标动画 timeline。"
+  ],
+  "manualWindowsVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\manual-windows-polar-radar-visual-v2.json",
+    "sha256": "59491B9BAEB9E174BACAD6C9D9ECD82E09FE0185C1C00E41FCE1D782098B691B",
+    "bytes": 3992
+  },
+  "manualLinuxVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\manual-linux-polar-radar-visual-v2.json",
+    "sha256": "4E0C17482EDE5054ACE35494AD3F65718EF006E5A47B2CE65C4A899DFCB99F23",
+    "bytes": 4075
+  },
+  "independentPackagePayloadReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\independent-package-payload-v2.json",
+    "sha256": "C20DBD5B385887A2BA0FE1619D21EE940951538CCFFBAC88E83D8FFDF1DBEF0B",
+    "bytes": 8585
+  },
+  "axisRegressionScenariosPerTheme": 3,
+  "totalPolarBusinessAndAxisScenariosPerTheme": 18,
+  "rasterAxisOraclePreregistrationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\polar-radar-axis-oracle-preregistered-v1.json",
+    "sha256": "AC04E50514D74F35520F61D44A0FE7BD3B4416E53EFE0C16234E0CEB8CC01C6B",
+    "bytes": 4017
+  },
+  "originalFifteenRasterCasesAndThresholdsUnchanged": true,
+  "manualOriginalAxisGapReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\root-manual-axis-gap-v1.json",
+    "sha256": "1E841043919F4F4A12C81C9E1E93CF8D27110295E51DD27C5960D69F1DC014F2",
+    "bytes": 1198
+  },
+  "officialDocumentationReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\official-documentation-review-v1.json",
+    "sha256": "BC0A55F080F0CCAE648851234D9B2D6EF157FBAB932AF420BA85F600C7261E66",
+    "bytes": 2618
+  },
+  "officialPublicDocumentationSources": [
+    {
+      "title": "Polar chart",
+      "url": "https://docs.avaloniaui.net/controls/data-display/charts/radial/polar-chart",
+      "localComparison": "Public page describes numeric angle/radius PolarChart and PolarLineSeries. Local code instead exposes explicit AngularAxis/RadialAxis and additional series; no property/default compatibility certification."
+    },
+    {
+      "title": "Radar chart",
+      "url": "https://docs.avaloniaui.net/controls/data-display/charts/radial/radar-chart",
+      "localComparison": "Public page describes categorical multi-series profiles, RadarSeries and MaxValue 100. Local axis-count/category union and shared-grid versus per-series scaling are explicit local contracts."
+    },
+    {
+      "title": "Polar area chart",
+      "url": "https://docs.avaloniaui.net/controls/data-display/charts/radial/polar-area-chart",
+      "localComparison": "Public page describes equal-angle variable-radius categories and a dedicated PolarAreaChart. Local PolarAreaSeries uses an explicit annular-area square-root formula; the official runtime formula was not measured."
+    },
+    {
+      "title": "Nightingale rose chart",
+      "url": "https://docs.avaloniaui.net/controls/data-display/charts/radial/nightingale-rose-chart",
+      "localComparison": "Public page describes equal angles/variable radius and a dedicated NightingaleRoseChart. Local NightingaleRoseSeries defines linear radial distance above its inner baseline."
+    },
+    {
+      "title": "Radial bar chart",
+      "url": "https://docs.avaloniaui.net/controls/data-display/charts/radial/radial-bar-chart",
+      "localComparison": "Public page describes circular category comparisons and a dedicated RadialBarChart. Local RadialBarSeries uses explicit concentric lanes and angular length, with its own geometry parameters."
+    },
+    {
+      "title": "Radial line chart",
+      "url": "https://docs.avaloniaui.net/controls/data-display/charts/radial/radial-line-chart",
+      "localComparison": "Public page reuses PolarChart with PolarLineSeries, not a separate required RadialLineSeries. Local numeric PolarLine supports that role and additionally provides category-based RadialLineSeries."
+    }
+  ],
+  "supplementalDiagnosticSnapshotLimitationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\development\\trackball-supplemental-diagnostic-limit-v1.json",
+    "sha256": "79BAD2222BF02471736F4F2CD093B8A514AE34D1110A6DFECDE6D0FA0E7533B8",
+    "bytes": 1989
+  },
+  "supplementalDiagnosticCardsAreAssertionTimeSnapshots": false,
+  "diagnosticLimitation": "Supplemental deferred cards LINQ may serialize after detach, so cards.readings can be null; use immediately evaluated boolean card gates and value snapshots for routed coordinates/rawY/PlotArea. No production/source change was made during formal verification.",
+  "rootSupplementalVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\root-supplemental-visual-v2.json",
+    "sha256": "9204A9398867CEDB9F9C7D3F8FB7D1E631EF948245BCAE947DD078A9084B25DF",
+    "bytes": 1361
+  },
+  "retainedDevelopmentEvidence": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\retained-development-v1.json",
+    "sha256": "37C1E3A98A0F4E506BBA59013F27E34E66DD75B00EBB481527A88A249908CB33",
+    "bytes": 24244
+  },
+  "retainedAxisRepairDevelopmentEvidence": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\retained-repair-development-v2.json",
+    "sha256": "2DE886E4AF954142882E887382189738CFAA6DD552A19B53F5CDCC2ECF41A6DA",
+    "bytes": 11260
+  },
+  "retainedEarlierFormalEvidence": [
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-polar-radar-20261018\\retained-formal-source-v1.json",
+      "sha256": "6225CBDEC44415FDDA721081CC85AC6205F43459821639903271A3593B8A3BFA",
+      "bytes": 13440
+    }
+  ]
+}

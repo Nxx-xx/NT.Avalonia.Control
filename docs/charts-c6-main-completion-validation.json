@@ -1,0 +1,382 @@
+{
+  "schema": "charts-c6-main-completion/v1",
+  "date": "2026-10-23",
+  "candidate": "c6-main-completion-source-v1",
+  "mainStageComplete": true,
+  "completionScope": "C6 foundational chart families and catalog audit; full C6-06 professional cross-family integration and official mapping remain open",
+  "catalogAuditComplete": true,
+  "fullC6ExitComplete": false,
+  "fullOfficialParity": false,
+  "fullC5Complete": false,
+  "nextWorkItem": "C5 remaining statistics and professional gaps",
+  "sourceSnapshot": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/source-snapshot-v1.json",
+    "sha256": "9AF95ABB9E9AB30160415970B37EF7F101EC3F988BCBADAB6142F4803F3F16BD",
+    "bytes": 345755
+  },
+  "sourceFiles": 1743,
+  "platforms": {
+    "windows": {
+      "passed": true,
+      "formalRun": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/windows/run-v1/results.json",
+        "sha256": "204E222CA56C4DD04ED163511D0B758BDB489A92360140A0DEC8B4EB3121724F",
+        "bytes": 8404
+      },
+      "baseRun": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/windows/run-v1/verification/functional-v1/results.json",
+        "sha256": "C024B79F60942A42B083E2CF1B75BFA9B5959FE031CA13757E6743C5FEA8B17E",
+        "bytes": 21702
+      },
+      "stages": 7,
+      "chartsTests": 2753,
+      "demoChecks": 4046,
+      "usageChecks": 688,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 904,
+          "result": {
+            "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/windows/run-v1/consumers/20261023T022013605Z-2c1c6270e14a4a418f6d1c989b241482/function/consumer-result.json",
+            "sha256": "2EBF84BFABC397FAC7E47610B4BD7B2F792D73AA88E212D031ECC55D885DC11D",
+            "bytes": 143015
+          },
+          "identityPreservation": {
+            "previous": 790,
+            "current": 904,
+            "added": 114,
+            "missing": [],
+            "failed": [],
+            "previousFailures": []
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 904,
+          "result": {
+            "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/windows/run-v1/consumers/20261023T022013605Z-2c1c6270e14a4a418f6d1c989b241482/themes/consumer-result.json",
+            "sha256": "8B6136D619A4832EE6A71E2D75633C06F13A383C110DBC827C0175B6DA52B6D8",
+            "bytes": 143068
+          },
+          "identityPreservation": {
+            "previous": 790,
+            "current": 904,
+            "added": 114,
+            "missing": [],
+            "failed": [],
+            "previousFailures": []
+          }
+        }
+      ],
+      "identityPreservation": {
+        "tests": {
+          "previous": 2617,
+          "current": 2753,
+          "missing": []
+        },
+        "demo": {
+          "previous": 3286,
+          "current": 4046,
+          "added": 760,
+          "missing": [],
+          "failed": [],
+          "previousFailures": []
+        },
+        "usage": {
+          "previous": 584,
+          "current": 688,
+          "added": 104,
+          "missing": [],
+          "failed": [],
+          "previousFailures": []
+        }
+      },
+      "api": {
+        "previousTypes": 350,
+        "currentTypes": 459,
+        "missingTypes": [],
+        "changedOrMissingDeclarations": {}
+      },
+      "apiSnapshot": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/windows/run-v1/api/api.txt",
+        "sha256": "4691826B647026D1DAEECF5F6C6E16984F38553BCA192DD3ED6599DF48484F26",
+        "bytes": 949985
+      },
+      "numeric": {
+        "fixedCases": 84,
+        "scaleCases": 2,
+        "checks": 1927023,
+        "raw": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/windows/run-v1/raw.json",
+          "sha256": "0441F60FC6CFAA37384E09484B80C58D7B50EA415A24E9D155D56738457D2CC2",
+          "bytes": 33863954
+        },
+        "result": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/windows/run-v1/numeric-result.json",
+          "sha256": "3BE05D7097BC3A08DFF66FF960D0FE7784376B6F3E08B8B2F8594D22ADFDEC24",
+          "bytes": 392
+        }
+      },
+      "native": {
+        "checks": 50412,
+        "c6Pngs": 116,
+        "fullDemoPngs": 1113,
+        "probeRows": 166,
+        "result": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/windows/run-v1/native-result.json",
+          "sha256": "E4D586317FC5730CFC275E17A214E3DB45AB65F24BF794E6E87097C7843781C4",
+          "bytes": 251
+        },
+        "smoke": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/windows/run-v1/verification/functional-v1/charts-smoke.json",
+          "sha256": "0CB93281318CBEA062BE343F27AB22201E62453F9DE133B656EBA188CD27846E",
+          "bytes": 82042704
+        }
+      },
+      "performance": [
+        {
+          "id": "schedule-100000",
+          "elapsedMilliseconds": 131.8001,
+          "allocatedBytes": 77227240
+        },
+        {
+          "id": "matrix-20000",
+          "elapsedMilliseconds": 13.3247,
+          "allocatedBytes": 4849616
+        }
+      ],
+      "sourcesStable": true,
+      "assembliesStable": true
+    },
+    "linux": {
+      "passed": true,
+      "formalRun": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/linux/run-v1/results.json",
+        "sha256": "AC58CD5C4CEE186192579286A98FFCF212AA019B4A2788AD1967626EBF2B7B90",
+        "bytes": 8081
+      },
+      "baseRun": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/linux/run-v1/verification/functional-v1/results.json",
+        "sha256": "03730F97D1F499200ADA37B2DF1B9C94ECA466833C51422F872E059CF953D368",
+        "bytes": 23855
+      },
+      "stages": 7,
+      "chartsTests": 2753,
+      "demoChecks": 4046,
+      "usageChecks": 688,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 904,
+          "result": {
+            "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/linux/run-v1/consumers/20261023T023218779Z-8dcf643109bd4a2093706da687cdebf5/function/consumer-result.json",
+            "sha256": "04BB9E48796847367CB0F48A269EF2030549A573B2178079D336F654E256EBA3",
+            "bytes": 139151
+          },
+          "identityPreservation": {
+            "previous": 790,
+            "current": 904,
+            "added": 114,
+            "missing": [],
+            "failed": [],
+            "previousFailures": []
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 904,
+          "result": {
+            "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/linux/run-v1/consumers/20261023T023218779Z-8dcf643109bd4a2093706da687cdebf5/themes/consumer-result.json",
+            "sha256": "35F44A028D01CCD2403FBE53A56DC6D925DEBE6D664B63C5E7ACC009C8220D5F",
+            "bytes": 139205
+          },
+          "identityPreservation": {
+            "previous": 790,
+            "current": 904,
+            "added": 114,
+            "missing": [],
+            "failed": [],
+            "previousFailures": []
+          }
+        }
+      ],
+      "identityPreservation": {
+        "tests": {
+          "previous": 2617,
+          "current": 2753,
+          "missing": []
+        },
+        "demo": {
+          "previous": 3286,
+          "current": 4046,
+          "added": 760,
+          "missing": [],
+          "failed": [],
+          "previousFailures": []
+        },
+        "usage": {
+          "previous": 584,
+          "current": 688,
+          "added": 104,
+          "missing": [],
+          "failed": [],
+          "previousFailures": []
+        }
+      },
+      "api": {
+        "previousTypes": 350,
+        "currentTypes": 459,
+        "missingTypes": [],
+        "changedOrMissingDeclarations": {}
+      },
+      "apiSnapshot": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/linux/run-v1/api/api.txt",
+        "sha256": "FFA4B6D6BD86B6DB3C4A436205EE5F2EB23A88D2A62FA098CE48BDA7F35AF5D7",
+        "bytes": 949985
+      },
+      "numeric": {
+        "fixedCases": 84,
+        "scaleCases": 2,
+        "checks": 1927023,
+        "raw": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/linux/run-v1/raw.json",
+          "sha256": "1C38C2E6AE0B82E16104413C88063CC081E0B269AA93BE8410286B6A2F11A1A6",
+          "bytes": 32696233
+        },
+        "result": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/linux/run-v1/numeric-result.json",
+          "sha256": "9400F58F096B4D0686EC04AA45042E4FF48AE8142399090B16A227FDF277E41E",
+          "bytes": 374
+        }
+      },
+      "native": {
+        "checks": 50416,
+        "c6Pngs": 116,
+        "fullDemoPngs": 1113,
+        "probeRows": 166,
+        "result": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/linux/run-v1/native-result.json",
+          "sha256": "0872436618F05A0C2C7469B471839DF69128A7E8DE7615847B2208B856E3189B",
+          "bytes": 243
+        },
+        "smoke": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/linux/run-v1/verification/functional-v1/charts-smoke.json",
+          "sha256": "BBE773C032B417DE44BBE2F5B213E23C49D5581402B41168B37475FE452F3AD0",
+          "bytes": 79172058
+        }
+      },
+      "performance": [
+        {
+          "id": "schedule-100000",
+          "elapsedMilliseconds": 150.1632,
+          "allocatedBytes": 77227272
+        },
+        {
+          "id": "matrix-20000",
+          "elapsedMilliseconds": 11.0292,
+          "allocatedBytes": 4848696
+        }
+      ],
+      "sourcesStable": true,
+      "assembliesStable": true
+    }
+  },
+  "apiDeclarationsIdentical": true,
+  "catalog": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/catalog-audit-v1.json",
+    "sha256": "2DD7D760374DB343D0584DEF4AE22DB801E1DCD8A42BCE3D0DC09086E1CC02E5",
+    "bytes": 16039
+  },
+  "preservation": {
+    "historical-documents-before-v1.json": {
+      "checked": 122,
+      "changed": []
+    },
+    "prior-c603-root-evidence-pins-v1.json": {
+      "checked": 135,
+      "changed": []
+    }
+  },
+  "limits": [
+    "C6-01～06 主项基础功能已交付；完整官方 API、二进制、默认行为和性能等价未认证。AK15 Stream graph/Theme river 的精确官方 API 对应继续在 C7 核验。",
+    "C5 七类统计缺项 Beeswarm、Contour、Mosaic、Parallel coordinates、Ridgeline、Strip、Violin，以及金融/技术指标等专业扩展仍开放；下一主线先补 C5。",
+    "C7-NATIVE-LOD-AV-01：此前 LOD 原生导出 0xC0000005 根因未定位、未修复。本轮通过不能关闭此问题。",
+    "百万点命中尾延迟和 A11Y-NATIVE-01 按用户决定后置；物理 Windows/Linux、GPU/compositor present、触摸设备、读屏和长稳未认证。",
+    "完整专业模板、PlotAreaContent、Trackball/范围联动/高级标注等跨图族集成仍需 C7 专项；未重跑 C4-08 正式性能门禁或旧阶段独立 oracle，未执行远端 CI。",
+    "排程显示约束诊断而不自动重排；泳道采用明确单位的数值区间。Dendrogram 展示已有树，不自动聚类。",
+    "运营图未覆盖官方全部嵌套 RankingsPath/布尔 ValuesPath 适配、Bullet 竖向、词云旋转/紧密排布；词云和密集端点标签可明确省略。Table 为只读绘制表，无编辑和虚拟化。Theme river 为 centered/zero 基线，无 wiggle。",
+    "地图曲线/弧采用最多 128 段近似，圆弧半径为 DIP 而非测地距离；瓦片、标签避让、专业样式/模板仍开放。暗色地图部分白色标签落在浅色区域，对比不足，列入 C7 主题改进。",
+    "100000 排程/20000 矩阵的计时与线程分配是单次诊断，不是 p95、持续帧率、进程/原生/GPU 内存或 SLA。"
+  ],
+  "closedIssues": [
+    "C6-MAP-FIT-01",
+    "C6-MAP-OBSERVER-01"
+  ],
+  "evidenceRoot": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023",
+  "physicalInputValidated": false,
+  "linuxDesktopCertified": false,
+  "formalSlaEvaluated": false,
+  "remoteCiExecuted": false,
+  "protocols": {
+    "pre-observation-pins-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/pre-observation-pins-v1.json",
+      "sha256": "FE97139B13C2F750635E80FC3A17B5DB3D198E8A9D67930082321BC3739F38A2",
+      "bytes": 1166
+    },
+    "numeric-protocol-seal-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/numeric-protocol-seal-v1.json",
+      "sha256": "BA930EC33DE70FBF0BF50A0D8EF7D986CC79AD2C2FEE7E6ABB0E35FEFB142495",
+      "bytes": 327
+    },
+    "numeric-oracle-amendment-v2.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/numeric-oracle-amendment-v2.json",
+      "sha256": "02D136DF64448FCC5A0A415096157DEC3500A5B596D053780B95ED95FAECFE70",
+      "bytes": 364
+    },
+    "native-protocol-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/native-protocol-v1.json",
+      "sha256": "8ECE01AECC77463BEE1C838179F35AD8BF30DF4F24FE85364DCEF86C848FF8B1",
+      "bytes": 1609
+    },
+    "native-oracle-amendment-v2.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/native-oracle-amendment-v2.json",
+      "sha256": "3A9CDE832EEF88791B1988C70EF9D390110483D797A58B995F677340B6B6A875",
+      "bytes": 1855
+    },
+    "native-predicate-count-explanation-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/native-predicate-count-explanation-v1.json",
+      "sha256": "E56D3382E336DF2CFAF2540656247F6697DF5662CE62FBC4F94B8B3CEDAD2C47",
+      "bytes": 1807
+    },
+    "formal-board-visual-review-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/formal-board-visual-review-v1.json",
+      "sha256": "FD4C6345F9B23DC38B8DBD21170F6A2EF33135665F5DD5BD5632E67550898F2C",
+      "bytes": 5421
+    },
+    "C6IndependentOracle-v2.py": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/C6IndependentOracle-v2.py",
+      "sha256": "49B9375E123B864DE84EB92C2C1B8FFC455DD813B5C0B693DC48D246845A94F5",
+      "bytes": 19645
+    },
+    "C6NativeOracle-v2.py": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/C6NativeOracle-v2.py",
+      "sha256": "30738442D326C04FFEC80E179D8B7DD0FBA73CA48869E3D190353FF7E6173C0A",
+      "bytes": 4461
+    },
+    "charts_png_oracle.py": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/charts_png_oracle.py",
+      "sha256": "2C05338338984B1D5C818997AAB22E6C8C34331CEC24C8CED65AAE32503C44FF",
+      "bytes": 12612
+    },
+    "Run-C6Platform-v1.ps1": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/Run-C6Platform-v1.ps1",
+      "sha256": "9DE956965E65921EC8420A96DF8C4739C58379CEE24DA5ED5A943959F11330F7",
+      "bytes": 4287
+    },
+    "run-linux-v1.sh": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-main-completion-20261023/run-linux-v1.sh",
+      "sha256": "D7B9418E519CD32E610D93B1DC61974BD0348FE7C15494F4011617294C6CA0A9",
+      "bytes": 1791
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:charts="using:NT.AvaloniaControl.Charts"
+             x:Class="Charts.Headless.Tests.XamlConsumerView">
+  <charts:CartesianChart x:Name="Chart" Title="XAML chart" ShowLegend="True">
+    <charts:CartesianChart.XAxis>
+      <charts:ChartAxis Title="Sample" Minimum="0" Maximum="4" />
+    </charts:CartesianChart.XAxis>
+    <charts:CartesianChart.YAxis>
+      <charts:ChartAxis Title="Value" LabelFormat="0.0" />
+    </charts:CartesianChart.YAxis>
+    <charts:CartesianChart.Series>
+      <charts:LineSeries Title="Line" Stroke="Blue" />
+      <charts:BarSeries Title="Bar" Fill="Orange" />
+      <charts:ScatterSeries Title="Scatter" MarkerSize="9" />
+    </charts:CartesianChart.Series>
+  </charts:CartesianChart>
+</UserControl>

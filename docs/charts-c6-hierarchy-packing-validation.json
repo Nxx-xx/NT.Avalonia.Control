@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "completedUtc": "2026-10-21T15:29:18.224786+00:00",
+  "passed": true,
+  "checks": {
+    "selected-stable-frozen-candidate": true,
+    "all-tools-and-protocols-sha-retained": true,
+    "freeze-copy-0-all-sha": true,
+    "freeze-copy-1-all-sha": true,
+    "freeze-copy-2-all-sha": true,
+    "windows:all-nine-supervised-stages": true,
+    "windows:all-full-tests-no-skip": true,
+    "windows:full-demo-and-usage": true,
+    "windows:new-hierarchy-checks": true,
+    "windows:stable-sources-assemblies": true,
+    "windows:validated-inputs-match-freeze": true,
+    "windows:native-assembly-bytes-retained": true,
+    "windows:zero-warning-error-release-builds": true,
+    "windows:function:fresh-consumer-checks": true,
+    "windows:themes:fresh-consumer-checks": true,
+    "windows:two-package-consumers": true,
+    "windows:consumer-clean-builds": true,
+    "windows:independent-numeric": true,
+    "windows:numeric-bindings": true,
+    "windows:loaded-numeric-payloads-retained": true,
+    "windows:native-numeric-same-core": true,
+    "windows:all-fixed-pixel-rois": true,
+    "windows:pixel-sha-bindings": true,
+    "windows:12-native-export96-zero-diffs": true,
+    "windows:all-original-hierarchy-metadata": true,
+    "windows:metadata-sha-bindings": true,
+    "windows:28-new-hierarchy-pngs": true,
+    "linux:all-nine-supervised-stages": true,
+    "linux:all-full-tests-no-skip": true,
+    "linux:full-demo-and-usage": true,
+    "linux:new-hierarchy-checks": true,
+    "linux:stable-sources-assemblies": true,
+    "linux:validated-inputs-match-freeze": true,
+    "linux:native-assembly-bytes-retained": true,
+    "linux:zero-warning-error-release-builds": true,
+    "linux:function:fresh-consumer-checks": true,
+    "linux:themes:fresh-consumer-checks": true,
+    "linux:two-package-consumers": true,
+    "linux:consumer-clean-builds": true,
+    "linux:independent-numeric": true,
+    "linux:numeric-bindings": true,
+    "linux:loaded-numeric-payloads-retained": true,
+    "linux:native-numeric-same-core": true,
+    "linux:all-fixed-pixel-rois": true,
+    "linux:pixel-sha-bindings": true,
+    "linux:12-native-export96-zero-diffs": true,
+    "linux:all-original-hierarchy-metadata": true,
+    "linux:metadata-sha-bindings": true,
+    "linux:28-new-hierarchy-pngs": true,
+    "api-platforms-identical": true,
+    "all-268-existing-public-types-and-members-retained": true,
+    "historical-documents-unchanged": true
+  },
+  "sourceCandidate": "c6-hierarchy-packing-source-v1",
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\source-snapshot-v1.json",
+    "sha256": "04D627A569EC6F62F9CB29B23117D4A7FB9608D09BDE7E32C02D186BEA9D7627",
+    "bytes": 384395
+  },
+  "formalPlan": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\formal-plan-v1.json",
+    "sha256": "BF596CC569B9274E02FB0D1E13B096234099853B6403200C96E6519995F73A4D",
+    "bytes": 9055
+  },
+  "sourceFiles": 1650,
+  "runtimeInputFiles": 954,
+  "platforms": {
+    "windows": {
+      "formalRun": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\formal-run-v1.json",
+        "sha256": "464B3F9510A492DC59EC6B123D58A130FB4374BF9EDF24BF019BD66480140E3D",
+        "bytes": 12633
+      },
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\verification\\functional-v1\\results.json",
+        "sha256": "08E3EA6599E3133A2689999DF61303DD51BC706B1EA184693EB0B797D67F9961",
+        "bytes": 21833
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\verification\\functional-v1\\charts-smoke.json",
+        "sha256": "5510EC6F50A45D93A0308EDD4F2D3F49269052E535FEB96BB3B1AD50A28B3DD8",
+        "bytes": 6938865
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\verification\\functional-v1\\charts-usage.json",
+        "sha256": "62DDEC833A58EE9660EC6354C78BB9BB924A253EA967B94850E6A980040889B2",
+        "bytes": 81672
+      },
+      "headlessTests": 2393,
+      "demoChecks": 2644,
+      "hierarchyDemoChecks": 344,
+      "usageChecks": 535,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 726,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\package-consumers\\20261021T151529287Z-4949733fb5ab470b9a16edb0d40db1e6\\function\\consumer-result.json",
+            "sha256": "2505ACFB0CB8D9F0B7CDD8688BA220A0B9B49455A118DD5768F3DDFA5F651304",
+            "bytes": 124941
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 726,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\package-consumers\\20261021T151529287Z-4949733fb5ab470b9a16edb0d40db1e6\\themes\\consumer-result.json",
+            "sha256": "58E3304D7F58A8712EAE3A666D302C7A8E44F25544F014F546218ED72E59165B",
+            "bytes": 124993
+          }
+        }
+      ],
+      "pngCount": 933,
+      "hierarchyPngCount": 28,
+      "numericRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\hierarchy\\raw.json",
+        "sha256": "B39A5263CFA5684DAA17C6C0A99A8C586D01B7BE2BAEE384626EFD76237EDD34",
+        "bytes": 12756639
+      },
+      "numericResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\hierarchy\\independent-numeric-result.json",
+        "sha256": "83A1893B48B380F145009C69ADF22DF9921EB256101518FA5B900EF0BDC4181B",
+        "bytes": 11081703
+      },
+      "numericChecks": 202108,
+      "pixelResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\hierarchy\\independent-pixel-result.json",
+        "sha256": "B40DAC2DDBD05855A19A2C7FD1394CF301DABB8A3D7CAD2F40755019874A777E",
+        "bytes": 84851
+      },
+      "pixelChecks": 346,
+      "metadataResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\hierarchy\\independent-metadata-result.json",
+        "sha256": "FDFC65F6188E7192AFB94B5A74709454BCDFA1BEE711EF239B928606D0CD7EAC",
+        "bytes": 1129347
+      },
+      "metadataChecks": 13963,
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\api-v1\\api.txt",
+        "sha256": "F6D8FAEEFE2E1D9BA9769ED97E51635D9D499654A76FBB2A9D48637516B89DF2",
+        "bytes": 652878
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\verification\\functional-v1\\environment.json",
+        "sha256": "ABA579D543CDAE4FFF428689A52EC72CEBC395FFC540AC43D6D8CE54E4C8DD1C",
+        "bytes": 8834
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\verification\\functional-v1\\assembly-manifest.json",
+        "sha256": "B96919BA65E7357426F686572C2B3E9043710264EDC7A94D9E6F76DD9BAFC3EF",
+        "bytes": 1956
+      },
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\windows\\run-v1\\verification\\functional-v1\\validated-input-manifest.json",
+        "sha256": "F5759EA57A41F43F2270BD909B115BDCD1FA65856416C26822A5DCE4F031D496",
+        "bytes": 151931
+      },
+      "performance": [
+        {
+          "id": "perf-treemap-10000",
+          "inputCount": 10000,
+          "elapsedMilliseconds": 12.681,
+          "threadAllocatedBytes": 5863960
+        },
+        {
+          "id": "perf-packed-1000",
+          "inputCount": 1000,
+          "elapsedMilliseconds": 25.6525,
+          "threadAllocatedBytes": 700144
+        }
+      ],
+      "formalSlaEvaluated": false,
+      "physicalInputValidated": false
+    },
+    "linux": {
+      "formalRun": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\formal-run-v1.json",
+        "sha256": "BA79778A131451F8EE695C49B328BDC4602BE2C94B2E35C5FAC4474641994242",
+        "bytes": 13054
+      },
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\verification\\functional-v1\\results.json",
+        "sha256": "61796560FD6675F2CE184EB06350AE75E718F624998F766D7DD9EF315D4904C0",
+        "bytes": 14740
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\verification\\functional-v1\\charts-smoke.json",
+        "sha256": "BA57B2F89598D135E31B7600290373E992541458776A7814D8710B2265974CB9",
+        "bytes": 6657866
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\verification\\functional-v1\\charts-usage.json",
+        "sha256": "01745CF8520229213973D50261E2EF3B76ECC8EDDD38CD7D8111210954887F01",
+        "bytes": 79124
+      },
+      "headlessTests": 2393,
+      "demoChecks": 2644,
+      "hierarchyDemoChecks": 344,
+      "usageChecks": 535,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 726,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\package-consumers\\20261021T152557740Z-6ff98b6e411746fcbdd2ebbea8b66fd5\\function\\consumer-result.json",
+            "sha256": "4FFE5D381E9D38E24A2891F54DE1D54FCAC0AE91D2C404C3C0AF42854DE2C119",
+            "bytes": 121550
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 726,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\package-consumers\\20261021T152557740Z-6ff98b6e411746fcbdd2ebbea8b66fd5\\themes\\consumer-result.json",
+            "sha256": "96C25B55BE3BD7CE9413CE24E272F3EDB62B303B7E4F1306FD11FBAA1F4E5A1D",
+            "bytes": 121604
+          }
+        }
+      ],
+      "pngCount": 933,
+      "hierarchyPngCount": 28,
+      "numericRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\hierarchy\\raw.json",
+        "sha256": "5B69B2614BB9A1A2E883A4CF0291921DCC3E636F89BAB73DFFCD563199340C15",
+        "bytes": 12320874
+      },
+      "numericResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\hierarchy\\independent-numeric-result.json",
+        "sha256": "80792AEFA9399FA821E3C7FFA88EBCF69AAA97BD62474A00C9D7E7D3CB289EAA",
+        "bytes": 10879542
+      },
+      "numericChecks": 202108,
+      "pixelResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\hierarchy\\independent-pixel-result.json",
+        "sha256": "C945EBE5409DE97D7166708448AEF9F98D61E139A8A54195A8959FC3FF912BCB",
+        "bytes": 81503
+      },
+      "pixelChecks": 346,
+      "metadataResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\hierarchy\\independent-metadata-result.json",
+        "sha256": "2DBB1042C8C3C84C0DFEC3B8F4F4F7DBBAEB3A92F632A4A4A6DFF5C62D25A036",
+        "bytes": 1115318
+      },
+      "metadataChecks": 13963,
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\api-v1\\api.txt",
+        "sha256": "51C4B717BBD952F2A1C916CE961D193EE38B28A970CB1B1805C7BED47984182C",
+        "bytes": 652878
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\verification\\functional-v1\\environment.json",
+        "sha256": "C6916AC53FEE2E58FF92DC3A0350537C094D6547F1F3A8B3F5FB3F318BFC11F3",
+        "bytes": 6194
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\verification\\functional-v1\\assembly-manifest.json",
+        "sha256": "C27AAF6CF2D6FFB441A98A8C3085B2F3EAB98FFBC74A5D8BF5FA647D2A2FC629",
+        "bytes": 1906
+      },
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\verification\\functional-v1\\validated-input-manifest.json",
+        "sha256": "3CCFC6AA75528401E5AAB1B80F21C2C7BDEEEB56AC0DDB5AD0E8D66AB46499EB",
+        "bytes": 148469
+      },
+      "performance": [
+        {
+          "id": "perf-treemap-10000",
+          "inputCount": 10000,
+          "elapsedMilliseconds": 16.518998,
+          "threadAllocatedBytes": 5864200
+        },
+        {
+          "id": "perf-packed-1000",
+          "inputCount": 1000,
+          "elapsedMilliseconds": 21.742053,
+          "threadAllocatedBytes": 700144
+        }
+      ],
+      "formalSlaEvaluated": false,
+      "physicalInputValidated": false
+    }
+  },
+  "api": {
+    "path": "<REPO_ROOT>\\docs\\charts-c6-hierarchy-packing-api.txt",
+    "sha256": "F6D8FAEEFE2E1D9BA9769ED97E51635D9D499654A76FBB2A9D48637516B89DF2",
+    "bytes": 652878
+  },
+  "formalSlaEvaluated": false,
+  "physicalInputValidated": false,
+  "compositorPresentValidated": false,
+  "githubActionsRunExecuted": false,
+  "historicalStandaloneOraclesRerun": false,
+  "report": "<REPO_ROOT>\\docs\\charts-c6-hierarchy-packing.md",
+  "wslgEnvironment": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\linux\\run-v1\\wslg-environment.json",
+    "sha256": "BF5ED4075BABFE091C7C42F3868D6DBDB6DC536CBE2335C645B81D884E55C557",
+    "bytes": 3482
+  },
+  "finalBoardVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\final-board-visual-review-v1.json",
+    "sha256": "43782F47FE8AA51AE425C00903559C431E58588D6F9F37D8AF7B7F46E6F5F5BB",
+    "bytes": 4522
+  },
+  "toolFixtureRecovery": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\tool-fixture-recovery-v1.json",
+    "sha256": "FB27D950371058E1B577780DD615F3E733FAA806EDA29C1FCA1C83E50F723BD7",
+    "bytes": 3364
+  },
+  "developmentEvidenceIndex": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\development-evidence-index-v1.json",
+    "sha256": "15C9D7E0082731F99A52D6E94B1EA61FB2A0008DCE34556FFABB5907C7418475",
+    "bytes": 19601
+  },
+  "rollingMetadataInitialBytes": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-hierarchy-packing-20261021\\rolling-metadata-task-initial-v1.json",
+    "sha256": "DFA9BAF387B585B6A59FBECF8CCE16268C227A56DF69DC4E1AFCB07953576AA3",
+    "bytes": 1193
+  },
+  "completeC6": false,
+  "nextMainStage": "C6-02",
+  "remainingIssues": [
+    "The six user-named hierarchy/packing families are implemented; additional public Icicle/Dendrogram/Flame/Indented/Radial/Mindmap catalog entries remain assigned to C6-06 follow-up.",
+    "Packing is a deterministic 16-ray tangent-envelope heuristic, not optimal-density or force-simulation/vendor-algorithm equivalence. Nested ancestor circle areas include enclosure whitespace and do not encode aggregate totals.",
+    "Maximum 10000 source nodes / zero-based depth64; packing subtree maximum2000 including collapsed descendants. Full-source mapping, snapshot and layouts may run synchronously; no background/incremental sustained-throughput claim.",
+    "Custom organization node templates, full interactive legends, vendor-specific bubble-size clamping/defaults and full professional shared-feature integration remain open where not explicitly provided.",
+    "Formal C4-08 new-family performance, native/process/GPU memory, physical devices and 30-minute/8-hour long-soak qualification remain open.",
+    "Physical Windows/Linux input, native Wayland/ARM/distributions/multi-screen DPI and real assistive technology remain open.",
+    "Million-point hit p95 and A11Y-NATIVE-01 remain deferred by user; historical AX06/PixelProbe/animation/long-path/default-JIT issues are not closed by this run.",
+    "Valid tiny positive sectors/rectangles/circles may fall below pixel or representable endpoint resolution; Snapshot retains values/identity but visibility, labels and hit regions are not guaranteed for those inputs.",
+    "Remaining statistics/complete C5, complete C6 and licensed vendor runtime/API/binary equivalence remain open."
+  ]
+}

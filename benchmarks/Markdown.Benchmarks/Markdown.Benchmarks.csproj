@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="NativeHost/**/*.cs" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Markdown/NT.AvaloniaControl.Markdown.csproj" />
+  </ItemGroup>
+</Project>

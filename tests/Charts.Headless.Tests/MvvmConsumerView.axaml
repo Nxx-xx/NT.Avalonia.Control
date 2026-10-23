@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:charts="using:NT.AvaloniaControl.Charts" xmlns:local="using:Charts.Headless.Tests"
+             x:Class="Charts.Headless.Tests.MvvmConsumerView" x:DataType="local:ChartBindingModel" x:CompileBindings="True">
+  <UserControl.Resources><SolidColorBrush x:Key="BoundSeriesBrush" Color="#1234AB" /></UserControl.Resources>
+  <Grid ColumnDefinitions="*,*">
+    <charts:CartesianChart x:Name="Declared" Viewport="{Binding Viewport, Mode=TwoWay}"
+                           SelectedPoint="{Binding SelectedPoint, Mode=TwoWay}" PointInvokedCommand="{Binding PointInvokedCommand}">
+      <charts:CartesianChart.XAxis><charts:CategoryAxis Title="{Binding CategoryTitle}" /></charts:CartesianChart.XAxis>
+      <charts:CartesianChart.YAxis><charts:NumericAxis Title="{Binding ValueTitle}" Minimum="0" /></charts:CartesianChart.YAxis>
+      <charts:CartesianChart.Series>
+        <charts:LineSeries Title="{Binding SeriesTitle}" ItemsSource="{Binding Records}"
+                           CategoryPath="Category" ValuePath="Value" IdPath="Id"
+                           Stroke="{DynamicResource BoundSeriesBrush}" />
+      </charts:CartesianChart.Series>
+    </charts:CartesianChart>
+    <charts:CartesianChart x:Name="Sourced" Grid.Column="1" SeriesSource="{Binding SeriesSource}" Viewport="{Binding Viewport, Mode=TwoWay}">
+      <charts:CartesianChart.XAxis><charts:CategoryAxis /></charts:CartesianChart.XAxis>
+      <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" /></charts:CartesianChart.YAxis>
+    </charts:CartesianChart>
+  </Grid>
+</UserControl>

@@ -1,0 +1,56 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:charts="using:NT.AvaloniaControl.Charts" xmlns:local="using:Charts.Headless.Tests"
+             x:Class="Charts.Headless.Tests.TrackballConsumerView" x:DataType="local:TrackballConsumerModel" x:CompileBindings="True">
+  <UserControl.Resources>
+    <SolidColorBrush x:Key="TrackballAccent" Color="#165C91" />
+    <DataTemplate x:Key="BusinessTrackballTemplate" x:DataType="charts:ChartTooltipContext">
+      <Border Name="CompiledTrackballCard" Background="{DynamicResource TrackballAccent}">
+        <StackPanel>
+          <TextBlock Name="CompiledTrackballText" Text="{Binding Text}" />
+          <ItemsControl ItemsSource="{Binding Readings}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate x:DataType="charts:ChartTrackballReading">
+                <StackPanel Name="CompiledTrackballReading">
+                  <TextBlock Name="CompiledInterpolatedX" Text="{Binding Point.X}" />
+                  <TextBlock Name="CompiledInterpolatedY" Text="{Binding Point.Y}" />
+                  <TextBlock Name="CompiledIsInterpolated" Text="{Binding IsInterpolated}" />
+                  <ContentControl Content="{Binding Original.Item}">
+                    <ContentControl.ContentTemplate>
+                      <DataTemplate x:DataType="local:TrackballBusinessRow">
+                        <TextBlock Name="CompiledTrackballOriginal" Text="{Binding Name}" />
+                      </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                  </ContentControl>
+                  <ContentControl Content="{Binding Segment.Start.Item}">
+                    <ContentControl.ContentTemplate>
+                      <DataTemplate x:DataType="local:TrackballBusinessRow">
+                        <TextBlock Name="CompiledTrackballLeftId" Text="{Binding Id}" />
+                      </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                  </ContentControl>
+                  <ContentControl Content="{Binding Segment.End.Item}">
+                    <ContentControl.ContentTemplate>
+                      <DataTemplate x:DataType="local:TrackballBusinessRow">
+                        <TextBlock Name="CompiledTrackballRightId" Text="{Binding Id}" />
+                      </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                  </ContentControl>
+                </StackPanel>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+  </UserControl.Resources>
+  <charts:CartesianChart x:Name="TrackballChart" ShowLegend="False" IsTooltipEnabled="False"
+                         TrackballMode="{Binding Mode}" TrackballDisplayMode="{Binding Display}"
+                         TrackballSnapMode="{Binding Snap}" TrackballContentTemplate="{Binding ContentTemplate}">
+    <charts:CartesianChart.XAxis><charts:NumericAxis Minimum="0" Maximum="10" /></charts:CartesianChart.XAxis>
+    <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+    <charts:CartesianChart.Series>
+      <charts:LineSeries Title="Primary business" ItemsSource="{Binding Rows}" CategoryPath="X" ValuePath="Y" IdPath="Id" />
+      <charts:LineSeries Title="Secondary business" ItemsSource="{Binding SecondaryRows}" CategoryPath="X" ValuePath="Y" IdPath="Id" />
+    </charts:CartesianChart.Series>
+  </charts:CartesianChart>
+</UserControl>

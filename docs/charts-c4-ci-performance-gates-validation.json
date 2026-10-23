@@ -1,0 +1,783 @@
+{
+  "schemaVersion": 1,
+  "completedUtc": "2026-10-20T15:26:24.299555+00:00",
+  "passed": true,
+  "checks": {
+    "frozenCopy0AllSourceHashes": true,
+    "frozenCopy1AllSourceHashes": true,
+    "frozenCopy2AllSourceHashes": true,
+    "frozenCopy3AllSourceHashes": true,
+    "frozenCopy4AllSourceHashes": true,
+    "windowsOriginalFixtureFailurePreserved": true,
+    "windowsQualifiedCompletionChain": true,
+    "windowsBasePassed": true,
+    "windowsSourceAssemblyStable": true,
+    "windowsAllTestsNoSkip": true,
+    "windowsNativeAllTrue": true,
+    "windowsUsageAllTrue": true,
+    "windowsReleaseBuildZeroWarningsErrors": true,
+    "windowsValidatedInputsMatchFrozen": true,
+    "windowsfunctionConsumerAllTrue": true,
+    "windowsthemesConsumerAllTrue": true,
+    "windowsExactlyTwoPackageConsumers": true,
+    "windowsBothConsumerBuildsZeroWarningsErrors": true,
+    "windowsCiContractUnitEntriesPassed": true,
+    "windowspython-allAdversarialCaseArchives": true,
+    "windowspython-allCasBlobsMatchHashes": true,
+    "windowspython-allEveryCaseFileBoundToCas": true,
+    "windowsguard-entryAdversarialCaseArchives": true,
+    "windowsguard-entryCasBlobsMatchHashes": true,
+    "windowsguard-entryEveryCaseFileBoundToCas": true,
+    "windowsCiEntryPassed": true,
+    "windowsCiFailureRateZero": true,
+    "windowsIndependentGuardPassed": true,
+    "windowsExactlyNineStages": true,
+    "windowslayer-cachePassed": true,
+    "windowsvisible-clippingPassed": true,
+    "windowslevel-of-detailPassed": true,
+    "windowsefficient-hitPassed": true,
+    "windowsincremental-streamingPassed": true,
+    "windowsrender-resource-budgetPassed": true,
+    "windowsmultichart-background-layoutPassed": true,
+    "windowsgeneric-benchmarkPassed": true,
+    "windowsnative-windowPassed": true,
+    "windowsFinalChecksumsComplete": true,
+    "windowsFinalChecksumsMatch": true,
+    "windowsPairedBaselinePassed": true,
+    "windowsCiBuildsPassed": true,
+    "windowsCiBuildsZeroWarningsErrors": true,
+    "linuxAllFiveEntryPhasesPassed": true,
+    "linuxBasePassed": true,
+    "linuxSourceAssemblyStable": true,
+    "linuxAllTestsNoSkip": true,
+    "linuxNativeAllTrue": true,
+    "linuxUsageAllTrue": true,
+    "linuxReleaseBuildZeroWarningsErrors": true,
+    "linuxValidatedInputsMatchFrozen": true,
+    "linuxfunctionConsumerAllTrue": true,
+    "linuxthemesConsumerAllTrue": true,
+    "linuxExactlyTwoPackageConsumers": true,
+    "linuxBothConsumerBuildsZeroWarningsErrors": true,
+    "linuxCiContractUnitEntriesPassed": true,
+    "linuxpython-allAdversarialCaseArchives": true,
+    "linuxpython-allCasBlobsMatchHashes": true,
+    "linuxpython-allEveryCaseFileBoundToCas": true,
+    "linuxguard-entryAdversarialCaseArchives": true,
+    "linuxguard-entryCasBlobsMatchHashes": true,
+    "linuxguard-entryEveryCaseFileBoundToCas": true,
+    "linuxCiEntryPassed": true,
+    "linuxCiFailureRateZero": true,
+    "linuxIndependentGuardPassed": true,
+    "linuxExactlyNineStages": true,
+    "linuxlayer-cachePassed": true,
+    "linuxvisible-clippingPassed": true,
+    "linuxlevel-of-detailPassed": true,
+    "linuxefficient-hitPassed": true,
+    "linuxincremental-streamingPassed": true,
+    "linuxrender-resource-budgetPassed": true,
+    "linuxmultichart-background-layoutPassed": true,
+    "linuxgeneric-benchmarkPassed": true,
+    "linuxnative-windowPassed": true,
+    "linuxFinalChecksumsComplete": true,
+    "linuxFinalChecksumsMatch": true,
+    "linuxPairedBaselinePassed": true,
+    "linuxCiBuildsPassed": true,
+    "linuxCiBuildsZeroWarningsErrors": true,
+    "CompletePublicApiBothPlatformsEqual": true,
+    "NoOldPublicTypesOrMembersRemoved": true,
+    "HistoricalDocsUnchanged": true,
+    "RollingMetadataTaskInitialBytesRetainedInFrozenSource": true
+  },
+  "sourceCandidate": "c4-ci-performance-gates-source-v1",
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\source-snapshot-v1.json",
+    "sha256": "42FD20D24EFA95C6CD8C6554AEFCBAAACCB8F19D6F3247CC4A9B11DE6B618ECC",
+    "bytes": 355706
+  },
+  "frozenSourceFiles": 1524,
+  "runtimeInputFiles": 857,
+  "historicalDocPins": 95,
+  "platforms": {
+    "windows": {
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\windows-final-v1\\results.json",
+        "sha256": "51718F783D2747F691C8C9889A28F4120C57312BF975F25EB90F2BD83AC6E1E3",
+        "bytes": 20890
+      },
+      "qualifiedCompletion": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\continuation-v1.json",
+        "sha256": "0A873159C3AE224D1999776738D0B297C9E5B6A394FB605BB5E6DEEAD1F8EED2",
+        "bytes": 1546
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\windows-final-v1\\charts-smoke.json",
+        "sha256": "BC69DFBAEC41E0775C271D7A8541307AB42E5FC6661C2A1C52FE064C41257CB0",
+        "bytes": 4936530
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\windows-final-v1\\charts-usage.json",
+        "sha256": "BA21FF815AC3431EC737504A04A2A1FE18FE7094FED0AF7CB3A9CF60D16D5353",
+        "bytes": 64118
+      },
+      "headlessTests": 1939,
+      "demoChecks": 1414,
+      "usageChecks": 393,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 553,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\package-consumers-v1\\20261020T145045347Z-19a5a02e6db04a9a9fa536bbd17f0ce4\\function\\consumer-result.json",
+            "sha256": "0F6F22A559A8E3D895EC0E768B7C221E8296007A2DBB25A438E84B5E1AF13F92",
+            "bytes": 98109
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 553,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\package-consumers-v1\\20261020T145045347Z-19a5a02e6db04a9a9fa536bbd17f0ce4\\themes\\consumer-result.json",
+            "sha256": "2790B15A3FEDC9D70B559F566FF5CAB1777B5332DB71809E9B15FE60F5F9850D",
+            "bytes": 98161
+          }
+        }
+      ],
+      "stages": {
+        "layer-cache": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\layer-cache\\process.json",
+            "sha256": "9E39B511CC8BD7C9FB10E10D8604DB4D36E84BD6D0CF0695864431D635C9FD92",
+            "bytes": 1020
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\layer-cache\\raw.json",
+            "sha256": "021DD89721817414DAB88C37703717C7AC4ABD0C54DE0B4A7B723C88A418517C",
+            "bytes": 911149
+          }
+        },
+        "visible-clipping": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\visible-clipping\\process.json",
+            "sha256": "81569E92A198EB401997285CB65428226FD7C1B52FEFAF42EE25FAD5D76A73B5",
+            "bytes": 1035
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\visible-clipping\\raw.json",
+            "sha256": "DB486A07CA570E7CDC7B6568447D8A514452CD55A34E7FB70D48A2AFA93115E9",
+            "bytes": 606662
+          }
+        },
+        "level-of-detail": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\level-of-detail\\process.json",
+            "sha256": "20D83BEB6C1EDD34964677D31A7ECA48BB421C161622099098AA0BBFA5DC3F99",
+            "bytes": 1032
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\level-of-detail\\raw.json",
+            "sha256": "A308D9C7F4873534FC4A8FCA796D3600B1F1E50364BC180729089047D5E64D7E",
+            "bytes": 11868561
+          }
+        },
+        "efficient-hit": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\efficient-hit\\process.json",
+            "sha256": "01BF50FAA376E305ABB3742DC21653988B7F302C7D8811ABD03341F97DF7202E",
+            "bytes": 1026
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\efficient-hit\\raw.json",
+            "sha256": "E90FD77E6D2D028517E75BF89E2FBFA690109DCB56B28B630EAA2EA0B9C378AA",
+            "bytes": 903106
+          }
+        },
+        "incremental-streaming": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\incremental-streaming\\process.json",
+            "sha256": "B31F6F30828706C47D7B7EC158ECD3EB495720CC9878CE9B4B6A9E3107311E60",
+            "bytes": 1050
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\incremental-streaming\\raw.json",
+            "sha256": "DC73ADB55AD5D3277227C223788F22279179C469CF64B78F516F657150BD5120",
+            "bytes": 1329259
+          }
+        },
+        "render-resource-budget": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\render-resource-budget\\process.json",
+            "sha256": "FF96EFB7C7D5828EC8C53F693D2F5C576753CDA42E27A569487261D42D5C2461",
+            "bytes": 1053
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\render-resource-budget\\raw.json",
+            "sha256": "4AF1F4594C044E2F1CE3BBAAF8D58C8654A5EC2EC4E97AE4532C85F848094DC6",
+            "bytes": 1593863
+          }
+        },
+        "multichart-background-layout": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\multichart-background-layout\\process.json",
+            "sha256": "553351EF57E4151B9A2171EFEDDC2E56483F7BA53D86DFCAE1A019A3BBD36011",
+            "bytes": 1071
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\multichart-background-layout\\raw.json",
+            "sha256": "BD757D25A9136E186DB520F151F4E7D244BE000FEED5C97D5DE0C0F73907589A",
+            "bytes": 30154
+          }
+        },
+        "generic-benchmark": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\generic-benchmark\\process.json",
+            "sha256": "2E5E32BC1F567A7CE9415A8EEA14B497EB64C28897CF3FC2D1BF12D97F5544F8",
+            "bytes": 1247
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\generic-benchmark\\raw.json",
+            "sha256": "90EF4E7BBD20E53867366847D136E792E15E081BF190EB46188A29DCBA72A490",
+            "bytes": 155116
+          }
+        },
+        "native-window": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\native-window\\process.json",
+            "sha256": "5CB3351D3C2E8621B1C5E803760A91119CECEDFCAD38F5577A35286714BE57FE",
+            "bytes": 1186
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\native-window\\raw.json",
+            "sha256": "CEF2E259A4D3948CF59E7403775AD7D8C67AD2747338C687EA66F902ADE892AA",
+            "bytes": 285762
+          }
+        }
+      },
+      "ciContractUnits": {
+        "path": "<REPO_ROOT>\\artifacts\\c408\\windows-contract-units-v2\\supervisor.json",
+        "sha256": "FC6CC41212066C8CFE5901EA64538A08473ECDFA0A75F364D33B488C08F36689",
+        "bytes": 3927
+      },
+      "syntheticGuardArchives": [
+        {
+          "label": "python-all",
+          "archiveRoot": "<REPO_ROOT>\\artifacts\\c408\\windows-contract-units-v2\\python-fixtures\\synthetic-case-evidence",
+          "caseReceipts": 27,
+          "contentAddressedBlobs": 47,
+          "negativeCaseReceipts": 25,
+          "fileEntriesChecked": 697,
+          "syntheticOnly": true
+        },
+        {
+          "label": "guard-entry",
+          "archiveRoot": "<REPO_ROOT>\\artifacts\\c408\\windows-contract-units-v2\\guard-entry\\synthetic-case-evidence",
+          "caseReceipts": 27,
+          "contentAddressedBlobs": 47,
+          "negativeCaseReceipts": 25,
+          "fileEntriesChecked": 697,
+          "syntheticOnly": true
+        }
+      ],
+      "ciEntry": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\orchestration.json",
+        "sha256": "10A4BF2B2040D341F7329AC976FE979464A46B8B01C1BE55CF10630558B7E1B5",
+        "bytes": 10656
+      },
+      "independentGuard": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\guard\\result.json",
+        "sha256": "46C43AFB7E6C412BD2A4782D541451314A3A63739CC65509E9298898B35B73A6",
+        "bytes": 329973
+      },
+      "finalChecksums": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\checksums.json",
+        "sha256": "84B193CCF62AFC5650690D0E31B913E712E5D178E08A775890CBA34BFE415448",
+        "bytes": 110944
+      },
+      "pairedBaseline": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\baseline\\baseline.json",
+        "sha256": "DC0DDB8D1F80399999A81730A2528146ED73FAD1B9706B85B19EA9E15F2D7EAB",
+        "bytes": 751
+      },
+      "baselineNativeRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\baseline\\native-window\\raw.json",
+        "sha256": "6A9EF04D0477C01380F12CEB7AB9D1BFD48622308E64D11CE9AE73B84173C205",
+        "bytes": 286231
+      },
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\api-windows-final-v1\\api.txt",
+        "sha256": "16721ADD967DFDE15A374D7A73841300AA4B87140C697759EA719C8EC1B2DDD7",
+        "bytes": 437604
+      },
+      "pngCount": 737,
+      "newPngCount": 0,
+      "validatedInputs": 774,
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\windows-final-v1\\validated-input-manifest.json",
+        "sha256": "7C235A8FC6444E9C87179F057868E687AE7CE35BF21C3F76D63B16217447E549",
+        "bytes": 136895
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\windows-final-v1\\assembly-manifest.json",
+        "sha256": "339EAE2F5D3C2759E8A6A49860621627073887653329E614D5391A41995DFBDC",
+        "bytes": 1956
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\windows-final-v1\\environment.json",
+        "sha256": "621A84070A2CC08C36181E480502A6A56BD52A7D8FB831E6AD24E1786382FABD",
+        "bytes": 8745
+      }
+    },
+    "linux": {
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\results.json",
+        "sha256": "BC15C536C0EDA1AC28F888C16E7970D257A6696C375D3B6819AD04A83465A9EC",
+        "bytes": 14761
+      },
+      "qualifiedCompletion": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\launcher-exit.json",
+        "sha256": "DF5FC4F3347EF911DAB7D944C7D9EE89B70FB2AA4DA87AB805F864A5F8BE084E",
+        "bytes": 770
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\charts-smoke.json",
+        "sha256": "AAD9E3E0E489ED633BFB5B4A10D15EAFC7E8D3BD28B93AB6E4F2E6B296B38867",
+        "bytes": 4751187
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\charts-usage.json",
+        "sha256": "D9D8303D63C056F00B1BF8C7BA03DD29131AEA2B327F6ACE9775B8F0B2B6DE0F",
+        "bytes": 62016
+      },
+      "headlessTests": 1939,
+      "demoChecks": 1414,
+      "usageChecks": 393,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 553,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\package-consumers\\20261020T150918967Z-f237305b2b47423595a7fe528edbc27a\\function\\consumer-result.json",
+            "sha256": "B7E10F1B374447CCEA072E5B517331C6C9A7EADE7B7B16D5F13F23FA9C353772",
+            "bytes": 95463
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 553,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\package-consumers\\20261020T150918967Z-f237305b2b47423595a7fe528edbc27a\\themes\\consumer-result.json",
+            "sha256": "B3955C24B3A163B39B263CD4D23BE5C4948FC632E1EF2308A56661CA978AED58",
+            "bytes": 95506
+          }
+        }
+      ],
+      "stages": {
+        "layer-cache": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\layer-cache\\process.json",
+            "sha256": "9B171C1E74ED46D49A2E2889D5C4D554D56884090D97A1D8A8D6D07F28C32C37",
+            "bytes": 1271
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\layer-cache\\raw.json",
+            "sha256": "7463CDFED9718F525980F3A1B6D3873CB6FD436DA823A5E0813C31D17956F213",
+            "bytes": 882846
+          }
+        },
+        "visible-clipping": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\visible-clipping\\process.json",
+            "sha256": "BDC1245F42B0F0203A1C541170020E9B5FEBA136FA38B21C0F801191667A3BDF",
+            "bytes": 1286
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\visible-clipping\\raw.json",
+            "sha256": "895FA792720188210D69E6FA3D983E72FDBBB667EA9307B0B955176F5DDFBFA3",
+            "bytes": 587271
+          }
+        },
+        "level-of-detail": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\level-of-detail\\process.json",
+            "sha256": "4DD73FC5AFBB91A1D110AF8010380AB37721046539327DE8FE81284E5AC48AE6",
+            "bytes": 1283
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\level-of-detail\\raw.json",
+            "sha256": "709239EBD71091B7CB4546ADFFAFCE99C2F974B1E469F933B56D7F638EB25C68",
+            "bytes": 11333749
+          }
+        },
+        "efficient-hit": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\efficient-hit\\process.json",
+            "sha256": "99DE06873600AB82D60D786E5663AE3F5C120269C642F09902D0151C769FE58C",
+            "bytes": 1277
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\efficient-hit\\raw.json",
+            "sha256": "F573431F68C492C8C687928A6B2424EB5F9C1F406A4360E663632710C48E9BB6",
+            "bytes": 882429
+          }
+        },
+        "incremental-streaming": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\incremental-streaming\\process.json",
+            "sha256": "2B03C876F023382ABB180B6AB161E49012B8BB0E12E663EB6EF4EBBB4980AC65",
+            "bytes": 1301
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\incremental-streaming\\raw.json",
+            "sha256": "BE771521B69FFEB62C8221B96576DDEFE3EEE2525E9B08CCC6CAEBCA2915E3DD",
+            "bytes": 1292626
+          }
+        },
+        "render-resource-budget": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\render-resource-budget\\process.json",
+            "sha256": "B0293B03C105D2F27BB2A03461C313C603942B4BD8FC4F50E790F8DC7F8D86E0",
+            "bytes": 1304
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\render-resource-budget\\raw.json",
+            "sha256": "F2A652783CECC8AF1AC413484A25D511DA74406E591A927C6521255FA81AF117",
+            "bytes": 1518836
+          }
+        },
+        "multichart-background-layout": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\multichart-background-layout\\process.json",
+            "sha256": "CA5B895056E8A005F4D4ECED122CDA74116F92441FF82D5354C9A4DCB1E98431",
+            "bytes": 1322
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\multichart-background-layout\\raw.json",
+            "sha256": "4B081AE3EDF7D89EC4005CA2CB9D6ABBAE311F4911958D3D1FB864DDD1497436",
+            "bytes": 35066
+          }
+        },
+        "generic-benchmark": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\generic-benchmark\\process.json",
+            "sha256": "943AEBEA510CB0BBB56A4B934F2AC66BD96B133A5A6E445FB3D512EA38CE186A",
+            "bytes": 1486
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\generic-benchmark\\raw.json",
+            "sha256": "712337347A49A3C60B1CE97A3A0DD5D39B752942839DF042F008301B740E1D53",
+            "bytes": 151445
+          }
+        },
+        "native-window": {
+          "receipt": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\native-window\\process.json",
+            "sha256": "448EFFCC084B32B3B2DAEAB92424872FCD81C88BB1B3B4F4604EE8CD5D9D5202",
+            "bytes": 1518
+          },
+          "raw": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\native-window\\raw.json",
+            "sha256": "B8C2101742247B04C55583A77783213F54382D54E4F72665C63DFAA8F02CA5BC",
+            "bytes": 280908
+          }
+        }
+      },
+      "ciContractUnits": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\contract-units-v1\\supervisor.json",
+        "sha256": "09761CB8C029A19D20D4DDBCCEDC299A3CE7022D1AD48ED0D3CF6F96450FF128",
+        "bytes": 4736
+      },
+      "syntheticGuardArchives": [
+        {
+          "label": "python-all",
+          "archiveRoot": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\contract-units-v1\\python-fixtures\\synthetic-case-evidence",
+          "caseReceipts": 27,
+          "contentAddressedBlobs": 47,
+          "negativeCaseReceipts": 25,
+          "fileEntriesChecked": 697,
+          "syntheticOnly": true
+        },
+        {
+          "label": "guard-entry",
+          "archiveRoot": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\contract-units-v1\\guard-entry\\synthetic-case-evidence",
+          "caseReceipts": 27,
+          "contentAddressedBlobs": 47,
+          "negativeCaseReceipts": 25,
+          "fileEntriesChecked": 697,
+          "syntheticOnly": true
+        }
+      ],
+      "ciEntry": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\orchestration.json",
+        "sha256": "3FC0579ACAF387921B906624E45186D08F3FF29B1F259E8A80FA7EB515A41951",
+        "bytes": 12355
+      },
+      "independentGuard": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\guard\\result.json",
+        "sha256": "037ED0DBD7703C462482A789ECDBC79420FA6CA8F5058D9193279AD8177694C8",
+        "bytes": 325262
+      },
+      "finalChecksums": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\checksums.json",
+        "sha256": "B3574C349FA5E6A9E59707B5014D3D07F6386F33BBC17AAC248DD98E5DF431C1",
+        "bytes": 107925
+      },
+      "pairedBaseline": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\baseline\\baseline.json",
+        "sha256": "9ABFA2F1BA850E51314B25C97009D0112C54C739CEC7FB6E35D85B3BBB9D1A01",
+        "bytes": 820
+      },
+      "baselineNativeRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\baseline\\native-window\\raw.json",
+        "sha256": "3804DAEC825F8F953F3544A8587FED02D541F9828E39B1AD3056E1E4AA6E0408",
+        "bytes": 281169
+      },
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\api-linux-final-v1\\api.txt",
+        "sha256": "75CEDE4BD5CE752BF1F43535590AC3AEFA739A70D07B7CA18EC28F54123563AA",
+        "bytes": 437604
+      },
+      "pngCount": 737,
+      "newPngCount": 0,
+      "validatedInputs": 774,
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\validated-input-manifest.json",
+        "sha256": "B742A15C2BF88E58C51EF0B7278BD53701E4BFD51D232109773CEC179A970AA6",
+        "bytes": 133797
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\assembly-manifest.json",
+        "sha256": "C7C00E0446BEA4DDA5D6277A2B919AD906D4F1A5CE8F6C1378A29B8CF3688599",
+        "bytes": 1906
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\environment.json",
+        "sha256": "4B6098AE122A00445AC60DA5FCAA2216DC2B03F52DFB4F21B765F8F7BEDC3F70",
+        "bytes": 6200
+      }
+    }
+  },
+  "apiDelta": {
+    "oldTypes": 173,
+    "newTypes": 173,
+    "addedTypes": [],
+    "removedTypes": [],
+    "removedMembers": {},
+    "addedExistingMembers": {},
+    "old": {
+      "path": "<REPO_ROOT>\\docs\\charts-c4-multichart-background-layout-api.txt",
+      "sha256": "44ECD49BB41264300223F7A7B77D223E8BA905490C1140A5C67BA0F9CE09E999",
+      "bytes": 437604
+    },
+    "windows": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\api-windows-final-v1\\api.txt",
+      "sha256": "16721ADD967DFDE15A374D7A73841300AA4B87140C697759EA719C8EC1B2DDD7",
+      "bytes": 437604
+    },
+    "linux": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\api-linux-final-v1\\api.txt",
+      "sha256": "75CEDE4BD5CE752BF1F43535590AC3AEFA739A70D07B7CA18EC28F54123563AA",
+      "bytes": 437604
+    }
+  },
+  "physicalDesktopQualified": false,
+  "compositorPresentValidated": false,
+  "nativeGpuMemoryQualified": false,
+  "longSoakValidated": false,
+  "githubActionsRunExecuted": false,
+  "formalSlaEvaluated": false,
+  "localBaselineKind": "independent-same-source-candidate-control-not-historical-regression",
+  "stage": "C4-08 automated CI performance regression gates",
+  "softwareFunctionalSubsetPassed": true,
+  "automatedPerformanceGateEntryValidated": true,
+  "ciConfigurationConnected": true,
+  "localPairedControlPassed": true,
+  "fullC2StageComplete": false,
+  "fullC3StageComplete": false,
+  "fullC4StageComplete": false,
+  "fullC7StageComplete": false,
+  "nextWorkItem": "C5-01",
+  "actualProcessMemoryBudgetQualified": false,
+  "officialRuntimeCompared": false,
+  "apiSnapshot": {
+    "path": "<REPO_ROOT>\\docs\\charts-c4-ci-performance-gates-api.txt",
+    "sha256": "16721ADD967DFDE15A374D7A73841300AA4B87140C697759EA719C8EC1B2DDD7",
+    "bytes": 437604
+  },
+  "ciEvidence": {
+    "windows": {
+      "orchestration": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\orchestration.json",
+        "sha256": "10A4BF2B2040D341F7329AC976FE979464A46B8B01C1BE55CF10630558B7E1B5",
+        "bytes": 10656
+      },
+      "guard": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\guard\\result.json",
+        "sha256": "46C43AFB7E6C412BD2A4782D541451314A3A63739CC65509E9298898B35B73A6",
+        "bytes": 329973
+      },
+      "guardPredicates": 4204,
+      "policy": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\policy.json",
+        "sha256": "CF6832A53E21E078C554F51194D93541F0B093AFF1C67D7E031EC177B8E87377",
+        "bytes": 3055
+      },
+      "failureRate": {
+        "numerator": 0,
+        "denominator": 9,
+        "rate": 0.0,
+        "definition": "Unsuccessful supervised producer stages / nine required producer stages; missing report counts unsuccessful; independent guard may find additional semantic failures."
+      },
+      "baseline": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\windows\\ci-performance-v1\\baseline\\baseline.json",
+        "sha256": "DC0DDB8D1F80399999A81730A2528146ED73FAD1B9706B85B19EA9E15F2D7EAB",
+        "bytes": 751
+      },
+      "native": {
+        "candidateSamples": 56,
+        "baselineSamples": 56,
+        "pngs": 224,
+        "datasets": 8
+      },
+      "unitSupervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\c408\\windows-contract-units-v2\\supervisor.json",
+        "sha256": "FC6CC41212066C8CFE5901EA64538A08473ECDFA0A75F364D33B488C08F36689",
+        "bytes": 3927
+      },
+      "syntheticArchives": [
+        {
+          "label": "python-all",
+          "archiveRoot": "<REPO_ROOT>\\artifacts\\c408\\windows-contract-units-v2\\python-fixtures\\synthetic-case-evidence",
+          "caseReceipts": 27,
+          "contentAddressedBlobs": 47,
+          "negativeCaseReceipts": 25,
+          "fileEntriesChecked": 697,
+          "syntheticOnly": true
+        },
+        {
+          "label": "guard-entry",
+          "archiveRoot": "<REPO_ROOT>\\artifacts\\c408\\windows-contract-units-v2\\guard-entry\\synthetic-case-evidence",
+          "caseReceipts": 27,
+          "contentAddressedBlobs": 47,
+          "negativeCaseReceipts": 25,
+          "fileEntriesChecked": 697,
+          "syntheticOnly": true
+        }
+      ]
+    },
+    "linux": {
+      "orchestration": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\orchestration.json",
+        "sha256": "3FC0579ACAF387921B906624E45186D08F3FF29B1F259E8A80FA7EB515A41951",
+        "bytes": 12355
+      },
+      "guard": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\guard\\result.json",
+        "sha256": "037ED0DBD7703C462482A789ECDBC79420FA6CA8F5058D9193279AD8177694C8",
+        "bytes": 325262
+      },
+      "guardPredicates": 4204,
+      "policy": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\policy.json",
+        "sha256": "CF6832A53E21E078C554F51194D93541F0B093AFF1C67D7E031EC177B8E87377",
+        "bytes": 3055
+      },
+      "failureRate": {
+        "numerator": 0,
+        "denominator": 9,
+        "rate": 0.0,
+        "definition": "Unsuccessful supervised producer stages / nine required producer stages; missing report counts unsuccessful; independent guard may find additional semantic failures."
+      },
+      "baseline": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\ci-performance-v1\\baseline\\baseline.json",
+        "sha256": "9ABFA2F1BA850E51314B25C97009D0112C54C739CEC7FB6E35D85B3BBB9D1A01",
+        "bytes": 820
+      },
+      "native": {
+        "candidateSamples": 56,
+        "baselineSamples": 56,
+        "pngs": 224,
+        "datasets": 8
+      },
+      "unitSupervisor": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\contract-units-v1\\supervisor.json",
+        "sha256": "09761CB8C029A19D20D4DDBCCEDC299A3CE7022D1AD48ED0D3CF6F96450FF128",
+        "bytes": 4736
+      },
+      "syntheticArchives": [
+        {
+          "label": "python-all",
+          "archiveRoot": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\contract-units-v1\\python-fixtures\\synthetic-case-evidence",
+          "caseReceipts": 27,
+          "contentAddressedBlobs": 47,
+          "negativeCaseReceipts": 25,
+          "fileEntriesChecked": 697,
+          "syntheticOnly": true
+        },
+        {
+          "label": "guard-entry",
+          "archiveRoot": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\linux\\run-v1\\contract-units-v1\\guard-entry\\synthetic-case-evidence",
+          "caseReceipts": 27,
+          "contentAddressedBlobs": 47,
+          "negativeCaseReceipts": 25,
+          "fileEntriesChecked": 697,
+          "syntheticOnly": true
+        }
+      ]
+    }
+  },
+  "collectorClassificationAmendment": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\historical-pin-classification-amendment-v1.json",
+    "sha256": "F59BC40E2E25B004E7918E00A90B3AA861B37E5FEF68549207F8DAE2EB3A5C23",
+    "bytes": 904
+  },
+  "unitContracts": {
+    "pythonTests": 39,
+    "processAndWorkflowPredicates": 30,
+    "powershellEntryRerunsMainPythonTests": 15,
+    "uniqueCountsAreNotSummedWithProductTests": true
+  },
+  "openItems": [
+    "下一主项 C5-01 统计与分布；C4-01～C4-08 指定软件交付已推进，完整 C2/C3/C4/C7、剩余图族与官方许可运行时/API/二进制对照仍开放。",
+    "本轮实际执行的是 Windows 本地原生窗口与 Ubuntu26.04 WSL2/WSLg。GitHub Actions 的 Windows2025、Ubuntu22.04/24.04 Xvfb 工作流已连接，但尚未提交/推送或执行远端 run；配置不能记作远端通过。",
+    "门槛是固定版本的 hosted CI 回归守卫，绝对阈值较宽，并同时使用同环境基线、失败率、原始身份和画质；不认证完整 C4 固定硬件 FPS、首次可用、尾延迟、吞吐或30分钟/8小时长稳 SLA。",
+    "Native protocol v2 显式关闭 tiered compilation，核对 runtimeconfig、AppContext switch 与环境覆盖。结果仅适用这个测量协议，未认证应用默认 JIT 策略下的性能。旧 paired control 慢到快切换的具体原因未证实，后续通过不能证明 JIT 是唯一原因或产品性能回退已修复。",
+    "本地正式基线是同一冻结候选的独立源码副本与新进程，仅验证 paired control 和门禁接线；不能当作相对历史版本的提升。PR 工作流配置为独立 base SHA 产品与同一候选 native harness，实际远端 PR 比较仍待执行。",
+    "Native request-to-capture 包含 UI 应用/布局、RAF调度等待与受控离屏绘制/PNG写出/像素复制；RAF callback 和 RenderTargetBitmap 不证明 compositor present、GPU完成、真实输入或物理桌面帧率。",
+    "全进程/实际托管、原生/GPU峰值和长期保留预算、共享索引/CWT/已发布路径、调用方对象与旧快照、复杂图族和域的 N 级工作及完整多图 UI 帧公平性仍待专项。",
+    "百万点 hit p95 历史0.7649→1.1235ms按用户决定后置；新10k hosted场景不能关闭该问题。",
+    "A11Y-NATIVE-01 的 UIA/AT-SPI 原生选中项枚举按用户决定延期；AX06与四份历史 PixelProbe DLL 缺口保留。",
+    "C4-03 Linux旧导出/动画暂停前置时序失败、C4-06 Windows旧viewport中间帧时序失败及libHarfBuzzSharp OS0x800700CE长路径问题保留；短路径和本轮通过不构成修复证明。",
+    "物理Windows/Linux、原生Wayland、ARM、国产Linux、多屏DPI、设备输入、实际backend/GPU和读屏器工作流仍待平台资格验证；原有C3图族/模板/标签/交互适配残余见对应历史报告。",
+    "远端setup-python之后，workflow的python与guard自动选择的python3是否指向同一解释器尚待实际runner核验；本轮本地两平台均显式指定解释器。",
+    "CI job限50分钟，多个子进程分别可达600秒。极端累计超时、runner强杀/取消时，always上传无法保证执行完；逐阶段snapshot和流式日志只证明本地已写，不能当作远端已持久化。",
+    "本地同版本control未证明真实PR base的依赖、锁文件、SDK及API兼容；跨版本baseline构建或契约不兼容会fail closed，尚未取得真实PR base运行资格。"
+  ],
+  "evidenceCollection": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\collected-evidence-v3.json",
+    "sha256": "815CA765AC267D21D743B74AB10E77A6ED89942D1E7BEB0C9131299F7B5D0A85",
+    "bytes": 34105
+  },
+  "collectorClassificationAmendments": [
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\historical-pin-classification-amendment-v1.json",
+      "sha256": "F59BC40E2E25B004E7918E00A90B3AA861B37E5FEF68549207F8DAE2EB3A5C23",
+      "bytes": 904
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\historical-pin-classification-amendment-v2.json",
+      "sha256": "A187BAC1009B7A6181CCBC3B37BB48E4579DC5335EC9245E30407A28747A3D3D",
+      "bytes": 886
+    }
+  ],
+  "preservedToolingFailures": {
+    "initialCollector": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\collected-evidence-v1.json",
+      "sha256": "4C439918C66F6636AC252A5865CB47BD1E995327F691A72A6094238FB16D3CF3",
+      "bytes": 34039
+    },
+    "firstPostDocumentationProof": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-ci-performance-gates-20261020\\post-documentation-proof-v1.json",
+      "sha256": "3E05385F863BDE625879BAF181D0C7E85427C146592C997199A5D7D936EE9154",
+      "bytes": 12231
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Light">
+      <SolidColorBrush x:Key="TreeDataGridBackgroundBrush">#FFFFFF</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridForegroundBrush">#17212F</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridHeaderBackgroundBrush">#EDF2F7</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridBorderBrush">#CDD7E3</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridMutedForegroundBrush">#586A7C</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridCellHoverBrush">#F0F6FE</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridHeaderHoverBrush">#DFEAF7</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridAccentBrush">#2464A5</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridSelectedBackgroundBrush">#DCEBFE</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridSelectedForegroundBrush">#10243A</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridCurrentBorderBrush">#2464A5</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridEditorBackgroundBrush">#FFFFFF</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridValidationBrush">#B42318</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridValidationBackgroundBrush">#FEE4E2</SolidColorBrush>
+    </ResourceDictionary>
+    <ResourceDictionary x:Key="Dark">
+      <SolidColorBrush x:Key="TreeDataGridBackgroundBrush">#17212F</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridForegroundBrush">#E7EEF7</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridHeaderBackgroundBrush">#233246</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridBorderBrush">#405268</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridMutedForegroundBrush">#A8B8CB</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridCellHoverBrush">#20354D</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridHeaderHoverBrush">#304862</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridAccentBrush">#8BBFFA</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridSelectedBackgroundBrush">#1E446B</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridSelectedForegroundBrush">#FFFFFF</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridCurrentBorderBrush">#8BBFFA</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridEditorBackgroundBrush">#203245</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridValidationBrush">#FFB4AB</SolidColorBrush>
+      <SolidColorBrush x:Key="TreeDataGridValidationBackgroundBrush">#4C2025</SolidColorBrush>
+    </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>

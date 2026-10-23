@@ -1,0 +1,84 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:PdfViewer.Usage"
+        xmlns:pdf="clr-namespace:NT.AvaloniaControl.PdfViewer;assembly=NT.AvaloniaControl.PdfViewer"
+        x:Class="PdfViewer.Usage.MainWindow" x:DataType="vm:ReaderViewModel"
+        x:CompileBindings="True" Title="PDF Viewer · MVVM Usage"
+        Width="1200" Height="850" MinWidth="760" MinHeight="560">
+  <Grid Margin="16" RowDefinitions="Auto,Auto,Auto,*" RowSpacing="10">
+    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+      <TextBox PlaceholderText="本地 PDF 路径" Text="{Binding DocumentPath, Mode=TwoWay}" />
+      <Button Grid.Column="1" Content="选择 PDF" Click="OpenPdf" />
+    </Grid>
+    <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="14">
+      <CheckBox Content="允许复制" IsChecked="{Binding #Reader.AllowCopy, Mode=TwoWay}" />
+      <CheckBox Content="允许搜索" IsChecked="{Binding #Reader.AllowSearch, Mode=TwoWay}" />
+      <Button Content="关闭文档" Command="{Binding #Reader.CloseCommand}" />
+      <TextBlock Text="{Binding #Reader.DocumentState}" VerticalAlignment="Center" />
+    </StackPanel>
+    <Grid Grid.Row="2" ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,*,Auto" ColumnSpacing="10">
+      <StackPanel Orientation="Horizontal" Spacing="6">
+        <TextBlock Text="布局" VerticalAlignment="Center" />
+        <ComboBox MinWidth="120" VerticalAlignment="Center"
+                  ItemsSource="{x:Static vm:ReaderViewModel.DisplayModes}"
+                  SelectedItem="{Binding #Reader.PageDisplayMode, Mode=TwoWay}" />
+      </StackPanel>
+      <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="6">
+        <TextBlock Text="侧栏" VerticalAlignment="Center" />
+        <ComboBox MinWidth="100" VerticalAlignment="Center"
+                  ItemsSource="{x:Static vm:ReaderViewModel.SidebarPresentations}"
+                  SelectedItem="{Binding #Reader.SidebarPresentation, Mode=TwoWay}" />
+      </StackPanel>
+      <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="6">
+        <Button Content="保存阅读位置" Command="{Binding CapturePositionCommand}" CommandParameter="{Binding #Reader}" />
+        <Button Content="恢复阅读位置" Command="{Binding RestorePositionCommand}" CommandParameter="{Binding #Reader}" />
+      </StackPanel>
+      <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="6">
+        <Button Content="添加书签" Command="{Binding #Reader.AddUserBookmarkCommand}" />
+        <Button Content="移除书签"
+                Command="{Binding #Reader.RemoveUserBookmarkCommand}"
+                CommandParameter="{Binding #BookmarkList.SelectedItem}" />
+      </StackPanel>
+      <Button Grid.Column="4" Content="导出当前页 PNG"
+              Command="{Binding ExportPageCommand}" CommandParameter="{Binding #Reader}" />
+      <TextBlock Grid.Column="5" Text="{Binding PositionStatus}" VerticalAlignment="Center"
+                 TextTrimming="CharacterEllipsis" />
+      <TextBlock Grid.Column="6" Text="{Binding ExportStatus}" VerticalAlignment="Center"
+                 TextTrimming="CharacterEllipsis" MaxWidth="320" />
+    </Grid>
+    <Grid Grid.Row="3" ColumnDefinitions="280,*" ColumnSpacing="10">
+      <Grid RowDefinitions="Auto,Auto,*,Auto,Auto" RowSpacing="6">
+        <TextBlock Text="用户书签（双击跳转）" FontWeight="SemiBold" />
+        <ListBox Grid.Row="1" Name="BookmarkList" MaxHeight="180"
+                 ItemsSource="{Binding #Reader.UserBookmarks}"
+                 DoubleTapped="JumpToBookmark">
+          <ListBox.ItemTemplate>
+            <DataTemplate x:DataType="pdf:PdfUserBookmark">
+              <TextBlock>
+                <Run Text="{Binding PageNumber, StringFormat='第 {0} 页 · '}" />
+                <Run Text="{Binding Title}" FontWeight="{Binding Weight}" FontStyle="{Binding Style}" />
+              </TextBlock>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Grid.Row="2" VerticalAlignment="Top" TextWrapping="Wrap" Foreground="Gray"
+                   Text="搜索结果按页渐进发布：SearchResults 每扫描完一页刷新，SearchProgress 为进度，SearchCompleted 携带最终数量。" />
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Spacing="8">
+          <TextBlock>
+            <Run Text="命中 " /><Run Text="{Binding #Reader.SearchResultCount}" />
+            <Run Text=" · 进度 " /><Run Text="{Binding #Reader.SearchProgress, StringFormat='{}{0:P0}'}" />
+          </TextBlock>
+          <TextBlock Foreground="DarkOrange"
+                     IsVisible="{Binding #Reader.SearchResultsTruncated}" Text="已达上限" />
+        </StackPanel>
+        <ProgressBar Grid.Row="4" Minimum="0" Maximum="1" Height="8"
+                     Value="{Binding #Reader.SearchProgress}" />
+      </Grid>
+      <pdf:PdfViewer Name="Reader" Grid.Column="1"
+                     Source="{Binding DocumentPath}"
+                     Password="{Binding Password}"
+                     CurrentPage="{Binding Page, Mode=TwoWay}"
+                     IsSidebarVisible="{Binding SidebarVisible, Mode=TwoWay}" />
+    </Grid>
+  </Grid>
+</Window>

@@ -1,0 +1,78 @@
+# Visual Studio user settings and local cache
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sln.ide/
+
+# C# / .NET build output (also covers Avalonia generated resources)
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Aa]rtifacts/
+
+# Avalonia build-task cache
+.avalonia-build-tasks/
+
+# NuGet package output (keep package references and lock files)
+*.nupkg
+*.snupkg
+
+# Test results, coverage, and benchmarks
+[Tt]est[Rr]esults/
+*.trx
+*.coverage
+*.coveragexml
+coverage/
+BenchmarkDotNet.Artifacts/
+
+# MSBuild logs and temporary files
+*.binlog
+[Bb]uild[Ll]og.*
+*.tmp
+*.tmp_proj
+
+# Visual Studio profiling and upgrade reports
+*.psess
+*.vsp
+*.vspx
+*.sap
+UpgradeLog*.XML
+UpgradeLog*.htm
+_UpgradeReport_Files/
+
+# Rider / ReSharper user settings and cache
+.idea/
+_ReSharper*/
+*.DotSettings.user
+*.dotCover
+
+# Editor local history (keep shared .vscode configuration)
+.history/
+*.swp
+*.swo
+
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Python guard bytecode
+__pycache__/
+*.py[cod]
+
+# Local credentials and signing keys
+.env
+.env.*
+!.env.example
+!.env.template
+*.pfx
+*.p12
+*.key
+*.pem
+
+# Keep source, project files, assets, and shared configuration tracked:
+# *.cs, *.axaml, *.xaml, *.csproj, *.sln, *.slnx, Assets/,
+# .editorconfig, .vscode/, NuGet.Config, packages.lock.json

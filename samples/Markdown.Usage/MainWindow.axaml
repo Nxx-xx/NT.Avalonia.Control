@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:md="clr-namespace:NT.AvaloniaControl.Markdown;assembly=NT.AvaloniaControl.Markdown"
+        xmlns:local="clr-namespace:Markdown.Usage" x:Class="Markdown.Usage.MainWindow"
+        x:DataType="local:MarkdownViewModel" Width="960" Height="720" Title="Markdown · AXAML/MVVM Usage">
+  <Grid RowDefinitions="Auto,Auto,*" Margin="16" RowSpacing="10">
+    <StackPanel Orientation="Horizontal" Spacing="8">
+      <Button Content="流式追加" Click="StreamClick" />
+      <Button Content="完整替换" Click="ReplaceClick" />
+      <Button Content="全选" Click="SelectAllClick" />
+      <Button Content="复制" Click="CopyClick" />
+    </StackPanel>
+    <TextBlock Grid.Row="1" Text="{Binding Status}" TextWrapping="Wrap" />
+    <TabControl Grid.Row="2">
+      <TabItem Header="MVVM 绑定"><md:Markdown x:Name="Reader" Text="{Binding Text, Mode=TwoWay}" AutoScrollToEnd="True" /></TabItem>
+      <TabItem Header="AXAML 内嵌文本">
+        <md:Markdown xml:space="preserve"># 内嵌 Markdown
+
+保留换行的 **AXAML 文本**。
+
+- 使用 Content 属性
+- 与 Text 绑定二选一
+        </md:Markdown>
+      </TabItem>
+    </TabControl>
+  </Grid>
+</Window>

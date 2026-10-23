@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "charts-retention-comparison-v1",
+  "generatedUtc": "2026-10-15T12:02:07.8034758+00:00",
+  "comparable": true,
+  "status": "matched-retention-diagnostic-passed",
+  "performanceQualification": "pending-C4",
+  "presentStatus": "blocked-present",
+  "referenceStatus": "blocked-reference",
+  "formalSlaEvaluated": false,
+  "formalPerformancePassed": null,
+  "scriptPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\Compare-MemoryRetention.ps1",
+  "scriptSha256": "80F4C4AD18ECE838A866852541ABD0D259A06F437E34903CC04785D1AB69D8BE",
+  "fixture": "twenty sequential full-precision monotonic-X million-point replacements, render/hit, forced full GC, source clear while chart remains alive, then detach",
+  "unchangedLimits": {
+    "plateauGrowthBytes": 16777216,
+    "clearedResidualBytes": 16777216
+  },
+  "before": {
+    "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C1-20261015-after-v3\\raw.json",
+    "sha256": "7AC10FB48957B3E7AD509A140D3F7CFF40B2CDB8CBB08ABFD838335B9D8205C8",
+    "runId": "f93f3a1b4858438ebe4bd01f2a2564d0",
+    "processCount": 1,
+    "cycles": 20,
+    "pointCount": 1000000,
+    "gcPolicy": "forced-full-GC-after-each-cycle; not timing or native present evidence",
+    "runtime": ".NET 10.0.12",
+    "os": "Microsoft Windows 10.0.26200",
+    "sources": {
+      "NT.AvaloniaControl.Charts.dll": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C1-20261015-after-v3\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+        "sha256": "6C30F456DC038192D260B7F84F7786A29B7CE633F5335619B35DA1FFC9694F33"
+      },
+      "NT.AvaloniaControl.Charts.Themes.dll": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C1-20261015-after-v3\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+        "sha256": "A50CFD46E06DD55EC3F60876902893A8A157B564E789A281AD5938A5A2861DDC"
+      },
+      "Charts.Benchmarks.dll": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C1-20261015-after-v3\\frozen-host\\Charts.Benchmarks.dll",
+        "sha256": "5DA2E701C96F2CE04BDD94419F2C0F040F83C992D9263BE3BED3DD30FF36503A"
+      }
+    },
+    "baseline": {
+      "managedBytes": 747456,
+      "heapBytes": 756896,
+      "fragmentedBytes": 34112,
+      "committedBytes": 3366912,
+      "privateBytes": 24956928,
+      "workingSetBytes": 60313600
+    },
+    "cleared": {
+      "managedBytes": 773920,
+      "heapBytes": 940512,
+      "fragmentedBytes": 183040,
+      "committedBytes": 105123840,
+      "privateBytes": 128630784,
+      "workingSetBytes": 167776256
+    },
+    "detached": {
+      "managedBytes": 786424,
+      "heapBytes": 981056,
+      "fragmentedBytes": 219304,
+      "committedBytes": 99192832,
+      "privateBytes": 122621952,
+      "workingSetBytes": 161964032
+    },
+    "plateauGrowthBytes": 29272,
+    "clearedResidualBytes": 26464,
+    "sourceSurvivors": 0,
+    "snapshotSurvivors": 0,
+    "maximumCycleManagedBytes": 33552624.0,
+    "maximumObservedCurrentPrivateBytes": 160690176.0,
+    "checkpointCount": 20,
+    "independentlyRecomputedPassed": true
+  },
+  "after": {
+    "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C2-common-20261015-final-v3\\raw.json",
+    "sha256": "8562D0D6DD2B9C91FF5F530CD63219DA8CB385268DE65A8E41CC5FEB2967DCF6",
+    "runId": "cf88a2500bef44bda33a379893a4e948",
+    "processCount": 1,
+    "cycles": 20,
+    "pointCount": 1000000,
+    "gcPolicy": "forced-full-GC-after-each-cycle; not timing or native present evidence",
+    "runtime": ".NET 10.0.12",
+    "os": "Microsoft Windows 10.0.26200",
+    "sources": {
+      "NT.AvaloniaControl.Charts.dll": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C2-common-20261015-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+        "sha256": "048EED53A4EF91AB83A6334DF170497628B4DC54570A5E0D33EA5E8D6074CD0C"
+      },
+      "NT.AvaloniaControl.Charts.Themes.dll": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C2-common-20261015-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+        "sha256": "6743ACD7E3841F3874628EB1AF1CD08EE0D0412FABB62BF03A0BEFBD4FEB5DD9"
+      },
+      "Charts.Benchmarks.dll": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-memory\\C2-common-20261015-final-v3\\frozen-host\\Charts.Benchmarks.dll",
+        "sha256": "5DA2E701C96F2CE04BDD94419F2C0F040F83C992D9263BE3BED3DD30FF36503A"
+      }
+    },
+    "baseline": {
+      "managedBytes": 770696,
+      "heapBytes": 780480,
+      "fragmentedBytes": 34456,
+      "committedBytes": 3432448,
+      "privateBytes": 25010176,
+      "workingSetBytes": 60702720
+    },
+    "cleared": {
+      "managedBytes": 797128,
+      "heapBytes": 963904,
+      "fragmentedBytes": 183224,
+      "committedBytes": 96718848,
+      "privateBytes": 120053760,
+      "workingSetBytes": 159936512
+    },
+    "detached": {
+      "managedBytes": 805336,
+      "heapBytes": 1005272,
+      "fragmentedBytes": 220280,
+      "committedBytes": 92831744,
+      "privateBytes": 116277248,
+      "workingSetBytes": 156155904
+    },
+    "plateauGrowthBytes": 29240,
+    "clearedResidualBytes": 26432,
+    "sourceSurvivors": 0,
+    "snapshotSurvivors": 0,
+    "maximumCycleManagedBytes": 33575832.0,
+    "maximumObservedCurrentPrivateBytes": 160567296.0,
+    "checkpointCount": 20,
+    "independentlyRecomputedPassed": true
+  },
+  "deltas": {
+    "plateauGrowthBytes": -32,
+    "clearedResidualBytes": -32
+  },
+  "errors": [],
+  "notes": [
+    "Independent validation reconstructs deltas, unchanged 16 MiB limits, checkpoint obsolete-reference counts and final survivor counts; raw passed flags alone are insufficient.",
+    "One process per side; tiny byte differences do not establish a statistically meaningful memory improvement.",
+    "Forced-GC managed retention diagnostic, not timing, native allocation, OS peak, FPS, long soak, Linux performance or official reference evidence.",
+    "Monotonic X does not exercise nonmonotonic radix scratch retention.",
+    "Process private bytes are boundary observations, not retained live managed objects; GC/native/runtime reservations may remain.",
+    "After runtime includes stable radix plus C2 default paths and correctness fixes; this comparison does not isolate index attribution."
+  ]
+}

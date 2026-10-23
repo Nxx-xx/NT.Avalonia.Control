@@ -1,0 +1,12 @@
+{
+  "retrievedHongKongDate": "2026-10-23",
+  "source": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/9380cca83db5f9aef52d5e762765100745f84b27/geojson/ne_110m_admin_0_countries.geojson",
+  "sourceCommit": "9380cca83db5f9aef52d5e762765100745f84b27",
+  "terms": "https://www.naturalearthdata.com/about/terms-of-use/",
+  "license": "Public domain",
+  "credit": "Made with Natural Earth",
+  "featureCount": 177,
+  "originalSha256": "6866C877D39CBA9C357620878839B336D569F8C662D3CFAB4CB1DBE2D39C977F",
+  "embeddedSha256": "D2A29C7C1958BAAEEA91D70FAEF888CD5D8ADF6B25AC9C43261B6A41558C8DFB",
+  "transform": "Retain every geometry coordinate; feature.id=ADM0_A3; properties retain NAME as name and POP_EST as population; omit other properties, source name/bbox/crs. No filtering or simplification."
+}

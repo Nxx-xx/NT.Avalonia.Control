@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>NT.AvaloniaControl.PdfViewer</PackageId>
+    <AssemblyName>NT.AvaloniaControl.PdfViewer</AssemblyName>
+    <RootNamespace>NT.AvaloniaControl.PdfViewer</RootNamespace>
+    <Description>Independent PDFium-based desktop PDF reader control for Avalonia.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="PDFsharp" />
+    <!-- Override PDFsharp's vulnerable minimum dependency; keep NuGet audit enabled in release verification. -->
+    <PackageReference Include="System.Security.Cryptography.Pkcs" />
+    <PackageReference Include="bblanchon.PDFium.Win32" />
+    <PackageReference Include="bblanchon.PDFium.Linux" />
+    <PackageReference Include="bblanchon.PDFium.macOS" />
+    <None Update="README.md" Pack="true" PackagePath="/README.md" />
+    <None Update="THIRD-PARTY-NOTICES.md" Pack="true" PackagePath="/THIRD-PARTY-NOTICES.md" />
+    <None Update="Licenses/**/*" Pack="true" PackagePath="/%(Identity)" />
+    <None Update="Licenses/**/.gitattributes" Pack="false" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,105 @@
+using System.ComponentModel;
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Headless;
+using Avalonia.Input;
+using Avalonia.Markup.Xaml;
+using Avalonia.Threading;
+using Avalonia.VisualTree;
+using NT.AvaloniaControl.VirtualKeyboard;
+using KeyboardControl = NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboard;
+
+namespace KeyboardPackageConsumer;
+
+internal static class Program
+{
+    public static void Main(string[] args)
+    {
+        AppBuilder.Configure<ConsumerApp>().UseHeadless(new AvaloniaHeadlessPlatformOptions()).SetupWithoutStarting();
+        var model = new ConsumerViewModel { Value = "seed" };
+        var window = new ConsumerWindow { DataContext = model };
+        var editor = window.FindControl<TextBox>("Editor")!;
+        var keyboard = window.FindControl<KeyboardControl>("Keyboard")!;
+        window.Show();
+        window.UpdateLayout();
+        Dispatcher.UIThread.RunJobs();
+        Check(window.IsActive && editor.Focus(), "Headless consumer editing focus unavailable.");
+        Dispatcher.UIThread.RunJobs();
+        Check(keyboard.IsInputAvailable && ReferenceEquals(keyboard.Target, editor), "Packaged Target XAML binding failed.");
+        Check(keyboard.TemplateDiagnostic is null, "Packaged keyboard template contract failed.");
+        editor.CaretIndex = 4;
+        Click(window, FindCharacter(keyboard, "a"));
+        Dispatcher.UIThread.RunJobs();
+        Check(editor.Text == "seeda" && model.Value == "seeda", "Packaged pointer input or TwoWay binding failed.");
+        Check(editor.IsFocused && editor.CanUndo, "Packaged pointer input lost focus or native undo history.");
+        editor.Undo();
+        Dispatcher.UIThread.RunJobs();
+        Check(editor.Text == "seed" && model.Value == "seed", "Packaged native undo/TwoWay binding failed.");
+        editor.Redo();
+        Check(editor.Text == "seeda", "Packaged native redo failed.");
+        editor.SelectionStart = 1;
+        editor.SelectionEnd = 4;
+        Click(window, FindCharacter(keyboard, "b"));
+        Check(editor.Text == "sba", "Packaged native selection replacement failed.");
+        keyboard.Layout = VirtualKeyboardLayout.Numeric;
+        window.UpdateLayout();
+        editor.SelectAll();
+        Click(window, FindCharacter(keyboard, "1"));
+        Check(editor.Text == "1", "Packaged numeric layout input failed.");
+        keyboard.ShowDecimalPoint = false;
+        keyboard.ShowNegativeSign = false;
+        window.UpdateLayout();
+        Check(!keyboard.Rows.SelectMany(row => row.Keys).Any(key => key.Text is "." or "-"), "Packaged numeric options failed.");
+        keyboard.IsVisible = false;
+        Check(!keyboard.IsInputAvailable, "Hidden packaged keyboard remained available.");
+        keyboard.IsVisible = true;
+        window.Close();
+        Check(!keyboard.IsInputAvailable, "Detached packaged keyboard retained an input session.");
+        if (args.Single() == "FunctionOnly")
+            Check(!File.Exists(Path.Combine(AppContext.BaseDirectory, "NT.AvaloniaControl.VirtualKeyboard.Themes.dll")),
+                "Function package acquired the optional theme dependency.");
+        Console.WriteLine($"PASS: VirtualKeyboard {args.Single()} fresh NuGet consumer: compiled AXAML, explicit Target, pointer input, focus, selection, native undo/redo, TwoWay binding, numeric options and detach.");
+    }
+
+    private static VirtualKeyboardKeyButton FindCharacter(KeyboardControl keyboard, string text) =>
+        keyboard.GetVisualDescendants().OfType<VirtualKeyboardKeyButton>().First(button => button.Key?.Text == text);
+
+    private static void Click(Window window, Control button)
+    {
+        var point = button.TranslatePoint(new Point(button.Bounds.Width / 2, button.Bounds.Height / 2), window)
+            ?? throw new InvalidOperationException("Packaged key was not arranged in the window.");
+        window.MouseDown(point, MouseButton.Left);
+        window.MouseUp(point, MouseButton.Left);
+    }
+
+    private static void Check(bool condition, string message)
+    {
+        if (!condition) throw new InvalidOperationException(message);
+    }
+}
+
+public sealed partial class ConsumerApp : Application
+{
+    public override void Initialize() => AvaloniaXamlLoader.Load(this);
+}
+
+public sealed partial class ConsumerWindow : Window
+{
+    public ConsumerWindow() => AvaloniaXamlLoader.Load(this);
+}
+
+public sealed class ConsumerViewModel : INotifyPropertyChanged
+{
+    private string? _value;
+    public string? Value
+    {
+        get => _value;
+        set
+        {
+            if (_value == value) return;
+            _value = value;
+            PropertyChanged?.Invoke(this, new(nameof(Value)));
+        }
+    }
+    public event PropertyChangedEventHandler? PropertyChanged;
+}

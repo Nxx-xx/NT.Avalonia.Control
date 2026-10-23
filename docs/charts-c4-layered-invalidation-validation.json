@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 1,
+  "stage": "C4-01 layered data/view invalidation",
+  "completedUtc": "2026-10-18T14:57:15.907894+00:00",
+  "clientExecutionDate": "2026-10-18",
+  "finalCandidateVersion": "c4-layered-invalidation-source-v1",
+  "softwareFunctionalSubsetPassed": true,
+  "functionalSubsetPassed": true,
+  "cacheMechanismValidated": true,
+  "cacheScope": "CartesianChart 主数据管线与内置系列；独立图族保留各自现有缓存",
+  "fullC2StageComplete": false,
+  "fullC3StageComplete": false,
+  "fullC4StageComplete": false,
+  "fullC7StageComplete": false,
+  "nextWorkItem": "C4-02",
+  "windows": {
+    "platform": "windows",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\windows\\windows-final-v1\\results.json",
+      "sha256": "8A83B19F5692EFC3D754FDD67F163CCE50B024F5968CB10AB4D61A00B5219DEB",
+      "bytes": 20781
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\windows\\windows-final-v1\\results.json",
+      "sha256": "8A83B19F5692EFC3D754FDD67F163CCE50B024F5968CB10AB4D61A00B5219DEB",
+      "bytes": 20781
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\windows\\windows-final-v1\\charts-smoke.json",
+      "sha256": "70AECAF47B5551FD9E6EE3CCBA21847BC697B8B46109B543DE75712DE496B3E6",
+      "bytes": 1694240
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\windows\\windows-final-v1\\charts-usage.json",
+      "sha256": "9433781241D4E7AE035BE19D5FBB38066B92ED17FF68F471391BA9E34BBE1056",
+      "bytes": 45618
+    },
+    "headlessTests": 1622,
+    "demoChecks": 1188,
+    "usageChecks": 318,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 470,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\windows\\package-consumers-v1\\20261018T144457410Z-cb97420f16a44df7b6094f5a8a547e1a\\function\\consumer-result.json",
+          "sha256": "54BD8A07FF6A3585558F6D666A1EB8554D900B6DC6E5072E8D256FD22C9211F2",
+          "bytes": 78179
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\windows\\package-consumers-v1\\20261018T144457410Z-cb97420f16a44df7b6094f5a8a547e1a\\function\\packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 470,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\windows\\package-consumers-v1\\20261018T144457410Z-cb97420f16a44df7b6094f5a8a547e1a\\themes\\consumer-result.json",
+          "sha256": "E77C65CA176A918838AC6C01708014A900AFA741F6D8A44E6A11A0AE049930A5",
+          "bytes": 78236
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\windows\\package-consumers-v1\\20261018T144457410Z-cb97420f16a44df7b6094f5a8a547e1a\\themes\\packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\windows\\windows-final-v1\\validated-input-manifest.json",
+      "sha256": "89C1F1E217656FBC3E64A6D6AE5E69D78540B1A873359BD9AC07E4113F95C0D4",
+      "bytes": 125667
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\windows\\windows-final-v1\\assembly-manifest.json",
+      "sha256": "CB9BBE2C60AADBF3EF782DE5C95E3E9FBBC71E808120741D14A953B1191EAF9E",
+      "bytes": 1955
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\windows\\windows-final-v1\\environment.json",
+      "sha256": "7ED7718229F1CD4164175EB5DE3C40D513E9CADAE478E0B9ED89A206095AFAE1",
+      "bytes": 9133
+    },
+    "coreSha256": "C9EF7DC9D4034D4052F912952F46F933C6AC6A11ABE8CBE0D1979159323A6CA5",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false
+  },
+  "linux": {
+    "platform": "linux",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\results.json",
+      "sha256": "FD5CE270A2391FB95EC75F8A74039028EC3E1358E91C7229633C69E9D3D19218",
+      "bytes": 14761
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\results.json",
+      "sha256": "FD5CE270A2391FB95EC75F8A74039028EC3E1358E91C7229633C69E9D3D19218",
+      "bytes": 14761
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\charts-smoke.json",
+      "sha256": "70AE01BD89D07AA05D0A64DBE234AB1CAB057C416FB76C247A7242FC62B64E61",
+      "bytes": 1635041
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\charts-usage.json",
+      "sha256": "0B71B426B5C1D1D3ADC24A20EFD8EDE38CC11CA3583B7EB939EA59F7ADCB3428",
+      "bytes": 44043
+    },
+    "headlessTests": 1622,
+    "demoChecks": 1188,
+    "usageChecks": 318,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 470,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\run-v1\\package-consumers\\20261018T144748684Z-3a7c0d08cc6e4a698310ce2ca6638b8f\\function\\consumer-result.json",
+          "sha256": "DA5096A6E393918B9A0102ADF18D78D81ABF1EB47395C1E8256D675DAD0E720C",
+          "bytes": 76070
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-layered-invalidation-20261018/linux/run-v1/package-consumers/20261018T144748684Z-3a7c0d08cc6e4a698310ce2ca6638b8f/function/packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 470,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\run-v1\\package-consumers\\20261018T144748684Z-3a7c0d08cc6e4a698310ce2ca6638b8f\\themes\\consumer-result.json",
+          "sha256": "6352A1E498847729F831353A9D00BC5811E5148025F67749F3E30AEF8602270F",
+          "bytes": 76116
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-layered-invalidation-20261018/linux/run-v1/package-consumers/20261018T144748684Z-3a7c0d08cc6e4a698310ce2ca6638b8f/themes/packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\validated-input-manifest.json",
+      "sha256": "6DF9AEBDC25A3B4CFF19A32CA7A2D2106F580432A0393D2988153EF7AE15DACD",
+      "bytes": 122837
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\assembly-manifest.json",
+      "sha256": "6BD3050CEFBF09820F1DB30B2C55C9AE88F9DB016024937FF0F1D3806C254354",
+      "bytes": 1905
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\environment.json",
+      "sha256": "0CEE46F636B192E8D2860669ADF66E67EDBBC4995F4A43D8DFA93488CC229C9A",
+      "bytes": 6375
+    },
+    "coreSha256": "3B8253AF7D439ECC23FDFEC51FF45E6530F932A5CEE0D9C83E2022040748A012",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false,
+    "originalOverallLauncherExitCode": 1,
+    "cacheProbeExecution": {
+      "kind": "successful-original-three-stages-plus-cache-only-harness-repair",
+      "originalLauncher": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\run-v1\\launcher-exit.json",
+        "sha256": "A86732A707E1BB04FD3E120AFDF19ECFA035E710ADC642304BC6492BB1C24133",
+        "bytes": 358
+      },
+      "initialCacheExitCode": 1,
+      "repairedCacheExitCode": 0,
+      "repairedSupervisor": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\run-v1\\layer-cache-v1-r2\\supervisor.json",
+        "sha256": "EDC1E4BDA49382B3445A6A6FCA1B408CBEFBA01DDE28E585A71B83729BE48ADD",
+        "bytes": 2242
+      },
+      "repairedRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\run-v1\\layer-cache-v1-r2\\raw.json",
+        "sha256": "31C304881EC237DCC8A04F6E4B535446DAEC86E3F13764DEBAB9B588C94FB327",
+        "bytes": 880403
+      }
+    }
+  },
+  "sourceSnapshotRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\source-snapshot-v1.json",
+    "sha256": "D88014A8470410368032AD4911D2A3C3622B2B1D76E4A385E5E50819190CF753",
+    "bytes": 283727
+  },
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\source-snapshot-v1.json",
+    "sha256": "D88014A8470410368032AD4911D2A3C3622B2B1D76E4A385E5E50819190CF753",
+    "bytes": 283727
+  },
+  "frozenSourceFiles": 1420,
+  "declaredValidatedInputsPerPlatform": 707,
+  "declaredInputsMatchBetweenPlatforms": true,
+  "declaredLiveInputsStillMatch": true,
+  "frozenSourceHashesStillMatch": true,
+  "liveFullRepositoryEqualityClaimed": false,
+  "sourceScope": "Declared runtime/harness inputs match the frozen candidate. Subsequent status/document edits are outside the runtime set.",
+  "windowsApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\api-windows-final-v1\\api.txt",
+    "sha256": "E2782314A20F71FE39662C92653031DD5AA1CABAA42976E01AB21CBE4CD71AE5",
+    "bytes": 973600
+  },
+  "linuxApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\api-linux-final-v1\\api.txt",
+    "sha256": "F4E093BAEB725AB952B532FA5B9D10CFACC58A1F2EFE62AE462562ED8D499AD7",
+    "bytes": 416068
+  },
+  "publicApiDocument": {
+    "path": "<REPO_ROOT>\\docs\\charts-c4-layered-invalidation-api.txt",
+    "sha256": "E2782314A20F71FE39662C92653031DD5AA1CABAA42976E01AB21CBE4CD71AE5",
+    "bytes": 973600
+  },
+  "localApiDeclarationsMatchBetweenPlatforms": true,
+  "apiDelta": {
+    "oldTypes": 163,
+    "newTypes": 163,
+    "oldNamedChartsTypes": 161,
+    "newNamedChartsTypes": 161,
+    "oldLegacyDistinctTypeNames": 163,
+    "newLegacyDistinctTypeNames": 163,
+    "addedTypes": [],
+    "addedMembersOnExistingTypes": [],
+    "removedTypes": [],
+    "changedExistingTypeDeclarations": [],
+    "removedMembersOnExistingTypes": [],
+    "binaryCompatibilityQualified": false,
+    "officialCompatibilityQualified": false
+  },
+  "completePublicApiReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\independent-full-public-api-v1.json",
+    "sha256": "B9C86FB161DCB847F9EB62268C8333F2373121B366F9A070978B7676D261B9C4",
+    "bytes": 1708
+  },
+  "independentReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\collected-evidence-v1.json",
+    "sha256": "AAC3BF9525394A184AA87D3980B261D217E1F62DA957164C128758400F5B0821",
+    "bytes": 727812
+  },
+  "independentRasterReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\independent-preserved-raster-v1.json",
+    "sha256": "B0295CCD5198EDC943B035491A058C869C85885B0E398F18F023580893DA0C67",
+    "bytes": 247496
+  },
+  "independentPackagePayloadReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\independent-package-payload-v1.json",
+    "sha256": "2A795CCBB19877CE57A70D4CFB07F0802E2D1C9A3A32FA961E26E082311DC66A",
+    "bytes": 8729
+  },
+  "cacheMechanismReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\cache-mechanism-review-v1.json",
+    "sha256": "150358602A3921BFC907BCA91491065B07D1CF207163FD2C160186AEE879035D",
+    "bytes": 831581
+  },
+  "preservedBusinessOracleRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\preserved-business-oracle-v1.json",
+    "sha256": "152D9345F54B5416E34EC64B3E0BE9D12689B8A0145CEF2F7E236AED4062844F",
+    "bytes": 640
+  },
+  "independentReviewCounts": {
+    "sourceAndPlatformChecks": 4377,
+    "rasterChecks": 981,
+    "decodedImages": 168,
+    "packagePayloadChecks": 14,
+    "cacheMechanismChecks": 5670,
+    "countsOverlapAndAreNotProductTestCounts": true
+  },
+  "historicalAndRendererPinsVerified": true,
+  "historicalDocumentPinCount": 50,
+  "historicalRendererVersionCount": 8,
+  "historicalRendererPreservationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\historical-renderer-preservation-v1.json",
+    "sha256": "08FDEBA38127A64B367C7880CB08E6AD22D3FF29C8AE6A54DE0F52968CF987E3",
+    "bytes": 5289
+  },
+  "generalMetadataBeforeRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\metadata-before.json",
+    "sha256": "8840EBF6AD71C3C8E40CCC7599BD7E2BA185052E146EDC458B514A2B70D80E0E",
+    "bytes": 3137
+  },
+  "dependencyReuse": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\dependency-reuse.json",
+    "sha256": "CC6A69B661D86779B615C9D083FA6398A1B4A1A13CED795E0C442A1664587278",
+    "bytes": 5592
+  },
+  "productPackagesReused": false,
+  "nugetAuditOrWarningPolicyChanged": false,
+  "nativeAccessibilityEnumerationRetested": false,
+  "deferredNativeAccessibilityWorkstream": "A11Y-NATIVE-01",
+  "completeNativeBridgeGatePassed": false,
+  "previousNativeBridgeEvidence": {
+    "path": "<REPO_ROOT>\\docs\\charts-c2-accessibility-validation.json",
+    "sha256": "BC80F3A743AD610E5B419D87D00A753755265A12F434F08654A06A59ABD72A8D",
+    "bytes": 1405510
+  },
+  "performanceQualified": false,
+  "performanceMeasured": true,
+  "memoryRegressionMeasured": false,
+  "formalSlaEvaluated": false,
+  "millionHitTailDeferredTo": "C4 later optimization",
+  "officialRuntimeReferenceIncluded": false,
+  "physicalKeyboardValidated": false,
+  "physicalDesktopCertified": false,
+  "implementationContracts": [
+    "数据准备与视图分开：挂载的 CartesianChart 按数据/配置版本复用源快照、分类映射、比较/堆叠/范围覆盖及点编码结果；布局/视口变更通过小型视图包装复用同一不可变数据，数据或映射/拓扑变化再重建。未挂载及未知扩展按原语义保守刷新。 标题/图例、字体和安全的纯绘制配置保留数据层；影响点编码默认颜色/大小的配置仍保守重建对应显示样式，RawPoint 使用 O(1) 覆盖共享数值拥有者。",
+    "极值摘要按不可变快照弱关联缓存，数值范围与合法域扫描独立于 X/Y 命中索引；X/Y 排序索引按需首次查询构建并复用。基础尺度与类别标签独立于视口；类别标签首次防御性复制后由内部不可变所有者复用。",
+    "轴文字与绘图按各自身份/视图失效：Tooltip/十字线/选择重绘不清除轴文字或数据层；视口改变仍重新计算必要刻度/布局与投影。系列绘图复用内置几何/原语，交互叠加在当前场景上独立绘制。 绘制式 Tooltip 通过最多32项的 FIFO 缓存复用文字/度量，按内容、字体、文化与画刷等键复用；formatter 每次继续调用，相同命中点移动锚点只更新位置，不重建文字，不把不同数据点的内容变化误作失效失败。轴文字容量保持有界 FIFO，避免字典槽位复用造成新文字反复被逐出。",
+    "内置系列记录并重放原本原语，保留 DrawLine/DrawRect/DrawEllipse/DrawGeometry 的光栅语义；动态选择透明度、裁剪与当前笔刷在当前绘制上下文生效。自定义 renderer 继续每帧调用，不强加未声明的外部状态版本协议。",
+    "点编码视图复用一次绘制排序和按需投影命中结构；线段插值/Trackball 复用当前视图的投影顶点及断裂切分数据，数据或视图变化后重建。外部可变自定义投影保留保守实时路径。 线性线段查询仍逐个检查已缓存的投影顶点，复杂重叠点的候选命中仍可能为 O(N)；本批减少源访问和重建，不承诺这些查询变为 O(log N)。 已知内置轴变换可复用；非单调自定义分类轴查询按完整候选回退，未知自定义投影实时求值。自定义轴的域或配置变更必须按既有 Changed/Refresh 协议通知，未声明裸字段变化不自动构成新版本。",
+    "缓存只持有当前必要数据/场景；换源、配置变化及卸载解除旧层引用，弱关联快照/上下文缓存不反向强保留退休数据。动画、导出、原地可变几何的 Refresh 约定与扩展回调的重入安全继续由现有契约和回归覆盖。",
+    "新增独立缓存机制诊断入口：9 场景每场景1次冷查询、30次预热与100次 Tooltip 更新+DrawingGroup Render，逐项记录源枚举/访问、数据/极值/视图/文字/几何/排序命中/线段/标签复制计数；按原始公式核对来源身份并记录原始计时与线程分配。门禁由操作数和语义决定，不设置机器相关延迟阈值。 另对同一命中点执行50次小幅锚点移动，要求交互文字构建为0、复用次数至少50；不同命中点的文字构建不设零增量要求。"
+  ],
+  "implementationContractsRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\implementation-contracts-final-v2.json",
+    "sha256": "02F0E8DAEDFB33844DF2DE43299302DCABB4EAB76BBEE7BC87DDD5EC730C9EBF",
+    "bytes": 6312
+  },
+  "remaining": [
+    "C4-02 可见数据裁剪为下一项，仍需完整视口边界邻点/形状穿越语义、LOD、增量更新、实时调度及多图预算；现有缓存复用不等于完成完整 C4。",
+    "保留绘图重放仍随绘图操作数增长，密集散点/重复符号/曲线仍有 CPU 与线程分配成本；极端重叠点命中候选和线性插值查询缓存顶点仍有 O(N) 最坏路径。后续优化必须保留命中、画质与来源身份；没有 O(1) 绘制或 present 保证。",
+    "本批计时与线程分配为 Headless 程序化诊断，不认证正式 FPS/尾延迟/内存字节预算或长稳 SLA。百万点命中 p95 历史回退 0.7649→1.1235 ms 继续留 C4 后续优化。",
+    "缓存资源字节上限、原生/GPU retained resources、在途任务及30分钟/8小时内存稳定性仍需专项；当前换源/卸载引用释放回归不能替代完整内存资格。",
+    "自定义 renderer/轴/投影可能依赖外部可变状态，继续按其既有通知协议和保守刷新路径执行；裸字段变化仍需 Changed/Refresh，不保证未知扩展的无通知拓扑/域变更被自动发现。独立 Circular/Polar/Gauge/Sparkline/Analysis 图族保持各自缓存，未取得本批全族分层缓存或性能资格。",
+    "C3-01～C3-07 和完整 C2 的已记录图族/模板/标签/动画/联动适配残余继续开放；未使用许可官方运行时作性能、视觉、API 或二进制等价对照。",
+    "Windows 与 Linux 证据限原生合成窗口、Headless 与 Ubuntu 26.04 WSL2/WSLg；物理输入、实体 Linux、实际 backend/GPU/compositor present 与正式平台门槛未认证。",
+    "Windows UIA/Linux AT-SPI 原生选中项枚举继续由用户延期到 A11Y-NATIVE-01，完整原生桥接门槛未关闭；AX06 标题/末刻度布局及四份历史 PixelProbe DLL 证据缺口保留。",
+    "轴标题/文字等部分视图样式变化仍保守重新生成基础尺度，但复用快照极值且不重新遍历源；后续可进一步缩小尺度/文字失效键。",
+    "编码点的绘制排序缓存当前属于 ChartSeriesRenderContext 视图；视口刷新创建新上下文时，SizeAscending/SizeDescending 仍可能重新执行 O(N log N) 排序。源快照、极值和坐标 X/Y 索引可跨视口复用，绘制排序更细粒度复用留后续。"
+  ],
+  "cacheProbeMeasurements": {
+    "windows": [
+      {
+        "id": "line-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.5687,
+        "hoverP95Milliseconds": 0.7632,
+        "hoverMaximumMilliseconds": 3.363,
+        "hoverMedianAllocatedBytes": 220056,
+        "hoverP95AllocatedBytes": 225624,
+        "hoverMaximumAllocatedBytes": 264528,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 104
+      },
+      {
+        "id": "line-1m",
+        "pointCount": 1000000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 1.7224,
+        "hoverP95Milliseconds": 2.0847,
+        "hoverMaximumMilliseconds": 4.1978,
+        "hoverMedianAllocatedBytes": 220184,
+        "hoverP95AllocatedBytes": 223656,
+        "hoverMaximumAllocatedBytes": 264784,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 111
+      },
+      {
+        "id": "scatter-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 17.9598,
+        "hoverP95Milliseconds": 26.509,
+        "hoverMaximumMilliseconds": 30.1491,
+        "hoverMedianAllocatedBytes": 10798168,
+        "hoverP95AllocatedBytes": 10802584,
+        "hoverMaximumAllocatedBytes": 10836280,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 177
+      },
+      {
+        "id": "shared-y-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.3977,
+        "hoverP95Milliseconds": 0.4793,
+        "hoverMaximumMilliseconds": 2.3218,
+        "hoverMedianAllocatedBytes": 243368,
+        "hoverP95AllocatedBytes": 243368,
+        "hoverMaximumAllocatedBytes": 248912,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 103
+      },
+      {
+        "id": "encoded-bubble-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 18.6264,
+        "hoverP95Milliseconds": 24.0785,
+        "hoverMaximumMilliseconds": 28.3918,
+        "hoverMedianAllocatedBytes": 10799560,
+        "hoverP95AllocatedBytes": 10799600,
+        "hoverMaximumAllocatedBytes": 10840808,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 166
+      },
+      {
+        "id": "interpolate-x-1k",
+        "pointCount": 1000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.492,
+        "hoverP95Milliseconds": 0.6674,
+        "hoverMaximumMilliseconds": 3.1428,
+        "hoverMedianAllocatedBytes": 233120,
+        "hoverP95AllocatedBytes": 233200,
+        "hoverMaximumAllocatedBytes": 245224,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 103
+      },
+      {
+        "id": "category-1k",
+        "pointCount": 1000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.2301,
+        "hoverP95Milliseconds": 0.392,
+        "hoverMaximumMilliseconds": 5.7664,
+        "hoverMedianAllocatedBytes": 434456,
+        "hoverP95AllocatedBytes": 434456,
+        "hoverMaximumAllocatedBytes": 434880,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 102
+      },
+      {
+        "id": "stacked-2x1k",
+        "pointCount": 1000,
+        "seriesCount": 2,
+        "hoverMedianMilliseconds": 0.2169,
+        "hoverP95Milliseconds": 0.3099,
+        "hoverMaximumMilliseconds": 2.4439,
+        "hoverMedianAllocatedBytes": 250816,
+        "hoverP95AllocatedBytes": 250816,
+        "hoverMaximumAllocatedBytes": 261952,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 204
+      },
+      {
+        "id": "range-band-1k",
+        "pointCount": 1000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.2034,
+        "hoverP95Milliseconds": 0.2945,
+        "hoverMaximumMilliseconds": 2.9679,
+        "hoverMedianAllocatedBytes": 236368,
+        "hoverP95AllocatedBytes": 236368,
+        "hoverMaximumAllocatedBytes": 236792,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 102
+      }
+    ],
+    "linux": [
+      {
+        "id": "line-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.584876,
+        "hoverP95Milliseconds": 0.770128,
+        "hoverMaximumMilliseconds": 3.088427,
+        "hoverMedianAllocatedBytes": 222664,
+        "hoverP95AllocatedBytes": 228232,
+        "hoverMaximumAllocatedBytes": 272352,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 104
+      },
+      {
+        "id": "line-1m",
+        "pointCount": 1000000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 2.026178,
+        "hoverP95Milliseconds": 3.228813,
+        "hoverMaximumMilliseconds": 6.555427,
+        "hoverMedianAllocatedBytes": 222800,
+        "hoverP95AllocatedBytes": 225848,
+        "hoverMaximumAllocatedBytes": 272608,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 114
+      },
+      {
+        "id": "scatter-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 17.533044,
+        "hoverP95Milliseconds": 24.623634,
+        "hoverMaximumMilliseconds": 28.612988,
+        "hoverMedianAllocatedBytes": 10797640,
+        "hoverP95AllocatedBytes": 10805192,
+        "hoverMaximumAllocatedBytes": 10847080,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 168
+      },
+      {
+        "id": "shared-y-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.292684,
+        "hoverP95Milliseconds": 0.476494,
+        "hoverMaximumMilliseconds": 9.44838,
+        "hoverMedianAllocatedBytes": 251184,
+        "hoverP95AllocatedBytes": 251184,
+        "hoverMaximumAllocatedBytes": 256728,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 103
+      },
+      {
+        "id": "encoded-bubble-10k",
+        "pointCount": 10000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 15.622743,
+        "hoverP95Milliseconds": 21.339751,
+        "hoverMaximumMilliseconds": 24.538506,
+        "hoverMedianAllocatedBytes": 10801880,
+        "hoverP95AllocatedBytes": 10802104,
+        "hoverMaximumAllocatedBytes": 10847752,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 162
+      },
+      {
+        "id": "interpolate-x-1k",
+        "pointCount": 1000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.257766,
+        "hoverP95Milliseconds": 0.356748,
+        "hoverMaximumMilliseconds": 1.742265,
+        "hoverMedianAllocatedBytes": 240456,
+        "hoverP95AllocatedBytes": 240456,
+        "hoverMaximumAllocatedBytes": 252560,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 102
+      },
+      {
+        "id": "category-1k",
+        "pointCount": 1000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.231949,
+        "hoverP95Milliseconds": 0.333017,
+        "hoverMaximumMilliseconds": 2.568477,
+        "hoverMedianAllocatedBytes": 441792,
+        "hoverP95AllocatedBytes": 441792,
+        "hoverMaximumAllocatedBytes": 442216,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 102
+      },
+      {
+        "id": "stacked-2x1k",
+        "pointCount": 1000,
+        "seriesCount": 2,
+        "hoverMedianMilliseconds": 0.219533,
+        "hoverP95Milliseconds": 0.321081,
+        "hoverMaximumMilliseconds": 5.732291,
+        "hoverMedianAllocatedBytes": 258152,
+        "hoverP95AllocatedBytes": 258152,
+        "hoverMaximumAllocatedBytes": 269288,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 204
+      },
+      {
+        "id": "range-band-1k",
+        "pointCount": 1000,
+        "seriesCount": 1,
+        "hoverMedianMilliseconds": 0.174673,
+        "hoverP95Milliseconds": 0.251554,
+        "hoverMaximumMilliseconds": 2.660157,
+        "hoverMedianAllocatedBytes": 243704,
+        "hoverP95AllocatedBytes": 243704,
+        "hoverMaximumAllocatedBytes": 244128,
+        "warmSourceEnumerations": 0,
+        "warmVisitedItems": 0,
+        "warmPreparedDataBuilds": 0,
+        "warmViewBuilds": 0,
+        "warmGeometryBuilds": 0,
+        "warmDrawingReplays": 102
+      }
+    ]
+  },
+  "retainedDevelopmentEvidence": [
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\retained-development-evidence-v1.json",
+      "sha256": "1E585E252FD0F5F7224CC8A7B98DBD09771394F6012643A9AD467E55250FB36B",
+      "bytes": 28300
+    }
+  ],
+  "counterEvidenceScope": "Warm hover before/after counters are retained and independently subtracted; viewport/data phase maps retain producer-computed deltas, supported by frozen source review and independent headless invalidation tests. Timing statistics and raw source identities are independently recalculated.",
+  "linuxCachePhaseRepairRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\cache-phase-repair-v1.json",
+    "sha256": "9AE550A07EC410D7C084835F66EAE162D82D8E012E02DFDDF8B8BA06C841585F",
+    "bytes": 4288
+  },
+  "linuxCacheRepairIndependentReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\data-agent-repair-review-v1.json",
+    "sha256": "969B17F8BC79B0FCC24664331A3DD6FF695F801DA6529BB436076D9423CD0050",
+    "bytes": 18233
+  },
+  "additionalIndependentCacheReviews": {
+    "windows": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\windows\\layer-cache-v1\\data-agent-independent-review-v1.json",
+      "sha256": "7BB8233FC32FF41119894FF93D4DDFF75E1942B27993E44C6CFBD8C17CB7BFBE",
+      "bytes": 271608
+    },
+    "linux": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\linux\\run-v1\\layer-cache-v1-r2\\data-agent-independent-review-v1.json",
+      "sha256": "859914B534C820BDDC38650568C27E09733A46765A9D623C8B20596C50118EDC",
+      "bytes": 271637
+    }
+  },
+  "manualWindowsVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\manual-windows-c401-visual-v1.json",
+    "sha256": "DF0FB8DE3EFC74935D772B8E2623C39D6879084239F94FB37F97D2D70FF67A02",
+    "bytes": 2113
+  },
+  "manualLinuxVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-layered-invalidation-20261018\\manual-linux-c401-visual-v1.json",
+    "sha256": "DA2EFD0D707B182F47E4830889E44379BDFF13B0999E076A746223684AD72B70",
+    "bytes": 2217
+  }
+}

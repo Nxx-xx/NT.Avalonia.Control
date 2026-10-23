@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <AvaloniaResource Include="Assets/**" />
+    <PackageReference Include="Avalonia.Headless.XUnit" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Markdown.Themes/NT.AvaloniaControl.Markdown.Themes.csproj" />
+  </ItemGroup>
+</Project>

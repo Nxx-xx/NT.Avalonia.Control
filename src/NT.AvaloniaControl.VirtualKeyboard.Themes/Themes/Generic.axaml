@@ -1,0 +1,89 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vk="clr-namespace:NT.AvaloniaControl.VirtualKeyboard;assembly=NT.AvaloniaControl.VirtualKeyboard">
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://NT.AvaloniaControl.VirtualKeyboard.Themes/Resources/Colors.axaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <ControlTheme x:Key="{x:Type vk:VirtualKeyboardKeyButton}" TargetType="vk:VirtualKeyboardKeyButton">
+        <Setter Property="Background" Value="{DynamicResource VirtualKeyboardKeyBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource VirtualKeyboardForegroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource VirtualKeyboardBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="{DynamicResource VirtualKeyboardKeyCornerRadius}" />
+        <Setter Property="Padding" Value="{DynamicResource VirtualKeyboardKeyPadding}" />
+        <Setter Property="FontSize" Value="{DynamicResource VirtualKeyboardFontSize}" />
+        <Setter Property="MinWidth" Value="{DynamicResource VirtualKeyboardKeyMinWidth}" />
+        <Setter Property="MinHeight" Value="{DynamicResource VirtualKeyboardKeyMinHeight}" />
+        <Setter Property="Template">
+          <ControlTemplate>
+            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}"
+                    Padding="{TemplateBinding Padding}">
+              <TextBlock Text="{TemplateBinding Label}" Foreground="{TemplateBinding Foreground}"
+                         FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}"
+                         HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False" />
+            </Border>
+          </ControlTemplate>
+        </Setter>
+        <Style Selector="^:pointerover">
+          <Setter Property="Background" Value="{DynamicResource VirtualKeyboardKeyHoverBrush}" />
+        </Style>
+        <Style Selector="^:locked">
+          <Setter Property="Background" Value="{DynamicResource VirtualKeyboardKeyLockedBrush}" />
+          <Setter Property="Foreground" Value="{DynamicResource VirtualKeyboardKeyLockedForegroundBrush}" />
+        </Style>
+        <Style Selector="^:pressed">
+          <Setter Property="Background" Value="{DynamicResource VirtualKeyboardKeyPressedBrush}" />
+        </Style>
+        <Style Selector="^:unavailable, ^:disabled">
+          <Setter Property="Background" Value="{DynamicResource VirtualKeyboardKeyDisabledBrush}" />
+          <Setter Property="Foreground" Value="{DynamicResource VirtualKeyboardKeyDisabledForegroundBrush}" />
+        </Style>
+      </ControlTheme>
+      <ControlTheme x:Key="{x:Type vk:VirtualKeyboard}" TargetType="vk:VirtualKeyboard">
+        <Setter Property="Background" Value="{DynamicResource VirtualKeyboardBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource VirtualKeyboardForegroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource VirtualKeyboardBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="{DynamicResource VirtualKeyboardCornerRadius}" />
+        <Setter Property="Padding" Value="{DynamicResource VirtualKeyboardPadding}" />
+        <Setter Property="Template">
+          <ControlTemplate>
+            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}"
+                    Padding="{TemplateBinding Padding}">
+              <ScrollViewer Name="PART_KeyboardScrollViewer" Focusable="False"
+                            HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+              <ItemsControl Name="PART_RowsPresenter" Focusable="False">
+                <ItemsControl.ItemsPanel>
+                  <ItemsPanelTemplate>
+                    <StackPanel Spacing="{DynamicResource VirtualKeyboardKeySpacing}" />
+                  </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate x:DataType="vk:VirtualKeyboardRow">
+                    <ItemsControl ItemsSource="{Binding Keys}" Focusable="False">
+                      <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                          <vk:VirtualKeyboardRowPanel Spacing="{DynamicResource VirtualKeyboardKeySpacing}" />
+                        </ItemsPanelTemplate>
+                      </ItemsControl.ItemsPanel>
+                      <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="vk:VirtualKeyboardKey">
+                          <vk:VirtualKeyboardKeyButton Key="{Binding}" />
+                        </DataTemplate>
+                      </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+              </ScrollViewer>
+            </Border>
+          </ControlTemplate>
+        </Setter>
+      </ControlTheme>
+    </ResourceDictionary>
+  </Styles.Resources>
+</Styles>

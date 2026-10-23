@@ -1,0 +1,68 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Light">
+      <SolidColorBrush x:Key="MarkdownBackgroundBrush" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="MarkdownForegroundBrush" Color="#1B2430" />
+      <SolidColorBrush x:Key="MarkdownMutedBrush" Color="#526174" />
+      <SolidColorBrush x:Key="MarkdownBorderBrush" Color="#D5DEE8" />
+      <SolidColorBrush x:Key="MarkdownCodeBackgroundBrush" Color="#F1F4F8" />
+      <SolidColorBrush x:Key="MarkdownQuoteBackgroundBrush" Color="#F5F7FB" />
+      <SolidColorBrush x:Key="MarkdownQuoteBorderBrush" Color="#6B7B90" />
+      <SolidColorBrush x:Key="MarkdownTableHeaderBrush" Color="#EDF2F8" />
+      <SolidColorBrush x:Key="MarkdownLinkBrush" Color="#1466B8" />
+      <SolidColorBrush x:Key="MarkdownLinkHoverBrush" Color="#004F9B" />
+      <SolidColorBrush x:Key="MarkdownLinkVisitedBrush" Color="#7855A0" />
+      <SolidColorBrush x:Key="MarkdownSelectionBrush" Color="#663399FF" />
+      <SolidColorBrush x:Key="MarkdownCaretBrush" Color="#1466B8" />
+      <SolidColorBrush x:Key="MarkdownMarkBrush" Color="#835F00" />
+      <SolidColorBrush x:Key="MarkdownNoteBrush" Color="#327BCC" />
+      <SolidColorBrush x:Key="MarkdownTipBrush" Color="#248653" />
+      <SolidColorBrush x:Key="MarkdownImportantBrush" Color="#895EC4" />
+      <SolidColorBrush x:Key="MarkdownWarningBrush" Color="#A57408" />
+      <SolidColorBrush x:Key="MarkdownCautionBrush" Color="#C74B50" />
+    </ResourceDictionary>
+    <ResourceDictionary x:Key="Dark">
+      <SolidColorBrush x:Key="MarkdownBackgroundBrush" Color="#151B24" />
+      <SolidColorBrush x:Key="MarkdownForegroundBrush" Color="#E1E7EF" />
+      <SolidColorBrush x:Key="MarkdownMutedBrush" Color="#A6B4C8" />
+      <SolidColorBrush x:Key="MarkdownBorderBrush" Color="#3D4C60" />
+      <SolidColorBrush x:Key="MarkdownCodeBackgroundBrush" Color="#202B39" />
+      <SolidColorBrush x:Key="MarkdownQuoteBackgroundBrush" Color="#1C2532" />
+      <SolidColorBrush x:Key="MarkdownQuoteBorderBrush" Color="#93A6C0" />
+      <SolidColorBrush x:Key="MarkdownTableHeaderBrush" Color="#243245" />
+      <SolidColorBrush x:Key="MarkdownLinkBrush" Color="#79B9FA" />
+      <SolidColorBrush x:Key="MarkdownLinkHoverBrush" Color="#B1D7FF" />
+      <SolidColorBrush x:Key="MarkdownLinkVisitedBrush" Color="#BBA0E6" />
+      <SolidColorBrush x:Key="MarkdownSelectionBrush" Color="#805AA5FF" />
+      <SolidColorBrush x:Key="MarkdownCaretBrush" Color="#79B9FA" />
+      <SolidColorBrush x:Key="MarkdownMarkBrush" Color="#F0CA68" />
+      <SolidColorBrush x:Key="MarkdownNoteBrush" Color="#70AEF0" />
+      <SolidColorBrush x:Key="MarkdownTipBrush" Color="#69C592" />
+      <SolidColorBrush x:Key="MarkdownImportantBrush" Color="#B99AE8" />
+      <SolidColorBrush x:Key="MarkdownWarningBrush" Color="#EDC363" />
+      <SolidColorBrush x:Key="MarkdownCautionBrush" Color="#F08C92" />
+    </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
+  <FontFamily x:Key="MarkdownFontFamily">Segoe UI, Noto Sans CJK SC, Microsoft YaHei, sans-serif</FontFamily>
+  <FontFamily x:Key="MarkdownCodeFontFamily">Cascadia Code, Consolas, Noto Sans Mono, monospace</FontFamily>
+  <x:Double x:Key="MarkdownFontSize">16</x:Double>
+  <x:Double x:Key="MarkdownCodeFontSize">14</x:Double>
+  <x:Double x:Key="MarkdownH1FontSize">32</x:Double>
+  <x:Double x:Key="MarkdownH2FontSize">26</x:Double>
+  <x:Double x:Key="MarkdownH3FontSize">22</x:Double>
+  <x:Double x:Key="MarkdownH4FontSize">19</x:Double>
+  <x:Double x:Key="MarkdownH5FontSize">17</x:Double>
+  <x:Double x:Key="MarkdownH6FontSize">16</x:Double>
+  <Thickness x:Key="MarkdownPadding">24,20</Thickness>
+  <Thickness x:Key="MarkdownBlockMargin">0,0,0,12</Thickness>
+  <Thickness x:Key="MarkdownHeadingMargin">0,12,0,14</Thickness>
+  <Thickness x:Key="MarkdownCodePadding">12</Thickness>
+  <Thickness x:Key="MarkdownQuotePadding">14,10</Thickness>
+  <Thickness x:Key="MarkdownQuoteBorderThickness">3,0,0,0</Thickness>
+  <Thickness x:Key="MarkdownListPadding">12,0,0,0</Thickness>
+  <Thickness x:Key="MarkdownTableCellPadding">10,8</Thickness>
+  <Thickness x:Key="MarkdownTableCellBorderThickness">0.5</Thickness>
+  <CornerRadius x:Key="MarkdownCodeCornerRadius">6</CornerRadius>
+  <CornerRadius x:Key="MarkdownCornerRadius">8</CornerRadius>
+</ResourceDictionary>

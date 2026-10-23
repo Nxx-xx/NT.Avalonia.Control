@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>NT.AvaloniaControl.Markdown.TextMate</PackageId>
+    <AssemblyName>NT.AvaloniaControl.Markdown.TextMate</AssemblyName>
+    <RootNamespace>NT.AvaloniaControl.Markdown.TextMate</RootNamespace>
+    <Description>Optional TextMate syntax highlighting for NT.AvaloniaControl.Markdown.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../NT.AvaloniaControl.Markdown/NT.AvaloniaControl.Markdown.csproj" />
+    <PackageReference Include="TextMateSharp" />
+    <PackageReference Include="TextMateSharp.Grammars" />
+    <None Update="README.md" Pack="true" PackagePath="/README.md" />
+    <None Update="THIRD-PARTY-NOTICES.md" Pack="true" PackagePath="/THIRD-PARTY-NOTICES.md" />
+    <None Update="Licenses/**/*" Pack="true" PackagePath="/Licenses/%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,97 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:md="clr-namespace:NT.AvaloniaControl.Markdown;assembly=NT.AvaloniaControl.Markdown">
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://NT.AvaloniaControl.Markdown.Themes/Resources/Colors.axaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <ControlTheme x:Key="{x:Type md:Markdown}" TargetType="md:Markdown">
+        <Setter Property="Background" Value="{DynamicResource MarkdownBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource MarkdownForegroundBrush}" />
+        <Setter Property="FontFamily" Value="{DynamicResource MarkdownFontFamily}" />
+        <Setter Property="FontSize" Value="{DynamicResource MarkdownFontSize}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MarkdownBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="{DynamicResource MarkdownCornerRadius}" />
+        <Setter Property="Padding" Value="{DynamicResource MarkdownPadding}" />
+        <Setter Property="SelectionBrush" Value="{DynamicResource MarkdownSelectionBrush}" />
+        <Setter Property="CaretBrush" Value="{DynamicResource MarkdownCaretBrush}" />
+        <Setter Property="Template">
+          <ControlTemplate>
+            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}"
+                    Padding="{TemplateBinding Padding}">
+              <ScrollViewer Name="PART_ScrollViewer" Focusable="False"
+                            HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <md:MarkdownDocumentPresenter Name="PART_DocumentPresenter" />
+              </ScrollViewer>
+            </Border>
+          </ControlTemplate>
+        </Setter>
+      </ControlTheme>
+    </ResourceDictionary>
+  </Styles.Resources>
+  <Style Selector=":is(md|MarkdownBlockPresenter)">
+    <Setter Property="Margin" Value="{DynamicResource MarkdownBlockMargin}" />
+  </Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).heading">
+    <Setter Property="Margin" Value="{DynamicResource MarkdownHeadingMargin}" />
+  </Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).heading md|MarkdownTextPresenter">
+    <Setter Property="FontWeight" Value="SemiBold" />
+  </Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).h1 md|MarkdownTextPresenter"><Setter Property="FontSize" Value="{DynamicResource MarkdownH1FontSize}" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).h2 md|MarkdownTextPresenter"><Setter Property="FontSize" Value="{DynamicResource MarkdownH2FontSize}" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).h3 md|MarkdownTextPresenter"><Setter Property="FontSize" Value="{DynamicResource MarkdownH3FontSize}" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).h4 md|MarkdownTextPresenter"><Setter Property="FontSize" Value="{DynamicResource MarkdownH4FontSize}" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).h5 md|MarkdownTextPresenter"><Setter Property="FontSize" Value="{DynamicResource MarkdownH5FontSize}" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).h6 md|MarkdownTextPresenter"><Setter Property="FontSize" Value="{DynamicResource MarkdownH6FontSize}" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).code">
+    <Setter Property="Background" Value="{DynamicResource MarkdownCodeBackgroundBrush}" />
+    <Setter Property="Padding" Value="{DynamicResource MarkdownCodePadding}" />
+    <Setter Property="CornerRadius" Value="{DynamicResource MarkdownCodeCornerRadius}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource MarkdownBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+  <Style Selector="md|MarkdownTextPresenter.code">
+    <Setter Property="FontFamily" Value="{DynamicResource MarkdownCodeFontFamily}" />
+    <Setter Property="FontSize" Value="{DynamicResource MarkdownCodeFontSize}" />
+  </Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).quote, :is(md|MarkdownBlockPresenter).alert">
+    <Setter Property="Background" Value="{DynamicResource MarkdownQuoteBackgroundBrush}" />
+    <Setter Property="Padding" Value="{DynamicResource MarkdownQuotePadding}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource MarkdownQuoteBorderThickness}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource MarkdownQuoteBorderBrush}" />
+  </Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).note"><Setter Property="BorderBrush" Value="{DynamicResource MarkdownNoteBrush}" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).tip"><Setter Property="BorderBrush" Value="{DynamicResource MarkdownTipBrush}" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).important"><Setter Property="BorderBrush" Value="{DynamicResource MarkdownImportantBrush}" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).warning"><Setter Property="BorderBrush" Value="{DynamicResource MarkdownWarningBrush}" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).caution"><Setter Property="BorderBrush" Value="{DynamicResource MarkdownCautionBrush}" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).list"><Setter Property="Padding" Value="{DynamicResource MarkdownListPadding}" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).paragraph.tight-list"><Setter Property="Margin" Value="0" /></Style>
+  <Style Selector="md|MarkdownTextPresenter.alert-title"><Setter Property="FontWeight" Value="SemiBold" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).tablecell">
+    <Setter Property="Padding" Value="{DynamicResource MarkdownTableCellPadding}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource MarkdownTableCellBorderThickness}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource MarkdownBorderBrush}" />
+    <Setter Property="Margin" Value="0" />
+  </Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).tablecell.header"><Setter Property="Background" Value="{DynamicResource MarkdownTableHeaderBrush}" /></Style>
+  <Style Selector=":is(md|MarkdownBlockPresenter).tablecell.header md|MarkdownTextPresenter"><Setter Property="FontWeight" Value="SemiBold" /></Style>
+  <Style Selector="md|MarkdownSpan.strong"><Setter Property="FontWeight" Value="Bold" /></Style>
+  <Style Selector="md|MarkdownSpan.emphasis"><Setter Property="FontStyle" Value="Italic" /></Style>
+  <Style Selector="md|MarkdownSpan.strike"><Setter Property="TextDecorations" Value="Strikethrough" /></Style>
+  <Style Selector="md|MarkdownSpan.insert"><Setter Property="TextDecorations" Value="Underline" /></Style>
+  <Style Selector="md|MarkdownSpan.mark"><Setter Property="Foreground" Value="{DynamicResource MarkdownMarkBrush}" /></Style>
+  <Style Selector="md|MarkdownSpan.subscript"><Setter Property="BaselineAlignment" Value="Subscript" /></Style>
+  <Style Selector="md|MarkdownSpan.superscript"><Setter Property="BaselineAlignment" Value="Superscript" /></Style>
+  <Style Selector="md|MarkdownSpan.code"><Setter Property="FontFamily" Value="{DynamicResource MarkdownCodeFontFamily}" /></Style>
+  <Style Selector="md|MarkdownSpan.link">
+    <Setter Property="Foreground" Value="{DynamicResource MarkdownLinkBrush}" />
+    <Setter Property="TextDecorations" Value="Underline" />
+  </Style>
+  <Style Selector="md|MarkdownSpan.link.pointerover"><Setter Property="Foreground" Value="{DynamicResource MarkdownLinkHoverBrush}" /></Style>
+  <Style Selector="md|MarkdownSpan.link.visited"><Setter Property="Foreground" Value="{DynamicResource MarkdownLinkVisitedBrush}" /></Style>
+</Styles>

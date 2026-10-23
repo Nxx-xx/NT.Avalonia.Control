@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Optional Fluent mapping: redefines the PdfViewer palette in terms of Avalonia Fluent
+       System*Color tokens so the reader follows the host's Fluent light/dark variant. Merge
+       this dictionary after Colors.axaml (or construct PdfViewerTheme(useFluentResources: true)).
+       Colors.axaml keeps the standalone defaults; the scalar PdfViewer* keys are unchanged. -->
+  <SolidColorBrush x:Key="PdfViewerBackgroundBrush" Color="{DynamicResource SystemAltHighColor}" />
+  <SolidColorBrush x:Key="PdfViewerForegroundBrush" Color="{DynamicResource SystemBaseHighColor}" />
+  <SolidColorBrush x:Key="PdfViewerMutedForegroundBrush" Color="{DynamicResource SystemBaseMediumColor}" />
+  <SolidColorBrush x:Key="PdfViewerBorderBrush" Color="{DynamicResource SystemBaseLowColor}" />
+  <SolidColorBrush x:Key="PdfViewerToolbarBrush" Color="{DynamicResource SystemChromeMediumLowColor}" />
+  <SolidColorBrush x:Key="PdfViewerCanvasBrush" Color="{DynamicResource SystemChromeMediumColor}" />
+  <SolidColorBrush x:Key="PdfViewerErrorBrush" Color="{DynamicResource SystemErrorTextColor}" />
+</ResourceDictionary>

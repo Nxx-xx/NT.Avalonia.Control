@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>NT.AvaloniaControl.VirtualKeyboard</PackageId>
+    <AssemblyName>NT.AvaloniaControl.VirtualKeyboard</AssemblyName>
+    <RootNamespace>NT.AvaloniaControl.VirtualKeyboard</RootNamespace>
+    <Description>Application-local numeric and English virtual keyboard for Avalonia TextBox.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <None Update="README.md" Pack="true" PackagePath="/README.md" />
+  </ItemGroup>
+</Project>

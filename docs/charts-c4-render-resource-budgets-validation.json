@@ -1,0 +1,851 @@
+{
+  "schemaVersion": 1,
+  "stage": "C4-06 drawing and local resource budgets",
+  "completedUtc": "2026-10-20T12:12:22.997814+00:00",
+  "clientExecutionDate": "2026-10-20",
+  "finalCandidateVersion": "c4-render-resource-budgets-source-v1",
+  "softwareFunctionalSubsetPassed": true,
+  "functionalSubsetPassed": true,
+  "renderResourceMechanismValidated": true,
+  "incrementalStreamingMechanismValidated": true,
+  "efficientHitMechanismValidated": true,
+  "lodMechanismValidated": true,
+  "visibilityMechanismValidated": true,
+  "cacheMechanismValidated": true,
+  "fullC2StageComplete": false,
+  "fullC3StageComplete": false,
+  "fullC4StageComplete": false,
+  "fullC7StageComplete": false,
+  "nextWorkItem": "C4-07",
+  "windows": {
+    "platform": "windows",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows/windows-final-v3/results.json",
+      "sha256": "0A94E06AC622346754B647966336CB5CCDC8CAD36D52A787020483AB3EE915DB",
+      "bytes": 21090
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows/windows-final-v3/charts-smoke.json",
+      "sha256": "A03F6DE6DCA140895EBDF830E11C43AE1BD0989325C6B355CEE98120DF15F22D",
+      "bytes": 3882065
+    },
+    "usageReport": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows/windows-final-v3/charts-usage.json",
+      "sha256": "B5821A8CE153FC6AB804380BF52F71776911DD478A9F1922EA42BBFBA33FCCB2",
+      "bytes": 59191
+    },
+    "headlessTests": 1893,
+    "demoChecks": 1384,
+    "usageChecks": 380,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 538,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-render-resource-budgets-20261020\\windows\\package-consumers-v3\\20261020T120147698Z-ed1c66f7982941dca8291637ac0596f9\\function\\consumer-result.json",
+          "sha256": "C6194FAA575EAEB1D52A4449ED9505C9E1A09725651BEFF44DB4DBC898F18721",
+          "bytes": 92789
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-render-resource-budgets-20261020\\windows\\package-consumers-v3\\20261020T120147698Z-ed1c66f7982941dca8291637ac0596f9\\function\\packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 538,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-render-resource-budgets-20261020\\windows\\package-consumers-v3\\20261020T120147698Z-ed1c66f7982941dca8291637ac0596f9\\themes\\consumer-result.json",
+          "sha256": "19284595E0455230CD25C5101CCFAA033BFD237E96187F01D1BB08DCC8180E9C",
+          "bytes": 92843
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-render-resource-budgets-20261020\\windows\\package-consumers-v3\\20261020T120147698Z-ed1c66f7982941dca8291637ac0596f9\\themes\\packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows/windows-final-v3/validated-input-manifest.json",
+      "sha256": "29853CB08658FA27827623188F3206BEA3F031AF7915E665C192F22252F91C96",
+      "bytes": 135382
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows/windows-final-v3/assembly-manifest.json",
+      "sha256": "A7B14F7237D7357DB29F4E7999C56261C255547866C0202283CA6E2CEA03ACEC",
+      "bytes": 1956
+    },
+    "environment": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows/windows-final-v3/environment.json",
+      "sha256": "24B5F955473FB1D1ED72871BCCB191398F33D3A8FF0EA54DE6EF3EA41CE8448D",
+      "bytes": 8745
+    },
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false,
+    "resourceSupervisor": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows/render-resource-budgets-v3/supervisor.json",
+      "sha256": "565A82A70EA91FE976211C08A76816D325A1316DF1F88C44A36FC2C8DEA7FCFF",
+      "bytes": 2322
+    },
+    "resourceRaw": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows/render-resource-budgets-v3/raw.json",
+      "sha256": "56459C9BBAAA7B3FFBA7C3F55FD52E0B17BBF0C348A8413CF875F48E04DB77FE",
+      "bytes": 1593861
+    },
+    "independentResourceMechanism": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-render-resource-mechanism-windows-v1.json",
+      "sha256": "43F1D97A1F0E526DD4A8A3DE38C0342E1A4047CBD98F73EC9FC6ABA77428BC48",
+      "bytes": 1048268
+    },
+    "independentResourceNative": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-render-resource-native-windows-v2.json",
+      "sha256": "20C99B15E13647AD369D8BD31564B14A3A76DE47A5D1D7E4C01F4ED54D35902E",
+      "bytes": 455065
+    },
+    "manualVisualReview": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/manual-windows-c406-visual-v1.json",
+      "sha256": "8AE32ABD2D9CA9574A917BE715D531E173A10BBA9B154F3D01B19B027942C5D0",
+      "bytes": 2014
+    },
+    "screenshotDirectory": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows/windows-final-v3",
+    "pngCount": 725,
+    "newResourcePngCount": 14,
+    "representativeScreenshots": {
+      "overview": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows/windows-final-v3/charts-light-resource-light-overview.png",
+        "sha256": "E6D1B99176186DE4074EE92B7E7D0D89CBFE62F468439797DFA6BE24D88DA203",
+        "bytes": 58986
+      },
+      "smallBudget": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows/windows-final-v3/charts-light-resource-light-small-budget.png",
+        "sha256": "223994512523C9C94BE748D1F2C599EE8A334A1DBCB61B8C4DEB3C68A5E28B86",
+        "bytes": 26131
+      },
+      "mutableDark": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows/windows-final-v3/charts-light-resource-dark-mutable-brush.png",
+        "sha256": "5F9526B19220C53BD94FD920DDAD903AC95FBC887721205B52C3774A55FF72AC",
+        "bytes": 25574
+      }
+    }
+  },
+  "linux": {
+    "platform": "linux",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/verification/wslg-final-v1/results.json",
+      "sha256": "640C68712FDA6FF4E3800C296D624626FE0DB32CC1C8F186AA3C1E124716AB62",
+      "bytes": 14782
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/verification/wslg-final-v1/charts-smoke.json",
+      "sha256": "DECD1E765048B919CDDFBAA88C4A724DBECABF226D5467E428BDF26A08C5951B",
+      "bytes": 3741803
+    },
+    "usageReport": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/verification/wslg-final-v1/charts-usage.json",
+      "sha256": "6223CDF02C98F6326A5D07312E0B072422941A53AC2E5A0ADFD7A452B7780FA7",
+      "bytes": 57234
+    },
+    "headlessTests": 1893,
+    "demoChecks": 1384,
+    "usageChecks": 380,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 538,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-render-resource-budgets-20261020\\linux\\run-v1\\package-consumers\\20261020T114252171Z-17221d7bf3ad4872b559c690c075f919\\function\\consumer-result.json",
+          "sha256": "1A4BE0729AE2EFB5512FFEA26043D4AA02CD94C8075E7B1FEAFD18EADD2E6473",
+          "bytes": 90287
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/package-consumers/20261020T114252171Z-17221d7bf3ad4872b559c690c075f919/function/packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 538,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-render-resource-budgets-20261020\\linux\\run-v1\\package-consumers\\20261020T114252171Z-17221d7bf3ad4872b559c690c075f919\\themes\\consumer-result.json",
+          "sha256": "4109019F16D4F26D390F4F2480733433CD702A22BE8AEBBE74C38F47BE6C6075",
+          "bytes": 90324
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/package-consumers/20261020T114252171Z-17221d7bf3ad4872b559c690c075f919/themes/packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/verification/wslg-final-v1/validated-input-manifest.json",
+      "sha256": "8F67E0554C9457D8E4EA9DC2B4021EC0B0B68E37AAAE6E8402FE48523DD24AFB",
+      "bytes": 132320
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/verification/wslg-final-v1/assembly-manifest.json",
+      "sha256": "55B969939FB97321E0DEDC40398B1F35D45430C933D0B18EA2C1C87B66A18908",
+      "bytes": 1906
+    },
+    "environment": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/verification/wslg-final-v1/environment.json",
+      "sha256": "AB1E37AB8265959891DD7830068132588CE29170EC90A705FF58AD3DF8828A69",
+      "bytes": 6206
+    },
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false,
+    "resourceSupervisor": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/render-resource-budgets-v1/supervisor.json",
+      "sha256": "F139FD7F3E3E92BD6A4CEE0BDB86739EF9F0F0157F7A419FF9349DB0118B4C31",
+      "bytes": 2431
+    },
+    "resourceRaw": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/render-resource-budgets-v1/raw.json",
+      "sha256": "0BFAB6F66DAA917B31EF285FBC5A379BCCF16F74FF07A011967D2FDCFF6EB727",
+      "bytes": 1518843
+    },
+    "independentResourceMechanism": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-render-resource-mechanism-linux-v1.json",
+      "sha256": "94B4D76AC6F0B599F218F50D779B710CE2EE20EB8EBC10278B675F867CFDF0DD",
+      "bytes": 1007178
+    },
+    "independentResourceNative": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-render-resource-native-linux-v2.json",
+      "sha256": "9E778CA4E7104E966C7BBA6A54E67191B281973F4B5B5E6ED1644F7FE384355E",
+      "bytes": 455808
+    },
+    "manualVisualReview": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/manual-linux-c406-visual-v1.json",
+      "sha256": "E79A8BC8525AA9BDA35A4EE83DA640A43F2253CB31DCF81B37FBE86C34E3AA1D",
+      "bytes": 2193
+    },
+    "screenshotDirectory": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/verification/wslg-final-v1",
+    "pngCount": 725,
+    "newResourcePngCount": 14,
+    "representativeScreenshots": {
+      "overview": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/verification/wslg-final-v1/charts-light-resource-light-overview.png",
+        "sha256": "27E80C02F13BA4CC36BA7EB4A9B898954261800954B6E07C804731221032940F",
+        "bytes": 93147
+      },
+      "smallBudget": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/verification/wslg-final-v1/charts-light-resource-light-small-budget.png",
+        "sha256": "50437F2B5F916F1C8A03E72D7649F96C3B10D0B136F95C41D3CF7BCFC5B016C4",
+        "bytes": 29865
+      },
+      "mutableDark": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/run-v1/verification/wslg-final-v1/charts-light-resource-dark-mutable-brush.png",
+        "sha256": "A9C23D7830AB1021A188B36B02F8D45984A7076E4447DA7070C9CFDF4B10D2D4",
+        "bytes": 30158
+      }
+    }
+  },
+  "sourceSnapshotRef": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/source-snapshot-v1.json",
+    "sha256": "91631B630837C55068D0C6656ED8B12D2BF0CF12978D0340D9DA9ABCF1B04153",
+    "bytes": 350934
+  },
+  "sourceSnapshot": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/source-snapshot-v1.json",
+    "sha256": "91631B630837C55068D0C6656ED8B12D2BF0CF12978D0340D9DA9ABCF1B04153",
+    "bytes": 350934
+  },
+  "frozenSourceFiles": 1501,
+  "declaredValidatedInputsPerPlatform": 765,
+  "freezeRuntimeAndBenchmarkInputs": 780,
+  "declaredInputsMatchBetweenPlatforms": true,
+  "declaredFrozenInputsStillMatch": true,
+  "declaredLiveInputsStillMatch": null,
+  "frozenSourceHashesStillMatch": true,
+  "liveFullRepositoryEqualityClaimed": false,
+  "sourceScope": "Both platforms build separate byte-identical frozen physical copies, independent bin/obj and fresh caches. Declared freeze inputs are checked before/after capture. Current active unrelated PdfViewer work may differ; no full live workspace equality claim.",
+  "windowsApi": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/api-windows-final-v3/api.txt",
+    "sha256": "AC9314BF9EE8DDC73CFF6459183E9AC56499B9A783A080654B31ECCAEB30948E",
+    "bytes": 429451
+  },
+  "linuxApi": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux/api-linux-final-v1/api.txt",
+    "sha256": "1A716AB6A167C5D3248B494CBD6A6BF10B249B9D87CA66B0F2A40CB65E1DCA49",
+    "bytes": 429451
+  },
+  "publicApiDocument": {
+    "path": "<REPO_ROOT>/docs/charts-c4-render-resource-budgets-api.txt",
+    "sha256": "AC9314BF9EE8DDC73CFF6459183E9AC56499B9A783A080654B31ECCAEB30948E",
+    "bytes": 429451
+  },
+  "localApiDeclarationsMatchBetweenPlatforms": true,
+  "apiDelta": {
+    "oldTypes": 168,
+    "newTypes": 169,
+    "oldNamedChartsTypes": 166,
+    "newNamedChartsTypes": 167,
+    "addedTypes": [
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartResourceCacheInfo"
+    ],
+    "addedMembersOnExistingTypes": [
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CartesianChart",
+        "member": "  Field: Avalonia.StyledProperty`1[System.Int64] ResourceCacheBudgetBytesProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CartesianChart",
+        "member": "  Property: System.Int64 ResourceCacheBudgetBytes [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CartesianChart",
+        "member": "  Method: NT.AvaloniaControl.Charts.ChartResourceCacheInfo GetResourceCacheInfo() [static=False, abstract=False, virtual=False]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CartesianChart",
+        "member": "  Method: System.Void TrimResourceCaches() [static=False, abstract=False, virtual=False]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartDataBuffer`1",
+        "member": "  Property: System.Int32 StoragePageCount [get=True, set=False]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartDataBuffer`1",
+        "member": "  Method: System.Boolean Compact() [static=False, abstract=False, virtual=False]"
+      }
+    ],
+    "removedTypes": [],
+    "changedExistingTypeDeclarations": [],
+    "removedMembersOnExistingTypes": [],
+    "officialCompatibilityQualified": false,
+    "binaryCompatibilityQualified": false
+  },
+  "completePublicApiReviewRef": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-full-public-api-v1.json",
+    "sha256": "0B7E97755AC6263C1B29102C4A10D1E17EC58C5CEBF060E7FE83CEBF5729F7D8",
+    "bytes": 3080
+  },
+  "independentReviewRef": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/collected-evidence-v1.json",
+    "sha256": "8D1320CF2B08704745300A593FD0337D5E202B112C63E28F4F72B44E59769034",
+    "bytes": 789877
+  },
+  "independentPackagePayloadReviewRef": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-package-payload-v2.json",
+    "sha256": "5186A3B763CE11B77068D52CFC2B383ADC2080EA5C6A7B358E6BD87410B94B03",
+    "bytes": 8889
+  },
+  "independentRasterReviewRef": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-preserved-raster-v1.json",
+    "sha256": "E6198E27177CFA0D9D388BED577335866282D58D411FE815C3503985AC20D65B",
+    "bytes": 248024
+  },
+  "cacheMechanismReviewRef": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/cache-mechanism-review-v1.json",
+    "sha256": "6437F16A946233A5A5572AC7062EB9778A0EECF84253C4C72E240F5FA624206A",
+    "bytes": 860581
+  },
+  "visibilityMechanismReviewRef": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/visibility-mechanism-review-v1.json",
+    "sha256": "81D38207A0618BF0C7727D792DD29778DE79AB4428D7EEDC6D311FCB363B8F6A",
+    "bytes": 800627
+  },
+  "lodMechanismReviewRef": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/lod-mechanism-review-final-v1.json",
+    "sha256": "1B1ACB1513A465A559E54624E8DB2FC3390B49B91DCB1EF3F2A083C3941C9FB7",
+    "bytes": 615656
+  },
+  "efficientHitMechanismReviewRef": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/efficient-hit-mechanism-review-v1.json",
+    "sha256": "BD7D9726DA495B8000C624F36979A5875C69A6D53F6B92241B21D17A6BBFEE51",
+    "bytes": 1584124
+  },
+  "incrementalStreamingMechanismReviewRef": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/incremental-streaming-mechanism-review-v1.json",
+    "sha256": "A684D0E8FCCC952AA89F6876A37BBEBF9825355F2203EB5121B04509CA4D8C2B",
+    "bytes": 249762
+  },
+  "renderResourceMechanismReviewRef": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/render-resource-mechanism-review-v1.json",
+    "sha256": "13BE342834CBBE7A6220FE1A4D97C02947C63C206B5E034BBE19F19C5910FD23",
+    "bytes": 257582
+  },
+  "resourceMeasurements": {
+    "windows": {
+      "interaction": {
+        "originalPairs": 3000,
+        "milestones": 30,
+        "observedMilestoneSingleSeriesMemoMaximum": 4096,
+        "actualMemoEvictions": 4909,
+        "privateLiteralTextRoute": true,
+        "actualRoutedTooltipExercised": false
+      },
+      "shortProcessMemorySnapshots": [
+        {
+          "phase": "after-app-setup",
+          "managedLiveEstimateBytes": 3548096,
+          "lastGcHeapSizeBytes": 0,
+          "lastGcFragmentedBytes": 0,
+          "lastGcCommittedBytes": 0,
+          "totalAllocatedBytes": 3542624,
+          "gen0Collections": 0,
+          "gen1Collections": 0,
+          "gen2Collections": 0,
+          "processPrivateBytes": 25546752,
+          "workingSetBytes": 57880576,
+          "osPeakWorkingSetBytes": 57880576,
+          "nativeBytes": null,
+          "gpuBytes": null,
+          "scope": "Short process snapshots without forced GC; GC heap values describe the latest collection, OS peak is process-lifetime, not this fixture's exact peak. Private-minus-managed is not native memory. Unsupported OS counters are null."
+        },
+        {
+          "phase": "after-drawing-fixture",
+          "managedLiveEstimateBytes": 11583144,
+          "lastGcHeapSizeBytes": 7116920,
+          "lastGcFragmentedBytes": 2145992,
+          "lastGcCommittedBytes": 19247104,
+          "totalAllocatedBytes": 63588288,
+          "gen0Collections": 10,
+          "gen1Collections": 9,
+          "gen2Collections": 8,
+          "processPrivateBytes": 43130880,
+          "workingSetBytes": 87142400,
+          "osPeakWorkingSetBytes": 87142400,
+          "nativeBytes": null,
+          "gpuBytes": null,
+          "scope": "Short process snapshots without forced GC; GC heap values describe the latest collection, OS peak is process-lifetime, not this fixture's exact peak. Private-minus-managed is not native memory. Unsupported OS counters are null."
+        },
+        {
+          "phase": "after-compaction-fixture",
+          "managedLiveEstimateBytes": 21985616,
+          "lastGcHeapSizeBytes": 13217656,
+          "lastGcFragmentedBytes": 1258576,
+          "lastGcCommittedBytes": 25743360,
+          "totalAllocatedBytes": 245206456,
+          "gen0Collections": 27,
+          "gen1Collections": 10,
+          "gen2Collections": 9,
+          "processPrivateBytes": 50425856,
+          "workingSetBytes": 95899648,
+          "osPeakWorkingSetBytes": 95899648,
+          "nativeBytes": null,
+          "gpuBytes": null,
+          "scope": "Short process snapshots without forced GC; GC heap values describe the latest collection, OS peak is process-lifetime, not this fixture's exact peak. Private-minus-managed is not native memory. Unsupported OS counters are null."
+        },
+        {
+          "phase": "after-interaction-fixture",
+          "managedLiveEstimateBytes": 26071328,
+          "lastGcHeapSizeBytes": 17079664,
+          "lastGcFragmentedBytes": 80888,
+          "lastGcCommittedBytes": 26628096,
+          "totalAllocatedBytes": 256297584,
+          "gen0Collections": 29,
+          "gen1Collections": 11,
+          "gen2Collections": 10,
+          "processPrivateBytes": 52174848,
+          "workingSetBytes": 97583104,
+          "osPeakWorkingSetBytes": 99860480,
+          "nativeBytes": null,
+          "gpuBytes": null,
+          "scope": "Short process snapshots without forced GC; GC heap values describe the latest collection, OS peak is process-lifetime, not this fixture's exact peak. Private-minus-managed is not native memory. Unsupported OS counters are null."
+        }
+      ],
+      "shortProcessMemoryScope": "Observations only; no retained/peak/native/GPU/long-soak or memory-regression gate. Latest-GC values are not necessarily current live heap; OS peak is lifetime, not exact fixture peak.",
+      "cached": {
+        "samples": 20,
+        "millisecondsMedian": 0.16995,
+        "millisecondsP95NearestRank": 0.2395,
+        "millisecondsMaximum": 0.25070000000000003,
+        "threadAllocationTotalBytes": 2250560,
+        "threadAllocationMaximumBytes": 112528
+      },
+      "disabled": {
+        "samples": 20,
+        "millisecondsMedian": 1.24145,
+        "millisecondsP95NearestRank": 1.5129,
+        "millisecondsMaximum": 1.5631,
+        "threadAllocationTotalBytes": 23839240,
+        "threadAllocationMaximumBytes": 1198720
+      },
+      "allocationRatio": 0.09440569414125619,
+      "compaction": {
+        "copiedRows": 2048,
+        "mappedTransferRows": 2048,
+        "newMappedRows": 0,
+        "getterReads": 0,
+        "pagesBefore": 2048,
+        "pagesAfter": 8,
+        "threadAllocatedBytes": 615208,
+        "milliseconds": 12.8189
+      }
+    },
+    "linux": {
+      "interaction": {
+        "originalPairs": 3000,
+        "milestones": 30,
+        "observedMilestoneSingleSeriesMemoMaximum": 4096,
+        "actualMemoEvictions": 4909,
+        "privateLiteralTextRoute": true,
+        "actualRoutedTooltipExercised": false
+      },
+      "shortProcessMemorySnapshots": [
+        {
+          "phase": "after-app-setup",
+          "managedLiveEstimateBytes": 3596928,
+          "lastGcHeapSizeBytes": 0,
+          "lastGcFragmentedBytes": 0,
+          "lastGcCommittedBytes": 0,
+          "totalAllocatedBytes": 3591456,
+          "gen0Collections": 0,
+          "gen1Collections": 0,
+          "gen2Collections": 0,
+          "processPrivateBytes": 51961856,
+          "workingSetBytes": 75431936,
+          "osPeakWorkingSetBytes": 75431936,
+          "nativeBytes": null,
+          "gpuBytes": null,
+          "scope": "Short process snapshots without forced GC; GC heap values describe the latest collection, OS peak is process-lifetime, not this fixture's exact peak. Private-minus-managed is not native memory. Unsupported OS counters are null."
+        },
+        {
+          "phase": "after-drawing-fixture",
+          "managedLiveEstimateBytes": 11629248,
+          "lastGcHeapSizeBytes": 7140608,
+          "lastGcFragmentedBytes": 2145144,
+          "lastGcCommittedBytes": 19378176,
+          "totalAllocatedBytes": 63679824,
+          "gen0Collections": 10,
+          "gen1Collections": 9,
+          "gen2Collections": 8,
+          "processPrivateBytes": 77389824,
+          "workingSetBytes": 103960576,
+          "osPeakWorkingSetBytes": 103960576,
+          "nativeBytes": null,
+          "gpuBytes": null,
+          "scope": "Short process snapshots without forced GC; GC heap values describe the latest collection, OS peak is process-lifetime, not this fixture's exact peak. Private-minus-managed is not native memory. Unsupported OS counters are null."
+        },
+        {
+          "phase": "after-compaction-fixture",
+          "managedLiveEstimateBytes": 22044472,
+          "lastGcHeapSizeBytes": 13247472,
+          "lastGcFragmentedBytes": 1258352,
+          "lastGcCommittedBytes": 25677824,
+          "totalAllocatedBytes": 245313872,
+          "gen0Collections": 27,
+          "gen1Collections": 10,
+          "gen2Collections": 9,
+          "processPrivateBytes": 84803584,
+          "workingSetBytes": 113565696,
+          "osPeakWorkingSetBytes": 113565696,
+          "nativeBytes": null,
+          "gpuBytes": null,
+          "scope": "Short process snapshots without forced GC; GC heap values describe the latest collection, OS peak is process-lifetime, not this fixture's exact peak. Private-minus-managed is not native memory. Unsupported OS counters are null."
+        },
+        {
+          "phase": "after-interaction-fixture",
+          "managedLiveEstimateBytes": 26067432,
+          "lastGcHeapSizeBytes": 16824520,
+          "lastGcFragmentedBytes": 80632,
+          "lastGcCommittedBytes": 26333184,
+          "totalAllocatedBytes": 256419384,
+          "gen0Collections": 29,
+          "gen1Collections": 11,
+          "gen2Collections": 10,
+          "processPrivateBytes": 88760320,
+          "workingSetBytes": 117334016,
+          "osPeakWorkingSetBytes": 117334016,
+          "nativeBytes": null,
+          "gpuBytes": null,
+          "scope": "Short process snapshots without forced GC; GC heap values describe the latest collection, OS peak is process-lifetime, not this fixture's exact peak. Private-minus-managed is not native memory. Unsupported OS counters are null."
+        }
+      ],
+      "shortProcessMemoryScope": "Observations only; no retained/peak/native/GPU/long-soak or memory-regression gate. Latest-GC values are not necessarily current live heap; OS peak is lifetime, not exact fixture peak.",
+      "cached": {
+        "samples": 20,
+        "millisecondsMedian": 0.29833350000000003,
+        "millisecondsP95NearestRank": 0.409037,
+        "millisecondsMaximum": 0.413965,
+        "threadAllocationTotalBytes": 2250560,
+        "threadAllocationMaximumBytes": 112528
+      },
+      "disabled": {
+        "samples": 20,
+        "millisecondsMedian": 1.3160405000000002,
+        "millisecondsP95NearestRank": 1.918483,
+        "millisecondsMaximum": 1.995705,
+        "threadAllocationTotalBytes": 23852440,
+        "threadAllocationMaximumBytes": 1198264
+      },
+      "allocationRatio": 0.09435344979381564,
+      "compaction": {
+        "copiedRows": 2048,
+        "mappedTransferRows": 2048,
+        "newMappedRows": 0,
+        "getterReads": 0,
+        "pagesBefore": 2048,
+        "pagesAfter": 8,
+        "threadAllocatedBytes": 615208,
+        "milliseconds": 12.608388999999999
+      }
+    }
+  },
+  "independentResourceNativeReviews": {
+    "windows": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-render-resource-native-windows-v2.json",
+      "sha256": "20C99B15E13647AD369D8BD31564B14A3A76DE47A5D1D7E4C01F4ED54D35902E",
+      "bytes": 455065
+    },
+    "linux": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-render-resource-native-linux-v2.json",
+      "sha256": "9E778CA4E7104E966C7BBA6A54E67191B281973F4B5B5E6ED1644F7FE384355E",
+      "bytes": 455808
+    }
+  },
+  "resourceNativeOracle": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/render-resource-native-oracle-preregistered-v3.json",
+    "sha256": "D72F1C314CAF5C74A59DEDD0B20BB080CC09C79520040A82895306A36A6C09FC",
+    "bytes": 3599
+  },
+  "resourceMechanismPreregistration": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/render-resource-mechanism-preregistered-v4.json",
+    "sha256": "63C14ECD27DBEF9EA9B974A98D677F4AD7DD91400E24D5096ED96963E5704154",
+    "bytes": 4627
+  },
+  "historicalAndRendererPinsVerified": true,
+  "historicalDocumentPinCount": 65,
+  "historicalRendererVersionCount": 13,
+  "historicalRendererPreservationRef": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/historical-renderer-preservation-v1.json",
+    "sha256": "6718D331FCE3A7F525C28922E1F286DAC33513EA3621BE67EB20BD6F00BCE0AA",
+    "bytes": 7888
+  },
+  "generalMetadataBeforeRef": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/metadata-before.json",
+    "sha256": "BC83F2699897467D0C1DBDD0784208E0EAB4A747CB4E8742B0E06CBA6340655B",
+    "bytes": 2512
+  },
+  "dependencyReuse": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/dependency-reuse.json",
+    "sha256": "AC8B9C1AC2F5B0A2F85E219B8ADED1DD995DBEA67B51007A14E808BCAE4BC190",
+    "bytes": 5504
+  },
+  "productPackagesReused": false,
+  "nugetAuditOrWarningPolicyChanged": false,
+  "nativeAccessibilityEnumerationRetested": false,
+  "deferredNativeAccessibilityWorkstream": "A11Y-NATIVE-01",
+  "completeNativeBridgeGatePassed": false,
+  "previousNativeBridgeEvidence": {
+    "path": "<REPO_ROOT>/docs/charts-c2-accessibility-validation.json",
+    "sha256": "BC80F3A743AD610E5B419D87D00A753755265A12F434F08654A06A59ABD72A8D",
+    "bytes": 1405510
+  },
+  "previousIncrementalStreamingEvidence": {
+    "path": "<REPO_ROOT>/docs/charts-c4-incremental-streaming-validation.json",
+    "sha256": "3C28453A9ACDE0AB8FA35381E81C282C140C342EED3E23A10C724FCFF715AFC1",
+    "bytes": 47537
+  },
+  "performanceQualified": false,
+  "performanceMeasured": true,
+  "shortProcessMemorySnapshotsObserved": true,
+  "memoryRegressionMeasured": false,
+  "processRetainedMemoryQualified": false,
+  "nativeMemoryQualified": false,
+  "gpuMemoryQualified": false,
+  "formalSlaEvaluated": false,
+  "millionHitTailDeferredTo": "later optimization, user decision retained",
+  "officialRuntimeReferenceIncluded": false,
+  "physicalDesktopCertified": false,
+  "implementationContracts": [
+    "CartesianChart提供ResourceCacheBudgetBytes（默认128MiB，0禁本地保留）、GetResourceCacheInfo与TrimResourceCaches。系列绘图、轴文字、交互文字、轴画笔和线段几何共享LRU准入与淘汰；超预算项本次正常绘制但不保留，降低预算立即约束模型计费；卸载释放可重建本地资源。 全局计费预算采用LRU；轴文字256、交互文字32、画笔64的内部条目上限另以FIFO淘汰，不把所有内部策略统称纯LRU。",
+    "Info的ModelVersion=1报告各层条目、固定权重估算之和以及累计命中/未命中/淘汰/旁路/清理；NativeMemoryIncluded和SharedIndexCachesIncluded为false。这不是托管堆、进程、原生或GPU实际字节硬上限，调用者业务对象、字体缓存、共享source/series/context缓存（含命中/LOD、PreparedStacks、预备路径与BarGeometry等CWT持有结果）和绘制临时工作不在五层账本。",
+    "轴Pen保留可变Brush/DashStyle引用；绘图重放读取当前画刷。原生两主题检查同一画刷变色，清理、降低预算、禁用缓存及显式Compact后原始数据、命中、选择和图形保持一致。",
+    "线性线段按原始数据查询；每系列屏幕投影memo最多4096端点，内部memo淘汰另报，不与公共LRU EvictionCount混同。固定3000独立查询重算原始端点，30个每100查询的Info里程碑报告观测最大；不称全部查询的全程内存峰值。",
+    "ChartDataBuffer<T>.StoragePageCount统计当前buffer不同底层页；Compact()在UI线程显式按当前顺序复制全部保留行并迁移已有有效映射缓存，Compact本身不读取业务getter，保持Item、StableId、当前序号/坐标及旧快照。有效压实一次Reset/Version++，已紧凑或空源false不发通知；不计作删除或容量淘汰。 无live owner的系列后续读取仍沿既有轮询规则，不能据此承诺任意后续CreateSnapshot都不重映射。",
+    "Compact有O(N)复制、临时双份数据和版本失效成本；不自动执行，旧快照仍可持有旧页，任意T对象图未获字节预算。普通追加仍保留C4-05原500新页payload/映射门槛，自动压实、共享索引和进程级资源策略另留后续。",
+    "固定Headless诊断使用20000原始线性点、无marker，cached与budget0各5次预热20个样本。缓存暖样本的数据/视图/绘图/文字/画笔重建和投影六计数均0；每帧当前线程分配最多2MiB，cached总分配至多disabled一半；40次长文字/窄窗churn检查五层估算预算。",
+    "20帧测量区间仅包含PlotArea访问、新DrawingGroup及Render，前后计数和Info/命中/oracle在外；线程分配不代表进程保留或native/GPU峰值，Headless DrawingGroup不含栅格化或compositor present。原始源构造不在暖区间，不证明首次可用。",
+    "独立interaction文字夹具调用private缓存/绘制helper和固定literal，oversized4096字符检查旁路；不将该helper等同实际routed Tooltip路线。完整Demo继承已有routed Tooltip检查，专门资源Native小图关闭Tooltip以维持固定图形。",
+    "2048单点页压实到8页的诊断完整保存新旧2048行、真实版本及前后metrics：buffer payload复制2048、映射迁移2048、新映射0、getter0。独立reader按原公式重算全部序号/ID/IEEE754坐标；运行时对象引用比较保留，JSON不能重建实际引用。",
+    "有限primitive-leaf指纹只比较有序叶子、变换/clip/opacity/paint/glyph与Geometry.ToString/Bounds；未独立解码opaque pathcommands，不等同完整矢量或原生画质证明。资源Native另由预登记14图协议、12图PNG独立解码/每图3业务ROI和每主题4组全画布0差检查。",
+    "四个短时MemorySamples按app setup、drawing、compaction、interaction后观测，未强制GC。managedLiveEstimate为估计，GC堆/碎片/提交值对应最新一次GC；累计分配与回收次数跨整个进程，OSpeak是进程生命周期而非夹具精确峰值，缺失OS计数和Native/GPU为null。没有将private减managed当原生，也没有为短时快照设保留/峰值/长期内存门槛。"
+  ],
+  "implementationContractsRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-render-resource-budgets-20261020\\implementation-contracts-final-v2.json",
+    "sha256": "DD857CC89D579E66487D5568B1D7CA713BF9C894A3AABB6CED914855B637843C",
+    "bytes": 7990
+  },
+  "remaining": [
+    "下一项C4-07多图与后台布局；公平多图调度、隐藏/卸载的端到端工作预算、可取消复杂布局与旧结果版本隔离仍需后续执行，完整C2/C3/C4/C7及官方许可运行时/API/二进制对照继续开放。",
+    "Model1只约束五层逻辑估算；真实托管/进程私有/原生/GPU保留和峰值、字体/共享索引/调用者对象图、在途临时分配和30分钟/8小时长稳未取得资格。",
+    "显式Compact解决可主动恢复的页碎片，不承诺自动分页压实或固定总字节；AppendRange仍暂存整批后才裁剪，旧快照保留旧页；目录复制与部分摘要/slice工作仍O(P)，CopiedItemCount非完整数组/对象复制统计。",
+    "C4-05增量路径、日期/对数/断轴/自定义域和类别/排序/堆叠/点编码/柱布局、新版本二维/共享读数/线段/LOD索引与动画几何的已记录N路径仍开放；本轮未认证所有图族更新O(delta)。",
+    "固定20k无marker绘图分配门槛及原C4-01..05机制不是正式CPU/FPS/尾延迟或端到端显示SLA；百万点hit p95历史0.7649→1.1235ms按用户决定后置。",
+    "Windows原生合成、Ubuntu26.04 WSL2/WSLg和Headless不代表物理Windows/Linux、原生Wayland、国产Linux、实际GPU/backend、多屏DPI或触控板/触摸资格；无GPU/软件后端性能对等结论，未引入替换Skia路径。",
+    "A11Y-NATIVE-01原生UIA/AT-SPI选中项枚举按用户延期；AX06标题/末刻度与四份历史PixelProbe DLL缺口保留。C4-03 Linux旧导出动画三项部分暂停前置时序失败仍保留，同源码预热重试通过不视为修复。",
+    "Windows在原长验证路径下加载libHarfBuzzSharp报OS0x800700CE；同字节短源和全新短缓存共同规避，具体失败探测路径未定位，不称加载器已修复，也未更改系统长路径策略。超长安装/运行路径仍待平台打包专项处理。",
+    "C4-06 Windows run-v2旧动画viewport WaitProgress错过中间帧（Idle/progress1/threshold0.2），382个已执行布尔检查全true但整段提前exception。原failed base的最终source/assembly稳定flags未评估而为false，外部事后源/载荷SHA核对另列；后续同源码通过不视为时序稳健性已修复。"
+  ],
+  "windowsAuthoritativeAttempt": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows-authoritative-v1.json",
+    "sha256": "D3B0ABFEAE9D018750F850D6431C04E03296F905068A47647AFFBB8382DB58C4",
+    "bytes": 2832
+  },
+  "linuxAuthoritativeAttempt": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux-authoritative-v1.json",
+    "sha256": "FC49E0D857FDE9BA2AC47C207450A260C58C298DA9EBA48E3B3A13B9204A268C",
+    "bytes": 2929
+  },
+  "linuxEnvironmentReadiness": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/linux-environment-readiness-v1.json",
+    "sha256": "4C681A853A5F03D7B304B7C6843BE790F1B219849C89633E56AED5F9530F894C",
+    "bytes": 2886
+  },
+  "linuxProjectDependencyFeed": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/project-dependency-archives-v1.json",
+    "sha256": "02C0CEF103E441A6DE63908B9C342671B1B9E88813E90AD41DB12907E1E55707",
+    "bytes": 35007
+  },
+  "toolingPreservation": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/tooling-at-freeze-v1.json",
+    "sha256": "6A2DD8B1C28317057DD4A328C85641482DA772A4CCCB262E7EFA1D714FEA869B",
+    "bytes": 39996
+  },
+  "freezeRuntimeStability": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/freeze-runtime-stability-v1.json",
+    "sha256": "73BFA6434AEA1478DA8C2549C84D8F2DFE165460AE9B2918BDB4B73D94EBA238",
+    "bytes": 276
+  },
+  "linuxLegacyAnimationFixtureTimingRobustnessResolved": false,
+  "independentFinalReviewSummary": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-final-review-summary-v1.json",
+    "sha256": "2218BBFA4C1F25360FB822E0D38FD5E4C3566DA8EB5EA81874ED165E02B08F46",
+    "bytes": 3268358
+  },
+  "developmentEvidence": [
+    {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/development/demo-v1/supervisor.json",
+      "sha256": "9A5C7A79D700E948D5DBBF6E31C647B3FA2C42AEB6E3A42F5BABB514147B9123",
+      "bytes": 2656
+    },
+    {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/development/demo-v2/supervisor.json",
+      "sha256": "C479F11884B3413BD4AD89F7CCBC814BFDAAD1F321463449CA484595EAF153B8",
+      "bytes": 2656
+    },
+    {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/development/benchmark-v1/raw.json",
+      "sha256": "3D14C086BD48637770F781B6F6F5D0DEFF555829B450307F4B6B6FBD1F36B192",
+      "bytes": 1590657
+    },
+    {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/development/benchmark-v2/raw.json",
+      "sha256": "A2773DF83BED758A1F23C0544B180AF932DF8D96E76417FBFE6B382C4107ABFE",
+      "bytes": 1593757
+    }
+  ],
+  "windowsFirstAttemptFailure": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows-v1-native-path-failure-v1.json",
+    "sha256": "E63D125ACDE2523E2D5863B4538095122491B2323D7418085C408A5DC3121379",
+    "bytes": 1682
+  },
+  "windowsShortSourceProof": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows-short-path-source-proof-v1.json",
+    "sha256": "C31FF0657A0AAECB62ABF1FF20F0398C13822909D87B36BA962EE058AC847E55",
+    "bytes": 758013
+  },
+  "windowsShortPathTooling": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/tooling-before-windows-short-v2.json",
+    "sha256": "C5916E27EECA97FE8F4C929D33314AD2B690F265466F7BFFBCA337C7BE51BCE2",
+    "bytes": 3489
+  },
+  "windowsSecondAttemptAnimationFailure": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows-v2-legacy-animation-timing-failure-v1.json",
+    "sha256": "750EF6751A605943575CB9C3B933B8F01B41800EBE6244A742876A6D61546CA5",
+    "bytes": 1829
+  },
+  "windowsInterruptedAttemptStabilityAmendment": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows-v2-legacy-animation-stability-amendment-v1.json",
+    "sha256": "9FC0A9E7CCB58BBFE91CE8E73A590BBD4D4669170E500BAE1332082C17586E8E",
+    "bytes": 651
+  },
+  "windowsFinalRetryPreflight": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/windows-v3-preflight-v1.json",
+    "sha256": "D7680E2A9313E12A35337ED84B8AA2FC2DDDEAE1BBC9B9B5C85547A5CE8C5DBA",
+    "bytes": 604005
+  },
+  "windowsFinalRetryTools": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/tooling-before-windows-retry-v3-v2.json",
+    "sha256": "7674B4DC735181CCA1286DBF704CA295ADF7A55AF89518BCF4B34D0C88A15307",
+    "bytes": 3224
+  },
+  "windowsInterruptedAttemptScope": {
+    "basePipelineStabilityFlagsWereNotEvaluatedAndRemainFalse": true,
+    "postFailureCapturedSourceAndRuntimeHashComparisonPassed": true,
+    "priorActualRuntimePayloadCopiesRetained": true,
+    "retryDoesNotFixAnimationTimingRobustness": true
+  },
+  "actualBuiltSourceDirectories": {
+    "windows": "<REPO_ROOT>\\artifacts\\c406\\windows-source-v1",
+    "linux": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-render-resource-budgets-20261020\\linux\\physical-source-v1"
+  },
+  "externalToolingNotes": [
+    {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/development/native-reader-invalid-review-id-v1.json",
+      "sha256": "C833249C4A572D2999B94F8EB32C8BAD25FD7906B76A599411E8EFB8AA986CA1",
+      "bytes": 665
+    },
+    {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/development/native-reader-invalid-review-id-exit-amendment-v1.json",
+      "sha256": "68C705FD4C824F1E2E185A4BB45961858032D90109069F1DEB52D8E32EB2700C",
+      "bytes": 686
+    },
+    {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/development/preregister-v4-tool-failure-v1.json",
+      "sha256": "3A425A25B4468B8EBE2C83A9082330074EE75A6399502EDF6B14B641F958FFAD",
+      "bytes": 577
+    },
+    {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/development/demo-v2-summary-v2.json",
+      "sha256": "46846BFE330D4FF9243F518FCE57A1273B3ACDBD024B24E759D49916A7FC3DFE",
+      "bytes": 4165
+    }
+  ],
+  "inheritedLodNativeReaderBindingRepair": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/lod-native-reader-binding-repair-v1.json",
+    "sha256": "EAA0E562D45370F8B3395221459C4159343D2298F99BD4CAF0C756AEA6340C15",
+    "bytes": 3260
+  },
+  "inheritedLodNativeReaderSupplement": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-lod-binding-repair-supervisor-v1.json",
+    "sha256": "F350590087FDFA899C063E82402383EC05ADC07FBEE3AF0A7C6AF303761A91EF",
+    "bytes": 1201
+  },
+  "externalResourceReaderHistory": [
+    {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-render-resource-mechanism-windows-development-v1.json",
+      "sha256": "311FA3BE9A808FFE125EA5E8DD1F388126EB1A333A68D262C2DDD48F8A2C6D90",
+      "bytes": 906518
+    },
+    {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-render-resource-mechanism-windows-development-v2.json",
+      "sha256": "11D85A8E1E9005DDD9B6DA08CAD8A1CB884F40283AD76FDA626A82926865BA11",
+      "bytes": 905115
+    },
+    {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-render-resource-mechanism-windows-development-v3.json",
+      "sha256": "91D77F0872FA8EE902871698531FFF1CC5816551954060CB81F05A8D09F71153",
+      "bytes": 919439
+    },
+    {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-render-resource-budgets-20261020/independent-render-resource-mechanism-windows-development-v4.json",
+      "sha256": "535A3FD0329AF6361DEECC89EA7D902499685AF89B55387FE24A82DC5307CFBE",
+      "bytes": 924590
+    }
+  ],
+  "postFreezeEditorialPlan": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-render-resource-budgets-20261020\\final-editorial-plan-v2.json",
+    "sha256": "ADC5555BD9DE0F4E3AA9D14F14849E112D9CEC69632F8EA2E0518D06B062A50C",
+    "bytes": 6396
+  }
+}

@@ -1,0 +1,2938 @@
+{
+  "schemaVersion": 1,
+  "stage": "C0",
+  "runId": "20261015T073038905Z-cd7b6c5c",
+  "capturedUtc": "2026-10-15T07:30:38.9054047+00:00",
+  "accessedDate": "2026-10-15",
+  "captureKind": "read-only-metadata-and-source",
+  "executedRestore": false,
+  "executedBuild": false,
+  "git": {
+    "head": "2a8199b65157952b8bbb52220f467efbc8e4e273",
+    "workingTreeChanges": [
+      " M .github/workflows/ci.yml",
+      " M docs/markdown-acceptance-matrix.md",
+      " M docs/markdown-contracts.md",
+      " M docs/markdown-official-alignment.md",
+      " M docs/markdown-status.md",
+      " M docs/markdown-usage.md",
+      " M scripts/Test-MarkdownPackageConsumer.ps1",
+      " M src/NT.AvaloniaControl.Markdown/Controls/Markdown.cs",
+      " M src/NT.AvaloniaControl.Markdown/Services/MarkdownServices.cs",
+      " M tests/Markdown.Headless.Tests/InteractionTests.cs",
+      " M tests/Markdown.Headless.Tests/LinkResolutionTests.cs",
+      "?? .github/workflows/charts.yml",
+      "?? .github/workflows/markdown-native.yml",
+      "?? benchmarks/Charts.Benchmarks/",
+      "?? benchmarks/Charts.Reference/",
+      "?? benchmarks/PdfViewer.P0/",
+      "?? docs/charts-platform-matrix.json",
+      "?? docs/markdown-followup-20261015.md",
+      "?? docs/screenshots/",
+      "?? scripts/Capture-ChartsBaseline.ps1",
+      "?? scripts/Test-MarkdownNative.Helpers.ps1",
+      "?? scripts/Test-MarkdownNative.ps1",
+      "?? scripts/Tests/Test-MarkdownNative.Tests.ps1",
+      "?? scripts/Verify-Charts-Linux.sh",
+      "?? scripts/Verify-Charts.ps1",
+      "?? tests/Markdown.Headless.Tests/LinkHandledContractTests.cs"
+    ]
+  },
+  "environment": {
+    "osDescription": "Microsoft Windows 10.0.26200",
+    "osArchitecture": "X64",
+    "processArchitecture": "X64",
+    "powershell": "7.6.5",
+    "framework": ".NET 10.0.11",
+    "sdkRequired": "10.0.401",
+    "installedSdks": [
+      "8.0.407 [C:\\Program Files\\dotnet\\sdk]",
+      "9.0.305 [C:\\Program Files\\dotnet\\sdk]",
+      "10.0.103 [C:\\Program Files\\dotnet\\sdk]",
+      "10.0.401 [C:\\Program Files\\dotnet\\sdk]"
+    ],
+    "installedRuntimes": [
+      "Microsoft.AspNetCore.All 2.2.5 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.All]",
+      "Microsoft.AspNetCore.App 2.2.5 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+      "Microsoft.AspNetCore.App 6.0.36 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+      "Microsoft.AspNetCore.App 8.0.14 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+      "Microsoft.AspNetCore.App 8.0.20 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+      "Microsoft.AspNetCore.App 8.0.31 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+      "Microsoft.AspNetCore.App 9.0.9 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+      "Microsoft.AspNetCore.App 9.0.20 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+      "Microsoft.AspNetCore.App 10.0.3 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+      "Microsoft.AspNetCore.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+      "Microsoft.NETCore.App 2.2.5 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+      "Microsoft.NETCore.App 6.0.36 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+      "Microsoft.NETCore.App 8.0.14 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+      "Microsoft.NETCore.App 8.0.20 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+      "Microsoft.NETCore.App 8.0.28 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+      "Microsoft.NETCore.App 8.0.31 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+      "Microsoft.NETCore.App 9.0.9 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+      "Microsoft.NETCore.App 9.0.20 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+      "Microsoft.NETCore.App 10.0.3 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+      "Microsoft.NETCore.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+      "Microsoft.WindowsDesktop.App 6.0.36 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]",
+      "Microsoft.WindowsDesktop.App 8.0.14 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]",
+      "Microsoft.WindowsDesktop.App 8.0.20 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]",
+      "Microsoft.WindowsDesktop.App 8.0.28 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]",
+      "Microsoft.WindowsDesktop.App 8.0.31 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]",
+      "Microsoft.WindowsDesktop.App 9.0.9 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]",
+      "Microsoft.WindowsDesktop.App 9.0.20 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]",
+      "Microsoft.WindowsDesktop.App 10.0.3 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]",
+      "Microsoft.WindowsDesktop.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]"
+    ],
+    "culture": "zh-CN",
+    "uiCulture": "zh-CN",
+    "timezone": "China Standard Time",
+    "licenseEnvironmentPresent": false,
+    "licenseValueRead": false,
+    "requestedConfiguration": "Release",
+    "nativeWindowRun": false,
+    "actualPresentMeasured": false,
+    "linuxAcceptance": "not-run",
+    "hardwareInventory": "blocked-cim-access; use the native platform report for device evidence"
+  },
+  "alignment": {
+    "file": {
+      "path": "docs/charts-official-alignment.md",
+      "status": "captured",
+      "sha256": "9C00D703D0D9AC29F3C5F70F9ED3BF51BBA446CE9A89DD8AAA479C1907C1A37B",
+      "bytes": 36137,
+      "lastWriteUtc": "2026-10-15T03:53:30.0003311Z"
+    },
+    "matrixItemCount": 200,
+    "rowsSha256": "4F0AB13D4836C54BC0BE5CF5DAFD6409F852049EB10FF66869008942B4AD504D",
+    "sourceListSha256": "2F03D85C7E2B1B0FEC094726DAFB826AEE4706E96DD526D53C13BA9E94E7E4C8",
+    "items": [
+      {
+        "id": "CT01",
+        "name": "Line / `LineSeries`",
+        "status": "部分",
+        "remainingWork": "基本折线、缺失值断线已实现；补通用数据映射、线型、标记与标签契约",
+        "phases": "C1、C2、C3",
+        "rowSnapshot": "| CT01 | Line / `LineSeries` | 部分 | 基本折线、缺失值断线已实现；补通用数据映射、线型、标记与标签契约 | C1、C2、C3 |"
+      },
+      {
+        "id": "CT02",
+        "name": "Bar / `BarSeries`，单系列及多系列并列",
+        "status": "部分",
+        "remainingWork": "竖向分组及正负零基线已实现；补宽度、圆角、描边、逐点颜色等配置",
+        "phases": "C1、C2、C3",
+        "rowSnapshot": "| CT02 | Bar / `BarSeries`，单系列及多系列并列 | 部分 | 竖向分组及正负零基线已实现；补宽度、圆角、描边、逐点颜色等配置 | C1、C2、C3 |"
+      },
+      {
+        "id": "CT03",
+        "name": "Scatter / `ScatterSeries`",
+        "status": "部分",
+        "remainingWork": "基本 XY 圆点及独立描边/填充已实现；补标记形状、逐点配置和通用数据适配",
+        "phases": "C1、C2、C3",
+        "rowSnapshot": "| CT03 | Scatter / `ScatterSeries` | 部分 | 基本 XY 圆点及独立描边/填充已实现；补标记形状、逐点配置和通用数据适配 | C1、C2、C3 |"
+      },
+      {
+        "id": "CT04",
+        "name": "Scatter line / `ScatterLineSeries`",
+        "status": "未实现",
+        "remainingWork": "独立的散点连线模式，定义线与标记开关、缺失值和输入顺序",
+        "phases": "C3",
+        "rowSnapshot": "| CT04 | Scatter line / `ScatterLineSeries` | 未实现 | 独立的散点连线模式，定义线与标记开关、缺失值和输入顺序 | C3 |"
+      },
+      {
+        "id": "CT05",
+        "name": "Area / `AreaSeries`",
+        "status": "未实现",
+        "remainingWork": "基线填充、透明度、正负数据和断点区域",
+        "phases": "C3",
+        "rowSnapshot": "| CT05 | Area / `AreaSeries` | 未实现 | 基线填充、透明度、正负数据和断点区域 | C3 |"
+      },
+      {
+        "id": "CT06",
+        "name": "Spline / `SplineSeries`",
+        "status": "未实现",
+        "remainingWork": "曲线插值、端点及过冲策略、命中语义",
+        "phases": "C3",
+        "rowSnapshot": "| CT06 | Spline / `SplineSeries` | 未实现 | 曲线插值、端点及过冲策略、命中语义 | C3 |"
+      },
+      {
+        "id": "CT07",
+        "name": "Spline area / `SplineAreaSeries`",
+        "status": "未实现",
+        "remainingWork": "复用曲线插值并生成可裁剪的填充区域",
+        "phases": "C3",
+        "rowSnapshot": "| CT07 | Spline area / `SplineAreaSeries` | 未实现 | 复用曲线插值并生成可裁剪的填充区域 | C3 |"
+      },
+      {
+        "id": "CT08",
+        "name": "Step line / `StepLineSeries`",
+        "status": "未实现",
+        "remainingWork": "阶跃方向与缺失值策略",
+        "phases": "C3",
+        "rowSnapshot": "| CT08 | Step line / `StepLineSeries` | 未实现 | 阶跃方向与缺失值策略 | C3 |"
+      },
+      {
+        "id": "CT09",
+        "name": "Stacked bar / `StackedBarSeries`",
+        "status": "未实现",
+        "remainingWork": "堆叠组、正负分组累计、图例隐藏后的重算",
+        "phases": "C3",
+        "rowSnapshot": "| CT09 | Stacked bar / `StackedBarSeries` | 未实现 | 堆叠组、正负分组累计、图例隐藏后的重算 | C3 |"
+      },
+      {
+        "id": "CT10",
+        "name": "Stacked 100% bar / `Stacked100PercentBarSeries`",
+        "status": "未实现",
+        "remainingWork": "百分比归一化、零分母和堆叠组；与普通并列柱分别验收",
+        "phases": "C3",
+        "rowSnapshot": "| CT10 | Stacked 100% bar / `Stacked100PercentBarSeries` | 未实现 | 百分比归一化、零分母和堆叠组；与普通并列柱分别验收 | C3 |"
+      },
+      {
+        "id": "CT11",
+        "name": "Stacked area / `StackedAreaSeries`",
+        "status": "未实现",
+        "remainingWork": "多层累计、堆叠组、层缺失与交叉处理",
+        "phases": "C3",
+        "rowSnapshot": "| CT11 | Stacked area / `StackedAreaSeries` | 未实现 | 多层累计、堆叠组、层缺失与交叉处理 | C3 |"
+      },
+      {
+        "id": "CT12",
+        "name": "Area range / `AreaRangeSeries`",
+        "status": "未实现",
+        "remainingWork": "上下界数据、区间带、上下界交叉与命中",
+        "phases": "C1、C3",
+        "rowSnapshot": "| CT12 | Area range / `AreaRangeSeries` | 未实现 | 上下界数据、区间带、上下界交叉与命中 | C1、C3 |"
+      },
+      {
+        "id": "CT13",
+        "name": "Range bar / `RangeBarSeries`",
+        "status": "未实现",
+        "remainingWork": "每项起止区间、低高值校验、区间提示",
+        "phases": "C1、C3",
+        "rowSnapshot": "| CT13 | Range bar / `RangeBarSeries` | 未实现 | 每项起止区间、低高值校验、区间提示 | C1、C3 |"
+      },
+      {
+        "id": "CT14",
+        "name": "Waterfall / `WaterfallSeries`",
+        "status": "未实现",
+        "remainingWork": "增减累计、连接线、总计分类和颜色",
+        "phases": "C3",
+        "rowSnapshot": "| CT14 | Waterfall / `WaterfallSeries` | 未实现 | 增减累计、连接线、总计分类和颜色 | C3 |"
+      },
+      {
+        "id": "CT15",
+        "name": "Histogram / `HistogramSeries`",
+        "status": "未实现",
+        "remainingWork": "分箱和边界归属、计数/密度、空箱与稳定重算",
+        "phases": "C5",
+        "rowSnapshot": "| CT15 | Histogram / `HistogramSeries` | 未实现 | 分箱和边界归属、计数/密度、空箱与稳定重算 | C5 |"
+      },
+      {
+        "id": "CT16",
+        "name": "Pareto",
+        "status": "未实现",
+        "remainingWork": "降序柱与累计百分比线，明确排序、累计及左右尺度",
+        "phases": "C3",
+        "rowSnapshot": "| CT16 | Pareto | 未实现 | 降序柱与累计百分比线，明确排序、累计及左右尺度 | C3 |"
+      },
+      {
+        "id": "CT17",
+        "name": "Dot plot / `DotPlotSeries`",
+        "status": "未实现",
+        "remainingWork": "点大小、可选连接线、分类布局；不以现有散点替代验收",
+        "phases": "C3",
+        "rowSnapshot": "| CT17 | Dot plot / `DotPlotSeries` | 未实现 | 点大小、可选连接线、分类布局；不以现有散点替代验收 | C3 |"
+      },
+      {
+        "id": "CT18",
+        "name": "Lollipop / `LollipopSeries`",
+        "status": "未实现",
+        "remainingWork": "点与细杆、基线、横竖方向",
+        "phases": "C3",
+        "rowSnapshot": "| CT18 | Lollipop / `LollipopSeries` | 未实现 | 点与细杆、基线、横竖方向 | C3 |"
+      },
+      {
+        "id": "CT19",
+        "name": "Variance / `VarianceSeries`",
+        "status": "未实现",
+        "remainingWork": "自定义参考基线、正负偏差色和柱宽",
+        "phases": "C3",
+        "rowSnapshot": "| CT19 | Variance / `VarianceSeries` | 未实现 | 自定义参考基线、正负偏差色和柱宽 | C3 |"
+      },
+      {
+        "id": "CT20",
+        "name": "Combo：混合系列共用主轴",
+        "status": "部分",
+        "remainingWork": "现有 line/bar/scatter 可混绘；补 area 等新系列与统一交互",
+        "phases": "C1、C3",
+        "rowSnapshot": "| CT20 | Combo：混合系列共用主轴 | 部分 | 现有 line/bar/scatter 可混绘；补 area 等新系列与统一交互 | C1、C3 |"
+      },
+      {
+        "id": "CT21",
+        "name": "Combo：次 Y 轴及系列轴归属",
+        "status": "未实现",
+        "remainingWork": "右轴、自有刻度与范围、提示/缩放/叠加层正确归属",
+        "phases": "C1、C2、C3",
+        "rowSnapshot": "| CT21 | Combo：次 Y 轴及系列轴归属 | 未实现 | 右轴、自有刻度与范围、提示/缩放/叠加层正确归属 | C1、C2、C3 |"
+      },
+      {
+        "id": "BC01",
+        "name": "Bubble：XY + 大小编码",
+        "status": "未实现",
+        "remainingWork": "第三值大小映射、负/零值规则和气泡命中",
+        "phases": "C1、C3",
+        "rowSnapshot": "| BC01 | Bubble：XY + 大小编码 | 未实现 | 第三值大小映射、负/零值规则和气泡命中 | C1、C3 |"
+      },
+      {
+        "id": "BC02",
+        "name": "Bubble cloud",
+        "status": "未实现",
+        "remainingWork": "无轴气泡布局、标签和碰撞",
+        "phases": "C6",
+        "rowSnapshot": "| BC02 | Bubble cloud | 未实现 | 无轴气泡布局、标签和碰撞 | C6 |"
+      },
+      {
+        "id": "BC03",
+        "name": "Packed bubble",
+        "status": "未实现",
+        "remainingWork": "紧凑打包、大小与类别图例",
+        "phases": "C6",
+        "rowSnapshot": "| BC03 | Packed bubble | 未实现 | 紧凑打包、大小与类别图例 | C6 |"
+      },
+      {
+        "id": "CC01",
+        "name": "Pie",
+        "status": "未实现",
+        "remainingWork": "扇区、占比、零/负值规则和扇区交互",
+        "phases": "C3",
+        "rowSnapshot": "| CC01 | Pie | 未实现 | 扇区、占比、零/负值规则和扇区交互 | C3 |"
+      },
+      {
+        "id": "CC02",
+        "name": "Donut",
+        "status": "未实现",
+        "remainingWork": "内半径、中心内容与环段命中",
+        "phases": "C3",
+        "rowSnapshot": "| CC02 | Donut | 未实现 | 内半径、中心内容与环段命中 | C3 |"
+      },
+      {
+        "id": "CC03",
+        "name": "Semi-donut",
+        "status": "未实现",
+        "remainingWork": "半圆起止角、标签和布局",
+        "phases": "C3",
+        "rowSnapshot": "| CC03 | Semi-donut | 未实现 | 半圆起止角、标签和布局 | C3 |"
+      },
+      {
+        "id": "RD01",
+        "name": "Polar / `PolarLineSeries`",
+        "status": "未实现",
+        "remainingWork": "角度/半径契约、闭合开关、圆形网格和点标记",
+        "phases": "C1、C3",
+        "rowSnapshot": "| RD01 | Polar / `PolarLineSeries` | 未实现 | 角度/半径契约、闭合开关、圆形网格和点标记 | C1、C3 |"
+      },
+      {
+        "id": "RD02",
+        "name": "Radar / `RadarSeries`",
+        "status": "未实现",
+        "remainingWork": "分类辐条、多系列、轮廓/填充、网格与最大值",
+        "phases": "C3",
+        "rowSnapshot": "| RD02 | Radar / `RadarSeries` | 未实现 | 分类辐条、多系列、轮廓/填充、网格与最大值 | C3 |"
+      },
+      {
+        "id": "RD03",
+        "name": "Polar area",
+        "status": "未实现",
+        "remainingWork": "极坐标扇区面积编码与标签",
+        "phases": "C3",
+        "rowSnapshot": "| RD03 | Polar area | 未实现 | 极坐标扇区面积编码与标签 | C3 |"
+      },
+      {
+        "id": "RD04",
+        "name": "Nightingale rose",
+        "status": "未实现",
+        "remainingWork": "半径编码，与 Polar area 的数值语义分别验收",
+        "phases": "C3",
+        "rowSnapshot": "| RD04 | Nightingale rose | 未实现 | 半径编码，与 Polar area 的数值语义分别验收 | C3 |"
+      },
+      {
+        "id": "RD05",
+        "name": "Radial bar",
+        "status": "未实现",
+        "remainingWork": "类别弧长与圆形布局",
+        "phases": "C3",
+        "rowSnapshot": "| RD05 | Radial bar | 未实现 | 类别弧长与圆形布局 | C3 |"
+      },
+      {
+        "id": "RD06",
+        "name": "Radial line",
+        "status": "未实现",
+        "remainingWork": "径向分类折线、闭合与圆周标签",
+        "phases": "C3",
+        "rowSnapshot": "| RD06 | Radial line | 未实现 | 径向分类折线、闭合与圆周标签 | C3 |"
+      },
+      {
+        "id": "CP01",
+        "name": "Diverging bar",
+        "status": "未实现",
+        "remainingWork": "中心基线、双向条和标签",
+        "phases": "C5",
+        "rowSnapshot": "| CP01 | Diverging bar | 未实现 | 中心基线、双向条和标签 | C5 |"
+      },
+      {
+        "id": "CP02",
+        "name": "Dumbbell",
+        "status": "未实现",
+        "remainingWork": "两端点数据、连接线和比较提示",
+        "phases": "C5",
+        "rowSnapshot": "| CP02 | Dumbbell | 未实现 | 两端点数据、连接线和比较提示 | C5 |"
+      },
+      {
+        "id": "CP03",
+        "name": "Mekko",
+        "status": "未实现",
+        "remainingWork": "可变柱宽、堆叠面积/占比和累计布局",
+        "phases": "C5",
+        "rowSnapshot": "| CP03 | Mekko | 未实现 | 可变柱宽、堆叠面积/占比和累计布局 | C5 |"
+      },
+      {
+        "id": "CP04",
+        "name": "Mirror bar",
+        "status": "未实现",
+        "remainingWork": "成对背靠背布局、双侧刻度",
+        "phases": "C5",
+        "rowSnapshot": "| CP04 | Mirror bar | 未实现 | 成对背靠背布局、双侧刻度 | C5 |"
+      },
+      {
+        "id": "CP05",
+        "name": "Parliament",
+        "status": "未实现",
+        "remainingWork": "半圆席位排布、分组、席位命中",
+        "phases": "C6",
+        "rowSnapshot": "| CP05 | Parliament | 未实现 | 半圆席位排布、分组、席位命中 | C6 |"
+      },
+      {
+        "id": "CP06",
+        "name": "Population pyramid",
+        "status": "未实现",
+        "remainingWork": "有序分段、左右人口组和镜像尺度",
+        "phases": "C5",
+        "rowSnapshot": "| CP06 | Population pyramid | 未实现 | 有序分段、左右人口组和镜像尺度 | C5 |"
+      },
+      {
+        "id": "CP07",
+        "name": "Tornado",
+        "status": "未实现",
+        "remainingWork": "双向横条、排序与敏感度比较",
+        "phases": "C5",
+        "rowSnapshot": "| CP07 | Tornado | 未实现 | 双向横条、排序与敏感度比较 | C5 |"
+      },
+      {
+        "id": "CP08",
+        "name": "Venn diagram",
+        "status": "未实现",
+        "remainingWork": "集合/交集契约、几何及近似误差说明",
+        "phases": "C5",
+        "rowSnapshot": "| CP08 | Venn diagram | 未实现 | 集合/交集契约、几何及近似误差说明 | C5 |"
+      },
+      {
+        "id": "ST01",
+        "name": "Beeswarm",
+        "status": "未实现",
+        "remainingWork": "分类点、碰撞规避、确定性布局",
+        "phases": "C5",
+        "rowSnapshot": "| ST01 | Beeswarm | 未实现 | 分类点、碰撞规避、确定性布局 | C5 |"
+      },
+      {
+        "id": "ST02",
+        "name": "Box plot",
+        "status": "未实现",
+        "remainingWork": "分位数定义、须线、离群点和预聚合输入",
+        "phases": "C5",
+        "rowSnapshot": "| ST02 | Box plot | 未实现 | 分位数定义、须线、离群点和预聚合输入 | C5 |"
+      },
+      {
+        "id": "ST03",
+        "name": "Contour plot",
+        "status": "未实现",
+        "remainingWork": "标量网格、等值线/填色及鞍点处理",
+        "phases": "C5",
+        "rowSnapshot": "| ST03 | Contour plot | 未实现 | 标量网格、等值线/填色及鞍点处理 | C5 |"
+      },
+      {
+        "id": "ST04",
+        "name": "Density plot",
+        "status": "未实现",
+        "remainingWork": "核密度估计、带宽、采样域和归一化",
+        "phases": "C5",
+        "rowSnapshot": "| ST04 | Density plot | 未实现 | 核密度估计、带宽、采样域和归一化 | C5 |"
+      },
+      {
+        "id": "ST05",
+        "name": "Error bar / `ErrorBarSeries`",
+        "status": "未实现",
+        "remainingWork": "对称/非对称误差、端帽和源点交互",
+        "phases": "C1、C5",
+        "rowSnapshot": "| ST05 | Error bar / `ErrorBarSeries` | 未实现 | 对称/非对称误差、端帽和源点交互 | C1、C5 |"
+      },
+      {
+        "id": "ST06",
+        "name": "Mosaic",
+        "status": "未实现",
+        "remainingWork": "双分类列联数据、比例与嵌套矩形",
+        "phases": "C5",
+        "rowSnapshot": "| ST06 | Mosaic | 未实现 | 双分类列联数据、比例与嵌套矩形 | C5 |"
+      },
+      {
+        "id": "ST07",
+        "name": "Parallel coordinates",
+        "status": "未实现",
+        "remainingWork": "多维轴、维度尺度和记录命中",
+        "phases": "C5",
+        "rowSnapshot": "| ST07 | Parallel coordinates | 未实现 | 多维轴、维度尺度和记录命中 | C5 |"
+      },
+      {
+        "id": "ST08",
+        "name": "Ridgeline",
+        "status": "未实现",
+        "remainingWork": "多分布估计、重叠与共同尺度",
+        "phases": "C5",
+        "rowSnapshot": "| ST08 | Ridgeline | 未实现 | 多分布估计、重叠与共同尺度 | C5 |"
+      },
+      {
+        "id": "ST09",
+        "name": "Strip plot",
+        "status": "未实现",
+        "remainingWork": "分类散列、jitter 可重复性和均值线",
+        "phases": "C5",
+        "rowSnapshot": "| ST09 | Strip plot | 未实现 | 分类散列、jitter 可重复性和均值线 | C5 |"
+      },
+      {
+        "id": "ST10",
+        "name": "Violin plot",
+        "status": "未实现",
+        "remainingWork": "密度轮廓、分位数与小样本规则",
+        "phases": "C5",
+        "rowSnapshot": "| ST10 | Violin plot | 未实现 | 密度轮廓、分位数与小样本规则 | C5 |"
+      },
+      {
+        "id": "EN01",
+        "name": "Carpet plot",
+        "status": "未实现",
+        "remainingWork": "非正交参数网格与插值",
+        "phases": "C5",
+        "rowSnapshot": "| EN01 | Carpet plot | 未实现 | 非正交参数网格与插值 | C5 |"
+      },
+      {
+        "id": "EN02",
+        "name": "Hexbin",
+        "status": "未实现",
+        "remainingWork": "六边形分箱、密度颜色与聚合命中",
+        "phases": "C4、C5",
+        "rowSnapshot": "| EN02 | Hexbin | 未实现 | 六边形分箱、密度颜色与聚合命中 | C4、C5 |"
+      },
+      {
+        "id": "EN03",
+        "name": "Smith",
+        "status": "未实现",
+        "remainingWork": "复阻抗/导纳、归一化和专业网格",
+        "phases": "C5",
+        "rowSnapshot": "| EN03 | Smith | 未实现 | 复阻抗/导纳、归一化和专业网格 | C5 |"
+      },
+      {
+        "id": "EN04",
+        "name": "Ternary",
+        "status": "未实现",
+        "remainingWork": "三分量归一化、三角坐标与边界",
+        "phases": "C5",
+        "rowSnapshot": "| EN04 | Ternary | 未实现 | 三分量归一化、三角坐标与边界 | C5 |"
+      },
+      {
+        "id": "EN05",
+        "name": "Wind rose",
+        "status": "未实现",
+        "remainingWork": "方向分箱、极坐标堆叠及频率",
+        "phases": "C5",
+        "rowSnapshot": "| EN05 | Wind rose | 未实现 | 方向分箱、极坐标堆叠及频率 | C5 |"
+      },
+      {
+        "id": "FN01",
+        "name": "Financial chart 宿主",
+        "status": "未实现",
+        "remainingWork": "日期/交易槽、价格轴、多金融系列和叠加坐标上下文",
+        "phases": "C1、C5",
+        "rowSnapshot": "| FN01 | Financial chart 宿主 | 未实现 | 日期/交易槽、价格轴、多金融系列和叠加坐标上下文 | C1、C5 |"
+      },
+      {
+        "id": "FN02",
+        "name": "Candlestick / `CandlestickSeries`",
+        "status": "未实现",
+        "remainingWork": "OHLC 数据、涨跌蜡烛、数据校验",
+        "phases": "C5",
+        "rowSnapshot": "| FN02 | Candlestick / `CandlestickSeries` | 未实现 | OHLC 数据、涨跌蜡烛、数据校验 | C5 |"
+      },
+      {
+        "id": "FN03",
+        "name": "OHLC / `OhlcSeries`",
+        "status": "未实现",
+        "remainingWork": "高低线、开收短横和交易日提示",
+        "phases": "C5",
+        "rowSnapshot": "| FN03 | OHLC / `OhlcSeries` | 未实现 | 高低线、开收短横和交易日提示 | C5 |"
+      },
+      {
+        "id": "FN04",
+        "name": "Heikin-Ashi",
+        "status": "未实现",
+        "remainingWork": "递推转换、初值和缺失区间",
+        "phases": "C5",
+        "rowSnapshot": "| FN04 | Heikin-Ashi | 未实现 | 递推转换、初值和缺失区间 | C5 |"
+      },
+      {
+        "id": "FN05",
+        "name": "Hilo",
+        "status": "未实现",
+        "remainingWork": "高低区间线与日期布局",
+        "phases": "C5",
+        "rowSnapshot": "| FN05 | Hilo | 未实现 | 高低区间线与日期布局 | C5 |"
+      },
+      {
+        "id": "FN06",
+        "name": "Kagi",
+        "status": "未实现",
+        "remainingWork": "反转规则、阈值和来源数据追溯",
+        "phases": "C5",
+        "rowSnapshot": "| FN06 | Kagi | 未实现 | 反转规则、阈值和来源数据追溯 | C5 |"
+      },
+      {
+        "id": "FN07",
+        "name": "Renko",
+        "status": "未实现",
+        "remainingWork": "砖块阈值、反转和非时间槽",
+        "phases": "C5",
+        "rowSnapshot": "| FN07 | Renko | 未实现 | 砖块阈值、反转和非时间槽 | C5 |"
+      },
+      {
+        "id": "FN08",
+        "name": "Point and figure",
+        "status": "未实现",
+        "remainingWork": "箱大小、反转数量和 X/O 列",
+        "phases": "C5",
+        "rowSnapshot": "| FN08 | Point and figure | 未实现 | 箱大小、反转数量和 X/O 列 | C5 |"
+      },
+      {
+        "id": "AN01",
+        "name": "附加 Trendline 与独立 `ChartTrendlineSeries` 两种接入",
+        "status": "未实现",
+        "remainingWork": "源系列引用、独立输入、轴上下文、预测范围和图例",
+        "phases": "C1、C5",
+        "rowSnapshot": "| AN01 | 附加 Trendline 与独立 `ChartTrendlineSeries` 两种接入 | 未实现 | 源系列引用、独立输入、轴上下文、预测范围和图例 | C1、C5 |"
+      },
+      {
+        "id": "AN02",
+        "name": "Linear 趋势线",
+        "status": "未实现",
+        "remainingWork": "数值稳定回归和退化输入",
+        "phases": "C5",
+        "rowSnapshot": "| AN02 | Linear 趋势线 | 未实现 | 数值稳定回归和退化输入 | C5 |"
+      },
+      {
+        "id": "AN03",
+        "name": "Polynomial 趋势线",
+        "status": "未实现",
+        "remainingWork": "阶数、病态输入和稳定求解",
+        "phases": "C5",
+        "rowSnapshot": "| AN03 | Polynomial 趋势线 | 未实现 | 阶数、病态输入和稳定求解 | C5 |"
+      },
+      {
+        "id": "AN04",
+        "name": "Exponential 趋势线",
+        "status": "未实现",
+        "remainingWork": "适用域、拟合及无效点策略",
+        "phases": "C5",
+        "rowSnapshot": "| AN04 | Exponential 趋势线 | 未实现 | 适用域、拟合及无效点策略 | C5 |"
+      },
+      {
+        "id": "AN05",
+        "name": "Logarithmic 趋势线",
+        "status": "未实现",
+        "remainingWork": "正数域和拟合",
+        "phases": "C5",
+        "rowSnapshot": "| AN05 | Logarithmic 趋势线 | 未实现 | 正数域和拟合 | C5 |"
+      },
+      {
+        "id": "AN06",
+        "name": "Power 趋势线",
+        "status": "未实现",
+        "remainingWork": "定义域、拟合及负值规则",
+        "phases": "C5",
+        "rowSnapshot": "| AN06 | Power 趋势线 | 未实现 | 定义域、拟合及负值规则 | C5 |"
+      },
+      {
+        "id": "AN07",
+        "name": "Moving average 趋势线",
+        "status": "未实现",
+        "remainingWork": "窗口、预热期及数据更新",
+        "phases": "C5",
+        "rowSnapshot": "| AN07 | Moving average 趋势线 | 未实现 | 窗口、预热期及数据更新 | C5 |"
+      },
+      {
+        "id": "AN08",
+        "name": "`MovingAverageSeries`：Simple / SMA",
+        "status": "未实现",
+        "remainingWork": "独立均线系列与金融叠加接入",
+        "phases": "C5",
+        "rowSnapshot": "| AN08 | `MovingAverageSeries`：Simple / SMA | 未实现 | 独立均线系列与金融叠加接入 | C5 |"
+      },
+      {
+        "id": "AN09",
+        "name": "`MovingAverageSeries`：Exponential / EMA",
+        "status": "未实现",
+        "remainingWork": "初值和递推约定",
+        "phases": "C5",
+        "rowSnapshot": "| AN09 | `MovingAverageSeries`：Exponential / EMA | 未实现 | 初值和递推约定 | C5 |"
+      },
+      {
+        "id": "AN10",
+        "name": "`MovingAverageSeries`：Weighted / WMA",
+        "status": "未实现",
+        "remainingWork": "权重和窗口约定",
+        "phases": "C5",
+        "rowSnapshot": "| AN10 | `MovingAverageSeries`：Weighted / WMA | 未实现 | 权重和窗口约定 | C5 |"
+      },
+      {
+        "id": "AN11",
+        "name": "`MovingAverageSeries`：Triangular / TMA",
+        "status": "未实现",
+        "remainingWork": "双重平滑和奇偶窗口",
+        "phases": "C5",
+        "rowSnapshot": "| AN11 | `MovingAverageSeries`：Triangular / TMA | 未实现 | 双重平滑和奇偶窗口 | C5 |"
+      },
+      {
+        "id": "AN12",
+        "name": "`SMAIndicator`",
+        "status": "未实现",
+        "remainingWork": "指标对象接入与源系列关联；不因均线系列完成自动通过",
+        "phases": "C5",
+        "rowSnapshot": "| AN12 | `SMAIndicator` | 未实现 | 指标对象接入与源系列关联；不因均线系列完成自动通过 | C5 |"
+      },
+      {
+        "id": "AN13",
+        "name": "`EMAIndicator`",
+        "status": "未实现",
+        "remainingWork": "指标对象生命周期、更新与图例",
+        "phases": "C5",
+        "rowSnapshot": "| AN13 | `EMAIndicator` | 未实现 | 指标对象生命周期、更新与图例 | C5 |"
+      },
+      {
+        "id": "AN14",
+        "name": "`WMAIndicator`",
+        "status": "未实现",
+        "remainingWork": "指标对象生命周期、更新与图例",
+        "phases": "C5",
+        "rowSnapshot": "| AN14 | `WMAIndicator` | 未实现 | 指标对象生命周期、更新与图例 | C5 |"
+      },
+      {
+        "id": "AN15",
+        "name": "`BollingerBandsIndicator`",
+        "status": "未实现",
+        "remainingWork": "中轨、标准差上下轨、带填充和参数",
+        "phases": "C5",
+        "rowSnapshot": "| AN15 | `BollingerBandsIndicator` | 未实现 | 中轨、标准差上下轨、带填充和参数 | C5 |"
+      },
+      {
+        "id": "AN16",
+        "name": "RSI、MACD 等未在当前技术指标正文列出的算法",
+        "status": "需核验",
+        "remainingWork": "C0 核验目标版本的公开 API/可运行行为；如自主增加，单列扩展，不冒充官方清单",
+        "phases": "C0、C5",
+        "rowSnapshot": "| AN16 | RSI、MACD 等未在当前技术指标正文列出的算法 | 需核验 | C0 核验目标版本的公开 API/可运行行为；如自主增加，单列扩展，不冒充官方清单 | C0、C5 |"
+      },
+      {
+        "id": "GG01",
+        "name": "Circular gauge",
+        "status": "未实现",
+        "remainingWork": "圆形刻度、针/弧与范围",
+        "phases": "C3",
+        "rowSnapshot": "| GG01 | Circular gauge | 未实现 | 圆形刻度、针/弧与范围 | C3 |"
+      },
+      {
+        "id": "GG02",
+        "name": "Gauge chart",
+        "status": "未实现",
+        "remainingWork": "半圆表盘及可选指针；与完整圆形仪表分别覆盖",
+        "phases": "C3",
+        "rowSnapshot": "| GG02 | Gauge chart | 未实现 | 半圆表盘及可选指针；与完整圆形仪表分别覆盖 | C3 |"
+      },
+      {
+        "id": "GG03",
+        "name": "Gradient ring",
+        "status": "未实现",
+        "remainingWork": "同心进度环和共享最大值",
+        "phases": "C3",
+        "rowSnapshot": "| GG03 | Gradient ring | 未实现 | 同心进度环和共享最大值 | C3 |"
+      },
+      {
+        "id": "GG04",
+        "name": "Linear gauge",
+        "status": "未实现",
+        "remainingWork": "横竖轨道、填充/指针及阈值",
+        "phases": "C3",
+        "rowSnapshot": "| GG04 | Linear gauge | 未实现 | 横竖轨道、填充/指针及阈值 | C3 |"
+      },
+      {
+        "id": "GG05",
+        "name": "Liquid fill gauge",
+        "status": "未实现",
+        "remainingWork": "液位、形状裁剪和动画/静态回退",
+        "phases": "C3",
+        "rowSnapshot": "| GG05 | Liquid fill gauge | 未实现 | 液位、形状裁剪和动画/静态回退 | C3 |"
+      },
+      {
+        "id": "GG06",
+        "name": "Progress donut",
+        "status": "未实现",
+        "remainingWork": "进度弧、上下限和文本",
+        "phases": "C3",
+        "rowSnapshot": "| GG06 | Progress donut | 未实现 | 进度弧、上下限和文本 | C3 |"
+      },
+      {
+        "id": "AK01",
+        "name": "Bullet",
+        "status": "未实现",
+        "remainingWork": "主值、目标和定性范围",
+        "phases": "C6",
+        "rowSnapshot": "| AK01 | Bullet | 未实现 | 主值、目标和定性范围 | C6 |"
+      },
+      {
+        "id": "AK02",
+        "name": "Bump",
+        "status": "未实现",
+        "remainingWork": "多时期排名、同名实体及跨期连线",
+        "phases": "C6",
+        "rowSnapshot": "| AK02 | Bump | 未实现 | 多时期排名、同名实体及跨期连线 | C6 |"
+      },
+      {
+        "id": "AK03",
+        "name": "Calendar heatmap",
+        "status": "未实现",
+        "remainingWork": "日期网格、周起点、缺失日及颜色图例",
+        "phases": "C1、C6",
+        "rowSnapshot": "| AK03 | Calendar heatmap | 未实现 | 日期网格、周起点、缺失日及颜色图例 | C1、C6 |"
+      },
+      {
+        "id": "AK04",
+        "name": "Funnel",
+        "status": "未实现",
+        "remainingWork": "阶段值、段布局、标签和命中",
+        "phases": "C3",
+        "rowSnapshot": "| AK04 | Funnel | 未实现 | 阶段值、段布局、标签和命中 | C3 |"
+      },
+      {
+        "id": "AK05",
+        "name": "Heatmap",
+        "status": "未实现",
+        "remainingWork": "行列矩阵、颜色轴、缺失单元",
+        "phases": "C3、C4",
+        "rowSnapshot": "| AK05 | Heatmap | 未实现 | 行列矩阵、颜色轴、缺失单元 | C3、C4 |"
+      },
+      {
+        "id": "AK06",
+        "name": "KPI cards",
+        "status": "未实现",
+        "remainingWork": "主指标、变化量、趋势与小图组合",
+        "phases": "C6",
+        "rowSnapshot": "| AK06 | KPI cards | 未实现 | 主指标、变化量、趋势与小图组合 | C6 |"
+      },
+      {
+        "id": "AK07",
+        "name": "Matrix",
+        "status": "未实现",
+        "remainingWork": "双分类关系矩阵、标签和条件编码",
+        "phases": "C6",
+        "rowSnapshot": "| AK07 | Matrix | 未实现 | 双分类关系矩阵、标签和条件编码 | C6 |"
+      },
+      {
+        "id": "AK08",
+        "name": "Pictorial bar / `PictorialBarSeries`",
+        "status": "未实现",
+        "remainingWork": "图形符号及 Stretch、Clip、Repeat 三种模式",
+        "phases": "C3",
+        "rowSnapshot": "| AK08 | Pictorial bar / `PictorialBarSeries` | 未实现 | 图形符号及 Stretch、Clip、Repeat 三种模式 | C3 |"
+      },
+      {
+        "id": "AK09",
+        "name": "Pyramid",
+        "status": "未实现",
+        "remainingWork": "分层比例、布局与标签",
+        "phases": "C3",
+        "rowSnapshot": "| AK09 | Pyramid | 未实现 | 分层比例、布局与标签 | C3 |"
+      },
+      {
+        "id": "AK10",
+        "name": "Slope",
+        "status": "未实现",
+        "remainingWork": "两时点比较和端点标签布局",
+        "phases": "C6",
+        "rowSnapshot": "| AK10 | Slope | 未实现 | 两时点比较和端点标签布局 | C6 |"
+      },
+      {
+        "id": "AK11",
+        "name": "Table chart",
+        "status": "未实现",
+        "remainingWork": "行列数据与条件格式，确定和仓库表格组件的复用边界",
+        "phases": "C6",
+        "rowSnapshot": "| AK11 | Table chart | 未实现 | 行列数据与条件格式，确定和仓库表格组件的复用边界 | C6 |"
+      },
+      {
+        "id": "AK12",
+        "name": "Theme river：堆叠面积 + 透明基底组合",
+        "status": "未实现",
+        "remainingWork": "文档示例的中心偏移由数据计算；按组合示例验收，不虚列独立原生系列",
+        "phases": "C3、C6",
+        "rowSnapshot": "| AK12 | Theme river：堆叠面积 + 透明基底组合 | 未实现 | 文档示例的中心偏移由数据计算；按组合示例验收，不虚列独立原生系列 | C3、C6 |"
+      },
+      {
+        "id": "AK13",
+        "name": "Waffle",
+        "status": "未实现",
+        "remainingWork": "网格单元、百分比取整和颜色图例",
+        "phases": "C6",
+        "rowSnapshot": "| AK13 | Waffle | 未实现 | 网格单元、百分比取整和颜色图例 | C6 |"
+      },
+      {
+        "id": "AK14",
+        "name": "Word cloud",
+        "status": "未实现",
+        "remainingWork": "词频、字形测量、碰撞与可重复布局",
+        "phases": "C6、C7",
+        "rowSnapshot": "| AK14 | Word cloud | 未实现 | 词频、字形测量、碰撞与可重复布局 | C6、C7 |"
+      },
+      {
+        "id": "AK15",
+        "name": "官网 Stream graph 与 Theme river 的精确对应",
+        "status": "需核验",
+        "remainingWork": "核对目标版本是否另有系列/API或额外基线算法；不因 AK12 完成自动宣称覆盖",
+        "phases": "C0、C6",
+        "rowSnapshot": "| AK15 | 官网 Stream graph 与 Theme river 的精确对应 | 需核验 | 核对目标版本是否另有系列/API或额外基线算法；不因 AK12 完成自动宣称覆盖 | C0、C6 |"
+      },
+      {
+        "id": "HF01",
+        "name": "Alluvial",
+        "status": "未实现",
+        "remainingWork": "多阶段类别迁移和数量带",
+        "phases": "C6",
+        "rowSnapshot": "| HF01 | Alluvial | 未实现 | 多阶段类别迁移和数量带 | C6 |"
+      },
+      {
+        "id": "HF02",
+        "name": "Arc diagram",
+        "status": "未实现",
+        "remainingWork": "线性节点和连接弧",
+        "phases": "C6",
+        "rowSnapshot": "| HF02 | Arc diagram | 未实现 | 线性节点和连接弧 | C6 |"
+      },
+      {
+        "id": "HF03",
+        "name": "Chord diagram",
+        "status": "未实现",
+        "remainingWork": "圆周实体和成对关系带",
+        "phases": "C6",
+        "rowSnapshot": "| HF03 | Chord diagram | 未实现 | 圆周实体和成对关系带 | C6 |"
+      },
+      {
+        "id": "HF04",
+        "name": "Circle packing",
+        "status": "未实现",
+        "remainingWork": "层级圆嵌套、布局与钻取",
+        "phases": "C6",
+        "rowSnapshot": "| HF04 | Circle packing | 未实现 | 层级圆嵌套、布局与钻取 | C6 |"
+      },
+      {
+        "id": "HF05",
+        "name": "Dendrogram",
+        "status": "未实现",
+        "remainingWork": "聚类树、合并高度和标签",
+        "phases": "C6",
+        "rowSnapshot": "| HF05 | Dendrogram | 未实现 | 聚类树、合并高度和标签 | C6 |"
+      },
+      {
+        "id": "HF06",
+        "name": "Flame graph",
+        "status": "未实现",
+        "remainingWork": "层级成本/时长、堆栈布局与路径提示",
+        "phases": "C6",
+        "rowSnapshot": "| HF06 | Flame graph | 未实现 | 层级成本/时长、堆栈布局与路径提示 | C6 |"
+      },
+      {
+        "id": "HF07",
+        "name": "Flow chart",
+        "status": "未实现",
+        "remainingWork": "节点/边/分组、形状和显式位置",
+        "phases": "C6",
+        "rowSnapshot": "| HF07 | Flow chart | 未实现 | 节点/边/分组、形状和显式位置 | C6 |"
+      },
+      {
+        "id": "HF08",
+        "name": "Force-directed graph",
+        "status": "未实现",
+        "remainingWork": "迭代布局、收敛、取消与确定性种子",
+        "phases": "C4、C6",
+        "rowSnapshot": "| HF08 | Force-directed graph | 未实现 | 迭代布局、收敛、取消与确定性种子 | C4、C6 |"
+      },
+      {
+        "id": "HF09",
+        "name": "Icicle",
+        "status": "未实现",
+        "remainingWork": "自顶向下层级矩形带",
+        "phases": "C6",
+        "rowSnapshot": "| HF09 | Icicle | 未实现 | 自顶向下层级矩形带 | C6 |"
+      },
+      {
+        "id": "HF10",
+        "name": "Indented tree",
+        "status": "未实现",
+        "remainingWork": "展开折叠、缩进、层级导航",
+        "phases": "C6",
+        "rowSnapshot": "| HF10 | Indented tree | 未实现 | 展开折叠、缩进、层级导航 | C6 |"
+      },
+      {
+        "id": "HF11",
+        "name": "Mindmap / brainstorming：FlowChart 组合",
+        "status": "未实现",
+        "remainingWork": "复用节点边契约，验证发散布局示例",
+        "phases": "C6",
+        "rowSnapshot": "| HF11 | Mindmap / brainstorming：FlowChart 组合 | 未实现 | 复用节点边契约，验证发散布局示例 | C6 |"
+      },
+      {
+        "id": "HF12",
+        "name": "Network",
+        "status": "未实现",
+        "remainingWork": "任意图数据、节点边布局和命中",
+        "phases": "C6",
+        "rowSnapshot": "| HF12 | Network | 未实现 | 任意图数据、节点边布局和命中 | C6 |"
+      },
+      {
+        "id": "HF13",
+        "name": "Organization",
+        "status": "未实现",
+        "remainingWork": "组织树、连接、节点内容和折叠",
+        "phases": "C6",
+        "rowSnapshot": "| HF13 | Organization | 未实现 | 组织树、连接、节点内容和折叠 | C6 |"
+      },
+      {
+        "id": "HF14",
+        "name": "Process flow：FlowChart 组合",
+        "status": "未实现",
+        "remainingWork": "步骤/判断形状、箭头、标签和分组示例",
+        "phases": "C6",
+        "rowSnapshot": "| HF14 | Process flow：FlowChart 组合 | 未实现 | 步骤/判断形状、箭头、标签和分组示例 | C6 |"
+      },
+      {
+        "id": "HF15",
+        "name": "Radial tree",
+        "status": "未实现",
+        "remainingWork": "树的圆周布局与展开",
+        "phases": "C6",
+        "rowSnapshot": "| HF15 | Radial tree | 未实现 | 树的圆周布局与展开 | C6 |"
+      },
+      {
+        "id": "HF16",
+        "name": "Sankey",
+        "status": "未实现",
+        "remainingWork": "流量守恒校验、节点带布局与交叉优化",
+        "phases": "C6",
+        "rowSnapshot": "| HF16 | Sankey | 未实现 | 流量守恒校验、节点带布局与交叉优化 | C6 |"
+      },
+      {
+        "id": "HF17",
+        "name": "Sunburst",
+        "status": "未实现",
+        "remainingWork": "层级扇环、钻取和祖先路径",
+        "phases": "C6",
+        "rowSnapshot": "| HF17 | Sunburst | 未实现 | 层级扇环、钻取和祖先路径 | C6 |"
+      },
+      {
+        "id": "HF18",
+        "name": "Treemap",
+        "status": "未实现",
+        "remainingWork": "层级面积布局、极端比例与标签",
+        "phases": "C6",
+        "rowSnapshot": "| HF18 | Treemap | 未实现 | 层级面积布局、极端比例与标签 | C6 |"
+      },
+      {
+        "id": "MP01",
+        "name": "Bubble map",
+        "status": "未实现",
+        "remainingWork": "地理位置、大小图层和地图命中",
+        "phases": "C6",
+        "rowSnapshot": "| MP01 | Bubble map | 未实现 | 地理位置、大小图层和地图命中 | C6 |"
+      },
+      {
+        "id": "MP02",
+        "name": "Choropleth map",
+        "status": "未实现",
+        "remainingWork": "区域关联、分级颜色和图例",
+        "phases": "C6",
+        "rowSnapshot": "| MP02 | Choropleth map | 未实现 | 区域关联、分级颜色和图例 | C6 |"
+      },
+      {
+        "id": "MP03",
+        "name": "Heatmap map",
+        "status": "未实现",
+        "remainingWork": "地理密度/强度叠加和颜色尺度",
+        "phases": "C4、C6",
+        "rowSnapshot": "| MP03 | Heatmap map | 未实现 | 地理密度/强度叠加和颜色尺度 | C4、C6 |"
+      },
+      {
+        "id": "MP04",
+        "name": "Non-geographic / Seat map",
+        "status": "未实现",
+        "remainingWork": "自定义平面坐标、座位状态和选择",
+        "phases": "C6",
+        "rowSnapshot": "| MP04 | Non-geographic / Seat map | 未实现 | 自定义平面坐标、座位状态和选择 | C6 |"
+      },
+      {
+        "id": "MP05",
+        "name": "Shape map",
+        "status": "未实现",
+        "remainingWork": "自定义区域几何、数据关联和分层交互",
+        "phases": "C6",
+        "rowSnapshot": "| MP05 | Shape map | 未实现 | 自定义区域几何、数据关联和分层交互 | C6 |"
+      },
+      {
+        "id": "SC01",
+        "name": "Gantt",
+        "status": "未实现",
+        "remainingWork": "任务区间、依赖/进度的目标版本契约及时间布局",
+        "phases": "C1、C6",
+        "rowSnapshot": "| SC01 | Gantt | 未实现 | 任务区间、依赖/进度的目标版本契约及时间布局 | C1、C6 |"
+      },
+      {
+        "id": "SC02",
+        "name": "Sparkline：Line",
+        "status": "未实现",
+        "remainingWork": "无轴微图、极值/首尾强调及小尺寸布局",
+        "phases": "C3",
+        "rowSnapshot": "| SC02 | Sparkline：Line | 未实现 | 无轴微图、极值/首尾强调及小尺寸布局 | C3 |"
+      },
+      {
+        "id": "SC03",
+        "name": "Sparkline：Area",
+        "status": "未实现",
+        "remainingWork": "微图填充",
+        "phases": "C3",
+        "rowSnapshot": "| SC03 | Sparkline：Area | 未实现 | 微图填充 | C3 |"
+      },
+      {
+        "id": "SC04",
+        "name": "Sparkline：Bar",
+        "status": "未实现",
+        "remainingWork": "微图柱与正负值",
+        "phases": "C3",
+        "rowSnapshot": "| SC04 | Sparkline：Bar | 未实现 | 微图柱与正负值 | C3 |"
+      },
+      {
+        "id": "SC05",
+        "name": "Sparkline：WinLoss",
+        "status": "未实现",
+        "remainingWork": "胜负符号、零值和颜色",
+        "phases": "C3",
+        "rowSnapshot": "| SC05 | Sparkline：WinLoss | 未实现 | 胜负符号、零值和颜色 | C3 |"
+      },
+      {
+        "id": "SC06",
+        "name": "Spiral timeline",
+        "status": "未实现",
+        "remainingWork": "时间到螺旋位置的映射、周期与命中",
+        "phases": "C6",
+        "rowSnapshot": "| SC06 | Spiral timeline | 未实现 | 时间到螺旋位置的映射、周期与命中 | C6 |"
+      },
+      {
+        "id": "SC07",
+        "name": "Swimlane",
+        "status": "未实现",
+        "remainingWork": "分泳道时间区间、重叠与标签",
+        "phases": "C6",
+        "rowSnapshot": "| SC07 | Swimlane | 未实现 | 分泳道时间区间、重叠与标签 | C6 |"
+      },
+      {
+        "id": "SC08",
+        "name": "Event timeline",
+        "status": "未实现",
+        "remainingWork": "事件日期、里程碑和标签避让",
+        "phases": "C1、C6",
+        "rowSnapshot": "| SC08 | Event timeline | 未实现 | 事件日期、里程碑和标签避让 | C1、C6 |"
+      },
+      {
+        "id": "DS01",
+        "name": "`ItemsSource` 绑定和集合更新",
+        "status": "部分",
+        "remainingWork": "当前仅 ChartPoint 可观察集合；补对象路径、变更范围、批量更新和订阅释放",
+        "phases": "C1、C4",
+        "rowSnapshot": "| DS01 | `ItemsSource` 绑定和集合更新 | 部分 | 当前仅 ChartPoint 可观察集合；补对象路径、变更范围、批量更新和订阅释放 | C1、C4 |"
+      },
+      {
+        "id": "DS02",
+        "name": "对象数据的 CategoryPath / ValuePath",
+        "status": "未实现",
+        "remainingWork": "定义访问器、空路径、嵌套值、缓存和错误策略",
+        "phases": "C1",
+        "rowSnapshot": "| DS02 | 对象数据的 CategoryPath / ValuePath | 未实现 | 定义访问器、空路径、嵌套值、缓存和错误策略 | C1 |"
+      },
+      {
+        "id": "DS03",
+        "name": "直接数值列表和 Point 列表",
+        "status": "未实现",
+        "remainingWork": "覆盖官方列明的 int/float/double/decimal 与 Point，明确隐式索引分类",
+        "phases": "C1",
+        "rowSnapshot": "| DS03 | 直接数值列表和 Point 列表 | 未实现 | 覆盖官方列明的 int/float/double/decimal 与 Point，明确隐式索引分类 | C1 |"
+      },
+      {
+        "id": "DS04",
+        "name": "范围、OHLC、角度半径、层级、图和空间数据",
+        "status": "未实现",
+        "remainingWork": "按系列建立强类型内部数据视图并保留原始数据项",
+        "phases": "C1、C5、C6",
+        "rowSnapshot": "| DS04 | 范围、OHLC、角度半径、层级、图和空间数据 | 未实现 | 按系列建立强类型内部数据视图并保留原始数据项 | C1、C5、C6 |"
+      },
+      {
+        "id": "DS05",
+        "name": "非有限值过滤和折线断点",
+        "status": "已实现",
+        "remainingWork": "当前固定 Gap；已有空数据、常量和极端有限值回归",
+        "phases": "C0",
+        "rowSnapshot": "| DS05 | 非有限值过滤和折线断点 | 已实现 | 当前固定 Gap；已有空数据、常量和极端有限值回归 | C0 |"
+      },
+      {
+        "id": "DS06",
+        "name": "EmptyPointMode：Zero",
+        "status": "未实现",
+        "remainingWork": "官方文档默认 Zero，与本库当前 Gap 不同；明确迁移策略",
+        "phases": "C1",
+        "rowSnapshot": "| DS06 | EmptyPointMode：Zero | 未实现 | 官方文档默认 Zero，与本库当前 Gap 不同；明确迁移策略 | C1 |"
+      },
+      {
+        "id": "DS07",
+        "name": "EmptyPointMode：Gap",
+        "status": "部分",
+        "remainingWork": "已有行为，尚无统一模式属性/跨系列契约",
+        "phases": "C1",
+        "rowSnapshot": "| DS07 | EmptyPointMode：Gap | 部分 | 已有行为，尚无统一模式属性/跨系列契约 | C1 |"
+      },
+      {
+        "id": "DS08",
+        "name": "EmptyPointMode：Average / Interpolate",
+        "status": "未实现",
+        "remainingWork": "分别定义邻点、边界、连续缺失及区间数据规则",
+        "phases": "C1",
+        "rowSnapshot": "| DS08 | EmptyPointMode：Average / Interpolate | 未实现 | 分别定义邻点、边界、连续缺失及区间数据规则 | C1 |"
+      },
+      {
+        "id": "DS09",
+        "name": "逐数据项画刷和调色板",
+        "status": "部分",
+        "remainingWork": "有系列画刷和固定内部颜色；补公共 palette、逐项颜色和路径映射",
+        "phases": "C1、C2",
+        "rowSnapshot": "| DS09 | 逐数据项画刷和调色板 | 部分 | 有系列画刷和固定内部颜色；补公共 palette、逐项颜色和路径映射 | C1、C2 |"
+      },
+      {
+        "id": "DS10",
+        "name": "完整 MVVM 状态、命令与通知",
+        "status": "部分",
+        "remainingWork": "已有 styled properties、可观察集合、ViewportChanged；选择、图例、事件载荷等尚缺",
+        "phases": "C1、C2",
+        "rowSnapshot": "| DS10 | 完整 MVVM 状态、命令与通知 | 部分 | 已有 styled properties、可观察集合、ViewportChanged；选择、图例、事件载荷等尚缺 | C1、C2 |"
+      },
+      {
+        "id": "DS11",
+        "name": "自定义 Cartesian 系列绘制协议",
+        "status": "未实现",
+        "remainingWork": "当前按具体类型分支绘制；可继承 ChartSeries 不代表可自定义渲染",
+        "phases": "C1、C4",
+        "rowSnapshot": "| DS11 | 自定义 Cartesian 系列绘制协议 | 未实现 | 当前按具体类型分支绘制；可继承 ChartSeries 不代表可自定义渲染 | C1、C4 |"
+      },
+      {
+        "id": "DS12",
+        "name": "自定义图例、边界及交互数据提供者",
+        "status": "未实现",
+        "remainingWork": "自定义系列必须接入范围、命中、提示和图例",
+        "phases": "C1、C2",
+        "rowSnapshot": "| DS12 | 自定义图例、边界及交互数据提供者 | 未实现 | 自定义系列必须接入范围、命中、提示和图例 | C1、C2 |"
+      },
+      {
+        "id": "DS13",
+        "name": "金融叠加层与 bounds provider",
+        "status": "未实现",
+        "remainingWork": "日期索引、可见价格边界和自定义叠加坐标转换",
+        "phases": "C1、C5",
+        "rowSnapshot": "| DS13 | 金融叠加层与 bounds provider | 未实现 | 日期索引、可见价格边界和自定义叠加坐标转换 | C1、C5 |"
+      },
+      {
+        "id": "DS14",
+        "name": "PlotAreaContent / 覆盖内容",
+        "status": "未实现",
+        "remainingWork": "布局对齐、裁剪、输入路由及尺寸变更",
+        "phases": "C2",
+        "rowSnapshot": "| DS14 | PlotAreaContent / 覆盖内容 | 未实现 | 布局对齐、裁剪、输入路由及尺寸变更 | C2 |"
+      },
+      {
+        "id": "DS15",
+        "name": "官方公开消费 API 与迁移映射",
+        "status": "需核验",
+        "remainingWork": "当前名称相似但契约不同；C0 固定公开 API/默认值差异并安排迁移样例，二进制替换不作为默认目标",
+        "phases": "C0、C1、C7",
+        "rowSnapshot": "| DS15 | 官方公开消费 API 与迁移映射 | 需核验 | 当前名称相似但契约不同；C0 固定公开 API/默认值差异并安排迁移样例，二进制替换不作为默认目标 | C0、C1、C7 |"
+      },
+      {
+        "id": "AX01",
+        "name": "数值轴自动范围、漂亮刻度、显式上下限",
+        "status": "已实现",
+        "remainingWork": "当前线性数值轴；极端值保护不代表所有轴模式完成",
+        "phases": "C0",
+        "rowSnapshot": "| AX01 | 数值轴自动范围、漂亮刻度、显式上下限 | 已实现 | 当前线性数值轴；极端值保护不代表所有轴模式完成 | C0 |"
+      },
+      {
+        "id": "AX02",
+        "name": "CategoryAxis",
+        "status": "部分",
+        "remainingWork": "当前是整数 X 对应标签；补完整类别映射、间隙与 plot mode",
+        "phases": "C1",
+        "rowSnapshot": "| AX02 | CategoryAxis | 部分 | 当前是整数 X 对应标签；补完整类别映射、间隙与 plot mode | C1 |"
+      },
+      {
+        "id": "AX03",
+        "name": "DateTimeAxis",
+        "status": "未实现",
+        "remainingWork": "DateTime/DateTimeOffset，秒到年单位、日历边界和格式",
+        "phases": "C1",
+        "rowSnapshot": "| AX03 | DateTimeAxis | 未实现 | DateTime/DateTimeOffset，秒到年单位、日历边界和格式 | C1 |"
+      },
+      {
+        "id": "AX04",
+        "name": "LogarithmicAxis",
+        "status": "未实现",
+        "remainingWork": "对数底、正值域、乘法主刻度和交互映射",
+        "phases": "C1",
+        "rowSnapshot": "| AX04 | LogarithmicAxis | 未实现 | 对数底、正值域、乘法主刻度和交互映射 | C1 |"
+      },
+      {
+        "id": "AX05",
+        "name": "主/次 Y 轴、系列轴归属",
+        "status": "未实现",
+        "remainingWork": "独立范围、右侧标签、叠加层及命中归属",
+        "phases": "C1",
+        "rowSnapshot": "| AX05 | 主/次 Y 轴、系列轴归属 | 未实现 | 独立范围、右侧标签、叠加层及命中归属 | C1 |"
+      },
+      {
+        "id": "AX06",
+        "name": "坐标轴标题、基本数值格式",
+        "status": "已实现",
+        "remainingWork": "当前随控件字体设置；补轴级字体/画刷/可见性等见 AX09",
+        "phases": "C0、C1",
+        "rowSnapshot": "| AX06 | 坐标轴标题、基本数值格式 | 已实现 | 当前随控件字体设置；补轴级字体/画刷/可见性等见 AX09 | C0、C1 |"
+      },
+      {
+        "id": "AX07",
+        "name": "固定主步长、次步长、次网格",
+        "status": "未实现",
+        "remainingWork": "不以 DesiredTickCount 近似替代固定间隔",
+        "phases": "C1",
+        "rowSnapshot": "| AX07 | 固定主步长、次步长、次网格 | 未实现 | 不以 DesiredTickCount 近似替代固定间隔 | C1 |"
+      },
+      {
+        "id": "AX08",
+        "name": "标签适配：隐藏、换行、多行、45/90度、自定义旋转及 Auto",
+        "status": "部分",
+        "remainingWork": "当前只有密度抽稀/裁剪；补明确的布局模式与边缘标签策略",
+        "phases": "C1、C2",
+        "rowSnapshot": "| AX08 | 标签适配：隐藏、换行、多行、45/90度、自定义旋转及 Auto | 部分 | 当前只有密度抽稀/裁剪；补明确的布局模式与边缘标签策略 | C1、C2 |"
+      },
+      {
+        "id": "AX09",
+        "name": "轴/标题/标签/刻度/主次网格独立样式",
+        "status": "部分",
+        "remainingWork": "当前只有通用字体、AxisBrush、GridLineBrush 与总开关",
+        "phases": "C1、C2",
+        "rowSnapshot": "| AX09 | 轴/标题/标签/刻度/主次网格独立样式 | 部分 | 当前只有通用字体、AxisBrush、GridLineBrush 与总开关 | C1、C2 |"
+      },
+      {
+        "id": "AX10",
+        "name": "Scale breaks",
+        "status": "未实现",
+        "remainingWork": "区间合并、非线性映射、边界标签、缩放与命中一致",
+        "phases": "C1、C2",
+        "rowSnapshot": "| AX10 | Scale breaks | 未实现 | 区间合并、非线性映射、边界标签、缩放与命中一致 | C1、C2 |"
+      },
+      {
+        "id": "AX11",
+        "name": "Plot bands：文字、重复、系列前后层级",
+        "status": "未实现",
+        "remainingWork": "数据坐标与分类槽、无效端点和重复区间",
+        "phases": "C1、C2",
+        "rowSnapshot": "| AX11 | Plot bands：文字、重复、系列前后层级 | 未实现 | 数据坐标与分类槽、无效端点和重复区间 | C1、C2 |"
+      },
+      {
+        "id": "AX12",
+        "name": "连续水平轴与系列兼容/退回分类布局规则",
+        "status": "部分",
+        "remainingWork": "当前 XY 数值位置可用；日期/对数/混合兼容判定尚缺",
+        "phases": "C1",
+        "rowSnapshot": "| AX12 | 连续水平轴与系列兼容/退回分类布局规则 | 部分 | 当前 XY 数值位置可用；日期/对数/混合兼容判定尚缺 | C1 |"
+      },
+      {
+        "id": "VI01",
+        "name": "标题、网格和基础静态图例",
+        "status": "已实现",
+        "remainingWork": "已有当前控件范围内的基本展示",
+        "phases": "C0",
+        "rowSnapshot": "| VI01 | 标题、网格和基础静态图例 | 已实现 | 已有当前控件范围内的基本展示 | C0 |"
+      },
+      {
+        "id": "VI02",
+        "name": "图例位置、对齐、浮动、可复用图例模型",
+        "status": "部分",
+        "remainingWork": "当前顶部静态图例；补布局选项与系列对应标记",
+        "phases": "C2",
+        "rowSnapshot": "| VI02 | 图例位置、对齐、浮动、可复用图例模型 | 部分 | 当前顶部静态图例；补布局选项与系列对应标记 | C2 |"
+      },
+      {
+        "id": "VI03",
+        "name": "图例控制系列/分类显隐",
+        "status": "未实现",
+        "remainingWork": "显隐后的轴范围、堆叠、选择及命中必须同步",
+        "phases": "C2",
+        "rowSnapshot": "| VI03 | 图例控制系列/分类显隐 | 未实现 | 显隐后的轴范围、堆叠、选择及命中必须同步 | C2 |"
+      },
+      {
+        "id": "VI04",
+        "name": "基础点标记",
+        "status": "部分",
+        "remainingWork": "当前圆形及大小；补官方列明的圆、方、矩形、菱形、三角/倒三角、十字、五边形、横/竖线及独立样式",
+        "phases": "C2",
+        "rowSnapshot": "| VI04 | 基础点标记 | 部分 | 当前圆形及大小；补官方列明的圆、方、矩形、菱形、三角/倒三角、十字、五边形、横/竖线及独立样式 | C2 |"
+      },
+      {
+        "id": "VI05",
+        "name": "数据标签",
+        "status": "未实现",
+        "remainingWork": "值/类别格式、偏移、字体、画刷及拥挤处理",
+        "phases": "C2",
+        "rowSnapshot": "| VI05 | 数据标签 | 未实现 | 值/类别格式、偏移、字体、画刷及拥挤处理 | C2 |"
+      },
+      {
+        "id": "IN01",
+        "name": "点/柱 Tooltip 基础命中与主题",
+        "status": "已实现",
+        "remainingWork": "当前三系列名称、X/Y、分类标签和轴格式可用",
+        "phases": "C0",
+        "rowSnapshot": "| IN01 | 点/柱 Tooltip 基础命中与主题 | 已实现 | 当前三系列名称、X/Y、分类标签和轴格式可用 | C0 |"
+      },
+      {
+        "id": "IN02",
+        "name": "Tooltip 模板与数据项 TooltipText、系列级开关",
+        "status": "未实现",
+        "remainingWork": "保留原始对象，允许绑定多个字段和自定义 UI",
+        "phases": "C1、C2",
+        "rowSnapshot": "| IN02 | Tooltip 模板与数据项 TooltipText、系列级开关 | 未实现 | 保留原始对象，允许绑定多个字段和自定义 UI | C1、C2 |"
+      },
+      {
+        "id": "IN03",
+        "name": "按轴鼠标滚轮缩放、拖动平移、复位",
+        "status": "已实现",
+        "remainingWork": "独立 Viewport、边界及最小跨度、捕获释放已有回归；尚无完整官方交互契约",
+        "phases": "C0",
+        "rowSnapshot": "| IN03 | 按轴鼠标滚轮缩放、拖动平移、复位 | 已实现 | 独立 Viewport、边界及最小跨度、捕获释放已有回归；尚无完整官方交互契约 | C0 |"
+      },
+      {
+        "id": "IN04",
+        "name": "捏合等触控手势",
+        "status": "未实现",
+        "remainingWork": "触点仲裁、手势与滚动容器竞争和方向",
+        "phases": "C2、C7",
+        "rowSnapshot": "| IN04 | 捏合等触控手势 | 未实现 | 触点仲裁、手势与滚动容器竞争和方向 | C2、C7 |"
+      },
+      {
+        "id": "IN05",
+        "name": "缩放灵敏度、历史及返回",
+        "status": "未实现",
+        "remainingWork": "配置、历史上限、复位通知和与程序设值的关系",
+        "phases": "C2",
+        "rowSnapshot": "| IN05 | 缩放灵敏度、历史及返回 | 未实现 | 配置、历史上限、复位通知和与程序设值的关系 | C2 |"
+      },
+      {
+        "id": "IN06",
+        "name": "内嵌/独立 Range selector",
+        "status": "未实现",
+        "remainingWork": "横竖范围条、拖柄、双向绑定、键盘步长及轴比率转换",
+        "phases": "C2",
+        "rowSnapshot": "| IN06 | 内嵌/独立 Range selector | 未实现 | 横竖范围条、拖柄、双向绑定、键盘步长及轴比率转换 | C2 |"
+      },
+      {
+        "id": "IN07",
+        "name": "Crosshair：横/竖/双向与轴坐标标签",
+        "status": "未实现",
+        "remainingWork": "格式、次轴、对数与断轴一致映射",
+        "phases": "C2",
+        "rowSnapshot": "| IN07 | Crosshair：横/竖/双向与轴坐标标签 | 未实现 | 格式、次轴、对数与断轴一致映射 | C2 |"
+      },
+      {
+        "id": "IN08",
+        "name": "Trackball：横/竖与逐点/聚合浮层",
+        "status": "未实现",
+        "remainingWork": "多系列最近点、共同类别和密集数据命中",
+        "phases": "C2、C4",
+        "rowSnapshot": "| IN08 | Trackball：横/竖与逐点/聚合浮层 | 未实现 | 多系列最近点、共同类别和密集数据命中 | C2、C4 |"
+      },
+      {
+        "id": "IN09",
+        "name": "Hover highlighting",
+        "status": "部分",
+        "remainingWork": "当前提示环；补系列/单元/扇区高亮及其余数据淡化",
+        "phases": "C2",
+        "rowSnapshot": "| IN09 | Hover highlighting | 部分 | 当前提示环；补系列/单元/扇区高亮及其余数据淡化 | C2 |"
+      },
+      {
+        "id": "IN10",
+        "name": "Selection：Single、SingleDeselect、Multiple",
+        "status": "未实现",
+        "remainingWork": "双向状态、索引快照、选中样式、取消/修改前置事件",
+        "phases": "C1、C2",
+        "rowSnapshot": "| IN10 | Selection：Single、SingleDeselect、Multiple | 未实现 | 双向状态、索引快照、选中样式、取消/修改前置事件 | C1、C2 |"
+      },
+      {
+        "id": "IN11",
+        "name": "点击、悬停、选择、缩放和系列变化事件",
+        "status": "部分",
+        "remainingWork": "当前有 HoveredPoint 查询与 ViewportChanged；补完整对象载荷与事件顺序",
+        "phases": "C1、C2",
+        "rowSnapshot": "| IN11 | 点击、悬停、选择、缩放和系列变化事件 | 部分 | 当前有 HoveredPoint 查询与 ViewportChanged；补完整对象载荷与事件顺序 | C1、C2 |"
+      },
+      {
+        "id": "IN12",
+        "name": "稳定布局下的交互锚点和视觉命中",
+        "status": "部分",
+        "remainingWork": "当前已有大标记/裁剪边缘命中和标签留白稳定的回归；仍需覆盖多轴、断轴和全部新增系列的一致几何",
+        "phases": "C2、C4",
+        "rowSnapshot": "| IN12 | 稳定布局下的交互锚点和视觉命中 | 部分 | 当前已有大标记/裁剪边缘命中和标签留白稳定的回归；仍需覆盖多轴、断轴和全部新增系列的一致几何 | C2、C4 |"
+      },
+      {
+        "id": "OV01",
+        "name": "Line annotation",
+        "status": "未实现",
+        "remainingWork": "横/竖参考线、标签和数据坐标",
+        "phases": "C2",
+        "rowSnapshot": "| OV01 | Line annotation | 未实现 | 横/竖参考线、标签和数据坐标 | C2 |"
+      },
+      {
+        "id": "OV02",
+        "name": "Band annotation",
+        "status": "未实现",
+        "remainingWork": "区间带、方向和标签",
+        "phases": "C2",
+        "rowSnapshot": "| OV02 | Band annotation | 未实现 | 区间带、方向和标签 | C2 |"
+      },
+      {
+        "id": "OV03",
+        "name": "Text annotation",
+        "status": "未实现",
+        "remainingWork": "XY 坐标、文本样式与裁剪",
+        "phases": "C2",
+        "rowSnapshot": "| OV03 | Text annotation | 未实现 | XY 坐标、文本样式与裁剪 | C2 |"
+      },
+      {
+        "id": "OV04",
+        "name": "Rectangle annotation",
+        "status": "未实现",
+        "remainingWork": "数据单位的矩形、圆角及标签",
+        "phases": "C2",
+        "rowSnapshot": "| OV04 | Rectangle annotation | 未实现 | 数据单位的矩形、圆角及标签 | C2 |"
+      },
+      {
+        "id": "OV05",
+        "name": "Ellipse annotation",
+        "status": "未实现",
+        "remainingWork": "数据半径、填充及标签",
+        "phases": "C2",
+        "rowSnapshot": "| OV05 | Ellipse annotation | 未实现 | 数据半径、填充及标签 | C2 |"
+      },
+      {
+        "id": "OV06",
+        "name": "Arrow line annotation",
+        "status": "未实现",
+        "remainingWork": "两端坐标、箭头与标签",
+        "phases": "C2",
+        "rowSnapshot": "| OV06 | Arrow line annotation | 未实现 | 两端坐标、箭头与标签 | C2 |"
+      },
+      {
+        "id": "OV07",
+        "name": "自定义叠加内容",
+        "status": "未实现",
+        "remainingWork": "确定 PlotAreaContent 与自定义绘制扩展的边界",
+        "phases": "C1、C2",
+        "rowSnapshot": "| OV07 | 自定义叠加内容 | 未实现 | 确定 PlotAreaContent 与自定义绘制扩展的边界 | C1、C2 |"
+      },
+      {
+        "id": "EX01",
+        "name": "PNG / JPEG 文件导出",
+        "status": "未实现",
+        "remainingWork": "指定大小、DPI、错误/取消结果及主题一致性",
+        "phases": "C2、C7",
+        "rowSnapshot": "| EX01 | PNG / JPEG 文件导出 | 未实现 | 指定大小、DPI、错误/取消结果及主题一致性 | C2、C7 |"
+      },
+      {
+        "id": "EX02",
+        "name": "PNG stream 导出与保存对话框",
+        "status": "未实现",
+        "remainingWork": "流所有权、取消和双平台 picker 集成",
+        "phases": "C2、C7",
+        "rowSnapshot": "| EX02 | PNG stream 导出与保存对话框 | 未实现 | 流所有权、取消和双平台 picker 集成 | C2、C7 |"
+      },
+      {
+        "id": "EX03",
+        "name": "SVG / PDF 等额外格式",
+        "status": "需核验",
+        "remainingWork": "当前官方导出正文仅列 PNG/JPEG；如自行扩展，独立列范围",
+        "phases": "C0",
+        "rowSnapshot": "| EX03 | SVG / PDF 等额外格式 | 需核验 | 当前官方导出正文仅列 PNG/JPEG；如自行扩展，独立列范围 | C0 |"
+      },
+      {
+        "id": "AM01",
+        "name": "入场动画开关、时长和 easing",
+        "status": "未实现",
+        "remainingWork": "动画与命中、导出、可访问性静态回退一致",
+        "phases": "C2",
+        "rowSnapshot": "| AM01 | 入场动画开关、时长和 easing | 未实现 | 动画与命中、导出、可访问性静态回退一致 | C2 |"
+      },
+      {
+        "id": "AM02",
+        "name": "系列 delay / progress",
+        "status": "未实现",
+        "remainingWork": "多系列时序与数据更新后的动画策略",
+        "phases": "C2、C4",
+        "rowSnapshot": "| AM02 | 系列 delay / progress | 未实现 | 多系列时序与数据更新后的动画策略 | C2、C4 |"
+      },
+      {
+        "id": "TH01",
+        "name": "亮暗主题与自定义基础样式",
+        "status": "部分",
+        "remainingWork": "已有 Themes 包及 Tooltip 亮暗配色；尚未覆盖完整目录和模板",
+        "phases": "C2、C3、C7",
+        "rowSnapshot": "| TH01 | 亮暗主题与自定义基础样式 | 部分 | 已有 Themes 包及 Tooltip 亮暗配色；尚未覆盖完整目录和模板 | C2、C3、C7 |"
+      },
+      {
+        "id": "AC01",
+        "name": "图案等非颜色编码",
+        "status": "未实现",
+        "remainingWork": "按产品页已公开描述补纹理/图案和识别测试",
+        "phases": "C2、C7",
+        "rowSnapshot": "| AC01 | 图案等非颜色编码 | 未实现 | 按产品页已公开描述补纹理/图案和识别测试 | C2、C7 |"
+      },
+      {
+        "id": "AC02",
+        "name": "图表键盘、读屏、数据摘要与可访问性树的官方精确覆盖",
+        "status": "需核验",
+        "remainingWork": "产品宣传不能证明每图表每平台读屏实现；C0 实测，库内自主制定键盘与语义树门槛",
+        "phases": "C0、C2、C7",
+        "rowSnapshot": "| AC02 | 图表键盘、读屏、数据摘要与可访问性树的官方精确覆盖 | 需核验 | 产品宣传不能证明每图表每平台读屏实现；C0 实测，库内自主制定键盘与语义树门槛 | C0、C2、C7 |"
+      },
+      {
+        "id": "PF01",
+        "name": "完整数据、可见数据和绘制数据分层",
+        "status": "部分",
+        "remainingWork": "当前有场景缓存，但失效后仍全量快照/遍历；补版本化数据管线和分层失效",
+        "phases": "C4",
+        "rowSnapshot": "| PF01 | 完整数据、可见数据和绘制数据分层 | 部分 | 当前有场景缓存，但失效后仍全量快照/遍历；补版本化数据管线和分层失效 | C4 |"
+      },
+      {
+        "id": "PF02",
+        "name": "大数据裁剪、抽样与 LOD",
+        "status": "未实现",
+        "remainingWork": "线峰值/缺口保持、分布不失真、原始点可追溯",
+        "phases": "C4",
+        "rowSnapshot": "| PF02 | 大数据裁剪、抽样与 LOD | 未实现 | 线峰值/缺口保持、分布不失真、原始点可追溯 | C4 |"
+      },
+      {
+        "id": "PF03",
+        "name": "实时追加/替换/删除与窗口滚动",
+        "status": "部分",
+        "remainingWork": "集合变更可重绘；尚无增量范围、批处理、环形缓冲和刷新预算",
+        "phases": "C4",
+        "rowSnapshot": "| PF03 | 实时追加/替换/删除与窗口滚动 | 部分 | 集合变更可重绘；尚无增量范围、批处理、环形缓冲和刷新预算 | C4 |"
+      },
+      {
+        "id": "PF04",
+        "name": "命中索引和交互缓存",
+        "status": "未实现",
+        "remainingWork": "当前命中扫描；补可见区索引、热路径分配、hover/trackball 延迟",
+        "phases": "C4",
+        "rowSnapshot": "| PF04 | 命中索引和交互缓存 | 未实现 | 当前命中扫描；补可见区索引、热路径分配、hover/trackball 延迟 | C4 |"
+      },
+      {
+        "id": "PF05",
+        "name": "与官方同等性能",
+        "status": "需核验",
+        "remainingWork": "固定两库版本、硬件、后端、数据集、视觉设置，比较首帧、P95/P99、内存和持续更新",
+        "phases": "C0、C4、C7",
+        "rowSnapshot": "| PF05 | 与官方同等性能 | 需核验 | 固定两库版本、硬件、后端、数据集、视觉设置，比较首帧、P95/P99、内存和持续更新 | C0、C4、C7 |"
+      },
+      {
+        "id": "PL01",
+        "name": "Windows 实机功能回归",
+        "status": "部分",
+        "remainingWork": "当前 smoke 是基础首版证据；后续每组图表、输入、DPI、字体和导出逐项验收",
+        "phases": "C0、C7",
+        "rowSnapshot": "| PL01 | Windows 实机功能回归 | 部分 | 当前 smoke 是基础首版证据；后续每组图表、输入、DPI、字体和导出逐项验收 | C0、C7 |"
+      },
+      {
+        "id": "PL02",
+        "name": "Linux 功能兼容",
+        "status": "需核验",
+        "remainingWork": "须在真实 Linux 图形会话验证目标发行版、显示会话、字体、输入和导出；不能用 Windows/Headless 结果替代",
+        "phases": "C0、C7",
+        "rowSnapshot": "| PL02 | Linux 功能兼容 | 需核验 | 须在真实 Linux 图形会话验证目标发行版、显示会话、字体、输入和导出；不能用 Windows/Headless 结果替代 | C0、C7 |"
+      },
+      {
+        "id": "PL03",
+        "name": "Linux 性能与官方对照",
+        "status": "需核验",
+        "remainingWork": "须有 Linux 独立原始测量；WSL、CI headless 或能编译均不代表桌面性能完成",
+        "phases": "C4、C7",
+        "rowSnapshot": "| PL03 | Linux 性能与官方对照 | 需核验 | 须有 Linux 独立原始测量；WSL、CI headless 或能编译均不代表桌面性能完成 | C4、C7 |"
+      },
+      {
+        "id": "PL04",
+        "name": "Windows/Linux 可访问性与发布",
+        "status": "未实现",
+        "remainingWork": "平台语义树/读屏、键盘、高对比/图案、包与完整 Demo 验收",
+        "phases": "C2、C7",
+        "rowSnapshot": "| PL04 | Windows/Linux 可访问性与发布 | 未实现 | 平台语义树/读屏、键盘、高对比/图案、包与完整 Demo 验收 | C2、C7 |"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://api.nuget.org/v3-flatcontainer/avalonia.controls.charts/12.3.0/avalonia.controls.charts.12.3.0.nupkg",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://api.nuget.org/v3-flatcontainer/avalonia.controls.charts/index.json",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://avaloniaui.net/charts",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/analytics/bullet-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/analytics/pictorial-bar-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/analytics/theme-river-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/bubble/bubble-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/area-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/bar-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/combo-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/dot-plot-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/histogram-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/line-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/lollipop-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/pareto-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/range-area-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/range-bar-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/scatter-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/stacked-100-percent-bar-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/stacked-area-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/stacked-bar-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/variance-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/cartesian/waterfall-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/circular/pie-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/comparison/diverging-bar-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/engineering/carpet-plot-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/financial/candlestick-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/financial/financial-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/financial/technical-indicators-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/gauges/circular-gauge-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/hierarchy/alluvial-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/hierarchy/flow-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/hierarchy/mindmap-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/hierarchy/process-flow-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/maps/bubble-map-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/radial/nightingale-rose-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/radial/polar-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/radial/radar-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/scheduling/sparkline-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/scheduling/timeline-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/annotations-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/crosshairs-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/data-labels-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/export-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/interactions-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/legend-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/markers-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/tooltip-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/trendline-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/controls/data-display/charts/statistical/beeswarm-plot-chart",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://docs.avaloniaui.net/tools/installing-avalonia-pro",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      },
+      {
+        "url": "https://www.nuget.org/packages/Avalonia.Controls.Charts/12.3.0",
+        "accessedDate": "2026-10-15",
+        "evidenceKind": "primary-public-source",
+        "status": "listed-not-downloaded",
+        "sha256": null,
+        "capturedUtc": null
+      }
+    ]
+  },
+  "local": {
+    "sourceManifest": {
+      "path": "benchmarks/Charts.Reference/evidence/c0-frozen/source-manifest.json",
+      "status": "captured",
+      "sha256": "9E3B1EC71E9F3DB1DCD4AAFFED3FAE4040994AD142FF23AD58502687FC120F2B",
+      "bytes": 9137,
+      "lastWriteUtc": "2026-10-15T07:30:39.1492166Z"
+    },
+    "sourceFiles": [
+      {
+        "path": "benchmarks/Charts.Reference/.gitignore",
+        "status": "captured",
+        "sha256": "3244CEEE406362E1B9AE1CEF918C78F766D5930CFA9541C753C69BC071866C4B",
+        "bytes": 20,
+        "lastWriteUtc": "2026-10-15T07:30:11.0719342Z"
+      },
+      {
+        "path": "Directory.Build.props",
+        "status": "captured",
+        "sha256": "FA2D125EF59164ED7362104E1FD2BD60FC2149F9B8D9AD022B403A15AAE67BAF",
+        "bytes": 638,
+        "lastWriteUtc": "2026-10-13T01:40:43.1272118Z"
+      },
+      {
+        "path": "Directory.Packages.props",
+        "status": "captured",
+        "sha256": "9D1607E65506D8A7AA7CB722C7CED8F2306740B65D2619C8CECD1AB5375B9454",
+        "bytes": 1135,
+        "lastWriteUtc": "2026-10-15T03:08:51.5469255Z"
+      },
+      {
+        "path": "docs/charts-development-plan.md",
+        "status": "captured",
+        "sha256": "8124EF7FDD9F76C20905A25CDB8C1B57D4713079486BF21C78838E12AD227CB0",
+        "bytes": 26965,
+        "lastWriteUtc": "2026-10-15T03:53:29.6401736Z"
+      },
+      {
+        "path": "docs/charts-official-alignment.md",
+        "status": "captured",
+        "sha256": "9C00D703D0D9AC29F3C5F70F9ED3BF51BBA446CE9A89DD8AAA479C1907C1A37B",
+        "bytes": 36137,
+        "lastWriteUtc": "2026-10-15T03:53:30.0003311Z"
+      },
+      {
+        "path": "docs/charts-performance-platform-plan.md",
+        "status": "captured",
+        "sha256": "E67CF95D83725D02391AEDE5D74A946471AB64F65F968B6AA998B923155455C6",
+        "bytes": 33247,
+        "lastWriteUtc": "2026-10-15T03:52:57.5757300Z"
+      },
+      {
+        "path": "global.json",
+        "status": "captured",
+        "sha256": "4E7D5022B2A5A8D02BB951BB264A4C8613EABC332572A0AF5F9743D23F23D84E",
+        "bytes": 105,
+        "lastWriteUtc": "2026-10-12T02:47:03.4478248Z"
+      },
+      {
+        "path": "NuGet.Config",
+        "status": "captured",
+        "sha256": "AEC93B5637AB6D62470979A008990A4A336A287AB83A3F2541849AE735674055",
+        "bytes": 197,
+        "lastWriteUtc": "2026-10-12T02:47:04.5265686Z"
+      },
+      {
+        "path": "NT.AvaloniaControl.slnx",
+        "status": "captured",
+        "sha256": "4C9F83C0414D039BCF041909F9259171D0ADA8B49B19848599FE580DBBA97078",
+        "bytes": 3148,
+        "lastWriteUtc": "2026-10-15T03:15:59.9513647Z"
+      },
+      {
+        "path": "scripts/Capture-ChartsBaseline.ps1",
+        "status": "captured",
+        "sha256": "D82B14DD86A5D85B5F89D99F109AC0C0D4082F20F1DB173013F5926FA5A1D153",
+        "bytes": 30022,
+        "lastWriteUtc": "2026-10-15T07:30:37.9790586Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Themes/ChartsTheme.cs",
+        "status": "captured",
+        "sha256": "576FC5CE0E10FB00CD0DE1F823D5184CD05BABF791CDAC9D6F1D0DFB21A1E5A3",
+        "bytes": 442,
+        "lastWriteUtc": "2026-10-15T03:08:29.7262980Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Themes/packages.lock.json",
+        "status": "captured",
+        "sha256": "ECA700BCD9C7A557090DC4747B9E91BF5544F88F5F88BDDC4B1058F3AF38BC96",
+        "bytes": 1309,
+        "lastWriteUtc": "2026-10-15T03:09:16.2858202Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Themes/README.md",
+        "status": "captured",
+        "sha256": "6C93F9521BCD8F243C42E155ECD4EEF856762D4F98121C72AA0A737E70621F91",
+        "bytes": 561,
+        "lastWriteUtc": "2026-10-15T03:31:00.5351560Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Themes/NT.AvaloniaControl.Charts.Themes.csproj",
+        "status": "captured",
+        "sha256": "DB862E283734014F875FDBF6EA3E953B9045F14AE83EFBE03EB144DAD2CE3AA8",
+        "bytes": 651,
+        "lastWriteUtc": "2026-10-15T03:08:29.3768056Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Themes/Themes/Generic.axaml",
+        "status": "captured",
+        "sha256": "31A2128E66EED748D55EF3E7BCCE190026738CB2D111B16ECD2852AB6C26E241",
+        "bytes": 2249,
+        "lastWriteUtc": "2026-10-15T03:29:50.3743569Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.cs",
+        "status": "captured",
+        "sha256": "1341F2A3224D34B3EBDA7BF54CA403164F4C3DB1B55634594FA46F25FD7ED455",
+        "bytes": 21071,
+        "lastWriteUtc": "2026-10-15T03:32:38.5186862Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Interaction.cs",
+        "status": "captured",
+        "sha256": "C42E8779E082EE79E3CA895A9A8E18C6EC1CF4F8C3237180BE9D2E6A12B277B9",
+        "bytes": 13827,
+        "lastWriteUtc": "2026-10-15T03:32:38.8767178Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartAxis.cs",
+        "status": "captured",
+        "sha256": "0C7D86F3C0A566BA008F56C8A4D7755C204ED3D3047A6BC7239C848CE97DCD5F",
+        "bytes": 3824,
+        "lastWriteUtc": "2026-10-15T03:08:39.0305403Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartInteractionAxes.cs",
+        "status": "captured",
+        "sha256": "3599FB3F8837320C919AC11D1C4C58AF40F0988B663F1537BAD75AD5AEC65698",
+        "bytes": 217,
+        "lastWriteUtc": "2026-10-15T03:27:00.9816085Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartPoint.cs",
+        "status": "captured",
+        "sha256": "E5B8393C1562C0F0501872D2BE337477CF9E767C90300932973910AC1B3BD3D5",
+        "bytes": 170,
+        "lastWriteUtc": "2026-10-15T03:08:38.3374750Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartPointHit.cs",
+        "status": "captured",
+        "sha256": "23FA88297A5DF590E990C2E68E551E29B2EF71BC8EB391ACDBF1BE89ED33CF7B",
+        "bytes": 256,
+        "lastWriteUtc": "2026-10-15T03:29:28.1107251Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartScale.cs",
+        "status": "captured",
+        "sha256": "89642DA86270AF407EFF47AEEC9D2352C4326B487911C7A64DC6D1CEAC691B87",
+        "bytes": 10461,
+        "lastWriteUtc": "2026-10-15T03:14:35.7562457Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSeries.cs",
+        "status": "captured",
+        "sha256": "5D5CCCADEEC67A0C6A598BF09BBF45E41EA118B7E1B084BFA9A901D5FAD15A22",
+        "bytes": 4318,
+        "lastWriteUtc": "2026-10-15T03:09:41.8336539Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartViewport.cs",
+        "status": "captured",
+        "sha256": "B3E47E781ACDF1A801147F4A4EEF8BB67E42C925F74E11FC401643D3FD9E19B0",
+        "bytes": 7298,
+        "lastWriteUtc": "2026-10-15T03:27:26.7284152Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/packages.lock.json",
+        "status": "captured",
+        "sha256": "0F17371506FD5CA0F53D281973FD2387D8F10EC4EB95F405233AAD40001EE794",
+        "bytes": 1148,
+        "lastWriteUtc": "2026-10-15T03:09:16.2858202Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/Properties/AssemblyInfo.cs",
+        "status": "captured",
+        "sha256": "5127F1EE8B9186A2F65C0C344193E9AFB72570EC589ADE6F1DCBE535A82138F0",
+        "bytes": 96,
+        "lastWriteUtc": "2026-10-15T03:08:40.1196731Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/README.md",
+        "status": "captured",
+        "sha256": "CAF9837AB6F72D3099B63FACC5E9E866215FC9AC664E7E39884955F48C50D193",
+        "bytes": 3240,
+        "lastWriteUtc": "2026-10-15T03:33:47.7780541Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/NT.AvaloniaControl.Charts.csproj",
+        "status": "captured",
+        "sha256": "0584A0F82A910603D5DA111CCE7DB76AD3F8472E86FA9C24898F12DCD6832690",
+        "bytes": 580,
+        "lastWriteUtc": "2026-10-15T03:08:28.3153656Z"
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartInteractionTests.cs",
+        "status": "captured",
+        "sha256": "E703B158C02315922F0C5F39507B15A7E17562B3127579C7128AAF7505FE7A2A",
+        "bytes": 18504,
+        "lastWriteUtc": "2026-10-15T03:34:05.1230414Z"
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartRenderingTests.cs",
+        "status": "captured",
+        "sha256": "2B55DB8A105560E299A6877C88FEA609C916A2571368662040806E189A4ADF54",
+        "bytes": 9834,
+        "lastWriteUtc": "2026-10-15T03:13:35.7702709Z"
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/Charts.Headless.Tests.csproj",
+        "status": "captured",
+        "sha256": "0294222F72095397D59AAA63AF5D5622D924763943BE3DACA76E2E3E2C01C8A2",
+        "bytes": 309,
+        "lastWriteUtc": "2026-10-15T03:08:24.5955046Z"
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartScaleTests.cs",
+        "status": "captured",
+        "sha256": "9465B596738D4E2AEDC2CD78B4491CC9C394D37D308D897A19EE03622EAF4610",
+        "bytes": 5300,
+        "lastWriteUtc": "2026-10-15T03:14:52.2005204Z"
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartViewportMathTests.cs",
+        "status": "captured",
+        "sha256": "962ECAD47355A4DDF57CC9E3FAB6B34576C88346B9565381B7DAD25CE3758233",
+        "bytes": 7238,
+        "lastWriteUtc": "2026-10-15T03:27:27.0863231Z"
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/packages.lock.json",
+        "status": "captured",
+        "sha256": "84C3A9672235DE0FDBD427674F5E6D30BB1E7A1D17CCF6AFCEEE9BA56A825121",
+        "bytes": 11320,
+        "lastWriteUtc": "2026-10-15T03:09:16.4181381Z"
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/TestApplication.cs",
+        "status": "captured",
+        "sha256": "536092B45E7F1603781DD47CD2D4E01E3D8F16CB1095AA52932BBCAD96141D91",
+        "bytes": 596,
+        "lastWriteUtc": "2026-10-15T03:08:24.9651331Z"
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/XamlConsumerView.axaml",
+        "status": "captured",
+        "sha256": "0A34BC3F7AD2BE0E6E43D7882112525C24AE066BD1856D4E7A798091D03E868C",
+        "bytes": 866,
+        "lastWriteUtc": "2026-10-15T03:09:43.4863897Z"
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/XamlConsumerView.axaml.cs",
+        "status": "captured",
+        "sha256": "84993CDB5367BD51F064B32E0BF7D741CB0F3953948793FB84B780089495B9D2",
+        "bytes": 215,
+        "lastWriteUtc": "2026-10-15T03:09:43.8613463Z"
+      }
+    ],
+    "assemblies": [
+      {
+        "path": "src/NT.AvaloniaControl.Charts/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+        "status": "captured",
+        "sha256": "B3989A070EFAAF48BC0D283501BB472DF9CF6C082E3C39C37801C73291A1C27A",
+        "bytes": 56320,
+        "lastWriteUtc": "2026-10-15T07:23:26.5983835Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Themes/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+        "status": "captured",
+        "sha256": "B607697E804EE44BCA777E00C1C24FCCC1E6EA9B6ABFC24D269BA09641FE15FE",
+        "bytes": 18944,
+        "lastWriteUtc": "2026-10-15T07:23:28.7213718Z"
+      }
+    ],
+    "dependencyLocks": [
+      {
+        "path": "src/NT.AvaloniaControl.Charts/packages.lock.json",
+        "status": "captured",
+        "sha256": "0F17371506FD5CA0F53D281973FD2387D8F10EC4EB95F405233AAD40001EE794",
+        "bytes": 1148,
+        "lastWriteUtc": "2026-10-15T03:09:16.2858202Z"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Themes/packages.lock.json",
+        "status": "captured",
+        "sha256": "ECA700BCD9C7A557090DC4747B9E91BF5544F88F5F88BDDC4B1058F3AF38BC96",
+        "bytes": 1309,
+        "lastWriteUtc": "2026-10-15T03:09:16.2858202Z"
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/packages.lock.json",
+        "status": "captured",
+        "sha256": "3E2B76C87EEFF82F8D982833E58C56ADEF513F2BA9A29A85F576DCF34A356C54",
+        "bytes": 12289,
+        "lastWriteUtc": "2026-10-15T03:15:08.2792763Z"
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/packages.lock.json",
+        "status": "captured",
+        "sha256": "84C3A9672235DE0FDBD427674F5E6D30BB1E7A1D17CCF6AFCEEE9BA56A825121",
+        "bytes": 11320,
+        "lastWriteUtc": "2026-10-15T03:09:16.4181381Z"
+      },
+      {
+        "path": "benchmarks/Charts.Reference/packages.lock.json",
+        "status": "missing",
+        "sha256": null
+      }
+    ],
+    "api": {
+      "path": "benchmarks/Charts.Reference/evidence/c0-frozen/api.txt",
+      "status": "captured",
+      "sha256": "1C638E7BE926291D610BCA4FBADA07A17D70AA56284A55C566FD8868ECA88E38",
+      "bytes": 580721,
+      "lastWriteUtc": "2026-10-15T07:30:40.1531961Z"
+    },
+    "apiResults": [
+      {
+        "kind": "local",
+        "path": "src/NT.AvaloniaControl.Charts/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+        "status": "captured-metadata-only",
+        "exportedTypes": 10,
+        "assemblyIdentity": "NT.AvaloniaControl.Charts, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null",
+        "sha256": "B3989A070EFAAF48BC0D283501BB472DF9CF6C082E3C39C37801C73291A1C27A"
+      },
+      {
+        "kind": "local",
+        "path": "src/NT.AvaloniaControl.Charts.Themes/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+        "status": "captured-metadata-only",
+        "exportedTypes": 3,
+        "assemblyIdentity": "NT.AvaloniaControl.Charts.Themes, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null",
+        "sha256": "B607697E804EE44BCA777E00C1C24FCCC1E6EA9B6ABFC24D269BA09641FE15FE"
+      },
+      {
+        "kind": "official-reference",
+        "path": "benchmarks/Charts.Reference/evidence/official-12.3.0/lib/net9.0/Avalonia.Controls.Charts.dll",
+        "status": "captured-metadata-only",
+        "exportedTypes": 282,
+        "assemblyIdentity": "Avalonia.Controls.Charts, Version=12.3.0.0, Culture=neutral, PublicKeyToken=c8d484a7012f9a8b",
+        "sha256": "8488C1A75255167FECC97E1FB87CB831DA8A4D0F1CD0F0B57FBFA2BB0E76064F"
+      }
+    ]
+  },
+  "officialReference": {
+    "packageId": "Avalonia.Controls.Charts",
+    "pinnedVersion": "12.3.0",
+    "packageVersionEvidence": "nuget-v3-index-and-nuspec",
+    "versionIndex": {
+      "path": "benchmarks/Charts.Reference/evidence/official-12.3.0/versions.json",
+      "status": "captured",
+      "sha256": "5387332F755AF7942881928B204E0DA814AC963BB6FA249E667846419DF689DE",
+      "bytes": 100,
+      "lastWriteUtc": "2026-10-15T07:24:42.5449378Z"
+    },
+    "archive": {
+      "path": "benchmarks/Charts.Reference/evidence/official-12.3.0/avalonia.controls.charts.12.3.0.nupkg",
+      "status": "captured",
+      "sha256": "90F31AC154DDC3E98B635A24E62CB965ED5A1D3C5A981A8850F16A2A5E1C2387",
+      "bytes": 703758,
+      "lastWriteUtc": "2026-10-15T07:24:44.1816114Z"
+    },
+    "pinnedArchiveSha256": "90F31AC154DDC3E98B635A24E62CB965ED5A1D3C5A981A8850F16A2A5E1C2387",
+    "archiveVerified": true,
+    "assembly": {
+      "path": "benchmarks/Charts.Reference/evidence/official-12.3.0/lib/net9.0/Avalonia.Controls.Charts.dll",
+      "status": "captured",
+      "sha256": "8488C1A75255167FECC97E1FB87CB831DA8A4D0F1CD0F0B57FBFA2BB0E76064F",
+      "bytes": 1640448,
+      "lastWriteUtc": "2026-09-28T04:01:26.0000000Z"
+    },
+    "xmlDocumentation": {
+      "path": "benchmarks/Charts.Reference/evidence/official-12.3.0/lib/net9.0/Avalonia.Controls.Charts.xml",
+      "status": "captured",
+      "sha256": "D60FD2FD797B687434F7DB9A2C5B583D0414AAADB80C9B868955E27D2C2CD964",
+      "bytes": 860529,
+      "lastWriteUtc": "2026-09-28T04:01:26.0000000Z"
+    },
+    "nuspec": {
+      "path": "benchmarks/Charts.Reference/evidence/official-12.3.0/Avalonia.Controls.Charts.nuspec",
+      "status": "captured",
+      "sha256": "2FA9301193F075BAE26CE81BB02E7ED1DEB95999E77725B81018657349E48CAA",
+      "bytes": 1215,
+      "lastWriteUtc": "2026-09-28T04:01:26.0000000Z"
+    },
+    "targetFramework": "net9.0",
+    "upstreamRepositoryCommit": "af8225d971c05fb541086f6ab1e9c53ca10a7ee6",
+    "declaredDependencies": [
+      {
+        "minimumVersion": "12.0.0",
+        "id": "Avalonia"
+      },
+      {
+        "nuspecExcludes": "Runtime,Compile,Build,Native,Analyzers",
+        "id": "AvaloniaUI.Licensing",
+        "minimumVersion": "3.0.7"
+      },
+      {
+        "minimumVersion": "3.119.3-preview.1.1",
+        "id": "SkiaSharp"
+      }
+    ],
+    "documentedDefaults": [
+      {
+        "value": "null",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "charts",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts",
+        "accessedDate": "2026-10-15",
+        "member": "Title",
+        "type": "ChartBase"
+      },
+      {
+        "value": "null",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "charts",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts",
+        "accessedDate": "2026-10-15",
+        "member": "ItemsSource",
+        "type": "ChartSeries"
+      },
+      {
+        "value": "null",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "charts",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts",
+        "accessedDate": "2026-10-15",
+        "member": "ValuePath",
+        "type": "ChartSeries"
+      },
+      {
+        "value": "1.0; a default theme can override it",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "charts",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts",
+        "accessedDate": "2026-10-15",
+        "member": "StrokeThickness",
+        "type": "ChartSeries"
+      },
+      {
+        "value": "Zero",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "charts",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts",
+        "accessedDate": "2026-10-15",
+        "member": "EmptyPointMode",
+        "type": "CartesianSeries"
+      },
+      {
+        "value": "true",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "charts",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts",
+        "accessedDate": "2026-10-15",
+        "member": "IsAnimationEnabled",
+        "type": "ChartBase"
+      },
+      {
+        "value": "00:00:01",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "charts",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts",
+        "accessedDate": "2026-10-15",
+        "member": "AnimationDuration",
+        "type": "ChartBase"
+      },
+      {
+        "value": "CubicEaseOut",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "charts",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts",
+        "accessedDate": "2026-10-15",
+        "member": "Easing",
+        "type": "ChartBase"
+      },
+      {
+        "value": "00:00:00",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "charts",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts",
+        "accessedDate": "2026-10-15",
+        "member": "AnimationDelay",
+        "type": "ChartSeries"
+      },
+      {
+        "value": "1.0",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "charts",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts",
+        "accessedDate": "2026-10-15",
+        "member": "AnimationProgress",
+        "type": "ChartSeries"
+      },
+      {
+        "value": "false",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "interactions-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/interactions-chart",
+        "accessedDate": "2026-10-15",
+        "member": "IsZoomEnabled",
+        "type": "CartesianChart"
+      },
+      {
+        "value": "false",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "interactions-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/interactions-chart",
+        "accessedDate": "2026-10-15",
+        "member": "IsPanEnabled",
+        "type": "CartesianChart"
+      },
+      {
+        "value": "XY",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "interactions-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/interactions-chart",
+        "accessedDate": "2026-10-15",
+        "member": "ZoomMode",
+        "type": "CartesianChart"
+      },
+      {
+        "value": "0.1",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "interactions-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/interactions-chart",
+        "accessedDate": "2026-10-15",
+        "member": "ZoomSensitivity",
+        "type": "CartesianChart"
+      },
+      {
+        "value": "true",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "interactions-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/interactions-chart",
+        "accessedDate": "2026-10-15",
+        "member": "ShowRangeSelector",
+        "type": "CartesianChart"
+      },
+      {
+        "value": "20",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "interactions-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/interactions-chart",
+        "accessedDate": "2026-10-15",
+        "member": "ZoomHistoryLimit",
+        "type": "CartesianChart"
+      },
+      {
+        "value": "None",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "crosshairs-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/crosshairs-chart",
+        "accessedDate": "2026-10-15",
+        "member": "CrosshairMode",
+        "type": "CartesianChart"
+      },
+      {
+        "value": "None",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "interactions-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/interactions-chart",
+        "accessedDate": "2026-10-15",
+        "member": "TrackballMode",
+        "type": "CartesianChart"
+      },
+      {
+        "value": "FloatAllPoints",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "interactions-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/interactions-chart",
+        "accessedDate": "2026-10-15",
+        "member": "TrackballDisplayMode",
+        "type": "CartesianChart"
+      },
+      {
+        "value": "false",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "legend-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/legend-chart",
+        "accessedDate": "2026-10-15",
+        "member": "ShowLegend",
+        "type": "ChartBase"
+      },
+      {
+        "value": "None",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "legend-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/legend-chart",
+        "accessedDate": "2026-10-15",
+        "member": "LegendPosition",
+        "type": "ChartBase"
+      },
+      {
+        "value": "Center",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "legend-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/legend-chart",
+        "accessedDate": "2026-10-15",
+        "member": "LegendAlignment",
+        "type": "ChartBase"
+      },
+      {
+        "value": "true; scale legends may coerce false",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "legend-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/legend-chart",
+        "accessedDate": "2026-10-15",
+        "member": "ToggleSeriesVisibility",
+        "type": "ChartBase"
+      },
+      {
+        "value": "true",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "tooltip-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/tooltip-chart",
+        "accessedDate": "2026-10-15",
+        "member": "IsTooltipEnabled",
+        "type": "ChartBase"
+      },
+      {
+        "value": "true",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "IsVisible",
+        "type": "ChartAxis"
+      },
+      {
+        "value": "null",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "Title",
+        "type": "ChartAxis"
+      },
+      {
+        "value": "true",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "ShowLabels",
+        "type": "ChartAxis"
+      },
+      {
+        "value": "12.0",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "LabelFontSize",
+        "type": "ChartAxis"
+      },
+      {
+        "value": "true",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "ShowGridLines",
+        "type": "ChartAxis"
+      },
+      {
+        "value": "false",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "ShowMinorGridLines",
+        "type": "ChartAxis"
+      },
+      {
+        "value": "None",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "LabelFitMode",
+        "type": "ChartAxis"
+      },
+      {
+        "value": "null",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "Minimum",
+        "type": "NumericalAxis"
+      },
+      {
+        "value": "null",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "Maximum",
+        "type": "NumericalAxis"
+      },
+      {
+        "value": "null",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "MajorStep",
+        "type": "NumericalAxis"
+      },
+      {
+        "value": "1.0",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "MajorStep",
+        "type": "DateTimeAxis"
+      },
+      {
+        "value": "Day",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "MajorStepUnit",
+        "type": "DateTimeAxis"
+      },
+      {
+        "value": "10.0",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "LogBase",
+        "type": "LogarithmicAxis"
+      },
+      {
+        "value": "null",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "axis-customization-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/axis-customization-chart",
+        "accessedDate": "2026-10-15",
+        "member": "MajorStep",
+        "type": "LogarithmicAxis"
+      },
+      {
+        "value": "series-dependent; line family false, some point series true",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "markers-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/markers-chart",
+        "accessedDate": "2026-10-15",
+        "member": "ShowMarkers",
+        "type": "CartesianSeries"
+      },
+      {
+        "value": "Circle",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "markers-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/markers-chart",
+        "accessedDate": "2026-10-15",
+        "member": "MarkerShape",
+        "type": "CartesianSeries"
+      },
+      {
+        "value": "NaN; falls back to series StrokeThickness",
+        "evidence": "rolling-public-docs-default; not-observed-on-12.3.0-runtime",
+        "source": "markers-chart",
+        "sourceUrl": "https://docs.avaloniaui.net/controls/data-display/charts/shared-elements/markers-chart",
+        "accessedDate": "2026-10-15",
+        "member": "MarkerStrokeThickness",
+        "type": "CartesianSeries"
+      }
+    ],
+    "defaultsRuntimeVerified": false,
+    "nativeHostStatus": "blocked-reference",
+    "reason": "Reference build/runtime/entitlement and matching benchmark data must pass before any comparison; capture does not execute licensed controls."
+  },
+  "missingOrUnverified": [
+    "official-license-environment-not-present",
+    "official-reference-lock-not-generated",
+    "official-runtime-defaults-not-observed",
+    "official-reference-host-not-restored-built-or-run-by-capture",
+    "linux-native-and-performance-acceptance-not-run"
+  ]
+}

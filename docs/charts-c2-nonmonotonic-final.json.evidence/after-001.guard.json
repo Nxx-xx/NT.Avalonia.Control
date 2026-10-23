@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "charts-c0-guard-v1",
+  "passed": true,
+  "scope": "prototype-schema-raw-statistics-and-index-oracle",
+  "performanceQualification": "pending-C4",
+  "presentStatus": "blocked-present",
+  "referenceStatus": "blocked-reference",
+  "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run1\\raw.json",
+  "reportSha256": "0A4FF3D1F1EAD127B262B62EA2356DE63AAABE593A7AEB4E021A33A0785D792A",
+  "errors": [],
+  "checkedUtc": "2026-10-15T12:00:08.1076200+00:00"
+}

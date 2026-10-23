@@ -1,0 +1,3562 @@
+{
+  "schemaVersion": "charts-prototype-regression-v1",
+  "status": "comparable-prototype-statistics",
+  "comparable": true,
+  "performanceQualification": "pending-C4",
+  "presentStatus": "blocked-present",
+  "referenceStatus": "blocked-reference",
+  "formalSlaEvaluated": false,
+  "formalPerformancePassed": null,
+  "generatedUtc": "2026-10-15T09:27:28.2769066+00:00",
+  "comparisonScript": {
+    "path": "<REPO_ROOT>\\scripts\\Compare-ChartsRegression.ps1",
+    "sha256": "E3AAD460702513C0FD999B91103A32B08A21FFC78198CBE898375488898D7F96"
+  },
+  "guardScript": {
+    "path": "<REPO_ROOT>\\scripts\\Test-ChartsPerformance.ps1",
+    "sha256": "59566E48E53E7133B5A0DB70EA69E2A81B24981F174082FF48455B6B73A15035"
+  },
+  "evidenceDirectory": "<REPO_ROOT>\\docs\\charts-c1-axes-performance-results.json.evidence",
+  "requestedBeforeProcesses": 1,
+  "requestedAfterProcesses": 1,
+  "requestedInputs": {
+    "before": [
+      "artifacts/charts-performance/C1-axis-complete-before-perf/matched-timings/raw.json"
+    ],
+    "after": [
+      "artifacts/charts-performance/C1-axes-compact-final-v2/timings/raw.json"
+    ]
+  },
+  "reports": [
+    {
+      "side": "before",
+      "ordinal": 1,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-timings\\raw.json",
+      "reportSha256": "BF421F12E4C5D2BA93C3DDC03B74476DC98A68B67F5B205DCD08FF4D36FB4C90",
+      "runId": "b3b72e09cd934a58be24bc34bc4917f4",
+      "phase": "C1-matched-before",
+      "startedUtc": "2026-10-15T17:18:12.8404866+08:00",
+      "finishedUtc": "2026-10-15T17:18:18.7158895+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c1-axes-performance-results.json.evidence\\before-001.guard.json",
+        "sha256": "9A85E09EC4B76D7C1FBC6887A62416F63BB3DCCF0150A1E9F58C7979B315927A",
+        "reportSha256": "BF421F12E4C5D2BA93C3DDC03B74476DC98A68B67F5B205DCD08FF4D36FB4C90",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "DB866302C9675BB8CB95FD4CE5BD6C4BB1CF7E60DAB382F5DA0B56EB8D0C9E3F"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\same-harness-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "DABCDB32CAB9BB18A1C9D173147194DC4525A6AE63917B2133C4CBD156F753F5"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-timings\\supervisor.json",
+        "sha256": "1975A87039C768F3F5C6450D798A7C93BEAA37DC9CEEED2F6F84F2A19683A3FC",
+        "runId": "b3b72e09cd934a58be24bc34bc4917f4",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "after",
+      "ordinal": 1,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\timings\\raw.json",
+      "reportSha256": "4DF13CA4AC79555999B78575784442E8ABDF4D59DBDEA53D0131A85EFFDA535A",
+      "runId": "47c70336711849abab8402c938bc194a",
+      "phase": "C1-axes-compact-final-v2",
+      "startedUtc": "2026-10-15T17:26:19.2506625+08:00",
+      "finishedUtc": "2026-10-15T17:26:20.9003517+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c1-axes-performance-results.json.evidence\\after-001.guard.json",
+        "sha256": "8111E1DC746C77233A3CA2C11F82CB67DDE7F2C46237376A53F5337E3F74244B",
+        "reportSha256": "4DF13CA4AC79555999B78575784442E8ABDF4D59DBDEA53D0131A85EFFDA535A",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "2DA9BC30C9DFF65345BAF3686D3A5329EFFF432E0A349BCC144F8C709DDA6493"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "A50CFD46E06DD55EC3F60876902893A8A157B564E789A281AD5938A5A2861DDC"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\timings\\supervisor.json",
+        "sha256": "697AD319CBECE0A9B5D4D8D020DEBF22CFBC809126ADB1D7FF602567047014F9",
+        "runId": "47c70336711849abab8402c938bc194a",
+        "processExitCode": 0
+      }
+    }
+  ],
+  "qualityFingerprints": [
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axis-complete-before-perf\\matched-timings\\raw.json",
+      "globalSha256": "09B2BEB7E9863A703FAAEBC75354D5742751F150E114C3DB9B425201ADF68F12",
+      "scenarios": {
+        "S10-L": "BDB6B77E761BB3355C546E6EDF5296497DA3B80FE1775C634625833559871709",
+        "S10-S": "63E2DF69363706C8A42D27DCA6925F6580EC5016950ED97E3D61B0BB525D2D2C",
+        "S10-B": "49A05B1CECE49B0A762051763A393FFEB34EEA6FDE29583650FAF45538081313",
+        "S100-L": "27270BA275D335A19FD8C18F589A70380972FAA43E7839D83CFC2609FACE3C18",
+        "S1M-L": "C9867F88919770D2BB0EC136B8871DF08D469C2B1729521EDDEA9B8BEF8B311D",
+        "S10-L-NONMONOTONIC": "49586508823034192DBA28AB54CA4F0054C182C75AF5D3E5791597CDFDBA15D4",
+        "S10-L-GAP": "DA30265161EDD0B08355A5615491EC2B70DDDE3D9CC11F9938CBA75DDAE8F5DC",
+        "S-RT-POC": "C698885FF9AEFB050B5A44BD8818D8D693653AE3BBD779A6014D52CB0747343A"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v2\\timings\\raw.json",
+      "globalSha256": "09B2BEB7E9863A703FAAEBC75354D5742751F150E114C3DB9B425201ADF68F12",
+      "scenarios": {
+        "S10-L": "BDB6B77E761BB3355C546E6EDF5296497DA3B80FE1775C634625833559871709",
+        "S10-S": "63E2DF69363706C8A42D27DCA6925F6580EC5016950ED97E3D61B0BB525D2D2C",
+        "S10-B": "49A05B1CECE49B0A762051763A393FFEB34EEA6FDE29583650FAF45538081313",
+        "S100-L": "27270BA275D335A19FD8C18F589A70380972FAA43E7839D83CFC2609FACE3C18",
+        "S1M-L": "C9867F88919770D2BB0EC136B8871DF08D469C2B1729521EDDEA9B8BEF8B311D",
+        "S10-L-NONMONOTONIC": "49586508823034192DBA28AB54CA4F0054C182C75AF5D3E5791597CDFDBA15D4",
+        "S10-L-GAP": "DA30265161EDD0B08355A5615491EC2B70DDDE3D9CC11F9938CBA75DDAE8F5DC",
+        "S-RT-POC": "C698885FF9AEFB050B5A44BD8818D8D693653AE3BBD779A6014D52CB0747343A"
+      }
+    }
+  ],
+  "qualityReference": {
+    "global": {
+      "configuration": {
+        "widthDip": 1200,
+        "heightDip": 650,
+        "dpi": 1,
+        "fontSizeDip": 12,
+        "strokeThicknessDip": 2,
+        "quality": "current-runtime-full-data; dense-line-markers-off; no-downsampling",
+        "warmups": 1,
+        "hitQueries": 5,
+        "budgetVersion": "charts-engineering-targets-v1",
+        "targetStatus": "frozen-targets-not-performance-acceptance"
+      },
+      "environment": {
+        "executionOs": "Microsoft Windows 10.0.26200",
+        "processArchitecture": "X64",
+        "framework": ".NET 10.0.12",
+        "avaloniaVersion": "12.0.3.0",
+        "processorCount": 16,
+        "gcServer": false,
+        "backend": "Avalonia.Headless",
+        "rendering": "DrawingGroup render-record only; no GPU or compositor present",
+        "privateMeasurementKind": "Process.PrivateMemorySize64-private-commit",
+        "fontQualification": "headless-test-font; real CJK/font hashes pending native harness"
+      },
+      "harnessSha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E",
+      "budgetSha256": "3E7149E6C4538993CBFEBAD2542E154DC8EBEBD06A72259EF345B3E3A07DEEA2",
+      "scopes": [
+        "pending-C4",
+        "blocked-present",
+        "blocked-reference"
+      ],
+      "boundaries": [
+        "harnessSourceSnapshot is host ToArray preparation, not an isolated runtime-internal snapshot metric.",
+        "sourceEnumeration is a nested instrumented IEnumerable consumption interval; scenePrepare includes it. Do not add nested timings.",
+        "scenePrepare is the public PlotArea/VisibleRange getter including current internal snapshot/range/text preparation.",
+        "renderRecord is chart.Render into DrawingGroup, not composition/render completion, framePipeline, actual present or FPS.",
+        "firstUsableToRecord includes host snapshot, source assignment, scene preparation, record and query correctness; it is not firstUsableToRender/present.",
+        "Quick mode is a prototype, not formal 5-process or long-soak acceptance. No absolute C4 budget is evaluated."
+      ]
+    },
+    "scenarios": [
+      {
+        "id": "S10-L",
+        "qualification": "C0-diagnostic-only",
+        "datasets": [
+          {
+            "manifest": {
+              "id": "S10-L",
+              "revision": 0,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607081",
+              "sha256": "7C9499A72605725ADD8F4011F0B5FC0900842C41AF886C9E172D53E10150DF86",
+              "inputPointCount": 10000,
+              "validPointCount": 10000,
+              "seriesPointCounts": [
+                10000
+              ],
+              "seriesSha256": [
+                "A63546DB64E05EAFE1073F79C2CBA9092301834C5EAB0C51F2532DD375E8605F"
+              ],
+              "monotonicX": true,
+              "containsGaps": false,
+              "realtimePoc": false,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "complete-C4-corpus",
+                "quality-golden",
+                "physical-input",
+                "native-frame-present",
+                "official-reference"
+              ],
+              "seriesCount": 1
+            },
+            "sampleQuality": {
+              "datasetSha256": "7C9499A72605725ADD8F4011F0B5FC0900842C41AF886C9E172D53E10150DF86",
+              "inputPointCount": 10000,
+              "primitiveCount": 31,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                10000,
+                -1.84375,
+                182.44140625
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 302.1841815818418,
+                  "screenY": 445.39396150401683,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 1666,
+                  "probeXBits": "409A080000000000",
+                  "probeYBits": "4048180000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 1666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 1666,
+                  "actualXBits": "409A080000000000",
+                  "actualYBits": "4048180000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 477.3683631636837,
+                  "screenY": 496.9823705804735,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 3333,
+                  "probeXBits": "40AA0A0000000000",
+                  "probeYBits": "403FE80000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 3333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 3333,
+                  "actualXBits": "40AA0A0000000000",
+                  "actualYBits": "403FE80000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 652.5525447455254,
+                  "screenY": 552.0487890020561,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 5000,
+                  "probeXBits": "40B3880000000000",
+                  "probeYBits": "402D0E0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 5000,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 5000,
+                  "actualXBits": "40B3880000000000",
+                  "actualYBits": "402D0E0000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 827.6316368363164,
+                  "screenY": 398.5336647757382,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 6666,
+                  "probeXBits": "40BA0A0000000000",
+                  "probeYBits": "404F7D0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 6666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 6666,
+                  "actualXBits": "40BA0A0000000000",
+                  "actualYBits": "404F7D0000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 1002.8158184181582,
+                  "screenY": 539.9314539526677,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 8333,
+                  "probeXBits": "40C0468000000000",
+                  "probeYBits": "40325A0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 8333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 8333,
+                  "actualXBits": "40C0468000000000",
+                  "actualYBits": "40325A0000000000"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "S10-S",
+        "qualification": "C0-diagnostic-only",
+        "datasets": [
+          {
+            "manifest": {
+              "id": "S10-S",
+              "revision": 0,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "uniform-fixed-grid-candidate",
+              "seedHex": "1020304050607082",
+              "sha256": "F5B6A6EFE192E19A45668E7BBCA650A01A17F8F45C0E8B63742C8E5A4FA48304",
+              "inputPointCount": 10000,
+              "validPointCount": 10000,
+              "seriesPointCounts": [
+                10000
+              ],
+              "seriesSha256": [
+                "F122AB26CE1318E0B63748598656BB2FD80DA4AEBC5E7FAA1EB8162CFA996039"
+              ],
+              "monotonicX": true,
+              "containsGaps": false,
+              "realtimePoc": false,
+              "markerSize": 4,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "complete-C4-corpus",
+                "quality-golden",
+                "physical-input",
+                "native-frame-present",
+                "official-reference"
+              ],
+              "seriesCount": 1
+            },
+            "sampleQuality": {
+              "datasetSha256": "F5B6A6EFE192E19A45668E7BBCA650A01A17F8F45C0E8B63742C8E5A4FA48304",
+              "inputPointCount": 10000,
+              "primitiveCount": 10033,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                10000,
+                -1,
+                1024.921875
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 302.1841815818418,
+                  "screenY": 333.4553659371954,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 1666,
+                  "probeXBits": "409A080000000000",
+                  "probeYBits": "407DA32400000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 1666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 1666,
+                  "actualXBits": "409A080000000000",
+                  "actualYBits": "407DA32400000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 477.3683631636837,
+                  "screenY": 188.81555456327868,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 3333,
+                  "probeXBits": "40AA0A0000000000",
+                  "probeYBits": "4086C29200000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 3333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 3333,
+                  "actualXBits": "40AA0A0000000000",
+                  "actualYBits": "4086C29200000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 652.5525447455254,
+                  "screenY": 571.1163447372267,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 5000,
+                  "probeXBits": "40B3880000000000",
+                  "probeYBits": "404C51A000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 5000,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 5000,
+                  "actualXBits": "40B3880000000000",
+                  "actualYBits": "404C51A000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 827.6316368363164,
+                  "screenY": 364.0848291902814,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 6666,
+                  "probeXBits": "40BA0A0000000000",
+                  "probeYBits": "407A461C00000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 6666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 6666,
+                  "actualXBits": "40BA0A0000000000",
+                  "actualYBits": "407A461C00000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 1002.8158184181582,
+                  "screenY": 488.26182907974345,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 8333,
+                  "probeXBits": "40C0468000000000",
+                  "probeYBits": "406946B000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 8333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 8333,
+                  "actualXBits": "40C0468000000000",
+                  "actualYBits": "406946B000000000"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "S10-B",
+        "qualification": "C0-diagnostic-only",
+        "datasets": [
+          {
+            "manifest": {
+              "id": "S10-B",
+              "revision": 0,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607083",
+              "sha256": "364E61FC8705F7B6BE7402F942D6D1A7BD456D51891E62D4018E4ECFA67EE46B",
+              "inputPointCount": 10000,
+              "validPointCount": 10000,
+              "seriesPointCounts": [
+                5000,
+                5000
+              ],
+              "seriesSha256": [
+                "41A74A231E4508264DE08ABFE37C2442C60CF5584287A5801E79DA6D50723996",
+                "9914F740E86F9B061D0D486379202DAC9234E2C0E692B283F2235E86F03436ED"
+              ],
+              "monotonicX": true,
+              "containsGaps": false,
+              "realtimePoc": false,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "complete-C4-corpus",
+                "quality-golden",
+                "physical-input",
+                "native-frame-present",
+                "official-reference"
+              ],
+              "seriesCount": 2
+            },
+            "sampleQuality": {
+              "datasetSha256": "364E61FC8705F7B6BE7402F942D6D1A7BD456D51891E62D4018E4ECFA67EE46B",
+              "inputPointCount": 10000,
+              "primitiveCount": 10021,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                5000,
+                -190.984375,
+                185.9375
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 302.27174565086983,
+                  "screenY": 270.6594120173175,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 833,
+                  "probeXBits": "408A080000000000",
+                  "probeYBits": "4038230000000000",
+                  "oracleMode": "source-index-consistency-with-overlapping-columns",
+                  "expectedSeriesIndex": null,
+                  "expectedRawIndex": null,
+                  "hitSeriesIndex": 1,
+                  "hitRawIndex": 833,
+                  "actualXBits": "408A080000000000",
+                  "actualYBits": "403BD20000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 477.3333333333333,
+                  "screenY": 230.24745785272353,
+                  "probeSeriesIndex": 1,
+                  "probeRawIndex": 1666,
+                  "probeXBits": "409A080000000000",
+                  "probeYBits": "40491C8000000000",
+                  "oracleMode": "source-index-consistency-with-overlapping-columns",
+                  "expectedSeriesIndex": null,
+                  "expectedRawIndex": null,
+                  "hitSeriesIndex": 1,
+                  "hitRawIndex": 1666,
+                  "actualXBits": "409A080000000000",
+                  "actualYBits": "40491C8000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 652.6050789842033,
+                  "screenY": 219.37895385757366,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 2500,
+                  "probeXBits": "40A3880000000000",
+                  "probeYBits": "404C9E8000000000",
+                  "oracleMode": "source-index-consistency-with-overlapping-columns",
+                  "expectedSeriesIndex": null,
+                  "expectedRawIndex": null,
+                  "hitSeriesIndex": 1,
+                  "hitRawIndex": 2500,
+                  "actualXBits": "40A3880000000000",
+                  "actualYBits": "404D9A8000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 827.6666666666666,
+                  "screenY": 374.64243214463374,
+                  "probeSeriesIndex": 1,
+                  "probeRawIndex": 3333,
+                  "probeXBits": "40AA0A0000000000",
+                  "probeYBits": "C0457E0000000000",
+                  "oracleMode": "source-index-consistency-with-overlapping-columns",
+                  "expectedSeriesIndex": null,
+                  "expectedRawIndex": null,
+                  "hitSeriesIndex": 1,
+                  "hitRawIndex": 3333,
+                  "actualXBits": "40AA0A0000000000",
+                  "actualYBits": "C0457E0000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 1002.7282543491301,
+                  "screenY": 293.9395539267504,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 4166,
+                  "probeXBits": "40B0460000000000",
+                  "probeYBits": "4022380000000000",
+                  "oracleMode": "source-index-consistency-with-overlapping-columns",
+                  "expectedSeriesIndex": null,
+                  "expectedRawIndex": null,
+                  "hitSeriesIndex": 1,
+                  "hitRawIndex": 4166,
+                  "actualXBits": "40B0460000000000",
+                  "actualYBits": "40273A0000000000"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "S100-L",
+        "qualification": "C0-diagnostic-only",
+        "datasets": [
+          {
+            "manifest": {
+              "id": "S100-L",
+              "revision": 0,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607084",
+              "sha256": "FE2B1CDE582C5B08F5DE082EA35A170829B6596559642673DDBE4B47C00202A5",
+              "inputPointCount": 100000,
+              "validPointCount": 100000,
+              "seriesPointCounts": [
+                100000
+              ],
+              "seriesSha256": [
+                "EC74D6D5B9DB33219C6B3D5F519AA07189DEEE19D2A64ED2CF720BF68ABE62E6"
+              ],
+              "monotonicX": true,
+              "containsGaps": false,
+              "realtimePoc": false,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "complete-C4-corpus",
+                "quality-golden",
+                "physical-input",
+                "native-frame-present",
+                "official-reference"
+              ],
+              "seriesCount": 1
+            },
+            "sampleQuality": {
+              "datasetSha256": "FE2B1CDE582C5B08F5DE082EA35A170829B6596559642673DDBE4B47C00202A5",
+              "inputPointCount": 100000,
+              "primitiveCount": 31,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                100000,
+                -1.9765625,
+                193.13671875
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 302.16841831581684,
+                  "screenY": 491.34369212847105,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 16666,
+                  "probeXBits": "40D0468000000000",
+                  "probeYBits": "4041D20000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 16666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 16666,
+                  "actualXBits": "40D0468000000000",
+                  "actualYBits": "4041D20000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 477.3368366316337,
+                  "screenY": 427.68967284129815,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 33333,
+                  "probeXBits": "40E046A000000000",
+                  "probeYBits": "404C748000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 33333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 33333,
+                  "actualXBits": "40E046A000000000",
+                  "actualYBits": "404C748000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 652.5052549474505,
+                  "screenY": 530.3895001026046,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 50000,
+                  "probeXBits": "40E86A0000000000",
+                  "probeYBits": "4036980000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 50000,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 50000,
+                  "actualXBits": "40E86A0000000000",
+                  "actualYBits": "4036980000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 827.6631633683663,
+                  "screenY": 558.6918657030171,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 66666,
+                  "probeXBits": "40F046A000000000",
+                  "probeYBits": "402A460000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 66666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 66666,
+                  "actualXBits": "40F046A000000000",
+                  "actualYBits": "402A460000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 1002.8315816841831,
+                  "screenY": 450.0299539905704,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 83333,
+                  "probeXBits": "40F4585000000000",
+                  "probeYBits": "4048B90000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 83333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 83333,
+                  "actualXBits": "40F4585000000000",
+                  "actualYBits": "4048B90000000000"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "S1M-L",
+        "qualification": "C0-diagnostic-only",
+        "datasets": [
+          {
+            "manifest": {
+              "id": "S1M-L",
+              "revision": 0,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607085",
+              "sha256": "B5DDAB0C4F17595ABD629369BC850C07A3D999A3BEAA8154AEE08EEE909ACBED",
+              "inputPointCount": 1000000,
+              "validPointCount": 1000000,
+              "seriesPointCounts": [
+                1000000
+              ],
+              "seriesSha256": [
+                "221CA25AE92DE5EBD64B274343B734350488F271916C59251342FC6B2C2D3741"
+              ],
+              "monotonicX": true,
+              "containsGaps": false,
+              "realtimePoc": false,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "complete-C4-corpus",
+                "quality-golden",
+                "physical-input",
+                "native-frame-present",
+                "official-reference"
+              ],
+              "seriesCount": 1
+            },
+            "sampleQuality": {
+              "datasetSha256": "B5DDAB0C4F17595ABD629369BC850C07A3D999A3BEAA8154AEE08EEE909ACBED",
+              "inputPointCount": 1000000,
+              "primitiveCount": 31,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                1000000,
+                -1.99609375,
+                193.37109375
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 302.1668418331582,
+                  "screenY": 505.6636573009557,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 166666,
+                  "probeXBits": "4104585000000000",
+                  "probeYBits": "403EE10000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 166666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 166666,
+                  "actualXBits": "4104585000000000",
+                  "actualYBits": "403EE10000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 477.33368366631635,
+                  "screenY": 413.02119562772424,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 333333,
+                  "probeXBits": "4114585400000000",
+                  "probeYBits": "404EF00000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 333333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 333333,
+                  "actualXBits": "4114585400000000",
+                  "actualYBits": "404EF00000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 652.5005254994745,
+                  "screenY": 488.4894845068381,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 500000,
+                  "probeXBits": "411E848000000000",
+                  "probeYBits": "4042500000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 500000,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 500000,
+                  "actualXBits": "411E848000000000",
+                  "actualYBits": "4042500000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 827.6663163336837,
+                  "screenY": 582.1943865092774,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 666666,
+                  "probeXBits": "4124585400000000",
+                  "probeYBits": "4015180000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 666666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 666666,
+                  "actualXBits": "4124585400000000",
+                  "actualYBits": "4015180000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 1002.8331581668418,
+                  "screenY": 520.8530514580917,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 833333,
+                  "probeXBits": "41296E6A00000000",
+                  "probeYBits": "4039CC0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 833333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 833333,
+                  "actualXBits": "41296E6A00000000",
+                  "actualYBits": "4039CC0000000000"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "S10-L-NONMONOTONIC",
+        "qualification": "C0-diagnostic-only",
+        "datasets": [
+          {
+            "manifest": {
+              "id": "S10-L-NONMONOTONIC",
+              "revision": 0,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607086",
+              "sha256": "3233FDA1A58CBCEE2FF0BB79F1346D563A8F0D5F13A99CE2EE8649B2B41485B9",
+              "inputPointCount": 10000,
+              "validPointCount": 10000,
+              "seriesPointCounts": [
+                10000
+              ],
+              "seriesSha256": [
+                "EC889019AEF25A3E437C8829548D7A03D9CBF77CE34BF6C4792AF26A135E5D72"
+              ],
+              "monotonicX": false,
+              "containsGaps": false,
+              "realtimePoc": false,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "complete-C4-corpus",
+                "quality-golden",
+                "physical-input",
+                "native-frame-present",
+                "official-reference"
+              ],
+              "seriesCount": 1
+            },
+            "sampleQuality": {
+              "datasetSha256": "3233FDA1A58CBCEE2FF0BB79F1346D563A8F0D5F13A99CE2EE8649B2B41485B9",
+              "inputPointCount": 10000,
+              "primitiveCount": 31,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                10000,
+                -1.9609375,
+                183.765625
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 214.64463553644634,
+                  "screenY": 449.42439492806966,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 1666,
+                  "probeXBits": "408A080000000000",
+                  "probeYBits": "4047970000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 1666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 1666,
+                  "actualXBits": "408A080000000000",
+                  "actualYBits": "4047970000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 1002.8158184181582,
+                  "screenY": 496.3385740914062,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 3333,
+                  "probeXBits": "40C0468000000000",
+                  "probeYBits": "4040210000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 3333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 3333,
+                  "actualXBits": "40C0468000000000",
+                  "actualYBits": "4040210000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 389.82881711828816,
+                  "screenY": 547.8704839786733,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 5000,
+                  "probeXBits": "40A3880000000000",
+                  "probeYBits": "402FBC0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 5000,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 5000,
+                  "actualXBits": "40A3880000000000",
+                  "actualYBits": "402FBC0000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 477.3683631636837,
+                  "screenY": 398.4942637787616,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 6666,
+                  "probeXBits": "40AA0A0000000000",
+                  "probeYBits": "404FB08000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 6666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 6666,
+                  "actualXBits": "40AA0A0000000000",
+                  "actualYBits": "404FB08000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 740.0920907909209,
+                  "screenY": 542.3071009522357,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 8333,
+                  "probeXBits": "40B6C90000000000",
+                  "probeYBits": "4031A30000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 8333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 8333,
+                  "actualXBits": "40B6C90000000000",
+                  "actualYBits": "4031A30000000000"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "S10-L-GAP",
+        "qualification": "C0-diagnostic-only",
+        "datasets": [
+          {
+            "manifest": {
+              "id": "S10-L-GAP",
+              "revision": 0,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607087",
+              "sha256": "F514D98DA11E5ED5B90E76C1E24DE4DD0F093A2935A99E2C03A87A7968B5B65D",
+              "inputPointCount": 10000,
+              "validPointCount": 9961,
+              "seriesPointCounts": [
+                10000
+              ],
+              "seriesSha256": [
+                "230BED2723BFFDA0BCB25DCDD0F61D3D33DCCD38FEFEB0F4F1BE3DEE3F3C67BB"
+              ],
+              "monotonicX": true,
+              "containsGaps": true,
+              "realtimePoc": false,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "complete-C4-corpus",
+                "quality-golden",
+                "physical-input",
+                "native-frame-present",
+                "official-reference"
+              ],
+              "seriesCount": 1
+            },
+            "sampleQuality": {
+              "datasetSha256": "F514D98DA11E5ED5B90E76C1E24DE4DD0F093A2935A99E2C03A87A7968B5B65D",
+              "inputPointCount": 10000,
+              "primitiveCount": 31,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                10000,
+                -1.83984375,
+                182.40625
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 302.1841815818418,
+                  "screenY": 443.6395480420633,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 1666,
+                  "probeXBits": "409A080000000000",
+                  "probeYBits": "40485E0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 1666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 1666,
+                  "actualXBits": "409A080000000000",
+                  "actualYBits": "40485E0000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 477.3683631636837,
+                  "screenY": 495.2884140394767,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 3333,
+                  "probeXBits": "40AA0A0000000000",
+                  "probeYBits": "4040380000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 3333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 3333,
+                  "actualXBits": "40AA0A0000000000",
+                  "actualYBits": "4040380000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 652.5525447455254,
+                  "screenY": 547.7048326955287,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 5000,
+                  "probeXBits": "40B3880000000000",
+                  "probeYBits": "402FCC0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 5000,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 5000,
+                  "actualXBits": "40B3880000000000",
+                  "actualYBits": "402FCC0000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 827.6316368363164,
+                  "screenY": 396.1131826144338,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 6666,
+                  "probeXBits": "40BA0A0000000000",
+                  "probeYBits": "404FDD8000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 6666,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 6666,
+                  "actualXBits": "40BA0A0000000000",
+                  "actualYBits": "404FDD8000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 1002.8158184181582,
+                  "screenY": 543.8051699943817,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 8333,
+                  "probeXBits": "40C0468000000000",
+                  "probeYBits": "4031210000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 8333,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 8333,
+                  "actualXBits": "40C0468000000000",
+                  "actualYBits": "4031210000000000"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "S-RT-POC",
+        "qualification": "batch-replace-poc-only-not-rate-qualified",
+        "datasets": [
+          {
+            "manifest": {
+              "id": "S-RT-POC",
+              "revision": 0,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607088",
+              "sha256": "CE6A5A4993CE0CBB483AB196916334CE17B511137C048A34B97AA74F68BD2952",
+              "inputPointCount": 1000,
+              "validPointCount": 1000,
+              "seriesPointCounts": [
+                250,
+                250,
+                250,
+                250
+              ],
+              "seriesSha256": [
+                "3ED4CAF3C0746AEAA0DC2D690C717BF827401E9C088EFD8907F7B36B2A39B327",
+                "5FD5E686C514EB4434D99D803BE6132107FF8885128D6ABB1920FD07C4ABE3C4",
+                "98748CA9CDE265A9DE3FF45F7E5DAC7AED0735442BE0C8FEA9C38C5C141FA731",
+                "70B66F99F208519E23FC30E061C601728D0A3FBF72C7CAA2008FA23D177E70A0"
+              ],
+              "monotonicX": true,
+              "containsGaps": false,
+              "realtimePoc": true,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "paced-10000-points-per-second",
+                "INCC-streaming-cost",
+                "ring-buffer",
+                "30-minute-soak",
+                "8-hour-soak"
+              ],
+              "seriesCount": 4
+            },
+            "sampleQuality": {
+              "datasetSha256": "CE6A5A4993CE0CBB483AB196916334CE17B511137C048A34B97AA74F68BD2952",
+              "inputPointCount": 1000,
+              "primitiveCount": 37,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                400,
+                -1.4296875,
+                41.828125
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 237.07980049875312,
+                  "screenY": 523.140918480224,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 41,
+                  "probeXBits": "4044800000000000",
+                  "probeYBits": "4012380000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 41,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 41,
+                  "actualXBits": "4044800000000000",
+                  "actualYBits": "4012380000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 347.15960099750623,
+                  "screenY": 409.24609727740653,
+                  "probeSeriesIndex": 1,
+                  "probeRawIndex": 83,
+                  "probeXBits": "4054C00000000000",
+                  "probeYBits": "4029FC0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 1,
+                  "expectedRawIndex": 83,
+                  "hitSeriesIndex": 1,
+                  "hitRawIndex": 83,
+                  "actualXBits": "4054C00000000000",
+                  "actualYBits": "4029FC0000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 457.2394014962594,
+                  "screenY": 293.2948418028716,
+                  "probeSeriesIndex": 2,
+                  "probeRawIndex": 125,
+                  "probeXBits": "405F400000000000",
+                  "probeYBits": "4035950000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 2,
+                  "expectedRawIndex": 125,
+                  "hitSeriesIndex": 2,
+                  "hitRawIndex": 125,
+                  "actualXBits": "405F400000000000",
+                  "actualYBits": "4035950000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 564.6982543640897,
+                  "screenY": 196.11514019324545,
+                  "probeSeriesIndex": 3,
+                  "probeRawIndex": 166,
+                  "probeXBits": "4064C00000000000",
+                  "probeYBits": "403CC80000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 3,
+                  "expectedRawIndex": 166,
+                  "hitSeriesIndex": 3,
+                  "hitRawIndex": 166,
+                  "actualXBits": "4064C00000000000",
+                  "actualYBits": "403CC80000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 674.7780548628429,
+                  "screenY": 223.32334748058514,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 208,
+                  "probeXBits": "406A000000000000",
+                  "probeYBits": "403AC40000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 208,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 208,
+                  "actualXBits": "406A000000000000",
+                  "actualYBits": "403AC40000000000"
+                }
+              ]
+            }
+          },
+          {
+            "manifest": {
+              "id": "S-RT-POC",
+              "revision": 1,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607088",
+              "sha256": "F1E016A9CDCE38C1E2998345FE9961A8D6EE4A7DA7E83C1244EA600219858130",
+              "inputPointCount": 1100,
+              "validPointCount": 1100,
+              "seriesPointCounts": [
+                275,
+                275,
+                275,
+                275
+              ],
+              "seriesSha256": [
+                "98514A9A63180ECE629C35696EAA074AC029EC6016B5B9204531D3B5E203920B",
+                "71F5291DF19665E59C0BFA9C31092B0F8581F977B545D929225E22952E1C684D",
+                "BF86935C431C5CA8DA1722D4DB5F076CC7A691932247CF104EA4F6666022F594",
+                "60C06617F0EFEBD0DA73B30034E4C1E84DF1B805ABE8CDF6EBD567E866172E64"
+              ],
+              "monotonicX": true,
+              "containsGaps": false,
+              "realtimePoc": true,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "paced-10000-points-per-second",
+                "INCC-streaming-cost",
+                "ring-buffer",
+                "30-minute-soak",
+                "8-hour-soak"
+              ],
+              "seriesCount": 4
+            },
+            "sampleQuality": {
+              "datasetSha256": "F1E016A9CDCE38C1E2998345FE9961A8D6EE4A7DA7E83C1244EA600219858130",
+              "inputPointCount": 1100,
+              "primitiveCount": 37,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                400,
+                -1.4296875,
+                41.828125
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 247.5635910224439,
+                  "screenY": 504.89665545421707,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 45,
+                  "probeXBits": "4046800000000000",
+                  "probeYBits": "4017A00000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 45,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 45,
+                  "actualXBits": "4046800000000000",
+                  "actualYBits": "4017A00000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 368.1271820448878,
+                  "screenY": 386.8889657079646,
+                  "probeSeriesIndex": 1,
+                  "probeRawIndex": 91,
+                  "probeXBits": "4056C00000000000",
+                  "probeYBits": "402D4C0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 1,
+                  "expectedRawIndex": 91,
+                  "hitSeriesIndex": 1,
+                  "hitRawIndex": 91,
+                  "actualXBits": "4056C00000000000",
+                  "actualYBits": "402D4C0000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 488.6907730673317,
+                  "screenY": 264.1356584115947,
+                  "probeSeriesIndex": 2,
+                  "probeRawIndex": 137,
+                  "probeXBits": "4061200000000000",
+                  "probeYBits": "4037BE0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 2,
+                  "expectedRawIndex": 137,
+                  "hitSeriesIndex": 2,
+                  "hitRawIndex": 137,
+                  "actualXBits": "4061200000000000",
+                  "actualYBits": "4037BE0000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 609.2543640897755,
+                  "screenY": 141.27689294744448,
+                  "probeSeriesIndex": 3,
+                  "probeRawIndex": 183,
+                  "probeXBits": "4066E00000000000",
+                  "probeYBits": "40406C0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 3,
+                  "expectedRawIndex": 183,
+                  "hitSeriesIndex": 3,
+                  "hitRawIndex": 183,
+                  "actualXBits": "4066E00000000000",
+                  "actualYBits": "40406C0000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 729.8179551122195,
+                  "screenY": 186.2020724218891,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 229,
+                  "probeXBits": "406CA00000000000",
+                  "probeYBits": "403D840000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 229,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 229,
+                  "actualXBits": "406CA00000000000",
+                  "actualYBits": "403D840000000000"
+                }
+              ]
+            }
+          },
+          {
+            "manifest": {
+              "id": "S-RT-POC",
+              "revision": 2,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607088",
+              "sha256": "ABC98E78A853A798834BA486AAA0472AE3E4DF3D75A033E436C227F43822C769",
+              "inputPointCount": 1200,
+              "validPointCount": 1200,
+              "seriesPointCounts": [
+                300,
+                300,
+                300,
+                300
+              ],
+              "seriesSha256": [
+                "63031E0D50796F894249C912391C6FD8DE0F6861AB84169105AA85A57CF459A0",
+                "551D62E2E82912CAC6CE84CA6EE1FD9BFBBDE19CC75C8B0A63B1E0A77D49953A",
+                "EFEEDDE0DCB613B888AAC92154BA5A14553846C36B3CA668ACF411C438CD9524",
+                "ED32B5CE7D7C22D7565279DAAD54112315C99B13EC9AA31B22BE6819479320BE"
+              ],
+              "monotonicX": true,
+              "containsGaps": false,
+              "realtimePoc": true,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "paced-10000-points-per-second",
+                "INCC-streaming-cost",
+                "ring-buffer",
+                "30-minute-soak",
+                "8-hour-soak"
+              ],
+              "seriesCount": 4
+            },
+            "sampleQuality": {
+              "datasetSha256": "ABC98E78A853A798834BA486AAA0472AE3E4DF3D75A033E436C227F43822C769",
+              "inputPointCount": 1200,
+              "primitiveCount": 37,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                400,
+                -1.4296875,
+                41.828125
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 260.66832917705733,
+                  "screenY": 498.14733271627233,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 50,
+                  "probeXBits": "4049000000000000",
+                  "probeYBits": "4019A00000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 50,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 50,
+                  "actualXBits": "4049000000000000",
+                  "actualYBits": "4019A00000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 391.71571072319205,
+                  "screenY": 371.07024054090664,
+                  "probeSeriesIndex": 1,
+                  "probeRawIndex": 100,
+                  "probeXBits": "4059000000000000",
+                  "probeYBits": "402FA40000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 1,
+                  "expectedRawIndex": 100,
+                  "hitSeriesIndex": 1,
+                  "hitRawIndex": 100,
+                  "actualXBits": "4059000000000000",
+                  "actualYBits": "402FA40000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 522.7630922693266,
+                  "screenY": 238.93115631208235,
+                  "probeSeriesIndex": 2,
+                  "probeRawIndex": 150,
+                  "probeXBits": "4062C00000000000",
+                  "probeYBits": "40399C0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 2,
+                  "expectedRawIndex": 150,
+                  "hitSeriesIndex": 2,
+                  "hitRawIndex": 150,
+                  "actualXBits": "4062C00000000000",
+                  "actualYBits": "40399C0000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 653.8104738154614,
+                  "screenY": 121.81986099196314,
+                  "probeSeriesIndex": 3,
+                  "probeRawIndex": 200,
+                  "probeXBits": "4069000000000000",
+                  "probeYBits": "4041248000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 3,
+                  "expectedRawIndex": 200,
+                  "hitSeriesIndex": 3,
+                  "hitRawIndex": 200,
+                  "actualXBits": "4069000000000000",
+                  "actualYBits": "4041248000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 784.857855361596,
+                  "screenY": 159.15205238621996,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 250,
+                  "probeXBits": "406F400000000000",
+                  "probeYBits": "403F850000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 250,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 250,
+                  "actualXBits": "406F400000000000",
+                  "actualYBits": "403F850000000000"
+                }
+              ]
+            }
+          },
+          {
+            "manifest": {
+              "id": "S-RT-POC",
+              "revision": 3,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607088",
+              "sha256": "9FD8C2FD3192044364CA24B46A98E9B4259C5A33298BBE3C628C165E3B52C9E1",
+              "inputPointCount": 1300,
+              "validPointCount": 1300,
+              "seriesPointCounts": [
+                325,
+                325,
+                325,
+                325
+              ],
+              "seriesSha256": [
+                "581E93CA0B9E528D6AEDC7DAB231D621B19E0535899B1E03A32B0E46ED4B8653",
+                "57E90B40DE1CAF5C4674F825DDC2D9A415EDCA516F6B38D36703E7506F49298C",
+                "FA781287FACAF70B521153E9CEAD6090D7B460518AC924AE6663CAFEE6C9727B",
+                "1F073A7EF42CE7B36D99312DC2D56A5A821ADE5F4F068BB62680EDCDE3F7E014"
+              ],
+              "monotonicX": true,
+              "containsGaps": false,
+              "realtimePoc": true,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "paced-10000-points-per-second",
+                "INCC-streaming-cost",
+                "ring-buffer",
+                "30-minute-soak",
+                "8-hour-soak"
+              ],
+              "seriesCount": 4
+            },
+            "sampleQuality": {
+              "datasetSha256": "9FD8C2FD3192044364CA24B46A98E9B4259C5A33298BBE3C628C165E3B52C9E1",
+              "inputPointCount": 1300,
+              "primitiveCount": 37,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                400,
+                -1.4296875,
+                41.828125
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 271.15211970074813,
+                  "screenY": 495.56360760565286,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 54,
+                  "probeXBits": "404B000000000000",
+                  "probeYBits": "401A640000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 54,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 54,
+                  "actualXBits": "404B000000000000",
+                  "actualYBits": "401A640000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 412.6832917705736,
+                  "screenY": 357.72978231668776,
+                  "probeSeriesIndex": 1,
+                  "probeRawIndex": 108,
+                  "probeXBits": "405B000000000000",
+                  "probeYBits": "4030CF0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 1,
+                  "expectedRawIndex": 108,
+                  "hitSeriesIndex": 1,
+                  "hitRawIndex": 108,
+                  "actualXBits": "405B000000000000",
+                  "actualYBits": "4030CF0000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 554.214463840399,
+                  "screenY": 236.40016028535308,
+                  "probeSeriesIndex": 2,
+                  "probeRawIndex": 162,
+                  "probeXBits": "4064400000000000",
+                  "probeYBits": "4039CC0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 2,
+                  "expectedRawIndex": 162,
+                  "hitSeriesIndex": 2,
+                  "hitRawIndex": 162,
+                  "actualXBits": "4064400000000000",
+                  "actualYBits": "4039CC0000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 695.7456359102245,
+                  "screenY": 105.89567765712485,
+                  "probeSeriesIndex": 3,
+                  "probeRawIndex": 216,
+                  "probeXBits": "406B000000000000",
+                  "probeYBits": "4041BB8000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 3,
+                  "expectedRawIndex": 216,
+                  "hitSeriesIndex": 3,
+                  "hitRawIndex": 216,
+                  "actualXBits": "406B000000000000",
+                  "actualYBits": "4041BB8000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 837.2768079800499,
+                  "screenY": 131.73292876331948,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 270,
+                  "probeXBits": "4070E00000000000",
+                  "probeYBits": "4040C68000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 270,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 270,
+                  "actualXBits": "4070E00000000000",
+                  "actualYBits": "4040C68000000000"
+                }
+              ]
+            }
+          },
+          {
+            "manifest": {
+              "id": "S-RT-POC",
+              "revision": 4,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607088",
+              "sha256": "3FB47807CEF5EDC1C6143EAB87ED2847D5871A5E2979C42B55A81B5784D20981",
+              "inputPointCount": 1400,
+              "validPointCount": 1400,
+              "seriesPointCounts": [
+                350,
+                350,
+                350,
+                350
+              ],
+              "seriesSha256": [
+                "F3E70ABA308CD8467F68AB76DA89BADD6B88FF31CA661A30035B349912BC9476",
+                "395166729FAE890367900BCED10F729DFB4DA26C6ACCC4E6D5C843AC4BB47BDA",
+                "A6E4D5232C31385971B8F194463DB126226FAFAC821F9C44AA270166F8CF8830",
+                "5C997CA4178ECC5E931FE7FA085A232CD1D23C14B4C0190C2BC35CC7FA5980F0"
+              ],
+              "monotonicX": true,
+              "containsGaps": false,
+              "realtimePoc": true,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "paced-10000-points-per-second",
+                "INCC-streaming-cost",
+                "ring-buffer",
+                "30-minute-soak",
+                "8-hour-soak"
+              ],
+              "seriesCount": 4
+            },
+            "sampleQuality": {
+              "datasetSha256": "3FB47807CEF5EDC1C6143EAB87ED2847D5871A5E2979C42B55A81B5784D20981",
+              "inputPointCount": 1400,
+              "primitiveCount": 37,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                400,
+                -1.4296875,
+                41.828125
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 281.63591022443893,
+                  "screenY": 483.17227289145745,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 58,
+                  "probeXBits": "404D000000000000",
+                  "probeYBits": "401E100000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 58,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 58,
+                  "actualXBits": "404D000000000000",
+                  "actualYBits": "401E100000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 433.6508728179551,
+                  "screenY": 346.076654776955,
+                  "probeSeriesIndex": 1,
+                  "probeRawIndex": 116,
+                  "probeXBits": "405D000000000000",
+                  "probeYBits": "4031AC0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 1,
+                  "expectedRawIndex": 116,
+                  "hitSeriesIndex": 1,
+                  "hitRawIndex": 116,
+                  "actualXBits": "405D000000000000",
+                  "actualYBits": "4031AC0000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 588.2867830423941,
+                  "screenY": 200.8080286594726,
+                  "probeSeriesIndex": 2,
+                  "probeRawIndex": 175,
+                  "probeXBits": "4065E00000000000",
+                  "probeYBits": "403C6F0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 2,
+                  "expectedRawIndex": 175,
+                  "hitSeriesIndex": 2,
+                  "hitRawIndex": 175,
+                  "actualXBits": "4065E00000000000",
+                  "actualYBits": "403C6F0000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 740.3017456359102,
+                  "screenY": 70.8835659540365,
+                  "probeSeriesIndex": 3,
+                  "probeRawIndex": 233,
+                  "probeXBits": "406D200000000000",
+                  "probeYBits": "4043078000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 3,
+                  "expectedRawIndex": 233,
+                  "hitSeriesIndex": 3,
+                  "hitRawIndex": 233,
+                  "actualXBits": "406D200000000000",
+                  "actualYBits": "4043078000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 892.3167082294265,
+                  "screenY": 97.88085690581539,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 291,
+                  "probeXBits": "4072300000000000",
+                  "probeYBits": "4042078000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 291,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 291,
+                  "actualXBits": "4072300000000000",
+                  "actualYBits": "4042078000000000"
+                }
+              ]
+            }
+          },
+          {
+            "manifest": {
+              "id": "S-RT-POC",
+              "revision": 5,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607088",
+              "sha256": "F3C83F5D67384C7F298A0201566817E258D6E610AA6F643F8781531CF5C228F9",
+              "inputPointCount": 1500,
+              "validPointCount": 1500,
+              "seriesPointCounts": [
+                375,
+                375,
+                375,
+                375
+              ],
+              "seriesSha256": [
+                "28D00C775B2ACEFD7BF77E2A818F08C2458D6F9336BC469B14AE016944683096",
+                "D3D101260261AEB74100E226F0B257ECA1580025EFA91DB43DAAF3CF32B7DA12",
+                "5EDBED138A486AE0F29B285B45C3CB34796FC2CD0C87D59BBD352B7848940738",
+                "94DB5B4A15509AFCD733343E72CB552687D689BBC77B052BC1B5E59B8AFED143"
+              ],
+              "monotonicX": true,
+              "containsGaps": false,
+              "realtimePoc": true,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "paced-10000-points-per-second",
+                "INCC-streaming-cost",
+                "ring-buffer",
+                "30-minute-soak",
+                "8-hour-soak"
+              ],
+              "seriesCount": 4
+            },
+            "sampleQuality": {
+              "datasetSha256": "F3C83F5D67384C7F298A0201566817E258D6E610AA6F643F8781531CF5C228F9",
+              "inputPointCount": 1500,
+              "primitiveCount": 37,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                400,
+                -1.4296875,
+                41.828125
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 292.11970074812973,
+                  "screenY": 485.5450816665161,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 62,
+                  "probeXBits": "404F000000000000",
+                  "probeYBits": "401D5C0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 62,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 62,
+                  "actualXBits": "404F000000000000",
+                  "actualYBits": "401D5C0000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 457.2394014962594,
+                  "screenY": 327.4105590798266,
+                  "probeSeriesIndex": 1,
+                  "probeRawIndex": 125,
+                  "probeXBits": "405F400000000000",
+                  "probeYBits": "40330E0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 1,
+                  "expectedRawIndex": 125,
+                  "hitSeriesIndex": 1,
+                  "hitRawIndex": 125,
+                  "actualXBits": "405F400000000000",
+                  "actualYBits": "40330E0000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 619.7381546134663,
+                  "screenY": 183.88199273072064,
+                  "probeSeriesIndex": 2,
+                  "probeRawIndex": 187,
+                  "probeXBits": "4067600000000000",
+                  "probeYBits": "403DB00000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 2,
+                  "expectedRawIndex": 187,
+                  "hitSeriesIndex": 2,
+                  "hitRawIndex": 187,
+                  "actualXBits": "4067600000000000",
+                  "actualYBits": "403DB00000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 784.857855361596,
+                  "screenY": 44.41356584115954,
+                  "probeSeriesIndex": 3,
+                  "probeRawIndex": 250,
+                  "probeXBits": "406F400000000000",
+                  "probeYBits": "4044028000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 3,
+                  "expectedRawIndex": 250,
+                  "hitSeriesIndex": 3,
+                  "hitRawIndex": 250,
+                  "actualXBits": "406F400000000000",
+                  "actualYBits": "4044028000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 947.356608478803,
+                  "screenY": 62.39418344771536,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 312,
+                  "probeXBits": "4073800000000000",
+                  "probeYBits": "4043580000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 312,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 312,
+                  "actualXBits": "4073800000000000",
+                  "actualYBits": "4043580000000000"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "S-RT-POC",
+      "comparable": true,
+      "before": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.0048,
+            "p95Milliseconds": 0.0056,
+            "p95AllocatedBytes": 24240,
+            "maximumMilliseconds": 0.0056,
+            "maximumAllocatedBytes": 24240.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 0.0704,
+            "p95Milliseconds": 0.0739,
+            "p95AllocatedBytes": 145896,
+            "maximumMilliseconds": 0.0739,
+            "maximumAllocatedBytes": 145896.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 0.514,
+            "p95Milliseconds": 2.6993,
+            "p95AllocatedBytes": 435640,
+            "maximumMilliseconds": 2.6993,
+            "maximumAllocatedBytes": 435640.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0003,
+            "p95Milliseconds": 0.0012,
+            "p95AllocatedBytes": 152,
+            "maximumMilliseconds": 0.0012,
+            "maximumAllocatedBytes": 152.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 0.2947,
+            "p95Milliseconds": 0.3541,
+            "p95AllocatedBytes": 219592,
+            "maximumMilliseconds": 0.3541,
+            "maximumAllocatedBytes": 219592.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 0.9696,
+            "p95Milliseconds": 3.177,
+            "p95AllocatedBytes": 827904,
+            "maximumMilliseconds": 3.177,
+            "maximumAllocatedBytes": 827904.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 0.0489,
+          "p95Milliseconds": 0.0539,
+          "p95AllocatedBytes": 1168,
+          "maximumMilliseconds": 0.0542,
+          "maximumAllocatedBytes": 1168.0
+        },
+        "maxObservedCurrentPrivateBytes": 1155006464.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 1155006464.0,
+        "processes": [
+          {
+            "runId": "b3b72e09cd934a58be24bc34bc4917f4",
+            "reportSha256": "BF421F12E4C5D2BA93C3DDC03B74476DC98A68B67F5B205DCD08FF4D36FB4C90",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 1155006464.0
+          }
+        ]
+      },
+      "after": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.0058,
+            "p95Milliseconds": 0.0094,
+            "p95AllocatedBytes": 24240,
+            "maximumMilliseconds": 0.0094,
+            "maximumAllocatedBytes": 24240.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 0.1307,
+            "p95Milliseconds": 0.1731,
+            "p95AllocatedBytes": 1075144,
+            "maximumMilliseconds": 0.1731,
+            "maximumAllocatedBytes": 1075144.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 0.9175,
+            "p95Milliseconds": 1.1269,
+            "p95AllocatedBytes": 80944,
+            "maximumMilliseconds": 1.1269,
+            "maximumAllocatedBytes": 80944.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0005,
+            "p95Milliseconds": 0.0005,
+            "p95AllocatedBytes": 264,
+            "maximumMilliseconds": 0.0005,
+            "maximumAllocatedBytes": 264.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 1.0433,
+            "p95Milliseconds": 2.262,
+            "p95AllocatedBytes": 227040,
+            "maximumMilliseconds": 2.262,
+            "maximumAllocatedBytes": 227040.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 2.1124,
+            "p95Milliseconds": 3.5938,
+            "p95AllocatedBytes": 1408632,
+            "maximumMilliseconds": 3.5938,
+            "maximumAllocatedBytes": 1408632.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 0.0082,
+          "p95Milliseconds": 0.0191,
+          "p95AllocatedBytes": 528,
+          "maximumMilliseconds": 0.0204,
+          "maximumAllocatedBytes": 528.0
+        },
+        "maxObservedCurrentPrivateBytes": 474456064.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 474456064.0,
+        "processes": [
+          {
+            "runId": "47c70336711849abab8402c938bc194a",
+            "reportSha256": "4DF13CA4AC79555999B78575784442E8ABDF4D59DBDEA53D0131A85EFFDA535A",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 474456064.0
+          }
+        ]
+      },
+      "afterOverBefore": {
+        "stages": {
+          "harnessSourceSnapshot": {
+            "p50Milliseconds": 1.2083333333333333,
+            "p95Milliseconds": 1.6785714285714286,
+            "p95AllocatedBytes": 1.0
+          },
+          "sourceApply": {
+            "p50Milliseconds": 1.856534090909091,
+            "p95Milliseconds": 2.3423545331529096,
+            "p95AllocatedBytes": 7.369249328288644
+          },
+          "scenePrepare": {
+            "p50Milliseconds": 1.7850194552529182,
+            "p95Milliseconds": 0.4174786055644056,
+            "p95AllocatedBytes": 0.18580479294830593
+          },
+          "cachedSceneGetter": {
+            "p50Milliseconds": 1.6666666666666667,
+            "p95Milliseconds": 0.4166666666666667,
+            "p95AllocatedBytes": 1.736842105263158
+          },
+          "renderRecord": {
+            "p50Milliseconds": 3.5402103834407868,
+            "p95Milliseconds": 6.388025981361197,
+            "p95AllocatedBytes": 1.0339174469015264
+          },
+          "firstUsableToRecord": {
+            "p50Milliseconds": 2.1786303630363038,
+            "p95Milliseconds": 1.1311929493232609,
+            "p95AllocatedBytes": 1.701443645640074
+          }
+        },
+        "hitQuery": {
+          "p50Milliseconds": 0.16768916155419225,
+          "p95Milliseconds": 0.3543599257884972,
+          "p95AllocatedBytes": 0.4520547945205479
+        },
+        "maxObservedCurrentPrivateBytes": 0.41078217203812983,
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 0.41078217203812983
+      }
+    },
+    {
+      "id": "S10-B",
+      "comparable": true,
+      "before": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.0293,
+            "p95Milliseconds": 0.0299,
+            "p95AllocatedBytes": 160176,
+            "maximumMilliseconds": 0.0299,
+            "maximumAllocatedBytes": 160176.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 0.7467,
+            "p95Milliseconds": 0.7639,
+            "p95AllocatedBytes": 960968,
+            "maximumMilliseconds": 0.7639,
+            "maximumAllocatedBytes": 960968.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 12.5974,
+            "p95Milliseconds": 13.3854,
+            "p95AllocatedBytes": 3727736,
+            "maximumMilliseconds": 13.3854,
+            "maximumAllocatedBytes": 3727736.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.002,
+            "p95Milliseconds": 0.0039,
+            "p95AllocatedBytes": 152,
+            "maximumMilliseconds": 0.0039,
+            "maximumAllocatedBytes": 152.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 18.611,
+            "p95Milliseconds": 25.6043,
+            "p95AllocatedBytes": 9880768,
+            "maximumMilliseconds": 25.6043,
+            "maximumAllocatedBytes": 9880768.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 35.211,
+            "p95Milliseconds": 42.1657,
+            "p95AllocatedBytes": 14736120,
+            "maximumMilliseconds": 42.1657,
+            "maximumAllocatedBytes": 14736120.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 2.9038,
+          "p95Milliseconds": 3.8925,
+          "p95AllocatedBytes": 5216,
+          "maximumMilliseconds": 3.9173,
+          "maximumAllocatedBytes": 5216.0
+        },
+        "maxObservedCurrentPrivateBytes": 59437056.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 59437056.0,
+        "processes": [
+          {
+            "runId": "b3b72e09cd934a58be24bc34bc4917f4",
+            "reportSha256": "BF421F12E4C5D2BA93C3DDC03B74476DC98A68B67F5B205DCD08FF4D36FB4C90",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 59437056.0
+          }
+        ]
+      },
+      "after": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.0241,
+            "p95Milliseconds": 0.0679,
+            "p95AllocatedBytes": 160176,
+            "maximumMilliseconds": 0.0679,
+            "maximumAllocatedBytes": 160176.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 0.1983,
+            "p95Milliseconds": 0.2105,
+            "p95AllocatedBytes": 685592,
+            "maximumMilliseconds": 0.2105,
+            "maximumAllocatedBytes": 685592.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 4.5333,
+            "p95Milliseconds": 11.1745,
+            "p95AllocatedBytes": 901520,
+            "maximumMilliseconds": 11.1745,
+            "maximumAllocatedBytes": 901520.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0015,
+            "p95Milliseconds": 0.0026,
+            "p95AllocatedBytes": 264,
+            "maximumMilliseconds": 0.0026,
+            "maximumAllocatedBytes": 264.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 23.0065,
+            "p95Milliseconds": 23.5412,
+            "p95AllocatedBytes": 9880792,
+            "maximumMilliseconds": 23.5412,
+            "maximumAllocatedBytes": 9880792.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 27.7434,
+            "p95Milliseconds": 29.1381,
+            "p95AllocatedBytes": 11630320,
+            "maximumMilliseconds": 29.1381,
+            "maximumAllocatedBytes": 11630320.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 0.0972,
+          "p95Milliseconds": 0.1324,
+          "p95AllocatedBytes": 1128,
+          "maximumMilliseconds": 0.1327,
+          "maximumAllocatedBytes": 1128.0
+        },
+        "maxObservedCurrentPrivateBytes": 62894080.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 62894080.0,
+        "processes": [
+          {
+            "runId": "47c70336711849abab8402c938bc194a",
+            "reportSha256": "4DF13CA4AC79555999B78575784442E8ABDF4D59DBDEA53D0131A85EFFDA535A",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 62894080.0
+          }
+        ]
+      },
+      "afterOverBefore": {
+        "stages": {
+          "harnessSourceSnapshot": {
+            "p50Milliseconds": 0.8225255972696246,
+            "p95Milliseconds": 2.270903010033445,
+            "p95AllocatedBytes": 1.0
+          },
+          "sourceApply": {
+            "p50Milliseconds": 0.2655685014061872,
+            "p95Milliseconds": 0.2755596282235895,
+            "p95AllocatedBytes": 0.7134389490596982
+          },
+          "scenePrepare": {
+            "p50Milliseconds": 0.35985997110514867,
+            "p95Milliseconds": 0.8348274986178971,
+            "p95AllocatedBytes": 0.2418411604255237
+          },
+          "cachedSceneGetter": {
+            "p50Milliseconds": 0.75,
+            "p95Milliseconds": 0.6666666666666666,
+            "p95AllocatedBytes": 1.736842105263158
+          },
+          "renderRecord": {
+            "p50Milliseconds": 1.236177529418086,
+            "p95Milliseconds": 0.9194236905519777,
+            "p95AllocatedBytes": 1.0000024289609877
+          },
+          "firstUsableToRecord": {
+            "p50Milliseconds": 0.7879185481809663,
+            "p95Milliseconds": 0.6910379763646756,
+            "p95AllocatedBytes": 0.7892389584232484
+          }
+        },
+        "hitQuery": {
+          "p50Milliseconds": 0.03347337970934637,
+          "p95Milliseconds": 0.03401412973667309,
+          "p95AllocatedBytes": 0.21625766871165644
+        },
+        "maxObservedCurrentPrivateBytes": 1.0581627730687064,
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 1.0581627730687064
+      }
+    },
+    {
+      "id": "S10-L",
+      "comparable": true,
+      "before": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.0273,
+            "p95Milliseconds": 0.0726,
+            "p95AllocatedBytes": 160144,
+            "maximumMilliseconds": 0.0726,
+            "maximumAllocatedBytes": 160144.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 0.5537,
+            "p95Milliseconds": 0.7387,
+            "p95AllocatedBytes": 960504,
+            "maximumMilliseconds": 0.7387,
+            "maximumAllocatedBytes": 960504.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 3.1326,
+            "p95Milliseconds": 5.713,
+            "p95AllocatedBytes": 2470880,
+            "maximumMilliseconds": 5.713,
+            "maximumAllocatedBytes": 2470880.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0015,
+            "p95Milliseconds": 0.0016,
+            "p95AllocatedBytes": 152,
+            "maximumMilliseconds": 0.0016,
+            "maximumAllocatedBytes": 152.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 1.9446,
+            "p95Milliseconds": 2.1133,
+            "p95AllocatedBytes": 664168,
+            "maximumMilliseconds": 2.1133,
+            "maximumAllocatedBytes": 664168.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 6.4011,
+            "p95Milliseconds": 9.1919,
+            "p95AllocatedBytes": 4258280,
+            "maximumMilliseconds": 9.1919,
+            "maximumAllocatedBytes": 4258280.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 0.7882,
+          "p95Milliseconds": 0.8532,
+          "p95AllocatedBytes": 1720,
+          "maximumMilliseconds": 0.9413,
+          "maximumAllocatedBytes": 1720.0
+        },
+        "maxObservedCurrentPrivateBytes": 37969920.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 37969920.0,
+        "processes": [
+          {
+            "runId": "b3b72e09cd934a58be24bc34bc4917f4",
+            "reportSha256": "BF421F12E4C5D2BA93C3DDC03B74476DC98A68B67F5B205DCD08FF4D36FB4C90",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 37969920.0
+          }
+        ]
+      },
+      "after": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.0487,
+            "p95Milliseconds": 0.0889,
+            "p95AllocatedBytes": 160144,
+            "maximumMilliseconds": 0.0889,
+            "maximumAllocatedBytes": 160144.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 0.1379,
+            "p95Milliseconds": 0.1602,
+            "p95AllocatedBytes": 422816,
+            "maximumMilliseconds": 0.1602,
+            "maximumAllocatedBytes": 422816.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 0.8338,
+            "p95Milliseconds": 0.8534,
+            "p95AllocatedBytes": 70752,
+            "maximumMilliseconds": 0.8534,
+            "maximumAllocatedBytes": 70752.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0014,
+            "p95Milliseconds": 0.0014,
+            "p95AllocatedBytes": 264,
+            "maximumMilliseconds": 0.0014,
+            "maximumAllocatedBytes": 264.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 1.4519,
+            "p95Milliseconds": 4.344,
+            "p95AllocatedBytes": 664192,
+            "maximumMilliseconds": 4.344,
+            "maximumAllocatedBytes": 664192.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 2.4917,
+            "p95Milliseconds": 5.4057,
+            "p95AllocatedBytes": 1319744,
+            "maximumMilliseconds": 5.4057,
+            "maximumAllocatedBytes": 1319744.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 0.0469,
+          "p95Milliseconds": 0.0604,
+          "p95AllocatedBytes": 640,
+          "maximumMilliseconds": 0.0671,
+          "maximumAllocatedBytes": 640.0
+        },
+        "maxObservedCurrentPrivateBytes": 30572544.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 30572544.0,
+        "processes": [
+          {
+            "runId": "47c70336711849abab8402c938bc194a",
+            "reportSha256": "4DF13CA4AC79555999B78575784442E8ABDF4D59DBDEA53D0131A85EFFDA535A",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 30572544.0
+          }
+        ]
+      },
+      "afterOverBefore": {
+        "stages": {
+          "harnessSourceSnapshot": {
+            "p50Milliseconds": 1.7838827838827838,
+            "p95Milliseconds": 1.2245179063360883,
+            "p95AllocatedBytes": 1.0
+          },
+          "sourceApply": {
+            "p50Milliseconds": 0.24905183312262957,
+            "p95Milliseconds": 0.21686746987951808,
+            "p95AllocatedBytes": 0.4402022271640722
+          },
+          "scenePrepare": {
+            "p50Milliseconds": 0.2661686777756496,
+            "p95Milliseconds": 0.14937861018729215,
+            "p95AllocatedBytes": 0.02863433270737551
+          },
+          "cachedSceneGetter": {
+            "p50Milliseconds": 0.9333333333333333,
+            "p95Milliseconds": 0.875,
+            "p95AllocatedBytes": 1.736842105263158
+          },
+          "renderRecord": {
+            "p50Milliseconds": 0.7466316980355857,
+            "p95Milliseconds": 2.055552926702314,
+            "p95AllocatedBytes": 1.0000361354356126
+          },
+          "firstUsableToRecord": {
+            "p50Milliseconds": 0.38926122072768743,
+            "p95Milliseconds": 0.5880938652509274,
+            "p95AllocatedBytes": 0.3099241947452962
+          }
+        },
+        "hitQuery": {
+          "p50Milliseconds": 0.05950266429840142,
+          "p95Milliseconds": 0.07079231129864041,
+          "p95AllocatedBytes": 0.37209302325581395
+        },
+        "maxObservedCurrentPrivateBytes": 0.8051779935275081,
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 0.8051779935275081
+      }
+    },
+    {
+      "id": "S10-L-GAP",
+      "comparable": true,
+      "before": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.0594,
+            "p95Milliseconds": 0.1045,
+            "p95AllocatedBytes": 160144,
+            "maximumMilliseconds": 0.1045,
+            "maximumAllocatedBytes": 160144.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 0.3795,
+            "p95Milliseconds": 30.1277,
+            "p95AllocatedBytes": 960504,
+            "maximumMilliseconds": 30.1277,
+            "maximumAllocatedBytes": 960504.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 2.1041,
+            "p95Milliseconds": 4.6518,
+            "p95AllocatedBytes": 4545680,
+            "maximumMilliseconds": 4.6518,
+            "maximumAllocatedBytes": 4545680.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0003,
+            "p95Milliseconds": 0.0021,
+            "p95AllocatedBytes": 152,
+            "maximumMilliseconds": 0.0021,
+            "maximumAllocatedBytes": 152.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 1.9109,
+            "p95Milliseconds": 4.7979,
+            "p95AllocatedBytes": 657400,
+            "maximumMilliseconds": 4.7979,
+            "maximumAllocatedBytes": 657400.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 6.8317,
+            "p95Milliseconds": 38.1043,
+            "p95AllocatedBytes": 6326408,
+            "maximumMilliseconds": 38.1043,
+            "maximumAllocatedBytes": 6326408.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 0.3971,
+          "p95Milliseconds": 0.4325,
+          "p95AllocatedBytes": 1528,
+          "maximumMilliseconds": 0.4327,
+          "maximumAllocatedBytes": 1528.0
+        },
+        "maxObservedCurrentPrivateBytes": 1171345408.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 1171345408.0,
+        "processes": [
+          {
+            "runId": "b3b72e09cd934a58be24bc34bc4917f4",
+            "reportSha256": "BF421F12E4C5D2BA93C3DDC03B74476DC98A68B67F5B205DCD08FF4D36FB4C90",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 1171345408.0
+          }
+        ]
+      },
+      "after": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.0242,
+            "p95Milliseconds": 0.0299,
+            "p95AllocatedBytes": 160144,
+            "maximumMilliseconds": 0.0299,
+            "maximumAllocatedBytes": 160144.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 0.1064,
+            "p95Milliseconds": 0.1178,
+            "p95AllocatedBytes": 422816,
+            "maximumMilliseconds": 0.1178,
+            "maximumAllocatedBytes": 422816.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 0.9626,
+            "p95Milliseconds": 1.0777,
+            "p95AllocatedBytes": 110624,
+            "maximumMilliseconds": 1.0777,
+            "maximumAllocatedBytes": 110624.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0005,
+            "p95Milliseconds": 0.0026,
+            "p95AllocatedBytes": 264,
+            "maximumMilliseconds": 0.0026,
+            "maximumAllocatedBytes": 264.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 2.4628,
+            "p95Milliseconds": 2.9713,
+            "p95AllocatedBytes": 664192,
+            "maximumMilliseconds": 2.9713,
+            "maximumAllocatedBytes": 664192.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 3.5953,
+            "p95Milliseconds": 4.0534,
+            "p95AllocatedBytes": 1359616,
+            "maximumMilliseconds": 4.0534,
+            "maximumAllocatedBytes": 1359616.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 0.015,
+          "p95Milliseconds": 0.0318,
+          "p95AllocatedBytes": 640,
+          "maximumMilliseconds": 0.0326,
+          "maximumAllocatedBytes": 640.0
+        },
+        "maxObservedCurrentPrivateBytes": 472616960.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 472616960.0,
+        "processes": [
+          {
+            "runId": "47c70336711849abab8402c938bc194a",
+            "reportSha256": "4DF13CA4AC79555999B78575784442E8ABDF4D59DBDEA53D0131A85EFFDA535A",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 472616960.0
+          }
+        ]
+      },
+      "afterOverBefore": {
+        "stages": {
+          "harnessSourceSnapshot": {
+            "p50Milliseconds": 0.4074074074074074,
+            "p95Milliseconds": 0.2861244019138756,
+            "p95AllocatedBytes": 1.0
+          },
+          "sourceApply": {
+            "p50Milliseconds": 0.280368906455863,
+            "p95Milliseconds": 0.00391002300208778,
+            "p95AllocatedBytes": 0.4402022271640722
+          },
+          "scenePrepare": {
+            "p50Milliseconds": 0.45748776198849866,
+            "p95Milliseconds": 0.23167376069478485,
+            "p95AllocatedBytes": 0.024336072930782632
+          },
+          "cachedSceneGetter": {
+            "p50Milliseconds": 1.6666666666666667,
+            "p95Milliseconds": 1.2380952380952381,
+            "p95AllocatedBytes": 1.736842105263158
+          },
+          "renderRecord": {
+            "p50Milliseconds": 1.288816787900989,
+            "p95Milliseconds": 0.6192917734842326,
+            "p95AllocatedBytes": 1.0103316093702464
+          },
+          "firstUsableToRecord": {
+            "p50Milliseconds": 0.5262672541241565,
+            "p95Milliseconds": 0.1063764457029784,
+            "p95AllocatedBytes": 0.21491121027919793
+          }
+        },
+        "hitQuery": {
+          "p50Milliseconds": 0.03777386048854193,
+          "p95Milliseconds": 0.07352601156069365,
+          "p95AllocatedBytes": 0.418848167539267
+        },
+        "maxObservedCurrentPrivateBytes": 0.40348214691596757,
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 0.40348214691596757
+      }
+    },
+    {
+      "id": "S10-L-NONMONOTONIC",
+      "comparable": true,
+      "before": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.0707,
+            "p95Milliseconds": 0.0901,
+            "p95AllocatedBytes": 160144,
+            "maximumMilliseconds": 0.0901,
+            "maximumAllocatedBytes": 160144.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 0.348,
+            "p95Milliseconds": 0.6433,
+            "p95AllocatedBytes": 960504,
+            "maximumMilliseconds": 0.6433,
+            "maximumAllocatedBytes": 960504.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 1.4156,
+            "p95Milliseconds": 1.5066,
+            "p95AllocatedBytes": 2465168,
+            "maximumMilliseconds": 1.5066,
+            "maximumAllocatedBytes": 2465168.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0003,
+            "p95Milliseconds": 0.0003,
+            "p95AllocatedBytes": 152,
+            "maximumMilliseconds": 0.0003,
+            "maximumAllocatedBytes": 152.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 0.931,
+            "p95Milliseconds": 48.3062,
+            "p95AllocatedBytes": 657400,
+            "maximumMilliseconds": 48.3062,
+            "maximumAllocatedBytes": 657400.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 3.4867,
+            "p95Milliseconds": 50.7458,
+            "p95AllocatedBytes": 4245512,
+            "maximumMilliseconds": 50.7458,
+            "maximumAllocatedBytes": 4245512.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 0.3963,
+          "p95Milliseconds": 0.6483,
+          "p95AllocatedBytes": 1192,
+          "maximumMilliseconds": 0.6511,
+          "maximumAllocatedBytes": 1192.0
+        },
+        "maxObservedCurrentPrivateBytes": 1155706880.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 1155706880.0,
+        "processes": [
+          {
+            "runId": "b3b72e09cd934a58be24bc34bc4917f4",
+            "reportSha256": "BF421F12E4C5D2BA93C3DDC03B74476DC98A68B67F5B205DCD08FF4D36FB4C90",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 1155706880.0
+          }
+        ]
+      },
+      "after": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.0241,
+            "p95Milliseconds": 0.0263,
+            "p95AllocatedBytes": 160144,
+            "maximumMilliseconds": 0.0263,
+            "maximumAllocatedBytes": 160144.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 0.1043,
+            "p95Milliseconds": 0.1614,
+            "p95AllocatedBytes": 422816,
+            "maximumMilliseconds": 0.1614,
+            "maximumAllocatedBytes": 422816.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 4.2072,
+            "p95Milliseconds": 4.4368,
+            "p95AllocatedBytes": 111104,
+            "maximumMilliseconds": 4.4368,
+            "maximumAllocatedBytes": 111104.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0006,
+            "p95Milliseconds": 0.0007,
+            "p95AllocatedBytes": 264,
+            "maximumMilliseconds": 0.0007,
+            "maximumAllocatedBytes": 264.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 1.5873,
+            "p95Milliseconds": 1.9012,
+            "p95AllocatedBytes": 664192,
+            "maximumMilliseconds": 1.9012,
+            "maximumAllocatedBytes": 664192.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 6.1544,
+            "p95Milliseconds": 6.1938,
+            "p95AllocatedBytes": 1360096,
+            "maximumMilliseconds": 6.1938,
+            "maximumAllocatedBytes": 1360096.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 0.0183,
+          "p95Milliseconds": 0.0318,
+          "p95AllocatedBytes": 640,
+          "maximumMilliseconds": 0.0396,
+          "maximumAllocatedBytes": 640.0
+        },
+        "maxObservedCurrentPrivateBytes": 471613440.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 471613440.0,
+        "processes": [
+          {
+            "runId": "47c70336711849abab8402c938bc194a",
+            "reportSha256": "4DF13CA4AC79555999B78575784442E8ABDF4D59DBDEA53D0131A85EFFDA535A",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 471613440.0
+          }
+        ]
+      },
+      "afterOverBefore": {
+        "stages": {
+          "harnessSourceSnapshot": {
+            "p50Milliseconds": 0.3408769448373409,
+            "p95Milliseconds": 0.29189789123196447,
+            "p95AllocatedBytes": 1.0
+          },
+          "sourceApply": {
+            "p50Milliseconds": 0.299712643678161,
+            "p95Milliseconds": 0.25089382869578736,
+            "p95AllocatedBytes": 0.4402022271640722
+          },
+          "scenePrepare": {
+            "p50Milliseconds": 2.9720259960440805,
+            "p95Milliseconds": 2.944909066772866,
+            "p95AllocatedBytes": 0.04506954495596243
+          },
+          "cachedSceneGetter": {
+            "p50Milliseconds": 2.0,
+            "p95Milliseconds": 2.3333333333333335,
+            "p95AllocatedBytes": 1.736842105263158
+          },
+          "renderRecord": {
+            "p50Milliseconds": 1.704940923737916,
+            "p95Milliseconds": 0.039357266769068984,
+            "p95AllocatedBytes": 1.0103316093702464
+          },
+          "firstUsableToRecord": {
+            "p50Milliseconds": 1.7651074081509737,
+            "p95Milliseconds": 0.12205542133536175,
+            "p95AllocatedBytes": 0.3203608893344313
+          }
+        },
+        "hitQuery": {
+          "p50Milliseconds": 0.0461771385314156,
+          "p95Milliseconds": 0.049051365108745956,
+          "p95AllocatedBytes": 0.5369127516778524
+        },
+        "maxObservedCurrentPrivateBytes": 0.40807357658024845,
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 0.40807357658024845
+      }
+    },
+    {
+      "id": "S10-S",
+      "comparable": true,
+      "before": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.0253,
+            "p95Milliseconds": 0.0302,
+            "p95AllocatedBytes": 160144,
+            "maximumMilliseconds": 0.0302,
+            "maximumAllocatedBytes": 160144.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 0.544,
+            "p95Milliseconds": 4.9577,
+            "p95AllocatedBytes": 960504,
+            "maximumMilliseconds": 4.9577,
+            "maximumAllocatedBytes": 960504.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 2.403,
+            "p95Milliseconds": 6.181,
+            "p95AllocatedBytes": 2476344,
+            "maximumMilliseconds": 6.181,
+            "maximumAllocatedBytes": 2476344.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0015,
+            "p95Milliseconds": 0.0017,
+            "p95AllocatedBytes": 152,
+            "maximumMilliseconds": 0.0017,
+            "maximumAllocatedBytes": 152.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 16.6515,
+            "p95Milliseconds": 26.638,
+            "p95AllocatedBytes": 10734184,
+            "maximumMilliseconds": 26.638,
+            "maximumAllocatedBytes": 10734184.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 27.7172,
+            "p95Milliseconds": 30.6778,
+            "p95AllocatedBytes": 14333328,
+            "maximumMilliseconds": 30.6778,
+            "maximumAllocatedBytes": 14333328.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 0.7718,
+          "p95Milliseconds": 0.8122,
+          "p95AllocatedBytes": 1000,
+          "maximumMilliseconds": 0.8296,
+          "maximumAllocatedBytes": 1000.0
+        },
+        "maxObservedCurrentPrivateBytes": 63733760.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 63733760.0,
+        "processes": [
+          {
+            "runId": "b3b72e09cd934a58be24bc34bc4917f4",
+            "reportSha256": "BF421F12E4C5D2BA93C3DDC03B74476DC98A68B67F5B205DCD08FF4D36FB4C90",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 63733760.0
+          }
+        ]
+      },
+      "after": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.0254,
+            "p95Milliseconds": 0.0292,
+            "p95AllocatedBytes": 160144,
+            "maximumMilliseconds": 0.0292,
+            "maximumAllocatedBytes": 160144.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 0.1194,
+            "p95Milliseconds": 0.133,
+            "p95AllocatedBytes": 422816,
+            "maximumMilliseconds": 0.133,
+            "maximumAllocatedBytes": 422816.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 0.8952,
+            "p95Milliseconds": 0.9217,
+            "p95AllocatedBytes": 76736,
+            "maximumMilliseconds": 0.9217,
+            "maximumAllocatedBytes": 76736.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0013,
+            "p95Milliseconds": 0.0014,
+            "p95AllocatedBytes": 264,
+            "maximumMilliseconds": 0.0014,
+            "maximumAllocatedBytes": 264.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 18.0464,
+            "p95Milliseconds": 29.0658,
+            "p95AllocatedBytes": 10734240,
+            "maximumMilliseconds": 29.0658,
+            "maximumAllocatedBytes": 10734240.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 19.192,
+            "p95Milliseconds": 30.1831,
+            "p95AllocatedBytes": 11395776,
+            "maximumMilliseconds": 30.1831,
+            "maximumAllocatedBytes": 11395776.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 0.0485,
+          "p95Milliseconds": 0.0736,
+          "p95AllocatedBytes": 640,
+          "maximumMilliseconds": 0.0793,
+          "maximumAllocatedBytes": 640.0
+        },
+        "maxObservedCurrentPrivateBytes": 54513664.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 54513664.0,
+        "processes": [
+          {
+            "runId": "47c70336711849abab8402c938bc194a",
+            "reportSha256": "4DF13CA4AC79555999B78575784442E8ABDF4D59DBDEA53D0131A85EFFDA535A",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 54513664.0
+          }
+        ]
+      },
+      "afterOverBefore": {
+        "stages": {
+          "harnessSourceSnapshot": {
+            "p50Milliseconds": 1.0039525691699605,
+            "p95Milliseconds": 0.966887417218543,
+            "p95AllocatedBytes": 1.0
+          },
+          "sourceApply": {
+            "p50Milliseconds": 0.21948529411764706,
+            "p95Milliseconds": 0.026826956048167497,
+            "p95AllocatedBytes": 0.4402022271640722
+          },
+          "scenePrepare": {
+            "p50Milliseconds": 0.3725343320848939,
+            "p95Milliseconds": 0.14911826565280697,
+            "p95AllocatedBytes": 0.030987617229270247
+          },
+          "cachedSceneGetter": {
+            "p50Milliseconds": 0.8666666666666666,
+            "p95Milliseconds": 0.823529411764706,
+            "p95AllocatedBytes": 1.736842105263158
+          },
+          "renderRecord": {
+            "p50Milliseconds": 1.0837702309101283,
+            "p95Milliseconds": 1.0911404760117125,
+            "p95AllocatedBytes": 1.0000052169778346
+          },
+          "firstUsableToRecord": {
+            "p50Milliseconds": 0.6924220339716854,
+            "p95Milliseconds": 0.9838743325792593,
+            "p95AllocatedBytes": 0.7950544353690923
+          }
+        },
+        "hitQuery": {
+          "p50Milliseconds": 0.06284011401917595,
+          "p95Milliseconds": 0.09061807436591972,
+          "p95AllocatedBytes": 0.64
+        },
+        "maxObservedCurrentPrivateBytes": 0.8553341902313625,
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 0.8553341902313625
+      }
+    },
+    {
+      "id": "S100-L",
+      "comparable": true,
+      "before": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.2144,
+            "p95Milliseconds": 0.2604,
+            "p95AllocatedBytes": 1600144,
+            "maximumMilliseconds": 0.2604,
+            "maximumAllocatedBytes": 1600144.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 19.3485,
+            "p95Milliseconds": 44.1353,
+            "p95AllocatedBytes": 9600528,
+            "maximumMilliseconds": 44.1353,
+            "maximumAllocatedBytes": 9600528.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 13.8233,
+            "p95Milliseconds": 49.6839,
+            "p95AllocatedBytes": 24075472,
+            "maximumMilliseconds": 49.6839,
+            "maximumAllocatedBytes": 24075472.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0011,
+            "p95Milliseconds": 0.0022,
+            "p95AllocatedBytes": 152,
+            "maximumMilliseconds": 0.0022,
+            "maximumAllocatedBytes": 152.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 14.0504,
+            "p95Milliseconds": 27.9529,
+            "p95AllocatedBytes": 4334264,
+            "maximumMilliseconds": 27.9529,
+            "maximumAllocatedBytes": 4334264.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 74.0524,
+            "p95Milliseconds": 89.1635,
+            "p95AllocatedBytes": 39613472,
+            "maximumMilliseconds": 89.1635,
+            "maximumAllocatedBytes": 39613472.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 5.7254,
+          "p95Milliseconds": 7.3311,
+          "p95AllocatedBytes": 2296,
+          "maximumMilliseconds": 15.4355,
+          "maximumAllocatedBytes": 2296.0
+        },
+        "maxObservedCurrentPrivateBytes": 124174336.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 124174336.0,
+        "processes": [
+          {
+            "runId": "b3b72e09cd934a58be24bc34bc4917f4",
+            "reportSha256": "BF421F12E4C5D2BA93C3DDC03B74476DC98A68B67F5B205DCD08FF4D36FB4C90",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 124174336.0
+          }
+        ]
+      },
+      "after": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 0.2989,
+            "p95Milliseconds": 0.3967,
+            "p95AllocatedBytes": 1600144,
+            "maximumMilliseconds": 0.3967,
+            "maximumAllocatedBytes": 1600144.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 0.8177,
+            "p95Milliseconds": 5.1717,
+            "p95AllocatedBytes": 3443664,
+            "maximumMilliseconds": 5.1717,
+            "maximumAllocatedBytes": 3443664.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 1.3166,
+            "p95Milliseconds": 1.6405,
+            "p95AllocatedBytes": 71032,
+            "maximumMilliseconds": 1.6405,
+            "maximumAllocatedBytes": 71032.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0015,
+            "p95Milliseconds": 0.0017,
+            "p95AllocatedBytes": 264,
+            "maximumMilliseconds": 0.0017,
+            "maximumAllocatedBytes": 264.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 7.4605,
+            "p95Milliseconds": 7.5797,
+            "p95AllocatedBytes": 4334288,
+            "maximumMilliseconds": 7.5797,
+            "maximumAllocatedBytes": 4334288.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 10.2357,
+            "p95Milliseconds": 14.4146,
+            "p95AllocatedBytes": 9450968,
+            "maximumMilliseconds": 14.4146,
+            "maximumAllocatedBytes": 9450968.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 0.2728,
+          "p95Milliseconds": 0.3016,
+          "p95AllocatedBytes": 640,
+          "maximumMilliseconds": 0.3059,
+          "maximumAllocatedBytes": 640.0
+        },
+        "maxObservedCurrentPrivateBytes": 84619264.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 84619264.0,
+        "processes": [
+          {
+            "runId": "47c70336711849abab8402c938bc194a",
+            "reportSha256": "4DF13CA4AC79555999B78575784442E8ABDF4D59DBDEA53D0131A85EFFDA535A",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 84619264.0
+          }
+        ]
+      },
+      "afterOverBefore": {
+        "stages": {
+          "harnessSourceSnapshot": {
+            "p50Milliseconds": 1.3941231343283582,
+            "p95Milliseconds": 1.5234254992319507,
+            "p95AllocatedBytes": 1.0
+          },
+          "sourceApply": {
+            "p50Milliseconds": 0.04226167403157867,
+            "p95Milliseconds": 0.11717831305100453,
+            "p95AllocatedBytes": 0.3586952717600532
+          },
+          "scenePrepare": {
+            "p50Milliseconds": 0.09524498491677096,
+            "p95Milliseconds": 0.03301874450274636,
+            "p95AllocatedBytes": 0.002950388677738073
+          },
+          "cachedSceneGetter": {
+            "p50Milliseconds": 1.3636363636363635,
+            "p95Milliseconds": 0.7727272727272726,
+            "p95AllocatedBytes": 1.736842105263158
+          },
+          "renderRecord": {
+            "p50Milliseconds": 0.5309813243751067,
+            "p95Milliseconds": 0.2711597007823875,
+            "p95AllocatedBytes": 1.0000055372723027
+          },
+          "firstUsableToRecord": {
+            "p50Milliseconds": 0.13822239387244706,
+            "p95Milliseconds": 0.16166480678753078,
+            "p95AllocatedBytes": 0.23857964280434696
+          }
+        },
+        "hitQuery": {
+          "p50Milliseconds": 0.047647325951025256,
+          "p95Milliseconds": 0.04113980166687127,
+          "p95AllocatedBytes": 0.2787456445993031
+        },
+        "maxObservedCurrentPrivateBytes": 0.6814553371157145,
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 0.6814553371157145
+      }
+    },
+    {
+      "id": "S1M-L",
+      "comparable": true,
+      "before": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 2.543,
+            "p95Milliseconds": 2.7386,
+            "p95AllocatedBytes": 16000144,
+            "maximumMilliseconds": 2.7386,
+            "maximumAllocatedBytes": 16000144.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 169.3624,
+            "p95Milliseconds": 259.9265,
+            "p95AllocatedBytes": 96000528,
+            "maximumMilliseconds": 259.9265,
+            "maximumAllocatedBytes": 96000528.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 125.3201,
+            "p95Milliseconds": 180.935,
+            "p95AllocatedBytes": 240065232,
+            "maximumMilliseconds": 180.935,
+            "maximumAllocatedBytes": 240065232.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.0005,
+            "p95Milliseconds": 0.0015,
+            "p95AllocatedBytes": 152,
+            "maximumMilliseconds": 0.0015,
+            "maximumAllocatedBytes": 152.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 66.8773,
+            "p95Milliseconds": 111.2598,
+            "p95AllocatedBytes": 33689880,
+            "maximumMilliseconds": 111.2598,
+            "maximumAllocatedBytes": 33689880.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 432.8936,
+            "p95Milliseconds": 528.9834,
+            "p95AllocatedBytes": 385762184,
+            "maximumMilliseconds": 528.9834,
+            "maximumAllocatedBytes": 385762184.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 42.184,
+          "p95Milliseconds": 44.7173,
+          "p95AllocatedBytes": 5320,
+          "maximumMilliseconds": 48.864,
+          "maximumAllocatedBytes": 5320.0
+        },
+        "maxObservedCurrentPrivateBytes": 1137147904.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 1137147904.0,
+        "processes": [
+          {
+            "runId": "b3b72e09cd934a58be24bc34bc4917f4",
+            "reportSha256": "BF421F12E4C5D2BA93C3DDC03B74476DC98A68B67F5B205DCD08FF4D36FB4C90",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 1137147904.0
+          }
+        ]
+      },
+      "after": {
+        "processCount": 1,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 5,
+        "hitQueryCount": 25,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 5,
+            "p50Milliseconds": 3.0531,
+            "p95Milliseconds": 3.7756,
+            "p95AllocatedBytes": 16000144,
+            "maximumMilliseconds": 3.7756,
+            "maximumAllocatedBytes": 16000144.0
+          },
+          "sourceApply": {
+            "count": 5,
+            "p50Milliseconds": 7.9504,
+            "p95Milliseconds": 9.3853,
+            "p95AllocatedBytes": 32256208,
+            "maximumMilliseconds": 9.3853,
+            "maximumAllocatedBytes": 32256208.0
+          },
+          "scenePrepare": {
+            "count": 5,
+            "p50Milliseconds": 6.207,
+            "p95Milliseconds": 6.4501,
+            "p95AllocatedBytes": 71080,
+            "maximumMilliseconds": 6.4501,
+            "maximumAllocatedBytes": 71080.0
+          },
+          "cachedSceneGetter": {
+            "count": 5,
+            "p50Milliseconds": 0.001,
+            "p95Milliseconds": 0.0014,
+            "p95AllocatedBytes": 264,
+            "maximumMilliseconds": 0.0014,
+            "maximumAllocatedBytes": 264.0
+          },
+          "renderRecord": {
+            "count": 5,
+            "p50Milliseconds": 36.6337,
+            "p95Milliseconds": 48.9635,
+            "p95AllocatedBytes": 33694512,
+            "maximumMilliseconds": 48.9635,
+            "maximumAllocatedBytes": 33694512.0
+          },
+          "firstUsableToRecord": {
+            "count": 5,
+            "p50Milliseconds": 55.7167,
+            "p95Milliseconds": 64.9432,
+            "p95AllocatedBytes": 82023784,
+            "maximumMilliseconds": 64.9432,
+            "maximumAllocatedBytes": 82023784.0
+          }
+        },
+        "hitQuery": {
+          "count": 25,
+          "p50Milliseconds": 0.5539,
+          "p95Milliseconds": 1.0322,
+          "p95AllocatedBytes": 640,
+          "maximumMilliseconds": 1.234,
+          "maximumAllocatedBytes": 640.0
+        },
+        "maxObservedCurrentPrivateBytes": 474427392.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 474427392.0,
+        "processes": [
+          {
+            "runId": "47c70336711849abab8402c938bc194a",
+            "reportSha256": "4DF13CA4AC79555999B78575784442E8ABDF4D59DBDEA53D0131A85EFFDA535A",
+            "measuredSamples": 5,
+            "allRecordedSamples": 6,
+            "maxObservedCurrentPrivateBytes": 474427392.0
+          }
+        ]
+      },
+      "afterOverBefore": {
+        "stages": {
+          "harnessSourceSnapshot": {
+            "p50Milliseconds": 1.200589854502556,
+            "p95Milliseconds": 1.3786606295187323,
+            "p95AllocatedBytes": 1.0
+          },
+          "sourceApply": {
+            "p50Milliseconds": 0.04694312314893979,
+            "p95Milliseconds": 0.03610751500905064,
+            "p95AllocatedBytes": 0.33600031866491403
+          },
+          "scenePrepare": {
+            "p50Milliseconds": 0.049529165712443576,
+            "p95Milliseconds": 0.03564871362644043,
+            "p95AllocatedBytes": 0.000296086190440105
+          },
+          "cachedSceneGetter": {
+            "p50Milliseconds": 2.0,
+            "p95Milliseconds": 0.9333333333333333,
+            "p95AllocatedBytes": 1.736842105263158
+          },
+          "renderRecord": {
+            "p50Milliseconds": 0.5477748055020163,
+            "p95Milliseconds": 0.44008258148945084,
+            "p95AllocatedBytes": 1.0001374893588222
+          },
+          "firstUsableToRecord": {
+            "p50Milliseconds": 0.1287076085208929,
+            "p95Milliseconds": 0.12276982604747146,
+            "p95AllocatedBytes": 0.21262785053083377
+          }
+        },
+        "hitQuery": {
+          "p50Milliseconds": 0.013130570832543143,
+          "p95Milliseconds": 0.023082788987707218,
+          "p95AllocatedBytes": 0.12030075187969924
+        },
+        "maxObservedCurrentPrivateBytes": 0.4172081664409417,
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 0.4172081664409417
+      }
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "Each raw report is validated by a fresh child invocation of Test-ChartsPerformance; original guard files are not overwritten.",
+    "Pooled percentiles use all non-warmup samples across distinct report/run IDs; hit percentiles pool non-warmup query timings. This is not a percentile of per-process percentiles.",
+    "Nearest-rank percentiles match the raw guard. Ratios are after/before; a zero before denominator produces null, not Infinity or an improvement claim.",
+    "Allocated bytes are reported current-thread stage deltas. Stage intervals can nest: firstUsable includes other work, source enumeration belongs to scene preparation; do not sum them.",
+    "Current private values are sampled at recorded memoryBefore/memoryAfter boundaries; their maximum is not measured peak private, retained memory, or native allocations.",
+    "Distinct run IDs and successful supervisor receipts identify process invocations; this raw schema does not include OS PID, CPU model, power state, or concurrent-process audit.",
+    "Matching recorded manifests/primitive counts/probes does not constitute full image-golden or complete C4 quality-corpus acceptance. Native present, GPU, Linux, official reference and SLA acceptance remain outside scope.",
+    "Known trace diagnostic reports are rejected. The caller remains responsible for providing untraced runs with externally verified isolated execution.",
+    "Only recorded known quality fields are compared; no rendering data is downsampled or silently omitted to make reports comparable."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "Version": "0.2.0-preview.2",
+  "VerifiedAtUtc": "2026-10-12T13:56:49.5035117+08:00",
+  "BuildConfiguration": "Release",
+  "BuildWarnings": 0,
+  "BuildErrors": 0,
+  "Tests": {
+    "Core": 93,
+    "Headless": 85,
+    "Themes": 18,
+    "Total": 196,
+    "Failed": 0,
+    "Skipped": 0
+  },
+  "PublicApi": {
+    "Snapshot": "docs/public-api.txt",
+    "P1Compatible": true,
+    "P2P3Compatible": true,
+    "P4P5Compatible": true
+  },
+  "MvvmNativeChecks": 21,
+  "RegressionNativeChecks": 36,
+  "MvvmProbeTimestampUtc": "2026-10-12T05:54:13.6310483+00:00",
+  "RegressionProbeTimestampUtc": "2026-10-12T05:54:18.5544186+00:00",
+  "ConsumerDirectory": "artifacts/consumer/1ddf16713b294166b9d44c69c744dc5b",
+  "ConsumerUsedProjectReference": false,
+  "FreshNuGetCache": true,
+  "ConsumerPassed": true,
+  "Assemblies": [
+    {
+      "Name": "NT.AvaloniaControl",
+      "BuildSha256": "2E0569AA8474F895CE4448584AD5FEB4A79A63925DCD7D66A2A4904128CE4EFE",
+      "PublishedSha256": "2E0569AA8474F895CE4448584AD5FEB4A79A63925DCD7D66A2A4904128CE4EFE",
+      "ConsumerSha256": "2E0569AA8474F895CE4448584AD5FEB4A79A63925DCD7D66A2A4904128CE4EFE"
+    },
+    {
+      "Name": "NT.AvaloniaControl.Themes",
+      "BuildSha256": "913E418EBBCCD81C91C7C9011DA841759008840BE1112ED3C9E537BF645EC672",
+      "PublishedSha256": "913E418EBBCCD81C91C7C9011DA841759008840BE1112ED3C9E537BF645EC672",
+      "ConsumerSha256": "913E418EBBCCD81C91C7C9011DA841759008840BE1112ED3C9E537BF645EC672"
+    }
+  ],
+  "NativeImeValidated": false,
+  "KylinValidated": false
+}

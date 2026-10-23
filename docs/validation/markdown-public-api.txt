@@ -1,0 +1,625 @@
+Markdown public contract snapshot: actual Release assemblies, public declared members.
+Record generated members are retained; inherited members and internal implementation are excluded.
+Runtime: .NET 10.0.12
+
+Assembly: NT.AvaloniaControl.Markdown, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null
+SHA256: 1AEF42AB16F6133750047AD4708A4ECB8D8110A5806722F6421D21FD64478F4A
+NT.AvaloniaControl.Markdown.IMarkdownCodeHighlighter : none [abstract=True, sealed=False]
+  Method: System.Threading.Tasks.ValueTask`1[System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.Markdown.MarkdownHighlightSpan]] HighlightAsync(System.String, System.String, System.Threading.CancellationToken) [static=False, abstract=True, virtual=True]
+  Event: System.EventHandler Invalidated
+NT.AvaloniaControl.Markdown.IMarkdownImageLoader : none [abstract=True, sealed=False]
+  Method: System.Threading.Tasks.ValueTask`1[NT.AvaloniaControl.Markdown.MarkdownImageLease] LoadAsync(System.Uri, System.Threading.CancellationToken) [static=False, abstract=True, virtual=True]
+NT.AvaloniaControl.Markdown.Markdown : Avalonia.Controls.Primitives.TemplatedControl [abstract=False, sealed=False]
+  Constructor: Void .ctor()
+  Field: Avalonia.StyledProperty`1[System.Boolean] AutoScrollToEndProperty [static=True, readonly=True]
+  Field: Avalonia.StyledProperty`1[System.Uri] BaseUriProperty [static=True, readonly=True]
+  Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.Markdown.Markdown,System.Boolean] CanCopyProperty [static=True, readonly=True]
+  Field: Avalonia.StyledProperty`1[Avalonia.Media.IBrush] CaretBrushProperty [static=True, readonly=True]
+  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.Markdown.IMarkdownCodeHighlighter] CodeHighlighterProperty [static=True, readonly=True]
+  Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.Markdown.Markdown,NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot] DocumentProperty [static=True, readonly=True]
+  Field: Avalonia.StyledProperty`1[System.Func`2[NT.AvaloniaControl.Markdown.MarkdownElementDescriptor,NT.AvaloniaControl.Markdown.MarkdownServiceOverrides]] ElementServicesProperty [static=True, readonly=True]
+  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.Markdown.IMarkdownImageLoader] ImageLoaderProperty [static=True, readonly=True]
+  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.Markdown.MarkdownRendererRegistry] NodeRenderersProperty [static=True, readonly=True]
+  Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.Markdown.Markdown,System.String] SelectedTextProperty [static=True, readonly=True]
+  Field: Avalonia.StyledProperty`1[Avalonia.Media.IBrush] SelectionBrushProperty [static=True, readonly=True]
+  Field: Avalonia.StyledProperty`1[System.Boolean] SelectionEnabledProperty [static=True, readonly=True]
+  Field: Avalonia.StyledProperty`1[System.String] TextProperty [static=True, readonly=True]
+  Property: Int32 ActiveParseCount [get=public, set=none, init=False]
+  Property: Int32 ActiveResourceRequestCount [get=public, set=none, init=False]
+  Property: Boolean AutoScrollToEnd [get=public, set=public, init=False]
+  Property: System.Uri BaseUri [get=public, set=public, init=False]
+  Property: Boolean CanCopy [get=public, set=none, init=False]
+  Property: Avalonia.Media.IBrush CaretBrush [get=public, set=public, init=False]
+  Property: NT.AvaloniaControl.Markdown.IMarkdownCodeHighlighter CodeHighlighter [get=public, set=public, init=False]
+  Property: NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot Document [get=public, set=none, init=False]
+  Property: NT.AvaloniaControl.Markdown.MarkdownDocumentPresenter DocumentPresenter [get=public, set=none, init=False]
+  Property: System.Func`2[NT.AvaloniaControl.Markdown.MarkdownElementDescriptor,NT.AvaloniaControl.Markdown.MarkdownServiceOverrides] ElementServices [get=public, set=public, init=False]
+  Property: Int32 ExecutingResourceRequestCount [get=public, set=none, init=False]
+  Property: Boolean HasPresentationEnvironment [get=public, set=none, init=False]
+  Property: NT.AvaloniaControl.Markdown.IMarkdownImageLoader ImageLoader [get=public, set=public, init=False]
+  Property: NT.AvaloniaControl.Markdown.MarkdownRendererRegistry NodeRenderers [get=public, set=public, init=False]
+  Property: Int32 PendingRequestCount [get=public, set=none, init=False]
+  Property: Int32 PendingResourceRequestCount [get=public, set=none, init=False]
+  Property: System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.Markdown.MarkdownDiagnostic] RenderingDiagnostics [get=public, set=none, init=False]
+  Property: System.String SelectedText [get=public, set=none, init=False]
+  Property: NT.AvaloniaControl.Markdown.MarkdownSelection Selection [get=public, set=none, init=False]
+  Property: Avalonia.Media.IBrush SelectionBrush [get=public, set=public, init=False]
+  Property: Boolean SelectionEnabled [get=public, set=public, init=False]
+  Property: System.String Text [get=public, set=public, init=False]
+  Method: NT.AvaloniaControl.Markdown.MarkdownStreamingSession BeginStreaming() [static=False, abstract=False, virtual=False]
+  Method: System.Threading.Tasks.Task`1[NT.AvaloniaControl.Markdown.MarkdownCopyResult] CopyAsync() [static=False, abstract=False, virtual=False]
+  Method: System.Threading.Tasks.Task`1[NT.AvaloniaControl.Markdown.MarkdownUpdateResult] CompleteStreamingAsync() [static=False, abstract=False, virtual=False]
+  Method: System.Threading.Tasks.Task`1[NT.AvaloniaControl.Markdown.MarkdownUpdateResult] WhenUpdatedAsync() [static=False, abstract=False, virtual=False]
+  Method: Void AppendText(System.String, System.Nullable`1[System.TimeSpan]) [optional: mergeInterval=null] [static=False, abstract=False, virtual=False]
+  Method: Void CancelInteraction() [static=False, abstract=False, virtual=False]
+  Method: Void CancelStreaming() [static=False, abstract=False, virtual=False]
+  Method: Void ClearSelection() [static=False, abstract=False, virtual=False]
+  Method: Void ConfigureParser(NT.AvaloniaControl.Markdown.MarkdownParserOptions) [static=False, abstract=False, virtual=False]
+  Method: Void ConfigurePipeline(System.Action`1[Markdig.MarkdownPipelineBuilder]) [static=False, abstract=False, virtual=False]
+  Method: Void Copy() [static=False, abstract=False, virtual=False]
+  Method: Void ScrollToEnd() [static=False, abstract=False, virtual=False]
+  Method: Void SelectAll() [static=False, abstract=False, virtual=False]
+  Method: Void SetSelection(Int32, Int32) [static=False, abstract=False, virtual=False]
+  Event: System.EventHandler`1[NT.AvaloniaControl.Markdown.MarkdownCopyEventArgs] CopyingToClipboard
+  Event: System.EventHandler`1[NT.AvaloniaControl.Markdown.MarkdownElementPreparedEventArgs] ElementPrepared
+  Event: System.EventHandler`1[NT.AvaloniaControl.Markdown.MarkdownErrorEventArgs] Error
+  Event: System.EventHandler`1[NT.AvaloniaControl.Markdown.MarkdownLinkEventArgs] LinkClicked
+  Event: System.EventHandler SelectionChanged
+  Event: System.EventHandler`1[NT.AvaloniaControl.Markdown.MarkdownUpdateMetrics] UpdateMeasured
+  Event: System.EventHandler Updated
+NT.AvaloniaControl.Markdown.MarkdownApplyResult : System.Enum [abstract=False, sealed=True]
+  Field: NT.AvaloniaControl.Markdown.MarkdownApplyResult Applied = 0 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownApplyResult LayoutPending = 1 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownApplyResult NoPresentationEnvironment = 2 [static=True, readonly=False]
+  Field: Int32 value__ [static=False, readonly=False]
+NT.AvaloniaControl.Markdown.MarkdownAutomationPeer : Avalonia.Automation.Peers.ControlAutomationPeer [abstract=False, sealed=True]
+  Constructor: Void .ctor(NT.AvaloniaControl.Markdown.Markdown)
+  Property: Int32 CachedLogicalPeerCount [get=public, set=none, init=False]
+  Property: Boolean IsReadOnly [get=public, set=none, init=False]
+  Property: System.String Value [get=public, set=none, init=False]
+  Method: NT.AvaloniaControl.Markdown.MarkdownAutomationTextRange GetSelectionRange() [static=False, abstract=False, virtual=False]
+  Method: NT.AvaloniaControl.Markdown.MarkdownAutomationTextRange GetTextRange(Int32, Int32) [static=False, abstract=False, virtual=False]
+  Method: Void SetValue(System.String) [static=False, abstract=False, virtual=True]
+NT.AvaloniaControl.Markdown.MarkdownAutomationTextRange : System.Object [abstract=False, sealed=True]
+  Property: Boolean IsCurrent [get=public, set=none, init=False]
+  Property: Int32 Length [get=public, set=none, init=False]
+  Property: NT.AvaloniaControl.Markdown.MarkdownSelection Selection [get=public, set=none, init=False]
+  Property: Int32 Start [get=public, set=none, init=False]
+  Property: System.String Text [get=public, set=none, init=False]
+  Method: Void BringIntoView() [static=False, abstract=False, virtual=False]
+  Method: Void Select() [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownBlock : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(Int64, NT.AvaloniaControl.Markdown.MarkdownBlockKind, Int32, Int32, Int32, Int32, System.String, System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownBlock], System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownInline], System.Collections.Immutable.ImmutableDictionary`2[System.String,System.String])
+  Property: System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownBlock] Children [get=public, set=public, init=True]
+  Property: Int64 Id [get=public, set=public, init=True]
+  Property: System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownInline] Inlines [get=public, set=public, init=True]
+  Property: NT.AvaloniaControl.Markdown.MarkdownBlockKind Kind [get=public, set=public, init=True]
+  Property: System.Collections.Immutable.ImmutableDictionary`2[System.String,System.String] Metadata [get=public, set=public, init=True]
+  Property: NT.AvaloniaControl.Markdown.MarkdownBlockKind SemanticKind [get=public, set=none, init=False]
+  Property: Int32 SourceLength [get=public, set=public, init=True]
+  Property: Int32 SourceStart [get=public, set=public, init=True]
+  Property: System.String Text [get=public, set=public, init=True]
+  Property: Int32 TextLength [get=public, set=public, init=True]
+  Property: Int32 TextStart [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownBlock) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownBlock <Clone>$() [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(Int64 ByRef, NT.AvaloniaControl.Markdown.MarkdownBlockKind ByRef, Int32 ByRef, Int32 ByRef, Int32 ByRef, Int32 ByRef, System.String ByRef, System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownBlock] ByRef, System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownInline] ByRef, System.Collections.Immutable.ImmutableDictionary`2[System.String,System.String] ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownBlockKind : System.Enum [abstract=False, sealed=True]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind Alert = 3 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind Code = 6 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind Custom = 15 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind Footnote = 12 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind FootnoteGroup = 11 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind Heading = 1 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind Html = 13 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind List = 4 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind ListItem = 5 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind Paragraph = 0 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind Quote = 2 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind Table = 8 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind TableCell = 10 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind TableRow = 9 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind ThematicBreak = 7 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownBlockKind Unsupported = 14 [static=True, readonly=False]
+  Field: Int32 value__ [static=False, readonly=False]
+NT.AvaloniaControl.Markdown.MarkdownBlockPresenter : Avalonia.Controls.Border [abstract=False, sealed=False]
+  Constructor: Void .ctor()
+  Property: Int64 NodeId [get=public, set=non-public, init=False]
+NT.AvaloniaControl.Markdown.MarkdownBlockRenderContext : System.Object [abstract=False, sealed=True]
+  Property: NT.AvaloniaControl.Markdown.MarkdownBlock Block [get=public, set=none, init=False]
+  Property: NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot Document [get=public, set=none, init=False]
+  Property: NT.AvaloniaControl.Markdown.Markdown Owner [get=public, set=none, init=False]
+  Method: Avalonia.Controls.Control CreateDefault() [static=False, abstract=False, virtual=False]
+  Method: NT.AvaloniaControl.Markdown.MarkdownTextPresenter CreateText() [static=False, abstract=False, virtual=False]
+  Method: NT.AvaloniaControl.Markdown.MarkdownTextPresenter CreateText(Int32, Int32) [static=False, abstract=False, virtual=False]
+  Method: Void RegisterDisposable(System.IDisposable) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownBlockRendererRegistration : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.String, System.Func`2[NT.AvaloniaControl.Markdown.MarkdownBlockRenderContext,Avalonia.Controls.Control])
+  Property: System.String Key [get=public, set=public, init=True]
+  Property: System.Func`2[NT.AvaloniaControl.Markdown.MarkdownBlockRenderContext,Avalonia.Controls.Control] Render [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownBlockRendererRegistration) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownBlockRendererRegistration <Clone>$() [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(System.String ByRef, System.Func`2[NT.AvaloniaControl.Markdown.MarkdownBlockRenderContext,Avalonia.Controls.Control] ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownCodeBlock : NT.AvaloniaControl.Markdown.MarkdownBlockPresenter [abstract=False, sealed=False]
+  Constructor: Void .ctor()
+  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.Markdown.IMarkdownCodeHighlighter] CodeHighlighterProperty [static=True, readonly=True]
+  Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.Markdown.MarkdownCodeBlock,System.Boolean] IsHighlightingProperty [static=True, readonly=True]
+  Field: Avalonia.StyledProperty`1[System.String] LanguageProperty [static=True, readonly=True]
+  Property: System.String Code [get=public, set=non-public, init=False]
+  Property: NT.AvaloniaControl.Markdown.IMarkdownCodeHighlighter CodeHighlighter [get=public, set=public, init=False]
+  Property: Boolean IsHighlighting [get=public, set=none, init=False]
+  Property: System.String Language [get=public, set=public, init=False]
+  Method: Void Reload() [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownCopyEventArgs : System.EventArgs [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.String)
+  Property: Boolean Cancel [get=public, set=public, init=False]
+  Property: System.String Text [get=public, set=none, init=False]
+NT.AvaloniaControl.Markdown.MarkdownCopyResult : System.Enum [abstract=False, sealed=True]
+  Field: NT.AvaloniaControl.Markdown.MarkdownCopyResult Cancelled = 2 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownCopyResult ClipboardUnavailable = 3 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownCopyResult Copied = 0 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownCopyResult EmptySelection = 1 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownCopyResult Failed = 4 [static=True, readonly=False]
+  Field: Int32 value__ [static=False, readonly=False]
+NT.AvaloniaControl.Markdown.MarkdownCustomNode : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.String, System.String) [optional: Text=null]
+  Property: System.Collections.Immutable.ImmutableDictionary`2[System.String,System.String] Metadata [get=public, set=public, init=True]
+  Property: System.String RendererKey [get=public, set=public, init=True]
+  Property: System.Collections.Immutable.ImmutableArray`1[System.String] StyleClasses [get=public, set=public, init=True]
+  Property: System.String Text [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownCustomNode) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownCustomNode <Clone>$() [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(System.String ByRef, System.String ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownCustomNodeMetadata : System.Object [abstract=True, sealed=True]
+  Field: System.String AstType = "ast-type" [static=True, readonly=False]
+  Field: System.String NativeKind = "native-kind" [static=True, readonly=False]
+  Field: System.String RendererKey = "renderer-key" [static=True, readonly=False]
+  Field: System.String StyleClasses = "style-classes" [static=True, readonly=False]
+NT.AvaloniaControl.Markdown.MarkdownDiagnostic : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.String, System.String, Int32, Int32)
+  Property: System.String Code [get=public, set=public, init=True]
+  Property: System.String Message [get=public, set=public, init=True]
+  Property: Int32 SourceLength [get=public, set=public, init=True]
+  Property: Int32 SourceStart [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownDiagnostic) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownDiagnostic <Clone>$() [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(System.String ByRef, System.String ByRef, Int32 ByRef, Int32 ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownDocumentChanges : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.Collections.Immutable.ImmutableArray`1[System.Int64], System.Collections.Immutable.ImmutableArray`1[System.Int64], System.Collections.Immutable.ImmutableArray`1[System.Int64])
+  Property: System.Collections.Immutable.ImmutableArray`1[System.Int64] Added [get=public, set=public, init=True]
+  Property: System.Collections.Immutable.ImmutableArray`1[System.Int64] Changed [get=public, set=public, init=True]
+  Property: System.Collections.Immutable.ImmutableArray`1[System.Int64] Removed [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownDocumentChanges) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownDocumentChanges <Clone>$() [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(System.Collections.Immutable.ImmutableArray`1[System.Int64] ByRef, System.Collections.Immutable.ImmutableArray`1[System.Int64] ByRef, System.Collections.Immutable.ImmutableArray`1[System.Int64] ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownDocumentMatcher : System.Object [abstract=True, sealed=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownDocumentChanges GetChanges(NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot, NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot) [static=True, abstract=False, virtual=False]
+  Method: NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot Reconcile(NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot, NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot) [static=True, abstract=False, virtual=False]
+  Method: NT.AvaloniaControl.Markdown.MarkdownSelection MigrateSelection(NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot, NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot, NT.AvaloniaControl.Markdown.MarkdownSelection) [static=True, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownDocumentPresenter : Avalonia.Controls.Panel [abstract=False, sealed=False]
+  Constructor: Void .ctor()
+  Property: Int32 RealizedBlockCount [get=public, set=none, init=False]
+  Property: Int32 RetainedBlockCount [get=public, set=none, init=False]
+NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.String, System.String, System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownBlock], System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownDiagnostic])
+  Property: System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownBlock] Blocks [get=public, set=public, init=True]
+  Property: System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownDiagnostic] Diagnostics [get=public, set=public, init=True]
+  Property: NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot Empty [get=public, set=none, init=False]
+  Property: System.String Source [get=public, set=public, init=True]
+  Property: System.String Text [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownBlock FindBlock(Int64) [static=False, abstract=False, virtual=False]
+  Method: NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot <Clone>$() [static=False, abstract=False, virtual=False]
+  Method: System.Collections.Generic.IEnumerable`1[NT.AvaloniaControl.Markdown.MarkdownBlock] Descendants() [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(System.String ByRef, System.String ByRef, System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownBlock] ByRef, System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownDiagnostic] ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownElementDescriptor : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(NT.AvaloniaControl.Markdown.MarkdownBlock, NT.AvaloniaControl.Markdown.MarkdownInline)
+  Property: NT.AvaloniaControl.Markdown.MarkdownBlock Block [get=public, set=public, init=True]
+  Property: NT.AvaloniaControl.Markdown.MarkdownInline Inline [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownElementDescriptor) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownElementDescriptor <Clone>$() [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(NT.AvaloniaControl.Markdown.MarkdownBlock ByRef, NT.AvaloniaControl.Markdown.MarkdownInline ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownElementPreparedEventArgs : System.EventArgs [abstract=False, sealed=True]
+  Constructor: Void .ctor(Avalonia.StyledElement, NT.AvaloniaControl.Markdown.MarkdownElementDescriptor)
+  Property: NT.AvaloniaControl.Markdown.MarkdownElementDescriptor Descriptor [get=public, set=none, init=False]
+  Property: Avalonia.StyledElement Element [get=public, set=none, init=False]
+NT.AvaloniaControl.Markdown.MarkdownErrorEventArgs : System.EventArgs [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.String, System.Exception)
+  Property: System.String Category [get=public, set=none, init=False]
+  Property: System.Exception Error [get=public, set=none, init=False]
+NT.AvaloniaControl.Markdown.MarkdownHighlightSpan : System.ValueType [abstract=False, sealed=True]
+  Constructor: Void .ctor(Int32, Int32, System.String, Boolean, Boolean) [optional: Foreground=null, Bold=false, Italic=false]
+  Property: Boolean Bold [get=public, set=public, init=True]
+  Property: System.String Foreground [get=public, set=public, init=True]
+  Property: Boolean Italic [get=public, set=public, init=True]
+  Property: Int32 Length [get=public, set=public, init=True]
+  Property: Int32 Start [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownHighlightSpan) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(Int32 ByRef, Int32 ByRef, System.String ByRef, Boolean ByRef, Boolean ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownImage : Avalonia.Controls.Border [abstract=False, sealed=False]
+  Constructor: Void .ctor()
+  Field: Avalonia.StyledProperty`1[System.Uri] BaseUriProperty [static=True, readonly=True]
+  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.Markdown.IMarkdownImageLoader] ImageLoaderProperty [static=True, readonly=True]
+  Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.Markdown.MarkdownImage,System.Boolean] IsLoadingProperty [static=True, readonly=True]
+  Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.Markdown.MarkdownImage,System.String] LoadErrorProperty [static=True, readonly=True]
+  Field: Avalonia.StyledProperty`1[System.String] SourceProperty [static=True, readonly=True]
+  Property: System.String AltText [get=public, set=non-public, init=False]
+  Property: System.Uri BaseUri [get=public, set=public, init=False]
+  Property: NT.AvaloniaControl.Markdown.IMarkdownImageLoader ImageLoader [get=public, set=public, init=False]
+  Property: Boolean IsLoading [get=public, set=none, init=False]
+  Property: System.String LoadError [get=public, set=none, init=False]
+  Property: Int64 NodeId [get=public, set=non-public, init=False]
+  Property: System.String Source [get=public, set=public, init=False]
+  Property: Int32 TextStart [get=public, set=non-public, init=False]
+  Method: Void Reload() [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownImageLease : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(Avalonia.Media.Imaging.Bitmap, Boolean) [optional: ownsBitmap=true]
+  Property: Avalonia.Media.Imaging.Bitmap Bitmap [get=public, set=none, init=False]
+  Method: Void Dispose() [static=False, abstract=False, virtual=True]
+NT.AvaloniaControl.Markdown.MarkdownImageLoader : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.Net.Http.HttpClient, Int32, Int64) [optional: client=null, maximumBytes=16777216, maximumDecodedPixels=33554432]
+  Property: Int32 MaximumBytes [get=public, set=none, init=False]
+  Property: Int64 MaximumDecodedPixels [get=public, set=none, init=False]
+  Method: System.Threading.Tasks.ValueTask`1[NT.AvaloniaControl.Markdown.MarkdownImageLease] LoadAsync(System.Uri, System.Threading.CancellationToken) [static=False, abstract=False, virtual=True]
+  Method: Void Dispose() [static=False, abstract=False, virtual=True]
+NT.AvaloniaControl.Markdown.MarkdownInline : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(NT.AvaloniaControl.Markdown.MarkdownInlineKind, Int32, Int32, Int32, Int32, System.String, System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownInline], System.Collections.Immutable.ImmutableDictionary`2[System.String,System.String])
+  Property: System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownInline] Children [get=public, set=public, init=True]
+  Property: NT.AvaloniaControl.Markdown.MarkdownInlineKind Kind [get=public, set=public, init=True]
+  Property: System.Collections.Immutable.ImmutableDictionary`2[System.String,System.String] Metadata [get=public, set=public, init=True]
+  Property: NT.AvaloniaControl.Markdown.MarkdownInlineKind SemanticKind [get=public, set=none, init=False]
+  Property: Int32 SourceLength [get=public, set=public, init=True]
+  Property: Int32 SourceStart [get=public, set=public, init=True]
+  Property: System.String Text [get=public, set=public, init=True]
+  Property: Int32 TextLength [get=public, set=public, init=True]
+  Property: Int32 TextStart [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownInline) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownInline <Clone>$() [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(NT.AvaloniaControl.Markdown.MarkdownInlineKind ByRef, Int32 ByRef, Int32 ByRef, Int32 ByRef, Int32 ByRef, System.String ByRef, System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownInline] ByRef, System.Collections.Immutable.ImmutableDictionary`2[System.String,System.String] ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownInlineKind : System.Enum [abstract=False, sealed=True]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Code = 8 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Custom = 16 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Emphasis = 1 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind FootnoteReference = 12 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Html = 14 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Image = 10 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Insert = 4 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind LineBreak = 11 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Link = 9 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Mark = 5 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Strike = 3 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Strong = 2 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Subscript = 6 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Superscript = 7 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Task = 13 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Text = 0 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownInlineKind Unsupported = 15 [static=True, readonly=False]
+  Field: Int32 value__ [static=False, readonly=False]
+NT.AvaloniaControl.Markdown.MarkdownInlineRenderContext : System.Object [abstract=False, sealed=True]
+  Property: NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot Document [get=public, set=none, init=False]
+  Property: NT.AvaloniaControl.Markdown.MarkdownInline Inline [get=public, set=none, init=False]
+  Property: NT.AvaloniaControl.Markdown.Markdown Owner [get=public, set=none, init=False]
+  Method: Avalonia.Controls.Documents.Inline CreateDefault() [static=False, abstract=False, virtual=False]
+  Method: NT.AvaloniaControl.Markdown.MarkdownRun CreateText() [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownInlineRendererRegistration : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.String, System.Func`2[NT.AvaloniaControl.Markdown.MarkdownInlineRenderContext,Avalonia.Controls.Documents.Inline])
+  Property: System.String Key [get=public, set=public, init=True]
+  Property: System.Func`2[NT.AvaloniaControl.Markdown.MarkdownInlineRenderContext,Avalonia.Controls.Documents.Inline] Render [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownInlineRendererRegistration) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownInlineRendererRegistration <Clone>$() [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(System.String ByRef, System.Func`2[NT.AvaloniaControl.Markdown.MarkdownInlineRenderContext,Avalonia.Controls.Documents.Inline] ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownLinkEventArgs : System.EventArgs [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.String, System.String)
+  Property: Boolean Handled [get=public, set=public, init=False]
+  Property: System.String Title [get=public, set=none, init=False]
+  Property: System.String Url [get=public, set=none, init=False]
+NT.AvaloniaControl.Markdown.MarkdownNodeConversionContext`1 : System.Object [abstract=False, sealed=True]
+  Property: TNode Node [get=public, set=none, init=False]
+  Property: System.String Source [get=public, set=none, init=False]
+  Property: Int32 SourceLength [get=public, set=none, init=False]
+  Property: Int32 SourceStart [get=public, set=none, init=False]
+  Property: System.String SourceText [get=public, set=none, init=False]
+NT.AvaloniaControl.Markdown.MarkdownNodeConverterRegistration : System.Object [abstract=True, sealed=False]
+  Property: System.Type NodeType [get=public, set=none, init=False]
+NT.AvaloniaControl.Markdown.MarkdownNodeConverterRegistration`1 : NT.AvaloniaControl.Markdown.MarkdownNodeConverterRegistration [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.Func`2[NT.AvaloniaControl.Markdown.MarkdownNodeConversionContext`1[TNode],NT.AvaloniaControl.Markdown.MarkdownCustomNode])
+NT.AvaloniaControl.Markdown.MarkdownParser : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.Action`1[Markdig.MarkdownPipelineBuilder], System.Collections.Generic.IEnumerable`1[NT.AvaloniaControl.Markdown.MarkdownNodeConverterRegistration]) [optional: configurePipeline=null, converters=null]
+  Property: NT.AvaloniaControl.Markdown.MarkdownParserOptions Options [get=public, set=none, init=False]
+  Method: NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot Parse(System.String, NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot) [optional: previous=null] [static=False, abstract=False, virtual=False]
+  Method: NT.AvaloniaControl.Markdown.MarkdownParser FromOptions(NT.AvaloniaControl.Markdown.MarkdownParserOptions) [static=True, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownParserOptions : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor()
+  Property: System.Action`1[Markdig.MarkdownPipelineBuilder] ConfigurePipeline [get=public, set=public, init=True]
+  Property: System.Collections.Immutable.ImmutableArray`1[NT.AvaloniaControl.Markdown.MarkdownNodeConverterRegistration] Converters [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownParserOptions) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownParserOptions <Clone>$() [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+NT.AvaloniaControl.Markdown.MarkdownRendererRegistry : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.Collections.Generic.IEnumerable`1[NT.AvaloniaControl.Markdown.MarkdownBlockRendererRegistration], System.Collections.Generic.IEnumerable`1[NT.AvaloniaControl.Markdown.MarkdownInlineRendererRegistration]) [optional: blocks=null, inlines=null]
+  Property: System.Collections.Immutable.ImmutableDictionary`2[System.String,System.Func`2[NT.AvaloniaControl.Markdown.MarkdownBlockRenderContext,Avalonia.Controls.Control]] Blocks [get=public, set=none, init=False]
+  Property: NT.AvaloniaControl.Markdown.MarkdownRendererRegistry Empty [get=public, set=none, init=False]
+  Property: System.Collections.Immutable.ImmutableDictionary`2[System.String,System.Func`2[NT.AvaloniaControl.Markdown.MarkdownInlineRenderContext,Avalonia.Controls.Documents.Inline]] Inlines [get=public, set=none, init=False]
+NT.AvaloniaControl.Markdown.MarkdownRun : Avalonia.Controls.Documents.Run [abstract=False, sealed=False]
+  Constructor: Void .ctor()
+  Constructor: Void .ctor(System.String)
+NT.AvaloniaControl.Markdown.MarkdownSelection : System.ValueType [abstract=False, sealed=True]
+  Constructor: Void .ctor(Int32, Int32)
+  Property: Int32 Active [get=public, set=public, init=True]
+  Property: Int32 Anchor [get=public, set=public, init=True]
+  Property: Int32 End [get=public, set=none, init=False]
+  Property: Boolean IsEmpty [get=public, set=none, init=False]
+  Property: Int32 Length [get=public, set=none, init=False]
+  Property: Int32 Start [get=public, set=none, init=False]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownSelection) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownSelection Normalize(System.String) [static=False, abstract=False, virtual=False]
+  Method: System.String GetText(NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot) [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(Int32 ByRef, Int32 ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownServiceOverrides : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor()
+  Property: NT.AvaloniaControl.Markdown.IMarkdownCodeHighlighter CodeHighlighter [get=public, set=public, init=True]
+  Property: NT.AvaloniaControl.Markdown.IMarkdownImageLoader ImageLoader [get=public, set=public, init=True]
+  Property: Boolean OverrideCodeHighlighter [get=public, set=public, init=True]
+  Property: Boolean OverrideImageLoader [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownServiceOverrides) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownServiceOverrides <Clone>$() [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+NT.AvaloniaControl.Markdown.MarkdownSpan : Avalonia.Controls.Documents.Span [abstract=False, sealed=False]
+  Constructor: Void .ctor()
+  Property: Int32 TextLength [get=public, set=non-public, init=False]
+  Property: Int32 TextStart [get=public, set=non-public, init=False]
+  Property: System.String Url [get=public, set=non-public, init=False]
+NT.AvaloniaControl.Markdown.MarkdownStreamingSession : System.Object [abstract=False, sealed=True]
+  Property: System.Threading.Tasks.Task`1[NT.AvaloniaControl.Markdown.MarkdownUpdateResult] Completion [get=public, set=none, init=False]
+  Property: Int64 Id [get=public, set=none, init=False]
+  Method: System.Threading.Tasks.Task`1[NT.AvaloniaControl.Markdown.MarkdownUpdateResult] CompleteAsync() [static=False, abstract=False, virtual=False]
+  Method: System.Threading.Tasks.ValueTask DisposeAsync() [static=False, abstract=False, virtual=True]
+  Method: Void Append(System.ReadOnlyMemory`1[System.Char]) [static=False, abstract=False, virtual=False]
+  Method: Void Append(System.String) [static=False, abstract=False, virtual=False]
+  Method: Void Cancel() [static=False, abstract=False, virtual=False]
+  Method: Void Dispose() [static=False, abstract=False, virtual=True]
+NT.AvaloniaControl.Markdown.MarkdownTextAnchor : System.ValueType [abstract=False, sealed=True]
+  Constructor: Void .ctor(Int64, Int32)
+  Property: Int64 BlockId [get=public, set=public, init=True]
+  Property: Int32 Offset [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownTextAnchor) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: Int32 Resolve(NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot) [static=False, abstract=False, virtual=False]
+  Method: NT.AvaloniaControl.Markdown.MarkdownTextAnchor FromPosition(NT.AvaloniaControl.Markdown.MarkdownDocumentSnapshot, Int32) [static=True, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(Int64 ByRef, Int32 ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownTextBoundary : System.Object [abstract=True, sealed=True]
+  Method: Int32 Next(System.String, Int32) [static=True, abstract=False, virtual=False]
+  Method: Int32 Previous(System.String, Int32) [static=True, abstract=False, virtual=False]
+  Method: Int32 SnapBackward(System.String, Int32) [static=True, abstract=False, virtual=False]
+  Method: Int32 SnapForward(System.String, Int32) [static=True, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownTextPresenter : Avalonia.Controls.TextBlock [abstract=False, sealed=False]
+  Constructor: Void .ctor()
+  Property: Int32 TextLength [get=public, set=non-public, init=False]
+  Property: Int32 TextStart [get=public, set=non-public, init=False]
+NT.AvaloniaControl.Markdown.MarkdownUpdateMetrics : System.ValueType [abstract=False, sealed=True]
+  Constructor: Void .ctor(Int64, Int32, Double, Double, Double)
+  Property: Double LayoutElapsedMilliseconds [get=public, set=public, init=True]
+  Property: Double ParseElapsedMilliseconds [get=public, set=public, init=True]
+  Property: Int32 SourceLength [get=public, set=public, init=True]
+  Property: Int64 SourceVersion [get=public, set=public, init=True]
+  Property: Double UiApplyElapsedMilliseconds [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownUpdateMetrics) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(Int64 ByRef, Int32 ByRef, Double ByRef, Double ByRef, Double ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownUpdateRequest : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.String, Int64, Int64, Int64, Int64, Boolean)
+  Property: Int64 ConfigurationVersion [get=public, set=public, init=True]
+  Property: Int64 DocumentGeneration [get=public, set=public, init=True]
+  Property: Boolean IsFinal [get=public, set=public, init=True]
+  Property: Boolean IsStreaming [get=public, set=none, init=False]
+  Property: Int64 SessionId [get=public, set=public, init=True]
+  Property: System.String Source [get=public, set=public, init=True]
+  Property: Int64 SourceVersion [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownUpdateRequest) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownUpdateRequest <Clone>$() [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(System.String ByRef, Int64 ByRef, Int64 ByRef, Int64 ByRef, Int64 ByRef, Boolean ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownUpdateResult : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(NT.AvaloniaControl.Markdown.MarkdownUpdateStatus, System.String, Int64, Boolean, System.Exception) [optional: LayoutPending=false, Error=null]
+  Property: System.Exception Error [get=public, set=public, init=True]
+  Property: Boolean LayoutPending [get=public, set=public, init=True]
+  Property: System.String Source [get=public, set=public, init=True]
+  Property: Int64 SourceVersion [get=public, set=public, init=True]
+  Property: NT.AvaloniaControl.Markdown.MarkdownUpdateStatus Status [get=public, set=public, init=True]
+  Method: Boolean Equals(NT.AvaloniaControl.Markdown.MarkdownUpdateResult) [static=False, abstract=False, virtual=True]
+  Method: Boolean Equals(System.Object) [static=False, abstract=False, virtual=True]
+  Method: Int32 GetHashCode() [static=False, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.Markdown.MarkdownUpdateResult <Clone>$() [static=False, abstract=False, virtual=False]
+  Method: System.String ToString() [static=False, abstract=False, virtual=True]
+  Method: Void Deconstruct(NT.AvaloniaControl.Markdown.MarkdownUpdateStatus ByRef, System.String ByRef, Int64 ByRef, Boolean ByRef, System.Exception ByRef) [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownUpdateScheduler`1 : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.Func`3[NT.AvaloniaControl.Markdown.MarkdownUpdateRequest,System.Threading.CancellationToken,System.Threading.Tasks.Task`1[T]], System.Func`3[NT.AvaloniaControl.Markdown.MarkdownUpdate`1[T],System.Threading.CancellationToken,System.Threading.Tasks.Task`1[NT.AvaloniaControl.Markdown.MarkdownApplyResult]], System.Nullable`1[System.TimeSpan], Int32) [optional: mergeInterval=null, maximumTextLength=16777216]
+  Field: Int32 DefaultMaximumTextLength = 16777216 [static=True, readonly=False]
+  Property: Int32 ActiveParseCount [get=public, set=none, init=False]
+  Property: System.TimeSpan DefaultMergeInterval [get=public, set=none, init=False]
+  Property: Int64 DocumentGeneration [get=public, set=none, init=False]
+  Property: Boolean HasActiveSession [get=public, set=none, init=False]
+  Property: Boolean HasExplicitSession [get=public, set=none, init=False]
+  Property: Int64 LastAppliedSourceVersion [get=public, set=none, init=False]
+  Property: Int32 PendingRequestCount [get=public, set=none, init=False]
+  Property: System.String SourceText [get=public, set=none, init=False]
+  Property: Int64 SourceVersion [get=public, set=none, init=False]
+  Method: NT.AvaloniaControl.Markdown.MarkdownStreamingSession BeginStreaming() [static=False, abstract=False, virtual=False]
+  Method: System.Threading.Tasks.Task`1[NT.AvaloniaControl.Markdown.MarkdownUpdateResult] CompleteStreamingAsync() [static=False, abstract=False, virtual=False]
+  Method: System.Threading.Tasks.Task`1[NT.AvaloniaControl.Markdown.MarkdownUpdateResult] Reconfigure(Int64) [static=False, abstract=False, virtual=False]
+  Method: System.Threading.Tasks.Task`1[NT.AvaloniaControl.Markdown.MarkdownUpdateResult] ReplaceText(System.String, Int64) [optional: configurationVersion=0] [static=False, abstract=False, virtual=False]
+  Method: Void AppendText(System.String, System.Nullable`1[System.TimeSpan]) [optional: mergeInterval=null] [static=False, abstract=False, virtual=False]
+  Method: Void CancelStreaming() [static=False, abstract=False, virtual=False]
+  Method: Void Dispose() [static=False, abstract=False, virtual=True]
+  Method: Void Invalidate() [static=False, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.MarkdownUpdateStatus : System.Enum [abstract=False, sealed=True]
+  Field: NT.AvaloniaControl.Markdown.MarkdownUpdateStatus Cancelled = 1 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownUpdateStatus Completed = 0 [static=True, readonly=False]
+  Field: NT.AvaloniaControl.Markdown.MarkdownUpdateStatus Error = 2 [static=True, readonly=False]
+  Field: Int32 value__ [static=False, readonly=False]
+NT.AvaloniaControl.Markdown.MarkdownUpdate`1 : System.Object [abstract=False, sealed=True]
+  Property: Boolean IsCurrent [get=public, set=none, init=False]
+  Property: NT.AvaloniaControl.Markdown.MarkdownUpdateRequest Request [get=public, set=none, init=False]
+  Property: T Snapshot [get=public, set=none, init=False]
+  Method: Boolean TryCommit(System.Action) [static=False, abstract=False, virtual=False]
+
+Assembly: NT.AvaloniaControl.Markdown.Themes, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null
+SHA256: 7C10E82B973A44125EA11706620AE7F60DABFB70233AF0786F71B0A284AD93FF
+CompiledAvaloniaXaml.!AvaloniaResources : System.Object [abstract=False, sealed=False]
+  Method: Avalonia.Controls.ResourceDictionary Build:/Resources/Colors.axaml(System.IServiceProvider) [static=True, abstract=False, virtual=False]
+  Method: Avalonia.Styling.Styles Build:/Themes/Generic.axaml(System.IServiceProvider) [static=True, abstract=False, virtual=False]
+  Method: Void Populate:/Resources/Colors.axaml(System.IServiceProvider, Avalonia.Controls.ResourceDictionary) [static=True, abstract=False, virtual=False]
+  Method: Void Populate:/Themes/Generic.axaml(System.IServiceProvider, Avalonia.Styling.Styles) [static=True, abstract=False, virtual=False]
+CompiledAvaloniaXaml.!XamlLoader : System.Object [abstract=False, sealed=False]
+  Method: System.Object TryLoad(System.IServiceProvider, System.String) [static=True, abstract=False, virtual=False]
+  Method: System.Object TryLoad(System.String) [static=True, abstract=False, virtual=False]
+NT.AvaloniaControl.Markdown.Themes.MarkdownTheme : Avalonia.Styling.Styles [abstract=False, sealed=True]
+  Constructor: Void .ctor()
+
+Assembly: NT.AvaloniaControl.Markdown.TextMate, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null
+SHA256: 0CCA67FA8141F372FF33D5BDB614C8366637313CE50CE45429DC16921B40A120
+NT.AvaloniaControl.Markdown.TextMate.TextMateCodeHighlighter : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor()
+  Constructor: Void .ctor(TextMateSharp.Grammars.ThemeName)
+  Property: TextMateSharp.Grammars.ThemeName Theme [get=public, set=none, init=False]
+  Method: System.Threading.Tasks.ValueTask`1[System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.Markdown.MarkdownHighlightSpan]] HighlightAsync(System.String, System.String, System.Threading.CancellationToken) [static=False, abstract=False, virtual=True]
+  Method: Void SetTheme(TextMateSharp.Grammars.ThemeName) [static=False, abstract=False, virtual=False]
+  Event: System.EventHandler Invalidated
+
+Unattached control defaults (observed before template/theme attachment):
+  Text = null
+  SelectionEnabled = true
+  AutoScrollToEnd = false
+  ImageLoader = null
+  CodeHighlighter = null
+  BaseUri = null
+  ElementServices = null
+  NodeRenderers = NT.AvaloniaControl.Markdown.MarkdownRendererRegistry
+  SelectedText = ""
+  CanCopy = false
+  SelectionBrush = #663399ff
+  CaretBrush = DodgerBlue
+  ActiveParseCount = 0
+  PendingRequestCount = 0
+  ActiveResourceRequestCount = 0
+  ExecutingResourceRequestCount = 0
+  PendingResourceRequestCount = 0
+  NodeRenderers default is Empty = True
+  NodeRenderers registration counts = 0 / 0
+
+Default-theme runtime template parts (visuals whose TemplatedParent is this Markdown):
+  PART_DocumentPresenter : NT.AvaloniaControl.Markdown.MarkdownDocumentPresenter
+  PART_ScrollViewer : Avalonia.Controls.ScrollViewer
+  HasPresentationEnvironment = True
+TemplatePart attributes declared in assembly:
+  [Avalonia.Controls.Metadata.TemplatePartAttribute("PART_ScrollViewer", typeof(Avalonia.Controls.ScrollViewer), IsRequired = True)]
+  [Avalonia.Controls.Metadata.TemplatePartAttribute("PART_DocumentPresenter", typeof(NT.AvaloniaControl.Markdown.MarkdownDocumentPresenter), IsRequired = True)]
+If no attribute is listed, required parts above are runtime observations; template semantics are linked below.
+
+Default-theme resource URIs and keys (actual loaded styles/resources):
+  Dark: MarkdownBackgroundBrush : Avalonia.Media.SolidColorBrush = #ff151b24
+  Dark: MarkdownBorderBrush : Avalonia.Media.SolidColorBrush = #ff3d4c60
+  Dark: MarkdownCaretBrush : Avalonia.Media.SolidColorBrush = #ff79b9fa
+  Dark: MarkdownCautionBrush : Avalonia.Media.SolidColorBrush = #fff08c92
+  Dark: MarkdownCodeBackgroundBrush : Avalonia.Media.SolidColorBrush = #ff202b39
+  Dark: MarkdownForegroundBrush : Avalonia.Media.SolidColorBrush = #ffe1e7ef
+  Dark: MarkdownImportantBrush : Avalonia.Media.SolidColorBrush = #ffb99ae8
+  Dark: MarkdownLinkBrush : Avalonia.Media.SolidColorBrush = #ff79b9fa
+  Dark: MarkdownLinkHoverBrush : Avalonia.Media.SolidColorBrush = #ffb1d7ff
+  Dark: MarkdownLinkVisitedBrush : Avalonia.Media.SolidColorBrush = #ffbba0e6
+  Dark: MarkdownMarkBrush : Avalonia.Media.SolidColorBrush = #fff0ca68
+  Dark: MarkdownMutedBrush : Avalonia.Media.SolidColorBrush = #ffa6b4c8
+  Dark: MarkdownNoteBrush : Avalonia.Media.SolidColorBrush = #ff70aef0
+  Dark: MarkdownQuoteBackgroundBrush : Avalonia.Media.SolidColorBrush = #ff1c2532
+  Dark: MarkdownQuoteBorderBrush : Avalonia.Media.SolidColorBrush = #ff93a6c0
+  Dark: MarkdownSelectionBrush : Avalonia.Media.SolidColorBrush = #805aa5ff
+  Dark: MarkdownTableHeaderBrush : Avalonia.Media.SolidColorBrush = #ff243245
+  Dark: MarkdownTipBrush : Avalonia.Media.SolidColorBrush = #ff69c592
+  Dark: MarkdownWarningBrush : Avalonia.Media.SolidColorBrush = #ffedc363
+  Default: MarkdownBlockMargin : Avalonia.Thickness = 0,0,0,12
+  Default: MarkdownCodeCornerRadius : Avalonia.CornerRadius = 6,6,6,6
+  Default: MarkdownCodeFontFamily : Avalonia.Media.FontFamily = compositefont:Cascadia Code, Consolas, Noto Sans Mono, monospace#Cascadia Code, Consolas, Noto Sans Mono, monospace
+  Default: MarkdownCodeFontSize : System.Double = 14
+  Default: MarkdownCodePadding : Avalonia.Thickness = 12,12,12,12
+  Default: MarkdownCornerRadius : Avalonia.CornerRadius = 8,8,8,8
+  Default: MarkdownFontFamily : Avalonia.Media.FontFamily = compositefont:Segoe UI, Noto Sans CJK SC, Microsoft YaHei, sans-serif#Segoe UI, Noto Sans CJK SC, Microsoft YaHei, sans-serif
+  Default: MarkdownFontSize : System.Double = 16
+  Default: MarkdownH1FontSize : System.Double = 32
+  Default: MarkdownH2FontSize : System.Double = 26
+  Default: MarkdownH3FontSize : System.Double = 22
+  Default: MarkdownH4FontSize : System.Double = 19
+  Default: MarkdownH5FontSize : System.Double = 17
+  Default: MarkdownH6FontSize : System.Double = 16
+  Default: MarkdownHeadingMargin : Avalonia.Thickness = 0,12,0,14
+  Default: MarkdownListPadding : Avalonia.Thickness = 12,0,0,0
+  Default: MarkdownPadding : Avalonia.Thickness = 24,20,24,20
+  Default: MarkdownQuoteBorderThickness : Avalonia.Thickness = 3,0,0,0
+  Default: MarkdownQuotePadding : Avalonia.Thickness = 14,10,14,10
+  Default: MarkdownTableCellBorderThickness : Avalonia.Thickness = 0.5,0.5,0.5,0.5
+  Default: MarkdownTableCellPadding : Avalonia.Thickness = 10,8,10,8
+  Light: MarkdownBackgroundBrush : Avalonia.Media.SolidColorBrush = White
+  Light: MarkdownBorderBrush : Avalonia.Media.SolidColorBrush = #ffd5dee8
+  Light: MarkdownCaretBrush : Avalonia.Media.SolidColorBrush = #ff1466b8
+  Light: MarkdownCautionBrush : Avalonia.Media.SolidColorBrush = #ffc74b50
+  Light: MarkdownCodeBackgroundBrush : Avalonia.Media.SolidColorBrush = #fff1f4f8
+  Light: MarkdownForegroundBrush : Avalonia.Media.SolidColorBrush = #ff1b2430
+  Light: MarkdownImportantBrush : Avalonia.Media.SolidColorBrush = #ff895ec4
+  Light: MarkdownLinkBrush : Avalonia.Media.SolidColorBrush = #ff1466b8
+  Light: MarkdownLinkHoverBrush : Avalonia.Media.SolidColorBrush = #ff004f9b
+  Light: MarkdownLinkVisitedBrush : Avalonia.Media.SolidColorBrush = #ff7855a0
+  Light: MarkdownMarkBrush : Avalonia.Media.SolidColorBrush = #ff835f00
+  Light: MarkdownMutedBrush : Avalonia.Media.SolidColorBrush = #ff526174
+  Light: MarkdownNoteBrush : Avalonia.Media.SolidColorBrush = #ff327bcc
+  Light: MarkdownQuoteBackgroundBrush : Avalonia.Media.SolidColorBrush = #fff5f7fb
+  Light: MarkdownQuoteBorderBrush : Avalonia.Media.SolidColorBrush = #ff6b7b90
+  Light: MarkdownSelectionBrush : Avalonia.Media.SolidColorBrush = #663399ff
+  Light: MarkdownTableHeaderBrush : Avalonia.Media.SolidColorBrush = #ffedf2f8
+  Light: MarkdownTipBrush : Avalonia.Media.SolidColorBrush = #ff248653
+  Light: MarkdownWarningBrush : Avalonia.Media.SolidColorBrush = #ffa57408
+  StyleInclude URI: avares://NT.AvaloniaControl.Markdown.Themes/Themes/Generic.axaml
+
+Semantic/default/lifecycle contracts: [usage](../markdown-usage.md), [status](../markdown-status.md), [official differences](../markdown-official-alignment.md).
+This snapshot is exported from compiled assemblies and a Headless theme instance; it does not establish native clipboard, DPI or accessibility validation.

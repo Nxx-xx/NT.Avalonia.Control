@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>NT.AvaloniaControl.TreeDataGrid.Themes</PackageId>
+    <AssemblyName>NT.AvaloniaControl.TreeDataGrid.Themes</AssemblyName>
+    <RootNamespace>NT.AvaloniaControl.TreeDataGrid.Themes</RootNamespace>
+    <Description>Default templates and light/dark themes for NT.AvaloniaControl.TreeDataGrid.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../NT.AvaloniaControl.TreeDataGrid/NT.AvaloniaControl.TreeDataGrid.csproj" />
+    <None Include="../../README.md" Pack="true" PackagePath="/README.md" />
+  </ItemGroup>
+</Project>

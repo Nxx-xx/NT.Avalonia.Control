@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Headless.XUnit" />
+    <ProjectReference Include="../../samples/NT.AvaloniaControl.Demo/NT.AvaloniaControl.Demo.csproj" />
+  </ItemGroup>
+</Project>

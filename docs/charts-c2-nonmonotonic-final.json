@@ -1,0 +1,1261 @@
+{
+  "schemaVersion": "charts-prototype-regression-v1",
+  "status": "comparable-prototype-statistics",
+  "comparable": true,
+  "performanceQualification": "pending-C4",
+  "presentStatus": "blocked-present",
+  "referenceStatus": "blocked-reference",
+  "formalSlaEvaluated": false,
+  "formalPerformancePassed": null,
+  "generatedUtc": "2026-10-15T12:00:13.1817008+00:00",
+  "comparisonScript": {
+    "path": "<REPO_ROOT>\\scripts\\Compare-ChartsRegression.ps1",
+    "sha256": "E3AAD460702513C0FD999B91103A32B08A21FFC78198CBE898375488898D7F96"
+  },
+  "guardScript": {
+    "path": "<REPO_ROOT>\\scripts\\Test-ChartsPerformance.ps1",
+    "sha256": "59566E48E53E7133B5A0DB70EA69E2A81B24981F174082FF48455B6B73A15035"
+  },
+  "evidenceDirectory": "<REPO_ROOT>\\docs\\charts-c2-nonmonotonic-final.json.evidence",
+  "requestedBeforeProcesses": 5,
+  "requestedAfterProcesses": 5,
+  "requestedInputs": {
+    "before": [
+      "artifacts/charts-performance/C1-index-nonmonotonic-20261015-before/run1/raw.json",
+      "artifacts/charts-performance/C1-index-nonmonotonic-20261015-before/run2/raw.json",
+      "artifacts/charts-performance/C1-index-nonmonotonic-20261015-before/run3/raw.json",
+      "artifacts/charts-performance/C1-index-nonmonotonic-20261015-before/run4/raw.json",
+      "artifacts/charts-performance/C1-index-nonmonotonic-20261015-before/run5/raw.json"
+    ],
+    "after": [
+      "artifacts/charts-performance/C2-common-20261015-final-v3/nonmonotonic/run1/raw.json",
+      "artifacts/charts-performance/C2-common-20261015-final-v3/nonmonotonic/run2/raw.json",
+      "artifacts/charts-performance/C2-common-20261015-final-v3/nonmonotonic/run3/raw.json",
+      "artifacts/charts-performance/C2-common-20261015-final-v3/nonmonotonic/run4/raw.json",
+      "artifacts/charts-performance/C2-common-20261015-final-v3/nonmonotonic/run5/raw.json"
+    ]
+  },
+  "reports": [
+    {
+      "side": "before",
+      "ordinal": 1,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run1\\raw.json",
+      "reportSha256": "68769D69D627194CB5B1DC84E8C3B89CEBC1A49E8CFBF0C1D6740C51EC00C746",
+      "runId": "c5dab9ea1729418b9db5a550280663bf",
+      "phase": "C1-index-nonmonotonic-before",
+      "startedUtc": "2026-10-15T18:58:49.5167084+08:00",
+      "finishedUtc": "2026-10-15T18:58:50.5963374+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c2-nonmonotonic-final.json.evidence\\before-001.guard.json",
+        "sha256": "453A54F1BC18248B065367CBFD6C70B21C04AEB150FA013EA2EB5E9E18E0F49E",
+        "reportSha256": "68769D69D627194CB5B1DC84E8C3B89CEBC1A49E8CFBF0C1D6740C51EC00C746",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "6C30F456DC038192D260B7F84F7786A29B7CE633F5335619B35DA1FFC9694F33"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "A50CFD46E06DD55EC3F60876902893A8A157B564E789A281AD5938A5A2861DDC"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run1\\supervisor.json",
+        "sha256": "ADDAF8BC978011962869921B1E8488C743176526D88EBC48143A475142524E6C",
+        "runId": "c5dab9ea1729418b9db5a550280663bf",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "before",
+      "ordinal": 2,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run2\\raw.json",
+      "reportSha256": "4F498DB37CC68870C41764E5D99CC54F61E01FBA21E1E3D31C8E8D6AFB032AF4",
+      "runId": "57edac4159ca4bc4a6b838333cd86f57",
+      "phase": "C1-index-nonmonotonic-before",
+      "startedUtc": "2026-10-15T18:59:01.9153235+08:00",
+      "finishedUtc": "2026-10-15T18:59:02.6663505+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c2-nonmonotonic-final.json.evidence\\before-002.guard.json",
+        "sha256": "EDAA0CA5461B22E3B790BC23610AA9859D703FB47844D763E2709792EE5848FD",
+        "reportSha256": "4F498DB37CC68870C41764E5D99CC54F61E01FBA21E1E3D31C8E8D6AFB032AF4",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "6C30F456DC038192D260B7F84F7786A29B7CE633F5335619B35DA1FFC9694F33"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "A50CFD46E06DD55EC3F60876902893A8A157B564E789A281AD5938A5A2861DDC"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run2\\supervisor.json",
+        "sha256": "B44503D4F963A094B3B8C0C47D221F2DC91A2089D2E9826EAEC5AD506907A9EE",
+        "runId": "57edac4159ca4bc4a6b838333cd86f57",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "before",
+      "ordinal": 3,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run3\\raw.json",
+      "reportSha256": "9B098E619689DE0EEE37B53D6C41B2F6F77C14FF533DDB97C56728F118A99C7F",
+      "runId": "d719ff56d2854d0e8966b3d838ab55cb",
+      "phase": "C1-index-nonmonotonic-before",
+      "startedUtc": "2026-10-15T18:59:03.4508854+08:00",
+      "finishedUtc": "2026-10-15T18:59:04.223851+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c2-nonmonotonic-final.json.evidence\\before-003.guard.json",
+        "sha256": "8CADE75C19078BFA6DC1CCE5B8791A26EF5F91EA2623A85B4DF2444DE6D5BB4B",
+        "reportSha256": "9B098E619689DE0EEE37B53D6C41B2F6F77C14FF533DDB97C56728F118A99C7F",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "6C30F456DC038192D260B7F84F7786A29B7CE633F5335619B35DA1FFC9694F33"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "A50CFD46E06DD55EC3F60876902893A8A157B564E789A281AD5938A5A2861DDC"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run3\\supervisor.json",
+        "sha256": "CCFB4703334F12BC42149C638AD9377F883E548708B0D9F881E691C31DE36590",
+        "runId": "d719ff56d2854d0e8966b3d838ab55cb",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "before",
+      "ordinal": 4,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run4\\raw.json",
+      "reportSha256": "397B55ABACB4605C8A2B69FB115CEB8B9E0B5F16D12BFB02D2605508B0F8828B",
+      "runId": "a5c367c2d07949039bdebdc8cbcc7295",
+      "phase": "C1-index-nonmonotonic-before",
+      "startedUtc": "2026-10-15T18:59:04.8709791+08:00",
+      "finishedUtc": "2026-10-15T18:59:05.6091586+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c2-nonmonotonic-final.json.evidence\\before-004.guard.json",
+        "sha256": "917C24FD24D613DDACA3D964642B01324F7EA81756EA7A69D2FE5EA3FF5D6216",
+        "reportSha256": "397B55ABACB4605C8A2B69FB115CEB8B9E0B5F16D12BFB02D2605508B0F8828B",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "6C30F456DC038192D260B7F84F7786A29B7CE633F5335619B35DA1FFC9694F33"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "A50CFD46E06DD55EC3F60876902893A8A157B564E789A281AD5938A5A2861DDC"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run4\\supervisor.json",
+        "sha256": "30D688D4807D2C9009066242AD5C9922D0BF6196E036C36683740751F6FB39E5",
+        "runId": "a5c367c2d07949039bdebdc8cbcc7295",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "before",
+      "ordinal": 5,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run5\\raw.json",
+      "reportSha256": "1EC698C2034609CA29D85EF5E8997F54DAA3C2B65B358341A516427045C2967B",
+      "runId": "bf41dd8f26494f52b4bc20f705657ddf",
+      "phase": "C1-index-nonmonotonic-before",
+      "startedUtc": "2026-10-15T18:59:06.1524695+08:00",
+      "finishedUtc": "2026-10-15T18:59:06.8519254+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c2-nonmonotonic-final.json.evidence\\before-005.guard.json",
+        "sha256": "D6D483CF24EED5F481E9ECDFA7AED45D0F0463D41B98342E7076BA6E76B0947C",
+        "reportSha256": "1EC698C2034609CA29D85EF5E8997F54DAA3C2B65B358341A516427045C2967B",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "6C30F456DC038192D260B7F84F7786A29B7CE633F5335619B35DA1FFC9694F33"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-axes-compact-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "A50CFD46E06DD55EC3F60876902893A8A157B564E789A281AD5938A5A2861DDC"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run5\\supervisor.json",
+        "sha256": "5712205AD48501EA297C11FD35924E63EDFE2DD487387AB19B786C63B925EE7A",
+        "runId": "bf41dd8f26494f52b4bc20f705657ddf",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "after",
+      "ordinal": 1,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run1\\raw.json",
+      "reportSha256": "0A4FF3D1F1EAD127B262B62EA2356DE63AAABE593A7AEB4E021A33A0785D792A",
+      "runId": "3068ba5c868841e6bfd294fe3de918f9",
+      "phase": "C2-common-final-nonmonotonic",
+      "startedUtc": "2026-10-15T19:58:48.5332275+08:00",
+      "finishedUtc": "2026-10-15T19:58:49.1692826+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c2-nonmonotonic-final.json.evidence\\after-001.guard.json",
+        "sha256": "922D216B5462055163A02C1DF7C53F52AD96532AA593BD88280720759C96C771",
+        "reportSha256": "0A4FF3D1F1EAD127B262B62EA2356DE63AAABE593A7AEB4E021A33A0785D792A",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "048EED53A4EF91AB83A6334DF170497628B4DC54570A5E0D33EA5E8D6074CD0C"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "6743ACD7E3841F3874628EB1AF1CD08EE0D0412FABB62BF03A0BEFBD4FEB5DD9"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run1\\supervisor.json",
+        "sha256": "4FCE42C5E33191D10FC11FFF0AC90084FA2382855AEF4BFAEDAAF6A15F7878A2",
+        "runId": "3068ba5c868841e6bfd294fe3de918f9",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "after",
+      "ordinal": 2,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run2\\raw.json",
+      "reportSha256": "63B21CCB940215588635538C5999988EE4FBCECD41AA8008CE446C88705BA724",
+      "runId": "187fab3237ab4bdaa286f9ea3b1490e6",
+      "phase": "C2-common-final-nonmonotonic",
+      "startedUtc": "2026-10-15T19:58:49.9837243+08:00",
+      "finishedUtc": "2026-10-15T19:58:50.6433324+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c2-nonmonotonic-final.json.evidence\\after-002.guard.json",
+        "sha256": "5B9E8A9BD6BA83809B454C8D072A8FC12A26381D1B1B97DE8BDF21C04A85A570",
+        "reportSha256": "63B21CCB940215588635538C5999988EE4FBCECD41AA8008CE446C88705BA724",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "048EED53A4EF91AB83A6334DF170497628B4DC54570A5E0D33EA5E8D6074CD0C"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "6743ACD7E3841F3874628EB1AF1CD08EE0D0412FABB62BF03A0BEFBD4FEB5DD9"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run2\\supervisor.json",
+        "sha256": "7EBF3586C5DCF254F143F12CE45AF3BED457AA27D1F9D8F7C8C9CC101BE9C9BD",
+        "runId": "187fab3237ab4bdaa286f9ea3b1490e6",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "after",
+      "ordinal": 3,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run3\\raw.json",
+      "reportSha256": "CCC6B9BB6D4BB8F518672ABB94B188ABA9002EBA5550C6F735762E8A017CBFC5",
+      "runId": "44047ef6a8644b59a022afa2ddd33920",
+      "phase": "C2-common-final-nonmonotonic",
+      "startedUtc": "2026-10-15T19:58:51.3598346+08:00",
+      "finishedUtc": "2026-10-15T19:58:52.0032133+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c2-nonmonotonic-final.json.evidence\\after-003.guard.json",
+        "sha256": "C590FC5D7FB87D3BD1BB4515BF953616A82A0473FABB319D90460089A2FEB0BC",
+        "reportSha256": "CCC6B9BB6D4BB8F518672ABB94B188ABA9002EBA5550C6F735762E8A017CBFC5",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "048EED53A4EF91AB83A6334DF170497628B4DC54570A5E0D33EA5E8D6074CD0C"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "6743ACD7E3841F3874628EB1AF1CD08EE0D0412FABB62BF03A0BEFBD4FEB5DD9"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run3\\supervisor.json",
+        "sha256": "3191B8657334256319F621499911E4EA8A4AC0F1B7BDD8F17409BCCA194E8D05",
+        "runId": "44047ef6a8644b59a022afa2ddd33920",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "after",
+      "ordinal": 4,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run4\\raw.json",
+      "reportSha256": "27165972988C4810B8134177081D0F57F7D7B3DEFA50D0D0A1AD138395E13172",
+      "runId": "984a4e37aba54282893633d21a08c1d0",
+      "phase": "C2-common-final-nonmonotonic",
+      "startedUtc": "2026-10-15T19:58:52.6202512+08:00",
+      "finishedUtc": "2026-10-15T19:58:53.2727866+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c2-nonmonotonic-final.json.evidence\\after-004.guard.json",
+        "sha256": "0D2AA3F876C132B812271CE5552E5D2D4CC47A5B532C148F34F16D15E7477E45",
+        "reportSha256": "27165972988C4810B8134177081D0F57F7D7B3DEFA50D0D0A1AD138395E13172",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "048EED53A4EF91AB83A6334DF170497628B4DC54570A5E0D33EA5E8D6074CD0C"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "6743ACD7E3841F3874628EB1AF1CD08EE0D0412FABB62BF03A0BEFBD4FEB5DD9"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run4\\supervisor.json",
+        "sha256": "EF532D68BE749B954E9B09EA8355EDE111E285E40F75B31DC6C49E50E50D8550",
+        "runId": "984a4e37aba54282893633d21a08c1d0",
+        "processExitCode": 0
+      }
+    },
+    {
+      "side": "after",
+      "ordinal": 5,
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run5\\raw.json",
+      "reportSha256": "4467EB147EA883986FE09AC826DABAABA02C618A9313EA72DDF52B53767E4D4F",
+      "runId": "18fe8de95ec441a88b5cb86329252b6b",
+      "phase": "C2-common-final-nonmonotonic",
+      "startedUtc": "2026-10-15T19:58:53.6091894+08:00",
+      "finishedUtc": "2026-10-15T19:58:54.2484147+08:00",
+      "guard": {
+        "passed": true,
+        "exitCode": 0,
+        "path": "<REPO_ROOT>\\docs\\charts-c2-nonmonotonic-final.json.evidence\\after-005.guard.json",
+        "sha256": "16A0A0B57175833E2FDE31A9C70C4F356A173F06624D3D4E6419918AF9066F11",
+        "reportSha256": "4467EB147EA883986FE09AC826DABAABA02C618A9313EA72DDF52B53767E4D4F",
+        "errors": []
+      },
+      "reportedAssemblyHashes": {
+        "harness": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\Charts.Benchmarks.dll",
+          "sha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E"
+        },
+        "charts": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.dll",
+          "sha256": "048EED53A4EF91AB83A6334DF170497628B4DC54570A5E0D33EA5E8D6074CD0C"
+        },
+        "themes": {
+          "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\frozen-host\\NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "6743ACD7E3841F3874628EB1AF1CD08EE0D0412FABB62BF03A0BEFBD4FEB5DD9"
+        }
+      },
+      "supervisor": {
+        "path": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run5\\supervisor.json",
+        "sha256": "8A216C4E255B20812AA71ABDA870035AD5391EE075F563E90CBE68D3815C9CB6",
+        "runId": "18fe8de95ec441a88b5cb86329252b6b",
+        "processExitCode": 0
+      }
+    }
+  ],
+  "qualityFingerprints": [
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run1\\raw.json",
+      "globalSha256": "464170083AD0DE999B637C5E889BE4905EA2D82ABCBE7B5EC9AD6D1E66CE3D64",
+      "scenarios": {
+        "S10-L-NONMONOTONIC": "C33527B7711D550AF6FF77766A1347AF4848A59C1F3B6D8712EBB4727F8D182E"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run2\\raw.json",
+      "globalSha256": "464170083AD0DE999B637C5E889BE4905EA2D82ABCBE7B5EC9AD6D1E66CE3D64",
+      "scenarios": {
+        "S10-L-NONMONOTONIC": "C33527B7711D550AF6FF77766A1347AF4848A59C1F3B6D8712EBB4727F8D182E"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run3\\raw.json",
+      "globalSha256": "464170083AD0DE999B637C5E889BE4905EA2D82ABCBE7B5EC9AD6D1E66CE3D64",
+      "scenarios": {
+        "S10-L-NONMONOTONIC": "C33527B7711D550AF6FF77766A1347AF4848A59C1F3B6D8712EBB4727F8D182E"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run4\\raw.json",
+      "globalSha256": "464170083AD0DE999B637C5E889BE4905EA2D82ABCBE7B5EC9AD6D1E66CE3D64",
+      "scenarios": {
+        "S10-L-NONMONOTONIC": "C33527B7711D550AF6FF77766A1347AF4848A59C1F3B6D8712EBB4727F8D182E"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C1-index-nonmonotonic-20261015-before\\run5\\raw.json",
+      "globalSha256": "464170083AD0DE999B637C5E889BE4905EA2D82ABCBE7B5EC9AD6D1E66CE3D64",
+      "scenarios": {
+        "S10-L-NONMONOTONIC": "C33527B7711D550AF6FF77766A1347AF4848A59C1F3B6D8712EBB4727F8D182E"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run1\\raw.json",
+      "globalSha256": "464170083AD0DE999B637C5E889BE4905EA2D82ABCBE7B5EC9AD6D1E66CE3D64",
+      "scenarios": {
+        "S10-L-NONMONOTONIC": "C33527B7711D550AF6FF77766A1347AF4848A59C1F3B6D8712EBB4727F8D182E"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run2\\raw.json",
+      "globalSha256": "464170083AD0DE999B637C5E889BE4905EA2D82ABCBE7B5EC9AD6D1E66CE3D64",
+      "scenarios": {
+        "S10-L-NONMONOTONIC": "C33527B7711D550AF6FF77766A1347AF4848A59C1F3B6D8712EBB4727F8D182E"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run3\\raw.json",
+      "globalSha256": "464170083AD0DE999B637C5E889BE4905EA2D82ABCBE7B5EC9AD6D1E66CE3D64",
+      "scenarios": {
+        "S10-L-NONMONOTONIC": "C33527B7711D550AF6FF77766A1347AF4848A59C1F3B6D8712EBB4727F8D182E"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run4\\raw.json",
+      "globalSha256": "464170083AD0DE999B637C5E889BE4905EA2D82ABCBE7B5EC9AD6D1E66CE3D64",
+      "scenarios": {
+        "S10-L-NONMONOTONIC": "C33527B7711D550AF6FF77766A1347AF4848A59C1F3B6D8712EBB4727F8D182E"
+      }
+    },
+    {
+      "reportPath": "<REPO_ROOT>\\artifacts\\charts-performance\\C2-common-20261015-final-v3\\nonmonotonic\\run5\\raw.json",
+      "globalSha256": "464170083AD0DE999B637C5E889BE4905EA2D82ABCBE7B5EC9AD6D1E66CE3D64",
+      "scenarios": {
+        "S10-L-NONMONOTONIC": "C33527B7711D550AF6FF77766A1347AF4848A59C1F3B6D8712EBB4727F8D182E"
+      }
+    }
+  ],
+  "qualityReference": {
+    "global": {
+      "configuration": {
+        "widthDip": 1200,
+        "heightDip": 650,
+        "dpi": 1,
+        "fontSizeDip": 12,
+        "strokeThicknessDip": 2,
+        "quality": "current-runtime-full-data; dense-line-markers-off; no-downsampling",
+        "warmups": 3,
+        "hitQueries": 25,
+        "budgetVersion": "charts-engineering-targets-v1",
+        "targetStatus": "frozen-targets-not-performance-acceptance"
+      },
+      "environment": {
+        "executionOs": "Microsoft Windows 10.0.26200",
+        "processArchitecture": "X64",
+        "framework": ".NET 10.0.12",
+        "avaloniaVersion": "12.0.3.0",
+        "processorCount": 16,
+        "gcServer": false,
+        "backend": "Avalonia.Headless",
+        "rendering": "DrawingGroup render-record only; no GPU or compositor present",
+        "privateMeasurementKind": "Process.PrivateMemorySize64-private-commit",
+        "fontQualification": "headless-test-font; real CJK/font hashes pending native harness"
+      },
+      "harnessSha256": "34055360A2D39F711175FC0191E6EE0DC57A0279DC15527AEDDF4C859289B45E",
+      "budgetSha256": "3E7149E6C4538993CBFEBAD2542E154DC8EBEBD06A72259EF345B3E3A07DEEA2",
+      "scopes": [
+        "pending-C4",
+        "blocked-present",
+        "blocked-reference"
+      ],
+      "boundaries": [
+        "harnessSourceSnapshot is host ToArray preparation, not an isolated runtime-internal snapshot metric.",
+        "sourceEnumeration is a nested instrumented IEnumerable consumption interval; scenePrepare includes it. Do not add nested timings.",
+        "scenePrepare is the public PlotArea/VisibleRange getter including current internal snapshot/range/text preparation.",
+        "renderRecord is chart.Render into DrawingGroup, not composition/render completion, framePipeline, actual present or FPS.",
+        "firstUsableToRecord includes host snapshot, source assignment, scene preparation, record and query correctness; it is not firstUsableToRender/present.",
+        "Quick mode is a prototype, not formal 5-process or long-soak acceptance. No absolute C4 budget is evaluated."
+      ]
+    },
+    "scenarios": [
+      {
+        "id": "S10-L-NONMONOTONIC",
+        "qualification": "C0-diagnostic-only",
+        "datasets": [
+          {
+            "manifest": {
+              "id": "S10-L-NONMONOTONIC",
+              "revision": 0,
+              "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+              "distribution": "triangle-noise-isolated-spikes-candidate",
+              "seedHex": "1020304050607086",
+              "sha256": "3233FDA1A58CBCEE2FF0BB79F1346D563A8F0D5F13A99CE2EE8649B2B41485B9",
+              "inputPointCount": 10000,
+              "validPointCount": 10000,
+              "seriesPointCounts": [
+                10000
+              ],
+              "seriesSha256": [
+                "EC889019AEF25A3E437C8829548D7A03D9CBF77CE34BF6C4792AF26A135E5D72"
+              ],
+              "monotonicX": false,
+              "containsGaps": false,
+              "realtimePoc": false,
+              "markerSize": 0,
+              "downsampling": "none-current-runtime",
+              "pendingScope": [
+                "complete-C4-corpus",
+                "quality-golden",
+                "physical-input",
+                "native-frame-present",
+                "official-reference"
+              ],
+              "seriesCount": 1
+            },
+            "sampleQuality": {
+              "datasetSha256": "3233FDA1A58CBCEE2FF0BB79F1346D563A8F0D5F13A99CE2EE8649B2B41485B9",
+              "inputPointCount": 10000,
+              "primitiveCount": 31,
+              "geometryFinite": true,
+              "plotArea": [
+                127,
+                20,
+                1051,
+                583.921875
+              ],
+              "visibleRange": [
+                -1,
+                10000,
+                -1.9609375,
+                183.765625
+              ],
+              "queries": [
+                {
+                  "queryIndex": 0,
+                  "screenX": 147.28227177282272,
+                  "screenY": 446.1330336673958,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 384,
+                  "probeXBits": "4068000000000000",
+                  "probeYBits": "40481D0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 384,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 384,
+                  "actualXBits": "4068000000000000",
+                  "actualYBits": "40481D0000000000"
+                },
+                {
+                  "queryIndex": 1,
+                  "screenX": 1137.5405459454055,
+                  "screenY": 500.1948704938376,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 769,
+                  "probeXBits": "40C2C78000000000",
+                  "probeYBits": "403F080000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 769,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 769,
+                  "actualXBits": "40C2C78000000000",
+                  "actualYBits": "403F080000000000"
+                },
+                {
+                  "queryIndex": 2,
+                  "screenX": 1117.3633636636337,
+                  "screenY": 549.6021330001472,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 1153,
+                  "probeXBits": "40C2678000000000",
+                  "probeYBits": "402EA20000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 1153,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 1153,
+                  "actualXBits": "40C2678000000000",
+                  "actualYBits": "402EA20000000000"
+                },
+                {
+                  "queryIndex": 3,
+                  "screenX": 207.9189081091891,
+                  "screenY": 396.0871488269255,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 1538,
+                  "probeXBits": "4088080000000000",
+                  "probeYBits": "4050094000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 1538,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 1538,
+                  "actualXBits": "4088080000000000",
+                  "actualYBits": "4050094000000000"
+                },
+                {
+                  "queryIndex": 4,
+                  "screenX": 1076.9039096090391,
+                  "screenY": 546.8265820862954,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 1923,
+                  "probeXBits": "40C1A70000000000",
+                  "probeYBits": "4030330000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 1923,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 1923,
+                  "actualXBits": "40C1A70000000000",
+                  "actualYBits": "4030330000000000"
+                },
+                {
+                  "queryIndex": 5,
+                  "screenX": 1056.7267273272673,
+                  "screenY": 497.9719735230093,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 2307,
+                  "probeXBits": "40C1470000000000",
+                  "probeYBits": "403FBD0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 2307,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 2307,
+                  "actualXBits": "40C1470000000000",
+                  "actualYBits": "403FBD0000000000"
+                },
+                {
+                  "queryIndex": 6,
+                  "screenX": 268.5555444455555,
+                  "screenY": 447.238341553443,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 2692,
+                  "probeXBits": "4095080000000000",
+                  "probeYBits": "4047F00000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 2692,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 2692,
+                  "actualXBits": "4095080000000000",
+                  "actualYBits": "4047F00000000000"
+                },
+                {
+                  "queryIndex": 7,
+                  "screenX": 288.7327267273273,
+                  "screenY": 599.1322074937955,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 3076,
+                  "probeXBits": "4098080000000000",
+                  "probeYBits": "BFDC000000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 3076,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 3076,
+                  "actualXBits": "4098080000000000",
+                  "actualYBits": "BFDC000000000000"
+                },
+                {
+                  "queryIndex": 8,
+                  "screenX": 996.0900909909009,
+                  "screenY": 444.20488546618014,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 3461,
+                  "probeXBits": "40C0268000000000",
+                  "probeYBits": "40486B8000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 3461,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 3461,
+                  "actualXBits": "40C0268000000000",
+                  "actualYBits": "40486B8000000000"
+                },
+                {
+                  "queryIndex": 9,
+                  "screenX": 329.1921807819218,
+                  "screenY": 497.5052879711227,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 3846,
+                  "probeXBits": "409E0C0000000000",
+                  "probeYBits": "403FE30000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 3846,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 3846,
+                  "actualXBits": "409E0C0000000000",
+                  "actualYBits": "403FE30000000000"
+                },
+                {
+                  "queryIndex": 10,
+                  "screenX": 349.36936306369364,
+                  "screenY": 547.0722060609726,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 4230,
+                  "probeXBits": "40A0860000000000",
+                  "probeYBits": "40301F0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 4230,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 4230,
+                  "actualXBits": "40A0860000000000",
+                  "actualYBits": "40301F0000000000"
+                },
+                {
+                  "queryIndex": 11,
+                  "screenX": 935.4534546545345,
+                  "screenY": 401.048753115404,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 4615,
+                  "probeXBits": "40BE0C0000000000",
+                  "probeYBits": "404F488000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 4615,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 4615,
+                  "actualXBits": "40BE0C0000000000",
+                  "actualYBits": "404F488000000000"
+                },
+                {
+                  "queryIndex": 12,
+                  "screenX": 389.82881711828816,
+                  "screenY": 547.8704839786733,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 5000,
+                  "probeXBits": "40A3880000000000",
+                  "probeYBits": "402FBC0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 5000,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 5000,
+                  "actualXBits": "40A3880000000000",
+                  "actualYBits": "402FBC0000000000"
+                },
+                {
+                  "queryIndex": 13,
+                  "screenX": 410.00599940006,
+                  "screenY": 496.87894683569596,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 5384,
+                  "probeXBits": "40A5080000000000",
+                  "probeYBits": "40400B0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 5384,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 5384,
+                  "actualXBits": "40A5080000000000",
+                  "actualYBits": "40400B0000000000"
+                },
+                {
+                  "queryIndex": 14,
+                  "screenX": 874.8168183181682,
+                  "screenY": 447.5330903230556,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 5769,
+                  "probeXBits": "40BBCB0000000000",
+                  "probeYBits": "4047E40000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 5769,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 5769,
+                  "actualXBits": "40BBCB0000000000",
+                  "actualYBits": "4047E40000000000"
+                },
+                {
+                  "queryIndex": 15,
+                  "screenX": 854.6396360363964,
+                  "screenY": 593.7039176534304,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 6153,
+                  "probeXBits": "40BB0B0000000000",
+                  "probeYBits": "3FF4A00000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 6153,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 6153,
+                  "actualXBits": "40BB0B0000000000",
+                  "actualYBits": "3FF4A00000000000"
+                },
+                {
+                  "queryIndex": 16,
+                  "screenX": 470.64263573642637,
+                  "screenY": 442.44867404723846,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 6538,
+                  "probeXBits": "40A98A0000000000",
+                  "probeYBits": "4048B30000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 6538,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 6538,
+                  "actualXBits": "40A98A0000000000",
+                  "actualYBits": "4048B30000000000"
+                },
+                {
+                  "queryIndex": 17,
+                  "screenX": 814.1801819818019,
+                  "screenY": 499.60537295461233,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 6923,
+                  "probeXBits": "40B98A0000000000",
+                  "probeYBits": "403F380000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 6923,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 6923,
+                  "actualXBits": "40B98A0000000000",
+                  "actualYBits": "403F380000000000"
+                },
+                {
+                  "queryIndex": 18,
+                  "screenX": 794.00299970003,
+                  "screenY": 543.3632840433474,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 7307,
+                  "probeXBits": "40B8CA0000000000",
+                  "probeYBits": "40314D0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 7307,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 7307,
+                  "actualXBits": "40B8CA0000000000",
+                  "actualYBits": "40314D0000000000"
+                },
+                {
+                  "queryIndex": 19,
+                  "screenX": 531.2792720727928,
+                  "screenY": 403.6646484457157,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 7692,
+                  "probeXBits": "40AE0C0000000000",
+                  "probeYBits": "404EDE0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 7692,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 7692,
+                  "actualXBits": "40AE0C0000000000",
+                  "actualYBits": "404EDE0000000000"
+                },
+                {
+                  "queryIndex": 20,
+                  "screenX": 551.4564543545646,
+                  "screenY": 551.5794059962983,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 8076,
+                  "probeXBits": "40AF8C0000000000",
+                  "probeYBits": "402D600000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 8076,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 8076,
+                  "actualXBits": "40AF8C0000000000",
+                  "actualYBits": "402D600000000000"
+                },
+                {
+                  "queryIndex": 21,
+                  "screenX": 733.3663633636636,
+                  "screenY": 494.0174275307071,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 8461,
+                  "probeXBits": "40B6890000000000",
+                  "probeYBits": "40407F8000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 8461,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 8461,
+                  "actualXBits": "40B6890000000000",
+                  "actualYBits": "40407F8000000000"
+                },
+                {
+                  "queryIndex": 22,
+                  "screenX": 591.9159084091591,
+                  "screenY": 452.6420689963404,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 8846,
+                  "probeXBits": "40B1470000000000",
+                  "probeYBits": "4047140000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 8846,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 8846,
+                  "actualXBits": "40B1470000000000",
+                  "actualYBits": "4047140000000000"
+                },
+                {
+                  "queryIndex": 23,
+                  "screenX": 612.0930906909309,
+                  "screenY": 592.8319525433265,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 9230,
+                  "probeXBits": "40B2070000000000",
+                  "probeYBits": "3FF9100000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 9230,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 9230,
+                  "actualXBits": "40B2070000000000",
+                  "actualYBits": "3FF9100000000000"
+                },
+                {
+                  "queryIndex": 24,
+                  "screenX": 672.7297270272973,
+                  "screenY": 438.2485040802591,
+                  "probeSeriesIndex": 0,
+                  "probeRawIndex": 9615,
+                  "probeXBits": "40B4480000000000",
+                  "probeYBits": "40495E0000000000",
+                  "oracleMode": "exact-probe-nearest-and-source-index",
+                  "expectedSeriesIndex": 0,
+                  "expectedRawIndex": 9615,
+                  "hitSeriesIndex": 0,
+                  "hitRawIndex": 9615,
+                  "actualXBits": "40B4480000000000",
+                  "actualYBits": "40495E0000000000"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "S10-L-NONMONOTONIC",
+      "comparable": true,
+      "before": {
+        "processCount": 5,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 50,
+        "hitQueryCount": 1250,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 50,
+            "p50Milliseconds": 0.0278,
+            "p95Milliseconds": 3.162,
+            "p95AllocatedBytes": 160144,
+            "maximumMilliseconds": 4.006,
+            "maximumAllocatedBytes": 160144.0
+          },
+          "sourceApply": {
+            "count": 50,
+            "p50Milliseconds": 0.1196,
+            "p95Milliseconds": 0.1789,
+            "p95AllocatedBytes": 357136,
+            "maximumMilliseconds": 0.1952,
+            "maximumAllocatedBytes": 357136.0
+          },
+          "scenePrepare": {
+            "count": 50,
+            "p50Milliseconds": 8.2699,
+            "p95Milliseconds": 9.8117,
+            "p95AllocatedBytes": 111104,
+            "maximumMilliseconds": 10.3657,
+            "maximumAllocatedBytes": 111104.0
+          },
+          "cachedSceneGetter": {
+            "count": 50,
+            "p50Milliseconds": 0.0016,
+            "p95Milliseconds": 0.0022,
+            "p95AllocatedBytes": 264,
+            "maximumMilliseconds": 0.0023,
+            "maximumAllocatedBytes": 264.0
+          },
+          "renderRecord": {
+            "count": 50,
+            "p50Milliseconds": 1.5613,
+            "p95Milliseconds": 3.7939,
+            "p95AllocatedBytes": 664192,
+            "maximumMilliseconds": 5.9539,
+            "maximumAllocatedBytes": 664192.0
+          },
+          "firstUsableToRecord": {
+            "count": 50,
+            "p50Milliseconds": 10.1922,
+            "p95Milliseconds": 13.7522,
+            "p95AllocatedBytes": 1294576,
+            "maximumMilliseconds": 14.6491,
+            "maximumAllocatedBytes": 1294576.0
+          }
+        },
+        "hitQuery": {
+          "count": 1250,
+          "p50Milliseconds": 0.0503,
+          "p95Milliseconds": 0.0755,
+          "p95AllocatedBytes": 920,
+          "maximumMilliseconds": 0.204,
+          "maximumAllocatedBytes": 1480.0
+        },
+        "maxObservedCurrentPrivateBytes": 32870400.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 32870400.0,
+        "processes": [
+          {
+            "runId": "c5dab9ea1729418b9db5a550280663bf",
+            "reportSha256": "68769D69D627194CB5B1DC84E8C3B89CEBC1A49E8CFBF0C1D6740C51EC00C746",
+            "measuredSamples": 10,
+            "allRecordedSamples": 13,
+            "maxObservedCurrentPrivateBytes": 32866304.0
+          },
+          {
+            "runId": "57edac4159ca4bc4a6b838333cd86f57",
+            "reportSha256": "4F498DB37CC68870C41764E5D99CC54F61E01FBA21E1E3D31C8E8D6AFB032AF4",
+            "measuredSamples": 10,
+            "allRecordedSamples": 13,
+            "maxObservedCurrentPrivateBytes": 32788480.0
+          },
+          {
+            "runId": "d719ff56d2854d0e8966b3d838ab55cb",
+            "reportSha256": "9B098E619689DE0EEE37B53D6C41B2F6F77C14FF533DDB97C56728F118A99C7F",
+            "measuredSamples": 10,
+            "allRecordedSamples": 13,
+            "maxObservedCurrentPrivateBytes": 32677888.0
+          },
+          {
+            "runId": "a5c367c2d07949039bdebdc8cbcc7295",
+            "reportSha256": "397B55ABACB4605C8A2B69FB115CEB8B9E0B5F16D12BFB02D2605508B0F8828B",
+            "measuredSamples": 10,
+            "allRecordedSamples": 13,
+            "maxObservedCurrentPrivateBytes": 32747520.0
+          },
+          {
+            "runId": "bf41dd8f26494f52b4bc20f705657ddf",
+            "reportSha256": "1EC698C2034609CA29D85EF5E8997F54DAA3C2B65B358341A516427045C2967B",
+            "measuredSamples": 10,
+            "allRecordedSamples": 13,
+            "maxObservedCurrentPrivateBytes": 32870400.0
+          }
+        ]
+      },
+      "after": {
+        "processCount": 5,
+        "processCountEvidence": "distinct successful runId/report; supervisor receipt when present; raw schema has no PID",
+        "measuredSampleCount": 50,
+        "hitQueryCount": 1250,
+        "stages": {
+          "harnessSourceSnapshot": {
+            "count": 50,
+            "p50Milliseconds": 0.0265,
+            "p95Milliseconds": 3.1018,
+            "p95AllocatedBytes": 160144,
+            "maximumMilliseconds": 3.4646,
+            "maximumAllocatedBytes": 160144.0
+          },
+          "sourceApply": {
+            "count": 50,
+            "p50Milliseconds": 0.1127,
+            "p95Milliseconds": 0.1651,
+            "p95AllocatedBytes": 357136,
+            "maximumMilliseconds": 0.2048,
+            "maximumAllocatedBytes": 357136.0
+          },
+          "scenePrepare": {
+            "count": 50,
+            "p50Milliseconds": 1.1795,
+            "p95Milliseconds": 1.3663,
+            "p95AllocatedBytes": 151256,
+            "maximumMilliseconds": 1.8401,
+            "maximumAllocatedBytes": 151256.0
+          },
+          "cachedSceneGetter": {
+            "count": 50,
+            "p50Milliseconds": 0.0013,
+            "p95Milliseconds": 0.0021,
+            "p95AllocatedBytes": 216,
+            "maximumMilliseconds": 0.0022,
+            "maximumAllocatedBytes": 216.0
+          },
+          "renderRecord": {
+            "count": 50,
+            "p50Milliseconds": 1.5084,
+            "p95Milliseconds": 3.9856,
+            "p95AllocatedBytes": 664192,
+            "maximumMilliseconds": 4.5047,
+            "maximumAllocatedBytes": 664192.0
+          },
+          "firstUsableToRecord": {
+            "count": 50,
+            "p50Milliseconds": 2.9373,
+            "p95Milliseconds": 5.9732,
+            "p95AllocatedBytes": 1334656,
+            "maximumMilliseconds": 6.7819,
+            "maximumAllocatedBytes": 1334656.0
+          }
+        },
+        "hitQuery": {
+          "count": 1250,
+          "p50Milliseconds": 0.0492,
+          "p95Milliseconds": 0.0657,
+          "p95AllocatedBytes": 896,
+          "maximumMilliseconds": 0.1501,
+          "maximumAllocatedBytes": 1456.0
+        },
+        "maxObservedCurrentPrivateBytes": 32989184.0,
+        "maxObservedCurrentPrivateBytesScope": "maximum recorded memoryBefore/memoryAfter current private value, including warmups; not OS peak private and not retained/native bytes",
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 32989184.0,
+        "processes": [
+          {
+            "runId": "3068ba5c868841e6bfd294fe3de918f9",
+            "reportSha256": "0A4FF3D1F1EAD127B262B62EA2356DE63AAABE593A7AEB4E021A33A0785D792A",
+            "measuredSamples": 10,
+            "allRecordedSamples": 13,
+            "maxObservedCurrentPrivateBytes": 32944128.0
+          },
+          {
+            "runId": "187fab3237ab4bdaa286f9ea3b1490e6",
+            "reportSha256": "63B21CCB940215588635538C5999988EE4FBCECD41AA8008CE446C88705BA724",
+            "measuredSamples": 10,
+            "allRecordedSamples": 13,
+            "maxObservedCurrentPrivateBytes": 32825344.0
+          },
+          {
+            "runId": "44047ef6a8644b59a022afa2ddd33920",
+            "reportSha256": "CCC6B9BB6D4BB8F518672ABB94B188ABA9002EBA5550C6F735762E8A017CBFC5",
+            "measuredSamples": 10,
+            "allRecordedSamples": 13,
+            "maxObservedCurrentPrivateBytes": 32911360.0
+          },
+          {
+            "runId": "984a4e37aba54282893633d21a08c1d0",
+            "reportSha256": "27165972988C4810B8134177081D0F57F7D7B3DEFA50D0D0A1AD138395E13172",
+            "measuredSamples": 10,
+            "allRecordedSamples": 13,
+            "maxObservedCurrentPrivateBytes": 32989184.0
+          },
+          {
+            "runId": "18fe8de95ec441a88b5cb86329252b6b",
+            "reportSha256": "4467EB147EA883986FE09AC826DABAABA02C618A9313EA72DDF52B53767E4D4F",
+            "measuredSamples": 10,
+            "allRecordedSamples": 13,
+            "maxObservedCurrentPrivateBytes": 32960512.0
+          }
+        ]
+      },
+      "afterOverBefore": {
+        "stages": {
+          "harnessSourceSnapshot": {
+            "p50Milliseconds": 0.9532374100719425,
+            "p95Milliseconds": 0.9809614168247944,
+            "p95AllocatedBytes": 1.0
+          },
+          "sourceApply": {
+            "p50Milliseconds": 0.9423076923076923,
+            "p95Milliseconds": 0.9228619340413639,
+            "p95AllocatedBytes": 1.0
+          },
+          "scenePrepare": {
+            "p50Milliseconds": 0.142625666573961,
+            "p95Milliseconds": 0.1392521173700786,
+            "p95AllocatedBytes": 1.361391129032258
+          },
+          "cachedSceneGetter": {
+            "p50Milliseconds": 0.8124999999999999,
+            "p95Milliseconds": 0.9545454545454545,
+            "p95AllocatedBytes": 0.8181818181818182
+          },
+          "renderRecord": {
+            "p50Milliseconds": 0.9661179786075706,
+            "p95Milliseconds": 1.050528479928306,
+            "p95AllocatedBytes": 1.0
+          },
+          "firstUsableToRecord": {
+            "p50Milliseconds": 0.28819096956496143,
+            "p95Milliseconds": 0.43434505024650605,
+            "p95AllocatedBytes": 1.0309599436417793
+          }
+        },
+        "hitQuery": {
+          "p50Milliseconds": 0.9781312127236581,
+          "p95Milliseconds": 0.8701986754966887,
+          "p95AllocatedBytes": 0.9739130434782609
+        },
+        "maxObservedCurrentPrivateBytes": 1.003613707165109,
+        "measuredSamplesMaxObservedCurrentPrivateBytes": 1.003613707165109
+      }
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "Each raw report is validated by a fresh child invocation of Test-ChartsPerformance; original guard files are not overwritten.",
+    "Pooled percentiles use all non-warmup samples across distinct report/run IDs; hit percentiles pool non-warmup query timings. This is not a percentile of per-process percentiles.",
+    "Nearest-rank percentiles match the raw guard. Ratios are after/before; a zero before denominator produces null, not Infinity or an improvement claim.",
+    "Allocated bytes are reported current-thread stage deltas. Stage intervals can nest: firstUsable includes other work, source enumeration belongs to scene preparation; do not sum them.",
+    "Current private values are sampled at recorded memoryBefore/memoryAfter boundaries; their maximum is not measured peak private, retained memory, or native allocations.",
+    "Distinct run IDs and successful supervisor receipts identify process invocations; this raw schema does not include OS PID, CPU model, power state, or concurrent-process audit.",
+    "Matching recorded manifests/primitive counts/probes does not constitute full image-golden or complete C4 quality-corpus acceptance. Native present, GPU, Linux, official reference and SLA acceptance remain outside scope.",
+    "Known trace diagnostic reports are rejected. The caller remains responsible for providing untraced runs with externally verified isolated execution.",
+    "Only recorded known quality fields are compared; no rendering data is downsampled or silently omitted to make reports comparable."
+  ]
+}

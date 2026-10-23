@@ -1,0 +1,9 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:pdf="clr-namespace:NT.AvaloniaControl.PdfViewer;assembly=NT.AvaloniaControl.PdfViewer"
+             x:Class="PdfPackageConsumer.ConsumerApp" x:CompileBindings="False">
+  <Application.Styles>
+    <FluentTheme />
+    __PDF_STYLES__
+  </Application.Styles>
+</Application>

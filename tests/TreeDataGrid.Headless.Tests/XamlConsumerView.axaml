@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:tg="clr-namespace:NT.AvaloniaControl.TreeDataGrid;assembly=NT.AvaloniaControl.TreeDataGrid"
+             x:Class="TreeDataGrid.Headless.Tests.XamlConsumerView">
+  <Grid ColumnDefinitions="*,*">
+    <tg:TreeDataGrid x:Name="XamlGrid">
+      <tg:TreeDataGrid.Columns>
+        <tg:TreeDataGridTextColumn Header="名称" Width="180" Binding="{ReflectionBinding Name}" />
+      </tg:TreeDataGrid.Columns>
+      <tg:TreeDataGrid.Template>
+        <ControlTemplate>
+          <ScrollViewer x:Name="PART_ScrollViewer"
+                        HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <tg:TreeDataGridRowsPresenter x:Name="PART_RowsPresenter" />
+          </ScrollViewer>
+        </ControlTemplate>
+      </tg:TreeDataGrid.Template>
+    </tg:TreeDataGrid>
+    <tg:TreeDataGrid x:Name="CodeGrid" Grid.Column="1" />
+  </Grid>
+</UserControl>

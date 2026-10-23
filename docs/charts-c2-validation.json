@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "updatedDate": "2026-10-15",
+  "stage": "C2-partial",
+  "stageComplete": false,
+  "contracts": "docs/charts-c2-common.md",
+  "api": {
+    "path": "docs/charts-c2-api.txt",
+    "sha256": "DEC5C1CA08FA59034D93434A1314AAE8A9E6FBFB12F75E8B401C5FEBA8AE4C0E"
+  },
+  "windows": {
+    "result": "artifacts/charts-platform/C2-common-20261015-final-v6/results.json",
+    "sha256": "0C564095BFD05AA700B58E1B4C2C792FB108225B39B46F4F5C655C060DC4A084",
+    "passed": true,
+    "scope": "contracts-and-native-programmatic-smoke",
+    "tests": {
+      "status": "passed",
+      "inputKind": "headless-injection",
+      "total": 258,
+      "passed": 258,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "notRun": 0,
+      "result": "artifacts/charts-platform/C2-common-20261015-final-v6/Charts.Headless.Tests.xml"
+    },
+    "nativeChecks": 66,
+    "usageChecks": 30,
+    "packageConsumers": [
+      {
+        "kind": "function",
+        "status": "passed",
+        "checks": 32,
+        "noProjectReferences": true,
+        "executionKind": "headless-package-contracts",
+        "report": "<REPO_ROOT>\\artifacts\\charts-platform\\C2-common-20261015-final-v6\\package-consumers\\20261015T114713785Z-abe0860155644b3793db066ae43a1b21\\function\\consumer-result.json",
+        "sha256": "4C1CF7A4807E712199B7C0C72A2544DE61B44758BA0CECBA888B2224B449582E"
+      },
+      {
+        "kind": "themes",
+        "status": "passed",
+        "checks": 32,
+        "noProjectReferences": true,
+        "executionKind": "headless-package-contracts",
+        "report": "<REPO_ROOT>\\artifacts\\charts-platform\\C2-common-20261015-final-v6\\package-consumers\\20261015T114713785Z-abe0860155644b3793db066ae43a1b21\\themes\\consumer-result.json",
+        "sha256": "08A63D695EFCC0FF940F3AAEDAC533078019C9287A3692403565FDAE73D79EAB"
+      }
+    ],
+    "packageConsumerReport": "artifacts/charts-platform/C2-common-20261015-final-v6/package-consumers/20261015T114713785Z-abe0860155644b3793db066ae43a1b21/results.json",
+    "coreSha256": "048EED53A4EF91AB83A6334DF170497628B4DC54570A5E0D33EA5E8D6074CD0C",
+    "themesSha256": "6743ACD7E3841F3874628EB1AF1CD08EE0D0412FABB62BF03A0BEFBD4FEB5DD9",
+    "validatedInputManifest": "artifacts\\charts-platform\\C2-common-20261015-final-v6\\validated-input-manifest.json",
+    "validatedInputCount": 484,
+    "validatedInputSourcesUnchangedDuringRun": true,
+    "currentValidatedInputsMatch": true,
+    "assembliesUnchangedDuringRun": true,
+    "currentAssembliesMatch": true,
+    "allManifestSourcesUnchangedDuringRun": false,
+    "unrelatedChangesSupplement": "artifacts/charts-platform/C2-common-20261015-final-v6/source-changes-supplement.json",
+    "solutionReleaseBuild": {
+      "passed": true,
+      "warnings": 0,
+      "errors": 0,
+      "log": "artifacts/charts-build/C2-common-final-v6/Release.log"
+    },
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false
+  },
+  "linux": {
+    "result": "artifacts/charts-linux/20261015T114700134Z-final-v4-3c7b0fb20bbd4defa25071c4d94b8067/linux-final-summary.json",
+    "sha256": "5E4A4C4FB66954132355ACB52497E208D1AE4262804F1FFC54E640DA9A688F93",
+    "passed": true,
+    "environment": "Ubuntu 26.04 x64 / WSL2 kernel 6.6.114.1 / WSLg 1.0.73",
+    "scope": "Ubuntu26.04-WSL2-WSLg-real-window-synthetic-and-headless-consumers",
+    "releaseBuildProjects": [
+      "Charts.Headless.Tests",
+      "NT.AvaloniaControl.Demo",
+      "Charts.Usage"
+    ],
+    "headless": {
+      "status": "passed",
+      "inputKind": "headless-injection",
+      "total": 258,
+      "passed": 258,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "notRun": 0,
+      "result": "../verification/wslg/Charts.Headless.Tests.xml"
+    },
+    "nativeChecks": 66,
+    "usageChecks": 30,
+    "packageConsumers": [
+      {
+        "kind": "function-only-application-style",
+        "passed": true,
+        "checks": 32,
+        "noProjectReferences": true,
+        "freshPackageCache": "/mnt/d/Procedure/AvaloniaControl/artifacts/charts-linux/20261015T114700134Z-final-v4-3c7b0fb20bbd4defa25071c4d94b8067/package-consumers/20261015T115403850Z-2710decfdadf4bbd9d69d4522a86f891/function/packages",
+        "coreAssemblySha256": "D9F1A5C2C348FB784B3C2ECBF415696C3F70E35A72882EF0E6280D5417DA6BEC",
+        "report": "package-consumers/20261015T115403850Z-2710decfdadf4bbd9d69d4522a86f891/function/consumer-result.json",
+        "nativeWindowValidated": false,
+        "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+      },
+      {
+        "kind": "function-and-themes",
+        "passed": true,
+        "checks": 32,
+        "noProjectReferences": true,
+        "freshPackageCache": "/mnt/d/Procedure/AvaloniaControl/artifacts/charts-linux/20261015T114700134Z-final-v4-3c7b0fb20bbd4defa25071c4d94b8067/package-consumers/20261015T115403850Z-2710decfdadf4bbd9d69d4522a86f891/themes/packages",
+        "coreAssemblySha256": "D9F1A5C2C348FB784B3C2ECBF415696C3F70E35A72882EF0E6280D5417DA6BEC",
+        "report": "package-consumers/20261015T115403850Z-2710decfdadf4bbd9d69d4522a86f891/themes/consumer-result.json",
+        "nativeWindowValidated": false,
+        "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+      }
+    ],
+    "platformReport": "artifacts/charts-linux/20261015T114700134Z-final-v4-3c7b0fb20bbd4defa25071c4d94b8067/verification/wslg/results.json",
+    "copiedSourcesUnchanged": true,
+    "liveChartsInputsStillMatchSnapshot": true,
+    "publishedAssembliesUnchangedAfterConsumers": true,
+    "coreSha256": "D9F1A5C2C348FB784B3C2ECBF415696C3F70E35A72882EF0E6280D5417DA6BEC",
+    "requestedBackend": "x11-via-wslg-xwayland",
+    "actualBackend": null,
+    "actualRenderer": null,
+    "actualGpu": null,
+    "physicalDesktopCertified": false,
+    "physicalInputValidated": false,
+    "performanceMeasured": false,
+    "systemInstallationOrServiceChangesPerformed": false
+  },
+  "performance": {
+    "nonmonotonic": {
+      "report": "docs/charts-c2-nonmonotonic-final.json",
+      "sha256": "A6E52A0499178ADC37710F98B212E10C89EBE6F84CC328096C90A920675AF3DE",
+      "comparable": true,
+      "formalSlaEvaluated": false,
+      "formalPerformancePassed": null
+    },
+    "full8": {
+      "report": "docs/charts-c2-full8-final.json",
+      "sha256": "74EE2F3882F48C3E9867B9601A999445E19BC36C15C2CB12E20922B9B486F114",
+      "comparable": true,
+      "formalSlaEvaluated": false,
+      "formalPerformancePassed": null
+    },
+    "millionPoint": {
+      "report": "docs/charts-c2-millionpoint-final.json",
+      "sha256": "AA60090CDB52EADB2ACFB742505A003F1C5A383945542FE462CD19A7330790E0",
+      "comparable": true,
+      "formalSlaEvaluated": false,
+      "formalPerformancePassed": null
+    },
+    "retention": {
+      "report": "docs/charts-c2-memory-final.json",
+      "sha256": "0A660F0B595CB44A8B029E233A1B3FFA655AEE47BB8513AD55FB990122A127A9",
+      "comparable": true,
+      "formalSlaEvaluated": false,
+      "formalPerformancePassed": null
+    },
+    "evidenceManifest": {
+      "path": "artifacts/charts-performance/C2-common-20261015-final-v3/evidence-manifest.json",
+      "sha256": "CAC8F9E25B2A591F17B425F42029F95A230F8181E3191DADB32572C9AB072662"
+    },
+    "remainingRegressions": "artifacts/charts-performance/C2-common-20261015-final-v3/regressions-and-distribution.md",
+    "preindexFull8": {
+      "path": "artifacts/charts-performance/C2-common-20261015-final-v3/preindex-full8-comparison.json",
+      "sha256": "8B24CC1CF59E876448FDA43766CF4CD731058263FF760152843DE810D230FC81"
+    }
+  },
+  "retentionDiagnostic": {
+    "passed": true,
+    "cycles": 20,
+    "processesPerSide": 1,
+    "pointsPerCycle": 1000000,
+    "monotonic": true,
+    "forcedGc": true,
+    "sourceSurvivors": 0,
+    "snapshotSurvivors": 0,
+    "clearedResidualBytes": 26432,
+    "plateauGrowthBytes": 29240,
+    "nonmonotonicScratchCovered": false,
+    "longSoak": false
+  },
+  "formalSlaEvaluated": false,
+  "formalPerformancePassed": null,
+  "officialReferenceStatus": "blocked-reference",
+  "presentStatus": "blocked-present",
+  "open": [
+    "AX12 explicit continuous axis/Gap policy differs from official automatic category fallback",
+    "C2 full templates, series selection/range selector, touch/trackpad/window activation and remaining reading modes",
+    "C2 rectangle/ellipse/arrow annotations, animation, JPEG/async cancellation and physical save-picker checks",
+    "C2 point-level accessibility, patterns/high contrast, native UIA/AT-SPI and peer revision notification coalescing",
+    "C4 isolated million-point record/first-usable regression and small-scene preparation/record regressions; causal profiling pending",
+    "C4 nonmonotonic temporary scratch allocations and retention/large-random performance; DB866 residual preparation difference",
+    "C4 full-data geometry, incremental updates/LOD, degenerate same-X/SharedX and two-dimensional queries",
+    "Headless parallel scheduling hang root cause lacks confirmed stack; final verification is explicitly serial",
+    "Ubuntu22.04/24.04 physical target desktops, actual backend/renderer, native Wayland/ARM/Kylin/UOS and physical input/DPI matrix",
+    "Official licensed reference runtime comparison, compositor present/FPS, native memory/long soak and release qualification"
+  ],
+  "postDocumentIntegrityCheck": "artifacts/charts-platform/C2-common-20261015-final-v6/post-document-checks.json"
+}

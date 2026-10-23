@@ -1,0 +1,1509 @@
+{
+  "schemaVersion": 1,
+  "collector": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\Collect-C603Evidence-v2.py",
+    "sha256": "F148B99FF4CFCFBDFC90441EAA7829DEE266496112894BB025563F86F9940146",
+    "bytes": 12353
+  },
+  "completedUtc": "2026-10-22T19:05:20.864428+00:00",
+  "passed": true,
+  "checks": {
+    "same-stable-candidate": true,
+    "all-sealed-tools-retained": true,
+    "freeze-copy-0": true,
+    "freeze-copy-1": true,
+    "freeze-copy-2": true,
+    "inventory-sha": true,
+    "baseline2515-sha": true,
+    "expected-union-count": true,
+    "windows:nine-supervised-stages": true,
+    "windows:xml-exact-location": true,
+    "windows:all-test-identities": true,
+    "windows:all-tests-no-skip": true,
+    "windows:full-demo": true,
+    "windows:maps-demo": true,
+    "windows:usage": true,
+    "windows:source-assembly-stability": true,
+    "windows:validated-input-source-sha": true,
+    "windows:native-assembly-bytes": true,
+    "windows:zero-warning-error-builds": true,
+    "windows:function:consumer": true,
+    "windows:themes:consumer": true,
+    "windows:two-consumers": true,
+    "windows:consumer-builds-clean": true,
+    "windows:numeric": true,
+    "windows:numeric-sha": true,
+    "windows:numeric-native-same-loaded-core": true,
+    "windows:producer-retained": true,
+    "windows:consumers-same-core": true,
+    "windows:pixel": true,
+    "windows:pixel-sha": true,
+    "windows:ten-zero-rgba-diffs": true,
+    "windows:metadata": true,
+    "windows:metadata-sha": true,
+    "windows:new-png-count": true,
+    "windows:all-png-count": true,
+    "linux:nine-supervised-stages": true,
+    "linux:xml-exact-location": true,
+    "linux:all-test-identities": true,
+    "linux:all-tests-no-skip": true,
+    "linux:full-demo": true,
+    "linux:maps-demo": true,
+    "linux:usage": true,
+    "linux:source-assembly-stability": true,
+    "linux:validated-input-source-sha": true,
+    "linux:native-assembly-bytes": true,
+    "linux:zero-warning-error-builds": true,
+    "linux:function:consumer": true,
+    "linux:themes:consumer": true,
+    "linux:two-consumers": true,
+    "linux:consumer-builds-clean": true,
+    "linux:numeric": true,
+    "linux:numeric-sha": true,
+    "linux:numeric-native-same-loaded-core": true,
+    "linux:producer-retained": true,
+    "linux:consumers-same-core": true,
+    "linux:pixel": true,
+    "linux:pixel-sha": true,
+    "linux:ten-zero-rgba-diffs": true,
+    "linux:metadata": true,
+    "linux:metadata-sha": true,
+    "linux:new-png-count": true,
+    "linux:all-png-count": true,
+    "api-platforms-identical": true,
+    "all316-old-types-and-members-retained": true,
+    "c602-root-evidence-unchanged": true,
+    "c601-root-evidence-unchanged": true,
+    "historical-documents-unchanged": true,
+    "all-development-control-failures-retained": true,
+    "original-linux-animation-failure-retained": true,
+    "single-animation-diagnostic-v1-retained": true,
+    "original-windows-full-pass-retained": true
+  },
+  "sourceCandidate": "c6-geographic-maps-source-v2",
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\source-snapshot-v2.json",
+    "sha256": "69762602770CEC15F005C3F076E587389A92AED78CAE816C259D32C3ADAE2978",
+    "bytes": 396379
+  },
+  "formalPlan": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\formal-plan-v2.json",
+    "sha256": "FCA1E5ABBEA90F3F0F764D0B9AB098589123D92A7D2C42039F647EBB345067AB",
+    "bytes": 40744
+  },
+  "sourceFiles": 1703,
+  "runtimeInputFiles": 999,
+  "platforms": {
+    "windows": {
+      "formalRun": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\formal-run-v2.json",
+        "sha256": "FF8328D659068EB407C9DF058A05F055A42125E20BA1D944B1194C1D8B9DDFB6",
+        "bytes": 12529
+      },
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\verification\\functional-v2\\results.json",
+        "sha256": "6BAC8E6AC9764D5255A86BE1FD799654F6E99E358B95C544A4CE07DF66C87EB1",
+        "bytes": 21710
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\verification\\functional-v2\\charts-smoke.json",
+        "sha256": "CA49F007C03133F08BAB90C73115A4EAD0E747BAC720753A0A059B72AAB92B23",
+        "bytes": 8201235
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\verification\\functional-v2\\charts-usage.json",
+        "sha256": "37B1388C51CBA05E95A7F99F3A53D18FFB6F5EF1595086623B0E3DAD59FBA2F7",
+        "bytes": 86628
+      },
+      "tests": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\verification\\functional-v2\\Charts.Headless.Tests.xml",
+        "sha256": "EACB4DC4E013569D7B58E84D7E4C6BD0448C9755B5BA125823D878124E5AFE11",
+        "bytes": 1505088
+      },
+      "headlessTests": 2617,
+      "demoChecks": 3286,
+      "mapsDemoChecks": 242,
+      "usageChecks": 584,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 790,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\package-consumers\\20261022T185245564Z-f5bc5bfbacfa4204a533926d91098d7b\\function\\consumer-result.json",
+            "sha256": "54806DF026D29366AAE0F67A0803E6B29FB76179A819BBC3860939F09287A518",
+            "bytes": 132164
+          },
+          "coreAssemblySha256": "5E79761A750B35D857FCAA6052455AE0C06DEF2C17FB25E643F3FD127477A475"
+        },
+        {
+          "kind": "themes",
+          "checks": 790,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\package-consumers\\20261022T185245564Z-f5bc5bfbacfa4204a533926d91098d7b\\themes\\consumer-result.json",
+            "sha256": "651B84FAFAAE628C243EFB40B3419ADFB9F3B3B9E37E739E18043CC8DC201675",
+            "bytes": 132222
+          },
+          "coreAssemblySha256": "5E79761A750B35D857FCAA6052455AE0C06DEF2C17FB25E643F3FD127477A475"
+        }
+      ],
+      "pngCount": 997,
+      "mapsPngCount": 24,
+      "numericRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\maps\\raw.json",
+        "sha256": "7CA4C1F9CDB1DCCAB338698E1AFA48AAE1D444C4FC81D266ABBA75F6E97F2EAF",
+        "bytes": 266826760
+      },
+      "numericResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\maps\\independent-numeric-result.json",
+        "sha256": "03D26052AEEB38ED545BEEB17D689957AE982D667F5E84F881DA241599719A70",
+        "bytes": 133748828
+      },
+      "numericChecks": 2034945,
+      "pixelResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\maps\\independent-pixel-result.json",
+        "sha256": "AE63BCA215E7DE45CD8D66BBFCD6D6341A3E331419ABB9DC491EFF980042BF49",
+        "bytes": 49000
+      },
+      "pixelChecks": 156,
+      "metadataResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\maps\\independent-metadata-result.json",
+        "sha256": "AE84729FD268D2CD0C3BA8569C4BBF100483AF38BFB4DF8BDF2416CC810C2238",
+        "bytes": 216913
+      },
+      "metadataChecks": 4004,
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\api-v2\\api.txt",
+        "sha256": "6EACD83BCB7A355F833105AEFE42019D559A5649099905A193F952FBD740B71E",
+        "bytes": 743665
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\verification\\functional-v2\\environment.json",
+        "sha256": "F2ABB923FC7D4A6D8E5DA31B92DB4CC891F0BE21D18CCC653FADA6DC0663B173",
+        "bytes": 6401
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\verification\\functional-v2\\assembly-manifest.json",
+        "sha256": "1A68D00D8F54CEE39B4EF371DF8D38FC1E790685EAF9A5BBF3D6388120396431",
+        "bytes": 1956
+      },
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\windows\\run-v2\\verification\\functional-v2\\validated-input-manifest.json",
+        "sha256": "D140E4AE7FDB7C1290DB658D1CE84CEB5D3F0A4C9403382B416ED0E39B47F8E4",
+        "bytes": 158958
+      },
+      "performance": [
+        {
+          "id": "perf-geometry-2000-10000",
+          "elapsedMilliseconds": 9.7909,
+          "allocatedBytes": 5037144
+        },
+        {
+          "id": "perf-heat-10000-64x64-r2",
+          "elapsedMilliseconds": 14.9816,
+          "allocatedBytes": 11069400
+        }
+      ],
+      "physicalInputValidated": false,
+      "formalSlaEvaluated": false
+    },
+    "linux": {
+      "formalRun": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\formal-run-v2.json",
+        "sha256": "79FC8ED8642905A429C42166594E40245ED7E2DDCBCF7A35A8B0919F274E8A27",
+        "bytes": 12919
+      },
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\verification\\functional-v2\\results.json",
+        "sha256": "50779353E1CB7409E1DE3231A8C825A793DAB4FF1AD181E45F6768B09A81D24C",
+        "bytes": 14726
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\verification\\functional-v2\\charts-smoke.json",
+        "sha256": "CDB5FDADFC731AA7E239269B310DED718D017ED2D26A23CDD746B33F8E9DE77E",
+        "bytes": 7872703
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\verification\\functional-v2\\charts-usage.json",
+        "sha256": "31A382D8C7930E48EBF3C9AA15A9A8183DF062B575FCE4D92150749B01091ED4",
+        "bytes": 83925
+      },
+      "tests": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\verification\\functional-v2\\Charts.Headless.Tests.xml",
+        "sha256": "B786BAA1E31782A72F3658C11C51418741F233C20246C9F0755E25D2869A086C",
+        "bytes": 1630330
+      },
+      "headlessTests": 2617,
+      "demoChecks": 3286,
+      "mapsDemoChecks": 242,
+      "usageChecks": 584,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 790,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\package-consumers\\20261022T190111334Z-7429db780c904cfc9b52dfa125a009f6\\function\\consumer-result.json",
+            "sha256": "3923D950393BB1E27E574863F23987E242C4512BD6DDE4CEE14477D91397EAED",
+            "bytes": 128561
+          },
+          "coreAssemblySha256": "176E3B86D0DFAC5D6E632E5E2867818747D55E2F392F84A933206A8CE54B4A69"
+        },
+        {
+          "kind": "themes",
+          "checks": 790,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\package-consumers\\20261022T190111334Z-7429db780c904cfc9b52dfa125a009f6\\themes\\consumer-result.json",
+            "sha256": "1B4A21EF320C6E4120535EE8A7BCE7B274355AB5CB4553D438C728C8C004A1BC",
+            "bytes": 128614
+          },
+          "coreAssemblySha256": "176E3B86D0DFAC5D6E632E5E2867818747D55E2F392F84A933206A8CE54B4A69"
+        }
+      ],
+      "pngCount": 997,
+      "mapsPngCount": 24,
+      "numericRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\maps\\raw.json",
+        "sha256": "F4C9F560509796CC0809C1068EDBF3DF512C7142858018556E47035005A0EFBB",
+        "bytes": 258531745
+      },
+      "numericResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\maps\\independent-numeric-result.json",
+        "sha256": "2AC20D2549E0E020A516EAE8D6268847C19191EE486CDE1463BA95896A0E079B",
+        "bytes": 131713836
+      },
+      "numericChecks": 2034945,
+      "pixelResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\maps\\independent-pixel-result.json",
+        "sha256": "3CBFFD9696C102384B6FC26B364B98843B53806D110E738A4A98CF06705DF2C8",
+        "bytes": 46840
+      },
+      "pixelChecks": 156,
+      "metadataResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\maps\\independent-metadata-result.json",
+        "sha256": "44275279524F7331E4085A8899C20DD2D8836FDFDF6E4C226E90D512DBA99384",
+        "bytes": 212862
+      },
+      "metadataChecks": 4004,
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\api-v2\\api.txt",
+        "sha256": "D1EAD74DE45DD8615AF1F333F8F4B64C9B9B6E13EBC971BA010F57A8818602B2",
+        "bytes": 743665
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\verification\\functional-v2\\environment.json",
+        "sha256": "C76A944BAD7C1F9CFA60BCD9DC258F2796243DA0F53755CECCB88678EEA41718",
+        "bytes": 8435
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\verification\\functional-v2\\assembly-manifest.json",
+        "sha256": "3FD49550CCB6F4BE7C5529F6620A03AA57874BAE1364FAE8DF25EA7D0D092D2F",
+        "bytes": 1906
+      },
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\verification\\functional-v2\\validated-input-manifest.json",
+        "sha256": "F369887FE8E850AE653C92F3A7C91E12AA923141D36D7986C3B8AD01005D1FF8",
+        "bytes": 155324
+      },
+      "performance": [
+        {
+          "id": "perf-geometry-2000-10000",
+          "elapsedMilliseconds": 9.8805,
+          "allocatedBytes": 5037144
+        },
+        {
+          "id": "perf-heat-10000-64x64-r2",
+          "elapsedMilliseconds": 16.1357,
+          "allocatedBytes": 11069400
+        }
+      ],
+      "physicalInputValidated": false,
+      "formalSlaEvaluated": false
+    }
+  },
+  "api": {
+    "path": "<REPO_ROOT>\\docs\\charts-c6-geographic-maps-api.txt",
+    "sha256": "6EACD83BCB7A355F833105AEFE42019D559A5649099905A193F952FBD740B71E",
+    "bytes": 743665
+  },
+  "testIdentityDisplayAdaptations": [
+    {
+      "rawName": "Charts.Headless.Tests.GaugeControlTests.Invalid_domains_and_nonfinite_values_render_a_track_without_throwing(minimum: 0, maximum: Infinity, value: 50)",
+      "canonicalWindowsName": "Charts.Headless.Tests.GaugeControlTests.Invalid_domains_and_nonfinite_values_render_a_track_without_throwing(minimum: 0, maximum: ∞, value: 50)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.GaugeControlTests",
+        "method": "Invalid_domains_and_nonfinite_values_render_a_track_without_throwing",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/GaugeControlTests.cs",
+        "sourceSha256": "6B80AB5CF97DBDF120D69892E5C862BD5DA0A6A9F860D1F3EF28DB3594D590CC",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 30,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.GaugeControlTests",
+        "method": "Invalid_domains_and_nonfinite_values_render_a_track_without_throwing",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/GaugeControlTests.cs",
+        "sourceSha256": "6B80AB5CF97DBDF120D69892E5C862BD5DA0A6A9F860D1F3EF28DB3594D590CC",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 30,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.GaugeControlTests.Invalid_domains_and_nonfinite_values_render_a_track_without_throwing(minimum: 0, maximum: 100, value: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.GaugeControlTests.Invalid_domains_and_nonfinite_values_render_a_track_without_throwing(minimum: 0, maximum: 100, value: -∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.GaugeControlTests",
+        "method": "Invalid_domains_and_nonfinite_values_render_a_track_without_throwing",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/GaugeControlTests.cs",
+        "sourceSha256": "6B80AB5CF97DBDF120D69892E5C862BD5DA0A6A9F860D1F3EF28DB3594D590CC",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 30,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.GaugeControlTests",
+        "method": "Invalid_domains_and_nonfinite_values_render_a_track_without_throwing",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/GaugeControlTests.cs",
+        "sourceSha256": "6B80AB5CF97DBDF120D69892E5C862BD5DA0A6A9F860D1F3EF28DB3594D590CC",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 30,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.ChartScaleTests.Degenerate_or_invalid_explicit_bounds_cannot_break_scale_generation(minimum: NaN, maximum: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ChartScaleTests.Degenerate_or_invalid_explicit_bounds_cannot_break_scale_generation(minimum: NaN, maximum: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.ChartScaleTests",
+        "method": "Degenerate_or_invalid_explicit_bounds_cannot_break_scale_generation",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ChartScaleTests.cs",
+        "sourceSha256": "D6ACD2887C55B03D7425BDB52C4E79353523FF6FE1B0483802B8EE7261CCF5AD",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/ChartScaleTests.cs",
+        "reportedSourceLine": "119",
+        "declaredMethodLine": 123,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.ChartScaleTests",
+        "method": "Degenerate_or_invalid_explicit_bounds_cannot_break_scale_generation",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ChartScaleTests.cs",
+        "sourceSha256": "D6ACD2887C55B03D7425BDB52C4E79353523FF6FE1B0483802B8EE7261CCF5AD",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\ChartScaleTests.cs",
+        "reportedSourceLine": "119",
+        "declaredMethodLine": 123,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.StatisticsMathTests.Confidence_level_is_finite_and_strictly_between_zero_and_one(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.StatisticsMathTests.Confidence_level_is_finite_and_strictly_between_zero_and_one(value: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.StatisticsMathTests",
+        "method": "Confidence_level_is_finite_and_strictly_between_zero_and_one",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "reportedSourceLine": "340",
+        "declaredMethodLine": 345,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.StatisticsMathTests",
+        "method": "Confidence_level_is_finite_and_strictly_between_zero_and_one",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\StatisticsMathTests.cs",
+        "reportedSourceLine": "340",
+        "declaredMethodLine": 345,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.StatisticsMathTests.Nonnegative_numeric_parameters_reject_invalid_values(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.StatisticsMathTests.Nonnegative_numeric_parameters_reject_invalid_values(value: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.StatisticsMathTests",
+        "method": "Nonnegative_numeric_parameters_reject_invalid_values",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "reportedSourceLine": "327",
+        "declaredMethodLine": 332,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.StatisticsMathTests",
+        "method": "Nonnegative_numeric_parameters_reject_invalid_values",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\StatisticsMathTests.cs",
+        "reportedSourceLine": "327",
+        "declaredMethodLine": 332,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.StatisticsMathTests.Nonnegative_numeric_parameters_reject_invalid_values(value: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.StatisticsMathTests.Nonnegative_numeric_parameters_reject_invalid_values(value: -∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.StatisticsMathTests",
+        "method": "Nonnegative_numeric_parameters_reject_invalid_values",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "reportedSourceLine": "327",
+        "declaredMethodLine": 332,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.StatisticsMathTests",
+        "method": "Nonnegative_numeric_parameters_reject_invalid_values",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\StatisticsMathTests.cs",
+        "reportedSourceLine": "327",
+        "declaredMethodLine": 332,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.StatisticsMathTests.Quantile_rejects_invalid_probabilities(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.StatisticsMathTests.Quantile_rejects_invalid_probabilities(value: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.StatisticsMathTests",
+        "method": "Quantile_rejects_invalid_probabilities",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "reportedSourceLine": "318",
+        "declaredMethodLine": 324,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.StatisticsMathTests",
+        "method": "Quantile_rejects_invalid_probabilities",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\StatisticsMathTests.cs",
+        "reportedSourceLine": "318",
+        "declaredMethodLine": 324,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.StatisticsMathTests.Quantile_rejects_invalid_probabilities(value: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.StatisticsMathTests.Quantile_rejects_invalid_probabilities(value: -∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.StatisticsMathTests",
+        "method": "Quantile_rejects_invalid_probabilities",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "reportedSourceLine": "318",
+        "declaredMethodLine": 324,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.StatisticsMathTests",
+        "method": "Quantile_rejects_invalid_probabilities",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "sourceSha256": "CEBC56B580A3157F91ED6E94C594877CBA714BA70B8D668EB7B9C886DC14D36A",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\StatisticsMathTests.cs",
+        "reportedSourceLine": "318",
+        "declaredMethodLine": 324,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.ThemeRiverStackTests.Invalid_contributions_are_rejected_without_inventing_gaps(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ThemeRiverStackTests.Invalid_contributions_are_rejected_without_inventing_gaps(value: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.ThemeRiverStackTests",
+        "method": "Invalid_contributions_are_rejected_without_inventing_gaps",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ThemeRiverStackTests.cs",
+        "sourceSha256": "B36D8A85943C2E3531BB466E5A84FDFFE4D59C9FFB574BFC6E741F9F95A5FC4A",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/ThemeRiverStackTests.cs",
+        "reportedSourceLine": "23",
+        "declaredMethodLine": 25,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.ThemeRiverStackTests",
+        "method": "Invalid_contributions_are_rejected_without_inventing_gaps",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ThemeRiverStackTests.cs",
+        "sourceSha256": "B36D8A85943C2E3531BB466E5A84FDFFE4D59C9FFB574BFC6E741F9F95A5FC4A",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\ThemeRiverStackTests.cs",
+        "reportedSourceLine": "23",
+        "declaredMethodLine": 25,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.HierarchyChartTests.Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals(invalid: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.HierarchyChartTests.Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals(invalid: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.HierarchyChartTests",
+        "method": "Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/HierarchyChartTests.cs",
+        "sourceSha256": "30FEFB9C99733F5DA22D2C3F1FE6891D70840E8F3B273DC07271CE553A3CBF69",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 212,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.HierarchyChartTests",
+        "method": "Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/HierarchyChartTests.cs",
+        "sourceSha256": "30FEFB9C99733F5DA22D2C3F1FE6891D70840E8F3B273DC07271CE553A3CBF69",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 212,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.HierarchyChartTests.Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals(invalid: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.HierarchyChartTests.Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals(invalid: -∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.HierarchyChartTests",
+        "method": "Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/HierarchyChartTests.cs",
+        "sourceSha256": "30FEFB9C99733F5DA22D2C3F1FE6891D70840E8F3B273DC07271CE553A3CBF69",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 212,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.HierarchyChartTests",
+        "method": "Nonfinite_explicit_branch_values_are_rejected_even_when_children_have_valid_totals",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/HierarchyChartTests.cs",
+        "sourceSha256": "30FEFB9C99733F5DA22D2C3F1FE6891D70840E8F3B273DC07271CE553A3CBF69",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 212,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.TouchInputTests.Invalid_native_pinch_scale_is_not_consumed_and_does_not_change_the_view(scale: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.TouchInputTests.Invalid_native_pinch_scale_is_not_consumed_and_does_not_change_the_view(scale: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.TouchInputTests",
+        "method": "Invalid_native_pinch_scale_is_not_consumed_and_does_not_change_the_view",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/TouchInputTests.cs",
+        "sourceSha256": "9903A96E27F8D941AE24B12BE2D096F1F517125C8DA0A982C9B1501E887BDE18",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 403,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.TouchInputTests",
+        "method": "Invalid_native_pinch_scale_is_not_consumed_and_does_not_change_the_view",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/TouchInputTests.cs",
+        "sourceSha256": "9903A96E27F8D941AE24B12BE2D096F1F517125C8DA0A982C9B1501E887BDE18",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 403,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.InRangeLinearProjectionTests.Proven_bar_group_parameter_edges_keep_per_primitive_general_bits(groupWidth: Infinity, groupCount: 3, groupIndex: 2)",
+      "canonicalWindowsName": "Charts.Headless.Tests.InRangeLinearProjectionTests.Proven_bar_group_parameter_edges_keep_per_primitive_general_bits(groupWidth: ∞, groupCount: 3, groupIndex: 2)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.InRangeLinearProjectionTests",
+        "method": "Proven_bar_group_parameter_edges_keep_per_primitive_general_bits",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/InRangeLinearProjectionTests.cs",
+        "sourceSha256": "482A92CE355F3DC4A39E290DE4E4293FC5F9B5E341F5DA6D3A871EC8F59235C6",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 310,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.InRangeLinearProjectionTests",
+        "method": "Proven_bar_group_parameter_edges_keep_per_primitive_general_bits",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/InRangeLinearProjectionTests.cs",
+        "sourceSha256": "482A92CE355F3DC4A39E290DE4E4293FC5F9B5E341F5DA6D3A871EC8F59235C6",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 310,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.MapChartTests.Typed_business_values_must_be_finite_even_when_a_separate_positive_size_is_mapped(invalidValue: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.MapChartTests.Typed_business_values_must_be_finite_even_when_a_separate_positive_size_is_mapped(invalidValue: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.MapChartTests",
+        "method": "Typed_business_values_must_be_finite_even_when_a_separate_positive_size_is_mapped",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/MapChartTests.cs",
+        "sourceSha256": "A73688E1D5BF1C533890C598AE2D8D999E9FD9884229F9B1895AA00D61BBAB17",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 140,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.MapChartTests",
+        "method": "Typed_business_values_must_be_finite_even_when_a_separate_positive_size_is_mapped",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/MapChartTests.cs",
+        "sourceSha256": "A73688E1D5BF1C533890C598AE2D8D999E9FD9884229F9B1895AA00D61BBAB17",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 140,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.MapChartTests.Typed_business_values_must_be_finite_even_when_a_separate_positive_size_is_mapped(invalidValue: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.MapChartTests.Typed_business_values_must_be_finite_even_when_a_separate_positive_size_is_mapped(invalidValue: -∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.MapChartTests",
+        "method": "Typed_business_values_must_be_finite_even_when_a_separate_positive_size_is_mapped",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/MapChartTests.cs",
+        "sourceSha256": "A73688E1D5BF1C533890C598AE2D8D999E9FD9884229F9B1895AA00D61BBAB17",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 140,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.MapChartTests",
+        "method": "Typed_business_values_must_be_finite_even_when_a_separate_positive_size_is_mapped",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/MapChartTests.cs",
+        "sourceSha256": "A73688E1D5BF1C533890C598AE2D8D999E9FD9884229F9B1895AA00D61BBAB17",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 140,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.ChartExportCompletionTests.Invalid_jpeg_density_is_rejected_before_destination_write(dpi: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ChartExportCompletionTests.Invalid_jpeg_density_is_rejected_before_destination_write(dpi: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.ChartExportCompletionTests",
+        "method": "Invalid_jpeg_density_is_rejected_before_destination_write",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ChartExportCompletionTests.cs",
+        "sourceSha256": "64FBC9AC2F10F53193CEAE583BF8DE90AA783D506660119E2E333D491F289B25",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/ChartExportCompletionTests.cs",
+        "reportedSourceLine": "57",
+        "declaredMethodLine": 62,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.ChartExportCompletionTests",
+        "method": "Invalid_jpeg_density_is_rejected_before_destination_write",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ChartExportCompletionTests.cs",
+        "sourceSha256": "64FBC9AC2F10F53193CEAE583BF8DE90AA783D506660119E2E333D491F289B25",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\ChartExportCompletionTests.cs",
+        "reportedSourceLine": "57",
+        "declaredMethodLine": 62,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.ScatterBubbleDataTests.Missing_negative_and_nonfinite_sizes_hide_glyphs_but_keep_canonical_XY_available(size: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ScatterBubbleDataTests.Missing_negative_and_nonfinite_sizes_hide_glyphs_but_keep_canonical_XY_available(size: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.ScatterBubbleDataTests",
+        "method": "Missing_negative_and_nonfinite_sizes_hide_glyphs_but_keep_canonical_XY_available",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ScatterBubbleDataTests.cs",
+        "sourceSha256": "3A8D84FD992378859579D7EB90615EBCAF3276BAAB9899C79754024394787E3E",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 110,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.ScatterBubbleDataTests",
+        "method": "Missing_negative_and_nonfinite_sizes_hide_glyphs_but_keep_canonical_XY_available",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ScatterBubbleDataTests.cs",
+        "sourceSha256": "3A8D84FD992378859579D7EB90615EBCAF3276BAAB9899C79754024394787E3E",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 110,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.LineInterpolationTests.Invalid_data_separates_figures_and_is_not_bridged_by_segment_hit_testing(missing: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.LineInterpolationTests.Invalid_data_separates_figures_and_is_not_bridged_by_segment_hit_testing(missing: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.LineInterpolationTests",
+        "method": "Invalid_data_separates_figures_and_is_not_bridged_by_segment_hit_testing",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/LineInterpolationTests.cs",
+        "sourceSha256": "2E54BDC1452F1711CCDF0E5A0F678AA36CDFCF6E7E113078C36C12CA1523DB2A",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 89,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.LineInterpolationTests",
+        "method": "Invalid_data_separates_figures_and_is_not_bridged_by_segment_hit_testing",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/LineInterpolationTests.cs",
+        "sourceSha256": "2E54BDC1452F1711CCDF0E5A0F678AA36CDFCF6E7E113078C36C12CA1523DB2A",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 89,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.HierarchyMathTests.Invalid_values_are_rejected_even_on_nonleaf_nodes(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.HierarchyMathTests.Invalid_values_are_rejected_even_on_nonleaf_nodes(value: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.HierarchyMathTests",
+        "method": "Invalid_values_are_rejected_even_on_nonleaf_nodes",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/HierarchyMathTests.cs",
+        "sourceSha256": "7083771590C8D26149568CEF18C446B0BBFEF65309B85D04472439B7ACE5E2BB",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/HierarchyMathTests.cs",
+        "reportedSourceLine": "254",
+        "declaredMethodLine": 259,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.HierarchyMathTests",
+        "method": "Invalid_values_are_rejected_even_on_nonleaf_nodes",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/HierarchyMathTests.cs",
+        "sourceSha256": "7083771590C8D26149568CEF18C446B0BBFEF65309B85D04472439B7ACE5E2BB",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\HierarchyMathTests.cs",
+        "reportedSourceLine": "254",
+        "declaredMethodLine": 259,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.HierarchyMathTests.Invalid_values_are_rejected_even_on_nonleaf_nodes(value: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.HierarchyMathTests.Invalid_values_are_rejected_even_on_nonleaf_nodes(value: -∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.HierarchyMathTests",
+        "method": "Invalid_values_are_rejected_even_on_nonleaf_nodes",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/HierarchyMathTests.cs",
+        "sourceSha256": "7083771590C8D26149568CEF18C446B0BBFEF65309B85D04472439B7ACE5E2BB",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/HierarchyMathTests.cs",
+        "reportedSourceLine": "254",
+        "declaredMethodLine": 259,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.HierarchyMathTests",
+        "method": "Invalid_values_are_rejected_even_on_nonleaf_nodes",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/HierarchyMathTests.cs",
+        "sourceSha256": "7083771590C8D26149568CEF18C446B0BBFEF65309B85D04472439B7ACE5E2BB",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\HierarchyMathTests.cs",
+        "reportedSourceLine": "254",
+        "declaredMethodLine": 259,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.RelationMathTests.Snapshot_rejects_invalid_node_and_edge_weights(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.RelationMathTests.Snapshot_rejects_invalid_node_and_edge_weights(value: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.RelationMathTests",
+        "method": "Snapshot_rejects_invalid_node_and_edge_weights",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/RelationMathTests.cs",
+        "sourceSha256": "5241A2BF337E3D870203C813F59455D62504C7E5FA0D3F721BAF467F27273F74",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/RelationMathTests.cs",
+        "reportedSourceLine": "66",
+        "declaredMethodLine": 70,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.RelationMathTests",
+        "method": "Snapshot_rejects_invalid_node_and_edge_weights",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/RelationMathTests.cs",
+        "sourceSha256": "5241A2BF337E3D870203C813F59455D62504C7E5FA0D3F721BAF467F27273F74",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\RelationMathTests.cs",
+        "reportedSourceLine": "66",
+        "declaredMethodLine": 70,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.FinancialMathTests.Invalid_box_sizes_and_reversal_amounts_are_rejected(size: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.FinancialMathTests.Invalid_box_sizes_and_reversal_amounts_are_rejected(size: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.FinancialMathTests",
+        "method": "Invalid_box_sizes_and_reversal_amounts_are_rejected",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/FinancialMathTests.cs",
+        "sourceSha256": "A990ED94E9638B5CE07A9DD7A243A7B87E1ABE5450FEC8AEA15733972876274C",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/FinancialMathTests.cs",
+        "reportedSourceLine": "196",
+        "declaredMethodLine": 198,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.FinancialMathTests",
+        "method": "Invalid_box_sizes_and_reversal_amounts_are_rejected",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/FinancialMathTests.cs",
+        "sourceSha256": "A990ED94E9638B5CE07A9DD7A243A7B87E1ABE5450FEC8AEA15733972876274C",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\FinancialMathTests.cs",
+        "reportedSourceLine": "196",
+        "declaredMethodLine": 198,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.FinancialMathTests.Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping(open: 9, high: Infinity, low: 8, close: 10)",
+      "canonicalWindowsName": "Charts.Headless.Tests.FinancialMathTests.Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping(open: 9, high: ∞, low: 8, close: 10)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.FinancialMathTests",
+        "method": "Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/FinancialMathTests.cs",
+        "sourceSha256": "A990ED94E9638B5CE07A9DD7A243A7B87E1ABE5450FEC8AEA15733972876274C",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/FinancialMathTests.cs",
+        "reportedSourceLine": "166",
+        "declaredMethodLine": 170,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.FinancialMathTests",
+        "method": "Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/FinancialMathTests.cs",
+        "sourceSha256": "A990ED94E9638B5CE07A9DD7A243A7B87E1ABE5450FEC8AEA15733972876274C",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\FinancialMathTests.cs",
+        "reportedSourceLine": "166",
+        "declaredMethodLine": 170,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.FinancialMathTests.Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping(open: 9, high: 10, low: -Infinity, close: 10)",
+      "canonicalWindowsName": "Charts.Headless.Tests.FinancialMathTests.Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping(open: 9, high: 10, low: -∞, close: 10)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.FinancialMathTests",
+        "method": "Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/FinancialMathTests.cs",
+        "sourceSha256": "A990ED94E9638B5CE07A9DD7A243A7B87E1ABE5450FEC8AEA15733972876274C",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/FinancialMathTests.cs",
+        "reportedSourceLine": "166",
+        "declaredMethodLine": 170,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.FinancialMathTests",
+        "method": "Invalid_ohlc_is_rejected_without_silent_sorting_or_clamping",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/FinancialMathTests.cs",
+        "sourceSha256": "A990ED94E9638B5CE07A9DD7A243A7B87E1ABE5450FEC8AEA15733972876274C",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\FinancialMathTests.cs",
+        "reportedSourceLine": "166",
+        "declaredMethodLine": 170,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.FinancialMathTests.Invalid_volume_is_rejected(volume: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.FinancialMathTests.Invalid_volume_is_rejected(volume: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.FinancialMathTests",
+        "method": "Invalid_volume_is_rejected",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/FinancialMathTests.cs",
+        "sourceSha256": "A990ED94E9638B5CE07A9DD7A243A7B87E1ABE5450FEC8AEA15733972876274C",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/FinancialMathTests.cs",
+        "reportedSourceLine": "176",
+        "declaredMethodLine": 178,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.FinancialMathTests",
+        "method": "Invalid_volume_is_rejected",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/FinancialMathTests.cs",
+        "sourceSha256": "A990ED94E9638B5CE07A9DD7A243A7B87E1ABE5450FEC8AEA15733972876274C",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\FinancialMathTests.cs",
+        "reportedSourceLine": "176",
+        "declaredMethodLine": 178,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions(invalid: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions(invalid: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.AnnotationShapeCompletionTests",
+        "method": "Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/AnnotationShapeCompletionTests.cs",
+        "sourceSha256": "5DFF63D9226CCB2D284DB6582CA49F3C00198EB712578F4590EEE70CBD6A12B5",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 48,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.AnnotationShapeCompletionTests",
+        "method": "Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/AnnotationShapeCompletionTests.cs",
+        "sourceSha256": "5DFF63D9226CCB2D284DB6582CA49F3C00198EB712578F4590EEE70CBD6A12B5",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 48,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions(invalid: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions(invalid: -∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.AnnotationShapeCompletionTests",
+        "method": "Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/AnnotationShapeCompletionTests.cs",
+        "sourceSha256": "5DFF63D9226CCB2D284DB6582CA49F3C00198EB712578F4590EEE70CBD6A12B5",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 48,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.AnnotationShapeCompletionTests",
+        "method": "Radii_and_corner_radii_reject_negative_or_nonfinite_dimensions",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/AnnotationShapeCompletionTests.cs",
+        "sourceSha256": "5DFF63D9226CCB2D284DB6582CA49F3C00198EB712578F4590EEE70CBD6A12B5",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 48,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Invalid_or_overflowing_data_center_extrema_are_not_drawn(center: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Invalid_or_overflowing_data_center_extrema_are_not_drawn(center: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.AnnotationShapeCompletionTests",
+        "method": "Invalid_or_overflowing_data_center_extrema_are_not_drawn",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/AnnotationShapeCompletionTests.cs",
+        "sourceSha256": "5DFF63D9226CCB2D284DB6582CA49F3C00198EB712578F4590EEE70CBD6A12B5",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 86,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.AnnotationShapeCompletionTests",
+        "method": "Invalid_or_overflowing_data_center_extrema_are_not_drawn",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/AnnotationShapeCompletionTests.cs",
+        "sourceSha256": "5DFF63D9226CCB2D284DB6582CA49F3C00198EB712578F4590EEE70CBD6A12B5",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 86,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Invalid_or_overflowing_data_center_extrema_are_not_drawn(center: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.AnnotationShapeCompletionTests.Invalid_or_overflowing_data_center_extrema_are_not_drawn(center: -∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.AnnotationShapeCompletionTests",
+        "method": "Invalid_or_overflowing_data_center_extrema_are_not_drawn",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/AnnotationShapeCompletionTests.cs",
+        "sourceSha256": "5DFF63D9226CCB2D284DB6582CA49F3C00198EB712578F4590EEE70CBD6A12B5",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 86,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.AnnotationShapeCompletionTests",
+        "method": "Invalid_or_overflowing_data_center_extrema_are_not_drawn",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/AnnotationShapeCompletionTests.cs",
+        "sourceSha256": "5DFF63D9226CCB2D284DB6582CA49F3C00198EB712578F4590EEE70CBD6A12B5",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 86,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.ChartShapeAnnotationTests.Arrow_head_dimensions_reject_invalid_or_unbounded_sizes(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ChartShapeAnnotationTests.Arrow_head_dimensions_reject_invalid_or_unbounded_sizes(value: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.ChartShapeAnnotationTests",
+        "method": "Arrow_head_dimensions_reject_invalid_or_unbounded_sizes",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ChartShapeAnnotationTests.cs",
+        "sourceSha256": "3C337A861866A9AAA5138B5F7B30F86AB582B8FC34B48C8A7E9B7FFD9F2E1916",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 73,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.ChartShapeAnnotationTests",
+        "method": "Arrow_head_dimensions_reject_invalid_or_unbounded_sizes",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ChartShapeAnnotationTests.cs",
+        "sourceSha256": "3C337A861866A9AAA5138B5F7B30F86AB582B8FC34B48C8A7E9B7FFD9F2E1916",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 73,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.ChartShapeAnnotationTests.Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ChartShapeAnnotationTests.Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend(value: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.ChartShapeAnnotationTests",
+        "method": "Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ChartShapeAnnotationTests.cs",
+        "sourceSha256": "3C337A861866A9AAA5138B5F7B30F86AB582B8FC34B48C8A7E9B7FFD9F2E1916",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 85,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.ChartShapeAnnotationTests",
+        "method": "Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ChartShapeAnnotationTests.cs",
+        "sourceSha256": "3C337A861866A9AAA5138B5F7B30F86AB582B8FC34B48C8A7E9B7FFD9F2E1916",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 85,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.ChartShapeAnnotationTests.Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend(value: -Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ChartShapeAnnotationTests.Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend(value: -∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.ChartShapeAnnotationTests",
+        "method": "Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ChartShapeAnnotationTests.cs",
+        "sourceSha256": "3C337A861866A9AAA5138B5F7B30F86AB582B8FC34B48C8A7E9B7FFD9F2E1916",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 85,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.ChartShapeAnnotationTests",
+        "method": "Nonfinite_raw_endpoints_are_not_sent_to_the_drawing_backend",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ChartShapeAnnotationTests.cs",
+        "sourceSha256": "3C337A861866A9AAA5138B5F7B30F86AB582B8FC34B48C8A7E9B7FFD9F2E1916",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 85,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.MapMathTests.Spatial_layers_reject_invalid_weights(value: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.MapMathTests.Spatial_layers_reject_invalid_weights(value: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.MapMathTests",
+        "method": "Spatial_layers_reject_invalid_weights",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/MapMathTests.cs",
+        "sourceSha256": "F6BA1B6BB3062B8B4A8FA498DF2D0A16BC3EA7D9DF24368F9CE90D962669D6EA",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c6-geographic-maps-20261023/linux/physical-source-v2/tests/Charts.Headless.Tests/MapMathTests.cs",
+        "reportedSourceLine": "306",
+        "declaredMethodLine": 310,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.MapMathTests",
+        "method": "Spatial_layers_reject_invalid_weights",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/MapMathTests.cs",
+        "sourceSha256": "F6BA1B6BB3062B8B4A8FA498DF2D0A16BC3EA7D9DF24368F9CE90D962669D6EA",
+        "sourceFileReported": true,
+        "sourceLineReported": true,
+        "reportedSourceFile": "<REPO_ROOT>\\artifacts\\c603\\windows-source-v2\\tests\\Charts.Headless.Tests\\MapMathTests.cs",
+        "reportedSourceLine": "306",
+        "declaredMethodLine": 310,
+        "declaredLocationDerived": true
+      }
+    },
+    {
+      "rawName": "Charts.Headless.Tests.ChartExportTests.Invalid_resolution_reports_one_failure_without_writing_or_closing_stream(dpi: Infinity)",
+      "canonicalWindowsName": "Charts.Headless.Tests.ChartExportTests.Invalid_resolution_reports_one_failure_without_writing_or_closing_stream(dpi: ∞)",
+      "lexicalRule": "Only replace Infinity with Unicode infinity and/or escape quotes when a unique exact expected full name exists.",
+      "linuxSourceProof": {
+        "type": "Charts.Headless.Tests.ChartExportTests",
+        "method": "Invalid_resolution_reports_one_failure_without_writing_or_closing_stream",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ChartExportTests.cs",
+        "sourceSha256": "8B0D72E23653C7FEC1036C59EA5D2D5C5EBD183C1D623C88479500D669684024",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 66,
+        "declaredLocationDerived": true
+      },
+      "windowsSourceProof": {
+        "type": "Charts.Headless.Tests.ChartExportTests",
+        "method": "Invalid_resolution_reports_one_failure_without_writing_or_closing_stream",
+        "sourceRelativePath": "tests/Charts.Headless.Tests/ChartExportTests.cs",
+        "sourceSha256": "8B0D72E23653C7FEC1036C59EA5D2D5C5EBD183C1D623C88479500D669684024",
+        "sourceFileReported": false,
+        "sourceLineReported": false,
+        "reportedSourceFile": null,
+        "reportedSourceLine": null,
+        "declaredMethodLine": 66,
+        "declaredLocationDerived": true
+      }
+    }
+  ],
+  "allOldTestIdentities": 2515,
+  "newTestIdentities": 102,
+  "formalSlaEvaluated": false,
+  "physicalInputValidated": false,
+  "compositorPresentValidated": false,
+  "githubActionsRunExecuted": false,
+  "historicalStandaloneOraclesRerun": false,
+  "unresolvedLegacyLodNativeAv": true,
+  "geographicMapsSoftwarePassed": true,
+  "completeC6": false,
+  "nextMainStage": "C6-04",
+  "nativeLodCrashUnresolved": true,
+  "physicalAndNativeQualification": false,
+  "report": "<REPO_ROOT>\\docs\\charts-c6-geographic-maps.md",
+  "openIssueRegistry": {
+    "C7-NATIVE-LOD-AV-01": {
+      "status": "open",
+      "rootCauseConfirmed": false,
+      "productFixClaimed": false,
+      "firstFailure": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\candidate-v3-failure-pins-v1.json",
+        "sha256": "973DC9ADADC1A9390C0EDDDBAE8C2414BE05E827CB1DA88F34C0D6E4CB9FEEBE",
+        "bytes": 298221
+      },
+      "diagnostic": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-flow-relations-20261022\\development\\lod-native-diagnostic-conclusion-v1.json",
+        "sha256": "46887198F1368BE7D5F2C76EE6116EAB1F042358CD9E23CEFA24B42309ECD358",
+        "bytes": 3136
+      },
+      "stage": "C7/native qualification",
+      "note": "Prior C6-02 native original LOD export fatal0xC0000005 remains unresolved; this software pass is not a fix."
+    },
+    "C6-MAP-FIT-01": {
+      "status": "open",
+      "productFixClaimed": false,
+      "stage": "map fit/numerical follow-up",
+      "note": "A geometry-free SeatMap with a single double.Epsilon coordinate can expand .99/1.01 to identical bounds: zero fit width/radius makes a marker invisible; arbitrary finite-coordinate display is not qualified."
+    },
+    "C6-MAP-OBSERVER-01": {
+      "status": "open",
+      "productFixClaimed": false,
+      "stage": "source lifecycle follow-up",
+      "note": "Replacing ItemsSource or removing a layer retires former item observers on the next GetMarks/render. INCC row deletion now prunes immediately; deferred source/layer retirement is not claimed immediate."
+    },
+    "A11Y-NATIVE-01": {
+      "status": "deferred-by-user",
+      "productFixClaimed": false,
+      "note": "Native Windows UIA/Linux AT-SPI selected-item enumeration belongs to the later accessibility workstream."
+    }
+  },
+  "remainingIssues": [
+    "C7-NATIVE-LOD-AV-01 remains open: prior native LOD export fatal0xC0000005 has no confirmed root cause or product fix.",
+    "C6-MAP-FIT-01 remains open: geometry-free SeatMap single double.Epsilon coordinate may produce zero fit width/radius and an invisible marker.",
+    "C6-MAP-OBSERVER-01 remains open: replaced ItemsSource or removed layer item observers retire on next GetMarks/render; INCC row deletion alone prunes immediately.",
+    "Marker/Line/Vector/Pie overlays, tiles, categorical mappings, multi-seat selection, professional label collision/templates and complete official API/binary/default equivalence remain open.",
+    "Map preparation/projection/rendering and business mapping remain partly synchronous; bounded background source loading is not a complete background rendering pipeline.",
+    "Feature/vertex/ring/observation/JSON/grid/kernel/work/contribution budgets bound input or work, not measured process/native/GPU memory.",
+    "Formal C4-08 performance, percentile latency, frame/present/GPU, physical Windows/Linux input, native Wayland/ARM/distributions/multi-DPI and long-soak qualification remain open; no remote CI run was executed.",
+    "Million-point hit p95 and A11Y-NATIVE-01 remain deferred by user. Historical AX06/PixelProbe/animation/long-path/default-JIT and incomplete C5/C6 professional interactions remain retained."
+  ],
+  "finalBoardVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\final-board-visual-review-v2.json",
+    "sha256": "63262B6B578A5C880012E279EBF13733E2E241CA26BF00629AEF76F15EF7E24F",
+    "bytes": 3164
+  },
+  "developmentEvidenceIndex": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\development-evidence-index-v2.json",
+    "sha256": "D1E6BDDDCA7CBBC8F4B2F6BCAF8C56E57696585FB82902BBCF7E2934F0E71542",
+    "bytes": 61827
+  },
+  "alternateControlEvidence": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\alternate-control-evidence-pins-final-v2.json",
+    "sha256": "42FE60BBB4C8A6FE76B14B743E47D185FBE6380684FE78B9E64A4C67E726F166",
+    "bytes": 8284
+  },
+  "previousDevelopmentEvidenceIndex": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\development-evidence-index-v1.json",
+    "sha256": "D567BE0DA44BC6ACF8B03648503346995FCD3CBDB2DD293AEC6D19639E17688C",
+    "bytes": 56346
+  },
+  "previousAlternateControlEvidence": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\alternate-control-evidence-pins-final.json",
+    "sha256": "2ACF40E62355C3A6E55228C9D2E47AA5FDBF15502A31B4B0B8940BF8E6FA625F",
+    "bytes": 6337
+  },
+  "collectorIdentityGuards": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\collector-identity-guards-v1.json",
+    "sha256": "5168E1A24F80EBF08044319C51270D430E93052EB73C5EC9740240AAABDBB421",
+    "bytes": 553
+  },
+  "initialDocumentBytes": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\rolling-metadata-task-initial-v1.json",
+    "sha256": "F0196B3495E4641AFD5331E957639E58FCEEE2D5F92FC68F4365A2221B7AD95C",
+    "bytes": 2333
+  },
+  "numericProtocolAmendment": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\numeric-protocol-amendment-v4.json",
+    "sha256": "16B125659244E2E9603A68CEC95BD23F318806DE73C1A13FDF030EC146E7C459",
+    "bytes": 2682
+  },
+  "preObservationProtocolPins": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\pre-observation-protocol-pins-v1.json",
+    "sha256": "9DA99388E5635E76B39A8BDE2CF5098E65104984FC22A748BBAEF50F50557631",
+    "bytes": 19423
+  },
+  "wslgEnvironment": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\run-v2\\wslg-environment.json",
+    "sha256": "E7D7D8202232AD32DD0B3BAFE4B462D67CA2C012123BB75BFE20BDE4E5AE4BDC",
+    "bytes": 3474
+  },
+  "preservedFirstFormalLinuxFailure": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\candidate-v1-linux-failure-pins-v1.json",
+    "sha256": "62647FB0DF29A214A8978C703E8A921033BB8B742A0F69DA9A8002FF0AA5B13E",
+    "bytes": 76741
+  },
+  "independentAnimationDiagnostic": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\animation-diagnostic-v1-pins.json",
+    "sha256": "86E97EA3EE9F35A36A95C5B53845471B56A7BAA9E0DBB6E1187FB831437083F8",
+    "bytes": 19437
+  },
+  "candidateSourceAmendment": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\candidate-v2-source-amendment-v1.json",
+    "sha256": "F857BE040B3877E19441FB3DC73393AAC4105B94C5E7E63D8AF9DE4ECCD6C85B",
+    "bytes": 5350
+  },
+  "pointerAnimationRedGreen": {
+    "oldCoreRed": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\development\\animation-pointer-red-v2\\animation-pointer.trx",
+      "sha256": "1282F8DAAF8E70C5415A47E5E7FBFA9DBEE9BF7B2373DB99975C2FA69CEA08AB",
+      "bytes": 15128
+    },
+    "fixedCoreGreen": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\development\\animation-pointer-green-v1\\animation-pointer.trx",
+      "sha256": "59085E70243E5132F0C9FF38874497E887B5F123A7F2D44B1C0CE235A17BDA17",
+      "bytes": 88093
+    },
+    "pointerCases": [
+      "Charts.Headless.Tests.ChartAnimationTests.Native_pointer_enter_and_leave_preserve_paused_drawing_and_export_frame(trigger: Data)",
+      "Charts.Headless.Tests.ChartAnimationTests.Native_pointer_enter_and_leave_preserve_paused_drawing_and_export_frame(trigger: Entrance)",
+      "Charts.Headless.Tests.ChartAnimationTests.Native_pointer_enter_and_leave_preserve_running_animation_and_current_frame_tooltip(trigger: Data)",
+      "Charts.Headless.Tests.ChartAnimationTests.Native_pointer_enter_and_leave_preserve_running_animation_and_current_frame_tooltip(trigger: Entrance)"
+    ],
+    "oldCoreFailed": 4,
+    "fixedPassed": 60,
+    "originalTestFileShaClaimedUnchanged": false,
+    "oldTestLinesAllRetained": true,
+    "insertedTestLines": 39
+  },
+  "fixedAnimationDiagnostic": {
+    "receipt": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\animation-diagnostic-v2-pins.json",
+      "sha256": "CAC8381D998E1BEE1593ADE23CA944A0B7ACF743FFA089FFD8E9EC7A77D9F8D6",
+      "bytes": 39618
+    },
+    "run": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\animation-diagnostic-v2\\diagnostic-run-v2.json",
+      "sha256": "902D0D422D38AA453D4B4B02298AD881419F93742887D867815F4F4B2755DD74",
+      "bytes": 4015
+    },
+    "native": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\linux\\animation-diagnostic-v2\\native.json",
+      "sha256": "D99A208E67D03C201972DE4FBCF9F522F324BE6BF3D277B80E28718ACC8D946C",
+      "bytes": 1604693
+    },
+    "themes": [
+      "亮色",
+      "暗色"
+    ],
+    "diagnosticOnly": true,
+    "formalRetry": false
+  },
+  "firstFormalLinuxFailureSummary": {
+    "theme": "light",
+    "nativeExitCode": 1,
+    "checksObserved": 377,
+    "failedChecks": 4,
+    "mapsPhaseExecuted": false,
+    "automaticRetryPerformed": false,
+    "isPriorNativeLodAv": false,
+    "diagnosticExitCode": 1,
+    "diagnosedCancellationPath": "IsPointerOver -> CartesianChart.OnPropertyChanged -> PrepareAnimationChange(None) -> CancelAnimations -> Running to Idle"
+  },
+  "animationRepairQualificationScope": "Synthetic regression for the diagnosed IsPointerOver/non-animation-property cancellation path only; not a resolution of prior native LOD AV, general race, physical input or GPU/present reliability.",
+  "supersededCandidate": "c6-geographic-maps-source-v1",
+  "officialSources": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c6-geographic-maps-20261023\\official-sources-v1.json",
+    "sha256": "163EB10228E4515E46CD4EF7792564DE9756CA06767C29A61B6851FFAB203267",
+    "bytes": 1901
+  },
+  "mapAssetProvenance": {
+    "path": "<REPO_ROOT>\\samples\\NT.AvaloniaControl.Demo\\Assets\\Maps\\provenance.json",
+    "sha256": "F44AAB0FF791DD7750A0048C9529908505A61551F649CEAFD03C3A2C7EDAB8DC",
+    "bytes": 821
+  }
+}

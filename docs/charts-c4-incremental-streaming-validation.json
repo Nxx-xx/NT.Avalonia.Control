@@ -1,0 +1,729 @@
+{
+  "schemaVersion": 1,
+  "stage": "C4-05 incremental source and bounded real-time scheduling",
+  "completedUtc": "2026-10-20T10:23:00.470323+00:00",
+  "clientExecutionDate": "2026-10-20",
+  "finalCandidateVersion": "c4-incremental-streaming-source-v1",
+  "softwareFunctionalSubsetPassed": true,
+  "functionalSubsetPassed": true,
+  "incrementalStreamingMechanismValidated": true,
+  "efficientHitMechanismValidated": true,
+  "lodMechanismValidated": true,
+  "visibilityMechanismValidated": true,
+  "cacheMechanismValidated": true,
+  "fullC2StageComplete": false,
+  "fullC3StageComplete": false,
+  "fullC4StageComplete": false,
+  "fullC7StageComplete": false,
+  "nextWorkItem": "C4-06",
+  "windows": {
+    "platform": "windows",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\windows-final-v1\\results.json",
+      "sha256": "4731BF9B5AA36FF314A972249F07198DA6E25C05826AAB917C568B62A6EB0A6D",
+      "bytes": 12996
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\windows-final-v1\\charts-smoke.json",
+      "sha256": "4E96A929C83DFD56D25A38D69BDA73617545F92C603B0C5843EF8418AF52E54B",
+      "bytes": 3161231
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\windows-final-v1\\charts-usage.json",
+      "sha256": "F3ACF6A355474FC9D70FACED9C348B0E0BBA9F99BB1F9674FAFD91721113CFBA",
+      "bytes": 52563
+    },
+    "headlessTests": 1868,
+    "demoChecks": 1320,
+    "usageChecks": 361,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 517,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\package-consumers-v1\\20261020T100706535Z-86b9cc3f0f5041cb84fc89689ecc244e\\function\\consumer-result.json",
+          "sha256": "31F18277E0801FD6BEA923775732F806E0D0340A675C08185B52E002435EB7C8",
+          "bytes": 85682
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\package-consumers-v1\\20261020T100706535Z-86b9cc3f0f5041cb84fc89689ecc244e\\function\\packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 517,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\package-consumers-v1\\20261020T100706535Z-86b9cc3f0f5041cb84fc89689ecc244e\\themes\\consumer-result.json",
+          "sha256": "9FD32C3D302C2E90644A6DCE852515BFFAD59DB940A67BAB6E6FD5FE30AD92AC",
+          "bytes": 85728
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\package-consumers-v1\\20261020T100706535Z-86b9cc3f0f5041cb84fc89689ecc244e\\themes\\packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\windows-final-v1\\validated-input-manifest.json",
+      "sha256": "A6EC43E03DF154D679F8DA8260FD40EFBE37BCC54B435F8C14AEE47C3CD70F3F",
+      "bytes": 134186
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\windows-final-v1\\assembly-manifest.json",
+      "sha256": "63FD05F120D858578A8F6A12E96FEB140BC819174CEDDEC23958AEDDE8205016",
+      "bytes": 1956
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\windows-final-v1\\environment.json",
+      "sha256": "10DFB172E5B570774C34912CC6B1ECC49A6DB14481344B7CACBFE40AE6BFEA6B",
+      "bytes": 8900
+    },
+    "coreSha256": "05A288E8159EC48406DF992DC213D046DF328435DF70512D70DC8A1F6C7B864D",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false,
+    "incrementalStreamingSupervisor": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\incremental-streaming-v1\\supervisor.json",
+      "sha256": "85DD9748258A74BDB6F7E4E15CEC026AC6C0D9478D8E0F95C894436C3ABAA57A",
+      "bytes": 2355
+    },
+    "incrementalStreamingRaw": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\incremental-streaming-v1\\raw.json",
+      "sha256": "F3889835BB004877479C22B4E60EB3094F69909B3BC62C941508F26C3E6893BB",
+      "bytes": 1329590
+    },
+    "independentIncrementalStreamingMechanism": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\independent-incremental-streaming-mechanism-windows-v1.json",
+      "sha256": "5D318F401AA48564758CBBEBB6ABECE1DC5B56142858015E072511CA3E9978C0",
+      "bytes": 958932
+    },
+    "independentNativeStreamingReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\independent-incremental-streaming-native-windows-v1.json",
+      "sha256": "52E6492B9D46C73F4900BA0F806CA9FF23A7E94856DBA553E8D725969978FB6F",
+      "bytes": 585478
+    },
+    "manualVisualReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\manual-windows-c405-visual-v1.json",
+      "sha256": "9DF789C9A1717DDC742D4D46207485395C3B0EE9E600D03D91BEBBD68D471756",
+      "bytes": 1704
+    },
+    "screenshotDirectory": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\windows-final-v1",
+    "pngCount": 711,
+    "newIncrementalStreamingPngCount": 6,
+    "representativeScreenshots": {
+      "paused": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\windows-final-v1\\charts-light-stream-light-paused-queue.png",
+        "sha256": "B326C01921BF7AFAF4E7854CAA376EAB7ED06EAAA493A601EB7121F1B7DBD5EC",
+        "bytes": 77717
+      },
+      "resumed": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\windows-final-v1\\charts-light-stream-light-resumed-follow.png",
+        "sha256": "2F39253E564FEFA4679B842F309A9EB62F2DA9E263760FE210B4B9C6F71BC15D",
+        "bytes": 81422
+      },
+      "darkChart": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows\\windows-final-v1\\charts-light-stream-dark-four-stream-chart.png",
+        "sha256": "EFEDB3F234A60FEB56F1A8C196ECA2CAF12DE31BF342F489043463DC590FC391",
+        "bytes": 50859
+      }
+    }
+  },
+  "linux": {
+    "platform": "linux",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\results.json",
+      "sha256": "C0BB089FD734E0D7739A699B46138F95360174BD7914E6DB722C346D730A7CB3",
+      "bytes": 14768
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\charts-smoke.json",
+      "sha256": "2E106760D0A2087D7F93E2530DDD2E10C928AF12491B28C12E6E0F068BC2AC2F",
+      "bytes": 3046782
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\charts-usage.json",
+      "sha256": "1F967E449A1D69131710F0CD0EA84C6DBF6438695A0E48D013E1858D96EDC25B",
+      "bytes": 50799
+    },
+    "headlessTests": 1868,
+    "demoChecks": 1320,
+    "usageChecks": 361,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 517,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\package-consumers\\20261020T101113539Z-28a6b062b8894ff4b5420c11a37f82a2\\function\\consumer-result.json",
+          "sha256": "D55CBF75572561AF9573A6ABA020CAA0B048E52C38C9111B5BEC35E64E7B0465",
+          "bytes": 83358
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-incremental-streaming-20261020/linux/run-v1/package-consumers/20261020T101113539Z-28a6b062b8894ff4b5420c11a37f82a2/function/packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 517,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\package-consumers\\20261020T101113539Z-28a6b062b8894ff4b5420c11a37f82a2\\themes\\consumer-result.json",
+          "sha256": "0EEBE91FDC0F3E77C364CCAEE6BD2B646608712664177BE12FC786210C16B6B7",
+          "bytes": 83402
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c4-incremental-streaming-20261020/linux/run-v1/package-consumers/20261020T101113539Z-28a6b062b8894ff4b5420c11a37f82a2/themes/packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\validated-input-manifest.json",
+      "sha256": "FFE77AEA986FBB243B669E67B07F56F1E629B422F977C683C157D1BF10527E2C",
+      "bytes": 131152
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\assembly-manifest.json",
+      "sha256": "D7DB0BFE31B21834D95FE9B859EE65BE2B691C9F9D2CEB11A431652A02E1524B",
+      "bytes": 1906
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\environment.json",
+      "sha256": "18CAFF1A2F3F25191CB19CEF4A87921F128E03AB8BC489D6EDBF9AC953FD01AD",
+      "bytes": 6202
+    },
+    "coreSha256": "338BD82A829CBFEFB1305DC84E8CD9BEDF305EF556166D61A8DB21FE8DBEA998",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false,
+    "incrementalStreamingSupervisor": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\incremental-streaming-v1\\supervisor.json",
+      "sha256": "4D0F73C29CEF156BA048BD9BE1BD5582120699BB77E0623B0F4EC0C7C23B2C5B",
+      "bytes": 2270
+    },
+    "incrementalStreamingRaw": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\incremental-streaming-v1\\raw.json",
+      "sha256": "157A0BDBB1EE3EF16EC9F164D64EF11427344C6B1E2205732AE5CEF2EB245A28",
+      "bytes": 1292650
+    },
+    "independentIncrementalStreamingMechanism": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\independent-incremental-streaming-mechanism-linux-v1.json",
+      "sha256": "B51CD4CAA7DCADB414E6A8777707C4513333EA7D8AE7EE6F182162512AD593E1",
+      "bytes": 901820
+    },
+    "independentNativeStreamingReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\independent-incremental-streaming-native-linux-v1.json",
+      "sha256": "9601C5CAF77D7E3B545E4A07ED7F904EBEC927E834BD7AD0E9404E3819DC6571",
+      "bytes": 585599
+    },
+    "manualVisualReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\manual-linux-c405-visual-v1.json",
+      "sha256": "31BB2C884058A5893EA7D874C598B8D1458EE59598CD25D7C3D04D1BF01789B4",
+      "bytes": 1719
+    },
+    "screenshotDirectory": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\verification\\wslg-final-v1",
+    "pngCount": 711,
+    "newIncrementalStreamingPngCount": 6,
+    "representativeScreenshots": {
+      "paused": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\charts-light-stream-light-paused-queue.png",
+        "sha256": "903C26F37CB44265373562620E4FC4D5028EA45C126F5C36F587FEB37264D625",
+        "bytes": 113132
+      },
+      "resumed": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\charts-light-stream-light-resumed-follow.png",
+        "sha256": "73E0C19B8241A905DC26832AAD26CE115852AC0D4A57E74C98756C70CD8A99BA",
+        "bytes": 119563
+      },
+      "darkChart": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\run-v1\\verification\\wslg-final-v1\\charts-light-stream-dark-four-stream-chart.png",
+        "sha256": "B6CF956457A03F613D1124D4529DA8B8FCBFF4C552F36D38CC705EFC433565EA",
+        "bytes": 58287
+      }
+    }
+  },
+  "sourceSnapshotRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\source-snapshot-v1.json",
+    "sha256": "A1A0118C374FDA5EB2B84B9DD5B5DC1A8EE0160C30750043E8F90AF2965C5F6E",
+    "bytes": 348285
+  },
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\source-snapshot-v1.json",
+    "sha256": "A1A0118C374FDA5EB2B84B9DD5B5DC1A8EE0160C30750043E8F90AF2965C5F6E",
+    "bytes": 348285
+  },
+  "frozenSourceFiles": 1490,
+  "declaredValidatedInputsPerPlatform": 758,
+  "declaredInputsMatchBetweenPlatforms": true,
+  "declaredFrozenInputsStillMatch": true,
+  "declaredLiveInputsStillMatch": null,
+  "frozenSourceHashesStillMatch": true,
+  "liveFullRepositoryEqualityClaimed": false,
+  "sourceScope": "Both platforms build separate byte-identical physical frozen copies with independent bin/obj and caches. All declared frozen inputs and actual runtime payloads are authenticated. Concurrent unrelated active PdfViewer work can differ; no full active-workspace equality claim.",
+  "windowsApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\api-windows-final-v1\\api.txt",
+    "sha256": "CC35CCF57A8D293BCBFFD57CA15722C4ED981F8565825DF96E31C7C4E06ED5F6",
+    "bytes": 425905
+  },
+  "linuxApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux\\api-linux-final-v1\\api.txt",
+    "sha256": "FB08D352A9D333F181053CD5E379E2490B0411F8F22792BE2D3517EDA8C84E84",
+    "bytes": 425905
+  },
+  "publicApiDocument": {
+    "path": "<REPO_ROOT>\\docs\\charts-c4-incremental-streaming-api.txt",
+    "sha256": "CC35CCF57A8D293BCBFFD57CA15722C4ED981F8565825DF96E31C7C4E06ED5F6",
+    "bytes": 425905
+  },
+  "localApiDeclarationsMatchBetweenPlatforms": true,
+  "apiDelta": {
+    "oldTypes": 165,
+    "newTypes": 168,
+    "oldNamedChartsTypes": 163,
+    "newNamedChartsTypes": 166,
+    "addedTypes": [
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartDataBuffer`1",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartStreamingSession`1",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartStreamingStatistics"
+    ],
+    "addedMembersOnExistingTypes": [
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CartesianChart",
+        "member": "  Field: Avalonia.StyledProperty`1[System.Boolean] FollowLatestDataProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CartesianChart",
+        "member": "  Field: Avalonia.StyledProperty`1[System.Double] FollowLatestWindowProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CartesianChart",
+        "member": "  Property: System.Boolean FollowLatestData [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CartesianChart",
+        "member": "  Property: System.Double FollowLatestWindow [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CartesianChart",
+        "member": "  Method: System.IDisposable DeferDataUpdates() [static=False, abstract=False, virtual=False]"
+      }
+    ],
+    "removedTypes": [],
+    "changedExistingTypeDeclarations": [],
+    "removedMembersOnExistingTypes": [],
+    "officialCompatibilityQualified": false,
+    "binaryCompatibilityQualified": false
+  },
+  "completePublicApiReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\independent-full-public-api-v1.json",
+    "sha256": "0A7B190F4B5A616DE23481B034C0E9D3DB81A06ED7272F36B14240130D0F5878",
+    "bytes": 2999
+  },
+  "independentReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\collected-evidence-v1.json",
+    "sha256": "665C4BE4FE94AF6AF7941065D720A5A8D5E14C05547210C37B08182B59B8F6A5",
+    "bytes": 780580
+  },
+  "independentPackagePayloadReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\independent-package-payload-v1.json",
+    "sha256": "3C40F806050A3A46D4CE09470E403FFAB9D9B875FF228D22A037A055CE263DF3",
+    "bytes": 9051
+  },
+  "independentRasterReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\independent-preserved-raster-v1.json",
+    "sha256": "A120C8F4EADB87E8716583F868D209384A9F1D0CF059CC110E60B2B3D112616C",
+    "bytes": 247678
+  },
+  "cacheMechanismReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\cache-mechanism-review-v1.json",
+    "sha256": "25D2945F5118F67EADB382F5C6C9224861DAE89E9337200E3CD2269454C099FA",
+    "bytes": 874083
+  },
+  "visibilityMechanismReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\visibility-mechanism-review-v1.json",
+    "sha256": "8690C7D639C8B57849BBDB09ED8A1A7C3885DCCEA8E86FBFBB63E062F1533FAC",
+    "bytes": 814130
+  },
+  "lodMechanismReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\lod-mechanism-review-final-v1.json",
+    "sha256": "A87308F101C7195EC3ACA106DEBBA2A09CBE1834BD7E0A5C9D317F03729C9743",
+    "bytes": 629160
+  },
+  "efficientHitMechanismReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\efficient-hit-mechanism-formal-review-v1.json",
+    "sha256": "BFDD40ADABF65F0E6F69AE33C2B37983F23B78DC791FD962B49BD4D18D4588C5",
+    "bytes": 1620184
+  },
+  "incrementalStreamingMechanismReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\incremental-streaming-mechanism-review-v1.json",
+    "sha256": "CA888387C69FC4A52A441E85517C46350B37612FC8EFED78CF3D2602AC1E6761",
+    "bytes": 281604
+  },
+  "incrementalStreamingMeasurements": {
+    "windows": {
+      "coldMilliseconds": 1294.0728,
+      "coldAllocatedBytes": 1402939544,
+      "revisionMillisecondsMedian": 3.6995000000000005,
+      "revisionMillisecondsP95": 10.6861,
+      "revisionMillisecondsMaximum": 24.1991,
+      "revisionAllocatedBytesMaximum": 1682776,
+      "copiedRowsRange": [
+        500,
+        500
+      ],
+      "mappedRowsRange": [
+        500,
+        500
+      ],
+      "directoryEntriesRange": [
+        3912,
+        4156
+      ],
+      "virtualPacingOnly": true,
+      "sourceScenarioChartRenderAndPresentExcluded": true,
+      "attachedChart": {
+        "coldMilliseconds": 1353.0827000000002,
+        "coldIdentityPrimingMilliseconds": 130.7815,
+        "revisionMillisecondsMedian": 4.1247,
+        "revisionMillisecondsP95": 23.1372,
+        "revisionMillisecondsMaximum": 23.1372,
+        "revisionAllocatedBytesMaximum": 1871576,
+        "projectedPointsRange": [
+          2080,
+          2108
+        ],
+        "viewBuildsRange": [
+          1,
+          1
+        ],
+        "dataIndexBuildsRange": [
+          0,
+          0
+        ],
+        "summaryRowsRange": [
+          524,
+          1144
+        ],
+        "headlessDrawingGroupOnly": true,
+        "rasterAndPresentExcluded": true,
+        "subsequentHitNavigationAndOracleExcluded": true
+      }
+    },
+    "linux": {
+      "coldMilliseconds": 1700.995617,
+      "coldAllocatedBytes": 1403042728,
+      "revisionMillisecondsMedian": 4.053367,
+      "revisionMillisecondsP95": 10.054604999999999,
+      "revisionMillisecondsMaximum": 33.62616,
+      "revisionAllocatedBytesMaximum": 1682776,
+      "copiedRowsRange": [
+        500,
+        500
+      ],
+      "mappedRowsRange": [
+        500,
+        500
+      ],
+      "directoryEntriesRange": [
+        3912,
+        4156
+      ],
+      "virtualPacingOnly": true,
+      "sourceScenarioChartRenderAndPresentExcluded": true,
+      "attachedChart": {
+        "coldMilliseconds": 1404.985645,
+        "coldIdentityPrimingMilliseconds": 88.418435,
+        "revisionMillisecondsMedian": 3.738373,
+        "revisionMillisecondsP95": 19.235228,
+        "revisionMillisecondsMaximum": 19.235228,
+        "revisionAllocatedBytesMaximum": 1863608,
+        "projectedPointsRange": [
+          2080,
+          2108
+        ],
+        "viewBuildsRange": [
+          1,
+          1
+        ],
+        "dataIndexBuildsRange": [
+          0,
+          0
+        ],
+        "summaryRowsRange": [
+          524,
+          1144
+        ],
+        "headlessDrawingGroupOnly": true,
+        "rasterAndPresentExcluded": true,
+        "subsequentHitNavigationAndOracleExcluded": true
+      }
+    }
+  },
+  "independentNativeStreamingReviews": {
+    "windows": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\independent-incremental-streaming-native-windows-v1.json",
+      "sha256": "52E6492B9D46C73F4900BA0F806CA9FF23A7E94856DBA553E8D725969978FB6F",
+      "bytes": 585478
+    },
+    "linux": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\independent-incremental-streaming-native-linux-v1.json",
+      "sha256": "9601C5CAF77D7E3B545E4A07ED7F904EBEC927E834BD7AD0E9404E3819DC6571",
+      "bytes": 585599
+    }
+  },
+  "nativeStreamingOracle": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\incremental-streaming-native-oracle-preregistered-v1.json",
+    "sha256": "70F4FEE296BB42A8854FBCC423583851704651BD5E63FA779B0CA8B1B9063581",
+    "bytes": 1575
+  },
+  "historicalAndRendererPinsVerified": true,
+  "historicalDocumentPinCount": 62,
+  "historicalRendererVersionCount": 12,
+  "historicalRendererPreservationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\historical-renderer-preservation-v1.json",
+    "sha256": "C72823AC5585CFE8ADA62F8293476AF09D1D5F5B3C16C8BB2DBC9B1D9B42299E",
+    "bytes": 7262
+  },
+  "generalMetadataBeforeRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\metadata-before.json",
+    "sha256": "0C8721088FDA2E1A1515747465B242717BED9CFE18D8BD51D3F3E3090E466E56",
+    "bytes": 2542
+  },
+  "dependencyReuse": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\dependency-reuse.json",
+    "sha256": "D81263F8C1A71E416352576F8906943BF9CA12CD370574B63A3E9C716D1E8930",
+    "bytes": 5595
+  },
+  "productPackagesReused": false,
+  "nugetAuditOrWarningPolicyChanged": false,
+  "nativeAccessibilityEnumerationRetested": false,
+  "deferredNativeAccessibilityWorkstream": "A11Y-NATIVE-01",
+  "completeNativeBridgeGatePassed": false,
+  "previousNativeBridgeEvidence": {
+    "path": "<REPO_ROOT>\\docs\\charts-c2-accessibility-validation.json",
+    "sha256": "BC80F3A743AD610E5B419D87D00A753755265A12F434F08654A06A59ABD72A8D",
+    "bytes": 1405510
+  },
+  "previousEfficientHitEvidence": {
+    "path": "<REPO_ROOT>\\docs\\charts-c4-efficient-hit-validation.json",
+    "sha256": "8062E066838ACC9C692E98670FEECBC1877784E50B541477E1F159DEB36856EF",
+    "bytes": 47004
+  },
+  "performanceQualified": false,
+  "performanceMeasured": true,
+  "memoryRegressionMeasured": false,
+  "formalSlaEvaluated": false,
+  "millionHitTailDeferredTo": "C4 later optimization, user decision retained",
+  "officialRuntimeReferenceIncluded": false,
+  "physicalDesktopCertified": false,
+  "implementationContracts": [
+    "新增 ChartDataBuffer<T> 有限容量数据源，支持追加、插入、删除、批量替换与清空；超容量保留最后 Capacity 条，显式删除与容量淘汰分别统计。每次有效批量修改只发布一次集合通知和源版本，输入枚举失败不发布部分状态；修改必须在 UI 线程执行。 AppendRange 为保证失败迭代器不修改源，先枚举整个输入批并创建新页后才按容量裁剪，瞬时内存可随输入批大小超过保留容量。",
+    "数据源、映射记录与极值摘要采用不可变分页状态；存在 live Changed owner/附图订阅且映射配置未变时，适用的 Gap/Zero 普通对象映射在追加与滑动窗口中复用保留页，仅复制和映射新行。旧快照保留旧顺序、坐标、元数据和业务引用；由 buffer 映射创建的快照中 SourceIndex 是该快照的当前序号；公开发布/重排快照仍可保留显式 SourceIndex，跨滑动窗口使用显式 X 与 StableId 标识绝对业务记录。旧快照不深拷贝调用者 Item 对象。",
+    "新增 ChartStreamingSession<T> 将后台生产者的 TryAppend/AppendAsync 调度到 UI 回调，队列最多两批并包含执行中的批次；一次调度可以合并待提交批次。最多一个异步等待生产者，其他等待明确抛错；TryAppend 满时返回 false，没有静默丢弃。AppendAsync 在接受并复制输入后完成，调用者在接受前保留输入内存。 两批加一名等待者只保证批次与样本计数上限，不能界定任意 T 对象图的实际字节。",
+    "支持暂停、恢复、取消、完成、释放、Flush 和统计。暂停允许接收到容量；Flush 等待此前已接受数据完成 UI 回调，Complete 停止接受并恢复排空。取消清理未执行批次但不能打断已进入回调。CommittedSamples 表示成功 UI 源回调，不表示已显示帧；回调失败不自动重试，不保证任意用户修改之间的事务回滚。",
+    "CartesianChart.DeferDataUpdates 支持嵌套，合并多数据源变更后的选择核对与刷新请求，数据缓存仍随每次变更立即失效；作用域内查询仍须看到当前数据。FollowLatestData/FollowLatestWindow 控制主轴最新窗口，用户拖动、缩放、显式视口或重置暂停跟随，重新启用追到最新；暂停提交与暂停跟随独立。运行时配置或替换坐标轴不误停内部跟随策略。",
+    "Demo 展示四路有限窗口、后台生产、暂停恢复、停止、手动追加、查看完整窗口、删除与替换、跟随开关、原始业务 ID 和队列统计。Usage 使用编译绑定公开 API，两类仅包消费者复用 Usage 夹具且禁止源码项目引用。",
+    "结构诊断为四路共一百万保留行、120次每批500新行；初始用户对象与每批输入构造位于计数区间之前，完整原始 oracle 位于区间之后。每批 buffer 新页 payload 复制500行、对象新行映射500行，CopiedItemCount不包含Session接受ToArray与合并数组拷贝，映射阶段X/Y getter各500，整体getter各不超过1500，分页摘要访问不超过2548。新状态目录条目数另报；该计数不包含全部临时 slice 遍历或整页摘要合并工作，后两者仍为 O(P)，没有完整 P 工作门禁；虚拟50ms不证明实际定时10000点/秒吞吐。",
+    "独立附图诊断为四路共一百万行的真实 Headless CartesianChart，Numeric/SamplingNone、512单位窄窗，共12次每批500行，验证跟随、历史窗口暂停与恢复、淘汰与存活选择和原始命中。暖区间包含源、UI回调、选择维护、布局、场景、DrawingGroup绘制和RunJobs；初始 Row/Id、App、系列、源赋值与初始命中在 cold 区间之外，cold 不表示首次可用；首次业务ID缓存启动另报，随后命中、导航和完整oracle在暖区间之外；未测 framebuffer/GPU/compositor/present。",
+    "运行时直接比较原始 Item 引用；独立 reader 从完整公式重新计算新旧快照当前序号、业务ID、IEEE754坐标SHA，以及小型修改夹具全部原始行和队列顺序。JSON不能重建实际对象引用，不将布尔引用声明等同于独立引用证明。",
+    "两主题原生夹具验证后台线程到UI、暂停背压、合并取消、滑动删除身份、实际routed Tooltip与业务图形。独立PNG reader用预登记颜色、业务坐标、轴/plot和96DPI重算四区域，阈值alpha≥250、RGB±24、至少10像素不变；每平台仅两张chart-only图取得像素核对，另四张只记录SHA。"
+  ],
+  "implementationContractsRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\implementation-contracts-final-v3.json",
+    "sha256": "37EDF70E0D512A098448BC2AF5D21994B32F9FEB33CDFD461DD9B48F163849D3",
+    "bytes": 7870
+  },
+  "remaining": [
+    "下一项 C4-06 绘图与资源预算；完整 C4、C2/C3/C7、官方许可运行时对照与 API/二进制等价继续开放。",
+    "分页目录复制为O(P)，独立小批次不压实旧尾页，长期单点批次或中间编辑页数可能接近行数；压实、缓存字节预算、旧快照持有成本与公平多图调度仍需验证。 DirectoryEntryCount 仅统计新 state 的目录条目数，不能当作所有 P 相关工作量或内存分配的完整计数。 Buffer retained Capacity 不是总字节硬上限，AppendRange 的暂存输入可超过 Capacity；Session maximumBatchSize 约束接收数组，任意 T 引用对象与等待输入仍由调用者管理。",
+    "增量快速路径只对 ChartDataBuffer 与已记录映射策略成立；普通 ObservableCollection、INPC可变业务项或映射属性变化、Average/Interpolate与范围Zero修补等仍有全量路径。 无 live owner 的 Series.CreateSnapshot 沿用轮询语义，会主动全量重映射，即使用 Buffer 也不属于本轮增量快速路径。",
+    "日期/对数/断轴/自定义域过滤仍可能每数据版本扫描全源，非法值还可能构造N级overlay；类别/排序/堆叠/点编码/柱布局、新版本二维/共享读数/线段/LOD索引和动画几何仍有N级工作。本轮百万行附图仅验证Numeric/SamplingNone窄窗，不承诺全部图族或更新O(delta)。",
+    "队列批次与样本有上限，回调、布局、首次索引与用户对象分配仍可能耗时；取消不能打断执行中的UI回调。UI提交与DrawingGroup计数不是输入到最终显示延迟、GPU/present或稳定FPS资格。",
+    "30分钟/8小时长稳、进程私有/原生/GPU内存、缓存取消回收、实际定时持续吞吐和多图公平尚未执行，短诊断线程分配不代表完整内存回归。",
+    "百万点hit p95历史回退0.7649→1.1235ms按用户决定留后续专项；数据更新和身份正确性门槛通过不等于该尾延迟问题取得正式资格。",
+    "Windows原生合成、Ubuntu26.04 WSL2/WSLg和Headless检查不代表物理Windows/Linux、原生Wayland、国产Linux、实际GPU/backend、真实触摸/触控板、多屏DPI与读屏器资格。",
+    "Windows UIA/Linux AT-SPI原生选中项枚举保留用户延期A11Y-NATIVE-01；AX06标题/末刻度和四份历史PixelProbe DLL缺口仍开放。",
+    "C4-03 Linux run-v2旧导出动画夹具三项部分暂停前置状态时序失败仍保留，同源码预热重试通过未视为修复。历史原始目录清理后仅核对保留副本和报告/API SHA，不声称被删除路径仍存在。"
+  ],
+  "windowsAuthoritativeAttempt": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\windows-authoritative-v1.json",
+    "sha256": "260640D32BC8620287C4C422E04E85424BA616D9CA8D1CEEEFA62989B59DAD90",
+    "bytes": 2693
+  },
+  "linuxAuthoritativeAttempt": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux-authoritative-v1.json",
+    "sha256": "785BFE4B747708B278D7FA56348DD7962F9E920E3E100CE743C0E6DBB92B8C70",
+    "bytes": 2697
+  },
+  "linuxEnvironmentReadiness": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\linux-environment-readiness-v1.json",
+    "sha256": "E0A5B2005FEC69419C9CE0A30F00F2BCB0F481FBCD543D42B186F6AA2B8EEBF5",
+    "bytes": 2880
+  },
+  "linuxProjectDependencyFeed": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\project-dependency-archives-v1.json",
+    "sha256": "189B372AF77CE3D347BEBA420EBBD71606BD5F5EC576293DA03F818DF447BF3C",
+    "bytes": 34757
+  },
+  "toolingPreservation": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\tooling-at-freeze-v2.json",
+    "sha256": "543762B13E592CBC2A7AD4DCB12C54EB0538CB7D7B977B25A5ED77A5675EC278",
+    "bytes": 23704
+  },
+  "toolingArchiveInitialFailure": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\tooling-at-freeze-v1-failure.json",
+    "sha256": "A6DEB7DCE6499CE2C93722D8FA42484FEC59AD8F590CAA4E4079E4C07D8D7F13",
+    "bytes": 499
+  },
+  "inheritedHitReaderAdaptation": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\inherited-hit-reader-binding-adaptation-v1.json",
+    "sha256": "6D0937FF45ACB497554372C6B5CC8B6CB6E8D22A249C931DDCB82D767777F906",
+    "bytes": 634
+  },
+  "linuxLegacyAnimationFixtureTimingRobustnessResolved": false,
+  "counterEvidenceScope": "Fixed source and attached-chart intervals and exclusions are defined in the implementation contract. New state directory entry counts do not instrument every temporary slice traversal or whole-page merge. Sample/batch bounds are not arbitrary T object-byte bounds. No first-usable, paced-throughput, tail-latency, present or long-memory qualification.",
+  "packageReviewToolingRepair": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\package-review-tooling-repair-v1.json",
+    "sha256": "3D7112953C908EA2EEE8F513BBC7DEBB73181F557C8C5EB816B322B14E6A001E",
+    "bytes": 2394
+  },
+  "postFreezeEditorial": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\post-freeze-editorial-v1.json",
+    "sha256": "A70E6E15EDB7CEB5161E0CFA6D16229555F96C04F96DFC0A0EFC8E68F92024CB",
+    "bytes": 1589
+  },
+  "independentFinalReviewSummary": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\independent-final-review-summary-v1.json",
+    "sha256": "C6A52341DE8CB9BBA0E7CC92DAE0E0B8316A5D00707588F8A97E066B3383553D",
+    "bytes": 9526
+  },
+  "developmentEvidence": [
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\demo-v1\\supervisor.json",
+      "sha256": "9F8132AAE0B1DFA45400998FA9A7DB8F5C5F1F4CAC4D4446B4CF59F8E8447F12",
+      "bytes": 2650
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\benchmark-runtime-v1\\raw.json",
+      "sha256": "4CE9AD6F3EDF3771D35197CEE9A9B0DF8FD2146EC512971116F55111EC60669B",
+      "bytes": 1329141
+    }
+  ],
+  "documentationWriterInitialFailure": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\docs-writer-v1-failure.json",
+    "sha256": "A203B8A285A1E2E2E78C2FCA6E968CF4611CF581EECB26C47B86BDED4A3E0147",
+    "bytes": 474
+  },
+  "preservedDevelopmentCompileAndTestEvidence": [
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\headless-v1\\build.log",
+      "sha256": "81F8346E4341949374063161423C8BFEBCFB78D0E8126C723AC21BC5C902524A",
+      "bytes": 1315
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\headless-v1\\source.json",
+      "sha256": "8BE578EDD39BA432A3A4DBB4461F4702A3C4090D24789DD310641675B0353CA7",
+      "bytes": 41423
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\headless-v2\\build.log",
+      "sha256": "262FE982A4C0BCA978252E56315290170A2A92B30C4F46914F70EFDA74C53AA9",
+      "bytes": 1152
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\headless-v2\\source.json",
+      "sha256": "4C40C24BE58C6F8C594EB209DB281B79A5CE8BF181E7AAFC21FF4F1538525817",
+      "bytes": 41423
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\headless-v3\\build.log",
+      "sha256": "91318C8A2C559C15CC05119DB715B7689FFFFFC95F8767C257FDE50EDC2D2C84",
+      "bytes": 518
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\headless-v3\\source.json",
+      "sha256": "795EEC5149E669BDDEB8C028E8DFE5C7A4B3F5F390E1D4420FE1CBF0B988C140",
+      "bytes": 39288
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\headless-v3\\tests.log",
+      "sha256": "13B4BAE88CED73AF002015FA06C485503543C542DB68F556F6BD24E4836B6FFB",
+      "bytes": 9900
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\headless-v3\\tests.xml",
+      "sha256": "F5502531D198DE201ABC7A0DC54912F3DAE17B9C1F4D686E660A74F5D9B0C24E",
+      "bytes": 1047299
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\headless-v4\\build.log",
+      "sha256": "CAF1FB38B936BE59A409A771E975ABBF15F81304B9624D3C7C917C3815C889E6",
+      "bytes": 518
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\headless-v4\\source.json",
+      "sha256": "5B051896EDAEC2D864AC7592A74866ED48F00008FFE696FFC41D690FAE2C6AE4",
+      "bytes": 39288
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\headless-v4\\tests.log",
+      "sha256": "88EBCD059533E47270E6F2ED86BA4B2B5F2908595F2D4B79B2C4EB7E935A8C50",
+      "bytes": 358
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\headless-v4\\tests.xml",
+      "sha256": "882067B5D079A037E6AAA2818CE399C22FF58F59BAC84543F1E84ACC216A0745",
+      "bytes": 1038490
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\benchmark-build-v1\\build.log",
+      "sha256": "6D0304868C8DFECE0D99614754EC9A3BA55A5C482B8E73D4FA61A632230C9A58",
+      "bytes": 813
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\benchmark-build-v1\\source-before.json",
+      "sha256": "1906054F7D2DCBD33736219BA8812D374D4576202E732D730F76DE8470CBDB62",
+      "bytes": 765
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\benchmark-build-v1\\result.json",
+      "sha256": "D512F261AE2DA81E46278460E611E880951044DFDB29A7B8AC115A1255BEC24B",
+      "bytes": 164
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\benchmark-build-v2\\build.log",
+      "sha256": "0999DAAED5CC3A77D25CA6C8CEF8981ECDDA9D1EA282F3B9009B444166E8130B",
+      "bytes": 208
+    },
+    {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\benchmark-build-v2\\result.json",
+      "sha256": "CB6EC7B74788D275C18EC411292673096798202754EF1BF236C1BC7BAB33E1B4",
+      "bytes": 795
+    }
+  ],
+  "developmentBenchmarkInitialCompileFailure": {
+    "errorCode": "CS8604",
+    "testsOrBenchmarkExecuted": false,
+    "result": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\benchmark-build-v1\\result.json",
+      "sha256": "D512F261AE2DA81E46278460E611E880951044DFDB29A7B8AC115A1255BEC24B",
+      "bytes": 164
+    },
+    "originalLog": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\benchmark-build-v1\\build.log",
+      "sha256": "6D0304868C8DFECE0D99614754EC9A3BA55A5C482B8E73D4FA61A632230C9A58",
+      "bytes": 813
+    },
+    "subsequentSuccessfulBuild": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c4-incremental-streaming-20261020\\development\\benchmark-build-v2\\result.json",
+      "sha256": "CB6EC7B74788D275C18EC411292673096798202754EF1BF236C1BC7BAB33E1B4",
+      "bytes": 795
+    }
+  }
+}

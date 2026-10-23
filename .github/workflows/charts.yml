@@ -1,0 +1,144 @@
+name: charts-contracts-native-and-performance
+on:
+  push:
+    paths: ['src/NT.AvaloniaControl.Charts*/**', 'benchmarks/Charts*/**', 'tests/Charts.Headless.Tests/**', 'samples/Charts.Usage/**', 'samples/NT.AvaloniaControl.Demo/**', 'scripts/*Charts*', 'scripts/*charts*', 'scripts/Tests/*Charts*', 'scripts/Tests/*charts*', 'scripts/charts-ci-performance-policy.json', 'scripts/Consumers/Charts/**', '.github/workflows/charts.yml', 'docs/charts-platform-matrix.json', 'Directory.*.props', 'global.json', 'NuGet.Config']
+  pull_request:
+    paths: ['src/NT.AvaloniaControl.Charts*/**', 'benchmarks/Charts*/**', 'tests/Charts.Headless.Tests/**', 'samples/Charts.Usage/**', 'samples/NT.AvaloniaControl.Demo/**', 'scripts/*Charts*', 'scripts/*charts*', 'scripts/Tests/*Charts*', 'scripts/Tests/*charts*', 'scripts/charts-ci-performance-policy.json', 'scripts/Consumers/Charts/**', '.github/workflows/charts.yml', 'docs/charts-platform-matrix.json', 'Directory.*.props', 'global.json', 'NuGet.Config']
+  schedule:
+    - cron: '17 2 * * 1'
+  workflow_dispatch:
+    inputs:
+      desktop_target:
+        description: 'Optional pre-provisioned, logged-in self-hosted desktop; input remains synthetic.'
+        type: choice
+        default: none
+        options: [none, windows, linux]
+permissions:
+  contents: read
+jobs:
+  performance-guard:
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2025, ubuntu-22.04, ubuntu-24.04]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Independent base product checkout for native differences
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          path: .charts-baseline
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Provision Linux window benchmark dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb libx11-6 libice6 libsm6 libfontconfig1 libfreetype6 libgl1 libegl1 libxcb1 fonts-noto-cjk
+      - name: Strict guard mutation contracts
+        shell: pwsh
+        run: ./scripts/Tests/Test-ChartsRegressionGate.Tests.ps1 -OutputDirectory "artifacts/charts-performance-ci/guard-tests-${{ github.run_id }}-${{ github.run_attempt }}"
+      - name: Independent raw mechanism and PNG oracle unit contracts
+        shell: pwsh
+        run: python -m unittest discover -s scripts/Tests -p 'test_charts_*.py' -v
+      - name: Process supervision and CI contracts
+        shell: pwsh
+        run: ./scripts/Tests/Test-ChartsPerformanceGate.Tests.ps1 -OutputDirectory "artifacts/charts-performance-ci/orchestrator-tests-${{ github.run_id }}-${{ github.run_attempt }}"
+      - name: Windows benchmark, native window, raw differences and strict guard
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: ./scripts/Invoke-ChartsPerformanceGate.ps1 -NativeMode DesktopSynthetic -BaselineSourceDirectory ".charts-baseline" -OutputDirectory "artifacts/charts-performance-ci/run-${{ github.run_id }}-${{ github.run_attempt }}"
+      - name: Linux benchmark, Xvfb native window, raw differences and strict guard
+        if: runner.os == 'Linux'
+        run: bash ./scripts/Invoke-ChartsPerformanceGate-Linux.sh -BaselineSourceDirectory ".charts-baseline" -OutputDirectory "artifacts/charts-performance-ci/run-${{ github.run_id }}-${{ github.run_attempt }}"
+      - name: Preserve successful and failed raw data, PNGs, traces, logs and receipts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: charts-performance-${{ matrix.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/charts-performance-ci/**
+          if-no-files-found: error
+          retention-days: 30
+  windows-native:
+    runs-on: windows-2025
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Contracts and Windows native programmatic smoke
+        shell: pwsh
+        run: ./scripts/Verify-Charts.ps1 -Mode NativeSynthetic -IncludeC1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: charts-windows-native-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/charts-platform/**
+          if-no-files-found: error
+  linux:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, ubuntu-24.04]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Provision CI-only native dependencies and fixed font family
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb libx11-6 libice6 libsm6 libfontconfig1 libfreetype6 libgl1 libegl1 libxcb1 fonts-noto-cjk
+      - name: Linux headless contracts
+        run: bash ./scripts/Verify-Charts-Linux.sh --mode headless -IncludeC1
+      - name: Xvfb native programmatic smoke (separate from a real desktop)
+        run: bash ./scripts/Verify-Charts-Linux.sh --mode xvfb -IncludeC1 -SkipPackageConsumers
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: charts-${{ matrix.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/charts-platform/**
+          if-no-files-found: error
+  windows-desktop:
+    if: github.event_name == 'workflow_dispatch' && inputs.desktop_target == 'windows'
+    runs-on: [self-hosted, Windows, charts-desktop]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Existing desktop session, synthetic input only
+        shell: pwsh
+        run: ./scripts/Verify-Charts.ps1 -Mode DesktopSynthetic -IncludeC1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: charts-windows-desktop-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/charts-platform/**
+          if-no-files-found: error
+  linux-desktop:
+    if: github.event_name == 'workflow_dispatch' && inputs.desktop_target == 'linux'
+    runs-on: [self-hosted, Linux, charts-desktop]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Existing X11 or XWayland desktop session, synthetic input only
+        run: bash ./scripts/Verify-Charts-Linux.sh --mode desktop -IncludeC1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: charts-linux-desktop-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/charts-platform/**
+          if-no-files-found: error

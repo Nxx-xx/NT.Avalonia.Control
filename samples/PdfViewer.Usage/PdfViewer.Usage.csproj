@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PdfViewer.Usage</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.PdfViewer/NT.AvaloniaControl.PdfViewer.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.PdfViewer.Themes/NT.AvaloniaControl.PdfViewer.Themes.csproj" />
+    <Compile Include="../NT.AvaloniaControl.Demo/Pages/PdfViewer/SamplePdf.cs" Link="SamplePdf.cs" />
+  </ItemGroup>
+</Project>

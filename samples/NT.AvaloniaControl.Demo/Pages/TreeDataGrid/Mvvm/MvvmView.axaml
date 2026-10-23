@@ -1,0 +1,82 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:NT.AvaloniaControl.Demo.Pages.TreeDataGrid.Mvvm"
+             xmlns:tg="clr-namespace:NT.AvaloniaControl.TreeDataGrid;assembly=NT.AvaloniaControl.TreeDataGrid"
+             x:Class="NT.AvaloniaControl.Demo.Pages.TreeDataGrid.Mvvm.MvvmView"
+             x:DataType="vm:MvvmDemoViewModel" x:CompileBindings="True">
+  <Grid Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
+    <StackPanel Spacing="10">
+      <TextBlock Text="数据绑定与编辑" FontSize="22" FontWeight="SemiBold" />
+      <TextBlock Text="修改数据、切换选择，再观察表格与右侧编辑草稿的同步。" TextWrapping="Wrap" Opacity="0.75" />
+      <Border BorderBrush="#608095AB" BorderThickness="1" CornerRadius="6" Padding="12">
+        <Grid ColumnDefinitions="90,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="10" ColumnSpacing="10">
+          <TextBlock Text="数据操作" FontWeight="SemiBold" VerticalAlignment="Center" />
+          <WrapPanel Grid.Column="1" ItemSpacing="8" LineSpacing="6">
+            <Button Name="AddRecordButton" Content="新增记录" Command="{Binding AddCommand}" ToolTip.Tip="添加一条记录，并自动选中新记录。" />
+            <Button Name="RemoveRecordButton" Content="删除选中" Command="{Binding RemoveCommand}" ToolTip.Tip="删除当前选中的记录；先单击表格中的一行。" />
+            <Button Name="ModifyRecordButton" Content="数量 +1 / 切换启用" Command="{Binding ModifyCommand}" ToolTip.Tip="选中记录的数量加 1，并切换启用状态。" />
+            <Button Name="ReplaceSourceButton" Content="换一组数据" Command="{Binding ReplaceSourceCommand}" ToolTip.Tip="切换到新的 100 条记录，清空当前选择和编辑草稿。" />
+          </WrapPanel>
+          <TextBlock Grid.Row="1" Text="选择定位" FontWeight="SemiBold" VerticalAlignment="Center" />
+          <WrapPanel Grid.Row="1" Grid.Column="1" ItemSpacing="8" LineSpacing="6">
+            <Button Content="选第一条" Command="{Binding SelectFirstCommand}" ToolTip.Tip="按数据对象选择第一条记录。" />
+            <Button Content="选前两条" Command="{Binding SelectTwoCommand}" ToolTip.Tip="同时选择前两条记录，演示多选同步。" />
+            <Button Content="定位第三条" Command="{Binding SelectThirdByPathCommand}" ToolTip.Tip="按原始数据顺序定位第三条记录；排序后仍选择同一记录。" />
+            <Button Content="记住单元格" Command="{Binding RememberCurrentCommand}" ToolTip.Tip="保存最近点击的单元格位置，之后可恢复。" />
+            <Button Content="恢复单元格" Command="{Binding RestoreCurrentCommand}" ToolTip.Tip="回到之前记住的单元格；需要先点击“记住单元格”。" />
+          </WrapPanel>
+          <TextBlock Grid.Row="2" Text="单元格编辑" FontWeight="SemiBold" VerticalAlignment="Center" />
+          <WrapPanel Grid.Row="2" Grid.Column="1" ItemSpacing="8" LineSpacing="6">
+            <Button Name="BeginEditButton" Content="开始编辑" Command="{Binding Editing.BeginEditCommand}" ToolTip.Tip="先点击名称、数量或启用列的单元格，再开始编辑。也可按 F2。" />
+            <Button Name="CommitEditButton" Content="保存修改" Command="{Binding Editing.CommitEditCommand}" ToolTip.Tip="验证并保存草稿；输入不合法时保留草稿并显示原因。" />
+            <Button Name="CancelEditButton" Content="取消修改" Command="{Binding Editing.CancelEditCommand}" ToolTip.Tip="放弃草稿，保留编辑前的原值。也可按 Esc。" />
+            <TextBlock Text="先点单元格 → 开始编辑 → 保存或取消" VerticalAlignment="Center" Opacity="0.7" />
+          </WrapPanel>
+        </Grid>
+      </Border>
+      <TextBlock Name="VmMessage" Text="{Binding Message}" TextWrapping="Wrap" />
+    </StackPanel>
+    <Grid Grid.Row="1" ColumnDefinitions="*,280" ColumnSpacing="14">
+      <tg:TreeDataGrid Name="BoundGrid" Source="{Binding Source}"
+                       SelectionUnit="Row" SelectionMode="Multiple" FrozenColumnCount="1"
+                       SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                       SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}"
+                       SelectedItems="{Binding SelectedItems, Mode=TwoWay}"
+                       CurrentCell="{Binding CurrentCell, Mode=TwoWay}"
+                       EditCommands="{Binding Editing}">
+        <tg:TreeDataGridTextColumn x:DataType="vm:MvvmRecord" Header="名称（必填）" Width="260" Binding="{ReflectionBinding Name}" />
+        <tg:TreeDataGridTextColumn x:DataType="vm:MvvmRecord" Header="数量（0–100）" Width="160" Binding="{ReflectionBinding Quantity}" />
+        <tg:TreeDataGridCheckBoxColumn x:DataType="vm:MvvmRecord" Header="启用（可留空）" Width="130" IsThreeState="True" Binding="{ReflectionBinding Enabled}" />
+        <tg:TreeDataGridTextColumn x:DataType="vm:MvvmRecord" Header="编号（只读）" Width="*" MinWidth="110" IsReadOnly="True" Binding="{ReflectionBinding Id}" />
+      </tg:TreeDataGrid>
+      <Border Grid.Column="1" BorderBrush="#608095AB" BorderThickness="1" CornerRadius="6" Padding="14">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+          <StackPanel Spacing="10">
+            <TextBlock Text="编辑草稿" FontWeight="SemiBold" FontSize="18" />
+            <CheckBox Content="正在编辑" IsChecked="{Binding Editing.IsEditing, Mode=OneWay}" IsHitTestVisible="False" Focusable="False" />
+            <TextBlock Text="原值" FontWeight="SemiBold" />
+            <TextBlock Name="OriginalValueText" Text="{Binding Editing.EditSession.OriginalValue}" TextWrapping="Wrap" MinHeight="22" />
+            <TextBlock Text="草稿 · 与表格内输入框同步" FontWeight="SemiBold" TextWrapping="Wrap" />
+            <TextBox Name="DraftEditor" Text="{Binding Editing.EditSession.Value, Mode=TwoWay}"
+                     IsEnabled="{Binding Editing.IsEditing}" MinHeight="36" PlaceholderText="先选择单元格并开始编辑" />
+            <TextBlock Text="输入问题" FontWeight="SemiBold" />
+            <TextBlock Name="ValidationErrorText" Text="{Binding Editing.EditSession.ValidationError}" Foreground="#D1493F" TextWrapping="Wrap" MinHeight="22" />
+            <Separator />
+            <TextBlock Text="试一试：在数量列输入 200 并保存，查看错误；改为 42 再保存。取消修改会保留原值。" TextWrapping="Wrap" Opacity="0.75" />
+            <TextBlock Text="Ctrl + 单击可多选；单击列标题可排序。" TextWrapping="Wrap" Opacity="0.75" />
+          </StackPanel>
+        </ScrollViewer>
+      </Border>
+    </Grid>
+    <StackPanel Grid.Row="2" Spacing="6">
+      <TextBlock Name="CollectionSummaryText" Text="{Binding CollectionSummary}" TextWrapping="Wrap" />
+      <Expander Header="绑定诊断" HorizontalAlignment="Stretch">
+        <StackPanel Spacing="6" Margin="0,6,0,0">
+          <TextBlock Name="SelectionSummaryText" Text="{Binding SelectionSummary}" TextWrapping="Wrap" />
+          <TextBlock Name="CurrentCellSummaryText" Text="{Binding CurrentCellSummary}" TextWrapping="Wrap" />
+          <TextBlock Text="界面使用强类型 XAML 绑定；数据、选择和编辑命令由 ViewModel 管理。表格编辑器与右侧草稿共享同一编辑会话。" TextWrapping="Wrap" Opacity="0.75" />
+        </StackPanel>
+      </Expander>
+    </StackPanel>
+  </Grid>
+</UserControl>

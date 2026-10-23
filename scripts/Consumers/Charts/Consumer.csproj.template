@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <DefineConstants>$(DefineConstants);__CONSUMER_SYMBOL__</DefineConstants>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="__PRODUCT_PACKAGE__" Version="__PRODUCT_VERSION__" />
+    <PackageReference Include="Avalonia.Headless" Version="__AVALONIA_VERSION__" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="__AVALONIA_VERSION__" />
+  </ItemGroup>
+</Project>

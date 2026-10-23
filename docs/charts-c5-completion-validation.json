@@ -1,0 +1,499 @@
+{
+  "schema": "charts-c5-completion/v1",
+  "date": "2026-10-23",
+  "candidate": "c5-completion-source-v2",
+  "c5FoundationalChartFamiliesComplete": true,
+  "statisticalCatalogGapsClosed": [
+    "ST01",
+    "ST03",
+    "ST06",
+    "ST07",
+    "ST08",
+    "ST09",
+    "ST10"
+  ],
+  "fullC5ExitComplete": false,
+  "completionScope": "C5-01 through C5-05 foundational chart families plus seven missing statistical catalog families; C7 professional/platform/official qualification remains open",
+  "nextWorkItem": "C7-01 full-family integration",
+  "fullOfficialParity": false,
+  "officialRuntimeCompared": false,
+  "sourceSnapshot": {
+    "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/source-snapshot-v2.json",
+    "sha256": "9389F9190823FE89EB71CDD46651BF40EAA06899C17333E5528C2AA06BDE3BCC",
+    "bytes": 349843
+  },
+  "sourceFiles": 1764,
+  "platforms": {
+    "windows": {
+      "passed": true,
+      "formalRun": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/windows/run-v2/results.json",
+        "sha256": "D35549B6000BA725439284DEF0B666455780DCAB101DC1F8D1DDF1140083795E",
+        "bytes": 8394
+      },
+      "baseRun": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/windows/run-v2/verification/functional-v2/results.json",
+        "sha256": "AF7BB41E8C4016CCC52B0E7EC079CC25271900407DECEB5FC163494C56FD1C5A",
+        "bytes": 21387
+      },
+      "stages": 7,
+      "chartsTests": 2830,
+      "demoChecks": 4380,
+      "usageChecks": 752,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 968,
+          "result": {
+            "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/windows/run-v2/consumers/20261023T051724656Z-8892cbe076104ea9968399deadd55b57/function/consumer-result.json",
+            "sha256": "2F2E58CB8E143388762C330990646AEE8411B8A98D606E57874532DD87E9C555",
+            "bytes": 147618
+          },
+          "identityPreservation": {
+            "previous": 904,
+            "current": 968,
+            "added": 64,
+            "missing": [],
+            "failed": [],
+            "previousFailures": []
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 968,
+          "result": {
+            "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/windows/run-v2/consumers/20261023T051724656Z-8892cbe076104ea9968399deadd55b57/themes/consumer-result.json",
+            "sha256": "4B821DE10D77385065E175DE6E67FF0AD1CBFDFC23FE6B6F4AD8A4D82EC136B0",
+            "bytes": 147672
+          },
+          "identityPreservation": {
+            "previous": 904,
+            "current": 968,
+            "added": 64,
+            "missing": [],
+            "failed": [],
+            "previousFailures": []
+          }
+        }
+      ],
+      "identityPreservation": {
+        "tests": {
+          "previous": 2753,
+          "current": 2830,
+          "missing": []
+        },
+        "demo": {
+          "previous": 4046,
+          "current": 4380,
+          "added": 334,
+          "missing": [],
+          "failed": [],
+          "previousFailures": []
+        },
+        "usage": {
+          "previous": 688,
+          "current": 752,
+          "added": 64,
+          "missing": [],
+          "failed": [],
+          "previousFailures": []
+        }
+      },
+      "api": {
+        "previousTypes": 459,
+        "currentTypes": 499,
+        "missingTypes": [],
+        "changedOrMissingDeclarations": {}
+      },
+      "apiSnapshot": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/windows/run-v2/api/api.txt",
+        "sha256": "2C77F487F5317058182D01D76653A296645FC5DCD6758A4979F96C394554EB09",
+        "bytes": 1021339
+      },
+      "numeric": {
+        "fixedCases": 57,
+        "scaleCases": 7,
+        "checks": 820755,
+        "raw": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/windows/run-v2/raw.json",
+          "sha256": "5136921C2B46C001CAD5C3C14FEBE90E98B48FD722F88111B3B2BA2A68289661",
+          "bytes": 67146545
+        },
+        "result": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/windows/run-v2/numeric-result.json",
+          "sha256": "E735586252C6104405ECB181BC52727BCF2CD9540A1DF23E5CA22A251F14EFC1",
+          "bytes": 261
+        }
+      },
+      "native": {
+        "checks": 19191,
+        "c6Pngs": 32,
+        "fullDemoPngs": 1145,
+        "probeRows": 44,
+        "result": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/windows/run-v2/native-result.json",
+          "sha256": "3A54C90A86046C4FA816E844DD91274B58915ED9BD44CC1D51457A6911D04AE9",
+          "bytes": 396
+        },
+        "smoke": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/windows/run-v2/verification/functional-v2/charts-smoke.json",
+          "sha256": "1ABAEFD0313078CF2E21B7C17489D283FF17D3A3288FF13B83ADC6C97C0DB586",
+          "bytes": 85259043
+        }
+      },
+      "performance": [
+        {
+          "id": "beeswarm-4000",
+          "elapsedMilliseconds": 15.7162,
+          "allocatedBytes": 1316240
+        },
+        {
+          "id": "strip-4000",
+          "elapsedMilliseconds": 3.4176,
+          "allocatedBytes": 1285328
+        },
+        {
+          "id": "contour-64x64",
+          "elapsedMilliseconds": 38.491,
+          "allocatedBytes": 23947824
+        },
+        {
+          "id": "ridgeline-10000",
+          "elapsedMilliseconds": 29.3205,
+          "allocatedBytes": 3409704
+        },
+        {
+          "id": "violin-10000",
+          "elapsedMilliseconds": 16.8404,
+          "allocatedBytes": 3409704
+        },
+        {
+          "id": "mosaic-20000",
+          "elapsedMilliseconds": 27.6121,
+          "allocatedBytes": 12784880
+        },
+        {
+          "id": "parallel-20000x6",
+          "elapsedMilliseconds": 23.3485,
+          "allocatedBytes": 14330792
+        }
+      ],
+      "sourcesStable": true,
+      "assembliesStable": true
+    },
+    "linux": {
+      "passed": true,
+      "formalRun": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/linux/run-v2/results.json",
+        "sha256": "6143BA442B27A980393C323E0C016BFCFB4B88509088DFD8F66655F05D5E7663",
+        "bytes": 8070
+      },
+      "baseRun": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/linux/run-v2/verification/functional-v2/results.json",
+        "sha256": "45D51C610FCD6534B3D4B7FD6C91C311FCCB3B2A69EC0674ED9404BC3E2E08A9",
+        "bytes": 23518
+      },
+      "stages": 7,
+      "chartsTests": 2830,
+      "demoChecks": 4380,
+      "usageChecks": 752,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 968,
+          "result": {
+            "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/linux/run-v2/consumers/20261023T053001868Z-30b3507c023844e8bb459ccb80bcc60f/function/consumer-result.json",
+            "sha256": "85BBFD2D2EACD880EF32B7E03A800BF314293CEB247BD229B5DFB83196B18FDD",
+            "bytes": 143689
+          },
+          "identityPreservation": {
+            "previous": 904,
+            "current": 968,
+            "added": 64,
+            "missing": [],
+            "failed": [],
+            "previousFailures": []
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 968,
+          "result": {
+            "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/linux/run-v2/consumers/20261023T053001868Z-30b3507c023844e8bb459ccb80bcc60f/themes/consumer-result.json",
+            "sha256": "7CBF70A643A70BF0C056F93040E8B5C91CA31EC693BF86ECE51D13FC5F4EF559",
+            "bytes": 143743
+          },
+          "identityPreservation": {
+            "previous": 904,
+            "current": 968,
+            "added": 64,
+            "missing": [],
+            "failed": [],
+            "previousFailures": []
+          }
+        }
+      ],
+      "identityPreservation": {
+        "tests": {
+          "previous": 2753,
+          "current": 2830,
+          "missing": []
+        },
+        "demo": {
+          "previous": 4046,
+          "current": 4380,
+          "added": 334,
+          "missing": [],
+          "failed": [],
+          "previousFailures": []
+        },
+        "usage": {
+          "previous": 688,
+          "current": 752,
+          "added": 64,
+          "missing": [],
+          "failed": [],
+          "previousFailures": []
+        }
+      },
+      "api": {
+        "previousTypes": 459,
+        "currentTypes": 499,
+        "missingTypes": [],
+        "changedOrMissingDeclarations": {}
+      },
+      "apiSnapshot": {
+        "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/linux/run-v2/api/api.txt",
+        "sha256": "CF1FD1FC172B6EA0AA699D0832FE14037463F39081673A5ECDFA875E2EEF21AF",
+        "bytes": 1021339
+      },
+      "numeric": {
+        "fixedCases": 57,
+        "scaleCases": 7,
+        "checks": 820755,
+        "raw": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/linux/run-v2/raw.json",
+          "sha256": "BBF74829A62CE195E3D51C66F2B04DD2DC54EA0B20EB67908C3758A8E080A032",
+          "bytes": 64574866
+        },
+        "result": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/linux/run-v2/numeric-result.json",
+          "sha256": "DD768088A4F7041D7E6F286F864ABE3510DA9AE40FDFB7C8C0E8E30D161F8355",
+          "bytes": 252
+        }
+      },
+      "native": {
+        "checks": 19191,
+        "c6Pngs": 32,
+        "fullDemoPngs": 1145,
+        "probeRows": 44,
+        "result": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/linux/run-v2/native-result.json",
+          "sha256": "ECFFD200ED0387B4318A06FFCC571175A4C7659CF915A4EB0B61FCFFA444C3A7",
+          "bytes": 384
+        },
+        "smoke": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/linux/run-v2/verification/functional-v2/charts-smoke.json",
+          "sha256": "2E1618E3591BA313B7428850E6B008F9906C70D90E89E07E28071887DC8E968D",
+          "bytes": 82272779
+        }
+      },
+      "performance": [
+        {
+          "id": "beeswarm-4000",
+          "elapsedMilliseconds": 17.0111,
+          "allocatedBytes": 1316240
+        },
+        {
+          "id": "strip-4000",
+          "elapsedMilliseconds": 4.1483,
+          "allocatedBytes": 1285328
+        },
+        {
+          "id": "contour-64x64",
+          "elapsedMilliseconds": 42.0982,
+          "allocatedBytes": 23947824
+        },
+        {
+          "id": "ridgeline-10000",
+          "elapsedMilliseconds": 27.1788,
+          "allocatedBytes": 3409704
+        },
+        {
+          "id": "violin-10000",
+          "elapsedMilliseconds": 16.6902,
+          "allocatedBytes": 3409704
+        },
+        {
+          "id": "mosaic-20000",
+          "elapsedMilliseconds": 30.2326,
+          "allocatedBytes": 12784560
+        },
+        {
+          "id": "parallel-20000x6",
+          "elapsedMilliseconds": 24.3094,
+          "allocatedBytes": 14330792
+        }
+      ],
+      "sourcesStable": true,
+      "assembliesStable": true
+    }
+  },
+  "apiDeclarationsIdentical": true,
+  "preservation": {
+    "historicalDocuments": 125,
+    "changedHistoricalDocuments": [],
+    "chartsRuntimeSourcesUnchanged": true
+  },
+  "rootSourceAudit": {
+    "schema": "c5-root-source-audit/v1",
+    "candidate": "c5-completion-source-v2",
+    "sourceSnapshot": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/source-snapshot-v2.json",
+      "sha256": "9389F9190823FE89EB71CDD46651BF40EAA06899C17333E5528C2AA06BDE3BCC",
+      "bytes": 349843
+    },
+    "chartsRuntimeInputsChecked": 585,
+    "chartsRuntimeSourcesUnchanged": true,
+    "rootDifferences": [
+      {
+        "path": "src/NT.AvaloniaControl.Charts/README.md",
+        "frozenSha256": "D5FE3288017199B050A3E8D15A60A175B7B4EAA9D91A720F1A856B37AB621416",
+        "currentSha256": "562C14E01D98FB870EC469D7AD8EE97E48AF4AE2EFDA2E5375F0D937AE266782",
+        "classification": "documentation-only-root-change",
+        "usedByFormalCandidate": false
+      }
+    ],
+    "note": "Formal evidence uses the frozen source-v2 copies. Non-Charts parallel root changes are listed, not attributed to C5 or incorporated retroactively into validated evidence."
+  },
+  "evidenceRoot": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023",
+  "protocols": {
+    "official-scope-review-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/official-scope-review-v1.json",
+      "sha256": "06E7C3E0681D818E177C7FA1F1E9FB952DA4F620F14FEF2AAC65109FEECEFB9E",
+      "bytes": 1422
+    },
+    "numeric-protocol-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/numeric-protocol-v1.json",
+      "sha256": "96ED959F951BC0B3224CE10C02309DC6567FCAC84B439CEA67BC643BF26D5F7D",
+      "bytes": 659
+    },
+    "numeric-oracle-amendment-v2.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/numeric-oracle-amendment-v2.json",
+      "sha256": "BCF56820215CFC46358BC8026654B3511E616A37CBBA21B344CEBA8114684BA6",
+      "bytes": 843
+    },
+    "numeric-oracle-amendment-v3.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/numeric-oracle-amendment-v3.json",
+      "sha256": "E0D25F60B49D5F14B36374A26A3986438E12A82EBF5F8F03A08D274785D03310",
+      "bytes": 1179
+    },
+    "numeric-oracle-guards-v2-observation-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/numeric-oracle-guards-v2-observation-v1.json",
+      "sha256": "E6E65496D933ADFE0DEEBB7C7EB17EC7BB5A457A1E01BB8536FE3BC87F59D846",
+      "bytes": 9246
+    },
+    "numeric-oracle-guards-v3-observation-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/numeric-oracle-guards-v3-observation-v1.json",
+      "sha256": "72CA75E0200E09D1A8CCEBA26B459C3875CC548B9A047854BCC1ED751E6ADFC2",
+      "bytes": 11117
+    },
+    "native-protocol-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/native-protocol-v1.json",
+      "sha256": "E3D4BBA295714A3E515EFE53BAF3DACCBBDB5CACFF00D576CB764A1F28F16FE6",
+      "bytes": 2932
+    },
+    "native-protocol-v2.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/native-protocol-v2.json",
+      "sha256": "20ECFB38A7560A372EE75F9B99E07F34F723E4CF1BB37903E86A7356D974445F",
+      "bytes": 3420
+    },
+    "native-protocol-guard-v2.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/native-protocol-guard-v2.json",
+      "sha256": "C79B08D60EFD2F538798A1116311FCAC3E5CE95FA6A9428B1549B13A5ADDC4B9",
+      "bytes": 390
+    },
+    "C5NumericOracle-v3.py": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/C5NumericOracle-v3.py",
+      "sha256": "0C1CB761FC7DC13AF9373C89765939E7F0A0B8754AE751E397203F1C298EA6C2",
+      "bytes": 22958
+    },
+    "C5NativeOracle-v2.py": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/C5NativeOracle-v2.py",
+      "sha256": "19F5878B62FB7BD942FBD60CD0730845DED61EBE92C40D5674AC47F902024880",
+      "bytes": 21370
+    },
+    "c5_png_decoder_v1.py": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/c5_png_decoder_v1.py",
+      "sha256": "2C05338338984B1D5C818997AAB22E6C8C34331CEC24C8CED65AAE32503C44FF",
+      "bytes": 12612
+    },
+    "Run-C5Platform-v2.ps1": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/Run-C5Platform-v2.ps1",
+      "sha256": "DD85B815875149CDB7B7CF164EC5354724817FB85A59F6459D25F6C42DC86700",
+      "bytes": 4333
+    },
+    "run-linux-v2.sh": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/run-linux-v2.sh",
+      "sha256": "2F74F05DA122A356F5A4665C3671089467100E7ABC749B357A0937D5CD7A8F35",
+      "bytes": 1792
+    },
+    "candidate-v1-source-change-audit.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/candidate-v1-source-change-audit.json",
+      "sha256": "EAF0D44A9954E2787E6980A6CB7A6384C1ABDB5AD25CF185FA5AFB54F8245066",
+      "bytes": 262
+    },
+    "candidate-v2-source-amendment-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/candidate-v2-source-amendment-v1.json",
+      "sha256": "3A448FB8493395E065EA872FBA3B37E0613A2F94910EED8591A069E091B2BFBA",
+      "bytes": 561
+    },
+    "cross-platform-audit-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/cross-platform-audit-v1.json",
+      "sha256": "30013D0EFEFB48FACD5243B37C6CDA05E6764BF4F0412EE665F207CB8066956D",
+      "bytes": 11800
+    },
+    "root-working-tree-source-audit-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/root-working-tree-source-audit-v1.json",
+      "sha256": "638DB71E1024DE43B74656DDCF79ABCD34B8EABDC86173960FFCE82AA1850D4B",
+      "bytes": 1023
+    },
+    "catalog-completion-audit-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/catalog-completion-audit-v1.json",
+      "sha256": "0B901B2FE31FBFF25498F443F2B365E25B09548941F980D787C933897768D2CA",
+      "bytes": 2072
+    },
+    "formal-board-visual-review-v1.json": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c5-completion-20261023/formal-board-visual-review-v1.json",
+      "sha256": "B828CA93BE9DD22107EDE39D7F9F5288BD09134F0530E7F47988730450333D27",
+      "bytes": 2771
+    }
+  },
+  "limits": [
+    "C5-01～05的基础图族主项已交付，七类统计目录基础缺项已补齐；官方API/二进制/默认行为、完整专业交叉集成和平台性能资格继续由C7验收。",
+    "Beeswarm为确定性有界碰撞启发式；密集输入可能明确标记Overflow/WorkBudgetExceeded并回退jitter，不承诺任意密度无重叠。Strip的jitter由seed和源序号决定，重排可改变横向偏移，业务值及源身份不变。",
+    "Violin的ValuesPath/CategoryPath别名仅属于Violin，Ridgeline使用SamplesPath/LabelPath或ProfilePath；Violin缺少官方ViolinWidth和专用Fill/Stroke/StrokeThickness，中位线在少于5样本或ShowBoxPlot关闭时仍可由ShowMedian显示，与官方条件不同。",
+    "Strip未提供PointOpacity，一些半径/jitter/描边默认值与官方不同；Parallel未提供CurveTension/LegendLabelPath/图例，自动轴范围规则也与官方默认0..100不同。",
+    "Contour只接受完整矩形网格；NaN遮蔽相邻整单元，Infinity拒绝。采用鞍点感知三角片的分段线性等值线/色带，保留拓扑，不宣称任意散点插值或精确双线性曲线。总览中可见相邻填色三角片的抗锯齿细缝，专业渲染改进留C7。",
+    "Mosaic为二维非负列联权重，不是任意维度递归mosaic；重复组合聚合并返回全部源成员，零权重无可选面积。不可表示的单元合计拒绝。",
+    "Parallel按独立轴归一化并保留NaN断线；精确marker/线段命中与基本记录选择已实现，轴范围刷选、多图过滤、高级多轴格式/模板仍待专业集成。",
+    "Violin/Ridgeline共享绝对密度尺度，Gaussian KDE为有界直接计算，无加权/自适应带宽/边界反射校正。命中返回真实组，个体原始样本索引保存在metadata，不提供每个隐藏样本的独立命中。",
+    "Ridgeline预计算曲线为逐段线性，尚无官方CurveType样条和固定DIP SeriesHeight等价契约。Violin少于5个有效样本不画箱体；单点/常数按公开自动带宽fallback后仍乘Silverman系数。",
+    "历史金融/指标/工程/比较专业扩展仍开放：交易所日历及盘中会话、增量/后台指标、专业模板和完整共享Trackball/范围联动/标注/动画需C7逐项验证。AN16只核验公开目录，不能据此宣称授权runtime不存在RSI/MACD。",
+    "Windows本地原生合成窗口及Ubuntu26.04 WSL2/WSLg是软件验证，不认证物理Windows/Linux桌面、GPU/compositor present、实际触摸/触控板、DPI跨屏、读屏或8小时长稳；未执行远端CI。",
+    "本轮七项规模计时/线程分配为单次诊断，不是p95/持续帧率/进程原生或GPU内存SLA；没有重跑C4-08正式门禁或全部旧阶段独立oracle。",
+    "C7-NATIVE-LOD-AV-01仍未定位/未修复；地图暗色标签对比、历史AX06/PixelProbe/动画时序/长路径/default-JIT等问题保留。百万点命中尾延迟和A11Y-NATIVE-01按用户决定后置。"
+  ],
+  "physicalInputValidated": false,
+  "linuxDesktopCertified": false,
+  "formalSlaEvaluated": false,
+  "remoteCiExecuted": false,
+  "closedIssues": [
+    "C5-PARALLEL-INVALID-FRAME-OBSERVERS-01"
+  ],
+  "unresolvedIssuesPreserved": [
+    "C7-NATIVE-LOD-AV-01",
+    "A11Y-NATIVE-01",
+    "C7-MAP-LABEL-CONTRAST-01"
+  ]
+}

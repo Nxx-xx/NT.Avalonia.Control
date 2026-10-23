@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>NT.AvaloniaControl.PdfViewer.Themes</PackageId>
+    <AssemblyName>NT.AvaloniaControl.PdfViewer.Themes</AssemblyName>
+    <RootNamespace>NT.AvaloniaControl.PdfViewer.Themes</RootNamespace>
+    <Description>Default light and dark templates for NT.AvaloniaControl.PdfViewer.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../NT.AvaloniaControl.PdfViewer/NT.AvaloniaControl.PdfViewer.csproj" />
+    <None Update="README.md" Pack="true" PackagePath="/README.md" />
+  </ItemGroup>
+</Project>

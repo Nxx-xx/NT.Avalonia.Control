@@ -1,0 +1,88 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:charts="using:NT.AvaloniaControl.Charts">
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+          <SolidColorBrush x:Key="ChartForegroundBrush" Color="#344054" />
+          <SolidColorBrush x:Key="ChartAxisBrush" Color="#98A2B3" />
+          <SolidColorBrush x:Key="ChartGridBrush" Color="#E7ECF2" />
+          <SolidColorBrush x:Key="ChartTooltipBackgroundBrush" Color="#FFFFFF" />
+          <SolidColorBrush x:Key="ChartTooltipForegroundBrush" Color="#243247" />
+          <SolidColorBrush x:Key="ChartTooltipBorderBrush" Color="#BAC8DB" />
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+          <SolidColorBrush x:Key="ChartForegroundBrush" Color="#D7E0EE" />
+          <SolidColorBrush x:Key="ChartAxisBrush" Color="#718096" />
+          <SolidColorBrush x:Key="ChartGridBrush" Color="#2C3A4E" />
+          <SolidColorBrush x:Key="ChartTooltipBackgroundBrush" Color="#101B2B" />
+          <SolidColorBrush x:Key="ChartTooltipForegroundBrush" Color="#F2F4F7" />
+          <SolidColorBrush x:Key="ChartTooltipBorderBrush" Color="#53657C" />
+        </ResourceDictionary>
+      </ResourceDictionary.ThemeDictionaries>
+      <ControlTheme x:Key="{x:Type charts:AnalysisChartBase}" TargetType="charts:AnalysisChartBase">
+        <Setter Property="Foreground" Value="{DynamicResource ChartForegroundBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Padding" Value="12" />
+      </ControlTheme>
+      <ControlTheme x:Key="{x:Type charts:EngineeringChartBase}" TargetType="charts:EngineeringChartBase">
+        <Setter Property="Foreground" Value="{DynamicResource ChartForegroundBrush}" />
+        <Setter Property="GridLineBrush" Value="{DynamicResource ChartGridBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Padding" Value="0" />
+      </ControlTheme>
+      <ControlTheme x:Key="{x:Type charts:GaugeBase}" TargetType="charts:GaugeBase">
+        <Setter Property="Foreground" Value="{DynamicResource ChartForegroundBrush}" />
+        <Setter Property="AxisBrush" Value="{DynamicResource ChartAxisBrush}" />
+        <Setter Property="TrackBrush" Value="{DynamicResource ChartGridBrush}" />
+        <Setter Property="ValueBrush" Value="#4385F4" />
+        <Setter Property="NeedleBrush" Value="{DynamicResource ChartForegroundBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Padding" Value="8" />
+      </ControlTheme>
+      <ControlTheme x:Key="{x:Type charts:SparklineChart}" TargetType="charts:SparklineChart">
+        <Setter Property="Foreground" Value="{DynamicResource ChartForegroundBrush}" />
+        <Setter Property="LineBrush" Value="#4385F4" />
+        <Setter Property="BarBrush" Value="#4385F4" />
+        <Setter Property="AreaFill" Value="#504385F4" />
+        <Setter Property="WinBrush" Value="#19A798" />
+        <Setter Property="LossBrush" Value="#D7256A" />
+        <Setter Property="ZeroBrush" Value="{DynamicResource ChartAxisBrush}" />
+        <Setter Property="BaselineBrush" Value="{DynamicResource ChartGridBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Padding" Value="4" />
+      </ControlTheme>
+      <ControlTheme x:Key="{x:Type charts:PolarChart}" TargetType="charts:PolarChart">
+        <Setter Property="Foreground" Value="{DynamicResource ChartForegroundBrush}" />
+        <Setter Property="AxisBrush" Value="{DynamicResource ChartAxisBrush}" />
+        <Setter Property="GridLineBrush" Value="{DynamicResource ChartGridBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Padding" Value="16" />
+      </ControlTheme>
+      <ControlTheme x:Key="{x:Type charts:CircularChart}" TargetType="charts:CircularChart">
+        <Setter Property="Foreground" Value="{DynamicResource ChartForegroundBrush}" />
+        <Setter Property="LabelConnectorBrush" Value="{DynamicResource ChartAxisBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Padding" Value="16" />
+      </ControlTheme>
+      <ControlTheme x:Key="{x:Type charts:CartesianChart}" TargetType="charts:CartesianChart">
+        <Setter Property="Foreground" Value="{DynamicResource ChartForegroundBrush}" />
+        <Setter Property="AxisBrush" Value="{DynamicResource ChartAxisBrush}" />
+        <Setter Property="GridLineBrush" Value="{DynamicResource ChartGridBrush}" />
+        <Setter Property="TooltipBackground" Value="{DynamicResource ChartTooltipBackgroundBrush}" />
+        <Setter Property="TooltipForeground" Value="{DynamicResource ChartTooltipForegroundBrush}" />
+        <Setter Property="TooltipBorderBrush" Value="{DynamicResource ChartTooltipBorderBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Padding" Value="16" />
+      </ControlTheme>
+    </ResourceDictionary>
+  </Styles.Resources>
+</Styles>

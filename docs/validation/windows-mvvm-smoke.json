@@ -1,0 +1,43 @@
+{
+  "Passed": true,
+  "TimestampUtc": "2026-10-12T05:54:13.6310483+00:00",
+  "OS": "Microsoft Windows 10.0.26200",
+  "Architecture": "X64",
+  "Runtime": "10.0.12",
+  "AvaloniaVersion": "12.0.3.0",
+  "WindowWidthDip": 1200,
+  "WindowHeightDip": 780,
+  "RenderScaling": 1,
+  "Checks": {
+    "nativeWindowCreated": true,
+    "compiledViewSourceBinding": true,
+    "declarativeColumns": true,
+    "modelBindingDisplayed": true,
+    "observableCollectionAdd": true,
+    "vmSelectedItemToView": true,
+    "modelPropertyChangeDisplayed": true,
+    "observableCollectionRemove": true,
+    "vmIndexPathSelection": true,
+    "vmSelectedItemsToView": true,
+    "vmCurrentCellToView": true,
+    "viewSelectionAndCurrentToVm": true,
+    "boundBeginEditCommand": true,
+    "externalDraftBindingToEditor": true,
+    "validationErrorBound": true,
+    "boundCommitCommand": true,
+    "cellEditorDraftToVm": true,
+    "boundCancelCommand": true,
+    "vmSourceReplacement": true,
+    "dataContextReplacement": true,
+    "commandsReboundAfterDataContext": true
+  },
+  "Error": null,
+  "ImageOutputs": [
+    "<REPO_ROOT>\\artifacts\\platform\\windows-mvvm-release.png",
+    "<REPO_ROOT>\\artifacts\\platform\\windows-mvvm-release-validation.png"
+  ],
+  "ImageCaptureKind": "Avalonia RenderTargetBitmap offscreen Window rendering; not a desktop screenshot.",
+  "NativeImeValidated": false,
+  "KylinValidated": false,
+  "Notes": "Native Window, compiled XAML View bindings, bound commands, programmatic editor and routed control input. This does not automate a physical keyboard or native IME."
+}

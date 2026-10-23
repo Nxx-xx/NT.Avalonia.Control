@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "charts-performance-targets-v1",
+  "budgetVersion": "charts-engineering-targets-v1",
+  "frozenOn": "2026-10-15",
+  "source": "docs/charts-performance-platform-plan.md",
+  "scope": "Proposed engineering targets frozen for subsequent measurement; not official SLA or achieved results.",
+  "measurementQualification": "pending-C4-native-harness",
+  "referenceStatus": "blocked-reference",
+  "headlessRenderRecordEligibleForFrameOrPresentGate": false,
+  "profiles": {
+    "gpu-dpi1-60hz": {
+      "widthDip": 1200,
+      "heightDip": 650,
+      "dpi": 1.0,
+      "refreshHz": 60,
+      "S10": { "framePipelineP95Ms": 16.7, "requestToPresentP95Ms": 33.3 },
+      "S100-L-downsampled": { "framePipelineP95Ms": 33.3, "requestToPresentP95Ms": 66.7 },
+      "S1M-L-downsampled": { "firstUsableToRenderP95Ms": 1500, "firstUsableToPresentP95Ms": 1600 },
+      "hitQueryP95Ms": 8,
+      "pointerToTooltipPresentP95Ms": 50,
+      "peakPrivateIncrementBytes": 536870912,
+      "referenceP95MaximumRatio": 1.25
+    },
+    "software-dpi1": {
+      "S10FramePipelineP95Ms": 33.3,
+      "S100FramePipelineP95Ms": 66.7,
+      "S1MFirstUsableToRenderP95Ms": 3000,
+      "minimumCpuStatus": "pending-fixed-hardware"
+    }
+  },
+  "realtime": {
+    "seriesCount": 4,
+    "totalPointsPerSecond": 10000,
+    "batchMilliseconds": 50,
+    "totalRetainedPoints": 1000000,
+    "framePipelineP95Ms": 33.3,
+    "requestToPresentP95Ms": 66.7,
+    "droppedPoints": 0,
+    "soakMinutes": [30, 480],
+    "steadyMemoryGrowthAllowance": { "minimumBytes": 33554432, "baselineFraction": 0.05 },
+    "qualification": "pending-C4-C7"
+  },
+  "hiDpiBudgetStatus": "pending-fixed-hardware",
+  "changesRequire": "New budgetVersion, reason and retention of previous raw failures. Never relabel render-record as framePipeline/present."
+}

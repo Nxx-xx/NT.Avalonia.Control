@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "stage": "C3-01 Cartesian line and area family",
+  "completedUtc": "2026-10-18T03:57:09.664180+00:00",
+  "finalCandidateVersion": "c3-line-area-source-v1",
+  "softwareFunctionalSubsetPassed": true,
+  "functionalSubsetPassed": true,
+  "fullC2StageComplete": false,
+  "fullC3StageComplete": false,
+  "fullC4StageComplete": false,
+  "windows": {
+    "platform": "windows",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\windows\\windows-final-v1\\results.json",
+      "sha256": "A74675ABE7FF57E2EA7199D82DFE3810D03E7F325B3634CC82773773675AC5D5",
+      "bytes": 20044
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\windows\\windows-final-v1\\results.json",
+      "sha256": "A74675ABE7FF57E2EA7199D82DFE3810D03E7F325B3634CC82773773675AC5D5",
+      "bytes": 20044
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\windows\\windows-final-v1\\charts-smoke.json",
+      "sha256": "7624661065462C9DFF9B6A786DCDFB65D1531396F910D2C261E6900C193BD964",
+      "bytes": 925888
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\windows\\windows-final-v1\\charts-usage.json",
+      "sha256": "009CEE8E7C9919A14AAB210E8789DA019DAAA420B3999956BD30A3670E6E2207",
+      "bytes": 13873
+    },
+    "headlessTests": 1013,
+    "demoChecks": 652,
+    "usageChecks": 181,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 245,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\windows\\package-consumers-v1\\20261018T034714817Z-b5f6628cc6f64918a1839f7ab5bd2fd6\\function\\consumer-result.json",
+          "sha256": "B21B6D8DB886C1C54237E436411A608AFF7F20A91DF40D907E2BFB420A074B5E",
+          "bytes": 41218
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\windows\\package-consumers-v1\\20261018T034714817Z-b5f6628cc6f64918a1839f7ab5bd2fd6\\function\\packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 245,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\windows\\package-consumers-v1\\20261018T034714817Z-b5f6628cc6f64918a1839f7ab5bd2fd6\\themes\\consumer-result.json",
+          "sha256": "4D456757D11F92A4C44181F079021D47C05BC4F11E173476562B7AF64F147350",
+          "bytes": 41247
+        },
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\windows\\package-consumers-v1\\20261018T034714817Z-b5f6628cc6f64918a1839f7ab5bd2fd6\\themes\\packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\windows\\windows-final-v1\\validated-input-manifest.json",
+      "sha256": "FA2A8FE71F5CE6FA2DC4CC3B26C09C301BD5548311FD9546CB696F8BDE90610F",
+      "bytes": 108105
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\windows\\windows-final-v1\\assembly-manifest.json",
+      "sha256": "B076F5EDF24E23A32860DB469DE0669011BE7D5729F9C68710258FFA1A34856A",
+      "bytes": 1954
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\windows\\windows-final-v1\\environment.json",
+      "sha256": "BA028CFF6F3A01FFB9E51BE428DC4B09D9718778AC315455E16D6F488343C7E5",
+      "bytes": 9252
+    },
+    "coreSha256": "EB0E8884CA7F816DF08C229CB1AC4DE587F2212848D45A30B18CC9A3A3B907D5",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false
+  },
+  "linux": {
+    "platform": "linux",
+    "passed": true,
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\results.json",
+      "sha256": "5EEA1BA3044DFA5DCA9E6DC7D4C61FC70DF4B5C2E07F6F10A688957A88AA2353",
+      "bytes": 14683
+    },
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\results.json",
+      "sha256": "5EEA1BA3044DFA5DCA9E6DC7D4C61FC70DF4B5C2E07F6F10A688957A88AA2353",
+      "bytes": 14683
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\charts-smoke.json",
+      "sha256": "2FF880E11D618D5397291D221FD5C524392ECE68816E006ACDE0CD2DCEBDC18B",
+      "bytes": 892518
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\charts-usage.json",
+      "sha256": "34D5C282577B372178EE15AB6BDA982B75EA3F2DE812B7D29DF31863C8336DA1",
+      "bytes": 13592
+    },
+    "headlessTests": 1013,
+    "demoChecks": 652,
+    "usageChecks": 181,
+    "consumers": [
+      {
+        "kind": "function",
+        "checks": 245,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\linux\\run-v1\\package-consumers\\20261018T035005314Z-9e7fc703af204bb28a2ad9723a7d1641\\function\\consumer-result.json",
+          "sha256": "11C78B8B57AEE5C1F0F75372C11C991AB379F11D33887A2A8C0FB92781940D1E",
+          "bytes": 40024
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c3-line-area-20261018/linux/run-v1/package-consumers/20261018T035005314Z-9e7fc703af204bb28a2ad9723a7d1641/function/packages"
+      },
+      {
+        "kind": "themes",
+        "checks": 245,
+        "result": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\linux\\run-v1\\package-consumers\\20261018T035005314Z-9e7fc703af204bb28a2ad9723a7d1641\\themes\\consumer-result.json",
+          "sha256": "F57F9850671BF578A8F02E798136299FCC1677CDE1D5AE255A45C83EC2926E39",
+          "bytes": 40053
+        },
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c3-line-area-20261018/linux/run-v1/package-consumers/20261018T035005314Z-9e7fc703af204bb28a2ad9723a7d1641/themes/packages"
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\validated-input-manifest.json",
+      "sha256": "26A1F14F5B1A521F9331852D98DFAF7A47A4155919DE52084A2AE00ED5F3B79C",
+      "bytes": 105703
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\assembly-manifest.json",
+      "sha256": "FE14D57489A0045BB410694AF6526940A6B83F5DDD1A1EEEE7B408D49F2FCDCF",
+      "bytes": 1905
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\linux\\run-v1\\verification\\wslg-final-v1\\environment.json",
+      "sha256": "C09DBDF87D8C6CF37DDD29770FD4E39F6708247D1AF6E6C091A4987004DE01D7",
+      "bytes": 6312
+    },
+    "coreSha256": "4642FEB86EE5C23B38122B8CB9018177297DCED3478A5286A3AD1AEBDE8AB9EA",
+    "sourceAndAssemblyStableDuringRun": true,
+    "freshConsumerPackageCaches": true,
+    "noConsumerSourceProjectReferences": true,
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false,
+    "nativeAccessibilityEnumerationRetested": false
+  },
+  "sourceSnapshotRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\source-snapshot-v1.json",
+    "sha256": "86A6B06D2242CA2BC8EB07A929CC7586BD0D79B5069D3345B70764C119607C5B",
+    "bytes": 258995
+  },
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\source-snapshot-v1.json",
+    "sha256": "86A6B06D2242CA2BC8EB07A929CC7586BD0D79B5069D3345B70764C119607C5B",
+    "bytes": 258995
+  },
+  "frozenSourceFiles": 1291,
+  "declaredValidatedInputsPerPlatform": 600,
+  "declaredInputsMatchBetweenPlatforms": true,
+  "declaredLiveInputsStillMatch": true,
+  "frozenSourceHashesStillMatch": true,
+  "liveFullRepositoryEqualityClaimed": false,
+  "sourceScope": "All runtime/harness declared inputs match frozen candidate; later general documentation and metadata updates are outside that runtime set.",
+  "windowsApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\api-windows-final-v1\\api.txt",
+    "sha256": "C77A1F8421D73B6CCD8E33D25E9D9CE9D27BE01DA88EC2646FADF2E70504C1C2",
+    "bytes": 789602
+  },
+  "linuxApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\linux\\api-linux-final-v1\\api.txt",
+    "sha256": "64781B0B37469F417E560CFA0FF0342D443FFFD77B13CA8943E5557C2337524C",
+    "bytes": 232070
+  },
+  "publicApiDocument": {
+    "path": "<REPO_ROOT>\\docs\\charts-c3-line-area-api.txt",
+    "sha256": "C77A1F8421D73B6CCD8E33D25E9D9CE9D27BE01DA88EC2646FADF2E70504C1C2",
+    "bytes": 789602
+  },
+  "localApiDeclarationsMatchBetweenPlatforms": true,
+  "apiDelta": {
+    "oldTypes": 98,
+    "newTypes": 102,
+    "addedTypes": [
+      "NT.AvaloniaControl.Charts.AreaSeries",
+      "NT.AvaloniaControl.Charts.ChartLineInterpolation",
+      "NT.AvaloniaControl.Charts.ChartStackMode",
+      "NT.AvaloniaControl.Charts.RangeAreaSeries"
+    ],
+    "removedTypes": [],
+    "changedExistingTypeDeclarations": [],
+    "addedMembersOnExistingTypes": [
+      {
+        "type": "NT.AvaloniaControl.Charts.ChartDataPoint",
+        "member": "  Property: System.Nullable`1[System.Double] BaseValue [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.ChartDataPoint",
+        "member": "  Property: System.Nullable`1[NT.AvaloniaControl.Charts.ChartPoint] RawPoint [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.ChartDataPoint",
+        "member": "  Property: System.Nullable`1[System.Double] StackValue [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.ChartPointHit",
+        "member": "  Property: System.Nullable`1[System.Double] BaseValue [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.ChartPointHit",
+        "member": "  Property: System.Nullable`1[NT.AvaloniaControl.Charts.ChartPoint] RawPoint [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.ChartPointHit",
+        "member": "  Property: System.Nullable`1[System.Double] StackValue [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.ChartSegmentHit",
+        "member": "  Property: System.Nullable`1[System.Double] BaseValue [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.ChartTrackballReading",
+        "member": "  Property: System.Nullable`1[System.Double] BaseValue [get=True, set=False]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.LineSeries",
+        "member": "  Interface: NT.AvaloniaControl.Charts.IChartLineSeries"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.LineSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.Charts.ChartLineInterpolation] InterpolationProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.LineSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[System.String] StackGroupProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.LineSeries",
+        "member": "  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.Charts.ChartStackMode] StackModeProperty [static=True, readonly=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.LineSeries",
+        "member": "  Property: NT.AvaloniaControl.Charts.ChartLineInterpolation Interpolation [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.LineSeries",
+        "member": "  Property: System.String StackGroup [get=True, set=True]"
+      },
+      {
+        "type": "NT.AvaloniaControl.Charts.LineSeries",
+        "member": "  Property: NT.AvaloniaControl.Charts.ChartStackMode StackMode [get=True, set=True]"
+      }
+    ],
+    "removedMembersOnExistingTypes": [],
+    "binaryCompatibilityQualified": false,
+    "officialCompatibilityQualified": false,
+    "namespaceOnlyTypeCounts": {
+      "old": 96,
+      "new": 100
+    },
+    "typeCountScope": "Complete two local product assemblies keyed by assembly plus type name, including exported generated resource/loader classes; NT.AvaloniaControl.Charts namespace-only counts retained separately."
+  },
+  "independentReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\collected-evidence-v1-attempt2.json",
+    "sha256": "F667D4E0262BCCE2374BA78333C0B56B93382CE65DC703A598BC8B6E99DB90DF",
+    "bytes": 639823
+  },
+  "independentRasterReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\independent-line-area-raster-v1.json",
+    "sha256": "97D5AD1EFE4EA7494BF3A56FEF718DD7088D44447B25A67CF51601443C38E631",
+    "bytes": 70697
+  },
+  "rasterOraclePreregistrationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\line-area-oracle-preregistration-v4.json",
+    "sha256": "EBC893FB4E386F0B019BD6F45784483080A73E662BD6717A3D37FF8CCD330A6A",
+    "bytes": 2585
+  },
+  "independentAlgebraicReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\independent-stack-thickness-oracle.json",
+    "sha256": "E6D10E788EDF25DD517C50F96D8EF5EC5B5A921A464E44B4E6C5091C8E49DBD4",
+    "bytes": 574
+  },
+  "independentReviewCounts": {
+    "sourceAndPlatformChecks": 3784,
+    "rasterChecks": 174,
+    "decodedImages": 112,
+    "algebraicCases": 2000,
+    "algebraicBands": 48000,
+    "algebraicSamples": 4848000,
+    "countsOverlapAndAreNotProductTestCounts": true
+  },
+  "historicalAndRendererPinsVerified": true,
+  "historicalAndRendererPinCount": 30,
+  "dependencyReuse": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\dependency-reuse.json",
+    "sha256": "F38AAA8461D8314B3DFA13D5C05B2938136DE317437C44CE39590231BC250363",
+    "bytes": 5687
+  },
+  "productPackagesReused": false,
+  "nugetAuditOrWarningPolicyChanged": false,
+  "nativeAccessibilityEnumerationRetested": false,
+  "deferredNativeAccessibilityWorkstream": "A11Y-NATIVE-01",
+  "completeNativeBridgeGatePassed": false,
+  "previousNativeBridgeEvidence": {
+    "path": "<REPO_ROOT>\\docs\\charts-c2-accessibility-validation.json",
+    "sha256": "BC80F3A743AD610E5B419D87D00A753755265A12F434F08654A06A59ABD72A8D",
+    "bytes": 1405510
+  },
+  "performanceQualified": false,
+  "performanceMeasured": false,
+  "memoryRegressionMeasured": false,
+  "millionHitTailDeferredTo": "C4",
+  "officialRuntimeReferenceIncluded": false,
+  "physicalKeyboardValidated": false,
+  "physicalDesktopCertified": false,
+  "retainedEarlierRuns": {
+    "developmentNativeV1": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\development-native-v1\\charts-smoke.json",
+      "sha256": "0BDFD80692733D4392EF3C616C4A151B8FD604DCA61619FD6644538AEDE33FBA",
+      "bytes": 923216
+    },
+    "developmentNativeV1Total": 650,
+    "developmentNativeV1Passed": 646,
+    "strictPercentFixtureFailures": 4,
+    "actualPercentAutoAxisBugAlsoObserved": true,
+    "earlierEvidenceOverwritten": false,
+    "toleranceCorrection": "Only derived Base/Stack absolute tolerance1e-9; raw/identity/Point coordinates remain exact; raster/DPI/PNG thresholds unchanged",
+    "preregistrationHistory": [
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\line-area-oracle-preregistration-v1.json",
+        "sha256": "FA5717E3FF3BFFEDA7488F96814F60C72979516CA96EE0307B80FFCC4D03AD37",
+        "bytes": 1566
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\line-area-oracle-preregistration-v2.json",
+        "sha256": "ED2333ABBBE86E11F7CDEC177523CF2E8492D231B1F0204475FB8E1456A1BBFA",
+        "bytes": 1820
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\line-area-oracle-preregistration-v3.json",
+        "sha256": "1D084DEC67749B7BA4338458212929126BF85DE523F56168944C1D8614A49632",
+        "bytes": 2433
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\line-area-oracle-preregistration-v4.json",
+        "sha256": "EBC893FB4E386F0B019BD6F45784483080A73E662BD6717A3D37FF8CCD330A6A",
+        "bytes": 2585
+      }
+    ]
+  },
+  "manualWindowsVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\manual-windows-line-area-visual-v1.json",
+    "sha256": "B4D28E2FDF89FC50B1841F46660ED28F48B7C0FDADB9C7B3DA24E18E589CCAE7",
+    "bytes": 2893
+  },
+  "demoAgentWindowsVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\windows\\manual-line-area-visual-review-v1.json",
+    "sha256": "0BF1502B57F352063C5BD61935A0ACE4615FA7511FDB0C1332AD862EC586B752",
+    "bytes": 6468
+  },
+  "manualLinuxVisualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\manual-linux-line-area-visual-v1.json",
+    "sha256": "51B88895BB8B1DC82970EC1DE527D63506AEFE446409B20C5656FC483F6BC3A9",
+    "bytes": 2961
+  },
+  "remaining": [
+    "不同插值、X/source ordinal拓扑、缺失段或符号链的堆叠仅保证实际X采样点累计，不保证连续曲线共边。",
+    "点命中/选择/键盘及线段/Trackball锚定上边界；本轮不提供填充内部命中和独立下边界选择目标。",
+    "新形状几何构建/命中为O(N)，百万点曲线、带宽内存/LOD/增量及尾延迟归C4，未建立本轮性能资格。",
+    "面积/范围及堆叠值轴要求数值轴；范围High/Low需有效数值。非零Baseline落在数值轴域外时断段；log默认0基线回退绘图区origin。",
+    "Windows UIA与Linux AT-SPI原生选中项枚举保留原失败，按用户要求进入A11Y-NATIVE-01，未在本批重验。",
+    "物理Windows/Linux、多屏DPI、实际GPU/backend/compositor、Ubuntu22/24物理桌面、原生Wayland/ARM及官方许可运行时对照继续待验。",
+    "C3-02柱条、C3-03气泡及后续常用图族未在本批完成；完整C2/C3/C4及C7出口仍开放。"
+  ],
+  "historicalCurrentPathPinCount": 29,
+  "historicalSourcePinCount": 1,
+  "historicalRendererPreservationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\historical-renderer-preservation-v2.json",
+    "sha256": "9A0F0DF91808F4B7C99559E58B72B9A505C6706FF41B6D334D0D8F8D0577CEE8",
+    "bytes": 2077
+  },
+  "supplementalEnglishCompilationRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\windows\\english-build-summaries-v1\\results.json",
+    "sha256": "BA518ED823FC812A7DC767F7744FD8CFF9E05E80825FBB89E3FD5A6A2D3EEABB",
+    "bytes": 4444
+  },
+  "retainedFailedCollectorRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\collected-evidence-v1.json",
+    "sha256": "6166E266E0816853FBB342B405E5548DB4A0A6755BB45544FF2E5F098AF3E919",
+    "bytes": 634053
+  },
+  "retainedFailedCollectorPassedChecks": 3779,
+  "retainedFailedCollectorTotalChecks": 3783,
+  "failedCollectorExplanation": "One current product renderer deliberately changed for the new shape getter; its C209 original is preserved and independently verified. Three Windows original Chinese build summaries were mojibake; original logs are retained, explicit English no-incremental recompiles report zero warnings/errors with all600 declared source/all executed assembly hashes identical before/after.",
+  "fullPublicApiReviewRef": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c3-line-area-20261018\\independent-full-public-api-v1.json",
+    "sha256": "9BE1B2F6C7FD78ABA3B0AB4039C71C0CDD0C44E6617906F100BC0AFEA9BA8124",
+    "bytes": 5104
+  },
+  "fullPublicApiReviewScope": "Complete two local product assemblies, keyed by assembly plus type name; includes exported generated CompiledAvaloniaXaml resource/loader classes. Official assembly excluded."
+}

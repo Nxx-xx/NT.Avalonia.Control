@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>__TARGET_FRAMEWORK__</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="__PACKAGE_ID__" Version="__PRODUCT_VERSION__" />
+    <PackageReference Include="Avalonia.Headless" Version="__AVALONIA_VERSION__" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="__AVALONIA_VERSION__" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="P0AnnotationCjk.ttf" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Noto-CJK-COPYRIGHT.txt" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

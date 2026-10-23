@@ -1,0 +1,5713 @@
+{
+  "schemaVersion": 1,
+  "stage": "C2-03 line segment interpolation and Trackball for current Line/Bar/Scatter",
+  "completedUtc": "2026-10-16T17:07:51.4840010+00:00",
+  "functionalSubsetPassed": true,
+  "fullC2StageComplete": false,
+  "fullC4StageComplete": false,
+  "windows": {
+    "platform": "Windows native synthetic",
+    "passed": true,
+    "headlessTests": 587,
+    "demoChecks": 206,
+    "usageChecks": 84,
+    "consumers": [
+      {
+        "kind": "function",
+        "passed": true,
+        "checks": 100,
+        "noProjectReferences": true,
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\package-consumers-v1\\20261016T170038159Z-d6d40d770a0242ee9a871158b249d7ab\\function\\packages",
+        "runLocalCacheVerified": true,
+        "coreSha256": "A1DB20CB7F09A136EE2CCCCE05CA72B5D7E995BA58F7524E2EFE5C0F220CCF08",
+        "report": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\package-consumers-v1\\20261016T170038159Z-d6d40d770a0242ee9a871158b249d7ab\\function\\consumer-result.json",
+          "sha256": "CCEE2446FFDB118E7419395AF1E129AE49F70F291CEA1F68F85F70BD9291E005",
+          "bytes": 19354
+        },
+        "diagnostics": {
+          "packagedLegendWindowInput": {
+            "chartOriginBeforeBringIntoView": {
+              "X": 39,
+              "Y": -250
+            },
+            "chartOriginAfterBringIntoView": {
+              "X": 39,
+              "Y": 128
+            },
+            "outerOffsetsBeforeBringIntoView": [
+              {
+                "X": 0,
+                "Y": 1784,
+                "Length": 1784,
+                "SquaredLength": 3182656
+              }
+            ],
+            "outerOffsetsAfterBringIntoView": [
+              {
+                "X": 0,
+                "Y": 1406,
+                "Length": 1406,
+                "SquaredLength": 1976836
+              }
+            ],
+            "windowClientSize": {
+              "AspectRatio": 1.2666666666666666,
+              "Width": 1140,
+              "Height": 900
+            },
+            "chartBounds": {
+              "X": 0,
+              "Y": 64,
+              "Width": 1062,
+              "Height": 420,
+              "Position": {
+                "X": 0,
+                "Y": 64
+              },
+              "Size": {
+                "AspectRatio": 2.5285714285714285,
+                "Width": 1062,
+                "Height": 420
+              },
+              "Right": 1062,
+              "Bottom": 484,
+              "Left": 0,
+              "Top": 64,
+              "TopLeft": {
+                "X": 0,
+                "Y": 64
+              },
+              "TopRight": {
+                "X": 1062,
+                "Y": 64
+              },
+              "BottomLeft": {
+                "X": 0,
+                "Y": 484
+              },
+              "BottomRight": {
+                "X": 1062,
+                "Y": 484
+              },
+              "Center": {
+                "X": 531,
+                "Y": 274
+              }
+            },
+            "viewerFound": true,
+            "viewerExtent": {
+              "AspectRatio": 0.221875,
+              "Width": 142,
+              "Height": 640
+            },
+            "viewerViewport": {
+              "AspectRatio": 0.6926829268292682,
+              "Width": 142,
+              "Height": 205
+            },
+            "offsetBeforeWheel": {
+              "X": 0,
+              "Y": 0,
+              "Length": 0,
+              "SquaredLength": 0
+            },
+            "offsetAfterWheel": {
+              "X": 0,
+              "Y": 435,
+              "Length": 435,
+              "SquaredLength": 189225
+            },
+            "observedWheelPoint": {
+              "X": 1022,
+              "Y": 269.5
+            },
+            "wheelInsideClient": true,
+            "wheelHitInsideLegend": false,
+            "wheelHitType": "Avalonia.Controls.Border",
+            "wheelHitName": "PART_Border",
+            "routedWheelCount": 1,
+            "routedWheelSourceInsideLegend": true,
+            "routedWheelSourceType": "Avalonia.Controls.Presenters.ScrollContentPresenter",
+            "routedWheelSourceName": "PART_ContentPresenter",
+            "routedWheelCaptureType": null,
+            "routedWheelPositionInChart": {
+              "X": 983,
+              "Y": 141.5
+            },
+            "routedWheelHandledAtChart": true,
+            "routedWheelHandled": true,
+            "inputOracle": "actual-window-MouseWheel-routed-source-and-chart/window-bubble-handled",
+            "standaloneInputHitTestRole": "diagnostic-only; Headless MouseWheel drains jobs/renders to stability before raw input",
+            "observedClickPoint": {
+              "X": 1022,
+              "Y": 352
+            },
+            "clickInsideClient": true,
+            "invoked": true,
+            "lastSeriesTitle": "候选渠道 16",
+            "visibilityBefore": false,
+            "visibilityAfter": false,
+            "viewportBefore": null,
+            "viewportAfter": null,
+            "visibleRangeBefore": {
+              "XMinimum": 0,
+              "XMaximum": 6,
+              "YMinimum": 0,
+              "YMaximum": 100,
+              "IsValid": true
+            },
+            "visibleRangeAfter": {
+              "XMinimum": 0,
+              "XMaximum": 6,
+              "YMinimum": 0,
+              "YMaximum": 100,
+              "IsValid": true
+            },
+            "visibleItemsAfterWheel": [
+              {
+                "title": "候选渠道 11",
+                "Bounds": {
+                  "X": 912,
+                  "Y": 39,
+                  "Width": 142,
+                  "Height": 5,
+                  "Position": {
+                    "X": 912,
+                    "Y": 39
+                  },
+                  "Size": {
+                    "AspectRatio": 28.4,
+                    "Width": 142,
+                    "Height": 5
+                  },
+                  "Right": 1054,
+                  "Bottom": 44,
+                  "Left": 912,
+                  "Top": 39,
+                  "TopLeft": {
+                    "X": 912,
+                    "Y": 39
+                  },
+                  "TopRight": {
+                    "X": 1054,
+                    "Y": 39
+                  },
+                  "BottomLeft": {
+                    "X": 912,
+                    "Y": 44
+                  },
+                  "BottomRight": {
+                    "X": 1054,
+                    "Y": 44
+                  },
+                  "Center": {
+                    "X": 983,
+                    "Y": 41.5
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 12",
+                "Bounds": {
+                  "X": 912,
+                  "Y": 44,
+                  "Width": 142,
+                  "Height": 40,
+                  "Position": {
+                    "X": 912,
+                    "Y": 44
+                  },
+                  "Size": {
+                    "AspectRatio": 3.55,
+                    "Width": 142,
+                    "Height": 40
+                  },
+                  "Right": 1054,
+                  "Bottom": 84,
+                  "Left": 912,
+                  "Top": 44,
+                  "TopLeft": {
+                    "X": 912,
+                    "Y": 44
+                  },
+                  "TopRight": {
+                    "X": 1054,
+                    "Y": 44
+                  },
+                  "BottomLeft": {
+                    "X": 912,
+                    "Y": 84
+                  },
+                  "BottomRight": {
+                    "X": 1054,
+                    "Y": 84
+                  },
+                  "Center": {
+                    "X": 983,
+                    "Y": 64
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 13",
+                "Bounds": {
+                  "X": 912,
+                  "Y": 84,
+                  "Width": 142,
+                  "Height": 40,
+                  "Position": {
+                    "X": 912,
+                    "Y": 84
+                  },
+                  "Size": {
+                    "AspectRatio": 3.55,
+                    "Width": 142,
+                    "Height": 40
+                  },
+                  "Right": 1054,
+                  "Bottom": 124,
+                  "Left": 912,
+                  "Top": 84,
+                  "TopLeft": {
+                    "X": 912,
+                    "Y": 84
+                  },
+                  "TopRight": {
+                    "X": 1054,
+                    "Y": 84
+                  },
+                  "BottomLeft": {
+                    "X": 912,
+                    "Y": 124
+                  },
+                  "BottomRight": {
+                    "X": 1054,
+                    "Y": 124
+                  },
+                  "Center": {
+                    "X": 983,
+                    "Y": 104
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 14",
+                "Bounds": {
+                  "X": 912,
+                  "Y": 124,
+                  "Width": 142,
+                  "Height": 40,
+                  "Position": {
+                    "X": 912,
+                    "Y": 124
+                  },
+                  "Size": {
+                    "AspectRatio": 3.55,
+                    "Width": 142,
+                    "Height": 40
+                  },
+                  "Right": 1054,
+                  "Bottom": 164,
+                  "Left": 912,
+                  "Top": 124,
+                  "TopLeft": {
+                    "X": 912,
+                    "Y": 124
+                  },
+                  "TopRight": {
+                    "X": 1054,
+                    "Y": 124
+                  },
+                  "BottomLeft": {
+                    "X": 912,
+                    "Y": 164
+                  },
+                  "BottomRight": {
+                    "X": 1054,
+                    "Y": 164
+                  },
+                  "Center": {
+                    "X": 983,
+                    "Y": 144
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 15",
+                "Bounds": {
+                  "X": 912,
+                  "Y": 164,
+                  "Width": 142,
+                  "Height": 40,
+                  "Position": {
+                    "X": 912,
+                    "Y": 164
+                  },
+                  "Size": {
+                    "AspectRatio": 3.55,
+                    "Width": 142,
+                    "Height": 40
+                  },
+                  "Right": 1054,
+                  "Bottom": 204,
+                  "Left": 912,
+                  "Top": 164,
+                  "TopLeft": {
+                    "X": 912,
+                    "Y": 164
+                  },
+                  "TopRight": {
+                    "X": 1054,
+                    "Y": 164
+                  },
+                  "BottomLeft": {
+                    "X": 912,
+                    "Y": 204
+                  },
+                  "BottomRight": {
+                    "X": 1054,
+                    "Y": 204
+                  },
+                  "Center": {
+                    "X": 983,
+                    "Y": 184
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 16",
+                "Bounds": {
+                  "X": 912,
+                  "Y": 204,
+                  "Width": 142,
+                  "Height": 40,
+                  "Position": {
+                    "X": 912,
+                    "Y": 204
+                  },
+                  "Size": {
+                    "AspectRatio": 3.55,
+                    "Width": 142,
+                    "Height": 40
+                  },
+                  "Right": 1054,
+                  "Bottom": 244,
+                  "Left": 912,
+                  "Top": 204,
+                  "TopLeft": {
+                    "X": 912,
+                    "Y": 204
+                  },
+                  "TopRight": {
+                    "X": 1054,
+                    "Y": 204
+                  },
+                  "BottomLeft": {
+                    "X": 912,
+                    "Y": 244
+                  },
+                  "BottomRight": {
+                    "X": 1054,
+                    "Y": 244
+                  },
+                  "Center": {
+                    "X": 983,
+                    "Y": 224
+                  }
+                }
+              }
+            ]
+          },
+          "packagedTrackballWindowInput": {
+            "pointerPosition": {
+              "X": 402.25,
+              "Y": 637
+            },
+            "insideClient": true,
+            "routedMoves": 3,
+            "routedSourceInsideChart": true,
+            "routedSourceType": "NT.AvaloniaControl.Charts.CartesianChart",
+            "firstRoutedPosition": {
+              "X": 363.25,
+              "Y": 274
+            },
+            "firstRoutedPlot": {
+              "X": 135,
+              "Y": 97.2578125,
+              "Width": 913,
+              "Height": 353.484375,
+              "Position": {
+                "X": 135,
+                "Y": 97.2578125
+              },
+              "Size": {
+                "AspectRatio": 2.5828581532069133,
+                "Width": 913,
+                "Height": 353.484375
+              },
+              "Right": 1048,
+              "Bottom": 450.7421875,
+              "Left": 135,
+              "Top": 97.2578125,
+              "TopLeft": {
+                "X": 135,
+                "Y": 97.2578125
+              },
+              "TopRight": {
+                "X": 1048,
+                "Y": 97.2578125
+              },
+              "BottomLeft": {
+                "X": 135,
+                "Y": 450.7421875
+              },
+              "BottomRight": {
+                "X": 1048,
+                "Y": 450.7421875
+              },
+              "Center": {
+                "X": 591.5,
+                "Y": 274
+              }
+            },
+            "expectedPrimary": {
+              "X": 2.5,
+              "Y": 35
+            },
+            "expectedSecondary": {
+              "X": 2.5,
+              "Y": 55
+            },
+            "fallbackRequestedPosition": {
+              "X": 402.25,
+              "Y": 690.02265625
+            },
+            "fallbackDeliveredPosition": {
+              "X": 363.25,
+              "Y": 327.02265624999995
+            },
+            "fallbackDeliveredPlot": {
+              "X": 135,
+              "Y": 97.2578125,
+              "Width": 913,
+              "Height": 353.484375,
+              "Position": {
+                "X": 135,
+                "Y": 97.2578125
+              },
+              "Size": {
+                "AspectRatio": 2.5828581532069133,
+                "Width": 913,
+                "Height": 353.484375
+              },
+              "Right": 1048,
+              "Bottom": 450.7421875,
+              "Left": 135,
+              "Top": 97.2578125,
+              "TopLeft": {
+                "X": 135,
+                "Y": 97.2578125
+              },
+              "TopRight": {
+                "X": 1048,
+                "Y": 97.2578125
+              },
+              "BottomLeft": {
+                "X": 135,
+                "Y": 450.7421875
+              },
+              "BottomRight": {
+                "X": 1048,
+                "Y": 450.7421875
+              },
+              "Center": {
+                "X": 591.5,
+                "Y": 274
+              }
+            },
+            "expectedFallback": {
+              "X": 2.5,
+              "Y": 35
+            },
+            "expectedFallbackFraction": 0.37500000000000006,
+            "initialPrimaryPoint": {
+              "X": 2.5,
+              "Y": 35
+            },
+            "initialSecondaryPoint": {
+              "X": 2.5,
+              "Y": 55.00000000000001
+            },
+            "viewportBefore": null,
+            "viewportAfter": null,
+            "inputKind": "headless-window-MouseMove; actual routed source captured; no physical input claim"
+          }
+        }
+      },
+      {
+        "kind": "themes",
+        "passed": true,
+        "checks": 100,
+        "noProjectReferences": true,
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\package-consumers-v1\\20261016T170038159Z-d6d40d770a0242ee9a871158b249d7ab\\themes\\packages",
+        "runLocalCacheVerified": true,
+        "coreSha256": "A1DB20CB7F09A136EE2CCCCE05CA72B5D7E995BA58F7524E2EFE5C0F220CCF08",
+        "report": {
+          "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\package-consumers-v1\\20261016T170038159Z-d6d40d770a0242ee9a871158b249d7ab\\themes\\consumer-result.json",
+          "sha256": "EBE391031BA45ED19953EF8CA28FB3874FD244A15B3081656F1C1D5C75F72305",
+          "bytes": 19410
+        },
+        "diagnostics": {
+          "packagedLegendWindowInput": {
+            "chartOriginBeforeBringIntoView": {
+              "X": 39,
+              "Y": -250
+            },
+            "chartOriginAfterBringIntoView": {
+              "X": 39,
+              "Y": 128
+            },
+            "outerOffsetsBeforeBringIntoView": [
+              {
+                "X": 0,
+                "Y": 1784,
+                "Length": 1784,
+                "SquaredLength": 3182656
+              }
+            ],
+            "outerOffsetsAfterBringIntoView": [
+              {
+                "X": 0,
+                "Y": 1406,
+                "Length": 1406,
+                "SquaredLength": 1976836
+              }
+            ],
+            "windowClientSize": {
+              "AspectRatio": 1.2666666666666666,
+              "Width": 1140,
+              "Height": 900
+            },
+            "chartBounds": {
+              "X": 0,
+              "Y": 64,
+              "Width": 1062,
+              "Height": 420,
+              "Position": {
+                "X": 0,
+                "Y": 64
+              },
+              "Size": {
+                "AspectRatio": 2.5285714285714285,
+                "Width": 1062,
+                "Height": 420
+              },
+              "Right": 1062,
+              "Bottom": 484,
+              "Left": 0,
+              "Top": 64,
+              "TopLeft": {
+                "X": 0,
+                "Y": 64
+              },
+              "TopRight": {
+                "X": 1062,
+                "Y": 64
+              },
+              "BottomLeft": {
+                "X": 0,
+                "Y": 484
+              },
+              "BottomRight": {
+                "X": 1062,
+                "Y": 484
+              },
+              "Center": {
+                "X": 531,
+                "Y": 274
+              }
+            },
+            "viewerFound": true,
+            "viewerExtent": {
+              "AspectRatio": 0.23355263157894737,
+              "Width": 142,
+              "Height": 608
+            },
+            "viewerViewport": {
+              "AspectRatio": 0.6926829268292682,
+              "Width": 142,
+              "Height": 205
+            },
+            "offsetBeforeWheel": {
+              "X": 0,
+              "Y": 0,
+              "Length": 0,
+              "SquaredLength": 0
+            },
+            "offsetAfterWheel": {
+              "X": 0,
+              "Y": 403,
+              "Length": 403,
+              "SquaredLength": 162409
+            },
+            "observedWheelPoint": {
+              "X": 1014,
+              "Y": 275.5
+            },
+            "wheelInsideClient": true,
+            "wheelHitInsideLegend": false,
+            "wheelHitType": "Avalonia.Controls.Border",
+            "wheelHitName": "ExpanderContent",
+            "routedWheelCount": 1,
+            "routedWheelSourceInsideLegend": true,
+            "routedWheelSourceType": "Avalonia.Controls.Presenters.ScrollContentPresenter",
+            "routedWheelSourceName": "PART_ContentPresenter",
+            "routedWheelCaptureType": null,
+            "routedWheelPositionInChart": {
+              "X": 975,
+              "Y": 147.5
+            },
+            "routedWheelHandledAtChart": true,
+            "routedWheelHandled": true,
+            "inputOracle": "actual-window-MouseWheel-routed-source-and-chart/window-bubble-handled",
+            "standaloneInputHitTestRole": "diagnostic-only; Headless MouseWheel drains jobs/renders to stability before raw input",
+            "observedClickPoint": {
+              "X": 1014,
+              "Y": 359
+            },
+            "clickInsideClient": true,
+            "invoked": true,
+            "lastSeriesTitle": "候选渠道 16",
+            "visibilityBefore": false,
+            "visibilityAfter": false,
+            "viewportBefore": null,
+            "viewportAfter": null,
+            "visibleRangeBefore": {
+              "XMinimum": 0,
+              "XMaximum": 6,
+              "YMinimum": 0,
+              "YMaximum": 100,
+              "IsValid": true
+            },
+            "visibleRangeAfter": {
+              "XMinimum": 0,
+              "XMaximum": 6,
+              "YMinimum": 0,
+              "YMaximum": 100,
+              "IsValid": true
+            },
+            "visibleItemsAfterWheel": [
+              {
+                "title": "候选渠道 11",
+                "Bounds": {
+                  "X": 904,
+                  "Y": 45,
+                  "Width": 142,
+                  "Height": 15,
+                  "Position": {
+                    "X": 904,
+                    "Y": 45
+                  },
+                  "Size": {
+                    "AspectRatio": 9.466666666666667,
+                    "Width": 142,
+                    "Height": 15
+                  },
+                  "Right": 1046,
+                  "Bottom": 60,
+                  "Left": 904,
+                  "Top": 45,
+                  "TopLeft": {
+                    "X": 904,
+                    "Y": 45
+                  },
+                  "TopRight": {
+                    "X": 1046,
+                    "Y": 45
+                  },
+                  "BottomLeft": {
+                    "X": 904,
+                    "Y": 60
+                  },
+                  "BottomRight": {
+                    "X": 1046,
+                    "Y": 60
+                  },
+                  "Center": {
+                    "X": 975,
+                    "Y": 52.5
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 12",
+                "Bounds": {
+                  "X": 904,
+                  "Y": 60,
+                  "Width": 142,
+                  "Height": 38,
+                  "Position": {
+                    "X": 904,
+                    "Y": 60
+                  },
+                  "Size": {
+                    "AspectRatio": 3.736842105263158,
+                    "Width": 142,
+                    "Height": 38
+                  },
+                  "Right": 1046,
+                  "Bottom": 98,
+                  "Left": 904,
+                  "Top": 60,
+                  "TopLeft": {
+                    "X": 904,
+                    "Y": 60
+                  },
+                  "TopRight": {
+                    "X": 1046,
+                    "Y": 60
+                  },
+                  "BottomLeft": {
+                    "X": 904,
+                    "Y": 98
+                  },
+                  "BottomRight": {
+                    "X": 1046,
+                    "Y": 98
+                  },
+                  "Center": {
+                    "X": 975,
+                    "Y": 79
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 13",
+                "Bounds": {
+                  "X": 904,
+                  "Y": 98,
+                  "Width": 142,
+                  "Height": 38,
+                  "Position": {
+                    "X": 904,
+                    "Y": 98
+                  },
+                  "Size": {
+                    "AspectRatio": 3.736842105263158,
+                    "Width": 142,
+                    "Height": 38
+                  },
+                  "Right": 1046,
+                  "Bottom": 136,
+                  "Left": 904,
+                  "Top": 98,
+                  "TopLeft": {
+                    "X": 904,
+                    "Y": 98
+                  },
+                  "TopRight": {
+                    "X": 1046,
+                    "Y": 98
+                  },
+                  "BottomLeft": {
+                    "X": 904,
+                    "Y": 136
+                  },
+                  "BottomRight": {
+                    "X": 1046,
+                    "Y": 136
+                  },
+                  "Center": {
+                    "X": 975,
+                    "Y": 117
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 14",
+                "Bounds": {
+                  "X": 904,
+                  "Y": 136,
+                  "Width": 142,
+                  "Height": 38,
+                  "Position": {
+                    "X": 904,
+                    "Y": 136
+                  },
+                  "Size": {
+                    "AspectRatio": 3.736842105263158,
+                    "Width": 142,
+                    "Height": 38
+                  },
+                  "Right": 1046,
+                  "Bottom": 174,
+                  "Left": 904,
+                  "Top": 136,
+                  "TopLeft": {
+                    "X": 904,
+                    "Y": 136
+                  },
+                  "TopRight": {
+                    "X": 1046,
+                    "Y": 136
+                  },
+                  "BottomLeft": {
+                    "X": 904,
+                    "Y": 174
+                  },
+                  "BottomRight": {
+                    "X": 1046,
+                    "Y": 174
+                  },
+                  "Center": {
+                    "X": 975,
+                    "Y": 155
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 15",
+                "Bounds": {
+                  "X": 904,
+                  "Y": 174,
+                  "Width": 142,
+                  "Height": 38,
+                  "Position": {
+                    "X": 904,
+                    "Y": 174
+                  },
+                  "Size": {
+                    "AspectRatio": 3.736842105263158,
+                    "Width": 142,
+                    "Height": 38
+                  },
+                  "Right": 1046,
+                  "Bottom": 212,
+                  "Left": 904,
+                  "Top": 174,
+                  "TopLeft": {
+                    "X": 904,
+                    "Y": 174
+                  },
+                  "TopRight": {
+                    "X": 1046,
+                    "Y": 174
+                  },
+                  "BottomLeft": {
+                    "X": 904,
+                    "Y": 212
+                  },
+                  "BottomRight": {
+                    "X": 1046,
+                    "Y": 212
+                  },
+                  "Center": {
+                    "X": 975,
+                    "Y": 193
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 16",
+                "Bounds": {
+                  "X": 904,
+                  "Y": 212,
+                  "Width": 142,
+                  "Height": 38,
+                  "Position": {
+                    "X": 904,
+                    "Y": 212
+                  },
+                  "Size": {
+                    "AspectRatio": 3.736842105263158,
+                    "Width": 142,
+                    "Height": 38
+                  },
+                  "Right": 1046,
+                  "Bottom": 250,
+                  "Left": 904,
+                  "Top": 212,
+                  "TopLeft": {
+                    "X": 904,
+                    "Y": 212
+                  },
+                  "TopRight": {
+                    "X": 1046,
+                    "Y": 212
+                  },
+                  "BottomLeft": {
+                    "X": 904,
+                    "Y": 250
+                  },
+                  "BottomRight": {
+                    "X": 1046,
+                    "Y": 250
+                  },
+                  "Center": {
+                    "X": 975,
+                    "Y": 231
+                  }
+                }
+              }
+            ]
+          },
+          "packagedTrackballWindowInput": {
+            "pointerPosition": {
+              "X": 394.25,
+              "Y": 636.5
+            },
+            "insideClient": true,
+            "routedMoves": 3,
+            "routedSourceInsideChart": true,
+            "routedSourceType": "NT.AvaloniaControl.Charts.CartesianChart",
+            "firstRoutedPosition": {
+              "X": 355.25,
+              "Y": 273.5
+            },
+            "firstRoutedPlot": {
+              "X": 127,
+              "Y": 99.078125,
+              "Width": 913,
+              "Height": 348.84375,
+              "Position": {
+                "X": 127,
+                "Y": 99.078125
+              },
+              "Size": {
+                "AspectRatio": 2.617217593836782,
+                "Width": 913,
+                "Height": 348.84375
+              },
+              "Right": 1040,
+              "Bottom": 447.921875,
+              "Left": 127,
+              "Top": 99.078125,
+              "TopLeft": {
+                "X": 127,
+                "Y": 99.078125
+              },
+              "TopRight": {
+                "X": 1040,
+                "Y": 99.078125
+              },
+              "BottomLeft": {
+                "X": 127,
+                "Y": 447.921875
+              },
+              "BottomRight": {
+                "X": 1040,
+                "Y": 447.921875
+              },
+              "Center": {
+                "X": 583.5,
+                "Y": 273.5
+              }
+            },
+            "expectedPrimary": {
+              "X": 2.5,
+              "Y": 35
+            },
+            "expectedSecondary": {
+              "X": 2.5,
+              "Y": 55
+            },
+            "fallbackRequestedPosition": {
+              "X": 394.25,
+              "Y": 688.8265625
+            },
+            "fallbackDeliveredPosition": {
+              "X": 355.25,
+              "Y": 325.8265625
+            },
+            "fallbackDeliveredPlot": {
+              "X": 127,
+              "Y": 99.078125,
+              "Width": 913,
+              "Height": 348.84375,
+              "Position": {
+                "X": 127,
+                "Y": 99.078125
+              },
+              "Size": {
+                "AspectRatio": 2.617217593836782,
+                "Width": 913,
+                "Height": 348.84375
+              },
+              "Right": 1040,
+              "Bottom": 447.921875,
+              "Left": 127,
+              "Top": 99.078125,
+              "TopLeft": {
+                "X": 127,
+                "Y": 99.078125
+              },
+              "TopRight": {
+                "X": 1040,
+                "Y": 99.078125
+              },
+              "BottomLeft": {
+                "X": 127,
+                "Y": 447.921875
+              },
+              "BottomRight": {
+                "X": 1040,
+                "Y": 447.921875
+              },
+              "Center": {
+                "X": 583.5,
+                "Y": 273.5
+              }
+            },
+            "expectedFallback": {
+              "X": 2.5,
+              "Y": 35
+            },
+            "expectedFallbackFraction": 0.375,
+            "initialPrimaryPoint": {
+              "X": 2.5,
+              "Y": 35.00000000000001
+            },
+            "initialSecondaryPoint": {
+              "X": 2.5,
+              "Y": 55.000000000000014
+            },
+            "viewportBefore": null,
+            "viewportAfter": null,
+            "inputKind": "headless-window-MouseMove; actual routed source captured; no physical input claim"
+          }
+        }
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "buildLogs": [
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\build-0.stdout.log",
+        "sha256": "C18487E52C338A1FED3512E398614FD76B98B92D777A389217C899225ACB040C",
+        "bytes": 518
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\build-1.stdout.log",
+        "sha256": "A21FED2D75F18AF10B1FF02B83955100A769B3B8DDAE443D9F30D8C0FBB1F095",
+        "bytes": 2032
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\build-2.stdout.log",
+        "sha256": "B466A5DFE2BC6E5D2CAC3AEEB3214456DCADBD8F351E9D7197EBFEA83F37FC95",
+        "bytes": 493
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\package-consumers-v1\\20261016T170038159Z-d6d40d770a0242ee9a871158b249d7ab\\function-build.stdout.log",
+        "sha256": "8ADECCACF8FE6385D25A767F6B7661FAC89D6841A768CFC0218DF6016D82EB74",
+        "bytes": 337
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\package-consumers-v1\\20261016T170038159Z-d6d40d770a0242ee9a871158b249d7ab\\themes-build.stdout.log",
+        "sha256": "1ABD598A175D188009BC1763852514BC8D3ADDD96BB8EB9257D7D72797B6052A",
+        "bytes": 335
+      }
+    ],
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\results.json",
+      "sha256": "D5FAECED5FF06279303F398FB99E9786447D4836E4E5E674C97B0CF812303332",
+      "bytes": 18903
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-smoke.json",
+      "sha256": "5781EE74E15A504DD420F6F45A139BF222C4F6E3F9338CBC60B5A8E374D63E61",
+      "bytes": 222227
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-usage.json",
+      "sha256": "99799554F5F159134133441BA9E1FD195E780BFE020EBE57A1E4328B73091998",
+      "bytes": 5157
+    },
+    "independentConsumerReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\package-consumers-v1\\20261016T170038159Z-d6d40d770a0242ee9a871158b249d7ab\\results.json",
+      "sha256": "08777ECBFBEC7E6DAF248E15EA66304B45CD19963BF25D96B97A63A9D1474859",
+      "bytes": 11994
+    },
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\validated-input-manifest.json",
+      "sha256": "5A250724AF2E3AC5C5F4CF93D8314DCF3A717D7C21669F3103DFE5885490F1FE",
+      "bytes": 98374
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\assembly-manifest.json",
+      "sha256": "FB9EFB1CF072663F7E381B20C1D90E6E7B74B871702844AAD717FABF674273FE",
+      "bytes": 1953
+    },
+    "sourceManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\source-manifest.json",
+      "sha256": "1CEABB203486245FED6A995405FD4EF57C0F8502B862484B853BDC7B66B47564",
+      "bytes": 207177
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\environment.json",
+      "sha256": "EB51E3EB412512DF11CBCA3477C5A2A212A81C0806FA99F5DE0971201214AF6D",
+      "bytes": 9006
+    },
+    "coreSha256": "A1DB20CB7F09A136EE2CCCCE05CA72B5D7E995BA58F7524E2EFE5C0F220CCF08",
+    "sourceAndAssemblyStableDuringRun": true,
+    "baseExplicitlySkippedPackageConsumers": true,
+    "freshConsumerPackageCaches": true,
+    "trackballEvidence": [
+      {
+        "Theme": "亮色",
+        "NativeWindowCreated": true,
+        "PageImage": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-light.png",
+        "PixelImage": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-pixels-light.png",
+        "WithoutEndpointsImage": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-without-endpoints-light.png",
+        "ExportImage": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-export-light.png",
+        "StartIdRegion": {
+          "X": 412,
+          "Y": 131,
+          "Width": 118,
+          "Height": 16,
+          "Position": {
+            "X": 412,
+            "Y": 131
+          },
+          "Size": {
+            "AspectRatio": 7.375,
+            "Width": 118,
+            "Height": 16
+          },
+          "Right": 530,
+          "Bottom": 147,
+          "Left": 412,
+          "Top": 131,
+          "TopLeft": {
+            "X": 412,
+            "Y": 131
+          },
+          "TopRight": {
+            "X": 530,
+            "Y": 131
+          },
+          "BottomLeft": {
+            "X": 412,
+            "Y": 147
+          },
+          "BottomRight": {
+            "X": 530,
+            "Y": 147
+          },
+          "Center": {
+            "X": 471,
+            "Y": 139
+          }
+        },
+        "StartGlyphChangedPixels": 204,
+        "EndIdRegion": {
+          "X": 412,
+          "Y": 184,
+          "Width": 118,
+          "Height": 16,
+          "Position": {
+            "X": 412,
+            "Y": 184
+          },
+          "Size": {
+            "AspectRatio": 7.375,
+            "Width": 118,
+            "Height": 16
+          },
+          "Right": 530,
+          "Bottom": 200,
+          "Left": 412,
+          "Top": 184,
+          "TopLeft": {
+            "X": 412,
+            "Y": 184
+          },
+          "TopRight": {
+            "X": 530,
+            "Y": 184
+          },
+          "BottomLeft": {
+            "X": 412,
+            "Y": 200
+          },
+          "BottomRight": {
+            "X": 530,
+            "Y": 200
+          },
+          "Center": {
+            "X": 471,
+            "Y": 192
+          }
+        },
+        "EndGlyphChangedPixels": 190,
+        "RestoredGlyphPixelsSame": true,
+        "MarkerChangedPixels": [
+          130,
+          126
+        ],
+        "Modes": [
+          {
+            "Direction": "Vertical",
+            "Display": "GroupAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 326,
+              "Y": 423
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "Position": {
+                  "X": 176.8916015625,
+                  "Y": 517.231640625
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 475.927734375,
+                  "Y": 413.42421874999997
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Vertical",
+            "Display": "GroupAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 376,
+              "Y": 413
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1020,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 2.997501738985608,
+                  "Y": 39.97501738985608
+                },
+                "Position": {
+                  "X": 376,
+                  "Y": 413.55388776753745
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.499375434746402
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 2.997501738985608,
+                  "Y": 50.02498261014393
+                },
+                "Position": {
+                  "X": 376,
+                  "Y": 361.3908387949625
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.749375434746402
+              }
+            ]
+          },
+          {
+            "Direction": "Vertical",
+            "Display": "FloatAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 326,
+              "Y": 423
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "Position": {
+                  "X": 176.8916015625,
+                  "Y": 517.231640625
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 475.927734375,
+                  "Y": 413.42421874999997
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Vertical",
+            "Display": "FloatAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 376,
+              "Y": 413
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1020,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 2.997501738985608,
+                  "Y": 39.97501738985608
+                },
+                "Position": {
+                  "X": 376,
+                  "Y": 413.55388776753745
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.499375434746402
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 2.997501738985608,
+                  "Y": 50.02498261014393
+                },
+                "Position": {
+                  "X": 376,
+                  "Y": 361.3908387949625
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.749375434746402
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "GroupAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 326,
+              "Y": 423
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a2",
+                "OriginalPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "ReadingPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "Position": {
+                  "X": 974.3212890625,
+                  "Y": 439.37607421875003
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 475.927734375,
+                  "Y": 413.42421874999997
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "GroupAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 376,
+              "Y": 413
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1970,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a1",
+                "OriginalPoint": {
+                  "X": 5,
+                  "Y": 60
+                },
+                "ReadingPoint": {
+                  "X": 3.0081731872796302,
+                  "Y": 40.081731872796304
+                },
+                "Position": {
+                  "X": 377.06371620978433,
+                  "Y": 413
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.5020432968199077
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 3.9918268127203707,
+                  "Y": 40.081731872796304
+                },
+                "Position": {
+                  "X": 475.1130416027157,
+                  "Y": 413
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.9979567031800926
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "FloatAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 326,
+              "Y": 423
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a2",
+                "OriginalPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "ReadingPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "Position": {
+                  "X": 974.3212890625,
+                  "Y": 439.37607421875003
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 475.927734375,
+                  "Y": 413.42421874999997
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "FloatAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 376,
+              "Y": 413
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1646,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a1",
+                "OriginalPoint": {
+                  "X": 5,
+                  "Y": 60
+                },
+                "ReadingPoint": {
+                  "X": 3.0081731872796302,
+                  "Y": 40.081731872796304
+                },
+                "Position": {
+                  "X": 377.06371620978433,
+                  "Y": 413
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.5020432968199077
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 3.9918268127203707,
+                  "Y": 40.081731872796304
+                },
+                "Position": {
+                  "X": 475.1130416027157,
+                  "Y": 413
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.9979567031800926
+              }
+            ]
+          }
+        ],
+        "Exports": [
+          {
+            "Dpi": 96,
+            "Exported": true,
+            "Width": 960,
+            "Height": 540,
+            "StartIdRegion": {
+              "X": 374.48275862068965,
+              "Y": 101.63793103448276,
+              "Width": 91.55172413793103,
+              "Height": 12.413793103448276,
+              "Position": {
+                "X": 374.48275862068965,
+                "Y": 101.63793103448276
+              },
+              "Size": {
+                "AspectRatio": 7.375,
+                "Width": 91.55172413793103,
+                "Height": 12.413793103448276
+              },
+              "Right": 466.0344827586207,
+              "Bottom": 114.05172413793103,
+              "Left": 374.48275862068965,
+              "Top": 101.63793103448276,
+              "TopLeft": {
+                "X": 374.48275862068965,
+                "Y": 101.63793103448276
+              },
+              "TopRight": {
+                "X": 466.0344827586207,
+                "Y": 101.63793103448276
+              },
+              "BottomLeft": {
+                "X": 374.48275862068965,
+                "Y": 114.05172413793103
+              },
+              "BottomRight": {
+                "X": 466.0344827586207,
+                "Y": 114.05172413793103
+              },
+              "Center": {
+                "X": 420.2586206896552,
+                "Y": 107.8448275862069
+              }
+            },
+            "StartGlyphChangedPixels": 109,
+            "EndIdRegion": {
+              "X": 374.48275862068965,
+              "Y": 142.75862068965517,
+              "Width": 91.55172413793103,
+              "Height": 12.413793103448276,
+              "Position": {
+                "X": 374.48275862068965,
+                "Y": 142.75862068965517
+              },
+              "Size": {
+                "AspectRatio": 7.375,
+                "Width": 91.55172413793103,
+                "Height": 12.413793103448276
+              },
+              "Right": 466.0344827586207,
+              "Bottom": 155.17241379310346,
+              "Left": 374.48275862068965,
+              "Top": 142.75862068965517,
+              "TopLeft": {
+                "X": 374.48275862068965,
+                "Y": 142.75862068965517
+              },
+              "TopRight": {
+                "X": 466.0344827586207,
+                "Y": 142.75862068965517
+              },
+              "BottomLeft": {
+                "X": 374.48275862068965,
+                "Y": 155.17241379310346
+              },
+              "BottomRight": {
+                "X": 466.0344827586207,
+                "Y": 155.17241379310346
+              },
+              "Center": {
+                "X": 420.2586206896552,
+                "Y": 148.9655172413793
+              }
+            },
+            "EndGlyphChangedPixels": 97,
+            "BadgeInkPixels": 1296,
+            "SameRasterAs96Dpi": true,
+            "RestoreSame": true,
+            "DensityMatches": true
+          },
+          {
+            "Dpi": 144,
+            "Exported": true,
+            "Width": 960,
+            "Height": 540,
+            "StartIdRegion": {
+              "X": 374.48275862068965,
+              "Y": 101.63793103448276,
+              "Width": 91.55172413793103,
+              "Height": 12.413793103448276,
+              "Position": {
+                "X": 374.48275862068965,
+                "Y": 101.63793103448276
+              },
+              "Size": {
+                "AspectRatio": 7.375,
+                "Width": 91.55172413793103,
+                "Height": 12.413793103448276
+              },
+              "Right": 466.0344827586207,
+              "Bottom": 114.05172413793103,
+              "Left": 374.48275862068965,
+              "Top": 101.63793103448276,
+              "TopLeft": {
+                "X": 374.48275862068965,
+                "Y": 101.63793103448276
+              },
+              "TopRight": {
+                "X": 466.0344827586207,
+                "Y": 101.63793103448276
+              },
+              "BottomLeft": {
+                "X": 374.48275862068965,
+                "Y": 114.05172413793103
+              },
+              "BottomRight": {
+                "X": 466.0344827586207,
+                "Y": 114.05172413793103
+              },
+              "Center": {
+                "X": 420.2586206896552,
+                "Y": 107.8448275862069
+              }
+            },
+            "StartGlyphChangedPixels": 109,
+            "EndIdRegion": {
+              "X": 374.48275862068965,
+              "Y": 142.75862068965517,
+              "Width": 91.55172413793103,
+              "Height": 12.413793103448276,
+              "Position": {
+                "X": 374.48275862068965,
+                "Y": 142.75862068965517
+              },
+              "Size": {
+                "AspectRatio": 7.375,
+                "Width": 91.55172413793103,
+                "Height": 12.413793103448276
+              },
+              "Right": 466.0344827586207,
+              "Bottom": 155.17241379310346,
+              "Left": 374.48275862068965,
+              "Top": 142.75862068965517,
+              "TopLeft": {
+                "X": 374.48275862068965,
+                "Y": 142.75862068965517
+              },
+              "TopRight": {
+                "X": 466.0344827586207,
+                "Y": 142.75862068965517
+              },
+              "BottomLeft": {
+                "X": 374.48275862068965,
+                "Y": 155.17241379310346
+              },
+              "BottomRight": {
+                "X": 466.0344827586207,
+                "Y": 155.17241379310346
+              },
+              "Center": {
+                "X": 420.2586206896552,
+                "Y": 148.9655172413793
+              }
+            },
+            "EndGlyphChangedPixels": 97,
+            "BadgeInkPixels": 1296,
+            "SameRasterAs96Dpi": true,
+            "RestoreSame": true,
+            "DensityMatches": true
+          },
+          {
+            "Dpi": 192,
+            "Exported": true,
+            "Width": 960,
+            "Height": 540,
+            "StartIdRegion": {
+              "X": 374.48275862068965,
+              "Y": 101.63793103448276,
+              "Width": 91.55172413793103,
+              "Height": 12.413793103448276,
+              "Position": {
+                "X": 374.48275862068965,
+                "Y": 101.63793103448276
+              },
+              "Size": {
+                "AspectRatio": 7.375,
+                "Width": 91.55172413793103,
+                "Height": 12.413793103448276
+              },
+              "Right": 466.0344827586207,
+              "Bottom": 114.05172413793103,
+              "Left": 374.48275862068965,
+              "Top": 101.63793103448276,
+              "TopLeft": {
+                "X": 374.48275862068965,
+                "Y": 101.63793103448276
+              },
+              "TopRight": {
+                "X": 466.0344827586207,
+                "Y": 101.63793103448276
+              },
+              "BottomLeft": {
+                "X": 374.48275862068965,
+                "Y": 114.05172413793103
+              },
+              "BottomRight": {
+                "X": 466.0344827586207,
+                "Y": 114.05172413793103
+              },
+              "Center": {
+                "X": 420.2586206896552,
+                "Y": 107.8448275862069
+              }
+            },
+            "StartGlyphChangedPixels": 109,
+            "EndIdRegion": {
+              "X": 374.48275862068965,
+              "Y": 142.75862068965517,
+              "Width": 91.55172413793103,
+              "Height": 12.413793103448276,
+              "Position": {
+                "X": 374.48275862068965,
+                "Y": 142.75862068965517
+              },
+              "Size": {
+                "AspectRatio": 7.375,
+                "Width": 91.55172413793103,
+                "Height": 12.413793103448276
+              },
+              "Right": 466.0344827586207,
+              "Bottom": 155.17241379310346,
+              "Left": 374.48275862068965,
+              "Top": 142.75862068965517,
+              "TopLeft": {
+                "X": 374.48275862068965,
+                "Y": 142.75862068965517
+              },
+              "TopRight": {
+                "X": 466.0344827586207,
+                "Y": 142.75862068965517
+              },
+              "BottomLeft": {
+                "X": 374.48275862068965,
+                "Y": 155.17241379310346
+              },
+              "BottomRight": {
+                "X": 466.0344827586207,
+                "Y": 155.17241379310346
+              },
+              "Center": {
+                "X": 420.2586206896552,
+                "Y": 148.9655172413793
+              }
+            },
+            "EndGlyphChangedPixels": 97,
+            "BadgeInkPixels": 1296,
+            "SameRasterAs96Dpi": true,
+            "RestoreSame": true,
+            "DensityMatches": true
+          }
+        ]
+      },
+      {
+        "Theme": "暗色",
+        "NativeWindowCreated": true,
+        "PageImage": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-dark.png",
+        "PixelImage": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-pixels-dark.png",
+        "WithoutEndpointsImage": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-without-endpoints-dark.png",
+        "ExportImage": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-export-dark.png",
+        "StartIdRegion": {
+          "X": 412,
+          "Y": 131,
+          "Width": 118,
+          "Height": 16,
+          "Position": {
+            "X": 412,
+            "Y": 131
+          },
+          "Size": {
+            "AspectRatio": 7.375,
+            "Width": 118,
+            "Height": 16
+          },
+          "Right": 530,
+          "Bottom": 147,
+          "Left": 412,
+          "Top": 131,
+          "TopLeft": {
+            "X": 412,
+            "Y": 131
+          },
+          "TopRight": {
+            "X": 530,
+            "Y": 131
+          },
+          "BottomLeft": {
+            "X": 412,
+            "Y": 147
+          },
+          "BottomRight": {
+            "X": 530,
+            "Y": 147
+          },
+          "Center": {
+            "X": 471,
+            "Y": 139
+          }
+        },
+        "StartGlyphChangedPixels": 204,
+        "EndIdRegion": {
+          "X": 412,
+          "Y": 184,
+          "Width": 118,
+          "Height": 16,
+          "Position": {
+            "X": 412,
+            "Y": 184
+          },
+          "Size": {
+            "AspectRatio": 7.375,
+            "Width": 118,
+            "Height": 16
+          },
+          "Right": 530,
+          "Bottom": 200,
+          "Left": 412,
+          "Top": 184,
+          "TopLeft": {
+            "X": 412,
+            "Y": 184
+          },
+          "TopRight": {
+            "X": 530,
+            "Y": 184
+          },
+          "BottomLeft": {
+            "X": 412,
+            "Y": 200
+          },
+          "BottomRight": {
+            "X": 530,
+            "Y": 200
+          },
+          "Center": {
+            "X": 471,
+            "Y": 192
+          }
+        },
+        "EndGlyphChangedPixels": 190,
+        "RestoredGlyphPixelsSame": true,
+        "MarkerChangedPixels": [
+          130,
+          126
+        ],
+        "Modes": [
+          {
+            "Direction": "Vertical",
+            "Display": "GroupAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 326,
+              "Y": 423
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "Position": {
+                  "X": 176.8916015625,
+                  "Y": 517.231640625
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 475.927734375,
+                  "Y": 413.42421874999997
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Vertical",
+            "Display": "GroupAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 376,
+              "Y": 413
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1020,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 2.997501738985608,
+                  "Y": 39.97501738985608
+                },
+                "Position": {
+                  "X": 376,
+                  "Y": 413.55388776753745
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.499375434746402
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 2.997501738985608,
+                  "Y": 50.02498261014393
+                },
+                "Position": {
+                  "X": 376,
+                  "Y": 361.3908387949625
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.749375434746402
+              }
+            ]
+          },
+          {
+            "Direction": "Vertical",
+            "Display": "FloatAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 326,
+              "Y": 423
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "Position": {
+                  "X": 176.8916015625,
+                  "Y": 517.231640625
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 475.927734375,
+                  "Y": 413.42421874999997
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Vertical",
+            "Display": "FloatAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 376,
+              "Y": 413
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1020,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 2.997501738985608,
+                  "Y": 39.97501738985608
+                },
+                "Position": {
+                  "X": 376,
+                  "Y": 413.55388776753745
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.499375434746402
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 2.997501738985608,
+                  "Y": 50.02498261014393
+                },
+                "Position": {
+                  "X": 376,
+                  "Y": 361.3908387949625
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.749375434746402
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "GroupAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 326,
+              "Y": 423
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a2",
+                "OriginalPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "ReadingPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "Position": {
+                  "X": 974.3212890625,
+                  "Y": 439.37607421875003
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 475.927734375,
+                  "Y": 413.42421874999997
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "GroupAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 376,
+              "Y": 413
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1970,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a1",
+                "OriginalPoint": {
+                  "X": 5,
+                  "Y": 60
+                },
+                "ReadingPoint": {
+                  "X": 3.0081731872796302,
+                  "Y": 40.081731872796304
+                },
+                "Position": {
+                  "X": 377.06371620978433,
+                  "Y": 413
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.5020432968199077
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 3.9918268127203707,
+                  "Y": 40.081731872796304
+                },
+                "Position": {
+                  "X": 475.1130416027157,
+                  "Y": 413
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.9979567031800926
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "FloatAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 326,
+              "Y": 423
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a2",
+                "OriginalPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "ReadingPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "Position": {
+                  "X": 974.3212890625,
+                  "Y": 439.37607421875003
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 475.927734375,
+                  "Y": 413.42421874999997
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "FloatAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 376,
+              "Y": 413
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1646,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a1",
+                "OriginalPoint": {
+                  "X": 5,
+                  "Y": 60
+                },
+                "ReadingPoint": {
+                  "X": 3.0081731872796302,
+                  "Y": 40.081731872796304
+                },
+                "Position": {
+                  "X": 377.06371620978433,
+                  "Y": 413
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.5020432968199077
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 3.9918268127203707,
+                  "Y": 40.081731872796304
+                },
+                "Position": {
+                  "X": 475.1130416027157,
+                  "Y": 413
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.9979567031800926
+              }
+            ]
+          }
+        ],
+        "Exports": [
+          {
+            "Dpi": 96,
+            "Exported": true,
+            "Width": 960,
+            "Height": 540,
+            "StartIdRegion": {
+              "X": 374.48275862068965,
+              "Y": 101.63793103448276,
+              "Width": 91.55172413793103,
+              "Height": 12.413793103448276,
+              "Position": {
+                "X": 374.48275862068965,
+                "Y": 101.63793103448276
+              },
+              "Size": {
+                "AspectRatio": 7.375,
+                "Width": 91.55172413793103,
+                "Height": 12.413793103448276
+              },
+              "Right": 466.0344827586207,
+              "Bottom": 114.05172413793103,
+              "Left": 374.48275862068965,
+              "Top": 101.63793103448276,
+              "TopLeft": {
+                "X": 374.48275862068965,
+                "Y": 101.63793103448276
+              },
+              "TopRight": {
+                "X": 466.0344827586207,
+                "Y": 101.63793103448276
+              },
+              "BottomLeft": {
+                "X": 374.48275862068965,
+                "Y": 114.05172413793103
+              },
+              "BottomRight": {
+                "X": 466.0344827586207,
+                "Y": 114.05172413793103
+              },
+              "Center": {
+                "X": 420.2586206896552,
+                "Y": 107.8448275862069
+              }
+            },
+            "StartGlyphChangedPixels": 109,
+            "EndIdRegion": {
+              "X": 374.48275862068965,
+              "Y": 142.75862068965517,
+              "Width": 91.55172413793103,
+              "Height": 12.413793103448276,
+              "Position": {
+                "X": 374.48275862068965,
+                "Y": 142.75862068965517
+              },
+              "Size": {
+                "AspectRatio": 7.375,
+                "Width": 91.55172413793103,
+                "Height": 12.413793103448276
+              },
+              "Right": 466.0344827586207,
+              "Bottom": 155.17241379310346,
+              "Left": 374.48275862068965,
+              "Top": 142.75862068965517,
+              "TopLeft": {
+                "X": 374.48275862068965,
+                "Y": 142.75862068965517
+              },
+              "TopRight": {
+                "X": 466.0344827586207,
+                "Y": 142.75862068965517
+              },
+              "BottomLeft": {
+                "X": 374.48275862068965,
+                "Y": 155.17241379310346
+              },
+              "BottomRight": {
+                "X": 466.0344827586207,
+                "Y": 155.17241379310346
+              },
+              "Center": {
+                "X": 420.2586206896552,
+                "Y": 148.9655172413793
+              }
+            },
+            "EndGlyphChangedPixels": 97,
+            "BadgeInkPixels": 1296,
+            "SameRasterAs96Dpi": true,
+            "RestoreSame": true,
+            "DensityMatches": true
+          },
+          {
+            "Dpi": 144,
+            "Exported": true,
+            "Width": 960,
+            "Height": 540,
+            "StartIdRegion": {
+              "X": 374.48275862068965,
+              "Y": 101.63793103448276,
+              "Width": 91.55172413793103,
+              "Height": 12.413793103448276,
+              "Position": {
+                "X": 374.48275862068965,
+                "Y": 101.63793103448276
+              },
+              "Size": {
+                "AspectRatio": 7.375,
+                "Width": 91.55172413793103,
+                "Height": 12.413793103448276
+              },
+              "Right": 466.0344827586207,
+              "Bottom": 114.05172413793103,
+              "Left": 374.48275862068965,
+              "Top": 101.63793103448276,
+              "TopLeft": {
+                "X": 374.48275862068965,
+                "Y": 101.63793103448276
+              },
+              "TopRight": {
+                "X": 466.0344827586207,
+                "Y": 101.63793103448276
+              },
+              "BottomLeft": {
+                "X": 374.48275862068965,
+                "Y": 114.05172413793103
+              },
+              "BottomRight": {
+                "X": 466.0344827586207,
+                "Y": 114.05172413793103
+              },
+              "Center": {
+                "X": 420.2586206896552,
+                "Y": 107.8448275862069
+              }
+            },
+            "StartGlyphChangedPixels": 109,
+            "EndIdRegion": {
+              "X": 374.48275862068965,
+              "Y": 142.75862068965517,
+              "Width": 91.55172413793103,
+              "Height": 12.413793103448276,
+              "Position": {
+                "X": 374.48275862068965,
+                "Y": 142.75862068965517
+              },
+              "Size": {
+                "AspectRatio": 7.375,
+                "Width": 91.55172413793103,
+                "Height": 12.413793103448276
+              },
+              "Right": 466.0344827586207,
+              "Bottom": 155.17241379310346,
+              "Left": 374.48275862068965,
+              "Top": 142.75862068965517,
+              "TopLeft": {
+                "X": 374.48275862068965,
+                "Y": 142.75862068965517
+              },
+              "TopRight": {
+                "X": 466.0344827586207,
+                "Y": 142.75862068965517
+              },
+              "BottomLeft": {
+                "X": 374.48275862068965,
+                "Y": 155.17241379310346
+              },
+              "BottomRight": {
+                "X": 466.0344827586207,
+                "Y": 155.17241379310346
+              },
+              "Center": {
+                "X": 420.2586206896552,
+                "Y": 148.9655172413793
+              }
+            },
+            "EndGlyphChangedPixels": 97,
+            "BadgeInkPixels": 1296,
+            "SameRasterAs96Dpi": true,
+            "RestoreSame": true,
+            "DensityMatches": true
+          },
+          {
+            "Dpi": 192,
+            "Exported": true,
+            "Width": 960,
+            "Height": 540,
+            "StartIdRegion": {
+              "X": 374.48275862068965,
+              "Y": 101.63793103448276,
+              "Width": 91.55172413793103,
+              "Height": 12.413793103448276,
+              "Position": {
+                "X": 374.48275862068965,
+                "Y": 101.63793103448276
+              },
+              "Size": {
+                "AspectRatio": 7.375,
+                "Width": 91.55172413793103,
+                "Height": 12.413793103448276
+              },
+              "Right": 466.0344827586207,
+              "Bottom": 114.05172413793103,
+              "Left": 374.48275862068965,
+              "Top": 101.63793103448276,
+              "TopLeft": {
+                "X": 374.48275862068965,
+                "Y": 101.63793103448276
+              },
+              "TopRight": {
+                "X": 466.0344827586207,
+                "Y": 101.63793103448276
+              },
+              "BottomLeft": {
+                "X": 374.48275862068965,
+                "Y": 114.05172413793103
+              },
+              "BottomRight": {
+                "X": 466.0344827586207,
+                "Y": 114.05172413793103
+              },
+              "Center": {
+                "X": 420.2586206896552,
+                "Y": 107.8448275862069
+              }
+            },
+            "StartGlyphChangedPixels": 109,
+            "EndIdRegion": {
+              "X": 374.48275862068965,
+              "Y": 142.75862068965517,
+              "Width": 91.55172413793103,
+              "Height": 12.413793103448276,
+              "Position": {
+                "X": 374.48275862068965,
+                "Y": 142.75862068965517
+              },
+              "Size": {
+                "AspectRatio": 7.375,
+                "Width": 91.55172413793103,
+                "Height": 12.413793103448276
+              },
+              "Right": 466.0344827586207,
+              "Bottom": 155.17241379310346,
+              "Left": 374.48275862068965,
+              "Top": 142.75862068965517,
+              "TopLeft": {
+                "X": 374.48275862068965,
+                "Y": 142.75862068965517
+              },
+              "TopRight": {
+                "X": 466.0344827586207,
+                "Y": 142.75862068965517
+              },
+              "BottomLeft": {
+                "X": 374.48275862068965,
+                "Y": 155.17241379310346
+              },
+              "BottomRight": {
+                "X": 466.0344827586207,
+                "Y": 155.17241379310346
+              },
+              "Center": {
+                "X": 420.2586206896552,
+                "Y": 148.9655172413793
+              }
+            },
+            "EndGlyphChangedPixels": 97,
+            "BadgeInkPixels": 1296,
+            "SameRasterAs96Dpi": true,
+            "RestoreSame": true,
+            "DensityMatches": true
+          }
+        ]
+      }
+    ],
+    "images": [
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-dark.png",
+        "sha256": "2E3F80A4A848A7178AE21CA9DD8C8DFAA63132E06152E90A9ADF0523D7A22A3D",
+        "bytes": 103842
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-export-dark.png",
+        "sha256": "878EDF7A4CA019063C416EA625E2DA2125421C6C5151E94132BCC37A23E666F8",
+        "bytes": 45142
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-export-light.png",
+        "sha256": "C82F34B347B9D92567A1075C48E671C9ACCAB9FE44AC185016DA9B5004D43DB9",
+        "bytes": 44795
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-light.png",
+        "sha256": "AF5AA125A91FEAD65DF7B66924188CF66DFD427111F6FDA8496F6AEC9DDCAED2",
+        "bytes": 104318
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-pixels-dark.png",
+        "sha256": "0D6553D90CEF49B384E41183C02AB8E0D09D7BF4008D5F2F764D0FF0F14B5305",
+        "bytes": 59682
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-pixels-light.png",
+        "sha256": "BDE865747F5B9E3C25E9DAA9F29E983556322F3852ECDF1B89E63BE511124D9D",
+        "bytes": 59574
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-without-endpoints-dark.png",
+        "sha256": "B597653D9033E3E1CE6EFF186CE7240C6D28DACD63561D668F83F927F88E096C",
+        "bytes": 58548
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\windows\\windows-final-v1\\charts-light-trackball-without-endpoints-light.png",
+        "sha256": "59C068B93CF75324208ACDB8A1301B7583ED8F19BBB42E3B003EFBE3C01CDEE9",
+        "bytes": 58369
+      }
+    ],
+    "imageKind": "Native-window-attached RenderTargetBitmap and PNG exports",
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false
+  },
+  "linux": {
+    "platform": "Ubuntu26.04 x64 WSL2/WSLg XWayland native synthetic",
+    "passed": true,
+    "headlessTests": 587,
+    "demoChecks": 206,
+    "usageChecks": 84,
+    "consumers": [
+      {
+        "kind": "function",
+        "passed": true,
+        "checks": 100,
+        "noProjectReferences": true,
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c2-trackball-20261017/linux/run-v1/package-consumers/20261016T170519242Z-3a1d15a741f24c8ea95fa03d87bd2223/function/packages",
+        "runLocalCacheVerified": true,
+        "coreSha256": "36BD584946868A6A6DC2818037AEC35AA874BD4A4C066FEC06D189BCDD73A338",
+        "report": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c2-trackball-20261017/linux/run-v1/package-consumers/20261016T170519242Z-3a1d15a741f24c8ea95fa03d87bd2223/function/consumer-result.json",
+          "sha256": "7C0D8844A1A02267D096CD60DC20F074D6550A60B76AC4E6AC86B3E45BBA36DE",
+          "bytes": 18705
+        },
+        "diagnostics": {
+          "packagedLegendWindowInput": {
+            "chartOriginBeforeBringIntoView": {
+              "X": 39,
+              "Y": -250
+            },
+            "chartOriginAfterBringIntoView": {
+              "X": 39,
+              "Y": 128
+            },
+            "outerOffsetsBeforeBringIntoView": [
+              {
+                "X": 0,
+                "Y": 1784,
+                "Length": 1784,
+                "SquaredLength": 3182656
+              }
+            ],
+            "outerOffsetsAfterBringIntoView": [
+              {
+                "X": 0,
+                "Y": 1406,
+                "Length": 1406,
+                "SquaredLength": 1976836
+              }
+            ],
+            "windowClientSize": {
+              "AspectRatio": 1.2666666666666666,
+              "Width": 1140,
+              "Height": 900
+            },
+            "chartBounds": {
+              "X": 0,
+              "Y": 64,
+              "Width": 1062,
+              "Height": 420,
+              "Position": {
+                "X": 0,
+                "Y": 64
+              },
+              "Size": {
+                "AspectRatio": 2.5285714285714285,
+                "Width": 1062,
+                "Height": 420
+              },
+              "Right": 1062,
+              "Bottom": 484,
+              "Left": 0,
+              "Top": 64,
+              "TopLeft": {
+                "X": 0,
+                "Y": 64
+              },
+              "TopRight": {
+                "X": 1062,
+                "Y": 64
+              },
+              "BottomLeft": {
+                "X": 0,
+                "Y": 484
+              },
+              "BottomRight": {
+                "X": 1062,
+                "Y": 484
+              },
+              "Center": {
+                "X": 531,
+                "Y": 274
+              }
+            },
+            "viewerFound": true,
+            "viewerExtent": {
+              "AspectRatio": 0.221875,
+              "Width": 142,
+              "Height": 640
+            },
+            "viewerViewport": {
+              "AspectRatio": 0.6926829268292682,
+              "Width": 142,
+              "Height": 205
+            },
+            "offsetBeforeWheel": {
+              "X": 0,
+              "Y": 0,
+              "Length": 0,
+              "SquaredLength": 0
+            },
+            "offsetAfterWheel": {
+              "X": 0,
+              "Y": 435,
+              "Length": 435,
+              "SquaredLength": 189225
+            },
+            "observedWheelPoint": {
+              "X": 1022,
+              "Y": 269.5
+            },
+            "wheelInsideClient": true,
+            "wheelHitInsideLegend": false,
+            "wheelHitType": "Avalonia.Controls.Border",
+            "wheelHitName": "PART_Border",
+            "routedWheelCount": 1,
+            "routedWheelSourceInsideLegend": true,
+            "routedWheelSourceType": "Avalonia.Controls.Presenters.ScrollContentPresenter",
+            "routedWheelSourceName": "PART_ContentPresenter",
+            "routedWheelCaptureType": null,
+            "routedWheelPositionInChart": {
+              "X": 983,
+              "Y": 141.5
+            },
+            "routedWheelHandledAtChart": true,
+            "routedWheelHandled": true,
+            "inputOracle": "actual-window-MouseWheel-routed-source-and-chart/window-bubble-handled",
+            "standaloneInputHitTestRole": "diagnostic-only; Headless MouseWheel drains jobs/renders to stability before raw input",
+            "observedClickPoint": {
+              "X": 1022,
+              "Y": 352
+            },
+            "clickInsideClient": true,
+            "invoked": true,
+            "lastSeriesTitle": "候选渠道 16",
+            "visibilityBefore": false,
+            "visibilityAfter": false,
+            "viewportBefore": null,
+            "viewportAfter": null,
+            "visibleRangeBefore": {
+              "XMinimum": 0,
+              "XMaximum": 6,
+              "YMinimum": 0,
+              "YMaximum": 100,
+              "IsValid": true
+            },
+            "visibleRangeAfter": {
+              "XMinimum": 0,
+              "XMaximum": 6,
+              "YMinimum": 0,
+              "YMaximum": 100,
+              "IsValid": true
+            },
+            "visibleItemsAfterWheel": [
+              {
+                "title": "候选渠道 11",
+                "Bounds": {
+                  "X": 912,
+                  "Y": 39,
+                  "Width": 142,
+                  "Height": 5,
+                  "Position": {
+                    "X": 912,
+                    "Y": 39
+                  },
+                  "Size": {
+                    "AspectRatio": 28.4,
+                    "Width": 142,
+                    "Height": 5
+                  },
+                  "Right": 1054,
+                  "Bottom": 44,
+                  "Left": 912,
+                  "Top": 39,
+                  "TopLeft": {
+                    "X": 912,
+                    "Y": 39
+                  },
+                  "TopRight": {
+                    "X": 1054,
+                    "Y": 39
+                  },
+                  "BottomLeft": {
+                    "X": 912,
+                    "Y": 44
+                  },
+                  "BottomRight": {
+                    "X": 1054,
+                    "Y": 44
+                  },
+                  "Center": {
+                    "X": 983,
+                    "Y": 41.5
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 12",
+                "Bounds": {
+                  "X": 912,
+                  "Y": 44,
+                  "Width": 142,
+                  "Height": 40,
+                  "Position": {
+                    "X": 912,
+                    "Y": 44
+                  },
+                  "Size": {
+                    "AspectRatio": 3.55,
+                    "Width": 142,
+                    "Height": 40
+                  },
+                  "Right": 1054,
+                  "Bottom": 84,
+                  "Left": 912,
+                  "Top": 44,
+                  "TopLeft": {
+                    "X": 912,
+                    "Y": 44
+                  },
+                  "TopRight": {
+                    "X": 1054,
+                    "Y": 44
+                  },
+                  "BottomLeft": {
+                    "X": 912,
+                    "Y": 84
+                  },
+                  "BottomRight": {
+                    "X": 1054,
+                    "Y": 84
+                  },
+                  "Center": {
+                    "X": 983,
+                    "Y": 64
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 13",
+                "Bounds": {
+                  "X": 912,
+                  "Y": 84,
+                  "Width": 142,
+                  "Height": 40,
+                  "Position": {
+                    "X": 912,
+                    "Y": 84
+                  },
+                  "Size": {
+                    "AspectRatio": 3.55,
+                    "Width": 142,
+                    "Height": 40
+                  },
+                  "Right": 1054,
+                  "Bottom": 124,
+                  "Left": 912,
+                  "Top": 84,
+                  "TopLeft": {
+                    "X": 912,
+                    "Y": 84
+                  },
+                  "TopRight": {
+                    "X": 1054,
+                    "Y": 84
+                  },
+                  "BottomLeft": {
+                    "X": 912,
+                    "Y": 124
+                  },
+                  "BottomRight": {
+                    "X": 1054,
+                    "Y": 124
+                  },
+                  "Center": {
+                    "X": 983,
+                    "Y": 104
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 14",
+                "Bounds": {
+                  "X": 912,
+                  "Y": 124,
+                  "Width": 142,
+                  "Height": 40,
+                  "Position": {
+                    "X": 912,
+                    "Y": 124
+                  },
+                  "Size": {
+                    "AspectRatio": 3.55,
+                    "Width": 142,
+                    "Height": 40
+                  },
+                  "Right": 1054,
+                  "Bottom": 164,
+                  "Left": 912,
+                  "Top": 124,
+                  "TopLeft": {
+                    "X": 912,
+                    "Y": 124
+                  },
+                  "TopRight": {
+                    "X": 1054,
+                    "Y": 124
+                  },
+                  "BottomLeft": {
+                    "X": 912,
+                    "Y": 164
+                  },
+                  "BottomRight": {
+                    "X": 1054,
+                    "Y": 164
+                  },
+                  "Center": {
+                    "X": 983,
+                    "Y": 144
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 15",
+                "Bounds": {
+                  "X": 912,
+                  "Y": 164,
+                  "Width": 142,
+                  "Height": 40,
+                  "Position": {
+                    "X": 912,
+                    "Y": 164
+                  },
+                  "Size": {
+                    "AspectRatio": 3.55,
+                    "Width": 142,
+                    "Height": 40
+                  },
+                  "Right": 1054,
+                  "Bottom": 204,
+                  "Left": 912,
+                  "Top": 164,
+                  "TopLeft": {
+                    "X": 912,
+                    "Y": 164
+                  },
+                  "TopRight": {
+                    "X": 1054,
+                    "Y": 164
+                  },
+                  "BottomLeft": {
+                    "X": 912,
+                    "Y": 204
+                  },
+                  "BottomRight": {
+                    "X": 1054,
+                    "Y": 204
+                  },
+                  "Center": {
+                    "X": 983,
+                    "Y": 184
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 16",
+                "Bounds": {
+                  "X": 912,
+                  "Y": 204,
+                  "Width": 142,
+                  "Height": 40,
+                  "Position": {
+                    "X": 912,
+                    "Y": 204
+                  },
+                  "Size": {
+                    "AspectRatio": 3.55,
+                    "Width": 142,
+                    "Height": 40
+                  },
+                  "Right": 1054,
+                  "Bottom": 244,
+                  "Left": 912,
+                  "Top": 204,
+                  "TopLeft": {
+                    "X": 912,
+                    "Y": 204
+                  },
+                  "TopRight": {
+                    "X": 1054,
+                    "Y": 204
+                  },
+                  "BottomLeft": {
+                    "X": 912,
+                    "Y": 244
+                  },
+                  "BottomRight": {
+                    "X": 1054,
+                    "Y": 244
+                  },
+                  "Center": {
+                    "X": 983,
+                    "Y": 224
+                  }
+                }
+              }
+            ]
+          },
+          "packagedTrackballWindowInput": {
+            "pointerPosition": {
+              "X": 402.25,
+              "Y": 637
+            },
+            "insideClient": true,
+            "routedMoves": 3,
+            "routedSourceInsideChart": true,
+            "routedSourceType": "NT.AvaloniaControl.Charts.CartesianChart",
+            "firstRoutedPosition": {
+              "X": 363.25,
+              "Y": 274
+            },
+            "firstRoutedPlot": {
+              "X": 135,
+              "Y": 97.2578125,
+              "Width": 913,
+              "Height": 353.484375,
+              "Position": {
+                "X": 135,
+                "Y": 97.2578125
+              },
+              "Size": {
+                "AspectRatio": 2.5828581532069133,
+                "Width": 913,
+                "Height": 353.484375
+              },
+              "Right": 1048,
+              "Bottom": 450.7421875,
+              "Left": 135,
+              "Top": 97.2578125,
+              "TopLeft": {
+                "X": 135,
+                "Y": 97.2578125
+              },
+              "TopRight": {
+                "X": 1048,
+                "Y": 97.2578125
+              },
+              "BottomLeft": {
+                "X": 135,
+                "Y": 450.7421875
+              },
+              "BottomRight": {
+                "X": 1048,
+                "Y": 450.7421875
+              },
+              "Center": {
+                "X": 591.5,
+                "Y": 274
+              }
+            },
+            "expectedPrimary": {
+              "X": 2.5,
+              "Y": 35
+            },
+            "expectedSecondary": {
+              "X": 2.5,
+              "Y": 55
+            },
+            "fallbackRequestedPosition": {
+              "X": 402.25,
+              "Y": 690.02265625
+            },
+            "fallbackDeliveredPosition": {
+              "X": 363.25,
+              "Y": 327.02265624999995
+            },
+            "fallbackDeliveredPlot": {
+              "X": 135,
+              "Y": 97.2578125,
+              "Width": 913,
+              "Height": 353.484375,
+              "Position": {
+                "X": 135,
+                "Y": 97.2578125
+              },
+              "Size": {
+                "AspectRatio": 2.5828581532069133,
+                "Width": 913,
+                "Height": 353.484375
+              },
+              "Right": 1048,
+              "Bottom": 450.7421875,
+              "Left": 135,
+              "Top": 97.2578125,
+              "TopLeft": {
+                "X": 135,
+                "Y": 97.2578125
+              },
+              "TopRight": {
+                "X": 1048,
+                "Y": 97.2578125
+              },
+              "BottomLeft": {
+                "X": 135,
+                "Y": 450.7421875
+              },
+              "BottomRight": {
+                "X": 1048,
+                "Y": 450.7421875
+              },
+              "Center": {
+                "X": 591.5,
+                "Y": 274
+              }
+            },
+            "expectedFallback": {
+              "X": 2.5,
+              "Y": 35
+            },
+            "expectedFallbackFraction": 0.37500000000000006,
+            "initialPrimaryPoint": {
+              "X": 2.5,
+              "Y": 35
+            },
+            "initialSecondaryPoint": {
+              "X": 2.5,
+              "Y": 55.00000000000001
+            },
+            "viewportBefore": null,
+            "viewportAfter": null,
+            "inputKind": "headless-window-MouseMove; actual routed source captured; no physical input claim"
+          }
+        }
+      },
+      {
+        "kind": "themes",
+        "passed": true,
+        "checks": 100,
+        "noProjectReferences": true,
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c2-trackball-20261017/linux/run-v1/package-consumers/20261016T170519242Z-3a1d15a741f24c8ea95fa03d87bd2223/themes/packages",
+        "runLocalCacheVerified": true,
+        "coreSha256": "36BD584946868A6A6DC2818037AEC35AA874BD4A4C066FEC06D189BCDD73A338",
+        "report": {
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c2-trackball-20261017/linux/run-v1/package-consumers/20261016T170519242Z-3a1d15a741f24c8ea95fa03d87bd2223/themes/consumer-result.json",
+          "sha256": "AD931E3D9B787A99D7B9E0A3BCD99629F8B4FD876995920FEFA78C54EB3358DA",
+          "bytes": 18761
+        },
+        "diagnostics": {
+          "packagedLegendWindowInput": {
+            "chartOriginBeforeBringIntoView": {
+              "X": 39,
+              "Y": -250
+            },
+            "chartOriginAfterBringIntoView": {
+              "X": 39,
+              "Y": 128
+            },
+            "outerOffsetsBeforeBringIntoView": [
+              {
+                "X": 0,
+                "Y": 1784,
+                "Length": 1784,
+                "SquaredLength": 3182656
+              }
+            ],
+            "outerOffsetsAfterBringIntoView": [
+              {
+                "X": 0,
+                "Y": 1406,
+                "Length": 1406,
+                "SquaredLength": 1976836
+              }
+            ],
+            "windowClientSize": {
+              "AspectRatio": 1.2666666666666666,
+              "Width": 1140,
+              "Height": 900
+            },
+            "chartBounds": {
+              "X": 0,
+              "Y": 64,
+              "Width": 1062,
+              "Height": 420,
+              "Position": {
+                "X": 0,
+                "Y": 64
+              },
+              "Size": {
+                "AspectRatio": 2.5285714285714285,
+                "Width": 1062,
+                "Height": 420
+              },
+              "Right": 1062,
+              "Bottom": 484,
+              "Left": 0,
+              "Top": 64,
+              "TopLeft": {
+                "X": 0,
+                "Y": 64
+              },
+              "TopRight": {
+                "X": 1062,
+                "Y": 64
+              },
+              "BottomLeft": {
+                "X": 0,
+                "Y": 484
+              },
+              "BottomRight": {
+                "X": 1062,
+                "Y": 484
+              },
+              "Center": {
+                "X": 531,
+                "Y": 274
+              }
+            },
+            "viewerFound": true,
+            "viewerExtent": {
+              "AspectRatio": 0.23355263157894737,
+              "Width": 142,
+              "Height": 608
+            },
+            "viewerViewport": {
+              "AspectRatio": 0.6926829268292682,
+              "Width": 142,
+              "Height": 205
+            },
+            "offsetBeforeWheel": {
+              "X": 0,
+              "Y": 0,
+              "Length": 0,
+              "SquaredLength": 0
+            },
+            "offsetAfterWheel": {
+              "X": 0,
+              "Y": 403,
+              "Length": 403,
+              "SquaredLength": 162409
+            },
+            "observedWheelPoint": {
+              "X": 1014,
+              "Y": 275.5
+            },
+            "wheelInsideClient": true,
+            "wheelHitInsideLegend": false,
+            "wheelHitType": "Avalonia.Controls.Border",
+            "wheelHitName": "ExpanderContent",
+            "routedWheelCount": 1,
+            "routedWheelSourceInsideLegend": true,
+            "routedWheelSourceType": "Avalonia.Controls.Presenters.ScrollContentPresenter",
+            "routedWheelSourceName": "PART_ContentPresenter",
+            "routedWheelCaptureType": null,
+            "routedWheelPositionInChart": {
+              "X": 975,
+              "Y": 147.5
+            },
+            "routedWheelHandledAtChart": true,
+            "routedWheelHandled": true,
+            "inputOracle": "actual-window-MouseWheel-routed-source-and-chart/window-bubble-handled",
+            "standaloneInputHitTestRole": "diagnostic-only; Headless MouseWheel drains jobs/renders to stability before raw input",
+            "observedClickPoint": {
+              "X": 1014,
+              "Y": 359
+            },
+            "clickInsideClient": true,
+            "invoked": true,
+            "lastSeriesTitle": "候选渠道 16",
+            "visibilityBefore": false,
+            "visibilityAfter": false,
+            "viewportBefore": null,
+            "viewportAfter": null,
+            "visibleRangeBefore": {
+              "XMinimum": 0,
+              "XMaximum": 6,
+              "YMinimum": 0,
+              "YMaximum": 100,
+              "IsValid": true
+            },
+            "visibleRangeAfter": {
+              "XMinimum": 0,
+              "XMaximum": 6,
+              "YMinimum": 0,
+              "YMaximum": 100,
+              "IsValid": true
+            },
+            "visibleItemsAfterWheel": [
+              {
+                "title": "候选渠道 11",
+                "Bounds": {
+                  "X": 904,
+                  "Y": 45,
+                  "Width": 142,
+                  "Height": 15,
+                  "Position": {
+                    "X": 904,
+                    "Y": 45
+                  },
+                  "Size": {
+                    "AspectRatio": 9.466666666666667,
+                    "Width": 142,
+                    "Height": 15
+                  },
+                  "Right": 1046,
+                  "Bottom": 60,
+                  "Left": 904,
+                  "Top": 45,
+                  "TopLeft": {
+                    "X": 904,
+                    "Y": 45
+                  },
+                  "TopRight": {
+                    "X": 1046,
+                    "Y": 45
+                  },
+                  "BottomLeft": {
+                    "X": 904,
+                    "Y": 60
+                  },
+                  "BottomRight": {
+                    "X": 1046,
+                    "Y": 60
+                  },
+                  "Center": {
+                    "X": 975,
+                    "Y": 52.5
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 12",
+                "Bounds": {
+                  "X": 904,
+                  "Y": 60,
+                  "Width": 142,
+                  "Height": 38,
+                  "Position": {
+                    "X": 904,
+                    "Y": 60
+                  },
+                  "Size": {
+                    "AspectRatio": 3.736842105263158,
+                    "Width": 142,
+                    "Height": 38
+                  },
+                  "Right": 1046,
+                  "Bottom": 98,
+                  "Left": 904,
+                  "Top": 60,
+                  "TopLeft": {
+                    "X": 904,
+                    "Y": 60
+                  },
+                  "TopRight": {
+                    "X": 1046,
+                    "Y": 60
+                  },
+                  "BottomLeft": {
+                    "X": 904,
+                    "Y": 98
+                  },
+                  "BottomRight": {
+                    "X": 1046,
+                    "Y": 98
+                  },
+                  "Center": {
+                    "X": 975,
+                    "Y": 79
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 13",
+                "Bounds": {
+                  "X": 904,
+                  "Y": 98,
+                  "Width": 142,
+                  "Height": 38,
+                  "Position": {
+                    "X": 904,
+                    "Y": 98
+                  },
+                  "Size": {
+                    "AspectRatio": 3.736842105263158,
+                    "Width": 142,
+                    "Height": 38
+                  },
+                  "Right": 1046,
+                  "Bottom": 136,
+                  "Left": 904,
+                  "Top": 98,
+                  "TopLeft": {
+                    "X": 904,
+                    "Y": 98
+                  },
+                  "TopRight": {
+                    "X": 1046,
+                    "Y": 98
+                  },
+                  "BottomLeft": {
+                    "X": 904,
+                    "Y": 136
+                  },
+                  "BottomRight": {
+                    "X": 1046,
+                    "Y": 136
+                  },
+                  "Center": {
+                    "X": 975,
+                    "Y": 117
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 14",
+                "Bounds": {
+                  "X": 904,
+                  "Y": 136,
+                  "Width": 142,
+                  "Height": 38,
+                  "Position": {
+                    "X": 904,
+                    "Y": 136
+                  },
+                  "Size": {
+                    "AspectRatio": 3.736842105263158,
+                    "Width": 142,
+                    "Height": 38
+                  },
+                  "Right": 1046,
+                  "Bottom": 174,
+                  "Left": 904,
+                  "Top": 136,
+                  "TopLeft": {
+                    "X": 904,
+                    "Y": 136
+                  },
+                  "TopRight": {
+                    "X": 1046,
+                    "Y": 136
+                  },
+                  "BottomLeft": {
+                    "X": 904,
+                    "Y": 174
+                  },
+                  "BottomRight": {
+                    "X": 1046,
+                    "Y": 174
+                  },
+                  "Center": {
+                    "X": 975,
+                    "Y": 155
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 15",
+                "Bounds": {
+                  "X": 904,
+                  "Y": 174,
+                  "Width": 142,
+                  "Height": 38,
+                  "Position": {
+                    "X": 904,
+                    "Y": 174
+                  },
+                  "Size": {
+                    "AspectRatio": 3.736842105263158,
+                    "Width": 142,
+                    "Height": 38
+                  },
+                  "Right": 1046,
+                  "Bottom": 212,
+                  "Left": 904,
+                  "Top": 174,
+                  "TopLeft": {
+                    "X": 904,
+                    "Y": 174
+                  },
+                  "TopRight": {
+                    "X": 1046,
+                    "Y": 174
+                  },
+                  "BottomLeft": {
+                    "X": 904,
+                    "Y": 212
+                  },
+                  "BottomRight": {
+                    "X": 1046,
+                    "Y": 212
+                  },
+                  "Center": {
+                    "X": 975,
+                    "Y": 193
+                  }
+                }
+              },
+              {
+                "title": "候选渠道 16",
+                "Bounds": {
+                  "X": 904,
+                  "Y": 212,
+                  "Width": 142,
+                  "Height": 38,
+                  "Position": {
+                    "X": 904,
+                    "Y": 212
+                  },
+                  "Size": {
+                    "AspectRatio": 3.736842105263158,
+                    "Width": 142,
+                    "Height": 38
+                  },
+                  "Right": 1046,
+                  "Bottom": 250,
+                  "Left": 904,
+                  "Top": 212,
+                  "TopLeft": {
+                    "X": 904,
+                    "Y": 212
+                  },
+                  "TopRight": {
+                    "X": 1046,
+                    "Y": 212
+                  },
+                  "BottomLeft": {
+                    "X": 904,
+                    "Y": 250
+                  },
+                  "BottomRight": {
+                    "X": 1046,
+                    "Y": 250
+                  },
+                  "Center": {
+                    "X": 975,
+                    "Y": 231
+                  }
+                }
+              }
+            ]
+          },
+          "packagedTrackballWindowInput": {
+            "pointerPosition": {
+              "X": 394.25,
+              "Y": 636.5
+            },
+            "insideClient": true,
+            "routedMoves": 3,
+            "routedSourceInsideChart": true,
+            "routedSourceType": "NT.AvaloniaControl.Charts.CartesianChart",
+            "firstRoutedPosition": {
+              "X": 355.25,
+              "Y": 273.5
+            },
+            "firstRoutedPlot": {
+              "X": 127,
+              "Y": 99.078125,
+              "Width": 913,
+              "Height": 348.84375,
+              "Position": {
+                "X": 127,
+                "Y": 99.078125
+              },
+              "Size": {
+                "AspectRatio": 2.617217593836782,
+                "Width": 913,
+                "Height": 348.84375
+              },
+              "Right": 1040,
+              "Bottom": 447.921875,
+              "Left": 127,
+              "Top": 99.078125,
+              "TopLeft": {
+                "X": 127,
+                "Y": 99.078125
+              },
+              "TopRight": {
+                "X": 1040,
+                "Y": 99.078125
+              },
+              "BottomLeft": {
+                "X": 127,
+                "Y": 447.921875
+              },
+              "BottomRight": {
+                "X": 1040,
+                "Y": 447.921875
+              },
+              "Center": {
+                "X": 583.5,
+                "Y": 273.5
+              }
+            },
+            "expectedPrimary": {
+              "X": 2.5,
+              "Y": 35
+            },
+            "expectedSecondary": {
+              "X": 2.5,
+              "Y": 55
+            },
+            "fallbackRequestedPosition": {
+              "X": 394.25,
+              "Y": 688.8265625
+            },
+            "fallbackDeliveredPosition": {
+              "X": 355.25,
+              "Y": 325.8265625
+            },
+            "fallbackDeliveredPlot": {
+              "X": 127,
+              "Y": 99.078125,
+              "Width": 913,
+              "Height": 348.84375,
+              "Position": {
+                "X": 127,
+                "Y": 99.078125
+              },
+              "Size": {
+                "AspectRatio": 2.617217593836782,
+                "Width": 913,
+                "Height": 348.84375
+              },
+              "Right": 1040,
+              "Bottom": 447.921875,
+              "Left": 127,
+              "Top": 99.078125,
+              "TopLeft": {
+                "X": 127,
+                "Y": 99.078125
+              },
+              "TopRight": {
+                "X": 1040,
+                "Y": 99.078125
+              },
+              "BottomLeft": {
+                "X": 127,
+                "Y": 447.921875
+              },
+              "BottomRight": {
+                "X": 1040,
+                "Y": 447.921875
+              },
+              "Center": {
+                "X": 583.5,
+                "Y": 273.5
+              }
+            },
+            "expectedFallback": {
+              "X": 2.5,
+              "Y": 35
+            },
+            "expectedFallbackFraction": 0.375,
+            "initialPrimaryPoint": {
+              "X": 2.5,
+              "Y": 35.00000000000001
+            },
+            "initialSecondaryPoint": {
+              "X": 2.5,
+              "Y": 55.000000000000014
+            },
+            "viewportBefore": null,
+            "viewportAfter": null,
+            "inputKind": "headless-window-MouseMove; actual routed source captured; no physical input claim"
+          }
+        }
+      }
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "buildLogs": [
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\build-0.stdout.log",
+        "sha256": "7A231F17E7D280F894232039A42B18FC4F44EBE014469B43FBDEB468C22467CE",
+        "bytes": 849
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\build-1.stdout.log",
+        "sha256": "05CB7B1D162231D904C4C58F47973A087556CB6DAA091C7AD32039A5F14C077F",
+        "bytes": 3380
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\build-2.stdout.log",
+        "sha256": "279D8B75FDBA0D1B43F84A8B9CC96FF00C78D020CE07AB12729126E93CB43C91",
+        "bytes": 824
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\package-consumers\\20261016T170519242Z-3a1d15a741f24c8ea95fa03d87bd2223\\function-build.stdout.log",
+        "sha256": "AD059853A585765098191A5194B4E08C432BBECC7AD93A83B8D2D0BDC6A54CC2",
+        "bytes": 334
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\package-consumers\\20261016T170519242Z-3a1d15a741f24c8ea95fa03d87bd2223\\themes-build.stdout.log",
+        "sha256": "390D71E142275FC5295E2B0A1E3E06A323B84C9DBD4E10D50B5EBD0AA4E9983E",
+        "bytes": 332
+      }
+    ],
+    "baseReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\results.json",
+      "sha256": "6E777C2F4FD07C5F0A99EBDBA6C959530F790F17B097DDFE47305A6A6F0EECE3",
+      "bytes": 14160
+    },
+    "nativeReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\charts-smoke.json",
+      "sha256": "E989F7F10D70166BBE4E58962D03DB0D51910868143C535D185F89A21CBAEBA5",
+      "bytes": 214939
+    },
+    "usageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\charts-usage.json",
+      "sha256": "F984221753F3CDE7F6C1A3CF506666BC5A7817DB0921B0FBB46612F92167F4FD",
+      "bytes": 5064
+    },
+    "independentConsumerReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\package-consumers\\20261016T170519242Z-3a1d15a741f24c8ea95fa03d87bd2223\\results.json",
+      "sha256": "4802997104218E3F194BA1EAF93C510A8DEF5A3BB05073E718F12E7701785B1F",
+      "bytes": 11804
+    },
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\validated-input-manifest.json",
+      "sha256": "738E4D99AAC2EC2DCBEA0AEB321F0EFD06391D86A85EE94DDB0B00CED3AB26E7",
+      "bytes": 96200
+    },
+    "assemblyManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\assembly-manifest.json",
+      "sha256": "1DE76EA1B18D724F2EB72204D9E0887F5F4F7549591F16CD0E874E29772FA254",
+      "bytes": 1903
+    },
+    "sourceManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\source-manifest.json",
+      "sha256": "A4CE0CDA48A59D1BE34C4BBB7CE93A559F9DBE4116C196B51DB1AD6B62008080",
+      "bytes": 202319
+    },
+    "environment": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\environment.json",
+      "sha256": "F6CE9B2D659E462BF7C4AE59DF32E14A7063E774A3AD7DA784F58249043B1366",
+      "bytes": 6312
+    },
+    "coreSha256": "36BD584946868A6A6DC2818037AEC35AA874BD4A4C066FEC06D189BCDD73A338",
+    "sourceAndAssemblyStableDuringRun": true,
+    "baseExplicitlySkippedPackageConsumers": true,
+    "freshConsumerPackageCaches": true,
+    "trackballEvidence": [
+      {
+        "Theme": "亮色",
+        "NativeWindowCreated": true,
+        "PageImage": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c2-trackball-20261017/linux/run-v1/verification/wslg-final-v1/charts-light-trackball-light.png",
+        "PixelImage": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c2-trackball-20261017/linux/run-v1/verification/wslg-final-v1/charts-light-trackball-pixels-light.png",
+        "WithoutEndpointsImage": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c2-trackball-20261017/linux/run-v1/verification/wslg-final-v1/charts-light-trackball-without-endpoints-light.png",
+        "ExportImage": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c2-trackball-20261017/linux/run-v1/verification/wslg-final-v1/charts-light-trackball-export-light.png",
+        "StartIdRegion": {
+          "X": 417,
+          "Y": 139,
+          "Width": 119,
+          "Height": 14,
+          "Position": {
+            "X": 417,
+            "Y": 139
+          },
+          "Size": {
+            "AspectRatio": 8.5,
+            "Width": 119,
+            "Height": 14
+          },
+          "Right": 536,
+          "Bottom": 153,
+          "Left": 417,
+          "Top": 139,
+          "TopLeft": {
+            "X": 417,
+            "Y": 139
+          },
+          "TopRight": {
+            "X": 536,
+            "Y": 139
+          },
+          "BottomLeft": {
+            "X": 417,
+            "Y": 153
+          },
+          "BottomRight": {
+            "X": 536,
+            "Y": 153
+          },
+          "Center": {
+            "X": 476.5,
+            "Y": 146
+          }
+        },
+        "StartGlyphChangedPixels": 270,
+        "EndIdRegion": {
+          "X": 417,
+          "Y": 189,
+          "Width": 119,
+          "Height": 14,
+          "Position": {
+            "X": 417,
+            "Y": 189
+          },
+          "Size": {
+            "AspectRatio": 8.5,
+            "Width": 119,
+            "Height": 14
+          },
+          "Right": 536,
+          "Bottom": 203,
+          "Left": 417,
+          "Top": 189,
+          "TopLeft": {
+            "X": 417,
+            "Y": 189
+          },
+          "TopRight": {
+            "X": 536,
+            "Y": 189
+          },
+          "BottomLeft": {
+            "X": 417,
+            "Y": 203
+          },
+          "BottomRight": {
+            "X": 536,
+            "Y": 203
+          },
+          "Center": {
+            "X": 476.5,
+            "Y": 196
+          }
+        },
+        "EndGlyphChangedPixels": 249,
+        "RestoredGlyphPixelsSame": true,
+        "MarkerChangedPixels": [
+          128,
+          129
+        ],
+        "Modes": [
+          {
+            "Direction": "Vertical",
+            "Display": "GroupAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 332,
+              "Y": 425
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "Position": {
+                  "X": 183.8578125,
+                  "Y": 519.1002
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 480.57187500000003,
+                  "Y": 415.16915
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Vertical",
+            "Display": "GroupAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 381,
+              "Y": 415
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1020,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 2.993254237823662,
+                  "Y": 39.932542378236626
+                },
+                "Position": {
+                  "X": 381,
+                  "Y": 415.5196970730185
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.4983135594559156
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 2.993254237823662,
+                  "Y": 50.06745762176338
+                },
+                "Position": {
+                  "X": 381,
+                  "Y": 362.8530779269814
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.7483135594559155
+              }
+            ]
+          },
+          {
+            "Direction": "Vertical",
+            "Display": "FloatAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 332,
+              "Y": 425
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "Position": {
+                  "X": 183.8578125,
+                  "Y": 519.1002
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 480.57187500000003,
+                  "Y": 415.16915
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Vertical",
+            "Display": "FloatAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 381,
+              "Y": 415
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1020,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 2.993254237823662,
+                  "Y": 39.932542378236626
+                },
+                "Position": {
+                  "X": 381,
+                  "Y": 415.5196970730185
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.4983135594559156
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 2.993254237823662,
+                  "Y": 50.06745762176338
+                },
+                "Position": {
+                  "X": 381,
+                  "Y": 362.8530779269814
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.7483135594559155
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "GroupAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 332,
+              "Y": 425
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a2",
+                "OriginalPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "ReadingPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "Position": {
+                  "X": 975.0953125,
+                  "Y": 441.1519125
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 480.57187500000003,
+                  "Y": 415.16915
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "GroupAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 381,
+              "Y": 415
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1960,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a1",
+                "OriginalPoint": {
+                  "X": 5,
+                  "Y": 60
+                },
+                "ReadingPoint": {
+                  "X": 3.003255042646061,
+                  "Y": 40.03255042646062
+                },
+                "Position": {
+                  "X": 381.98912647570785,
+                  "Y": 415
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.5008137606615154
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 3.996744957353938,
+                  "Y": 40.03255042646062
+                },
+                "Position": {
+                  "X": 480.2499360242921,
+                  "Y": 415
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.9991862393384845
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "FloatAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 332,
+              "Y": 425
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a2",
+                "OriginalPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "ReadingPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "Position": {
+                  "X": 975.0953125,
+                  "Y": 441.1519125
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 480.57187500000003,
+                  "Y": 415.16915
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "FloatAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 381,
+              "Y": 415
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1634,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a1",
+                "OriginalPoint": {
+                  "X": 5,
+                  "Y": 60
+                },
+                "ReadingPoint": {
+                  "X": 3.003255042646061,
+                  "Y": 40.03255042646062
+                },
+                "Position": {
+                  "X": 381.98912647570785,
+                  "Y": 415
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.5008137606615154
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 3.996744957353938,
+                  "Y": 40.03255042646062
+                },
+                "Position": {
+                  "X": 480.2499360242921,
+                  "Y": 415
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.9991862393384845
+              }
+            ]
+          }
+        ],
+        "Exports": [
+          {
+            "Dpi": 96,
+            "Exported": true,
+            "Width": 960,
+            "Height": 540,
+            "StartIdRegion": {
+              "X": 378.36206896551727,
+              "Y": 107.84482758620689,
+              "Width": 92.32758620689656,
+              "Height": 10.862068965517242,
+              "Position": {
+                "X": 378.36206896551727,
+                "Y": 107.84482758620689
+              },
+              "Size": {
+                "AspectRatio": 8.5,
+                "Width": 92.32758620689656,
+                "Height": 10.862068965517242
+              },
+              "Right": 470.68965517241384,
+              "Bottom": 118.70689655172413,
+              "Left": 378.36206896551727,
+              "Top": 107.84482758620689,
+              "TopLeft": {
+                "X": 378.36206896551727,
+                "Y": 107.84482758620689
+              },
+              "TopRight": {
+                "X": 470.68965517241384,
+                "Y": 107.84482758620689
+              },
+              "BottomLeft": {
+                "X": 378.36206896551727,
+                "Y": 118.70689655172413
+              },
+              "BottomRight": {
+                "X": 470.68965517241384,
+                "Y": 118.70689655172413
+              },
+              "Center": {
+                "X": 424.5258620689655,
+                "Y": 113.27586206896551
+              }
+            },
+            "StartGlyphChangedPixels": 154,
+            "EndIdRegion": {
+              "X": 378.36206896551727,
+              "Y": 146.63793103448276,
+              "Width": 92.32758620689656,
+              "Height": 10.862068965517242,
+              "Position": {
+                "X": 378.36206896551727,
+                "Y": 146.63793103448276
+              },
+              "Size": {
+                "AspectRatio": 8.5,
+                "Width": 92.32758620689656,
+                "Height": 10.862068965517242
+              },
+              "Right": 470.68965517241384,
+              "Bottom": 157.5,
+              "Left": 378.36206896551727,
+              "Top": 146.63793103448276,
+              "TopLeft": {
+                "X": 378.36206896551727,
+                "Y": 146.63793103448276
+              },
+              "TopRight": {
+                "X": 470.68965517241384,
+                "Y": 146.63793103448276
+              },
+              "BottomLeft": {
+                "X": 378.36206896551727,
+                "Y": 157.5
+              },
+              "BottomRight": {
+                "X": 470.68965517241384,
+                "Y": 157.5
+              },
+              "Center": {
+                "X": 424.5258620689655,
+                "Y": 152.0689655172414
+              }
+            },
+            "EndGlyphChangedPixels": 135,
+            "BadgeInkPixels": 1341,
+            "SameRasterAs96Dpi": true,
+            "RestoreSame": true,
+            "DensityMatches": true
+          },
+          {
+            "Dpi": 144,
+            "Exported": true,
+            "Width": 960,
+            "Height": 540,
+            "StartIdRegion": {
+              "X": 378.36206896551727,
+              "Y": 107.84482758620689,
+              "Width": 92.32758620689656,
+              "Height": 10.862068965517242,
+              "Position": {
+                "X": 378.36206896551727,
+                "Y": 107.84482758620689
+              },
+              "Size": {
+                "AspectRatio": 8.5,
+                "Width": 92.32758620689656,
+                "Height": 10.862068965517242
+              },
+              "Right": 470.68965517241384,
+              "Bottom": 118.70689655172413,
+              "Left": 378.36206896551727,
+              "Top": 107.84482758620689,
+              "TopLeft": {
+                "X": 378.36206896551727,
+                "Y": 107.84482758620689
+              },
+              "TopRight": {
+                "X": 470.68965517241384,
+                "Y": 107.84482758620689
+              },
+              "BottomLeft": {
+                "X": 378.36206896551727,
+                "Y": 118.70689655172413
+              },
+              "BottomRight": {
+                "X": 470.68965517241384,
+                "Y": 118.70689655172413
+              },
+              "Center": {
+                "X": 424.5258620689655,
+                "Y": 113.27586206896551
+              }
+            },
+            "StartGlyphChangedPixels": 154,
+            "EndIdRegion": {
+              "X": 378.36206896551727,
+              "Y": 146.63793103448276,
+              "Width": 92.32758620689656,
+              "Height": 10.862068965517242,
+              "Position": {
+                "X": 378.36206896551727,
+                "Y": 146.63793103448276
+              },
+              "Size": {
+                "AspectRatio": 8.5,
+                "Width": 92.32758620689656,
+                "Height": 10.862068965517242
+              },
+              "Right": 470.68965517241384,
+              "Bottom": 157.5,
+              "Left": 378.36206896551727,
+              "Top": 146.63793103448276,
+              "TopLeft": {
+                "X": 378.36206896551727,
+                "Y": 146.63793103448276
+              },
+              "TopRight": {
+                "X": 470.68965517241384,
+                "Y": 146.63793103448276
+              },
+              "BottomLeft": {
+                "X": 378.36206896551727,
+                "Y": 157.5
+              },
+              "BottomRight": {
+                "X": 470.68965517241384,
+                "Y": 157.5
+              },
+              "Center": {
+                "X": 424.5258620689655,
+                "Y": 152.0689655172414
+              }
+            },
+            "EndGlyphChangedPixels": 135,
+            "BadgeInkPixels": 1341,
+            "SameRasterAs96Dpi": true,
+            "RestoreSame": true,
+            "DensityMatches": true
+          },
+          {
+            "Dpi": 192,
+            "Exported": true,
+            "Width": 960,
+            "Height": 540,
+            "StartIdRegion": {
+              "X": 378.36206896551727,
+              "Y": 107.84482758620689,
+              "Width": 92.32758620689656,
+              "Height": 10.862068965517242,
+              "Position": {
+                "X": 378.36206896551727,
+                "Y": 107.84482758620689
+              },
+              "Size": {
+                "AspectRatio": 8.5,
+                "Width": 92.32758620689656,
+                "Height": 10.862068965517242
+              },
+              "Right": 470.68965517241384,
+              "Bottom": 118.70689655172413,
+              "Left": 378.36206896551727,
+              "Top": 107.84482758620689,
+              "TopLeft": {
+                "X": 378.36206896551727,
+                "Y": 107.84482758620689
+              },
+              "TopRight": {
+                "X": 470.68965517241384,
+                "Y": 107.84482758620689
+              },
+              "BottomLeft": {
+                "X": 378.36206896551727,
+                "Y": 118.70689655172413
+              },
+              "BottomRight": {
+                "X": 470.68965517241384,
+                "Y": 118.70689655172413
+              },
+              "Center": {
+                "X": 424.5258620689655,
+                "Y": 113.27586206896551
+              }
+            },
+            "StartGlyphChangedPixels": 154,
+            "EndIdRegion": {
+              "X": 378.36206896551727,
+              "Y": 146.63793103448276,
+              "Width": 92.32758620689656,
+              "Height": 10.862068965517242,
+              "Position": {
+                "X": 378.36206896551727,
+                "Y": 146.63793103448276
+              },
+              "Size": {
+                "AspectRatio": 8.5,
+                "Width": 92.32758620689656,
+                "Height": 10.862068965517242
+              },
+              "Right": 470.68965517241384,
+              "Bottom": 157.5,
+              "Left": 378.36206896551727,
+              "Top": 146.63793103448276,
+              "TopLeft": {
+                "X": 378.36206896551727,
+                "Y": 146.63793103448276
+              },
+              "TopRight": {
+                "X": 470.68965517241384,
+                "Y": 146.63793103448276
+              },
+              "BottomLeft": {
+                "X": 378.36206896551727,
+                "Y": 157.5
+              },
+              "BottomRight": {
+                "X": 470.68965517241384,
+                "Y": 157.5
+              },
+              "Center": {
+                "X": 424.5258620689655,
+                "Y": 152.0689655172414
+              }
+            },
+            "EndGlyphChangedPixels": 135,
+            "BadgeInkPixels": 1341,
+            "SameRasterAs96Dpi": true,
+            "RestoreSame": true,
+            "DensityMatches": true
+          }
+        ]
+      },
+      {
+        "Theme": "暗色",
+        "NativeWindowCreated": true,
+        "PageImage": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c2-trackball-20261017/linux/run-v1/verification/wslg-final-v1/charts-light-trackball-dark.png",
+        "PixelImage": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c2-trackball-20261017/linux/run-v1/verification/wslg-final-v1/charts-light-trackball-pixels-dark.png",
+        "WithoutEndpointsImage": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c2-trackball-20261017/linux/run-v1/verification/wslg-final-v1/charts-light-trackball-without-endpoints-dark.png",
+        "ExportImage": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c2-trackball-20261017/linux/run-v1/verification/wslg-final-v1/charts-light-trackball-export-dark.png",
+        "StartIdRegion": {
+          "X": 417,
+          "Y": 139,
+          "Width": 119,
+          "Height": 14,
+          "Position": {
+            "X": 417,
+            "Y": 139
+          },
+          "Size": {
+            "AspectRatio": 8.5,
+            "Width": 119,
+            "Height": 14
+          },
+          "Right": 536,
+          "Bottom": 153,
+          "Left": 417,
+          "Top": 139,
+          "TopLeft": {
+            "X": 417,
+            "Y": 139
+          },
+          "TopRight": {
+            "X": 536,
+            "Y": 139
+          },
+          "BottomLeft": {
+            "X": 417,
+            "Y": 153
+          },
+          "BottomRight": {
+            "X": 536,
+            "Y": 153
+          },
+          "Center": {
+            "X": 476.5,
+            "Y": 146
+          }
+        },
+        "StartGlyphChangedPixels": 275,
+        "EndIdRegion": {
+          "X": 417,
+          "Y": 189,
+          "Width": 119,
+          "Height": 14,
+          "Position": {
+            "X": 417,
+            "Y": 189
+          },
+          "Size": {
+            "AspectRatio": 8.5,
+            "Width": 119,
+            "Height": 14
+          },
+          "Right": 536,
+          "Bottom": 203,
+          "Left": 417,
+          "Top": 189,
+          "TopLeft": {
+            "X": 417,
+            "Y": 189
+          },
+          "TopRight": {
+            "X": 536,
+            "Y": 189
+          },
+          "BottomLeft": {
+            "X": 417,
+            "Y": 203
+          },
+          "BottomRight": {
+            "X": 536,
+            "Y": 203
+          },
+          "Center": {
+            "X": 476.5,
+            "Y": 196
+          }
+        },
+        "EndGlyphChangedPixels": 254,
+        "RestoredGlyphPixelsSame": true,
+        "MarkerChangedPixels": [
+          128,
+          129
+        ],
+        "Modes": [
+          {
+            "Direction": "Vertical",
+            "Display": "GroupAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 332,
+              "Y": 425
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "Position": {
+                  "X": 183.8578125,
+                  "Y": 519.1002
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 480.57187500000003,
+                  "Y": 415.16915
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Vertical",
+            "Display": "GroupAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 381,
+              "Y": 415
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1020,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 2.993254237823662,
+                  "Y": 39.932542378236626
+                },
+                "Position": {
+                  "X": 381,
+                  "Y": 415.5196970730185
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.4983135594559156
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 2.993254237823662,
+                  "Y": 50.06745762176338
+                },
+                "Position": {
+                  "X": 381,
+                  "Y": 362.8530779269814
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.7483135594559155
+              }
+            ]
+          },
+          {
+            "Direction": "Vertical",
+            "Display": "FloatAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 332,
+              "Y": 425
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "Position": {
+                  "X": 183.8578125,
+                  "Y": 519.1002
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 480.57187500000003,
+                  "Y": 415.16915
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Vertical",
+            "Display": "FloatAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 381,
+              "Y": 415
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1020,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a0",
+                "OriginalPoint": {
+                  "X": 1,
+                  "Y": 20
+                },
+                "ReadingPoint": {
+                  "X": 2.993254237823662,
+                  "Y": 39.932542378236626
+                },
+                "Position": {
+                  "X": 381,
+                  "Y": 415.5196970730185
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.4983135594559156
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 2.993254237823662,
+                  "Y": 50.06745762176338
+                },
+                "Position": {
+                  "X": 381,
+                  "Y": 362.8530779269814
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.7483135594559155
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "GroupAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 332,
+              "Y": 425
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a2",
+                "OriginalPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "ReadingPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "Position": {
+                  "X": 975.0953125,
+                  "Y": 441.1519125
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 480.57187500000003,
+                  "Y": 415.16915
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "GroupAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 381,
+              "Y": 415
+            },
+            "MatchesMath": true,
+            "CardCount": 1,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1960,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a1",
+                "OriginalPoint": {
+                  "X": 5,
+                  "Y": 60
+                },
+                "ReadingPoint": {
+                  "X": 3.003255042646061,
+                  "Y": 40.03255042646062
+                },
+                "Position": {
+                  "X": 381.98912647570785,
+                  "Y": 415
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.5008137606615154
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 3.996744957353938,
+                  "Y": 40.03255042646062
+                },
+                "Position": {
+                  "X": 480.2499360242921,
+                  "Y": 415
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.9991862393384845
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "FloatAllPoints",
+            "Snap": "NearestPoint",
+            "RoutedPointer": {
+              "X": 332,
+              "Y": 425
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": -1,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a2",
+                "OriginalPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "ReadingPoint": {
+                  "X": 9,
+                  "Y": 35
+                },
+                "Position": {
+                  "X": 975.0953125,
+                  "Y": 441.1519125
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "Position": {
+                  "X": 480.57187500000003,
+                  "Y": 415.16915
+                },
+                "IsInterpolated": false,
+                "StartId": null,
+                "EndId": null,
+                "Fraction": null
+              }
+            ]
+          },
+          {
+            "Direction": "Horizontal",
+            "Display": "FloatAllPoints",
+            "Snap": "LinearInterpolation",
+            "RoutedPointer": {
+              "X": 381,
+              "Y": 415
+            },
+            "MatchesMath": true,
+            "CardCount": 2,
+            "TemplateContextsMatch": true,
+            "LineChangedPixels": 1634,
+            "Readings": [
+              {
+                "Series": "响应采样",
+                "OriginalId": "track-a1",
+                "OriginalPoint": {
+                  "X": 5,
+                  "Y": 60
+                },
+                "ReadingPoint": {
+                  "X": 3.003255042646061,
+                  "Y": 40.03255042646062
+                },
+                "Position": {
+                  "X": 381.98912647570785,
+                  "Y": 415
+                },
+                "IsInterpolated": true,
+                "StartId": "track-a0",
+                "EndId": "track-a1",
+                "Fraction": 0.5008137606615154
+              },
+              {
+                "Series": "任务采样",
+                "OriginalId": "track-b1",
+                "OriginalPoint": {
+                  "X": 4,
+                  "Y": 40
+                },
+                "ReadingPoint": {
+                  "X": 3.996744957353938,
+                  "Y": 40.03255042646062
+                },
+                "Position": {
+                  "X": 480.2499360242921,
+                  "Y": 415
+                },
+                "IsInterpolated": true,
+                "StartId": "track-b0",
+                "EndId": "track-b1",
+                "Fraction": 0.9991862393384845
+              }
+            ]
+          }
+        ],
+        "Exports": [
+          {
+            "Dpi": 96,
+            "Exported": true,
+            "Width": 960,
+            "Height": 540,
+            "StartIdRegion": {
+              "X": 378.36206896551727,
+              "Y": 107.84482758620689,
+              "Width": 92.32758620689656,
+              "Height": 10.862068965517242,
+              "Position": {
+                "X": 378.36206896551727,
+                "Y": 107.84482758620689
+              },
+              "Size": {
+                "AspectRatio": 8.5,
+                "Width": 92.32758620689656,
+                "Height": 10.862068965517242
+              },
+              "Right": 470.68965517241384,
+              "Bottom": 118.70689655172413,
+              "Left": 378.36206896551727,
+              "Top": 107.84482758620689,
+              "TopLeft": {
+                "X": 378.36206896551727,
+                "Y": 107.84482758620689
+              },
+              "TopRight": {
+                "X": 470.68965517241384,
+                "Y": 107.84482758620689
+              },
+              "BottomLeft": {
+                "X": 378.36206896551727,
+                "Y": 118.70689655172413
+              },
+              "BottomRight": {
+                "X": 470.68965517241384,
+                "Y": 118.70689655172413
+              },
+              "Center": {
+                "X": 424.5258620689655,
+                "Y": 113.27586206896551
+              }
+            },
+            "StartGlyphChangedPixels": 154,
+            "EndIdRegion": {
+              "X": 378.36206896551727,
+              "Y": 146.63793103448276,
+              "Width": 92.32758620689656,
+              "Height": 10.862068965517242,
+              "Position": {
+                "X": 378.36206896551727,
+                "Y": 146.63793103448276
+              },
+              "Size": {
+                "AspectRatio": 8.5,
+                "Width": 92.32758620689656,
+                "Height": 10.862068965517242
+              },
+              "Right": 470.68965517241384,
+              "Bottom": 157.5,
+              "Left": 378.36206896551727,
+              "Top": 146.63793103448276,
+              "TopLeft": {
+                "X": 378.36206896551727,
+                "Y": 146.63793103448276
+              },
+              "TopRight": {
+                "X": 470.68965517241384,
+                "Y": 146.63793103448276
+              },
+              "BottomLeft": {
+                "X": 378.36206896551727,
+                "Y": 157.5
+              },
+              "BottomRight": {
+                "X": 470.68965517241384,
+                "Y": 157.5
+              },
+              "Center": {
+                "X": 424.5258620689655,
+                "Y": 152.0689655172414
+              }
+            },
+            "EndGlyphChangedPixels": 135,
+            "BadgeInkPixels": 1341,
+            "SameRasterAs96Dpi": true,
+            "RestoreSame": true,
+            "DensityMatches": true
+          },
+          {
+            "Dpi": 144,
+            "Exported": true,
+            "Width": 960,
+            "Height": 540,
+            "StartIdRegion": {
+              "X": 378.36206896551727,
+              "Y": 107.84482758620689,
+              "Width": 92.32758620689656,
+              "Height": 10.862068965517242,
+              "Position": {
+                "X": 378.36206896551727,
+                "Y": 107.84482758620689
+              },
+              "Size": {
+                "AspectRatio": 8.5,
+                "Width": 92.32758620689656,
+                "Height": 10.862068965517242
+              },
+              "Right": 470.68965517241384,
+              "Bottom": 118.70689655172413,
+              "Left": 378.36206896551727,
+              "Top": 107.84482758620689,
+              "TopLeft": {
+                "X": 378.36206896551727,
+                "Y": 107.84482758620689
+              },
+              "TopRight": {
+                "X": 470.68965517241384,
+                "Y": 107.84482758620689
+              },
+              "BottomLeft": {
+                "X": 378.36206896551727,
+                "Y": 118.70689655172413
+              },
+              "BottomRight": {
+                "X": 470.68965517241384,
+                "Y": 118.70689655172413
+              },
+              "Center": {
+                "X": 424.5258620689655,
+                "Y": 113.27586206896551
+              }
+            },
+            "StartGlyphChangedPixels": 154,
+            "EndIdRegion": {
+              "X": 378.36206896551727,
+              "Y": 146.63793103448276,
+              "Width": 92.32758620689656,
+              "Height": 10.862068965517242,
+              "Position": {
+                "X": 378.36206896551727,
+                "Y": 146.63793103448276
+              },
+              "Size": {
+                "AspectRatio": 8.5,
+                "Width": 92.32758620689656,
+                "Height": 10.862068965517242
+              },
+              "Right": 470.68965517241384,
+              "Bottom": 157.5,
+              "Left": 378.36206896551727,
+              "Top": 146.63793103448276,
+              "TopLeft": {
+                "X": 378.36206896551727,
+                "Y": 146.63793103448276
+              },
+              "TopRight": {
+                "X": 470.68965517241384,
+                "Y": 146.63793103448276
+              },
+              "BottomLeft": {
+                "X": 378.36206896551727,
+                "Y": 157.5
+              },
+              "BottomRight": {
+                "X": 470.68965517241384,
+                "Y": 157.5
+              },
+              "Center": {
+                "X": 424.5258620689655,
+                "Y": 152.0689655172414
+              }
+            },
+            "EndGlyphChangedPixels": 135,
+            "BadgeInkPixels": 1341,
+            "SameRasterAs96Dpi": true,
+            "RestoreSame": true,
+            "DensityMatches": true
+          },
+          {
+            "Dpi": 192,
+            "Exported": true,
+            "Width": 960,
+            "Height": 540,
+            "StartIdRegion": {
+              "X": 378.36206896551727,
+              "Y": 107.84482758620689,
+              "Width": 92.32758620689656,
+              "Height": 10.862068965517242,
+              "Position": {
+                "X": 378.36206896551727,
+                "Y": 107.84482758620689
+              },
+              "Size": {
+                "AspectRatio": 8.5,
+                "Width": 92.32758620689656,
+                "Height": 10.862068965517242
+              },
+              "Right": 470.68965517241384,
+              "Bottom": 118.70689655172413,
+              "Left": 378.36206896551727,
+              "Top": 107.84482758620689,
+              "TopLeft": {
+                "X": 378.36206896551727,
+                "Y": 107.84482758620689
+              },
+              "TopRight": {
+                "X": 470.68965517241384,
+                "Y": 107.84482758620689
+              },
+              "BottomLeft": {
+                "X": 378.36206896551727,
+                "Y": 118.70689655172413
+              },
+              "BottomRight": {
+                "X": 470.68965517241384,
+                "Y": 118.70689655172413
+              },
+              "Center": {
+                "X": 424.5258620689655,
+                "Y": 113.27586206896551
+              }
+            },
+            "StartGlyphChangedPixels": 154,
+            "EndIdRegion": {
+              "X": 378.36206896551727,
+              "Y": 146.63793103448276,
+              "Width": 92.32758620689656,
+              "Height": 10.862068965517242,
+              "Position": {
+                "X": 378.36206896551727,
+                "Y": 146.63793103448276
+              },
+              "Size": {
+                "AspectRatio": 8.5,
+                "Width": 92.32758620689656,
+                "Height": 10.862068965517242
+              },
+              "Right": 470.68965517241384,
+              "Bottom": 157.5,
+              "Left": 378.36206896551727,
+              "Top": 146.63793103448276,
+              "TopLeft": {
+                "X": 378.36206896551727,
+                "Y": 146.63793103448276
+              },
+              "TopRight": {
+                "X": 470.68965517241384,
+                "Y": 146.63793103448276
+              },
+              "BottomLeft": {
+                "X": 378.36206896551727,
+                "Y": 157.5
+              },
+              "BottomRight": {
+                "X": 470.68965517241384,
+                "Y": 157.5
+              },
+              "Center": {
+                "X": 424.5258620689655,
+                "Y": 152.0689655172414
+              }
+            },
+            "EndGlyphChangedPixels": 135,
+            "BadgeInkPixels": 1341,
+            "SameRasterAs96Dpi": true,
+            "RestoreSame": true,
+            "DensityMatches": true
+          }
+        ]
+      }
+    ],
+    "images": [
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\charts-light-trackball-dark.png",
+        "sha256": "57D68623E609BC033E1618CB5F5A5404E8FF2D292CC46F2DA2AF0741020444C9",
+        "bytes": 148126
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\charts-light-trackball-export-dark.png",
+        "sha256": "6C95360FD88EBAD6376360F4EE710FE1C74BC9F3A722EA58914EA68D610E16CE",
+        "bytes": 58030
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\charts-light-trackball-export-light.png",
+        "sha256": "FDFA168E0A41868D71680E1A2E159955EF09BBBFEEC829D5316AAD5A9AFD72EC",
+        "bytes": 56828
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\charts-light-trackball-light.png",
+        "sha256": "E7E365805EFDB700C24DE40DDA73A479CD75AE56A754EF6387182CB37490E637",
+        "bytes": 140635
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\charts-light-trackball-pixels-dark.png",
+        "sha256": "30A652708EDD35431C29F50E62BB6E75CCC271C9FFB7B6A753AA1243CBEABCB9",
+        "bytes": 78474
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\charts-light-trackball-pixels-light.png",
+        "sha256": "65789BB168305FCC97AC3EA242AB912A87773B4D0097B0B164C60C6C0E2A89BB",
+        "bytes": 76295
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\charts-light-trackball-without-endpoints-dark.png",
+        "sha256": "A536B565495BA933ABBAF9524950556E422DE93C51F6C2AD0F70BA6AAA681E8F",
+        "bytes": 76961
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\run-v1\\verification\\wslg-final-v1\\charts-light-trackball-without-endpoints-light.png",
+        "sha256": "435A0EB54223BAABD200B7F50C531AD448D877F89096B2D1EB919317F73B3F16",
+        "bytes": 74736
+      }
+    ],
+    "imageKind": "Native-window-attached RenderTargetBitmap and PNG exports",
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null,
+    "physicalLinuxDesktopCertified": false
+  },
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\source-snapshot-v1.json",
+    "sha256": "7AD1E8BFFE1EECE074D278B46AD6D713DB9A2A738A812F89F48424021D38760E",
+    "bytes": 244804
+  },
+  "frozenSourceFiles": 1215,
+  "declaredValidatedInputsPerPlatform": 543,
+  "declaredInputsMatchBetweenPlatforms": true,
+  "declaredLiveInputsStillMatch": true,
+  "frozenSourceHashesStillMatch": true,
+  "liveFullRepositoryEqualityClaimed": false,
+  "sourceScope": "Declared runtime/build/test/Demo/Usage/consumer/harness inputs match both platforms, live source and frozen copy. Later general documentation edits are outside these runtime inputs.",
+  "windowsApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\api-windows-final\\api.txt",
+    "sha256": "4DF1478512C24D7A37A25A80D9BC9C3B5016051B6F4B913677EC54A5EA3F76C5",
+    "bytes": 731529
+  },
+  "linuxApi": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\api-linux-final\\api.txt",
+    "sha256": "F1344AA824A9F454E0054CC6CDC73FBDA48A383A381F715A82F479880EF0F32B",
+    "bytes": 173997
+  },
+  "localApiDeclarationsMatchBetweenPlatforms": true,
+  "apiDelta": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\api-delta.json",
+    "sha256": "A8363E72A2EE443A1F280D2FDF72D3AC13C62E3F1F77EA769C6E3234F678B98D",
+    "bytes": 10498
+  },
+  "historicalAndRendererPinsVerified": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\before.json",
+    "sha256": "BCCEA78D0006098BE3791A663E588502CE7BC1EE9EB20CAB1C987BACEDDDC46D",
+    "bytes": 2442
+  },
+  "dependencyReuse": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\dependency-reuse.json",
+    "sha256": "72DDD2052C925F54C4AAE2C4CAA3B5E9FF1423A0C30AB54654948693AFA03175",
+    "bytes": 10676
+  },
+  "nugetAuditOrWarningPolicyChanged": false,
+  "officialMatrixSemanticIdentity": {
+    "frozen": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\linux\\physical-source-v1\\docs\\charts-official-alignment.md",
+      "sha256": "268DB25016FD11EC89CA2380CB6EFEB01FD4C2C38DFC7CD72BC556561250D078",
+      "bytes": 39652
+    },
+    "ids": 200,
+    "idsAndOrderMatch": true,
+    "existingSourceUrlOrderMatches": true,
+    "markdownSourceUrlOccurrences": 59,
+    "markdownDistinctSourceUrls": 50,
+    "frozenC0SourceSnapshotPreservedByHash": true
+  },
+  "performanceMeasured": false,
+  "memoryRegressionMeasured": false,
+  "formalPerformancePassed": null,
+  "formalSlaEvaluated": false,
+  "officialRuntimeReferenceIncluded": false,
+  "officialReferenceStatus": "licensed-reference-not-qualified",
+  "millionPointHitTail": {
+    "status": "deferred-by-user-to-C4",
+    "markedResolved": false,
+    "historicalV15P95Milliseconds": 1.1235,
+    "historicalReferenceP95Milliseconds": 0.7649
+  },
+  "remaining": [
+    "Future spline/step/stacked/LOD and custom renderer segment contracts",
+    "C4 query/large-card/SharedY index performance and all historical residuals",
+    "C2 series/range selection, synchronization, category legends, advanced labels, touch, animation, JPEG and point accessibility",
+    "Physical Windows/Linux devices, target Ubuntu22.04/24.04, native Wayland/ARM, actual backend/GPU/present and licensed official runtime reference"
+  ],
+  "independentWindowsApiReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\api-review-windows.json",
+    "sha256": "FE9F0BD7C007402D0CB0A4EC27247225DE5710F74F0396F39A0FEF065920D585",
+    "bytes": 1298706
+  },
+  "apiHeaderAssemblyHashesMatchPlatformManifests": true,
+  "visualReview": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c2-trackball-20261017\\visual-review-final.json",
+    "sha256": "0592AAC66470ECFC5E7D10F74B4B4055EF5D53A04BEAE941EEBC62EF343E8AB4",
+    "bytes": 7229
+  }
+}

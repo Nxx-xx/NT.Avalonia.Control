@@ -1,0 +1,25 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:charts="using:NT.AvaloniaControl.Charts" xmlns:local="using:Charts.Headless.Tests"
+             x:Class="Charts.Headless.Tests.AxesConsumerView" x:DataType="local:AxesBindingModel" x:CompileBindings="True">
+  <UserControl.Resources><SolidColorBrush x:Key="AxisAccent" Color="#AD1457" /></UserControl.Resources>
+  <charts:CartesianChart x:Name="Chart" ShowLegend="False">
+    <charts:CartesianChart.XAxis>
+      <charts:NumericAxis Title="{Binding Title}" Minimum="0" Maximum="10" MinorInterval="0.5" ShowMinorGridLines="{Binding ShowMinor}"
+                          LabelBrush="{DynamicResource AxisAccent}" LabelMode="Auto">
+        <charts:NumericAxis.PlotBands>
+          <charts:ChartPlotBand Start="{Binding BandStart}" End="3" Text="{Binding Title}" RepeatInterval="4" RepeatCount="2"
+                                Foreground="{DynamicResource AxisAccent}" Fill="#223388AA" />
+        </charts:NumericAxis.PlotBands>
+        <charts:NumericAxis.ScaleBreaks><charts:ChartScaleBreak Start="{Binding BreakStart}" End="7" /></charts:NumericAxis.ScaleBreaks>
+      </charts:NumericAxis>
+    </charts:CartesianChart.XAxis>
+    <charts:CartesianChart.YAxis><charts:NumericAxis Minimum="0" Maximum="100" /></charts:CartesianChart.YAxis>
+    <charts:CartesianChart.Axes>
+      <charts:NumericAxis Key="secondary" Title="{Binding Title}" Position="Far" Minimum="0" Maximum="1"
+                          ViewMinimum="{Binding ViewMinimum, Mode=TwoWay}" ViewMaximum="{Binding ViewMaximum, Mode=TwoWay}" />
+    </charts:CartesianChart.Axes>
+    <charts:CartesianChart.Series>
+      <charts:ScatterSeries ItemsSource="{Binding Points}" YAxisKey="secondary" />
+    </charts:CartesianChart.Series>
+  </charts:CartesianChart>
+</UserControl>

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Markdown.TextMate/NT.AvaloniaControl.Markdown.TextMate.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,3411 @@
+{
+  "schemaVersion": 1,
+  "phase": "P1 public reader contracts, capabilities, scheduling and asynchronous native lifetime",
+  "date": "2026-10-16",
+  "timeZone": "Asia/Hong_Kong",
+  "runId": "20261015T164000Z-p1-final",
+  "artifactRoot": "<REPO_ROOT>/artifacts/pdfviewer/20261015T164000Z-p1-final",
+  "exportedUtc": "2026-10-15T16:46:51.375925+00:00",
+  "exporterSHA256": "0D3B0BACE38BD251BFF38B29A5335C60C021E32CF8E36EC055E95483B5D9D20C",
+  "status": "current-platform evidence verified; target Ubuntu CI and physical-platform acceptance remain open",
+  "G1Complete": false,
+  "baseline": {
+    "CapturedUtc": "2026-10-15T16:39:33.2371191+00:00",
+    "GitCommit": "6337717d17e1b2b4c670107664ac3dd2b3f35829",
+    "SDK": "10.0.401",
+    "OS": "Microsoft Windows 10.0.26200",
+    "ProcessArchitecture": "X64",
+    "SourceManifestSHA256": "9BF0794E8213AB1028C5E599423F759C8D3F24C3095D78C220831ED9AA2BA06F",
+    "SnapshotSHA256": "329276649E0468A16D06A88841BB88F9C550B10911F27CE7554115C348B765CD",
+    "SourceFileCount": 372,
+    "CurrentExecutableSourceFileCount": 270,
+    "CurrentExecutableSourceMatchesFreeze": true,
+    "DocumentationMayBeUpdatedAfterFreeze": true
+  },
+  "functionalAssemblySHA256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+  "parentRecord": {
+    "scope": "Historical P0 provenance only; P0 binaries, test counts and passes are not inherited as P1 coverage.",
+    "path": "docs/validation/pdfviewer-p0-real-corpus-20261015.json",
+    "sha256": "F86BEB846FA4F891F8D8F4F8EC294945C8D650EC07541BDD60AAFC42ABE25954",
+    "bytes": 99371,
+    "runId": "20261015T130500Z-p0-real-corpus"
+  },
+  "windows": {
+    "executed": true,
+    "passed": true,
+    "sourceFileCount": 75,
+    "functionalAssemblySHA256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+    "hostAssemblySHA256": "4DA13F25A33FF09D88F97F5D40CE10704F95DD2FD685137FFCBE50BE81789E68",
+    "actualOS": "Microsoft Windows 10.0.26200",
+    "runtime": ".NET 10.0.12",
+    "runtimeIdentifier": "win-x64",
+    "wsl": false,
+    "environment": {
+      "CapturedUtc": "2026-10-15T16:40:01.7861678+00:00",
+      "OS": "Microsoft Windows 10.0.26200",
+      "ProcessArchitecture": "X64",
+      "GitHubRunId": null,
+      "GitHubSha": null,
+      "Boundary": "Native PDFium and native Avalonia window smoke; no physical input, DPI matrix, printing, scan-out or official performance acceptance."
+    },
+    "buildRequested": true,
+    "buildExecuted": true,
+    "nativeBackendChecks": 11,
+    "nativeWindowChecks": 22,
+    "regressions": [
+      {
+        "suite": "Core",
+        "passed": 92,
+        "total": 92,
+        "xml": {
+          "scope": "run",
+          "path": "windows/Core.xml",
+          "sha256": "1EE24769A4DFB7EE6DE225A9EE6AD1BD2231A8C20F27F2DF71AE3A7143157EC8",
+          "bytes": 54873
+        },
+        "assembly": {
+          "scope": "repository",
+          "path": "tests/PdfViewer.Core.Tests/bin/Release/net10.0/PdfViewer.Core.Tests.dll",
+          "sha256": "EAB39F20F447AE866A7C903B670E62D34B529C22ECAFDE9326BC9FD633E35B50",
+          "bytes": 228864
+        },
+        "environment": "64-bit (x64) .NET 10.0.12 [collection-per-class, parallel (16 threads)]"
+      },
+      {
+        "suite": "Headless",
+        "passed": 33,
+        "total": 33,
+        "xml": {
+          "scope": "run",
+          "path": "windows/Headless.xml",
+          "sha256": "E482F2D683B286B62F35F6BE7F1704A9427C76D4508D93815729C54399672A82",
+          "bytes": 20345
+        },
+        "assembly": {
+          "scope": "repository",
+          "path": "tests/PdfViewer.Headless.Tests/bin/Release/net10.0/PdfViewer.Headless.Tests.dll",
+          "sha256": "BE947C936447BD0D767466A9EA88D6EA38CD78E234E82ED854CFC00B24E781F9",
+          "bytes": 121856
+        },
+        "environment": "64-bit (x64) .NET 10.0.12 [collection-per-class, parallel (16 threads)]"
+      }
+    ],
+    "nativeModule": {
+      "Path": "<REPO_ROOT>\\benchmarks\\PdfViewer.P1\\bin\\Release\\net10.0\\runtimes\\win-x64\\native\\pdfium.DLL",
+      "SHA256": "04100C03E41CAC1F979E36E5E26FB860BCB5A7461F53830D3C098716624A27A9",
+      "Bytes": 7370752
+    },
+    "captureKind": "Avalonia RenderTargetBitmap of the native Window visual; not a desktop screenshot or scan-out measurement.",
+    "physicalDesktopAcceptance": false,
+    "githubRunId": null,
+    "run": {
+      "scope": "run",
+      "path": "windows/run.json",
+      "sha256": "3A6CE07AE85895C5D00A77A22E8D7D04EF3EA2D89C478AABDEFF0A237979B021",
+      "bytes": 15013
+    }
+  },
+  "linux": {
+    "executed": true,
+    "passed": true,
+    "sourceFileCount": 75,
+    "functionalAssemblySHA256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+    "hostAssemblySHA256": "4DA13F25A33FF09D88F97F5D40CE10704F95DD2FD685137FFCBE50BE81789E68",
+    "actualOS": "Ubuntu 26.04 LTS",
+    "runtime": ".NET 10.0.13",
+    "runtimeIdentifier": "linux-x64",
+    "wsl": true,
+    "environment": {
+      "CapturedUtc": "2026-10-15T16:41:50.935537+00:00",
+      "Platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+      "Machine": "x86_64",
+      "Kernel": "6.6.114.1-microsoft-standard-WSL2",
+      "Wsl": true,
+      "Display": ":0",
+      "WaylandDisplay": "wayland-0",
+      "LD_LIBRARY_PATH": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d45-c96e-78a0-81df-3fc930f9db6f/pdfviewer/p1-linux/icu-local/usr/lib/x86_64-linux-gnu",
+      "DOTNET_ROOT": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d45-c96e-78a0-81df-3fc930f9db6f/pdfviewer/p1-linux/dotnet-runtime",
+      "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT": "0",
+      "FONTCONFIG_FILE": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d45-c96e-78a0-81df-3fc930f9db6f/pdfviewer/p1-linux/fonts.conf",
+      "XDG_CACHE_HOME": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d45-c96e-78a0-81df-3fc930f9db6f/pdfviewer/p1-linux/font-cache",
+      "GitHubRunId": null,
+      "GitHubSha": null,
+      "Boundary": "Native PDFium and optional X11 window smoke; WSLg/Xvfb is not Ubuntu 24.04 physical desktop, Kylin, input/IME or performance acceptance."
+    },
+    "buildRequested": false,
+    "buildExecuted": false,
+    "nativeBackendChecks": 11,
+    "nativeWindowChecks": 22,
+    "regressions": [
+      {
+        "suite": "Core",
+        "passed": 92,
+        "total": 92,
+        "xml": {
+          "scope": "run",
+          "path": "linux/Core.xml",
+          "sha256": "E4433BAB0D04183050C739AAEC935D481C48D3E7F770714A8469ECB59D3A2DE7",
+          "bytes": 54990
+        },
+        "assembly": {
+          "scope": "external",
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d45-c96e-78a0-81df-3fc930f9db6f/pdfviewer/p1-linux/20261015T164000Z-p1-final-same-il-source/tests/PdfViewer.Core.Tests/bin/Release/net10.0/PdfViewer.Core.Tests.dll",
+          "sha256": "EAB39F20F447AE866A7C903B670E62D34B529C22ECAFDE9326BC9FD633E35B50",
+          "bytes": 228864
+        },
+        "environment": "64-bit (x64) .NET 10.0.13 [collection-per-class, parallel (16 threads)]"
+      },
+      {
+        "suite": "Headless",
+        "passed": 33,
+        "total": 33,
+        "xml": {
+          "scope": "run",
+          "path": "linux/Headless.xml",
+          "sha256": "4F6EDB0BB9BC6D5BB6475FCD060F9BDE5B8F23EF590BD1A86E242A8EBAB483C9",
+          "bytes": 20461
+        },
+        "assembly": {
+          "scope": "external",
+          "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d45-c96e-78a0-81df-3fc930f9db6f/pdfviewer/p1-linux/20261015T164000Z-p1-final-same-il-source/tests/PdfViewer.Headless.Tests/bin/Release/net10.0/PdfViewer.Headless.Tests.dll",
+          "sha256": "BE947C936447BD0D767466A9EA88D6EA38CD78E234E82ED854CFC00B24E781F9",
+          "bytes": 121856
+        },
+        "environment": "64-bit (x64) .NET 10.0.13 [collection-per-class, parallel (16 threads)]"
+      }
+    ],
+    "nativeModule": {
+      "Path": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d45-c96e-78a0-81df-3fc930f9db6f/pdfviewer/p1-linux/20261015T164000Z-p1-final-same-il-source/benchmarks/PdfViewer.P1/bin/Release/net10.0/runtimes/linux-x64/native/libpdfium.so",
+      "SHA256": "B0361F8BA0BC6FFEB2325949A88F08B09356F46ABE257FFDF846202999DAA27B",
+      "Bytes": 7824656
+    },
+    "captureKind": "Avalonia RenderTargetBitmap of the native Window visual; not a desktop screenshot or scan-out measurement.",
+    "physicalDesktopAcceptance": false,
+    "githubRunId": null,
+    "run": {
+      "scope": "run",
+      "path": "linux/run.json",
+      "sha256": "445C0D6E9B0927913BA07A79C3E98D3A0B592D8A0A216AE584231D412B8A8027",
+      "bytes": 6104
+    }
+  },
+  "sameFunctionalILAcrossExecutedPlatforms": true,
+  "packageConsumers": [
+    {
+      "mode": "FunctionOnly",
+      "passed": true,
+      "checks": 48,
+      "sourceProjectReferences": false,
+      "functionOnlyThemeDependency": false,
+      "functionalAssemblySHA256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+      "freshPackageCache": "<REPO_ROOT>\\artifacts\\consumer\\a1ae4d54cc004c9c91a745332012c69f\\.packages",
+      "packages": [
+        {
+          "package": "NT.AvaloniaControl.PdfViewer",
+          "version": "0.2.0-preview.2",
+          "archive": {
+            "scope": "run",
+            "path": "packages/NT.AvaloniaControl.PdfViewer.0.2.0-preview.2.nupkg",
+            "sha256": "405431FC619331B054E8C193F315E2C031FD687CE11E89621EDD45EE4D64AB01",
+            "bytes": 658866
+          },
+          "dllSHA256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693"
+        }
+      ]
+    },
+    {
+      "mode": "DefaultTheme",
+      "passed": true,
+      "checks": 51,
+      "sourceProjectReferences": false,
+      "functionOnlyThemeDependency": null,
+      "functionalAssemblySHA256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+      "freshPackageCache": "<REPO_ROOT>\\artifacts\\consumer\\fbf25578d52d4cd1887b036fe9f8bb51\\.packages",
+      "packages": [
+        {
+          "package": "NT.AvaloniaControl.PdfViewer",
+          "version": "0.2.0-preview.2",
+          "archive": {
+            "scope": "run",
+            "path": "packages/NT.AvaloniaControl.PdfViewer.0.2.0-preview.2.nupkg",
+            "sha256": "405431FC619331B054E8C193F315E2C031FD687CE11E89621EDD45EE4D64AB01",
+            "bytes": 658866
+          },
+          "dllSHA256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693"
+        },
+        {
+          "package": "NT.AvaloniaControl.PdfViewer.Themes",
+          "version": "0.2.0-preview.2",
+          "archive": {
+            "scope": "run",
+            "path": "packages/NT.AvaloniaControl.PdfViewer.Themes.0.2.0-preview.2.nupkg",
+            "sha256": "1D68206BF7F46076714BB404D400F47CCE16FFA83FC4A0E20E16403DE5661EEF",
+            "bytes": 15918
+          },
+          "dllSHA256": "B8738187D7A6BB906C8A7D13752A4A8EA180975684CE45087E975F3A15E9E87B"
+        }
+      ]
+    }
+  ],
+  "builds": [
+    {
+      "name": "buildUsage",
+      "passed": true,
+      "scope": "compile only",
+      "log": {
+        "scope": "run",
+        "path": "logs/buildUsage.log",
+        "sha256": "5FDE7028438EFC0D186FBB583ABD4327C21A1A6D8A36ECEC742065BE892559B7",
+        "bytes": 520
+      }
+    },
+    {
+      "name": "buildDemo",
+      "passed": true,
+      "scope": "compile only",
+      "log": {
+        "scope": "run",
+        "path": "logs/buildDemo.log",
+        "sha256": "4ED40A33805B2E2A4BBA133A483B4C08140CB0159F7BF4CBAE7EAF7D82BC0F3A",
+        "bytes": 2032
+      }
+    }
+  ],
+  "manualVisualReview": {
+    "performed": true,
+    "passed": true,
+    "reviewer": "Codex root agent, direct image inspection",
+    "reviewedUtc": "2026-10-15T16:45:03.432493+00:00",
+    "report": {
+      "scope": "run",
+      "path": "final/manual-visual-review.json",
+      "sha256": "8BB1DF28951D3A83BFF5A3F88D91E8A6F6CC2018B4EBBBDFC86C78B45937B9F9",
+      "bytes": 1637
+    }
+  },
+  "ci": {
+    "configured": true,
+    "workflow": {
+      "scope": "repository",
+      "path": ".github/workflows/pdfviewer-native.yml",
+      "sha256": "3A097E883CF708FC41335FAD12E9F6E0928A03EE0A761CE80D0EBD53BFDF83AD",
+      "bytes": 2889
+    },
+    "targets": [
+      "windows-latest",
+      "ubuntu-24.04"
+    ],
+    "configuredOnly": true,
+    "observedGitHubRunIds": [],
+    "ubuntu2404Executed": false,
+    "scope": "Configuration is not proof that hosted CI ran."
+  },
+  "audit": {
+    "logsHashBound": [
+      "logs/audit-restore.log",
+      "logs/audit-vulnerabilities-final.json",
+      "logs/audit-vulnerabilities-final.stderr.log"
+    ],
+    "passedInferredFromLogPresence": false
+  },
+  "scope": {
+    "newContracts": "Owned/reopenable sources, metadata/permissions/errors, viewer state/session and optional host service interfaces.",
+    "implementedViewerOperations": [
+      "read",
+      "search",
+      "permission/host-gated text copying"
+    ],
+    "futureViewerOperations": [
+      "annotations",
+      "form input",
+      "save",
+      "printing",
+      "sharing"
+    ],
+    "scheduling": "One process-wide native worker, weighted foreground/search/thumbnail queues; pagewise search; running native calls are not preempted.",
+    "release": "Dispose stops admission and initiates cancellation; DisposeAsync awaits actual native close and pinned-input release.",
+    "physicalInputVerified": false,
+    "scanOutVerified": false,
+    "officialPerformanceCompared": false,
+    "kylinX64Arm64Verified": false,
+    "performanceAcceptance": false
+  },
+  "remainingG1Items": [
+    "Execute the configured Ubuntu 24.04 x64 hosted CI job and retain its run evidence.",
+    "Validate exact deployment images and native desktop dependencies on target devices; WSL/native visual capture is not physical input/IME or scan-out acceptance."
+  ],
+  "evidence": [
+    {
+      "scope": "external",
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d45-c96e-78a0-81df-3fc930f9db6f/pdfviewer/p1-linux/20261015T164000Z-p1-final-same-il-source/benchmarks/PdfViewer.P1/bin/Release/net10.0/runtimes/linux-x64/native/libpdfium.so",
+      "sha256": "B0361F8BA0BC6FFEB2325949A88F08B09356F46ABE257FFDF846202999DAA27B",
+      "bytes": 7824656
+    },
+    {
+      "scope": "external",
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d45-c96e-78a0-81df-3fc930f9db6f/pdfviewer/p1-linux/20261015T164000Z-p1-final-same-il-source/tests/PdfViewer.Core.Tests/bin/Release/net10.0/PdfViewer.Core.Tests.dll",
+      "sha256": "EAB39F20F447AE866A7C903B670E62D34B529C22ECAFDE9326BC9FD633E35B50",
+      "bytes": 228864
+    },
+    {
+      "scope": "external",
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d45-c96e-78a0-81df-3fc930f9db6f/pdfviewer/p1-linux/20261015T164000Z-p1-final-same-il-source/tests/PdfViewer.Core.Tests/bin/Release/net10.0/NT.AvaloniaControl.PdfViewer.dll",
+      "sha256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+      "bytes": 292352
+    },
+    {
+      "scope": "external",
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d45-c96e-78a0-81df-3fc930f9db6f/pdfviewer/p1-linux/20261015T164000Z-p1-final-same-il-source/tests/PdfViewer.Headless.Tests/bin/Release/net10.0/PdfViewer.Headless.Tests.dll",
+      "sha256": "BE947C936447BD0D767466A9EA88D6EA38CD78E234E82ED854CFC00B24E781F9",
+      "bytes": 121856
+    },
+    {
+      "scope": "external",
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d45-c96e-78a0-81df-3fc930f9db6f/pdfviewer/p1-linux/20261015T164000Z-p1-final-same-il-source/tests/PdfViewer.Headless.Tests/bin/Release/net10.0/NT.AvaloniaControl.PdfViewer.dll",
+      "sha256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+      "bytes": 292352
+    },
+    {
+      "scope": "repository",
+      "path": ".github/workflows/pdfviewer-native.yml",
+      "sha256": "3A097E883CF708FC41335FAD12E9F6E0928A03EE0A761CE80D0EBD53BFDF83AD",
+      "bytes": 2889
+    },
+    {
+      "scope": "repository",
+      "path": "Directory.Build.props",
+      "sha256": "FA2D125EF59164ED7362104E1FD2BD60FC2149F9B8D9AD022B403A15AAE67BAF",
+      "bytes": 638
+    },
+    {
+      "scope": "repository",
+      "path": "Directory.Packages.props",
+      "sha256": "F0FA03929702599226DD86B48FC30545878663FECACD8AD6184C3AF7FE959E0A",
+      "bytes": 1394
+    },
+    {
+      "scope": "repository",
+      "path": "NuGet.Config",
+      "sha256": "AEC93B5637AB6D62470979A008990A4A336A287AB83A3F2541849AE735674055",
+      "bytes": 197
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/a1ae4d54cc004c9c91a745332012c69f/.packages/nt.avaloniacontrol.pdfviewer/0.2.0-preview.2/lib/net10.0/NT.AvaloniaControl.PdfViewer.dll",
+      "sha256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+      "bytes": 292352
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/a1ae4d54cc004c9c91a745332012c69f/.packages/nt.avaloniacontrol.pdfviewer/0.2.0-preview.2/nt.avaloniacontrol.pdfviewer.0.2.0-preview.2.nupkg",
+      "sha256": "405431FC619331B054E8C193F315E2C031FD687CE11E89621EDD45EE4D64AB01",
+      "bytes": 658866
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/a1ae4d54cc004c9c91a745332012c69f/Consumer.csproj",
+      "sha256": "25807298E47387E0CEE2363F933A3820B1C90EE0B50F3AA83C6D686502FA491E",
+      "bytes": 908
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/a1ae4d54cc004c9c91a745332012c69f/bin/Release/net10.0/Consumer.dll",
+      "sha256": "0AF096CCF4F430F728E8ED89948786141C5B54BCE32D54B2BE09BB832A11A130",
+      "bytes": 83968
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/a1ae4d54cc004c9c91a745332012c69f/bin/Release/net10.0/Noto-CJK-COPYRIGHT.txt",
+      "sha256": "849F4EA9C214FA4AC3593B770C699F387534B11CE671264C1B10D85BDCB5997B",
+      "bytes": 14712
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/a1ae4d54cc004c9c91a745332012c69f/bin/Release/net10.0/P0AnnotationCjk.ttf",
+      "sha256": "95936C1AAA400CE69FCC002B9F8F1AF52AD20FCFC1D8DE8645D6ED30991C7978",
+      "bytes": 7092
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/a1ae4d54cc004c9c91a745332012c69f/bin/Release/net10.0/NT.AvaloniaControl.PdfViewer.dll",
+      "sha256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+      "bytes": 292352
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/a1ae4d54cc004c9c91a745332012c69f/bin/Release/net10.0/consumer-result.json",
+      "sha256": "8B394A60F508B79A2AC38F6806B71E4AFA3F32ABC734A1494162FA346B2856C6",
+      "bytes": 3865
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/a1ae4d54cc004c9c91a745332012c69f/obj/project.assets.json",
+      "sha256": "15318345144548821517249C540DEE26342C6AECD1308AD3C8292B354D737884",
+      "bytes": 92602
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/a1ae4d54cc004c9c91a745332012c69f/stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/a1ae4d54cc004c9c91a745332012c69f/stdout.log",
+      "sha256": "10E1A00D48EC71C40A04B2FBE9A3FA8F3B7FF866D7E7C3D952FE5A368B09177E",
+      "bytes": 177
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/a1ae4d54cc004c9c91a745332012c69f/supervisor.json",
+      "sha256": "8521BCA63211D731375B246F7CE9CA93961EC9CCF4A33B92D440D3C5B39C9648",
+      "bytes": 2248
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/.packages/nt.avaloniacontrol.pdfviewer.themes/0.2.0-preview.2/lib/net10.0/NT.AvaloniaControl.PdfViewer.Themes.dll",
+      "sha256": "B8738187D7A6BB906C8A7D13752A4A8EA180975684CE45087E975F3A15E9E87B",
+      "bytes": 36864
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/.packages/nt.avaloniacontrol.pdfviewer.themes/0.2.0-preview.2/nt.avaloniacontrol.pdfviewer.themes.0.2.0-preview.2.nupkg",
+      "sha256": "1D68206BF7F46076714BB404D400F47CCE16FFA83FC4A0E20E16403DE5661EEF",
+      "bytes": 15918
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/.packages/nt.avaloniacontrol.pdfviewer/0.2.0-preview.2/lib/net10.0/NT.AvaloniaControl.PdfViewer.dll",
+      "sha256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+      "bytes": 292352
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/.packages/nt.avaloniacontrol.pdfviewer/0.2.0-preview.2/nt.avaloniacontrol.pdfviewer.0.2.0-preview.2.nupkg",
+      "sha256": "405431FC619331B054E8C193F315E2C031FD687CE11E89621EDD45EE4D64AB01",
+      "bytes": 658866
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/Consumer.csproj",
+      "sha256": "82B6F1F3B2679753606DCCF31F06889A1EC7232F81DC5959CE2D04359020CE09",
+      "bytes": 915
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/bin/Release/net10.0/Consumer.dll",
+      "sha256": "9CA3C48CABD7EDDA4F873A359043C2E88ED788E0160E0BED552F61434D3AAC06",
+      "bytes": 81920
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/bin/Release/net10.0/Noto-CJK-COPYRIGHT.txt",
+      "sha256": "849F4EA9C214FA4AC3593B770C699F387534B11CE671264C1B10D85BDCB5997B",
+      "bytes": 14712
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/bin/Release/net10.0/P0AnnotationCjk.ttf",
+      "sha256": "95936C1AAA400CE69FCC002B9F8F1AF52AD20FCFC1D8DE8645D6ED30991C7978",
+      "bytes": 7092
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/bin/Release/net10.0/NT.AvaloniaControl.PdfViewer.Themes.dll",
+      "sha256": "B8738187D7A6BB906C8A7D13752A4A8EA180975684CE45087E975F3A15E9E87B",
+      "bytes": 36864
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/bin/Release/net10.0/NT.AvaloniaControl.PdfViewer.dll",
+      "sha256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+      "bytes": 292352
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/bin/Release/net10.0/consumer-result.json",
+      "sha256": "748AF28EB6693C4C78B1433D48B4FC2E7449CC8D48D82A444F05C8A691BBA1BD",
+      "bytes": 3979
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/obj/project.assets.json",
+      "sha256": "E79EA230A5BBAB693DDF7B745DE23D7C6DB5C8ED76C4894107F4EA3C445EF392",
+      "bytes": 93570
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/stdout.log",
+      "sha256": "E1ABA2AB1773A262C92F4A71191DC51F4CE5C4F837A85F000D6D7AD5E373013E",
+      "bytes": 177
+    },
+    {
+      "scope": "repository",
+      "path": "artifacts/consumer/fbf25578d52d4cd1887b036fe9f8bb51/supervisor.json",
+      "sha256": "138CB270C7C073A9C5ED147E0BD3EA0830CC35D2E086AC8D80FBA7DB13BD0256",
+      "bytes": 2680
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P0/Fixtures/FontSubset/GowunDodum-OFL.txt",
+      "sha256": "A7C73F9521CD646BBDFB6684C99A62311BBD7BCE11898DC11EF0B3C69EDA1ACA",
+      "bytes": 4395
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P0/Fixtures/FontSubset/LXGW-OFL.txt",
+      "sha256": "C38B1994A5E48AC30AC7D1DA7D0409FD8FD8127DFE28A13D6E787D5B1EF34A5E",
+      "bytes": 4448
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P0/Fixtures/FontSubset/P0AliasGlyph.ttf",
+      "sha256": "41D8A0440084EE7CB5A0B44CE84E1137D4FC24D202A15C00C363E851806EBB05",
+      "bytes": 3960
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P0/Fixtures/FontSubset/P0Cmap12Only.ttf",
+      "sha256": "A12A8891CF8E1E90826F0644BD11209041C69AF68F77295EF8CAB128342E5573",
+      "bytes": 3988
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P0/Fixtures/FontSubset/P0CompositeGlyph.ttf",
+      "sha256": "345A810982A2BBC10CD6BB1650D212A8E86A5F2D781C9D75657238D7B7718B7D",
+      "bytes": 4868
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P0/Fixtures/FontSubset/P0NoSubsetting.ttf",
+      "sha256": "8958C71DEA4699FF3DED4E5D9DA0274BE4CA5DDCDF8A907F651E9A7252BD4585",
+      "bytes": 4860
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P0/Fixtures/FontSubset/provenance.json",
+      "sha256": "7FA877A0568A6230DE4BC01BD016102629F9640AA3A4F4AFF0DD1FEB98174593",
+      "bytes": 3666
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P0/Fixtures/Noto-CJK-COPYRIGHT.txt",
+      "sha256": "849F4EA9C214FA4AC3593B770C699F387534B11CE671264C1B10D85BDCB5997B",
+      "bytes": 14712
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P0/Fixtures/P0AnnotationCjk.ttf",
+      "sha256": "95936C1AAA400CE69FCC002B9F8F1AF52AD20FCFC1D8DE8645D6ED30991C7978",
+      "bytes": 7092
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P0/Fixtures/font-provenance.json",
+      "sha256": "0342070491E6AF97FE3F52A5039E2DEA9F9C74EF6842362F69888C8E80A2593D",
+      "bytes": 825
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P0/Fixtures/font-subset-sources.json",
+      "sha256": "8AFF3539DB8E6895BCFF702A30F69CB099E526C4FB15100C5AEA248D3E7C65FD",
+      "bytes": 2244
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P0/Fixtures/real-corpus-sources.json",
+      "sha256": "696EF0410AE2CE616C357059B5C71E990B6D6F6FB263F0AFCD977E19A0AF1D7E",
+      "bytes": 15557
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P1/PdfViewer.P1.csproj",
+      "sha256": "B61C002F28658F6606821B99209A1D5CF96C384A32294AE97DDD8BBCE93139B0",
+      "bytes": 582
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P1/Program.cs",
+      "sha256": "0AB1630BF2B828C344FF009A8A1B91183369C2212976E5E3D8FB9E3B7853F5B6",
+      "bytes": 13895
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P1/bin/Release/net10.0/PdfViewer.P1.dll",
+      "sha256": "4DA13F25A33FF09D88F97F5D40CE10704F95DD2FD685137FFCBE50BE81789E68",
+      "bytes": 48640
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P1/bin/Release/net10.0/runtimes/win-x64/native/pdfium.dll",
+      "sha256": "04100C03E41CAC1F979E36E5E26FB860BCB5A7461F53830D3C098716624A27A9",
+      "bytes": 7370752
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P1/export_record.py",
+      "sha256": "0D3B0BACE38BD251BFF38B29A5335C60C021E32CF8E36EC055E95483B5D9D20C",
+      "bytes": 27105
+    },
+    {
+      "scope": "repository",
+      "path": "benchmarks/PdfViewer.P1/packages.lock.json",
+      "sha256": "ED8699704427A2CFD11903D232C63A5FB8C04BD4BF1ECA7966F7447415E0595B",
+      "bytes": 10621
+    },
+    {
+      "scope": "repository",
+      "path": "docs/validation/pdfviewer-p0-real-corpus-20261015.json",
+      "sha256": "F86BEB846FA4F891F8D8F4F8EC294945C8D650EC07541BDD60AAFC42ABE25954",
+      "bytes": 99371
+    },
+    {
+      "scope": "repository",
+      "path": "global.json",
+      "sha256": "4E7D5022B2A5A8D02BB951BB264A4C8613EABC332572A0AF5F9743D23F23D84E",
+      "bytes": 105
+    },
+    {
+      "scope": "repository",
+      "path": "scripts/Consumers/PdfViewer/App.axaml.template",
+      "sha256": "EDD3FC826CA29757E6C78E49AF545D292846093786F4C4D2826E2DE6E70D9D9D",
+      "bytes": 407
+    },
+    {
+      "scope": "repository",
+      "path": "scripts/Consumers/PdfViewer/Consumer.csproj.template",
+      "sha256": "866502EAA69E9964A6D63613E80E3A69CBF6787C99091B8103476965A9F05AD7",
+      "bytes": 937
+    },
+    {
+      "scope": "repository",
+      "path": "scripts/Consumers/PdfViewer/CustomStyles.axaml.template",
+      "sha256": "10E48C390B787AF74E3D9F2333F4E1553181B821DDD34F1F39700F6015C1E10B",
+      "bytes": 670
+    },
+    {
+      "scope": "repository",
+      "path": "scripts/Consumers/PdfViewer/Program.cs.template",
+      "sha256": "E2FFEB060177EF7CB1639657B47B194A26CBFBE2ABEABCF90DA0C9DB14691DBF",
+      "bytes": 23095
+    },
+    {
+      "scope": "repository",
+      "path": "scripts/Consumers/PdfViewer/SamplePdf.cs.template",
+      "sha256": "B02AA80F1DE1EC09736290E480BBCB2A0AEBADF771EC5B6A8F0FA9686BD7FF8E",
+      "bytes": 5605
+    },
+    {
+      "scope": "repository",
+      "path": "scripts/Consumers/PdfViewer/Window.axaml.template",
+      "sha256": "274A313EE61842B98AE8E887F08C4DACFC062F1607B5D34358F2266238BD562B",
+      "bytes": 762
+    },
+    {
+      "scope": "repository",
+      "path": "scripts/Freeze-PdfViewerBaseline.ps1",
+      "sha256": "15BA6D7B4A92AB1E7A14572F37BAA2EE440186DF09820B00F2217A1D95259A28",
+      "bytes": 10469
+    },
+    {
+      "scope": "repository",
+      "path": "scripts/Test-PdfViewerNative.ps1",
+      "sha256": "76FD481DE6673D949BE0D70C7A2C0BF193EB408D9253D124B14FDCADFC974A9B",
+      "bytes": 9109
+    },
+    {
+      "scope": "repository",
+      "path": "scripts/Test-PdfViewerPackageConsumer.ps1",
+      "sha256": "4D96DCC3291AACB6536C298FE4BC291960D0B41ED96ABDD17AA226CC038165EE",
+      "bytes": 15681
+    },
+    {
+      "scope": "repository",
+      "path": "scripts/Verify-PdfViewer-Linux.sh",
+      "sha256": "3CCCC01DA63728972747D9FA719A22763186118F5EF0F53FD63C7D57194777FA",
+      "bytes": 11646
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer.Themes/PdfViewerTheme.cs",
+      "sha256": "959DDE7C2CE6345105E4751FC2FB5AF30FBF61EB55B61EA6309402B4ED0B033E",
+      "bytes": 458
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer.Themes/NT.AvaloniaControl.PdfViewer.Themes.csproj",
+      "sha256": "A8C2F2663BEC97DE7AEE10D16C687DC0EF2DD69F63B8518F903E9BC1DFD9BFE5",
+      "bytes": 671
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer.Themes/Resources/Colors.axaml",
+      "sha256": "4DE086B8E60C73E3D017111D32D4E3786ABB076963EE273881FFDC14CBFFB1E1",
+      "bytes": 1614
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer.Themes/Themes/Generic.axaml",
+      "sha256": "82725EC40FC7E6906640376A75D7C5BD7890B1EB7E0223D9A2FF8FF9A59374AB",
+      "bytes": 10728
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer.Themes/packages.lock.json",
+      "sha256": "13ED1CC14B24E5835A36858B571E7F6DDD05EB8430FC44DF53E802D865C03369",
+      "bytes": 3699
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/AssemblyInfo.cs",
+      "sha256": "C5D08A8AB968880A6CF1B0604F5FBDB1FAF0352722FAA919272B82125092C8F7",
+      "bytes": 417
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Controls/PdfDocumentPresenter.cs",
+      "sha256": "DEF196F73D9BA33A34EDB206FDC60924D744324800C1A72B46EBDBCDC754961E",
+      "bytes": 19677
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Controls/PdfPageLayout.cs",
+      "sha256": "AB154CA603B240DF1F3DDCC1A111846717121C8D8EB982478B458381AAD1F20B",
+      "bytes": 2794
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Controls/PdfViewer.Contracts.cs",
+      "sha256": "D64D80A41CCA66EFD40AC8BD60E2716FB0571CFAF2F0719E6BB68A6EDAE703EE",
+      "bytes": 11971
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Controls/PdfViewer.Document.cs",
+      "sha256": "0AF735DE87BC9CFDB6CCF509D74D5BA24DFF5964065DA69E60B1BFA1B4FCA94F",
+      "bytes": 17362
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Controls/PdfViewer.Interaction.cs",
+      "sha256": "976FA6E33DC991B20F9D832BB08CCC623BD86EB85522D375F9C9108983985CE5",
+      "bytes": 11266
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Controls/PdfViewer.Services.cs",
+      "sha256": "0F389281A193C4AA3E807196705EAF58A24304BDB1779E77C50B708093378165",
+      "bytes": 2557
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Controls/PdfViewer.cs",
+      "sha256": "2A1CB4912B3F92DC6AE7293DACF357C638BFB136346A580DFACEA33A87A6A485",
+      "bytes": 24497
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Controls/PdfViewerModels.cs",
+      "sha256": "620D788E19B43C53300B225EA27A5F7BDA54E766F383444FB5294AF935C1389D",
+      "bytes": 762
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Editing/PdfAnnotationAppearance.cs",
+      "sha256": "F74DF23CBAF641C9D3355CA7FCB4E399765816D118C26B42B5DD7A9133A9093D",
+      "bytes": 13962
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Editing/PdfContentRedactor.cs",
+      "sha256": "EE42F8CCE22CA17C4EAB6015417F13EE2EF93FED2006FF26C2E8B2BAA74AB4BD",
+      "bytes": 18159
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Editing/PdfEditSession.Sanitization.cs",
+      "sha256": "187F99DDD56CE3B230A3768562DA284C0152F18A84BB7EAEC0A292578C540A81",
+      "bytes": 4486
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Editing/PdfEditSession.cs",
+      "sha256": "047BAFD4439E3D88E352671CD9DE02423AD9B014AA7DEDF793BBEA3C2506AA11",
+      "bytes": 9137
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Editing/PdfEditingModels.cs",
+      "sha256": "0D3F4FC46716A17E406DA81FDA8F6D0B61F6C9044BDB96BD4C1CBB66310FA36F",
+      "bytes": 2653
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Editing/PdfFreeTextCidFont.cs",
+      "sha256": "33E802258DE559DBD2B2ACE642B5F696A30A8AF5B6CAA7A6965769EF02AC7289",
+      "bytes": 2496
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Editing/PdfHiddenInformationSanitizer.cs",
+      "sha256": "18A9CEE1868F79287F4D14C0BFDEBD312D7131CFC1EB09BA8F041CB5E79C1F37",
+      "bytes": 47067
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Editing/PdfSanitizationContentValidation.cs",
+      "sha256": "36ABC8BD841401B9B07633086748E2DCC8273CFBFE57BD8DBE7345DA5A217247",
+      "bytes": 5676
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Editing/PdfSanitizationModels.cs",
+      "sha256": "EA8AF4E22AEBE8507CDA9F210593CEFA4CB82938A82F9F0C216488DF81775D70",
+      "bytes": 1673
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Editing/PdfStructureWriter.cs",
+      "sha256": "D526FE8DF9BB2CB1673AC7C864E46B8615399344EB15511C23D326D12EDC3DEB",
+      "bytes": 18383
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Editing/PdfTrueTypeFont.cs",
+      "sha256": "3DAF23627351ADD1BB301F721F522FC5417FF936982BAEA290F4DED0AE696F8A",
+      "bytes": 8614
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Editing/PdfTrueTypeSubsetter.cs",
+      "sha256": "CECE1E5EFFA8DD44A455E88D7B51DAF0906CA9522B69E6FFFB5EFDFE859F91A9",
+      "bytes": 35088
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Editing/PdfWriteValidation.cs",
+      "sha256": "609D1A24A5D8AE1899ECFAF04BC689011E6C1EC3F463CCFA02995515619CC5E9",
+      "bytes": 2136
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Interop/PdfDocumentLifetime.cs",
+      "sha256": "6822354E5A8F1ACFC6BD40F2429B0CD7D5F222FC4A97E1132F39D871ACD47B5D",
+      "bytes": 4297
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Interop/PdfiumNative.Contracts.cs",
+      "sha256": "873D36690420C06F71AD53C8A9810661C44218F68C0F127968D9B22DD59CA518",
+      "bytes": 1285
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Interop/PdfiumNative.cs",
+      "sha256": "AFFE1780A7CAB9792C4AE83A8F1F37EA443814FA21104AD5609F43D8FFAB5868",
+      "bytes": 6547
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Interop/PdfiumRuntime.cs",
+      "sha256": "00E06867C5BD7C84E94576699C31112BBCCD1967CBCFE05FA9C6A16258166AB6",
+      "bytes": 1517
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Interop/PdfiumWorkScheduler.cs",
+      "sha256": "7354ABC15879DF06365F7BE2BCA56F1746A4EEA4B9DE38BAE41044BBC1F6816F",
+      "bytes": 5334
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-LICENSE.txt",
+      "sha256": "961EACD9633FFF6D051DB7208B755E9210E30EFAC7ADEC3E6A6D52798F0CCF0E",
+      "bytes": 12818
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/.gitattributes",
+      "sha256": "89894B5F0345B75F916FCF169A01A624DFDFBD4811EDFE8946D0330B832CF6D3",
+      "bytes": 92
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/LICENSE.txt",
+      "sha256": "BA26C1263131696B86C10496B5066B918A20B7161822A80C274D0080105F6C93",
+      "bytes": 1177
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/licenses/abseil.txt",
+      "sha256": "C79A7FEA0E3CAC04CD43F20E7B648E5A0FF8FA5344E644B0EE09CA1162B62747",
+      "bytes": 11361
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/licenses/agg23.txt",
+      "sha256": "C110D3EA2AD77467CE0DCFF7D3337E6C8BE8049A5103F4B9BD5FD911A77972E5",
+      "bytes": 725
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/licenses/fast_float.txt",
+      "sha256": "E562F3F974CED7E69DD1DB77B820B36BCF8F30377F1AA105723FBA449C53C4E6",
+      "bytes": 1079
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/licenses/freetype.txt",
+      "sha256": "F4B133E25DF1F86AD3FFEA453AA0E613F0474F34778DBBB3E437E7B2724937D8",
+      "bytes": 6741
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/licenses/icu.txt",
+      "sha256": "E55522D81EDC687A341A4411E0776E54CA654E90147F354A90458AACED4116AF",
+      "bytes": 27718
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/licenses/lcms.txt",
+      "sha256": "7312B68C5B25E9BF2B828706FB4E29588F22705112F411FD42E1F7D84C3D139A",
+      "bytes": 1353
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/licenses/libjpeg_turbo.ijg",
+      "sha256": "75815E3BF6484201A3C3D17A1BBF10F2E8E3237F84DF10A2357EA896DB2A81D6",
+      "bytes": 12799
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/licenses/libopenjpeg.txt",
+      "sha256": "C5AB0890A737C2DFA7BA675036554F6D17741D98629B0C2A145354D00617E6B2",
+      "bytes": 1794
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/licenses/libpng.txt",
+      "sha256": "BDB0A645EA18C60507D0368379B1AC5474B92255FCC2D115E07486A7672BA526",
+      "bytes": 5345
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/licenses/llvm-libc.txt",
+      "sha256": "EBCD9BBF783A73D05C53BA4D586B8D5813DCDF3BBEC50265860CCC885E606F47",
+      "bytes": 15140
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/licenses/pdfium.txt",
+      "sha256": "961EACD9633FFF6D051DB7208B755E9210E30EFAC7ADEC3E6A6D52798F0CCF0E",
+      "bytes": 12818
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/licenses/simdutf.txt",
+      "sha256": "FC8DBC04E03AD4EFC08A647FFE7F995B811A95BC04C0E85A56D5277C6593FA5F",
+      "bytes": 1059
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm/licenses/zlib.txt",
+      "sha256": "33FD641C9F3B0E0BE64BC78FEA9E94807674CDD70C48477599226CB8956565FE",
+      "bytes": 1332
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/LICENSE.txt",
+      "sha256": "BA26C1263131696B86C10496B5066B918A20B7161822A80C274D0080105F6C93",
+      "bytes": 1177
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/licenses/abseil.txt",
+      "sha256": "C79A7FEA0E3CAC04CD43F20E7B648E5A0FF8FA5344E644B0EE09CA1162B62747",
+      "bytes": 11361
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/licenses/agg23.txt",
+      "sha256": "C110D3EA2AD77467CE0DCFF7D3337E6C8BE8049A5103F4B9BD5FD911A77972E5",
+      "bytes": 725
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/licenses/fast_float.txt",
+      "sha256": "E562F3F974CED7E69DD1DB77B820B36BCF8F30377F1AA105723FBA449C53C4E6",
+      "bytes": 1079
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/licenses/freetype.txt",
+      "sha256": "F4B133E25DF1F86AD3FFEA453AA0E613F0474F34778DBBB3E437E7B2724937D8",
+      "bytes": 6741
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/licenses/icu.txt",
+      "sha256": "E55522D81EDC687A341A4411E0776E54CA654E90147F354A90458AACED4116AF",
+      "bytes": 27718
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/licenses/lcms.txt",
+      "sha256": "7312B68C5B25E9BF2B828706FB4E29588F22705112F411FD42E1F7D84C3D139A",
+      "bytes": 1353
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/licenses/libjpeg_turbo.ijg",
+      "sha256": "75815E3BF6484201A3C3D17A1BBF10F2E8E3237F84DF10A2357EA896DB2A81D6",
+      "bytes": 12799
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/licenses/libopenjpeg.txt",
+      "sha256": "C5AB0890A737C2DFA7BA675036554F6D17741D98629B0C2A145354D00617E6B2",
+      "bytes": 1794
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/licenses/libpng.txt",
+      "sha256": "BDB0A645EA18C60507D0368379B1AC5474B92255FCC2D115E07486A7672BA526",
+      "bytes": 5345
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/licenses/llvm-libc.txt",
+      "sha256": "EBCD9BBF783A73D05C53BA4D586B8D5813DCDF3BBEC50265860CCC885E606F47",
+      "bytes": 15140
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/licenses/pdfium.txt",
+      "sha256": "961EACD9633FFF6D051DB7208B755E9210E30EFAC7ADEC3E6A6D52798F0CCF0E",
+      "bytes": 12818
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/licenses/simdutf.txt",
+      "sha256": "FC8DBC04E03AD4EFC08A647FFE7F995B811A95BC04C0E85A56D5277C6593FA5F",
+      "bytes": 1059
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-arm64/licenses/zlib.txt",
+      "sha256": "33FD641C9F3B0E0BE64BC78FEA9E94807674CDD70C48477599226CB8956565FE",
+      "bytes": 1332
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/LICENSE.txt",
+      "sha256": "BA26C1263131696B86C10496B5066B918A20B7161822A80C274D0080105F6C93",
+      "bytes": 1177
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/licenses/abseil.txt",
+      "sha256": "C79A7FEA0E3CAC04CD43F20E7B648E5A0FF8FA5344E644B0EE09CA1162B62747",
+      "bytes": 11361
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/licenses/agg23.txt",
+      "sha256": "C110D3EA2AD77467CE0DCFF7D3337E6C8BE8049A5103F4B9BD5FD911A77972E5",
+      "bytes": 725
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/licenses/fast_float.txt",
+      "sha256": "E562F3F974CED7E69DD1DB77B820B36BCF8F30377F1AA105723FBA449C53C4E6",
+      "bytes": 1079
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/licenses/freetype.txt",
+      "sha256": "F4B133E25DF1F86AD3FFEA453AA0E613F0474F34778DBBB3E437E7B2724937D8",
+      "bytes": 6741
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/licenses/icu.txt",
+      "sha256": "E55522D81EDC687A341A4411E0776E54CA654E90147F354A90458AACED4116AF",
+      "bytes": 27718
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/licenses/lcms.txt",
+      "sha256": "7312B68C5B25E9BF2B828706FB4E29588F22705112F411FD42E1F7D84C3D139A",
+      "bytes": 1353
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/licenses/libjpeg_turbo.ijg",
+      "sha256": "75815E3BF6484201A3C3D17A1BBF10F2E8E3237F84DF10A2357EA896DB2A81D6",
+      "bytes": 12799
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/licenses/libopenjpeg.txt",
+      "sha256": "C5AB0890A737C2DFA7BA675036554F6D17741D98629B0C2A145354D00617E6B2",
+      "bytes": 1794
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/licenses/libpng.txt",
+      "sha256": "BDB0A645EA18C60507D0368379B1AC5474B92255FCC2D115E07486A7672BA526",
+      "bytes": 5345
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/licenses/musl.txt",
+      "sha256": "B870108EC5E7790E9F9919064F1B9421D62D5F9B0E6C230C6ADF7EA2DA62E97B",
+      "bytes": 6196
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/licenses/pdfium.txt",
+      "sha256": "961EACD9633FFF6D051DB7208B755E9210E30EFAC7ADEC3E6A6D52798F0CCF0E",
+      "bytes": 12818
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/licenses/simdutf.txt",
+      "sha256": "FC8DBC04E03AD4EFC08A647FFE7F995B811A95BC04C0E85A56D5277C6593FA5F",
+      "bytes": 1059
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-arm64/licenses/zlib.txt",
+      "sha256": "33FD641C9F3B0E0BE64BC78FEA9E94807674CDD70C48477599226CB8956565FE",
+      "bytes": 1332
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/LICENSE.txt",
+      "sha256": "BA26C1263131696B86C10496B5066B918A20B7161822A80C274D0080105F6C93",
+      "bytes": 1177
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/licenses/abseil.txt",
+      "sha256": "C79A7FEA0E3CAC04CD43F20E7B648E5A0FF8FA5344E644B0EE09CA1162B62747",
+      "bytes": 11361
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/licenses/agg23.txt",
+      "sha256": "C110D3EA2AD77467CE0DCFF7D3337E6C8BE8049A5103F4B9BD5FD911A77972E5",
+      "bytes": 725
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/licenses/fast_float.txt",
+      "sha256": "E562F3F974CED7E69DD1DB77B820B36BCF8F30377F1AA105723FBA449C53C4E6",
+      "bytes": 1079
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/licenses/freetype.txt",
+      "sha256": "F4B133E25DF1F86AD3FFEA453AA0E613F0474F34778DBBB3E437E7B2724937D8",
+      "bytes": 6741
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/licenses/icu.txt",
+      "sha256": "E55522D81EDC687A341A4411E0776E54CA654E90147F354A90458AACED4116AF",
+      "bytes": 27718
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/licenses/lcms.txt",
+      "sha256": "7312B68C5B25E9BF2B828706FB4E29588F22705112F411FD42E1F7D84C3D139A",
+      "bytes": 1353
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/licenses/libjpeg_turbo.ijg",
+      "sha256": "75815E3BF6484201A3C3D17A1BBF10F2E8E3237F84DF10A2357EA896DB2A81D6",
+      "bytes": 12799
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/licenses/libopenjpeg.txt",
+      "sha256": "C5AB0890A737C2DFA7BA675036554F6D17741D98629B0C2A145354D00617E6B2",
+      "bytes": 1794
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/licenses/libpng.txt",
+      "sha256": "BDB0A645EA18C60507D0368379B1AC5474B92255FCC2D115E07486A7672BA526",
+      "bytes": 5345
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/licenses/musl.txt",
+      "sha256": "B870108EC5E7790E9F9919064F1B9421D62D5F9B0E6C230C6ADF7EA2DA62E97B",
+      "bytes": 6196
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/licenses/pdfium.txt",
+      "sha256": "961EACD9633FFF6D051DB7208B755E9210E30EFAC7ADEC3E6A6D52798F0CCF0E",
+      "bytes": 12818
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/licenses/simdutf.txt",
+      "sha256": "FC8DBC04E03AD4EFC08A647FFE7F995B811A95BC04C0E85A56D5277C6593FA5F",
+      "bytes": 1059
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x64/licenses/zlib.txt",
+      "sha256": "33FD641C9F3B0E0BE64BC78FEA9E94807674CDD70C48477599226CB8956565FE",
+      "bytes": 1332
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/LICENSE.txt",
+      "sha256": "BA26C1263131696B86C10496B5066B918A20B7161822A80C274D0080105F6C93",
+      "bytes": 1177
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/licenses/abseil.txt",
+      "sha256": "C79A7FEA0E3CAC04CD43F20E7B648E5A0FF8FA5344E644B0EE09CA1162B62747",
+      "bytes": 11361
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/licenses/agg23.txt",
+      "sha256": "C110D3EA2AD77467CE0DCFF7D3337E6C8BE8049A5103F4B9BD5FD911A77972E5",
+      "bytes": 725
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/licenses/fast_float.txt",
+      "sha256": "E562F3F974CED7E69DD1DB77B820B36BCF8F30377F1AA105723FBA449C53C4E6",
+      "bytes": 1079
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/licenses/freetype.txt",
+      "sha256": "F4B133E25DF1F86AD3FFEA453AA0E613F0474F34778DBBB3E437E7B2724937D8",
+      "bytes": 6741
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/licenses/icu.txt",
+      "sha256": "E55522D81EDC687A341A4411E0776E54CA654E90147F354A90458AACED4116AF",
+      "bytes": 27718
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/licenses/lcms.txt",
+      "sha256": "7312B68C5B25E9BF2B828706FB4E29588F22705112F411FD42E1F7D84C3D139A",
+      "bytes": 1353
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/licenses/libjpeg_turbo.ijg",
+      "sha256": "75815E3BF6484201A3C3D17A1BBF10F2E8E3237F84DF10A2357EA896DB2A81D6",
+      "bytes": 12799
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/licenses/libopenjpeg.txt",
+      "sha256": "C5AB0890A737C2DFA7BA675036554F6D17741D98629B0C2A145354D00617E6B2",
+      "bytes": 1794
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/licenses/libpng.txt",
+      "sha256": "BDB0A645EA18C60507D0368379B1AC5474B92255FCC2D115E07486A7672BA526",
+      "bytes": 5345
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/licenses/musl.txt",
+      "sha256": "B870108EC5E7790E9F9919064F1B9421D62D5F9B0E6C230C6ADF7EA2DA62E97B",
+      "bytes": 6196
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/licenses/pdfium.txt",
+      "sha256": "961EACD9633FFF6D051DB7208B755E9210E30EFAC7ADEC3E6A6D52798F0CCF0E",
+      "bytes": 12818
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/licenses/simdutf.txt",
+      "sha256": "FC8DBC04E03AD4EFC08A647FFE7F995B811A95BC04C0E85A56D5277C6593FA5F",
+      "bytes": 1059
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-musl-x86/licenses/zlib.txt",
+      "sha256": "33FD641C9F3B0E0BE64BC78FEA9E94807674CDD70C48477599226CB8956565FE",
+      "bytes": 1332
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/LICENSE.txt",
+      "sha256": "BA26C1263131696B86C10496B5066B918A20B7161822A80C274D0080105F6C93",
+      "bytes": 1177
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/licenses/abseil.txt",
+      "sha256": "C79A7FEA0E3CAC04CD43F20E7B648E5A0FF8FA5344E644B0EE09CA1162B62747",
+      "bytes": 11361
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/licenses/agg23.txt",
+      "sha256": "C110D3EA2AD77467CE0DCFF7D3337E6C8BE8049A5103F4B9BD5FD911A77972E5",
+      "bytes": 725
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/licenses/fast_float.txt",
+      "sha256": "E562F3F974CED7E69DD1DB77B820B36BCF8F30377F1AA105723FBA449C53C4E6",
+      "bytes": 1079
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/licenses/freetype.txt",
+      "sha256": "F4B133E25DF1F86AD3FFEA453AA0E613F0474F34778DBBB3E437E7B2724937D8",
+      "bytes": 6741
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/licenses/icu.txt",
+      "sha256": "E55522D81EDC687A341A4411E0776E54CA654E90147F354A90458AACED4116AF",
+      "bytes": 27718
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/licenses/lcms.txt",
+      "sha256": "7312B68C5B25E9BF2B828706FB4E29588F22705112F411FD42E1F7D84C3D139A",
+      "bytes": 1353
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/licenses/libjpeg_turbo.ijg",
+      "sha256": "75815E3BF6484201A3C3D17A1BBF10F2E8E3237F84DF10A2357EA896DB2A81D6",
+      "bytes": 12799
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/licenses/libopenjpeg.txt",
+      "sha256": "C5AB0890A737C2DFA7BA675036554F6D17741D98629B0C2A145354D00617E6B2",
+      "bytes": 1794
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/licenses/libpng.txt",
+      "sha256": "BDB0A645EA18C60507D0368379B1AC5474B92255FCC2D115E07486A7672BA526",
+      "bytes": 5345
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/licenses/llvm-libc.txt",
+      "sha256": "EBCD9BBF783A73D05C53BA4D586B8D5813DCDF3BBEC50265860CCC885E606F47",
+      "bytes": 15140
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/licenses/pdfium.txt",
+      "sha256": "961EACD9633FFF6D051DB7208B755E9210E30EFAC7ADEC3E6A6D52798F0CCF0E",
+      "bytes": 12818
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/licenses/simdutf.txt",
+      "sha256": "FC8DBC04E03AD4EFC08A647FFE7F995B811A95BC04C0E85A56D5277C6593FA5F",
+      "bytes": 1059
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x64/licenses/zlib.txt",
+      "sha256": "33FD641C9F3B0E0BE64BC78FEA9E94807674CDD70C48477599226CB8956565FE",
+      "bytes": 1332
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/LICENSE.txt",
+      "sha256": "BA26C1263131696B86C10496B5066B918A20B7161822A80C274D0080105F6C93",
+      "bytes": 1177
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/licenses/abseil.txt",
+      "sha256": "C79A7FEA0E3CAC04CD43F20E7B648E5A0FF8FA5344E644B0EE09CA1162B62747",
+      "bytes": 11361
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/licenses/agg23.txt",
+      "sha256": "C110D3EA2AD77467CE0DCFF7D3337E6C8BE8049A5103F4B9BD5FD911A77972E5",
+      "bytes": 725
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/licenses/fast_float.txt",
+      "sha256": "E562F3F974CED7E69DD1DB77B820B36BCF8F30377F1AA105723FBA449C53C4E6",
+      "bytes": 1079
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/licenses/freetype.txt",
+      "sha256": "F4B133E25DF1F86AD3FFEA453AA0E613F0474F34778DBBB3E437E7B2724937D8",
+      "bytes": 6741
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/licenses/icu.txt",
+      "sha256": "E55522D81EDC687A341A4411E0776E54CA654E90147F354A90458AACED4116AF",
+      "bytes": 27718
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/licenses/lcms.txt",
+      "sha256": "7312B68C5B25E9BF2B828706FB4E29588F22705112F411FD42E1F7D84C3D139A",
+      "bytes": 1353
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/licenses/libjpeg_turbo.ijg",
+      "sha256": "75815E3BF6484201A3C3D17A1BBF10F2E8E3237F84DF10A2357EA896DB2A81D6",
+      "bytes": 12799
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/licenses/libopenjpeg.txt",
+      "sha256": "C5AB0890A737C2DFA7BA675036554F6D17741D98629B0C2A145354D00617E6B2",
+      "bytes": 1794
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/licenses/libpng.txt",
+      "sha256": "BDB0A645EA18C60507D0368379B1AC5474B92255FCC2D115E07486A7672BA526",
+      "bytes": 5345
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/licenses/llvm-libc.txt",
+      "sha256": "EBCD9BBF783A73D05C53BA4D586B8D5813DCDF3BBEC50265860CCC885E606F47",
+      "bytes": 15140
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/licenses/pdfium.txt",
+      "sha256": "961EACD9633FFF6D051DB7208B755E9210E30EFAC7ADEC3E6A6D52798F0CCF0E",
+      "bytes": 12818
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/licenses/simdutf.txt",
+      "sha256": "FC8DBC04E03AD4EFC08A647FFE7F995B811A95BC04C0E85A56D5277C6593FA5F",
+      "bytes": 1059
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/linux-x86/licenses/zlib.txt",
+      "sha256": "33FD641C9F3B0E0BE64BC78FEA9E94807674CDD70C48477599226CB8956565FE",
+      "bytes": 1332
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/LICENSE.txt",
+      "sha256": "BA26C1263131696B86C10496B5066B918A20B7161822A80C274D0080105F6C93",
+      "bytes": 1177
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/licenses/abseil.txt",
+      "sha256": "C79A7FEA0E3CAC04CD43F20E7B648E5A0FF8FA5344E644B0EE09CA1162B62747",
+      "bytes": 11361
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/licenses/agg23.txt",
+      "sha256": "C110D3EA2AD77467CE0DCFF7D3337E6C8BE8049A5103F4B9BD5FD911A77972E5",
+      "bytes": 725
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/licenses/fast_float.txt",
+      "sha256": "E562F3F974CED7E69DD1DB77B820B36BCF8F30377F1AA105723FBA449C53C4E6",
+      "bytes": 1079
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/licenses/freetype.txt",
+      "sha256": "F4B133E25DF1F86AD3FFEA453AA0E613F0474F34778DBBB3E437E7B2724937D8",
+      "bytes": 6741
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/licenses/icu.txt",
+      "sha256": "E55522D81EDC687A341A4411E0776E54CA654E90147F354A90458AACED4116AF",
+      "bytes": 27718
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/licenses/lcms.txt",
+      "sha256": "7312B68C5B25E9BF2B828706FB4E29588F22705112F411FD42E1F7D84C3D139A",
+      "bytes": 1353
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/licenses/libjpeg_turbo.ijg",
+      "sha256": "75815E3BF6484201A3C3D17A1BBF10F2E8E3237F84DF10A2357EA896DB2A81D6",
+      "bytes": 12799
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/licenses/libopenjpeg.txt",
+      "sha256": "C5AB0890A737C2DFA7BA675036554F6D17741D98629B0C2A145354D00617E6B2",
+      "bytes": 1794
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/licenses/libpng.txt",
+      "sha256": "BDB0A645EA18C60507D0368379B1AC5474B92255FCC2D115E07486A7672BA526",
+      "bytes": 5345
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/licenses/llvm-libc.txt",
+      "sha256": "EBCD9BBF783A73D05C53BA4D586B8D5813DCDF3BBEC50265860CCC885E606F47",
+      "bytes": 15140
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/licenses/pdfium.txt",
+      "sha256": "1FE9DEA718FBD75CF149ADAF4D8A22A4335604D964DDB76D1B45383DEC8668C9",
+      "bytes": 12896
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/licenses/simdutf.txt",
+      "sha256": "FC8DBC04E03AD4EFC08A647FFE7F995B811A95BC04C0E85A56D5277C6593FA5F",
+      "bytes": 1059
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-arm64/licenses/zlib.txt",
+      "sha256": "33FD641C9F3B0E0BE64BC78FEA9E94807674CDD70C48477599226CB8956565FE",
+      "bytes": 1332
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/LICENSE.txt",
+      "sha256": "BA26C1263131696B86C10496B5066B918A20B7161822A80C274D0080105F6C93",
+      "bytes": 1177
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/licenses/abseil.txt",
+      "sha256": "C79A7FEA0E3CAC04CD43F20E7B648E5A0FF8FA5344E644B0EE09CA1162B62747",
+      "bytes": 11361
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/licenses/agg23.txt",
+      "sha256": "C110D3EA2AD77467CE0DCFF7D3337E6C8BE8049A5103F4B9BD5FD911A77972E5",
+      "bytes": 725
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/licenses/fast_float.txt",
+      "sha256": "E562F3F974CED7E69DD1DB77B820B36BCF8F30377F1AA105723FBA449C53C4E6",
+      "bytes": 1079
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/licenses/freetype.txt",
+      "sha256": "F4B133E25DF1F86AD3FFEA453AA0E613F0474F34778DBBB3E437E7B2724937D8",
+      "bytes": 6741
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/licenses/icu.txt",
+      "sha256": "E55522D81EDC687A341A4411E0776E54CA654E90147F354A90458AACED4116AF",
+      "bytes": 27718
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/licenses/lcms.txt",
+      "sha256": "7312B68C5B25E9BF2B828706FB4E29588F22705112F411FD42E1F7D84C3D139A",
+      "bytes": 1353
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/licenses/libjpeg_turbo.ijg",
+      "sha256": "75815E3BF6484201A3C3D17A1BBF10F2E8E3237F84DF10A2357EA896DB2A81D6",
+      "bytes": 12799
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/licenses/libopenjpeg.txt",
+      "sha256": "C5AB0890A737C2DFA7BA675036554F6D17741D98629B0C2A145354D00617E6B2",
+      "bytes": 1794
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/licenses/libpng.txt",
+      "sha256": "BDB0A645EA18C60507D0368379B1AC5474B92255FCC2D115E07486A7672BA526",
+      "bytes": 5345
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/licenses/llvm-libc.txt",
+      "sha256": "EBCD9BBF783A73D05C53BA4D586B8D5813DCDF3BBEC50265860CCC885E606F47",
+      "bytes": 15140
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/licenses/pdfium.txt",
+      "sha256": "1FE9DEA718FBD75CF149ADAF4D8A22A4335604D964DDB76D1B45383DEC8668C9",
+      "bytes": 12896
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/licenses/simdutf.txt",
+      "sha256": "FC8DBC04E03AD4EFC08A647FFE7F995B811A95BC04C0E85A56D5277C6593FA5F",
+      "bytes": 1059
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/osx-x64/licenses/zlib.txt",
+      "sha256": "33FD641C9F3B0E0BE64BC78FEA9E94807674CDD70C48477599226CB8956565FE",
+      "bytes": 1332
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/verification-manifest.json",
+      "sha256": "23AAC0FE51C277F352266D8B3AF6C6CE490AF6E0AF80120E60A0625A36823640",
+      "bytes": 59990
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/LICENSE.txt",
+      "sha256": "8854F4388F1CA13B3AD9BAA42E95F5546B4C0B17109C159256D3ECA7BE39B09B",
+      "bytes": 1184
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/licenses/abseil.txt",
+      "sha256": "F54FFF0B905DF5B3464527C652A30E903B172D6DCAB4D89B5E6F105D5E4A4603",
+      "bytes": 11564
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/licenses/agg23.txt",
+      "sha256": "C110D3EA2AD77467CE0DCFF7D3337E6C8BE8049A5103F4B9BD5FD911A77972E5",
+      "bytes": 725
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/licenses/fast_float.txt",
+      "sha256": "BF1B57355FECA8FCE77EE95F48002F8D4789FB71B30EC7599C06CDA4901FBB2B",
+      "bytes": 1106
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/licenses/freetype.txt",
+      "sha256": "F4B133E25DF1F86AD3FFEA453AA0E613F0474F34778DBBB3E437E7B2724937D8",
+      "bytes": 6741
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/licenses/icu.txt",
+      "sha256": "93679F4389D53B6835D89843F251844FB9BC455B35BAB036D3C8E7ABE497A47A",
+      "bytes": 28286
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/licenses/lcms.txt",
+      "sha256": "7312B68C5B25E9BF2B828706FB4E29588F22705112F411FD42E1F7D84C3D139A",
+      "bytes": 1353
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/licenses/libjpeg_turbo.ijg",
+      "sha256": "DB16A04128171879C60708D171B88D97345A2DD20F9BFC173680A4497C73F704",
+      "bytes": 13059
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/licenses/libopenjpeg.txt",
+      "sha256": "C5AB0890A737C2DFA7BA675036554F6D17741D98629B0C2A145354D00617E6B2",
+      "bytes": 1794
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/licenses/libpng.txt",
+      "sha256": "452390433BA0F88AA3E2B122C647741B72A0C117CD6ED7A329B49785AECB5511",
+      "bytes": 5479
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/licenses/llvm-libc.txt",
+      "sha256": "3B6226C32E168C83B891D8D6F0D3C29C2116DC3EF93DC93C307B54F279ECF383",
+      "bytes": 15418
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/licenses/pdfium.txt",
+      "sha256": "961EACD9633FFF6D051DB7208B755E9210E30EFAC7ADEC3E6A6D52798F0CCF0E",
+      "bytes": 12818
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/licenses/simdutf.txt",
+      "sha256": "C172A0BA936FF31230FEBB5DAD869E25CB7C1A07480C7A381BE8CF011BB52719",
+      "bytes": 1077
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-arm64/licenses/zlib.txt",
+      "sha256": "33FD641C9F3B0E0BE64BC78FEA9E94807674CDD70C48477599226CB8956565FE",
+      "bytes": 1332
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/LICENSE.txt",
+      "sha256": "8854F4388F1CA13B3AD9BAA42E95F5546B4C0B17109C159256D3ECA7BE39B09B",
+      "bytes": 1184
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/licenses/abseil.txt",
+      "sha256": "F54FFF0B905DF5B3464527C652A30E903B172D6DCAB4D89B5E6F105D5E4A4603",
+      "bytes": 11564
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/licenses/agg23.txt",
+      "sha256": "C110D3EA2AD77467CE0DCFF7D3337E6C8BE8049A5103F4B9BD5FD911A77972E5",
+      "bytes": 725
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/licenses/fast_float.txt",
+      "sha256": "BF1B57355FECA8FCE77EE95F48002F8D4789FB71B30EC7599C06CDA4901FBB2B",
+      "bytes": 1106
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/licenses/freetype.txt",
+      "sha256": "F4B133E25DF1F86AD3FFEA453AA0E613F0474F34778DBBB3E437E7B2724937D8",
+      "bytes": 6741
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/licenses/icu.txt",
+      "sha256": "93679F4389D53B6835D89843F251844FB9BC455B35BAB036D3C8E7ABE497A47A",
+      "bytes": 28286
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/licenses/lcms.txt",
+      "sha256": "7312B68C5B25E9BF2B828706FB4E29588F22705112F411FD42E1F7D84C3D139A",
+      "bytes": 1353
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/licenses/libjpeg_turbo.ijg",
+      "sha256": "DB16A04128171879C60708D171B88D97345A2DD20F9BFC173680A4497C73F704",
+      "bytes": 13059
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/licenses/libopenjpeg.txt",
+      "sha256": "C5AB0890A737C2DFA7BA675036554F6D17741D98629B0C2A145354D00617E6B2",
+      "bytes": 1794
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/licenses/libpng.txt",
+      "sha256": "452390433BA0F88AA3E2B122C647741B72A0C117CD6ED7A329B49785AECB5511",
+      "bytes": 5479
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/licenses/llvm-libc.txt",
+      "sha256": "3B6226C32E168C83B891D8D6F0D3C29C2116DC3EF93DC93C307B54F279ECF383",
+      "bytes": 15418
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/licenses/pdfium.txt",
+      "sha256": "961EACD9633FFF6D051DB7208B755E9210E30EFAC7ADEC3E6A6D52798F0CCF0E",
+      "bytes": 12818
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/licenses/simdutf.txt",
+      "sha256": "C172A0BA936FF31230FEBB5DAD869E25CB7C1A07480C7A381BE8CF011BB52719",
+      "bytes": 1077
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x64/licenses/zlib.txt",
+      "sha256": "33FD641C9F3B0E0BE64BC78FEA9E94807674CDD70C48477599226CB8956565FE",
+      "bytes": 1332
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/LICENSE.txt",
+      "sha256": "8854F4388F1CA13B3AD9BAA42E95F5546B4C0B17109C159256D3ECA7BE39B09B",
+      "bytes": 1184
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/licenses/abseil.txt",
+      "sha256": "F54FFF0B905DF5B3464527C652A30E903B172D6DCAB4D89B5E6F105D5E4A4603",
+      "bytes": 11564
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/licenses/agg23.txt",
+      "sha256": "C110D3EA2AD77467CE0DCFF7D3337E6C8BE8049A5103F4B9BD5FD911A77972E5",
+      "bytes": 725
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/licenses/fast_float.txt",
+      "sha256": "BF1B57355FECA8FCE77EE95F48002F8D4789FB71B30EC7599C06CDA4901FBB2B",
+      "bytes": 1106
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/licenses/freetype.txt",
+      "sha256": "F4B133E25DF1F86AD3FFEA453AA0E613F0474F34778DBBB3E437E7B2724937D8",
+      "bytes": 6741
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/licenses/icu.txt",
+      "sha256": "93679F4389D53B6835D89843F251844FB9BC455B35BAB036D3C8E7ABE497A47A",
+      "bytes": 28286
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/licenses/lcms.txt",
+      "sha256": "7312B68C5B25E9BF2B828706FB4E29588F22705112F411FD42E1F7D84C3D139A",
+      "bytes": 1353
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/licenses/libjpeg_turbo.ijg",
+      "sha256": "DB16A04128171879C60708D171B88D97345A2DD20F9BFC173680A4497C73F704",
+      "bytes": 13059
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/licenses/libopenjpeg.txt",
+      "sha256": "C5AB0890A737C2DFA7BA675036554F6D17741D98629B0C2A145354D00617E6B2",
+      "bytes": 1794
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/licenses/libpng.txt",
+      "sha256": "452390433BA0F88AA3E2B122C647741B72A0C117CD6ED7A329B49785AECB5511",
+      "bytes": 5479
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/licenses/llvm-libc.txt",
+      "sha256": "3B6226C32E168C83B891D8D6F0D3C29C2116DC3EF93DC93C307B54F279ECF383",
+      "bytes": 15418
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/licenses/pdfium.txt",
+      "sha256": "961EACD9633FFF6D051DB7208B755E9210E30EFAC7ADEC3E6A6D52798F0CCF0E",
+      "bytes": 12818
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/licenses/simdutf.txt",
+      "sha256": "C172A0BA936FF31230FEBB5DAD869E25CB7C1A07480C7A381BE8CF011BB52719",
+      "bytes": 1077
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFium-ThirdParty/win-x86/licenses/zlib.txt",
+      "sha256": "33FD641C9F3B0E0BE64BC78FEA9E94807674CDD70C48477599226CB8956565FE",
+      "bytes": 1332
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFsharp-6.2.4-LICENSE.txt",
+      "sha256": "3C648A5072BD7F7386CA28687780489A708A57ED75F13927BC16DD3E34AF3BF7",
+      "bytes": 1147
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/PDFsharp-6.2.4-SOURCES.json",
+      "sha256": "F99F890789EDDD92E983A2F0DE1C866D55AF33CC1355AEDDAE0208323CACD70C",
+      "bytes": 171936
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/pdfium-binaries-8044-license-script.txt",
+      "sha256": "FCB09EC2FD312630EB4BC524B0ED2B4B3F8CBE157EB2FB25E6A3250D412A6C78",
+      "bytes": 3926
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/pdfium-binaries-8044-pack-script.txt",
+      "sha256": "7E1310BB9251F211A2BE39CBC898D1C2557F170F2FB721C4A65A411218AFC832",
+      "bytes": 1154
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/pdfium-binaries-8044-stage-script.txt",
+      "sha256": "EA54C45ECF4FE7A1B8177065FEB9DBBCE11EE919E48958F55CE73A8EB8A54517",
+      "bytes": 2419
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Licenses/pdfium-binaries-LICENSE.txt",
+      "sha256": "B7CE9BE44AC7DBD38CB0DA2727D65AFB9EBA9E28310268472F9C7A5AB328A592",
+      "bytes": 1060
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/PdfDocument.Contracts.cs",
+      "sha256": "A19B60CEBAC8D289E068DA2BB92634F3A17ABB81834A84EB794AAC6CD35F1692",
+      "bytes": 3513
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/PdfDocument.cs",
+      "sha256": "40E7DC5474783AF0E26C551948E18E339E0E5E8100A9BE7F456EF59DD798E193",
+      "bytes": 24395
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/PdfDocumentContracts.cs",
+      "sha256": "AA563B30B98ED835A4323B40F9A4208E139A05569883E1B34672D0E67BC509CE",
+      "bytes": 6745
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/PdfDocumentSource.cs",
+      "sha256": "6C6CE279EA1E989566DD93FFB57B445CCBFC752372113E0824607B24D10761CA",
+      "bytes": 2752
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/PdfModels.cs",
+      "sha256": "3916B2D8B16927F9CCE30398AA577A113D54D5727FD4E7568AE55BBA680A1DA4",
+      "bytes": 2127
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/NT.AvaloniaControl.PdfViewer.csproj",
+      "sha256": "EC6D70B185C311233D26F55DD231978A7BBA1AB58871AAA12001835FCEAD3813",
+      "bytes": 1223
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/Services/PdfPlatformServices.cs",
+      "sha256": "2148DD5A2A054836F69A3966092C474E108C44600E4B50AEC9BEC5FCC49F8B00",
+      "bytes": 2017
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/bin/Release/net10.0/NT.AvaloniaControl.PdfViewer.dll",
+      "sha256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+      "bytes": 292352
+    },
+    {
+      "scope": "repository",
+      "path": "src/NT.AvaloniaControl.PdfViewer/packages.lock.json",
+      "sha256": "571998CFA4B0DBBAAB687E956CC14FFBD09D6E0FB7E50BFC3148918DBAF6F463",
+      "bytes": 3211
+    },
+    {
+      "scope": "repository",
+      "path": "tests/Directory.Build.props",
+      "sha256": "C5CDA05A79C2246D254E962B7A88C387A57B36DA9E7C6AA20A43194AD6FB098D",
+      "bytes": 421
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/ContractFixture.cs",
+      "sha256": "16EA60805354309FCB8D431923A1D83C321A92EF9005BB48B659C01834E1EAD7",
+      "bytes": 4399
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/ContractTests.cs",
+      "sha256": "126036B7665C4976D35333572764EF7DE86A94544B062D25CC88FC5C2A1FA8E2",
+      "bytes": 11469
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/DocumentTests.cs",
+      "sha256": "A5421BBD86FB5AD3B744A2FA53D42F0F5DC1A327957B9B56AF97D32347451451",
+      "bytes": 16163
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/EditingTests.cs",
+      "sha256": "3009072EC0DD3E0BF1CF282AFB1B869A00FF1269AD3B3E4E442B233C9439A7AF",
+      "bytes": 16890
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/FontSubsettingTests.cs",
+      "sha256": "FAE3383660D5FBCCD2C60B97A00351B41F076107BE6709BCA53D8EAAFFD1A5A8",
+      "bytes": 19768
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/PageGeometryTests.cs",
+      "sha256": "59BFE44EC296C218F10A630B7D6E2A4B4CFC9FFA6B3AFC05A022E4E6C3685E66",
+      "bytes": 2219
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/PdfFixture.cs",
+      "sha256": "71AE469ABCD77CF117816F498C528031808C31E10E978E7938880B0DAABD7202",
+      "bytes": 7847
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/PdfViewer.Core.Tests.csproj",
+      "sha256": "30D48EC158AD2EB606022A3AB6BAED879DDFE234A199BF27469066086D0E86BC",
+      "bytes": 483
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/RedactionNativeGeometryTests.cs",
+      "sha256": "F6DD0CF36638D97F6E895FCFDC4EA4DAB26BEFF68EDA4DB7833FC6CE7964B71A",
+      "bytes": 5852
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/SanitizationTests.cs",
+      "sha256": "D02D9981F6583D09FF1400102CF94DAE9AEABD8CF0B48F9DFC7D22BB7D1609A4",
+      "bytes": 11241
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/SanitizerFontTests.cs",
+      "sha256": "62A5A78B79F7EB7942550BBA7ABDBA06639DA422E35F0B6D2940E1F5819821A6",
+      "bytes": 5245
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/SchedulerLifetimeTests.cs",
+      "sha256": "E662A83EEDD30D8A8A702209474B672288DA2A9D265168CDA0969D229CFB57D2",
+      "bytes": 16705
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/bin/Release/net10.0/PdfViewer.Core.Tests.dll",
+      "sha256": "EAB39F20F447AE866A7C903B670E62D34B529C22ECAFDE9326BC9FD633E35B50",
+      "bytes": 228864
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/bin/Release/net10.0/NT.AvaloniaControl.PdfViewer.dll",
+      "sha256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+      "bytes": 292352
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Core.Tests/packages.lock.json",
+      "sha256": "5E97226D73598E40F2D67AFB5EF3DFFCD9651B265CC6D9753562387D805FF661",
+      "bytes": 10395
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Headless.Tests/ContractViewerTests.cs",
+      "sha256": "491B3AED956A2CC1FF785BFB6EB53831683C696E30D0E994CDCCA03E736A777F",
+      "bytes": 10323
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Headless.Tests/GatedReadStream.cs",
+      "sha256": "1A8C2AE4E128FF55C9D9685795F5662787E151E54DB3663188ED15D0359B35E2",
+      "bytes": 1832
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Headless.Tests/HeadlessTestScope.cs",
+      "sha256": "08C50AF6C5BE2F499CC1BCC32A1B536DDD28B3C2800D265727AA3BB7CA49B3BC",
+      "bytes": 1576
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Headless.Tests/P1IntegrationTests.cs",
+      "sha256": "B0FB610AF78A66FAF2642C69F9CEECA995B3AE93EECC12F6F3E55110FFA62F08",
+      "bytes": 13508
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Headless.Tests/PdfViewer.Headless.Tests.csproj",
+      "sha256": "425A9A0531D0481A64B2B9F51E8D6EF18D00424C18E111A00102DE3C7F11C234",
+      "bytes": 605
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Headless.Tests/TestApplication.cs",
+      "sha256": "FE51B0ED8ACB0396EC80411296A8F85329A50DE3B874ADFDB4D54F0C1B34EF37",
+      "bytes": 577
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Headless.Tests/ViewerTests.cs",
+      "sha256": "6D0CFC5DE98D1E8BC12CE220FC1B17124828E88B4C5C85D89B7B58449C20FA15",
+      "bytes": 28355
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Headless.Tests/bin/Release/net10.0/PdfViewer.Headless.Tests.dll",
+      "sha256": "BE947C936447BD0D767466A9EA88D6EA38CD78E234E82ED854CFC00B24E781F9",
+      "bytes": 121856
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Headless.Tests/bin/Release/net10.0/NT.AvaloniaControl.PdfViewer.dll",
+      "sha256": "60422D2DE73383593AA68F47445B1D682C8E33924E963E0622D5D96A3E9C1693",
+      "bytes": 292352
+    },
+    {
+      "scope": "repository",
+      "path": "tests/PdfViewer.Headless.Tests/packages.lock.json",
+      "sha256": "21E38033C0F87408109A3DEFD4FFCCCB5565606A9CF575EF6AA4BEF4CEC967AC",
+      "bytes": 13716
+    },
+    {
+      "scope": "run",
+      "path": "baseline/baseline.json",
+      "sha256": "9700A507C790BB4AD880706AD9CF6619FDC94D44256C7941AC59160A938D86CF",
+      "bytes": 400
+    },
+    {
+      "scope": "run",
+      "path": "baseline/native-assets.json",
+      "sha256": "AC7D7A19267E82044646A485C083E2896BEB2C6CA5EB55B1F54FB1A4013B445B",
+      "bytes": 5363
+    },
+    {
+      "scope": "run",
+      "path": "baseline/official-documents/annotations.html",
+      "sha256": "B9AE86D28EA05215B1CDE7C8EDD5BBCD8E20881CC253F46CC2BD3A58D8FF2134",
+      "bytes": 61087
+    },
+    {
+      "scope": "run",
+      "path": "baseline/official-documents/index.html",
+      "sha256": "4B4C3294A96990AC9088D9FACB9B9E619437E620D9D454F5A1009EEC3C0F0355",
+      "bytes": 86860
+    },
+    {
+      "scope": "run",
+      "path": "baseline/official-documents/loading-and-saving.html",
+      "sha256": "A9103610409A11EE2C6A3EA9128D6670D2CAFCDF0682FC11B740FAB7B84A6F64",
+      "bytes": 55527
+    },
+    {
+      "scope": "run",
+      "path": "baseline/official-documents/manifest.json",
+      "sha256": "1EB8CE0CE240F593DFDE0C6B6087A7B5873BE46C288328C1D092575EE7A6BA8D",
+      "bytes": 2929
+    },
+    {
+      "scope": "run",
+      "path": "baseline/official-documents/navigation-and-search.html",
+      "sha256": "3C7472894A6BEA679150448E43FDC2B79D5AF8AEF882EA21F96032F931029FE7",
+      "bytes": 60448
+    },
+    {
+      "scope": "run",
+      "path": "baseline/official-documents/platforms-and-performance.html",
+      "sha256": "2796A4CA11F71B0452EEF2646AC17CDB5808766B74397B6C36EE5ACE53642865",
+      "bytes": 48020
+    },
+    {
+      "scope": "run",
+      "path": "baseline/official-documents/printing-and-sharing.html",
+      "sha256": "FCC88919AFCAF2D2FB6C0655EBF2A979FEF1FE3257FAB9E4D56EBCF55240B63E",
+      "bytes": 38228
+    },
+    {
+      "scope": "run",
+      "path": "baseline/official-documents/theming-and-localization.html",
+      "sha256": "DDCC4757227DA113FE629B05E3F97657217B15914B96F7308CDE29011FD84D3C",
+      "bytes": 71500
+    },
+    {
+      "scope": "run",
+      "path": "baseline/source-manifest.json",
+      "sha256": "9BF0794E8213AB1028C5E599423F759C8D3F24C3095D78C220831ED9AA2BA06F",
+      "bytes": 74359
+    },
+    {
+      "scope": "run",
+      "path": "baseline/source-snapshot.zip",
+      "sha256": "329276649E0468A16D06A88841BB88F9C550B10911F27CE7554115C348B765CD",
+      "bytes": 1430097
+    },
+    {
+      "scope": "run",
+      "path": "baseline/targets.json",
+      "sha256": "4538E5C36270E7A5D23A366EDB251C2DEC36B365391A70231B999E8253B97245",
+      "bytes": 1118
+    },
+    {
+      "scope": "run",
+      "path": "final/audit-status.json",
+      "sha256": "3A57E69C71001120629493A145E993454FD1B4FBBB677A35BD357652C8F73E4A",
+      "bytes": 1810
+    },
+    {
+      "scope": "run",
+      "path": "final/document-finalization.json",
+      "sha256": "8E1E28AD8DB332FD9CA226D5F1C3F598776B9713F33FAD4598D1D52B5145DF43",
+      "bytes": 4578
+    },
+    {
+      "scope": "run",
+      "path": "final/documents/pdfviewer-development-plan.md",
+      "sha256": "1E136F6728A4EA150DD698D423A8D015122F990FB94BA46D1358F4D901C29A6B",
+      "bytes": 45388
+    },
+    {
+      "scope": "run",
+      "path": "final/documents/pdfviewer-linux-native.md",
+      "sha256": "359B1730291E65C1261F509AFC28BD61DE30F4AF8C9933F8CFCEE79353692DE3",
+      "bytes": 5249
+    },
+    {
+      "scope": "run",
+      "path": "final/documents/pdfviewer-official-alignment.md",
+      "sha256": "99404D3B7BED523DA283AB61D724A4331C476A244E9A51D04E047D4FB23EB822",
+      "bytes": 31115
+    },
+    {
+      "scope": "run",
+      "path": "final/documents/pdfviewer-p1-contracts.md",
+      "sha256": "CFF5D081C2927918E4C29EAAC8D5FAB5243B3E2E1DB216475B4619F114E55EB0",
+      "bytes": 15722
+    },
+    {
+      "scope": "run",
+      "path": "final/documents/pdfviewer-p1-validation.md",
+      "sha256": "C238292CF496F2E602C629518559312285209A9EB22587A1D144BE01ADAC69CC",
+      "bytes": 10621
+    },
+    {
+      "scope": "run",
+      "path": "final/documents/pdfviewer-performance-plan.md",
+      "sha256": "62202A63EC0C3A5935A4D65DF947770E6CA4DB0CCF9FBF90376C7DFAE2F819DD",
+      "bytes": 32587
+    },
+    {
+      "scope": "run",
+      "path": "final/documents/pdfviewer-platform-plan.md",
+      "sha256": "4492B00E9FCA4F4379E899190F2D7091E1347CCFB789372F26888754F6816965",
+      "bytes": 33587
+    },
+    {
+      "scope": "run",
+      "path": "final/documents/pdfviewer-status.md",
+      "sha256": "66BCC51E5082C6B6D93F882A39F950D5AA8609A519DD9757998C0612F613EBEB",
+      "bytes": 17058
+    },
+    {
+      "scope": "run",
+      "path": "final/documents/pdfviewer-usage.md",
+      "sha256": "B54620A5CC922032AA328DC2515660BFB4F5B5BD686C852F4BB4DDB67286FEED",
+      "bytes": 18270
+    },
+    {
+      "scope": "run",
+      "path": "final/integration-builds.json",
+      "sha256": "FEE54CE0E72E4BED9D5C2E7BD898C7CF65C9B2EBD38B7962EEE128CEA55ABE74",
+      "bytes": 1201
+    },
+    {
+      "scope": "run",
+      "path": "final/manual-visual-review.json",
+      "sha256": "8BB1DF28951D3A83BFF5A3F88D91E8A6F6CC2018B4EBBBDFC86C78B45937B9F9",
+      "bytes": 1637
+    },
+    {
+      "scope": "run",
+      "path": "final/permission-independent-summary.json",
+      "sha256": "98FB3606B3C4015CA65378595204F8B32BAF17AC1DD7980F17557FAB517A381F",
+      "bytes": 1103
+    },
+    {
+      "scope": "run",
+      "path": "final/permission-independent/p-4.pdf",
+      "sha256": "F6D3FE966E7F524765AEB8BB629CEE71E8248FEE63CAB104F97BA2280F58CA8C",
+      "bytes": 919
+    },
+    {
+      "scope": "run",
+      "path": "final/permission-independent/p-64.pdf",
+      "sha256": "1603CCDF1B9C760F48F543858208BFB5248E24B78C05D473D50F9FC278D719E6",
+      "bytes": 920
+    },
+    {
+      "scope": "run",
+      "path": "final/permission-independent/probe.py",
+      "sha256": "7143601D94D1053826DB9B944364C5B2FA443D00E67EBA9EC0E9DFE0108734E0",
+      "bytes": 3797
+    },
+    {
+      "scope": "run",
+      "path": "final/permission-independent/result.json",
+      "sha256": "BD815B8032D0183054E40219878A7A9C4F89104693AC9F02902652E394D1A9B8",
+      "bytes": 1387
+    },
+    {
+      "scope": "run",
+      "path": "final/supplemental-validation.json",
+      "sha256": "B7DB1FFDBDF91B98315CCA835B12FFBE9C88EED74FFCE4F494A1317DD5309836",
+      "bytes": 393242
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/Core.xml",
+      "sha256": "7E74C6173D9AF4CBD320AF7859ACEC3DEA74B39B21DB5DD5DE1A9E07F5FF4B13",
+      "bytes": 66397
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/Headless.xml",
+      "sha256": "AA3C8340DD920DF355D143878C7ECBD3E2C38B1087D1D8962DBD942FED5619DE",
+      "bytes": 24561
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/backend/owned-fixture.pdf",
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "bytes": 1284
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/backend/result.json",
+      "sha256": "4FCFA3602AC896DF81975E9460AAEECBE1B5A13D1A8DE6364C29D4FC25E29617",
+      "bytes": 2876
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/corpus/gnu-make.pdf",
+      "sha256": "A4BC06026984382815E392159E60A4BC356CAC6C5B81E5AE84FA4F58F621F4D3",
+      "bytes": 952174
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/corpus/source.json",
+      "sha256": "105AE69D9253E8D05724A47EDF512255FDB83E77795997D37925367E8AF70405",
+      "bytes": 2062
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/environment.json",
+      "sha256": "1453752DC58530F5396BC413CF337274877F1539F5A55B1F5BE22EFF4341143D",
+      "bytes": 1110
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/backend.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/build-Core.log",
+      "sha256": "B98DF99437BF53D9BF6BC482A11026F749617892882A1F848E5465282C7F95B5",
+      "bytes": 600
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/build-Headless.log",
+      "sha256": "B4093981BA50FE4B61EB4C2ADF6C8E30E57B7C1F89B031B44691252DACB65431",
+      "bytes": 906
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/build.log",
+      "sha256": "45633D2B60DCB48185D48410B0143AA074EE7789D72A72C00BBF9E5013696E94",
+      "bytes": 875
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/dotnet-info.log",
+      "sha256": "6658736207700F9519277D8CF258D76F46648B90C892D46ECC0F85E3162EA05F",
+      "bytes": 2120
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-dynamic.log",
+      "sha256": "9C146122E89DA26D94EFF9FB1BD18701A037F69002AE8E19271DD33DD5A93CFB",
+      "bytes": 1788
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-header.log",
+      "sha256": "7509DBF4140E07D7D511F8085729957EB85A3C6FF8297563EF30731AD1537716",
+      "bytes": 960
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-libHarfBuzzSharp.so-dynamic.log",
+      "sha256": "A3D1F1416CCB5134D8AE885FE6528C875E40B8AD83E56C98C990E1F6E11E5131",
+      "bytes": 1764
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-libHarfBuzzSharp.so-header.log",
+      "sha256": "438BAA3DB6BE8178AD8895EF49C3DF94F13BF7455434EBEFA4C42D83CEDC6A16",
+      "bytes": 958
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-libHarfBuzzSharp.so-ldd.log",
+      "sha256": "8E27F07F87E06A1922FB56631291425908C53B5AED5634FD387CF82A429E6868",
+      "bytes": 313
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-libHarfBuzzSharp.so-versions.log",
+      "sha256": "F9AAF646E731BE8083ABD015F99074C4DFCCA367DF56A5FF6BE74BDE8E34DB2D",
+      "bytes": 16292
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-libSkiaSharp.so-dynamic.log",
+      "sha256": "A30DE9BDA2CBF9FBB508AEB658E6D36C3EFCD384878B58AA0BD8E684BA63B03A",
+      "bytes": 1915
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-libSkiaSharp.so-header.log",
+      "sha256": "4B2FCB96B5B2B73B6B352363B7709300C020375969ED5C397BDA0A89D1D1152A",
+      "bytes": 960
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-libSkiaSharp.so-ldd.log",
+      "sha256": "ECDD03559E0A7D73EA490E92B0A3C4789E09CD2D2449807129E3EA6AD57786AC",
+      "bytes": 1050
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-libSkiaSharp.so-versions.log",
+      "sha256": "299927A269D714D44572B5F40445113C7DF4E5C6B353504E042CA9DFD56DAB82",
+      "bytes": 25328
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-libpdfium.so-dynamic.log",
+      "sha256": "9C146122E89DA26D94EFF9FB1BD18701A037F69002AE8E19271DD33DD5A93CFB",
+      "bytes": 1788
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-libpdfium.so-header.log",
+      "sha256": "7509DBF4140E07D7D511F8085729957EB85A3C6FF8297563EF30731AD1537716",
+      "bytes": 960
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-libpdfium.so-ldd.log",
+      "sha256": "9F5A187F1A630B93E7D0A0764B9D37C580AAE3DDEB88D0F4A564833B60D018B6",
+      "bytes": 392
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-libpdfium.so-versions.log",
+      "sha256": "66D5499FEEFE0D23039BDDCB9E362087FF1831D4D1A56C4C036C157BEB2DFF7B",
+      "bytes": 16796
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/elf-versions.log",
+      "sha256": "66D5499FEEFE0D23039BDDCB9E362087FF1831D4D1A56C4C036C157BEB2DFF7B",
+      "bytes": 16796
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/native-ldd.log",
+      "sha256": "AB2D08663FAAEC500F6995CF6A3E58D482908042D3DA94145F7D9DB6A9A0C391",
+      "bytes": 392
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/native-window.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/prepare-published-source.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/restore-Core.log",
+      "sha256": "CED75BD8B0B7F9F60B89419E34573F729BC10F4E62E64A252500A548664EEDB7",
+      "bytes": 317
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/restore-Headless.log",
+      "sha256": "166B72E004DE21A70F66EBF17882A5F37E0BB981F2C6EE33B42984EB4F1C3295",
+      "bytes": 325
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/restore.log",
+      "sha256": "A7CD1174877C39E57B8AE396024FFFC2D87F2B50CC50D9E85941599E36DADCF1",
+      "bytes": 767
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/system.log",
+      "sha256": "1F46F1A992891C9B1C91098606473F031FF290EB0F305A6E928FD9A429E5899B",
+      "bytes": 1090
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/test-Core.log",
+      "sha256": "8660E598D6314D6F0EA7032D159AAF4938396110F1A09802DC9C76A24B349A51",
+      "bytes": 402
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/logs/test-Headless.log",
+      "sha256": "5EDA56CE249E0D87282A04540E203346210753E7086B8248CDB6A044C2516B2A",
+      "bytes": 422
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/manual-visual-review.json",
+      "sha256": "7BE7827308A334826771EFDD89FBC552CB06BC5124BAB387DDB85F0BAE59D52A",
+      "bytes": 1646
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/native-asset.json",
+      "sha256": "7D9B160E5073DACB0AE15070C5BC4AD1F1581142F533B28B2F0CFC7AA1A4293E",
+      "bytes": 3377
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/native-window/native-window.png",
+      "sha256": "54702C09B328905AF48EAA1AA97431C86703B3EFC9E57515946178789D86CB1D",
+      "bytes": 40686
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/native-window/owned-fixture.pdf",
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "bytes": 1284
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/native-window/result.json",
+      "sha256": "4F35280806FDED89BCB4EA9B35FB3C2E98C9A9514AFF890CA3647D6DA71D1FA3",
+      "bytes": 4480
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/run.json",
+      "sha256": "DD560FD8877410CFA3CB502375B5663649F096084AEB348A1A01BA8EC0923340",
+      "bytes": 7024
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/source-after.json",
+      "sha256": "F067B6F6E945FE2B4E91A48AA755BC010CED60D4C9B5AFC9C8556A892F896C72",
+      "bytes": 12621
+    },
+    {
+      "scope": "run",
+      "path": "linux-built/source-before.json",
+      "sha256": "F067B6F6E945FE2B4E91A48AA755BC010CED60D4C9B5AFC9C8556A892F896C72",
+      "bytes": 12621
+    },
+    {
+      "scope": "run",
+      "path": "linux-environment/environment-provenance.json",
+      "sha256": "618E7B7D82826CBEF6A79946F6ACAAFCA6A327576EE0B2AF23C83EB0C1556397",
+      "bytes": 3540
+    },
+    {
+      "scope": "run",
+      "path": "linux-environment/final-source-copy.json",
+      "sha256": "27A0B413A21E24442F959B43289003B15CAC317D51C61009FA421E6F6050C191",
+      "bytes": 70335
+    },
+    {
+      "scope": "run",
+      "path": "linux-environment/fonts.conf",
+      "sha256": "C33733CF2E85D49919E11B1E491F9223A3BD1E201A5F8CD350AAE1654D9EC0FE",
+      "bytes": 470
+    },
+    {
+      "scope": "run",
+      "path": "linux-environment/linux-build-provenance.json",
+      "sha256": "0F086C41B424B869D92F16C424BFAEF2EA5039B4DFDECE17C715557032FCDE5D",
+      "bytes": 75446
+    },
+    {
+      "scope": "run",
+      "path": "linux-environment/linux-runner-negative-controls.json",
+      "sha256": "4C7EC428C72EBA8D3F919A26E481265CC5A7405653C0A8DCA3EF577EE6020A34",
+      "bytes": 677
+    },
+    {
+      "scope": "run",
+      "path": "linux-environment/replay-config.json",
+      "sha256": "F4855F53EAE13A9BEEA13F956F2B5FD36355B1BBE96FA2AEAAE207F70FECA7A3",
+      "bytes": 589
+    },
+    {
+      "scope": "run",
+      "path": "linux-environment/runtime-download.json",
+      "sha256": "6ED0EE13A529FAB7B09F3E7D3CF9AE48F1B96BCE6B2F3900D7CE4138FB7AB3A6",
+      "bytes": 329
+    },
+    {
+      "scope": "run",
+      "path": "linux-environment/sdk-download.json",
+      "sha256": "745B06ACD68CCFEE632F692DDA17FB010BA80E3DDB9992023D7C8FDC48574AC3",
+      "bytes": 319
+    },
+    {
+      "scope": "run",
+      "path": "linux-environment/source-copy-binding.json",
+      "sha256": "62961433863AA3A563456D512D99607CA740E89CBD160BAFA7E6169CB3478B29",
+      "bytes": 661
+    },
+    {
+      "scope": "run",
+      "path": "linux-environment/ubuntu-package-metadata.txt",
+      "sha256": "2D495BACC3160467E5CD1E51D8F724E3999DA2268A2E61B4714A9C4A2A6B9F3E",
+      "bytes": 7919
+    },
+    {
+      "scope": "run",
+      "path": "linux-environment/workflow-static-validation.json",
+      "sha256": "CAEECBC856D24E2DC5ABECD60802F7F1B834C1136B7ACDBB6C6A1100A5F77A14",
+      "bytes": 1120
+    },
+    {
+      "scope": "run",
+      "path": "linux/Core.xml",
+      "sha256": "E4433BAB0D04183050C739AAEC935D481C48D3E7F770714A8469ECB59D3A2DE7",
+      "bytes": 54990
+    },
+    {
+      "scope": "run",
+      "path": "linux/Headless.xml",
+      "sha256": "4F6EDB0BB9BC6D5BB6475FCD060F9BDE5B8F23EF590BD1A86E242A8EBAB483C9",
+      "bytes": 20461
+    },
+    {
+      "scope": "run",
+      "path": "linux/backend/owned-fixture.pdf",
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "bytes": 1284
+    },
+    {
+      "scope": "run",
+      "path": "linux/backend/result.json",
+      "sha256": "4A2D7BE98E0440F384149D42C3444ECDA44215A33BDC58A63E82C5964893B2AB",
+      "bytes": 2862
+    },
+    {
+      "scope": "run",
+      "path": "linux/corpus/gnu-make.pdf",
+      "sha256": "A4BC06026984382815E392159E60A4BC356CAC6C5B81E5AE84FA4F58F621F4D3",
+      "bytes": 952174
+    },
+    {
+      "scope": "run",
+      "path": "linux/corpus/source.json",
+      "sha256": "105AE69D9253E8D05724A47EDF512255FDB83E77795997D37925367E8AF70405",
+      "bytes": 2062
+    },
+    {
+      "scope": "run",
+      "path": "linux/environment.json",
+      "sha256": "C8087E76EC0ED9A9E721A170EEC32095969C0935DE49FFDEBDC5AE2D9F636D66",
+      "bytes": 1114
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/backend.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/dotnet-info.log",
+      "sha256": "E6D5EAF3B3D1E052AE6EB6EA5152B6F8E6954E17B6582F2DACBA5A009C2740D6",
+      "bytes": 1217
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-dynamic.log",
+      "sha256": "9C146122E89DA26D94EFF9FB1BD18701A037F69002AE8E19271DD33DD5A93CFB",
+      "bytes": 1788
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-header.log",
+      "sha256": "7509DBF4140E07D7D511F8085729957EB85A3C6FF8297563EF30731AD1537716",
+      "bytes": 960
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-libHarfBuzzSharp.so-dynamic.log",
+      "sha256": "A3D1F1416CCB5134D8AE885FE6528C875E40B8AD83E56C98C990E1F6E11E5131",
+      "bytes": 1764
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-libHarfBuzzSharp.so-header.log",
+      "sha256": "438BAA3DB6BE8178AD8895EF49C3DF94F13BF7455434EBEFA4C42D83CEDC6A16",
+      "bytes": 958
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-libHarfBuzzSharp.so-ldd.log",
+      "sha256": "F14F4678B751049371AD653F5DFCFF57C5B0413B3700386BCE6D95A6DDC1DC34",
+      "bytes": 313
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-libHarfBuzzSharp.so-versions.log",
+      "sha256": "F9AAF646E731BE8083ABD015F99074C4DFCCA367DF56A5FF6BE74BDE8E34DB2D",
+      "bytes": 16292
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-libSkiaSharp.so-dynamic.log",
+      "sha256": "A30DE9BDA2CBF9FBB508AEB658E6D36C3EFCD384878B58AA0BD8E684BA63B03A",
+      "bytes": 1915
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-libSkiaSharp.so-header.log",
+      "sha256": "4B2FCB96B5B2B73B6B352363B7709300C020375969ED5C397BDA0A89D1D1152A",
+      "bytes": 960
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-libSkiaSharp.so-ldd.log",
+      "sha256": "C5862AABA9973FEC19C14213A623157970210DC68E9AFC01AC9C5493FC087264",
+      "bytes": 1050
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-libSkiaSharp.so-versions.log",
+      "sha256": "299927A269D714D44572B5F40445113C7DF4E5C6B353504E042CA9DFD56DAB82",
+      "bytes": 25328
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-libpdfium.so-dynamic.log",
+      "sha256": "9C146122E89DA26D94EFF9FB1BD18701A037F69002AE8E19271DD33DD5A93CFB",
+      "bytes": 1788
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-libpdfium.so-header.log",
+      "sha256": "7509DBF4140E07D7D511F8085729957EB85A3C6FF8297563EF30731AD1537716",
+      "bytes": 960
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-libpdfium.so-ldd.log",
+      "sha256": "48FE67F90FB85FFEBCEF69072D252227F56818F68E411B77E22BF50AD46532F6",
+      "bytes": 392
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-libpdfium.so-versions.log",
+      "sha256": "66D5499FEEFE0D23039BDDCB9E362087FF1831D4D1A56C4C036C157BEB2DFF7B",
+      "bytes": 16796
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/elf-versions.log",
+      "sha256": "66D5499FEEFE0D23039BDDCB9E362087FF1831D4D1A56C4C036C157BEB2DFF7B",
+      "bytes": 16796
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/native-ldd.log",
+      "sha256": "16B35F18B0D60281A88FE823B4A4EB4145F802346DEE18BF9CDE9CB628AB3785",
+      "bytes": 392
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/native-window.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/prepare-published-source.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/system.log",
+      "sha256": "CDD15314F1B55BAFED65419948C607ABF10634FCE5C224148FDFA2F788570916",
+      "bytes": 1094
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/test-Core.log",
+      "sha256": "B572AE8E203A21973F07E69B33DE41F6EF775C25B144E245223D4C94D332679F",
+      "bytes": 402
+    },
+    {
+      "scope": "run",
+      "path": "linux/logs/test-Headless.log",
+      "sha256": "6988F37F4851180DAF2F47264B6487412E61F7253C6C125F7A53B330292F26D3",
+      "bytes": 422
+    },
+    {
+      "scope": "run",
+      "path": "linux/manual-visual-review.json",
+      "sha256": "D68B23376A618E0FB4E3D66CD2DFFAD0E00A9C307F763A5D0827ACEC5C0EF85D",
+      "bytes": 1646
+    },
+    {
+      "scope": "run",
+      "path": "linux/native-asset.json",
+      "sha256": "5576D166B0B0F9D47BFF391F07D64280DD9F188F7AAA7BBAB65E2D82E5351916",
+      "bytes": 3361
+    },
+    {
+      "scope": "run",
+      "path": "linux/native-window/native-window.png",
+      "sha256": "54702C09B328905AF48EAA1AA97431C86703B3EFC9E57515946178789D86CB1D",
+      "bytes": 40686
+    },
+    {
+      "scope": "run",
+      "path": "linux/native-window/owned-fixture.pdf",
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "bytes": 1284
+    },
+    {
+      "scope": "run",
+      "path": "linux/native-window/result.json",
+      "sha256": "C9C87B5DE453F1D3FD0DB522A349BF255529DC084E20349BCA06A3E7D434A41F",
+      "bytes": 4458
+    },
+    {
+      "scope": "run",
+      "path": "linux/run.json",
+      "sha256": "445C0D6E9B0927913BA07A79C3E98D3A0B592D8A0A216AE584231D412B8A8027",
+      "bytes": 6104
+    },
+    {
+      "scope": "run",
+      "path": "linux/source-after.json",
+      "sha256": "8639813E93E88E652130B24537900D3BFE3EEA41489BC7E7CC2697F2E9FF116C",
+      "bytes": 12621
+    },
+    {
+      "scope": "run",
+      "path": "linux/source-before.json",
+      "sha256": "8639813E93E88E652130B24537900D3BFE3EEA41489BC7E7CC2697F2E9FF116C",
+      "bytes": 12621
+    },
+    {
+      "scope": "run",
+      "path": "logs/audit-restore.log",
+      "sha256": "0A5293E62D3BB4D8819D8D749F51206D3AA424744E622337BEE96070823F245B",
+      "bytes": 86
+    },
+    {
+      "scope": "run",
+      "path": "logs/audit-vulnerabilities-final.json",
+      "sha256": "EE3867157D1021BB191754D27938C4BEA376A6198235C502C5034B64870E6A03",
+      "bytes": 293
+    },
+    {
+      "scope": "run",
+      "path": "logs/audit-vulnerabilities-final.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "logs/buildDemo.log",
+      "sha256": "4ED40A33805B2E2A4BBA133A483B4C08140CB0159F7BF4CBAE7EAF7D82BC0F3A",
+      "bytes": 2032
+    },
+    {
+      "scope": "run",
+      "path": "logs/buildUsage.log",
+      "sha256": "5FDE7028438EFC0D186FBB583ABD4327C21A1A6D8A36ECEC742065BE892559B7",
+      "bytes": 520
+    },
+    {
+      "scope": "run",
+      "path": "logs/package-consumers.log",
+      "sha256": "E9BCB70675D858A2C3AC5A95D07C127C9C32675DCF039682CECA6F826ECCA991",
+      "bytes": 1382
+    },
+    {
+      "scope": "run",
+      "path": "packages/NT.AvaloniaControl.PdfViewer.0.2.0-preview.2.nupkg",
+      "sha256": "405431FC619331B054E8C193F315E2C031FD687CE11E89621EDD45EE4D64AB01",
+      "bytes": 658866
+    },
+    {
+      "scope": "run",
+      "path": "packages/NT.AvaloniaControl.PdfViewer.Themes.0.2.0-preview.2.nupkg",
+      "sha256": "1D68206BF7F46076714BB404D400F47CCE16FFA83FC4A0E20E16403DE5661EEF",
+      "bytes": 15918
+    },
+    {
+      "scope": "run",
+      "path": "packages/consumer-results.json",
+      "sha256": "BB90A15E27BFB3A3E040E6BEF5EC502B0E89383D0C17A34CD30555D902C2B486",
+      "bytes": 3779
+    },
+    {
+      "scope": "run",
+      "path": "packages/dependency-cache-provenance.json",
+      "sha256": "00CD05A98C3623457D0F266AB87FEA517187782E1E96B2D9EF10556D2CCBF2E0",
+      "bytes": 26956
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/buildDemo-concurrent-charts.log",
+      "sha256": "5B9F435D0E0B683DAC4332537F0DFA454DA359451CD3B5AE6C9C245EB1C85F0F",
+      "bytes": 2716
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/core.xml",
+      "sha256": "4CB5CE59624565E590916F4B88BCEC480599C623D4D8CA55A81FE27749DA0F3C",
+      "bytes": 53627
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/headless.xml",
+      "sha256": "317315137D4D0295D653168D8491D0A48B884AC3751D0E9B246450BC09ECD8B1",
+      "bytes": 19429
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-bad-corpus-current/environment.json",
+      "sha256": "CDA40CC403F7BAB7EEE8972AAA09FAC340B4ED72D953736C23E902704C74D6BC",
+      "bytes": 623
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-bad-corpus-current/logs/dotnet-info.log",
+      "sha256": "268B76A95AE83CF62DE55363492C731DFEB8B19BE560A080D5338C80C6DAEBDB",
+      "bytes": 857
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-bad-corpus-current/logs/prepare-published-source.log",
+      "sha256": "71746DEFB362EFFD09DCA7D14E1D6D2E44D6AFD7D8D8313D595EB0FA85686FE7",
+      "bytes": 144
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-bad-corpus-current/logs/system.log",
+      "sha256": "F60FB6B43E3AE2D56F541C85C634C059AACA4536C839EFC1A320721E73E9C99C",
+      "bytes": 826
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-bad-corpus-current/run.json",
+      "sha256": "B676EDF72042BA49F23E53F9E55E53911C2F3BA2CD95CF74E8CF2436AB98992F",
+      "bytes": 1140
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-bad-corpus-current/source-before.json",
+      "sha256": "1DFDBAFF5F5CA9A2042882D8017E91594DEA14AD99D4AC63757F3A14F597EB1B",
+      "bytes": 12621
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-font-ready-pilot/native-window.png",
+      "sha256": "54702C09B328905AF48EAA1AA97431C86703B3EFC9E57515946178789D86CB1D",
+      "bytes": 40686
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-font-ready-pilot/owned-fixture.pdf",
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "bytes": 1284
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-font-ready-pilot/result.json",
+      "sha256": "142C7F2CFC8217D1022E9E97826084DA11975EEC817F1DEF84726E2D86567473",
+      "bytes": 2898
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-pilot-index.json",
+      "sha256": "F418992C20A1E678C769F3165C6E6C8D261E942FE6F231F7E8779544D7CB9309",
+      "bytes": 4236
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-window-icu-pilot/owned-fixture.pdf",
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "bytes": 1284
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-window-icu-pilot/result.json",
+      "sha256": "116FA5AC0266CB59D65F8B563CC71FD4BF34B2432C67361F7CE74EB2EEEA683B",
+      "bytes": 5699
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-window-session-deps-pilot/native-window.png",
+      "sha256": "4BC564A4128987DB2547FE95284C8C9062D39E05236032AA38D9AE77DF11988C",
+      "bytes": 30226
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-window-session-deps-pilot/owned-fixture.pdf",
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "bytes": 1284
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/linux-window-session-deps-pilot/result.json",
+      "sha256": "308DCE1C2E10928761AEA287F97B44057BBE29CDE37D4E226B738B6E5FB781CD",
+      "bytes": 2898
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/negative-bad-corpus/environment.json",
+      "sha256": "9092B7002842E4705004F269B59B43DC5F39CE7A60E25E710365A81A3D1B5ECA",
+      "bytes": 623
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/negative-bad-corpus/logs/dotnet-info.log",
+      "sha256": "5DD609BD222DCF75563CA7BC862B683DEF568250689BF38F11527FDC385F76D9",
+      "bytes": 741
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/negative-bad-corpus/logs/prepare-published-source.log",
+      "sha256": "71746DEFB362EFFD09DCA7D14E1D6D2E44D6AFD7D8D8313D595EB0FA85686FE7",
+      "bytes": 144
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/negative-bad-corpus/logs/system.log",
+      "sha256": "F60FB6B43E3AE2D56F541C85C634C059AACA4536C839EFC1A320721E73E9C99C",
+      "bytes": 826
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/negative-bad-corpus/run.json",
+      "sha256": "D7EF701DD5252235457FA421FD6690A1603DC6C604832B2759764E2721F53B62",
+      "bytes": 1140
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/negative-bad-corpus/source-before.json",
+      "sha256": "BD87A04A62B49937842AC096D40276269629A5C9210260D67D900F64ECF463B9",
+      "bytes": 12480
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/package-consumers-advisory-unavailable.log",
+      "sha256": "EB61A05A74D068B67A65B60C84B0AAA80BB09CBF65F60F876774D82D00EE8E22",
+      "bytes": 569
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/package-consumers-sandbox-network.log",
+      "sha256": "C78D4A2CB8BE9B56B6CA41A42E27474F175C82ECB37DB13C97F4F0438C088977",
+      "bytes": 2567
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/windows-sandbox-failed/environment.json",
+      "sha256": "E125BF5003C3DA678D6AF97B80E4BDDD954B55951ED3903FE74538C064F73138",
+      "bytes": 332
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/windows-sandbox-failed/logs/dotnet-info.stderr.log",
+      "sha256": "CAB2CFA8983654055EE7CD76FB86208B62F4AD475DBF0AD092B712A9504D723D",
+      "bytes": 2841
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/windows-sandbox-failed/logs/dotnet-info.stdout.log",
+      "sha256": "EB14B715BE6B7E22462352BF9592355FE8120FF0580CE242EDEE121744F42FBE",
+      "bytes": 3461
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/windows-sandbox-failed/run.json",
+      "sha256": "0FD13F687591E14414EC3F0B496134C6E362DEDE3A631AE7754443E4259C5E7F",
+      "bytes": 1963
+    },
+    {
+      "scope": "run",
+      "path": "pilot-diagnostics/windows-sandbox-failed/source-before.json",
+      "sha256": "E2138AF30C278A0B341B8D646AE2A4D74E6C49B9CDA0636C4D9CA6DB1698DA64",
+      "bytes": 12117
+    },
+    {
+      "scope": "run",
+      "path": "windows-binary-copy-for-linux.json",
+      "sha256": "4DF80FDEEAFBAB124B71D43AAC1F4D4CF89BF90847F2F2907EC11632D5BD37F8",
+      "bytes": 113347
+    },
+    {
+      "scope": "run",
+      "path": "windows/Core.xml",
+      "sha256": "1EE24769A4DFB7EE6DE225A9EE6AD1BD2231A8C20F27F2DF71AE3A7143157EC8",
+      "bytes": 54873
+    },
+    {
+      "scope": "run",
+      "path": "windows/Headless.xml",
+      "sha256": "E482F2D683B286B62F35F6BE7F1704A9427C76D4508D93815729C54399672A82",
+      "bytes": 20345
+    },
+    {
+      "scope": "run",
+      "path": "windows/backend/owned-fixture.pdf",
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "bytes": 1284
+    },
+    {
+      "scope": "run",
+      "path": "windows/backend/result.json",
+      "sha256": "A74DD92406384A749FDCC0829609B63D01EB8243CF7A9C448BEFDFD4547065DF",
+      "bytes": 2396
+    },
+    {
+      "scope": "run",
+      "path": "windows/corpus/gnu-make.pdf",
+      "sha256": "A4BC06026984382815E392159E60A4BC356CAC6C5B81E5AE84FA4F58F621F4D3",
+      "bytes": 952174
+    },
+    {
+      "scope": "run",
+      "path": "windows/corpus/source.json",
+      "sha256": "CA864974FD5D252A2CD4DA14CD6CCB52C6B45EB42D74970506A9083CEA7BFD3D",
+      "bytes": 2033
+    },
+    {
+      "scope": "run",
+      "path": "windows/environment.json",
+      "sha256": "632DE21103905D8EB203EB1FD44DC95305D1271CDADCE264F58A5DB5BC611AD8",
+      "bytes": 332
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/backend.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/backend.stdout.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/build-Core.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/build-Core.stdout.log",
+      "sha256": "AD40C51DBB544390F2989644D992EAA238FB47EB9B960C8160A857945CBC83C3",
+      "bytes": 362
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/build-Headless.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/build-Headless.stdout.log",
+      "sha256": "6F52BAE0B57CF682DDC6ACCFB68DE8C29F74C9FA31EA33D816C7219EEFBB5C7E",
+      "bytes": 545
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/build.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/build.stdout.log",
+      "sha256": "6703E511A879E2124BF73EBAC422D0307AAE6922C90741E8BCF6C99048D66BC5",
+      "bytes": 514
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/dotnet-info.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/dotnet-info.stdout.log",
+      "sha256": "965153B8EBCB8CF7F311926570D60009C7AB3AF9917BBBBE727FD0B54782E78F",
+      "bytes": 6106
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/native-window.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/native-window.stdout.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/restore-Core.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/restore-Core.stdout.log",
+      "sha256": "0A5293E62D3BB4D8819D8D749F51206D3AA424744E622337BEE96070823F245B",
+      "bytes": 86
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/restore-Headless.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/restore-Headless.stdout.log",
+      "sha256": "0A5293E62D3BB4D8819D8D749F51206D3AA424744E622337BEE96070823F245B",
+      "bytes": 86
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/restore.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/restore.stdout.log",
+      "sha256": "0A5293E62D3BB4D8819D8D749F51206D3AA424744E622337BEE96070823F245B",
+      "bytes": 86
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/test-Core.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/test-Core.stdout.log",
+      "sha256": "9CD22C60D3DB1E3E130850011917FC521B6C5010C5362970334DE34D170F1098",
+      "bytes": 350
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/test-Headless.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "scope": "run",
+      "path": "windows/logs/test-Headless.stdout.log",
+      "sha256": "88CC7D027BD70E6E497D84DA050414F610F5F3D57CCF9B9CA645894246FA1629",
+      "bytes": 370
+    },
+    {
+      "scope": "run",
+      "path": "windows/native-window/native-window.png",
+      "sha256": "BA6024EF83E8254B76FB02C3C185F211E330082C4C87DBEC5888A6DBFE3F9115",
+      "bytes": 34133
+    },
+    {
+      "scope": "run",
+      "path": "windows/native-window/owned-fixture.pdf",
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "bytes": 1284
+    },
+    {
+      "scope": "run",
+      "path": "windows/native-window/result.json",
+      "sha256": "5E038BFDB5B3E3CB5CDD18DAA7FC461D0D05263B6FFC07BF87695D60846D0AC9",
+      "bytes": 3255
+    },
+    {
+      "scope": "run",
+      "path": "windows/run.json",
+      "sha256": "3A6CE07AE85895C5D00A77A22E8D7D04EF3EA2D89C478AABDEFF0A237979B021",
+      "bytes": 15013
+    },
+    {
+      "scope": "run",
+      "path": "windows/source-after.json",
+      "sha256": "DAE3FAB948BBAA40FA99AB97313C011C31701A669D4C6BAB28BD7A16605B12BD",
+      "bytes": 12254
+    },
+    {
+      "scope": "run",
+      "path": "windows/source-before.json",
+      "sha256": "DAE3FAB948BBAA40FA99AB97313C011C31701A669D4C6BAB28BD7A16605B12BD",
+      "bytes": 12254
+    }
+  ]
+}

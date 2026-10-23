@@ -1,0 +1,386 @@
+{
+  "schemaVersion": 1,
+  "completedUtc": "2026-10-21T09:53:37.034842+00:00",
+  "passed": true,
+  "checks": {
+    "formal-plan-selected-source": true,
+    "formal-tools-protocol-pins-unchanged": true,
+    "runtime-stable-at-freeze": true,
+    "frozen-copy-0-all-sha": true,
+    "frozen-copy-1-all-sha": true,
+    "frozen-copy-2-all-sha": true,
+    "recovery-tool-pins-unchanged": true,
+    "recovery-does-not-change-source-or-thresholds": true,
+    "fresh-linux-recovery-source-all-sha": true,
+    "linux-v1-failed-tool-report-retained": true,
+    "windows-v2-supplement-same-2726-predicates": true,
+    "windows:all-nine-supervised-stages": true,
+    "windows:base-passed": true,
+    "windows:complete-tests-no-skip": true,
+    "windows:native-all-checks": true,
+    "windows:engineering-checks": true,
+    "windows:usage-all-checks": true,
+    "windows:sources-assemblies-stable-through-verify": true,
+    "windows:validated-inputs-match-freeze": true,
+    "windows:base-payloads-still-match": true,
+    "windows:release-zero-warning-error": true,
+    "windows:function:all-package-checks": true,
+    "windows:themes:all-package-checks": true,
+    "windows:exactly-two-consumers": true,
+    "windows:consumer-builds-zero-warning-error": true,
+    "windows:numeric-63-fixed-two-scale": true,
+    "windows:numeric-source-tool-binding": true,
+    "windows:numeric-loaded-payloads": true,
+    "windows:native-numeric-same-core": true,
+    "windows:pixel-all-fixed-22-images": true,
+    "windows:pixel-image-tool-bindings": true,
+    "windows:ten-native-export96-zero-diffs": true,
+    "windows:metadata-all-original-members": true,
+    "windows:metadata-source-tool-binding": true,
+    "windows:exact-24-engineering-pngs": true,
+    "linux:all-nine-supervised-stages": true,
+    "linux:base-passed": true,
+    "linux:complete-tests-no-skip": true,
+    "linux:native-all-checks": true,
+    "linux:engineering-checks": true,
+    "linux:usage-all-checks": true,
+    "linux:sources-assemblies-stable-through-verify": true,
+    "linux:validated-inputs-match-freeze": true,
+    "linux:base-payloads-still-match": true,
+    "linux:release-zero-warning-error": true,
+    "linux:function:all-package-checks": true,
+    "linux:themes:all-package-checks": true,
+    "linux:exactly-two-consumers": true,
+    "linux:consumer-builds-zero-warning-error": true,
+    "linux:numeric-63-fixed-two-scale": true,
+    "linux:numeric-source-tool-binding": true,
+    "linux:numeric-loaded-payloads": true,
+    "linux:native-numeric-same-core": true,
+    "linux:pixel-all-fixed-22-images": true,
+    "linux:pixel-image-tool-bindings": true,
+    "linux:ten-native-export96-zero-diffs": true,
+    "linux:metadata-all-original-members": true,
+    "linux:metadata-source-tool-binding": true,
+    "linux:exact-24-engineering-pngs": true,
+    "api-windows-linux-identical": true,
+    "all-219-previous-types-declarations-retained": true,
+    "all-107-historical-documents-unchanged": true
+  },
+  "sourceCandidate": "c5-engineering-projections-source-v1",
+  "sourceSnapshot": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\source-snapshot-v1.json",
+    "sha256": "D9E7B5DF3611FA6419413090FDF1E2331A3176214910A76A06420AF860EDCCB7",
+    "bytes": 372579
+  },
+  "formalPlan": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\formal-plan-v1.json",
+    "sha256": "56A09F2362DFAF911E0467FF8C8D573A8229642CEE83EC4295FE4DBD9326E65A",
+    "bytes": 6159
+  },
+  "formalRecoveryPlan": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\formal-plan-v2.json",
+    "sha256": "DE7BE8C739EFA836DF61DA46CC07B2FF7019AB053D81D9B5D35F1EA775B5F6FC",
+    "bytes": 10638
+  },
+  "platformPlanVersions": {
+    "windows": "v1",
+    "linux": "v2"
+  },
+  "metadataToolRecovery": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\metadata-tool-recovery-v2.json",
+    "sha256": "9CFEDF4A282876AC75B8027633F19288EABC197928510DB0B24A5D5EA06F1B17",
+    "bytes": 2355
+  },
+  "priorLinuxFailedRun": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v1\\formal-run-v1.json",
+    "sha256": "DC4F5050ACD3DC9E4191CA1449FCB24691121C34344710C00A8A81F64C467354",
+    "bytes": 13554
+  },
+  "linuxRecoveryPreparation": {
+    "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\prepared-linux-recovery-v2.json",
+    "sha256": "CDE205BB5BA1DA9EFE3E28A9DB2D23EB22181166216643717485E8EA42C387C6",
+    "bytes": 1003334
+  },
+  "sourceFiles": 1598,
+  "runtimeInputFiles": 916,
+  "platforms": {
+    "windows": {
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\verification\\functional-v1\\results.json",
+        "sha256": "49A9194DCA69AAC3CE32755EEA9E0ED755A68016299B1CADAEA72C22FE6AAF9C",
+        "bytes": 22234
+      },
+      "formalRun": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\formal-run-v1.json",
+        "sha256": "430C441136C1EF4E18FEC8E85D73A0F50F47BD089805F161E5073E037498DF5C",
+        "bytes": 12919
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\verification\\functional-v1\\charts-smoke.json",
+        "sha256": "F76D7C74C899967B953DA6AFD7A6FD34785AEF0DFC546C6BFB49D141DFE8D78F",
+        "bytes": 5959204
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\verification\\functional-v1\\charts-usage.json",
+        "sha256": "647A1FE27F67AF6092B25FA030908A585C342DEEEF09D069BEDC256231C3426B",
+        "bytes": 71833
+      },
+      "headlessTests": 2236,
+      "demoChecks": 1860,
+      "engineeringDemoChecks": 146,
+      "usageChecks": 462,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 639,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\package-consumers\\20261021T092404677Z-1ca8dd57672241349d5c47fccd37ace1\\function\\consumer-result.json",
+            "sha256": "FAE1ECFA8527D1081F40E6E892A5EA81159A53A79927263DBA461B48BCC3BCAE",
+            "bytes": 110157
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 639,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\package-consumers\\20261021T092404677Z-1ca8dd57672241349d5c47fccd37ace1\\themes\\consumer-result.json",
+            "sha256": "122CDB0F783C0DF6A808A308839B9699B2A17CE650829A3208DC706B84828354",
+            "bytes": 110209
+          }
+        }
+      ],
+      "pngCount": 865,
+      "engineeringPngCount": 24,
+      "numericRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\engineering-projections\\raw.json",
+        "sha256": "A2A1F416CAD37CFD55B3A493FDDC60D7CE9FA977F8D5BF82A8866F3540177DCA",
+        "bytes": 8088472
+      },
+      "numericResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\engineering-projections\\independent-numeric-result.json",
+        "sha256": "6C79F946772BB367D1CC845AF6DF67F0B6BE646A8C00C350A059469B6C34298D",
+        "bytes": 19437356
+      },
+      "numericChecks": 333340,
+      "pixelResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\engineering-projections\\independent-pixel-result.json",
+        "sha256": "E5C02EE0F74B83177B67D81EC75BD443ED0984D59AA7EE662DEE3183C1A66977",
+        "bytes": 69453
+      },
+      "pixelChecks": 233,
+      "metadataResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\engineering-projections\\independent-metadata-result-v2.json",
+        "sha256": "AFC50F2CED5A3E3295E996C1A63FE3DAC8ECA51D1D8626E0F63F19B930623E90",
+        "bytes": 173410
+      },
+      "metadataChecks": 2726,
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\api-v1\\api.txt",
+        "sha256": "67896622121EA2204B2C08553810CA418E2E5407B9E32919CDF2605F5044279D",
+        "bytes": 564923
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\verification\\functional-v1\\environment.json",
+        "sha256": "CB6DA186DC752DE5183AF8D9C3F899E1808CD5D4CB527E48C2561F3135DBBD51",
+        "bytes": 8840
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\verification\\functional-v1\\assembly-manifest.json",
+        "sha256": "946126D020DF023A40F3C67CE7E804A3E8C0D2F8C995E93E732E5F98969D081C",
+        "bytes": 1956
+      },
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\verification\\functional-v1\\validated-input-manifest.json",
+        "sha256": "EB080F051A301314ADD7AEA2C27AA884C654FAB5BCD553C3D825AF7F15437167",
+        "bytes": 146005
+      },
+      "performance": [
+        {
+          "id": "perf-hexbin-100k",
+          "elapsedTicks": 90974,
+          "threadAllocatedBytes": 2031312,
+          "inputCount": 100000,
+          "inputFormula": "X=((i*37)%997)/10;Y=((i*71)%991)/10;Value=1+(i%7)*0.25",
+          "inputSha256": "334451F5A55840BFA3753716434E1DDFB4B443E8200A431F98D10D49DC9373F3"
+        },
+        {
+          "id": "perf-wind-100k",
+          "elapsedTicks": 88959,
+          "threadAllocatedBytes": 1472680,
+          "inputCount": 100000,
+          "inputFormula": "Direction=(i*37)%720-180;Speed=((i*13)%100)/10;Frequency=1+(i%5)*0.25",
+          "inputSha256": "E78D83BA90B32054E01C960424FF284CA5BF0814F2E2B80E9888C70A926C10BB"
+        }
+      ],
+      "stopwatchFrequency": 10000000,
+      "formalSlaEvaluated": false,
+      "physicalInputValidated": false
+    },
+    "linux": {
+      "results": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\verification\\functional-v2\\results.json",
+        "sha256": "E1E39CF3F7BAD3796D0D7AB0FC0B37D4EEEBBFC179061A21B3B0FB1E384F1366",
+        "bytes": 14803
+      },
+      "formalRun": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\formal-run-v2.json",
+        "sha256": "B6DB658A2B359B931AA280C528372D3D97895D6E2F1FA0E586F6079AD84A3DCD",
+        "bytes": 13483
+      },
+      "nativeReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\verification\\functional-v2\\charts-smoke.json",
+        "sha256": "1F280DBE743730CAA86E88A15BAB0D11EAE204235F742D8F10EAA0D00B876BE9",
+        "bytes": 5716389
+      },
+      "usageReport": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\verification\\functional-v2\\charts-usage.json",
+        "sha256": "9E62CA3095099CDCAF4E0B4CC1599CC50DBEF967B6D500C94E38B518CF89C087",
+        "bytes": 69568
+      },
+      "headlessTests": 2236,
+      "demoChecks": 1860,
+      "engineeringDemoChecks": 146,
+      "usageChecks": 462,
+      "consumers": [
+        {
+          "kind": "function",
+          "checks": 639,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\package-consumers\\20261021T094957920Z-a67f0eac6b0d4a168b08805ddffff713\\function\\consumer-result.json",
+            "sha256": "87E5FF236C60728B2EA108368D266764A7DD8B6CE216C0799DD304253D7ABC56",
+            "bytes": 107201
+          }
+        },
+        {
+          "kind": "themes",
+          "checks": 639,
+          "result": {
+            "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\package-consumers\\20261021T094957920Z-a67f0eac6b0d4a168b08805ddffff713\\themes\\consumer-result.json",
+            "sha256": "21A047273B1D8937DDB379A858DB233D62A15CDD5A9C49692794052D810E7343",
+            "bytes": 107254
+          }
+        }
+      ],
+      "pngCount": 865,
+      "engineeringPngCount": 24,
+      "numericRaw": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\engineering-projections\\raw.json",
+        "sha256": "FBFE3D44CE328D671FBD4E07F2FD561C213C62BD8924CBDAE33E88845619EF02",
+        "bytes": 7743763
+      },
+      "numericResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\engineering-projections\\independent-numeric-result.json",
+        "sha256": "94CBCD866779C0AD703699EC1458C912915DBD1856D942D6D4DD4FB671BEA035",
+        "bytes": 19103971
+      },
+      "numericChecks": 333340,
+      "pixelResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\engineering-projections\\independent-pixel-result.json",
+        "sha256": "AA9D95C62411DB3856B8BB54D60CD6314FF77508B2C0C315238393421B3DF8FD",
+        "bytes": 66556
+      },
+      "pixelChecks": 233,
+      "metadataResult": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\engineering-projections\\independent-metadata-result.json",
+        "sha256": "60BF2C0806D783303CE6FD831A075975B23D9E5C379A478E6CD5F0C63A76BF46",
+        "bytes": 170909
+      },
+      "metadataChecks": 2726,
+      "api": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\api-v2\\api.txt",
+        "sha256": "E5D1B564CD268BEFB026ADAC6FB992618B2A9A0282BBFAF5FA160E6B2B6B1DC9",
+        "bytes": 564923
+      },
+      "environment": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\verification\\functional-v2\\environment.json",
+        "sha256": "C6E4BAEB692154ED6F215D94FA26271CBD9954F8266715B1010E410A8AA83E11",
+        "bytes": 6213
+      },
+      "assemblyManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\verification\\functional-v2\\assembly-manifest.json",
+        "sha256": "B3A66821C69CF3516451B49A1EDF96E3D0D30D16BF6CA941D20A00395DCE6F88",
+        "bytes": 1906
+      },
+      "validatedInputManifest": {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\verification\\functional-v2\\validated-input-manifest.json",
+        "sha256": "4E0E40EF9F38E8550B915C304EBD629E0169108DD466B9B9ED6206C420B3BC3F",
+        "bytes": 142687
+      },
+      "performance": [
+        {
+          "id": "perf-hexbin-100k",
+          "elapsedTicks": 9382719,
+          "threadAllocatedBytes": 2031312,
+          "inputCount": 100000,
+          "inputFormula": "X=((i*37)%997)/10;Y=((i*71)%991)/10;Value=1+(i%7)*0.25",
+          "inputSha256": "334451F5A55840BFA3753716434E1DDFB4B443E8200A431F98D10D49DC9373F3"
+        },
+        {
+          "id": "perf-wind-100k",
+          "elapsedTicks": 9424096,
+          "threadAllocatedBytes": 1472680,
+          "inputCount": 100000,
+          "inputFormula": "Direction=(i*37)%720-180;Speed=((i*13)%100)/10;Frequency=1+(i%5)*0.25",
+          "inputSha256": "E78D83BA90B32054E01C960424FF284CA5BF0814F2E2B80E9888C70A926C10BB"
+        }
+      ],
+      "stopwatchFrequency": 1000000000,
+      "formalSlaEvaluated": false,
+      "physicalInputValidated": false
+    }
+  },
+  "api": {
+    "oldTypes": 219,
+    "newTypes": 243,
+    "addedTypes": [
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CarpetGridSnapshot",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CarpetPlot",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.CarpetPoint",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.ChartEngineering",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.EngineeringChartBase",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.EngineeringGridLine",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.EngineeringMarkInfo",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.EngineeringPath",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.EngineeringPointHit",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.HexbinAggregation",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.HexbinBin",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.HexbinChart",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.HexbinPoint",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.HexbinResult",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.SmithChart",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.SmithPoint",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.SmithQuantity",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.TernaryChart",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.TernaryPoint",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.WindObservation",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.WindRoseBin",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.WindRoseChart",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.WindRoseResult",
+      "NT.AvaloniaControl.Charts|NT.AvaloniaControl.Charts.WindRoseSector"
+    ],
+    "removedTypes": [],
+    "removedMembers": {},
+    "changedHeaders": {},
+    "old": {
+      "path": "<REPO_ROOT>\\docs\\charts-c5-technical-trends-api.txt",
+      "sha256": "10ADBAEB93DA13FE31BCBDA9EC70B332458DC4162A50CDA05CB720A8B5C7034E",
+      "bytes": 510585
+    },
+    "windows": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\windows\\run-v1\\api-v1\\api.txt",
+      "sha256": "67896622121EA2204B2C08553810CA418E2E5407B9E32919CDF2605F5044279D",
+      "bytes": 564923
+    },
+    "linux": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c5-engineering-projections-20261021\\linux\\run-v2\\api-v2\\api.txt",
+      "sha256": "E5D1B564CD268BEFB026ADAC6FB992618B2A9A0282BBFAF5FA160E6B2B6B1DC9",
+      "bytes": 564923
+    },
+    "officialApiOrBinaryEquivalence": false
+  },
+  "formalSlaEvaluated": false,
+  "physicalInputValidated": false,
+  "compositorPresentValidated": false,
+  "githubActionsRunExecuted": false,
+  "historicalStandaloneOraclesRerun": false
+}

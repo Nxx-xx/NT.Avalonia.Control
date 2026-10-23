@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 2,
+  "updatedDate": "2026-10-15",
+  "status": "targeted-performance-fixes-and-additional-C2-subset-validated",
+  "fullC2StageComplete": false,
+  "report": "docs/charts-c2-followup.md",
+  "windows": {
+    "report": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-followup\\windows\\C2-followup-20261015-final-v3\\results.json",
+      "sha256": "99503B9094F14B896B30907859271709258EC85DD539C5DBA10F9D2CE03E9D8B"
+    },
+    "coreSha256": "CDB6C56A759233CFBF48FA8B41369FA89CB614F1908E831A803DC4CB5DF04B8D",
+    "themesSha256": "204BE1FA4B8EDFC0C7BBA486CBD689C10BAD7FF5C661BBDFB820F5E24D6BB6DC",
+    "headless": {
+      "status": "passed",
+      "inputKind": "headless-injection",
+      "total": 338,
+      "passed": 338,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "notRun": 0,
+      "result": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-followup/windows/C2-followup-20261015-final-v3/Charts.Headless.Tests.xml"
+    },
+    "nativeChecks": 100,
+    "usageChecks": 35,
+    "nativeEvidence": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-followup\\windows\\C2-followup-20261015-final-v3\\charts-smoke.json",
+      "sha256": "7EDE86C5DCB4BDB95A2D489AE843409ACA4A0691E580CC0BB9520FABAE0D8410"
+    },
+    "usageEvidence": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-followup\\windows\\C2-followup-20261015-final-v3\\charts-usage.json",
+      "sha256": "D3520CA1A5A0C64CE4C7FFCAFB4C97861B7DB487E5456CD2ABAF822F52715003"
+    },
+    "releaseBuildProjects": [
+      "Charts.Headless.Tests",
+      "NT.AvaloniaControl.Demo",
+      "Charts.Usage"
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputs": 498,
+    "validatedInputsStable": true,
+    "outputsStable": true,
+    "allRepositoryInputsStableDuringBaseRun": true,
+    "basePackageConsumersStatus": "explicitly-skipped",
+    "packageAcceptanceSource": "Separate original Test-ChartsPackageConsumer.ps1 execution; the base report explicitly skips this scope.",
+    "packageReport": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-followup\\windows\\C2-followup-20261015-final-v3\\package-consumers\\20261015T152321953Z-ad8247c6d9e64942b19527dd6e96777b\\results.json",
+      "sha256": "3426AC23B3316A7DA3CBD5F14F2A947C0C9F4E7AA6569FBEB371B57B1A4BC9F7"
+    },
+    "isolatedConsumers": [
+      {
+        "kind": "function",
+        "status": "passed",
+        "checks": 37,
+        "noProjectReferences": true,
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-followup\\windows\\C2-followup-20261015-final-v3\\package-consumers\\20261015T152321953Z-ad8247c6d9e64942b19527dd6e96777b\\function\\packages",
+        "report": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-followup\\windows\\C2-followup-20261015-final-v3\\package-consumers\\20261015T152321953Z-ad8247c6d9e64942b19527dd6e96777b\\function\\consumer-result.json",
+        "sha256": "D540AAB5E4ABDDBF331A5BAA6F7DD020536D80F073CE52786F322F53A6751701",
+        "executionKind": "headless-compiled-axaml-mvvm-package-contracts",
+        "nativeWindowValidated": false
+      },
+      {
+        "kind": "themes",
+        "status": "passed",
+        "checks": 37,
+        "noProjectReferences": true,
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-followup\\windows\\C2-followup-20261015-final-v3\\package-consumers\\20261015T152321953Z-ad8247c6d9e64942b19527dd6e96777b\\themes\\packages",
+        "report": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-followup\\windows\\C2-followup-20261015-final-v3\\package-consumers\\20261015T152321953Z-ad8247c6d9e64942b19527dd6e96777b\\themes\\consumer-result.json",
+        "sha256": "E8A762370946FB56CD6F5359511B4A00C27CF6A52039347DAB1640F1CFEC3CB7",
+        "executionKind": "headless-compiled-axaml-mvvm-package-contracts",
+        "nativeWindowValidated": false
+      }
+    ],
+    "visualReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-followup\\windows\\C2-followup-20261015-final-v3\\visual-review.json",
+      "sha256": "1A5F464E1A9C5B480DD123D4357CCE63CE7DDA2C2A02703D33A6422459CBBD12"
+    },
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null
+  },
+  "linux": {
+    "report": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\20261015T141841885Z-perf-candidate-dcdd71d35d7248f5a5e254a0ea6885e9\\linux-final-summary.json",
+      "sha256": "F2A3B0753E3C479ABD57B63215895D5514136EFFDD156198EA39B6937B158085"
+    },
+    "coreSha256": "E657BD20E648BD4174A4243F6FBE32A63D42203AC56BD3CF18E60FFB215E5B45",
+    "themesSha256": "F8B803D7DAEC299546EE199930FE2348E095B47494DA945EAE7B1BC876493E7E",
+    "headless": {
+      "status": "passed",
+      "inputKind": "headless-injection",
+      "total": 338,
+      "passed": 338,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "notRun": 0,
+      "result": "verification/wslg/Charts.Headless.Tests.xml"
+    },
+    "nativeChecks": 100,
+    "usageChecks": 35,
+    "isolatedConsumers": [
+      {
+        "kind": "function-only-application-style",
+        "passed": true,
+        "checks": 37,
+        "noProjectReferences": true,
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/20261015T141841885Z-perf-candidate-dcdd71d35d7248f5a5e254a0ea6885e9/package-consumers/20261015T152813428Z-9c75dc4210aa4ec6855aa895a67d9926/function/packages",
+        "coreAssemblySha256": "E657BD20E648BD4174A4243F6FBE32A63D42203AC56BD3CF18E60FFB215E5B45",
+        "coreMatchesBuiltAssembly": true,
+        "report": "package-consumers/20261015T152813428Z-9c75dc4210aa4ec6855aa895a67d9926/function/consumer-result.json",
+        "resultSha256": "813BEC9414FA8D19DDC22DB0133B1DC1A1275A61AAAFD08212CDEF949CC10EED",
+        "nativeWindowValidated": false,
+        "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+      },
+      {
+        "kind": "function-and-themes",
+        "passed": true,
+        "checks": 37,
+        "noProjectReferences": true,
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/20261015T141841885Z-perf-candidate-dcdd71d35d7248f5a5e254a0ea6885e9/package-consumers/20261015T152813428Z-9c75dc4210aa4ec6855aa895a67d9926/themes/packages",
+        "coreAssemblySha256": "E657BD20E648BD4174A4243F6FBE32A63D42203AC56BD3CF18E60FFB215E5B45",
+        "coreMatchesBuiltAssembly": true,
+        "report": "package-consumers/20261015T152813428Z-9c75dc4210aa4ec6855aa895a67d9926/themes/consumer-result.json",
+        "resultSha256": "8675FFD4A9FE6A58721AA6CA4067C83613ED329D014C8721DACD2492855ADF01",
+        "nativeWindowValidated": false,
+        "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+      }
+    ],
+    "releaseBuildProjects": [
+      "Charts.Headless.Tests",
+      "NT.AvaloniaControl.Demo",
+      "Charts.Usage"
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputs": 498,
+    "matchesFrozenWindowsValidatedInputs": true,
+    "copiedSourcesUnchanged": true,
+    "liveValidatedInputsStillMatchSnapshot": true,
+    "publishedAssembliesUnchangedAfterConsumers": true,
+    "windowsAssembliesUnchanged": true,
+    "environmentKind": "WSL2-WSLg",
+    "environment": "Ubuntu 26.04 x64 / WSL2 kernel 6.6.114.1 / WSLg 1.0.73",
+    "requestedBackend": "x11-via-wslg-xwayland",
+    "actualBackend": null,
+    "actualRenderer": null,
+    "actualGpu": null,
+    "sourceManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\20261015T141841885Z-perf-candidate-dcdd71d35d7248f5a5e254a0ea6885e9\\source-manifest.json",
+      "sha256": "A62B751C5EAEEB8C1E9257EBFEECC60621827A432C9A452CEF38ACA6B99EE2C5"
+    },
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\20261015T141841885Z-perf-candidate-dcdd71d35d7248f5a5e254a0ea6885e9\\validated-input-manifest.json",
+      "sha256": "D838DBF74321AF4B17A89D5639071E902F39875ED518A493439EA92D9596BA61"
+    },
+    "evidenceIndex": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\20261015T141841885Z-perf-candidate-dcdd71d35d7248f5a5e254a0ea6885e9\\evidence-index.json",
+      "sha256": "429D268FD9D11616B5034E1F991EDDE3DECF9ADE96FD731658BA8448844C1A72"
+    },
+    "allRunExecutableAndWritablePathsArePhysicalC": true,
+    "physicalInputValidated": false,
+    "linuxPhysicalDesktopCertified": false,
+    "nativeWaylandValidated": false,
+    "performanceMeasured": false
+  },
+  "performance": {
+    "prototypeRegressionGatePassed": true,
+    "acceptanceScope": "Prototype acceptance of the reproduced first-usable, repeated axis text and small/dense hit regressions addressed in this work; not acceptance of every metric, native presentation, official parity or formal SLA.",
+    "gate": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\C2-regression-fix-20261015\\final-controlled-cdb6c56a-v1\\prototype-regression-gate.json",
+      "sha256": "1E92CD866A0E6694B5D16443BCDBAC7AE934217D7E2D9AE8FC7EC97919BADC8D"
+    },
+    "executionPassed": true,
+    "driver": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\C2-regression-fix-20261015\\final-controlled-cdb6c56a-v1\\driver-result.json",
+      "sha256": "688430D2CAE4D99D1DC1C903A6F487824003327F29A80B89358B42D89885D6E6"
+    },
+    "summary": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\C2-regression-fix-20261015\\final-controlled-cdb6c56a-v1\\summary.json",
+      "sha256": "9AB7269FA574B37DEFE20A8ECB2B5C67866394CBE9DD449FF46BBD7415562073"
+    },
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\C2-regression-fix-20261015\\final-controlled-cdb6c56a-v1\\results.md",
+      "sha256": "B5173013E63E18552F6F635A6D1BCD841928835FB0029522F15B06B19401D76B"
+    },
+    "evidenceManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\C2-regression-fix-20261015\\final-controlled-cdb6c56a-v1\\evidence-manifest.json",
+      "sha256": "2DEA931967FBFB63CBB9E3296B1C07C9F0F7B1D4709ABA1679DF45D27C2643B7"
+    },
+    "freezeManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\C2-regression-fix-20261015\\final-c2-cdb6c56a\\frozen-host.json",
+      "sha256": "407FE00E92CF74CB278C3F486F35F60B247E5CC87B4805F5F9009EB958EEDE45"
+    },
+    "coreSha256": "CDB6C56A759233CFBF48FA8B41369FA89CB614F1908E831A803DC4CB5DF04B8D",
+    "themesSha256": "204BE1FA4B8EDFC0C7BBA486CBD689C10BAD7FF5C661BBDFB820F5E24D6BB6DC",
+    "protocols": {
+      "full8": {
+        "processesPerSide": 5,
+        "warmupsPerProcess": 1,
+        "samplesPerProcess": 5,
+        "hitQueriesPerSample": 5,
+        "measuredSamplesPerSide": 25
+      },
+      "million": {
+        "processesPerSide": 5,
+        "warmupsPerProcess": 1,
+        "samplesPerProcess": 5,
+        "hitQueriesPerSample": 5,
+        "measuredSamplesPerSide": 25
+      },
+      "nonmonotonic": {
+        "processesPerSide": 5,
+        "warmupsPerProcess": 3,
+        "samplesPerProcess": 10,
+        "hitQueriesPerSample": 25,
+        "measuredSamplesPerSide": 50
+      }
+    },
+    "timingProcesses": 45,
+    "comparisons": 6,
+    "managedRetentionProcesses": 3,
+    "managedRetentionCyclesPerProcess": 20,
+    "memoryComparisons": [
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\C2-regression-fix-20261015\\final-controlled-cdb6c56a-v1\\memory-vs-c1.json",
+        "sha256": "7814B7F8F905DAD64DA13989FC00366D06124297D1D3F0DF9F5DFD0A8FC31656"
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\C2-regression-fix-20261015\\final-controlled-cdb6c56a-v1\\memory-vs-c2.json",
+        "sha256": "59EC35EC38FDA8FA842E694EAC9C9B8F5DBA9937A26CA4101FAA4B1B62430F61"
+      }
+    ],
+    "residuals": [
+      "FULL8 scatter record p50: C119.9816ms,04820.5377ms,after21.4006ms (+7.10%/+4.20%). First p50 C121.3745,04821.8308,after21.9847 (+2.85%/+.70%); first p95 improves31.6601/31.2051 to30.7961. These values remain C4 monitoring items, not claimed eliminated or attributed to noise.",
+      "Independent million hitmedian C1.5976 to.6547ms (+9.55%,+.0571ms), while p951.5036 to.8567; FULL8 barhitp95 C1.15 to.1604ms (+.0104ms). All descriptive flags are retained.",
+      "Cache256 entries is not a byte limit; arbitrary long category strings/glyphs have a separate retained-size risk. Numeric20cycle results do not prove arbitrary labels, native/GPU lifecycle, nonmonotonic scratch retention or long-soak memory.",
+      "Initial optimized compilation has measurable process/window/layout cost outside the fixed first-usable sample timer; current diagnostic receipt records actual intervals and all raw warmup observations are retained.",
+      "Formal reference/present/SLA remain pending-C4/blocked; this boolean is a narrow prototype regression gate."
+    ],
+    "platformStatusAtImmutableGateWasPending": true,
+    "platformAcceptanceNowSuppliedSeparately": "See windows/linux fields; the original gate is retained unchanged.",
+    "formalSlaEvaluated": false,
+    "formalPerformancePassed": null,
+    "performanceQualification": "pending-C4",
+    "presentStatus": "blocked-present",
+    "referenceStatus": "blocked-reference"
+  },
+  "api": {
+    "path": "docs/charts-c2-followup-api.txt",
+    "sha256": "83D963D0F721ECBBC10945F7668B76A3A87B26C0336EDC2109B8F6185D8F182F",
+    "capture": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-followup\\api-final-v2\\baseline.json",
+      "sha256": "76617665D1308BE0E3BBA4DE8714E0BCE7249C1C1BE1E0F1CAF5443FE38FDCF7"
+    },
+    "metadataOnly": true,
+    "officialRuntimeExecuted": false
+  },
+  "frozenC0Unmodified": true,
+  "frozenMatrixIds": 200,
+  "officialSourceUrls": 54,
+  "documentationIntegrity": {
+    "report": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-followup\\post-document-checker-v1\\final-receipt.json",
+    "scope": "The external receipt records the actual check result after these documents are written."
+  },
+  "remaining": [
+    "Scatter FULL8 record/first medians and small C1 hit residuals retained in the measured report; no all-metric regression pass is claimed.",
+    "C2 full templates/category legend scrolling, series selection/range selector, additional tracker/axis labels, touch, animation, JPEG and point-level native accessibility remain.",
+    "C4 incremental/LOD/geometry caching, same-X/2D queries, nonmonotonic scratch/large-random retention, arbitrary-label byte budgets and long soak remain.",
+    "AX12 explicit continuous/category/Gap compatibility difference and the historical parallel headless scheduling hang remain.",
+    "Physical Windows and Ubuntu22.04/24.04 desktops, native Wayland/ARM/Kylin/UOS, actual backend/renderer/GPU, input/DPI/multimonitor/UIA/AT-SPI remain.",
+    "Official licensed runtime reference, application cold-start, compositor present/FPS, native/GPU memory and formal SLA remain unqualified."
+  ]
+}

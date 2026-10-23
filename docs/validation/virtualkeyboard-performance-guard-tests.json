@@ -1,0 +1,252 @@
+{
+  "Passed": true,
+  "CaseCount": 41,
+  "Cases": [
+    {
+      "Name": "valid",
+      "Passed": true,
+      "ExpectedGuardPass": true,
+      "GuardExitCode": 0
+    },
+    {
+      "Name": "passed-string-false",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "passed-false",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "missing-first-hit",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "missing-raw-timing",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "negative-raw-timing",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "numeric-string",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "nonfinite-cancel",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "invalid-text-change-count",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "view-model-false",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "view-model-string-false",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "forged-summary",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "incorrect-summary-count",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "raw-regression-with-consistent-summary",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "duplicate-scenario",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "unknown-scenario",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "missing-scenario",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "duplicate-profile",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "unknown-profile",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "wrong-default-delay",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "wrong-short-interval",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "inconsistent-repeat-interval",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "invalid-repeat-summary",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "changed-os-build",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "changed-runtime",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "changed-font",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "changed-theme",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "changed-font-size",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "changed-key-size",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "changed-scaling",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "old-baseline-without-fixture",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "report-without-visual-fixture",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "negative-baseline-threshold",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "missing-semantic-check",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "false-native-focus",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "wrong-mode",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "incomplete-hold-window",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "incomplete-cancel-window",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "focus-observation-string-false",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    },
+    {
+      "Name": "cancel-window-quantization-boundary",
+      "Passed": true,
+      "ExpectedGuardPass": true,
+      "GuardExitCode": 0
+    },
+    {
+      "Name": "cancel-window-below-quantization-boundary",
+      "Passed": true,
+      "ExpectedGuardPass": false,
+      "GuardExitCode": 1
+    }
+  ]
+}

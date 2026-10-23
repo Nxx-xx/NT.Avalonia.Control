@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 2,
+  "updatedDate": "2026-10-16",
+  "status": "targeted-performance-fixes-and-additional-C2-subset-validated",
+  "fullC2StageComplete": false,
+  "report": "docs/charts-c2-templates-readings.md",
+  "windows": {
+    "report": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\windows\\frozen-final-v3-r2\\results.json",
+      "sha256": "B7017452CB318D710786BEFD277306A9A54217D593B40C92DBDC105383B406FE"
+    },
+    "coreSha256": "087ACE2F1437D9CDC4341A60E563F1B2DFD1307EC6F76815A6738D5EDC0AA5F5",
+    "themesSha256": "9FC4AE655E273B039961DA0A5F01D8FDBA32C0411FEC9EF751D17EBBE355C6F2",
+    "headless": {
+      "status": "passed",
+      "inputKind": "headless-injection",
+      "total": 378,
+      "passed": 378,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "notRun": 0,
+      "result": "../windows/frozen-final-v3-r2/Charts.Headless.Tests.xml"
+    },
+    "nativeChecks": 134,
+    "usageChecks": 51,
+    "nativeEvidence": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\windows\\frozen-final-v3-r2\\charts-smoke.json",
+      "sha256": "F2E09FE39B400D777DE2C5A8A53E7F847EBDE56AC9BB952348DA820A2DA4C314"
+    },
+    "usageEvidence": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\windows\\frozen-final-v3-r2\\charts-usage.json",
+      "sha256": "A38B4F70AB26FB36838172355AAC85B34036ECB3603142C35312B343AD9CE21A"
+    },
+    "releaseBuildProjects": [
+      "Charts.Headless.Tests",
+      "NT.AvaloniaControl.Demo",
+      "Charts.Usage"
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputs": 519,
+    "validatedInputsStable": true,
+    "outputsStable": true,
+    "allRepositoryInputsStableDuringBaseRun": true,
+    "basePackageConsumersStatus": "explicitly-skipped",
+    "packageAcceptanceSource": "Separate original Test-ChartsPackageConsumer.ps1 execution; the base report explicitly skips this scope.",
+    "packageReport": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-scatter-c2/20261016-final/windows-package-consumers-v3/20261015T174133675Z-88e83a4e33924e47b2da95c067a02019/results.json",
+      "sha256": "B40242C0474BE37DB22158E9006ADF57295BE1CEC51408398F7476022C32275E"
+    },
+    "isolatedConsumers": [
+      {
+        "kind": "function",
+        "status": "passed",
+        "checks": 55,
+        "noProjectReferences": true,
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\windows-package-consumers-v3\\20261015T174133675Z-88e83a4e33924e47b2da95c067a02019\\function\\packages",
+        "report": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\windows-package-consumers-v3\\20261015T174133675Z-88e83a4e33924e47b2da95c067a02019\\function\\consumer-result.json",
+        "sha256": "EC3BC969EBF35C96DCB4FCCE9ACDFB533EDCA26FEA4F822D5AFB6A8F15D27822",
+        "executionKind": "headless-compiled-axaml-mvvm-package-contracts",
+        "nativeWindowValidated": false
+      },
+      {
+        "kind": "themes",
+        "status": "passed",
+        "checks": 55,
+        "noProjectReferences": true,
+        "freshPackageCache": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\windows-package-consumers-v3\\20261015T174133675Z-88e83a4e33924e47b2da95c067a02019\\themes\\packages",
+        "report": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\windows-package-consumers-v3\\20261015T174133675Z-88e83a4e33924e47b2da95c067a02019\\themes\\consumer-result.json",
+        "sha256": "511A0DD2F68DBC8A73D37ED116B68A54A3B953FFAE017CD412D75641C24547CE",
+        "executionKind": "headless-compiled-axaml-mvvm-package-contracts",
+        "nativeWindowValidated": false
+      }
+    ],
+    "visualReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\windows\\frozen-final-v3-r2\\visual-review.json",
+      "sha256": "B12BAB3D19D44AD52B4C486D3F8EE4A2D557C76753395442EF969C0832A9AD42"
+    },
+    "physicalInputValidated": false,
+    "compositorPresentValidated": false,
+    "actualBackend": null,
+    "actualRenderer": null
+  },
+  "linux": {
+    "report": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\linux\\20261015T174300950Z-count-v3-5933c23092a14a808c7622b2b84ab67e\\linux-final-summary.json",
+      "sha256": "50148A82D5968823D7E96462F7384C2F5C172FE81D5D7555F27744C010388FD1"
+    },
+    "coreSha256": "9C1B7ACB6590E783F22586604CF546607908BC4D266D7D3EF2601EF10BC3C5E9",
+    "themesSha256": "D249D969A5D694A46D4737D216C9644AA2585B8B6E271FDB9CD769BF8940B31C",
+    "headless": {
+      "status": "passed",
+      "inputKind": "headless-injection",
+      "total": 378,
+      "passed": 378,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "notRun": 0,
+      "result": "verification/wslg/Charts.Headless.Tests.xml"
+    },
+    "nativeChecks": 134,
+    "usageChecks": 51,
+    "isolatedConsumers": [
+      {
+        "kind": "function-only-application-style",
+        "passed": true,
+        "checks": 55,
+        "noProjectReferences": true,
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-scatter-c2/20261016-final/linux/20261015T174300950Z-count-v3-5933c23092a14a808c7622b2b84ab67e/package-consumers/20261015T174736301Z-96268cf7991f490d95b825dd0e7bc3f0/function/packages",
+        "coreAssemblySha256": "9C1B7ACB6590E783F22586604CF546607908BC4D266D7D3EF2601EF10BC3C5E9",
+        "coreMatchesBuiltAssembly": true,
+        "report": "package-consumers/20261015T174736301Z-96268cf7991f490d95b825dd0e7bc3f0/function/consumer-result.json",
+        "resultSha256": "09A8BCB32AD3DE6900F1A5068950105DE5D12E88B12BA3ED80444F5F01836DAB",
+        "nativeWindowValidated": false,
+        "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+      },
+      {
+        "kind": "function-and-themes",
+        "passed": true,
+        "checks": 55,
+        "noProjectReferences": true,
+        "freshPackageCache": "/mnt/c<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-scatter-c2/20261016-final/linux/20261015T174300950Z-count-v3-5933c23092a14a808c7622b2b84ab67e/package-consumers/20261015T174736301Z-96268cf7991f490d95b825dd0e7bc3f0/themes/packages",
+        "coreAssemblySha256": "9C1B7ACB6590E783F22586604CF546607908BC4D266D7D3EF2601EF10BC3C5E9",
+        "coreMatchesBuiltAssembly": true,
+        "report": "package-consumers/20261015T174736301Z-96268cf7991f490d95b825dd0e7bc3f0/themes/consumer-result.json",
+        "resultSha256": "75E3176ED71F1F07D268A83141B0321F05272A8F7FB823E6349525B226A26313",
+        "nativeWindowValidated": false,
+        "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+      }
+    ],
+    "releaseBuildProjects": [
+      "Charts.Headless.Tests",
+      "NT.AvaloniaControl.Demo",
+      "Charts.Usage"
+    ],
+    "releaseBuildWarnings": 0,
+    "releaseBuildErrors": 0,
+    "validatedInputs": 519,
+    "matchesFrozenWindowsValidatedInputs": true,
+    "copiedSourcesUnchanged": true,
+    "liveValidatedInputsStillMatchSnapshot": true,
+    "frozenSourceRepository": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\frozen-repo-v3",
+    "frozenSourceRepositoryUnchanged": true,
+    "liveChartsInputs": 133,
+    "liveChartsInputsMatchFrozenSnapshot": true,
+    "liveFullRepositoryEqualityRequired": false,
+    "liveEqualityScope": "Only declared Charts runtime/themes, tests, Usage, Charts Demo and host, benchmark and verification harness inputs gate equality; unrelated PdfViewer live changes remain explicitly listed and are never claimed identical.",
+    "publishedAssembliesUnchangedAfterConsumers": true,
+    "windowsAssembliesUnchanged": true,
+    "environmentKind": "WSL2-WSLg",
+    "environment": "Ubuntu 26.04 x64 / WSL2 kernel 6.6.114.1 / WSLg 1.0.73",
+    "requestedBackend": "x11-via-wslg-xwayland",
+    "actualBackend": null,
+    "actualRenderer": null,
+    "actualGpu": null,
+    "sourceManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\linux\\20261015T174300950Z-count-v3-5933c23092a14a808c7622b2b84ab67e\\source-manifest.json",
+      "sha256": "90C1E6C0442AECD8D8A2D0D22202C00721FFB727C478047F3F667695C4784766"
+    },
+    "validatedInputManifest": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\linux\\20261015T174300950Z-count-v3-5933c23092a14a808c7622b2b84ab67e\\validated-input-manifest.json",
+      "sha256": "8065DF3ADDA29E5E7CAC78BEA59404DEA1BE0C73EBDCC312AAFDD39E0D6A579E"
+    },
+    "evidenceIndex": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\linux\\20261015T174300950Z-count-v3-5933c23092a14a808c7622b2b84ab67e\\evidence-index.json",
+      "sha256": "6AC0ED107E1B28410A66EF20EF8E184154509EBEDF68D251498B2C4215D81E79"
+    },
+    "allRunExecutableAndWritablePathsArePhysicalC": true,
+    "warningLogSummary": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\linux\\20261015T174300950Z-count-v3-5933c23092a14a808c7622b2b84ab67e\\build-warning-summary-v3.json",
+      "sha256": "6C7C32EEAAB0427BE7294D07DD2668F0726508D4660B6E261A214748A6D8E526"
+    },
+    "diagnosticWarningCount": 0,
+    "visualReview": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\linux\\20261015T174300950Z-count-v3-5933c23092a14a808c7622b2b84ab67e\\visual-review.json",
+      "sha256": "A0881D25BB17FC243817FFF2A04A0BA9A6A2B17663576FC11D4CB8FBCE6C986D"
+    },
+    "heavyWorkStopped": true,
+    "physicalInputValidated": false,
+    "linuxPhysicalDesktopCertified": false,
+    "nativeWaylandValidated": false,
+    "performanceMeasured": false
+  },
+  "performance": {
+    "prototypeRegressionGatePassed": true,
+    "expectedPrototypeGatePass": true,
+    "acceptanceScope": "Targeted prototype acceptance of the diagnosed scatter drawing regression in FULL8 and isolated S10-S only; not every metric or a complete performance SLA.",
+    "gate": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-c2-readings-20261016\\final-controlled-087ace2f-v1\\reports-v1\\prototype-regression-gate.json",
+      "sha256": "66AF53E5CBE452528CDE204CA1097404B9A62016F6BC968EA4534B3B17670498"
+    },
+    "executionPassed": true,
+    "driver": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-c2-readings-20261016\\final-controlled-087ace2f-v1\\driver-result.json",
+      "sha256": "1F7E667C20039A84DE5485FDC7929C5EC5DC8B923497F2736091FD3BABD0A7F9"
+    },
+    "summary": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-c2-readings-20261016\\final-controlled-087ace2f-v1\\reports-v1\\summary.json",
+      "sha256": "60FBD63DFAF67D990EBE14595689F77802375C79CD69DBC1262B23EAC3F54125"
+    },
+    "results": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-c2-readings-20261016\\final-controlled-087ace2f-v1\\reports-v1\\results-zh.md",
+      "sha256": "8A8E1E67A268840C020D57C8E6B43B3C3330B7BA0711C58D8E77FF4B0C830D20"
+    },
+    "evidenceManifest": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-c2-readings-20261016/final-controlled-087ace2f-v1/evidence-manifest.json",
+      "sha256": "FF09AB300F20E1B108832C513FE46EF40F6D05E2771BEC346901E4F6A7081526"
+    },
+    "freezeManifest": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-regression/charts-c2-readings-20261016/final-c2-readings-087ace2f/freeze.json",
+      "sha256": "441F61D9A47518C2C81FD9F34581CE468A6790EAFE207988AC0A32E46F7B143F"
+    },
+    "coreSha256": "087ACE2F1437D9CDC4341A60E563F1B2DFD1307EC6F76815A6738D5EDC0AA5F5",
+    "themesSha256": "9FC4AE655E273B039961DA0A5F01D8FDBA32C0411FEC9EF751D17EBBE355C6F2",
+    "protocols": {
+      "full8": {
+        "processesPerSide": 5,
+        "warmupsPerProcess": 1,
+        "samplesPerProcess": 5,
+        "hitQueriesPerSample": 5,
+        "measuredSamplesPerSide": 25,
+        "scenarios": null
+      },
+      "scatter": {
+        "processesPerSide": 5,
+        "warmupsPerProcess": 1,
+        "samplesPerProcess": 5,
+        "hitQueriesPerSample": 5,
+        "measuredSamplesPerSide": 25,
+        "scenarios": "S10-S"
+      },
+      "million": {
+        "processesPerSide": 5,
+        "warmupsPerProcess": 1,
+        "samplesPerProcess": 5,
+        "hitQueriesPerSample": 5,
+        "measuredSamplesPerSide": 25,
+        "scenarios": "S1M-L"
+      },
+      "nonmonotonic": {
+        "processesPerSide": 5,
+        "warmupsPerProcess": 3,
+        "samplesPerProcess": 10,
+        "hitQueriesPerSample": 25,
+        "measuredSamplesPerSide": 50,
+        "scenarios": "S10-L-NONMONOTONIC"
+      }
+    },
+    "timingProcesses": 80,
+    "comparisons": 12,
+    "managedRetentionProcesses": 4,
+    "managedRetentionCyclesPerProcess": 20,
+    "memoryComparisons": [
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-c2-readings-20261016\\final-controlled-087ace2f-v1\\memory-vs-c1.json",
+        "sha256": "7DC7E2B839D81E4EEA01263BF96E4E75473D9C1C27E208B85BE714402B5E8487"
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-c2-readings-20261016\\final-controlled-087ace2f-v1\\memory-vs-c2.json",
+        "sha256": "29DE8C5CB9D3065A2300F6278A035E047688CA0F27DA42C8D79661A377FF9C22"
+      },
+      {
+        "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-regression\\charts-c2-readings-20261016\\final-controlled-087ace2f-v1\\memory-vs-cdb6.json",
+        "sha256": "1D39B348C5FECE9E6157C90C84F5245774E4EEDFF29A2FD93A2393B14E489758"
+      }
+    ],
+    "adverseMetricsCount": 227,
+    "adverseMetricsSource": "gate.otherAdverseMetrics",
+    "descriptiveMaterialFlagsCount": 36,
+    "nonTargetReviewRequired": true,
+    "nonTargetRegressionReviewPassed": null,
+    "completeRegressionPassed": null,
+    "gateNotes": [
+      "Execution passed, targeted pass and formal performance qualification are distinct.",
+      "All four sides and all four pools are preserved. FULL8 is never pooled with isolated samples.",
+      "Every other upward metric remains visible. Significant new million/bar/small-scene regressions require native/allocation/lifecycle review before completion and cannot be waived by this gate scope.",
+      "Initial window/layout/JIT outside the existing harness window is not a measured cold-start improvement; all warmups remain in the summary.",
+      "The fixed default no-hover benchmark does not quantify opt-in SharedY first-build sorting or tooltip-template/crosshair-label performance."
+    ],
+    "platformAcceptanceSeparateFromGate": true,
+    "platformAcceptanceSource": "See windows/linux fields; the original gate is retained unchanged.",
+    "formalSlaEvaluated": false,
+    "formalPerformancePassed": null,
+    "performanceQualification": "pending-C4",
+    "presentStatus": "blocked-present",
+    "referenceStatus": "blocked-reference"
+  },
+  "api": {
+    "path": "docs/charts-c2-templates-readings-api.txt",
+    "sha256": "1F49125F49471DFE6202AE2D411DE98A9A7BB9D9716B095430041DD61AE5C5B7",
+    "capture": {
+      "path": "<USER_HOME>\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-scatter-c2\\20261016-final\\api\\frozen-final-v3\\baseline.json",
+      "sha256": "727781591F75444994561C4C8C1F5CAC17F713B51B177345EC7D230DD5AEEE0D"
+    },
+    "metadataOnly": true,
+    "officialRuntimeExecuted": false
+  },
+  "frozenC0Unmodified": true,
+  "frozenMatrixIds": 200,
+  "officialSourceUrls": 54,
+  "sourceSnapshot": {
+    "repository": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-scatter-c2/20261016-final/frozen-repo-v3",
+    "receipt": {
+      "path": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-scatter-c2/20261016-final/source-snapshot-v3.json",
+      "sha256": "BD10E82D15E738CE5D1C778BE396EB626379CCF6AF1F6BA1AFC7081C0A20DE47"
+    },
+    "fullFrozenBuildInputsMatch": true,
+    "liveFullRepositoryMatchClaimed": false,
+    "liveChartsScope": "Charts libraries/tests/Demo chart pages and host/Usage/shared configuration/Charts harness: separately verified by the final checker."
+  },
+  "documentationIntegrity": {
+    "report": "<USER_HOME>/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-scatter-c2/20261016-final/integrity/final-evidence-v3-v2.json",
+    "scope": "The external receipt records the actual check result after these documents are written; final docs are independent of the immutable build snapshot."
+  },
+  "remaining": [
+    "All measured residuals remain in the final regression gate/report; a targeted scatter acceptance is not an all-metric regression or formal SLA pass.",
+    "C2 legend/data-label templates/category legend scrolling, series selection/range selector, segment interpolation/additional tracker modes, touch, animation, JPEG and point-level native accessibility remain.",
+    "Opt-in SharedY nonmonotonic Y first-index construction uses O(n log n) sorting and transient double keys; default no-hover benchmark results do not qualify that path at a million points.",
+    "C4 incremental/LOD/geometry caching, same-X/2D queries, nonmonotonic scratch/large-random retention, arbitrary-label byte budgets and long soak remain.",
+    "AX12 explicit continuous/category/Gap compatibility difference and the historical parallel headless scheduling hang remain.",
+    "Physical Windows and Ubuntu22.04/24.04 desktops, native Wayland/ARM/Kylin/UOS, actual backend/renderer/GPU, input/DPI/multimonitor/UIA/AT-SPI remain.",
+    "Official licensed runtime reference, application cold-start, compositor present/FPS, native/GPU memory and formal SLA remain unqualified."
+  ],
+  "evidenceRole": "historical-087-template-readings-candidate-only",
+  "supersededBy": {
+    "report": "docs/charts-tail-latency.md",
+    "validation": "docs/charts-tail-latency-validation.json",
+    "candidate": "v15",
+    "note": "All original 087 measurements and platform results below remain historical; never reuse them as current v15 acceptance."
+  }
+}
