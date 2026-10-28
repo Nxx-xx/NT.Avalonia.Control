@@ -1,4 +1,100 @@
 # NT.AvaloniaControl.Charts
+
+## Linux 原生字体的早期接入
+
+使用当前锁定的 Avalonia Desktop / HarfBuzzSharp `8.3.1.3`，且需要规避 glibc Linux 上系统 HarfBuzz 与打包资产的符号抢占时，在正常应用的 `BuildAvaloniaApp` 中显式接入：
+
+```csharp
+using Avalonia;
+using NT.AvaloniaControl.Charts;
+
+public static AppBuilder BuildAvaloniaApp() => AppBuilder.Configure<App>()
+    .WithChartsNativeTextIsolation()
+    .UsePlatformDetect();
+```
+
+扩展立即执行，必须位于 Avalonia setup、应用实例创建和任何 HarfBuzzSharp 原生调用之前；也可在入口最早处直接调用 `ChartNativeTextBinding.Initialize()`。不要放到 `App.Initialize()`、窗口构造或字体回调中。重复及并发初始化共享同一个结果。未调用 API 时没有自动初始化；Windows、macOS 等不适用系统为 `NotApplicable`，不加载 Linux 原生资产或 HarfBuzzSharp 托管程序集。Core Charts 不因此增加对 Avalonia.Skia / HarfBuzzSharp 的包依赖，桌面应用仍需自己的正常锁定依赖。
+
+glibc Linux x64 / arm64 分别核对该版本的已知原生资产大小和 SHA-256；从 `AppContext.BaseDirectory/runtimes/<rid>/native/libHarfBuzzSharp.so` 或 RID 发布后的 `AppContext.BaseDirectory/libHarfBuzzSharp.so` 读取绝对路径，不搜索当前工作目录、系统库、NuGet 缓存或环境库路径。两个位置同时存在时两者均需匹配，避免静默忽略旧部署文件。当前架构的资产不存在或不匹配时明确失败；不会从另一架构回退。arm64 有独立资产指纹和路径支持，不能据此推断已完成 arm64 实机验收。
+
+初始化使用 glibc 的 `RTLD_NOW | RTLD_LOCAL | RTLD_DEEPBIND`，核对实际 `hb_font_create` / `hb_version_string` 符号提供者及原生版本，并仅为当前 HarfBuzzSharp 托管程序集设置 resolver。其绑定会影响同一程序集在本进程中的 Avalonia 文字使用，不局限于某个图表。没有 module initializer、全局 `LD_PRELOAD`、依赖升级或系统设置修改；已生效的原生句柄保留至进程结束。
+
+`ChartNativeTextBinding.Diagnostics` 返回不可变快照，可公开读取 `Status`、`PackageVersion`、`RuntimeIdentifier`、`GlibcVersion`、资产路径/字节数/SHA、`NativeVersion`、`SymbolProviderPath`、`ResolverRegistered`、`ResolverObserved`、`ResolverInvocationCount`、`ResolvedLibraryName`、`DeepBindingEnabled` 和错误代码/消息。读取本身不启动字体或加载原生库。`Initialized` 表示初始化检查完成；只有实际 HarfBuzzSharp import 后 `ResolverObserved` 才为 true，仍需真实多语文字渲染验证。诊断含本地资产路径，由应用决定日志披露范围。
+
+```csharp
+var state = ChartNativeTextBinding.Diagnostics;
+Console.WriteLine($"{state.Status}: {state.RuntimeIdentifier}, " +
+    $"provider={state.SymbolProviderPath}, imports={state.ResolverInvocationCount}");
+```
+
+已创建 Avalonia 应用或已映射 `libHarfBuzzSharp.so` 会以 `TooLate` 拒绝；无法读取 `/proc/self/maps` 时也不猜测早期资格。musl、其他 Linux 架构、非支持托管版本及缺失资产均失败。已有外部 resolver 时报告 `ResolverConflict`，不替换或串接未知 resolver；应用需选定一个最早期的绑定责任方。适用 Linux 上的失败抛出 `InvalidOperationException`，`Diagnostics.Status=Failed` 且保留原因；失败结果不可重试，已注册的 resolver 会拒绝默认回退。修正部署或初始化顺序后重启，不能捕获异常后继续渲染。应用仍需保证初始化前没有其他线程并行使用字体；公开 .NET API 无法枚举或撤销已缓存的 P/Invoke 绑定。
+
+支持范围集中在 `NativeText/` 中的版本和双架构资产映射。未来依赖升级必须同时重新检查托管版本、两个原生资产指纹、符号提供者、冲突/过晚场景及真实冷启动，不能删掉检查来接受未知二进制。本入口不代表已认证单文件、裁剪、NativeAOT、其他 libc、所有发行版或物理设备；最终 Windows/Linux 验证及仍开放的环境问题以本轮报告为准。
+
+C7-01 已接入共用高对比主题、专业 Tooltip、共享图例/数据标签及专业 PlotAreaContent/Trackball，并继续补齐专业范围选择与业务 ID 联动。当前实现、Windows/Linux 验证与剩余问题见[范围与联动报告](../../docs/charts-c7-range-linking.md)；历史证据保留在[专业绘图区/Trackball 报告](../../docs/charts-c7-plotarea-trackball.md)、[共享呈现报告](../../docs/charts-c7-shared-presentations.md)、[集成报告](../../docs/charts-c7-integration.md)和[Tooltip/导出报告](../../docs/charts-c7-tooltips-export-stability.md)。
+## 专业图族 Tooltip 模板
+
+`EngineeringChartBase` 及其层级、关系、地图、排程、比较和运营图族，以及 `AnalysisChartBase` 的漏斗、金字塔、Heatmap，可设置 `TooltipContentTemplate : IDataTemplate`。模板控件的 DataContext 为 `ChartDataTooltipContext`：`Text` 是当前图族的标准读数，`Anchor` 使用图表局部 DIP；`Members` 保留该标记贡献的全部原始 `Item`、`StableId`、`SourceIndex` 与数值元数据。`EngineeringHit` 提供聚合标记，分析图使用 `PointHit`，不会把聚合值伪装为一个原始观测。`BusinessDataContext` 单独保留读取时的业务 VM。
+
+```csharp
+using Avalonia.Controls;
+using Avalonia.Controls.Templates;
+using Avalonia.Data;
+using NT.AvaloniaControl.Charts;
+
+var chart = new MosaicChart
+{
+    ItemsSource = new[]
+    {
+        new { Id = "a", Label = "业务 A", Column = "线上", Row = "完成", Value = 3d },
+        new { Id = "b", Label = "业务 B", Column = "线上", Row = "完成", Value = 5d },
+    },
+};
+chart.TooltipContentTemplate = new FuncDataTemplate<ChartDataTooltipContext>((_, _) =>
+{
+    var text = new TextBlock();
+    text.Bind(TextBlock.TextProperty, new Binding(nameof(ChartDataTooltipContext.Text)));
+    return text;
+});
+```
+
+控件在读取更新时复用，应通过 DataContext 绑定更新文字。XAML 使用 `DataTemplate x:DataType="charts:ChartDataTooltipContext"`；业务 VM 和原始 `Members.Item` 可交给各自具备业务类型的 `ContentControl.ContentTemplate`。模板加入图表逻辑/视觉树并继承资源、字体和主题；外框使用 `TooltipBackground`、`TooltipForeground`、`TooltipBorderBrush`，局部值和绑定优先。控件限制在图表边界内，禁用命中和 Tab 导航。
+
+未设置模板时保留实时默认文本；模板 Build 返回 null 时隐藏当前提示。Build 或布局错误清理已创建的子树后传播，该失败模板停止重试，替换模板可恢复。源通知、换源、隐藏、禁用和卸载立即清除旧控件的读取上下文；恢复显示或启用后可恢复仍有效的读取。模板不得返回已有父级的控件，也不能在 Build/布局回调中重入导出。
+
+这些专业图族的 PNG/JPEG 同步和异步导出统一排除所有瞬态 Tooltip，包括默认文本与模板控件。Cartesian 保留既有 `ChartTooltipContext`、模板和导出契约。`Members` 直接引用当前帧的原始成员列表；模板自行展开大聚合的全部成员时，需控制所创建的 UI 数量。
+
+## 专业图族共享图例与数据标签模板
+
+`EngineeringChartBase`、`AnalysisChartBase` 及其全部派生控件共用 `LegendItemTemplate` 和 `DataLabelTemplate`。图例模板接收 `ChartDataLegendItemContext`；数据标签接收独立的 `ChartDataLabelItemContext`，与 Cartesian 系列使用的 `ChartDataLabelContext` 保持各自契约。
+
+```csharp
+chart.LegendItemTemplate = new FuncDataTemplate<ChartDataLegendItemContext>((_, _) =>
+{
+    var text = new TextBlock();
+    text.Bind(TextBlock.TextProperty, new Binding(nameof(ChartDataLegendItemContext.Text)));
+    return text;
+});
+chart.DataLabelTemplate = new FuncDataTemplate<ChartDataLabelItemContext>((_, _) =>
+{
+    var text = new TextBlock();
+    text.Bind(TextBlock.TextProperty, new Binding(nameof(ChartDataLabelItemContext.Text)));
+    return text;
+});
+chart.MaxLegendItems = 8;
+chart.MaxDataLabels = 40;
+```
+
+两种上下文均提供 `Text`、`Anchor`、`Bounds`、`Brush`、`Value`、`BusinessDataContext` 和完整原始 `Members`。工程标记使用 `EngineeringHit`，单点分析图使用 `PointHit`；Mosaic 等聚合标记直接保留当前标记的完整成员列表，不将聚合值替换成一条虚构观测。XAML 可为这两个上下文设置 `x:DataType`，业务 VM 通过 `BusinessDataContext` 进入自己的类型化模板。
+
+`GetLegendItems()` 与 `GetDataLabels()` 提供当前有界候选，独立于模板是否启用。`MaxLegendItems` 默认32、范围0～1024；`MaxDataLabels` 默认200、范围0～4096。候选按图族顺序截取，0关闭该共享呈现。它们限制创建的模板根控件数量，不限制业务模板自行展开 `Members` 的子控件数；大聚合需由应用控制展示数量。页脚和图表边界会裁切超出的内容，模板应保持紧凑；当前未提供共享图例滚动或通用标签避让。
+
+图例的 `Kind` 区分真实标记、分类、连续色标和相对大小示意。层级图保留可见终端分类与9:4:1大小键；地图按实际图层保留分类键、色标渐变、`Minimum/Maximum` 和原始成员。装饰性大小键没有业务 `Members`。关系图的节点与边使用各自原始身份域；表格、排程和比较图的数据标签沿用自己的单元、事件碰撞、端点和复合标记语义，轴标题、组标题及无数据地图标签仍是装饰。现有 `ShowLabels`、`ShowValues`、节点/边标签和图例开关继续生效。共享图例和标签为被动控件，不接收指针或 Tab；原有图形选择与键盘浏览仍返回原始数据。
+
+模板控件加入真实逻辑/视觉树，继承图表资源、字体、`Foreground` 和主题。稳定帧复用控件，换源、属性通知、业务 DataContext 改变后清除旧读取；替换模板、隐藏或卸载释放子树，恢复显示后重建。控件禁用时永久图例和标签仍显示。模板 Build 返回 null 隐藏该候选，新读取可重新判断；Build/布局异常清理后传播，失败模板停止重试，替换模板恢复。模板必须返回无父级控件，且不得在模板更新或绘制过程中重入导出。
+
+永久图例和数据标签同时进入 PNG/JPEG 同步与异步导出，并遵循既有像素尺寸、DPI、背景、取消和失败契约；瞬态 Tooltip 继续排除。导出前完成模板布局，捕获期间的数据或模板重入变更会拒绝此次导出，避免成功输出混合帧。Demo 的“专业图族共享图例与数据标签模板”及 Charts.Usage 包含 Funnel、聚合 Mosaic、StripPlot、SeatMap 实例，平台结果和剩余边界见仓库 C7 文档。
+
 ## C5 统计目录补齐
 
 新增 `BeeswarmChart` / `BeeswarmPlotChart`、`StripPlot` / `StripPlotChart`、`ContourPlot`、`MosaicChart`、`ParallelCoordinatesChart`、`RidgelineChart`、`ViolinPlot`。它们继承现有原始来源选择、键盘、Tooltip、缩放/平移和 PNG/JPEG 同步/异步导出；没有通知的输入调用 Refresh()，可观察输入在 UI 线程更新。验证与限制见 `docs/charts-c5-completion.md`。
@@ -697,3 +793,91 @@ Bubble cloud 与 Packed bubble 对可见终端节点绘制统一面积比例的�
 有效的极小正值仍可低于屏幕分辨率。极小扇区可能出现 `StartAngle + SweepAngle == StartAngle` 的坐标舍入，矩形或圆也可能小于一个像素；数值快照保留正值和原始身份，但不保证形成可见、可命中或可放置标签的区域。当前没有为所有小项强制最小像素尺寸，不能将这种可见性限制写作源数据无效。
 
 动画支持入场、数据和视图触发、`AnimationDuration/AnimationDelay/AnimationEasing`、暂停/继续、`CancelAnimations()`、`ReplayEntranceAnimation()`、`ReduceMotion` 与点数限制。`AnimationTriggers` 默认关闭，Demo显式启用；点数限制计算旧帧和目标总数，减少动态效果由应用显式设置。没有几何变化的更新直接稳定，不强制造帧；退出节点只作非交互装饰，不进入公开标记或键盘选择。导出使用当前帧及统一PNG/JPEG尺寸、DPI、背景和异步接口。使用示例见 `samples/Charts.Usage`，平台验证及边界见 `docs/charts-c6-hierarchy-packing.md`。
+
+## 专业图族 PlotAreaContent 与 Trackball
+
+`EngineeringChartBase` 和 `AnalysisChartBase` 的派生控件共用 `PlotAreaContent`、`PlotAreaContentTemplate` 与 Trackball 模式及外观属性。对应 StyledProperty 复用 Cartesian 的属性身份，但专业图族的模板上下文使用下面的独立类型；不能将 Cartesian 的 `ChartPlotAreaContext` / `ChartTooltipContext` 模板直接作为专业上下文使用。当前平台证据、Demo 截图和剩余问题见 [C7 PlotAreaContent / Trackball 报告](../../docs/charts-c7-plotarea-trackball.md)。
+
+```csharp
+using Avalonia.Controls;
+using Avalonia.Controls.Templates;
+using Avalonia.Data;
+using NT.AvaloniaControl.Charts;
+
+var professional = new FunnelChart
+{
+    ItemsSource = new double[] { 100, 60, 25 },
+    PlotAreaContent = "目标区说明",
+    TrackballMode = ChartTrackballMode.Vertical,
+    TrackballDisplayMode = ChartTrackballDisplayMode.GroupAllPoints,
+    MaxTrackballReadings = 32,
+};
+professional.PlotAreaContentTemplate = new FuncDataTemplate<ChartDataPlotAreaContext>((_, _) =>
+{
+    var caption = new TextBlock();
+    caption.Bind(TextBlock.TextProperty, new Binding(nameof(ChartDataPlotAreaContext.Content)));
+    return caption;
+});
+professional.TrackballContentTemplate = new FuncDataTemplate<ChartDataTrackballContext>((_, _) =>
+{
+    var text = new TextBlock();
+    text.Bind(TextBlock.TextProperty, new Binding(nameof(ChartDataTrackballContext.Text)));
+    return text;
+});
+// 完成窗口布局后，也可显式读取；真实指针和键盘浏览会更新读数。
+professional.UpdateTrackball(professional.PlotArea.Center);
+var retained = professional.TrackballReadings;
+var totalBeforeBudget = professional.TrackballTotalReadings;
+// 每个读数各自呈现一张卡片；切回 GroupAllPoints 则合并为一张。
+professional.TrackballDisplayMode = ChartTrackballDisplayMode.FloatAllPoints;
+professional.ClearTrackball();
+```
+
+`PlotAreaContentTemplate` 接收 `ChartDataPlotAreaContext`，其中 `Content` 是设置的内容，`DataContext` 是当前业务 VM；`EngineeringMarks` 或 `AnalysisMarks` 直接引用对应根的不可变实际帧，不重新枚举 `ItemsSource`。内容在真实 `PlotArea` 内布局、裁剪，位于已绘制图元上方、永久标签和图例下方，继承图表资源、字体、前景与主题。它是被动呈现，不接收指针和 Tab；不带模板的 `Control` 内容直接继承业务 DataContext，已有父级的外部控件明确拒绝。
+
+专业图族没有统一的数值轴，`ProjectLayout(xFraction, yFraction)` / `UnprojectLayout(plotLocal)` 因此使用未变换绘图区的视觉布局比例：左上为 `(0,0)`，右下为 `(1,1)`，Y 向下；工程图纳入实际 `Zoom/PanX/PanY`，分析图保持单位布局。`VisibleLayoutBounds` 给出可见的未变换比例范围；`ToLocal(chartLocal)` / `ToChart(plotLocal)` 仅在图表与绘图区局部 DIP 间换算。地图经纬度、排程时间、层级权重与分类值仍使用各图族自身的数据和投影接口，不能当作上述布局比例。
+
+Trackball 默认 `None`，保留既有 Tooltip 行为；启用 `Vertical` 或 `Horizontal` 后优先使用 Trackball，即使 `IsTooltipEnabled=false` 也可读数。它在当前可见图元的包围区间上沿显示 X 或 Y 寻找切片：保留与该坐标相交的全部图元，没有相交时保留最近区间的并列候选；候选顺序沿用图族绘制顺序，不把地理、树形、排程或聚合几何伪造成 Cartesian 线段插值。读数以当前实际图元为准，包含重叠或重复坐标图元，超出绘图区及不可见图元不参与。
+
+`ChartDataTrackballReading` 提供 `Members`、`Text`、`Position`、`Bounds`、`Brush`、`Value`、`BusinessDataContext`，以及对应的 `EngineeringHit` 或 `PointHit`。每个聚合读数保留完整原始成员、原始 `Item`、`StableId`、`SourceIndex`；限制读数数量不会截断一个聚合标记的成员。`ChartDataTrackballContext.Readings` 在 Group 模式包含全部保留读数，在 Float 模式只包含当前卡片的一个读数；`BusinessDataContext` 单独保存业务 VM，`Anchor` 为图表局部 DIP。`TotalReadings` 说明整个切片在预算前的候选数，`IsTruncated` 说明是否省略了其他图元；这不是单个聚合的原始成员总数。
+
+`MaxTrackballReadings` 默认32，允许0～1024；0不创建读数卡片，仍可通过 `TrackballTotalReadings` 看到切片候选总数。查询只扫描现有图元，不复制或重新枚举全部业务源，临时候选和卡片数量受预算约束；模板自行展开 `Members` 的控件数仍由应用负责。Float 卡片按实际测量尺寸尝试邻近的无重叠位置，并限制在图表范围内；可用空间不足时仍可能重叠或裁剪，密集上千卡片不构成交互性能承诺。`TrackballFormatter` 接收专业读数列表，Group 调用一次，Float 每张卡片调用一次；默认格式组合图族标准文本。返回 null 隐藏默认卡片，自定义模板仍可收到读数。
+
+`ShowTrackballLine`、`TrackballLineStroke/TrackballLineStrokeThickness`、`ShowTrackballMarkers` 与 `TrackballMarkerSize/TrackballMarkerStroke/TrackballMarkerFill/TrackballMarkerStrokeThickness` 控制线与标记。线和标记裁剪在绘图区，并显示在 PlotAreaContent 上方；卡片继承 `TooltipBackground/TooltipForeground/TooltipBorderBrush` 和现有主题，高对比及局部外观值保持优先。模板为真实被动控件，稳定帧和指针更新复用子树，应通过绑定读取新的上下文。Build 返回 null 隐藏该卡片；模板或 Formatter 异常清理旧读取并传播，失败项停止重试，替换对应模板或 Formatter 恢复。换源、业务上下文变化、隐藏、禁用和卸载清除旧读数上下文；移出绘图区、复位和 Escape 清除 Trackball。
+
+PlotAreaContent 是永久内容，进入同步、异步 PNG/JPEG 导出，并沿用尺寸、DPI、背景、取消和失败契约；Trackball 的线、标记和卡片均为瞬态内容，与 Tooltip 一起排除。模板更新、布局或绘制期间的重入导出会明确拒绝，避免输出混合帧。Demo 与 Charts.Usage 提供两种根、真实聚合和地图数据、布局与业务绑定、Group/Float、纵向/横向模式及导出对照示例。默认专业线和标记使用相反明暗色的轮廓改善局部同色填充上的可见性；显式 Stroke 保留调用方外观。
+
+## 专业范围选择与业务联动
+
+EngineeringChartBase 与 AnalysisChartBase 共享 `SelectedDataKeys` / `DataSelectionRange` 的 TwoWay 属性身份。`SelectedData` / `GetSelectedData()` 返回当前可见图元中匹配的原始 ChartDataPoint；重复绘制同一原始观察不会重复返回。范围选择或点击聚合图元时包含其全部原始成员；按 `SelectedDataKeys` 请求部分成员时只返回匹配项，整个聚合图元仍会高亮。例如 Mosaic 聚合包含 a、c，只请求 a 时公开选择仅包含 a。
+
+`SelectedDataKeys` 使用各图自身的原生身份：显式 ID 按值匹配，隐式来源按对象引用匹配。地图键使用带图层作用域的 MapGlyphKey，关系图键使用区分节点与边的 RelationGlyphKey。直接请求中暂时缺失的原生键会保留；公开选中数据在隐藏、禁用、卸载时释放旧来源引用。设置新的键请求会清除本地范围；范围自身产生的派生键保持该范围。点击和 Enter/Space 接入数据选择，ResetViewport 清除范围和多选。`ClearDataSelection()` 清除独立多选与范围，既有 SelectedIndex 仍需按其单点契约单独清理；直接设置 SelectedIndex 也不隐式改写独立多选绑定。
+
+`SelectDataRange(new Rect(x,y,width,height))` 使用当前绘图区从左上到右下的 0～1 布局比例，宽高为正且整个矩形位于此区间内。匹配采用可见图元的轴对齐几何包围盒相交；圆弧、孔洞或斜线的包围盒空白也可能匹配，零宽或零高线段的包围盒按 0.5 DIP 膨胀。它保留匹配图元的完整原始成员，并保持坐标轴和视口。当前提供矩形 API 和范围条输入，图内拖拽框选、套索与任意多边形选择仍属于扩展范围。
+
+`ChartDataRangeSelector` 只设置 EngineeringChart 或 AnalysisChart 中的一个目标，通过 Axis 指定 X/Y，复用已有双手柄指针、键盘和辅助语义。横纵范围条分别保留另一个方向区间。挂载时既有图表范围优先；卸载时提出的非默认 Range 仅在目标没有范围时初始化它。MinimumSpan 约束本地请求，外部设置到图表上的较窄范围仍保持其原值。永久选中高亮进入 PNG/JPEG 同步和异步导出，临时范围框排除。
+
+```csharp
+// 两图的 ItemsSource 和其他业务路径已经配置，窗口打开时两图可见。
+funnel.IdPath = nameof(Order.Id);
+mosaic.IdPath = nameof(Order.Id);
+var links = new ChartDataSynchronizationGroup();
+links.Add(funnel, static point => ((Order)point.Item!).Id);
+links.Add(mosaic, static point => ((Order)point.Item!).Id);
+ownerWindow.Opened += (_, _) =>
+{
+    // SelectedDataKeys 是源图原生键；此处 IdPath 使其成为 Order.Id。
+    funnel.SelectedDataKeys = new object[] { "order-a" };
+    // 注册本身不选定初始来源；已挂载、可见且启用后显式复制。
+    links.SynchronizeFrom(funnel);
+};
+ownerWindow.Closed += (_, _) => links.Dispose();
+```
+
+组的 keySelector 只负责跨图业务键映射，保持各图原生身份契约。未配置显式 ID 的普通来源使用原始 Order 对象引用请求选择；仅在 Add 中返回 Order.Id，并不会让源图接受字符串原生键。Add、Remove、SynchronizeFrom、Dispose 和选择操作均在 Avalonia UI 线程执行。
+
+成员使用弱引用，只有挂载、可见且启用的成员发送和接收变化。组会强持有显式 keySelector 委托和 layoutDomain 值；它们捕获的图表或业务 VM 仍由调用方管理，Remove/Dispose 会释放这些引用。来源排序和聚合方式可以不同，业务键负责匹配；默认只联动选择。联动读取当前真实绘图帧保留的成员，包括被本地视口裁剪的图元，避免不同平移意外清除业务选择；公开 SelectedData 仍只报告可见选择。目标没有生成相应图元时，组无法为该业务键构造原生选择；应用仍可在目标 SelectedDataKeys 中保留自己的未知原生键请求。
+
+范围或工程 Zoom/Pan 联动需分别开启 SynchronizeRange / SynchronizeViewport，并在 Add 时给出相同且非空的 `layoutDomain`，表示应用确认这些布局可比较。Analysis 没有对应工程视口。隐藏成员重新出现时不会自动广播旧状态，应用在需要重放时显式同步。业务回调提出的新状态优先；矛盾循环在有限次数后明确失败。组联动选择、高亮、范围与可比较的工程视口；交叉筛选和查询由应用依据事件与业务键更新查询或 ItemsSource。
+
+Demo 与 Usage 的异构看板展示业务选择联动和各图局部范围，Strip 缩放也保持本地视图。同一 layoutDomain 的范围/视口联动由测试覆盖，四图看板没有把这些不同布局注册到共同域。范围、监听生命周期和代表性动画导出验证见[本批报告](../../docs/charts-c7-range-linking.md)。

@@ -97,6 +97,8 @@ public abstract class CategoricalDistributionChartBase : ComparisonChartBase
             marks.Add(Mark(source, new EllipseGeometry(new Rect(position.X - diameter / 2, position.Y - diameter / 2, diameter, diameter)),
                 Fill ?? BrushAt(point.CategoryIndex), position, "sample", point.Value,
                 $"{point.Category}: {ValueText(point.Value)}{(string.IsNullOrEmpty(point.Label) ? "" : $" ({point.Label})")}{(point.IsOverflow ? " [dense lane]" : "")}"));
+            if (UsesDataLabelTemplate && (ShowLabels || ShowValues))
+                AddDataLabel(marks[^1], $"{(ShowLabels ? point.Label ?? point.Category.ToString() : null)}{(ShowLabels && ShowValues ? " " : "")}{(ShowValues ? ValueText(point.Value) : "")}", position, 160);
         }
         var half = _layout.Categories.Count == 0 ? 0 : Math.Min(plot.Width / _layout.Categories.Count * .32, 40);
         foreach (var category in _layout.Categories)

@@ -15,13 +15,15 @@ internal enum PdfiumWorkPriority
 internal sealed class PdfiumWorkScheduler
 {
     private static readonly int[] Slots = [0, 0, 0, 0, 1, 1, 2];
+    private static int s_workCounter;
     private readonly object _sync = new();
     private readonly Queue<IWorkItem>[] _queues = [new(), new(), new()];
     private int _nextSlot;
     private bool _draining;
 
     internal Task<T> Enqueue<T>(Func<T> operation, CancellationToken cancellationToken = default,
-        PdfiumWorkPriority priority = PdfiumWorkPriority.Foreground)
+        PdfiumWorkPriority priority = PdfiumWorkPriority.Foreground,
+        PdfPerformanceStage stage = PdfPerformanceStage.NativeExec, string correlationId = "")
     {
         ArgumentNullException.ThrowIfNull(operation);
         if ((uint)priority > (uint)PdfiumWorkPriority.Thumbnail)
@@ -29,7 +31,10 @@ internal sealed class PdfiumWorkScheduler
         if (cancellationToken.IsCancellationRequested)
             return Task.FromCanceled<T>(cancellationToken);
 
-        var item = new WorkItem<T>(operation, cancellationToken);
+        // PERF01: every item carries a correlation id so queue-wait and execution spans group
+        // with the caller-side stage spans (decode, upload, submit) of the same operation.
+        var item = new WorkItem<T>(operation, cancellationToken, stage,
+            correlationId.Length == 0 ? "work-" + Interlocked.Increment(ref s_workCounter) : correlationId);
         lock (_sync)
         {
             _queues[(int)priority].Enqueue(item);
@@ -78,15 +83,21 @@ internal sealed class PdfiumWorkScheduler
     {
         private Func<T>? _operation;
         private readonly CancellationToken _token;
+        private readonly PdfPerformanceStage _stage;
+        private readonly string _correlationId;
+        private readonly long _enqueuedAt;
         private readonly TaskCompletionSource<T> _completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
         private readonly object _registrationSync = new();
         private CancellationTokenRegistration _registration;
         private int _state; // 0 = queued, 1 = executing, 2 = finished/canceled before execution.
 
-        internal WorkItem(Func<T> operation, CancellationToken token)
+        internal WorkItem(Func<T> operation, CancellationToken token, PdfPerformanceStage stage, string correlationId)
         {
             _operation = operation;
             _token = token;
+            _stage = stage;
+            _correlationId = correlationId;
+            _enqueuedAt = PdfPerformanceSession.Now;
             if (token.CanBeCanceled)
             {
                 // A canceled token may invoke its callback synchronously inside registration.
@@ -111,6 +122,13 @@ internal sealed class PdfiumWorkScheduler
                 // Do not retain an abandoned document byte array behind a long native call.
                 Interlocked.Exchange(ref _operation, null);
                 UnregisterCancellation();
+                // PERF01: a dropped queue item still reports where cancellation was observed;
+                // the zero-length span is the observation instant on the monotonic clock.
+                if (PdfPerformanceSession.Current is { } session)
+                {
+                    var observed = PdfPerformanceSession.Now;
+                    session.Record(_correlationId, PdfPerformanceStage.CancelObserved, observed, observed);
+                }
                 _completion.TrySetCanceled(_token);
             }
         }
@@ -132,6 +150,9 @@ internal sealed class PdfiumWorkScheduler
                 UnregisterCancellation();
                 return;
             }
+            var startedAt = PdfPerformanceSession.Now;
+            if (PdfPerformanceSession.Current is { } sessionAtStart)
+                sessionAtStart.Record(_correlationId, PdfPerformanceStage.QueueWait, _enqueuedAt, startedAt);
             try
             {
                 _token.ThrowIfCancellationRequested();
@@ -140,6 +161,11 @@ internal sealed class PdfiumWorkScheduler
             }
             catch (OperationCanceledException exception) when (exception.CancellationToken.IsCancellationRequested)
             {
+                if (PdfPerformanceSession.Current is { } canceled)
+                {
+                    var observed = PdfPerformanceSession.Now;
+                    canceled.Record(_correlationId, PdfPerformanceStage.CancelObserved, observed, observed);
+                }
                 _completion.TrySetCanceled(exception.CancellationToken);
             }
             catch (Exception exception)
@@ -148,6 +174,9 @@ internal sealed class PdfiumWorkScheduler
             }
             finally
             {
+                var finishedAt = PdfPerformanceSession.Now;
+                if (PdfPerformanceSession.Current is { } sessionAtEnd)
+                    sessionAtEnd.Record(_correlationId, _stage, startedAt, finishedAt);
                 Interlocked.Exchange(ref _state, 2);
                 Interlocked.Exchange(ref _operation, null);
                 UnregisterCancellation();

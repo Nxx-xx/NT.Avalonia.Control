@@ -1,0 +1,1808 @@
+{
+  "schema": "charts-c703-vector-reuse-validation/v1",
+  "createdUtc": "2026-10-25T16:25:26.387817+00:00",
+  "collector": {
+    "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\Finalize-Validation.py",
+    "bytes": 7852,
+    "sha256": "4757CC57B63C5E4BD5EA791AF005D8349E16A217DB8C2B94D9BE90CE816CD216"
+  },
+  "report": {
+    "path": "D:\\Procedure\\AvaloniaControl\\docs\\charts-c7-vector-reuse.md",
+    "bytes": 46545,
+    "sha256": "382404B526E3D72AB7BD3EEEDE0B0704B0F0055E45766C529B22571D0DBA19BA"
+  },
+  "matrixHistoryPreservation": {
+    "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\platform-matrix-history-preservation-v1.json",
+    "bytes": 369,
+    "sha256": "331CC4CED5C763013040501B15442CD1F55DDE0077C8C32E5E32DB44C4AF48CD"
+  },
+  "evidenceValidationPassed": true,
+  "optimizationAccepted": false,
+  "decision": {
+    "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\decision-v1.json",
+    "bytes": 3858,
+    "sha256": "2960582C9272224794A4A412A43E46C353D06869056CD6CFDB4603F2D7A77655"
+  },
+  "sourceSnapshot": {
+    "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\source-snapshot-v2.json",
+    "bytes": 411689,
+    "sha256": "9F418ED72B872B8F629A4807473612820E01286FF168A3C6046AA2B1D0559E0B"
+  },
+  "frozenCopiesVerified": 2,
+  "filesPerCopy": 2130,
+  "restoredPrimarySources": [
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\src\\NT.AvaloniaControl.Charts.Skia\\ChartNativeCircleOperation.cs",
+      "bytes": 22720,
+      "sha256": "FCF9634080F9A0B3E734F658CC39C9CAEC611A3F7CEEB0B1A7965AD67E25BFB4"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\NativeCircleOperationTests.cs",
+      "bytes": 11627,
+      "sha256": "E092D347943ED121539E13FF751FAD70F41F463B706607973889D6F51F9F0671"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\benchmarks\\Charts.NativeBenchmarks\\Program.cs",
+      "bytes": 37560,
+      "sha256": "B2CBB7DB04794F1D39E35DE953FB88AB72A5ABE3E03C915C212F41A22508A0CD"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\benchmarks\\Charts.NativeBenchmarks\\C7PerformanceProgram.cs",
+      "bytes": 33510,
+      "sha256": "2AAE6F202F5C343C2C640A782150A511D573EE93CCAC40D7C199158604D08453"
+    }
+  ],
+  "primaryCompiledBackend": {
+    "path": "D:\\Procedure\\AvaloniaControl\\src\\NT.AvaloniaControl.Charts.Skia\\bin\\Release\\net10.0\\NT.AvaloniaControl.Charts.Skia.dll",
+    "bytes": 37376,
+    "sha256": "7DD51B991FE668B2EBC077A6EAEC3A1E67D53A54D3715B260CDB7DAF58F31E38"
+  },
+  "primaryCompiledMemoAbsent": true,
+  "restoredFocusedTests": {
+    "total": 65,
+    "passed": 65,
+    "failed": 0,
+    "file": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\restored-v1\\tests\\results\\restored.trx",
+      "bytes": 99714,
+      "sha256": "781F54A1492FC2450114C9BDDAFBF6DB67DE84D8D3908E3960B17A971CD619F0"
+    }
+  },
+  "platforms": {
+    "windows": {
+      "qa": {
+        "restore-tests": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\windows\\qa-v2\\restore-tests\\process.json",
+          "bytes": 737,
+          "sha256": "FDE9E8EE1FD5EA9CFF1F779B37BE1D8DC1FC0938A2CDA7B881946A77503EFB0B"
+        },
+        "full-tests": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\windows\\qa-v2\\full-tests\\process.json",
+          "bytes": 1085,
+          "sha256": "9E7538201FD6436EFD3091B17902F8AFB732A7DD794DE05B7C37204065134AC6"
+        },
+        "restore-usage": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\windows\\qa-v2\\restore-usage\\process.json",
+          "bytes": 721,
+          "sha256": "7C4669EF7D027009A2A50F42D27EB3E189E05B49DD2B00C3F166B045412D5026"
+        },
+        "build-usage": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\windows\\qa-v2\\build-usage\\process.json",
+          "bytes": 824,
+          "sha256": "B9FB5117B21D9E9AF2219F140C09F06D7BB3EE165023D9BAAAB82BC4149B65E0"
+        },
+        "restore-demo": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\windows\\qa-v2\\restore-demo\\process.json",
+          "bytes": 742,
+          "sha256": "9EB88E28ADBAF03292177E3DB0C417FFFC80DC5059ADDF6CBA32C780EAF1BB9E"
+        },
+        "build-demo": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\windows\\qa-v2\\build-demo\\process.json",
+          "bytes": 845,
+          "sha256": "95CB4C3043B3FC09392027A321AB9EDAC2C9E490CCBA09B00783C300CA26833F"
+        },
+        "pack-skia": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\windows\\qa-v2\\pack-skia\\process.json",
+          "bytes": 935,
+          "sha256": "B5955B00D22AEC1366A19048DB045280ABB9D4DA42866271722CE83D1BDECB1F"
+        }
+      },
+      "tests": {
+        "total": 3256,
+        "passed": 3256,
+        "failed": 0,
+        "file": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\windows\\qa-v2\\full-tests\\tests\\full.trx",
+          "bytes": 5109893,
+          "sha256": "07FB68037DBABC18D6A2B9E4B086BAD59A2242A7E388888A3A29712C13C8B35A"
+        }
+      },
+      "lifecycle": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\windows\\vector-lifecycle-v2\\receipt.json",
+        "bytes": 3262,
+        "sha256": "529D52EB6569ED6254AE814C4D986B4B7D5E2792EB1D3D4A7E6411EB3ADCEB3B"
+      },
+      "lifecycleChecks": 76,
+      "lifecyclePng": 28,
+      "fidelity": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\windows\\fidelity-run-v2.json",
+        "bytes": 10444,
+        "sha256": "2193E06AD1D8E2142AF91F1FD7BD43A6CC3BE905C1E36A1EF7506325DA937308"
+      },
+      "fidelityImages": 232,
+      "pairedSummary": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\windows\\paired-summary-30s-v1.json",
+        "bytes": 133420,
+        "sha256": "D078325DBEADD1F5D385130123B0BC50766B6C2E40A406F5D92F85CF41365F4C"
+      },
+      "pairedEvidenceQualified": true,
+      "fixedLoadPassed": true,
+      "pairs": [
+        {
+          "pair": 1,
+          "order": [
+            "baseline",
+            "candidate"
+          ],
+          "baseline": {
+            "planned": 1800,
+            "completed": 1800,
+            "pending": 0,
+            "actualDurationMs": 40904.6314,
+            "workloadPassed": true,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 1800,
+                "p50": 0.029,
+                "p95": 0.2189,
+                "p99": 0.2559,
+                "minimum": 0.0017,
+                "maximum": 11.8261
+              },
+              "prepareMs": {
+                "count": 1800,
+                "p50": 0.0661,
+                "p95": 0.9027,
+                "p99": 3.9954,
+                "minimum": 0.0023,
+                "maximum": 13.61
+              },
+              "recordMs": {
+                "count": 1800,
+                "p50": 5.0711,
+                "p95": 27.1963,
+                "p99": 31.0326,
+                "minimum": 0.9592,
+                "maximum": 33.3016
+              },
+              "controlledRasterMs": {
+                "count": 1800,
+                "p50": 5.4139,
+                "p95": 21.3469,
+                "p99": 22.514,
+                "minimum": 4.2407,
+                "maximum": 33.6627
+              },
+              "hitMs": {
+                "count": 1800,
+                "p50": 0.0151,
+                "p95": 0.02,
+                "p99": 0.0236,
+                "minimum": 0.0053,
+                "maximum": 0.2157
+              },
+              "requestToControlledRasterMs": {
+                "count": 1800,
+                "p50": 10.8727,
+                "p95": 47.9869,
+                "p99": 52.5164,
+                "minimum": 5.3702,
+                "maximum": 61.0721
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 1800,
+                "p50": 5934.9706,
+                "p95": 11423.3042,
+                "p99": 11875.946,
+                "minimum": 5.5789,
+                "maximum": 11988.629
+              },
+              "queueLatenessMs": {
+                "count": 1800,
+                "p50": 5900.0084,
+                "p95": 11407.6045,
+                "p99": 11860.0723,
+                "minimum": 0.0033,
+                "maximum": 11974.1663
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 1800,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 1800,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424296,
+                "minimum": 48,
+                "maximum": 1424840
+              },
+              "recordAllocatedBytes": {
+                "count": 1800,
+                "p50": 1953640,
+                "p95": 10393120,
+                "p99": 10393176,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 1800,
+                "p50": 6304,
+                "p95": 87408,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 95136
+              },
+              "hitAllocatedBytes": {
+                "count": 1800,
+                "p50": 344,
+                "p95": 424,
+                "p99": 424,
+                "minimum": 344,
+                "maximum": 848
+              }
+            },
+            "nativeBackendDiagnostics": {
+              "ExpandedFrameCount": 1207,
+              "FastPaintFrameCount": 1207,
+              "TranslatedExpandedFrameCount": 0,
+              "TranslatedFastPaintFrameCount": 0,
+              "FirstRejectedDeviceTransform": null,
+              "FirstTranslatedOptimizedDeviceTransform": null,
+              "VectorMemoHitCount": null,
+              "VectorMemoPublishCount": null
+            }
+          },
+          "candidate": {
+            "planned": 1800,
+            "completed": 1800,
+            "pending": 0,
+            "actualDurationMs": 41174.2869,
+            "workloadPassed": true,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 1800,
+                "p50": 0.0284,
+                "p95": 0.2129,
+                "p99": 0.2475,
+                "minimum": 0.0015,
+                "maximum": 12.0015
+              },
+              "prepareMs": {
+                "count": 1800,
+                "p50": 0.065,
+                "p95": 0.9032,
+                "p99": 1.3021,
+                "minimum": 0.0024,
+                "maximum": 13.9247
+              },
+              "recordMs": {
+                "count": 1800,
+                "p50": 5.1758,
+                "p95": 27.6147,
+                "p99": 31.3734,
+                "minimum": 0.9798,
+                "maximum": 34.6022
+              },
+              "controlledRasterMs": {
+                "count": 1800,
+                "p50": 5.4153,
+                "p95": 21.3273,
+                "p99": 22.2401,
+                "minimum": 4.2016,
+                "maximum": 36.1041
+              },
+              "hitMs": {
+                "count": 1800,
+                "p50": 0.0153,
+                "p95": 0.0201,
+                "p99": 0.0242,
+                "minimum": 0.0056,
+                "maximum": 0.2381
+              },
+              "requestToControlledRasterMs": {
+                "count": 1800,
+                "p50": 10.9184,
+                "p95": 48.2585,
+                "p99": 52.2384,
+                "minimum": 5.3403,
+                "maximum": 58.9448
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 1800,
+                "p50": 6202.5047,
+                "p95": 11697.8836,
+                "p99": 12156.8991,
+                "minimum": 5.7334,
+                "maximum": 12277.2757
+              },
+              "queueLatenessMs": {
+                "count": 1800,
+                "p50": 6168.2222,
+                "p95": 11681.6894,
+                "p99": 12140.5423,
+                "minimum": 0.003,
+                "maximum": 12261.7039
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 1800,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 1800,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424296,
+                "minimum": 48,
+                "maximum": 1424472
+              },
+              "recordAllocatedBytes": {
+                "count": 1800,
+                "p50": 1953640,
+                "p95": 10393120,
+                "p99": 10393176,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 1800,
+                "p50": 6304,
+                "p95": 9424,
+                "p99": 15232,
+                "minimum": 6120,
+                "maximum": 15496
+              },
+              "hitAllocatedBytes": {
+                "count": 1800,
+                "p50": 344,
+                "p95": 424,
+                "p99": 424,
+                "minimum": 344,
+                "maximum": 848
+              }
+            },
+            "nativeBackendDiagnostics": {
+              "ExpandedFrameCount": 1207,
+              "FastPaintFrameCount": 1207,
+              "TranslatedExpandedFrameCount": 0,
+              "TranslatedFastPaintFrameCount": 0,
+              "FirstRejectedDeviceTransform": null,
+              "FirstTranslatedOptimizedDeviceTransform": null,
+              "VectorMemoHitCount": 124,
+              "VectorMemoPublishCount": 2
+            }
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "candidate",
+            "baseline"
+          ],
+          "baseline": {
+            "planned": 1800,
+            "completed": 1800,
+            "pending": 0,
+            "actualDurationMs": 40946.7706,
+            "workloadPassed": true,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 1800,
+                "p50": 0.0294,
+                "p95": 0.2163,
+                "p99": 0.2464,
+                "minimum": 0.0016,
+                "maximum": 13.2235
+              },
+              "prepareMs": {
+                "count": 1800,
+                "p50": 0.0662,
+                "p95": 0.9119,
+                "p99": 3.9824,
+                "minimum": 0.0025,
+                "maximum": 14.3983
+              },
+              "recordMs": {
+                "count": 1800,
+                "p50": 5.1135,
+                "p95": 26.8214,
+                "p99": 31.0952,
+                "minimum": 0.9899,
+                "maximum": 35.1106
+              },
+              "controlledRasterMs": {
+                "count": 1800,
+                "p50": 5.634,
+                "p95": 21.295,
+                "p99": 22.2458,
+                "minimum": 4.2628,
+                "maximum": 29.8456
+              },
+              "hitMs": {
+                "count": 1800,
+                "p50": 0.0152,
+                "p95": 0.0198,
+                "p99": 0.0228,
+                "minimum": 0.0055,
+                "maximum": 0.2261
+              },
+              "requestToControlledRasterMs": {
+                "count": 1800,
+                "p50": 11.0024,
+                "p95": 47.7155,
+                "p99": 52.3486,
+                "minimum": 5.3591,
+                "maximum": 65.0221
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 1800,
+                "p50": 5953.7334,
+                "p95": 11461.6001,
+                "p99": 11908.9146,
+                "minimum": 5.9771,
+                "maximum": 12033.7659
+              },
+              "queueLatenessMs": {
+                "count": 1800,
+                "p50": 5919.4756,
+                "p95": 11446.7391,
+                "p99": 11892.4494,
+                "minimum": 0.0035,
+                "maximum": 12019.8009
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 1800,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 1800,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424296,
+                "minimum": 48,
+                "maximum": 1424472
+              },
+              "recordAllocatedBytes": {
+                "count": 1800,
+                "p50": 1953640,
+                "p95": 10393120,
+                "p99": 10393176,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 1800,
+                "p50": 6304,
+                "p95": 87408,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 95312
+              },
+              "hitAllocatedBytes": {
+                "count": 1800,
+                "p50": 344,
+                "p95": 424,
+                "p99": 424,
+                "minimum": 344,
+                "maximum": 848
+              }
+            },
+            "nativeBackendDiagnostics": {
+              "ExpandedFrameCount": 1207,
+              "FastPaintFrameCount": 1207,
+              "TranslatedExpandedFrameCount": 0,
+              "TranslatedFastPaintFrameCount": 0,
+              "FirstRejectedDeviceTransform": null,
+              "FirstTranslatedOptimizedDeviceTransform": null,
+              "VectorMemoHitCount": null,
+              "VectorMemoPublishCount": null
+            }
+          },
+          "candidate": {
+            "planned": 1800,
+            "completed": 1800,
+            "pending": 0,
+            "actualDurationMs": 41476.6573,
+            "workloadPassed": true,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 1800,
+                "p50": 0.028,
+                "p95": 0.2172,
+                "p99": 0.268,
+                "minimum": 0.0015,
+                "maximum": 13.021
+              },
+              "prepareMs": {
+                "count": 1800,
+                "p50": 0.0639,
+                "p95": 0.9254,
+                "p99": 1.272,
+                "minimum": 0.0024,
+                "maximum": 14.3749
+              },
+              "recordMs": {
+                "count": 1800,
+                "p50": 5.3051,
+                "p95": 27.8175,
+                "p99": 31.4463,
+                "minimum": 0.9912,
+                "maximum": 34.5981
+              },
+              "controlledRasterMs": {
+                "count": 1800,
+                "p50": 5.5391,
+                "p95": 21.5764,
+                "p99": 23.0138,
+                "minimum": 4.2424,
+                "maximum": 32.016
+              },
+              "hitMs": {
+                "count": 1800,
+                "p50": 0.0151,
+                "p95": 0.0197,
+                "p99": 0.0221,
+                "minimum": 0.0056,
+                "maximum": 0.1741
+              },
+              "requestToControlledRasterMs": {
+                "count": 1800,
+                "p50": 11.0044,
+                "p95": 48.726,
+                "p99": 52.8534,
+                "minimum": 5.394,
+                "maximum": 60.5225
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 1800,
+                "p50": 6196.4497,
+                "p95": 11977.3798,
+                "p99": 12438.6294,
+                "minimum": 5.7966,
+                "maximum": 12559.6976
+              },
+              "queueLatenessMs": {
+                "count": 1800,
+                "p50": 6150.4614,
+                "p95": 11961.0634,
+                "p99": 12422.1045,
+                "minimum": 0.0039,
+                "maximum": 12544.1358
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 1800,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 1800,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424296,
+                "minimum": 48,
+                "maximum": 1424472
+              },
+              "recordAllocatedBytes": {
+                "count": 1800,
+                "p50": 1953640,
+                "p95": 10393120,
+                "p99": 10393184,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 1800,
+                "p50": 6304,
+                "p95": 9320,
+                "p99": 15048,
+                "minimum": 6120,
+                "maximum": 15832
+              },
+              "hitAllocatedBytes": {
+                "count": 1800,
+                "p50": 344,
+                "p95": 424,
+                "p99": 424,
+                "minimum": 344,
+                "maximum": 848
+              }
+            },
+            "nativeBackendDiagnostics": {
+              "ExpandedFrameCount": 1208,
+              "FastPaintFrameCount": 1208,
+              "TranslatedExpandedFrameCount": 0,
+              "TranslatedFastPaintFrameCount": 0,
+              "FirstRejectedDeviceTransform": null,
+              "FirstTranslatedOptimizedDeviceTransform": null,
+              "VectorMemoHitCount": 125,
+              "VectorMemoPublishCount": 2
+            }
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "baseline",
+            "candidate"
+          ],
+          "baseline": {
+            "planned": 1800,
+            "completed": 1800,
+            "pending": 0,
+            "actualDurationMs": 40938.6752,
+            "workloadPassed": true,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 1800,
+                "p50": 0.028,
+                "p95": 0.2175,
+                "p99": 0.2526,
+                "minimum": 0.0016,
+                "maximum": 12.2418
+              },
+              "prepareMs": {
+                "count": 1800,
+                "p50": 0.0648,
+                "p95": 0.9043,
+                "p99": 3.8578,
+                "minimum": 0.0024,
+                "maximum": 13.3424
+              },
+              "recordMs": {
+                "count": 1800,
+                "p50": 5.0975,
+                "p95": 27.1505,
+                "p99": 31.0233,
+                "minimum": 0.9679,
+                "maximum": 33.7991
+              },
+              "controlledRasterMs": {
+                "count": 1800,
+                "p50": 5.4905,
+                "p95": 21.3696,
+                "p99": 22.9061,
+                "minimum": 4.2334,
+                "maximum": 32.6991
+              },
+              "hitMs": {
+                "count": 1800,
+                "p50": 0.015,
+                "p95": 0.0201,
+                "p99": 0.0238,
+                "minimum": 0.0057,
+                "maximum": 0.2536
+              },
+              "requestToControlledRasterMs": {
+                "count": 1800,
+                "p50": 10.9182,
+                "p95": 47.7348,
+                "p99": 51.5268,
+                "minimum": 5.3623,
+                "maximum": 58.2263
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 1800,
+                "p50": 5994.7955,
+                "p95": 11462.4015,
+                "p99": 11928.0104,
+                "minimum": 5.7351,
+                "maximum": 12039.8717
+              },
+              "queueLatenessMs": {
+                "count": 1800,
+                "p50": 5960.9399,
+                "p95": 11447.3606,
+                "p99": 11911.5473,
+                "minimum": 0.0032,
+                "maximum": 12025.4265
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 1800,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 1800,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424296,
+                "minimum": 48,
+                "maximum": 1424472
+              },
+              "recordAllocatedBytes": {
+                "count": 1800,
+                "p50": 1953640,
+                "p95": 10393120,
+                "p99": 10393184,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 1800,
+                "p50": 6304,
+                "p95": 87408,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 95448
+              },
+              "hitAllocatedBytes": {
+                "count": 1800,
+                "p50": 344,
+                "p95": 424,
+                "p99": 424,
+                "minimum": 344,
+                "maximum": 848
+              }
+            },
+            "nativeBackendDiagnostics": {
+              "ExpandedFrameCount": 1207,
+              "FastPaintFrameCount": 1207,
+              "TranslatedExpandedFrameCount": 0,
+              "TranslatedFastPaintFrameCount": 0,
+              "FirstRejectedDeviceTransform": null,
+              "FirstTranslatedOptimizedDeviceTransform": null,
+              "VectorMemoHitCount": null,
+              "VectorMemoPublishCount": null
+            }
+          },
+          "candidate": {
+            "planned": 1800,
+            "completed": 1800,
+            "pending": 0,
+            "actualDurationMs": 41954.949,
+            "workloadPassed": true,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 1800,
+                "p50": 0.0297,
+                "p95": 0.2152,
+                "p99": 0.247,
+                "minimum": 0.0017,
+                "maximum": 10.4264
+              },
+              "prepareMs": {
+                "count": 1800,
+                "p50": 0.0666,
+                "p95": 0.8995,
+                "p99": 1.1448,
+                "minimum": 0.0023,
+                "maximum": 14.6432
+              },
+              "recordMs": {
+                "count": 1800,
+                "p50": 5.2695,
+                "p95": 28.0045,
+                "p99": 32.064,
+                "minimum": 1.0066,
+                "maximum": 37.0832
+              },
+              "controlledRasterMs": {
+                "count": 1800,
+                "p50": 6.2845,
+                "p95": 22.0735,
+                "p99": 23.5651,
+                "minimum": 4.2265,
+                "maximum": 32.2456
+              },
+              "hitMs": {
+                "count": 1800,
+                "p50": 0.0155,
+                "p95": 0.0203,
+                "p99": 0.0232,
+                "minimum": 0.0055,
+                "maximum": 0.2234
+              },
+              "requestToControlledRasterMs": {
+                "count": 1800,
+                "p50": 11.2804,
+                "p95": 48.9535,
+                "p99": 53.5819,
+                "minimum": 5.3533,
+                "maximum": 64.32
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 1800,
+                "p50": 6432.0915,
+                "p95": 12376.4997,
+                "p99": 12817.6514,
+                "minimum": 5.7278,
+                "maximum": 12931.4243
+              },
+              "queueLatenessMs": {
+                "count": 1800,
+                "p50": 6396.941,
+                "p95": 12362.4706,
+                "p99": 12802.0233,
+                "minimum": 0.0044,
+                "maximum": 12916.9156
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 1800,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 1800,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424296,
+                "minimum": 48,
+                "maximum": 1424472
+              },
+              "recordAllocatedBytes": {
+                "count": 1800,
+                "p50": 1953640,
+                "p95": 10393120,
+                "p99": 10393192,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 1800,
+                "p50": 6304,
+                "p95": 9528,
+                "p99": 15144,
+                "minimum": 6120,
+                "maximum": 15888
+              },
+              "hitAllocatedBytes": {
+                "count": 1800,
+                "p50": 344,
+                "p95": 424,
+                "p99": 424,
+                "minimum": 344,
+                "maximum": 848
+              }
+            },
+            "nativeBackendDiagnostics": {
+              "ExpandedFrameCount": 1208,
+              "FastPaintFrameCount": 1208,
+              "TranslatedExpandedFrameCount": 0,
+              "TranslatedFastPaintFrameCount": 0,
+              "FirstRejectedDeviceTransform": null,
+              "FirstTranslatedOptimizedDeviceTransform": null,
+              "VectorMemoHitCount": 125,
+              "VectorMemoPublishCount": 2
+            }
+          }
+        }
+      ],
+      "recordCostProbe": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\windows\\record-probe-v2\\run\\record-cost-probe.json",
+        "bytes": 200020,
+        "sha256": "AFDF5EC353303DD6B125F73BE4A56C72914EC4148BB7B828AD397D9097437582"
+      },
+      "componentCases": 14,
+      "samplesPerCase": 25,
+      "package": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\windows\\qa-v2\\packages\\NT.AvaloniaControl.Charts.Skia.0.2.0-preview.2.nupkg",
+        "bytes": 23392,
+        "sha256": "D56DE9512E11E97E25D2E7E814E1DA4D0182E2CC75A72DDBCFFDE5A7BF402E46"
+      },
+      "packageDllMatchesMeasuredCandidate": true,
+      "packageScope": "Built candidate archive only, not shipped or requalified as a clean ordinary consumer."
+    },
+    "linux": {
+      "qa": {
+        "restore-tests": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\linux\\qa-v2\\restore-tests\\process.json",
+          "bytes": 709,
+          "sha256": "8EB4CC1F930C065210AF9D7A8C3B23FC4119EE3BEA7BCE1D1CA4F389D1B09F5D"
+        },
+        "full-tests": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\linux\\qa-v2\\full-tests\\process.json",
+          "bytes": 1037,
+          "sha256": "37E3C782D094039B37651AE1610644C4EA07FFFEB3D8A85B8F501C98F4359E19"
+        },
+        "restore-usage": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\linux\\qa-v2\\restore-usage\\process.json",
+          "bytes": 693,
+          "sha256": "8105B6C20F43225A54E2638A5967DE94DE4BAB072C6AC0ED061A2EC198EFDB13"
+        },
+        "build-usage": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\linux\\qa-v2\\build-usage\\process.json",
+          "bytes": 791,
+          "sha256": "8DF8D437A43246EA8A61EFFCD44DCD930AF627B9BB6EBA6AF3FFD3A72A6C954B"
+        },
+        "restore-demo": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\linux\\qa-v2\\restore-demo\\process.json",
+          "bytes": 714,
+          "sha256": "6D858F9D2CBFD275C78A928D64D8076F27CD02122FB189D18E0147387A509EA8"
+        },
+        "build-demo": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\linux\\qa-v2\\build-demo\\process.json",
+          "bytes": 813,
+          "sha256": "FF04B2A8A6CF6BB9B3441E568C322876E50CBBCF1498903282D34FC9E0469799"
+        },
+        "pack-skia": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\linux\\qa-v2\\pack-skia\\process.json",
+          "bytes": 894,
+          "sha256": "770EDA81208EB7D5FE82C421EB0265C0F926344CC6698B0E957EBD80DB548841"
+        }
+      },
+      "tests": {
+        "total": 3256,
+        "passed": 3256,
+        "failed": 0,
+        "file": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\linux\\qa-v2\\full-tests\\tests\\full.trx",
+          "bytes": 5103257,
+          "sha256": "2D990FDC5D0D384DA44E49D722E38857AAD7D98E2DC3C1228BEB1E21D44F8B56"
+        }
+      },
+      "lifecycle": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\linux\\vector-lifecycle-v2\\receipt.json",
+        "bytes": 3140,
+        "sha256": "375B0F4E8531465B6CDB4E29D002CC845AC1C99CBD119CB4F20D96CC6C1A6EB7"
+      },
+      "lifecycleChecks": 76,
+      "lifecyclePng": 28,
+      "fidelity": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\linux\\fidelity-run-v2.json",
+        "bytes": 10007,
+        "sha256": "F1F232739DA03EAA5A2AB5F4142EDC252BA0BB9D903F28811DDD2387F438049F"
+      },
+      "fidelityImages": 232,
+      "pairedSummary": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\linux\\paired-summary-30s-v1.json",
+        "bytes": 140459,
+        "sha256": "F1EC2C30AE87F5A10A51A1364D7174A38D850B297991A8BC6FEC26BBE9A7F8B1"
+      },
+      "pairedEvidenceQualified": true,
+      "fixedLoadPassed": false,
+      "pairs": [
+        {
+          "pair": 1,
+          "order": [
+            "baseline",
+            "candidate"
+          ],
+          "baseline": {
+            "planned": 1800,
+            "completed": 1612,
+            "pending": 188,
+            "actualDurationMs": 45027.825511,
+            "workloadPassed": false,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 1612,
+                "p50": 0.0332,
+                "p95": 0.274913,
+                "p99": 0.319751,
+                "minimum": 0.001922,
+                "maximum": 12.328885
+              },
+              "prepareMs": {
+                "count": 1612,
+                "p50": 0.078071,
+                "p95": 1.047745,
+                "p99": 3.675797,
+                "minimum": 0.002287,
+                "maximum": 13.535848
+              },
+              "recordMs": {
+                "count": 1612,
+                "p50": 7.104197,
+                "p95": 25.048659,
+                "p99": 30.64409,
+                "minimum": 0.950819,
+                "maximum": 40.968249
+              },
+              "controlledRasterMs": {
+                "count": 1612,
+                "p50": 7.261032,
+                "p95": 29.459525,
+                "p99": 31.590249,
+                "minimum": 5.082623,
+                "maximum": 39.751236
+              },
+              "hitMs": {
+                "count": 1612,
+                "p50": 0.01901,
+                "p95": 0.025423,
+                "p99": 0.032487,
+                "minimum": 0.007668,
+                "maximum": 0.060017
+              },
+              "requestToControlledRasterMs": {
+                "count": 1612,
+                "p50": 14.99143,
+                "p95": 53.890105,
+                "p99": 59.990704,
+                "minimum": 6.33987,
+                "maximum": 82.099937
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 1612,
+                "p50": 8974.231518,
+                "p95": 17265.596882,
+                "p99": 17711.740435,
+                "minimum": 6.939797,
+                "maximum": 18175.701529
+              },
+              "queueLatenessMs": {
+                "count": 1612,
+                "p50": 8958.252464,
+                "p95": 17245.028564,
+                "p99": 17670.035208,
+                "minimum": 0.003193,
+                "maximum": 18115.699516
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 1612,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 1612,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424312,
+                "minimum": 48,
+                "maximum": 1424680
+              },
+              "recordAllocatedBytes": {
+                "count": 1612,
+                "p50": 1955432,
+                "p95": 10393120,
+                "p99": 10393384,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 1612,
+                "p50": 7120,
+                "p95": 87408,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 94888
+              },
+              "hitAllocatedBytes": {
+                "count": 1612,
+                "p50": 344,
+                "p95": 424,
+                "p99": 688,
+                "minimum": 344,
+                "maximum": 688
+              }
+            },
+            "nativeBackendDiagnostics": {
+              "ExpandedFrameCount": 1140,
+              "FastPaintFrameCount": 1140,
+              "TranslatedExpandedFrameCount": 0,
+              "TranslatedFastPaintFrameCount": 0,
+              "FirstRejectedDeviceTransform": null,
+              "FirstTranslatedOptimizedDeviceTransform": null,
+              "VectorMemoHitCount": null,
+              "VectorMemoPublishCount": null
+            }
+          },
+          "candidate": {
+            "planned": 1800,
+            "completed": 1621,
+            "pending": 179,
+            "actualDurationMs": 45013.93552,
+            "workloadPassed": false,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 1621,
+                "p50": 0.033268,
+                "p95": 0.261011,
+                "p99": 0.302151,
+                "minimum": 0.001953,
+                "maximum": 15.022293
+              },
+              "prepareMs": {
+                "count": 1621,
+                "p50": 0.077651,
+                "p95": 1.054815,
+                "p99": 3.337884,
+                "minimum": 0.002338,
+                "maximum": 13.025609
+              },
+              "recordMs": {
+                "count": 1621,
+                "p50": 7.626347,
+                "p95": 25.612177,
+                "p99": 30.136445,
+                "minimum": 0.983775,
+                "maximum": 32.510471
+              },
+              "controlledRasterMs": {
+                "count": 1621,
+                "p50": 7.132844,
+                "p95": 28.596658,
+                "p99": 29.883457,
+                "minimum": 4.986063,
+                "maximum": 36.603615
+              },
+              "hitMs": {
+                "count": 1621,
+                "p50": 0.019479,
+                "p95": 0.026103,
+                "p99": 0.032702,
+                "minimum": 0.008318,
+                "maximum": 0.352793
+              },
+              "requestToControlledRasterMs": {
+                "count": 1621,
+                "p50": 15.662395,
+                "p95": 54.135262,
+                "p99": 58.383293,
+                "minimum": 6.27335,
+                "maximum": 66.865918
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 1621,
+                "p50": 8687.203322,
+                "p95": 16741.876218,
+                "p99": 17579.463661,
+                "minimum": 6.616152,
+                "maximum": 18011.246652
+              },
+              "queueLatenessMs": {
+                "count": 1621,
+                "p50": 8665.983898,
+                "p95": 16717.879733,
+                "p99": 17534.190682,
+                "minimum": 0.002451,
+                "maximum": 17968.480558
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 1621,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 1621,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424312,
+                "minimum": 48,
+                "maximum": 1428784
+              },
+              "recordAllocatedBytes": {
+                "count": 1621,
+                "p50": 1955448,
+                "p95": 10393120,
+                "p99": 10393384,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 1621,
+                "p50": 7120,
+                "p95": 10816,
+                "p99": 15264,
+                "minimum": 6120,
+                "maximum": 15760
+              },
+              "hitAllocatedBytes": {
+                "count": 1621,
+                "p50": 344,
+                "p95": 424,
+                "p99": 688,
+                "minimum": 344,
+                "maximum": 688
+              }
+            },
+            "nativeBackendDiagnostics": {
+              "ExpandedFrameCount": 1150,
+              "FastPaintFrameCount": 1150,
+              "TranslatedExpandedFrameCount": 0,
+              "TranslatedFastPaintFrameCount": 0,
+              "FirstRejectedDeviceTransform": null,
+              "FirstTranslatedOptimizedDeviceTransform": null,
+              "VectorMemoHitCount": 126,
+              "VectorMemoPublishCount": 2
+            }
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "candidate",
+            "baseline"
+          ],
+          "baseline": {
+            "planned": 1800,
+            "completed": 1621,
+            "pending": 179,
+            "actualDurationMs": 45032.473581,
+            "workloadPassed": false,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 1621,
+                "p50": 0.031538,
+                "p95": 0.272277,
+                "p99": 0.309245,
+                "minimum": 0.001985,
+                "maximum": 10.604976
+              },
+              "prepareMs": {
+                "count": 1621,
+                "p50": 0.07605,
+                "p95": 1.054946,
+                "p99": 4.736076,
+                "minimum": 0.002457,
+                "maximum": 11.717406
+              },
+              "recordMs": {
+                "count": 1621,
+                "p50": 7.176293,
+                "p95": 25.883195,
+                "p99": 30.330331,
+                "minimum": 0.957124,
+                "maximum": 32.438076
+              },
+              "controlledRasterMs": {
+                "count": 1621,
+                "p50": 7.57567,
+                "p95": 28.739919,
+                "p99": 30.041698,
+                "minimum": 5.088585,
+                "maximum": 34.787905
+              },
+              "hitMs": {
+                "count": 1621,
+                "p50": 0.019335,
+                "p95": 0.025984,
+                "p99": 0.035316,
+                "minimum": 0.008219,
+                "maximum": 0.298937
+              },
+              "requestToControlledRasterMs": {
+                "count": 1621,
+                "p50": 15.64964,
+                "p95": 53.863785,
+                "p99": 58.626014,
+                "minimum": 6.410365,
+                "maximum": 64.367483
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 1621,
+                "p50": 8619.686481,
+                "p95": 16897.115661,
+                "p99": 17549.367766,
+                "minimum": 7.045978,
+                "maximum": 18030.898947
+              },
+              "queueLatenessMs": {
+                "count": 1621,
+                "p50": 8602.965998,
+                "p95": 16878.945684,
+                "p99": 17508.242423,
+                "minimum": 0.002626,
+                "maximum": 17985.27714
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 1621,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 1621,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424312,
+                "minimum": 48,
+                "maximum": 1425632
+              },
+              "recordAllocatedBytes": {
+                "count": 1621,
+                "p50": 1955432,
+                "p95": 10393120,
+                "p99": 10393200,
+                "minimum": 1948624,
+                "maximum": 10408112
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 1621,
+                "p50": 7120,
+                "p95": 87408,
+                "p99": 88472,
+                "minimum": 6120,
+                "maximum": 95424
+              },
+              "hitAllocatedBytes": {
+                "count": 1621,
+                "p50": 344,
+                "p95": 424,
+                "p99": 688,
+                "minimum": 344,
+                "maximum": 688
+              }
+            },
+            "nativeBackendDiagnostics": {
+              "ExpandedFrameCount": 1150,
+              "FastPaintFrameCount": 1150,
+              "TranslatedExpandedFrameCount": 0,
+              "TranslatedFastPaintFrameCount": 0,
+              "FirstRejectedDeviceTransform": null,
+              "FirstTranslatedOptimizedDeviceTransform": null,
+              "VectorMemoHitCount": null,
+              "VectorMemoPublishCount": null
+            }
+          },
+          "candidate": {
+            "planned": 1800,
+            "completed": 1602,
+            "pending": 198,
+            "actualDurationMs": 45024.716942,
+            "workloadPassed": false,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 1602,
+                "p50": 0.03249,
+                "p95": 0.259211,
+                "p99": 0.319334,
+                "minimum": 0.002064,
+                "maximum": 12.222615
+              },
+              "prepareMs": {
+                "count": 1602,
+                "p50": 0.078135,
+                "p95": 1.045529,
+                "p99": 1.803923,
+                "minimum": 0.002401,
+                "maximum": 12.762102
+              },
+              "recordMs": {
+                "count": 1602,
+                "p50": 7.412049,
+                "p95": 25.955041,
+                "p99": 30.776576,
+                "minimum": 0.991869,
+                "maximum": 35.630329
+              },
+              "controlledRasterMs": {
+                "count": 1602,
+                "p50": 7.161904,
+                "p95": 29.623583,
+                "p99": 30.954262,
+                "minimum": 5.099681,
+                "maximum": 39.03013
+              },
+              "hitMs": {
+                "count": 1602,
+                "p50": 0.019476,
+                "p95": 0.027309,
+                "p99": 0.040362,
+                "minimum": 0.008163,
+                "maximum": 0.902199
+              },
+              "requestToControlledRasterMs": {
+                "count": 1602,
+                "p50": 15.154672,
+                "p95": 54.686805,
+                "p99": 59.464022,
+                "minimum": 6.380777,
+                "maximum": 67.170911
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 1602,
+                "p50": 9082.699302,
+                "p95": 17594.805972,
+                "p99": 17890.307586,
+                "minimum": 6.58043,
+                "maximum": 18340.092999
+              },
+              "queueLatenessMs": {
+                "count": 1602,
+                "p50": 9059.241795,
+                "p95": 17576.654634,
+                "p99": 17874.529373,
+                "minimum": 0.003155,
+                "maximum": 18299.490248
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 1602,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 1602,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424312,
+                "minimum": 48,
+                "maximum": 1424680
+              },
+              "recordAllocatedBytes": {
+                "count": 1602,
+                "p50": 1955432,
+                "p95": 10393120,
+                "p99": 10393384,
+                "minimum": 1948624,
+                "maximum": 10408120
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 1602,
+                "p50": 7120,
+                "p95": 10144,
+                "p99": 14968,
+                "minimum": 6120,
+                "maximum": 15520
+              },
+              "hitAllocatedBytes": {
+                "count": 1602,
+                "p50": 344,
+                "p95": 424,
+                "p99": 688,
+                "minimum": 344,
+                "maximum": 3280
+              }
+            },
+            "nativeBackendDiagnostics": {
+              "ExpandedFrameCount": 1129,
+              "FastPaintFrameCount": 1129,
+              "TranslatedExpandedFrameCount": 0,
+              "TranslatedFastPaintFrameCount": 0,
+              "FirstRejectedDeviceTransform": null,
+              "FirstTranslatedOptimizedDeviceTransform": null,
+              "VectorMemoHitCount": 124,
+              "VectorMemoPublishCount": 2
+            }
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "baseline",
+            "candidate"
+          ],
+          "baseline": {
+            "planned": 1800,
+            "completed": 1612,
+            "pending": 188,
+            "actualDurationMs": 45041.348449,
+            "workloadPassed": false,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 1612,
+                "p50": 0.031745,
+                "p95": 0.272998,
+                "p99": 0.329696,
+                "minimum": 0.001906,
+                "maximum": 12.505864
+              },
+              "prepareMs": {
+                "count": 1612,
+                "p50": 0.075678,
+                "p95": 1.064341,
+                "p99": 3.273825,
+                "minimum": 0.002381,
+                "maximum": 13.167981
+              },
+              "recordMs": {
+                "count": 1612,
+                "p50": 7.192835,
+                "p95": 26.073973,
+                "p99": 30.584956,
+                "minimum": 0.96989,
+                "maximum": 35.323196
+              },
+              "controlledRasterMs": {
+                "count": 1612,
+                "p50": 7.061872,
+                "p95": 29.439875,
+                "p99": 30.893838,
+                "minimum": 4.950678,
+                "maximum": 38.504486
+              },
+              "hitMs": {
+                "count": 1612,
+                "p50": 0.019019,
+                "p95": 0.026785,
+                "p99": 0.036033,
+                "minimum": 0.008311,
+                "maximum": 0.210394
+              },
+              "requestToControlledRasterMs": {
+                "count": 1612,
+                "p50": 15.691257,
+                "p95": 54.674633,
+                "p99": 60.040729,
+                "minimum": 6.191558,
+                "maximum": 66.704928
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 1612,
+                "p50": 8794.203953,
+                "p95": 17241.355898,
+                "p99": 17732.303332,
+                "minimum": 6.569531,
+                "maximum": 18189.083334
+              },
+              "queueLatenessMs": {
+                "count": 1612,
+                "p50": 8778.008973,
+                "p95": 17222.885158,
+                "p99": 17691.74949,
+                "minimum": 0.003583,
+                "maximum": 18143.567413
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 1612,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 1612,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424312,
+                "minimum": 48,
+                "maximum": 1424680
+              },
+              "recordAllocatedBytes": {
+                "count": 1612,
+                "p50": 1955432,
+                "p95": 10393120,
+                "p99": 10393384,
+                "minimum": 1948624,
+                "maximum": 10408152
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 1612,
+                "p50": 7120,
+                "p95": 87408,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 95544
+              },
+              "hitAllocatedBytes": {
+                "count": 1612,
+                "p50": 344,
+                "p95": 424,
+                "p99": 688,
+                "minimum": 344,
+                "maximum": 688
+              }
+            },
+            "nativeBackendDiagnostics": {
+              "ExpandedFrameCount": 1140,
+              "FastPaintFrameCount": 1140,
+              "TranslatedExpandedFrameCount": 0,
+              "TranslatedFastPaintFrameCount": 0,
+              "FirstRejectedDeviceTransform": null,
+              "FirstTranslatedOptimizedDeviceTransform": null,
+              "VectorMemoHitCount": null,
+              "VectorMemoPublishCount": null
+            }
+          },
+          "candidate": {
+            "planned": 1800,
+            "completed": 1614,
+            "pending": 186,
+            "actualDurationMs": 45014.702543,
+            "workloadPassed": false,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 1614,
+                "p50": 0.032121,
+                "p95": 0.261805,
+                "p99": 0.313392,
+                "minimum": 0.002027,
+                "maximum": 12.120021
+              },
+              "prepareMs": {
+                "count": 1614,
+                "p50": 0.07638,
+                "p95": 1.025562,
+                "p99": 1.636033,
+                "minimum": 0.002525,
+                "maximum": 13.029954
+              },
+              "recordMs": {
+                "count": 1614,
+                "p50": 7.188231,
+                "p95": 26.284367,
+                "p99": 30.751451,
+                "minimum": 0.994251,
+                "maximum": 33.000272
+              },
+              "controlledRasterMs": {
+                "count": 1614,
+                "p50": 7.688668,
+                "p95": 29.129918,
+                "p99": 30.607712,
+                "minimum": 5.164879,
+                "maximum": 39.35229
+              },
+              "hitMs": {
+                "count": 1614,
+                "p50": 0.019634,
+                "p95": 0.026796,
+                "p99": 0.036502,
+                "minimum": 0.008561,
+                "maximum": 1.041902
+              },
+              "requestToControlledRasterMs": {
+                "count": 1614,
+                "p50": 15.549698,
+                "p95": 54.839027,
+                "p99": 59.258665,
+                "minimum": 6.455019,
+                "maximum": 65.282442
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 1614,
+                "p50": 8803.662605,
+                "p95": 17130.245456,
+                "p99": 17653.08115,
+                "minimum": 6.484781,
+                "maximum": 18129.210745
+              },
+              "queueLatenessMs": {
+                "count": 1614,
+                "p50": 8782.533048,
+                "p95": 17105.73992,
+                "p99": 17610.11208,
+                "minimum": 0.002853,
+                "maximum": 18092.790343
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 1614,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 410056
+              },
+              "prepareAllocatedBytes": {
+                "count": 1614,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424312,
+                "minimum": 48,
+                "maximum": 1424680
+              },
+              "recordAllocatedBytes": {
+                "count": 1614,
+                "p50": 1955432,
+                "p95": 10393120,
+                "p99": 10393384,
+                "minimum": 1948624,
+                "maximum": 10408128
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 1614,
+                "p50": 7216,
+                "p95": 11888,
+                "p99": 15232,
+                "minimum": 6120,
+                "maximum": 15592
+              },
+              "hitAllocatedBytes": {
+                "count": 1614,
+                "p50": 344,
+                "p95": 424,
+                "p99": 688,
+                "minimum": 344,
+                "maximum": 4976
+              }
+            },
+            "nativeBackendDiagnostics": {
+              "ExpandedFrameCount": 1142,
+              "FastPaintFrameCount": 1142,
+              "TranslatedExpandedFrameCount": 0,
+              "TranslatedFastPaintFrameCount": 0,
+              "FirstRejectedDeviceTransform": null,
+              "FirstTranslatedOptimizedDeviceTransform": null,
+              "VectorMemoHitCount": 125,
+              "VectorMemoPublishCount": 2
+            }
+          }
+        }
+      ],
+      "recordCostProbe": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\linux\\record-probe-v2\\run\\record-cost-probe.json",
+        "bytes": 193925,
+        "sha256": "B9F2D7FDB711055093EF9A10088B709187D87B8307D7BD63EECB3982A9724E9C"
+      },
+      "componentCases": 14,
+      "samplesPerCase": 25,
+      "package": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-vector-reuse-20261025\\linux\\qa-v2\\packages\\NT.AvaloniaControl.Charts.Skia.0.2.0-preview.2.nupkg",
+        "bytes": 23370,
+        "sha256": "2448EC1F34F8D0FF215DBAB0907E225B9EE56FED2BCC336339CA5BF551CE5C0C"
+      },
+      "packageDllMatchesMeasuredCandidate": true,
+      "packageScope": "Built candidate archive only, not shipped or requalified as a clean ordinary consumer."
+    }
+  },
+  "immutableInputs": [
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\charts-c7-performance-protocol.json",
+      "bytes": 5350,
+      "sha256": "7E633452EA83F4A9342C68093FE597DFB0CF4B18491D21660DE70EBE73EC5463"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\charts_c7_performance_oracle.py",
+      "bytes": 55377,
+      "sha256": "888F4A287BD71FB5BE6035E974B9902618F321CE9666544B1B72FB0F99175E41"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\charts-performance-budgets.json",
+      "bytes": 1812,
+      "sha256": "3E7149E6C4538993CBFEBAD2542E154DC8EBEBD06A72259EF345B3E3A07DEEA2"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\charts-ci-performance-policy.json",
+      "bytes": 3055,
+      "sha256": "CF6832A53E21E078C554F51194D93541F0B093AFF1C67D7E031EC177B8E87377"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\charts-c7-backlog-optimization-validation.json",
+      "bytes": 326888,
+      "sha256": "F622EAAE380BED6230B14310812C0CFC37EF006C8DBE165A3FADC9FE1241C2C5"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\charts-c7-performance-optimization-validation.json",
+      "bytes": 82314,
+      "sha256": "CFA515BBD3A4BE0EC6FE65C4D92822F87F612CE8F767A0E132AAF2C09B99C963"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\charts-c7-space-recovery-and-batch-resolution-validation.json",
+      "bytes": 51064,
+      "sha256": "4382ED4C75774AA996E930C62109001A2BEF1964A75BB27663580ECC54891E46"
+    }
+  ],
+  "newFormalCampaignRun": false,
+  "formalResultStillB8": true,
+  "ciDraftApplied": false,
+  "c703Complete": false,
+  "officialReference": {
+    "status": "blocked-reference",
+    "measurements": null,
+    "ratios": null
+  },
+  "scope": "Checks retained metadata, exact frozen inputs, qualified paired summaries and diagnostic/test receipts. Paired diagnostics and component microprobes are not a full formal campaign, present/peak-memory/hardware qualification, or official speed ratio."
+}

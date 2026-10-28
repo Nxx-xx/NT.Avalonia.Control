@@ -1,6 +1,8 @@
 # PdfViewer 桌面阅读控件
 
-最新状态为 **2026-10-21 P2（含 10-20 P2-01 / P2-02 收尾、10-21 P2-03 / P2-04 收尾与 10-21 收尾修复批 WP1–6：PNG 导出、触摸手势、链接目的地与书签边界、阅读交互契约、主题与窄窗口验收、MVVM 示例与包消费）**：页面布局模式、页标签、链接目的地（含完整拟合视图参数）、用户书签、FitHeight / 可配置缩放与阅读位置保存、渐进搜索与结果上限提示、清除搜索、页面 / 全文文本提取、页面 PNG 图片导出、细粒度工具开关、侧栏布局 / 宽度、独立默认外观与 Fluent 资源映射、字符串本地化（含错误、菜单、工具提示与无障碍名称）已交付，Windows 单平台验证结果见[状态记录](pdfviewer-status.md)。P1 批（2026-10-16）已加入 typed 数据源、元数据、权限与能力状态、可绑定命令、异步释放和串行公平调度，并在 Windows x64 与 Ubuntu 26.04 WSL2 x64 执行原生验证。接入迁移详见[P1 公共契约](pdfviewer-p1-contracts.md)，实际结果与限制见[P1 验证记录](pdfviewer-p1-validation.md)及[机器记录](validation/pdfviewer-p1-20261016.json)。Ubuntu 24.04 / Windows CI 已配置，尚未执行远端工作流；G1 未关闭。
+最新为 **2026-10-25 P4-03 真实存储与耐久验证**，见[存储专项](pdfviewer-p4-03-storage-validation.md)；首轮见[P4-03 验证](pdfviewer-p4-03-validation.md)，保存控件基本接入见[P4-02 验证](pdfviewer-p4-02-validation.md)。
+
+P2 历史状态为 **2026-10-21 P2（含 10-20 P2-01 / P2-02 收尾、10-21 P2-03 / P2-04 收尾与 10-21 收尾修复批 WP1–6：PNG 导出、触摸手势、链接目的地与书签边界、阅读交互契约、主题与窄窗口验收、MVVM 示例与包消费）**：页面布局模式、页标签、链接目的地（含完整拟合视图参数）、用户书签、FitHeight / 可配置缩放与阅读位置保存、渐进搜索与结果上限提示、清除搜索、页面 / 全文文本提取、页面 PNG 图片导出、细粒度工具开关、侧栏布局 / 宽度、独立默认外观与 Fluent 资源映射、字符串本地化（含错误、菜单、工具提示与无障碍名称）已交付，Windows 单平台验证结果见[状态记录](pdfviewer-status.md)。P1 批（2026-10-16）已加入 typed 数据源、元数据、权限与能力状态、可绑定命令、异步释放和串行公平调度，并在 Windows x64 与 Ubuntu 26.04 WSL2 x64 执行原生验证。接入迁移详见[P1 公共契约](pdfviewer-p1-contracts.md)，实际结果与限制见[P1 验证记录](pdfviewer-p1-validation.md)及[机器记录](validation/pdfviewer-p1-20261016.json)。Ubuntu 24.04 / Windows CI 已配置，尚未执行远端工作流；G1 未关闭。
 
 当前读 / 写 / 清理 / 删除逐操作范围见[兼容性边界](pdfviewer-compatibility-boundaries.md)。真实文档能读取或原样保存，并不代表支持表单填写、任意结构改写或部分内容删除。
 
@@ -62,6 +64,8 @@ await reader.LoadDocumentAsync(streamSource, cancellationToken: token);
 
 旧式流重载复制流的当前位置到末尾，调用方继续拥有流；新流工厂返回的流则归加载器释放。输入字节由后端独立持有。加载新文档会关闭旧文档；失败后显示空态和 `ErrorMessage`，显式调用的任务同时抛出异常。绑定 `Source` / `DocumentSource` 触发的异步错误通过 `ErrorMessage`、`LastError`、旧 `LoadError` 和新 `DocumentLoadFailed` 呈现。取消不作为加载错误。后发加载覆盖先发加载；旧任务不能覆盖新文档，关闭或释放后也不能恢复旧文档。
 
+控件的 `Stream` 重载只捕获一次输入，密码提示的后续尝试复用该自有快照；首次加载任务完成后，调用方可以释放原流。可寻址输入使用精确长度缓冲，不可寻址 / 超大输入继续使用临时文件。成功打开、新加载、关闭或释放会清理重试输入，已打开文档另持有自己的 pin / 文件句柄。`CancelPasswordPrompt()` 仍只隐藏提示并保留重试数据。底层 `PdfDocument.LoadAsync(Stream)` 的单次加载及 `leaveOpen` 契约不变。
+
 密码加载失败时默认弹出内置密码提示（`IsPasswordPromptVisible` 与 `:password` 伪类）：`SubmitPassword(password)` 更新 `Password` 并用同一来源重开，错误密码会再次报告错误并重新弹出提示（重试由用户驱动，不会自动循环）；`CancelPasswordPrompt()` 只收起提示，错误状态保留，宿主之后仍可调用 `SubmitPassword` 重试。新加载、加载成功、`CloseDocument` 与释放都会收起提示并丢弃重试数据。宿主可用 `IsPasswordPromptEnabled = false` 关闭内置提示改用自有 UI（错误仍照常上报）；提示的标题、说明、按钮与输入无障碍名称来自 `PdfViewerStrings.PasswordPrompt*`。默认模板的 `PART_PasswordBox` 回车提交、Esc 取消，`PART_PasswordSubmit` / `PART_PasswordCancel` 按钮同义。
 
 `Source` 只接受本地文件路径，内存加载会清空它；`PdfDocumentSource.FromFile` 将本地路径规范为绝对路径。旧式 path / stream / bytes 加载清理之前的 typed `DocumentSource`；typed 文件来源同时投影其本地 `Source`，typed bytes / factory 的 `Source` 为 `null`。需要网络内容时由应用取得流或字节，控件不下载 URI。`Password` 变化优先重开当前 typed 来源，否则重开旧式 `Source`；显式加载可传密码。错误密码会产生 `PdfDocumentException`，其 `ErrorCode == 4`，分类为 `PasswordRequiredOrIncorrect`，不区分缺少和错误密码。
@@ -80,7 +84,7 @@ await using var document = await PdfDocument.LoadAsync(source, password, token);
 
 控件新增 `Metadata`、`Permissions`、`Capabilities`、`LastError`、`DocumentState` 和 `DocumentSessionId` direct properties。元数据读取标准 DocInfo 字段，日期保留原字符串；每字段最多 1 MiB，超出时明确拒绝。`SignatureCount` 只表示原生发现的签名数量，不验证证书信任或签名有效性。
 
-`Permissions` 是原生文件权限快照，`Capabilities` 合并当前文档、宿主策略和功能是否实现。绑定功能入口应检查 `Capabilities.<功能>.CanExecute`，不能仅检查原始权限。各能力还提供 `IsImplemented`、`IsAllowed`、`Reason`；打印、分享、控件保存、批注编辑和表单输入仍 `IsImplemented=false`。`IsReadOnly` 默认 `true`，不影响复制和搜索；将其设为 `false` 也不会解锁尚未实现的控件功能。
+`Permissions` 是原生文件权限快照，`Capabilities` 合并当前文档、宿主策略和功能是否实现。绑定功能入口应检查 `Capabilities.<功能>.CanExecute`，不能仅检查原始权限。各能力还提供 `IsImplemented`、`IsAllowed`、`Reason`；控件保存现为 `IsImplemented=true`，受只读和写入范围约束；打印、分享、批注编辑 UI 和表单输入仍未实现。`IsReadOnly` 默认 `true`，不影响复制和搜索；将其设为 `false` 也不会解锁尚未实现的控件功能。
 
 - 搜索受 `AllowSearch` 控制；禁用会取消当前搜索、清理结果，显式 `SearchAsync` 返回空结果。搜索属于阅读操作，可在文件禁止复制时继续使用。
 - 选择、全选和复制要求文件 `CanCopy`、宿主 `AllowCopy` 及 `AllowTextSelection` 同时允许。P1 新增行为：低层 `PdfDocument.GetTextAsync` 对禁止复制的受限 user 文档抛 `UnauthorizedAccessException`；渲染和搜索仍可用。
@@ -97,7 +101,7 @@ if (reader.NextPageCommand.CanExecute(null))
 
 可绑定命令包括打开、关闭、前后页、缩放、适配、旋转、搜索、前后匹配、复制和全选，例如 `OpenCommand`、`NextPageCommand`、`SearchCommand`、`CopyCommand`。不可执行命令不调用动作；默认工具栏、快捷键和公共操作应用相同限制。完整命令列表与事件语义见[P1 契约](pdfviewer-p1-contracts.md)。
 
-`FileDialogService` 可注入 `IPdfFileDialogService`；未设置时使用附着窗口的 Avalonia StorageProvider。`CanOpen` / `OpenAsync` 已接入打开流程，`CanSave` / `GetSavePathAsync` 仅固定宿主契约，控件尚无保存流程调用。`PrintService` / `ShareService` 及其不可变 `PdfPlatformDocument` 请求是 P8 适配边界；即使服务 `IsAvailable=true`，当前 `Capabilities.CanPrint` / `CanShare` 仍为 `false`。
+`FileDialogService` 可注入 `IPdfFileDialogService`；未设置时使用附着窗口的 Avalonia StorageProvider。`CanOpen` / `OpenAsync` 已接入打开流程，`CanSave` / `GetSavePathAsync` 已接入保存 / 另存为；取消返回 null。`PrintService` / `ShareService` 及其不可变 `PdfPlatformDocument` 请求是 P8 适配边界；即使服务 `IsAvailable=true`，当前 `Capabilities.CanPrint` / `CanShare` 仍为 `false`。
 
 ## 阅读和搜索
 
@@ -129,7 +133,65 @@ if (reader.NextPageCommand.CanExecute(null))
 
 ### 用户书签
 
-`UserBookmarks` 是会话内的用户书签集合，与文档目录分开建模：`AddUserBookmark(title?, pageNumber?, flags?)`、`RemoveUserBookmark(id)`、`RenameUserBookmark(id, title)`、`SetUserBookmarkFlags(id, flags)`、`ClearUserBookmarks()`，以及 `AddUserBookmarkCommand` / `RemoveUserBookmarkCommand`。`PdfUserBookmarkFlags.Bold` / `Italic` 控制显示样式。书签在文档关闭或替换时自动清空；PDF 持久化随保存 / 编辑阶段（P4）提供。
+`UserBookmarks` 是会话内的用户书签集合，与文档目录分开建模：`AddUserBookmark(title?, pageNumber?, flags?)`、`RemoveUserBookmark(id)`、`RenameUserBookmark(id, title)`、`SetUserBookmarkFlags(id, flags)`、`ClearUserBookmarks()`，以及 `AddUserBookmarkCommand` / `RemoveUserBookmarkCommand`。`PdfUserBookmarkFlags.Bold` / `Italic` 控制显示样式。书签在文档关闭或替换时自动清空；可写会话的 PDF 持久化与回读已在 P4-02 接入（私有 catalog 块）；只读会话继续使用临时书签。
+
+
+### 控件保存与未保存修改（P4-02）
+
+```csharp
+reader.IsReadOnly = false;
+await reader.EnableEditingAsync(); // 已加载文档；回读私有用户书签
+reader.AddUserBookmark("阅读标记");
+await reader.SaveAsAsync("edited.pdf"); // 建立新的 SavePath
+reader.AutoSave = true;             // 默认防抖 2 秒，仅针对本地目标
+await reader.ExecuteEditAsync(async (session, token) =>
+    await session.AddFreeTextAsync(0, bounds, "A", font, cancellationToken: token));
+await reader.UndoAsync();
+await reader.RedoAsync();
+byte[] pdf = await reader.ExportDocumentAsync(); // 不清 Dirty
+await reader.SaveAsync();                        // 当前路径，无路径则请求另存为
+// 窗口关闭事件应先 Cancel=true，然后等待；成功后再关闭并 DisposeAsync。
+bool canClose = await reader.RequestCloseDocumentAsync();
+```
+
+`SaveAsync(Stream)` 在当前位置写入、Flush 并保留流打开；成功清 Dirty，但不改变本地 SavePath。`SaveCommand` / `SaveAsCommand` / `UndoCommand` / `RedoCommand` 与 `IsDirty` / `IsEditing` / `IsSaving` / `CanUndo` / `CanRedo` / `Revision` / `SavePath` 可绑定。快捷键为 Ctrl/Cmd+S、Shift+S、Z、Y / Shift+Z，输入控件保留自身按键。
+
+写入要求可写模式、未加密 / 未签名、至多 256 MiB 且结构受支持。可写加载创建自有编辑快照，默认只读加载保持随机访问。`SaveRequested` 可取消 / 覆盖路径；`FileDialogService` 或 StorageProvider 提供本地选路径。`DocumentSaved` / `SaveFailed` 与 `LastError` 报告结果。AutoSave 无目标时不弹选路径，失败保留修改并停止本次重试循环。
+
+关闭 / 替换会先等待在途编辑，再通过 `UnsavedChangesRequested.Decision`、`UnsavedChangesService` 或默认主题等待保存 / 放弃 / 取消。`RespondToUnsavedChanges` 可完成自定义模板的提示；保存失败或选路径取消都保留当前文档。`Dispose` / `DisposeAsync` 是无条件释放入口，宿主需在释放前请求确认。详见[完整契约与限制](pdfviewer-p4-02-validation.md)。
+
+### 原路径冲突与保存事务恢复（P4-03）
+
+保存基线来自编辑会话初始化 / 上次成功文件保存的完整 SHA-256。`SaveAsync()`、AutoSave 及同路径 Save As 都不会自动覆盖发生变化的目标：抛 `PdfSaveConflictException`，`LastSaveConflict` / `SaveConflict` 和 `LastError.Kind=SaveConflict` 可绑定；Dirty / 当前文档保留。AutoSave 在冲突后暂停；另存到其他路径或重新加载解除。默认纯阅读阶段不承担整文件指纹，启用编辑后可等待 `EnableEditingAsync()` 完成初始化。
+
+独立后端可显式传入文件身份：
+
+```csharp
+var baseline = await PdfFileSnapshot.CaptureAsync(path);
+// 打开并编辑相应字节之后，使用该身份保护原文件。
+PdfFileSaveResult result = await edit.SaveAsync(path,
+    new PdfFileSaveOptions { ExpectedTarget = baseline });
+```
+
+未传 ExpectedTarget 的独立字节会话只保护本次保存开始后的变化。控件自动保留更早的编辑基线。目标发生冲突时应让用户选择重新加载或新路径，不通过重新捕获身份来暗中取消保护。
+
+保存使用私有 `.nt-pdf-txn-*` 暂存目录、落盘 journal、候选 SHA / PDF 重开校验和原子替换；稳定空 `.nt-pdf-save-*.lock` 文件用于跨进程协作，不存文档数据且不自动 unlink。重启后的显式入口如下，调用应由宿主向用户展示条目并取得选择后执行：
+
+```csharp
+IReadOnlyList<PdfSaveRecoveryEntry> pending = await PdfSaveRecovery.ScanAsync(directory);
+// 对用户选中的完整候选 / 已提交项：重新校验并恢复或清理。
+PdfFileSaveResult recovered = await PdfSaveRecovery.RecoverAsync(selected.TransactionDirectory);
+// 对用户明确放弃的、inactive 且有效的已识别事务：
+await PdfSaveRecovery.DiscardAsync(selected.TransactionDirectory);
+```
+
+扫描区分 Active / Incomplete / Prepared / AlreadyCommitted / Conflict / Invalid，并追加 PublishedConflict / DurabilityPending，原枚举数值保留。恢复不信任旧扫描缓存，不递归删除未知文件。它恢复已进入保存流程的快照，不自动持久化每次编辑和 Undo 栈。`DocumentSaved.FileResult` 提供提交后清理警告、恢复目录及 `Durability`。
+
+v2 事务在 `output.pdf` 保留独立输出，`candidate.pdf` 用于发布。Windows ReplaceFile 的 backup / Linux `RENAME_EXCHANGE` 保留实际被置换文件，再核对原身份与当前目标。最终窗口有竞争时，`PdfSaveConflictException.WasPublished=true`，目标可能已更新；请展示 `RecoveryDirectory`，保留当前 Dirty，显式另存解决。`PublishedConflict` 不允许自动恢复或 `DiscardAsync`；宿主可用 `PdfSaveRecovery.ReadVersionAsync(transaction, PdfSaveRecoveryVersion.SavedOutput / DisplacedExternal)` 读取自有字节，单版本上限 256 MiB，更大版本直接检查保留路径。不要盲目回滚并覆盖第三方后续修改。
+
+`PdfSaveDurabilityException` / `LastSaveDurabilityFailure` / `LastError.Kind=SaveDurabilityUncertain` 表示提交结果或耐久确认不确定；不清 Dirty，AutoSave 在后续编辑后仍暂停。恢复连接后检查条目；DurabilityPending 在确认目标 / 旧版本身份后可补写确认记录。成功文件另存或重新加载清除控件的暂停状态。Linux 返回 FileAndDirectoryEntriesFlushed；Windows 返回 PostRenameFileAndCommitRecordFlushed，不作目录 fsync 或 Windows 掉电验收声明。
+
+Windows 暂存使用当前用户私有 ACL；Unix 要求目录实际 0700，文件创建为 0600，并保留现有目标 Unix mode。权限无法落实、符号链接 / reparse point 明确拒绝。Linux 文件系统不支持原子交换时拒绝已有目标替换；实测 NFS 新路径可以 no-replace 发布，已有目标不可降级覆盖。NFSv4 永久失联的内核 I/O 不保证随 CancellationToken 立即退出，宿主应隔离进程并实施恢复 / 超时策略；本轮只验收三秒链路中断及重连。该方案仍不是 CAS，也不防止调用返回后的外部改写。完整元数据及掉电边界见[专项记录](pdfviewer-p4-03-storage-validation.md)。
 
 ### 阅读位置保存
 
@@ -174,6 +236,37 @@ await edit.SaveAsync("output.pdf");
 每次更新仍须提供原始字体对象，重新生成包含新增字符的子集；不能拿已经保存的子集补出缺失字形。使用显式 Unicode 标量 / CID / GID 和 UTF-16BE ToUnicode，支持经过验证的扩展汉字及同字形 Unicode 别名，批注 Contents 与实际 AP 文本保持一致。当前验证范围为三套 OFL 静态 TrueType 字体的简繁中文、日文、预组韩文、Ext-B、复合轮廓与 cmap 4/12；不是任意 CJK 字体的兼容保证。可变 / CFF / TTC、竖排、变体序列、复杂排版 / RTL、换行、字体回退仍未实现，缺字直接拒绝。字体不随产品捆绑，宿主负责提供可用且有许可的字体；已很小的字体可能因规范表 / 名称开销略增。
 
 加密及签名输入拒绝。`ExportAsync` 返回自有副本且不清 Dirty；流保存保留流打开，失败可能有部分输出；文件保存采用验证后原子替换。细节和限制见[功能包 README](../src/NT.AvaloniaControl.PdfViewer/README.md#bounded-freetext-writing-backend)。
+
+### 有界撤销历史、编辑事务与用户书签持久化
+
+P4-01 起内容编辑（FreeText、净化、红删）进入有界撤销历史，用户书签按单独规则持久化：
+
+```csharp
+await using var edit = await PdfEditSession.OpenAsync(bytes);
+await edit.AddFreeTextAsync(0, bounds, "第一笔", font, 18);
+await edit.AddFreeTextAsync(0, otherBounds, "第二笔", font, 18);
+await edit.UndoAsync();            // 撤销「第二笔」；CanUndo / CanRedo / UndoCount / HistoryBytes 实时反映
+await edit.RedoAsync();            // 重做；新的编辑会清空 redo 栈
+
+// 事务把一组编辑合并为一条历史记录，失败全量回滚字节、修订与 dirty：
+await edit.ExecuteTransactionAsync(async ct =>
+{
+    await edit.UpdateFreeTextAsync(id, 0, bounds, "改名", font, 18, ct);
+    await edit.AddFreeTextAsync(0, bounds, "新增", font, 18, ct);
+});
+
+// 书签：不进撤销历史、undo / redo 永不回滚；导出 / 保存时注入私有 catalog 块，重开即回读
+await edit.SetUserBookmarksAsync(
+[
+    new PdfEditUserBookmark(Guid.NewGuid(), "第一章", 0, PdfUserBookmarkFlags.Bold | PdfUserBookmarkFlags.Italic),
+    new PdfEditUserBookmark(Guid.NewGuid(), "附注", 1, PdfUserBookmarkFlags.Bold),
+]);
+var saved = await edit.ExportAsync();
+await using var reopened = await PdfEditSession.OpenAsync(saved);
+var persisted = await reopened.GetUserBookmarksAsync(); // 与写入集合一致
+```
+
+历史约束：`UndoLimit`（每栈条目数，默认 100，下限 1）与 `HistoryByteLimit`（留存快照字节，默认 64 MiB，下限 64 KiB）双限；调低即裁剪，最新一条撤销记录永远保留（字节可因此超出单条预算）。`IsDirty` 按内容状态身份加书签叠加层判定：撤销回到保存点即干净，保存失败保留 dirty，重复写入同一书签集合是 no-op。新分支分配全新的内容状态身份；书签与最后成功保存的集合逐项比较，改回该集合只清除书签脏状态，不清除未保存的内容变更。净化 / 红删清除书签后，Undo 只恢复内容；若保存集合中仍有书签，状态保持脏。同一状态的重复导出 / 保存字节一致（会话按状态缓存注入输出）；跨会话的字节复现不保证——PDFsharp 6.2.4 每次结构化保存都会以全新随机 XMP 文档 ID 替换 catalog 元数据（锁定版本源码已核对）。事务内禁止嵌套事务、undo / redo、保存、书签修改与历史限制调整；净化 / 红删各记一条历史并按其破坏性策略清空会话书签。持久化块（`/NTUserBookmarks`）属本包私有命名空间，其他阅读器忽略；损坏或越界的持久化块在打开时明确报错，不静默丢弃。书签标题限 1–512 个 UTF-16 码元、ID 非空且唯一、页索引零基、标志仅 None / Bold / Italic。
 
 上述完整字体 / 表单 / 部分删除兼容矩阵来自 P0 历史证据。P1 已改变功能包 DLL，本轮没有在新 DLL 上重新执行这些完整大矩阵；新一轮包消费者检查不等同于重新验收全部 CJK、复杂布局或 IME。
 
@@ -220,7 +313,7 @@ PdfViewerStrings.ErrorEmptyDocument = "The PDF file is empty.";
 
 主题资源以 `PdfViewer` 开头，包含 Background、Foreground、MutedForeground、Border、Toolbar、Canvas、Error 画刷，以及 `PdfViewerCornerRadius` / `PdfViewerSidebarWidth`（后者播种 `SidebarWidth` 属性）。画刷可整体替换为 Fluent token 映射，见上文[外观与本地化](#外观与本地化)。PDF 页面的原始白底与文档内容保持原样，应用主题作用于阅读器外观。
 
-当前范围为桌面阅读；批注编辑、表单填写、文档保存、内置打印、移动端及浏览器不在本版验收范围内。
+当前为桌面阅读与受限控件保存 / 内容历史；批注编辑 UI、表单填写、内置打印、移动端及浏览器仍待后续阶段。
 
 ## P1 当前验证范围
 

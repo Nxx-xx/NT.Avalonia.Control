@@ -14,6 +14,11 @@
     <Compile Include="../Charts.Benchmarks/DatasetFactory.cs" Link="Fixtures/DatasetFactory.cs" />
     <Compile Include="../../src/NT.AvaloniaControl.Charts/ChartPoint.cs" Link="Fixtures/ChartPoint.cs" />
   </ItemGroup>
+  <ItemGroup Condition="'$(EnableOfficialChartsReference)' == 'true' and '$(AVALONIA_LICENSE_KEY)' != ''">
+    <!-- The executable owns licensing. The value comes from the calling process,
+         never a checked-in key, command-line property, generated props or script. -->
+    <AvaloniaUILicenseKey Include="$(AVALONIA_LICENSE_KEY)" />
+  </ItemGroup>
   <Target Name="RequireExplicitReferenceOptIn" BeforeTargets="Restore;PrepareForBuild"
           Condition="'$(EnableOfficialChartsReference)' != 'true'">
     <Error Text="Official Charts reference is opt-in. Pass -p:EnableOfficialChartsReference=true. It is excluded from the normal solution." />

@@ -48,15 +48,15 @@ public abstract class PairedBarChartBase : ComparisonChartBase
             {
                 var position = Normalized(.5 - halfGap - leftWidth / 2, row.Y, plot);
                 marks.Add(Mark(source, Rectangle(.5 - halfGap - leftWidth, top, leftWidth, height, plot), LeftBrush ?? BrushAt(0), position, "left", row.First, $"{row.Label} {LeftTitle}: {ValueText(row.First)}"));
-                NumberLabel(row.First, position, Math.Max(16, leftWidth * plot.Width - 4));
+                DataNumberLabel(marks[^1], row.First, position, Math.Max(16, leftWidth * plot.Width - 4));
             }
             if (rightWidth > 0)
             {
                 var position = Normalized(.5 + halfGap + rightWidth / 2, row.Y, plot);
                 marks.Add(Mark(source, Rectangle(.5 + halfGap, top, rightWidth, height, plot), RightBrush ?? BrushAt(1), position, "right", row.Second, $"{row.Label} {RightTitle}: {ValueText(row.Second)}"));
-                NumberLabel(row.Second, position, Math.Max(16, rightWidth * plot.Width - 4));
+                DataNumberLabel(marks[^1], row.Second, position, Math.Max(16, rightWidth * plot.Width - 4));
             }
-            Label(row.Label, ApplyViewport(new(plot.Center.X, plot.Top + plot.Height * top - 8), plot), Math.Max(40, plot.Width / 3));
+            if (leftWidth > 0 || rightWidth > 0) DataLabel(marks[^1], row.Label, ApplyViewport(new(plot.Center.X, plot.Top + plot.Height * top - 8), plot), Math.Max(40, plot.Width / 3));
         }
         Label(LeftTitle, new(plot.Left + plot.Width / 4, plot.Top - 11), plot.Width / 2); Label(RightTitle, new(plot.Left + plot.Width * .75, plot.Top - 11), plot.Width / 2);
         return marks;

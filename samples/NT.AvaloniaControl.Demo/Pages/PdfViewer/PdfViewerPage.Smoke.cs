@@ -5,6 +5,7 @@ using Avalonia.Automation;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Media.Imaging;
+using Avalonia.Rendering.Composition;
 using Avalonia.Styling;
 using Avalonia.VisualTree;
 using PdfViewerSamples;
@@ -275,6 +276,67 @@ internal sealed partial class PdfViewerPage
                 && _reader.DegradedPageCount == 0;
             observations["previewPageCount"] = _reader.PreviewPageCount;
             observations["degradedPageCount"] = _reader.DegradedPageCount;
+
+            // P3-04 long-document contracts: published results stay page-ordered for the
+            // per-page highlight buckets, and a width-only viewport resize (sidebar change)
+            // recenters the rows without disturbing the active selection or its text.
+            await SearchForPdfSmokeAsync("Avalonia", timeout.Token);
+            checks["searchResultsPageOrdered"] = _reader.SearchResultCount >= 5
+                && _reader.SearchResults.Zip(_reader.SearchResults.Skip(1), (a, b) => a.PageIndex <= b.PageIndex)
+                    .All(ordered => ordered);
+            await _reader.SearchAsync(null, timeout.Token);
+            await _reader.SelectAllAsync().WaitAsync(timeout.Token);
+            var smokeSelectedBeforeResize = _reader.SelectedText;
+            _reader.ZoomMode = PdfZoomMode.Manual;
+            _reader.SidebarWidth = 320;
+            await PdfSmokeIdleAsync(timeout.Token);
+            checks["selectionSurvivesViewportResize"] = _reader.IsTextSelected
+                && _reader.SelectedText == smokeSelectedBeforeResize && smokeSelectedBeforeResize.Length > 0;
+            _reader.SidebarWidth = 208;
+            await PdfSmokeIdleAsync(timeout.Token);
+
+            // P3-05 performance instrumentation (PERF01/PERF17): a session on the real window
+            // records the first-screen stage chain; a compositor batch render is observed here
+            // as a harness-side present only — composition-batch-rendered, not scan-out, and
+            // never recorded by the product itself.
+            using (var smokePerf = PdfPerformanceSession.Begin("pdf-smoke-p3"))
+            {
+                await _reader.LoadDocumentAsync(SamplePdf.Create(), cancellationToken: timeout.Token);
+                await PdfSmokeIdleAsync(timeout.Token);
+                var smokeMarks = smokePerf.Marks;
+                var smokeDecoded = smokeMarks.Single(mark => mark.Name == PdfPerformanceSession.FirstPageDecodedMark);
+                var smokeSubmitted = smokeMarks.Single(mark => mark.Name == PdfPerformanceSession.FirstPageSubmittedMark);
+                checks["perfFirstScreenStageChain"] =
+                    smokeMarks.Single(mark => mark.Name == PdfPerformanceSession.LoadStartMark).Timestamp <= smokeDecoded.Timestamp
+                    && smokeDecoded.Timestamp <= smokeSubmitted.Timestamp
+                    && smokePerf.Spans.Any(span => span.Stage == PdfPerformanceStage.BitmapUpload && span.CorrelationId == smokeDecoded.CorrelationId)
+                    && smokePerf.Spans.Any(span => span.Stage == PdfPerformanceStage.UiSubmit && span.CorrelationId == smokeSubmitted.CorrelationId)
+                    && smokePerf.Spans.Any(span => span.Stage == PdfPerformanceStage.LayoutBuild);
+                checks["perfProductNeverClaimsPresent"] =
+                    !smokeMarks.Any(mark => mark.Name == PdfPerformanceSession.FirstPagePresentedMark)
+                    && !smokePerf.Spans.Any(span => span.Stage == PdfPerformanceStage.CompositorRendered);
+                var smokeCompositor = ElementComposition.GetElementVisual(_hostWindow)?.Compositor;
+                if (smokeCompositor is null)
+                {
+                    checks["perfCompositionPresentObserved"] = false;
+                    observations["perfPresentMethod"] = null;
+                    observations["perfPresentUnavailableReason"] = "no-compositor on the smoke host window";
+                }
+                else
+                {
+                    var smokeBatch = smokeCompositor.RequestCompositionBatchCommitAsync();
+                    await smokeBatch.Rendered.WaitAsync(timeout.Token);
+                    checks["perfCompositionPresentObserved"] = true;
+                    observations["perfPresentMethod"] = "composition-batch-rendered (harness-side; scanOutVerified=false)";
+                }
+                var smokeResourceSample = _reader.CaptureResourceSample();
+                checks["perfResourceSampleJoinsCache"] = smokeResourceSample.Cache is { BudgetedBytes: > 0 }
+                    && smokeResourceSample.ManagedHeapBytes > 0;
+                observations["perfStageSpanCounts"] = smokePerf.Spans
+                    .GroupBy(span => span.Stage.ToString())
+                    .ToDictionary(group => group.Key, group => (object?)group.Count());
+                observations["perfPrivateBytes"] = smokeResourceSample.PrivateBytes;
+            }
 
             // P2-04 completion: tool visibility, sidebar width / placement, strings and accessibility names.
             var smokeSidebar = _reader.GetVisualDescendants().OfType<Border>().Single(border => border.Name == "PART_Sidebar");

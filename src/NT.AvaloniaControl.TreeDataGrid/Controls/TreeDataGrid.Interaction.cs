@@ -1,4 +1,3 @@
-using System.Globalization;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -26,6 +25,8 @@ public partial class TreeDataGrid
     public TreeDataGridEditTriggers EditTriggers { get => GetValue(EditTriggersProperty); set => SetValue(EditTriggersProperty, value); }
     public TreeDataGridState? State { get { EnsureInteractionState(); RefreshVisibleColumns(); return _state; } }
     public event EventHandler? SelectionChanged;
+    public event EventHandler<TreeDataGridSelectionChangingEventArgs>? SelectionChanging;
+    public event EventHandler<TreeDataGridSelectionChangedEventArgs>? SelectionChangeCompleted;
     internal bool IsInputMethodComposing => RowsPresenter?.RealizedRows.SelectMany(row => row.RealizedCells).Any(cell => cell.IsComposing) == true;
 
     private void InitializeInteraction()
@@ -39,6 +40,7 @@ public partial class TreeDataGrid
     {
         if (ReferenceEquals(_stateSource, Source)) return;
         var hadSource = _stateSource is not null;
+        var previousSelection = _state?.CaptureSelection();
         if (_state is { } old) { old.Changed -= InteractionStateChanged; old.SelectionChanged -= InteractionSelectionChanged; old.ProjectionReconciled -= MvvmProjectionReconciled; old.ReleaseOwner(); }
         _state = null; _stateSource = Source;
         if (Source is { } source)
@@ -49,8 +51,29 @@ public partial class TreeDataGrid
             _state.Changed += InteractionStateChanged;
             _state.SelectionChanged += InteractionSelectionChanged;
             _state.ProjectionReconciled += MvvmProjectionReconciled;
+            _state.SelectionChanging += InteractionSelectionChanging;
+            _state.SelectionChangeCompleted += InteractionSelectionCompleted;
+            var state = _state;
+            _state.CommitSelectionEdit = CommitEdit;
+            _state.ObserveEditWrite = edit => BeginCellWrite(source, edit);
+            _state.EditCommitted = NotifyEditValueCommitted;
+            _state.SelectionTransactionFinished = SynchronizeMvvm;
+            _state.IsSelectionOwnerCurrent = () => ReferenceEquals(_state, state) && ReferenceEquals(Source, source);
+            _state.SelectionOwnerVersion = () => ColumnOperationVersion;
         }
         MvvmSourceChanged(hadSource);
+        if (previousSelection is not null)
+        {
+            var next = _state?.CaptureSelection() ?? new TreeDataGridSelectionSnapshot([], [], [], null, null);
+            if (!previousSelection.SameAs(next))
+            {
+                var completion = new TreeDataGridSelectionChangedEventArgs(previousSelection, next, TreeDataGridSelectionChangeReason.SourceChanged, true);
+                List<Exception>? errors = null;
+                TreeDataGridEventDispatch.Invoke(SelectionChanged, this, completion, ref errors);
+                TreeDataGridEventDispatch.Invoke(SelectionChangeCompleted, this, completion, ref errors);
+                TreeDataGridEventDispatch.Throw(errors);
+            }
+        }
     }
     private void ResumeInteraction() { EnsureInteractionState(); ResumeMvvm(); _state?.Resume(); }
     private void SuspendInteraction() { SuspendMvvm(); _state?.Suspend(); }
@@ -58,14 +81,38 @@ public partial class TreeDataGrid
     private void OnInteractionPropertyChanged(AvaloniaPropertyChangedEventArgs change)
     {
         if (change.Property == SourceProperty) EnsureInteractionState();
-        else if (change.Property == SelectionModeProperty && _state is not null) _state.SelectionMode = SelectionMode;
-        else if (change.Property == SelectionUnitProperty) _state?.ClearSelection();
+        else if (change.Property == SelectionModeProperty && _state is not null) _state.SetSelectionModeForOwner(SelectionMode);
+        else if (change.Property == SelectionUnitProperty) _state?.ClearSelectionForOwner();
         else if (change.Property == IsReadOnlyProperty && IsReadOnly) CancelEdit();
         OnMvvmPropertyChanged(change);
     }
-    private void InteractionSelectionChanged(object? sender, EventArgs e) => SelectionChanged?.Invoke(this, EventArgs.Empty);
+    private void InteractionSelectionChanging(object? sender, TreeDataGridSelectionChangingEventArgs e)
+    {
+        var version = ColumnOperationVersion;
+        SelectionChanging?.Invoke(this, e);
+        if (version != ColumnOperationVersion) e.Cancel = true;
+    }
+    private void InteractionSelectionChanged(object? sender, EventArgs e)
+    {
+        List<Exception>? errors = null;
+        TreeDataGridEventDispatch.Invoke(SelectionChanged, this, e, ref errors);
+        TreeDataGridEventDispatch.Throw(errors);
+    }
+    private void InteractionSelectionCompleted(object? sender, TreeDataGridSelectionChangedEventArgs e)
+    {
+        List<Exception>? errors = null;
+        TreeDataGridEventDispatch.Invoke(SelectionChangeCompleted, this, e, ref errors);
+        TreeDataGridEventDispatch.Throw(errors);
+    }
     private void InteractionStateChanged(object? sender, EventArgs e)
     {
+        // A binding input can own the outer synchronization loop. Publish the newly
+        // committed mirrors here before state completion observers are dispatched.
+        if (_mvvmSynchronizing && !_mvvmDataContextUpdating && _state is { } state && Source is { } source)
+        {
+            PublishMvvmSelection(state, source);
+            PublishMvvmEditState();
+        }
         SynchronizeMvvm();
         NotifyAutomationStateChanged();
         PseudoClasses.Set(":editing", _state?.EditSession is not null);
@@ -78,15 +125,15 @@ public partial class TreeDataGrid
         if (IsReadOnly || source is null || state is null || source.IsRefreshDeferred || !source.TryGetRow(cell.Node, out var row) || source.GetViewIndex(cell.Node) < 0) return false;
         var column = Columns.FirstOrDefault(item => item.Id == cell.Column);
         if (column is null || !column.IsVisible || column.IsReadOnly || column.EffectiveColumn.IsReadOnly) return false;
-        var writer = column.GetWriter(row!.Model, () => ReferenceEquals(Source, source) && ReferenceEquals(_state, state) &&
+        var writable = column.TryCreateEditAccess(row!.Model, () => ReferenceEquals(Source, source) && ReferenceEquals(_state, state) &&
             state.EditSession?.Cell == cell && source.IsEditNodeCurrent(cell.Node, row.Model) && Columns.Contains(column) && column.IsVisible &&
-            !IsReadOnly && !column.IsReadOnly && !column.EffectiveColumn.IsReadOnly);
-        if (writer is null) return false;
+            !IsReadOnly && !column.IsReadOnly && !column.EffectiveColumn.IsReadOnly, out var access, out _);
+        if (!writable) return false;
         if (state.EditSession?.Cell == cell) return true;
-        if (state.EditSession is not null && !CommitEdit()) return false;
+        if (!state.RunSelection(TreeDataGridSelectionChangeReason.Programmatic, () => state.SetCurrentCell(cell))) return false;
         if (!ReferenceEquals(Source, source) || !Columns.Contains(column) || !column.IsVisible) return false;
-        try { state.BeginEdit(cell, column.ReadValue, writer, column.EffectiveColumn.ValueValidator); }
-        catch (InvalidOperationException) when (!ReferenceEquals(_state, state) || !ReferenceEquals(Source, source)) { return false; }
+        try { state.BeginBindingEdit(cell, access!, column.EffectiveColumn.ValueValidator); }
+        catch (Exception failure) when (failure is InvalidOperationException or FormatException or InvalidCastException or NotSupportedException) { return false; }
         if (!ReferenceEquals(state, _state) || !ReferenceEquals(Source, source) || state.EditSession?.Cell != cell) return false;
         RowsPresenter?.ScrollIntoView(cell.Node);
         BringColumnIntoView(cell.Column);
@@ -100,45 +147,22 @@ public partial class TreeDataGrid
         if (IsInputMethodComposing) return false;
         var column = Columns.FirstOrDefault(item => item.Id == edit.Cell.Column);
         if (column is null || !column.IsVisible || IsReadOnly || column.IsReadOnly || column.EffectiveColumn.IsReadOnly) { state.CancelEdit(); return false; }
+        var writeVersion = state.EditWriteVersion;
         try
         {
-            var converted = column.ConvertEditValue(edit.Value, edit.Model);
+            var converted = state.ConvertOwnedEdit(() => edit.BindingAccess is { } access ? access.Convert(edit.Value) : column.ConvertEditValue(edit.Value, edit.Model));
             if (!ReferenceEquals(state, _state) || !ReferenceEquals(state.EditSession, edit)) return false;
             return state.CommitEdit(converted);
         }
-        catch (Exception error) when (error is FormatException or InvalidCastException or ArgumentException or NotSupportedException or OverflowException or InvalidOperationException or System.Reflection.TargetInvocationException)
+        catch (Exception error) when (state.EditWriteVersion == writeVersion && error is FormatException or InvalidCastException or ArgumentException or NotSupportedException or OverflowException or InvalidOperationException or System.Reflection.TargetInvocationException)
         { if (ReferenceEquals(state, _state)) state.SetValidationError(error.InnerException?.Message ?? error.Message); return false; }
     }
     public void CancelEdit() => _state?.CancelOwnedEdit();
     partial void TryCommitBeforeSort(ref bool canSort) => canSort = CommitEdit();
-    public CellAddress? SearchText(string text)
-    {
-        ArgumentNullException.ThrowIfNull(text);
-        var state = State; var source = Source;
-        if (text.Length == 0 || state is null || source is null || source.Rows.Count == 0) return null;
-        var snapshot = source.Rows;
-        var start = state.CurrentCell is { } current ? source.GetViewIndex(current.Node) + 1 : 0;
-        var columns = VisibleColumns.ToArray();
-        for (var offset = 0; offset < snapshot.Count; ++offset)
-        {
-            var row = snapshot[(Math.Max(0, start) + offset) % snapshot.Count];
-            foreach (var column in columns)
-            {
-                var effective = column.EffectiveColumn;
-                if (effective is not TreeDataGridTextColumn && effective.TextSearchValueSelector is null) continue;
-                var value = effective.TextSearchValueSelector?.Invoke(row.Model) ?? column.ReadValue(row.Model)?.ToString();
-                if (!ReferenceEquals(source, Source) || !Columns.Contains(column) || !column.IsVisible) return null;
-                if (value?.StartsWith(text, StringComparison.CurrentCultureIgnoreCase) != true || source.GetViewIndex(row.Id) < 0) continue;
-                var found = new CellAddress(row.Id, column.Id);
-                SelectAddress(found, extend: false, toggle: false);
-                RowsPresenter?.ScrollIntoView(row.Id); BringColumnIntoView(column.Id);
-                return found;
-            }
-        }
-        return null;
-    }
     private void InteractionPointerPressed(object? sender, PointerPressedEventArgs e)
     {
+        if (_rowPointerDrag is null) RowMovePointerPressed(sender, e);
+        if (_rowPointerDrag is not null) return;
         if (e.GetCurrentPoint(this).Properties.IsLeftButtonPressed != true || e.Source is not Visual visual) return;
         if (visual.GetSelfAndVisualAncestors().OfType<Button>().Any(button => button.Classes.Contains("tree-data-grid-expander"))) return;
         if (IsDisplayTemplateInput(visual)) return;
@@ -146,12 +170,30 @@ public partial class TreeDataGrid
         if (cell?.Row is null || cell.Column is null) return;
         var address = new CellAddress(cell.Row.Id, cell.Column.Id);
         var state = State;
+        var source = Source;
+        var column = cell.Column;
+        var wasSelected = state?.CurrentCell == address && (SelectionUnit == TreeDataGridSelectionUnit.Cell
+            ? state.IsCellSelected(address) : state.SelectedNodes.Contains(address.Node));
         if (state?.EditSession?.Cell == address) return;
-        if (state?.EditSession is not null && !CommitEdit()) { e.Handled = true; return; }
-        if (Source?.GetViewIndex(address.Node) < 0 || Source is null || GetColumnIndex(address.Column) < 0) { e.Handled = true; return; }
+        if (source is null || !ReferenceEquals(Source, source) || !ReferenceEquals(State, state)
+            || source.GetViewIndex(address.Node) < 0 || GetColumnIndex(address.Column) < 0) { e.Handled = true; return; }
+        var sourceVersion = source.Version;
+        var columnVersion = ColumnOperationVersion;
         Focus();
-        SelectAddress(address, e.KeyModifiers.HasFlag(KeyModifiers.Shift), e.KeyModifiers.HasFlag(KeyModifiers.Control));
-        if (EditTriggers.HasFlag(TreeDataGridEditTriggers.SingleClick) || e.ClickCount >= 2 && EditTriggers.HasFlag(TreeDataGridEditTriggers.DoubleClick)) BeginEdit(address);
+        if (!ReferenceEquals(Source, source) || !ReferenceEquals(State, state) || source.Version != sourceVersion
+            || ColumnOperationVersion != columnVersion) { e.Handled = true; return; }
+        if (!SelectAddress(address, e.KeyModifiers.HasFlag(KeyModifiers.Shift), e.KeyModifiers.HasFlag(KeyModifiers.Control), TreeDataGridSelectionChangeReason.Pointer))
+        { e.Handled = true; return; }
+        if (!ReferenceEquals(Source, source) || !ReferenceEquals(State, state)
+            || ColumnOperationVersion != columnVersion || state?.CurrentCell != address || GetColumnIndex(address.Column) < 0) return;
+        var gestures = column.GetEditGestures(EditTriggers);
+        var whenSelected = gestures.HasFlag(TreeDataGridBeginEditGestures.WhenSelected);
+        var selected = SelectionUnit == TreeDataGridSelectionUnit.Cell ? state.IsCellSelected(address) : state.SelectedNodes.Contains(address.Node);
+        var pointerGestures = gestures & (TreeDataGridBeginEditGestures.Tap | TreeDataGridBeginEditGestures.DoubleTap);
+        var clickEdits = gestures.HasFlag(TreeDataGridBeginEditGestures.Tap)
+            || e.ClickCount >= 2 && gestures.HasFlag(TreeDataGridBeginEditGestures.DoubleTap)
+            || whenSelected && pointerGestures == TreeDataGridBeginEditGestures.None;
+        if (clickEdits && (!whenSelected || wasSelected && selected)) BeginEdit(address);
     }
     private void InteractionKeyDown(object? sender, KeyEventArgs e)
     {
@@ -161,14 +203,13 @@ public partial class TreeDataGrid
         if (e.Source is Visual input && IsDisplayTemplateInput(input)) return;
         var state = State;
         if (state is null || Source is null || VisibleColumns.Count == 0 || Source.Rows.Count == 0 || IsInputMethodComposing) return;
-        if (e.Key == Key.F2 && EditTriggers.HasFlag(TreeDataGridEditTriggers.F2))
+        if (e.Key == Key.F2 && state.CurrentCell is { } editCell && VisibleColumns.FirstOrDefault(column => column.Id == editCell.Column) is { } editColumn
+            && editColumn.GetEditGestures(EditTriggers).HasFlag(TreeDataGridBeginEditGestures.F2))
         { if (state.CurrentCell is { } cell) BeginEdit(cell); e.Handled = true; return; }
         if (state.EditSession is not null)
         {
             if (e.Key == Key.Escape) { CancelEdit(); Focus(); e.Handled = true; return; }
             if (e.Key is not Key.Enter and not Key.Tab) return;
-            if (!CommitEdit()) { e.Handled = true; return; }
-            Focus();
             state = State;
             if (state is null || Source is null || VisibleColumns.Count == 0 || Source.Rows.Count == 0) { e.Handled = true; return; }
         }
@@ -184,8 +225,11 @@ public partial class TreeDataGrid
         { NavigateTree(current, e.Key == Key.Right); e.Handled = true; return; }
         if (e.Key == Key.A && e.KeyModifiers.HasFlag(KeyModifiers.Control) && SelectionMode == TreeDataGridSelectionMode.Multiple)
         {
-            if (SelectionUnit == TreeDataGridSelectionUnit.Row) state.SelectRowRange(Source.Rows[0].Id, Source.Rows[^1].Id);
-            else state.SelectCellRange(new(Source.Rows[0].Id, columns[0].Id), new(Source.Rows[^1].Id, columns[^1].Id), columns.Select(item => item.Id).ToArray());
+            state.RunSelection(TreeDataGridSelectionChangeReason.Keyboard, () =>
+            {
+                if (SelectionUnit == TreeDataGridSelectionUnit.Row) state.SelectRowRange(Source.Rows[0].Id, Source.Rows[^1].Id);
+                else state.SelectCellRange(new(Source.Rows[0].Id, columns[0].Id), new(Source.Rows[^1].Id, columns[^1].Id), columns.Select(item => item.Id).ToArray());
+            });
             e.Handled = true; return;
         }
         switch (e.Key)
@@ -204,7 +248,8 @@ public partial class TreeDataGrid
                 if (column >= columns.Count) { column = 0; row++; }
                 extend = false; break;
             case Key.Space:
-                if (columns[column].EffectiveColumn is TreeDataGridCheckBoxColumn && BeginEdit(current))
+                if (columns[column].EffectiveColumn is TreeDataGridCheckBoxColumn
+                    && (columns[column].BeginEditGestures ?? columns[column].EffectiveColumn.BeginEditGestures) != TreeDataGridBeginEditGestures.None && BeginEdit(current))
                 {
                     var session = state.EditSession!;
                     session.Value = session.Value is true ? (columns[column].EffectiveColumn is TreeDataGridCheckBoxColumn { IsThreeState: true } ? null : false) : session.Value is null ? false : true;
@@ -217,8 +262,14 @@ public partial class TreeDataGrid
         { e.Handled = true; return; }
         row = Math.Clamp(row, 0, navigationSource.Rows.Count - 1); column = Math.Clamp(column, 0, columns.Count - 1);
         var target = new CellAddress(navigationSource.Rows[row].Id, columns[column].Id);
-        SelectAddress(target, extend, toggle: false);
-        if (ReferenceEquals(Source, navigationSource)) { RowsPresenter?.ScrollIntoView(target.Node); BringColumnIntoView(target.Column); }
+        if (target == current && e.Key is Key.Enter or Key.Tab && state.EditSession is not null)
+        {
+            if (!CommitEdit() || !ReferenceEquals(Source, navigationSource) || !ReferenceEquals(_state, state)
+                || navigationSource.GetViewIndex(target.Node) < 0 || GetColumnIndex(target.Column) < 0)
+            { e.Handled = true; return; }
+        }
+        if (SelectAddress(target, extend, toggle: false, TreeDataGridSelectionChangeReason.Keyboard) && ReferenceEquals(Source, navigationSource))
+        { Focus(); RowsPresenter?.ScrollIntoView(target.Node); BringColumnIntoView(target.Column); }
         e.Handled = true;
     }
     private void InteractionTextInput(object? sender, TextInputEventArgs e)
@@ -246,21 +297,10 @@ public partial class TreeDataGrid
         }
         return false;
     }
-    private void SelectAddress(CellAddress address, bool extend, bool toggle)
+    private bool SelectAddress(CellAddress address, bool extend, bool toggle, TreeDataGridSelectionChangeReason reason = TreeDataGridSelectionChangeReason.Programmatic)
     {
-        if (State is not { } state) return;
-        using (state.DeferSelectionNotifications())
-        {
-            if (SelectionUnit == TreeDataGridSelectionUnit.Cell) state.SelectCell(address, extend);
-            else
-            {
-                var anchor = state.SelectionAnchor;
-                state.SetCurrentCell(address);
-                if (extend && SelectionMode == TreeDataGridSelectionMode.Multiple && anchor is { } origin && Source?.GetViewIndex(origin.Node) >= 0) state.SelectRowRange(origin.Node, address.Node);
-                else if (toggle) state.ToggleSelection(address.Node);
-                else state.Select(address.Node);
-            }
-        }
+        if (State is not { } state) return false;
+        return state.RunSelection(reason, () => state.SelectAddress(address, SelectionUnit, extend, toggle));
     }
     internal void BringColumnIntoView(ColumnId id)
     {

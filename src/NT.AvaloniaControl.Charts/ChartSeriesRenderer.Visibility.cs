@@ -26,7 +26,13 @@ internal sealed partial class CartesianSeriesRenderer
             if (started) path.EndFigure(false);
         }
         ChartVisibilityQuery.RecordProjected(sampling.Count);
-        if (segments > 0) drawing.DrawGeometry(null, new Pen(context.Brush, Size(context.Series.StrokeThickness)), geometry);
+        if (segments > 0)
+        {
+            drawing.DrawGeometry(null, new Pen(context.Brush, Size(context.Series.StrokeThickness)), geometry);
+            // Immediate native backends can pass only the path handle to a long
+            // unmanaged draw. Keep its owning geometry alive until that draw returns.
+            GC.KeepAlive(geometry);
+        }
     }
     private static double MarkerExtent(ChartSeries series, double radius) =>
         series.MarkerShape == ChartMarkerShape.Circle ? radius : ChartMarkerGeometry.HitRadius(series);

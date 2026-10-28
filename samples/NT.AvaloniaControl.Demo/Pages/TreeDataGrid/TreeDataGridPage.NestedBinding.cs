@@ -137,7 +137,8 @@ internal sealed partial class TreeDataGridPage
 
     private void ClearNestedBindingScenario()
     {
-        if (_nestedBindingRoots is null) return;
+        if (_nestedBindingRoots is null && !_batchMoveItemsSource) return;
+        _batchMoveItemsSource = false;
         if (_observedState is not null) _observedState.Changed -= DemoStateChanged;
         _observedState = null;
         _grid.ItemsSource = null;

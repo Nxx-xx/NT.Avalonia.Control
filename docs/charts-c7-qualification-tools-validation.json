@@ -1,0 +1,1861 @@
+{
+  "schema": "charts-c703-qualification-tools/v1",
+  "updatedDate": "2026-10-27",
+  "milestoneComplete": false,
+  "chartProductDrawingChanged": false,
+  "keepExistingRenderCalls": true,
+  "originalProtocolAndGatesChanged": false,
+  "fixedPrimaryFourSha256": {
+    "src/NT.AvaloniaControl.Charts.Skia/ChartNativeCircleOperation.cs": "FCF9634080F9A0B3E734F658CC39C9CAEC611A3F7CEEB0B1A7965AD67E25BFB4",
+    "tests/Charts.Headless.Tests/NativeCircleOperationTests.cs": "E092D347943ED121539E13FF751FAD70F41F463B706607973889D6F51F9F0671",
+    "benchmarks/Charts.NativeBenchmarks/Program.cs": "B2CBB7DB04794F1D39E35DE953FB88AB72A5ABE3E03C915C212F41A22508A0CD",
+    "benchmarks/Charts.NativeBenchmarks/C7PerformanceProgram.cs": "2AAE6F202F5C343C2C640A782150A511D573EE93CCAC40D7C199158604D08453"
+  },
+  "fixedProtocolFiveSha256": {
+    "scripts/charts-c7-performance-protocol.json": "7E633452EA83F4A9342C68093FE597DFB0CF4B18491D21660DE70EBE73EC5463",
+    "scripts/charts_c7_performance_oracle.py": "888F4A287BD71FB5BE6035E974B9902618F321CE9666544B1B72FB0F99175E41",
+    "scripts/Tests/test_charts_c7_performance_oracle.py": "9119056D3EC61A03A48F6F8804B2DDBACE93B48F691B5898362CA17B6E3C374D",
+    "docs/charts-performance-budgets.json": "3E7149E6C4538993CBFEBAD2542E154DC8EBEBD06A72259EF345B3E3A07DEEA2",
+    "scripts/charts-ci-performance-policy.json": "CF6832A53E21E078C554F51194D93541F0B093AFF1C67D7E031EC177B8E87377"
+  },
+  "latestOriginalFormal": {
+    "key": "c7RecordAllocations",
+    "report": "docs/charts-c7-record-allocations.md",
+    "validation": {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\charts-c7-record-allocations-validation.json",
+      "bytes": 834088,
+      "sha256": "E9D2CCEAA4341CA74E6DDA2E487D92B062A51DD470BF44C78967F78C5B13A5FE"
+    },
+    "newOriginalFormalRunThisBatch": false,
+    "scatterPending": {
+      "windows": 161,
+      "linux": 1040
+    },
+    "barPending": {
+      "windows": 0,
+      "linux": 0
+    }
+  },
+  "memory": {
+    "diagnosticOnly": true,
+    "pairsPerPlatform": 3,
+    "hostProcessesPerPlatform": 6,
+    "samplerProcessesPerPlatform": 6,
+    "evidenceIntegrityPassed": true,
+    "nominalSampledIncrementBudgetBytes": 536870912,
+    "diagnosticIncrementTargetPassed": true,
+    "instantaneousPeakQualified": false,
+    "originalC7PeakQualification": null,
+    "nativeBytes": null,
+    "gpuBytes": null,
+    "platforms": {
+      "windows": {
+        "pairs": [
+          {
+            "pairIndex": 1,
+            "order": [
+              "empty",
+              "full"
+            ],
+            "increments": {
+              "process.privateCommitBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 44810240,
+                "fullMaxObservedBytes": 291168256,
+                "fullMinusEmptyObservedBytes": 246358016,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.workingSetBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 108724224,
+                "fullMaxObservedBytes": 341594112,
+                "fullMinusEmptyObservedBytes": 232869888,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.osLifetimePeakCommitChargeBytes": {
+                "measurementKind": "os-reported-lifetime-counter",
+                "emptyMaxObservedBytes": 47902720,
+                "fullMaxObservedBytes": 291168256,
+                "fullMinusEmptyObservedBytes": 243265536,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.osLifetimePeakWorkingSetBytes": {
+                "measurementKind": "os-reported-lifetime-counter",
+                "emptyMaxObservedBytes": 111165440,
+                "fullMaxObservedBytes": 341594112,
+                "fullMinusEmptyObservedBytes": 230428672,
+                "withinNominalDiagnosticIncrement": true
+              }
+            },
+            "diagnosticIncrementTargetPassed": true,
+            "qualification": "Same-kind signed maxObserved(full)-maxObserved(empty), including retained original input and all process memory. Negative differences remain negative. Not exclusive chart/native bytes or an instantaneous peak."
+          },
+          {
+            "pairIndex": 2,
+            "order": [
+              "full",
+              "empty"
+            ],
+            "increments": {
+              "process.privateCommitBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 45154304,
+                "fullMaxObservedBytes": 290603008,
+                "fullMinusEmptyObservedBytes": 245448704,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.workingSetBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 108933120,
+                "fullMaxObservedBytes": 341188608,
+                "fullMinusEmptyObservedBytes": 232255488,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.osLifetimePeakCommitChargeBytes": {
+                "measurementKind": "os-reported-lifetime-counter",
+                "emptyMaxObservedBytes": 48263168,
+                "fullMaxObservedBytes": 290603008,
+                "fullMinusEmptyObservedBytes": 242339840,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.osLifetimePeakWorkingSetBytes": {
+                "measurementKind": "os-reported-lifetime-counter",
+                "emptyMaxObservedBytes": 111386624,
+                "fullMaxObservedBytes": 341188608,
+                "fullMinusEmptyObservedBytes": 229801984,
+                "withinNominalDiagnosticIncrement": true
+              }
+            },
+            "diagnosticIncrementTargetPassed": true,
+            "qualification": "Same-kind signed maxObserved(full)-maxObserved(empty), including retained original input and all process memory. Negative differences remain negative. Not exclusive chart/native bytes or an instantaneous peak."
+          },
+          {
+            "pairIndex": 3,
+            "order": [
+              "empty",
+              "full"
+            ],
+            "increments": {
+              "process.privateCommitBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 45314048,
+                "fullMaxObservedBytes": 291278848,
+                "fullMinusEmptyObservedBytes": 245964800,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.workingSetBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 109076480,
+                "fullMaxObservedBytes": 341577728,
+                "fullMinusEmptyObservedBytes": 232501248,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.osLifetimePeakCommitChargeBytes": {
+                "measurementKind": "os-reported-lifetime-counter",
+                "emptyMaxObservedBytes": 48398336,
+                "fullMaxObservedBytes": 291278848,
+                "fullMinusEmptyObservedBytes": 242880512,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.osLifetimePeakWorkingSetBytes": {
+                "measurementKind": "os-reported-lifetime-counter",
+                "emptyMaxObservedBytes": 111534080,
+                "fullMaxObservedBytes": 341577728,
+                "fullMinusEmptyObservedBytes": 230043648,
+                "withinNominalDiagnosticIncrement": true
+              }
+            },
+            "diagnosticIncrementTargetPassed": true,
+            "qualification": "Same-kind signed maxObserved(full)-maxObserved(empty), including retained original input and all process memory. Negative differences remain negative. Not exclusive chart/native bytes or an instantaneous peak."
+          }
+        ],
+        "evidence": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\oracle.json",
+          "bytes": 105441,
+          "sha256": "8B569EF651B7F5E04032074D8ADC3D722D91998F000F40D7C42266AA9A94B625"
+        },
+        "execution": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\results.json",
+          "bytes": 6159,
+          "sha256": "B698E4CB44C6979B4A034704C9E50149E7525C0B78783A58DC12894EE2B4859F"
+        },
+        "campaign": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\campaign.json",
+          "bytes": 5943,
+          "sha256": "6713263FA54530D66ACB1917F4D26BAAB07A5248A40A011EFEF2FA55626555FF"
+        }
+      },
+      "linux": {
+        "pairs": [
+          {
+            "pairIndex": 1,
+            "order": [
+              "empty",
+              "full"
+            ],
+            "increments": {
+              "process.rssBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 140029952,
+                "fullMaxObservedBytes": 377507840,
+                "fullMinusEmptyObservedBytes": 237477888,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.osLifetimePeakRssBytes": {
+                "measurementKind": "os-reported-lifetime-counter",
+                "emptyMaxObservedBytes": 140029952,
+                "fullMaxObservedBytes": 377507840,
+                "fullMinusEmptyObservedBytes": 237477888,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.statusSwapBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 0,
+                "fullMaxObservedBytes": 0,
+                "fullMinusEmptyObservedBytes": 0,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.rssBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 140029952,
+                "fullMaxObservedBytes": 377507840,
+                "fullMinusEmptyObservedBytes": 237477888,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.pssBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 104271872,
+                "fullMaxObservedBytes": 341688320,
+                "fullMinusEmptyObservedBytes": 237416448,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.privateCleanBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 22511616,
+                "fullMaxObservedBytes": 24276992,
+                "fullMinusEmptyObservedBytes": 1765376,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.privateDirtyBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 68005888,
+                "fullMaxObservedBytes": 303595520,
+                "fullMinusEmptyObservedBytes": 235589632,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.privateHugetlbBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 0,
+                "fullMaxObservedBytes": 0,
+                "fullMinusEmptyObservedBytes": 0,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.privateResidentBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 90517504,
+                "fullMaxObservedBytes": 327872512,
+                "fullMinusEmptyObservedBytes": 237355008,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.swapBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 0,
+                "fullMaxObservedBytes": 0,
+                "fullMinusEmptyObservedBytes": 0,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.swapPssBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 0,
+                "fullMaxObservedBytes": 0,
+                "fullMinusEmptyObservedBytes": 0,
+                "withinNominalDiagnosticIncrement": true
+              }
+            },
+            "diagnosticIncrementTargetPassed": true,
+            "qualification": "Same-kind signed maxObserved(full)-maxObserved(empty), including retained original input and all process memory. Negative differences remain negative. Not exclusive chart/native bytes or an instantaneous peak."
+          },
+          {
+            "pairIndex": 2,
+            "order": [
+              "full",
+              "empty"
+            ],
+            "increments": {
+              "process.rssBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 137101312,
+                "fullMaxObservedBytes": 377884672,
+                "fullMinusEmptyObservedBytes": 240783360,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.osLifetimePeakRssBytes": {
+                "measurementKind": "os-reported-lifetime-counter",
+                "emptyMaxObservedBytes": 138850304,
+                "fullMaxObservedBytes": 377884672,
+                "fullMinusEmptyObservedBytes": 239034368,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.statusSwapBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 0,
+                "fullMaxObservedBytes": 0,
+                "fullMinusEmptyObservedBytes": 0,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.rssBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 137101312,
+                "fullMaxObservedBytes": 377884672,
+                "fullMinusEmptyObservedBytes": 240783360,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.pssBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 101320704,
+                "fullMaxObservedBytes": 342075392,
+                "fullMinusEmptyObservedBytes": 240754688,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.privateCleanBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 22577152,
+                "fullMaxObservedBytes": 24469504,
+                "fullMinusEmptyObservedBytes": 1892352,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.privateDirtyBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 64983040,
+                "fullMaxObservedBytes": 303771648,
+                "fullMinusEmptyObservedBytes": 238788608,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.privateHugetlbBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 0,
+                "fullMaxObservedBytes": 0,
+                "fullMinusEmptyObservedBytes": 0,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.privateResidentBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 87560192,
+                "fullMaxObservedBytes": 328241152,
+                "fullMinusEmptyObservedBytes": 240680960,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.swapBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 0,
+                "fullMaxObservedBytes": 0,
+                "fullMinusEmptyObservedBytes": 0,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.swapPssBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 0,
+                "fullMaxObservedBytes": 0,
+                "fullMinusEmptyObservedBytes": 0,
+                "withinNominalDiagnosticIncrement": true
+              }
+            },
+            "diagnosticIncrementTargetPassed": true,
+            "qualification": "Same-kind signed maxObserved(full)-maxObserved(empty), including retained original input and all process memory. Negative differences remain negative. Not exclusive chart/native bytes or an instantaneous peak."
+          },
+          {
+            "pairIndex": 3,
+            "order": [
+              "empty",
+              "full"
+            ],
+            "increments": {
+              "process.rssBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 140533760,
+                "fullMaxObservedBytes": 377982976,
+                "fullMinusEmptyObservedBytes": 237449216,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.osLifetimePeakRssBytes": {
+                "measurementKind": "os-reported-lifetime-counter",
+                "emptyMaxObservedBytes": 140533760,
+                "fullMaxObservedBytes": 377982976,
+                "fullMinusEmptyObservedBytes": 237449216,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "process.statusSwapBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 0,
+                "fullMaxObservedBytes": 0,
+                "fullMinusEmptyObservedBytes": 0,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.rssBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 137412608,
+                "fullMaxObservedBytes": 377982976,
+                "fullMinusEmptyObservedBytes": 240570368,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.pssBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 107048960,
+                "fullMaxObservedBytes": 347465728,
+                "fullMinusEmptyObservedBytes": 240416768,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.privateCleanBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 23310336,
+                "fullMaxObservedBytes": 24993792,
+                "fullMinusEmptyObservedBytes": 1683456,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.privateDirtyBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 65228800,
+                "fullMaxObservedBytes": 303816704,
+                "fullMinusEmptyObservedBytes": 238587904,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.privateHugetlbBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 0,
+                "fullMaxObservedBytes": 0,
+                "fullMinusEmptyObservedBytes": 0,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.privateResidentBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 88539136,
+                "fullMaxObservedBytes": 328810496,
+                "fullMinusEmptyObservedBytes": 240271360,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.swapBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 0,
+                "fullMaxObservedBytes": 0,
+                "fullMinusEmptyObservedBytes": 0,
+                "withinNominalDiagnosticIncrement": true
+              },
+              "smaps.swapPssBytes": {
+                "measurementKind": "sampled-current-accounting",
+                "emptyMaxObservedBytes": 0,
+                "fullMaxObservedBytes": 0,
+                "fullMinusEmptyObservedBytes": 0,
+                "withinNominalDiagnosticIncrement": true
+              }
+            },
+            "diagnosticIncrementTargetPassed": true,
+            "qualification": "Same-kind signed maxObserved(full)-maxObserved(empty), including retained original input and all process memory. Negative differences remain negative. Not exclusive chart/native bytes or an instantaneous peak."
+          }
+        ],
+        "evidence": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\oracle.json",
+          "bytes": 112506,
+          "sha256": "91350E52C85A04E7BC0CED0D914DF9F143E7E2E99C77A3312D3139903FF8EAB1"
+        },
+        "execution": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\results.json",
+          "bytes": 5952,
+          "sha256": "B128C05D379E766A9BCA2A966A8BD0B55C9574D516706699BCD71CCA4D15878D"
+        },
+        "campaign": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\campaign.json",
+          "bytes": 5797,
+          "sha256": "BA3A17574397C3E3A5CBF2CEB182378A4059645F64981D5EF4A36527F91FA937"
+        }
+      }
+    },
+    "independentAudit": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\memory-independent-audit-v1.json",
+      "bytes": 250107,
+      "sha256": "C07A9A05A0BDE8605F24859033C90DB217447E8F0A6A91D1045D9EDE0A61905C"
+    },
+    "sourceSnapshot": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\memory-source-v2.json",
+      "bytes": 60595,
+      "sha256": "62A59ED8FB865885F402C5FBFA857F2DED4FC8B9A26DC9DE9C898861FA5C6457"
+    },
+    "intervalContract": "Requested 20ms process and 100ms Linux smaps; actual gaps/read cost retained, not an exact periodic or instantaneous-peak claim.",
+    "evidenceFiles": [
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\campaign.json",
+        "bytes": 5943,
+        "sha256": "6713263FA54530D66ACB1917F4D26BAAB07A5248A40A011EFEF2FA55626555FF"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\oracle.json",
+        "bytes": 105441,
+        "sha256": "8B569EF651B7F5E04032074D8ADC3D722D91998F000F40D7C42266AA9A94B625"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\processes\\build\\process.json",
+        "bytes": 815,
+        "sha256": "4B0534610DF3127AA75BE4AC83BB4191F67CCD8D7C3B7E90332C5F76F47BDCD0"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\processes\\build\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\processes\\build\\stdout.log",
+        "bytes": 3010,
+        "sha256": "090268A8D467A2CB269CA0705B835EF992ACCABBBABFA0FE7FFEF43BDF6AB848"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\processes\\independent-oracle\\process.json",
+        "bytes": 1132,
+        "sha256": "C2BF7890B83AFB4B4B3280676006F54EB34F9C7D4A9D3522939860E5896D6DA7"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\processes\\independent-oracle\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\processes\\independent-oracle\\stdout.log",
+        "bytes": 269,
+        "sha256": "6632D28E382D76E4EB74485BF3EE49E06073D975FC70A280884B9E884D0FD5C6"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\processes\\restore\\process.json",
+        "bytes": 737,
+        "sha256": "07C4920B2F42F218E605E936527058218ADB8BA3AF81C3C3C7ED8AC0051CEB7E"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\processes\\restore\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\processes\\restore\\stdout.log",
+        "bytes": 766,
+        "sha256": "2B9AA90C366D182BB619334DF22D445BE03C5473ACC949D4AB4EA98063573CFA"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\results.json",
+        "bytes": 6159,
+        "sha256": "B698E4CB44C6979B4A034704C9E50149E7525C0B78783A58DC12894EE2B4859F"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\control\\release.json",
+        "bytes": 157,
+        "sha256": "F85D57906C61F3D6050177A037291B1F1061C80774E50F8EAC3F1059B69F6738"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\control\\sampler-complete.json",
+        "bytes": 433,
+        "sha256": "7FB36C93F9DD1D97A8C6325E5A8AC33A1DD2D7DBB8D32B6AAFF52829F35E9D71"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\control\\sampler-ready.json",
+        "bytes": 600,
+        "sha256": "98ECD27EB2DA093AC003376FA0859941C7942167DF1349E4CBDBBE1BE553373F"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\host\\raw.json",
+        "bytes": 7595,
+        "sha256": "DB5EB672214DCE02CACA25201AA4DDE51DD020844E7F5CA09063502E8C9A1C2F"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\host\\ready.json",
+        "bytes": 4068,
+        "sha256": "E9C6B2F0CAF9F8A1631861A0EF81892712403CD5E41E25A8BDBD67912505B30B"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\host\\work-complete.json",
+        "bytes": 8610,
+        "sha256": "14BB61481FB5DFEA8B10F84177AE323C791E95933E2F36A676BB130E70147766"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\host-process\\process.json",
+        "bytes": 2327,
+        "sha256": "81DD2BD3EB22452B53B88DD4F8346276C8137D5F415C49FA87BD2B5F788FC3BC"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\host-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\host-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\sampler\\result.json",
+        "bytes": 3321,
+        "sha256": "31F6211FBF286FAB5406A1D82610FF8E93922CEF7A28F25330698C2894F65DD6"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\sampler\\samples.jsonl",
+        "bytes": 4013,
+        "sha256": "19B2AD761AE10943ABC21ABF61D90C4173B61FF3420E01F8A45C3583FCC0FC8B"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\sampler\\smaps.jsonl",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\sampler\\started.json",
+        "bytes": 2881,
+        "sha256": "BCFD45875CE41ECD512E4D631FCB76D07149F94F6B6B7F33C1466BB8FAE7617A"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\sampler-process\\process.json",
+        "bytes": 2139,
+        "sha256": "509135F3C04E584893F872683CBD22173A2389B97961AF2CDAF1DAE95F40352A"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\sampler-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-empty\\sampler-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\control\\release.json",
+        "bytes": 157,
+        "sha256": "842DB0484BAF6207B63B73864521F3710DAA4318EBCA1F4C22D696FA397DB0DF"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\control\\sampler-complete.json",
+        "bytes": 433,
+        "sha256": "F977AB00CD41EB72EAC44689B4DA11BA0A4B640F3DF9368E096DBAFEBE2A9E01"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\control\\sampler-ready.json",
+        "bytes": 599,
+        "sha256": "1066B725815FC6D1C6B2D7F8F58383C13771DB3D576278C49DBA2601CE5DA60F"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\host\\raw.json",
+        "bytes": 7668,
+        "sha256": "E6C4A0FEE00B0A2F535EEDF3C651CB64C3DDA233884A9F7271CA4DE2A8196A9B"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\host\\ready.json",
+        "bytes": 4067,
+        "sha256": "FD54E882BB2D9FC7E25CC518F89EF6674C9F51C5DAD0003393A3EE827E0966C1"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\host\\work-complete.json",
+        "bytes": 9591,
+        "sha256": "4FE9568EE9BCE9B06F42F22B3CCD32BABC43BC7C1BC7BD51976E69CDE5D7D6F4"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\host-process\\process.json",
+        "bytes": 2323,
+        "sha256": "D9E3B0B3D88F8FC39F9E951FB53C218534D54F400448B95A4B63A9941FB9D813"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\host-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\host-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\sampler\\result.json",
+        "bytes": 3321,
+        "sha256": "8151BB159A38FE03035605E1F6469A19E62945CCA7BFC13889CEC0111DE788FA"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\sampler\\samples.jsonl",
+        "bytes": 23249,
+        "sha256": "3676C147A29CABB23AE0D6E5CDCD3C539B9E43290AF45A5664F8E8F7DDE0C288"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\sampler\\smaps.jsonl",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\sampler\\started.json",
+        "bytes": 2879,
+        "sha256": "79F5B081C3D7069C26A7859B8F20FD84040B800F1DEC6EBB05E07FA224A40C12"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\sampler-process\\process.json",
+        "bytes": 2135,
+        "sha256": "EC880F2A2E5CC18C185B63B6F021FE2388971649F019B25458D2EAB8DB70CCCD"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\sampler-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-1-full\\sampler-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\control\\release.json",
+        "bytes": 157,
+        "sha256": "24FF492C91ECFAE17062D67C9862DFFC3D342DF3669EDC24F50784D4B8EB8429"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\control\\sampler-complete.json",
+        "bytes": 433,
+        "sha256": "F81BF25CBAD09043390E172B18C41DDFA5E540791DE5B38E3D7D6A69FCD133E0"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\control\\sampler-ready.json",
+        "bytes": 600,
+        "sha256": "BC90D8A04A611F0EE7C2E607F3EA2EE32CB26B9F26FAB9A31FD86F12DEA1F03C"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\host\\raw.json",
+        "bytes": 7591,
+        "sha256": "72D2CAF4FCCD647F5A787C210A89FC1C06FD057C62484365399C6F382200A535"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\host\\ready.json",
+        "bytes": 4068,
+        "sha256": "B681802BE617A438EF765D1FA7379E8D6F36FD2C6E2F8951C5B274EFD5BED983"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\host\\work-complete.json",
+        "bytes": 8606,
+        "sha256": "163126A478B223B9EF16F43A4691900BBE16672C2AEC35D40E30848775D41DBC"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\host-process\\process.json",
+        "bytes": 2327,
+        "sha256": "00A441EFA5AF5EBFCA78BCFBEBE7C68E98514109F99FF1B02B3DA219C7229985"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\host-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\host-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\sampler\\result.json",
+        "bytes": 3321,
+        "sha256": "F9A3BF22636F329E2A2ECD5448C9600E58AC4A52284FA98FAE223E8F0E6ECCDA"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\sampler\\samples.jsonl",
+        "bytes": 3213,
+        "sha256": "84A6400F5BD246AE821268CC95739B6A3374A54AB31A3DB99699FBB29CCB507A"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\sampler\\smaps.jsonl",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\sampler\\started.json",
+        "bytes": 2881,
+        "sha256": "7B345818315F9F9CBC4C803841B47AC36E5D56DD6982FB15D4B82BF91C5D52E4"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\sampler-process\\process.json",
+        "bytes": 2139,
+        "sha256": "0224C403A19B4BDCCC3971710A7F03B7BDBCB125777EA941491A8224AA426DB2"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\sampler-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-empty\\sampler-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\control\\release.json",
+        "bytes": 157,
+        "sha256": "379990B909A7BB34F12DE1ADF1332CBE4658CE44C21FAE4C9B1BDF76C4C179B7"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\control\\sampler-complete.json",
+        "bytes": 433,
+        "sha256": "C2E02C780B965E79D6A0FE587FEC68F85D04674AB6BA462D39AED2D915AF1748"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\control\\sampler-ready.json",
+        "bytes": 599,
+        "sha256": "A08406CF452D1237FD00D6666C601D46CDEF6352AD27A8B7DE80459242D4F4C5"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\host\\raw.json",
+        "bytes": 7670,
+        "sha256": "80C937FFA26BE7C917DF9C027D4AA84B2F99C14907CF6C9D3D8B267C8368C974"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\host\\ready.json",
+        "bytes": 4067,
+        "sha256": "4A128D9E6264B70FF14FBC3232C758FFE414C4A7553B9A41980B89D0C00D15DC"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\host\\work-complete.json",
+        "bytes": 9592,
+        "sha256": "6FE445264601B6E787F23F65907B257EBD61C1989E18D09DA23D8DF33E24E1BB"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\host-process\\process.json",
+        "bytes": 2323,
+        "sha256": "14E1926DE76943A6A81F085486C1CBBA45A339192518A36DBE5101B4834769E1"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\host-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\host-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\sampler\\result.json",
+        "bytes": 3321,
+        "sha256": "222CBB0DA351757A3CBC64F1C5E3CE42FEB6993074C44D9EBDA625F5245F4586"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\sampler\\samples.jsonl",
+        "bytes": 22447,
+        "sha256": "BB11C1EB6048639EDEC43FF4E8A8916E5C3348F8E5720ECB0B644135E8A35A63"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\sampler\\smaps.jsonl",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\sampler\\started.json",
+        "bytes": 2879,
+        "sha256": "4B5EAD17011B54416A24AA6DDD680EA6120762D3856DD4528956D95FBE21E55E"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\sampler-process\\process.json",
+        "bytes": 2135,
+        "sha256": "454CF75CC201D30EB8ED7B9ECA0F1E528577349E827F38161EE4D9BCF6C23C84"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\sampler-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-2-full\\sampler-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\control\\release.json",
+        "bytes": 156,
+        "sha256": "9DFAEA69764F66157943105E3016A4ED9E681AF3406715580685748F338EDD57"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\control\\sampler-complete.json",
+        "bytes": 432,
+        "sha256": "5086571776ED987F23BFC775774AD3F661D84C7434C64CCFD67C4F529067382C"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\control\\sampler-ready.json",
+        "bytes": 599,
+        "sha256": "658A01DA00133C90E15FFF3B66414ADA9C91C44415FD92B767B7E36D0C3FB36E"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\host\\raw.json",
+        "bytes": 7592,
+        "sha256": "E3669E74F47E8731887C03DF247486E43087F64574761E9D41BC3ED29C554878"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\host\\ready.json",
+        "bytes": 4067,
+        "sha256": "56BA2BD4C1A5FB46C8EE44E0BFA44F7638B46E6D1075140D4E6DF8FB10A83CB5"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\host\\work-complete.json",
+        "bytes": 8607,
+        "sha256": "ACDE6A22531A323AB041647B43D8E65DE08847FCC113A03434F4E4A4F9CF41B8"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\host-process\\process.json",
+        "bytes": 2324,
+        "sha256": "B587C658DC3AAD58BD4B799D44F0D296C3E49CC9E9A42976050BF432E9565845"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\host-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\host-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\sampler\\result.json",
+        "bytes": 3320,
+        "sha256": "389CE9D2B9E9A05554BA1A60C3C12CC874087072AF716830D01D45D2AB673B40"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\sampler\\samples.jsonl",
+        "bytes": 5607,
+        "sha256": "DB56FB3A6A8BD44FEEC678BBAC3796E02FEA08FA4B2E87D7D65551BC985452B7"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\sampler\\smaps.jsonl",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\sampler\\started.json",
+        "bytes": 2880,
+        "sha256": "DBD9A49481A7507607EC0C338C6FCE41334FE5B94DB16033B689E39EFFAE4848"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\sampler-process\\process.json",
+        "bytes": 2139,
+        "sha256": "9093122C8C65F986FA1ACA77A1B2953E8F293E72EA495D67846EEC19982FAFC5"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\sampler-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-empty\\sampler-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\control\\release.json",
+        "bytes": 157,
+        "sha256": "AE60918699B43B6F0ECFA0F4EF3C6AF7BDEB7399EF7EBBD1C99807895486F8BE"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\control\\sampler-complete.json",
+        "bytes": 433,
+        "sha256": "68C1B6A8CA21EB45EDC26E0E81C6C3650AE9C00B493F0930023F444FE5206ACF"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\control\\sampler-ready.json",
+        "bytes": 599,
+        "sha256": "053F0E381961540B36CBDC32BD0ADA118760C5BD99CAC830C4533D83DD7D7729"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\host\\raw.json",
+        "bytes": 7667,
+        "sha256": "D8DFF39534AF69F77AD7070BE6D80C4D1B218A7F2F6AF42A328D7750AB59754A"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\host\\ready.json",
+        "bytes": 4067,
+        "sha256": "567258641D66564B6ED5F160040563B233CBE0211B1A9FF37F73E90A906B503F"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\host\\work-complete.json",
+        "bytes": 9589,
+        "sha256": "26468C54AB9BF938A6FAA4EEEE894AA26ACFE84049C1E9A7FC5F9F792C1304F0"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\host-process\\process.json",
+        "bytes": 2323,
+        "sha256": "F953E03B7EF8787EEC62664D7EE178079C337C012C31E54ADF410C02905B0023"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\host-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\host-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\sampler\\result.json",
+        "bytes": 3321,
+        "sha256": "7EE39400EF4909CC39A1CBF9255E6F5BC21E54C5CE36D9E1DCB0A0B1E642A953"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\sampler\\samples.jsonl",
+        "bytes": 22448,
+        "sha256": "95D09B7E7389E2107371CC0E58E9F0AF261B14B194EB8A209BCF4EA226F66D62"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\sampler\\smaps.jsonl",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\sampler\\started.json",
+        "bytes": 2879,
+        "sha256": "81A9ED6CD62CDB4F3976F7EF589933E361AD8FE10196E335028D69F3B63C7ED8"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\sampler-process\\process.json",
+        "bytes": 2135,
+        "sha256": "A4816939E202C548C51DEEEF9DEF0C86664B5EE0897285D74EC87B12B4130CAE"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\sampler-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\runs\\pair-3-full\\sampler-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\source-after.json",
+        "bytes": 2129,
+        "sha256": "C9CFD65CA94079D520389E3F35DDB8A87797A2F0061184F1AEB508C72FF26E1F"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v2\\source-before.json",
+        "bytes": 2129,
+        "sha256": "C9CFD65CA94079D520389E3F35DDB8A87797A2F0061184F1AEB508C72FF26E1F"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\campaign.json",
+        "bytes": 5797,
+        "sha256": "BA3A17574397C3E3A5CBF2CEB182378A4059645F64981D5EF4A36527F91FA937"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\oracle.json",
+        "bytes": 112506,
+        "sha256": "91350E52C85A04E7BC0CED0D914DF9F143E7E2E99C77A3312D3139903FF8EAB1"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\processes\\build\\process.json",
+        "bytes": 783,
+        "sha256": "A6FD37DBD063F7F03DE7A63E5D878F73020CF0715C64FB3C66EF17B64DEC0468"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\processes\\build\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\processes\\build\\stdout.log",
+        "bytes": 3529,
+        "sha256": "E065A45F4EB7C3B944C26B6A6997D2746469939ACF6249D6E7163F467B7528A9"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\processes\\independent-oracle\\process.json",
+        "bytes": 1079,
+        "sha256": "928B75CC6E9D5A4E4AAF16AEDA138660FB5780741C82B8F6AAD8B00E7CCEBB1E"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\processes\\independent-oracle\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\processes\\independent-oracle\\stdout.log",
+        "bytes": 258,
+        "sha256": "E58AEC9DA6F36D6CD0D86813C1BA2C50683512FD526EF55DF3B299B94C77C68E"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\processes\\restore\\process.json",
+        "bytes": 709,
+        "sha256": "77B7AE1380FE09BC6BAD8D047470B4ABFB0F4885CEC68554C8C9A801813F89E6"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\processes\\restore\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\processes\\restore\\stdout.log",
+        "bytes": 729,
+        "sha256": "5A9EC11F8FD291AD7DCA219FB6756D0FC5BA2234CBD45A9FCE8400063EA8C6A7"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\results.json",
+        "bytes": 5952,
+        "sha256": "B128C05D379E766A9BCA2A966A8BD0B55C9574D516706699BCD71CCA4D15878D"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\control\\release.json",
+        "bytes": 150,
+        "sha256": "DC91BD98F023162EFA765F1A20925E92D3B385B567D30B7F24B68C316F9F12CC"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\control\\sampler-complete.json",
+        "bytes": 446,
+        "sha256": "F01D320FA7FF370ED4F2E46C947ACD8BDAF7BD35A0DF437F6B5970E046918F71"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\control\\sampler-ready.json",
+        "bytes": 548,
+        "sha256": "98E0ADCF26FDAFFC5B91C3A1D9B63EB3708F1E259E9FAEE02967B99DEB896686"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\host\\raw.json",
+        "bytes": 7327,
+        "sha256": "DB46FD358FF8B4A884CAA599FE75D42050EE59B2A31DE1BD3789315B044E7DA8"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\host\\ready.json",
+        "bytes": 4125,
+        "sha256": "647140062F818FAC83BE061772743FE054F04FC958C01522D31391703DDF3187"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\host\\work-complete.json",
+        "bytes": 8312,
+        "sha256": "FDF6208F2F3BE6D067120E8CDD0EFA477B78871B7CEB91F0A41F11537319414D"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\host-process\\process.json",
+        "bytes": 2264,
+        "sha256": "718CD2BE8E6B001762BB9271329CE6235E0450D359DC2127094C4462830D7B37"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\host-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\host-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\sampler\\result.json",
+        "bytes": 3434,
+        "sha256": "0D25E2391A9990472470DA7FFF53B438F9B6A41C4EA148FB04BB6F6B3CD5CF85"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\sampler\\samples.jsonl",
+        "bytes": 3684,
+        "sha256": "3EFFC8A6AC0CA34E171635F39D7287434E9065AF54D4CA64C9B6ACFA4FCEAF8E"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\sampler\\smaps.jsonl",
+        "bytes": 1719,
+        "sha256": "1EAEA5390AB9F908F87217900CF0130F7CDABEE6F203D567071EB0225322308D"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\sampler\\started.json",
+        "bytes": 2839,
+        "sha256": "53513EC1B4A8CECD84C1FED5DD8F4BD837D829E7362C436C1D60A463F60788BE"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\sampler-process\\process.json",
+        "bytes": 2060,
+        "sha256": "3E38D01228299AE9198694B3352D03D140AE8EFA1203009E5ED9343E5E1ABDA5"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\sampler-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-empty\\sampler-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\control\\release.json",
+        "bytes": 150,
+        "sha256": "1EE81BDACA1D687395A4D6A47B0C7AE55EE10EADB02E7431D46580206813F05C"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\control\\sampler-complete.json",
+        "bytes": 446,
+        "sha256": "06488359B32835799132B4006AC5C7104A4748441EA8431397F2262EAD4C3292"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\control\\sampler-ready.json",
+        "bytes": 547,
+        "sha256": "0EF13A8288EB44B73197E5288BEF06CB309789D49769A5994579C47D15A8FB73"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\host\\raw.json",
+        "bytes": 7407,
+        "sha256": "2172191BA99FF38C2E32D7978FBAB82BF9B14669F005B2B649FEAB20768E3971"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\host\\ready.json",
+        "bytes": 4123,
+        "sha256": "CA716A080388E3514DBB032CCF52D04EEFBB440BD8038A436D7F6827CF059EF2"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\host\\work-complete.json",
+        "bytes": 9271,
+        "sha256": "17ECE3E36E5AB8BFD7C010A17891C322D029092CCA612738D5CE5F52FB82DB1E"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\host-process\\process.json",
+        "bytes": 2260,
+        "sha256": "D953E3D89F1B6B2E67D053DD8F27C79645B5CB6BEEB6DF86B3C0CAFC54E3FD08"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\host-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\host-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\sampler\\result.json",
+        "bytes": 3434,
+        "sha256": "1D2201E4FC03780BB90E1E1EECD87CD897C749842CB74EE22149ED263997435F"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\sampler\\samples.jsonl",
+        "bytes": 27912,
+        "sha256": "4ABFCABE49EB76DFBB326D5A6EF8A59DF9AC2F8C07BB88D67F7A46999D68FD9E"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\sampler\\smaps.jsonl",
+        "bytes": 7701,
+        "sha256": "EE878A316D133295B1ABD08BC529A4633530910AC8EA0879C174811748349003"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\sampler\\started.json",
+        "bytes": 2837,
+        "sha256": "A7AFB6415DE8A6888C2B24ACF9DF31536021ED2CD1E0580DD2B395292F55BD1A"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\sampler-process\\process.json",
+        "bytes": 2056,
+        "sha256": "DB85A66729DF2024134CEE92536CC523C8D7EB3F761D8FA11DAAA71D66D7A472"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\sampler-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-1-full\\sampler-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\control\\release.json",
+        "bytes": 150,
+        "sha256": "4FB20CD0642E792CB0CB829240EF0DE6F4B269089CCDED3FD427E7D9B6293AB2"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\control\\sampler-complete.json",
+        "bytes": 446,
+        "sha256": "5F85F4E6ACA623257F79CBF8C8B4FF25C289548AC6B31D1943CD540635C5ADED"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\control\\sampler-ready.json",
+        "bytes": 548,
+        "sha256": "34BDE2D5953048E3D29EF1BE9A9B0411F9D9837B5D5623ACEE363E379909C44B"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\host\\raw.json",
+        "bytes": 7335,
+        "sha256": "EFF275F65246FB824CF6E3FFA6015082BBDE5C3A68D6146E4F1A449B0E40CF59"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\host\\ready.json",
+        "bytes": 4125,
+        "sha256": "BEF5DF9433096750E86B622371952396569358392CC14549B1F47F4074210EC8"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\host\\work-complete.json",
+        "bytes": 8320,
+        "sha256": "6EBCC6823D4BAD7CF5F887A21E34E59FE36E2ECFB7D3189B50CC073F2FA62051"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\host-process\\process.json",
+        "bytes": 2264,
+        "sha256": "548A9DFC12B3406621CC641D040E278FA32354912D5832FF98643B9F75E00975"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\host-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\host-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\sampler\\result.json",
+        "bytes": 3434,
+        "sha256": "98DAB269E0A502D5DCD34951287A4F57A056562E6BBA0862B444B7C7D0BDDFE8"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\sampler\\samples.jsonl",
+        "bytes": 4418,
+        "sha256": "1ACF8E2E6855310A8B33D0DE88CF89791B49F71531306BAE762C2F2452F29F46"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\sampler\\smaps.jsonl",
+        "bytes": 1720,
+        "sha256": "BF60E526669D2E440214192A006C59C0E16BE011CAA8F14E7BD93CEED341E2C9"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\sampler\\started.json",
+        "bytes": 2839,
+        "sha256": "90368E59C3209189AD9FC33C74599BE3345C592102238A26D822D1AAC8486560"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\sampler-process\\process.json",
+        "bytes": 2060,
+        "sha256": "2D477EA4AF0BDD874107C263D47B105051147CEDA7BCCB639B12B9C1A838F084"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\sampler-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-empty\\sampler-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\control\\release.json",
+        "bytes": 150,
+        "sha256": "A6E5DF8464B173E5564B4FC89AD909A472AE669ED2E2854B3FC9512915AFAE07"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\control\\sampler-complete.json",
+        "bytes": 446,
+        "sha256": "A738E32136E306CC5EE198A9DBE5F6916A6EA801D25D8155CB84AF66BD07B477"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\control\\sampler-ready.json",
+        "bytes": 547,
+        "sha256": "F6725F1491E451269787CAE31D790E45FB964C93E72003936875EECA7AF43EB9"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\host\\raw.json",
+        "bytes": 7406,
+        "sha256": "1D7AA82E303AEF12D754F24522B97CE3F51AD3B0A3C8CEA770247F604C7B5AB6"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\host\\ready.json",
+        "bytes": 4123,
+        "sha256": "D1FE8AC5A5E57102ABD569D2F5E2C046534F3BB095A7AAB1B3894B61217512B2"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\host\\work-complete.json",
+        "bytes": 9270,
+        "sha256": "EE4BEE78491AE90E890851AD0C1BD06A0A0B2FF6D3AF392DD451B03538044F22"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\host-process\\process.json",
+        "bytes": 2260,
+        "sha256": "606BA370D034B31C60D6AA84D8A0C75270B56A1093F9956A5FFDD7D2CC3762F2"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\host-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\host-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\sampler\\result.json",
+        "bytes": 3434,
+        "sha256": "CCF7236626533D643A3298287C35F55177F17E2FD99095BFD2A2B594467D4A2C"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\sampler\\samples.jsonl",
+        "bytes": 27914,
+        "sha256": "A412EB5E52ABCEFA311E217BEDDF0D239EE18D14884D5414E00C0741AA039992"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\sampler\\smaps.jsonl",
+        "bytes": 7701,
+        "sha256": "ED8D4692EBA8A9D72FCC27646BFE64BC371BF249C93C98FAC97B6C0B3F8E254F"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\sampler\\started.json",
+        "bytes": 2837,
+        "sha256": "0FF3D844497C799528F42287608E1B05CD4C59EDFBD5CA1CF05958E531DF6014"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\sampler-process\\process.json",
+        "bytes": 2056,
+        "sha256": "72FD2939C946CA244845BD00B9553A5D838FD41DF7406A39DA59FF3868D9F785"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\sampler-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-2-full\\sampler-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\control\\release.json",
+        "bytes": 150,
+        "sha256": "187340AE5CF688A60593F879B279E2065C7F648D902502278DD2CEF5A842D736"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\control\\sampler-complete.json",
+        "bytes": 446,
+        "sha256": "3EAF85A6B5C062ACD8551B17FE3683EA5A07887A93AE8A8F79C4450546C391A4"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\control\\sampler-ready.json",
+        "bytes": 548,
+        "sha256": "92AE0D577B2469BA7DEB294321A50D4F49BAAB995DC9DB2C5C6AE4D55AFC5428"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\host\\raw.json",
+        "bytes": 7333,
+        "sha256": "D08580D9548FD122F9FF047920B1E751F215087DCB61BE5EDD5BB02DC6A0EC1D"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\host\\ready.json",
+        "bytes": 4125,
+        "sha256": "EE3A5F85B09CE79C7F664D5BD1CEE4C366C6DB7535FDB2A4AEBF915A9B6A8A62"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\host\\work-complete.json",
+        "bytes": 8318,
+        "sha256": "FD00F36EBED61E0CE46E2D8BBC5CDE1DEA98E35085A541C4A7199CAF314C651B"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\host-process\\process.json",
+        "bytes": 2264,
+        "sha256": "FF9C0FB144052ACB9AA1311170909BB1544BA8E82D5E6B2C06F3BFCDC6E6450C"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\host-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\host-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\sampler\\result.json",
+        "bytes": 3434,
+        "sha256": "04CDFFC347311950E92149D7F5BB7D451B6E496440287BD9C356AE8E0F4004BC"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\sampler\\samples.jsonl",
+        "bytes": 4418,
+        "sha256": "0580CB493A7B16F8E7BA2F80AD5D1D31E09978FFFE616000D6BC4142AA171172"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\sampler\\smaps.jsonl",
+        "bytes": 1720,
+        "sha256": "DABF1E560CF4466140E8842729DC2E47F168F520F242D5F61373E4B0BDEB0411"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\sampler\\started.json",
+        "bytes": 2839,
+        "sha256": "81366B21FA7D18CA07FF51F17241DC6BAB807C6CB8598287AC77D575CDF0F579"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\sampler-process\\process.json",
+        "bytes": 2060,
+        "sha256": "9E41D01EE74967DF8BBDE9B7EFDAEFFB0350B7FB59FAF2AD11A4B424602523A0"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\sampler-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-empty\\sampler-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\control\\release.json",
+        "bytes": 150,
+        "sha256": "405011ADB8CD209CACA6382EBCBA9EDC7480604FBE5C6D9604D37AAF5B484F2E"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\control\\sampler-complete.json",
+        "bytes": 446,
+        "sha256": "CB0E358CAEF04036C41BB0A4C67453A8C0EBCB221A732420C7F8F5ADDFE055EA"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\control\\sampler-ready.json",
+        "bytes": 547,
+        "sha256": "130DF698831A4CB512CC4B2ECB0384B43B66FDCBC6F386A82E852605760FCE80"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\host\\raw.json",
+        "bytes": 7406,
+        "sha256": "ED97793E77B41E7CADB1552A9B7B1628F6E1BE953D439F93475B75A6FCD59400"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\host\\ready.json",
+        "bytes": 4123,
+        "sha256": "3556BE7B46ED18B87561485D6B66B60964B45893FBEB564AA6D1F68393A0B821"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\host\\work-complete.json",
+        "bytes": 9271,
+        "sha256": "B2C240B7E3AD233422BEB6C137C9C6FCCB86E4DEC139DB3BE66539C84970B4F8"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\host-process\\process.json",
+        "bytes": 2260,
+        "sha256": "544C82D38C8514E37BDEEA3E0395BFA4967829904F6C0620854FFBB56700C547"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\host-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\host-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\sampler\\result.json",
+        "bytes": 3434,
+        "sha256": "6ACCE1AA0E0BBD1B55C3CD624C69ACB6B8FD5AE6C42BF3B20A15464316D1CA11"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\sampler\\samples.jsonl",
+        "bytes": 28649,
+        "sha256": "8DFF7804207F763775FD5A9A991D68C103AAA37A8D8AF722FB2FBC4203E57E29"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\sampler\\smaps.jsonl",
+        "bytes": 7701,
+        "sha256": "1EE598D43E3EC8947BB11EE5E57CD47D8B91DDE1D9F8DB1491BD59DC0BED5547"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\sampler\\started.json",
+        "bytes": 2837,
+        "sha256": "770B3083AECC6412C1E52FAEFBBEA14AE47C55E7B7FF095A34064B4C7294071F"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\sampler-process\\process.json",
+        "bytes": 2056,
+        "sha256": "3E3A831B688C0ADCAE02FD77AACBC7EFDE6658CF0D47B0106BC77554D4CC8067"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\sampler-process\\stderr.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\runs\\pair-3-full\\sampler-process\\stdout.log",
+        "bytes": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\source-after.json",
+        "bytes": 2063,
+        "sha256": "0EE40EEF3314BAD6CBFC0370338C35B9CD1E8AEF337924D1F7C87C60DFF4A8FD"
+      },
+      {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v2\\source-before.json",
+        "bytes": 2063,
+        "sha256": "0EE40EEF3314BAD6CBFC0370338C35B9CD1E8AEF337924D1F7C87C60DFF4A8FD"
+      }
+    ]
+  },
+  "ci": {
+    "workflow": ".github/workflows/charts-c7.yml",
+    "manualOnly": true,
+    "defaultLightContractsOnly": true,
+    "formalOptIn": true,
+    "originalProcessesPerPlatform": 107,
+    "failureEvidenceAlwaysUploadConfigured": true,
+    "localContractTestsPassed": 94,
+    "yamlAndPowerShellSyntaxPassed": true,
+    "remoteWorkflowDispatched": false,
+    "remoteWorkflowPassed": null,
+    "memoryLiveJobWired": false,
+    "existingWorkflowUnchanged": true,
+    "independentAudit": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\ci-independent-audit-v2.json",
+      "bytes": 15161,
+      "sha256": "B2CCDDE28587F4F69BAAA3493CC5F99531AD67E4BFAAD8EFECD7CECFC995BC13"
+    },
+    "sourceManifest": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\ci-independent-sourcefiles-v1.json",
+      "bytes": 7520,
+      "sha256": "9FA6E1C69962FECA4BC4DFD13739A11AAB8FAFAD7AC16A6DA8B15E15700B51F5"
+    },
+    "wrongPlatformGuard": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\ci-wrong-platform-v1\\result.json",
+      "bytes": 166,
+      "sha256": "DFA715E6E853C0EB69B4E94883B565E4387E7A7323464B3383E650398DAA0597"
+    }
+  },
+  "nativeSubmission": {
+    "strictPixelPairsPerPlatform": 123,
+    "timedPairsPerPlatform": 3,
+    "ownedNativeOnly": true,
+    "productionLeaseQualified": false,
+    "stableImprovementBothPlatforms": false,
+    "productIntegrated": false,
+    "platforms": {
+      "windows": {
+        "pairs": [
+          {
+            "pair": 1,
+            "order": "AB",
+            "directNetPerDrawMs": 18.923700377358486,
+            "batchNetPerDrawMs": 18.513144074074066,
+            "batchMinusDirectMs": -0.4105563032844195,
+            "relativeChangePercent": -2.1695350015984993,
+            "lowerAccountedNetPerDraw": true,
+            "directDrawP95Ms": 19.6697,
+            "batchDrawP95Ms": 19.136
+          },
+          {
+            "pair": 2,
+            "order": "BA",
+            "directNetPerDrawMs": 19.006983207547172,
+            "batchNetPerDrawMs": 18.496145185185178,
+            "batchMinusDirectMs": -0.5108380223619946,
+            "relativeChangePercent": -2.687633364979003,
+            "lowerAccountedNetPerDraw": true,
+            "directDrawP95Ms": 19.8753,
+            "batchDrawP95Ms": 19.1517
+          },
+          {
+            "pair": 3,
+            "order": "AB",
+            "directNetPerDrawMs": 19.12527307692307,
+            "batchNetPerDrawMs": 18.617450185185184,
+            "batchMinusDirectMs": -0.5078228917378844,
+            "relativeChangePercent": -2.6552451810512134,
+            "lowerAccountedNetPerDraw": true,
+            "directDrawP95Ms": 20.198,
+            "batchDrawP95Ms": 19.4734
+          }
+        ],
+        "allThreePairsLower": true
+      },
+      "linux": {
+        "pairs": [
+          {
+            "pair": 1,
+            "order": "AB",
+            "directNetPerDrawMs": 26.115738643589737,
+            "batchNetPerDrawMs": 25.792099689743587,
+            "batchMinusDirectMs": -0.3236389538461495,
+            "relativeChangePercent": -1.2392487084625814,
+            "lowerAccountedNetPerDraw": true,
+            "directDrawP95Ms": 27.176128,
+            "batchDrawP95Ms": 27.122439
+          },
+          {
+            "pair": 2,
+            "order": "BA",
+            "directNetPerDrawMs": 25.89778284102565,
+            "batchNetPerDrawMs": 26.515741436842102,
+            "batchMinusDirectMs": 0.6179585958164537,
+            "relativeChangePercent": 2.3861447893428256,
+            "lowerAccountedNetPerDraw": false,
+            "directDrawP95Ms": 27.241789,
+            "batchDrawP95Ms": 27.484882
+          },
+          {
+            "pair": 3,
+            "order": "AB",
+            "directNetPerDrawMs": 26.0661037923077,
+            "batchNetPerDrawMs": 26.54164174473685,
+            "batchMinusDirectMs": 0.47553795242914987,
+            "relativeChangePercent": 1.8243537899572226,
+            "lowerAccountedNetPerDraw": false,
+            "directDrawP95Ms": 27.170812,
+            "batchDrawP95Ms": 27.630253
+          }
+        ],
+        "allThreePairsLower": false
+      }
+    },
+    "independentAudit": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-native-submit-20261027\\native-submit-independent-summary-v2.json",
+      "bytes": 374956,
+      "sha256": "9D87A7B762F2BE7121CD436648B94179193BC768144092397A2E334D27701E4A"
+    },
+    "caseColdAudit": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-native-submit-20261027\\native-submit-independent-case-cold-addendum-v1.json",
+      "bytes": 8121,
+      "sha256": "56E777391826D36DB0613DFED1F45ADF69F258265E9CC20B357B352C76371018"
+    },
+    "sourceExperimentOnly": true
+  },
+  "officialReference": {
+    "status": "blocked-reference",
+    "measurements": null,
+    "ratios": null
+  },
+  "present": null,
+  "formalPeakMemoryQualified": false,
+  "physicalHardwareQualified": false,
+  "userDeferrals": [
+    "Ubuntu22.04/24.04 physical desktops",
+    "hardware GPU",
+    "physical touch",
+    "million-point hit tail",
+    "UIA/AT-SPI selected-item bridge"
+  ],
+  "history": {
+    "windowsMemoryV1Passed": true,
+    "linuxMemoryV1RejectedBeforeSampling": true,
+    "linuxV1Oracle": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v1\\oracle.json",
+      "bytes": 1002,
+      "sha256": "1EC01DC28C9C2C584DAF999BADC56259B77E69875CF4747CAEDB225BC1826354"
+    },
+    "nativeFirstProbeSerializationFailureRetained": true,
+    "nativeFirstAuditSchemaFailureRetained": true,
+    "ciFirstAuditMarkdownAssertionFailureRetained": true,
+    "windowsMemoryV1Execution": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\windows\\memory-v1\\results.json",
+      "bytes": 6159,
+      "sha256": "032AFB0AEC03DC1B543781752C92FFCEB67A5B8C2052F210B73D47CA142C3D17"
+    },
+    "linuxMemoryV1Execution": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\linux\\memory-v1\\results.json",
+      "bytes": 6538,
+      "sha256": "C75872DD4FC55CB7F1656F664E881D75EA747868A3FBD4DC71C2656D6B53F69E"
+    },
+    "nativeFirstSerializationFailureReceipt": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-native-submit-20261027\\windows\\build-v1\\fidelity\\process.json",
+      "bytes": 1384,
+      "sha256": "41DAF03C1A01E2E1438585A0994A21C1991983874202F2D5FC7052EAAF08106D"
+    },
+    "nativeFirstAuditFailure": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-native-submit-20261027\\native-submit-independent-summary-v1.json",
+      "bytes": 1613,
+      "sha256": "F4E605480A01925C5FFA2B9BB1D9F4E012870B68622AE5B9DA5784F2AC77D68A"
+    },
+    "ciFirstAuditFailure": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\ci-independent-audit-v1.json",
+      "bytes": 14297,
+      "sha256": "1AE27165A085A70F464BD2413B8216401F5A932C6E6C97A5EF8C74BE11BF1DF7"
+    },
+    "parentPreview": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-qualification-tools-20261027\\publication-preview-v1\\publication-plan.json",
+      "bytes": 1299,
+      "sha256": "BCDA063B0418A64A9D952AD101CA0F92DED8DEDC3A332CEE6D6AA36A208E7E8B"
+    }
+  },
+  "sourceFiles": [
+    {
+      "relative": "NT.AvaloniaControl.slnx",
+      "path": "D:\\Procedure\\AvaloniaControl\\NT.AvaloniaControl.slnx",
+      "bytes": 4031,
+      "sha256": "0180C52B7C84F7F7C9CAEF58D37E15B53957D1766216D048E9FF48E46EFE888F"
+    },
+    {
+      "relative": "benchmarks/Charts.MemoryProbe/Charts.MemoryProbe.csproj",
+      "path": "D:\\Procedure\\AvaloniaControl\\benchmarks\\Charts.MemoryProbe\\Charts.MemoryProbe.csproj",
+      "bytes": 919,
+      "sha256": "F52B364A2B6B2D8630D73A4BFCB927102D60C3EEFA530D264E87AC0219E6789A"
+    },
+    {
+      "relative": "benchmarks/Charts.MemoryProbe/Program.cs",
+      "path": "D:\\Procedure\\AvaloniaControl\\benchmarks\\Charts.MemoryProbe\\Program.cs",
+      "bytes": 20586,
+      "sha256": "FAE820C56B287D480B989DC6AA48A71319312D52DC1DF8664EFF7CEA2B341A34"
+    },
+    {
+      "relative": "benchmarks/Charts.MemoryProbe/packages.lock.json",
+      "path": "D:\\Procedure\\AvaloniaControl\\benchmarks\\Charts.MemoryProbe\\packages.lock.json",
+      "bytes": 8805,
+      "sha256": "8C0BDF3FF1BC40BC50A3DC7D48B4C14E35F72752BB8D318869A01B2A189425F9"
+    },
+    {
+      "relative": "benchmarks/Charts.MemoryProbe/README.md",
+      "path": "D:\\Procedure\\AvaloniaControl\\benchmarks\\Charts.MemoryProbe\\README.md",
+      "bytes": 3091,
+      "sha256": "5DC03C706D5D20A059569C0C2AD814980273B1601F8F1632298BDDA67D04A4A7"
+    },
+    {
+      "relative": "scripts/Invoke-ChartsMemoryProbe.ps1",
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\Invoke-ChartsMemoryProbe.ps1",
+      "bytes": 21362,
+      "sha256": "5260E572A8EC1683239EBE8A4826CE22D1180D01831A44136614338BD8830F92"
+    },
+    {
+      "relative": "scripts/ChartsMemoryProbe.Contract.json",
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\ChartsMemoryProbe.Contract.json",
+      "bytes": 7360,
+      "sha256": "D847221FD38541DA1020B923B6AD8AFED09611287A813BD3050C627B818E33BB"
+    },
+    {
+      "relative": "scripts/charts_memory_sampler.py",
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\charts_memory_sampler.py",
+      "bytes": 19881,
+      "sha256": "13C31243153A6968A36A903A63F42ABAE89902631350F64932E9F770167E4ADF"
+    },
+    {
+      "relative": "scripts/charts_memory_oracle.py",
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\charts_memory_oracle.py",
+      "bytes": 30963,
+      "sha256": "3BE67B7F37E549C534442F65B96984A1EC45C47D6FB251A9E566ED79942E2574"
+    },
+    {
+      "relative": "scripts/Tests/test_charts_memory_sampling.py",
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\Tests\\test_charts_memory_sampling.py",
+      "bytes": 19386,
+      "sha256": "7FA79B2CCBE23CD7E8B54DC739A2F21804C384E1A92280247C9D0F90153200F7"
+    },
+    {
+      "relative": ".github/workflows/charts-c7.yml",
+      "path": "D:\\Procedure\\AvaloniaControl\\.github\\workflows\\charts-c7.yml",
+      "bytes": 6922,
+      "sha256": "71AB95EC88E44528A6C974049D023CAD303567036F21D9653F5A923E955E5714"
+    },
+    {
+      "relative": "scripts/Invoke-ChartsC7Ci.ps1",
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\Invoke-ChartsC7Ci.ps1",
+      "bytes": 4963,
+      "sha256": "A4B1303B140531FD81A6EB0DEABB304142D424D375D48CBFF6320E6BADD30DF9"
+    },
+    {
+      "relative": "scripts/charts_c7_ci_evidence.py",
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\charts_c7_ci_evidence.py",
+      "bytes": 18506,
+      "sha256": "94FC040F830BB4AF592980020A004CB5A618304CA4148BC1E63193F532B7A91A"
+    },
+    {
+      "relative": "scripts/Tests/test_charts_c7_ci_evidence.py",
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\Tests\\test_charts_c7_ci_evidence.py",
+      "bytes": 16332,
+      "sha256": "3D1A0B24C223F17A7BADF91E8A96D671EAA1D4A51E69BF8DD42AC20DE05CB32B"
+    },
+    {
+      "relative": "scripts/README.ChartsC7Ci.md",
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\README.ChartsC7Ci.md",
+      "bytes": 3913,
+      "sha256": "B98142B8A20F4ED21B902EDF54F44A70CC86E53DF37034B6DD039BDCC63D24D5"
+    }
+  ]
+}

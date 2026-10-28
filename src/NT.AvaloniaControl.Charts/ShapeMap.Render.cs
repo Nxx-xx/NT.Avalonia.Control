@@ -12,7 +12,7 @@ public partial class ShapeMap
     protected override Rect GetPlotArea(Size size)
     {
         var plot = base.GetPlotArea(size);
-        return ShowLegend ? new(plot.X, plot.Y, plot.Width, Math.Max(0, plot.Height - 30)) : plot;
+        return ShowLegend ? new(plot.X, plot.Y, plot.Width, Math.Max(0, plot.Height - (UsesLegendItemTemplate && MaxLegendItems > 0 ? 64 : 30))) : plot;
     }
     private Point ProjectPoint(ChartPoint point, Rect plot)
     {
@@ -44,7 +44,7 @@ public partial class ShapeMap
             var mark = new EngineeringMarkInfo(members, geometry, fill, position) { Key = key, Value = value, TooltipText = text, Stroke = stroke };
             _indices.TryAdd(key, marks.Count); marks.Add(mark); _painted.Add(mark, painted);
             _commandIndices.Add(mark, _commands.Count); _commands.Add(new(geometry, fill, stroke, mark, painted));
-            if (ShowLabels && !string.IsNullOrWhiteSpace(text)) _labels.Add((text, position));
+            if (ShowLabels && !string.IsNullOrWhiteSpace(text)) _labels.Add((text, position, fill, mark));
         }
         foreach (var state in _layerSnapshots)
         {
@@ -61,7 +61,7 @@ public partial class ShapeMap
                     if (feature.Polygons.Count == 0) continue;
                     var polygons = feature.Polygons.Select(p => new PaintedPolygon(p.Outer.Select(v => ProjectPoint(v, plot)).ToArray(), p.Holes.Select(h => h.Select(v => ProjectPoint(v, plot)).ToArray()).ToArray())).ToArray();
                     var geometry = PolygonGeometry(polygons); var center = LabelPoint(polygons);
-                    if (region.IsNoData || region.Data is null) { _commands.Add(new(geometry, WithOpacity(shape.NoDataBrush, layer.Opacity), WithOpacity(layer.Stroke, layer.Opacity), null, new(polygons, null))); if (ShowLabels && feature.Entry.Label is { } label) _labels.Add((label, center)); continue; }
+                    if (region.IsNoData || region.Data is null) { var noDataFill = WithOpacity(shape.NoDataBrush, layer.Opacity); _commands.Add(new(geometry, noDataFill, WithOpacity(layer.Stroke, layer.Opacity), null, new(polygons, null))); if (ShowLabels && feature.Entry.Label is { } label) _labels.Add((label, center, noDataFill, null)); continue; }
                     var row = region.Data; var raw = original.GetValueOrDefault(row.RegionId);
                     var category = input.Categories.GetValueOrDefault(row.RegionId);
                     IBrush mapped = Gradient(shape.MinimumColor, shape.MaximumColor, low == high ? .5 : Fraction(region.Value!.Value, low, high));
@@ -196,8 +196,14 @@ public partial class ShapeMap
     }
     protected override void RenderAnnotations(DrawingContext context, Rect plot)
     {
-        if (ShowLabels) using (context.PushClip(plot)) foreach (var label in _labels) DrawLabel(context, label.Text, label.Position, Math.Min(160, plot.Width));
-        if (!ShowLegend || _legends.Count + _categoryLegends.Count == 0) return;
+        if (ShowLabels)
+        {
+            var canvas = LabelCanvasColor();
+            using (context.PushClip(plot))
+                foreach (var label in _labels)
+                    if (!UsesDataLabelTemplate || label.Mark is null) DrawMapLabel(context, label.Text, label.Position, Math.Min(160, plot.Width), label.Fill, canvas);
+        }
+        if (UsesLegendItemTemplate || !ShowLegend || _legends.Count + _categoryLegends.Count == 0) return;
         var segment = plot.Width / (_legends.Count + _categoryLegends.Count);
         for (var i = 0; i < _legends.Count; i++)
         {

@@ -28,16 +28,16 @@ internal sealed partial class TreeDataGridPage
 
         return
         [
-            Group("基础与编辑", "编辑校验、列类型、外观与冻结", "editing", "columns", "visibility", "appearance"),
-            Group("树结构与行操作", "层级数据、按需加载与节点移动", "tree", "lazy-tree", "rowmoving"),
-            Group("自定义列模板", "按钮、选色盘、时钟与组合控件", "template-buttons", "template-colors", "template-clock", "template-composite"),
+            Group("基础与编辑", "编辑校验、列类型、外观与冻结", "editing", "columns", "column-options", "selection-events", "visibility", "appearance"),
+            Group("树结构与行操作", "层级数据、按需加载与节点移动", "tree", "lazy-tree", "rowmoving", "rowdrag-batch"),
+            Group("自定义列模板", "按钮、选色盘、时钟与组合控件", "template-buttons", "template-colors", "template-clock", "template-composite", "element-factory"),
             DemoNavigationItem.Group("数据绑定", "MVVM 与嵌套绑定", "table",
                 new DemoNavigationItem("MVVM 模式", "声明式列、绑定与 ViewModel 交互", "table", open: () =>
                 {
                     _modeTabs.SelectedIndex = 1;
                     Content = _mvvmView;
                     return this;
-                }), Scenario(_scenarioChoices.Single(choice => choice.Id == "nestedbindings"))),
+                }), Scenario(_scenarioChoices.Single(choice => choice.Id == "nestedbindings")), Scenario(_scenarioChoices.Single(choice => choice.Id == "binding-writeback"))),
             Group("大数据与滚动", "十万行、百列与虚拟化", "flat", "wide"),
         ];
     }

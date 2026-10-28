@@ -4,10 +4,15 @@ namespace NT.AvaloniaControl.Charts;
 
 public abstract partial class AnalysisChartBase
 {
-        private ChartRasterExporter Exporter => _exporter ??= new(this, Render, e => ExportFailed?.Invoke(this, e));
+    private ChartRasterExporter Exporter => _exporter ??= new(this, RenderWithoutTransientTooltip, e => ExportFailed?.Invoke(this, e), PreparePermanentPresentationExport, FinishPermanentPresentationExport);
     public event EventHandler<ChartExportFailedEventArgs>? ExportFailed;
     internal ChartExportLayout GetExportLayout(ChartExportOptions? options) => Exporter.GetLayout(options);
-    internal void RenderExport(DrawingContext context, ChartExportLayout layout, IBrush? background) => Exporter.Render(context, layout, background);
+    internal void RenderExport(DrawingContext context, ChartExportLayout layout, IBrush? background)
+    {
+        var depth = _permanentExportDepth;
+        try { PreparePermanentPresentationExport(); Exporter.Render(context, layout, background); }
+        finally { if (_permanentExportDepth > depth) FinishPermanentPresentationExport(); }
+    }
     public bool TryExportPng(Stream destination, ChartExportOptions? options = null) => Exporter.TryExportPng(destination, options);
     public bool TryExportPng(string path, ChartExportOptions? options = null) => Exporter.TryExportPng(path, options);
     public bool TryExportJpeg(Stream destination, ChartExportOptions? options = null) => Exporter.TryExportJpeg(destination, options);

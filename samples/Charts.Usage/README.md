@@ -1,5 +1,21 @@
 # Charts.Usage
 
+“平台字体与启动诊断”折叠面板同时显示中文、`é`、😀 和阿拉伯文字的真实 TextBlock、图表标题、图例及默认数据标签。正常 `Program.Main` 在 `UsePlatformDetect` 前无条件调用生产 `WithChartsNativeTextIsolation()`，保存创建界面前的诊断快照；不依赖 `--isolate-native-text`。Linux/glibc 的实际文本库路径、SHA256、版本、符号提供者与 resolver 调用通过 `ChartNativeTextBinding.Diagnostics` 公开，Windows 为 `NotApplicable`。初始化失败终止启动，不继续绘制界面。
+
+```powershell
+dotnet run --project samples/Charts.Usage -- --smoke --charts-font-startup-only --smoke-output <新绝对目录>/usage.json --smoke-image <新绝对目录>/usage.png
+```
+
+去掉 `--charts-font-startup-only` 保留完整绑定冒烟并追加字体检查。主 JSON 格式不变；`usage.font-startup.json`（`charts-sample-font-startup/v1`）记录 before-UI/真实文字绘制后的原生绑定、各脚本 shaped runs 和字体 glyph ID/哈希、原始 A/C 命中、七张 PNG 的尺寸和哈希。四张逐脚本隐藏对照图必须分别产生实际文字像素差，恢复图必须精确一致；缺少中文等脚本的 glyph 不会当作通过。初始化失败写 `usage.startup-failure.json` 并返回非零退出码。每次运行使用新目录，PNG 不覆盖。
+
+冷字体缓存验证需要每个进程使用独立且开始为空的缓存目录；证据记录的环境变量不能单独证明冷缓存。窗口 PNG 是原生窗口视觉树的 RTB 读回，另有图表导出，不冒充 compositor/GPU 输出、物理输入或完整塑形认证。Headless 包消费者复制 `FontStartupScene.cs` 和 `MainWindow.FontStartup.cs`，自定义 Program 提供 `internal static object? NativeTextBeforeUi { get; } = null;`；仅构造诊断面板不会初始化原生库或启动原生冒烟窗口。
+
+“C7 集成”通过一个编译绑定的 ViewModel 属性同步七类主题根，包含 BeeswarmPlotChart/StripPlotChart 别名；切换普通/高对比主题保留原始选择。两平台原生 Usage 各848项、功能包/主题包隔离消费者各1032/1064项，包含32项明确的主题颜色断言；仅功能包不自动安装 ChartsTheme。范围、完整 Demo 失败和剩余专业集成见 [C7-01 报告](../../docs/charts-c7-integration.md)。
+
+展开“C7 专业图族 · 共享业务 Tooltip 控件模板”（`ProfessionalTooltipExamples`），可查看 Funnel 单项和 Mosaic 重复分类聚合。`MainWindow.axaml` 的 `DataTemplate` 使用 `x:DataType="charts:ChartDataTooltipContext"` 编译绑定；`Members` 保留标记的全部原始记录、稳定 ID 和源索引，示例聚合对应 `[0, 2]`。模板只读取成员数量和首项身份，避免为大聚合创建完整控件列表。`BusinessDataContext` 交给具有 `ChartUsageViewModel` 类型的嵌套模板，直接读取业务标题。
+
+按钮可切换模板与默认读数、更新 DTO/业务标题或替换数据源；复选框控制 Tooltip。普通明暗主题及“C7 集成”的 `HighContrastMode` 选择器共同作用于模板继承的字体、资源与提示外框。`MainWindow.ProfessionalTooltips.cs` 验证编译绑定、控件复用、原始身份、双向选择及旧上下文/订阅释放，并将范围写入 `professionalTooltipDiagnostics`。这份 Usage 检查不声明导出像素验证；专业图族的默认和模板 Tooltip 均从 PNG/JPEG 同步、异步导出排除，由 Demo 的 `--charts-professional-tooltips-only` 原生窗口检查提供同格式像素对照。API 契约见 [Charts README](../../src/NT.AvaloniaControl.Charts/README.md#专业图族-tooltip-模板)。
+
 C6-04～C6-06 的“C6 主项”面板提供26个真实AXAML编译绑定示例：Gantt/Swimlane/Event/Spiral四类排程，Bullet/KpiCard/Calendar/Matrix/Table/Waffle/Word/Bump/Slope/Parliament/ThemeRiver十一类运营分析，Icicle/Flame/Indented/Radial/Dendrogram五类层级，以及地图Marker/Line/Vector/Pie/分类色/Seat多选六种扩展。数据与断言分别位于 `ChartUsageViewModel.C6Completion.cs`、`MainWindow.C6Completion.cs`，它们和同一份AXAML都进入功能包、主题包两类隔离消费者。
 
 示例使用真实业务路径 Open/Close/Complete/Links、Amount/Prior/Goal、Day、Entity/Period、Branches/Cost/Distance、East/North/Metric/Parts；Table通过可观察Columns读取业务行及格式、数值域和文本。Bullet、KPI、Waffle展示独立标量绑定，标量选择的Item是实际控件自身；集合模式的Item是原始业务行，非null空集合也覆盖标量。KPI显式Percentage Delta用百分数点，12.5显示12.5%，Previous派生变化独立保留；Previous为0时派生比例未定义。Map Seat的TwoWay SelectedItems包含原始区域对象，不是复制投影。
@@ -99,3 +115,26 @@ C6-01 的“层级和打包”提供 Treemap、Sunburst、Organization、Bubble 
 
 
 C5CompletionExamples 包含七类统计图的编译绑定、原始身份、嵌套Samples、Levels/Axes通知和双向选择验证。
+
+
+C7-01 的“专业图族 · 共享图例与数据标签模板”提供 Funnel 与 Mosaic 的实际编译绑定。`LegendItemTemplate`、`DataLabelTemplate` 和 `MaxLegendItems` / `MaxDataLabels` 均由业务 VM 控制；开关模板、更新数值/标题及替换原始集合可以直接操作。`ChartDataLegendItemContext` 与 `ChartDataLabelItemContext` 保留完整 `Members` 和 `BusinessDataContext`，重复的北区线上两项仍以 `[0, 2]` 原始成员表示，界面仅显示有界计数与首项 ID。专业标签上下文与原有 Cartesian 的 `ChartDataLabelContext` 分开，不创建假系列。
+
+Usage 及两种隔离 NuGet 消费者检查真实模板控件、编译绑定、成员身份、预算、业务/源通知、主题、视图、原始选择和换源释放。永久图例与数据标签的同步/异步 PNG/JPEG 像素验证由原生 Demo 专项负责；Usage 的绑定检查不代替原生图片或物理输入验收。本批平台结果及剩余工作见[共享图例与标签报告](../../docs/charts-c7-shared-presentations.md)。
+
+专业图族的绘图区和 Trackball 示例使用 `ChartDataPlotAreaContext` / `ChartDataTrackballContext` 的编译模板绑定，覆盖 Funnel 与 Mosaic 两个共享根。`PlotAreaContent` 是永久业务内容，投影的 0..1 坐标表示图族布局，Y 向下；它不是数值轴或经纬度。Trackball 读取显示空间的垂直 / 水平切片，分组和逐读数浮动都保留真实原始成员，Mosaic 的聚合仍包含源项 `[0, 2]`。
+
+`ProfessionalPlotTrackballExamples` 可切换永久内容、Trackball 和读数布局并更新业务数据。绑定检查同时验证来源替换、上下文释放、视口变化、高对比和显示预算；栅格永久内容与临时读数排除的像素证据由 Demo 的 `--charts-professional-plot-trackball-only` 原生窗口专项生成。
+
+专业绘图区与 Trackball 的同名折叠区展示 Funnel、Mosaic。`PlotAreaContentTemplate` 使用 `ChartDataPlotAreaContext` 编译绑定永久内容与业务 VM；`TrackballContentTemplate` 使用 `ChartDataTrackballContext`，展示完整原始成员、读数预算和原始 ID。内容、横纵模式、Group/Float、模板、预算、换源命令和选择都绑定到可观察 VM。布局比例从左上 `(0,0)` 到右下 `(1,1)`，不是地图、排程或分类的原始数据轴。
+
+PlotAreaContent 进入同步/异步 PNG、JPEG 导出；Trackball 线、标记和卡片从导出排除。Usage 核对实际编译绑定、来源身份与释放行为；原生图片由 Demo 专项验证。平台结果、截图目录和剩余工作见[专业绘图区与 Trackball 报告](../../docs/charts-c7-plotarea-trackball.md)。
+
+“专业图族 · 范围选择和业务 ID 联动”展示独立的 `SelectedDataKeys` / `DataSelectionRange` TwoWay 编译绑定。`ChartDataRangeSelector` 的 `EngineeringChart` 或 `AnalysisChart` 只绑定一种目标，范围是该家族绘图区从左上角开始的比例；它按可见图元的轴对齐包围盒相交选择完整原始成员，圆弧或多边形孔洞内的包围盒空白也可能匹配。范围条保持数据坐标与视口；图内拖拽框选和套索仍为扩展范围。
+
+示例的 Funnel/Mosaic 显式配置 `IdPath="Id"`，所以各自的 `SelectedDataKeys` 可以使用字符串业务 ID；未设显式 ID 的普通来源需要传原始对象引用。组的 keySelector 负责跨图映射，保留源图的原生键要求。地图仍使用带图层作用域的 MapGlyphKey。按键请求 a 时，Mosaic 聚合 a、c 的公开选择仅包含 a，整块仍高亮；用范围条选择这块才包含其全部原始成员。
+
+`MainWindow.ProfessionalLinking.cs` 使用 `ChartDataSynchronizationGroup` 将两个根按原始业务 ID 映射；显式清除、换源保留 ID、反向选择和高对比切换都由真实 VM 属性驱动。不同家族默认只联动业务选择。只有应用明确提供相同的 `layoutDomain` 并开启相应选项时，才适合联动范围或工程图视口；这类可比较布局由测试覆盖，当前异构看板展示业务 ID 联动与局部范围、局部缩放。交叉筛选由应用依据选择事件和业务键更新查询或 ItemsSource。
+
+挂载范围条时，图表已有的范围优先；卸载期间设置的非默认 Range 只在目标没有范围时初始化它。MinimumSpan 约束本地输入，外部图表范围保持原值。组的操作在 UI 线程执行，窗口关闭时释放组。成员虽使用弱引用，显式 keySelector 和 layoutDomain 仍被组持有；委托捕获的 VM/图表由应用管理。隐藏、禁用或卸载的成员停止同步，重新显示后需要主动重放时调用 SynchronizeFrom。
+
+Demo 的“专业范围与多图联动”还展示地图层身份、聚合来源、范围条指针和键盘输入，以及永久模板 / 暂态读数的导出组合。Usage 的编译绑定检查覆盖业务状态和来源身份；同一布局域联动、实际导出图片及代表性动画组合由测试与原生 Demo 专项各自验证，物理输入和实机验收仍见[范围与联动报告](../../docs/charts-c7-range-linking.md)。

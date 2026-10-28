@@ -1,6 +1,3 @@
-using System.ComponentModel;
-using System.Globalization;
-using System.Reflection;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
@@ -44,67 +41,41 @@ public abstract partial class TreeDataGridColumn
         if (column._hasTypedValueAccessors && column.ValueGetter is { } typedGetter) return typedGetter(model);
         if (column.DisplayBinding is { } binding)
         {
-            if (binding is ReflectionBinding reflection && IsSimpleDataContextBinding(reflection) && reflection.Path is { } path && TryProperty(model, path, out var target, out var property))
-                return property.GetValue(target);
+            try
+            {
+                var options = BindingOptions.Read(binding);
+                if (options.ModelPath is { } path && options.Element is null && options.Relative is null)
+                    return TreeDataGridBinding.ModelPath(binding).Capture(options.Root(binding, model), writable: false).ReadValue();
+            }
+            catch (Exception failure) when (failure is NotSupportedException or InvalidOperationException or ArgumentException or IndexOutOfRangeException or KeyNotFoundException) { }
             var sink = new BindingSink { DataContext = model };
-            using var subscription = sink.Bind(BindingSink.ResultProperty, binding);
-            return sink.GetValue(BindingSink.ResultProperty);
+            try
+            {
+                using var subscription = sink.Bind(BindingSink.ResultProperty, binding);
+                return sink.GetValue(BindingSink.ResultProperty);
+            }
+            finally { sink.DataContext = null; }
         }
         return column.ValueGetter is { } getter ? getter(model) : model;
     }
     internal Action<object, object?>? GetWriter(object model, Func<bool>? canWrite = null)
     {
-        var column = EffectiveColumn;
-        if (IsReadOnly || column.IsReadOnly) return null;
-        if (column.ValueSetter is { } writer) return writer;
-        if (column._hasTypedValueAccessors) return null;
-        if (column.DisplayBinding is ReflectionBinding binding && binding.Mode is BindingMode.Default or BindingMode.TwoWay
-            && IsSimpleDataContextBinding(binding) && binding.Path is { } path && TryProperty(model, path, out var capturedTarget, out var property, writable: true) && property.SetMethod?.IsPublic == true)
-            return (item, value) =>
-            {
-                if (!ReferenceEquals(column.DisplayBinding, binding) || !TryProperty(item, path, out var target, out var current, writable: true) ||
-                    !ReferenceEquals(target, capturedTarget) || !Equals(current, property) || current.SetMethod?.IsPublic != true || canWrite?.Invoke() == false)
-                    throw new InvalidOperationException("The binding edit target changed. Cancel the draft and begin a new edit.");
-                current.SetValue(target, value);
-            };
-        return null;
+        return TryCreateEditAccess(model, canWrite, out var access, out _) ? access!.Write : null;
     }
     internal object? ConvertEditValue(object? value, object model)
     {
         var column = EffectiveColumn;
-        if (column.ValueConverter is { } converter) return converter(value);
         var type = column.ValueType;
-        if (type is null && column.DisplayBinding is ReflectionBinding { Path: { } path } && TryProperty(model, path, out _, out var property)) type = property.PropertyType;
-        type ??= column is TreeDataGridCheckBoxColumn check ? check.IsThreeState ? typeof(bool?) : typeof(bool) : column.ReadValue(model)?.GetType() ?? typeof(string);
-        var nullable = Nullable.GetUnderlyingType(type);
-        if (value is null || value is string { Length: 0 } && nullable is not null)
+        if (type is null && column.DisplayBinding is { } binding)
         {
-            if (!type.IsValueType || nullable is not null) return null;
-            throw new FormatException($"A value of type {type.Name} is required.");
+            var options = BindingOptions.Read(binding);
+            if (options.ModelPath is { } path && options.Element is null && options.Relative is null)
+                type = TreeDataGridBinding.ModelPath(binding).Capture(options.Root(binding, model), writable: false).ValueType;
         }
-        type = nullable ?? type;
-        if (type.IsInstanceOfType(value)) return value;
-        if (type == typeof(string)) return Convert.ToString(value, CultureInfo.CurrentCulture);
-        if (type.IsEnum) return Enum.Parse(type, value.ToString()!, ignoreCase: true);
-        return TypeDescriptor.GetConverter(type).ConvertFrom(null, CultureInfo.CurrentCulture, value);
+        var converted = column.ValueConverter is { } converter ? converter(value) : ConvertValue(value, type ?? InferEditType(column, model));
+        RejectNoValue(converted);
+        return converted;
     }
-    private static bool TryProperty(object model, string path, out object target, out PropertyInfo property, bool writable = false)
-    {
-        target = model; property = null!;
-        var parts = path.Split('.');
-        if (parts.Any(part => part.Length == 0 || part.Any(c => !char.IsLetterOrDigit(c) && c != '_'))) return false;
-        for (var i = 0; i < parts.Length; ++i)
-        {
-            var member = target.GetType().GetProperty(parts[i], BindingFlags.Instance | BindingFlags.Public);
-            if (member?.GetMethod?.IsPublic != true || member.GetIndexParameters().Length != 0) return false;
-            if (i == parts.Length - 1) { property = member; return true; }
-            if (writable && member.PropertyType.IsValueType) return false;
-            var next = member.GetValue(target); if (next is null) return false; target = next;
-        }
-        return false;
-    }
-    private static bool IsSimpleDataContextBinding(ReflectionBinding binding) =>
-        ReferenceEquals(binding.Source, AvaloniaProperty.UnsetValue) && binding.Converter is null && binding.ElementName is null && binding.RelativeSource is null;
     private sealed class BindingSink : Control
     {
         internal static readonly StyledProperty<object?> ResultProperty = AvaloniaProperty.Register<BindingSink, object?>("Result");

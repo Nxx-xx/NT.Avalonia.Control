@@ -64,11 +64,25 @@ public sealed class TreeDataGridTextColumn : TreeDataGridColumn
     private BindingBase? _binding;
     private string? _stringFormat;
     private TextWrapping _textWrapping;
+    private TextAlignment _textAlignment = TextAlignment.Left;
+    private TextTrimming _textTrimming = TextTrimming.CharacterEllipsis;
     /// <summary>Optional Avalonia binding. When supplied, takes precedence over ValueGetter.</summary>
     [AssignBinding]
     public BindingBase? Binding { get => _binding; set => Set(ref _binding, value); }
     public string? StringFormat { get => _stringFormat; set => Set(ref _stringFormat, value); }
     public TextWrapping TextWrapping { get => _textWrapping; set => Set(ref _textWrapping, value); }
+    /// <summary>Alignment of the displayed text within the cell. Does not change the editor or column header.</summary>
+    public TextAlignment TextAlignment
+    {
+        get => _textAlignment;
+        set { if (!Enum.IsDefined(value)) throw new ArgumentOutOfRangeException(nameof(value)); Set(ref _textAlignment, value); }
+    }
+    /// <summary>Trimming strategy for displayed text. Use TextTrimming.None to disable ellipsis.</summary>
+    public TextTrimming TextTrimming
+    {
+        get => _textTrimming;
+        set { ArgumentNullException.ThrowIfNull(value); Set(ref _textTrimming, value); }
+    }
 }
 
 public sealed class TreeDataGridCheckBoxColumn : TreeDataGridColumn
@@ -85,9 +99,13 @@ public sealed class TreeDataGridTemplateColumn : TreeDataGridColumn
     public TreeDataGridTemplateColumn() => CanUserSort = false;
     private IDataTemplate? _cellTemplate;
     private IDataTemplate? _cellEditingTemplate;
+    private BindingBase? _textSearchBinding;
     public IDataTemplate? CellTemplate { get => _cellTemplate; set => Set(ref _cellTemplate, value); }
     /// <summary>Reserved editor template contract. Editing gestures and write-back are implemented in P4.</summary>
     public IDataTemplate? CellEditingTemplate { get => _cellEditingTemplate; set => Set(ref _cellEditingTemplate, value); }
+    /// <summary>Read-only search binding evaluated with the row model as DataContext. A search selector takes precedence.</summary>
+    [AssignBinding]
+    public BindingBase? TextSearchBinding { get => _textSearchBinding; set => Set(ref _textSearchBinding, value); }
 }
 
 /// <summary>Displays the one-based current view row number, unless ValueGetter supplies custom text.</summary>

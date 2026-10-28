@@ -29,7 +29,8 @@ internal sealed class ItemsSourceAdapter : IDisposable
         _hasChildren = hierarchy?.HasChildrenBinding;
         _expanded = hierarchy?.IsExpandedBinding;
         _nestedPaths = new[] { _children, _hasChildren, _expanded }
-            .OfType<ReflectionBinding>().Select(binding => binding.Path!).Where(path => path.Contains('.')).Distinct().ToArray();
+            .OfType<BindingBase>().Select(binding => ItemsSourceHierarchyBinding.Path(binding, ReferenceEquals(binding, _expanded)))
+            .Where(path => path.Contains('.')).Distinct().ToArray();
         try
         {
             var roots = Adapt(items);
@@ -46,17 +47,20 @@ internal sealed class ItemsSourceAdapter : IDisposable
                 var expandedPath = hierarchy.IsExpandedBinding is { } expanded ? ItemsSourceHierarchyBinding.Path(expanded, writable: true) : null;
                 Source = new HierarchicalTreeDataGridSource<object>(roots, model =>
                 {
+                    TreeDataGridBinding.ValidateHierarchyAdapter(children, model);
                     var value = ItemsSourceHierarchyBinding.Read(model, childrenPath);
                     return value is null ? null : value is IEnumerable values && value is not string ? Adapt(values)
                         : throw new InvalidOperationException($"ChildrenBinding '{childrenPath}' must return an IEnumerable or null.");
                 }, new HierarchicalTreeDataGridSourceOptions<object>
                 {
-                    HasChildrenSelector = hasChildrenPath is null ? null : model => ItemsSourceHierarchyBinding.ReadBoolean(model, hasChildrenPath, writable: false),
-                    IsExpandedSelector = expandedPath is null ? null : model => ItemsSourceHierarchyBinding.ReadBoolean(model, expandedPath, writable: true),
+                    HasChildrenSelector = hasChildrenPath is null ? null : model =>
+                    { TreeDataGridBinding.ValidateHierarchyAdapter(_hasChildren!, model); return ItemsSourceHierarchyBinding.ReadBoolean(model, hasChildrenPath, writable: false); },
+                    IsExpandedSelector = expandedPath is null ? null : model =>
+                    { TreeDataGridBinding.ValidateHierarchyAdapter(_expanded!, model); return ItemsSourceHierarchyBinding.ReadBoolean(model, expandedPath, writable: true); },
                     IsExpandedWriter = expandedPath is null ? null : (model, value) =>
                     {
                         _writingExpansion = true;
-                        try { ItemsSourceHierarchyBinding.WriteBoolean(model, expandedPath, value); }
+                        try { TreeDataGridBinding.ValidateHierarchyAdapter(_expanded!, model); ItemsSourceHierarchyBinding.WriteBoolean(model, expandedPath, value); }
                         finally { _writingExpansion = false; }
                     },
                 });
@@ -172,8 +176,17 @@ internal sealed class ItemsSourceAdapter : IDisposable
         finally { _refreshing = false; }
     }
 
-    private sealed class ObservableItems(IEnumerable items, Action detached) : IEnumerable<object>, INotifyCollectionChanged, IDisposable, ITreeDataGridCollectionChangeTransaction
+    private sealed class ObservableItems(IEnumerable items, Action detached) : IEnumerable<object>, INotifyCollectionChanged, IDisposable, ITreeDataGridCollectionChangeTransaction, IRowMoveCollection
     {
+        private readonly IRowMoveCollection? _moves = RowMoveAdapters.GetUntyped(items);
+        object IRowMoveCollection.Storage => _moves?.Storage ?? items;
+        bool IRowMoveCollection.CanMove => _moves?.CanMove == true;
+        bool IRowMoveCollection.CanMoveBatch => _moves?.CanMoveBatch == true;
+        long? IRowMoveCollection.MoveVersion => _moves?.MoveVersion;
+        int IRowMoveCollection.MoveCount => _moves?.MoveCount ?? 0;
+        object IRowMoveCollection.MoveItem(int index) => _moves!.MoveItem(index);
+        void IRowMoveCollection.MoveSingle(int oldIndex, int newIndex) => _moves!.MoveSingle(oldIndex, newIndex);
+        void IRowMoveCollection.MoveBatch(IReadOnlyList<RowMoveSlot> slots, int insertionIndex) => _moves!.MoveBatch(slots, insertionIndex);
         bool ITreeDataGridCollectionChangeTransaction.IsChangePending => items is ITreeDataGridCollectionChangeTransaction transaction && transaction.IsChangePending;
         event EventHandler? ITreeDataGridCollectionChangeTransaction.ChangeCompleted
         {
@@ -260,15 +273,22 @@ internal static class ItemsSourceHierarchyBinding
     }
     public static string Path(BindingBase binding, bool writable)
     {
-        if (binding is not ReflectionBinding reflection || reflection.Path is not { Length: > 0 } path
-            || path.Split('.').Any(part => part.Length == 0 || part.Any(character => !char.IsLetterOrDigit(character) && character != '_'))
-            || !ReferenceEquals(reflection.Source, AvaloniaProperty.UnsetValue) || reflection.ElementName is not null || reflection.RelativeSource is not null
-            || reflection.Converter is not null || reflection.StringFormat is not null
-            || !ReferenceEquals(reflection.FallbackValue, AvaloniaProperty.UnsetValue)
-            || !ReferenceEquals(reflection.TargetNullValue, AvaloniaProperty.UnsetValue)
-            || (writable ? reflection.Mode is not (BindingMode.Default or BindingMode.TwoWay)
-                : reflection.Mode is not (BindingMode.Default or BindingMode.OneWay)))
-            throw new NotSupportedException("ItemsSource hierarchy bindings require a public model-property path ReflectionBinding without converters or relative sources; expansion must use Default or TwoWay mode.");
+        var path = TreeDataGridBinding.GetPath(binding);
+        var validOptions = binding switch
+        {
+            ReflectionBinding value => ReferenceEquals(value.Source, AvaloniaProperty.UnsetValue) && value.ElementName is null && value.RelativeSource is null
+                && value.Converter is null && value.StringFormat is null && ReferenceEquals(value.FallbackValue, AvaloniaProperty.UnsetValue)
+                && ReferenceEquals(value.TargetNullValue, AvaloniaProperty.UnsetValue)
+                && (writable ? value.Mode is BindingMode.Default or BindingMode.TwoWay : value.Mode is BindingMode.Default or BindingMode.OneWay),
+            CompiledBinding value => (value.Source is null || ReferenceEquals(value.Source, AvaloniaProperty.UnsetValue))
+                && value.Converter is null && value.StringFormat is null && ReferenceEquals(value.FallbackValue, AvaloniaProperty.UnsetValue)
+                && ReferenceEquals(value.TargetNullValue, AvaloniaProperty.UnsetValue)
+                && (writable ? value.Mode is BindingMode.Default or BindingMode.TwoWay : value.Mode is BindingMode.Default or BindingMode.OneWay),
+            _ => false
+        };
+        if (!validOptions || path is not { Length: > 0 }
+            || path.Split('.').Any(part => part.Length == 0 || part.Any(character => !char.IsLetterOrDigit(character) && character != '_')))
+            throw new NotSupportedException("Hierarchy bindings require a public model-property ReflectionBinding or registered compiled binding adapter, without converters or visual/external sources; expansion must use Default or TwoWay mode.");
         return path;
     }
     public static (object? Target, PropertyInfo Property) Resolve(object model, string path, bool writable)

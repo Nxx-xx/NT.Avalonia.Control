@@ -36,6 +36,8 @@ public sealed partial class CartesianChart
     // Other projections share the bounded capture/codec/file pipeline through an
     // internal, detached export host. Ordinary Cartesian output never sets this.
     internal Action<DrawingContext, ChartExportLayout, IBrush?>? ExportRenderOverride { get; set; }
+    internal Action? ExportPrepareOverride { get; set; }
+    internal Action? ExportCleanupOverride { get; set; }
     private bool _exportInProgress;
     private bool _reportingExportFailure;
     public event EventHandler<ChartExportFailedEventArgs>? ExportFailed;
@@ -138,6 +140,7 @@ public sealed partial class CartesianChart
         }
         finally
         {
+            ExportCleanupOverride?.Invoke();
             // Offline export may temporarily create control-based plot content.
             // It must not reintroduce an owned subtree after visual detachment.
             if (!_attached)

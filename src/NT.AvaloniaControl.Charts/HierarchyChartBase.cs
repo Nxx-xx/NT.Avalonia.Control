@@ -96,9 +96,13 @@ public abstract partial class HierarchyChartBase : EngineeringChartBase
         if (change.Property == ItemsSourceProperty) ReleaseObservers();
         if (change.Property == ChildrenPathProperty || change.Property == ValuePathProperty || change.Property == GroupPathProperty)
         { OnDataInvalidated(); ObservePaths(ValuePath, ChildrenPath, GroupPath); }
-        if (change.Property == GapProperty || change.Property == MaximumVisibleDepthProperty || change.Property == ZoomProperty || change.Property == PanXProperty || change.Property == PanYProperty)
-            _pendingTrigger |= ChartAnimationTriggers.Viewport;
-        _viewDirty = true; _pendingTrigger |= ChartAnimationTriggers.Viewport;
+        // Rebuild family layout only for actual layout inputs. Inherited theme,
+        // interaction and presenter properties can change paint without replacing
+        // a running or paused geometric transition. A plot-size change is detected
+        // separately when the next real frame is built.
+        if (change.Property == GapProperty || change.Property == MaximumVisibleDepthProperty || change.Property == ZoomProperty || change.Property == PanXProperty || change.Property == PanYProperty ||
+            change.Property.OwnerType != typeof(HierarchyChartBase) && typeof(HierarchyChartBase).IsAssignableFrom(change.Property.OwnerType))
+        { _viewDirty = true; _pendingTrigger |= ChartAnimationTriggers.Viewport; }
         base.OnPropertyChanged(change);
     }
     private HierarchySnapshot ReadHierarchy(ChartDataSnapshot data)
@@ -191,6 +195,7 @@ public abstract partial class HierarchyChartBase : EngineeringChartBase
     protected sealed record Glyph(HierarchyEntry Entry, GlyphKind Kind, double X, double Y, double Width, double Height,
         double InnerRadius = 0, double StartAngle = 0, double SweepAngle = 0, bool IsExiting = false);
     protected IReadOnlyList<Glyph> DisplayedGlyphs => _frame;
+    internal override (double Zoom, double PanX, double PanY) DisplayedPlotContentViewport => (_displayZoom, _displayPanX, _displayPanY);
     protected Rect DisplayedRectangle(Glyph glyph, Rect plot) => DisplayRect(glyph, plot);
     protected abstract IReadOnlyList<Glyph> BuildHierarchy(HierarchySnapshot snapshot, int rootIndex, IReadOnlySet<int> collapsed);
     protected static Glyph Rectangle(HierarchyRectangle rectangle) => new(rectangle.Entry, GlyphKind.Rectangle, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
@@ -207,6 +212,7 @@ public abstract partial class HierarchyChartBase : EngineeringChartBase
         var root = ResolveRoot();
         if (_viewDirty || _framePlot != plot)
         {
+            if (_framePlot != plot) _pendingTrigger |= ChartAnimationTriggers.Viewport;
             var depth = root < 0 ? 0 : _snapshot.Nodes[root].Depth;
             var collapsed = _snapshot.Nodes.Where(entry => _collapsed.Contains(Identity(entry)) || entry.Depth - depth >= MaximumVisibleDepth).Select(entry => entry.Index).ToHashSet();
             var target = BuildHierarchy(_snapshot, root, collapsed); _viewDirty = false; _framePlot = plot;
@@ -306,7 +312,7 @@ public abstract partial class HierarchyChartBase : EngineeringChartBase
     {
         using (context.PushClip(plot)) foreach (var (geometry, fill) in _exits) context.DrawGeometry(fill, null, geometry);
         RenderLegend(context);
-        if (!ShowLabels && !ShowValues) return;
+        if (UsesDataLabelTemplate || !ShowLabels && !ShowValues) return;
         using var clip = context.PushClip(plot);
         foreach (var (mark, glyph) in _displayed)
         {

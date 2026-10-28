@@ -23,12 +23,18 @@
       </ResourceDictionary.ThemeDictionaries>
       <ControlTheme x:Key="{x:Type charts:AnalysisChartBase}" TargetType="charts:AnalysisChartBase">
         <Setter Property="Foreground" Value="{DynamicResource ChartForegroundBrush}" />
+        <Setter Property="TooltipBackground" Value="{DynamicResource ChartTooltipBackgroundBrush}" />
+        <Setter Property="TooltipForeground" Value="{DynamicResource ChartTooltipForegroundBrush}" />
+        <Setter Property="TooltipBorderBrush" Value="{DynamicResource ChartTooltipBorderBrush}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="FontSize" Value="12" />
         <Setter Property="Padding" Value="12" />
       </ControlTheme>
       <ControlTheme x:Key="{x:Type charts:EngineeringChartBase}" TargetType="charts:EngineeringChartBase">
         <Setter Property="Foreground" Value="{DynamicResource ChartForegroundBrush}" />
+        <Setter Property="TooltipBackground" Value="{DynamicResource ChartTooltipBackgroundBrush}" />
+        <Setter Property="TooltipForeground" Value="{DynamicResource ChartTooltipForegroundBrush}" />
+        <Setter Property="TooltipBorderBrush" Value="{DynamicResource ChartTooltipBorderBrush}" />
         <Setter Property="GridLineBrush" Value="{DynamicResource ChartGridBrush}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="FontSize" Value="12" />

@@ -5,7 +5,7 @@ using Avalonia.Threading;
 namespace NT.AvaloniaControl.Charts;
 
 /// <summary>Shares the existing encoder and its limits with compact chart projections.</summary>
-internal sealed class ChartRasterExporter(ChartBase owner, Action<DrawingContext> render, Action<ChartExportFailedEventArgs> onFailed)
+internal sealed class ChartRasterExporter(ChartBase owner, Action<DrawingContext> render, Action<ChartExportFailedEventArgs> onFailed, Action? prepare = null, Action? finished = null)
 {
     private CartesianChart? _host;
 
@@ -16,6 +16,8 @@ internal sealed class ChartRasterExporter(ChartBase owner, Action<DrawingContext
         {
             _host = new CartesianChart { ShowLegend = false, ShowGridLines = false };
             _host.ExportRenderOverride = Render;
+            _host.ExportPrepareOverride = prepare;
+            _host.ExportCleanupOverride = finished;
             _host.ExportFailed += (_, args) => onFailed(args);
         }
         _host.Measure(owner.Bounds.Size);

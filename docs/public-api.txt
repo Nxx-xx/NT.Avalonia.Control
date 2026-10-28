@@ -70,25 +70,40 @@ NT.AvaloniaControl.TreeDataGrid.ProjectionChangedEventArgs : System.EventArgs [a
 NT.AvaloniaControl.TreeDataGrid.TreeDataGrid : Avalonia.Controls.Primitives.TemplatedControl [abstract=False, sealed=False]
   Constructor: Void .ctor() [public, abstract=False, virtual=False]
   Event: System.EventHandler SelectionChanged
+  Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellEventArgs] CellClearing
+  Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellEventArgs] CellPrepared
+  Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellValueChangedEventArgs] CellValueChanged
   Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridColumnReorderedEventArgs] ColumnReordered
   Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridColumnReorderingEventArgs] ColumnReordering
+  Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDragEventArgs] RowDragOver
+  Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDragEventArgs] RowDragStarted
+  Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDragEventArgs] RowDrop
   Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowEventArgs] RowClearing
   Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowEventArgs] RowPrepared
   Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowMoveCompletedEventArgs] RowMoveCompleted
   Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowMoveRequestedEventArgs] RowMoveRequested
+  Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsMoveCompletedEventArgs] RowsMoveCompleted
+  Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsMoveRequestedEventArgs] RowsMoveRequested
+  Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangedEventArgs] SelectionChangeCompleted
+  Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangingEventArgs] SelectionChanging
   Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.TreeDataGrid.TreeDataGrid,NT.AvaloniaControl.TreeDataGrid.TreeDataGridEditSession] EditSessionProperty
   Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.TreeDataGrid.TreeDataGrid,System.Boolean] IsEditingProperty
   Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.TreeDataGrid.TreeDataGrid,System.Collections.IEnumerable] ItemsSourceProperty
   Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.TreeDataGrid.TreeDataGrid,System.Windows.Input.ICommand] BeginEditCommandProperty
   Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.TreeDataGrid.TreeDataGrid,System.Windows.Input.ICommand] CancelEditCommandProperty
   Field: Avalonia.DirectProperty`2[NT.AvaloniaControl.TreeDataGrid.TreeDataGrid,System.Windows.Input.ICommand] CommitEditCommandProperty
+  Field: Avalonia.Interactivity.RoutedEvent`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDragEventArgs] RowDragOverEvent
+  Field: Avalonia.Interactivity.RoutedEvent`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDragEventArgs] RowDragStartedEvent
+  Field: Avalonia.Interactivity.RoutedEvent`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDragEventArgs] RowDropEvent
   Field: Avalonia.StyledProperty`1[Avalonia.Controls.Templates.IDataTemplate] EmptyContentTemplateProperty
   Field: Avalonia.StyledProperty`1[Avalonia.Styling.ControlTheme] CellThemeProperty
   Field: Avalonia.StyledProperty`1[Avalonia.Styling.ControlTheme] ColumnHeaderThemeProperty
   Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.TreeDataGrid.IndexPath] SelectedIndexProperty
   Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridEditCommands] EditCommandsProperty
   Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridEditTriggers] EditTriggersProperty
+  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementFactory] ElementFactoryProperty
   Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridGridLinesVisibility] GridLinesVisibilityProperty
+  Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDragHandle] RowDragHandleProperty
   Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionMode] SelectionModeProperty
   Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionUnit] SelectionUnitProperty
   Field: Avalonia.StyledProperty`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridSource] SourceProperty
@@ -99,6 +114,7 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGrid : Avalonia.Controls.Primitives.Temp
   Field: Avalonia.StyledProperty`1[System.Boolean] CanUserSortColumnsProperty
   Field: Avalonia.StyledProperty`1[System.Boolean] IsReadOnlyProperty
   Field: Avalonia.StyledProperty`1[System.Boolean] IsThreeStateSortProperty
+  Field: Avalonia.StyledProperty`1[System.Boolean] ShowColumnHeadersProperty
   Field: Avalonia.StyledProperty`1[System.Collections.IList] SelectedItemsProperty
   Field: Avalonia.StyledProperty`1[System.Double] RowHeightProperty
   Field: Avalonia.StyledProperty`1[System.Func`2[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow,System.Double]] RowHeightSelectorProperty
@@ -115,6 +131,7 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGrid : Avalonia.Controls.Primitives.Temp
   Method: Boolean TryScrollIntoView(NT.AvaloniaControl.TreeDataGrid.NodeId, Boolean, Boolean) [public, abstract=False, virtual=False]
   Method: Int32 GetColumnIndex(NT.AvaloniaControl.TreeDataGrid.ColumnId) [public, abstract=False, virtual=False]
   Method: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowMoveResult TryMoveRow(NT.AvaloniaControl.TreeDataGrid.NodeId, NT.AvaloniaControl.TreeDataGrid.NodeId, NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDropPosition) [public, abstract=False, virtual=False]
+  Method: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsMoveResult TryMoveRows(System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.TreeDataGrid.NodeId], NT.AvaloniaControl.TreeDataGrid.NodeId, NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDropPosition) [public, abstract=False, virtual=False]
   Method: System.Nullable`1[NT.AvaloniaControl.TreeDataGrid.CellAddress] SearchText(System.String) [public, abstract=False, virtual=False]
   Method: Void CancelEdit() [public, abstract=False, virtual=False]
   Method: Void OnApplyTemplate(Avalonia.Controls.Primitives.TemplateAppliedEventArgs) [protected, abstract=False, virtual=True]
@@ -137,13 +154,16 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGrid : Avalonia.Controls.Primitives.Temp
   Property: Boolean IsEditing [get=public, set=none]
   Property: Boolean IsReadOnly [get=public, set=public]
   Property: Boolean IsThreeStateSort [get=public, set=public]
+  Property: Boolean ShowColumnHeaders [get=public, set=public]
   Property: Double RowHeight [get=public, set=public]
   Property: Int32 FrozenColumnCount [get=public, set=public]
   Property: NT.AvaloniaControl.TreeDataGrid.IndexPath SelectedIndex [get=public, set=public]
   Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridEditCommands EditCommands [get=public, set=public]
   Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridEditSession EditSession [get=public, set=none]
   Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridEditTriggers EditTriggers [get=public, set=public]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementFactory ElementFactory [get=public, set=public]
   Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridGridLinesVisibility GridLinesVisibility [get=public, set=public]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDragHandle RowDragHandle [get=public, set=public]
   Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsPresenter RowsPresenter [get=public, set=non-public]
   Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionMode SelectionMode [get=public, set=public]
   Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionUnit SelectionUnit [get=public, set=public]
@@ -183,6 +203,30 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGridAutomationPeer : Avalonia.Automation
   Property: Double VerticalViewSize [get=public, set=none]
   Property: Int32 ColumnCount [get=public, set=none]
   Property: Int32 RowCount [get=public, set=none]
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridBeginEditGestures : System.Enum [abstract=False, sealed=True]
+  Field: Int32 value__
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridBeginEditGestures DoubleTap = 4
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridBeginEditGestures F2 = 1
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridBeginEditGestures None = 0
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridBeginEditGestures Tap = 2
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridBeginEditGestures WhenSelected = 8
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridBinding : System.Object [abstract=True, sealed=True]
+  Method: Avalonia.Data.BindingBase Attach(Avalonia.Data.BindingBase, System.String) [public, abstract=False, virtual=False]
+  Method: Avalonia.Data.CompiledBinding Create[TModel,TValue](System.Linq.Expressions.Expression`1[System.Func`2[TModel,TValue]]) [public, abstract=False, virtual=False]
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridBindingAdapterExtension : Avalonia.Markup.Xaml.MarkupExtension [abstract=False, sealed=True]
+  Constructor: Void .ctor() [public, abstract=False, virtual=False]
+  Method: System.Object ProvideValue(System.IServiceProvider) [public, abstract=False, virtual=True]
+  Property: Avalonia.Data.BindingBase Binding [get=public, set=public]
+  Property: System.String Path [get=public, set=public]
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellEventArgs : System.EventArgs [abstract=False, sealed=True]
+  Property: Int32 ColumnIndex [get=public, set=none]
+  Property: Int32 RowIndex [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.ColumnId ColumnId [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.IndexPath SourceIndex [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.NodeId NodeId [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellPresenter Container [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSource Source [get=public, set=none]
+  Property: System.Object Model [get=public, set=none]
 NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellHit : System.ValueType [abstract=False, sealed=True]
   Constructor: Void .ctor(NT.AvaloniaControl.TreeDataGrid.NodeId, NT.AvaloniaControl.TreeDataGrid.ColumnId, Int32, Int32) [public, abstract=False, virtual=False]
   Method: Boolean Equals(NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellHit) [public, abstract=False, virtual=True]
@@ -206,6 +250,23 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellPresenter : Avalonia.Controls.Co
   Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow Row [get=public, set=non-public]
   Property: System.Object Value [get=public, set=none]
   Property: System.String ValidationError [get=public, set=none]
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellValueChangeReason : System.Enum [abstract=False, sealed=True]
+  Field: Int32 value__
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellValueChangeReason EditCommit = 0
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellValueChangeReason ModelNotification = 1
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellValueChangeReason Refresh = 2
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellValueChangedEventArgs : System.EventArgs [abstract=False, sealed=True]
+  Property: Boolean HasNewValue [get=public, set=none]
+  Property: Boolean HasOldValue [get=public, set=none]
+  Property: Int32 ColumnIndex [get=public, set=none]
+  Property: Int32 RowIndex [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.CellAddress Cell [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.IndexPath SourceIndex [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellValueChangeReason Reason [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSource Source [get=public, set=none]
+  Property: System.Object Model [get=public, set=none]
+  Property: System.Object NewValue [get=public, set=none]
+  Property: System.Object OldValue [get=public, set=none]
 NT.AvaloniaControl.TreeDataGrid.TreeDataGridCheckBoxColumn : NT.AvaloniaControl.TreeDataGrid.TreeDataGridColumn [abstract=False, sealed=True]
   Constructor: Void .ctor() [public, abstract=False, virtual=False]
   Property: Avalonia.Data.BindingBase Binding [get=public, set=public]
@@ -213,6 +274,7 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGridCheckBoxColumn : NT.AvaloniaControl.
 NT.AvaloniaControl.TreeDataGrid.TreeDataGridColumn : System.Object [abstract=True, sealed=False]
   Constructor: Void .ctor() [protected, abstract=False, virtual=False]
   Event: System.ComponentModel.PropertyChangedEventHandler PropertyChanged
+  Method: System.String GetEditBindingError(System.Object) [public, abstract=False, virtual=False]
   Method: Void SetValueAccessors[TModel,TValue](System.Func`2[TModel,TValue], System.Action`2[TModel,TValue]) [public, abstract=False, virtual=False]
   Method: Void Set[T](T ByRef, T, System.String) [protected, abstract=False, virtual=False]
   Property: Avalonia.Controls.GridLength Width [get=public, set=public]
@@ -220,17 +282,22 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGridColumn : System.Object [abstract=Tru
   Property: Boolean CanUserResize [get=public, set=public]
   Property: Boolean CanUserSort [get=public, set=public]
   Property: Boolean IsReadOnly [get=public, set=public]
+  Property: Boolean IsTextSearchEnabled [get=public, set=public]
   Property: Boolean IsVisible [get=public, set=public]
   Property: Double EstimatedAutoWidth [get=public, set=public]
   Property: Double MaxWidth [get=public, set=public]
   Property: Double MinWidth [get=public, set=public]
   Property: NT.AvaloniaControl.TreeDataGrid.ColumnId Id [get=public, set=none]
   Property: System.Action`2[System.Object,System.Object] ValueSetter [get=public, set=public]
+  Property: System.Comparison`1[System.Object] CompareAscending [get=public, set=public]
+  Property: System.Comparison`1[System.Object] CompareDescending [get=public, set=public]
   Property: System.Comparison`1[System.Object] Comparison [get=public, set=public]
   Property: System.Func`2[System.Object,System.Object] ValueConverter [get=public, set=public]
   Property: System.Func`2[System.Object,System.Object] ValueGetter [get=public, set=public]
   Property: System.Func`2[System.Object,System.String] TextSearchValueSelector [get=public, set=public]
   Property: System.Func`2[System.Object,System.String] ValueValidator [get=public, set=public]
+  Property: System.Nullable`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridBeginEditGestures] BeginEditGestures [get=public, set=public]
+  Property: System.Nullable`1[System.Boolean] AllowTriStateSorting [get=public, set=public]
   Property: System.Object Header [get=public, set=public]
   Property: System.Type ValueType [get=public, set=public]
 NT.AvaloniaControl.TreeDataGrid.TreeDataGridColumnHeader : Avalonia.Controls.ContentControl [abstract=False, sealed=True]
@@ -285,6 +352,27 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGridEditTriggers : System.Enum [abstract
   Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridEditTriggers F2 = 1
   Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridEditTriggers None = 0
   Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridEditTriggers SingleClick = 2
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementContext : System.Object [abstract=False, sealed=True]
+  Property: Avalonia.Controls.Control Element [get=public, set=none]
+  Property: Int32 ColumnIndex [get=public, set=none]
+  Property: Int32 RowIndex [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGrid Owner [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridColumn Column [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementKind Kind [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow Row [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSource Source [get=public, set=none]
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementFactory : System.Object [abstract=False, sealed=False]
+  Constructor: Void .ctor() [public, abstract=False, virtual=False]
+  Method: Avalonia.Controls.Control CreateElement(NT.AvaloniaControl.TreeDataGrid.TreeDataGrid, NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementKind) [public, abstract=False, virtual=True]
+  Method: Boolean RecycleElement(NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementContext) [public, abstract=False, virtual=True]
+  Method: Void ClearElement(NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementContext) [public, abstract=False, virtual=True]
+  Method: Void PrepareElement(NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementContext) [public, abstract=False, virtual=True]
+  Method: Void ReleaseElement(NT.AvaloniaControl.TreeDataGrid.TreeDataGrid, NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementKind, Avalonia.Controls.Control) [public, abstract=False, virtual=True]
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementKind : System.Enum [abstract=False, sealed=True]
+  Field: Int32 value__
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementKind Cell = 1
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementKind ColumnHeader = 2
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridElementKind Row = 0
 NT.AvaloniaControl.TreeDataGrid.TreeDataGridGridLinesVisibility : System.Enum [abstract=False, sealed=True]
   Field: Int32 value__
   Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridGridLinesVisibility All = 3
@@ -323,6 +411,18 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow : System.Object [abstract=False,
 NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowCancelEventArgs : NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowModelEventArgs [abstract=False, sealed=True]
   Constructor: Void .ctor(NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow) [public, abstract=False, virtual=False]
   Property: Boolean Cancel [get=public, set=public]
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDragEventArgs : Avalonia.Interactivity.RoutedEventArgs [abstract=False, sealed=True]
+  Property: Avalonia.Input.DragDropEffects AllowedEffects [get=public, set=public]
+  Property: Boolean Cancel [get=public, set=public]
+  Property: Int64 SourceVersion [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow Target [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDropPosition Position [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSource DataSource [get=public, set=none]
+  Property: System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow] Rows [get=public, set=none]
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDragHandle : System.Enum [abstract=False, sealed=True]
+  Field: Int32 value__
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDragHandle RowHeader = 0
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDragHandle WholeRow = 1
 NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDropPosition : System.Enum [abstract=False, sealed=True]
   Field: Int32 value__
   Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDropPosition After = 1
@@ -354,6 +454,7 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowMoveCollection`1 : System.Object 
   Method: Void CopyTo(T[], Int32) [public, abstract=False, virtual=True]
   Method: Void Insert(Int32, T) [public, abstract=False, virtual=True]
   Method: Void Move(Int32, Int32) [public, abstract=False, virtual=False]
+  Method: Void MoveMany(System.Collections.Generic.IReadOnlyList`1[System.Int32], Int32) [public, abstract=False, virtual=False]
   Method: Void RemoveAt(Int32) [public, abstract=False, virtual=True]
   Property: Boolean IsReadOnly [get=public, set=none]
   Property: Int32 Count [get=public, set=none]
@@ -406,6 +507,27 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowPresenter : Avalonia.Controls.Pan
   Property: Int32 RowIndex [get=public, set=non-public]
   Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow Row [get=public, set=non-public]
   Property: System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridCellPresenter] RealizedCells [get=public, set=none]
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsMoveCompletedEventArgs : System.EventArgs [abstract=False, sealed=True]
+  Constructor: Void .ctor(System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.TreeDataGrid.NodeId], NT.AvaloniaControl.TreeDataGrid.NodeId, NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDropPosition, NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsMoveResult) [public, abstract=False, virtual=False]
+  Property: NT.AvaloniaControl.TreeDataGrid.NodeId TargetNodeId [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDropPosition Position [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsMoveResult Result [get=public, set=none]
+  Property: System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.TreeDataGrid.NodeId] NodeIds [get=public, set=none]
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsMoveRequestedEventArgs : System.ComponentModel.CancelEventArgs [abstract=False, sealed=True]
+  Constructor: Void .ctor(NT.AvaloniaControl.TreeDataGrid.TreeDataGridSource, System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow], NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow, NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDropPosition, Int64) [public, abstract=False, virtual=False]
+  Property: Boolean Handled [get=public, set=public]
+  Property: Int64 SourceVersion [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow Target [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDropPosition Position [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsMoveResult Result [get=public, set=public]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSource Source [get=public, set=none]
+  Property: System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow] Rows [get=public, set=none]
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsMoveResult : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowMoveStatus, System.Collections.Generic.IReadOnlyDictionary`2[NT.AvaloniaControl.TreeDataGrid.NodeId,NT.AvaloniaControl.TreeDataGrid.NodeId], System.Exception) [public, abstract=False, virtual=False]
+  Property: Boolean IsCommitted [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowMoveStatus Status [get=public, set=none]
+  Property: System.Collections.Generic.IReadOnlyDictionary`2[NT.AvaloniaControl.TreeDataGrid.NodeId,NT.AvaloniaControl.TreeDataGrid.NodeId] IdentityMap [get=public, set=none]
+  Property: System.Exception Error [get=public, set=none]
 NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsPresenter : Avalonia.Controls.Panel [abstract=False, sealed=True]
   Constructor: Void .ctor() [public, abstract=False, virtual=False]
   Event: System.EventHandler ScrollInvalidated
@@ -433,10 +555,38 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsPresenter : Avalonia.Controls.Pa
   Property: Int32 RetainedRowCount [get=public, set=none]
   Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridLayout Layout [get=public, set=non-public]
   Property: System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowPresenter] RealizedRows [get=public, set=none]
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangeReason : System.Enum [abstract=False, sealed=True]
+  Field: Int32 value__
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangeReason Automation = 5
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangeReason Binding = 4
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangeReason ColumnsChanged = 7
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangeReason Keyboard = 2
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangeReason Pointer = 1
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangeReason Programmatic = 0
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangeReason ProjectionChanged = 6
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangeReason Search = 3
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangeReason SelectionModeChanged = 9
+  Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangeReason SourceChanged = 8
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangedEventArgs : System.EventArgs [abstract=False, sealed=True]
+  Property: Boolean IsForced [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangeReason Reason [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionSnapshot NewSelection [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionSnapshot OldSelection [get=public, set=none]
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangingEventArgs : System.EventArgs [abstract=False, sealed=True]
+  Property: Boolean Cancel [get=public, set=public]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangeReason Reason [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionSnapshot OldSelection [get=public, set=none]
+  Property: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionSnapshot ProposedSelection [get=public, set=none]
 NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionMode : System.Enum [abstract=False, sealed=True]
   Field: Int32 value__
   Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionMode Multiple = 1
   Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionMode Single = 0
+NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionSnapshot : System.Object [abstract=False, sealed=True]
+  Property: System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.TreeDataGrid.ColumnId] CellColumns [get=public, set=none]
+  Property: System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.TreeDataGrid.NodeId] CellRows [get=public, set=none]
+  Property: System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.TreeDataGrid.NodeId] SelectedNodes [get=public, set=none]
+  Property: System.Nullable`1[NT.AvaloniaControl.TreeDataGrid.CellAddress] CurrentCell [get=public, set=none]
+  Property: System.Nullable`1[NT.AvaloniaControl.TreeDataGrid.CellAddress] SelectionAnchor [get=public, set=none]
 NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionUnit : System.Enum [abstract=False, sealed=True]
   Field: Int32 value__
   Field: NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionUnit Cell = 1
@@ -462,6 +612,7 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGridSource : System.Object [abstract=Tru
   Method: Int32 GetViewIndex(NT.AvaloniaControl.TreeDataGrid.NodeId) [public, abstract=True, virtual=True]
   Method: Int32 SetExpandedRecursive(Boolean, System.Func`2[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow,System.Boolean]) [public, abstract=False, virtual=True]
   Method: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowMoveResult MoveRow(NT.AvaloniaControl.TreeDataGrid.NodeId, NT.AvaloniaControl.TreeDataGrid.NodeId, NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDropPosition) [public, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsMoveResult MoveRows(System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.TreeDataGrid.NodeId], NT.AvaloniaControl.TreeDataGrid.NodeId, NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDropPosition) [public, abstract=False, virtual=True]
   Method: System.IDisposable DeferRefresh() [public, abstract=True, virtual=True]
   Method: Void ClearExpansionEventHandlers() [protected, abstract=False, virtual=False]
   Method: Void ClearSort() [public, abstract=False, virtual=True]
@@ -491,6 +642,7 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGridSource`1 : NT.AvaloniaControl.TreeDa
   Method: Int32 GetViewIndex(NT.AvaloniaControl.TreeDataGrid.NodeId) [public, abstract=False, virtual=True]
   Method: Int32 SetExpandedRecursive(Boolean, System.Func`2[NT.AvaloniaControl.TreeDataGrid.TreeDataGridRow,System.Boolean]) [public, abstract=False, virtual=True]
   Method: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowMoveResult MoveRow(NT.AvaloniaControl.TreeDataGrid.NodeId, NT.AvaloniaControl.TreeDataGrid.NodeId, NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDropPosition) [public, abstract=False, virtual=True]
+  Method: NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowsMoveResult MoveRows(System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.TreeDataGrid.NodeId], NT.AvaloniaControl.TreeDataGrid.NodeId, NT.AvaloniaControl.TreeDataGrid.TreeDataGridRowDropPosition) [public, abstract=False, virtual=True]
   Method: System.IDisposable DeferRefresh() [public, abstract=False, virtual=True]
   Method: Void ClearSort() [public, abstract=False, virtual=True]
   Method: Void Dispose() [public, abstract=False, virtual=True]
@@ -507,6 +659,8 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGridState : System.Object [abstract=Fals
   Constructor: Void .ctor(NT.AvaloniaControl.TreeDataGrid.TreeDataGridSource) [public, abstract=False, virtual=False]
   Event: System.EventHandler Changed
   Event: System.EventHandler SelectionChanged
+  Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangedEventArgs] SelectionChangeCompleted
+  Event: System.EventHandler`1[NT.AvaloniaControl.TreeDataGrid.TreeDataGridSelectionChangingEventArgs] SelectionChanging
   Method: Boolean CommitEdit() [public, abstract=False, virtual=False]
   Method: Boolean CommitEdit(System.Object) [public, abstract=False, virtual=False]
   Method: Boolean IsCellSelected(NT.AvaloniaControl.TreeDataGrid.CellAddress) [public, abstract=False, virtual=False]
@@ -533,8 +687,11 @@ NT.AvaloniaControl.TreeDataGrid.TreeDataGridTemplateColumn : NT.AvaloniaControl.
   Constructor: Void .ctor() [public, abstract=False, virtual=False]
   Property: Avalonia.Controls.Templates.IDataTemplate CellEditingTemplate [get=public, set=public]
   Property: Avalonia.Controls.Templates.IDataTemplate CellTemplate [get=public, set=public]
+  Property: Avalonia.Data.BindingBase TextSearchBinding [get=public, set=public]
 NT.AvaloniaControl.TreeDataGrid.TreeDataGridTextColumn : NT.AvaloniaControl.TreeDataGrid.TreeDataGridColumn [abstract=False, sealed=True]
   Constructor: Void .ctor() [public, abstract=False, virtual=False]
   Property: Avalonia.Data.BindingBase Binding [get=public, set=public]
+  Property: Avalonia.Media.TextAlignment TextAlignment [get=public, set=public]
+  Property: Avalonia.Media.TextTrimming TextTrimming [get=public, set=public]
   Property: Avalonia.Media.TextWrapping TextWrapping [get=public, set=public]
   Property: System.String StringFormat [get=public, set=public]

@@ -55,7 +55,7 @@ public partial class ShapeMap : EngineeringChartBase, IDisposable
     private readonly Dictionary<MapGlyphKey, int> _indices = [];
     private readonly List<MapPaintCommand> _commands = [];
     private readonly Dictionary<EngineeringMarkInfo, int> _commandIndices = new(ReferenceEqualityComparer.Instance);
-    private readonly List<(string Text, Point Position)> _labels = [];
+    private readonly List<(string Text, Point Position, IBrush? Fill, EngineeringMarkInfo? Mark)> _labels = [];
     private readonly List<(MapLayer Layer, Color Minimum, Color Maximum, double Low, double High)> _legends = [];
     private readonly List<(MapLayer Layer, object Category, IBrush Brush)> _categoryLegends = [];
     private readonly Dictionary<(ShapeLayer Layer, object Category), int> _categoryIndices = [];

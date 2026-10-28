@@ -359,6 +359,7 @@ public sealed partial class CartesianChart
 
     private void PreparePresentationForExport(Size chartSize)
     {
+        if (ExportPrepareOverride is { } prepare) { prepare(); return; }
         if (_synchronizingTooltipPresentation || _synchronizingLabelTemplates || IsSynchronizingLegendPresentation || _drawingForegroundTooltip || _synchronizingTrackballPresentation || _synchronizingPlotAreaContent)
             throw new InvalidOperationException("A chart cannot be exported while a presentation template or formatter is updating.");
         PrepareLegendPresentationForExport(chartSize);

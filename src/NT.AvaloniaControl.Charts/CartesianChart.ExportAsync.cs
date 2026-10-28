@@ -194,6 +194,7 @@ public sealed partial class CartesianChart
         }
         finally
         {
+            ExportCleanupOverride?.Invoke();
             if (!_attached)
             {
                 ClearPlotAreaContent();

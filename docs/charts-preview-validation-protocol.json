@@ -1,0 +1,16 @@
+{
+  "schema": "charts-preview-validation-protocol/v1",
+  "frozenDate": "2026-10-27",
+  "scope": "Preview package reliability workload; does not replace original C7 formal performance or the S-RT 10000/s million-point qualification.",
+  "nativeVariants": ["core", "themes", "skia"],
+  "lifecycleCyclesPerPlatform": 100,
+  "soakSecondsPerPlatform": 28800,
+  "execution": "Windows then Linux, serial; same qualified consumer binaries are reused for lifecycle and soak",
+  "streaming": {"series": 4, "lineCharts": 2, "batchMilliseconds": 50, "samplesPerBatch": 50, "targetSamplesPerSecond": 1000, "retainedPerSeries": 16384, "maximumPendingBatches": 2, "maximumWaitingWriters": 1},
+  "otherCharts": {"barPoints": 32, "scatterPoints": 256, "optionalSkiaScatterPoints": 4096, "replacementSeconds": 10},
+  "operations": {"controlledRendersPerSecond": 5, "resourceSamplesPerSecond": 1, "pngJpegExportEverySeconds": 30, "themeSwitchEverySeconds": 10},
+  "resourceAssessment": {"warmupSeconds": 120, "baselineWindowSeconds": 300, "terminalWindowSeconds": 300, "minimumWindowSamples": 270, "minimumObservationFraction": 0.9, "maximumHeartbeatGapSeconds": 10, "statistic": "median of each complete window", "growthAllowance": "max(33554432 bytes, baseline * 0.05)", "fields": ["managedBytes", "privateBytes"], "workingSetHandlesThreads": "reported as time series; reviewed separately"},
+  "correctness": {"originalItemIndexId": true, "acceptedEqualsCommitted": true, "pendingAtCompletion": 0, "faultedCanceledRejectedSamples": 0, "unexpectedExceptions": 0, "logicalResourceBudgets": true},
+  "prohibitedDuringSoak": ["forced GC", "periodic cache clearing", "process restart to improve trends", "dropping slow/failing samples"],
+  "qualification": {"physicalInput": false, "hardwareGpu": false, "compositorPresent": false, "officialParity": false, "originalSrtPerformance": false}
+}

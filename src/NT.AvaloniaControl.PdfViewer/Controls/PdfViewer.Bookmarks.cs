@@ -45,6 +45,7 @@ public partial class PdfViewer
         ArgumentException.ThrowIfNullOrWhiteSpace(title);
         if (FindUserBookmark(id) is not { } bookmark) return false;
         bookmark.Title = title;
+        ViewerBookmarksChanged();
         return true;
     }
 
@@ -54,6 +55,7 @@ public partial class PdfViewer
         VerifyAccess();
         if (FindUserBookmark(id) is not { } bookmark) return false;
         bookmark.Flags = flags;
+        ViewerBookmarksChanged();
         return true;
     }
 

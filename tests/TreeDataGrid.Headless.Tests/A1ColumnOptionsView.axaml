@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TreeDataGrid.Headless.Tests"
+             xmlns:tg="clr-namespace:NT.AvaloniaControl.TreeDataGrid;assembly=NT.AvaloniaControl.TreeDataGrid"
+             x:Class="TreeDataGrid.Headless.Tests.A1ColumnOptionsView" x:DataType="local:SearchOptionRow">
+  <tg:TreeDataGrid Name="OptionsGrid" ShowColumnHeaders="False">
+    <tg:TreeDataGridTextColumn Header="Name" Width="150" Binding="{CompiledBinding Name}" IsTextSearchEnabled="False"
+                              BeginEditGestures="F2,WhenSelected" AllowTriStateSorting="False" />
+    <tg:TreeDataGridTemplateColumn Header="Detail" Width="150" TextSearchBinding="{CompiledBinding Detail.Name}">
+      <tg:TreeDataGridTemplateColumn.CellTemplate>
+        <DataTemplate x:DataType="local:SearchOptionRow"><TextBlock Text="{CompiledBinding Detail.Name}" /></DataTemplate>
+      </tg:TreeDataGridTemplateColumn.CellTemplate>
+    </tg:TreeDataGridTemplateColumn>
+    <tg:TreeDataGrid.Template>
+      <ControlTemplate>
+        <Grid RowDefinitions="Auto,*">
+          <Border IsVisible="{TemplateBinding ShowColumnHeaders}"><tg:TreeDataGridColumnHeadersPresenter Name="PART_ColumnHeadersPresenter" Height="28" /></Border>
+          <ScrollViewer Name="PART_ScrollViewer" Grid.Row="1"><tg:TreeDataGridRowsPresenter Name="PART_RowsPresenter" /></ScrollViewer>
+        </Grid>
+      </ControlTemplate>
+    </tg:TreeDataGrid.Template>
+  </tg:TreeDataGrid>
+</UserControl>

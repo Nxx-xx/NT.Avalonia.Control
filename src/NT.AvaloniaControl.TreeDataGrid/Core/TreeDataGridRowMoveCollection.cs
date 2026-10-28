@@ -9,8 +9,8 @@ namespace NT.AvaloniaControl.TreeDataGrid;
 /// A creating-thread collection with guarded notifications. The default row adapter can atomically transfer storage
 /// between two instances before invoking any observer. All observers run even when another observer throws.
 /// </summary>
-public sealed class TreeDataGridRowMoveCollection<T> : IList<T>, IReadOnlyList<T>, INotifyCollectionChanged, INotifyPropertyChanged,
-    ITreeDataGridCollectionChangeTransaction where T : class
+public sealed partial class TreeDataGridRowMoveCollection<T> : IList<T>, IReadOnlyList<T>, INotifyCollectionChanged, INotifyPropertyChanged,
+    ITreeDataGridCollectionChangeTransaction, IRowMoveCollection where T : class
 {
     private readonly int _ownerThread = Environment.CurrentManagedThreadId;
     private List<T> _items;
@@ -18,6 +18,14 @@ public sealed class TreeDataGridRowMoveCollection<T> : IList<T>, IReadOnlyList<T
     private bool _preparing;
     private EventHandler? _changeCompleted;
     internal long StorageVersion { get; private set; }
+    object IRowMoveCollection.Storage => this;
+    bool IRowMoveCollection.CanMove => true;
+    bool IRowMoveCollection.CanMoveBatch => true;
+    long? IRowMoveCollection.MoveVersion => StorageVersion;
+    int IRowMoveCollection.MoveCount => Count;
+    object IRowMoveCollection.MoveItem(int index) => this[index];
+    void IRowMoveCollection.MoveSingle(int oldIndex, int newIndex) => Move(oldIndex, newIndex);
+    void IRowMoveCollection.MoveBatch(IReadOnlyList<RowMoveSlot> slots, int insertionIndex) => TransferBatch(slots, insertionIndex);
 
     public TreeDataGridRowMoveCollection() => _items = [];
     public TreeDataGridRowMoveCollection(IEnumerable<T> items)

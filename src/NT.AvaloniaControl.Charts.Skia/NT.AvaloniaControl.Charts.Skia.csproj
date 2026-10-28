@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>NT.AvaloniaControl.Charts.Skia</PackageId>
+    <AssemblyName>NT.AvaloniaControl.Charts.Skia</AssemblyName>
+    <RootNamespace>NT.AvaloniaControl.Charts.Skia</RootNamespace>
+    <Description>Optional pinned Skia circle rendering for NT Avalonia Charts.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AvaloniaAccessUnstablePrivateApis>true</AvaloniaAccessUnstablePrivateApis>
+    <Avalonia_I_Want_To_Use_Private_Apis_In_Nuget_Package_And_Promise_To_Pin_The_Exact_Avalonia_Version_In_Package_Dependency>true</Avalonia_I_Want_To_Use_Private_Apis_In_Nuget_Package_And_Promise_To_Pin_The_Exact_Avalonia_Version_In_Package_Dependency>
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);AVA3001</WarningsNotAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" VersionOverride="[12.0.3]" />
+    <PackageReference Include="Avalonia.Skia" VersionOverride="[12.0.3]" />
+    <ProjectReference Include="../NT.AvaloniaControl.Charts/NT.AvaloniaControl.Charts.csproj" />
+    <None Update="README.md" Pack="true" PackagePath="/README.md" />
+  </ItemGroup>
+</Project>

@@ -74,7 +74,7 @@ public sealed class VennDiagramChart : ComparisonChartBase
             var members = region.SourceIndices.Select(index => data.Points[index] with { Point = new(values[index].Mask, values[index].Value), Value = values[index].Value, Category = values[index].Label, IsEmpty = false }).ToArray();
             var name = string.Join(" ∩ ", Enumerable.Range(0, SetCount).Where(index => (region.Mask & (1 << index)) != 0).Select(SetName));
             marks.Add(new(Array.AsReadOnly(members), geometry, BrushAt(region.Mask - 1), position) { Key = region.Mask, Value = region.Value, TooltipText = $"Exclusive {name}: {ValueText(region.Value)}; {members.Length} inclusive summary dependencies; represented {ValueText(region.EstimatedValue)}" });
-            if (ShowValues) Labels.Add(($"{name}: {ValueText(region.Value)}", position, square.Width / 3));
+            if (ShowValues) AddDataLabel(marks[^1], $"{name}: {ValueText(region.Value)}", position, square.Width / 3);
         }
         _unrepresented = Array.AsReadOnly(missing.ToArray());
         foreach (var circle in circles)

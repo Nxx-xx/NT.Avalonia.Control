@@ -32,7 +32,7 @@ public sealed class MosaicChart : OperationalChartBase
             if (cell.Width <= 0 || cell.Height <= 0 || cell.Value <= 0) continue;
             var position = Normalized(cell.X + cell.Width / 2, cell.Y + cell.Height / 2, plot); var members = cell.SourceIndices.Select(i => Original(data.Points[i], values[i].Value)).ToArray();
             marks.Add(new(Array.AsReadOnly(members), Cell(cell.X, cell.Y, cell.Width, cell.Height, plot), BrushAt(cell.RowIndex), position) { Key = ("mosaic", cell.Column, cell.Row), Value = cell.Value, TooltipText = $"{cell.Column} / {cell.Row}: {ValueText(cell.Value)} ({cell.Share:P1}); {members.Length} original rows" });
-            AddLabel($"{cell.Row}: {ValueText(cell.Value)}", position, Math.Max(1, cell.Width * plot.Width - CellGap - 4));
+            DataLabel(marks[^1], $"{cell.Row}: {ValueText(cell.Value)}", position, Math.Max(1, cell.Width * plot.Width - CellGap - 4));
         }
         foreach (var group in _layout.Cells.GroupBy(c => c.ColumnIndex)) { var cell = group.First(); AddLabel(cell.Column.ToString(), new(plot.Left + (cell.X + cell.Width / 2) * plot.Width, plot.Bottom + 12), Math.Max(1, cell.Width * plot.Width)); }
         return marks;

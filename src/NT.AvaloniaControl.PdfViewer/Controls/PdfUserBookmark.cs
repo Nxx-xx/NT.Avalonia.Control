@@ -16,8 +16,9 @@ public sealed class PdfUserBookmark : INotifyPropertyChanged
     private string _title;
     private PdfUserBookmarkFlags _flags;
 
-    internal PdfUserBookmark(string title, int pageIndex, PdfUserBookmarkFlags flags)
+    internal PdfUserBookmark(string title, int pageIndex, PdfUserBookmarkFlags flags, Guid? id = null)
     {
+        Id = id ?? Guid.NewGuid();
         _title = title;
         PageIndex = pageIndex;
         _flags = flags;

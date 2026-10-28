@@ -77,7 +77,7 @@ The work runs before native AP generation, outside the global PDFium gate. Fonts
 declaring `NoSubsetting` remain complete; restricted, preview-only and bitmap-only
 embedding is refused. Select `new PdfEmbeddedTrueTypeFont(bytes, PdfFontEmbeddingMode.Full)`
 to embed the supplied font program unchanged. No font fallback, complex shaping,
-RTL, wrapping, CFF/TTC/variable fonts, undo/history, annotation UI or general
+RTL, wrapping, CFF/TTC/variable fonts, annotation UI or general
 partial-object redaction is provided. Missing glyphs, unsupported text and restricted
 embedding declarations are rejected before committing an edit. The host remains
 responsible for its font license. Input is limited to 256 MiB, font input to 32 MiB.
@@ -100,6 +100,35 @@ custom dictionary. Arbitrary PDF feature preservation and Linux physical accepta
 remain open. `ExportAsync` does not clear `IsDirty`; successful `SaveAsync` does.
 Stream output stays open at its current position and may be partial on failure.
 The reader control continues to consume separate immutable document snapshots.
+
+## Bounded undo history, transactions and user-bookmark persistence
+
+Content edits (FreeText, sanitization, redaction) record bounded undo/redo history:
+`UndoAsync` / `RedoAsync` / `CanUndo` / `CanRedo`, `UndoLimit` (entries per stack,
+default 100) and `HistoryByteLimit` (retained snapshot bytes, default 64 MiB).
+Both limits trim immediately when lowered; the newest undo entry is always
+retained, so recorded bytes can exceed the budget by that one entry. A new edit
+clears the redo stack. `ExecuteTransactionAsync` runs a group of edits as one
+atomic, single-history-entry transaction and rolls bytes, revision and dirty state
+back on any failure; nesting, undo/redo, saves and bookmark changes are refused
+inside the body. `IsDirty` compares content state identity plus the bookmark
+overlay, so undoing back to a save point clears it and save failures retain it.
+
+User bookmarks follow separate rules. `SetUserBookmarksAsync` replaces the session
+set (validated: unique non-empty IDs, 1–512 UTF-16 code-unit titles, zero-based
+page index, `None`/`Bold`/`Italic` flags; identical set is a no-op). The set is
+persisted in a private catalog entry (`/NTUserBookmarks`) that other readers
+ignore: it is stripped into session overlay state at open, read back through
+`GetUserBookmarksAsync`, and injected into exported and saved bytes. Bookmarks
+never enter or roll back with the content history; sanitization and redaction
+clear them by policy. Malformed or out-of-range persisted blocks are rejected at
+open instead of being silently dropped.
+
+Export and save reuse one injected byte array per session state, so repeated
+outputs of the same state are byte-identical. Byte-for-byte reproducibility across
+separate sessions is not guaranteed: PDFsharp 6.2.4's save preparation replaces the
+catalog `/Metadata` with a freshly generated XMP packet (random document IDs) on
+every structural save.
 
 ## Native deployment
 
@@ -134,3 +163,69 @@ Regions use bottom-left PDF coordinates before page crop/rotation. Every selecte
 The pipeline cleans and validates supported painting, removes objects, regenerates content, prunes live resources into a fresh catalog, fully rewrites, and independently reopens/audits the candidate before one session commit. Failure/cancellation retains the prior bytes, revision and dirty state. `ExportAsync` and the existing save methods persist only the committed snapshot. No black cover or incremental revision is used. The returned SHA-256 values identify the input/output snapshots.
 
 Compatibility is deliberately bounded: optional content, marked-content properties, Type3 fonts, patterns/shadings, non-device/non-indexed color spaces, opaque JPEG/JPX/JBIG2 containers, unsupported filters/resources and non-default UserUnit are refused. The output may contain newly generated technical PDFsharp metadata, never copied source metadata. Retained fonts and image pixels remain rendering data; this is not a general detector for steganography or arbitrary covert data. Deleting portions of text glyphs/images/paths, general nested Form editing, editing UI, secure erasure of caller buffers/filesystem history, Linux validation and full official parity remain separate work.
+
+## Viewer save workflow (P4-02)
+
+Set `IsReadOnly=false` for the supported unsigned, unencrypted PDFs up to 256 MiB.
+`SaveAsync()` saves to `SavePath` (or requests a picker); `SaveAsAsync(path)` adopts
+the new local target. `SaveAsync(Stream)` leaves the stream open and marks the
+snapshot saved; `ExportDocumentAsync()` returns owned bytes without clearing Dirty.
+`AutoSave` debounces changes at `AutoSaveInterval` (default 2 seconds), only with an
+established local target. All content edits and saves run in one ordered control queue.
+
+`ExecuteEditAsync` wraps supported host content edits in one backend transaction and
+refreshes the reader snapshot. `UndoAsync` / `RedoAsync` and commands refresh the
+page while preserving logical session identity; bookmarks persist separately.
+Writable loads initialize the edit snapshot and persisted private bookmarks; for an
+already open reader, await `EnableEditingAsync()` after enabling writes.
+
+The default theme has Save / Save As / Undo / Redo and an unsaved prompt. Hosts may
+replace confirmation through `UnsavedChangesRequested` or `IPdfUnsavedChangesService`.
+Window closing must await `RequestCloseDocumentAsync()` before closing / disposal;
+`DisposeAsync` unconditionally releases resources. See the
+[P4-02 contract and validation](../../docs/pdfviewer-p4-02-validation.md) for file
+picker, failure, AutoSave, readonly bookmark and platform boundaries.
+
+## File conflicts and interrupted saves (P4-03)
+
+Original-path saves compare the full content fingerprint captured when editing was
+initialized or the last file save committed. `PdfSaveConflictException`,
+`LastSaveConflict` and `SaveConflict` preserve the external file and current Dirty
+state; AutoSave pauses until a different target is saved successfully or the source
+is reloaded. Save As to the same original path retains conflict protection.
+
+The file backend uses a private same-directory transaction with a flushed journal,
+validated candidate, final target comparison and atomic replacement. A stable empty
+`.nt-pdf-save-*.lock` file coordinates cooperating writers and intentionally survives
+cleanup. `SaveAsync(path, PdfFileSaveOptions)` lets standalone editing sessions supply
+an original `ExpectedTarget`; without it, the target is captured when that save starts.
+
+After restarting, hosts explicitly inspect `PdfSaveRecovery.ScanAsync(directory)`.
+`RecoverAsync(entry.TransactionDirectory)` revalidates the target and complete PDF,
+then commits or reconciles an already committed output; `DiscardAsync` only removes
+known files of an inactive valid transaction. Partial, changed, invalid or linked
+transactions are never blindly replayed. This recovers interrupted save transactions,
+not edits that never began saving or the in-memory undo stack.
+
+Windows staging uses an owner-only ACL; Unix staging requires enforced 0700 mode,
+with 0600 candidate / journal files and existing target mode preserved on replacement.
+Filesystems that cannot enforce private Unix staging are refused. The v2 protocol
+keeps independent output bytes and the atomically displaced file (Windows ReplaceFile
+backup / Linux RENAME_EXCHANGE). Races detected after publication raise a conflict
+with WasPublished and retained paths; Dirty remains and AutoSave pauses. PublishedConflict
+entries refuse automatic replay/discard. ReadVersionAsync returns a selected retained
+version, up to 256 MiB. Use an explicit new target to resolve it.
+
+PdfSaveDurabilityException / LastSaveDurabilityFailure also pause AutoSave and preserve
+Dirty. DurabilityPending recovery can repair a partial commit acknowledgement after
+revalidating the target and displaced version. PdfFileSaveResult.Durability distinguishes
+Linux file+directory fsync from Windows post-rename file/commit flushes.
+
+Actual bounded NTFS/ext4 full disks, SMB tree disconnects, transient NFS link loss and
+three Linux VM power cuts have dedicated evidence. NFS existing-target replacement is
+refused when atomic exchange is unavailable; new-target publication never replaces an
+existing entry. NFSv4 kernel I/O during permanent disconnection can wait beyond cancellation;
+hosts need process isolation/timeouts. This is not filesystem CAS or protection from
+later external writes. Windows VM power cuts were deferred by the user; physical device
+power removal and complete metadata preservation remain open. See the
+[storage validation record](../../docs/pdfviewer-p4-03-storage-validation.md).

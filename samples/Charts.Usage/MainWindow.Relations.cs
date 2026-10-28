@@ -19,7 +19,7 @@ public sealed partial class MainWindow
     {
         var expander = this.FindControl<Expander>("RelationsExamples")!; expander.IsExpanded = true; FlushBindings();
         var charts = RelationCharts;
-        void Check(string key, bool value) => checks["relations-compiled-" + key] = value;
+        void Check(string key, bool value) { checks["relations-compiled-" + key] = value; ProfessionalUsageTrace($"relations: {key}={value}"); }
         Check("nine-modes-arranged", charts.Length == 9 && charts.All(chart => chart.PlotArea.Width > 100 && chart.GetMarks().Count == 9 && chart.DataError is null));
         Check("separate-business-node-edge-sources", charts.All(chart => ReferenceEquals(chart.ItemsSource, Model.RelationNodes) && ReferenceEquals(chart.EdgesSource, Model.RelationEdges)));
         Check("custom-paths", charts.All(chart => chart.IdPath == "Id" && chart.LabelPath == "Name" && chart.SourcePath == "From" && chart.TargetPath == "To" && chart.WeightPath == "Amount" && chart.StagePath == "Stage"));

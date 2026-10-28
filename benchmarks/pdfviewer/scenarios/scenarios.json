@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0",
+  "notes": "Scenario matrix for the PdfViewer performance harness (PERF19). scenarioId values must match the switch in Scenarios.cs and Thresholds.cs. Iterations default to >= 30 per the A/B protocol; open-close-cycles runs 10 iterations because each iteration is itself 100 open/close cycles.",
+  "scenarios": [
+    {
+      "scenarioId": "open-first-screen",
+      "corpora": ["S1-manual-020"],
+      "ui": true,
+      "primaryMetric": "firstScreenMs",
+      "iterations": 30,
+      "warmup": "none (cold process per iteration)"
+    },
+    {
+      "scenarioId": "jump-page-cached",
+      "corpora": ["S1-manual-020"],
+      "ui": true,
+      "primaryMetric": "jumpMs",
+      "iterations": 30
+    },
+    {
+      "scenarioId": "jump-page-uncached",
+      "corpora": ["S2-large-text-1000"],
+      "ui": true,
+      "primaryMetric": "jumpMs",
+      "iterations": 30
+    },
+    {
+      "scenarioId": "scroll-continuous",
+      "corpora": ["S1-manual-020"],
+      "ui": true,
+      "primaryMetric": "frameIntervalMs",
+      "iterations": 30
+    },
+    {
+      "scenarioId": "search-first-hit",
+      "corpora": ["S1-manual-020"],
+      "ui": false,
+      "primaryMetric": "searchFirstHitMs",
+      "iterations": 30
+    },
+    {
+      "scenarioId": "search-full-document",
+      "corpora": ["S2-large-text-1000"],
+      "ui": false,
+      "primaryMetric": "searchTotalMs",
+      "iterations": 30
+    },
+    {
+      "scenarioId": "cancel-queued",
+      "corpora": ["S1-manual-020"],
+      "ui": false,
+      "primaryMetric": "cancelObservedMs",
+      "iterations": 30
+    },
+    {
+      "scenarioId": "cancel-native-render",
+      "corpora": ["S1-manual-020"],
+      "ui": false,
+      "primaryMetric": "cancelObservedMs",
+      "iterations": 30
+    },
+    {
+      "scenarioId": "close-release",
+      "corpora": ["S1-manual-020"],
+      "ui": true,
+      "primaryMetric": "closeUiMs",
+      "iterations": 30
+    },
+    {
+      "scenarioId": "open-close-cycles",
+      "corpora": ["S1-manual-020"],
+      "ui": true,
+      "primaryMetric": "privateBytesDeltaBytes",
+      "iterations": 10
+    }
+  ]
+}

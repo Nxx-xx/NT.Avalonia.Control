@@ -4,7 +4,7 @@ using Avalonia.Media;
 namespace NT.AvaloniaControl.Charts;
 
 /// <summary>Snapshot of this chart's local resource-cache accounting. Values are estimates, not measured managed, native or GPU allocations.</summary>
-/// <remarks>Model 1 counts retained drawing payload weights, text UTF-16/glyph weights and fixed cache-entry/pen weights.
+/// <remarks>Model 1 counts retained drawing and private geometry-history payload weights, text UTF-16/glyph weights and fixed cache-entry/pen weights.
 /// Shared source/context caches (including prepared shaped paths and point/comparison indices), caller objects,
 /// font-manager caches, native geometry and GPU allocations are excluded. This is not a total-memory budget.</remarks>
 public sealed record ChartResourceCacheInfo(long BudgetBytes, long EstimatedBytes,
@@ -27,7 +27,7 @@ public sealed partial class CartesianChart
     /// <remarks>This is cache-admission accounting, not a bound on process memory, native/GPU allocations, shared source/context caches or transient drawing work.</remarks>
     public long ResourceCacheBudgetBytes { get => GetValue(ResourceCacheBudgetBytesProperty); set => SetValue(ResourceCacheBudgetBytesProperty, value); }
 
-    private enum ResourceCacheKind { SeriesDrawing, AxisText, InteractionText, AxisPen, SegmentGeometry }
+    private enum ResourceCacheKind { SeriesDrawing, AxisText, InteractionText, AxisPen, SegmentGeometry, CircleHistory }
     private readonly record struct ResourceCacheKey(ResourceCacheKind Kind, object Key);
     private sealed record ResourceCacheEntry(ResourceCacheKey Key, long Bytes, Action Release, ChartWorkScheduler.ProcessResource ProcessEntry);
     private readonly Dictionary<ResourceCacheKey, LinkedListNode<ResourceCacheEntry>> _resourceEntries = [];
@@ -39,7 +39,13 @@ public sealed partial class CartesianChart
     {
         VerifyAccess();
         var bytes = new long[5]; var counts = new int[5];
-        foreach (var entry in _resourceLru) { bytes[(int)entry.Key.Kind] += entry.Bytes; counts[(int)entry.Key.Kind]++; }
+        foreach (var entry in _resourceLru)
+        {
+            // Histories survive scene invalidation, but remain part of the
+            // drawing payload budget. Count only actual scene drawing plans.
+            if (entry.Key.Kind == ResourceCacheKind.CircleHistory) bytes[0] += entry.Bytes;
+            else { bytes[(int)entry.Key.Kind] += entry.Bytes; counts[(int)entry.Key.Kind]++; }
+        }
         return new(ResourceCacheBudgetBytes, _resourceEstimatedBytes, bytes[0], bytes[1], bytes[2], bytes[3], bytes[4],
             counts[0], counts[1], counts[2], counts[3], counts[4], _segmentCaches.Values.Sum(value => value.ProjectedVertices?.Count ?? 0),
             _resourceCacheHits, _resourceCacheMisses, _resourceEvictions, _resourceBypasses, _resourceTrims);
@@ -58,12 +64,17 @@ public sealed partial class CartesianChart
         // Scene identity is kept separate from resources; the next draw can
         // rebuild its resources without preparing or copying the source again.
         ReleaseSeriesDrawingCache(); ReleaseAxisTextCaches(); ReleaseInteractionCaches(); ReleaseAxisPenCache(); ReleaseSegmentCaches();
+        var series = new HashSet<ChartSeries>(_observedSeries, ReferenceEqualityComparer.Instance);
+        foreach (var child in _ownedChildren)
+            if (child is ChartSeries item) series.Add(item);
+        foreach (var item in series) ClearCircleHistory(item);
     }
 
     private bool ResourcesPropertyChanged(AvaloniaPropertyChangedEventArgs change)
     {
         if (change.Property != ResourceCacheBudgetBytesProperty) return false;
         while (_resourceEstimatedBytes > ResourceCacheBudgetBytes && _resourceLru.First is { } first) RemoveResourceEntry(first, true);
+        if (ResourceCacheBudgetBytes == 0) ReleaseResourceCaches();
         RequestRender();
         return true;
     }
@@ -114,13 +125,9 @@ public sealed partial class CartesianChart
 
     private void ReleaseResourceKind(ResourceCacheKind kind)
     {
-        var node = _resourceLru.First;
-        while (node is not null)
-        {
-            var next = node.Next;
-            if (node.Value.Key.Kind == kind) RemoveResourceEntry(node, false);
-            node = next;
-        }
+        // A release callback may retire other entries, including the next node.
+        foreach (var node in _resourceEntries.Values.Where(node => node.Value.Key.Kind == kind).ToArray())
+            RemoveResourceEntry(node, false);
     }
 
     private void EvictResource(ResourceCacheKind kind, object key)
@@ -128,12 +135,70 @@ public sealed partial class CartesianChart
         if (_resourceEntries.TryGetValue(new(kind, key), out var node)) RemoveResourceEntry(node, true);
     }
 
-    private void RemoveResourceEntry(LinkedListNode<ResourceCacheEntry> node, bool eviction)
+    private void RemoveResourceEntry(LinkedListNode<ResourceCacheEntry> node, bool eviction, bool release = true)
     {
+        if (!ReferenceEquals(node.List, _resourceLru)) return;
         _resourceLru.Remove(node); _resourceEntries.Remove(node.Value.Key); _resourceEstimatedBytes -= node.Value.Bytes;
         ChartWorkScheduler.ReleaseResource(node.Value.ProcessEntry);
         if (eviction) _resourceEvictions++;
-        node.Value.Release();
+        if (release) node.Value.Release();
+        if (eviction && node.Value.Key.Kind == ResourceCacheKind.SeriesDrawing && node.Value.Key.Key is SeriesSnapshot snapshot)
+            ClearCircleHistory(snapshot.Series);
+    }
+
+    private bool TryRetainCircleHistory(ChartSeries series, ChartRetainedSeriesDrawing drawing)
+    {
+        var bytes = drawing.SharedCircleHistoryBytes;
+        if (bytes == 0)
+        {
+            ClearCircleHistory(series);
+            return true;
+        }
+        if (!drawing.SharedCircleHistoryActive) return false;
+        var key = new ResourceCacheKey(ResourceCacheKind.CircleHistory, series);
+        if (_resourceEntries.TryGetValue(key, out var previous))
+        {
+            if (previous.Value.Bytes >= bytes)
+            {
+                TouchResource(ResourceCacheKind.CircleHistory, series);
+                return true;
+            }
+            // The constructor declared a larger bounded capacity. Transfer its
+            // reservation without releasing the history; failure below retires
+            // it. No replay can grow this declared weight.
+            RemoveResourceEntry(previous, false, release: false);
+        }
+        return TryRetainResource(ResourceCacheKind.CircleHistory, series, bytes,
+            () => ReleaseCircleHistoryAndDrawings(series)) && drawing.SharedCircleHistoryActive;
+    }
+
+    private bool HasCircleHistoryReservation(ChartSeries series, ChartRetainedSeriesDrawing drawing) =>
+        drawing.SharedCircleHistoryBytes == 0 || drawing.SharedCircleHistoryActive &&
+        _resourceEntries.TryGetValue(new(ResourceCacheKind.CircleHistory, series), out var entry) &&
+        entry.Value.Bytes >= drawing.SharedCircleHistoryBytes;
+
+    private void ClearCircleHistory(ChartSeries series)
+    {
+        if (_resourceEntries.TryGetValue(new(ResourceCacheKind.CircleHistory, series), out var node))
+            RemoveResourceEntry(node, false);
+        else ReleaseCircleHistoryAndDrawings(series);
+    }
+
+    private void ReleaseCircleHistoryAndDrawings(ChartSeries series)
+    {
+        ChartNativeCircleBackend.Clear(series);
+        CartesianSeriesRenderer.ReleaseCircleGeometryHistory(series);
+        CartesianSeriesRenderer.ReleaseBarGeometryHistory(series);
+        // A plan's local slots can still reference the historical geometry.
+        // Retire those plans together with the shared charge. Earlier caller-
+        // owned frames retain their own references and remain valid.
+        foreach (var pair in _seriesDrawings.Where(pair => ReferenceEquals(pair.Key.Series, series) &&
+                     pair.Value.SharedCircleHistoryBytes > 0).ToArray())
+        {
+            if (_resourceEntries.TryGetValue(new(ResourceCacheKind.SeriesDrawing, pair.Key), out var node))
+                RemoveResourceEntry(node, false);
+            else _seriesDrawings.Remove(pair.Key);
+        }
     }
 
     // Include UTF-16 and a fixed per-character glyph/layout allowance. Opaque

@@ -17,6 +17,7 @@
     <ProjectReference Include="../../src/NT.AvaloniaControl.Markdown.TextMate/NT.AvaloniaControl.Markdown.TextMate.csproj" />
     <ProjectReference Include="../../src/NT.AvaloniaControl.Charts/NT.AvaloniaControl.Charts.csproj" />
     <ProjectReference Include="../../src/NT.AvaloniaControl.Charts.Themes/NT.AvaloniaControl.Charts.Themes.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Charts.Skia/NT.AvaloniaControl.Charts.Skia.csproj" />
     <ProjectReference Include="../../src/NT.AvaloniaControl.PdfViewer/NT.AvaloniaControl.PdfViewer.csproj" />
     <ProjectReference Include="../../src/NT.AvaloniaControl.PdfViewer.Themes/NT.AvaloniaControl.PdfViewer.Themes.csproj" />
   </ItemGroup>

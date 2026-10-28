@@ -1,0 +1,871 @@
+{
+  "date": "2026-10-24",
+  "timeZone": "Asia/Hong_Kong",
+  "recordedUtc": "2026-10-24T04:54:12.297891+00:00",
+  "status": "All six reviewed defects fixed and independently replayed.",
+  "functionalAssemblySHA256": "39BD7E8B866F8FFD01F264D226987BF906AD74E1BB969D936ECAAEED8596D12C",
+  "parentReview": {
+    "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\current-review-20261024\\review.json",
+    "sha256": "3352E3B6F2936A59CC419BC80249C33C5C9C04565852A7C0513D582F048FF266",
+    "bytes": 24928
+  },
+  "parentFunctionalAssemblySHA256": "922C7250E1CBED8BB50F3C42B0540DA6201AFC0CB1E16D178AB369458BCC86D6",
+  "finalSourceIdentity": {
+    "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\source-final.json",
+    "sha256": "8DDBDECBB3D2DFAF1C669CEC336B205A2A4EF1E290ADE35BE58E02ECAD2549D5",
+    "bytes": 19105
+  },
+  "sourceFilesVerifiedAgainstNativeBeforeAndAfter": 117,
+  "formalAddedCases": {
+    "CoreDirty": 6,
+    "CoreStreamLifetime": 2,
+    "HeadlessNavigationAndStreamRetries": 8
+  },
+  "regressions": [
+    {
+      "platform": "Windows",
+      "suite": "Core",
+      "total": 176,
+      "passed": 176,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0,
+      "xml": {
+        "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Core-final.xml",
+        "sha256": "BA37115ABB75D67F2A6CE0A86049F0A81586683BB4CE2039D2AE6A79DA557A50",
+        "bytes": 103456
+      },
+      "functionalAssemblySHA256": "39BD7E8B866F8FFD01F264D226987BF906AD74E1BB969D936ECAAEED8596D12C"
+    },
+    {
+      "platform": "Windows",
+      "suite": "Headless",
+      "total": 113,
+      "passed": 113,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0,
+      "xml": {
+        "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Headless-final.xml",
+        "sha256": "B4E9684D8AB83994F117DC785169980FE683FBEF6FC99F69BE173D87584F3DE0",
+        "bytes": 68116
+      },
+      "functionalAssemblySHA256": "39BD7E8B866F8FFD01F264D226987BF906AD74E1BB969D936ECAAEED8596D12C"
+    },
+    {
+      "platform": "Ubuntu26.04-WSL2-same-IL",
+      "suite": "Core",
+      "total": 176,
+      "passed": 176,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0,
+      "xml": {
+        "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Linux-Core.xml",
+        "sha256": "0A32B4486A3E9CFA034B97C6B8261018450EF41991A3210C3278397B56CCB43A",
+        "bytes": 103470
+      },
+      "functionalAssemblySHA256": "39BD7E8B866F8FFD01F264D226987BF906AD74E1BB969D936ECAAEED8596D12C"
+    },
+    {
+      "platform": "Ubuntu26.04-WSL2-same-IL",
+      "suite": "Headless",
+      "total": 113,
+      "passed": 113,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0,
+      "xml": {
+        "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Linux-Headless.xml",
+        "sha256": "77040A37CCF86BBA51EBCC2CE7E61902B539ED00BE47EE03A0E3B0A334C8C5D7",
+        "bytes": 68119
+      },
+      "functionalAssemblySHA256": "39BD7E8B866F8FFD01F264D226987BF906AD74E1BB969D936ECAAEED8596D12C"
+    }
+  ],
+  "native": [
+    {
+      "mode": "backend",
+      "checks": 11,
+      "passed": true,
+      "report": {
+        "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\backend\\result.json",
+        "sha256": "F21D121954BC27A8FF978CDBFF0FC90C174A16CEC1BFC7F37D3DA502BBF31751",
+        "bytes": 2388
+      }
+    },
+    {
+      "mode": "native-window",
+      "checks": 22,
+      "passed": true,
+      "report": {
+        "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\native-window\\result.json",
+        "sha256": "B0C5B4F1DFAF639E89D1703C86598B5C96CA0A5C51183B329BD011DA58D6C669",
+        "bytes": 3246
+      }
+    }
+  ],
+  "builds": [
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\build-core-final2.log",
+      "sha256": "F17082FF1CF4067A6AF6C8F93D6425E1B50C0EB3FC5B855C727D9CC56BE4079E",
+      "bytes": 362
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\build-headless-fit.log",
+      "sha256": "4BAF82440989A3FA5275D054D8AAF530745A16A51022C38F53483C09AFCEB627",
+      "bytes": 545
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\build-native.log",
+      "sha256": "89E2E87710873284B23156481ED8CBB36F9245E89249DCCE8699DE80625D8DFB",
+      "bytes": 514
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\build-usage.log",
+      "sha256": "8C85E3C77E21E7F40E224273C520F0750118641B74830FF507745621D0870126",
+      "bytes": 520
+    }
+  ],
+  "packageConsumers": [
+    {
+      "mode": "FunctionOnly",
+      "passed": true,
+      "checks": 108,
+      "freshPackageCache": "D:\\Procedure\\AvaloniaControl\\artifacts\\consumer\\fd79003b49d54c669c863544f7d504c3\\.packages",
+      "sourceProjectReferences": false,
+      "result": {
+        "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\consumer\\fd79003b49d54c669c863544f7d504c3\\bin\\Release\\net10.0\\consumer-result.json",
+        "sha256": "AAE56BA90ECC796EA2A5BEEBEE07CA2FAAC5A7674F858084ADB19FDA9E43F5B7",
+        "bytes": 6382
+      },
+      "supervisor": {
+        "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\consumer\\fd79003b49d54c669c863544f7d504c3\\supervisor.json",
+        "sha256": "1F643FC36E393485FD1D3C1C03E790688A134B3A52D40588EB4835D37A117A59",
+        "bytes": 2241
+      },
+      "packages": [
+        {
+          "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\packages\\NT.AvaloniaControl.PdfViewer.0.2.0-preview.2.nupkg",
+          "sha256": "148A98F39D5896E7FE49263044B543E0E5877B867F312D87D2ADC4CD69242BA3",
+          "bytes": 717622
+        }
+      ]
+    },
+    {
+      "mode": "DefaultTheme",
+      "passed": true,
+      "checks": 111,
+      "freshPackageCache": "D:\\Procedure\\AvaloniaControl\\artifacts\\consumer\\3db7db0187894e41a56b75bb2a47a03c\\.packages",
+      "sourceProjectReferences": false,
+      "result": {
+        "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\consumer\\3db7db0187894e41a56b75bb2a47a03c\\bin\\Release\\net10.0\\consumer-result.json",
+        "sha256": "DDD6DC3D42CCF545FB0E4D2F62026FE8E377F25EBCDA559B8696664C28D0F72A",
+        "bytes": 6496
+      },
+      "supervisor": {
+        "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\consumer\\3db7db0187894e41a56b75bb2a47a03c\\supervisor.json",
+        "sha256": "BB158CF465D2452E4BC2653E650B3A6D56BEA77C811B91434BAD84D565DCCE44",
+        "bytes": 2673
+      },
+      "packages": [
+        {
+          "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\packages\\NT.AvaloniaControl.PdfViewer.0.2.0-preview.2.nupkg",
+          "sha256": "148A98F39D5896E7FE49263044B543E0E5877B867F312D87D2ADC4CD69242BA3",
+          "bytes": 717622
+        },
+        {
+          "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\packages\\NT.AvaloniaControl.PdfViewer.Themes.0.2.0-preview.2.nupkg",
+          "sha256": "4FB7CF500E3922F61FC7C71C319AA397B98CA5C53C5B054FD0147553E021964D",
+          "bytes": 17969
+        }
+      ]
+    }
+  ],
+  "replay": {
+    "editing": {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\result.json",
+      "sha256": "BDF6A52AEC6282F74F9DDD6EE56FE297989FAE557AF43EF1E5ABEA895F10E4E8",
+      "bytes": 9162
+    },
+    "reading": {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\reading-final\\result.json",
+      "sha256": "2EDBE4DFA220BA03572DF2E610036E1C59590C9549C0C220E30C7C3EBD543BB6",
+      "bytes": 931
+    },
+    "allSixFixed": true,
+    "observedDirtyStates": [
+      true,
+      true,
+      false
+    ],
+    "xyzRetainedY": 250,
+    "latestFitNavigationPage": 2,
+    "streamRetryHasDocument": true,
+    "independentFormats": {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\independent-final.json",
+      "sha256": "637F451674D42B335176B3842A8546AEEB3BB69B62CE7293F41DEA1C80BF5D51",
+      "bytes": 2085
+    }
+  },
+  "visualInspection": {
+    "performed": true,
+    "reviewer": "Codex root, direct image inspection",
+    "images": [
+      {
+        "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\saved-A-final.png",
+        "sha256": "9C918222290C8A540B3B0A4C139D3B278E3AB54C0DFACFC3FE435453DB58E71B",
+        "bytes": 4091
+      },
+      {
+        "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\current-B-final.png",
+        "sha256": "CBCBFEDBC2E2C6200045FA288784BBA0A00E0F720A43E0B911C0A41B1876ED33",
+        "bytes": 4078
+      },
+      {
+        "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\native-window\\native-window.png",
+        "sha256": "B7DADB30C0A7124E004F2F33AD5E134F1EAA65A9C0D7C52C91EB9618A7C86B29",
+        "bytes": 44014
+      }
+    ],
+    "observation": "A/B persisted annotations render visibly different. Native window toolbar, Chinese text, page content and search highlights present.",
+    "popplerWarnings": "Symbol/ArialUnicode display font warnings; inspected Latin A/B and original page text render visibly.",
+    "scanOutOrPhysicalInputVerified": false
+  },
+  "linuxScope": {
+    "executed": true,
+    "sameFunctionalIL": true,
+    "sourceBuildExecuted": false,
+    "system": {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\linux-system.log",
+      "sha256": "7E2CBB42F58A95C8CCACF6B1B6051E7F0A6C92CBFFDBFEACBEE6F29506D2EAD3",
+      "bytes": 113
+    },
+    "dotnetInfo": {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\linux-dotnet-info.log",
+      "sha256": "D95674A87369368A0F71BEBCACE120B2A08E131924BC46F954371D6D0F9C4A35",
+      "bytes": 1088
+    },
+    "nativeLibraryUse": "Core/Headless use the Linux runtime assets from their copied outputs. No physical desktop or hosted CI acceptance."
+  },
+  "audit": {
+    "taskOnlyNuGetAuditFalse": true,
+    "newVulnerabilityAuditPassed": false,
+    "offlineDependencyFeedVerified": {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\dependency-feed-provenance.json",
+      "sha256": "C3C224E87A94529D2573CF1E1B9512228D1AABC5F375421FB8C67709E8F7A2C3",
+      "bytes": 17642
+    },
+    "scope": "Actual archives, payloads and independent fresh caches verified; project and CI audit configuration unchanged."
+  },
+  "retainedInitialFailures": [
+    "targeted-core.xml: sandbox temporary-directory move denied; test target moved to workspace.",
+    "Core.xml: one existing ManagedHeapBytes positive-value assertion failed; targeted and final full rerun passed without changing its assertion or sampler.",
+    "Headless.xml: first navigation-version patch invalidated its own fit-mode update; corrected and original/final regressions passed."
+  ],
+  "notClaimedComplete": [
+    "Viewer save/AutoSave/unsaved prompt integration",
+    "P3 performance acceptance and official A/B",
+    "Ubuntu24.04 hosted CI",
+    "Kylin/ARM64 and physical IME/touch/accessibility acceptance"
+  ],
+  "documentation": [
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\pdfviewer-six-fixes-20261024.md",
+      "sha256": "D33DA2EA846C6815651708FF544E8978C53ED3AA0390D2D389645F66759B3B01",
+      "bytes": 4724
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\pdfviewer-status.md",
+      "sha256": "767AAE01966E683D3B4D0C196361035FF6A9A4D6C7CE899CE5A802DDB8A17BD4",
+      "bytes": 94806
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\pdfviewer-development-plan.md",
+      "sha256": "A7D1957198892DDE5261ACBBF8992FF6391151839A6AE4A87B34CBD6A96B9890",
+      "bytes": 59333
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\pdfviewer-usage.md",
+      "sha256": "3E66A03F26F32FCD9D1DCE367C7EF9D9D537D5316ED097F94AB6AB1569D9A4D7",
+      "bytes": 41478
+    }
+  ],
+  "evidence": [
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\build-core-final.log",
+      "sha256": "EC4E35D6DBB859EA3D10B1855CE1C0D0A2A6FDF3E64E81DB43521F2D5499BC6F",
+      "bytes": 362
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\build-core-final2.log",
+      "sha256": "F17082FF1CF4067A6AF6C8F93D6425E1B50C0EB3FC5B855C727D9CC56BE4079E",
+      "bytes": 362
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\build-core-lifetime.log",
+      "sha256": "9F3B4827BC6851EFD22FD990C68C5575ED77B7C111FC1325897B3CACA9EE6526",
+      "bytes": 362
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\build-core.log",
+      "sha256": "E6EFE16D48F614AF9E19D96C96BA21F5AC1FE951D39C9E39799E743313095047",
+      "bytes": 362
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\build-headless-final.log",
+      "sha256": "87B472190F8E3E406824077861C54044D4FAAEBF4E5D5458FE616A5FF8FAF2A1",
+      "bytes": 545
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\build-headless-fit.log",
+      "sha256": "4BAF82440989A3FA5275D054D8AAF530745A16A51022C38F53483C09AFCEB627",
+      "bytes": 545
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\build-headless.log",
+      "sha256": "DA3BF5346324FFAC59EF6C4DEA9C2819602B7D66D8CD5B763756E5C8DDAAFFE0",
+      "bytes": 545
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\build-native.log",
+      "sha256": "89E2E87710873284B23156481ED8CBB36F9245E89249DCCE8699DE80625D8DFB",
+      "bytes": 514
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\build-usage.log",
+      "sha256": "8C85E3C77E21E7F40E224273C520F0750118641B74830FF507745621D0870126",
+      "bytes": 520
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Core-final.log",
+      "sha256": "303EC537923BF32D669389EE1CA82729C6A0EC13EA4066B251D0708CFDD93BA8",
+      "bytes": 351
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Core-final.xml",
+      "sha256": "BA37115ABB75D67F2A6CE0A86049F0A81586683BB4CE2039D2AE6A79DA557A50",
+      "bytes": 103456
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Core.log",
+      "sha256": "6763EA42039CA234F639381405B1CF5CEFBE6A8B5BA434DB1B58C6072DC7D7F7",
+      "bytes": 929
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Core.xml",
+      "sha256": "B9F6718F7A6373520CCABD4B8B9AFC5519055A62C4ADEBAA351926B2FA73A4FC",
+      "bytes": 104031
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\current-B-final.png",
+      "sha256": "CBCBFEDBC2E2C6200045FA288784BBA0A00E0F720A43E0B911C0A41B1876ED33",
+      "bytes": 4078
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\dependency-feed-provenance.json",
+      "sha256": "C3C224E87A94529D2573CF1E1B9512228D1AABC5F375421FB8C67709E8F7A2C3",
+      "bytes": 17642
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-final-process.json",
+      "sha256": "6CDA75C34D811D43C147DEABF49A923304DD305AC4CC1A0AAFA0548546CA34CF",
+      "bytes": 167
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-final.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-final.stdout.log",
+      "sha256": "0C96FDAA523D7CF632C41FD78A53FB2112D25ABA9946A74BC151066528C8166C",
+      "bytes": 9164
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-replay-process.json",
+      "sha256": "3189DF269AC31FE9B1CA1A0439590F7FEBC9BE3C56D81FA27C6A59D76B2B5430",
+      "bytes": 167
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-replay.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-replay.stdout.log",
+      "sha256": "82DAA8A6768111EB601CB7968403F4D89FFAEAA217ED3EBC03745EC77C6056F8",
+      "bytes": 9105
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\export_record.py",
+      "sha256": "A4FCAD943E9BD77745E9C9777CCBDEB7DF0D21D80CD5EE88436CE172EFC8F1C6",
+      "bytes": 10289
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\fit-check-final.log",
+      "sha256": "C6D4610D64A41C56101F1B16075F60A4BA3E81F0DACBEA9EC0E03F6B1E5B1BF8",
+      "bytes": 369
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\fit-check-final.xml",
+      "sha256": "3B1453188EB773EEB98E5BA59467C00545BA9B90172E0033AA61E4390A22CE17",
+      "bytes": 1702
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\fit-check.log",
+      "sha256": "E4615D66601D43BE1DED99C03F28118371546540B542A30B5E1BFB73088B9A4F",
+      "bytes": 1637
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\fit-check.xml",
+      "sha256": "0A02A9C3A5779DA681E70BC45311906F621C2BCBE1195C976E712098B222C5F3",
+      "bytes": 3051
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Headless-final.log",
+      "sha256": "5A64E7D701CC3E1B7C29DA4834E768DF95EF25C37C68948CDF34F5DBF80DC9EB",
+      "bytes": 372
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Headless-final.xml",
+      "sha256": "B4E9684D8AB83994F117DC785169980FE683FBEF6FC99F69BE173D87584F3DE0",
+      "bytes": 68116
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Headless.log",
+      "sha256": "639E4FF73B2089A6A9D489564BA631EC863A4F9830278964993A70BF39E18466",
+      "bytes": 1639
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Headless.xml",
+      "sha256": "28C1023A238E15C5A363DB783E3C630956BA9B9D7D3390BE109B562F34F37A85",
+      "bytes": 69465
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\independent-final.json",
+      "sha256": "637F451674D42B335176B3842A8546AEEB3BB69B62CE7293F41DEA1C80BF5D51",
+      "bytes": 2085
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Linux-Core.log",
+      "sha256": "2064BAB5A5864AB20344CD8B7C0C10106FB43DBA89E27B79DABFCB66CC8B1D68",
+      "bytes": 403
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Linux-Core.xml",
+      "sha256": "0A32B4486A3E9CFA034B97C6B8261018450EF41991A3210C3278397B56CCB43A",
+      "bytes": 103470
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\linux-dotnet-info.log",
+      "sha256": "D95674A87369368A0F71BEBCACE120B2A08E131924BC46F954371D6D0F9C4A35",
+      "bytes": 1088
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Linux-Headless.log",
+      "sha256": "A3DC746F05E76B986E8C02C0416219791A6E239C3039769BE68A97F3CEB94409",
+      "bytes": 424
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\Linux-Headless.xml",
+      "sha256": "77040A37CCF86BBA51EBCC2CE7E61902B539ED00BE47EE03A0E3B0A334C8C5D7",
+      "bytes": 68119
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\linux-system.log",
+      "sha256": "7E2CBB42F58A95C8CCACF6B1B6051E7F0A6C92CBFFDBFEACBEE6F29506D2EAD3",
+      "bytes": 113
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\pack-NT.AvaloniaControl.PdfViewer.log",
+      "sha256": "808EF9D51FC41F0F6B5291A472934F94640056BCC355AA437FEDCEAFE9C58BC6",
+      "bytes": 308
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\pack-NT.AvaloniaControl.PdfViewer.Themes.log",
+      "sha256": "E81F4E5874FBB1AB9CE5258D74D92FE1C979D6D3798BC8634D0E1E6101D5FAA0",
+      "bytes": 486
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\package-consumers.json",
+      "sha256": "FDDB650AA928CD1FFECDA74010AB35CF9F951C4221877D3EAC1A2415F21C226B",
+      "bytes": 3781
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\package-consumers.log",
+      "sha256": "7D9C44DF321C9C3E391B27F0937186AEB32CBB5CD13243612F8B19F9F477EC3E",
+      "bytes": 1383
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\performance-check.log",
+      "sha256": "A3A8480A27AE7F5F29F1404A8C0145897E233EA9B3C8971C21D71CC1A4CF012A",
+      "bytes": 349
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\performance-check.xml",
+      "sha256": "948DCBD0029F5E176C0785FE6809DE57768AA7BF34E4DD8E4E14343693BED714",
+      "bytes": 4362
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\prepare_feed.py",
+      "sha256": "788543EF0C3AAE7DE3EC23AF78422B2373E9B8433C1BC1BAAF197E3BE0A070C1",
+      "bytes": 2363
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\reading-final-process.json",
+      "sha256": "3EC11E2C64B1D6DA9E8C983C28FFB8DCABEE9A7ADF7B11A65629C2D78F74D18A",
+      "bytes": 167
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\reading-final-result.json",
+      "sha256": "2EDBE4DFA220BA03572DF2E610036E1C59590C9549C0C220E30C7C3EBD543BB6",
+      "bytes": 931
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\reading-final.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\reading-final.stdout.log",
+      "sha256": "2EF62580E997AD78DB98FF773B39CECB6D0C951EE8369ECED37CDE40882C7B65",
+      "bytes": 933
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\reading-replay-process.json",
+      "sha256": "AF45F3082A7858E7E74547DF87C14869B0452A231B476CF33AE76C5282E487EF",
+      "bytes": 167
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\reading-replay.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\reading-replay.stdout.log",
+      "sha256": "2EF62580E997AD78DB98FF773B39CECB6D0C951EE8369ECED37CDE40882C7B65",
+      "bytes": 933
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\saved-A-final.png",
+      "sha256": "9C918222290C8A540B3B0A4C139D3B278E3AB54C0DFACFC3FE435453DB58E71B",
+      "bytes": 4091
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\source-before.json",
+      "sha256": "72A919881FA32A540A852132ACCD9B40E10E11BE2E091897677A63BCE195E876",
+      "bytes": 17661
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\source-final.json",
+      "sha256": "8DDBDECBB3D2DFAF1C669CEC336B205A2A4EF1E290ADE35BE58E02ECAD2549D5",
+      "bytes": 19105
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\targeted-core-final.log",
+      "sha256": "D4D28D2961FF6D15D4C927DB34C933175F82705752B0E2EB57BCB3A3B228D5A9",
+      "bytes": 349
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\targeted-core-final.xml",
+      "sha256": "D78DA2B338D6C2635ED9E33D0515A5477B7BD51081287A32CEC9150083DC1C9F",
+      "bytes": 4582
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\targeted-core.log",
+      "sha256": "7FAE5EA2E2438906118112539D36BEB5C0E72789481D3F5ABE123E4691928BF7",
+      "bytes": 1363
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\targeted-core.xml",
+      "sha256": "A7C55FBD0973FCE12217C32F782C9E85095637E1BE56282F9C225CBFD4AADE1C",
+      "bytes": 5633
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\targeted-headless-final.log",
+      "sha256": "603DB2D72B2A0E95D8B875F0384FB679D0052666022CD7249836C6E224CE6DE7",
+      "bytes": 369
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\targeted-headless-final.xml",
+      "sha256": "D99024C678229D28FDFF7AEBD0F432B9E5A306D24154B22856921E399EAA09BA",
+      "bytes": 5815
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\targeted-headless.log",
+      "sha256": "454CC8FBFF2CCEE4BCB5F4640D931434BA6C14B7622A7B526D058E766BB7AE80",
+      "bytes": 369
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\targeted-headless.xml",
+      "sha256": "8D9D6B71A93E9C6DBC69A70A65EFA2FAE3E2D89C0AD42E66389A55BFA400DECD",
+      "bytes": 5816
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\targeted-stream.log",
+      "sha256": "A5C993A39B419546B05F5D49CF41B615F6A4A53077B3B64874F9B7D37155A5FC",
+      "bytes": 349
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\targeted-stream.xml",
+      "sha256": "565D542E97E52C2ACD0EA713FD4975F871729EC5986B947EF2D71B07BB81B898",
+      "bytes": 2372
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\verify_outputs.py",
+      "sha256": "473D167212D69CAC89AE4B874DC2CA29AA3D62E069FEB48B96059A7371492579",
+      "bytes": 3077
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output\\bookmark-return-A.pdf",
+      "sha256": "976B76154F1C8C9352E1BF295AECF2AF48BE63954F7B17775A0A1F4528E1731B",
+      "bytes": 2538
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output\\bookmark-return-B.pdf",
+      "sha256": "DDD82AD800E90C9A7681DF7F09494968A7AAB5F72C40AE7E558B3D618A277428",
+      "bytes": 2554
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output\\bookmark-return-before.pdf",
+      "sha256": "52C202113893167CEB9A7929D7C9BE08DE798364DDB4BBB2813663E47DDA1245",
+      "bytes": 2538
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output\\bookmark-return-saved-A.pdf",
+      "sha256": "52C202113893167CEB9A7929D7C9BE08DE798364DDB4BBB2813663E47DDA1245",
+      "bytes": 2538
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output\\bookmarks-after-sanitize-undo.pdf",
+      "sha256": "331D029C9165B538710C2574C9890EDF85ACDA2DD14F58150BC7C6D5D31642C1",
+      "bytes": 595
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output\\bookmarks-before-sanitize.pdf",
+      "sha256": "672D159178AB5E9AA3571B1E1BD25D4FA1AD85C048803B3B0D1B90F4B8F21B9F",
+      "bytes": 2538
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output\\bookmarks-sanitized.pdf",
+      "sha256": "5110FB754A1BF891405C5479D08CB62FDDF838BF0460CCBA49469427BE9DF469",
+      "bytes": 2343
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output\\bookmarks-saved-A.pdf",
+      "sha256": "672D159178AB5E9AA3571B1E1BD25D4FA1AD85C048803B3B0D1B90F4B8F21B9F",
+      "bytes": 2538
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output\\branch-saved-A.pdf",
+      "sha256": "5BEDBB24C766D024F4189401CE8F253DBBC006EA764891F2B0A66F3574FD9334",
+      "bytes": 5200
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output\\branch-undone.pdf",
+      "sha256": "331D029C9165B538710C2574C9890EDF85ACDA2DD14F58150BC7C6D5D31642C1",
+      "bytes": 595
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output\\current-B.pdf",
+      "sha256": "D801DCE6F28416F8D694E8058D370B2C23C8C363310D24C0524A6ED60D2ACF3E",
+      "bytes": 5233
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output\\result.json",
+      "sha256": "B86DCF093DD227C546B2D991C5C1005C6E48E7F55AA83CD564C943866C61BCE7",
+      "bytes": 9103
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output\\saved-A.pdf",
+      "sha256": "5BEDBB24C766D024F4189401CE8F253DBBC006EA764891F2B0A66F3574FD9334",
+      "bytes": 5200
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\bookmark-return-A.pdf",
+      "sha256": "F3BEB2F0C5A9A1B42F35A49ACBCF8F5C52CC18DE73BC28D7BAAC09CA8C3243DC",
+      "bytes": 2538
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\bookmark-return-B.pdf",
+      "sha256": "0786BF34744C16B6A61AAB9AB65F0AFBF80E80C11951C36B2F8B04E674CEFFBC",
+      "bytes": 2554
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\bookmark-return-before.pdf",
+      "sha256": "003DBD95759665FCA7F6CB6E658F70A5F92E66601A2334395FBB55CD74124D5E",
+      "bytes": 2538
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\bookmark-return-saved-A.pdf",
+      "sha256": "003DBD95759665FCA7F6CB6E658F70A5F92E66601A2334395FBB55CD74124D5E",
+      "bytes": 2538
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\bookmarks-after-sanitize-undo.pdf",
+      "sha256": "331D029C9165B538710C2574C9890EDF85ACDA2DD14F58150BC7C6D5D31642C1",
+      "bytes": 595
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\bookmarks-before-sanitize.pdf",
+      "sha256": "027513DC313D43664F2A174F3D7A4DAB785C99CDF0AFBE7BBD4EA0440DCAD0AE",
+      "bytes": 2538
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\bookmarks-sanitized.pdf",
+      "sha256": "D3F73DD45E6655602FF0082C121360F66B2F2C1C0C4BE5AB8EF36007B84A53E4",
+      "bytes": 2343
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\bookmarks-saved-A.pdf",
+      "sha256": "027513DC313D43664F2A174F3D7A4DAB785C99CDF0AFBE7BBD4EA0440DCAD0AE",
+      "bytes": 2538
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\branch-saved-A.pdf",
+      "sha256": "F3EAA3E3CCB18BBBCD265B87BAD80095DC013BD520E146034AD5A218E6866057",
+      "bytes": 5200
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\branch-undone.pdf",
+      "sha256": "331D029C9165B538710C2574C9890EDF85ACDA2DD14F58150BC7C6D5D31642C1",
+      "bytes": 595
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\current-B.pdf",
+      "sha256": "6304A1A88AAF2C9CB46CEEE1B2026B2CAB0232E3CC8C09AE1549DD5DC1431D6A",
+      "bytes": 5233
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\result.json",
+      "sha256": "BDF6A52AEC6282F74F9DDD6EE56FE297989FAE557AF43EF1E5ABEA895F10E4E8",
+      "bytes": 9162
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-output-final\\saved-A.pdf",
+      "sha256": "F3EAA3E3CCB18BBBCD265B87BAD80095DC013BD520E146034AD5A218E6866057",
+      "bytes": 5200
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\environment.json",
+      "sha256": "C5982EE66FF14BF5789476282409C45A0748E010D972C5F7BB63D16AFAEE6BB0",
+      "bytes": 332
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\run.json",
+      "sha256": "37FCCEF4EE3F90078C42E57B965E825DED9083E6F112EAD5D1BFB5F4455CE9E0",
+      "bytes": 5686
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\source-after.json",
+      "sha256": "8DDBDECBB3D2DFAF1C669CEC336B205A2A4EF1E290ADE35BE58E02ECAD2549D5",
+      "bytes": 19105
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\source-before.json",
+      "sha256": "8DDBDECBB3D2DFAF1C669CEC336B205A2A4EF1E290ADE35BE58E02ECAD2549D5",
+      "bytes": 19105
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\packages\\NT.AvaloniaControl.PdfViewer.0.2.0-preview.2.nupkg",
+      "sha256": "148A98F39D5896E7FE49263044B543E0E5877B867F312D87D2ADC4CD69242BA3",
+      "bytes": 717622
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\packages\\NT.AvaloniaControl.PdfViewer.Themes.0.2.0-preview.2.nupkg",
+      "sha256": "4FB7CF500E3922F61FC7C71C319AA397B98CA5C53C5B054FD0147553E021964D",
+      "bytes": 17969
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\backend\\owned-fixture.pdf",
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "bytes": 1284
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\backend\\result.json",
+      "sha256": "F21D121954BC27A8FF978CDBFF0FC90C174A16CEC1BFC7F37D3DA502BBF31751",
+      "bytes": 2388
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\corpus\\gnu-make.pdf",
+      "sha256": "A4BC06026984382815E392159E60A4BC356CAC6C5B81E5AE84FA4F58F621F4D3",
+      "bytes": 952174
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\corpus\\source.json",
+      "sha256": "CA864974FD5D252A2CD4DA14CD6CCB52C6B45EB42D74970506A9083CEA7BFD3D",
+      "bytes": 2033
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\logs\\backend.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\logs\\backend.stdout.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\logs\\dotnet-info.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\logs\\dotnet-info.stdout.log",
+      "sha256": "24422D63D733B180AB744AC6946D60B0F04934B3A02EF15F85720E50D9D5F3FA",
+      "bytes": 5610
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\logs\\native-window.stderr.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\logs\\native-window.stdout.log",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\native-window\\native-window.png",
+      "sha256": "B7DADB30C0A7124E004F2F33AD5E134F1EAA65A9C0D7C52C91EB9618A7C86B29",
+      "bytes": 44014
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\native-window\\owned-fixture.pdf",
+      "sha256": "530FBD65056A8AA4AFC8750D3BD4AF197CFC4243DAFBE2FDA848C93ECC477B21",
+      "bytes": 1284
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\native\\native-window\\result.json",
+      "sha256": "B0C5B4F1DFAF639E89D1703C86598B5C96CA0A5C51183B329BD011DA58D6C669",
+      "bytes": 3246
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\reading-final\\result.json",
+      "sha256": "2EDBE4DFA220BA03572DF2E610036E1C59590C9549C0C220E30C7C3EBD543BB6",
+      "bytes": 931
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\reading-final\\page.png",
+      "sha256": "8D49D65F96B073A7591E3C9675B8CCD415F97AD3F5F8A3A359B07A8AF938DE89",
+      "bytes": 11525
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\reading-final\\reference.bgra",
+      "sha256": "E41C04B8A092B36C998D32AD42A93DB8429B037A61D215ED21E9E008DB6ECEF7",
+      "bytes": 852800
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\reading-final\\Probe.dll",
+      "sha256": "FC6CCF645C1A00E2471722621608EAB8D68619CC18F286B384A869F57BF0222A",
+      "bytes": 27648
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\artifacts\\pdfviewer\\six-fixes-20261024\\editing-final\\EditingProbe.dll",
+      "sha256": "3952BDAD647FA0763C2BF1CC99575E7F0022486A13BBFA60C1700D568F2C2433",
+      "bytes": 56832
+    }
+  ]
+}

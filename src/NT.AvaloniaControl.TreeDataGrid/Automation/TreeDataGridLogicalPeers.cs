@@ -81,14 +81,14 @@ internal sealed class TreeDataGridLogicalHeaderPeer : UnrealizedElementAutomatio
     protected override string GetNameCore() => Column?.Header?.ToString() ?? "";
     protected override string GetItemStatusCore() => $"columnIndex={_grid.GetColumnIndex(_column)}; sortDirection={(_grid.Source?.SortColumn == _column ? _grid.Source.SortDirection : TreeDataGridSortDirection.None)}";
     protected override string GetHelpTextCore() => $"ColumnId={_column.Value}";
-    protected override bool IsOffscreenCore() => _grid.GetColumnIndex(_column) < 0 || RealizedHeader is null;
+    protected override bool IsOffscreenCore() => !_grid.ShowColumnHeaders || _grid.GetColumnIndex(_column) < 0 || RealizedHeader is null;
     protected override Rect GetBoundingRectangleCore() => RealizedHeader is { } header ? ControlAutomationPeer.CreatePeerForElement(header)!.GetBoundingRectangle() : default;
-    protected override bool IsEnabledCore() => _grid.IsEffectivelyEnabled && _grid.GetColumnIndex(_column) >= 0;
+    protected override bool IsEnabledCore() => _grid.IsEffectivelyEnabled && _grid.ShowColumnHeaders && _grid.GetColumnIndex(_column) >= 0;
     protected override bool IsKeyboardFocusableCore() => IsEnabledCore();
     protected override void BringIntoViewCore()
     {
         _grid.VerifyAccess();
-        if (_grid.GetColumnIndex(_column) < 0) throw new InvalidOperationException("The column is hidden or removed.");
+        if (!_grid.ShowColumnHeaders || _grid.GetColumnIndex(_column) < 0) throw new InvalidOperationException("The column header is hidden or removed.");
         _grid.BringColumnIntoView(_column);
     }
     protected override void SetFocusCore() { BringIntoViewCore(); _grid.Focus(); }

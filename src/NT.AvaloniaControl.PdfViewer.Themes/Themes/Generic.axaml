@@ -27,6 +27,14 @@
                       <Button Name="PART_Open" Content="{x:Static pdf:PdfViewerStrings.OpenText}"
                               AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.OpenText}"
                               IsVisible="{TemplateBinding IsOpenToolVisible}" ToolTip.Tip="{x:Static pdf:PdfViewerStrings.OpenTooltip}" />
+                      <Button Name="PART_Save" Content="{x:Static pdf:PdfViewerStrings.SaveText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.SaveText}" />
+                      <Button Name="PART_SaveAs" Content="{x:Static pdf:PdfViewerStrings.SaveAsText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.SaveAsText}" />
+                      <Button Name="PART_Undo" Content="{x:Static pdf:PdfViewerStrings.UndoText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.UndoText}" />
+                      <Button Name="PART_Redo" Content="{x:Static pdf:PdfViewerStrings.RedoText}"
+                              AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.RedoText}" />
                       <ToggleButton Content="{x:Static pdf:PdfViewerStrings.SidebarToggleText}"
                                     AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.SidebarToggleText}"
                                     IsVisible="{TemplateBinding IsSidebarToggleVisible}"
@@ -189,6 +197,20 @@
                       <StackPanel Spacing="8"><TextBlock Text="{x:Static pdf:PdfViewerStrings.LoadingText}" /><ProgressBar IsIndeterminate="True" Width="180" /></StackPanel>
                     </Border>
                     <!-- Full-cover password prompt: the canvas brush hides the empty state behind it. -->
+                    <Border IsVisible="{TemplateBinding IsUnsavedChangesPromptVisible}" Background="{DynamicResource PdfViewerCanvasBrush}">
+                      <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1"
+                              CornerRadius="8" Padding="24,20" MaxWidth="460" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <StackPanel Spacing="12">
+                          <TextBlock Text="{x:Static pdf:PdfViewerStrings.UnsavedChangesTitle}" FontSize="18" FontWeight="SemiBold" />
+                          <TextBlock Text="{x:Static pdf:PdfViewerStrings.UnsavedChangesMessage}" TextWrapping="Wrap" />
+                          <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                            <Button Name="PART_UnsavedSave" Content="{x:Static pdf:PdfViewerStrings.SaveText}" AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.SaveText}" />
+                            <Button Name="PART_UnsavedDiscard" Content="{x:Static pdf:PdfViewerStrings.DiscardChangesText}" AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.DiscardChangesText}" />
+                            <Button Name="PART_UnsavedCancel" Content="{x:Static pdf:PdfViewerStrings.CancelChangesText}" AutomationProperties.Name="{x:Static pdf:PdfViewerStrings.CancelChangesText}" />
+                          </StackPanel>
+                        </StackPanel>
+                      </Border>
+                    </Border>
                     <Border IsVisible="{TemplateBinding IsPasswordPromptVisible}" Background="{DynamicResource PdfViewerCanvasBrush}">
                       <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1"
                               CornerRadius="8" Padding="24,20" MinWidth="320" MaxWidth="420"
@@ -215,7 +237,10 @@
                         BorderThickness="0,1,0,0" Padding="10,6">
                   <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
                     <TextBlock Text="{TemplateBinding StatusText}" Foreground="{DynamicResource PdfViewerMutedForegroundBrush}" TextTrimming="CharacterEllipsis" />
-                    <TextBlock Grid.Column="1" Text="{TemplateBinding DocumentName}" MaxWidth="280" Margin="12,0,0,0" TextTrimming="CharacterEllipsis" />
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8">
+                      <TextBlock Text="{x:Static pdf:PdfViewerStrings.DirtyText}" IsVisible="{TemplateBinding IsDirty}" />
+                      <TextBlock Text="{TemplateBinding DocumentName}" MaxWidth="280" Margin="12,0,0,0" TextTrimming="CharacterEllipsis" />
+                    </StackPanel>
                     <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{TemplateBinding ErrorMessage}" TextWrapping="Wrap" Foreground="{DynamicResource PdfViewerErrorBrush}" />
                   </Grid>
                 </Border>

@@ -97,10 +97,24 @@ public sealed class ChartPointAutomationPeer : UnrealizedElementAutomationPeer, 
     protected override IReadOnlyList<AutomationPeer> GetOrCreateChildrenCore() => [];
     internal void ChartChanged()
     {
-        var selected = IsSelected; var name = GetName(); var value = Value;
+        // One notification describes one resolved original point. Resolve and
+        // format it once instead of independently rebuilding hits for selected,
+        // name and value (plus another resolve through CurrentPoint).
+        var available = TryCurrent(out var current);
+        var selected = available && _root.Chart.AccessibilityPointIsSelected(current);
+        var name = available ? _root.Chart.AccessibilityPointName(current) : $"{Series.Title ?? "Series"}; point unavailable";
+        var value = available ? name : "unavailable";
         if (_lastSelected != selected) RaisePropertyChangedEvent(SelectionItemPatternIdentifiers.IsSelectedProperty, _lastSelected, selected);
         if (_lastName != name) RaisePropertyChangedEvent(AutomationElementIdentifiers.NameProperty, _lastName, name);
         if (_lastValue != value) RaisePropertyChangedEvent(ValuePatternIdentifiers.ValueProperty, _lastValue, value);
         _lastSelected = selected; _lastName = name; _lastValue = value;
+    }
+
+    internal void SelectionChangedWhilePending()
+    {
+        var selected = !_retired && _point is { } previous && _root.Chart.AccessibilityPointIsSelected(previous);
+        if (_lastSelected == selected) return;
+        RaisePropertyChangedEvent(SelectionItemPatternIdentifiers.IsSelectedProperty, _lastSelected, selected);
+        _lastSelected = selected;
     }
 }

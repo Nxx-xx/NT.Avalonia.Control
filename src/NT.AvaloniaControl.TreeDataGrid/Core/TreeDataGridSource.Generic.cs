@@ -372,11 +372,12 @@ public abstract partial class TreeDataGridSource<TModel> : TreeDataGridSource wh
                     models.Add(notifyingModel);
                 var previous = candidates[index];
                 var path = parentPath.Append(index);
+                var movedExpansion = _batchMoveExpansion?.Invoke(previous, path, model);
                 var children = _childrenSelector?.Invoke(model);
                 var childNodes = BuildNodes(children, previous?.ChildrenCollection, previous?.Children ?? [],
                     path, ancestors, changes, collections, models);
                 result.Add(new Node(previous?.Id ?? NodeIdentity.Allocate(), model, children, childNodes,
-                    _isExpandedSelector?.Invoke(model) ?? previous?.IsExpanded ?? false,
+                    _isExpandedSelector?.Invoke(model) ?? movedExpansion ?? previous?.IsExpanded ?? false,
                     childNodes.Count != 0 || _hasChildrenSelector?.Invoke(model) == true, path));
             }
             finally
@@ -393,6 +394,16 @@ public abstract partial class TreeDataGridSource<TModel> : TreeDataGridSource wh
         var applicableChanges = changes.Where(change => ReferenceEquals(change.Collection, items)).ToArray();
         if (applicableChanges.Length == 0)
         {
+            // Model notifications commonly leave the occurrence sequence untouched. Verify every
+            // reference before taking this path: a silent reorder still needs occurrence queues,
+            // and indexed notifications (including a Move between identical models) stay exact.
+            if (values.Length == previousNodes.Count)
+            {
+                var unchanged = true;
+                for (var index = 0; index < values.Length; index++)
+                    if (!ReferenceEquals(values[index], previousNodes[index].Model)) { unchanged = false; break; }
+                if (unchanged) return previousNodes.ToArray();
+            }
             // A Refresh can reconcile a non-notifying collection. Reference queues preserve separate
             // identities for repeated objects, in occurrence order; indexed Move notifications are exact.
             var occurrences = new Dictionary<TModel, Queue<Node>>(ReferenceEqualityComparer.Instance);

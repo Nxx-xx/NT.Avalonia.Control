@@ -57,7 +57,7 @@ public sealed class MekkoChart : ComparisonChartBase
             var tooltip = $"{columns[cell.ColumnIndex].Label} / {cell.Label}: {ValueText(cell.Value)} ({cell.Height:P1}); width {ValueText(columns[cell.ColumnIndex].Width)}";
             marks.Add(new(Array.AsReadOnly(new[] { column, child }), Rectangle(cell.X + gap / 2, cell.Y, width, cell.Height, plot), BrushAt(cell.SegmentIndex), position)
             { Key = ("segment", column.StableId, identity), Value = cell.Value, TooltipText = tooltip });
-            if (ShowLabels && cell.Height * plot.Height > FontSize + 4) Labels.Add(($"{cell.Label}{(ShowPercentages ? $" {cell.Height:P0}" : ShowValues ? $" {ValueText(cell.Value)}" : "")}", position, Math.Max(1, width * plot.Width - 6)));
+            if (ShowLabels && cell.Height * plot.Height > FontSize + 4) AddDataLabel(marks[^1], $"{cell.Label}{(ShowPercentages ? $" {cell.Height:P0}" : ShowValues ? $" {ValueText(cell.Value)}" : "")}", position, Math.Max(1, width * plot.Width - 6));
         }
         foreach (var group in layout.Cells.GroupBy(c => c.ColumnIndex))
         { var cell = group.First(); Label(columns[cell.ColumnIndex].Label, ApplyViewport(new(plot.Left + plot.Width * (cell.X + cell.Width / 2), plot.Bottom + 12), plot), Math.Max(1, cell.Width * plot.Width - ColumnGap)); }

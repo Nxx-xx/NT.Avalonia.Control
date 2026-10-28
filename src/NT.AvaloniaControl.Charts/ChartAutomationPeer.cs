@@ -22,10 +22,15 @@ public sealed class ChartAutomationPeer : ControlAutomationPeer, IValueProvider,
     private IReadOnlyList<ChartPointHit> _lastSelection;
     private bool _lastCanSelectMultiple;
     private bool _updating;
+    private bool _pendingNotificationWanted;
+    private bool _pendingNotificationPosted;
+    private bool _flushPendingNotificationRequested;
+    private readonly Dictionary<ChartSeries, bool> _lastVisibility = new(ReferenceEqualityComparer.Instance);
     public ChartAutomationPeer(CartesianChart owner) : base(owner)
     {
         _chart = owner;
         _lastSeries = owner.AutomationSeries;
+        foreach (var series in _lastSeries) _lastVisibility.Add(series, series.EffectiveVisibility);
         _lastSelection = owner.AccessibilitySelection;
         _lastCanSelectMultiple = owner.SelectionMode == ChartSelectionMode.Multiple;
         _lastValue = owner.AccessibilitySummaryText;
@@ -110,16 +115,42 @@ public sealed class ChartAutomationPeer : ControlAutomationPeer, IValueProvider,
             node = next;
         }
     }
-    internal void ChartChanged()
+    internal void ChartChanged(bool flushPending = false)
     {
         if (_updating) return;
+        flushPending |= _flushPendingNotificationRequested;
+        _flushPendingNotificationRequested = false;
         _updating = true;
         try
         {
+            // Scene invalidation and its synchronous layout publication form one
+            // UI turn. Do not announce every realized point as unavailable and
+            // immediately available again during that transient gap. Providers
+            // still report the current pending state when queried directly.
+            var deferUnavailable = !_chart.AccessibilityHasScene && !flushPending &&
+                _chart.IsEffectivelyVisible && TopLevel.GetTopLevel(_chart) is not null;
+            _pendingNotificationWanted = deferUnavailable;
+            if (deferUnavailable) QueuePendingNotification();
             var active = _chart.AutomationSeries;
+            var availabilityChanged = !_lastSeries.SequenceEqual(active, ReferenceEqualityComparer.Instance);
+            foreach (var old in _lastVisibility.Keys.Where(series => !active.Contains(series)).ToArray()) _lastVisibility.Remove(old);
+            foreach (var series in active)
+            {
+                if (!_lastVisibility.TryGetValue(series, out var visible) || visible != series.EffectiveVisibility) availabilityChanged = true;
+                _lastVisibility[series] = series.EffectiveVisibility;
+                // An explicitly unbound source is not a transient viewport gap.
+                if (series.ItemsSource is null) availabilityChanged = true;
+            }
             Prune(active);
-            foreach (var peer in _series.Values.ToArray()) peer.ChartChanged();
-            foreach (var peer in _points.ToArray()) peer.ChartChanged();
+            foreach (var peer in _series.Values.ToArray()) peer.ChartChanged(deferUnavailable);
+            foreach (var peer in _points.ToArray())
+            {
+                // Hidden/removed items are real availability changes. Selection
+                // is also authoritative before the next scene is published.
+                if (deferUnavailable && peer.Series.EffectiveVisibility && peer.Series.ItemsSource is not null)
+                    peer.SelectionChangedWhilePending();
+                else peer.ChartChanged();
+            }
             if (!_lastSeries.SequenceEqual(active, ReferenceEqualityComparer.Instance))
             { _lastSeries = active; InvalidateChildren(); }
             var selection = _chart.AccessibilitySelection;
@@ -138,11 +169,33 @@ public sealed class ChartAutomationPeer : ControlAutomationPeer, IValueProvider,
                 RaisePropertyChangedEvent(SelectionPatternIdentifiers.CanSelectMultipleProperty, previous, canSelectMultiple);
             }
             var value = Value; var name = GetName();
-            if (_lastValue != value) RaisePropertyChangedEvent(ValuePatternIdentifiers.ValueProperty, _lastValue, value);
+            if ((!deferUnavailable || availabilityChanged) && _lastValue != value) RaisePropertyChangedEvent(ValuePatternIdentifiers.ValueProperty, _lastValue, value);
             if (_lastName != name) RaisePropertyChangedEvent(AutomationElementIdentifiers.NameProperty, _lastName, name);
-            _lastValue = value; _lastName = name;
+            if (!deferUnavailable || availabilityChanged) _lastValue = value;
+            _lastName = name;
         }
         finally { _updating = false; }
+    }
+
+    private void QueuePendingNotification()
+    {
+        if (_pendingNotificationPosted) return;
+        _pendingNotificationPosted = true;
+        // A chart closed before the dispatcher turn must not be kept alive by
+        // this notification alone.
+        var weak = new WeakReference<ChartAutomationPeer>(this);
+        Avalonia.Threading.Dispatcher.UIThread.Post(() =>
+        {
+            if (!weak.TryGetTarget(out var peer)) return;
+            peer._pendingNotificationPosted = false;
+            if (peer._pendingNotificationWanted)
+            {
+                // Keep the owner's reentrant notification loop: a native event
+                // handler may synchronously request and publish a fresh scene.
+                peer._flushPendingNotificationRequested = true;
+                peer._chart.NotifyAutomationStateChanged();
+            }
+        }, Avalonia.Threading.DispatcherPriority.Background);
     }
 }
 
@@ -210,12 +263,13 @@ internal sealed class ChartSeriesAutomationPeer : UnrealizedElementAutomationPee
         if ((long)PageStart + PageSize < _root.Chart.AccessibilityPointCount(Series)) result.Add(_nextPage ??= new ChartPointPageAutomationPeer(_root, this, true));
         return result;
     }
-    internal void ChartChanged()
+    internal void ChartChanged(bool deferUnavailable = false)
     {
         var state = ToggleState; var name = GetName();
         if (_lastState != state) RaisePropertyChangedEvent(TogglePatternIdentifiers.ToggleStateProperty, _lastState, state);
         if (_lastName != name) RaisePropertyChangedEvent(AutomationElementIdentifiers.NameProperty, _lastName, name);
         _lastState = state; _lastName = name;
+        if (deferUnavailable && Exists && Series.EffectiveVisibility) return;
         var count = _root.Chart.AccessibilityPointCount(Series);
         var previousStart = PageStart;
         // A scene invalidation precedes publication and temporarily has no rows.

@@ -5,7 +5,7 @@ namespace NT.AvaloniaControl.Charts;
 
 public sealed record ScheduleDependencyPath(object PredecessorId, object TaskId, ScheduleDependencyType Type, IReadOnlyList<Point> Points);
 /// <summary>UTC task bars, progress, milestones and nonselectable dependency connectors.</summary>
-public sealed class GanttChart : ScheduleChartBase
+public sealed partial class GanttChart : ScheduleChartBase
 {
     public static readonly StyledProperty<double> BarHeightProperty = AvaloniaProperty.Register<GanttChart, double>(nameof(BarHeight), .6, validate: v => double.IsFinite(v) && v > 0 && v <= 1);
     public static readonly StyledProperty<double> RowHeightProperty = AvaloniaProperty.Register<GanttChart, double>(nameof(RowHeight), 40, validate: v => double.IsFinite(v) && v >= 4 && v <= 4096);
@@ -68,6 +68,6 @@ public sealed class GanttChart : ScheduleChartBase
         foreach (var mark in marks) if (mark.Key is { } id && _byId.TryGetValue(id, out var entry) && !entry.IsMilestone && entry.Task.Progress > 0 && _bars.TryGetValue(id, out var bar)) context.DrawRectangle(ProgressBrush, null, new(bar.X, bar.Y, bar.Width * entry.Task.Progress / 100, bar.Height));
     }
     protected override void RenderAnnotations(DrawingContext context, Rect plot)
-    { if (!ShowLabels) return; using var clip = context.PushClip(plot); foreach (var pair in _bars) if (_byId.TryGetValue(pair.Key, out var entry)) DrawLabel(context, entry.Task.Label ?? entry.Id.ToString() ?? "", pair.Value.Center, Math.Max(0, pair.Value.Width - 4)); }
+    { if (!ShowLabels || UsesDataLabelTemplate) return; using var clip = context.PushClip(plot); foreach (var pair in _bars) if (_byId.TryGetValue(pair.Key, out var entry)) DrawLabel(context, entry.Task.Label ?? entry.Id.ToString() ?? "", pair.Value.Center, Math.Max(0, pair.Value.Width - 4)); }
     protected override void ClearScheduleGeometry() { _bars.Clear(); _dependencies = []; _byId.Clear(); _indexedSnapshot = null; }
 }

@@ -13,6 +13,11 @@
     <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="14">
       <CheckBox Content="允许复制" IsChecked="{Binding #Reader.AllowCopy, Mode=TwoWay}" />
       <CheckBox Content="允许搜索" IsChecked="{Binding #Reader.AllowSearch, Mode=TwoWay}" />
+      <CheckBox Content="自动保存" IsChecked="{Binding #Reader.AutoSave, Mode=TwoWay}" />
+      <Button Content="保存" Command="{Binding #Reader.SaveCommand}" />
+      <Button Content="另存为" Command="{Binding #Reader.SaveAsCommand}" />
+      <Button Content="撤销" Command="{Binding #Reader.UndoCommand}" />
+      <Button Content="重做" Command="{Binding #Reader.RedoCommand}" />
       <Button Content="关闭文档" Command="{Binding #Reader.CloseCommand}" />
       <TextBlock Text="{Binding #Reader.DocumentState}" VerticalAlignment="Center" />
     </StackPanel>
@@ -75,6 +80,7 @@
                      Value="{Binding #Reader.SearchProgress}" />
       </Grid>
       <pdf:PdfViewer Name="Reader" Grid.Column="1"
+                     IsReadOnly="False"
                      Source="{Binding DocumentPath}"
                      Password="{Binding Password}"
                      CurrentPage="{Binding Page, Mode=TwoWay}"

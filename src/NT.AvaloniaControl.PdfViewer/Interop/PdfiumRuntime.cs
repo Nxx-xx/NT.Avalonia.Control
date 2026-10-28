@@ -7,12 +7,13 @@ internal static class PdfiumRuntime
     private static bool _initialized;
 
     internal static Task<T> RunAsync<T>(Func<T> operation, CancellationToken cancellationToken,
-        PdfiumWorkPriority priority = PdfiumWorkPriority.Foreground) =>
+        PdfiumWorkPriority priority = PdfiumWorkPriority.Foreground,
+        PdfPerformanceStage stage = PdfPerformanceStage.NativeExec, string correlationId = "") =>
         Scheduler.Enqueue(() =>
         {
             EnsureInitialized();
             return operation();
-        }, cancellationToken, priority);
+        }, cancellationToken, priority, stage, correlationId);
 
     private static void EnsureInitialized()
     {

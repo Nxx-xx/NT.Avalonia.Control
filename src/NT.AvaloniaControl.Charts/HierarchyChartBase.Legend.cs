@@ -102,7 +102,7 @@ public abstract partial class HierarchyChartBase
 
     private void RenderLegend(DrawingContext context)
     {
-        if (!ShowLegend || _legendBounds.Width <= 0 || _legendBounds.Height <= 0) return;
+        if (UsesLegendItemTemplate || !ShowLegend || _legendBounds.Width <= 0 || _legendBounds.Height <= 0) return;
         using var clip = context.PushClip(_legendBounds);
         var line = Math.Max(16, FontSize + 5); var sizeHeight = HasSizeKey ? Math.Min(28, _legendBounds.Height) : 0;
         var available = Math.Max(0, _legendBounds.Height - sizeHeight); var columns = Math.Max(1, (int)(_legendBounds.Width / 120));

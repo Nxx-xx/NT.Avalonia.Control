@@ -90,8 +90,9 @@ public sealed class IncrementalDataBufferTests
         for (var i = 0; i < 32; i++) _ = data.GetValue(i);
         var before = GC.GetAllocatedBytesForCurrentThread(); var total = 0d;
         for (var i = 0; i < data.Count; i++) total += data.GetValue(i).Point.Y;
+        var allocated = GC.GetAllocatedBytesForCurrentThread() - before;
         Assert.Equal(49_995_000, total);
-        Assert.True(GC.GetAllocatedBytesForCurrentThread() - before < 1_024);
+        Assert.True(allocated < 1_024, $"Compact numeric traversal allocated {allocated} bytes; expected fewer than 1,024 bytes.");
         var points = new ChartDataBuffer<Point>(); points.AppendRange([new(1, 2), new(3, 4)]);
         series.ItemsSource = points; var point = series.CreateSnapshot().Points[1];
         Assert.IsType<Point>(point.Item); Assert.Equal(new ChartPoint(3, 4), point.Point);

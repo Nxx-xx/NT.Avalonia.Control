@@ -129,6 +129,8 @@ internal static class Program
         finally { File.Delete(truncPath); }
 
         await VerifyProductionWriterAsync(sample, cancellation);
+        await VerifyP4HistoryAndBookmarksAsync(sample, cancellation);
+        await VerifyP402ControlSavingAsync(sample, cancellation);
 
         var model = new ConsumerViewModel { DocumentPath = firstPath };
         var window = new ConsumerWindow { DataContext = model };
@@ -203,6 +205,50 @@ internal static class Program
             }
             Check(reader.PreviewPageCount >= 0 && reader.DegradedPageCount == 0
                 && reader.PreviewPageCount + reader.DegradedPageCount <= reader.CachedPageCount, "p3QualityStateCounters");
+            // P3-04 long-document contracts: published results stay page-ordered for the
+            // per-page highlight buckets, and a width-only viewport resize keeps the active
+            // selection and its coalesced text.
+            var orderedResults = await reader.SearchAsync("Avalonia", cancellation);
+            Check(orderedResults.Count >= 5
+                && orderedResults.Zip(orderedResults.Skip(1), (a, b) => a.PageIndex <= b.PageIndex).All(ordered => ordered),
+                "p3SearchResultsPageOrdered");
+            await reader.SearchAsync(null, cancellation);
+            await reader.SelectAllAsync().WaitAsync(cancellation);
+            var selectedBeforeResize = reader.SelectedText;
+            reader.SidebarWidth = 320;
+            await IdleAsync(reader, window, cancellation);
+            Check(reader.IsTextSelected && reader.SelectedText == selectedBeforeResize && selectedBeforeResize.Length > 0,
+                "p3SelectionSurvivesViewportResize");
+            reader.SidebarWidth = 208;
+            await IdleAsync(reader, window, cancellation);
+            // P3-05 performance contract (PERF01/PERF16) through the package surface: a session
+            // records the open stage chain on the monotonic clock, marks are unique per name,
+            // resource samples join the cache accounting, and the product never records a
+            // compositor present (PERF17 is harness territory).
+            using (var perf = PdfPerformanceSession.Begin("consumer-p3-performance"))
+            {
+                await using (var perfDoc = await PdfDocument.LoadAsync(SamplePdf.Create(), cancellationToken: cancellation))
+                {
+                    await perfDoc.RenderAsync(0, 240, 320, cancellationToken: cancellation);
+                    var perfMarks = perf.Marks;
+                    var perfLoadStart = perfMarks.Single(mark => mark.Name == PdfPerformanceSession.LoadStartMark);
+                    var perfLoadReturn = perfMarks.Single(mark => mark.Name == PdfPerformanceSession.LoadReturnMark);
+                    Check(perfLoadStart.Timestamp <= perfLoadReturn.Timestamp, "p3PerformanceLoadChainMarks");
+                    var perfSpans = perf.Spans;
+                    Check(perfSpans.Any(span => span.Stage == PdfPerformanceStage.OpenParse)
+                        && perfSpans.Any(span => span.Stage == PdfPerformanceStage.NativeExec)
+                        && perfSpans.Any(span => span.Stage == PdfPerformanceStage.QueueWait)
+                        && perfSpans.Any(span => span.Stage == PdfPerformanceStage.DecodeComplete)
+                        && perfSpans.All(span => span.EndTimestamp >= span.StartTimestamp), "p3PerformanceStageSpans");
+                    Check(!perfMarks.Any(mark => mark.Name == PdfPerformanceSession.FirstPagePresentedMark)
+                        && !perfSpans.Any(span => span.Stage == PdfPerformanceStage.CompositorRendered),
+                        "p3PerformanceProductNeverClaimsPresent");
+                    Check(perf.SampleResources(reader.CacheStatistics).Cache is { BudgetedBytes: > 0 },
+                        "p3PerformanceResourceSampleJoinsCache");
+                    Check(perf.Mark("consumer-unique-mark") && !perf.Mark("consumer-unique-mark"),
+                        "p3PerformanceMarkNamesUnique");
+                }
+            }
             Check(reader.GetVisualDescendants().OfType<ScrollViewer>().Any(scroll => scroll.Name == "PART_ScrollViewer" && scroll.Viewport.Height > 0 && scroll.Extent.Height > scroll.Viewport.Height), "continuousScrollLayout");
             Check(!typeof(ReaderControl).Assembly.GetReferencedAssemblies().Any(assembly => assembly.Name == "NT.AvaloniaControl.PdfViewer.Themes"), "functionalAssemblyIndependentOfThemes");
             if (mode == "FunctionOnly")
@@ -544,6 +590,144 @@ internal static class Program
         Check(!cleaned.IsDirty && redactedSave.ToArray().SequenceEqual(redactedBytes), "redactionSavePersistsCommittedSnapshot");
         await File.WriteAllBytesAsync(Path.Combine(AppContext.BaseDirectory, "writer-redacted.pdf"), redactedBytes, cancellation);
         Observations["redactionOutputSHA256"] = deletion.OutputSha256;
+    }
+
+    private static async Task VerifyP4HistoryAndBookmarksAsync(byte[] source, CancellationToken cancellation)
+    {
+        var font = new PdfEmbeddedTrueTypeFont(await File.ReadAllBytesAsync(Path.Combine(AppContext.BaseDirectory, "P0AnnotationCjk.ttf"), cancellation));
+        var bounds = new PdfEditRectangle(48, 180, 400, 60);
+        var secondBounds = new PdfEditRectangle(48, 300, 400, 60);
+
+        await using var edit = await PdfEditSession.OpenAsync(source, cancellation);
+        var original = await edit.ExportAsync(cancellation);
+        Check(edit.UndoLimit == PdfEditSession.DefaultUndoLimit && edit.HistoryByteLimit == PdfEditSession.DefaultHistoryByteLimit
+            && !edit.CanUndo && !edit.CanRedo && edit.HistoryBytes == 0 && !edit.IsDirty, "p4HistoryDefaults");
+        var created = await edit.AddFreeTextAsync(0, bounds, "中文批注 A 123", font, 18, cancellation);
+        Check(created.Id != Guid.Empty && edit.CanUndo && !edit.CanRedo && edit.UndoCount == 1 && edit.HistoryBytes == original.Length,
+            "p4HistoryBytesAccounted");
+        await edit.UndoAsync(cancellation);
+        Check((await edit.ExportAsync(cancellation)).SequenceEqual(original) && !edit.IsDirty && edit.CanRedo && !edit.CanUndo,
+            "p4UndoRestoresExactBytes");
+        await edit.RedoAsync(cancellation);
+        Check((await edit.GetFreeTextAnnotationsAsync(0, cancellation)).Count == 1 && edit.IsDirty && edit.CanUndo && !edit.CanRedo,
+            "p4RedoRestoresEdit");
+
+        // Bookmarks follow separate rules: they persist into the PDF, read back on open,
+        // never enter the undo history and never roll back with it.
+        var bookmarks = new[]
+        {
+            new PdfEditUserBookmark(Guid.NewGuid(), "中文批注", 0, PdfUserBookmarkFlags.Bold | PdfUserBookmarkFlags.Italic),
+            new PdfEditUserBookmark(Guid.NewGuid(), "编辑后", 1, PdfUserBookmarkFlags.Bold),
+        };
+        await edit.SetUserBookmarksAsync(bookmarks, cancellation);
+        Check(edit.UndoCount == 1 && edit.IsDirty && edit.Revision == 4, "p4BookmarksOutsideUndoHistory");
+        await edit.UndoAsync(cancellation);
+        Check((await edit.GetUserBookmarksAsync(cancellation)).SequenceEqual(bookmarks)
+            && (await edit.GetFreeTextAnnotationsAsync(0, cancellation)).Count == 0, "p4BookmarksSurviveUndo");
+        await edit.RedoAsync(cancellation);
+        var persisted = await edit.ExportAsync(cancellation);
+        Check(persisted.AsSpan().IndexOf("NTUserBookmarks"u8) >= 0, "p4BookmarkBlockWritten");
+        await using var reopened = await PdfEditSession.OpenAsync(persisted, cancellation);
+        Check(!reopened.IsDirty && (await reopened.GetUserBookmarksAsync(cancellation)).SequenceEqual(bookmarks)
+            && (await reopened.GetFreeTextAnnotationsAsync(0, cancellation)).Count == 1, "p4BookmarkPersistReadback");
+
+        // Dirty stays correct across save points, and transactions group / roll back atomically.
+        // Same-state outputs are byte-identical through the session's injected-output cache
+        // (PDFsharp regenerates XMP document IDs on every structural save).
+        using var saved = new MemoryStream();
+        await edit.SaveAsync(saved, cancellation);
+        Check(!edit.IsDirty, "p4SaveClearsDirty");
+        Check((await edit.ExportAsync(cancellation)).SequenceEqual(saved.ToArray()), "p4SameStateOutputsAreByteIdentical");
+        await edit.AddFreeTextAsync(0, secondBounds, "中文批注 B 123", font, 18, cancellation);
+        await edit.UndoAsync(cancellation);
+        Check(!edit.IsDirty
+            && (await edit.GetFreeTextAnnotationsAsync(0, cancellation)).Count == 1
+            && (await edit.GetUserBookmarksAsync(cancellation)).SequenceEqual(bookmarks)
+            && (await edit.ExportAsync(cancellation)).AsSpan().IndexOf("NTUserBookmarks"u8) >= 0,
+            "p4UndoBackToSavedStateIsClean");
+        await edit.RedoAsync(cancellation);
+        var depth = edit.UndoCount;
+        await edit.ExecuteTransactionAsync(async _ =>
+        {
+            await edit.UpdateFreeTextAsync(created.Id, 0, bounds, "中文批注 编辑后 ABC", font, 18, cancellation);
+            await edit.AddFreeTextAsync(0, new PdfEditRectangle(48, 420, 400, 60), "中文批注 C 12", font, 18, cancellation);
+        }, cancellation);
+        Check(edit.UndoCount == depth + 1 && (await edit.GetFreeTextAnnotationsAsync(0, cancellation)).Count == 3,
+            "p4TransactionGroupsOperations");
+        try
+        {
+            await edit.ExecuteTransactionAsync(async _ =>
+            {
+                await edit.AddFreeTextAsync(0, new PdfEditRectangle(48, 540, 400, 60), "中文批注 3", font, 18, cancellation);
+                throw new InvalidOperationException("Injected failure.");
+            }, cancellation);
+        }
+        catch (InvalidOperationException) { }
+        Check(edit.UndoCount == depth + 1 && (await edit.GetFreeTextAnnotationsAsync(0, cancellation)).Count == 3,
+            "p4TransactionRollbackRestoresSession");
+        edit.UndoLimit = 2;
+        Check(edit.UndoCount == 2, "p4UndoLimitTrimsImmediately");
+        edit.UndoLimit = 0;
+        edit.HistoryByteLimit = 1;
+        Check(edit.UndoLimit == 1 && edit.HistoryByteLimit == PdfEditSession.MinimumHistoryByteLimit && edit.UndoCount == 1,
+            "p4HistoryLimitsClamp");
+        Observations["p4HistoryBytes"] = edit.HistoryBytes;
+        Observations["p4FinalUndoCount"] = edit.UndoCount;
+    }
+
+    private static async Task VerifyP402ControlSavingAsync(byte[] source, CancellationToken token)
+    {
+        await using var reader = new ReaderControl { IsReadOnly = false };
+        await reader.LoadDocumentAsync(source, cancellationToken: token);
+        Check(reader.Capabilities.CanSave && reader.SaveCommand.CanExecute(null), "p402SaveCapability");
+        var font = new PdfEmbeddedTrueTypeFont(await File.ReadAllBytesAsync(Path.Combine(AppContext.BaseDirectory, "P0AnnotationCjk.ttf"), token));
+        await reader.ExecuteEditAsync(async (session, ct) => await session.AddFreeTextAsync(0, new(48, 180, 400, 60), "A", font, 18, ct), token);
+        var bookmark = reader.AddUserBookmark("Package bookmark");
+        Check(reader.IsDirty && reader.CanUndo && reader.UndoCommand.CanExecute(null), "p402ControlDirtyHistory");
+        var path = Path.Combine(AppContext.BaseDirectory, "p402-control-save.pdf");
+        Check(await reader.SaveAsAsync(path, token) && !reader.IsDirty && reader.SavePath == path, "p402ControlSaveAs");
+        await reader.UndoAsync(token);
+        Check(reader.IsDirty && reader.CanRedo && reader.UserBookmarks.Single().Id == bookmark.Id, "p402ControlUndoKeepsBookmark");
+        await reader.RedoAsync(token);
+        Check(!reader.IsDirty, "p402ControlRedoSavepoint");
+        var exported = await reader.ExportDocumentAsync(token);
+        using var output = new MemoryStream(); await reader.SaveAsync(output, token);
+        Check(output.CanWrite && output.ToArray().SequenceEqual(exported) && !reader.IsDirty, "p402ControlStreamAndExport");
+        var saves = 0;
+        reader.DocumentSaved += (_, args) => { if (args.IsAutoSave) saves++; };
+        reader.AutoSaveInterval = TimeSpan.FromMilliseconds(100); reader.AutoSave = true;
+        reader.RenameUserBookmark(bookmark.Id, "Autosaved package bookmark");
+        while (saves == 0 || reader.IsEditing) await Task.Delay(10, token);
+        reader.AutoSave = false;
+        Check(saves == 1 && !reader.IsDirty, "p402ControlAutoSave");
+        reader.RenameUserBookmark(bookmark.Id, "Unsaved package bookmark");
+        var close = reader.RequestCloseDocumentAsync(token);
+        Check(reader.IsUnsavedChangesPromptVisible && !close.IsCompleted, "p402ControlUnsavedPrompt");
+        reader.RespondToUnsavedChanges(PdfUnsavedChangesDecision.Cancel);
+        Check(!await close && reader.HasDocument && reader.IsDirty, "p402ControlCancelClose");
+        Check(await reader.SaveAsync(token) && !reader.IsDirty, "p402ControlOriginalSave");
+        await reader.LoadDocumentAsync(path, cancellationToken: token);
+        Check(reader.UserBookmarks.Single().Title == "Unsaved package bookmark" && !reader.CanUndo, "p402ControlReopen");
+        var baseline = await PdfFileSnapshot.CaptureAsync(path, token);
+        Check(baseline.Exists && baseline.Length > 0 && baseline.Sha256.Length == 64, "p403PublicFileFingerprint");
+        reader.AddUserBookmark("Conflict bookmark");
+        await File.WriteAllBytesAsync(path, source, token);
+        var conflict = false;
+        try { await reader.SaveAsync(token); } catch (PdfSaveConflictException) { conflict = true; }
+        Check(conflict && reader.LastError?.Kind == PdfErrorKind.SaveConflict && reader.IsDirty, "p403ControlRejectsExternalContent");
+        var retained = await File.ReadAllBytesAsync(path, token);
+        Check(source.SequenceEqual(retained), "p403ExternalFilePreserved");
+        Check(await reader.SaveAsAsync(Path.Combine(AppContext.BaseDirectory, "p403-copy.pdf"), token) && reader.LastSaveConflict is null && !reader.IsDirty, "p403SaveCopyResolvesConflict");
+        Check((await PdfSaveRecovery.ScanAsync(AppContext.BaseDirectory, token)).Count == 0, "p403RecoveryScanFromPackage");
+        Check(reader.LastSaveDurabilityFailure is null, "p403PublicDurabilityState");
+        Check((int)PdfSaveRecoveryStatus.PublishedConflict == 6 && (int)PdfSaveRecoveryStatus.DurabilityPending == 7, "p403RecoveryEnumCompatibility");
+        await using (var durable = await PdfEditSession.OpenAsync(source, token))
+        {
+            var written = await durable.SaveAsync(Path.Combine(AppContext.BaseDirectory, "p403-durable.pdf"), new(), token);
+            Check(written.Durability != PdfSaveDurability.Unknown, "p403DurabilityFromPackage");
+        }
+        Check(Enum.GetValues<PdfSaveRecoveryVersion>().Length == 2, "p403RetainedVersionContract");
+        Check(await reader.RequestCloseDocumentAsync(token) && !reader.HasDocument, "p402ControlCleanClose");
     }
 
     private static byte[] ReadAppearanceFont(byte[] pdf)

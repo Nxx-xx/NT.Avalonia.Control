@@ -9,6 +9,11 @@ namespace NT.AvaloniaControl.TreeDataGrid;
 /// <summary>Selection semantics and identity-based access for TreeDataGrid. Avalonia 12 does not expose grid/table provider interfaces.</summary>
 public sealed class TreeDataGridAutomationPeer(TreeDataGrid owner) : ControlAutomationPeer(owner), ISelectionProvider, IScrollProvider
 {
+    private readonly TreeDataGridAutomationPropertyCache _notifications = new();
+    private readonly List<(WeakReference<Control> Control, NodeId? Node, ColumnId? Column)> _children = [];
+    private TreeDataGridSelectionSnapshot? _selection;
+    private TreeDataGridSelectionUnit? _selectionUnit;
+    private bool _childrenKnown;
     public int RowCount => owner.Source?.Rows.Count ?? 0;
     public int ColumnCount => owner.VisibleColumns.Count;
     public bool CanSelectMultiple => owner.SelectionMode == TreeDataGridSelectionMode.Multiple;
@@ -61,7 +66,7 @@ public sealed class TreeDataGridAutomationPeer(TreeDataGrid owner) : ControlAuto
     public AutomationPeer? GetColumnHeaderPeer(ColumnId column)
     {
         owner.VerifyAccess();
-        if (owner.Columns.All(item => item.Id != column)) return null;
+        if (!owner.ShowColumnHeaders || owner.Columns.All(item => item.Id != column)) return null;
         return new TreeDataGridLogicalHeaderPeer(owner, column, this);
     }
 
@@ -77,9 +82,39 @@ public sealed class TreeDataGridAutomationPeer(TreeDataGrid owner) : ControlAuto
 
     internal void NotifyStateChanged()
     {
-        RaiseChildrenChangedEvent();
-        RaisePropertyChangedEvent(SelectionPatternIdentifiers.SelectionProperty, null, null);
-        RaisePropertyChangedEvent(AutomationElementIdentifiers.ItemStatusProperty, null, GetItemStatus());
+        var children = CurrentChildren();
+        var changed = !_childrenKnown || children.Count != _children.Count;
+        for (var i = 0; !changed && i < children.Count; i++)
+            changed = !_children[i].Control.TryGetTarget(out var control) || !ReferenceEquals(control, children[i].Control)
+                || _children[i].Node != children[i].Node || _children[i].Column != children[i].Column;
+        if (changed)
+        {
+            _childrenKnown = true; _children.Clear();
+            foreach (var child in children) _children.Add((new(child.Control), child.Node, child.Column));
+            RaiseChildrenChangedEvent();
+        }
+        var selection = owner.State?.CaptureSelection();
+        var selectionChanged = _selectionUnit != owner.SelectionUnit || !SameSelection(_selection, selection);
+        _selection = selection; _selectionUnit = owner.SelectionUnit;
+        if (selectionChanged) RaisePropertyChangedEvent(SelectionPatternIdentifiers.SelectionProperty, null, null);
+        _notifications.Notify(this, SelectionPatternIdentifiers.CanSelectMultipleProperty, CanSelectMultiple);
+        _notifications.Notify(this, AutomationElementIdentifiers.ItemStatusProperty, GetItemStatus());
+    }
+
+    private static bool SameSelection(TreeDataGridSelectionSnapshot? a, TreeDataGridSelectionSnapshot? b) =>
+        a is null || b is null ? a is null && b is null : a.SelectedNodes.ToHashSet().SetEquals(b.SelectedNodes)
+            && a.CellRows.ToHashSet().SetEquals(b.CellRows) && a.CellColumns.ToHashSet().SetEquals(b.CellColumns);
+
+    private List<(Control Control, NodeId? Node, ColumnId? Column)> CurrentChildren()
+    {
+        var result = new List<(Control, NodeId?, ColumnId?)>();
+        var headers = owner.GetVisualDescendants().OfType<TreeDataGridColumnHeadersPresenter>().FirstOrDefault();
+        if (owner.ShowColumnHeaders && headers is { IsEffectivelyVisible: true })
+            foreach (var header in headers.Children.OfType<TreeDataGridColumnHeader>().OrderBy(h => h.Column is { } c ? owner.GetColumnIndex(c.Id) : -1))
+                result.Add((header, null, header.Column?.Id));
+        if (owner.RowsPresenter is { } rows)
+            foreach (var row in rows.RealizedRows) result.Add((row, row.Row?.Id, null));
+        return result;
     }
 
     protected override AutomationControlType GetAutomationControlTypeCore() => AutomationControlType.DataGrid;
@@ -90,7 +125,7 @@ public sealed class TreeDataGridAutomationPeer(TreeDataGrid owner) : ControlAuto
     {
         var result = new List<AutomationPeer>();
         var headers = owner.GetVisualDescendants().OfType<TreeDataGridColumnHeadersPresenter>().FirstOrDefault();
-        if (headers is not null)
+        if (owner.ShowColumnHeaders && headers is { IsEffectivelyVisible: true })
             result.AddRange(headers.Children.OfType<TreeDataGridColumnHeader>()
                 .OrderBy(header => header.Column is { } column ? owner.GetColumnIndex(column.Id) : -1)
                 .Select(CreatePeerForElement).OfType<AutomationPeer>());
@@ -112,20 +147,9 @@ public partial class TreeDataGrid
         if (RowsPresenter is not { } rows) return;
         foreach (var row in rows.RealizedRows)
         {
-            if (ControlAutomationPeer.FromElement(row) is { } rowPeer)
-            {
-                rowPeer.RaisePropertyChangedEvent(AutomationElementIdentifiers.ItemStatusProperty, null, rowPeer.GetItemStatus());
-                rowPeer.RaisePropertyChangedEvent(ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty, null,
-                    rowPeer.GetProvider<IExpandCollapseProvider>()?.ExpandCollapseState);
-            }
+            if (ControlAutomationPeer.FromElement(row) is TreeDataGridRowPresenterAutomationPeer rowPeer) rowPeer.NotifyStateChanged();
             foreach (var cell in row.RealizedCells)
-                if (ControlAutomationPeer.FromElement(cell) is { } cellPeer)
-                {
-                    cellPeer.RaisePropertyChangedEvent(SelectionItemPatternIdentifiers.IsSelectedProperty, null,
-                        cellPeer.GetProvider<ISelectionItemProvider>()?.IsSelected);
-                    cellPeer.RaisePropertyChangedEvent(AutomationElementIdentifiers.ItemStatusProperty, null, cellPeer.GetItemStatus());
-                    cellPeer.RaisePropertyChangedEvent(AutomationElementIdentifiers.HelpTextProperty, null, cellPeer.GetHelpText());
-                }
+                if (ControlAutomationPeer.FromElement(cell) is TreeDataGridCellPresenterAutomationPeer cellPeer) cellPeer.NotifyStateChanged();
         }
     }
 }

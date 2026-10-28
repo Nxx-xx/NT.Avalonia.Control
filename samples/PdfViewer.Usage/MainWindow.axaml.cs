@@ -9,10 +9,25 @@ namespace PdfViewer.Usage;
 
 public partial class MainWindow : Window
 {
+    private bool _closeAccepted, _closePending;
     public MainWindow()
     {
         InitializeComponent();
         Closed += (_, _) => this.FindControl<PdfControl>("Reader")?.Dispose();
+        Closing += async (_, args) =>
+        {
+            if (_closeAccepted) return;
+            args.Cancel = true;
+            if (_closePending) return;
+            _closePending = true;
+            try
+            {
+                if (this.FindControl<PdfControl>("Reader") is not { } reader || await reader.RequestCloseDocumentAsync())
+                { _closeAccepted = true; Avalonia.Threading.Dispatcher.UIThread.Post(Close); }
+            }
+            catch (OperationCanceledException) { }
+            finally { _closePending = false; }
+        };
     }
 
     private async void OpenPdf(object? sender, RoutedEventArgs args)

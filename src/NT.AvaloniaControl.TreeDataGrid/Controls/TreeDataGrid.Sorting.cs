@@ -30,12 +30,15 @@ public partial class TreeDataGrid
         else
         {
             var inner = column is TreeDataGridHierarchicalExpanderColumn tree ? tree.InnerColumn : column;
-            var custom = column.Comparison ?? inner.Comparison;
+            var custom = direction == TreeDataGridSortDirection.Descending ? column.CompareDescending ?? inner.CompareDescending : null;
+            var descendingComparison = custom is not null;
+            custom ??= column.CompareAscending ?? inner.CompareAscending ?? column.Comparison ?? inner.Comparison;
+            var columnVersion = ColumnOperationVersion;
             TreeDataGrid? activeGrid = this;
             void VerifyOwner()
             {
                 if (activeGrid is null) return;
-                if (!ReferenceEquals(source, activeGrid.Source) || !activeGrid.Columns.Contains(column)
+                if (!ReferenceEquals(source, activeGrid.Source) || activeGrid.ColumnOperationVersion != columnVersion || !activeGrid.Columns.Contains(column)
                     || column is TreeDataGridHierarchicalExpanderColumn wrapper && !ReferenceEquals(wrapper.InnerColumn, inner))
                     throw new InvalidOperationException("The grid source or sorted column changed during comparison.");
             }
@@ -44,7 +47,8 @@ public partial class TreeDataGrid
                 VerifyOwner();
                 if (custom is not null)
                 {
-                    var result = custom(left, right);
+                    // Source.Sort reverses arguments for descending. Cancel that reversal for a final-order comparer.
+                    var result = descendingComparison ? custom(right, left) : custom(left, right);
                     VerifyOwner();
                     return result;
                 }
@@ -67,10 +71,11 @@ public partial class TreeDataGrid
     internal void ToggleColumnSort(TreeDataGridColumn column)
     {
         if (!CanUserSortColumns || !column.CanUserSort || Source is not { } source || !Columns.Contains(column)) return;
+        var triState = column.AllowTriStateSorting ?? column.EffectiveColumn.AllowTriStateSorting ?? IsThreeStateSort;
         var direction = source.SortColumn != column.Id ? TreeDataGridSortDirection.Ascending : source.SortDirection switch
         {
             TreeDataGridSortDirection.Ascending => TreeDataGridSortDirection.Descending,
-            TreeDataGridSortDirection.Descending when IsThreeStateSort => TreeDataGridSortDirection.None,
+            TreeDataGridSortDirection.Descending when triState => TreeDataGridSortDirection.None,
             _ => TreeDataGridSortDirection.Ascending,
         };
         SortByColumn(column.Id, direction);

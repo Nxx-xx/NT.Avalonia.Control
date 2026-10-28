@@ -22,18 +22,26 @@ public sealed partial class MainWindow : Window
     private readonly ChartSynchronizationGroup _rangeSynchronization = new();
     public MainWindow()
     {
+        ProfessionalUsageTrace("constructor-start");
         AvaloniaXamlLoader.Load(this);
+        ProfessionalUsageTrace("axaml-loaded");
         Model.ConfigureReadingTemplate((IDataTemplate)Resources["ReadingTooltipTemplate"]!);
         Model.ConfigureControlTemplates((IDataTemplate)Resources["ControlLegendTemplate"]!, (IDataTemplate)Resources["ControlDataLabelTemplate"]!);
         Model.ConfigureTrackballTemplate((IDataTemplate)Resources["TrackballBusinessTemplate"]!);
+        Model.ConfigureProfessionalTooltipTemplate((IDataTemplate)Resources["ProfessionalTooltipTemplate"]!);
+        Model.ConfigureProfessionalPresentations((IDataTemplate)Resources["ProfessionalLegendTemplate"]!, (IDataTemplate)Resources["ProfessionalDataLabelTemplate"]!);
+        Model.ConfigureProfessionalPlotTrackball((IDataTemplate)Resources["ProfessionalPlotTemplate"]!, (IDataTemplate)Resources["ProfessionalTrackTemplate"]!);
         ActualThemeVariantChanged += (_, _) => UpdateReadingTooltipResources();
         UpdateReadingTooltipResources();
         DataContext = Model;
+        ConfigureFontStartupScene();
+        ProfessionalUsageTrace("data-context-set");
         ConfigureBarComparisonLabels();
         ConfigureScatterBubbleLabels();
         ConfigureRenderResourceBindings();
         ConfigureFinancialBindings();
         ConfigureTechnicalTrendsBindings();
+        ConfigureProfessionalLinking();
         _rangeSynchronization.Add(SelectionPrimaryChart); _rangeSynchronization.Add(SelectionSecondaryChart);
         Closed += (_, _) => _rangeSynchronization.Dispose();
         Closed += (_, _) => Model.DisposeStreaming();
@@ -261,37 +269,79 @@ public sealed partial class MainWindow : Window
         Content = content;
         FlushBindings();
         checks["reattach-restores-bindings"] = Model.Records.All(record => record.SubscriberCount > 0) && ReferenceEquals(InheritedChart.Series.Single().ItemsSource, Model.Records);
+        ProfessionalUsageTrace("VerifyAxisBindings");
         VerifyAxisBindings(checks);
+        ProfessionalUsageTrace("VerifyCommonBindings");
         VerifyCommonBindings(checks);
+        ProfessionalUsageTrace("VerifyCommonFollowupBindings");
         VerifyCommonFollowupBindings(checks);
+        ProfessionalUsageTrace("VerifyReadingBindings");
         VerifyReadingBindings(checks);
+        ProfessionalUsageTrace("VerifyControlTemplateBindings");
         VerifyControlTemplateBindings(checks);
+        ProfessionalUsageTrace("VerifyTrackballBindings");
         VerifyTrackballBindings(checks);
+        ProfessionalUsageTrace("VerifySelectionRangeBindings");
         VerifySelectionRangeBindings(checks);
+        ProfessionalUsageTrace("VerifyInputBindings");
         VerifyInputBindings(checks);
+        ProfessionalUsageTrace("VerifyAnnotationCompletionBindings");
         VerifyAnnotationCompletionBindings(checks);
+        ProfessionalUsageTrace("VerifyAnimationBindings");
         VerifyAnimationBindings(checks);
+        ProfessionalUsageTrace("VerifyAccessibilityBindings");
         VerifyAccessibilityBindings(checks);
+        ProfessionalUsageTrace("VerifyLineAreaBindings");
         VerifyLineAreaBindings(checks);
+        ProfessionalUsageTrace("VerifyBarComparisonBindings");
         VerifyBarComparisonBindings(checks);
+        ProfessionalUsageTrace("VerifyScatterBubbleBindings");
         VerifyScatterBubbleBindings(checks);
+        ProfessionalUsageTrace("VerifyCircularBindings");
         VerifyCircularBindings(checks);
+        ProfessionalUsageTrace("VerifyPolarBindings");
         VerifyPolarBindings(checks);
+        ProfessionalUsageTrace("VerifyGaugeMicroBindings");
         VerifyGaugeMicroBindings(checks);
+        ProfessionalUsageTrace("VerifyAnalysisBindings");
         VerifyAnalysisBindings(checks);
+        ProfessionalUsageTrace("VerifyStatisticsBindings");
         VerifyStatisticsBindings(checks);
+        ProfessionalUsageTrace("VerifyFinancialBindings");
         VerifyFinancialBindings(checks);
+        ProfessionalUsageTrace("VerifyTechnicalTrendsBindings");
         VerifyTechnicalTrendsBindings(checks);
+        ProfessionalUsageTrace("VerifyEngineeringBindings");
         VerifyEngineeringBindings(checks);
+        ProfessionalUsageTrace("VerifyAdvancedComparisonBindings");
         VerifyAdvancedComparisonBindings(checks);
+        ProfessionalUsageTrace("VerifyHierarchyBindings");
         VerifyHierarchyBindings(checks);
+        ProfessionalUsageTrace("VerifyRelationsBindings");
         VerifyRelationsBindings(checks);
+        ProfessionalUsageTrace("VerifyMapBindings");
         VerifyMapBindings(checks);
+        ProfessionalUsageTrace("VerifyC6CompletionBindings");
         VerifyC6CompletionBindings(checks);
+        ProfessionalUsageTrace("VerifyC5CompletionBindings");
         VerifyC5CompletionBindings(checks);
+        ProfessionalUsageTrace("VerifyC7IntegrationBindings");
+        VerifyC7IntegrationBindings(checks);
+        ProfessionalUsageTrace("VerifyProfessionalTooltipBindings");
+        VerifyProfessionalTooltipBindings(checks);
+        ProfessionalUsageTrace("VerifyProfessionalPresentationBindings");
+        VerifyProfessionalPresentationBindings(checks);
+        ProfessionalUsageTrace("VerifyProfessionalPlotTrackballBindings");
+        VerifyProfessionalPlotTrackballBindings(checks);
+        ProfessionalUsageTrace("VerifyProfessionalLinkingBindings");
+        VerifyProfessionalLinkingBindings(checks);
+        ProfessionalUsageTrace("VerifyLevelOfDetailBindings");
         VerifyLevelOfDetailBindings(checks);
+        ProfessionalUsageTrace("VerifyEfficientHitBindings");
         VerifyEfficientHitBindings(checks);
+        ProfessionalUsageTrace("VerifyIncrementalStreamingBindings");
         VerifyIncrementalStreamingBindings(checks);
+        ProfessionalUsageTrace("VerifyRenderResourceBindings");
         VerifyRenderResourceBindings(checks);
         return checks;
     }
@@ -862,12 +912,25 @@ public sealed partial class MainWindow : Window
         var output = index >= 0 && index + 1 < Program.Arguments.Length ? Program.Arguments[index + 1] : "artifacts/platform/charts-usage.json";
         Dictionary<string, bool> checks = [];
         string? error = null;
-        try { await Task.Delay(80); checks = VerifyBindings(); foreach (var check in await VerifyExportBindingsAsync()) checks[check.Key] = check.Value; foreach (var check in await VerifyIncrementalStreamingSessionAsync()) checks[check.Key] = check.Value; foreach (var check in await VerifyMultiChartBindingsAsync()) checks[check.Key] = check.Value; checks["native-window-created"] = TryGetPlatformHandle() is { Handle: not 0 }; }
+        ProfessionalUsageTrace("native-opened");
+        try
+        {
+            await Task.Delay(80);
+            if (!Program.Arguments.Contains("--charts-font-startup-only", StringComparer.Ordinal))
+            {
+                checks = VerifyBindings();
+                foreach (var check in await VerifyExportBindingsAsync()) checks[check.Key] = check.Value;
+                foreach (var check in await VerifyIncrementalStreamingSessionAsync()) checks[check.Key] = check.Value;
+                foreach (var check in await VerifyMultiChartBindingsAsync()) checks[check.Key] = check.Value;
+            }
+            checks["native-window-created"] = TryGetPlatformHandle() is { Handle: not 0 };
+            await VerifyFontStartupAsync(checks, output);
+        }
         catch (Exception exception) { error = exception.ToString(); }
         var passed = error is null && checks.Count > 0 && checks.Values.All(value => value);
         var path = Path.GetFullPath(output);
         Directory.CreateDirectory(Path.GetDirectoryName(path)!);
-        File.WriteAllText(path, JsonSerializer.Serialize(new { passed, timestampUtc = DateTimeOffset.UtcNow, executionKind = "native-window-programmatic-binding-checks", physicalInputValidated = false, performanceMeasured = false, checks, exportDiagnostics = ExportBindingDiagnostics, trackballDiagnostics = TrackballBindingDiagnostics, accessibilityDiagnostics = AccessibilityBindingDiagnostics, lineAreaDiagnostics = LineAreaBindingDiagnostics, barComparisonDiagnostics = BarComparisonBindingDiagnostics, scatterBubbleDiagnostics = ScatterBubbleBindingDiagnostics, circularDiagnostics = CircularBindingDiagnostics, polarDiagnostics = PolarBindingDiagnostics, gaugeMicroDiagnostics = GaugeMicroBindingDiagnostics, analysisDiagnostics = AnalysisBindingDiagnostics, statisticsDiagnostics = StatisticsBindingDiagnostics, financialDiagnostics = FinancialBindingDiagnostics, technicalTrendsDiagnostics = TechnicalTrendsBindingDiagnostics, engineeringDiagnostics = EngineeringBindingDiagnostics, advancedComparisonDiagnostics = AdvancedComparisonBindingDiagnostics, hierarchyDiagnostics = HierarchyBindingDiagnostics, relationDiagnostics = RelationBindingDiagnostics, mapDiagnostics = MapBindingDiagnostics, c6CompletionDiagnostics = C6CompletionDiagnostics, c5CompletionDiagnostics = C5CompletionDiagnostics, levelOfDetailDiagnostics = LevelOfDetailBindingDiagnostics, efficientHitDiagnostics = EfficientHitBindingDiagnostics, incrementalStreamingDiagnostics = IncrementalStreamingBindingDiagnostics, renderResourceDiagnostics = RenderResourceBindingDiagnostics, multiChartDiagnostics = MultiChartBindingDiagnostics, error }, new JsonSerializerOptions { WriteIndented = true }));
+        File.WriteAllText(path, JsonSerializer.Serialize(new { passed, timestampUtc = DateTimeOffset.UtcNow, executionKind = "native-window-programmatic-binding-checks", physicalInputValidated = false, performanceMeasured = false, checks, c7IntegrationDiagnostics = C7IntegrationDiagnostics, professionalTooltipDiagnostics = ProfessionalTooltipDiagnostics, professionalPresentationDiagnostics = ProfessionalPresentationDiagnostics, professionalPlotTrackballDiagnostics = ProfessionalPlotTrackballDiagnostics, professionalLinkingDiagnostics = ProfessionalLinkingDiagnostics, exportDiagnostics = ExportBindingDiagnostics, trackballDiagnostics = TrackballBindingDiagnostics, accessibilityDiagnostics = AccessibilityBindingDiagnostics, lineAreaDiagnostics = LineAreaBindingDiagnostics, barComparisonDiagnostics = BarComparisonBindingDiagnostics, scatterBubbleDiagnostics = ScatterBubbleBindingDiagnostics, circularDiagnostics = CircularBindingDiagnostics, polarDiagnostics = PolarBindingDiagnostics, gaugeMicroDiagnostics = GaugeMicroBindingDiagnostics, analysisDiagnostics = AnalysisBindingDiagnostics, statisticsDiagnostics = StatisticsBindingDiagnostics, financialDiagnostics = FinancialBindingDiagnostics, technicalTrendsDiagnostics = TechnicalTrendsBindingDiagnostics, engineeringDiagnostics = EngineeringBindingDiagnostics, advancedComparisonDiagnostics = AdvancedComparisonBindingDiagnostics, hierarchyDiagnostics = HierarchyBindingDiagnostics, relationDiagnostics = RelationBindingDiagnostics, mapDiagnostics = MapBindingDiagnostics, c6CompletionDiagnostics = C6CompletionDiagnostics, c5CompletionDiagnostics = C5CompletionDiagnostics, levelOfDetailDiagnostics = LevelOfDetailBindingDiagnostics, efficientHitDiagnostics = EfficientHitBindingDiagnostics, incrementalStreamingDiagnostics = IncrementalStreamingBindingDiagnostics, renderResourceDiagnostics = RenderResourceBindingDiagnostics, multiChartDiagnostics = MultiChartBindingDiagnostics, error }, new JsonSerializerOptions { WriteIndented = true }));
         if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) desktop.Shutdown(passed ? 0 : 1);
         else Close();
     }

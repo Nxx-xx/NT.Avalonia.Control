@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0",
+  "generator": "PdfFixture (tests/PdfViewer.Core.Tests/PdfFixture.cs) — deterministic bytes, no timestamps or randomness; regenerating yields identical files and the run manifest records the real sha256 of what was measured",
+  "corpora": [
+    {
+      "corpusId": "S0-correctness-002",
+      "tier": "S0",
+      "fixture": "ReadingDocument",
+      "pages": 2,
+      "labels": ["text", "rotation", "search:hello"],
+      "searchQuery": "hello"
+    },
+    {
+      "corpusId": "S1-manual-020",
+      "tier": "S1",
+      "fixture": "ManyPages:20",
+      "pages": 20,
+      "labels": ["text", "manual-like", "search:Page"],
+      "searchQuery": "Page 3"
+    },
+    {
+      "corpusId": "S2-large-text-1000",
+      "tier": "S2",
+      "fixture": "ManyPages:1000",
+      "pages": 1000,
+      "labels": ["text", "large", "search:Page"],
+      "searchQuery": "Page"
+    }
+  ]
+}

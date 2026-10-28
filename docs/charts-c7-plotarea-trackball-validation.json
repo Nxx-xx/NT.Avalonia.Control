@@ -1,0 +1,3016 @@
+{
+  "schema": "charts-c7-plotarea-trackball-validation/v1",
+  "createdUtc": "2026-10-23T16:19:04.173121+00:00",
+  "batchPassed": true,
+  "fullNativeRegressionPassed": true,
+  "milestoneComplete": false,
+  "scope": "C7-01 professional PlotAreaContent and native glyph Trackball, Demo/Usage/package integration and permanent/transient software export regression.",
+  "platforms": {
+    "windows": {
+      "status": "complete",
+      "passed": true,
+      "checks": {
+        "six-ordered-software-stages-pass": true,
+        "same-frozen-source-manifest": true,
+        "every-frozen-file-unchanged-before-and-after": true,
+        "all-frozen-platform-files-still-pinned": true,
+        "base-software-contracts-and-input-stability": true,
+        "all-prior-headless-test-cases-retained": true,
+        "full-headless-records-and-summary-agree": true,
+        "new-plot-trackball-and-previous-presentation-tooltip-regressions-executed": true,
+        "full-native-Demo-dictionary-matches-summary": true,
+        "native-Usage-all-recorded-bindings-pass": true,
+        "complete-static-control-catalog-and-self-tests": true,
+        "package-hash-NT.AvaloniaControl.Charts": true,
+        "package-hash-NT.AvaloniaControl.Charts.Themes": true,
+        "isolated-function-all-contracts-and-package-identity": true,
+        "isolated-function-source-free-fresh-cache": true,
+        "isolated-function-actual-SDK-pinned": true,
+        "isolated-function-actual-output-core": true,
+        "isolated-themes-all-contracts-and-package-identity": true,
+        "isolated-themes-source-free-fresh-cache": true,
+        "isolated-themes-actual-SDK-pinned": true,
+        "isolated-themes-actual-output-core": true,
+        "isolated-themes-actual-output-theme": true,
+        "both-isolated-consumer-kinds-pass": true,
+        "focused-native-plot-trackball-contracts-all-pass": true,
+        "focused-theme-export-lifecycle-probe-order": true,
+        "theme-normal-light-shown-native-window-scope": true,
+        "theme-normal-light-four-real-family-probes": true,
+        "image-format-theme/normal-light": true,
+        "image-dimensions-theme/normal-light": true,
+        "theme-normal-dark-shown-native-window-scope": true,
+        "theme-normal-dark-four-real-family-probes": true,
+        "image-format-theme/normal-dark": true,
+        "image-dimensions-theme/normal-dark": true,
+        "theme-hc-light-shown-native-window-scope": true,
+        "theme-hc-light-four-real-family-probes": true,
+        "image-format-theme/hc-light": true,
+        "image-dimensions-theme/hc-light": true,
+        "theme-hc-dark-shown-native-window-scope": true,
+        "theme-hc-dark-four-real-family-probes": true,
+        "image-format-theme/hc-dark": true,
+        "image-dimensions-theme/hc-dark": true,
+        "analysis-three-states-four-codec-paths": true,
+        "image-format-analysis/legacy/sync-png": true,
+        "image-dimensions-analysis/legacy/sync-png": true,
+        "producer-export-contract-analysis/legacy/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/legacy/sync-png": true,
+        "image-format-analysis/legacy/async-png": true,
+        "image-dimensions-analysis/legacy/async-png": true,
+        "producer-export-contract-analysis/legacy/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/legacy/async-png": true,
+        "image-format-analysis/legacy/sync-jpeg": true,
+        "image-dimensions-analysis/legacy/sync-jpeg": true,
+        "producer-export-contract-analysis/legacy/sync-jpeg": true,
+        "image-format-analysis/legacy/async-jpeg": true,
+        "image-dimensions-analysis/legacy/async-jpeg": true,
+        "producer-export-contract-analysis/legacy/async-jpeg": true,
+        "image-format-analysis/plot-active/sync-png": true,
+        "image-dimensions-analysis/plot-active/sync-png": true,
+        "producer-export-contract-analysis/plot-active/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/plot-active/sync-png": true,
+        "image-format-analysis/plot-active/async-png": true,
+        "image-dimensions-analysis/plot-active/async-png": true,
+        "producer-export-contract-analysis/plot-active/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/plot-active/async-png": true,
+        "image-format-analysis/plot-active/sync-jpeg": true,
+        "image-dimensions-analysis/plot-active/sync-jpeg": true,
+        "producer-export-contract-analysis/plot-active/sync-jpeg": true,
+        "image-format-analysis/plot-active/async-jpeg": true,
+        "image-dimensions-analysis/plot-active/async-jpeg": true,
+        "producer-export-contract-analysis/plot-active/async-jpeg": true,
+        "image-format-analysis/plot-cleared/sync-png": true,
+        "image-dimensions-analysis/plot-cleared/sync-png": true,
+        "producer-export-contract-analysis/plot-cleared/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/plot-cleared/sync-png": true,
+        "image-format-analysis/plot-cleared/async-png": true,
+        "image-dimensions-analysis/plot-cleared/async-png": true,
+        "producer-export-contract-analysis/plot-cleared/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/plot-cleared/async-png": true,
+        "image-format-analysis/plot-cleared/sync-jpeg": true,
+        "image-dimensions-analysis/plot-cleared/sync-jpeg": true,
+        "producer-export-contract-analysis/plot-cleared/sync-jpeg": true,
+        "image-format-analysis/plot-cleared/async-jpeg": true,
+        "image-dimensions-analysis/plot-cleared/async-jpeg": true,
+        "producer-export-contract-analysis/plot-cleared/async-jpeg": true,
+        "independent-same-PNG-codec-sync-async-analysis-legacy": true,
+        "producer-JPEG-sync-async-analysis-legacy": true,
+        "independent-same-PNG-codec-sync-async-analysis-plot-active": true,
+        "producer-JPEG-sync-async-analysis-plot-active": true,
+        "independent-permanent-plot-pixels-differ-analysis-plot-active-sync-png": true,
+        "independent-permanent-plot-pixels-differ-analysis-plot-active-async-png": true,
+        "independent-same-PNG-codec-sync-async-analysis-plot-cleared": true,
+        "producer-JPEG-sync-async-analysis-plot-cleared": true,
+        "independent-permanent-plot-pixels-differ-analysis-plot-cleared-sync-png": true,
+        "independent-permanent-plot-pixels-differ-analysis-plot-cleared-async-png": true,
+        "independent-transient-Trackball-excluded-analysis-sync-png": true,
+        "independent-transient-Trackball-excluded-analysis-async-png": true,
+        "producer-transient-Trackball-excluded-analysis-sync-jpeg": true,
+        "producer-transient-Trackball-excluded-analysis-async-jpeg": true,
+        "analysis-one-real-permanent-plot-glyph-probe": true,
+        "image-format-analysis/glyph-plot-hidden": true,
+        "image-dimensions-analysis/glyph-plot-hidden": true,
+        "image-format-analysis/glyph-plot-restored": true,
+        "image-dimensions-analysis/glyph-plot-restored": true,
+        "independent-real-TextBlock-glyph-analysis/glyph-plot": true,
+        "independent-restored-whole-PNG-analysis/glyph-plot": true,
+        "producer-glyph-counter-consistency-analysis/glyph-plot": true,
+        "engineering-three-states-four-codec-paths": true,
+        "image-format-engineering/legacy/sync-png": true,
+        "image-dimensions-engineering/legacy/sync-png": true,
+        "producer-export-contract-engineering/legacy/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/legacy/sync-png": true,
+        "image-format-engineering/legacy/async-png": true,
+        "image-dimensions-engineering/legacy/async-png": true,
+        "producer-export-contract-engineering/legacy/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/legacy/async-png": true,
+        "image-format-engineering/legacy/sync-jpeg": true,
+        "image-dimensions-engineering/legacy/sync-jpeg": true,
+        "producer-export-contract-engineering/legacy/sync-jpeg": true,
+        "image-format-engineering/legacy/async-jpeg": true,
+        "image-dimensions-engineering/legacy/async-jpeg": true,
+        "producer-export-contract-engineering/legacy/async-jpeg": true,
+        "image-format-engineering/plot-active/sync-png": true,
+        "image-dimensions-engineering/plot-active/sync-png": true,
+        "producer-export-contract-engineering/plot-active/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/plot-active/sync-png": true,
+        "image-format-engineering/plot-active/async-png": true,
+        "image-dimensions-engineering/plot-active/async-png": true,
+        "producer-export-contract-engineering/plot-active/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/plot-active/async-png": true,
+        "image-format-engineering/plot-active/sync-jpeg": true,
+        "image-dimensions-engineering/plot-active/sync-jpeg": true,
+        "producer-export-contract-engineering/plot-active/sync-jpeg": true,
+        "image-format-engineering/plot-active/async-jpeg": true,
+        "image-dimensions-engineering/plot-active/async-jpeg": true,
+        "producer-export-contract-engineering/plot-active/async-jpeg": true,
+        "image-format-engineering/plot-cleared/sync-png": true,
+        "image-dimensions-engineering/plot-cleared/sync-png": true,
+        "producer-export-contract-engineering/plot-cleared/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/plot-cleared/sync-png": true,
+        "image-format-engineering/plot-cleared/async-png": true,
+        "image-dimensions-engineering/plot-cleared/async-png": true,
+        "producer-export-contract-engineering/plot-cleared/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/plot-cleared/async-png": true,
+        "image-format-engineering/plot-cleared/sync-jpeg": true,
+        "image-dimensions-engineering/plot-cleared/sync-jpeg": true,
+        "producer-export-contract-engineering/plot-cleared/sync-jpeg": true,
+        "image-format-engineering/plot-cleared/async-jpeg": true,
+        "image-dimensions-engineering/plot-cleared/async-jpeg": true,
+        "producer-export-contract-engineering/plot-cleared/async-jpeg": true,
+        "independent-same-PNG-codec-sync-async-engineering-legacy": true,
+        "producer-JPEG-sync-async-engineering-legacy": true,
+        "independent-same-PNG-codec-sync-async-engineering-plot-active": true,
+        "producer-JPEG-sync-async-engineering-plot-active": true,
+        "independent-permanent-plot-pixels-differ-engineering-plot-active-sync-png": true,
+        "independent-permanent-plot-pixels-differ-engineering-plot-active-async-png": true,
+        "independent-same-PNG-codec-sync-async-engineering-plot-cleared": true,
+        "producer-JPEG-sync-async-engineering-plot-cleared": true,
+        "independent-permanent-plot-pixels-differ-engineering-plot-cleared-sync-png": true,
+        "independent-permanent-plot-pixels-differ-engineering-plot-cleared-async-png": true,
+        "independent-transient-Trackball-excluded-engineering-sync-png": true,
+        "independent-transient-Trackball-excluded-engineering-async-png": true,
+        "producer-transient-Trackball-excluded-engineering-sync-jpeg": true,
+        "producer-transient-Trackball-excluded-engineering-async-jpeg": true,
+        "engineering-one-real-permanent-plot-glyph-probe": true,
+        "image-format-engineering/glyph-plot-hidden": true,
+        "image-dimensions-engineering/glyph-plot-hidden": true,
+        "image-format-engineering/glyph-plot-restored": true,
+        "image-dimensions-engineering/glyph-plot-restored": true,
+        "independent-real-TextBlock-glyph-engineering/glyph-plot": true,
+        "independent-restored-whole-PNG-engineering/glyph-plot": true,
+        "producer-glyph-counter-consistency-engineering/glyph-plot": true,
+        "four-required-theme-modes": true,
+        "both-professional-root-export-probes": true,
+        "24-exports-four-glyph-images-four-theme-images": true,
+        "all-32-focused-image-paths-unique": true,
+        "native-export272-attempts3200-guards": true,
+        "independent3232-export-oracle-checks": true,
+        "default-JIT-forcedGC-and-stable-native-inputs": true,
+        "packaged-core-and-themes-match-tested-build": true,
+        "export-executed-module-NT.AvaloniaControl.Charts": true,
+        "actual-host-copy-samples/NT.AvaloniaControl.Demo/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "actual-host-copy-samples/Charts.Usage/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "actual-host-copy-benchmarks/Charts.ExportStability/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "export-executed-module-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-host-copy-samples/NT.AvaloniaControl.Demo/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-host-copy-samples/Charts.Usage/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-host-copy-benchmarks/Charts.ExportStability/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-API-metadata-matches-tested-product": true,
+        "base-and-consumer-SDKs-agree-with-frozen-global-pin": true
+      },
+      "failedChecks": [],
+      "sourceSnapshotFiles": 1976,
+      "sourceDifferences": [],
+      "headless": {
+        "status": "passed",
+        "inputKind": "headless-injection",
+        "total": 3050,
+        "passed": 3050,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "notRun": 0,
+        "result": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-plotarea-trackball-20261023/windows/run-v2/verification/functional-v1/Charts.Headless.Tests.xml"
+      },
+      "xmlRecount": {
+        "tests": {
+          "total": 3050,
+          "passed": 3050,
+          "failed": 0
+        },
+        "classes": {
+          "ProfessionalPlotAreaContentTests": {
+            "total": 29,
+            "passed": 29,
+            "failed": 0
+          },
+          "ProfessionalTrackballTests": {
+            "total": 35,
+            "passed": 35,
+            "failed": 0
+          },
+          "SharedPresentationTests": {
+            "total": 38,
+            "passed": 38,
+            "failed": 0
+          },
+          "SharedPresentationFamiliesTests": {
+            "total": 20,
+            "passed": 20,
+            "failed": 0
+          },
+          "SharedTooltipPresentationTests": {
+            "total": 59,
+            "passed": 59,
+            "failed": 0
+          }
+        },
+        "failures": [],
+        "assemblyErrors": 0
+      },
+      "priorBaselineRetention": {
+        "passed": true,
+        "baseline": {
+          "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-shared-presentations-20261023/windows/run-v3/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "9C9F0C232F0820267D7F332AD3D54CFD57B8C41D63F0CBDF2885B60675DBD749",
+          "bytes": 1733197
+        },
+        "baselineActualTests": 2986,
+        "currentActualTests": 3050,
+        "removedTestNames": [],
+        "addedTestNames": [
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.A_parented_template_result_is_rejected_without_stealing_its_parent_or_context(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.A_parented_template_result_is_rejected_without_stealing_its_parent_or_context(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Ancestor_hiding_detach_and_replacement_release_old_owned_subtrees(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Ancestor_hiding_detach_and_replacement_release_old_owned_subtrees(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Both_professional_roots_share_the_Cartesian_plot_content_property_identity",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Build_failure_is_cleaned_and_quarantined_until_the_template_is_replaced(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Build_failure_is_cleaned_and_quarantined_until_the_template_is_replaced(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Conditional_null_build_is_stable_until_a_new_reading_and_then_recovers(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Conditional_null_build_is_stable_until_a_new_reading_and_then_recovers(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Direct_controls_inherit_the_chart_VM_and_plain_objects_require_a_template(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Direct_controls_inherit_the_chart_VM_and_plain_objects_require_a_template(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Hover_business_source_and_view_updates_reuse_the_control_and_release_old_readings_immediately(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Hover_business_source_and_view_updates_reuse_the_control_and_release_old_readings_immediately(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Measure_and_arrange_reentry_cleanup_obsolete_children_and_recover_after_an_exception(engineering: False, arrange: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Measure_and_arrange_reentry_cleanup_obsolete_children_and_recover_after_an_exception(engineering: False, arrange: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Measure_and_arrange_reentry_cleanup_obsolete_children_and_recover_after_an_exception(engineering: True, arrange: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Measure_and_arrange_reentry_cleanup_obsolete_children_and_recover_after_an_exception(engineering: True, arrange: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Permanent_plot_content_exports_as_a_visual_and_nested_export_during_build_is_rejected(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Permanent_plot_content_exports_as_a_visual_and_nested_export_during_build_is_rejected(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: False, operation: \\\"data-context\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: False, operation: \\\"detach\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: False, operation: \\\"source\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: False, operation: \\\"template\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: True, operation: \\\"data-context\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: True, operation: \\\"detach\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: True, operation: \\\"source\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: True, operation: \\\"template\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Template_content_has_actual_frame_original_data_local_projection_and_real_passive_membership(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Template_content_has_actual_frame_original_data_local_projection_and_real_passive_membership(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_listener_can_replace_mode_source_and_business_context_without_restoring_old_identity(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_listener_can_replace_mode_source_and_business_context_without_restoring_old_identity(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_notification_may_request_a_new_reading_without_splitting_the_published_total(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_notification_may_request_a_new_reading_without_splitting_the_published_total(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_real_click_without_a_preceding_pointer_move_reads_and_selects_the_original_glyph(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_real_click_without_a_preceding_pointer_move_reads_and_selects_the_original_glyph(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_stale_unparented_build_result_releases_its_explicit_old_reading_context(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_stale_unparented_build_result_releases_its_explicit_old_reading_context(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_template_child_context_cleared_listener_may_request_a_new_reading_after_the_whole_teardown(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_template_child_context_cleared_listener_may_request_a_new_reading_after_the_whole_teardown(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_valid_formatter_survives_template_failure_and_self_replacing_throwing_formatter_does_not_poison_its_replacement(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_valid_formatter_survives_template_failure_and_self_replacing_throwing_formatter_does_not_poison_its_replacement(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Budgets_disclose_total_and_truncation_without_copying_or_truncating_aggregate_members(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Budgets_disclose_total_and_truncation_without_copying_or_truncating_aggregate_members(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Formatter_failure_is_quarantined_and_replacement_recovers_without_source_reenumeration(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Formatter_failure_is_quarantined_and_replacement_recovers_without_source_reenumeration(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Group_and_float_templates_are_real_passive_controls_and_reuse_on_pointer_business_and_style_changes(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Group_and_float_templates_are_real_passive_controls_and_reuse_on_pointer_business_and_style_changes(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Measured_float_cards_avoid_overlap_when_space_exists_and_follow_live_theme_variant(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Measured_float_cards_avoid_overlap_when_space_exists_and_follow_live_theme_variant(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Null_formatter_output_hides_default_cards_but_custom_templates_still_receive_original_readings(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Null_formatter_output_hides_default_cards_but_custom_templates_still_receive_original_readings(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Null_template_build_hides_cards_and_failed_templates_are_cleaned_and_quarantined_until_replacement(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Null_template_build_hides_cards_and_failed_templates_are_cleaned_and_quarantined_until_replacement(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Professional_modes_and_appearance_share_Cartesian_properties_with_a_distinct_original_glyph_context",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Real_keyboard_navigation_updates_original_readings_and_Escape_clears_the_overlay(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Real_keyboard_navigation_updates_original_readings_and_Escape_clears_the_overlay(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Template_and_formatter_reentry_cannot_publish_removed_business_sources(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Template_and_formatter_reentry_cannot_publish_removed_business_sources(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Trackball_is_independent_of_tooltip_enabled_and_pointer_input_clears_on_leave(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Trackball_is_independent_of_tooltip_enabled_and_pointer_input_clears_on_leave(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Vertical_horizontal_and_equal_distance_slices_return_all_real_visible_glyphs_in_paint_order(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Vertical_horizontal_and_equal_distance_slices_return_all_real_visible_glyphs_in_paint_order(engineering: True)"
+        ],
+        "addedTestRecords": 64,
+        "comparison": "Exact xUnit display-name multiset, including every original theory case; no prior test name is silently dropped."
+      },
+      "fullDemoNative": {
+        "total": 5067,
+        "passed": 5067,
+        "failed": 0
+      },
+      "usage": {
+        "total": 913,
+        "passed": 913,
+        "failed": 0
+      },
+      "consumers": {
+        "function": {
+          "passed": true,
+          "checks": {
+            "total": 1095,
+            "passed": 1095,
+            "failed": 0
+          },
+          "coreSha256": "CE5471CE61605CAAE2EDD608F2A3C63E7620009674E03674732F5B63B461D9FD",
+          "runtime": "10.0.13",
+          "avaloniaVersion": "12.0.3.0",
+          "freshPackageCache": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-plotarea-trackball-20261023\\windows\\run-v2\\consumers\\20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db\\function\\packages",
+          "noProjectReferences": true,
+          "actualSdk": "10.0.402",
+          "sdkEvidence": {
+            "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/function-sdk.stdout.log",
+            "sha256": "6D5AB2A4EF35CEEC908F01287257F530B0C0D68F0E84326DF2EBCEA641F9134B",
+            "bytes": 10
+          },
+          "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+        },
+        "themes": {
+          "passed": true,
+          "checks": {
+            "total": 1129,
+            "passed": 1129,
+            "failed": 0
+          },
+          "coreSha256": "CE5471CE61605CAAE2EDD608F2A3C63E7620009674E03674732F5B63B461D9FD",
+          "runtime": "10.0.13",
+          "avaloniaVersion": "12.0.3.0",
+          "freshPackageCache": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-plotarea-trackball-20261023\\windows\\run-v2\\consumers\\20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db\\themes\\packages",
+          "noProjectReferences": true,
+          "actualSdk": "10.0.402",
+          "sdkEvidence": {
+            "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/themes-sdk.stdout.log",
+            "sha256": "6D5AB2A4EF35CEEC908F01287257F530B0C0D68F0E84326DF2EBCEA641F9134B",
+            "bytes": 10
+          },
+          "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+        }
+      },
+      "professionalPlotTrackball": {
+        "checks": {
+          "total": 243,
+          "passed": 243,
+          "failed": 0
+        },
+        "probes": 7,
+        "themeModes": [
+          "normal-light",
+          "normal-dark",
+          "hc-light",
+          "hc-dark"
+        ],
+        "exportArtifacts": 24,
+        "glyphProofs": [
+          {
+            "family": "analysis",
+            "kind": "plot",
+            "target": "ProfessionalPlotCaption",
+            "text": "永久绘图区 · 归一化中心",
+            "exportRegion": {
+              "x": 21.271676300578033,
+              "y": 52.71676300578035,
+              "width": 99.76065751445087,
+              "height": 11.098265895953757
+            },
+            "independentHidden": {
+              "changedPixels": 397,
+              "pixelRegion": [
+                21,
+                52,
+                101,
+                12
+              ]
+            },
+            "independentRestored": {
+              "changedPixels": 0,
+              "pixelRegion": [
+                21,
+                52,
+                101,
+                12
+              ]
+            },
+            "hiddenReference": {
+              "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-glyph-hidden.png",
+              "sha256": "D0213FD97F9921327D65FDBE23CB629C2D096056F03733C72C9F0AD51303A346",
+              "bytes": 13115,
+              "kind": "analysis/glyph-plot-hidden",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "19B57F5E6E3960151F34BD2888F928706FB8044E81A895DFB6F5A0172954F6E7",
+              "decodedPremultipliedBgraSha256": "DE04CD540721D149DB9991D029CE00372747867D032D4F7E134EEF654AFD4E9A"
+            },
+            "restoredReference": {
+              "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-glyph-restored.png",
+              "sha256": "E8071EA07EED7F4A3B7E43608C893E8D5ECE5963F8CAD9F052E049A7954DDF76",
+              "bytes": 14211,
+              "kind": "analysis/glyph-plot-restored",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "75A66EE29A0D18156E65BBF8B4FBCFDE5B45F6CC6C4F2E95163F0DA840C9753E",
+              "decodedPremultipliedBgraSha256": "0763441CBF5626C8C95E49FE36E49B1C188460900F34CBC5FB54C766EBAB133E"
+            }
+          },
+          {
+            "family": "engineering",
+            "kind": "plot",
+            "target": "ProfessionalPlotCaption",
+            "text": "永久绘图区 · 归一化中心",
+            "exportRegion": {
+              "x": 32.36994219653179,
+              "y": 63.8150289017341,
+              "width": 99.76065751445087,
+              "height": 11.098265895953757
+            },
+            "independentHidden": {
+              "changedPixels": 408,
+              "pixelRegion": [
+                32,
+                63,
+                101,
+                12
+              ]
+            },
+            "independentRestored": {
+              "changedPixels": 0,
+              "pixelRegion": [
+                32,
+                63,
+                101,
+                12
+              ]
+            },
+            "hiddenReference": {
+              "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-glyph-hidden.png",
+              "sha256": "9571EE08A7EB105D9712980946B522D613CFD3B621F8213E367D72122D798842",
+              "bytes": 6197,
+              "kind": "engineering/glyph-plot-hidden",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "2196E9C6B55791A5D9ED14B624300D1668C8CBE5AF4788756565EACFDEA6A4E6",
+              "decodedPremultipliedBgraSha256": "B050D04D66767A0ACAAD81AAE6BCC4996F0D533F03B44A2CAEB92EE4AB2EB3A4"
+            },
+            "restoredReference": {
+              "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-glyph-restored.png",
+              "sha256": "D2C324A8AF08EA25FE44D27F481357114B6C9E03106FECF92E888AF45D50AABA",
+              "bytes": 7267,
+              "kind": "engineering/glyph-plot-restored",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "88E96AB9D978D02EF81AFE364241E79987240B47B33C1C42A1354F24A7503DF1",
+              "decodedPremultipliedBgraSha256": "707873ACA6B297514E1BAE97E056BD788818A8EFDACF17E47433B8CDC82C964B"
+            }
+          }
+        ],
+        "images": [
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-normal-light.png",
+            "sha256": "5E83217065BEF150051A7A7E107E3AA528199793CA4DD4B663F7D2FB818C5748",
+            "bytes": 107802,
+            "kind": "theme/normal-light",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "7891EC688201F812D26821FC5E01FF864D0A1B1D2CC04D8E374B36EC2C8AAA1C",
+            "decodedPremultipliedBgraSha256": "A3C38E2CC7146B3572A560B8FE5FD0B4E0557430B17A9390DA2AB26FDD280E5D"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-normal-dark.png",
+            "sha256": "DAB0BB3569141FD206D4D0DDD0EA0D3CE2C9CBCADAF62DB7A299004789E3A270",
+            "bytes": 107557,
+            "kind": "theme/normal-dark",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "2A9CADA758F87A4BD0ABAE3FAB3ACDD59165BACD31CDE13408E504612FDE5145",
+            "decodedPremultipliedBgraSha256": "EE32125C405406FF504DD6B80FE1F20D3C65F322D450C48AACFEEAC77A1DE8D8"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-hc-light.png",
+            "sha256": "7EE4F259622CC9CB459FA77112403374EB281573086008AA5E1BA30BB7ED2AE2",
+            "bytes": 100055,
+            "kind": "theme/hc-light",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "44FC11E877DDEE89205807F720D816564D19EE08E1638CA1AF0C3A173F75A947",
+            "decodedPremultipliedBgraSha256": "E632ED9C273A79F987EC009F734B75952F84478D8CA45A0E64A9BA279F9EEF72"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-hc-dark.png",
+            "sha256": "049B8E450F5DA6F2DB3BE8C1A8F01BFEAB69027C6E8DB12A6FDEFE5A1EE73679",
+            "bytes": 98624,
+            "kind": "theme/hc-dark",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "0661A0E18BD42CE9F943BF26FF46EDB761236D256474A2D1E9F77FBFD1B34ADE",
+            "decodedPremultipliedBgraSha256": "BDD9399C2058CD651079D83D813E06856FD3F5436A924DF111964E42D0D39558"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-legacy-sync-png.png",
+            "sha256": "B4242D3C2F48F737BF8AC578B8C534D0428DFA39FF25F5CFF8B04F4DC36DEF82",
+            "bytes": 11630,
+            "kind": "analysis/legacy/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "77863B5D8173ABCDA7BF9D159DD282C2DA063A700B0975CCB24A0FE14C53FB3D",
+            "decodedPremultipliedBgraSha256": "8BB4D383D35E3B08EF281975A912DFCB58E1B5B8997D5832CC033A88AF26FFA1"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-legacy-async-png.png",
+            "sha256": "421122F48D406E3E5A087FCBB4F28E3FC739C8940F74BE8B84339261878F7F58",
+            "bytes": 18111,
+            "kind": "analysis/legacy/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "77863B5D8173ABCDA7BF9D159DD282C2DA063A700B0975CCB24A0FE14C53FB3D",
+            "decodedPremultipliedBgraSha256": "8BB4D383D35E3B08EF281975A912DFCB58E1B5B8997D5832CC033A88AF26FFA1"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-legacy-sync-jpeg.jpg",
+            "sha256": "7909B86EB7F4FB91C02473A030594FCCC8BA242ADC4B93E00E41E41F9B49A15C",
+            "bytes": 24645,
+            "kind": "analysis/legacy/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-legacy-async-jpeg.jpg",
+            "sha256": "7909B86EB7F4FB91C02473A030594FCCC8BA242ADC4B93E00E41E41F9B49A15C",
+            "bytes": 24645,
+            "kind": "analysis/legacy/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-active-sync-png.png",
+            "sha256": "E8071EA07EED7F4A3B7E43608C893E8D5ECE5963F8CAD9F052E049A7954DDF76",
+            "bytes": 14211,
+            "kind": "analysis/plot-active/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "75A66EE29A0D18156E65BBF8B4FBCFDE5B45F6CC6C4F2E95163F0DA840C9753E",
+            "decodedPremultipliedBgraSha256": "0763441CBF5626C8C95E49FE36E49B1C188460900F34CBC5FB54C766EBAB133E"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-active-async-png.png",
+            "sha256": "296B8197153CEEEF1A82B5B2C06EC6AAA0C702FD6593C2105408D394DDD0BAE9",
+            "bytes": 20377,
+            "kind": "analysis/plot-active/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "75A66EE29A0D18156E65BBF8B4FBCFDE5B45F6CC6C4F2E95163F0DA840C9753E",
+            "decodedPremultipliedBgraSha256": "0763441CBF5626C8C95E49FE36E49B1C188460900F34CBC5FB54C766EBAB133E"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-active-sync-jpeg.jpg",
+            "sha256": "787D80F1AAAC53D1E91E995D788C0E7F138AA41AF584518E189B0646CA241488",
+            "bytes": 27674,
+            "kind": "analysis/plot-active/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-active-async-jpeg.jpg",
+            "sha256": "787D80F1AAAC53D1E91E995D788C0E7F138AA41AF584518E189B0646CA241488",
+            "bytes": 27674,
+            "kind": "analysis/plot-active/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-cleared-sync-png.png",
+            "sha256": "E8071EA07EED7F4A3B7E43608C893E8D5ECE5963F8CAD9F052E049A7954DDF76",
+            "bytes": 14211,
+            "kind": "analysis/plot-cleared/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "75A66EE29A0D18156E65BBF8B4FBCFDE5B45F6CC6C4F2E95163F0DA840C9753E",
+            "decodedPremultipliedBgraSha256": "0763441CBF5626C8C95E49FE36E49B1C188460900F34CBC5FB54C766EBAB133E"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-cleared-async-png.png",
+            "sha256": "296B8197153CEEEF1A82B5B2C06EC6AAA0C702FD6593C2105408D394DDD0BAE9",
+            "bytes": 20377,
+            "kind": "analysis/plot-cleared/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "75A66EE29A0D18156E65BBF8B4FBCFDE5B45F6CC6C4F2E95163F0DA840C9753E",
+            "decodedPremultipliedBgraSha256": "0763441CBF5626C8C95E49FE36E49B1C188460900F34CBC5FB54C766EBAB133E"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-cleared-sync-jpeg.jpg",
+            "sha256": "787D80F1AAAC53D1E91E995D788C0E7F138AA41AF584518E189B0646CA241488",
+            "bytes": 27674,
+            "kind": "analysis/plot-cleared/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-cleared-async-jpeg.jpg",
+            "sha256": "787D80F1AAAC53D1E91E995D788C0E7F138AA41AF584518E189B0646CA241488",
+            "bytes": 27674,
+            "kind": "analysis/plot-cleared/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-glyph-hidden.png",
+            "sha256": "D0213FD97F9921327D65FDBE23CB629C2D096056F03733C72C9F0AD51303A346",
+            "bytes": 13115,
+            "kind": "analysis/glyph-plot-hidden",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "19B57F5E6E3960151F34BD2888F928706FB8044E81A895DFB6F5A0172954F6E7",
+            "decodedPremultipliedBgraSha256": "DE04CD540721D149DB9991D029CE00372747867D032D4F7E134EEF654AFD4E9A"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-glyph-restored.png",
+            "sha256": "E8071EA07EED7F4A3B7E43608C893E8D5ECE5963F8CAD9F052E049A7954DDF76",
+            "bytes": 14211,
+            "kind": "analysis/glyph-plot-restored",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "75A66EE29A0D18156E65BBF8B4FBCFDE5B45F6CC6C4F2E95163F0DA840C9753E",
+            "decodedPremultipliedBgraSha256": "0763441CBF5626C8C95E49FE36E49B1C188460900F34CBC5FB54C766EBAB133E"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-legacy-sync-png.png",
+            "sha256": "759525D79FCE5D9C0C66E67433559FBDFED2E844B186A79077999B7DAFB85024",
+            "bytes": 3647,
+            "kind": "engineering/legacy/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "AA5C09538E8973D8A0DE63627F4678C3ACB1122D190BDCD249037676B420FBAA",
+            "decodedPremultipliedBgraSha256": "8F8B8D2DB9D60CD0786CB46104A05359EF8460688C366163D4A683B75C332401"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-legacy-async-png.png",
+            "sha256": "2723F9EC15AFEF53216EF41AB3781A1889ABA14E4F9FEBDCB0B3343E550C08FC",
+            "bytes": 10464,
+            "kind": "engineering/legacy/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "AA5C09538E8973D8A0DE63627F4678C3ACB1122D190BDCD249037676B420FBAA",
+            "decodedPremultipliedBgraSha256": "8F8B8D2DB9D60CD0786CB46104A05359EF8460688C366163D4A683B75C332401"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-legacy-sync-jpeg.jpg",
+            "sha256": "D3676B896115A0D778ACE57D3F08B1E38465C2CCB35F4CC0BBCB8296CEA45668",
+            "bytes": 14828,
+            "kind": "engineering/legacy/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-legacy-async-jpeg.jpg",
+            "sha256": "D3676B896115A0D778ACE57D3F08B1E38465C2CCB35F4CC0BBCB8296CEA45668",
+            "bytes": 14828,
+            "kind": "engineering/legacy/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-active-sync-png.png",
+            "sha256": "D2C324A8AF08EA25FE44D27F481357114B6C9E03106FECF92E888AF45D50AABA",
+            "bytes": 7267,
+            "kind": "engineering/plot-active/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "88E96AB9D978D02EF81AFE364241E79987240B47B33C1C42A1354F24A7503DF1",
+            "decodedPremultipliedBgraSha256": "707873ACA6B297514E1BAE97E056BD788818A8EFDACF17E47433B8CDC82C964B"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-active-async-png.png",
+            "sha256": "8BFC787E9D89F3D5F65DB0A2FEF62D433CFBB4239F43C19F7B07240B1CF1E517",
+            "bytes": 13573,
+            "kind": "engineering/plot-active/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "88E96AB9D978D02EF81AFE364241E79987240B47B33C1C42A1354F24A7503DF1",
+            "decodedPremultipliedBgraSha256": "707873ACA6B297514E1BAE97E056BD788818A8EFDACF17E47433B8CDC82C964B"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-active-sync-jpeg.jpg",
+            "sha256": "FF86C85CEA37959C441A465F13FEEBEAA8924205C465778404DCA04FE4411A7D",
+            "bytes": 18406,
+            "kind": "engineering/plot-active/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-active-async-jpeg.jpg",
+            "sha256": "FF86C85CEA37959C441A465F13FEEBEAA8924205C465778404DCA04FE4411A7D",
+            "bytes": 18406,
+            "kind": "engineering/plot-active/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-cleared-sync-png.png",
+            "sha256": "D2C324A8AF08EA25FE44D27F481357114B6C9E03106FECF92E888AF45D50AABA",
+            "bytes": 7267,
+            "kind": "engineering/plot-cleared/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "88E96AB9D978D02EF81AFE364241E79987240B47B33C1C42A1354F24A7503DF1",
+            "decodedPremultipliedBgraSha256": "707873ACA6B297514E1BAE97E056BD788818A8EFDACF17E47433B8CDC82C964B"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-cleared-async-png.png",
+            "sha256": "8BFC787E9D89F3D5F65DB0A2FEF62D433CFBB4239F43C19F7B07240B1CF1E517",
+            "bytes": 13573,
+            "kind": "engineering/plot-cleared/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "88E96AB9D978D02EF81AFE364241E79987240B47B33C1C42A1354F24A7503DF1",
+            "decodedPremultipliedBgraSha256": "707873ACA6B297514E1BAE97E056BD788818A8EFDACF17E47433B8CDC82C964B"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-cleared-sync-jpeg.jpg",
+            "sha256": "FF86C85CEA37959C441A465F13FEEBEAA8924205C465778404DCA04FE4411A7D",
+            "bytes": 18406,
+            "kind": "engineering/plot-cleared/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-cleared-async-jpeg.jpg",
+            "sha256": "FF86C85CEA37959C441A465F13FEEBEAA8924205C465778404DCA04FE4411A7D",
+            "bytes": 18406,
+            "kind": "engineering/plot-cleared/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-glyph-hidden.png",
+            "sha256": "9571EE08A7EB105D9712980946B522D613CFD3B621F8213E367D72122D798842",
+            "bytes": 6197,
+            "kind": "engineering/glyph-plot-hidden",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "2196E9C6B55791A5D9ED14B624300D1668C8CBE5AF4788756565EACFDEA6A4E6",
+            "decodedPremultipliedBgraSha256": "B050D04D66767A0ACAAD81AAE6BCC4996F0D533F03B44A2CAEB92EE4AB2EB3A4"
+          },
+          {
+            "path": "windows/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-glyph-restored.png",
+            "sha256": "D2C324A8AF08EA25FE44D27F481357114B6C9E03106FECF92E888AF45D50AABA",
+            "bytes": 7267,
+            "kind": "engineering/glyph-plot-restored",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "88E96AB9D978D02EF81AFE364241E79987240B47B33C1C42A1354F24A7503DF1",
+            "decodedPremultipliedBgraSha256": "707873ACA6B297514E1BAE97E056BD788818A8EFDACF17E47433B8CDC82C964B"
+          }
+        ],
+        "pngDecoder": {
+          "path": "D:/Procedure/AvaloniaControl/scripts/charts_png_oracle.py",
+          "sha256": "2C05338338984B1D5C818997AAB22E6C8C34331CEC24C8CED65AAE32503C44FF",
+          "bytes": 12612
+        },
+        "pngScope": "Independent stdlib CRC/structure/dimension decoding, producer pixel-hash linkage, same-codec sync/async equality, permanent-content legacy differences, active/cleared Trackball equality, and hidden/restored real TextBlock ROI plus whole-image restoration pixels.",
+        "jpegScope": "Independent SOI/SOF/dimensions/EOI structure only. Same-codec decoded-pixel equality, permanent-content differences and active/cleared Trackball equality are producer Avalonia observations; no independent JPEG visual quality or cross-codec equality claimed."
+      },
+      "exportStability": {
+        "attempts": 272,
+        "producerGuards": 3200,
+        "independentChecks": 3232,
+        "independentlyDecodedPngs": 240,
+        "forcedCollections": 11716,
+        "collectionsBeginningDuringManagedCapture": 2523,
+        "workerStopped": true,
+        "actualNativeModules": [
+          {
+            "moduleName": "Avalonia.HarfBuzz.dll",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7plottrack\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\Avalonia.HarfBuzz.dll",
+            "sha256": "BE71D00740E2E76D8347961AFF32E18D67818971018229FE2AAE643C64DE08DC"
+          },
+          {
+            "moduleName": "Avalonia.Skia.dll",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7plottrack\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\Avalonia.Skia.dll",
+            "sha256": "1A76E530C5DB742104D5A5532B11E36AA826D2221FE925978598BB62C1A068FC"
+          },
+          {
+            "moduleName": "SkiaSharp.dll",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7plottrack\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\SkiaSharp.dll",
+            "sha256": "A833ABAE87FF3D13FF660B1F9D92027885B90395647479437EB9D262FAD6D4AB"
+          },
+          {
+            "moduleName": "libSkiaSharp.DLL",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7plottrack\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\runtimes\\win-x64\\native\\libSkiaSharp.DLL",
+            "sha256": "6D6ECA64EC333DAED78858A637B54C545AA01558204B8E2AE8870692ACADA127"
+          },
+          {
+            "moduleName": "HarfBuzzSharp.dll",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7plottrack\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\HarfBuzzSharp.dll",
+            "sha256": "55E72AC23263F8E12484F3435E02EC22FAC9EFF6E6D169BB0A8C246BE6B99D29"
+          },
+          {
+            "moduleName": "libHarfBuzzSharp.DLL",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7plottrack\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\runtimes\\win-x64\\native\\libHarfBuzzSharp.DLL",
+            "sha256": "145ADE963EBA427027D5E1381DB5D51A0EF9E98E9FEF9EFBFA6074CA20DA246F"
+          }
+        ],
+        "defaultJitPreserved": true,
+        "runtime": {
+          "os": "Microsoft Windows 10.0.26200",
+          "architecture": "X64",
+          "framework": ".NET 10.0.13",
+          "runtime": "10.0.13",
+          "serverGc": false,
+          "gcLatencyMode": "Interactive",
+          "tieredCompilationEnvironment": null,
+          "comPlusTieredCompilationEnvironment": null,
+          "runtimeConfigPath": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7plottrack\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\Charts.ExportStability.runtimeconfig.json",
+          "runtimeConfig": "{\r\n  \"runtimeOptions\": {\r\n    \"tfm\": \"net10.0\",\r\n    \"framework\": {\r\n      \"name\": \"Microsoft.NETCore.App\",\r\n      \"version\": \"10.0.0\"\r\n    },\r\n    \"configProperties\": {\r\n      \"System.Reflection.Metadata.MetadataUpdater.IsSupported\": false,\r\n      \"System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization\": false\r\n    }\r\n  }\r\n}"
+        }
+      },
+      "productAssemblyPins": {
+        "coreSha256": "CE5471CE61605CAAE2EDD608F2A3C63E7620009674E03674732F5B63B461D9FD",
+        "themesSha256": "E73C898807E9129B596B96E99863B707B0879F4D6CBB04022071A6D6AC637BB9",
+        "actualHostCopies": [
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7plottrack/windows-source-v2/samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "CE5471CE61605CAAE2EDD608F2A3C63E7620009674E03674732F5B63B461D9FD",
+            "bytes": 2298880
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7plottrack/windows-source-v2/samples/Charts.Usage/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "CE5471CE61605CAAE2EDD608F2A3C63E7620009674E03674732F5B63B461D9FD",
+            "bytes": 2298880
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7plottrack/windows-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "CE5471CE61605CAAE2EDD608F2A3C63E7620009674E03674732F5B63B461D9FD",
+            "bytes": 2298880
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7plottrack/windows-source-v2/samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "E73C898807E9129B596B96E99863B707B0879F4D6CBB04022071A6D6AC637BB9",
+            "bytes": 25600
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7plottrack/windows-source-v2/samples/Charts.Usage/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "E73C898807E9129B596B96E99863B707B0879F4D6CBB04022071A6D6AC637BB9",
+            "bytes": 25600
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7plottrack/windows-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "E73C898807E9129B596B96E99863B707B0879F4D6CBB04022071A6D6AC637BB9",
+            "bytes": 25600
+          }
+        ]
+      },
+      "api": {
+        "exportedTypes": [
+          503,
+          3
+        ],
+        "totalTypes": 506,
+        "normalizedSurfaceSha256": "5CF2AE9D8AD33EE1697F8A89A166033497BABAAF430BA85185D20AA2134D11E9",
+        "metadataOnly": true,
+        "officialCompared": false
+      },
+      "runtime": {
+        "osDescription": "Microsoft Windows 10.0.26200",
+        "osArchitecture": "X64",
+        "processArchitecture": "X64",
+        "baseSdk": "10.0.402",
+        "powershell": "7.6.5",
+        "actualExportFramework": ".NET 10.0.13",
+        "actualExportRuntime": "10.0.13",
+        "avalonia": "12.0.3.0",
+        "qualification": "visible native Windows synthetic window"
+      },
+      "references": [
+        {
+          "path": "windows/run-v2/results.json",
+          "sha256": "C27B60D3B680461D19643990441A489E11C378AEB98255D0570BEDD94725C3C8",
+          "bytes": 7532
+        },
+        {
+          "path": "windows/run-v2/source-before.json",
+          "sha256": "1D31743B6A7DA958611EB0B8451E4419191F8C434FE606B2408D011C6EE0105D",
+          "bytes": 64
+        },
+        {
+          "path": "windows/run-v2/source-after.json",
+          "sha256": "1D31743B6A7DA958611EB0B8451E4419191F8C434FE606B2408D011C6EE0105D",
+          "bytes": 64
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/results.json",
+          "sha256": "23B98291F2AF25C038C28CCCCC5A0912772D30410A73ED818DBB4854F413FCD5",
+          "bytes": 21920
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/environment.json",
+          "sha256": "8429D2AB9F25D81D71DFD26927C7EE07BF2117612F21F0D9BA938CC7F67A0B18",
+          "bytes": 8397
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/assembly-manifest.json",
+          "sha256": "07979BBDE49ED9072FCE6B6741BC4D452A18B23A4AE53318798C1C1224E14D09",
+          "bytes": 1957
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/source-manifest.json",
+          "sha256": "9B7437BA196B9674377B30A4E0A359F83EE4D18DD7C1CB0B0AACCDFDB71A8230",
+          "bytes": 331289
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/source-manifest-final.json",
+          "sha256": "9B7437BA196B9674377B30A4E0A359F83EE4D18DD7C1CB0B0AACCDFDB71A8230",
+          "bytes": 331289
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/validated-input-manifest.json",
+          "sha256": "AD3EA1ED6DA24B93710F1A5B1024137DA7CDAA7BB063E990F3CCA8B6B79A3056",
+          "bytes": 183749
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/evidence-manifest.json",
+          "sha256": "80688EBC1C3EEAC00A4623EF45D9B3983B976F9E2D14A7C92E16476917A74B2B",
+          "bytes": 233669
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "3C931FE2854384CD3F2B25B1E669BDAECEF4620F838690D4D5097552FC6392EF",
+          "bytes": 1764600
+        },
+        {
+          "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-shared-presentations-20261023/windows/run-v3/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "9C9F0C232F0820267D7F332AD3D54CFD57B8C41D63F0CBDF2885B60675DBD749",
+          "bytes": 1733197
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/charts-smoke.json",
+          "sha256": "7AC05BAB616F571D6BE55E47BCB3E95AE55022D6E65E9C1F86FBC147E97FB406",
+          "bytes": 85943514
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/charts-usage.json",
+          "sha256": "112BC86437C93BA5C15743557CB283967EA5F994CBF27AE4A53D106505B16FF2",
+          "bytes": 115820
+        },
+        {
+          "path": "windows/run-v2/catalog.json",
+          "sha256": "76D289B57A587837E250D0675C975183FAF6F9FC3772D0CF785A4940E046E075",
+          "bytes": 55643
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/results.json",
+          "sha256": "17F95FC696D59F5379D7F36DD3680C61E85198E018FECE959FD3DCA9BF7767BA",
+          "bytes": 13288
+        },
+        {
+          "path": "windows/run-v2/package-feed/NT.AvaloniaControl.Charts.0.2.0-preview.2.nupkg",
+          "sha256": "363BBDF2A4C87E0C7896DFAFDB1376022186528E9A8589AC03DD50B44D3E5C6B",
+          "bytes": 911637
+        },
+        {
+          "path": "windows/run-v2/package-feed/NT.AvaloniaControl.Charts.Themes.0.2.0-preview.2.nupkg",
+          "sha256": "BB5A0757CCF13D35237F9B9B4C4EB68A453C3C328F74466A9020106DA6CF2E89",
+          "bytes": 12788
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/function/consumer-result.json",
+          "sha256": "789C2E2D134EA5D11EF1A6A7AB5B856A090C130F6D2927E4380DDB958F9262F6",
+          "bytes": 157807
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/function/packages.lock.json",
+          "sha256": "84044EF3430B27DA994A01EBE7D9E39D99C159F19375FB1074602EE786D6A507",
+          "bytes": 4501
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/function-sdk.stdout.log",
+          "sha256": "6D5AB2A4EF35CEEC908F01287257F530B0C0D68F0E84326DF2EBCEA641F9134B",
+          "bytes": 10
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/function/global.json",
+          "sha256": "81AE2087DBFB46027FD94748351FB4B1AB24145FBB52544A2822BF128E2E48F1",
+          "bytes": 105
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/function/Consumer.csproj",
+          "sha256": "763C1C82E62DE207406A02B3E3FFFDFCBD9C76BCED83FE6800594908FEB1A431",
+          "bytes": 794
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/function/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+          "sha256": "CE5471CE61605CAAE2EDD608F2A3C63E7620009674E03674732F5B63B461D9FD",
+          "bytes": 2298880
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/themes/consumer-result.json",
+          "sha256": "3A5B402D3138D88E9347A77AE7CA20DCF22F489766AC4F802B6B14356C8F441D",
+          "bytes": 160283
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/themes/packages.lock.json",
+          "sha256": "0164FE3BF31BC542F06DC0FE486D90315C3288DE9D70BAC2922B3D922CE97E69",
+          "bytes": 4839
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/themes-sdk.stdout.log",
+          "sha256": "6D5AB2A4EF35CEEC908F01287257F530B0C0D68F0E84326DF2EBCEA641F9134B",
+          "bytes": 10
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/themes/global.json",
+          "sha256": "81AE2087DBFB46027FD94748351FB4B1AB24145FBB52544A2822BF128E2E48F1",
+          "bytes": 105
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/themes/Consumer.csproj",
+          "sha256": "D426382990E1FECF6B46D7610B65FDD0AF2BEDEC62C033477F574A563D24989A",
+          "bytes": 798
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/themes/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+          "sha256": "CE5471CE61605CAAE2EDD608F2A3C63E7620009674E03674732F5B63B461D9FD",
+          "bytes": 2298880
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T155651275Z-3dddf2d1744e4660b7c72bfba20c38db/themes/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "E73C898807E9129B596B96E99863B707B0879F4D6CBB04022071A6D6AC637BB9",
+          "bytes": 25600
+        },
+        {
+          "path": "windows/run-v2/professional-plot-trackball/smoke.json",
+          "sha256": "A19486679F6277F48D586DCC9C12E7480B98AFCAA330DC8D9A948EF4A848C520",
+          "bytes": 141790
+        },
+        {
+          "path": "windows/run-v2/export-stability/results.json",
+          "sha256": "69B7720F081B52603EA21CBAF4A16F7007E3D486CD938640B47C787BDE83C802",
+          "bytes": 6496
+        },
+        {
+          "path": "windows/run-v2/export-stability/producer/results.json",
+          "sha256": "0A8DDD5BC5CD8791021BF76290A21CF33A496821574690C56988AA98B2133B62",
+          "bytes": 2057583
+        },
+        {
+          "path": "windows/run-v2/export-stability/producer/protocol.json",
+          "sha256": "E085C52DF48AFADB11174FC67D93F6438F0870D403229F4ABDAD6CA39704FE2C",
+          "bytes": 62129
+        },
+        {
+          "path": "windows/run-v2/export-stability/producer/events.jsonl",
+          "sha256": "5BB4CD1CB7956783E2051DCE6E39D83B05C82C52EEC24CDFB2A85CB9FF11F184",
+          "bytes": 522647
+        },
+        {
+          "path": "windows/run-v2/export-stability/independent-oracle.json",
+          "sha256": "F3E4F62315C2D73BB406C0957844DB8A5D6B8728518DA640DDBD882F61C74E00",
+          "bytes": 463963
+        },
+        {
+          "path": "windows/run-v2/export-stability/source-inputs-before.json",
+          "sha256": "0BED4BF001B1F779AC1BFDC0E36A863F512AB210840AA40DC61D22936D378751",
+          "bytes": 52733
+        },
+        {
+          "path": "windows/run-v2/export-stability/source-inputs-after.json",
+          "sha256": "0BED4BF001B1F779AC1BFDC0E36A863F512AB210840AA40DC61D22936D378751",
+          "bytes": 52733
+        },
+        {
+          "path": "windows/run-v2/export-stability/host-inputs-before.json",
+          "sha256": "E0B647F5FF99CCC9FAC53154878C7C4C0546A6ABA66F8D8DE6C2240C7CC2A10B",
+          "bytes": 13097
+        },
+        {
+          "path": "windows/run-v2/export-stability/host-inputs-after.json",
+          "sha256": "E0B647F5FF99CCC9FAC53154878C7C4C0546A6ABA66F8D8DE6C2240C7CC2A10B",
+          "bytes": 13097
+        },
+        {
+          "path": "windows/run-v2/api/baseline.json",
+          "sha256": "AA25AA9C4A631AD49EB1EB8C5A4353C687169FC5773A1255DEA166D54DCEC6DD",
+          "bytes": 305413
+        },
+        {
+          "path": "windows/run-v2/api/api.txt",
+          "sha256": "6262E036BD26A2DB2606E7306E0B13B94356721C6836FA46551752E5CB690DB3",
+          "bytes": 1058660
+        },
+        {
+          "path": "windows/run-v2/api/source-manifest.json",
+          "sha256": "ADEAE793A5AE3C8B2A9DB9F0A1EB73D14374CDF106C058D733EA33E5D815C6A7",
+          "bytes": 114805
+        },
+        {
+          "path": "windows/run-v2/entry-catalog/process.json",
+          "sha256": "7BEF63F3A9D28F19748ADEBF3140A2A440479F93C286841F13D774049C4EEB96",
+          "bytes": 880
+        },
+        {
+          "path": "windows/run-v2/entry-base/process.json",
+          "sha256": "1910219EC018186F811C26A1E436D56BC86F2AEB67ED350BB12D4DFA9F97A592",
+          "bytes": 1075
+        },
+        {
+          "path": "windows/run-v2/entry-consumers/process.json",
+          "sha256": "31EF46A6A0D23745BF2D4734F2F8B0585EF27D5F78BC3B497F64D6E094798BF8",
+          "bytes": 1103
+        },
+        {
+          "path": "windows/run-v2/entry-professional-plot-trackball/process.json",
+          "sha256": "096A2F2759C36FF0B25FBB3BB0DFD02CB632A202B1E128A5141A0947E1248335",
+          "bytes": 1220
+        },
+        {
+          "path": "windows/run-v2/entry-export-stability/process.json",
+          "sha256": "B6B4CA20F94EFEF4CA11BDD02CCF9288FB81AE0F20C0978AA9260CD7DB0402F0",
+          "bytes": 1038
+        },
+        {
+          "path": "windows/run-v2/entry-api/process.json",
+          "sha256": "86063D7D37FC5D48E1EF6F79B71395FC3F6182231C364CC18A6BE67B12241A1F",
+          "bytes": 909
+        }
+      ]
+    },
+    "linux": {
+      "status": "complete",
+      "passed": true,
+      "checks": {
+        "six-ordered-software-stages-pass": true,
+        "same-frozen-source-manifest": true,
+        "every-frozen-file-unchanged-before-and-after": true,
+        "all-frozen-platform-files-still-pinned": true,
+        "base-software-contracts-and-input-stability": true,
+        "all-prior-headless-test-cases-retained": true,
+        "full-headless-records-and-summary-agree": true,
+        "new-plot-trackball-and-previous-presentation-tooltip-regressions-executed": true,
+        "full-native-Demo-dictionary-matches-summary": true,
+        "native-Usage-all-recorded-bindings-pass": true,
+        "complete-static-control-catalog-and-self-tests": true,
+        "package-hash-NT.AvaloniaControl.Charts": true,
+        "package-hash-NT.AvaloniaControl.Charts.Themes": true,
+        "isolated-function-all-contracts-and-package-identity": true,
+        "isolated-function-source-free-fresh-cache": true,
+        "isolated-function-actual-SDK-pinned": true,
+        "isolated-function-actual-output-core": true,
+        "isolated-themes-all-contracts-and-package-identity": true,
+        "isolated-themes-source-free-fresh-cache": true,
+        "isolated-themes-actual-SDK-pinned": true,
+        "isolated-themes-actual-output-core": true,
+        "isolated-themes-actual-output-theme": true,
+        "both-isolated-consumer-kinds-pass": true,
+        "focused-native-plot-trackball-contracts-all-pass": true,
+        "focused-theme-export-lifecycle-probe-order": true,
+        "theme-normal-light-shown-native-window-scope": true,
+        "theme-normal-light-four-real-family-probes": true,
+        "image-format-theme/normal-light": true,
+        "image-dimensions-theme/normal-light": true,
+        "theme-normal-dark-shown-native-window-scope": true,
+        "theme-normal-dark-four-real-family-probes": true,
+        "image-format-theme/normal-dark": true,
+        "image-dimensions-theme/normal-dark": true,
+        "theme-hc-light-shown-native-window-scope": true,
+        "theme-hc-light-four-real-family-probes": true,
+        "image-format-theme/hc-light": true,
+        "image-dimensions-theme/hc-light": true,
+        "theme-hc-dark-shown-native-window-scope": true,
+        "theme-hc-dark-four-real-family-probes": true,
+        "image-format-theme/hc-dark": true,
+        "image-dimensions-theme/hc-dark": true,
+        "analysis-three-states-four-codec-paths": true,
+        "image-format-analysis/legacy/sync-png": true,
+        "image-dimensions-analysis/legacy/sync-png": true,
+        "producer-export-contract-analysis/legacy/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/legacy/sync-png": true,
+        "image-format-analysis/legacy/async-png": true,
+        "image-dimensions-analysis/legacy/async-png": true,
+        "producer-export-contract-analysis/legacy/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/legacy/async-png": true,
+        "image-format-analysis/legacy/sync-jpeg": true,
+        "image-dimensions-analysis/legacy/sync-jpeg": true,
+        "producer-export-contract-analysis/legacy/sync-jpeg": true,
+        "image-format-analysis/legacy/async-jpeg": true,
+        "image-dimensions-analysis/legacy/async-jpeg": true,
+        "producer-export-contract-analysis/legacy/async-jpeg": true,
+        "image-format-analysis/plot-active/sync-png": true,
+        "image-dimensions-analysis/plot-active/sync-png": true,
+        "producer-export-contract-analysis/plot-active/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/plot-active/sync-png": true,
+        "image-format-analysis/plot-active/async-png": true,
+        "image-dimensions-analysis/plot-active/async-png": true,
+        "producer-export-contract-analysis/plot-active/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/plot-active/async-png": true,
+        "image-format-analysis/plot-active/sync-jpeg": true,
+        "image-dimensions-analysis/plot-active/sync-jpeg": true,
+        "producer-export-contract-analysis/plot-active/sync-jpeg": true,
+        "image-format-analysis/plot-active/async-jpeg": true,
+        "image-dimensions-analysis/plot-active/async-jpeg": true,
+        "producer-export-contract-analysis/plot-active/async-jpeg": true,
+        "image-format-analysis/plot-cleared/sync-png": true,
+        "image-dimensions-analysis/plot-cleared/sync-png": true,
+        "producer-export-contract-analysis/plot-cleared/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/plot-cleared/sync-png": true,
+        "image-format-analysis/plot-cleared/async-png": true,
+        "image-dimensions-analysis/plot-cleared/async-png": true,
+        "producer-export-contract-analysis/plot-cleared/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/plot-cleared/async-png": true,
+        "image-format-analysis/plot-cleared/sync-jpeg": true,
+        "image-dimensions-analysis/plot-cleared/sync-jpeg": true,
+        "producer-export-contract-analysis/plot-cleared/sync-jpeg": true,
+        "image-format-analysis/plot-cleared/async-jpeg": true,
+        "image-dimensions-analysis/plot-cleared/async-jpeg": true,
+        "producer-export-contract-analysis/plot-cleared/async-jpeg": true,
+        "independent-same-PNG-codec-sync-async-analysis-legacy": true,
+        "producer-JPEG-sync-async-analysis-legacy": true,
+        "independent-same-PNG-codec-sync-async-analysis-plot-active": true,
+        "producer-JPEG-sync-async-analysis-plot-active": true,
+        "independent-permanent-plot-pixels-differ-analysis-plot-active-sync-png": true,
+        "independent-permanent-plot-pixels-differ-analysis-plot-active-async-png": true,
+        "independent-same-PNG-codec-sync-async-analysis-plot-cleared": true,
+        "producer-JPEG-sync-async-analysis-plot-cleared": true,
+        "independent-permanent-plot-pixels-differ-analysis-plot-cleared-sync-png": true,
+        "independent-permanent-plot-pixels-differ-analysis-plot-cleared-async-png": true,
+        "independent-transient-Trackball-excluded-analysis-sync-png": true,
+        "independent-transient-Trackball-excluded-analysis-async-png": true,
+        "producer-transient-Trackball-excluded-analysis-sync-jpeg": true,
+        "producer-transient-Trackball-excluded-analysis-async-jpeg": true,
+        "analysis-one-real-permanent-plot-glyph-probe": true,
+        "image-format-analysis/glyph-plot-hidden": true,
+        "image-dimensions-analysis/glyph-plot-hidden": true,
+        "image-format-analysis/glyph-plot-restored": true,
+        "image-dimensions-analysis/glyph-plot-restored": true,
+        "independent-real-TextBlock-glyph-analysis/glyph-plot": true,
+        "independent-restored-whole-PNG-analysis/glyph-plot": true,
+        "producer-glyph-counter-consistency-analysis/glyph-plot": true,
+        "engineering-three-states-four-codec-paths": true,
+        "image-format-engineering/legacy/sync-png": true,
+        "image-dimensions-engineering/legacy/sync-png": true,
+        "producer-export-contract-engineering/legacy/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/legacy/sync-png": true,
+        "image-format-engineering/legacy/async-png": true,
+        "image-dimensions-engineering/legacy/async-png": true,
+        "producer-export-contract-engineering/legacy/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/legacy/async-png": true,
+        "image-format-engineering/legacy/sync-jpeg": true,
+        "image-dimensions-engineering/legacy/sync-jpeg": true,
+        "producer-export-contract-engineering/legacy/sync-jpeg": true,
+        "image-format-engineering/legacy/async-jpeg": true,
+        "image-dimensions-engineering/legacy/async-jpeg": true,
+        "producer-export-contract-engineering/legacy/async-jpeg": true,
+        "image-format-engineering/plot-active/sync-png": true,
+        "image-dimensions-engineering/plot-active/sync-png": true,
+        "producer-export-contract-engineering/plot-active/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/plot-active/sync-png": true,
+        "image-format-engineering/plot-active/async-png": true,
+        "image-dimensions-engineering/plot-active/async-png": true,
+        "producer-export-contract-engineering/plot-active/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/plot-active/async-png": true,
+        "image-format-engineering/plot-active/sync-jpeg": true,
+        "image-dimensions-engineering/plot-active/sync-jpeg": true,
+        "producer-export-contract-engineering/plot-active/sync-jpeg": true,
+        "image-format-engineering/plot-active/async-jpeg": true,
+        "image-dimensions-engineering/plot-active/async-jpeg": true,
+        "producer-export-contract-engineering/plot-active/async-jpeg": true,
+        "image-format-engineering/plot-cleared/sync-png": true,
+        "image-dimensions-engineering/plot-cleared/sync-png": true,
+        "producer-export-contract-engineering/plot-cleared/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/plot-cleared/sync-png": true,
+        "image-format-engineering/plot-cleared/async-png": true,
+        "image-dimensions-engineering/plot-cleared/async-png": true,
+        "producer-export-contract-engineering/plot-cleared/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/plot-cleared/async-png": true,
+        "image-format-engineering/plot-cleared/sync-jpeg": true,
+        "image-dimensions-engineering/plot-cleared/sync-jpeg": true,
+        "producer-export-contract-engineering/plot-cleared/sync-jpeg": true,
+        "image-format-engineering/plot-cleared/async-jpeg": true,
+        "image-dimensions-engineering/plot-cleared/async-jpeg": true,
+        "producer-export-contract-engineering/plot-cleared/async-jpeg": true,
+        "independent-same-PNG-codec-sync-async-engineering-legacy": true,
+        "producer-JPEG-sync-async-engineering-legacy": true,
+        "independent-same-PNG-codec-sync-async-engineering-plot-active": true,
+        "producer-JPEG-sync-async-engineering-plot-active": true,
+        "independent-permanent-plot-pixels-differ-engineering-plot-active-sync-png": true,
+        "independent-permanent-plot-pixels-differ-engineering-plot-active-async-png": true,
+        "independent-same-PNG-codec-sync-async-engineering-plot-cleared": true,
+        "producer-JPEG-sync-async-engineering-plot-cleared": true,
+        "independent-permanent-plot-pixels-differ-engineering-plot-cleared-sync-png": true,
+        "independent-permanent-plot-pixels-differ-engineering-plot-cleared-async-png": true,
+        "independent-transient-Trackball-excluded-engineering-sync-png": true,
+        "independent-transient-Trackball-excluded-engineering-async-png": true,
+        "producer-transient-Trackball-excluded-engineering-sync-jpeg": true,
+        "producer-transient-Trackball-excluded-engineering-async-jpeg": true,
+        "engineering-one-real-permanent-plot-glyph-probe": true,
+        "image-format-engineering/glyph-plot-hidden": true,
+        "image-dimensions-engineering/glyph-plot-hidden": true,
+        "image-format-engineering/glyph-plot-restored": true,
+        "image-dimensions-engineering/glyph-plot-restored": true,
+        "independent-real-TextBlock-glyph-engineering/glyph-plot": true,
+        "independent-restored-whole-PNG-engineering/glyph-plot": true,
+        "producer-glyph-counter-consistency-engineering/glyph-plot": true,
+        "four-required-theme-modes": true,
+        "both-professional-root-export-probes": true,
+        "24-exports-four-glyph-images-four-theme-images": true,
+        "all-32-focused-image-paths-unique": true,
+        "native-export272-attempts3200-guards": true,
+        "independent3232-export-oracle-checks": true,
+        "default-JIT-forcedGC-and-stable-native-inputs": true,
+        "packaged-core-and-themes-match-tested-build": true,
+        "export-executed-module-NT.AvaloniaControl.Charts": true,
+        "actual-host-copy-samples/NT.AvaloniaControl.Demo/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "actual-host-copy-samples/Charts.Usage/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "actual-host-copy-benchmarks/Charts.ExportStability/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "export-executed-module-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-host-copy-samples/NT.AvaloniaControl.Demo/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-host-copy-samples/Charts.Usage/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-host-copy-benchmarks/Charts.ExportStability/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-API-metadata-matches-tested-product": true,
+        "base-and-consumer-SDKs-agree-with-frozen-global-pin": true
+      },
+      "failedChecks": [],
+      "sourceSnapshotFiles": 1976,
+      "sourceDifferences": [],
+      "headless": {
+        "status": "passed",
+        "inputKind": "headless-injection",
+        "total": 3050,
+        "passed": 3050,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "notRun": 0,
+        "result": "../../../../../../c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-plotarea-trackball-20261023/linux/run-v2/verification/functional-v1/Charts.Headless.Tests.xml"
+      },
+      "xmlRecount": {
+        "tests": {
+          "total": 3050,
+          "passed": 3050,
+          "failed": 0
+        },
+        "classes": {
+          "ProfessionalPlotAreaContentTests": {
+            "total": 29,
+            "passed": 29,
+            "failed": 0
+          },
+          "ProfessionalTrackballTests": {
+            "total": 35,
+            "passed": 35,
+            "failed": 0
+          },
+          "SharedPresentationTests": {
+            "total": 38,
+            "passed": 38,
+            "failed": 0
+          },
+          "SharedPresentationFamiliesTests": {
+            "total": 20,
+            "passed": 20,
+            "failed": 0
+          },
+          "SharedTooltipPresentationTests": {
+            "total": 59,
+            "passed": 59,
+            "failed": 0
+          }
+        },
+        "failures": [],
+        "assemblyErrors": 0
+      },
+      "priorBaselineRetention": {
+        "passed": true,
+        "baseline": {
+          "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-shared-presentations-20261023/linux/run-v3/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "52BD603CF6A79B148AF4A1CD11D3DA143A34B357CE0FDAB58BEFBFB4A3450900",
+          "bytes": 1736555
+        },
+        "baselineActualTests": 2986,
+        "currentActualTests": 3050,
+        "removedTestNames": [],
+        "addedTestNames": [
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.A_parented_template_result_is_rejected_without_stealing_its_parent_or_context(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.A_parented_template_result_is_rejected_without_stealing_its_parent_or_context(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Ancestor_hiding_detach_and_replacement_release_old_owned_subtrees(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Ancestor_hiding_detach_and_replacement_release_old_owned_subtrees(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Both_professional_roots_share_the_Cartesian_plot_content_property_identity",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Build_failure_is_cleaned_and_quarantined_until_the_template_is_replaced(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Build_failure_is_cleaned_and_quarantined_until_the_template_is_replaced(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Conditional_null_build_is_stable_until_a_new_reading_and_then_recovers(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Conditional_null_build_is_stable_until_a_new_reading_and_then_recovers(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Direct_controls_inherit_the_chart_VM_and_plain_objects_require_a_template(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Direct_controls_inherit_the_chart_VM_and_plain_objects_require_a_template(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Hover_business_source_and_view_updates_reuse_the_control_and_release_old_readings_immediately(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Hover_business_source_and_view_updates_reuse_the_control_and_release_old_readings_immediately(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Measure_and_arrange_reentry_cleanup_obsolete_children_and_recover_after_an_exception(engineering: False, arrange: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Measure_and_arrange_reentry_cleanup_obsolete_children_and_recover_after_an_exception(engineering: False, arrange: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Measure_and_arrange_reentry_cleanup_obsolete_children_and_recover_after_an_exception(engineering: True, arrange: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Measure_and_arrange_reentry_cleanup_obsolete_children_and_recover_after_an_exception(engineering: True, arrange: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Permanent_plot_content_exports_as_a_visual_and_nested_export_during_build_is_rejected(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Permanent_plot_content_exports_as_a_visual_and_nested_export_during_build_is_rejected(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: False, operation: \\\"data-context\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: False, operation: \\\"detach\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: False, operation: \\\"source\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: False, operation: \\\"template\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: True, operation: \\\"data-context\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: True, operation: \\\"detach\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: True, operation: \\\"source\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Reentrant_build_does_not_publish_an_obsolete_content_control(engineering: True, operation: \\\"template\\\")",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Template_content_has_actual_frame_original_data_local_projection_and_real_passive_membership(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Template_content_has_actual_frame_original_data_local_projection_and_real_passive_membership(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_listener_can_replace_mode_source_and_business_context_without_restoring_old_identity(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_listener_can_replace_mode_source_and_business_context_without_restoring_old_identity(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_notification_may_request_a_new_reading_without_splitting_the_published_total(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_notification_may_request_a_new_reading_without_splitting_the_published_total(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_real_click_without_a_preceding_pointer_move_reads_and_selects_the_original_glyph(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_real_click_without_a_preceding_pointer_move_reads_and_selects_the_original_glyph(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_stale_unparented_build_result_releases_its_explicit_old_reading_context(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_stale_unparented_build_result_releases_its_explicit_old_reading_context(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_template_child_context_cleared_listener_may_request_a_new_reading_after_the_whole_teardown(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_template_child_context_cleared_listener_may_request_a_new_reading_after_the_whole_teardown(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_valid_formatter_survives_template_failure_and_self_replacing_throwing_formatter_does_not_poison_its_replacement(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.A_valid_formatter_survives_template_failure_and_self_replacing_throwing_formatter_does_not_poison_its_replacement(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Budgets_disclose_total_and_truncation_without_copying_or_truncating_aggregate_members(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Budgets_disclose_total_and_truncation_without_copying_or_truncating_aggregate_members(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Formatter_failure_is_quarantined_and_replacement_recovers_without_source_reenumeration(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Formatter_failure_is_quarantined_and_replacement_recovers_without_source_reenumeration(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Group_and_float_templates_are_real_passive_controls_and_reuse_on_pointer_business_and_style_changes(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Group_and_float_templates_are_real_passive_controls_and_reuse_on_pointer_business_and_style_changes(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Measured_float_cards_avoid_overlap_when_space_exists_and_follow_live_theme_variant(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Measured_float_cards_avoid_overlap_when_space_exists_and_follow_live_theme_variant(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Null_formatter_output_hides_default_cards_but_custom_templates_still_receive_original_readings(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Null_formatter_output_hides_default_cards_but_custom_templates_still_receive_original_readings(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Null_template_build_hides_cards_and_failed_templates_are_cleaned_and_quarantined_until_replacement(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Null_template_build_hides_cards_and_failed_templates_are_cleaned_and_quarantined_until_replacement(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Professional_modes_and_appearance_share_Cartesian_properties_with_a_distinct_original_glyph_context",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Real_keyboard_navigation_updates_original_readings_and_Escape_clears_the_overlay(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Real_keyboard_navigation_updates_original_readings_and_Escape_clears_the_overlay(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Template_and_formatter_reentry_cannot_publish_removed_business_sources(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Template_and_formatter_reentry_cannot_publish_removed_business_sources(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Trackball_is_independent_of_tooltip_enabled_and_pointer_input_clears_on_leave(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Trackball_is_independent_of_tooltip_enabled_and_pointer_input_clears_on_leave(engineering: True)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Vertical_horizontal_and_equal_distance_slices_return_all_real_visible_glyphs_in_paint_order(engineering: False)",
+          "Charts.Headless.Tests.ProfessionalTrackballTests.Vertical_horizontal_and_equal_distance_slices_return_all_real_visible_glyphs_in_paint_order(engineering: True)"
+        ],
+        "addedTestRecords": 64,
+        "comparison": "Exact xUnit display-name multiset, including every original theory case; no prior test name is silently dropped."
+      },
+      "fullDemoNative": {
+        "total": 5067,
+        "passed": 5067,
+        "failed": 0
+      },
+      "usage": {
+        "total": 913,
+        "passed": 913,
+        "failed": 0
+      },
+      "consumers": {
+        "function": {
+          "passed": true,
+          "checks": {
+            "total": 1095,
+            "passed": 1095,
+            "failed": 0
+          },
+          "coreSha256": "84677CD390F90C980522564922F25AE2918F2C8551931653CB22A593330F551C",
+          "runtime": "10.0.13",
+          "avaloniaVersion": "12.0.3.0",
+          "freshPackageCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-plotarea-trackball-20261023/linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/function/packages",
+          "noProjectReferences": true,
+          "actualSdk": "10.0.402",
+          "sdkEvidence": {
+            "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/function-sdk.stdout.log",
+            "sha256": "44EA2595BC5A7ACABC030531952071226AA70862FD008ED7327D752B39C8513C",
+            "bytes": 9
+          },
+          "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+        },
+        "themes": {
+          "passed": true,
+          "checks": {
+            "total": 1129,
+            "passed": 1129,
+            "failed": 0
+          },
+          "coreSha256": "84677CD390F90C980522564922F25AE2918F2C8551931653CB22A593330F551C",
+          "runtime": "10.0.13",
+          "avaloniaVersion": "12.0.3.0",
+          "freshPackageCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-plotarea-trackball-20261023/linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/themes/packages",
+          "noProjectReferences": true,
+          "actualSdk": "10.0.402",
+          "sdkEvidence": {
+            "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/themes-sdk.stdout.log",
+            "sha256": "44EA2595BC5A7ACABC030531952071226AA70862FD008ED7327D752B39C8513C",
+            "bytes": 9
+          },
+          "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+        }
+      },
+      "professionalPlotTrackball": {
+        "checks": {
+          "total": 243,
+          "passed": 243,
+          "failed": 0
+        },
+        "probes": 7,
+        "themeModes": [
+          "normal-light",
+          "normal-dark",
+          "hc-light",
+          "hc-dark"
+        ],
+        "exportArtifacts": 24,
+        "glyphProofs": [
+          {
+            "family": "analysis",
+            "kind": "plot",
+            "target": "ProfessionalPlotCaption",
+            "text": "永久绘图区 · 归一化中心",
+            "exportRegion": {
+              "x": 21.271676300578033,
+              "y": 52.71676300578035,
+              "width": 100.43692196531792,
+              "height": 11.098265895953757
+            },
+            "independentHidden": {
+              "changedPixels": 485,
+              "pixelRegion": [
+                21,
+                52,
+                101,
+                12
+              ]
+            },
+            "independentRestored": {
+              "changedPixels": 0,
+              "pixelRegion": [
+                21,
+                52,
+                101,
+                12
+              ]
+            },
+            "hiddenReference": {
+              "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-glyph-hidden.png",
+              "sha256": "467E1039AABF74806002521B19A2270CC86486617304F93EF1EF5B8D12D90054",
+              "bytes": 15512,
+              "kind": "analysis/glyph-plot-hidden",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "D93A76DF361F320B1E89C6376E1F94B95F3936BBC2739CC01F23A8F778862C61",
+              "decodedPremultipliedBgraSha256": "D9ADABA1C17CACB7287E40595104561B6FF4FE4E3EE0727A1697BE476FE676A4"
+            },
+            "restoredReference": {
+              "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-glyph-restored.png",
+              "sha256": "F10F8243854CAE7FB99724735AEB5A69B56A20758AC9CF27DDA26D35446BC0EA",
+              "bytes": 17211,
+              "kind": "analysis/glyph-plot-restored",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "869E9B7C9F4A7EB3CEFD0209480570FF89FA39E410CDF607B8E44E3EE4B7EC76",
+              "decodedPremultipliedBgraSha256": "AB6EC09A68587782DCB6E16A494088EC84A073F8331712900069669B9139FEF3"
+            }
+          },
+          {
+            "family": "engineering",
+            "kind": "plot",
+            "target": "ProfessionalPlotCaption",
+            "text": "永久绘图区 · 归一化中心",
+            "exportRegion": {
+              "x": 32.36994219653179,
+              "y": 63.8150289017341,
+              "width": 100.43692196531792,
+              "height": 11.098265895953757
+            },
+            "independentHidden": {
+              "changedPixels": 485,
+              "pixelRegion": [
+                32,
+                63,
+                101,
+                12
+              ]
+            },
+            "independentRestored": {
+              "changedPixels": 0,
+              "pixelRegion": [
+                32,
+                63,
+                101,
+                12
+              ]
+            },
+            "hiddenReference": {
+              "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-glyph-hidden.png",
+              "sha256": "A719604BEFF89AA11508C1F92F0CECE9D390A73E57E07F762512E9AA731AA443",
+              "bytes": 8644,
+              "kind": "engineering/glyph-plot-hidden",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "8C06B9D9CC542D41BDE4ADC2268EB070CB2ECBCBEF5E27D94AEA7EF8DE2AAF71",
+              "decodedPremultipliedBgraSha256": "60EA2A93088E03890F0C45277A28A8A8E249DD48ADCF97D76D7A8BE0653861A0"
+            },
+            "restoredReference": {
+              "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-glyph-restored.png",
+              "sha256": "9F24C7151FD2151DC19B056B65B02EBFCD044036A0BEB9549B20D5D84A94F15E",
+              "bytes": 10436,
+              "kind": "engineering/glyph-plot-restored",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "2F7CFEDDA017279E226A95E1C530D2D4258B8816B994B674BDF021F7A5B4CB9A",
+              "decodedPremultipliedBgraSha256": "25E16B3EC8873F9D7831952F5F09D65A7F3D3AE05A25141A327E58DF3A7F71EF"
+            }
+          }
+        ],
+        "images": [
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-normal-light.png",
+            "sha256": "B767A4C7ABC9BC45FB62D47562FFB616477E0D629A1B83207210B5D545E58322",
+            "bytes": 148615,
+            "kind": "theme/normal-light",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "C969F3E778338D556C75621E385D4242B6715CA478EDDF60DC2D13814085EAE2",
+            "decodedPremultipliedBgraSha256": "1B73B1234396C457739DFD2F63B350C038D7F7C362F235E44DD424A0F2ECE2C8"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-normal-dark.png",
+            "sha256": "FA7E1DFECE2F6F4E50CF37870BEE456AFB2A9D69D45C9641098420A64D368826",
+            "bytes": 155124,
+            "kind": "theme/normal-dark",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D765197408F9BD94F8C84EAD1D3CA85887129AEDD83A8D27A163DD36B93EB54D",
+            "decodedPremultipliedBgraSha256": "EDD8185FF44C739C81F238ECE438A544A41E3B2871BAE40EC744490AFD16E8B7"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-hc-light.png",
+            "sha256": "BA37C984D8C095E32242C3B8B5ACAF5CE6BEC36B94CC005A0343EE72B536212F",
+            "bytes": 138599,
+            "kind": "theme/hc-light",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "48941CA82204971E47D6052A428E73E49CB844E8BC0D57F55BEBB0678966CB3F",
+            "decodedPremultipliedBgraSha256": "6DDA8E98E97EB38176FE211165CD2931614F4B5BB51F6F0F94E026ADD337254A"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-hc-dark.png",
+            "sha256": "44E388CACA4A94B6BCFDC374DD349C0B570D65AF982616173A407923582D719D",
+            "bytes": 145996,
+            "kind": "theme/hc-dark",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "EFF425489A26F9CF04885C76CABA66C0320E527C6E049E2BEB683DCE16FB233A",
+            "decodedPremultipliedBgraSha256": "A780821EC59465BD58A782C91D122C0B66927B2140F0D5E09369CB67904D90E8"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-legacy-sync-png.png",
+            "sha256": "B060F9932C515DDF526B347174642B30ECE8456228D8D778F88F00AC15F30E5C",
+            "bytes": 12802,
+            "kind": "analysis/legacy/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "B98509D7AF217D4F0E5521930F1BC62814C166221A159335B18D9A70DF5FC63E",
+            "decodedPremultipliedBgraSha256": "96C5DA1BAB9FDBE40CD762C9679A85F907E8C8B909735FA404E3B2DFCF4E5A9E"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-legacy-async-png.png",
+            "sha256": "A0B1F4CF11AF22AB7F2E86B4E1F9DAACE344F03FFD788A773C464580C9A5713B",
+            "bytes": 19544,
+            "kind": "analysis/legacy/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "B98509D7AF217D4F0E5521930F1BC62814C166221A159335B18D9A70DF5FC63E",
+            "decodedPremultipliedBgraSha256": "96C5DA1BAB9FDBE40CD762C9679A85F907E8C8B909735FA404E3B2DFCF4E5A9E"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-legacy-sync-jpeg.jpg",
+            "sha256": "3FBAC319663A67C2D0B3B3722C2414CDA57BE373E22EF0AE7C494846DEF443BC",
+            "bytes": 24264,
+            "kind": "analysis/legacy/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-legacy-async-jpeg.jpg",
+            "sha256": "3FBAC319663A67C2D0B3B3722C2414CDA57BE373E22EF0AE7C494846DEF443BC",
+            "bytes": 24264,
+            "kind": "analysis/legacy/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-active-sync-png.png",
+            "sha256": "F10F8243854CAE7FB99724735AEB5A69B56A20758AC9CF27DDA26D35446BC0EA",
+            "bytes": 17211,
+            "kind": "analysis/plot-active/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "869E9B7C9F4A7EB3CEFD0209480570FF89FA39E410CDF607B8E44E3EE4B7EC76",
+            "decodedPremultipliedBgraSha256": "AB6EC09A68587782DCB6E16A494088EC84A073F8331712900069669B9139FEF3"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-active-async-png.png",
+            "sha256": "E3B759EF048CB4AEAA5772A55E9DB46681CA4C139E6265F3E07F60F121EAEEB6",
+            "bytes": 23267,
+            "kind": "analysis/plot-active/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "869E9B7C9F4A7EB3CEFD0209480570FF89FA39E410CDF607B8E44E3EE4B7EC76",
+            "decodedPremultipliedBgraSha256": "AB6EC09A68587782DCB6E16A494088EC84A073F8331712900069669B9139FEF3"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-active-sync-jpeg.jpg",
+            "sha256": "20E1ABED694A660615C831AC418CA115CC8436CD858BD7CD0EEE221B76C4AA71",
+            "bytes": 27240,
+            "kind": "analysis/plot-active/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-active-async-jpeg.jpg",
+            "sha256": "20E1ABED694A660615C831AC418CA115CC8436CD858BD7CD0EEE221B76C4AA71",
+            "bytes": 27240,
+            "kind": "analysis/plot-active/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-cleared-sync-png.png",
+            "sha256": "F10F8243854CAE7FB99724735AEB5A69B56A20758AC9CF27DDA26D35446BC0EA",
+            "bytes": 17211,
+            "kind": "analysis/plot-cleared/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "869E9B7C9F4A7EB3CEFD0209480570FF89FA39E410CDF607B8E44E3EE4B7EC76",
+            "decodedPremultipliedBgraSha256": "AB6EC09A68587782DCB6E16A494088EC84A073F8331712900069669B9139FEF3"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-cleared-async-png.png",
+            "sha256": "E3B759EF048CB4AEAA5772A55E9DB46681CA4C139E6265F3E07F60F121EAEEB6",
+            "bytes": 23267,
+            "kind": "analysis/plot-cleared/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "869E9B7C9F4A7EB3CEFD0209480570FF89FA39E410CDF607B8E44E3EE4B7EC76",
+            "decodedPremultipliedBgraSha256": "AB6EC09A68587782DCB6E16A494088EC84A073F8331712900069669B9139FEF3"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-cleared-sync-jpeg.jpg",
+            "sha256": "20E1ABED694A660615C831AC418CA115CC8436CD858BD7CD0EEE221B76C4AA71",
+            "bytes": 27240,
+            "kind": "analysis/plot-cleared/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-cleared-async-jpeg.jpg",
+            "sha256": "20E1ABED694A660615C831AC418CA115CC8436CD858BD7CD0EEE221B76C4AA71",
+            "bytes": 27240,
+            "kind": "analysis/plot-cleared/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-glyph-hidden.png",
+            "sha256": "467E1039AABF74806002521B19A2270CC86486617304F93EF1EF5B8D12D90054",
+            "bytes": 15512,
+            "kind": "analysis/glyph-plot-hidden",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D93A76DF361F320B1E89C6376E1F94B95F3936BBC2739CC01F23A8F778862C61",
+            "decodedPremultipliedBgraSha256": "D9ADABA1C17CACB7287E40595104561B6FF4FE4E3EE0727A1697BE476FE676A4"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-analysis-plot-glyph-restored.png",
+            "sha256": "F10F8243854CAE7FB99724735AEB5A69B56A20758AC9CF27DDA26D35446BC0EA",
+            "bytes": 17211,
+            "kind": "analysis/glyph-plot-restored",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "869E9B7C9F4A7EB3CEFD0209480570FF89FA39E410CDF607B8E44E3EE4B7EC76",
+            "decodedPremultipliedBgraSha256": "AB6EC09A68587782DCB6E16A494088EC84A073F8331712900069669B9139FEF3"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-legacy-sync-png.png",
+            "sha256": "AF2831FD95B2C1B2083F3A76FC9E8EA57EA8689608DA74C3EF5711AE47BE3003",
+            "bytes": 4678,
+            "kind": "engineering/legacy/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "A2D95E06663318720815DA8F209B90DF43500A8F39612EE0D7F53BA81F2F8556",
+            "decodedPremultipliedBgraSha256": "58ED99646FDBBF817763B0E2AC10F40E513FDE49202E2CD6C2B47961B0E1BDAF"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-legacy-async-png.png",
+            "sha256": "5CE38D97D6DD89F6C68FC4D19D66F56EAF9D2E8CB103A36842D77633F886A2C4",
+            "bytes": 11620,
+            "kind": "engineering/legacy/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "A2D95E06663318720815DA8F209B90DF43500A8F39612EE0D7F53BA81F2F8556",
+            "decodedPremultipliedBgraSha256": "58ED99646FDBBF817763B0E2AC10F40E513FDE49202E2CD6C2B47961B0E1BDAF"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-legacy-sync-jpeg.jpg",
+            "sha256": "857E6660F3994BDC495F1F5D85CA594135CCDB9B665FB4D2750E2EB42703500A",
+            "bytes": 14843,
+            "kind": "engineering/legacy/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-legacy-async-jpeg.jpg",
+            "sha256": "857E6660F3994BDC495F1F5D85CA594135CCDB9B665FB4D2750E2EB42703500A",
+            "bytes": 14843,
+            "kind": "engineering/legacy/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-active-sync-png.png",
+            "sha256": "9F24C7151FD2151DC19B056B65B02EBFCD044036A0BEB9549B20D5D84A94F15E",
+            "bytes": 10436,
+            "kind": "engineering/plot-active/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "2F7CFEDDA017279E226A95E1C530D2D4258B8816B994B674BDF021F7A5B4CB9A",
+            "decodedPremultipliedBgraSha256": "25E16B3EC8873F9D7831952F5F09D65A7F3D3AE05A25141A327E58DF3A7F71EF"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-active-async-png.png",
+            "sha256": "38A668F915C621108FDA674F22BE652113B9393EC15CEE86E564F7605A4C28E0",
+            "bytes": 16291,
+            "kind": "engineering/plot-active/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "2F7CFEDDA017279E226A95E1C530D2D4258B8816B994B674BDF021F7A5B4CB9A",
+            "decodedPremultipliedBgraSha256": "25E16B3EC8873F9D7831952F5F09D65A7F3D3AE05A25141A327E58DF3A7F71EF"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-active-sync-jpeg.jpg",
+            "sha256": "F2EFE58EAD28534AB1F4F6905B43A488545F7DDC856853EA6059D8C70657BCA1",
+            "bytes": 18426,
+            "kind": "engineering/plot-active/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-active-async-jpeg.jpg",
+            "sha256": "F2EFE58EAD28534AB1F4F6905B43A488545F7DDC856853EA6059D8C70657BCA1",
+            "bytes": 18426,
+            "kind": "engineering/plot-active/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-cleared-sync-png.png",
+            "sha256": "9F24C7151FD2151DC19B056B65B02EBFCD044036A0BEB9549B20D5D84A94F15E",
+            "bytes": 10436,
+            "kind": "engineering/plot-cleared/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "2F7CFEDDA017279E226A95E1C530D2D4258B8816B994B674BDF021F7A5B4CB9A",
+            "decodedPremultipliedBgraSha256": "25E16B3EC8873F9D7831952F5F09D65A7F3D3AE05A25141A327E58DF3A7F71EF"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-cleared-async-png.png",
+            "sha256": "38A668F915C621108FDA674F22BE652113B9393EC15CEE86E564F7605A4C28E0",
+            "bytes": 16291,
+            "kind": "engineering/plot-cleared/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "2F7CFEDDA017279E226A95E1C530D2D4258B8816B994B674BDF021F7A5B4CB9A",
+            "decodedPremultipliedBgraSha256": "25E16B3EC8873F9D7831952F5F09D65A7F3D3AE05A25141A327E58DF3A7F71EF"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-cleared-sync-jpeg.jpg",
+            "sha256": "F2EFE58EAD28534AB1F4F6905B43A488545F7DDC856853EA6059D8C70657BCA1",
+            "bytes": 18426,
+            "kind": "engineering/plot-cleared/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-cleared-async-jpeg.jpg",
+            "sha256": "F2EFE58EAD28534AB1F4F6905B43A488545F7DDC856853EA6059D8C70657BCA1",
+            "bytes": 18426,
+            "kind": "engineering/plot-cleared/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-glyph-hidden.png",
+            "sha256": "A719604BEFF89AA11508C1F92F0CECE9D390A73E57E07F762512E9AA731AA443",
+            "bytes": 8644,
+            "kind": "engineering/glyph-plot-hidden",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "8C06B9D9CC542D41BDE4ADC2268EB070CB2ECBCBEF5E27D94AEA7EF8DE2AAF71",
+            "decodedPremultipliedBgraSha256": "60EA2A93088E03890F0C45277A28A8A8E249DD48ADCF97D76D7A8BE0653861A0"
+          },
+          {
+            "path": "linux/run-v2/professional-plot-trackball/tooltip-professional-plot-trackball-engineering-plot-glyph-restored.png",
+            "sha256": "9F24C7151FD2151DC19B056B65B02EBFCD044036A0BEB9549B20D5D84A94F15E",
+            "bytes": 10436,
+            "kind": "engineering/glyph-plot-restored",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "2F7CFEDDA017279E226A95E1C530D2D4258B8816B994B674BDF021F7A5B4CB9A",
+            "decodedPremultipliedBgraSha256": "25E16B3EC8873F9D7831952F5F09D65A7F3D3AE05A25141A327E58DF3A7F71EF"
+          }
+        ],
+        "pngDecoder": {
+          "path": "D:/Procedure/AvaloniaControl/scripts/charts_png_oracle.py",
+          "sha256": "2C05338338984B1D5C818997AAB22E6C8C34331CEC24C8CED65AAE32503C44FF",
+          "bytes": 12612
+        },
+        "pngScope": "Independent stdlib CRC/structure/dimension decoding, producer pixel-hash linkage, same-codec sync/async equality, permanent-content legacy differences, active/cleared Trackball equality, and hidden/restored real TextBlock ROI plus whole-image restoration pixels.",
+        "jpegScope": "Independent SOI/SOF/dimensions/EOI structure only. Same-codec decoded-pixel equality, permanent-content differences and active/cleared Trackball equality are producer Avalonia observations; no independent JPEG visual quality or cross-codec equality claimed."
+      },
+      "exportStability": {
+        "attempts": 272,
+        "producerGuards": 3200,
+        "independentChecks": 3232,
+        "independentlyDecodedPngs": 240,
+        "forcedCollections": 13543,
+        "collectionsBeginningDuringManagedCapture": 2239,
+        "workerStopped": true,
+        "actualNativeModules": [
+          {
+            "moduleName": "libHarfBuzzSharp.so",
+            "fileName": "/mnt/d/Procedure/AvaloniaControl/artifacts/c7plottrack/linux-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/runtimes/linux-x64/native/libHarfBuzzSharp.so",
+            "sha256": "1D5C3AFEF13545BF34BF8F068B14E25EE619C3B6DEE235C44E260FE61CB24018"
+          },
+          {
+            "moduleName": "libSkiaSharp.so",
+            "fileName": "/mnt/d/Procedure/AvaloniaControl/artifacts/c7plottrack/linux-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/runtimes/linux-x64/native/libSkiaSharp.so",
+            "sha256": "77924699617FD9C8E04127C4CA797279DB041E6161AFCBDC44B371D9D81B1675"
+          }
+        ],
+        "defaultJitPreserved": true,
+        "runtime": {
+          "os": "Ubuntu 26.04 LTS",
+          "architecture": "X64",
+          "framework": ".NET 10.0.13",
+          "runtime": "10.0.13",
+          "serverGc": false,
+          "gcLatencyMode": "Interactive",
+          "tieredCompilationEnvironment": null,
+          "comPlusTieredCompilationEnvironment": null,
+          "runtimeConfigPath": "/mnt/d/Procedure/AvaloniaControl/artifacts/c7plottrack/linux-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/Charts.ExportStability.runtimeconfig.json",
+          "runtimeConfig": "{\n  \"runtimeOptions\": {\n    \"tfm\": \"net10.0\",\n    \"framework\": {\n      \"name\": \"Microsoft.NETCore.App\",\n      \"version\": \"10.0.0\"\n    },\n    \"configProperties\": {\n      \"System.Reflection.Metadata.MetadataUpdater.IsSupported\": false,\n      \"System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization\": false\n    }\n  }\n}"
+        }
+      },
+      "productAssemblyPins": {
+        "coreSha256": "84677CD390F90C980522564922F25AE2918F2C8551931653CB22A593330F551C",
+        "themesSha256": "842697675DC146BDE162CFB3EAA4FB9B2D6D1F5D449B2EBA7ABB4DD4C503D1C8",
+        "actualHostCopies": [
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7plottrack/linux-source-v2/samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "84677CD390F90C980522564922F25AE2918F2C8551931653CB22A593330F551C",
+            "bytes": 2298880
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7plottrack/linux-source-v2/samples/Charts.Usage/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "84677CD390F90C980522564922F25AE2918F2C8551931653CB22A593330F551C",
+            "bytes": 2298880
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7plottrack/linux-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "84677CD390F90C980522564922F25AE2918F2C8551931653CB22A593330F551C",
+            "bytes": 2298880
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7plottrack/linux-source-v2/samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "842697675DC146BDE162CFB3EAA4FB9B2D6D1F5D449B2EBA7ABB4DD4C503D1C8",
+            "bytes": 25600
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7plottrack/linux-source-v2/samples/Charts.Usage/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "842697675DC146BDE162CFB3EAA4FB9B2D6D1F5D449B2EBA7ABB4DD4C503D1C8",
+            "bytes": 25600
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7plottrack/linux-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "842697675DC146BDE162CFB3EAA4FB9B2D6D1F5D449B2EBA7ABB4DD4C503D1C8",
+            "bytes": 25600
+          }
+        ]
+      },
+      "api": {
+        "exportedTypes": [
+          503,
+          3
+        ],
+        "totalTypes": 506,
+        "normalizedSurfaceSha256": "5CF2AE9D8AD33EE1697F8A89A166033497BABAAF430BA85185D20AA2134D11E9",
+        "metadataOnly": true,
+        "officialCompared": false
+      },
+      "runtime": {
+        "osDescription": "Ubuntu 26.04 LTS",
+        "osArchitecture": "X64",
+        "processArchitecture": "X64",
+        "baseSdk": "10.0.402",
+        "powershell": "7.6.5",
+        "actualExportFramework": ".NET 10.0.13",
+        "actualExportRuntime": "10.0.13",
+        "avalonia": "12.0.3.0",
+        "qualification": "WSL2/WSLg XWayland native X11 synthetic window"
+      },
+      "references": [
+        {
+          "path": "linux/run-v2/results.json",
+          "sha256": "C10FA2F04C89C3482CC1BE658C50FDCB102ED8F33F77AB856C0EB956AD4470AC",
+          "bytes": 7249
+        },
+        {
+          "path": "linux/run-v2/source-before.json",
+          "sha256": "356F2EB07195E214777AB608358567178E80F8800D8BE6FF13F705D8B5D1C11A",
+          "bytes": 59
+        },
+        {
+          "path": "linux/run-v2/source-after.json",
+          "sha256": "356F2EB07195E214777AB608358567178E80F8800D8BE6FF13F705D8B5D1C11A",
+          "bytes": 59
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/results.json",
+          "sha256": "A66E20191B5904E36F1279B9CF1BA42E14A63F488618F64C4D12796413629724",
+          "bytes": 24083
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/environment.json",
+          "sha256": "05F30D0A338E074C50FE33DA0BB28A1DEEFB7E5D63F995C0867FE50474E104DF",
+          "bytes": 8388
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/assembly-manifest.json",
+          "sha256": "E9750F6E5D439108A5ACCD7333437687D1D622E292626C509F4ADFA5350A9430",
+          "bytes": 1907
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/source-manifest.json",
+          "sha256": "05C68D432172EFF421A0A5C79C095F712A047CCA8687F5A371A51CE883E3FD77",
+          "bytes": 323391
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/source-manifest-final.json",
+          "sha256": "05C68D432172EFF421A0A5C79C095F712A047CCA8687F5A371A51CE883E3FD77",
+          "bytes": 323391
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/validated-input-manifest.json",
+          "sha256": "87A4B5B39B29391BE33A75E4B46A807A98570217A9A6D67C8579FF5E8D8BC2ED",
+          "bytes": 179543
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/evidence-manifest.json",
+          "sha256": "838CE4C0C2B129A1F9AC11B2954FB5E43DDD11E45C0EA9F5EF379F22DFBB4178",
+          "bytes": 227757
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "AEE724DB3F679862811964CDB326D69C665EDE913068EF1F5AEE9DB665251119",
+          "bytes": 1767956
+        },
+        {
+          "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-shared-presentations-20261023/linux/run-v3/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "52BD603CF6A79B148AF4A1CD11D3DA143A34B357CE0FDAB58BEFBFB4A3450900",
+          "bytes": 1736555
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/charts-smoke.json",
+          "sha256": "296F4C7306F8981D490C63E9C1036E05C07375C05A2FB22556C0B64F1D69773C",
+          "bytes": 82936450
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/charts-usage.json",
+          "sha256": "E7A47BC506D1C388A9E0A208A6D3A6CE3733AA96D7300EA3E05E593F0EB441FE",
+          "bytes": 112548
+        },
+        {
+          "path": "linux/run-v2/catalog.json",
+          "sha256": "946766847D1DF2DC476D5A114FBD521309D641A590CCFDBD154BCBFAD154D3EB",
+          "bytes": 54333
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/results.json",
+          "sha256": "E6C807E94FA468357174BDC1F4789D3FC34E0F471F19E6B0A17DE284A13C3EC7",
+          "bytes": 12702
+        },
+        {
+          "path": "linux/run-v2/package-feed/NT.AvaloniaControl.Charts.0.2.0-preview.2.nupkg",
+          "sha256": "3D989D7A3CFEC80287C9DA570C3ABE017129027D53470115B96B0BD63753002A",
+          "bytes": 911627
+        },
+        {
+          "path": "linux/run-v2/package-feed/NT.AvaloniaControl.Charts.Themes.0.2.0-preview.2.nupkg",
+          "sha256": "BBAD224593D671E96405B34E8393F5A7C22043B668AB51C25A648DF1C5993511",
+          "bytes": 12773
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/function/consumer-result.json",
+          "sha256": "A1EE96E0430AE6F2F0F6AAF7061C85345B83B8D1EB749613E4A85534D4F69F44",
+          "bytes": 153752
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/function/packages.lock.json",
+          "sha256": "AA6CBBD90D02CBA64E459DF6F43F8E0A60856AD5428A6D9159FAD1C9B6550856",
+          "bytes": 4387
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/function-sdk.stdout.log",
+          "sha256": "44EA2595BC5A7ACABC030531952071226AA70862FD008ED7327D752B39C8513C",
+          "bytes": 9
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/function/global.json",
+          "sha256": "81AE2087DBFB46027FD94748351FB4B1AB24145FBB52544A2822BF128E2E48F1",
+          "bytes": 105
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/function/Consumer.csproj",
+          "sha256": "CE37BA26E727751F3D6444DA9FE47F1916711B070087403F745C88D880099ACE",
+          "bytes": 793
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/function/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+          "sha256": "84677CD390F90C980522564922F25AE2918F2C8551931653CB22A593330F551C",
+          "bytes": 2298880
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/themes/consumer-result.json",
+          "sha256": "D90F96FD41BFE2B49805C482A1BBEF792D53928F6CA6E7939B8E672E8AE5D19F",
+          "bytes": 156205
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/themes/packages.lock.json",
+          "sha256": "12208B5367F38CDD7B541B147A505E93AA9F3349D9AF16D68BD9364DF9B9C31E",
+          "bytes": 4717
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/themes-sdk.stdout.log",
+          "sha256": "44EA2595BC5A7ACABC030531952071226AA70862FD008ED7327D752B39C8513C",
+          "bytes": 9
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/themes/global.json",
+          "sha256": "81AE2087DBFB46027FD94748351FB4B1AB24145FBB52544A2822BF128E2E48F1",
+          "bytes": 105
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/themes/Consumer.csproj",
+          "sha256": "1DE40474E3ACBA04B486F8A14808C29E5B9BB7A8754BA6059017AE98F4A4DF33",
+          "bytes": 797
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/themes/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+          "sha256": "84677CD390F90C980522564922F25AE2918F2C8551931653CB22A593330F551C",
+          "bytes": 2298880
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T161116788Z-ef7d16ecacdc4d63a9782320c2546f03/themes/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "842697675DC146BDE162CFB3EAA4FB9B2D6D1F5D449B2EBA7ABB4DD4C503D1C8",
+          "bytes": 25600
+        },
+        {
+          "path": "linux/run-v2/professional-plot-trackball/smoke.json",
+          "sha256": "AD55FE916FADD5E05FACC83DB801FEA218F472E3EA8A937E3BC5627C20E7B52A",
+          "bytes": 137947
+        },
+        {
+          "path": "linux/run-v2/export-stability/results.json",
+          "sha256": "CD495E6D142503B06016787AE908649C9D92C0F72802D57D2DAF0805241C2C34",
+          "bytes": 6206
+        },
+        {
+          "path": "linux/run-v2/export-stability/producer/results.json",
+          "sha256": "B0FE63B30CC6A825F22C87998B5DB149D940C94C962A8E1D6FC5C4DF32C6A725",
+          "bytes": 1967508
+        },
+        {
+          "path": "linux/run-v2/export-stability/producer/protocol.json",
+          "sha256": "971F596BCF08AE6B2DC771792E0FC7510AC92EFE9D05A751B64E97DA8E3FF98A",
+          "bytes": 60527
+        },
+        {
+          "path": "linux/run-v2/export-stability/producer/events.jsonl",
+          "sha256": "3EA65A597A87B31F42B8B365810398D282D82FDE0F4B310CDEB0E334A1FFA5AD",
+          "bytes": 507705
+        },
+        {
+          "path": "linux/run-v2/export-stability/independent-oracle.json",
+          "sha256": "0DAA062122E5992FEF410C448AE01AE0C596B20FF09555FF2811F9B5A2A6C477",
+          "bytes": 447397
+        },
+        {
+          "path": "linux/run-v2/export-stability/source-inputs-before.json",
+          "sha256": "3BA25CA7373C0BCBBC7BE5CF53DD5582F33456AD6BE7C60C417E35CA9BCCC86D",
+          "bytes": 51291
+        },
+        {
+          "path": "linux/run-v2/export-stability/source-inputs-after.json",
+          "sha256": "3BA25CA7373C0BCBBC7BE5CF53DD5582F33456AD6BE7C60C417E35CA9BCCC86D",
+          "bytes": 51291
+        },
+        {
+          "path": "linux/run-v2/export-stability/host-inputs-before.json",
+          "sha256": "6BDE5699B2D77FF06DE74D8BB302C897D4E291A49060B96DAB858453F3BEF4FB",
+          "bytes": 12700
+        },
+        {
+          "path": "linux/run-v2/export-stability/host-inputs-after.json",
+          "sha256": "6BDE5699B2D77FF06DE74D8BB302C897D4E291A49060B96DAB858453F3BEF4FB",
+          "bytes": 12700
+        },
+        {
+          "path": "linux/run-v2/api/baseline.json",
+          "sha256": "EA21144118B8B388AD1FD0C9D8BFB2C3D2F5DE42B560E14702DA3099EF8D4734",
+          "bytes": 303239
+        },
+        {
+          "path": "linux/run-v2/api/api.txt",
+          "sha256": "C7293463246D3F6CB9278789390155FAD1289F741DBBEEDC3F3E97FB190A1148",
+          "bytes": 1058660
+        },
+        {
+          "path": "linux/run-v2/api/source-manifest.json",
+          "sha256": "A8BB6A4F94F61666550FB2638CC3CF554FFD64AFF01DCF79795E307AD75CC40D",
+          "bytes": 114566
+        },
+        {
+          "path": "linux/run-v2/entry-catalog/process.json",
+          "sha256": "4768C3E2754A0E9E827D07B4AF6202C28BD906EE86F53124F92BB190676CBE0C",
+          "bytes": 819
+        },
+        {
+          "path": "linux/run-v2/entry-base/process.json",
+          "sha256": "2A3E31546969A99E21947AA15C0C34B1F79D64CC91EA668503A6E776889C429C",
+          "bytes": 1080
+        },
+        {
+          "path": "linux/run-v2/entry-consumers/process.json",
+          "sha256": "5984684E2464DCD4A735AA15E3D6DAB2EDA45807082DC38BCBB0361B14017140",
+          "bytes": 1050
+        },
+        {
+          "path": "linux/run-v2/entry-professional-plot-trackball/process.json",
+          "sha256": "5CD40A6C139CDE4CB39FFE2CE5C4F68BFD15A7617BB669ABAD34EF3F3369EF2E",
+          "bytes": 1168
+        },
+        {
+          "path": "linux/run-v2/entry-export-stability/process.json",
+          "sha256": "EFF2FEF04E5F11C0784353E73154C23BA73CE5E06D43CD2CEDB8941F9D94EC2C",
+          "bytes": 970
+        },
+        {
+          "path": "linux/run-v2/entry-api/process.json",
+          "sha256": "527BB1E8C306999C843B4E4F783EB22CE000BC401A937AF8AB7E59A110411E4E",
+          "bytes": 868
+        }
+      ]
+    }
+  },
+  "pendingPlatforms": [],
+  "aggregationErrors": [],
+  "apiSurfacesMatchAcrossPlatforms": true,
+  "currentWorkspace": {
+    "checkedSnapshotFiles": 1976,
+    "chartRelevantBuildInputs": 615,
+    "chartProductTestUsageHarnessInputsMatchFrozenCandidate": true,
+    "chartRelevantDifferences": [],
+    "newRelevantInputsAbsentFromSnapshot": [],
+    "reportDocumentationDifferences": [
+      "docs/charts-c7-plotarea-trackball.md",
+      "docs/charts-development-plan.md",
+      "docs/charts-official-alignment.md",
+      "docs/charts-performance-platform-plan.md",
+      "docs/charts-platform-matrix.json",
+      "docs/treedatagrid-native-optimization-a6.md",
+      "docs/treedatagrid-platform-acceptance.md",
+      "samples/Charts.Usage/README.md"
+    ],
+    "unrelatedDifferences": [],
+    "qualificationScope": "All frozen files are verified independently in both platform source copies. Current repository matching is restricted to chart build/test/Usage/Demo Charts/harness inputs; documentation and unrelated changes are reported separately."
+  },
+  "qualification": {
+    "physicalInputValidated": false,
+    "compositorPresentCaptured": false,
+    "linuxDistributionCertified": false,
+    "officialRuntimeCompared": false,
+    "performanceParityMeasured": false,
+    "remoteCiExecuted": false,
+    "eightHourSoakCompleted": false,
+    "nativeUIAOrAtSpiSelectedItemBridgeCertified": false,
+    "windowsNativeSynthetic": true,
+    "linuxWslgNativeSynthetic": true
+  },
+  "dotnetExecutedByCollector": false,
+  "frozenSourceAmendment": {
+    "passed": true,
+    "parentManifestAndAmendmentsMatch": true,
+    "initialSnapshot": {
+      "path": "source-snapshot-v1.json",
+      "sha256": "F110A58C863ABCC413184FA50D9F461775A914D4BB8CB2AA52A5A693A7E02167",
+      "bytes": 381409
+    },
+    "chartRelevantChangedPaths": [
+      "src/NT.AvaloniaControl.Charts/AnalysisChartBase.Trackball.cs",
+      "src/NT.AvaloniaControl.Charts/EngineeringChartBase.Trackball.cs",
+      "tests/Charts.Headless.Tests/ProfessionalTrackballTests.cs"
+    ],
+    "allChangedPaths": [
+      "benchmarks/TreeDataGrid.ProfileAnalysis/Program.cs",
+      "benchmarks/TreeDataGrid.ProfileAnalysis/README.md",
+      "docs/charts-c7-plotarea-trackball.md",
+      "docs/treedatagrid-native-optimization-a6.md",
+      "scripts/Test-TreeDataGridNativePerformance.ps1",
+      "scripts/Trace-TreeDataGridNative.ps1",
+      "src/NT.AvaloniaControl.Charts/AnalysisChartBase.Trackball.cs",
+      "src/NT.AvaloniaControl.Charts/EngineeringChartBase.Trackball.cs",
+      "tests/Charts.Headless.Tests/ProfessionalTrackballTests.cs"
+    ],
+    "preservedFirstWindowsFailure": {
+      "path": "windows/run-v1/results.json",
+      "sha256": "27B0D3746923072D0380C986061BD40949441838D850E3A45FEB04FA097D5DE3",
+      "bytes": 2925
+    },
+    "preservedFirstBaseFailure": {
+      "path": "windows/run-v1/verification/functional-v1/results.json",
+      "sha256": "AE4A0716C988AD3C5B05BBD7722D7602F7D0AA60D927B3CB10A7D2F0C01ADAF4",
+      "bytes": 4290
+    },
+    "firstCandidateRuntimeTestsExecuted": false,
+    "firstCandidateFailure": "Sandbox restore stopped at normal NuGet vulnerability-audit network access; dotnet --info also reported SCM access denied. Audit remains enabled and the final Windows run uses the required execution permissions.",
+    "sourceAmendmentReason": "Independent review and fresh failing regressions exposed Trackball public-reading and control-teardown notification reentry. V2 guards the complete clear transaction and defers explicit callback queries until cleanup completes.",
+    "developmentRuns": [
+      {
+        "passed": false,
+        "receipt": {
+          "path": "windows/core-development-v1/results.json",
+          "sha256": "E490689AEBBF6253BD523FAA36C72032438BB752AD0A5D7468F1F71C4B474BD8",
+          "bytes": 1167
+        },
+        "xml": null,
+        "qualification": "Mutable development checkpoint. Failed receipts are retained, separate from final frozen platform qualification."
+      },
+      {
+        "passed": false,
+        "receipt": {
+          "path": "windows/core-development-v2/results.json",
+          "sha256": "D13D2337E7F4CDC47845F4A295676B08B7FEAD70DF45D81D48EC60F649042219",
+          "bytes": 2570
+        },
+        "xml": {
+          "tests": {
+            "total": 167,
+            "passed": 158,
+            "failed": 9
+          },
+          "classes": {
+            "ProfessionalPlotAreaContentTests": {
+              "total": 29,
+              "passed": 24,
+              "failed": 5
+            },
+            "ProfessionalTrackballTests": {
+              "total": 21,
+              "passed": 17,
+              "failed": 4
+            },
+            "SharedPresentationTests": {
+              "total": 38,
+              "passed": 38,
+              "failed": 0
+            },
+            "SharedPresentationFamiliesTests": {
+              "total": 20,
+              "passed": 20,
+              "failed": 0
+            },
+            "SharedTooltipPresentationTests": {
+              "total": 59,
+              "passed": 59,
+              "failed": 0
+            }
+          },
+          "failures": [
+            {
+              "name": "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Template_content_has_actual_frame_original_data_local_projection_and_real_passive_membership(engineering: False)",
+              "type": "Charts.Headless.Tests.ProfessionalPlotAreaContentTests",
+              "method": "Template_content_has_actual_frame_original_data_local_projection_and_real_passive_membership",
+              "result": "Fail",
+              "failure": "Assert.Equal() Failure: Values differ\nExpected: 123.2, 263.2\nActual:   123.19999999999999, 263.2   at Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Template_content_has_actual_frame_original_data_local_projection_and_real_passive_membership(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalPlotAreaContentTests.cs:line 52\n   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Conditional_null_build_is_stable_until_a_new_reading_and_then_recovers(engineering: False)",
+              "type": "Charts.Headless.Tests.ProfessionalPlotAreaContentTests",
+              "method": "Conditional_null_build_is_stable_until_a_new_reading_and_then_recovers",
+              "result": "Fail",
+              "failure": "Assert.Equal() Failure: Values differ\nExpected: 1\nActual:   2   at Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Conditional_null_build_is_stable_until_a_new_reading_and_then_recovers(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalPlotAreaContentTests.cs:line 115\n   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Conditional_null_build_is_stable_until_a_new_reading_and_then_recovers(engineering: True)",
+              "type": "Charts.Headless.Tests.ProfessionalPlotAreaContentTests",
+              "method": "Conditional_null_build_is_stable_until_a_new_reading_and_then_recovers",
+              "result": "Fail",
+              "failure": "Assert.Equal() Failure: Values differ\nExpected: 1\nActual:   2   at Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Conditional_null_build_is_stable_until_a_new_reading_and_then_recovers(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalPlotAreaContentTests.cs:line 115\n   at InvokeStub_ProfessionalPlotAreaContentTests.Conditional_null_build_is_stable_until_a_new_reading_and_then_recovers(Object, Span`1)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Hover_business_source_and_view_updates_reuse_the_control_and_release_old_readings_immediately(engineering: False)",
+              "type": "Charts.Headless.Tests.ProfessionalPlotAreaContentTests",
+              "method": "Hover_business_source_and_view_updates_reuse_the_control_and_release_old_readings_immediately",
+              "result": "Fail",
+              "failure": "Assert.Same() Failure: Values are not the same instance\nExpected: ChartDataPlotAreaContext { AnalysisMarks = [AnalysisMarkInfo { Data = ChartDataPoint { SourceIndex = 0, StableId = a, Item = Charts.Headless.Tests.SharedTooltipRow, Category = A, Point = ChartPoint { X = 0, Y = 4 }, IsEmpty = False, High = , Low = , Weight = , WasEmpty = False, Value = 4, RawPoint = , BaseValue = , StackValue = , CumulativeValue = , IsTotal = False, SizeValue = , ColorValue = , MarkerDiameter = , PointFill = , BoxPlot = , Financial = , Analysis =  }, Geometry = Avalonia.Media.PolylineGeometry, Fill = #ff4385f4, LabelPosition = 320, 74.16666666666666, Label = , LabelBrush = , TooltipText = , IsVisible = True, Bounds = 12, 12, 616, 124.33333333333331 }, AnalysisMarkInfo { Data = ChartDataPoint { SourceIndex = 1, StableId = b, Item = Charts.Headless.Tests.SharedTooltipRow, Category = B, Point = ChartPoint { X = 1, Y = 3 }, IsEmpty = False, High = , Low = , Weight = , WasEmpty = False, Value = 3, RawPoint = , BaseValue = , StackValue = , CumulativeValue = , IsTotal = False, SizeValue = , ColorValue = , MarkerDiameter = , PointFill = , BoxPlot = , Financial = , Analysis =  }, Geometry = Avalonia.Media.PolylineGeometry, Fill = #ff19a798, LabelPosition = 320, 199.99999999999997, Label = , LabelBrush = , TooltipText = , IsVisible = True, Bounds = 66.33005319148938, 138.33333333333331, 507.3398936170213, 123.33333333333331 }, AnalysisMarkInfo { Data = ChartDataPoint { SourceIndex = 2, StableId = c, Item = Charts.Headless.Tests.SharedTooltipRow, Category = C, Point = ChartPoint { X = 2, Y = 2 }, IsEmpty = False, High = , Low = , Weight = , WasEmpty = False, Value = 2, RawPoint = , BaseValue = , StackValue = , CumulativeValue = , IsTotal = False, SizeValue = , ColorValue = , MarkerDiameter = , PointFill = , BoxPlot = , Financial = , Analysis =  }, Geometry = Avalonia.Media.PolylineGeometry, Fill = #fff6a531, LabelPosition = 320, 325.8333333333333, Label = , LabelBrush = , TooltipText = , IsVisible = True, Bounds = 120.66010638297877, 263.66666666666663, 398.6797872340425, 124.33333333333337 }], Content = Object { }, DataContext = MutableBusiness { Title = \\\"Updated business\\\" }, EngineeringMarks = [], PlotArea = 12, 12, 616, 376, ··· }\nActual:   ChartDataPlotAreaContext { AnalysisMarks = [AnalysisMarkInfo { Data = ChartDataPoint { SourceIndex = 0, StableId = a, Item = Charts.Headless.Tests.SharedTooltipRow, Category = A, Point = ChartPoint { X = 0, Y = 4 }, IsEmpty = False, High = , Low = , Weight = , WasEmpty = False, Value = 4, RawPoint = , BaseValue = , StackValue = , CumulativeValue = , IsTotal = False, SizeValue = , ColorValue = , MarkerDiameter = , PointFill = , BoxPlot = , Financial = , Analysis =  }, Geometry = Avalonia.Media.PolylineGeometry, Fill = #ff4385f4, LabelPosition = 320, 74.16666666666666, Label = , LabelBrush = , TooltipText = , IsVisible = True, Bounds = 12, 12, 616, 124.33333333333331 }, AnalysisMarkInfo { Data = ChartDataPoint { SourceIndex = 1, StableId = b, Item = Charts.Headless.Tests.SharedTooltipRow, Category = B, Point = ChartPoint { X = 1, Y = 3 }, IsEmpty = False, High = , Low = , Weight = , WasEmpty = False, Value = 3, RawPoint = , BaseValue = , StackValue = , CumulativeValue = , IsTotal = False, SizeValue = , ColorValue = , MarkerDiameter = , PointFill = , BoxPlot = , Financial = , Analysis =  }, Geometry = Avalonia.Media.PolylineGeometry, Fill = #ff19a798, LabelPosition = 320, 199.99999999999997, Label = , LabelBrush = , TooltipText = , IsVisible = True, Bounds = 66.33005319148938, 138.33333333333331, 507.3398936170213, 123.33333333333331 }, AnalysisMarkInfo { Data = ChartDataPoint { SourceIndex = 2, StableId = c, Item = Charts.Headless.Tests.SharedTooltipRow, Category = C, Point = ChartPoint { X = 2, Y = 2 }, IsEmpty = False, High = , Low = , Weight = , WasEmpty = False, Value = 2, RawPoint = , BaseValue = , StackValue = , CumulativeValue = , IsTotal = False, SizeValue = , ColorValue = , MarkerDiameter = , PointFill = , BoxPlot = , Financial = , Analysis =  }, Geometry = Avalonia.Media.PolylineGeometry, Fill = #fff6a531, LabelPosition = 320, 325.8333333333333, Label = , LabelBrush = , TooltipText = , IsVisible = True, Bounds = 120.66010638297877, 263.66666666666663, 398.6797872340425, 124.33333333333337 }], Content = Object { }, DataContext = MutableBusiness { Title = \\\"Updated business\\\" }, EngineeringMarks = [], PlotArea = 12, 12, 616, 376, ··· }   at Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Hover_business_source_and_view_updates_reuse_the_control_and_release_old_readings_immediately(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalPlotAreaContentTests.cs:line 91\n   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Hover_business_source_and_view_updates_reuse_the_control_and_release_old_readings_immediately(engineering: True)",
+              "type": "Charts.Headless.Tests.ProfessionalPlotAreaContentTests",
+              "method": "Hover_business_source_and_view_updates_reuse_the_control_and_release_old_readings_immediately",
+              "result": "Fail",
+              "failure": "Assert.Same() Failure: Values are not the same instance\nExpected: ChartDataPlotAreaContext { AnalysisMarks = [], Content = Object { }, DataContext = MutableBusiness { Title = \\\"Updated business\\\" }, EngineeringMarks = [EngineeringMarkInfo { Members = NT.AvaloniaControl.Charts.ChartDataSnapshot+PointList, Geometry = Avalonia.Media.EllipseGeometry, Fill = Blue, Position = 320, 200, Key = , Value = 0, TooltipText = , Stroke = , Bounds = 316, 196, 8, 8 }], PlotArea = 24, 24, 592, 352, ··· }\nActual:   ChartDataPlotAreaContext { AnalysisMarks = [], Content = Object { }, DataContext = MutableBusiness { Title = \\\"Updated business\\\" }, EngineeringMarks = [EngineeringMarkInfo { Members = NT.AvaloniaControl.Charts.ChartDataSnapshot+PointList, Geometry = Avalonia.Media.EllipseGeometry, Fill = Blue, Position = 320, 200, Key = , Value = 0, TooltipText = , Stroke = , Bounds = 316, 196, 8, 8 }], PlotArea = 24, 24, 592, 352, ··· }   at Charts.Headless.Tests.ProfessionalPlotAreaContentTests.Hover_business_source_and_view_updates_reuse_the_control_and_release_old_readings_immediately(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalPlotAreaContentTests.cs:line 91\n   at InvokeStub_ProfessionalPlotAreaContentTests.Hover_business_source_and_view_updates_reuse_the_control_and_release_old_readings_immediately(Object, Span`1)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.Measured_float_cards_avoid_overlap_when_space_exists_and_follow_live_theme_variant(engineering: False)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "Measured_float_cards_avoid_overlap_when_space_exists_and_follow_live_theme_variant",
+              "result": "Fail",
+              "failure": "Assert.All() Failure: 2 out of 2 items in the collection did not pass.\n[0]: Item:  Border { ActualThemeVariant = Dark, Background = #ff101b2b, BackgroundSizing = CenterBorder, BorderBrush = #ff53657c, BorderThickness = 1,1,1,1, ··· }\n     Error: Assert.Same() Failure: Values are not the same instance\n            Expected: Black\n            Actual:   #ff101b2b\n[1]: Item:  Border { ActualThemeVariant = Dark, Background = #ff101b2b, BackgroundSizing = CenterBorder, BorderBrush = #ff53657c, BorderThickness = 1,1,1,1, ··· }\n     Error: Assert.Same() Failure: Values are not the same instance\n            Expected: Black\n            Actual:   #ff101b2b   at Charts.Headless.Tests.ProfessionalTrackballTests.Measured_float_cards_avoid_overlap_when_space_exists_and_follow_live_theme_variant(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 161\n   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.Measured_float_cards_avoid_overlap_when_space_exists_and_follow_live_theme_variant(engineering: True)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "Measured_float_cards_avoid_overlap_when_space_exists_and_follow_live_theme_variant",
+              "result": "Fail",
+              "failure": "Assert.All() Failure: 2 out of 2 items in the collection did not pass.\n[0]: Item:  Border { ActualThemeVariant = Dark, Background = #ff101b2b, BackgroundSizing = CenterBorder, BorderBrush = #ff53657c, BorderThickness = 1,1,1,1, ··· }\n     Error: Assert.Same() Failure: Values are not the same instance\n            Expected: Black\n            Actual:   #ff101b2b\n[1]: Item:  Border { ActualThemeVariant = Dark, Background = #ff101b2b, BackgroundSizing = CenterBorder, BorderBrush = #ff53657c, BorderThickness = 1,1,1,1, ··· }\n     Error: Assert.Same() Failure: Values are not the same instance\n            Expected: Black\n            Actual:   #ff101b2b   at Charts.Headless.Tests.ProfessionalTrackballTests.Measured_float_cards_avoid_overlap_when_space_exists_and_follow_live_theme_variant(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 161\n   at InvokeStub_ProfessionalTrackballTests.Measured_float_cards_avoid_overlap_when_space_exists_and_follow_live_theme_variant(Object, Span`1)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(engineering: False)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings",
+              "result": "Fail",
+              "failure": "Assert.NotEmpty() Failure: Collection was empty   at Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 92\n   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(engineering: True)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings",
+              "result": "Fail",
+              "failure": "Assert.NotEmpty() Failure: Collection was empty   at Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 92\n   at InvokeStub_ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(Object, Span`1)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)"
+            }
+          ],
+          "assemblyErrors": 0
+        },
+        "qualification": "Mutable development checkpoint. Failed receipts are retained, separate from final frozen platform qualification."
+      },
+      {
+        "passed": false,
+        "receipt": {
+          "path": "windows/core-development-v3/results.json",
+          "sha256": "4AB7BCD8BB8D89B10C638F8D7026E8680D2442FBB5345522EE4A1A0F5887339D",
+          "bytes": 2570
+        },
+        "xml": {
+          "tests": {
+            "total": 171,
+            "passed": 169,
+            "failed": 2
+          },
+          "classes": {
+            "ProfessionalPlotAreaContentTests": {
+              "total": 29,
+              "passed": 29,
+              "failed": 0
+            },
+            "ProfessionalTrackballTests": {
+              "total": 25,
+              "passed": 23,
+              "failed": 2
+            },
+            "SharedPresentationTests": {
+              "total": 38,
+              "passed": 38,
+              "failed": 0
+            },
+            "SharedPresentationFamiliesTests": {
+              "total": 20,
+              "passed": 20,
+              "failed": 0
+            },
+            "SharedTooltipPresentationTests": {
+              "total": 59,
+              "passed": 59,
+              "failed": 0
+            }
+          },
+          "failures": [
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(engineering: False)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings",
+              "result": "Fail",
+              "failure": "Assert.NotEmpty() Failure: Collection was empty   at Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 92\n   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(engineering: True)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings",
+              "result": "Fail",
+              "failure": "Assert.NotEmpty() Failure: Collection was empty   at Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 92\n   at InvokeStub_ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(Object, Span`1)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)"
+            }
+          ],
+          "assemblyErrors": 0
+        },
+        "qualification": "Mutable development checkpoint. Failed receipts are retained, separate from final frozen platform qualification."
+      },
+      {
+        "passed": false,
+        "receipt": {
+          "path": "windows/core-development-v4/results.json",
+          "sha256": "33C040996E621D2D9EF8F95D04562CA0073716421EA115BDE2E5746F5051F79A",
+          "bytes": 2238
+        },
+        "xml": {
+          "tests": {
+            "total": 25,
+            "passed": 23,
+            "failed": 2
+          },
+          "classes": {
+            "ProfessionalPlotAreaContentTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            },
+            "ProfessionalTrackballTests": {
+              "total": 25,
+              "passed": 23,
+              "failed": 2
+            },
+            "SharedPresentationTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            },
+            "SharedPresentationFamiliesTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            },
+            "SharedTooltipPresentationTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            }
+          },
+          "failures": [
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(engineering: False)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings",
+              "result": "Fail",
+              "failure": "Assert.NotEmpty() Failure: Collection was empty   at Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 92\n   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(engineering: True)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings",
+              "result": "Fail",
+              "failure": "Assert.NotEmpty() Failure: Collection was empty   at Charts.Headless.Tests.ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 92\n   at InvokeStub_ProfessionalTrackballTests.Source_mutation_hide_disable_detach_clear_old_contexts_and_restore_only_current_readings(Object, Span`1)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)"
+            }
+          ],
+          "assemblyErrors": 0
+        },
+        "qualification": "Mutable development checkpoint. Failed receipts are retained, separate from final frozen platform qualification."
+      },
+      {
+        "passed": true,
+        "receipt": {
+          "path": "windows/core-development-v5/results.json",
+          "sha256": "ECE29E9A84C895E07D5C1D826A6001A0DEAD1F2C0A43AD49B86B37225C243314",
+          "bytes": 2115
+        },
+        "xml": {
+          "tests": {
+            "total": 29,
+            "passed": 29,
+            "failed": 0
+          },
+          "classes": {
+            "ProfessionalPlotAreaContentTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            },
+            "ProfessionalTrackballTests": {
+              "total": 29,
+              "passed": 29,
+              "failed": 0
+            },
+            "SharedPresentationTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            },
+            "SharedPresentationFamiliesTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            },
+            "SharedTooltipPresentationTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            }
+          },
+          "failures": [],
+          "assemblyErrors": 0
+        },
+        "qualification": "Mutable development checkpoint. Failed receipts are retained, separate from final frozen platform qualification."
+      },
+      {
+        "passed": false,
+        "receipt": {
+          "path": "windows/core-development-v6/results.json",
+          "sha256": "CD6D0D7FCA806AF1A318915975667C841AC8DC165FEAD647D6657E7D96D495CE",
+          "bytes": 2238
+        },
+        "xml": {
+          "tests": {
+            "total": 33,
+            "passed": 29,
+            "failed": 4
+          },
+          "classes": {
+            "ProfessionalPlotAreaContentTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            },
+            "ProfessionalTrackballTests": {
+              "total": 33,
+              "passed": 29,
+              "failed": 4
+            },
+            "SharedPresentationTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            },
+            "SharedPresentationFamiliesTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            },
+            "SharedTooltipPresentationTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            }
+          },
+          "failures": [
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_notification_may_request_a_new_reading_without_splitting_the_published_total(engineering: False)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "A_readings_cleared_notification_may_request_a_new_reading_without_splitting_the_published_total",
+              "result": "Fail",
+              "failure": "Assert.Equal() Failure: Values differ\nExpected: 2\nActual:   0   at Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_notification_may_request_a_new_reading_without_splitting_the_published_total(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 225\n   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_notification_may_request_a_new_reading_without_splitting_the_published_total(engineering: True)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "A_readings_cleared_notification_may_request_a_new_reading_without_splitting_the_published_total",
+              "result": "Fail",
+              "failure": "Assert.Equal() Failure: Values differ\nExpected: 2\nActual:   0   at Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_notification_may_request_a_new_reading_without_splitting_the_published_total(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 225\n   at InvokeStub_ProfessionalTrackballTests.A_readings_cleared_notification_may_request_a_new_reading_without_splitting_the_published_total(Object, Span`1)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_listener_can_replace_mode_source_and_business_context_without_restoring_old_identity(engineering: False)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "A_readings_cleared_listener_can_replace_mode_source_and_business_context_without_restoring_old_identity",
+              "result": "Fail",
+              "failure": "Assert.Equal() Failure: Values differ\nExpected: 2\nActual:   0   at Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_listener_can_replace_mode_source_and_business_context_without_restoring_old_identity(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 242\n   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_listener_can_replace_mode_source_and_business_context_without_restoring_old_identity(engineering: True)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "A_readings_cleared_listener_can_replace_mode_source_and_business_context_without_restoring_old_identity",
+              "result": "Fail",
+              "failure": "Assert.Equal() Failure: Values differ\nExpected: 2\nActual:   0   at Charts.Headless.Tests.ProfessionalTrackballTests.A_readings_cleared_listener_can_replace_mode_source_and_business_context_without_restoring_old_identity(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 242\n   at InvokeStub_ProfessionalTrackballTests.A_readings_cleared_listener_can_replace_mode_source_and_business_context_without_restoring_old_identity(Object, Span`1)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)"
+            }
+          ],
+          "assemblyErrors": 0
+        },
+        "qualification": "Mutable development checkpoint. Failed receipts are retained, separate from final frozen platform qualification."
+      },
+      {
+        "passed": true,
+        "receipt": {
+          "path": "windows/core-development-v7/results.json",
+          "sha256": "E5D3113305293949B877BF155C1EDB575EF65EAA71C8EF0B1C8701651B1147C4",
+          "bytes": 2447
+        },
+        "xml": {
+          "tests": {
+            "total": 179,
+            "passed": 179,
+            "failed": 0
+          },
+          "classes": {
+            "ProfessionalPlotAreaContentTests": {
+              "total": 29,
+              "passed": 29,
+              "failed": 0
+            },
+            "ProfessionalTrackballTests": {
+              "total": 33,
+              "passed": 33,
+              "failed": 0
+            },
+            "SharedPresentationTests": {
+              "total": 38,
+              "passed": 38,
+              "failed": 0
+            },
+            "SharedPresentationFamiliesTests": {
+              "total": 20,
+              "passed": 20,
+              "failed": 0
+            },
+            "SharedTooltipPresentationTests": {
+              "total": 59,
+              "passed": 59,
+              "failed": 0
+            }
+          },
+          "failures": [],
+          "assemblyErrors": 0
+        },
+        "qualification": "Mutable development checkpoint. Failed receipts are retained, separate from final frozen platform qualification."
+      },
+      {
+        "passed": false,
+        "receipt": {
+          "path": "windows/core-development-v8/results.json",
+          "sha256": "E33D9B4F5FF025FF71C626D9D0007D3C5470425646863342F7858A9233CA6BCB",
+          "bytes": 2238
+        },
+        "xml": {
+          "tests": {
+            "total": 35,
+            "passed": 33,
+            "failed": 2
+          },
+          "classes": {
+            "ProfessionalPlotAreaContentTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            },
+            "ProfessionalTrackballTests": {
+              "total": 35,
+              "passed": 33,
+              "failed": 2
+            },
+            "SharedPresentationTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            },
+            "SharedPresentationFamiliesTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            },
+            "SharedTooltipPresentationTests": {
+              "total": 0,
+              "passed": 0,
+              "failed": 0
+            }
+          },
+          "failures": [
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.A_template_child_context_cleared_listener_may_request_a_new_reading_after_the_whole_teardown(engineering: False)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "A_template_child_context_cleared_listener_may_request_a_new_reading_after_the_whole_teardown",
+              "result": "Fail",
+              "failure": "Assert.Equal() Failure: Values differ\nExpected: 2\nActual:   0   at Charts.Headless.Tests.ProfessionalTrackballTests.A_template_child_context_cleared_listener_may_request_a_new_reading_after_the_whole_teardown(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 261\n   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)"
+            },
+            {
+              "name": "Charts.Headless.Tests.ProfessionalTrackballTests.A_template_child_context_cleared_listener_may_request_a_new_reading_after_the_whole_teardown(engineering: True)",
+              "type": "Charts.Headless.Tests.ProfessionalTrackballTests",
+              "method": "A_template_child_context_cleared_listener_may_request_a_new_reading_after_the_whole_teardown",
+              "result": "Fail",
+              "failure": "Assert.Equal() Failure: Values differ\nExpected: 2\nActual:   0   at Charts.Headless.Tests.ProfessionalTrackballTests.A_template_child_context_cleared_listener_may_request_a_new_reading_after_the_whole_teardown(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\tests\\Charts.Headless.Tests\\ProfessionalTrackballTests.cs:line 261\n   at InvokeStub_ProfessionalTrackballTests.A_template_child_context_cleared_listener_may_request_a_new_reading_after_the_whole_teardown(Object, Span`1)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)"
+            }
+          ],
+          "assemblyErrors": 0
+        },
+        "qualification": "Mutable development checkpoint. Failed receipts are retained, separate from final frozen platform qualification."
+      },
+      {
+        "passed": true,
+        "receipt": {
+          "path": "windows/core-development-v9/results.json",
+          "sha256": "810E665B96444ACB7D2B35A5610A24F607403DCC288C98CBB3D44BBF008DEE3F",
+          "bytes": 2446
+        },
+        "xml": {
+          "tests": {
+            "total": 181,
+            "passed": 181,
+            "failed": 0
+          },
+          "classes": {
+            "ProfessionalPlotAreaContentTests": {
+              "total": 29,
+              "passed": 29,
+              "failed": 0
+            },
+            "ProfessionalTrackballTests": {
+              "total": 35,
+              "passed": 35,
+              "failed": 0
+            },
+            "SharedPresentationTests": {
+              "total": 38,
+              "passed": 38,
+              "failed": 0
+            },
+            "SharedPresentationFamiliesTests": {
+              "total": 20,
+              "passed": 20,
+              "failed": 0
+            },
+            "SharedTooltipPresentationTests": {
+              "total": 59,
+              "passed": 59,
+              "failed": 0
+            }
+          },
+          "failures": [],
+          "assemblyErrors": 0
+        },
+        "qualification": "Mutable development checkpoint. Failed receipts are retained, separate from final frozen platform qualification."
+      },
+      {
+        "passed": false,
+        "receipt": {
+          "path": "windows/demo-development-v1/results.json",
+          "sha256": "44F0002C63619B2EE43D8D83B205C1FB3314D161BBCFD15BF548D3827038D08E",
+          "bytes": 1276
+        },
+        "xml": null,
+        "qualification": "Mutable development checkpoint. Failed receipts are retained, separate from final frozen platform qualification."
+      },
+      {
+        "passed": true,
+        "receipt": {
+          "path": "windows/demo-development-v2/results.json",
+          "sha256": "18E09746217F4DEB67A0BA6227F9615DD0EA270D54FD42B7DE1C4B8D37661B02",
+          "bytes": 4283
+        },
+        "xml": null,
+        "qualification": "Mutable development checkpoint. Failed receipts are retained, separate from final frozen platform qualification."
+      }
+    ]
+  },
+  "references": [
+    {
+      "path": "source-snapshot-v2.json",
+      "sha256": "6C20FDD91DA525E9FD097DCBFF2289923108AC4A8244C78F7ADE65D272B5839B",
+      "bytes": 384086
+    },
+    {
+      "path": "Collect-C7PlotTrackValidation-v2.py",
+      "sha256": "91A6B18D97D559F645EF0B02057E1C4634E51CE5DDA6395044AF8DE79A14C0DE",
+      "bytes": 39002
+    },
+    {
+      "path": "D:/Procedure/AvaloniaControl/scripts/charts_png_oracle.py",
+      "sha256": "2C05338338984B1D5C818997AAB22E6C8C34331CEC24C8CED65AAE32503C44FF",
+      "bytes": 12612
+    },
+    {
+      "path": "D:/Procedure/AvaloniaControl/scripts/charts_export_stability_oracle.py",
+      "sha256": "F1986F0CD9346DD1F1AE0A03BCBB151D9C13171CEAAEBCA30A46AF1ABC726C14",
+      "bytes": 19168
+    }
+  ],
+  "remainingIssues": [
+    "Remaining C7-01 range selection, multi-chart synchronization and full animation/export combinations remain open.",
+    "Official licensed runtime and functional/performance parity acceptance remain pending.",
+    "Physical Windows/Linux input and compositor evidence, distribution certification, native accessibility selected-item bridging, remote CI and eight-hour soak remain pending.",
+    "Million-point hit-test tail latency remains deferred by user direction; forced-GC export stress is not a throughput or latency benchmark.",
+    "Independent PNG checks prove raster differences and template glyph ROI pixels, not semantic screenshot review of every chart or independent JPEG visual quality."
+  ]
+}

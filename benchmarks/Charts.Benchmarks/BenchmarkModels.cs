@@ -83,6 +83,7 @@ internal sealed class ScenarioReport(DatasetDefinition definition)
     public string Qualification { get; } = definition.RealtimePoc ? "batch-replace-poc-only-not-rate-qualified" : "C0-diagnostic-only";
     public List<DatasetManifest> Datasets { get; } = [];
     public List<DatasetCreation> DatasetPreparation { get; } = [];
+    public object? AxisPreparation { get; set; }
     public List<BenchmarkSample> Samples { get; } = [];
     public Dictionary<string, MetricSummary> Summary { get; set; } = [];
 }

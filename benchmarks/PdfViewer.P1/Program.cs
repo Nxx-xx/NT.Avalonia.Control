@@ -18,7 +18,7 @@ using Reader = NT.AvaloniaControl.PdfViewer.PdfViewer;
 
 namespace PdfViewer.P1;
 
-internal static class Program
+internal static partial class Program
 {
     private static readonly Dictionary<string, bool> Checks = [];
     private static readonly Dictionary<string, object?> Observations = [];
@@ -200,6 +200,7 @@ internal static class Program
                         var batch = compositor.RequestCompositionBatchCommitAsync();
                         await batch.Rendered.WaitAsync(cancellation.Token);
                         Check("native-composition-rendered", true);
+                        await VerifyP402Async(reader, window, cancellation.Token);
                         using var bitmap = new RenderTargetBitmap(new PixelSize((int)window.ClientSize.Width, (int)window.ClientSize.Height), new Vector(96, 96));
                         bitmap.Render(window);
                         var image = Path.Combine(_output, "native-window.png");

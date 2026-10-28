@@ -8,7 +8,7 @@ using Avalonia.Media;
 namespace NT.AvaloniaControl.Charts;
 
 /// <summary>Advanced comparison glyphs with separate decorations and original parent/child membership.</summary>
-public abstract class ComparisonChartBase : EngineeringChartBase
+public abstract partial class ComparisonChartBase : EngineeringChartBase
 {
     public static readonly StyledProperty<bool> ShowLabelsProperty = AvaloniaProperty.Register<ComparisonChartBase, bool>(nameof(ShowLabels), true);
     public static readonly StyledProperty<bool> ShowValuesProperty = AvaloniaProperty.Register<ComparisonChartBase, bool>(nameof(ShowValues), true);
@@ -18,6 +18,8 @@ public abstract class ComparisonChartBase : EngineeringChartBase
     private bool _observing;
     protected readonly List<(string Text, Point Position, double Width)> Labels = [];
     protected readonly List<(Geometry Geometry, IBrush? Brush, double Thickness)> Decorations = [];
+    private WeakReference<IReadOnlyList<EngineeringMarkInfo>>? _labelMarks;
+    private readonly Dictionary<Point, IBrush?> _labelFills = [];
     public bool ShowLabels { get => GetValue(ShowLabelsProperty); set => SetValue(ShowLabelsProperty, value); }
     public bool ShowValues { get => GetValue(ShowValuesProperty); set => SetValue(ShowValuesProperty, value); }
     public string? ValueFormat { get => GetValue(ValueFormatProperty); set => SetValue(ValueFormatProperty, value); }
@@ -25,7 +27,7 @@ public abstract class ComparisonChartBase : EngineeringChartBase
     protected string ValueText(double value) { try { return value.ToString(ValueFormat, CultureInfo.CurrentCulture); } catch (FormatException) { return F(value); } }
     protected string? ReadText(object? item, string? path) => !string.IsNullOrWhiteSpace(path) && ChartDataAccessor.TryRead(item, path, out var raw) ? raw?.ToString() : null;
     protected static object? Read(object? item, string? path) => !string.IsNullOrWhiteSpace(path) && ChartDataAccessor.TryRead(item, path, out var raw) ? raw : null;
-    protected void BeginScene() { Labels.Clear(); Decorations.Clear(); }
+    protected void BeginScene() { Labels.Clear(); Decorations.Clear(); _dataLabelMarks.Clear(); }
     protected Point Normalized(double x, double y, Rect plot) => ApplyViewport(new(plot.Left + plot.Width * x, plot.Top + plot.Height * y), plot);
     protected Geometry Rectangle(double x, double y, double width, double height, Rect plot)
     {
@@ -39,7 +41,23 @@ public abstract class ComparisonChartBase : EngineeringChartBase
     protected override void RenderAnnotations(DrawingContext context, Rect plot)
     {
         using (context.PushClip(plot)) foreach (var decoration in Decorations) context.DrawGeometry(null, new Pen(decoration.Brush ?? Foreground ?? Brushes.Gray, decoration.Thickness), decoration.Geometry);
-        foreach (var label in Labels) DrawLabel(context, label.Text, label.Position, label.Width);
+        // Centered cell/value labels can resolve their real data fill without an
+        // O(labels * marks) geometry search. Outside labels keep Foreground.
+        var marks = GetMarks();
+        if (_labelMarks is null || !_labelMarks.TryGetTarget(out var previousMarks) || !ReferenceEquals(marks, previousMarks))
+        {
+            // The cache must not retain an old source frame after GetMarks replaces it.
+            _labelMarks = new(marks); _labelFills.Clear();
+            foreach (var mark in marks) _labelFills[mark.Position] = mark.Fill;
+        }
+        for (var ordinal = 0; ordinal < Labels.Count; ordinal++)
+        {
+            if (IsTemplatedDataLabel(ordinal)) continue;
+            var label = Labels[ordinal];
+            var fallback = Foreground ?? Brushes.Gray;
+            var brush = _labelFills.TryGetValue(label.Position, out var fill) ? ChartLabelContrast.OnFill(fill, fallback) : fallback;
+            DrawLabel(context, label.Text, label.Position, label.Width, brush);
+        }
     }
     protected override EngineeringPointHit? ResolveFollowedMark(EngineeringPointHit previous, IReadOnlyList<EngineeringMarkInfo> marks, EngineeringPointHit? proposed)
     {

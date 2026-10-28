@@ -1,6 +1,6 @@
 # TreeDataGrid 使用说明
 
-本文说明本仓库 `NT.AvaloniaControl.TreeDataGrid.TreeDataGrid` 的接入方式、MVVM 示例和公共功能接口，适用于当前 `0.2.0-preview.2`。示例使用 .NET SDK `10.0.401`、`net10.0`、Avalonia `12.0.3` 和 `CommunityToolkit.Mvvm` `8.4.2`，以仓库源码为准。
+本文说明本仓库 `NT.AvaloniaControl.TreeDataGrid.TreeDataGrid` 的接入方式、MVVM 示例和公共功能接口，适用于当前 `0.2.0-preview.2`。示例使用 .NET SDK `10.0.402`、`net10.0`、Avalonia `12.0.3` 和 `CommunityToolkit.Mvvm` `8.4.2`，以仓库源码为准。
 
 本控件支持平面列表和树形列表、五种列、行列虚拟化、冻结列、行或单元格选择、暂存编辑与验证、同级排序及过滤。命名空间为 `NT.AvaloniaControl.TreeDataGrid`；功能程序集为 `NT.AvaloniaControl.TreeDataGrid`，默认主题位于独立的 `NT.AvaloniaControl.TreeDataGrid.Themes` 程序集。
 
@@ -9,8 +9,13 @@
 ## 目录
 
 - [接入与主题](#接入与主题)
+- [文本列对齐与裁剪](#文本列对齐与裁剪)
+- [每列搜索编辑与排序配置](#每列搜索编辑与排序配置)
+- [列头显隐](#列头显隐)
 - [完整 MVVM 示例：ItemsSource](#完整-mvvm-示例itemssource)
 - [选择、当前单元格与编辑](#选择当前单元格与编辑)
+- [选择事务与单元格事件](#选择事务与单元格事件)
+- [受控编译绑定与 ConvertBack](#受控编译绑定与-convertback)
 - [MVVM 中使用显式 Source](#mvvm-中使用显式-source)
 - [树形数据与展开绑定](#树形数据与展开绑定)
 - [自定义列模板与编辑验证](#自定义列模板与编辑验证)
@@ -74,6 +79,90 @@ xmlns:tg="clr-namespace:NT.AvaloniaControl.TreeDataGrid;assembly=NT.AvaloniaCont
 | ViewModel 需要排序、过滤、展开命令或自定义树委托 | `Source="{Binding Source}"` | ViewModel / 应用创建并负责 `Dispose()` |
 
 `ItemsSource` 与显式 `Source` 互斥。切换入口时先清空当前入口。`ItemsSource` 模式下仍可读取控件的 `Source`，它是自动生成的适配源；不要再赋入外部 Source。
+
+## 文本列对齐与裁剪
+
+文本列提供 `TextAlignment` 和 `TextTrimming`，默认分别为 `Left` 与 `CharacterEllipsis`，保留现有左对齐和字符省略号表现。
+
+```xml
+<tg:TreeDataGridTextColumn Header="数量" Width="100"
+                           Binding="{ReflectionBinding Quantity}"
+                           TextAlignment="Right" TextTrimming="None" />
+<tg:TreeDataGridTextColumn Header="名称" Width="180"
+                           Binding="{ReflectionBinding Name}"
+                           TextAlignment="Center" TextTrimming="WordEllipsis" />
+```
+
+C# 可直接使用 Avalonia 类型：
+
+```csharp
+var column = new TreeDataGridTextColumn
+{
+    Header = "说明", Width = new Avalonia.Controls.GridLength(240),
+    TextAlignment = Avalonia.Media.TextAlignment.Right,
+    TextTrimming = Avalonia.Media.TextTrimming.None,
+    TextWrapping = Avalonia.Media.TextWrapping.Wrap,
+};
+```
+
+`TextTrimming.None` 关闭省略号，内容仍受单元格边界裁剪。`TextTrimming` 是 Avalonia 的策略类型，接受其公开裁剪策略，不能赋 null；非法 `TextAlignment` 枚举值在赋值时抛出异常。
+
+树形展开列将这些属性配置在 `InnerColumn` 的文本列上。修改运行中的列会更新可见单元格并重新测量；滚动回收后仍使用各列自己的配置。与 `TextWrapping` 和 `AutoRowHeight` 配合时按实际文本重新计算高度。配置作用于显示文本，列头、编辑器和应用模板内部控件按各自配置呈现；修改配置保留当前选择和暂存草稿。
+
+## 每列搜索编辑与排序配置
+
+`SearchText(prefix)` 在可见行和可见列中按前缀定位；文本列默认参与。设置列 `IsTextSearchEnabled="False"` 可排除该列；树形列的外层和内层都须允许搜索。
+
+模板列通过 `TextSearchBinding` 读取搜索文字：
+
+```xml
+<tg:TreeDataGridTemplateColumn Header="名称标签" TextSearchBinding="{ReflectionBinding Name}">
+  <tg:TreeDataGridTemplateColumn.CellTemplate>
+    <DataTemplate><TextBlock Text="{ReflectionBinding Name}" /></DataTemplate>
+  </tg:TreeDataGridTemplateColumn.CellTemplate>
+</tg:TreeDataGridTemplateColumn>
+```
+
+支持以模型为 DataContext 的反射和编译绑定，包括嵌套路径及 converter；每次搜索重新读取并释放临时订阅。需要视觉树、ElementName 或外部相对目标的搜索值应由显式 `TextSearchValueSelector` 提供。优先级为搜索开关 → 有效内列 selector → 模板搜索绑定 → 文本列原值。文本 selector 返回 null 时沿用原值回退；模板 selector 返回 null 代表无搜索文字，不回退到模型 ToString。
+
+没有命中时不会提交草稿；命中其它目标后先发送 SelectionChanging，未取消才提交旧编辑。取消或验证失败返回 null，不改变选择或滚动位置。成功写回可能改变匹配数据，因此会从新快照再搜索一次；旧提议不发送完成事件，新提议可以再次取消。getter、converter 或选择回调改变源/列/投影时拒绝陈旧目标；搜索回调直接重入 SearchText 会抛出 InvalidOperationException。
+
+每列 `BeginEditGestures` 为可空 Flags：
+
+| 值 | 行为 |
+| --- | --- |
+| null / 未设置 | 继承；展开器外层显式值优先于 InnerColumn，最后使用控件 EditTriggers |
+| None | 关闭该列的用户编辑手势，包括复选框 Space；程序 BeginEdit 仍可用于可写列 |
+| F2 | F2 开始编辑，与鼠标条件独立 |
+| Tap / DoubleTap | 单击 / 双击开始编辑 |
+| WhenSelected | 点击前已是当前且已选中的单元格才能进入编辑；单独使用表示选中后再次单击 |
+
+例如 `BeginEditGestures="F2,DoubleTap,WhenSelected"` 允许 F2，或在已选中项上双击。程序选中不自动开始编辑；模板内按钮、编辑器和 IME 保持自己的输入路由。运行时修改这些配置保留活动草稿和编辑器。旧 `TreeDataGridEditTriggers` 枚举及数值保持；未设置列手势时，旧全局 None 对复选框 Space 的历史行为继续保留。
+
+列 `AllowTriStateSorting: bool?` 按“外层 → 内层 → IsThreeStateSort”继承，显式 false 可以覆盖全局 true。`CompareAscending` 优先于旧 `Comparison`；外层对应比较器优先于内层。`CompareDescending` 直接表达最终降序，无需再反转一次；未设置时反转升序比较：
+
+```csharp
+column.CompareAscending = (left, right) => ((Person)left).Quantity.CompareTo(((Person)right).Quantity);
+column.CompareDescending = (left, right) => ((Person)right).Quantity.CompareTo(((Person)left).Quantity);
+```
+
+比较器接收模型对象；同值保留同级源顺序。替换比较器不会隐式提交草稿或重排当前视图，下一次显式 SortByColumn/列头操作采用新配置；既有 Source 排序继续使用先前捕获的比较器。比较回调中更换源、内列或列配置会拒绝本次陈旧操作。
+
+统一 Demo 的“每列交互与搜索”场景展示这些设置；输入“模板搜索定位示例”后点击“定位前缀”，可定位到说明模板列且不改变数据数量。
+
+## 列头显隐
+
+控件 `ShowColumnHeaders` 默认 true。设为 false 隐藏整条列头区域并释放高度，保留列身份、宽度、排序、选择和草稿。正在进行的列头排序点击、重排或调宽被取消；隐藏的列头从自动化树移除，已有逻辑列头 peer 的动作被禁用。
+
+默认主题已接入。应用自定义模板需要把列头**外层区域**的可见性绑定到该属性，例如在 ControlTemplate 内使用：
+
+```xml
+<Border IsVisible="{TemplateBinding ShowColumnHeaders}">
+  <tg:TreeDataGridColumnHeadersPresenter Name="PART_ColumnHeadersPresenter" Height="28" />
+</Border>
+```
+
+隐藏时保持 Auto 列已经测得的宽度基线，避免表格跳动；列头显隐不等同于隐藏列，VisibleColumns 和数据列数量保持。
 
 ## 完整 MVVM 示例：ItemsSource
 
@@ -190,9 +279,11 @@ public sealed partial class PeopleViewModel : ObservableObject
       <Button Content="开始编辑" Command="{Binding Editing.BeginEditCommand}" />
       <Button Content="提交" Command="{Binding Editing.CommitEditCommand}" />
       <Button Content="取消" Command="{Binding Editing.CancelEditCommand}" />
+      <CheckBox x:Name="BlockSelection" Content="阻止切换选择" />
     </StackPanel>
 
     <tg:TreeDataGrid Grid.Row="1" ItemsSource="{Binding Items}"
+                     SelectionChanging="OnSelectionChanging" CellValueChanged="OnCellValueChanged"
                      SelectionUnit="Row" SelectionMode="Multiple"
                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                      SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}"
@@ -203,9 +294,10 @@ public sealed partial class PeopleViewModel : ObservableObject
                      IsThreeStateSort="True">
       <tg:TreeDataGridRowHeaderColumn Header="#" Width="48" IsReadOnly="True" />
       <tg:TreeDataGridTextColumn Header="名称" Width="2*" MinWidth="120"
-                                 Binding="{ReflectionBinding Name}" />
+                                 Binding="{ReflectionBinding Name}" BeginEditGestures="F2,DoubleTap,WhenSelected" />
       <tg:TreeDataGridTextColumn Header="数量" Width="100"
-                                 Binding="{ReflectionBinding Quantity}" />
+                                 Binding="{ReflectionBinding Quantity}" TextAlignment="Right" TextTrimming="None"
+                                 IsTextSearchEnabled="False" AllowTriStateSorting="False" />
       <tg:TreeDataGridCheckBoxColumn Header="启用" Width="90" IsThreeState="True"
                                      Binding="{ReflectionBinding Enabled}" />
     </tg:TreeDataGrid>
@@ -217,7 +309,7 @@ public sealed partial class PeopleViewModel : ObservableObject
       <TextBlock Text="{Binding Editing.EditSession.ValidationError}"
                  Foreground="Red" VerticalAlignment="Center" />
     </StackPanel>
-    <TextBlock Grid.Row="3" Text="先点击名称或数量单元格，再按 F2、双击或点击开始编辑。" />
+    <TextBlock x:Name="EventStatus" Grid.Row="3" Text="先点击名称或数量单元格，再按 F2、双击或点击开始编辑。勾选后，切换选择不会提交草稿。" />
   </Grid>
 </Window>
 ```
@@ -228,12 +320,18 @@ View 的外围绑定使用 compiled bindings。列上的 `ReflectionBinding` 以
 
 ```csharp
 using Avalonia.Controls;
+using NT.AvaloniaControl.TreeDataGrid;
 
 namespace TreeDataGrid.Usage;
 
 public partial class MainWindow : Window
 {
     public MainWindow() => InitializeComponent();
+
+    private void OnSelectionChanging(object? sender, TreeDataGridSelectionChangingEventArgs e) => e.Cancel = BlockSelection.IsChecked == true;
+
+    private void OnCellValueChanged(object? sender, TreeDataGridCellValueChangedEventArgs e) =>
+        EventStatus.Text = $"{e.Reason}：{e.OldValue} → {e.NewValue}（节点 {e.Cell.Node.Value}，列 {e.Cell.Column.Value}）";
 }
 ```
 
@@ -295,7 +393,7 @@ dotnet run --project samples/TreeDataGrid.Usage
 
 使用仓库根目录的锁定还原与 Release 构建流程时，该项目会随解决方案一起构建，之后可运行 `dotnet run --project samples/TreeDataGrid.Usage -c Release --no-build`。复制到仓库外时，创建上述目录与文件，并补齐目标框架、Avalonia 包版本和两个控件程序集的引用。
 
-本例集中展示集合绑定、增删、多选、当前单元格、暂存编辑与验证和列头排序。需要树展开、排序过滤和其他组合场景时，可运行统一 Demo 的 TreeDataGrid 页面；`--mvvm` 直接选中该页面的 MVVM Tab，普通模式的十个场景位于另一个 Tab：
+本例集中展示集合绑定、增删、多选、当前单元格、暂存编辑与验证和列头排序。需要树展开、排序过滤和其他组合场景时，可运行统一 Demo 的 TreeDataGrid 页面；`--mvvm` 直接进入 MVVM 示例，其它例子可从 TreeDataGrid 分类进入，原生探针的普通模式保留十五个场景：
 
 ```powershell
 dotnet run --project samples/NT.AvaloniaControl.Demo -- --mvvm
@@ -334,6 +432,76 @@ dotnet run --project samples/NT.AvaloniaControl.Demo -- --mvvm
 | `EditSession.ValidationError` | 最近一次转换、验证或写回错误，只读 |
 
 这些对象实现 `INotifyPropertyChanged`；命令会更新 `CanExecute`。每个 `TreeDataGridEditCommands` 实例同时连接一个表格，多表格应各自创建实例。表格卸载时断开命令连接，重新挂载后恢复。`IsReadOnly=true` 会取消活动编辑。
+
+## 选择事务与单元格事件
+
+控件和独立 `TreeDataGridState` 都提供 `SelectionChanging` 与强类型 `SelectionChangeCompleted`。已有 `SelectionChanged` 的 `EventHandler` 签名保留，仍针对选集变化；仅移动当前单元格也经过前事件和强类型完成事件。
+
+```csharp
+grid.SelectionChanging += (_, e) =>
+{
+    // e.OldSelection / e.ProposedSelection 都是身份快照。
+    if (shouldKeepSelection) e.Cancel = true;
+};
+grid.SelectionChangeCompleted += (_, e) =>
+{
+    // e.Reason 区分 Pointer、Keyboard、Search、Binding、Automation、Programmatic。
+    // IsForced=true 表示删除、换源、列清理或选择模式改变，不能取消。
+    Log(e.Reason, e.IsForced, e.NewSelection.CurrentCell);
+};
+```
+
+顺序为：验证入口和目标 → 计算旧/拟议快照 → `SelectionChanging` → 提交必要的旧草稿 → 重新验证源、版本、身份、列和矩形 → 应用选集/锚点/当前项 → 同步输出 → 完成事件 → 请求滚动。取消或前事件抛异常不会调用 converter、validator 或 writer；校验失败保留原选择和错误草稿。成功 writer 的业务写入不能回滚，即使之后目标失效或观察者抛异常。
+
+| 入口 | 行为 |
+| --- | --- |
+| 指针、导航键、SearchText、`TryScrollIntoView(select: true)` | 共用事务；取消后不滚动到拟议目标，也不启动其编辑器 |
+| SelectedItem / SelectedIndex / SelectedItems / CurrentCell | 共用 Binding 原因；取消后恢复实际值并保留绑定；集合通知栈内的集合恢复可能调度到 UI 队列 |
+| State 的选择和当前项方法、BeginEdit 的当前项移动 | 共用 Programmatic 原因；State 的 void 方法可通过完成事件和实际状态判断是否接受 |
+| 自动化选择、移除选择和焦点移动 | 共用 Automation 原因；取消时 provider 反映原状态 |
+| 删除节点、替换 Source、隐藏/移除列、改变选择模式/单位 | 不发送可取消前事件；实际清理以 `IsForced` 和对应系统原因通知 |
+| 导航在末行/末列没有产生新地址时的 Enter/Tab | 属于当前编辑提交，不制造重复选择事件 |
+
+快照的 `SelectedNodes` 是节点列表；`CellRows × CellColumns` 表示矩形，避免分配整张单元格列表。`CurrentCell`、`SelectionAnchor` 独立保存。`DeferSelectionNotifications()` 的最外层释放提交一次逻辑选择事务；取消恢复整个批次。源或列在批次期间变化时废弃待提交草案并保留必要的系统清理。快照不复制模型内容，也不物化未加载的全源树。
+
+前事件中直接递归调用 State 选择会抛 `InvalidOperationException`；MVVM 输出回调产生的新输入在当前事务结束后受控处理。已提交后的观察者异常不会回滚或重试 writer，完成观察者和必要清理仍会执行，多个错误聚合报告。原有隐藏节点选择继续按身份保留；仅移动当前单元格不会因为旧隐藏选区而失败。
+
+`CellPrepared` / `CellClearing` 参数为 `TreeDataGridCellEventArgs`，包含 `Source`、`Container`、`Model`、`NodeId`、`ColumnId`、`SourceIndex`、`RowIndex` 和 `ColumnIndex`。位置为本次容器寿命建立时的快照，`Clearing` 使用同一份身份；长期定位应保存节点/列身份。Prepared 在内容、绑定和交互状态建立后触发；Clearing 在旧可视内容、绑定与 DataContext 解除前触发。行回收时，RowClearing 先于其各 CellClearing；主题或列刷新也可能产生新寿命。
+
+回调可能使容器立即失效，后续观察者应使用事件的不可变身份，不能假设 Container 一直保留旧内容。准备观察者抛异常后仍完成对应清理；清理观察者抛异常不妨碍其它单元格解绑。容器首次实现、滚动回收、排序、筛选、隐藏列和换主题本身不发送值事件。
+
+`CellValueChanged` 参数为 `TreeDataGridCellValueChangedEventArgs`。`Cell` 是稳定地址；`HasOldValue` / `HasNewValue` 区分不可用值与已知的 null。当前可报告的观察都能提供两端值。EditCommit 的旧值为会话 OriginalValue，新值为转换后成功交给 writer 的值；若业务 setter 另行规范化，新值仍描述接受的写回载荷。ModelNotification / Refresh 使用列读取器读到的值，不使用 StringFormat 的显示字符串。
+
+| 值读取/变更方式 | 已实现单元格 | 未跟踪的离屏单元格 |
+| --- | --- | --- |
+| ValueGetter / typed accessor，行模型发出 INPC | 投影更新前比较旧/新读取值，变化时通知 ModelNotification | 不自动通知，不为事件扫描全表 |
+| ReflectionBinding / CompiledBinding | 行通知、嵌套绑定值变化和中间对象替换可触发观察；旧订阅随清理释放 | 不为事件额外订阅离屏绑定 |
+| 无通知对象的外部赋值 | 调用 Source.Refresh 后，仍有已跟踪旧值时可比较并发送 Refresh | 无旧观察基线，不补造变化；再次 Prepared 不算值变化 |
+| 成功 State/控件编辑提交 | 恰好一次 EditCommit，目标同步 INPC 不重复 | 已知编辑会话仍按身份通知，即使编辑器已回收 |
+| 取消、失败转换/校验、草稿输入、相等值的外部通知 | 不发送值事件 | 不发送值事件 |
+
+成功的相等值编辑也发送一次 EditCommit。EditCommit 的源路径在目标仍存在时取当前路径，已移除时保留写入前路径；显示行号为 -1 可表示隐藏/移除，列号在当前控件无对应目标时为 -1。`Source` 明确指向产生写入的源；不要把旧源通知的身份用于回调中已替换的新源。
+
+统一 Demo 的“基础与编辑 → 选择事务与单元格事件”提供取消开关、模型更新按钮和生命周期/值变化计数。最小 Usage 的 XAML 演示事件接入。完整验收见 [A2 记录](treedatagrid-alignment-a2-status.md)。
+
+## 受控编译绑定与 ConvertBack
+
+A3 增加受控编译绑定适配器。它保留明确的模型目标路径，显示仍由原 CompiledBinding 执行，草稿与业务模型分离：
+
+```xml
+<tg:TreeDataGridTextColumn
+    Binding="{tg:TreeDataGridBindingAdapter Path=Detail.Name, Binding={CompiledBinding Detail.Name}}" />
+```
+
+代码可使用 `TreeDataGridBinding.Create<MyRow, string>(row => row.Detail.Name)`；常量引用索引路径也可使用，例如 `row.Items[1].Name`。已有绑定可通过 `TreeDataGridBinding.Attach(binding, "Detail.Name")` 声明目标。XAML 的 Path 是作者声明的权威模型路径，须与业务意图对应；它不解析视觉祖先或元素名。工厂入口还核对实际成员，拒绝把编译成员误认成派生类同名隐藏成员。
+
+公共引用属性链的 ReflectionBinding 和上述编译适配器可自动编辑，无需 ValueSetter。绑定带 converter 时，OriginalValue 保留原模型值，独立草稿用 Convert 初始化；提交调用 ConvertBack，再校验转换后的模型值，最后写一次。传入实际模型属性类型、ConverterParameter、ConverterCulture；缺省文化使用 CurrentCulture。ValueConverter 优先于绑定 ConvertBack。
+
+UnsetValue、DoNothing、BindingNotification、转换异常、错误类型或非 nullable 值属性的 null 均拒绝提交，保留草稿并显示 ValidationError。取消不调用 ConvertBack。StringFormat 只作显示格式，不推断逆转换。中间对象、外部 Source、索引目标、绑定或转换配置在编辑期间变化时，自动写回拒绝陈旧目标。
+
+`column.GetEditBindingError(model)` 可诊断自动编辑不可用的原因。未注册的原生 CompiledBinding 路径仍是不透明对象，保持显示支持，需要适配器或显式 ValueSetter / SetValueAccessors；本轮没有把任意原生编译绑定自动写回标为完成。普通 ElementName / RelativeSource、索引槽直接赋值和值类型中间节点使用显式 writer，应用负责业务映射。
+
+完整自动/显式/未支持矩阵及原型结论见[绑定支持表](treedatagrid-binding-support.md)。统一 Demo 的“数据绑定 → 受控编译绑定与转换”展示数量前缀转换、校验、取消和嵌套目标替换保护，验收见 [A3 记录](treedatagrid-alignment-a3-status.md)。
 
 ## MVVM 中使用显式 Source
 
@@ -471,7 +639,7 @@ View 设置 `x:DataType="vm:TreeViewModel"`、`DataContext = new TreeViewModel()
 自动层级绑定的当前限制：
 
 - 同时仅一列可定义层级数据绑定；设置 `HasChildrenBinding` 或 `IsExpandedBinding` 时必须同时设置 `ChildrenBinding`。
-- 三种绑定均须为直接模型属性的 `ReflectionBinding`，不能使用 compiled binding、点分路径、索引器、转换器、外部 Source、`ElementName` 或 `RelativeSource`，也不能设置格式、回退值或目标空值。
+- 三种绑定支持公共引用对象的点分 ReflectionBinding 或受控编译绑定适配器；不支持索引器、转换器、外部 Source、ElementName、RelativeSource、值类型中间节点、格式、回退值和目标空值。未注册编译路径不能用来自动建立层级。
 - `ChildrenBinding` / `HasChildrenBinding` 的 Mode 为 `Default` 或 `OneWay`；`IsExpandedBinding` 为 `Default` 或 `TwoWay`，对应属性必须是公开可读写的 `bool`。
 - 子集合增删通过集合通知同步；替换子集合须发出属性通知。没有通知时调用适配 Source 的 `Refresh()`。
 
@@ -551,7 +719,7 @@ var quantityColumn = new TreeDataGridTemplateColumn
 
 ## 排序、过滤与批量更新
 
-列头用户排序需要表格 `CanUserSortColumns=true` 和列 `CanUserSort=true`。默认升序、降序切换；`IsThreeStateSort=true` 时增加清除排序。模板列和行头列默认不参与用户排序，可显式开启并提供比较器。
+列头用户排序需要表格 `CanUserSortColumns=true` 和列 `CanUserSort=true`。默认升序、降序切换；未配置列级覆盖时，`IsThreeStateSort=true` 增加清除排序。列 `AllowTriStateSorting` 可覆盖该默认值。模板列和行头列默认不参与用户排序，可显式开启并提供比较器。
 
 ViewModel 可以直接通过显式 Source 排序和过滤。以下以 `PeopleSourceViewModel` 为例，`ColumnId` 用于标识排序配置；真实列头关联需使用对应列的 `Id`：
 
@@ -597,6 +765,8 @@ bool selected = grid.TryScrollIntoView(new IndexPath(0, 2), expandAncestors: tru
 
 设置 `CanUserMoveRows=true` 后，可从行号列单元格拖动。目标行上部/下部分别插入到前面/后面，中部移入其子集合；Esc 或捕获丢失取消。应用也可调用 `TryMoveRow(node, target, position)` 走相同的请求、编辑和选择策略。
 
+A4 新增 RowDragHandle=WholeRow、Bubble 路由的 RowDragStarted / RowDragOver / RowDrop，以及 TryMoveRows 和独立的 RowsMoveRequested / RowsMoveCompleted。RowDrop 取消发生在旧草稿提交之前；原移动请求的取消仍在编辑提交之后。已选行拖动保持多选，以源顺序整批移动，选中祖先覆盖的后代不重复移动。TextBox、按钮和修饰键选择手势保留自己的输入。完整时序、集合支持和错误边界见[拖放与批量移动契约](treedatagrid-row-move-support.md)。
+
 ```csharp
 grid.CanUserMoveRows = true;
 grid.RowMoveRequested += (_, e) =>
@@ -618,9 +788,12 @@ if (result.IsCommitted)
 | --- | --- | --- |
 | 同父 | 精确 `ObservableCollection<T>` 或 `TreeDataGridRowMoveCollection<T>` | 使用精确索引 Move，重复模型不同出现位置仍保留各自身份 |
 | 跨父 | 两边都是 sealed `TreeDataGridRowMoveCollection<T>` | 所有分配/验证在提交前；同时提交两边底层存储，然后发送 Remove/Add 通知；跨父产生的新身份由结果给出 |
+| 同父/跨父批量 | 所有参与集合都是相同 T 的 `TreeDataGridRowMoveCollection<T>` | 先验证整批再原子提交，精确通知保留同父身份；IdentityMap 返回跨父根与后代的新身份 |
 | 普通可写 IList、只读集合、ObservableCollection 子类、跨父普通 ObservableCollection | `Unsupported` | 默认不修改；由应用通过请求处理自己的事务 |
 
 `TreeDataGridRowMoveCollection<T>` 实现 `IList<T>` / `IReadOnlyList<T>`、INCC 和 INPC，访问与通知使用创建线程，通知内禁止再次修改这两个事务集合。其它观察者抛错仍执行余下处理器；如果存储已提交，结果为 `CommittedWithObserverError`，错误位于 `Error`，不能按普通失败重试同一移动。默认适配不承诺回滚业务观察者额外产生的副作用。排序或过滤存在时默认移动返回 `Rejected`，也拒绝自身、后代、循环模型目标、无变化落点及超过最大层级的移动。
+
+上述能力也适用于 ItemsSource，擦除适配器会访问原集合。普通 ObservableCollection 的多节点批量仍拒绝默认写入；不会逐个 Move 后冒充原子批次。集合级 MoveMany(indices, insertionIndex) 的插入位置按移除所选槽之后计算；树表推荐使用 TryMoveRows(nodes, target, position)，让控件执行编辑、树合法性和选择恢复。
 
 批量导入可使用 `collection.AddRange(additions)`。方法先完整枚举、检查 null 项并准备新存储，再一次提交并发送带起始索引与全部新增项的 Add 通知；空范围无通知。枚举/验证失败不修改集合，枚举期间不能重入修改该集合。通知异常发生在提交之后，剩余监听者仍执行，不能据异常把同一批数据再次追加。旧节点身份、选择、暂存草稿与订阅由范围通知保留；`AddRange` 不改变旧 `DeferRefresh` 的投影合并语义。
 
@@ -645,8 +818,10 @@ if (result.IsCommitted)
 | `FrozenColumnCount` | `int` | `0` | 冻结左侧列，非负，布局时不超过列数 |
 | `CanUserResizeColumns` | `bool` | `true` | 用户拖动调宽总开关，还需列允许调宽 |
 | `CanUserMoveRows` | `bool` | `false` | 行号单元格拖动及控件移动请求总开关 |
+| `RowDragHandle` | `TreeDataGridRowDragHandle` | `RowHeader` | 可选 WholeRow，整行非交互区域仅用于行选择 |
 | `CanUserSortColumns` | `bool` | `true` | 用户列头排序总开关，不限制显式程序排序 |
 | `IsThreeStateSort` | `bool` | `false` | 用户排序循环包含未排序状态 |
+| `ShowColumnHeaders` | `bool` | `true` | 默认主题隐藏/显示整条列头区域并释放高度；应用模板须绑定外层区域显隐 |
 | `SelectionUnit` | `TreeDataGridSelectionUnit` | `Row` | `Row` / `Cell`，切换时清空选择 |
 | `SelectionMode` | `TreeDataGridSelectionMode` | `Single` | `Single` / `Multiple`，切换时清空选择 |
 | `SelectedItem` | `object?` | `null` | 所选模型，默认 TwoWay，按引用匹配 |
@@ -677,7 +852,13 @@ if (result.IsCommitted)
 | `bool TryScrollIntoView(IndexPath sourcePath, bool expandAncestors = false, bool select = false)` | 先解析源集合路径，再按身份定位；路径不表示排序后的显示行号 |
 | `TreeDataGridRowMoveResult TryMoveRow(NodeId node, NodeId target, TreeDataGridRowDropPosition position)` | 先提交草稿，发送请求，再执行受控默认或应用事务 |
 | `RowMoveRequested` / `RowMoveCompleted` | 可取消/由应用处理的请求，以及最终移动结果通知 |
+| `RowDragStarted` / `RowDragOver` / `RowDrop` | Bubble 路由事件；携带源、规范化节点、落点、取消/Handled 与允许效果 |
+| `TryMoveRows` / `RowsMoveRequested` / `RowsMoveCompleted` | 整批事务入口，每批一次请求/完成；结果提供 IdentityMap，不逐节点重复调用旧事件 |
 | `SelectionChanged` | 选择变化事件 |
+| `SelectionChanging` | 主动选择前事件，可通过 Cancel 拒绝，保留选择、当前项、锚点和草稿 |
+| `SelectionChangeCompleted` | 强类型完成通知，含旧/新快照、Reason、IsForced；也覆盖当前项移动 |
+| `CellPrepared` / `CellClearing` | 单元格身份/绑定建立后，以及解除旧绑定和回收前 |
+| `CellValueChanged` | 已跟踪值更新和成功编辑提交；支持边界见上文表格 |
 | `RowPrepared` | 虚拟行容器准备完成 |
 | `RowClearing` | 行回收前、移除绑定和 DataContext 前触发 |
 
@@ -698,6 +879,10 @@ if (result.IsCommitted)
 | `CanUserResize` | `bool` | `true` | 列级用户调宽开关 |
 | `CanUserSort` | `bool` | `true` | 列级用户排序开关；模板 / 行头列默认为 false |
 | `Comparison` | `Comparison<object>?` | `null` | 比较模型对象；未设置时比较列读值 |
+| `CompareAscending` / `CompareDescending` | `Comparison<object>?` | `null` | 方向比较器优先；降序委托直接表达最终顺序 |
+| `AllowTriStateSorting` | `bool?` | `null` | 外层 > 内层 > 控件 IsThreeStateSort |
+| `BeginEditGestures` | `TreeDataGridBeginEditGestures?` | `null` | 外层 > 内层 > 控件 EditTriggers；None 禁用用户触发 |
+| `IsTextSearchEnabled` | `bool` | `true` | 外层和有效内列均须允许；关闭不调用搜索值提供者 |
 | `ValueGetter` | `Func<object, object?>?` | `null` | 读取模型值；没有绑定或 getter 时使用模型本身 |
 | `ValueSetter` | `Action<object, object?>?` | `null` | 显式写回器，优先于自动推导 |
 | `ValueType` | `Type?` | `null` | 编辑目标类型 |
@@ -710,9 +895,9 @@ if (result.IsCommitted)
 
 | 列类型 | 专用属性 | 说明 |
 | --- | --- | --- |
-| `TreeDataGridTextColumn` | `Binding: BindingBase?`、`StringFormat: string?`、`TextWrapping` | Binding 优先于 ValueGetter；默认不换行 |
+| `TreeDataGridTextColumn` | `Binding: BindingBase?`、`StringFormat: string?`、`TextWrapping`、`TextAlignment`、`TextTrimming` | Binding 优先于 ValueGetter；默认不换行、左对齐、字符省略号 |
 | `TreeDataGridCheckBoxColumn` | `Binding: BindingBase?`、`IsThreeState: bool` | 三态默认 false；三态模型一般使用 bool? |
-| `TreeDataGridTemplateColumn` | `CellTemplate: IDataTemplate?`、`CellEditingTemplate: IDataTemplate?` | 显示模板接收 Content，编辑模板接收编辑会话 |
+| `TreeDataGridTemplateColumn` | `CellTemplate: IDataTemplate?`、`CellEditingTemplate: IDataTemplate?`、`TextSearchBinding: BindingBase?` | 显示模板接收 Content，编辑模板接收编辑会话；搜索绑定接收模型 DataContext |
 | `TreeDataGridRowHeaderColumn` | 使用基类属性 | 默认显示从 1 开始的当前可见行号，ValueGetter 可覆盖 |
 | `TreeDataGridHierarchicalExpanderColumn` | `InnerColumn: TreeDataGridColumn`、`Indent: double`、`ChildrenBinding`、`HasChildrenBinding`、`IsExpandedBinding` | 默认内层文本列，Indent=16，有限非负；层级绑定为 BindingBase? |
 
@@ -783,10 +968,17 @@ if (result.IsCommitted)
 | `SelectCell(CellAddress cell, bool extend = false)` | 单元格选择 |
 | `SelectCellRange(CellAddress anchor, CellAddress end, IReadOnlyList<ColumnId> columns)` | 单矩形范围选择 |
 | `SelectRowRange(NodeId anchor, NodeId end)` | 行范围选择 |
-| `DeferSelectionNotifications(): IDisposable` | 合并选择通知 |
+| `DeferSelectionNotifications(): IDisposable` | 最外层释放提交一个可取消选择批次 |
 | `BeginEdit(CellAddress cell, Func<object, object?> reader, Action<object, object?> writer, Func<object?, string?>? validator = null)` | 独立编辑事务；控件编辑应走控件或端点以应用列转换 |
 | `CommitEdit()` / `CommitEdit(object? value)` / `CancelEdit()` | 提交或取消；State 不执行控件的列类型转换，无会话时提交会抛异常 |
 | `Changed` / `SelectionChanged` / `Dispose()` | 状态事件和独立 State 的资源释放 |
+| `SelectionChanging` / `SelectionChangeCompleted` | 与控件共用的前事件及强类型完成事件 |
+
+## 元素工厂
+
+`ElementFactory` 默认 null，使用内置标准宿主和回收池。继承 `TreeDataGridElementFactory` 可覆盖行、单元格、列头的 CreateElement / PrepareElement / ClearElement / RecycleElement / ReleaseElement，也可在编译 XAML 资源中创建工厂。返回标准 sealed presenter/header 类型；通过模板、属性和生命周期扩展外观与订阅，不返回任意 Control。
+
+池按表格与每次工厂赋值会话隔离，由控件管理；Create 必须返回全新、无父级、无 DataContext 的宿主。换工厂或设回 null 会释放旧宿主并重新实现，保留同一有效草稿、选择和滚动位置，不提交模型。工厂负责清理自己的订阅和局部属性。生命周期时序、回调重入、异常及模板要求见[元素工厂契约](treedatagrid-element-factory.md)。统一 Demo 增加“自定义与模板 → 元素工厂与容器回收”，可切换 A/B/默认工厂并观察创建、准备、回收、释放和订阅计数。
 
 ## 常见问题与当前边界
 
@@ -795,8 +987,8 @@ if (result.IsCommitted)
 | 表格没有默认外观 | 检查功能 / 主题程序集引用，并加载 FluentTheme 和 TreeDataGridTheme |
 | 行数据不刷新 | 集合使用 ObservableCollection，模型继承 Toolkit 的 ObservableObject，并用生成属性或 SetProperty 发出通知；非通知数据修改后调用 Source.Refresh() |
 | 点击开始编辑按钮无反应 | 先点击可写单元格；仅设置 SelectedItem 不会选择当前列；检查 IsReadOnly 与写回器 |
-| compiled 单元格绑定能显示却不能编辑 | 使用受支持的 ReflectionBinding、ValueSetter 或 SetValueAccessors<TModel,TValue>；compiled 显示不代表自动写回 |
-| 树层级绑定抛异常 | 检查公共引用对象属性路径 ReflectionBinding、每层 INPC、绑定模式、Children 类型及 IsExpanded 的 bool setter |
+| compiled 单元格绑定能显示却不能编辑 | 使用 TreeDataGridBinding.Create / XAML 适配器声明目标，或显式 writer；GetEditBindingError(model) 给出诊断，普通编译显示不代表任意路径都能自动写回 |
+| 树层级绑定抛异常 | 检查公共引用属性 ReflectionBinding / 受控编译适配器、每层 INPC、模式、Children 类型及 IsExpanded 的 bool setter |
 | 更改 SelectedIndex 选中了意外的行 | 它是原集合路径，不是排序后的显示索引；使用 Source 映射接口查询 |
 | 模板取消编辑仍然改了模型 | 编辑模板应绑定 EditSession.Value，避免直接 TwoWay 写模型 |
 | 多个表格共用编辑端点失败 | 每个表格单独创建 TreeDataGridEditCommands |
@@ -805,7 +997,7 @@ if (result.IsCommitted)
 
 为虚拟化提供有限高度的布局区域，例如主例 `Grid` 的 `*` 行；避免把大表格放入无限高度的外层纵向滚动区域。模板控件应将持久状态保存在模型里，行回收后不能依赖旧容器。
 
-当前树模型提前索引全部节点，拒绝 null 模型、祖先循环和超过 256 层的图；每次通知仍可能维护完整图。行列虚拟化不等同于服务端分页或模型的惰性索引。已实现同区列重排、受控同表行移动与专用自动化 peer；多列排序描述集合、自动保留祖先过滤、跨控件移动、真实屏幕阅读器和原生 Grid/Table pattern 支持仍未完成。默认行移动适配通过显式 Source 接入；ItemsSource 的擦除适配器通过 RowMoveRequested 交给应用处理。
+当前树模型提前索引全部节点，拒绝 null 模型、祖先循环和超过 256 层的图；每次通知仍可能维护完整图。行列虚拟化不等同于服务端分页或模型的惰性索引。已实现同区列重排、受控同表单个/批量移动与专用自动化 peer；多列排序描述集合、自动保留祖先过滤、跨控件移动、真实屏幕阅读器和原生 Grid/Table pattern 支持仍未完成。显式 Source 和 ItemsSource 都支持受控集合移动；不支持的集合由应用通过请求处理自己的事务。
 
 用户输入支持鼠标选择，多行模式下 Ctrl+左键切换行选择，Multiple 模式下 Shift 扩展范围、Ctrl+A 全选可见行或单元格；方向键、Home / End、PageUp / PageDown、Tab / Shift+Tab 导航，F2 编辑、Enter 提交后向下、Tab 提交后跨列、Escape 取消，以及文本前缀搜索。复选框单元格可用 Space 循环状态并提交，列头可用 Enter / Space 排序。单元格多选为单矩形范围。中文输入法预编辑、候选窗和麒麟平台的完整验收仍按仓库平台记录执行。
 

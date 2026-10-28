@@ -16,6 +16,7 @@ public abstract partial class TreeDataGridSource<TModel> where TModel : class
     private TModel? _rowMoveModel;
     private NodeId? _rowMoveResultNode;
     private bool _rowMoveIdentityCaptured;
+    private Action? _captureBatchIdentity;
 
     public override TreeDataGridRowMoveResult MoveRow(NodeId node, NodeId target, TreeDataGridRowDropPosition position)
     {
@@ -32,10 +33,10 @@ public abstract partial class TreeDataGridSource<TModel> where TModel : class
         var originCollection = GetCollection(originParentPath);
         var destinationCollection = position == TreeDataGridRowDropPosition.Inside ? landing.ChildrenCollection : GetCollection(destinationParentPath);
         var sameParent = originParentPath == destinationParentPath;
-        if (originCollection is not IList<TModel> origin || destinationCollection is not IList<TModel> destination
-            || !IsSupported(originCollection) || !IsSupported(destinationCollection)
-            || !sameParent && (originCollection is not TreeDataGridRowMoveCollection<TModel> || destinationCollection is not TreeDataGridRowMoveCollection<TModel>)
-            || !sameParent && ReferenceEquals(originCollection, destinationCollection))
+        var origin = RowMoveAdapters.Get(originCollection); var destination = RowMoveAdapters.Get(destinationCollection);
+        if (origin is null || destination is null
+            || !sameParent && (!origin.CanMoveBatch || !destination.CanMoveBatch || origin.Storage.GetType() != destination.Storage.GetType())
+            || !sameParent && ReferenceEquals(origin.Storage, destination.Storage))
             return new(TreeDataGridRowMoveStatus.Unsupported);
 
         var oldIndex = moving.ModelIndex[^1];
@@ -43,12 +44,12 @@ public abstract partial class TreeDataGridSource<TModel> where TModel : class
         {
             TreeDataGridRowDropPosition.Before => landing.ModelIndex[^1],
             TreeDataGridRowDropPosition.After => landing.ModelIndex[^1] + 1,
-            _ => destination.Count,
+            _ => destination.MoveCount,
         };
-        if (oldIndex < 0 || oldIndex >= origin.Count || !ReferenceEquals(origin[oldIndex], moving.Model)) return new(TreeDataGridRowMoveStatus.Stale);
+        if (oldIndex < 0 || oldIndex >= origin.MoveCount || !ReferenceEquals(origin.MoveItem(oldIndex), moving.Model)) return new(TreeDataGridRowMoveStatus.Stale);
         if (sameParent && oldIndex < insertionIndex) insertionIndex--;
         if (sameParent && oldIndex == insertionIndex) return new(TreeDataGridRowMoveStatus.Rejected);
-        if (insertionIndex < 0 || insertionIndex > destination.Count - (sameParent ? 1 : 0)) return new(TreeDataGridRowMoveStatus.Stale);
+        if (insertionIndex < 0 || insertionIndex > destination.MoveCount - (sameParent ? 1 : 0)) return new(TreeDataGridRowMoveStatus.Stale);
 
         var models = new HashSet<TModel>(ReferenceEqualityComparer.Instance);
         var subtreeCollections = new HashSet<IEnumerable<TModel>>(ReferenceEqualityComparer.Instance);
@@ -68,9 +69,8 @@ public abstract partial class TreeDataGridSource<TModel> where TModel : class
             if (!TryGetNodeId(destinationParentPath, out var parent)) return new(TreeDataGridRowMoveStatus.Stale);
             destinationParent = parent;
         }
-        var adapter = originCollection as TreeDataGridRowMoveCollection<TModel>;
-        var beforeStorageVersion = adapter?.StorageVersion;
-        var expected = sameParent && adapter is null ? origin.ToList() : null;
+        var beforeStorageVersion = origin.MoveVersion;
+        var expected = sameParent && beforeStorageVersion is null ? Enumerable.Range(0, origin.MoveCount).Select(origin.MoveItem).ToList() : null;
         if (expected is not null)
         {
             var value = expected[oldIndex]; expected.RemoveAt(oldIndex); expected.Insert(insertionIndex, value);
@@ -88,20 +88,18 @@ public abstract partial class TreeDataGridSource<TModel> where TModel : class
             {
                 if (sameParent)
                 {
-                    if (adapter is not null) adapter.Move(oldIndex, insertionIndex);
-                    else ((ObservableCollection<TModel>)originCollection!).Move(oldIndex, insertionIndex);
+                    origin.MoveSingle(oldIndex, insertionIndex);
                 }
-                else TreeDataGridRowMoveCollection<TModel>.Transfer(adapter!, oldIndex,
-                    (TreeDataGridRowMoveCollection<TModel>)destinationCollection!, insertionIndex);
+                else destination.MoveBatch([new(origin, oldIndex)], insertionIndex);
                 committed = true;
             }
             catch (Exception error)
             {
-                committed = adapter is not null ? adapter.StorageVersion != beforeStorageVersion
-                    : expected is not null && origin.SequenceEqual(expected, ReferenceEqualityComparer.Instance);
+                committed = beforeStorageVersion is not null ? origin.MoveVersion != beforeStorageVersion
+                    : expected is not null && Enumerable.Range(0, origin.MoveCount).Select(origin.MoveItem).SequenceEqual(expected, ReferenceEqualityComparer.Instance);
                 errors.Add(error);
             }
-            if (committed && !_disposed && adapter is null && !_rowMoveObserved)
+            if (committed && !_disposed && beforeStorageVersion is null && !_rowMoveObserved)
             {
                 // ObservableCollection stops invoking listeners at the first exception. If our listener was skipped,
                 // reconcile its exact indexed Move explicitly instead of relying on reference queues for duplicates.
@@ -134,6 +132,7 @@ public abstract partial class TreeDataGridSource<TModel> where TModel : class
     {
         if (!_rowMoveOperation || _rowMoveIdentityCaptured) return;
         _rowMoveIdentityCaptured = true;
+        if (_captureBatchIdentity is { } capture) { capture(); return; }
         if (_allRows.TryGetValue(_rowMoveNode, out var existing) && ReferenceEquals(existing.Model, _rowMoveModel))
         { _rowMoveResultNode = _rowMoveNode; return; }
         var parentPath = default(IndexPath);
@@ -148,8 +147,6 @@ public abstract partial class TreeDataGridSource<TModel> where TModel : class
 
     private IEnumerable<TModel>? GetCollection(IndexPath parentPath) => parentPath.Count == 0 ? _items
         : TryGetNodeId(parentPath, out var parent) && _nodes.TryGetValue(parent, out var node) ? node.ChildrenCollection : null;
-    private static bool IsSupported(IEnumerable<TModel>? collection) => collection is TreeDataGridRowMoveCollection<TModel>
-        || collection?.GetType() == typeof(ObservableCollection<TModel>);
     private static IndexPath ParentPath(IndexPath path) => new(path.Take(Math.Max(0, path.Count - 1)).ToArray());
     private static bool IsPathPrefix(IndexPath prefix, IndexPath path) => path.Count >= prefix.Count && prefix.SequenceEqual(path.Take(prefix.Count));
     private static int CollectModels(Node node, HashSet<TModel> models, HashSet<IEnumerable<TModel>> collections)

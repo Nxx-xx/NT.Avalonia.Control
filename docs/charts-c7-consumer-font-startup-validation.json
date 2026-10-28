@@ -1,0 +1,4471 @@
+{
+  "schema": "charts-c702-consumer-native-text-validation/v1",
+  "createdUtc": "2026-10-24T12:10:13.140285+00:00",
+  "passed": true,
+  "ordinaryConsumerStartupValidated": true,
+  "qualification": "Explicit early API with pinned HarfBuzzSharp 8.3.1.3 in normal framework-dependent build output. Windows x64 and Ubuntu26.04 WSL2/WSLg X11 only. Fresh private process caches; pre-existing OS font caches are retained. Not all distributions, hardware devices or publishing forms.",
+  "milestoneComplete": false,
+  "sourceSnapshots": [
+    {
+      "path": "source-snapshot-v1.json",
+      "sha256": "8D5298B051237993EE3AD8F2777D7052CBAF4A55D3C1907C690D5880D068AD98",
+      "bytes": 396520
+    },
+    {
+      "path": "source-snapshot-v2.json",
+      "sha256": "93262D1E06CE3641B76F25B928E71F8EC17F9637A0D468F7E583C69C5F90157C",
+      "bytes": 397618
+    }
+  ],
+  "sampleIndependentValidation": {
+    "path": "sample-validation-v1.json",
+    "sha256": "2324411E9166DAA1275E53E29A1202C8681E943D238FADE19F9618C08B6BFC9D",
+    "bytes": 34040
+  },
+  "currentQualifiedInputs": {
+    "passed": true,
+    "files": 625,
+    "inputs": [
+      {
+        "path": "Directory.Build.props",
+        "sha256": "C82DC615E179AC14619BB0E6084B3403C1F8708F3DA5F78FD67EF38FD1F772A1",
+        "bytes": 638
+      },
+      {
+        "path": "Directory.Packages.props",
+        "sha256": "4C7DF914340D519DD3E0AD61C2A8346EDBF7C7769E52B2F41BE68B9B7A8FAC1E",
+        "bytes": 1463
+      },
+      {
+        "path": "global.json",
+        "sha256": "81AE2087DBFB46027FD94748351FB4B1AB24145FBB52544A2822BF128E2E48F1",
+        "bytes": 105
+      },
+      {
+        "path": "samples/Charts.Usage/App.cs",
+        "sha256": "DACA11618C9D52A186EE9F69167B7D856A80FF9364B344E47187E49673B8534A",
+        "bytes": 589
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.AdvancedComparison.cs",
+        "sha256": "AAFA1014659159B5BDEB3B184FEFD9462D5BC9EC1C77DA12D778E6508C0F435C",
+        "bytes": 6063
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.Analysis.cs",
+        "sha256": "AF8049CB50483B90B429DEBCC16F60BCF8A974E45BEB2327810B8FE55FFC63C6",
+        "bytes": 4550
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.BarComparison.cs",
+        "sha256": "71F643BF215AB8BCE86230713A064782E8956DDE8857A74B172645E67C950B68",
+        "bytes": 3894
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.C5Completion.cs",
+        "sha256": "6CD4CB68898645DC9CA45B0DBABA1FCF02556C748C0B1081D76DB32A3E1A37D5",
+        "bytes": 6591
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.C6Completion.cs",
+        "sha256": "920042DFD97280FA039359D12943377C8164F442EC15CFCCF6737805C387770F",
+        "bytes": 8954
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.C7Integration.cs",
+        "sha256": "E5A6BC376D328D5F3378E3E2163A4C59C3811D93C9F59820FE900DE7E12265AD",
+        "bytes": 323
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.Circular.cs",
+        "sha256": "4D3B7DB4BCA7132709CC6A5AFA79EA6BFB1B675704BDEF13AD8C8BBC4C7DEC2C",
+        "bytes": 2781
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.EfficientHit.cs",
+        "sha256": "3DF6743AECDA081470EA89D8387E342F58BE8801AA6F72ECEC85635AC15910C2",
+        "bytes": 2229
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.Engineering.cs",
+        "sha256": "7A3AE7F2F259B39579B10E63521FD5633F1D8491DD764F05D6D46B732EBD5329",
+        "bytes": 6606
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.Financial.cs",
+        "sha256": "04953B925E0EBD311256356DB04A65429382F0F678F0E14D5B44C2E46A940A26",
+        "bytes": 2752
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.GaugeMicro.cs",
+        "sha256": "B5207768BBBFA9E440D6C9A376FCE731A9F9418C85B4ED0FC089BD4D06BE03FE",
+        "bytes": 3815
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.Hierarchy.cs",
+        "sha256": "C3D79626A73F3B3352F6EF5C2FD42BBD57024914100B54D10575F04D7CBED69D",
+        "bytes": 1932
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.IncrementalStreaming.cs",
+        "sha256": "4BC263339AA21F9E5D882D23D42CB5B691C321FC8D7A6C912680FD1E83EB1729",
+        "bytes": 4906
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.LevelOfDetail.cs",
+        "sha256": "BAF4F183192CDB3FF495B476A7448112D115F7509F5B202EFF41DC716E9C7653",
+        "bytes": 2271
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.Maps.cs",
+        "sha256": "9F584BCDA44B30B11B5A7630B618E635C7733C0A4BB1720850780C9ADEB959E3",
+        "bytes": 2934
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.MultiChart.cs",
+        "sha256": "0EF8D676DBAB3D5C8CD9FE31ECC2BC3ED0F7BE0B4DD68284D2685C064A78B8CD",
+        "bytes": 1236
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.Polar.cs",
+        "sha256": "335AAA46A8C32C416650620AEFA2EB50D4D20E65B448ED7D906836C7FEC3BECD",
+        "bytes": 4174
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.ProfessionalLinking.cs",
+        "sha256": "A845D39A6C7F27784C7F79744B4CBCBFE05ADBCF86D6F2F41A69CB5534473CCC",
+        "bytes": 2303
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.ProfessionalPlotTrackball.cs",
+        "sha256": "8FA8EDA7BED4D4B50D0374A49DCF88265A575B32C86F163240BE25F768F95329",
+        "bytes": 4315
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.ProfessionalPresentations.cs",
+        "sha256": "FB8386721EE03314CB07069E9D97686E34E799B846E08236FDDC057B88374BD1",
+        "bytes": 3006
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.ProfessionalTooltips.cs",
+        "sha256": "9FADEC5C61AA4B7B61AC20BAB52ED9E5BBB2E0576C97278D2A30A96AD26D8C11",
+        "bytes": 2841
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.Relations.cs",
+        "sha256": "95B17419D1BE3249863E85550FCEEADC8EC3869590BFB84B616B0367706A36C4",
+        "bytes": 2483
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.RenderResources.cs",
+        "sha256": "E5B62E1BBEF161052ED9F58BA82CE31647950EE946C26B33FD63C07DD93593F5",
+        "bytes": 2733
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.ScatterBubble.cs",
+        "sha256": "082C98EDEAB7C25A416F4A9458C4C429818FC8CAF3C721731B0F7007010BABC8",
+        "bytes": 2637
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.Statistics.cs",
+        "sha256": "1AD056557AE5ADC7E2249EC0205B046065B483D18638BAF8297F0A1AEA7F38F7",
+        "bytes": 4812
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.TechnicalTrends.cs",
+        "sha256": "450AECEF8B80B74879625E867FA1126408F98F8179E5655D9C8663310CC9DE99",
+        "bytes": 2750
+      },
+      {
+        "path": "samples/Charts.Usage/ChartUsageViewModel.cs",
+        "sha256": "7D27CAD0B9CC942302EE8D61FF1DFD21046CADBFF27FEF8CFDD808CCC4ED026A",
+        "bytes": 30192
+      },
+      {
+        "path": "samples/Charts.Usage/Charts.Usage.csproj",
+        "sha256": "B45C26CE6109B1E426B4B75455B39EC48611A1631E759A73399FE2805041EA9C",
+        "bytes": 527
+      },
+      {
+        "path": "samples/Charts.Usage/FontStartupScene.cs",
+        "sha256": "D76A5A0E22ED7EDD1977E186A888FC1AAD337655C169A7008B7CB8116BBC4057",
+        "bytes": 18059
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.AdvancedComparison.cs",
+        "sha256": "4199D443A6DA7BFAAEAB731C38A2F05CD93046DA2C4ED567D1765E729557CA5C",
+        "bytes": 16912
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.Analysis.cs",
+        "sha256": "ABBD49B77666DCF5ABE6F9B60F55129330B72F230DAA6094A164E92E5AA7F89B",
+        "bytes": 10319
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.BarComparison.cs",
+        "sha256": "9E6F3E86F2579A08CB3811667A339A93727ACE4147B155FF127A031FDBFEFB5D",
+        "bytes": 10728
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.C5Completion.cs",
+        "sha256": "1C2C32C3201C6FE680A05A38535330F4C2840342E9A60DFF88CDD1216A64FD04",
+        "bytes": 19994
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.C6Completion.cs",
+        "sha256": "86DF2C6403DA65836D9A38149CCA1A5FECFC9AD4AC9B7DDD431E94D0F57DB939",
+        "bytes": 14232
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.C7Integration.cs",
+        "sha256": "9DBEEF58EE3F55DBEB51D3B40B3B1AE004BF96350EB29C25ACE1A42797A00C44",
+        "bytes": 4046
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.Circular.cs",
+        "sha256": "E2E1FD771BF7FEC726143F6194FE066194285E742F70DD1F1226AB2EE3D8C00F",
+        "bytes": 7765
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.EfficientHit.cs",
+        "sha256": "097CE8819F506F9BE8FA128A828E55B94EB053716369A1DA6D3E6AED03CF4517",
+        "bytes": 5223
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.Engineering.cs",
+        "sha256": "8F02AF3C4F7698EE43AFC960318FB8F8D85E337868B6F186866E4A0AD65962C1",
+        "bytes": 10381
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.Financial.cs",
+        "sha256": "6D909C6DE35D44F48570782451FC2E1432C8876EBE3419A465661032A5CEBC3B",
+        "bytes": 7921
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.FontStartup.cs",
+        "sha256": "7B168752526C8F9D5A0ED3B91AC8E7855567021EE282AF2623F7C64E7F2C04C1",
+        "bytes": 1528
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.GaugeMicro.cs",
+        "sha256": "2A6ABD67507ADC88ED1145C7F22EC9BD728094D0A25AFD164BD3DB7A7989B82E",
+        "bytes": 9408
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.Hierarchy.cs",
+        "sha256": "5F044FCC1639C6272C487051739BC630181B20D39927110B333EE03D576ECB8E",
+        "bytes": 7886
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.IncrementalStreaming.cs",
+        "sha256": "D1CF4E2FA60FC1A8882F97679F57FEFBE4AC685885622D0E20F0CD6A6E888460",
+        "bytes": 6631
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.LevelOfDetail.cs",
+        "sha256": "947969618143F137854BA62C1847051F4CB3CFCBDD25BD8510A4969BC63DEC49",
+        "bytes": 6186
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.Maps.cs",
+        "sha256": "1F0E2A96B1B537EF2912EC854FAF99F9DDA3BCFE9EFAAED95AE1E606431DF7E2",
+        "bytes": 6396
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.MultiChart.cs",
+        "sha256": "48A9566A6CF91C95E2BD9A6A02986070085583D8E45C5903552F487DE6B7E08B",
+        "bytes": 6047
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.Polar.cs",
+        "sha256": "8DB2B681EF726209F1DAA1D5C37E19E59BDAFD5C44F05AAE73C28EF097C1B710",
+        "bytes": 9251
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.ProfessionalLinking.cs",
+        "sha256": "7ACCB8E08102B51A42C9FCDFFA6C248A60159C7E9D320E4A1CB06147DD6FB79B",
+        "bytes": 8663
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.ProfessionalPlotTrackball.cs",
+        "sha256": "8ED372A0E3A8D012CF9FEB14172230C6A728A155208274F82D98545193A3406B",
+        "bytes": 11887
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.ProfessionalPresentations.cs",
+        "sha256": "662CA7EB9AF9A04397A2A410E07B1BB3337505BA7BD222B205A2F88542B79AE7",
+        "bytes": 8704
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.ProfessionalTooltips.cs",
+        "sha256": "5F2410BDAADF0A56129A8E33961B45E9976C09B6B96AA4C2B32557EFBB782274",
+        "bytes": 8373
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.Relations.cs",
+        "sha256": "4F21816A3371B4BB536712D19521B2194EF414D18CF5501FF975091B3FE0A295",
+        "bytes": 7436
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.RenderResources.cs",
+        "sha256": "C11492C3F79EB31467E7749916507DA07A19962A61E69B23F52806A17A5A9706",
+        "bytes": 7835
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.ScatterBubble.cs",
+        "sha256": "5682379D044E0E126BE1ED5CD7542DD2F75B62BF08121C725B173EDFE566E842",
+        "bytes": 9829
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.Statistics.cs",
+        "sha256": "B6E14647E410E1EE291A780622698E3BCFCF0CA05C28EC055A3EA9D6DF4BDACD",
+        "bytes": 7762
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.TechnicalTrends.cs",
+        "sha256": "9ABB5EE1D156A357679067411B56E8C6284D961A82C0E6FD714A133160FD37C3",
+        "bytes": 9657
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.axaml",
+        "sha256": "B4D781EE6D4978C3C885B8A0E25B07380EF2EC3AB81B6453BDE34960D1E98B9C",
+        "bytes": 157471
+      },
+      {
+        "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+        "sha256": "5BFC55190F1DB85052A27E7EB2B5F18F54A7BE4321FB86F89262D34F826310EC",
+        "bytes": 94449
+      },
+      {
+        "path": "samples/Charts.Usage/Program.cs",
+        "sha256": "F1E0A93BA0168A99316BAA3456BB52F06DF9ACE8302A3E0E2E0CA37C9FF6B566",
+        "bytes": 871
+      },
+      {
+        "path": "samples/Charts.Usage/README.md",
+        "sha256": "944807F7DEF259C5981E238E743480D03BD31B1D18AEC650EB3131CA7404C42C",
+        "bytes": 30567
+      },
+      {
+        "path": "samples/Charts.Usage/packages.lock.json",
+        "sha256": "9C052845541E7740D9DE976B36BFE0EDE04F08F47217FDF7FCC3DCCDB3FC0BDF",
+        "bytes": 8533
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/App.cs",
+        "sha256": "5665BC6B17A9CB893FF64D0950260C0FEE33C6A0FE76C3F8F9DDE81A0044B38F",
+        "bytes": 973
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/NT.AvaloniaControl.Demo.csproj",
+        "sha256": "BC92D19A259C2683582F80178181F5C81BBE64A45156609162D4885132F78635",
+        "bytes": 1916
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Accessibility.Smoke.cs",
+        "sha256": "5A99019C4BE0A84D549BB5111362CD3B78FAB575EB82B3EA1FDBB5BDEEAF8A55",
+        "bytes": 20936
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Accessibility.cs",
+        "sha256": "49715CE4E6C0331A220825545D6A563A1A0FE6834EC8CD6005526E0601F85677",
+        "bytes": 6853
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.AdvancedComparison.Smoke.cs",
+        "sha256": "4483AC57D74257E2367949ED21A5416EE62102B67E4B139491A44069B958DE56",
+        "bytes": 16546
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.AdvancedComparison.cs",
+        "sha256": "4B0F43CF4A0EA76CDECD33239CE830A450B681CF28CAD08D6451DB7AE6F17C37",
+        "bytes": 9837
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Analysis.Smoke.cs",
+        "sha256": "D3120835ED39ADAE215D751B8B84074772E2BE78881695B8E218D3C15919CAC3",
+        "bytes": 18507
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Analysis.cs",
+        "sha256": "0B041DE68AF0CA7CE8F99F029BB4EE8DC9165C923FFE42F63D056995A5A79F99",
+        "bytes": 11892
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Animations.Smoke.cs",
+        "sha256": "6C5F870D70F925C87BEBBC7EE6EEF5764CAE3AE56BA42C6B033E5AE1F9094BAA",
+        "bytes": 26970
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Animations.cs",
+        "sha256": "4F8979A6C39EB19DFD08815B165B51B59E549BD55FA161497311B1318E3D1CC3",
+        "bytes": 8085
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.AnnotationCompletion.Smoke.cs",
+        "sha256": "7CB45EBF31F7D9B594ED8AF5DD70E9DEA9CFD81B8A44A12AB214B5B8B9669F44",
+        "bytes": 23943
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.AnnotationCompletion.cs",
+        "sha256": "538678E3E8C1ED9BB74FDC9CD801D6369927FE6236D0A39BACAAB792553744FB",
+        "bytes": 11952
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.AxisFeatures.Smoke.cs",
+        "sha256": "5A519F0A8178B35F968FCACFBA68A3620F200D16D2BB48B149E1A340CCB0F32E",
+        "bytes": 6176
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.AxisFeatures.cs",
+        "sha256": "1F406833847372D8CA929F589F9949014ADF5DB74C017A1CA6C51B4003DB7C5A",
+        "bytes": 8599
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.BarComparison.Smoke.cs",
+        "sha256": "FC95310DD3018E72749B10A5CC13DCC6100D98BCF93CD4D100965B841ECA8138",
+        "bytes": 20256
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.BarComparison.cs",
+        "sha256": "18E7789AF8204F32D6AA83F2695581D41A4911D5248266FA27F928A850753C6C",
+        "bytes": 11797
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.BreakPixels.Smoke.cs",
+        "sha256": "DCD3EF58F1887F275E11276E4BD971F4A051A1D419248F4F3AC3CDC326554FE4",
+        "bytes": 6651
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C5Completion.Smoke.cs",
+        "sha256": "22108159A2C08CA0B7686DAB48D09F3ACE6987DF94B0EB9290A40C9364BF83EB",
+        "bytes": 22343
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C5Completion.cs",
+        "sha256": "11534071F47A4AD5EC10AC2C23CE9A007A59AD785ECCA5CA6895C0210342BA37",
+        "bytes": 9357
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.Probes.cs",
+        "sha256": "080869F7935C63AFEAE8E0899ACFAB4A61FEEFF2A601F38CAF107BAD8E641A20",
+        "bytes": 19310
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.Smoke.cs",
+        "sha256": "3C84B35C2D516B061F4098C39E5B5882392AE5433DE0B16AFF70D15F253140D3",
+        "bytes": 16690
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+        "sha256": "AFE25CCA18F274A14D23575C7CAC0C14148F1F8478A19F21A7BCEC2A16944FC5",
+        "bytes": 18705
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C7Integration.Smoke.cs",
+        "sha256": "436AD2B3F106EBF8B91B9180E339EEB5764BCEC602B1D7DB226A733C6E43E6B4",
+        "bytes": 15288
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C7Integration.cs",
+        "sha256": "207CDC11E4D752C6CAE0181688A7F293EDB0FA578868479B8CF77C84C95981A6",
+        "bytes": 10032
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Circular.Smoke.cs",
+        "sha256": "742FEFE668B3E851D7917D58E49BFB7E99D806F754E36F87620CC904230351FD",
+        "bytes": 26287
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Circular.cs",
+        "sha256": "870503B2A18260D24C4E09BF98438B0EC05EF65ED2D973BB33DFB1DF73F8E6F1",
+        "bytes": 10736
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.CommonFeatures.Smoke.cs",
+        "sha256": "3B7DA5D2EF0338CF058B11EA833BDD6B3384B4579B1AC9FE9D622AB1C12330CE",
+        "bytes": 12123
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.CommonFeatures.cs",
+        "sha256": "8631ABA135FBC43911761A672DE2C18A28C380D4E105740BCFEC9BB2CFE68319",
+        "bytes": 10460
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ControlTemplates.Smoke.cs",
+        "sha256": "D967FCEB57B680A79B761BC3C5B2205FE9D19C228C555CE465984FDE95F558AB",
+        "bytes": 18854
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ControlTemplates.cs",
+        "sha256": "6AC2B257046387F407BF2DCE60CDF74028BC82F2104542E8DC23460AFA516BA5",
+        "bytes": 8349
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.DataAndAxes.Smoke.cs",
+        "sha256": "88E9D3887B281FF0C5EAB6A32F3287BF132768B23F1287565CA6CAEF97671719",
+        "bytes": 3749
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.DataAndAxes.cs",
+        "sha256": "FDDDBA0402B83FB316EA2051E69B0156B009EF680386EC8D9800A15CF0057AD2",
+        "bytes": 8242
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.EfficientHit.Smoke.cs",
+        "sha256": "D10C48B6F09EC27664370281B254C66A2EA5258C304C0F3EA7B7E5E9881A6223",
+        "bytes": 13403
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.EfficientHit.cs",
+        "sha256": "5CF51F633E3FF99BF341BE1ACE223EA7BE006581E9E4EE8950FE2DF3974F95D3",
+        "bytes": 7480
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Engineering.Smoke.cs",
+        "sha256": "654FC88F9D7CD45BB4B0919F5CDE4A844F7934132F97FF26A45A984F7EFF6305",
+        "bytes": 15930
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Engineering.cs",
+        "sha256": "3957F7EFDEA6298B6FAE8DE0F8FB9A35DF2B3F22D8B9EFC3E43F283ECE54A2E3",
+        "bytes": 5550
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ExportCompletion.Smoke.cs",
+        "sha256": "E3122D58438BD1DD3F2CD5E074DD72CC5031EBFD677DD63BC67BAF1091248E02",
+        "bytes": 36756
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ExportCompletion.cs",
+        "sha256": "00C8EBFBC15DCFB90F7AC0EB4145A728419CED0A9639DCA7A9C1854A947D5D75",
+        "bytes": 10506
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ExportPixels.Smoke.cs",
+        "sha256": "8220C58FB84502285CC1066BE1D44FCEFDFC70DD11CEC0FC3084679DB3470BB5",
+        "bytes": 8771
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Financial.Smoke.cs",
+        "sha256": "D84C060EC0F0F011AF18E4E8E1671A4197549F55CAFBE57ADF9FE7724CCE4EC1",
+        "bytes": 12281
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Financial.cs",
+        "sha256": "C04133F060B7B5A6956631E9BEA8F617EF8DDCBEA76726C87261543AECF6ABE5",
+        "bytes": 6771
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.FontStartup.cs",
+        "sha256": "550FAB272FA05F2B51F48A5AF3307A2DD702AD4299899F50EBFC46D16A0289D9",
+        "bytes": 1128
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Gallery.cs",
+        "sha256": "DE1B393F039989C63C85003A847E2257F5CB7EEADEA9155887DCAAC8B7E3E1B4",
+        "bytes": 7647
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.GaugeMicro.Smoke.cs",
+        "sha256": "243DBC70ECFBEB712BBBBAC83B433A4C18E8EA0E2F90F6EEFC909A1813191934",
+        "bytes": 16424
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.GaugeMicro.cs",
+        "sha256": "B90421C3E7B2D051B5C80856056AA5F7F0005EF2D103F5D89667C4ABCB82CC0F",
+        "bytes": 9861
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Hierarchy.Smoke.cs",
+        "sha256": "02BB972B18B6BD8D4FDF6420C1A35FA767148AA3DA4A8063874541D6E1C7A60C",
+        "bytes": 17223
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Hierarchy.cs",
+        "sha256": "4919CDB0805F8ABDEFB91072DB0A4838972C3B42223ADDE605436B82F4E0FEFB",
+        "bytes": 8405
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.IncrementalStreaming.Smoke.cs",
+        "sha256": "819DEDBAC350F37CC8E3BCF714A42D400B9D18430A09323C396CFA83CC58467E",
+        "bytes": 14457
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.IncrementalStreaming.cs",
+        "sha256": "B91774856E16D49E8323697550E396F389E23E9E43FD54B872817831C8F3B4C6",
+        "bytes": 10115
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.InputGestures.Smoke.cs",
+        "sha256": "A0AE43F118DC2DAB687463923D17DEB765E99A95DD5D6F0A1D25CC750919C2DC",
+        "bytes": 33441
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.InputGestures.cs",
+        "sha256": "0691FE88601893083EDA7164D49A678455D7A95153F1C7FAA17BDB5161425711",
+        "bytes": 9688
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.LegendLayout.Smoke.cs",
+        "sha256": "32478052D259B42FA1F2EEDA4D4FF197B18E1A705FEFF3FB747F6761A42B8A62",
+        "bytes": 3166
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.LegendLayout.cs",
+        "sha256": "49F14426CA788C4B4A3DDEC77BE95A1D0D86A7F7616B7346FFF102045670D5FC",
+        "bytes": 1271
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.LevelOfDetail.Smoke.cs",
+        "sha256": "632F4A8BC8F032DAA62568360EE81C82DDF1635757434A4A9EC45591CA4E22AB",
+        "bytes": 20501
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.LevelOfDetail.cs",
+        "sha256": "107F0B07DEE46C7ABDE9CA2117B2FB5B99481B5F27C17C5184DEB548E9202C2D",
+        "bytes": 7981
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.LineArea.Smoke.cs",
+        "sha256": "1749ABD23B018FBA9B7224358A91B0BC41F7638CBE3743F0A262B229C5F62CAC",
+        "bytes": 17431
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.LineArea.cs",
+        "sha256": "BCB55EF206A09F962B63BB244154E0DABAFABA20A2655A85B151DD22624F932D",
+        "bytes": 9930
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Maps.Probes.cs",
+        "sha256": "52240A32E88C5C9779C370E3ABEFE67D370938F16F60E983959281A4856D0690",
+        "bytes": 7862
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Maps.Smoke.cs",
+        "sha256": "F5E0FEE8241F64E2B5BD70FCFE1ED33E505F7881AD0071288EF066F37A69B00D",
+        "bytes": 12378
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Maps.cs",
+        "sha256": "86F5702BBBDF1876013CA019EA2FBFD413BE04830F728C15B9526EF21F3EAAF4",
+        "bytes": 10827
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.MultiChart.Smoke.cs",
+        "sha256": "CA4F1942815EBDC2BEA30E96020FB968E038310E48281007472EA3613F745A8C",
+        "bytes": 9270
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.MultiChart.cs",
+        "sha256": "E79D8A00ACAE5053EB9EB295403CDFDB40BD3B6BEF8125C0825D232A5CF61D8A",
+        "bytes": 7673
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Polar.Smoke.cs",
+        "sha256": "8E2D6D1FB773395E203167E2F10CC287381ED9C08A1BD96E4B0BABF4F23B65CA",
+        "bytes": 18098
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Polar.cs",
+        "sha256": "4B6DB418ACEF3A20583D36B730367C58D636711AEBB7BC5A550A2A61728E2E9F",
+        "bytes": 11906
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ProfessionalLinking.Smoke.cs",
+        "sha256": "9D3BA04DEE61248F47300F424528B306416ED5BDC216609D32C62845A6D5F6A9",
+        "bytes": 36759
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ProfessionalLinking.cs",
+        "sha256": "2F88E88DBDD6E81B812184BCAD1E5D3E989B5B502330B1A0476B5B381674FC1D",
+        "bytes": 9704
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ProfessionalPlotTrackball.Smoke.cs",
+        "sha256": "458BB881FED35DD9B88EB02060A11FA1B3EE8020B4B46719B3CD6F5B681CE130",
+        "bytes": 23756
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ProfessionalPlotTrackball.cs",
+        "sha256": "A637A6AE6AACE4E0CE727425449DE54C1A4552CD72BE8D6AAF5EDEFDA822FA5E",
+        "bytes": 15314
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ProfessionalPresentations.Smoke.cs",
+        "sha256": "660CEB037B68C00BC453E39303CC3E910B23D4B7E3B213515E3F5E5F5CCE9AAA",
+        "bytes": 25281
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ProfessionalPresentations.cs",
+        "sha256": "B0B49715BB73223FF4654A4FBBAB8571C4B8F11C13C93E34FB2B1E28F093E0EA",
+        "bytes": 12701
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ProfessionalTooltips.Smoke.cs",
+        "sha256": "3F00F5D44946595CA4822498C89327E13953B2E041413543611F09EF51B18552",
+        "bytes": 20610
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ProfessionalTooltips.cs",
+        "sha256": "F665E35D44D6CE58FBA94AFC4183AA8FD7E6F1AE323DEA814FAA3DB2C849974F",
+        "bytes": 10803
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Relations.Probes.cs",
+        "sha256": "774835D21E9F18FBCF234DE6535C0C22383452BA6EBEA4832A33C621DA0B6830",
+        "bytes": 7264
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Relations.Smoke.cs",
+        "sha256": "521F32382FEFFCE2A50DBA7049A55704E4C34ABECD124B874EA8E2CD366C6081",
+        "bytes": 10547
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Relations.cs",
+        "sha256": "CF90911DD3F44143A633442B728848A9D36C217B9AED36D89212AFFB697F5667",
+        "bytes": 9941
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.RenderResources.Smoke.cs",
+        "sha256": "3FD2C4EB919CE359530D43821534FE044ADA322BB37ED48797782834C43400FD",
+        "bytes": 13166
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.RenderResources.cs",
+        "sha256": "E308E40327A50E320CE9638AD4631DBE0CB26CA55ED765136DC6BCEA447868C4",
+        "bytes": 6410
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ResponsiveLayout.Smoke.cs",
+        "sha256": "63A8517230E8AF1C10CDBA7FD01AB9B2BB57EAC58AB798FB467E033C9B69F4E7",
+        "bytes": 4656
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ScatterBubble.Smoke.cs",
+        "sha256": "1A8301256F14EE4BFF7BAFC3653044AD96DEE475860268298AD35F59EF876130",
+        "bytes": 16416
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ScatterBubble.cs",
+        "sha256": "6199E9972504F051FAD24EE1B7A92BF33FDE0C5FEC399B963ED8A31816A33A65",
+        "bytes": 9635
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.SelectionChanging.Smoke.cs",
+        "sha256": "2D36CF7245669B0424521CE456B25D9592F227850753BCC6D8447F9D902716AE",
+        "bytes": 4132
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.SelectionChanging.cs",
+        "sha256": "AF3FB09828AA47F662C408709E6F85D3177508B769A971466446C131F9D9ECC2",
+        "bytes": 2133
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.SelectionRange.Smoke.cs",
+        "sha256": "687E9EDED0DBE04D58CEA774EDE077F1E9DAF815843AD5FCB6D6BA227785FB5B",
+        "bytes": 17064
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.SelectionRange.cs",
+        "sha256": "E6E722C92530C9DE5293F47DF80BD4D3768F3895B8B942FA2C0061F0FE86AC12",
+        "bytes": 7728
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ShapeAnnotations.Smoke.cs",
+        "sha256": "5FA3A332191F4C762F8DC9CDA02BB0F1EA14906F3F254162E20B42C62F14D749",
+        "bytes": 13837
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.ShapeAnnotations.cs",
+        "sha256": "F263DC514E0341D6CF9B25D75CEEE7280CB93D109E6D99DB1948CFEBA212F4AD",
+        "bytes": 5781
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Smoke.cs",
+        "sha256": "5D23732EE414F745A35E3655BA402684C3FDAE26024D36A7F1CE66FE7E49C8A9",
+        "bytes": 33164
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Statistics.Smoke.cs",
+        "sha256": "E58439634036B7AECBD9589CF5A3236F9A644E8C9C4978FC7686523534B04FC9",
+        "bytes": 10330
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Statistics.cs",
+        "sha256": "DB96E48ED9DD0208FD8D5B493B054FD11F3CD6F5772E10C7E0DFECE433D03DE5",
+        "bytes": 7598
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.TechnicalTrends.Smoke.cs",
+        "sha256": "6208EDE36D416FBE15B028A0978538145216863B4C55433D79A169F6D4505FFA",
+        "bytes": 12603
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.TechnicalTrends.cs",
+        "sha256": "AE4D510AF25EEC58EC6E13D6D6CE4CC7742322A33AB4D41F1E3A9E8FDE00E10D",
+        "bytes": 10274
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.TooltipTemplates.Smoke.cs",
+        "sha256": "FAEB673BDB2BCDE63A9132753F4C166C452457F3CC753B5DDB56F94509B91160",
+        "bytes": 21906
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.TooltipTemplates.cs",
+        "sha256": "4E3845564AEA31CD089816F189AE8024ECFCF9442F70218D75724E6F34078B9A",
+        "bytes": 8131
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Trackball.Smoke.cs",
+        "sha256": "2AC4D4A5915A07223181F646E0528AD072F610400480BDB9F906395EC25F84FF",
+        "bytes": 23780
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Trackball.cs",
+        "sha256": "6EC00057FD710CAC532AD5BCC0E42EF82CB81AB81449D3294C3F5D3CCA237A61",
+        "bytes": 9886
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.cs",
+        "sha256": "585BF394C12A6BECD88D217DF78EE20C0B23B42EE89910B3BEED589EA9A263BD",
+        "bytes": 19923
+      },
+      {
+        "path": "samples/NT.AvaloniaControl.Demo/Program.cs",
+        "sha256": "F2FABE22EF84AD4E10E3B5E288CEBB9860710231C83E712F59877C22B6DB5583",
+        "bytes": 969
+      },
+      {
+        "path": "scripts/ChartsPerformanceGate.Process.ps1",
+        "sha256": "D81B8A7B3568267295695483C1730DA16DCBE7BA431B7122103407871B558A09",
+        "bytes": 3880
+      },
+      {
+        "path": "scripts/Consumers/Charts/Consumer.csproj.template",
+        "sha256": "3FA5AAF84B186B2D79593396B073D0D17B94C8BA8B4E041AB9FCC16FB64B3556",
+        "bytes": 813
+      },
+      {
+        "path": "scripts/Consumers/Charts/Program.cs",
+        "sha256": "34257B4A6079A9592CE89F1458F2A5B6A35266048BFC2C1E95ECD79700856B1B",
+        "bytes": 131868
+      },
+      {
+        "path": "scripts/Consumers/ChartsNativeTextStartup/Consumer.csproj.template",
+        "sha256": "FD647845875A9D7E8328702563D2ABA650498AEAAAEF41A4F82CBB96598FAAB8",
+        "bytes": 707
+      },
+      {
+        "path": "scripts/Consumers/ChartsNativeTextStartup/Program.cs",
+        "sha256": "89974A0A3654F27B5A0AD9A15A8003B90FF5C9CBD1EE9DDE220EC418EFCF8D8F",
+        "bytes": 21165
+      },
+      {
+        "path": "scripts/Consumers/ChartsNativeTextStartup/README.md",
+        "sha256": "1880D961DB8CE3381E89A36B5164F87AF8E3C856F2F83633D99354F0749D2689",
+        "bytes": 2506
+      },
+      {
+        "path": "scripts/Consumers/ChartsNativeTextStartup/oracle.py",
+        "sha256": "C1EFF03BF8BFBA0A2A4FDFBB8D11B583B89CB80B77619BFF8976FC9A88294C52",
+        "bytes": 7256
+      },
+      {
+        "path": "scripts/Test-ChartsNativeTextStartup.ps1",
+        "sha256": "F2097EB54605016A3004A0BE4EDC9053AEBCEB61D9B656826373ED323F0C7D08",
+        "bytes": 16329
+      },
+      {
+        "path": "scripts/Test-ChartsPackageConsumer.ps1",
+        "sha256": "9F164B928459A89B0B1E492D4618CB985DD852DCE9909003DB46D36A04705D4D",
+        "bytes": 13392
+      },
+      {
+        "path": "scripts/charts_platform_acceptance_oracle.py",
+        "sha256": "11581313A0760912CA400979C537EE9A07489A848FB555C4C8F25C15741FCC34",
+        "bytes": 58633
+      },
+      {
+        "path": "scripts/charts_png_oracle.py",
+        "sha256": "2C05338338984B1D5C818997AAB22E6C8C34331CEC24C8CED65AAE32503C44FF",
+        "bytes": 12612
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Themes/ChartsTheme.cs",
+        "sha256": "316C54EE9A1C632B8CED8DADBAC1A47DBD0D62AA50EC13D31F670F3178DC32DC",
+        "bytes": 5320
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Themes/NT.AvaloniaControl.Charts.Themes.csproj",
+        "sha256": "BA23C3D62AE8B97DD9C3EB2025D90D5DD42D5CCF62F803767540B1D593C60A41",
+        "bytes": 651
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Themes/README.md",
+        "sha256": "BAB64DAB00BC1362B53195F5AAE3000379F275E81BAB5A1B4B83BBBDA48EDFE2",
+        "bytes": 3323
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Themes/Themes/Generic.axaml",
+        "sha256": "830B85FC655E54A738AE6EFB1717C723911CBFF62B7D57B5D8028E44447A4380",
+        "bytes": 6230
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Themes/packages.lock.json",
+        "sha256": "6FC3537ADFCEB6C06A752B1A795019D50645F014A755E3FEC69676E2E4D98864",
+        "bytes": 1617
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/AnalysisChartBase.DataSelection.cs",
+        "sha256": "434AA04502C17A3AFF5953CC2A30E7D185DC3A2FF6D55B3676C4950791B5BEBE",
+        "bytes": 23394
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/AnalysisChartBase.DataSynchronization.cs",
+        "sha256": "4F79A8C88C9FFB53F923CE4743E3E58698AE9DEFFA73A35C886A48469E0A981C",
+        "bytes": 3689
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/AnalysisChartBase.Export.cs",
+        "sha256": "5D2248315EE96B53F129BAA28CAA4813FE69287246F3E6CF4801A353AFAE460F",
+        "bytes": 2217
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/AnalysisChartBase.PlotAreaContent.cs",
+        "sha256": "F01A0C4F1DC2B2BDB6CFA9461B1BD1D71EBFD769B1D776EB0C1BFEEFAEDC6441",
+        "bytes": 7483
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/AnalysisChartBase.SharedPresentation.cs",
+        "sha256": "BF3428E8B7DCF93E085B1BF1C85B2027EDBB94480C3DC46916C70E8226C8169D",
+        "bytes": 15127
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/AnalysisChartBase.TooltipPresentation.cs",
+        "sha256": "51276F69865338FF82CB8DB1411F3C9BA1605E15131E8395B157834B9CFF2221",
+        "bytes": 6766
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/AnalysisChartBase.Trackball.cs",
+        "sha256": "9554D244340B0E996960EE0EFA7EAA4AB08429AD01B6F1925EE9327A0A095256",
+        "bytes": 20912
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/AnalysisChartBase.cs",
+        "sha256": "55974B7CACB309292E86FC8FA18815FFEF2573849241CA003AF9C70F0479AB58",
+        "bytes": 26748
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/BubbleCloudChart.cs",
+        "sha256": "43D2054EC16358EB494F68FC62BD6A85B41E7976655784039F95BDD0DA843EB8",
+        "bytes": 714
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CarpetPlot.cs",
+        "sha256": "FFDE2E2EE42AE1E2146C00506E38D9DF75869DB6474BF2C4FFD6DFDAA85B310A",
+        "bytes": 5443
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Accessibility.cs",
+        "sha256": "9FF981940837D998D3D9E38BC8174982D07D6C599736373CE338C8FA4326C593",
+        "bytes": 15131
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Analytics.cs",
+        "sha256": "031E5A22197CADDAA9F1838D342EA11BD2CFAA98B99BB92CBE0348F4DDD407AD",
+        "bytes": 5681
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Animations.cs",
+        "sha256": "986651F9999BAB54FD5D571113897FE23811135FF202178F3FE652B921E5EEE9",
+        "bytes": 25976
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.AnnotationAxes.cs",
+        "sha256": "5EB0FFE35831C83262BC173B5AA840D934EFAAC8D616FC615E871A8F091CF932",
+        "bytes": 3369
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Axes.cs",
+        "sha256": "6351EFC648E948B8915F5DED976E5F75998F97FE1EB921BDBF344FCD3D64EC8C",
+        "bytes": 30019
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.BackgroundLayout.cs",
+        "sha256": "843703B4CB12DF679235D1AA1E4E85D23774F3FDB130EF1FF285596CFCC111A9",
+        "bytes": 14730
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.BarComparison.cs",
+        "sha256": "27B8B5B8FFDDDCDF6CE83A48A2242B8B81F5271181D509EFA2C13E5E804E0BE1",
+        "bytes": 19481
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.DataLabelTemplates.cs",
+        "sha256": "3533422EE79D6E3C4F268FD5E8AC4F52EE34EE3C31F1926082AC03ABAFCEEF8C",
+        "bytes": 16429
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Export.cs",
+        "sha256": "0F0C890B138018BE6367FA074D51C73BAB16B22F11BF75252B7FED160C8C18DC",
+        "bytes": 12785
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.ExportAsync.cs",
+        "sha256": "F98B6C1C2C517DE720A734F381C9042BD7E0EC18668A0F39ED8EDBBD892C3605",
+        "bytes": 17799
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.ForegroundPresentation.cs",
+        "sha256": "CF4C9EB0D9CCEC31E07D6AEC31F79B7E68AA86A40712D9FAA61069ED2995D45C",
+        "bytes": 3879
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.InputTransactions.cs",
+        "sha256": "81FDD253E07672E523C0B9E59C32FE9AB9A371AFCF170AC0586B97DE155D8729",
+        "bytes": 7178
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Interaction.cs",
+        "sha256": "18AA60E6F5290BA9B836F7FD6109F0C80E3115F3ED335DDCA4D729127116B368",
+        "bytes": 20058
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.InteractionCache.cs",
+        "sha256": "7D532047AE929BA5F0D1B0EA67E191551252D4CBA9B4701DAF73611F16EB665F",
+        "bytes": 3790
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.KeyboardBrowsing.cs",
+        "sha256": "E7147BBEC3A310226819BD8805573DDBBE8EDEB6C69B65CCCD005DC27F970FD4",
+        "bytes": 10909
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.LayerCache.cs",
+        "sha256": "5C01E6D6ED20E8C940EBD8F00080961D2572B72B69494016961AFBE7675D68F2",
+        "bytes": 6713
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Legend.cs",
+        "sha256": "07B939ED59E11E5CA71C5BFEC9C4728691B915AA3F84D23D1E7E962D8E4CBC82",
+        "bytes": 14982
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.LegendTemplates.cs",
+        "sha256": "06D64BC6E8E49F831E4F445C865333F32708EFFC1739D0624EA7701E351D87BA",
+        "bytes": 31270
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.LineArea.cs",
+        "sha256": "42BF7ED98EC09314B112CF2A45AAD4D9F7A99B318D9BC5BBD7610DB1C0D68311",
+        "bytes": 9247
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Overlays.cs",
+        "sha256": "026E2D3615FC94BC87C1C03BA257F93742EAE4AB7D75D43C9F5090AE86F87CD7",
+        "bytes": 14701
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.PlotAreaContent.cs",
+        "sha256": "D57F07FD82FE98A65E7C59400FF2EB5157F9F5A719BFCA95205BD928AF0A28BC",
+        "bytes": 17911
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.PointEncoding.cs",
+        "sha256": "0CBEB1AF59AAC55B03FFE3D9FF2AE93039122D730E0B7CD2272B430403153AAF",
+        "bytes": 7134
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.PreparedData.cs",
+        "sha256": "5801258FC0E1E2E65B92418F25339ED46523BEBB32AFB9A7D66D1B933AACB2AB",
+        "bytes": 7665
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Presentation.cs",
+        "sha256": "843E0455A152199362CEAACBC7E7AE0B5F13B6FDBCD20BBFA401B12121CE264C",
+        "bytes": 18735
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Readings.cs",
+        "sha256": "5E101094A6DBFDA9D1851689886B8862E6F8361D4FC05BCF153ADFBD53105650",
+        "bytes": 25892
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Resources.cs",
+        "sha256": "0D131875651D15918C21DF4A134CFFBE58A41D9F7A3B7AE2124385691FA391FB",
+        "bytes": 9575
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Sampling.cs",
+        "sha256": "83C46607ECF6879B26DEF99083CEDA990E62A84F90E34CBACAE8AAA828086658",
+        "bytes": 2590
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Scheduling.cs",
+        "sha256": "E31F721BD0932AF70E2DAF5C4693F36E2AE233302B0715A924B5044A53A56E53",
+        "bytes": 3525
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.SegmentCache.cs",
+        "sha256": "BE242137104F2DF969D9CA2253496FE2806ADFB7DE651522B840352771D6AF8F",
+        "bytes": 4831
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Segments.cs",
+        "sha256": "D797587F2A65356A9F42ED562537D81977A16EACDBFC1F784541EBAC080014E1",
+        "bytes": 8253
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Selection.cs",
+        "sha256": "F735DB2DEFC5A84786E57B855030D7A186EAAF898829423DFD7C093AC0C33A96",
+        "bytes": 23188
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.SeriesSelection.cs",
+        "sha256": "8FBD8AA068FD3C71E294F07AB1DAACFCEFAB64A9212DD764B58CD6037493DFB6",
+        "bytes": 13035
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.ShapedSegments.cs",
+        "sha256": "46BAB8ED4E4A79234ADB95ACFCF6EFC0EEBE3BDEEA0013599F3868CE3FED33A1",
+        "bytes": 10794
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Streaming.cs",
+        "sha256": "279C071963B9EBCCA938701F7A72211FD9E25AFC45ED4F9D3DAC3E576B664E7E",
+        "bytes": 5863
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.TouchInput.cs",
+        "sha256": "FD8E551B06158BB114D0739C5BEE5C7219B607F6F02F20C3F5B3C0D856E63A16",
+        "bytes": 17714
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.Trackball.cs",
+        "sha256": "96BD1BFA9F6DB9300D31178A8FAAD2F9E5F1DA96A53E12695EDAFFD714C3A397",
+        "bytes": 7455
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.TrackballPresentation.cs",
+        "sha256": "96E6A7893590B91D4A57F6137702FCBE9E08F0499E46EE55C97324274D2BF9CB",
+        "bytes": 14059
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.ViewSynchronization.cs",
+        "sha256": "FF5FE9FA45230E6E9E7E4B3B34430B20A58B833FBCE614458EA5D75E6EE9126E",
+        "bytes": 12360
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.WheelInput.cs",
+        "sha256": "8A6BAB7895E5E4290EF6F28FAFD6E1EC613206748D3796CC26AB920370ACA886",
+        "bytes": 5937
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.cs",
+        "sha256": "443B77D117C8D46F8D9878F87821EFFE99686E05242EA55FFA241D44D8646A1E",
+        "bytes": 45505
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CategoricalDistributionCharts.cs",
+        "sha256": "CBF40ED8FC51E12701EC67FEC92BD48CE7702D6D159EE5C569C0D4AEB0972EDB",
+        "bytes": 14682
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartAdvancedComparison.Venn.cs",
+        "sha256": "A4BC6DE64D6D3E71B7842005BBF3993D3C3911461E8DC8B6F6AF9F0311C555E7",
+        "bytes": 10700
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartAdvancedComparison.cs",
+        "sha256": "183E08ECE3E3C3AD8DCDFC45F68225D6906990D6BBDA456B68538D6ACD6BF7CF",
+        "bytes": 13799
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartAnalyticalSeries.cs",
+        "sha256": "E02141FF67FDE70DC21A70C6E2D6F810EFB483CFC0FBBA804419784BB792DF76",
+        "bytes": 18069
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartAnalytics.Trends.cs",
+        "sha256": "21F01778F85DCE994BE1601A16004E550D054E38A1EBAB5142042569EDAC2278",
+        "bytes": 11429
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartAnalytics.cs",
+        "sha256": "CB573B4759B97277E32E619A8D5646B7901330678BEE55BB4993401DCCD6108B",
+        "bytes": 11338
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartAnnotations.cs",
+        "sha256": "42F554A0C59ABA30186AA2D1CA751A8DCE585F304573EDBC06347EA6B93BBDBF",
+        "bytes": 11239
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartAutomationPeer.cs",
+        "sha256": "9DC05BDF3C051DD110104EAF97448B2DB7B6A390B316BB95CD93DA887E1F524B",
+        "bytes": 17681
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartAxis.cs",
+        "sha256": "F19EC5118D4F39D1F59C6DA11F55F7991FDE9AF521C7370829F5DADAEC556607",
+        "bytes": 11271
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartAxisFeatures.cs",
+        "sha256": "2F9D7281D1696B007D42E65C845DEEDFA407D88ED0C0C194BCA679B4D7251B61",
+        "bytes": 29613
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartAxisReading.cs",
+        "sha256": "09AFD22461201AD651C56F6A315A4BC31E79847B7F12A86B5FB5166EB277536E",
+        "bytes": 412
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartBase.TooltipPresentation.cs",
+        "sha256": "768CBF11C96AF485F914F52C2BC9B43F3B4586D3F056C9BCE6B67140638F9DFB",
+        "bytes": 1306
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartBase.cs",
+        "sha256": "EB73DAF05A4D1CCFED1EE968383CFAA5A7C8B730643E995755A42EF749F4D81B",
+        "bytes": 1539
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartBreakMap.cs",
+        "sha256": "3E1071265000358CBE309EBDD166947D881AEF10ACFCAA656F4DF17046B5A258",
+        "bytes": 2625
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartCategoricalDistribution.cs",
+        "sha256": "C612CB9FC76D0FFB737FF12FAA5C5736BC556633B1A18E9DEC5C1032DAC694C6",
+        "bytes": 9888
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartComparisonGeometry.cs",
+        "sha256": "F71079DCCE043DF2D5751E049DD57A7B32F5C05B5D72ABCA5374E6860539C028",
+        "bytes": 8670
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartComparisonLayout.cs",
+        "sha256": "15CA875767340FC6A8A85C54A452A2CDC527EA41BBA558577F16DDEC2FDE6371",
+        "bytes": 17071
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartComparisonSeries.cs",
+        "sha256": "E48D657370025B91ED5D7103507B09CE30A9D6D6399E91660C8F4643F7BF0AFD",
+        "bytes": 10812
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartComparisonSeriesRenderer.Visibility.cs",
+        "sha256": "648C80BAA6BC1C064198AAD90FC49A879281DC8A6B3080CC0616C3D7BB4A5AEB",
+        "bytes": 2753
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartComparisonSeriesRenderer.cs",
+        "sha256": "F8351B99D4F57D5837C609EA261458DEE1DC8F5084DA4C0DF2FB4B6C2C54AF8B",
+        "bytes": 8987
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartContours.cs",
+        "sha256": "B3E2E267408E433D929B7772AC77D767C941B581AE6FE7FAFCA8353236838769",
+        "bytes": 15257
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartContrastPalettes.cs",
+        "sha256": "D7B0B4C97CA6EF65FCC07F591511B32B6B67E599C9CDE1EB9B913F4BB4602B58",
+        "bytes": 1497
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataAccessor.cs",
+        "sha256": "A39F6C9AA19FD1B126BB8867241C649A4097D8BCB10A537573E31355BA402ECC",
+        "bytes": 3341
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataBuffer.cs",
+        "sha256": "CA1EABBE072298ECCD4A1375EFF0EC20F77C35E74C621AB7BD2C5A9566CF415F",
+        "bytes": 21074
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataExtrema.cs",
+        "sha256": "D4F53C1F9FF67AD6374626993580AE254148A6766E8882C734D70160F3A22165",
+        "bytes": 6881
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataIndex.cs",
+        "sha256": "5C130E84229DBBC7178F154331C6CA994A01FFAE1EEE999F63716F4302C44A82",
+        "bytes": 6106
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataLegacyTooltipOverlay.cs",
+        "sha256": "8CEA8C42CA88B79111BBE26E074421F6F61E7EA73B87CFC28DF1E758D0AFF119",
+        "bytes": 749
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataPlotAreaContext.cs",
+        "sha256": "88148232DB1E0EBEF268C000DBCDB3C352AF6587C4A5B985DF62D48818B0DC05",
+        "bytes": 3599
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataPlotAreaPresenter.cs",
+        "sha256": "35ECE35762FE4623686B84C1B5833259BE4B75D8BCA8961B5AE279E577D6E66E",
+        "bytes": 10789
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataPresentationContext.cs",
+        "sha256": "5A3929EBBE6A2958ADD26ADB85D861B8F1180FAF17A851EFC731398E64EA9217",
+        "bytes": 1721
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataPresentationPresenter.cs",
+        "sha256": "812CB0919B35B2A15ED221F6E87DBBFDCB78FA63A6528F120F5AFB426C121978",
+        "bytes": 12869
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataRangeSelector.cs",
+        "sha256": "F92BD3977423EE13A97CC5CF94B404BC4D619A4683D93D83B7BDFDFAC27C2B6E",
+        "bytes": 10648
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataSelection.cs",
+        "sha256": "F9B408777949B24B068391663CB6E05C1C1AC6594151D43144F01F8FEDA983B7",
+        "bytes": 5486
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataSelectionOverlay.cs",
+        "sha256": "15FDF053F9FC8E8AAD8CCABB3001DF02500EA2F97FC4F5CC774ADDA810EE50EA",
+        "bytes": 623
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataSnapshot.cs",
+        "sha256": "3F8151D919177FD15277FAF4ED60DB93AB501AD27D98810C7828C6C1D7314025",
+        "bytes": 18765
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataSynchronizationGroup.cs",
+        "sha256": "7612B3C6509E039BF763E18833DEEEC6E99E5CF5864D1AFFEE0BF50CDE8380A7",
+        "bytes": 19198
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataTooltipContext.cs",
+        "sha256": "E8153690EE68F4F9EFDE1E6D5451EB7A499754F1194B9888C4E7EC200BDF18AF",
+        "bytes": 1126
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataTooltipPresenter.cs",
+        "sha256": "C5DE5414AB6A3F15826F943C8424D07AF25427C7BB928C97E1E8EEA114E62DDD",
+        "bytes": 12655
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataTrackballCardPresenter.cs",
+        "sha256": "FB8AD179D4C8D272ED646BA15ADE088D8A0CFF9E4D3D8F98905B115629BED86B",
+        "bytes": 14702
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataTrackballContext.cs",
+        "sha256": "60EEF0D363B496B6739F40107AB755534A9D65711E489C3F841D21EC0D10D923",
+        "bytes": 2069
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataTrackballContrast.cs",
+        "sha256": "CB60C4E9C8F211BDB82BC0CEE3829F19441FA5E45F22AE92BE2F97E632EA9FC9",
+        "bytes": 584
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDataTrackballPresenter.cs",
+        "sha256": "8B7CB06565A67B516AC0A9C933B7FDCC2E8825AC072C4617836B9E124C6EE286",
+        "bytes": 5909
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartDistributionProfiles.cs",
+        "sha256": "E4C57AFA03578FCBC66B5C28F4E2ED5A755C857C86CB68F285966F628693160C",
+        "bytes": 12551
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartEngineering.Carpet.cs",
+        "sha256": "9B58A6A17F5D953FBD8B56DB2332B4266E0735EE54D1DB855EC58C7A21382B60",
+        "bytes": 13151
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartEngineering.Hexbin.cs",
+        "sha256": "898D8C5D90CDA8585502960C824F1FD6FA8F6C0D38A10EAB366889BC7C8DA2AA",
+        "bytes": 5867
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartEngineering.SmithTernary.cs",
+        "sha256": "BD1473DF12FFFD825BA6ED1DD1B34DD9E412CBF057DD3F6A099D62666C1B67D5",
+        "bytes": 9732
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartEngineering.WindRose.cs",
+        "sha256": "D12C66BADE1DC2F7931E37DB5F21D6DFDCD16D00C3C97CED212C77D71D015252",
+        "bytes": 7724
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartEngineering.cs",
+        "sha256": "9B123FE33EEDCFF6B9BAF0256D294FA5239A117E1B76DEBDD72EADA160E14E77",
+        "bytes": 7368
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartFinancialData.cs",
+        "sha256": "F130EEC8E7004007E5CF28EB95D7F64AC12534AAE2F13F2A2DD86CA0D458CD0E",
+        "bytes": 3060
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartFinancialSeries.cs",
+        "sha256": "CE900F41BAD0915D5D87A32FE6B390E9117A67C258EBF63EC4E80828AEC9CC10",
+        "bytes": 8178
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartFinancialSeriesRenderer.cs",
+        "sha256": "F6F38B6DB43D91FCD3CA16D01F1942B7696DB3B57F8E49678829D48AB56DB3DF",
+        "bytes": 11035
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartFinancialTransforms.Kagi.cs",
+        "sha256": "7FAF9CFC5AA0067622776FB9F948801518C97E09AC3039159A64DC5F44A30446",
+        "bytes": 3794
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartFinancialTransforms.cs",
+        "sha256": "912B91276BB33FB8EA2EF159984DC758BB1588EDDFDC1DF275F17CA38A6B4502",
+        "bytes": 13252
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartHierarchy.Additional.cs",
+        "sha256": "7AACE20F9DC62D58CAF50FEFD414D0949D7E92DC7203A1E1D76D6450734B672D",
+        "bytes": 11495
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartHierarchy.Layouts.cs",
+        "sha256": "06D4C8B4FF6836274D0A1668ADF4B89A869463445374226B748F73B12C601C84",
+        "bytes": 10507
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartHierarchy.Packing.cs",
+        "sha256": "5D69FC62943750094214BE7DBA4DD7EED5E3F020FAFD30C02B5333C46BF23B9B",
+        "bytes": 9845
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartHierarchy.cs",
+        "sha256": "107635518CD9A92F5219DBE70C42750717A94065D436FD2FE270814ED3214D6B",
+        "bytes": 12393
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartInputRouting.cs",
+        "sha256": "20C1E76E8D6D4F5D948F320DA0DC4E6973725626041049E78250F36D33B281E4",
+        "bytes": 2691
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartInteractionAxes.cs",
+        "sha256": "EF6FF81F5541B01E2F6145D7A06D65630F505A4111908F0E669FF351A31CC3CE",
+        "bytes": 217
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartLabelContrast.cs",
+        "sha256": "6F29C9EF6871E7140D19CC3B9DBF047A6F5E39C9A98C0B25D37270B8906D9EC1",
+        "bytes": 958
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartLineGeometry.cs",
+        "sha256": "47B454D0C388354D0C421488F09759B6446DDF1E9017B5C6B3AEC2EE567C4D2F",
+        "bytes": 25332
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartLineSampling.cs",
+        "sha256": "E449E9379C0E02BE2F493DB8D5F8CEDC823F2746F3954066FFBBF02E5BC7C866",
+        "bytes": 1541
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartLineSeries.cs",
+        "sha256": "F84D71B5DF16EBBC8CD2448636B54FF2DBB1EBE3EFB4B9E89680ED6558CF04EE",
+        "bytes": 3911
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartLineSeriesRenderer.cs",
+        "sha256": "E0F64781D82F06193AD8D598DE7D50A682821B48290BD37D6EEBCD59B919CF61",
+        "bytes": 3551
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartLinearMapping.cs",
+        "sha256": "534B3B53AFEB39DAE9C3F45FF816F86085835643F05C003366AADC945BF8A852",
+        "bytes": 1231
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartMaps.GeoJson.cs",
+        "sha256": "5E5E874A7888C7BE6B8B4F733CDBBC73FCA4178B70C2C2EBFE769A325364FDDE",
+        "bytes": 7841
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartMaps.Geometry.cs",
+        "sha256": "A20357F6C6C05D07BDA532927EEFC2FF0437A4BBAA51066849BC16C9D6F2F7CE",
+        "bytes": 15657
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartMaps.Layers.cs",
+        "sha256": "A55BD8C71197B223EDE015D0295795685127A0FC29CB9818214DA6FF0779154D",
+        "bytes": 11915
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartMaps.Overlays.cs",
+        "sha256": "A91C2E7DCB3E90AD46F7F3B7F522685FE31EAEE3699C91A2420497C34BDB2E6C",
+        "bytes": 13999
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartMaps.cs",
+        "sha256": "814F7AD2907A9A81B78BC661B7D96B783FE12CAF4C67CD5361788CD294CBD0FE",
+        "bytes": 12601
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartMultivariate.cs",
+        "sha256": "60DE063B3599487BAC80A179603253231F62ADE971F179228BB7D29D9D773589",
+        "bytes": 8601
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartOperational.cs",
+        "sha256": "4326D977E7CD8A7868AEC158DEDA447D72096C507ECA64AAE9D768548BA6FBFC",
+        "bytes": 22089
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartPoint.cs",
+        "sha256": "48EDA15A8B24ED6FE304E7498413B4C8D9EDB8ECB0646B6EFD58384E11EEDB4C",
+        "bytes": 170
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartPointAutomationPeer.cs",
+        "sha256": "F709B95A7087DC1DF56610CBDB57F545A2CBF050761CF3705BC1CD64F543A207",
+        "bytes": 7164
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartPointEncoding.cs",
+        "sha256": "E34CA11225F7B3E142111434D20E72215C702DFF20E993DEB5DC6EFFBAFF22B2",
+        "bytes": 5704
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartPointGeometry.cs",
+        "sha256": "9EB069C5BA202C580400E822AD44D538A73F725B4DCE0DA818AE6DC6F9346BB1",
+        "bytes": 13253
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartPointHit.cs",
+        "sha256": "B39F2B257F408D171402ABC6EB058C421D957B9CD08011A71AB85974D408F024",
+        "bytes": 2432
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartPointSceneCache.Hit.cs",
+        "sha256": "957D076C3FFF6C9533C4E0D2E214EC29839054F76B44AA315B0C33987E3FEF04",
+        "bytes": 7362
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartPointSceneCache.cs",
+        "sha256": "D15206913BB06046F2AA23A5F61C2B146DDBD0012CBA0F791BC6D4913BF8D5B1",
+        "bytes": 6904
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartPointSeries.cs",
+        "sha256": "689A99C49379D48B890C4DA0AB66518080C86E48E7B5234AB20DF2C0763A2925",
+        "bytes": 9856
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartPointSeriesRenderer.cs",
+        "sha256": "CC9C5D518F0AB50655FF08F559B2CBDF6A2C98A4AF42E0942C51460825AD0096",
+        "bytes": 4955
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartRangeSelector.cs",
+        "sha256": "310D340CBF21211EF695F230124512E2631A2E406C81BE1761EEB5E225938DCE",
+        "bytes": 24149
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartRasterExporter.cs",
+        "sha256": "617A75A875BF5A7B0CCD219173E42413FCA6A06E05F0D1E2336100774E3FB660",
+        "bytes": 3495
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartReadingIndex.cs",
+        "sha256": "3819B267F2C3AE8382DFD6DE41A2F8CFC206AB93406124E04445347924A8C42A",
+        "bytes": 3273
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartRelations.ChordFlow.cs",
+        "sha256": "6A327452B9C94407DFC2732B6229BAD2A35C23EE9823452FE97E754BFC41C5D2",
+        "bytes": 12879
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartRelations.Network.cs",
+        "sha256": "54F0FF7354F1378EDCA53E80C3D9DD14F87245B7E6951664D1981D9F506AB8F3",
+        "bytes": 11402
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartRelations.Sankey.cs",
+        "sha256": "A8465D6E324D6C8076B61321E54D3CDA7030C930C41804C9E741AC2FA3254B47",
+        "bytes": 9993
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartRelations.cs",
+        "sha256": "254B6F112FFC9CF41EF26C65145D0600F131E8D15BCB311CAB7994095AFA12D8",
+        "bytes": 15285
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSampling.cs",
+        "sha256": "A7C1A035B379EFC052903D30FFE913B7E7F341C6C20481822F28237A133AB4C0",
+        "bytes": 2625
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSamplingIndex.cs",
+        "sha256": "B6A6735468732716E4A711F250A5ABADB44E7DAB59343DEB6FA319BB9C329AC4",
+        "bytes": 12797
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSamplingPlanner.cs",
+        "sha256": "5D766155D8550362B23AFD93BD57D0B366D4CEC8BCA54A3AFD2388669BE1F598",
+        "bytes": 7461
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartScale.cs",
+        "sha256": "BFC82C2EB9563F24F380E38BFD3A269BCCCDB01107DA8A83704CFD38E509A256",
+        "bytes": 30442
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSchedule.Layout.cs",
+        "sha256": "C2ECF38B8D64A58BA7B306ED21918EC9A9208F2650F0DCB26B9D83F2E4C301F8",
+        "bytes": 7748
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSchedule.cs",
+        "sha256": "AB334B4D3ACE5E0CFB5C3BCA5F25DBEDFDFEEC74601A576DBC126E1721419654",
+        "bytes": 11706
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSegmentIndex.cs",
+        "sha256": "5F0D5A9B6F14E37BF3B3C1F8CA2EBD5E8988C899B2C304472ACA1F27662414E2",
+        "bytes": 8205
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSeries.Buffered.cs",
+        "sha256": "18000EF4A6D3869A23BDB6CA1554D9E5AC627D7139D5E683DC3C3AD4F4591896",
+        "bytes": 20355
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSeries.Financial.cs",
+        "sha256": "DCD9F4B8F89284BC340822EF309F6FA6A021264CF173402A0B4E3A4803FFA0C5",
+        "bytes": 6198
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSeries.RangeMapping.cs",
+        "sha256": "7D9A23D30BDA05F762C029331AA56D23979072A77A40ADA19264D415FB939E27",
+        "bytes": 2256
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSeries.StatisticsMapping.cs",
+        "sha256": "4676153F4B2FD848C096D7361550DFE76E89F2D999F9D6BB2E2632D3C8790187",
+        "bytes": 6272
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSeries.Visuals.cs",
+        "sha256": "118E973D575FBE2789B61CA2BF67FE5028124FFFFBF28730FFF8B297D289A75C",
+        "bytes": 10600
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSeries.cs",
+        "sha256": "F2F12526EBDB1634752D6A51067A1FA2EB733BB8AF0C57F518F706CFCD36D81C",
+        "bytes": 32483
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSeriesRenderer.Retained.cs",
+        "sha256": "B5501F0BC96393C959CBD2B689C7B15E4EABDFD11675B71CC8346DBE8696393A",
+        "bytes": 7751
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSeriesRenderer.RetainedVariants.cs",
+        "sha256": "775908DC72A5E2437DE67400450C2FFA45D8227F460F79C630092D92A0B75076",
+        "bytes": 10986
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSeriesRenderer.Visibility.cs",
+        "sha256": "2B8E22D5C6D10F5FB8C26C4F8D69C05124E88EDAB8701F76247CC62F2F2DD776",
+        "bytes": 6522
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSeriesRenderer.cs",
+        "sha256": "EF105F8A4C363376ADD2DE1A2F725AC929A6179F7033761C6FE51F7E725BE017",
+        "bytes": 41126
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartShapeAnnotations.cs",
+        "sha256": "4466BBF20EDC527805C697A707FD8E3CB0CBEBEAA472CC375801FA0C2F89FEBD",
+        "bytes": 15026
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartStackTopology.cs",
+        "sha256": "AFAD06D08C162E1230BBE4BCC8BD9D14B3EFDD3A7573FF13D819F32B5CB2DEA6",
+        "bytes": 4771
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartStatisticalSeries.cs",
+        "sha256": "3E5FB516A7A5771A78DF4D41AF1E070AF0385809D5E9A33F4EA8FB5246E20874",
+        "bytes": 8788
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartStatisticalSeriesRenderer.cs",
+        "sha256": "1972D996490F416BA1D5119B55880D449B4132726B4F796D53AB52BD0ED1BB52",
+        "bytes": 20368
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartStatistics.cs",
+        "sha256": "D146086F15ECCDC6CF42A5D580EF24F814436A5BEB0C767B8A6556F0CFB5BD99",
+        "bytes": 25087
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartStreamingSession.cs",
+        "sha256": "8EF1688A635C6BB27FB54A0967FB65A614493F4F9A95C2A05CEE71DAC7D65BC3",
+        "bytes": 12891
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSynchronizationGroup.cs",
+        "sha256": "8CE1E6715E5A70A5C830223E1ABC8C06C5246948C5C3239886F643EDE85CA408",
+        "bytes": 8354
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartTechnicalIndicators.cs",
+        "sha256": "C2714CD4261335CBE5FCD97C3DCA1204C935744E34DBEAB2A4A6C73B3810B8A8",
+        "bytes": 6252
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartTooltipContext.cs",
+        "sha256": "79518CDAF1478505BEC0D8CDF49CF5492DA31D482E15C94CE4AA5194D457C5A0",
+        "bytes": 821
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartTrackball.cs",
+        "sha256": "D82F999010B37DAA4A2F5A0B7B25E2843FD884BD214F82105FDAAD2D16151E0C",
+        "bytes": 8483
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartViewport.cs",
+        "sha256": "E26A55DE6819A40F6D3A7E98BC7E5F4070F7D8E3132F39B94D1F7078F0A591EA",
+        "bytes": 8142
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartVisibilityIndex.Hit.cs",
+        "sha256": "59FACE5791C794052D90CC99A8884328F294FBC06DB172AE0813C777DEB2FB31",
+        "bytes": 5064
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartVisibilityIndex.Readings.cs",
+        "sha256": "72B80CAB6B10DA59383848FEB4A063BB3CEBBB05F11BBB4035B6FDD3620352DE",
+        "bytes": 5404
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartVisibilityIndex.cs",
+        "sha256": "7E94671D9E3B5064AF6A164270CC2B33C23F357FC7F4587E7AF458ED69B689F8",
+        "bytes": 16489
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartVisibilityQuery.cs",
+        "sha256": "0516EBA6CE899AACE4B3B1D5625E69E19EAA4DB0DA2324668CD3F6C267962B02",
+        "bytes": 5232
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartWorkScheduler.cs",
+        "sha256": "790CF793474D06FA7150B11B8289EE29274E5C71B67E03FFA17E7B107BAB0460",
+        "bytes": 13543
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChordDiagramChart.cs",
+        "sha256": "EBDFEB224F269CF73C49E9DF9A02AE9C32B88FB2E4AA12B5EFB3DF213E0B617F",
+        "bytes": 1486
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CirclePackingChart.cs",
+        "sha256": "8CAA0E44C1CC530C9A3B528908BC97A33705EB642832351D8D8097BF37191366",
+        "bytes": 748
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CircularChart.Animations.cs",
+        "sha256": "B72EE9F3A06FC83468FA7DFE360DBFA160320FDDF7E350A7D2D8170C9F8F178B",
+        "bytes": 14216
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CircularChart.Export.cs",
+        "sha256": "BFC4B0FB62842425E6A02CC3EA7392463F8943000FCDD482110CE7EBAF2700A0",
+        "bytes": 6604
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CircularChart.Rendering.cs",
+        "sha256": "FB5611491791CFBA10142B2EFCDB6D85F8A692F7875266EB4CD52102427D9FE1",
+        "bytes": 9322
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CircularChart.Selection.cs",
+        "sha256": "80DF6FBC72F6327D825E1377839E9734628781C64F6209E7EEA861367220DA17",
+        "bytes": 8798
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CircularChart.cs",
+        "sha256": "BB65A94D744756D502639C06DCF815C362629F7AB0F46FF1CA610E451F576D57",
+        "bytes": 20206
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CircularChartGeometry.cs",
+        "sha256": "63A3E2B61E046EB7B8964CEC83E510110EC391326D67BDFCE2A524BA36A61EAF",
+        "bytes": 15093
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CircularSeries.cs",
+        "sha256": "28EB35E1804063C4D381E9FB3F68649A188D4F5FE3067E801B7492ED1548689F",
+        "bytes": 7757
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/CompactSeriesData.cs",
+        "sha256": "F4CEF4BF5707BEEECD10BDACD105F21F73F35046B473EC530E414CD5553B068B",
+        "bytes": 23169
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ComparisonChartBase.SharedPresentation.cs",
+        "sha256": "A23C00E1DF618BC5E62408394AF99F0BBEAFC2EF6E37D0A5BA9A6DB60816B37F",
+        "bytes": 2726
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ComparisonChartBase.cs",
+        "sha256": "D11877C28F4B9C59ED55670255808AE4C17C9D3444F6B14370E64C907C9FEB64",
+        "bytes": 8267
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ContourPlot.cs",
+        "sha256": "373966C051578A4794C34EAD9A54501DEC2F95C3FC2B9A02D44C06F135FC9C62",
+        "bytes": 11064
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/DendrogramChart.cs",
+        "sha256": "CF7552F8A37708BCBD7A57724DF836A30B1CA537EB8B7EDC5F1F6478AEDF62B4",
+        "bytes": 4738
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/DistributionProfileCharts.cs",
+        "sha256": "88766A6C415401ADBD58619E16FC30207BCFEED48269A76CDE0CF6B5081496D6",
+        "bytes": 18540
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/DivergingBarChart.cs",
+        "sha256": "716CC9FCDCD42BD883DB1E492FE93F5EA535561454833352B66F710BBA8FCAA7",
+        "bytes": 5832
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/DumbbellChart.cs",
+        "sha256": "6197FAA9C4043391C4878642DF233FB4DF3B9F444C21F24A5C59400A21194C6D",
+        "bytes": 6466
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/EngineeringChartBase.DataSelection.cs",
+        "sha256": "1373E70FD865960E1296E16C96E6C52D0808EEDC69A3E00A8C8F64CE66A8CB1F",
+        "bytes": 23477
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/EngineeringChartBase.DataSynchronization.cs",
+        "sha256": "C18AF050B39BE1B67A6BF599702297A2DC6FCEE44B37E81847BB69420ACE8DD6",
+        "bytes": 6549
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/EngineeringChartBase.Export.cs",
+        "sha256": "C89FF09828E92C6EC7D49A52C5285FFF912824F3F2045FAAE6772049A0B534E2",
+        "bytes": 2196
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/EngineeringChartBase.PlotAreaContent.cs",
+        "sha256": "67900D7517F9FA6B7651574FD108B138B91740B852BDF6A9969DFB489A041975",
+        "bytes": 7664
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/EngineeringChartBase.SharedPresentation.cs",
+        "sha256": "27BA71EECA2E16E230D5DBDD3D1A681698D93D0A572A04265B5D853AFEC2D042",
+        "bytes": 15166
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/EngineeringChartBase.TooltipPresentation.cs",
+        "sha256": "AABD7758FE481DF8D8F262E79C630D047BE6A9F03B353D10CFC7F57E8435C239",
+        "bytes": 6723
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/EngineeringChartBase.Trackball.cs",
+        "sha256": "C1E5308AFA8D95C220FA16BE19F668137CE9B90CE4E6D21384E677A8C659083C",
+        "bytes": 21085
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/EngineeringChartBase.cs",
+        "sha256": "6C01DE5AF63587297768EC83ECEE0E85BE0809FD6F902BD2FF384E7A1719A7E3",
+        "bytes": 40001
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/EventTimelineChart.cs",
+        "sha256": "E8B298738959C6B7C5E3C65C672B6D5A822173541A9D1959E258A76080FC38DB",
+        "bytes": 7045
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/FinancialChart.cs",
+        "sha256": "6A221D0685E9182B4EF73491A0CF9172E64AB145359E2D3AE36BC059D6E74895",
+        "bytes": 5903
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/FlameGraph.cs",
+        "sha256": "82D10E85489C057716203F38EE1AE849E1FDFCF0AA73CF0652B3C7C4D75BBCFC",
+        "bytes": 1904
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/FlowChart.cs",
+        "sha256": "002495A3E42EB052BDD349233CE53D816DED6C9D9B6DAD5DC8D86893DA37444C",
+        "bytes": 1346
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/FunnelChart.cs",
+        "sha256": "F25809D9E96BFE20C1B7262BB1A042AF64C38C4AA55298994443AA5DD23BCAFB",
+        "bytes": 6857
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/GanttChart.cs",
+        "sha256": "0061B395096BC52411DED9EE0C03F9060A0F4D4A95CF28EB106EA110ADC3CCF1",
+        "bytes": 7836
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/GaugeBase.Export.cs",
+        "sha256": "EF1907AD947800C74CE77371472417A20E0175F9796881786839CEB7894858A7",
+        "bytes": 2035
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/GaugeBase.cs",
+        "sha256": "E6623D69EA2FDA069F9C4BD55D83DFF0B798EC288E94915DF29608B2D19755FE",
+        "bytes": 16250
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/GaugeCircular.cs",
+        "sha256": "397E17055E5C2716B0EC4EF18023316A4957604920C4A87ECF88245411CD7FD9",
+        "bytes": 7973
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/GaugeGeometry.cs",
+        "sha256": "4C0258A32CC7EEA674077C90D2440454ABA7DA2A6EE7F2F42199973238476A70",
+        "bytes": 3021
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/GaugeGradientRing.cs",
+        "sha256": "107287745916343FFDD8D07459C970A467A5F89793AE77240734C3926EC30FAD",
+        "bytes": 4215
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/GaugeLinear.cs",
+        "sha256": "B51A31E7FAC36F2A013C0338DB8106361B957671F02710DE2E82B6579C27D4E3",
+        "bytes": 4565
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/GaugeLiquidFill.cs",
+        "sha256": "08FD324B47613E8614DB961478953B9CD46411908F3D2865DCC82B72413892A7",
+        "bytes": 7532
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/HeatmapChart.cs",
+        "sha256": "AE6E1ADD22FAA6B1A2333E960B405B23285566871F25E2948D3F4D3E70245EFE",
+        "bytes": 11356
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/HexbinChart.cs",
+        "sha256": "FFAD4EBEC6B827032FAC46BE715956D60201D5FC9AD7097E865B1EF6EA348FFD",
+        "bytes": 6274
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/HierarchyChartBase.Animations.cs",
+        "sha256": "D41BED437E5E42315F511D1C420351372E54A53B0B351BC5AD9BB96DFB67221C",
+        "bytes": 13955
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/HierarchyChartBase.Legend.cs",
+        "sha256": "D58B257EAE5AE087431B1D447C2822BBCE7544FF38193FBE1682EE4F0C54D192",
+        "bytes": 9021
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/HierarchyChartBase.SharedPresentation.cs",
+        "sha256": "72645BF86C9049C02A5881530F610CBBA3357A6E20EE937EE626502C2D9D5029",
+        "bytes": 2715
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/HierarchyChartBase.cs",
+        "sha256": "90F52842C8CD87CB9CC57785A7E64D7F5E90C000379176A534A716F273D4AF4F",
+        "bytes": 27611
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/IcicleChart.cs",
+        "sha256": "25D477193C3CF1A96BDD0550787DAFA41CC546E845578C8086A121A0A4A45E76",
+        "bytes": 1898
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/IndentedTreeChart.cs",
+        "sha256": "9134146DA499B277067FB119F12456826EE34A6D5C779B0F70B02F83C8324BE7",
+        "bytes": 1771
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/MapLayer.Overlays.cs",
+        "sha256": "EC039F7B6A238DBCA71FE920A60393705BFEF1C04BA612FA5E94DB997B65FC87",
+        "bytes": 5519
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/MapLayer.cs",
+        "sha256": "E88EEC79F2AFA08475689F0A2F2E009EB988EF81427D1253E1EAB33F83EC937C",
+        "bytes": 11074
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/MekkoChart.cs",
+        "sha256": "9CDCD44E73908A8889B78A41B070D374CDBF5B20554AD9C289E5DB5B3C44D929",
+        "bytes": 7047
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/MirrorBarChart.cs",
+        "sha256": "6A0F89B09014612CC295D03A9F7BF0417A363D766CDFC050AF9CA9B4551CB9F0",
+        "bytes": 7169
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/MultivariateCharts.cs",
+        "sha256": "01CF1A4FA83EA0B23197430C2A0046E5A77839BBE71E6F424E5230BF9D187095",
+        "bytes": 11602
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/NT.AvaloniaControl.Charts.csproj",
+        "sha256": "F446AE6365B8D1EEE7024869B9531987C3D35B1AD879AD2D23B81D2B8F5A3970",
+        "bytes": 729
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/NativeText/ChartNativeTextBinding.cs",
+        "sha256": "982084A01FFE079DE0F003DF4BC65BFF52AA74D098F7C43B18F7615C7FA1818B",
+        "bytes": 9512
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/NativeText/LinuxChartNativeTextPlatform.cs",
+        "sha256": "8E5C3ED8B72217ECD5805E017880D3782C8CD314F4F43E39657BB3F093816071",
+        "bytes": 8259
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/NetworkChart.cs",
+        "sha256": "794F4D56655B5B90C2C77ACEEF182C93424CF8D6FAB16BBE56994111F79AE520",
+        "bytes": 1802
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalChartBase.cs",
+        "sha256": "CEC55BB9A3D8727F45834F7FB9E08E66159FE0300F861D9A8CB09D6801540905",
+        "bytes": 8048
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalGridCharts.cs",
+        "sha256": "49798475D1812CC9B0C7A8C6B47CA1A3172F6E3F5C0434562C8D11F2C3E88C4D",
+        "bytes": 10731
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalRankingCharts.cs",
+        "sha256": "277FDE0F48A23128726670A9851997E1AC32987510C59D9B72BCDD0922EE8AAB",
+        "bytes": 9413
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalSummaryCharts.cs",
+        "sha256": "A21D166AB2B5E8BE4B18C01CBCAC971D102CC8C2F79EC87DE55F7158F15614DE",
+        "bytes": 21606
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalTable.cs",
+        "sha256": "CD51345B610AF216BBAC77A23FF09511DDB89448515A475F3A88636E2F8A4E36",
+        "bytes": 8063
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/OrganizationChart.cs",
+        "sha256": "472865650F3CEB3E2E1F31614C1EC1C327A1773F0C2992AB471E1BFED55BEA00",
+        "bytes": 2622
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/PackedBubbleChart.cs",
+        "sha256": "9156C5F927453E6731B00F28868DB715E284ED6AE81D5EB72884A583BDE40E37",
+        "bytes": 753
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/PictorialBarRenderer.cs",
+        "sha256": "AFD0D7EA6F7EE1B79A39E3904E22A7118579AC45AC383753BCAA7AA207E3808B",
+        "bytes": 10024
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/PictorialBarSeries.cs",
+        "sha256": "20D4279175829839C4799627C74F8ECF09FF23EC238A6A63D3445DC5C240859F",
+        "bytes": 2860
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/PolarChart.Axes.cs",
+        "sha256": "876F63ADE3DEC583D67EFD260F8F8E4585DC950593BB70BF084147FA6493C037",
+        "bytes": 13629
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/PolarChart.Export.cs",
+        "sha256": "F4E526E1ADF62871CE5B89E16AFAF19ABAB20312D63DC69692D178212960B41D",
+        "bytes": 3409
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/PolarChart.Rendering.cs",
+        "sha256": "D7E9673639E3008E9C1C3C47D095CD6E6866C661BC9EE99B1601B5BFB1CD3AA8",
+        "bytes": 5976
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/PolarChart.Selection.cs",
+        "sha256": "4FA7E48B5446A295E3482F265EB3FB221815D00FBBBE7CA7DDC1CA429F71B783",
+        "bytes": 7036
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/PolarChart.cs",
+        "sha256": "DBAA3CAE702386F747A476E17A85C04FF8AC3F2E5A148A18998E76D2D273AE4C",
+        "bytes": 21404
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/PolarChartGeometry.cs",
+        "sha256": "768A469C1E3AE567DDDB77B34679A9CA11663EE28D1AFC788C44E30D1475C74A",
+        "bytes": 17697
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/PolarSeries.cs",
+        "sha256": "AE487CBC494A7B2B898E003F45CEECAEE6C2D3B9AEEA2C005C35B9A8B826ECE8",
+        "bytes": 6157
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/PopulationPyramidChart.cs",
+        "sha256": "93B087B8C15F7A79D14707287E4526F1CA4396AD7C93C709BBBC71EA0D0F3D08",
+        "bytes": 1710
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/Properties/AssemblyInfo.cs",
+        "sha256": "5127F1EE8B9186A2F65C0C344193E9AFB72570EC589ADE6F1DCBE535A82138F0",
+        "bytes": 96
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/PyramidChart.cs",
+        "sha256": "88CAE21C54B8A52B2A78C9677294F857829628782614D8F79F34FDEB1590C2E4",
+        "bytes": 1099
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/README.md",
+        "sha256": "88A7496A86A794685D5D0C76A8825A32EAC3EF867F6A342EEED939F85DAE118A",
+        "bytes": 135148
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/RadialTreeChart.cs",
+        "sha256": "240F80A6F0EA43E10C3C84B0A5911A6AF6D29D3971C6A54E902192C5F4B047BD",
+        "bytes": 3274
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/RelationsChartBase.Data.cs",
+        "sha256": "990CCF3A539EEAE97567E16C85F981D966FEA3C471E5137163D44D6D5CCD5C49",
+        "bytes": 7101
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/RelationsChartBase.Render.cs",
+        "sha256": "7106AAD702018B0FE60E57C891291B2AE6936CE0F5561F54C8BF41B924B74080",
+        "bytes": 14429
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/RelationsChartBase.SharedPresentation.cs",
+        "sha256": "CC3A2B072A79C8789C25DD24112944D94E20542EFA22C5A9153B8B24189FAAA6",
+        "bytes": 1956
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/RelationsChartBase.cs",
+        "sha256": "6429A303C5E9749540F88B411976F0AA5F37AA323855ED2C66F2316B61D2376B",
+        "bytes": 20715
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/SankeyChart.cs",
+        "sha256": "E21E3DBA687C1EFC6FEADD21F0E137CD3F98B6AFCADF0B64F8CB1423EC74C9CC",
+        "bytes": 2737
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ScheduleChartBase.cs",
+        "sha256": "EB8C734663135B984E41908A6A8959C67B6B809534E6BF77FDB641B6B8FD4F19",
+        "bytes": 18251
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ScheduleCharts.SharedPresentation.cs",
+        "sha256": "433DBEBC7EECEC51974EF9D16660C39B2AF32F328F1435904FDB19F67F998ADB",
+        "bytes": 2702
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/SeatMap.Selection.cs",
+        "sha256": "03C8D1777C043DC0E47E7F30DFF5BF7A58DF6D7522D8C591E09C72E808F12E19",
+        "bytes": 5043
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ShapeMap.Data.cs",
+        "sha256": "43C11E3F0C752B15FBBCDBDEFC42A0B60108401BEC218DB67BF5A8072EC99121",
+        "bytes": 19236
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ShapeMap.Labels.cs",
+        "sha256": "1C82231BBD31C0062F7DCE4E80990959B5D4559B6F5F49B4173BC60AB657AB0E",
+        "bytes": 3162
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ShapeMap.Overlays.cs",
+        "sha256": "2D36F42EF2DDC34273D19075802CFB5C030FB3F213739CCBE133BA904A96C115",
+        "bytes": 11720
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ShapeMap.Render.cs",
+        "sha256": "7C68A168CFA9DD59D466DEC355E58A42C55CA764FEAB1DB0AB0B40B73B4FC2B6",
+        "bytes": 17372
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ShapeMap.SharedPresentation.cs",
+        "sha256": "9324D81D2B802C9B85EFABD6B39A415F475488861DFD1B5E4E93FAD4EA5F735B",
+        "bytes": 5143
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ShapeMap.Source.cs",
+        "sha256": "39AA8900F3DF461FB32E55F87D7B743CDCCB78BD3B7BBC1E9EBC96EEC7D610DF",
+        "bytes": 5091
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ShapeMap.cs",
+        "sha256": "3BD1201974CB8C06EA98C59767CEED94B45BCCBD837C45BE191C70537CE1E7FA",
+        "bytes": 12762
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/SmithChart.cs",
+        "sha256": "6FFE4BD2CA76BECA04A2C6DF7535539BC25A483BBD8BC33E0AAE036B25D3FCF3",
+        "bytes": 3862
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/SparklineChart.Export.cs",
+        "sha256": "D5E19BB1572CE0E8D52BDD8C20DA82299E80D7322CFD2027EF29E898F18ED310",
+        "bytes": 1940
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/SparklineChart.Rendering.cs",
+        "sha256": "403007B6AD726507B6EB3E7EA16C05C5944B9F7EA9A251A82B18B78F67935D84",
+        "bytes": 6326
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/SparklineChart.cs",
+        "sha256": "AAE9ECD8D13607A022CEA2413318BCA00F85CC2E68789B10E0828DEE5556D9D1",
+        "bytes": 23340
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/SpiralTimelineChart.cs",
+        "sha256": "F26F92D68DCC985A476D90EE87F2B543DD3F0C317FC2B7A7D518D25A8BB1265B",
+        "bytes": 4847
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/SunburstChart.cs",
+        "sha256": "3161A5E034414B327A0C7258B4ABCE37A8B26E9E3D847C7886EB1FE58FD98C25",
+        "bytes": 1700
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/SwimlaneChart.cs",
+        "sha256": "BB46C7AC2B75E67640F6C7D7F2C79D9255E570DE91EE163E4060097D589CAB61",
+        "bytes": 8876
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/THIRD-PARTY-NOTICES.md",
+        "sha256": "C4237C2A7DF5983CC0A107437BFD6F74A2CC236E978F19F656F4E030A4040A8F",
+        "bytes": 988
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/TernaryChart.cs",
+        "sha256": "9ED6F7D3783537A39532A642A6BB03D061BF0C90A9915E383BA831D09906D707",
+        "bytes": 5120
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ThemeRiverStack.cs",
+        "sha256": "16F9C7B47AA6775196C2DF31DFAD1D84FAC86189998494E7F121D40424D3B4EE",
+        "bytes": 2900
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/TornadoChart.cs",
+        "sha256": "B5774513DAB3644E3337231EB2C00EF427C1B764210DF4F115915961BDD330C5",
+        "bytes": 287
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/TreemapChart.cs",
+        "sha256": "4791297AC9DE20E186D93C3CD99D71DC5C4EF59C8D6A6DE845AE89ECD03C7208",
+        "bytes": 1112
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/VennDiagramChart.cs",
+        "sha256": "22E98DDD9DDD2AD73E576BA0CB4BC1C82902FAE6279F500F429C6DF61F1A0D7F",
+        "bytes": 10786
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/WindRoseChart.cs",
+        "sha256": "74766168249C2E9C1F36079CD34B63849B672D024D5081165418660A5910EB95",
+        "bytes": 9876
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/WordCloudChart.cs",
+        "sha256": "B639290030C9C0435524929961A8E22DA8921C163FCB5D2DDC3D107D38D8327C",
+        "bytes": 3522
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/packages.lock.json",
+        "sha256": "3AF8EC5542CC64816943C21F763E826753C46BD2F7CC3389505D17CB16D58A69",
+        "bytes": 1398
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/AdditionalHierarchyChartTests.cs",
+        "sha256": "B9366D46413A36515036DEE2BB60BA41C546E2A3C7DC4645AA6A0AB5823F137D",
+        "bytes": 20496
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/AdvancedComparisonChartTests.cs",
+        "sha256": "8EFB4147C6859C26CCC6DC51C0AF8943388189201802245AC4EEE62EB97C748A",
+        "bytes": 22067
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/AdvancedComparisonMathTests.cs",
+        "sha256": "B12A90F2106F34C496C8458EC5588867C5BC6B7217977B70B1BF9B97BAAA6078",
+        "bytes": 14767
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/AdvancedPointSpatialHitTests.cs",
+        "sha256": "9C4D655AD88E293F3D0F86059E202D5F14A1065679CAB87C1E0CB8A06C5A20D6",
+        "bytes": 16839
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/AnalysisLifecycleTests.cs",
+        "sha256": "63D60E6A2E572B62F5761A29083F72E955D1A08D13581B679DF49589E8601726",
+        "bytes": 21840
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/AnalyticalSeriesTests.cs",
+        "sha256": "9785088B6BB8769279D58EC45295944D6BFD4A84CCFE366356CEE606AE460ABB",
+        "bytes": 34940
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/AnnotationAxesCompletionTests.cs",
+        "sha256": "21BBB9310D95AB23E1FB7610EEA38999D2D34EE857BF80BF30E1F8C6529A2D9E",
+        "bytes": 5926
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/AnnotationShapeCompletionTests.cs",
+        "sha256": "40E5AC4C11193A5BF25A93FD31EF672AD7D84FE21A91CEB4C3386B5877FA1037",
+        "bytes": 22050
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/AxesConsumerView.axaml",
+        "sha256": "7B7840F67784657A6DD96C2B722FBDFA3A1F3CB735BE74AD523CEF84E32771FD",
+        "bytes": 1858
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/AxisConfigurationTests.cs",
+        "sha256": "2FA6CCF2AC95E051EDB6DC09D5CCE3F3B309E0B5E89030F6ACB70A106FA24BF8",
+        "bytes": 11215
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/AxisMathTests.cs",
+        "sha256": "A819E862ADC136C60E13C571386AEE72717DEFD1D857730C8A2DC9E4A80F282E",
+        "bytes": 14079
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/AxisTextCacheTests.cs",
+        "sha256": "0BA1890B950F770FC831BC8D44168D8A29F83E1FD151A3E7A6671CD8CFDEF3C6",
+        "bytes": 15662
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/BackgroundLayoutTests.cs",
+        "sha256": "7E4BD5FC5CEB38F2C02B503F45134BA9F784844F543DE9CB3BC167A771FA1A75",
+        "bytes": 18193
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/BufferResourceBudgetTests.cs",
+        "sha256": "882F821F6DF9D85D45F1165BF95F4D4536BEC994F8EFB95316ADFBCBAFBF50BB",
+        "bytes": 15123
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/C2VisualTests.cs",
+        "sha256": "683A544366FDA7DBD8667B438CA03590E4DCE51692E42BA5368B17E2C4946C83",
+        "bytes": 15020
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/C7DataLabelContrastTests.cs",
+        "sha256": "065A3BE6DF14BABAE14A76FE6272FC39A5D97BEE09110AD92B888D42CDFC2557",
+        "bytes": 10490
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/C7SharedThemeTests.cs",
+        "sha256": "D14494E7EBC7B963A75BDCC7DD08268D6EC075E103E837106802743B1F33E95F",
+        "bytes": 14880
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/CartesianHiddenWorkAdmissionTests.cs",
+        "sha256": "20AAE747ECD062A74685009ED13239574F2B962800B958531526302A72331B69",
+        "bytes": 5939
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/CategoricalDistributionTests.cs",
+        "sha256": "E3172853B64B03ABA00B78FD72FD03EC72E373480EB5535C0BB9E569F2BBE2EF",
+        "bytes": 19947
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/CategoryLabelOwnershipTests.cs",
+        "sha256": "6F4746CA6F2A45A199DB3C007AB1C35AB7224CF06412A2987EBE594CB0F4297E",
+        "bytes": 3117
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartAccessibilityCompletionTests.cs",
+        "sha256": "82B25176CA34E122A2A1EE068E90158E96AB40C4493746033B8EB959A1F1E3CE",
+        "bytes": 35887
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartAnalyticsMathTests.cs",
+        "sha256": "81B18F40EACAC844A45F9E74AD493AC41EF9C8F6FFE1AFBD825BCFE56EA00FBF",
+        "bytes": 15210
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartAnimationTests.cs",
+        "sha256": "8FA5477897921E2ABFD197C9641E3525EDB5A0B2978AC2BEBA18B977682DA59A",
+        "bytes": 34678
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartAutomationTests.cs",
+        "sha256": "0D7AED1B96F41A34B726397A9A01B4D6DC9D2339AD80DCDE4B0D3F73CCBD8B58",
+        "bytes": 6787
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartAxisReadingTests.cs",
+        "sha256": "5D7A1BA93C8FCC94915DFEDA4EC66C247371C88AC6535A410C09AA872BA37F66",
+        "bytes": 12702
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartDataContractTests.cs",
+        "sha256": "A3F653B4FE4F1C73D6E542F434164FE47E4F6EA180B15EB0B42BEA3E2FB366A8",
+        "bytes": 14325
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartExportCompletionTests.cs",
+        "sha256": "1DDDBEC243F989753AFBBC62CDDEE398FCF6D380816F43FA93F63EB92CE46CD8",
+        "bytes": 16497
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartExportTests.cs",
+        "sha256": "EF4772513A11576398D4B0190638E5ACB297A804EF34E91460A2CBA0633ECA48",
+        "bytes": 8954
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartExtensionTests.cs",
+        "sha256": "932B9E45C05D8B377A3194FE12F02ED4275AA61C15B2C12D0CFB06676DCFA380",
+        "bytes": 12742
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartInteractionTests.cs",
+        "sha256": "D429ED165D2087DCF3C72804604AB0C1A829ACEB0D43A9BB866A248602DE34C8",
+        "bytes": 21145
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartMvvmTests.cs",
+        "sha256": "F45F32281CF1A58B4EBB7B90F4230D06ACF4DB99939CF7A32031A6A3FF37B01E",
+        "bytes": 8368
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartNativeTextBindingTests.cs",
+        "sha256": "9FD607AFAE107D2F47A7ECC3D8EB2ECE11F5F4ABEFA256A86BD4CA7C7ECB7751",
+        "bytes": 12569
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartReadingIndexTests.cs",
+        "sha256": "0C8DDCC66140B0F26647DA4B3CEB5922731DF210EFBBA8743552088C96C45CBE",
+        "bytes": 2192
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartRenderingTests.cs",
+        "sha256": "3FF181B276C4744C9592816A3DF578CE0178FC26263E6E305A0488A9A9E6C238",
+        "bytes": 9902
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartScaleTests.cs",
+        "sha256": "15AA4FD06B5797AD8B869E7EC7A9A2F37A0AA8E7027A34F7B28560A9F036878A",
+        "bytes": 15201
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartShapeAnnotationTests.cs",
+        "sha256": "064B289D6D7F0C6A14BE8F8FB939A261DDD171E400EEAC7C3A9D4B447EAD7433",
+        "bytes": 17178
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartSynchronizationTests.cs",
+        "sha256": "56162F6C4636A644F2AEF27D3656FC21A23B28FD2AE77694FDF2F06A344B7CCD",
+        "bytes": 20258
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartViewportMathTests.cs",
+        "sha256": "073B23686AEDBA7339C1AD672C38F75FFBF5EBD16D9C12F01491CE9F634996DD",
+        "bytes": 7238
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/Charts.Headless.Tests.csproj",
+        "sha256": "E3B463B54816D28188291C953D442E356293830A1453BF40BBF4687FB5A6510D",
+        "bytes": 309
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ChartsAxesIntegrationTests.cs",
+        "sha256": "5741B7B26743C56522D488E141EA03D4578A18030ADCD18E507DC5F40CA60B85",
+        "bytes": 37755
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/CircularAnimationExportTests.cs",
+        "sha256": "130B887119149B693D249445FEF70569D0F2A343EEFFA3914F35769C9E5B4ED8",
+        "bytes": 25874
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/CircularControlTests.cs",
+        "sha256": "C875327CABC85375F12EB6E9B95722DE315FD5D4DBC878B08E3A7D90D3D4AFD4",
+        "bytes": 17020
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/CircularGeometryTests.cs",
+        "sha256": "0FABD17C06729517FF5777E4D5D07D69A815E415C92728819BDBDFB72686982C",
+        "bytes": 21892
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/CommonInteractionTests.cs",
+        "sha256": "109AFF0B744F265DAB1E8DD1B94382A2A4E539F5C7176A822F91F64B6824130C",
+        "bytes": 14877
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/CompactDataTests.cs",
+        "sha256": "6D5B4A23DA9169092C949A6D8EAF01D99EE0DE888B97B4F9D93A65B2583E497C",
+        "bytes": 42576
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ComparisonAnimationTests.cs",
+        "sha256": "FE3A458724FF39CF5B9A3D17D75937066B9B8D5F6FB9EAE3A1BB77DC724A8098",
+        "bytes": 2986
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ComparisonDataTests.cs",
+        "sha256": "00583D20F55E2E33FD6902A11F4728F6C29C9E020898943839EFBBDDC222E3EB",
+        "bytes": 22823
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ComparisonGeometryTests.cs",
+        "sha256": "438C8C34E4152FA8FEB12A56CAE1CD030D034A16D4CF3E6C0B9C844469B9E8DB",
+        "bytes": 21732
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ComparisonHitLayoutTests.cs",
+        "sha256": "C04F1EC2A582CF6EC2414CBFFDD195CA07CB2C8CFEE9D64FDC4D29662FF55D86",
+        "bytes": 26851
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ComparisonHitWindowTests.cs",
+        "sha256": "521846E26EDAD8B441DD3DF575E9434DE9978A06F08EF2520B60B82A04B62F5D",
+        "bytes": 5944
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ComparisonReadoutTests.cs",
+        "sha256": "2C30364F7F1198CB25AD9F2D3A4C68674AB51533D691F48A8C40EDF9036B6330",
+        "bytes": 2591
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ContourTests.cs",
+        "sha256": "B94F75FE701753BE1118597BAA63B3996997EEAA1414E19BC1FA4E0CC6099F25",
+        "bytes": 18562
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/DataExtremaCacheTests.cs",
+        "sha256": "9DEB661D5C593021E2792CE1D939D375092BEED3E75F61D797879FDB6152BEF3",
+        "bytes": 11482
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/DataLabelTemplateTests.cs",
+        "sha256": "947C44A7E9D903992A28974F79DC27A1F580620AAA36EE75E0FCF2E2A28F30E2",
+        "bytes": 22326
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/DistributionProfileTests.cs",
+        "sha256": "3A4D2FD6F6151B354567B03EEF8B8719295B7D22D19B8969717B93D9AEA25C20",
+        "bytes": 18560
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/EngineeringChartTests.cs",
+        "sha256": "CA53C72F86A3A8D77EDECA02B1A3061AB55E6300E583496DE2D11AC466CB95C1",
+        "bytes": 28102
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/EngineeringMathTests.cs",
+        "sha256": "499C1AC7E1796B606A1060B9F705E80FA2B0F356FD632C6E3A332868F49DEE8B",
+        "bytes": 24126
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/EngineeringSourceLifecycleTests.cs",
+        "sha256": "B16F360AB8A1A15D9294CD5412CE43B6F474D836D683D67BFE568856B9560416",
+        "bytes": 4738
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/FinancialMathTests.cs",
+        "sha256": "57E11A6CBAAB275C57A6A17CE2CEA9136755F3EB57F151D24D43CCC018AD280F",
+        "bytes": 17546
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/FinancialSeriesTests.cs",
+        "sha256": "0B5D11F269F72399C7E86480EB607CCDBA6A625EF3B0D03A247380A3DD606807",
+        "bytes": 19179
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/FloatingLegendTemplateStackTests.cs",
+        "sha256": "A11DB3C95A51C614865CE0F76D7D41603E5EB0A303AFD97DEEC73CAD3EDC5A02",
+        "bytes": 5528
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/FlowDirectionTests.cs",
+        "sha256": "F7981A02C5F9625BD995412E5EFECED02F26807D8CC37AFC037307E55455E823",
+        "bytes": 11001
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ForegroundTooltipStackTests.cs",
+        "sha256": "11632ACA793D195BD56D256940E322597F6A2E6CE4E79C4A8EC831B981A2F99B",
+        "bytes": 5883
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/FunnelPyramidTests.cs",
+        "sha256": "E0438C9E360DFAFDC6C827BFC19A633CADC4F53DDF1DE278AD3F4AF83B932057",
+        "bytes": 16148
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/GaugeControlTests.cs",
+        "sha256": "B00361127A00D927014178C2E0ED97C01B577BB25DB132435448E9A7482BF408",
+        "bytes": 21688
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/GaugeExtremeAngleTests.cs",
+        "sha256": "148C37B74FB80FC0F3CCB4FA8A5000A300F6C9409B5DA4B14E626B0AD6496523",
+        "bytes": 6925
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/GaugeGeometryTests.cs",
+        "sha256": "B6D279E27981DE5C8AAA2FBABB1E6D2D98246953F97299D282F7B7E8FB6255DF",
+        "bytes": 3592
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/GaugeReentrancyTests.cs",
+        "sha256": "1D2146529986C368CEB789B7100230E6E48D49C6E6ADF0F61B418213109B36BE",
+        "bytes": 6228
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/HeatmapTests.cs",
+        "sha256": "C98564AE6108F2E8922550F39DB56D12BA2A58F5876D570D3E2DDBD665826B65",
+        "bytes": 16502
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/HierarchyChartTests.cs",
+        "sha256": "9923F73CCF6C71BCC58DAE623C705A9A6A97CD5CC91B82D9F808A441341C904C",
+        "bytes": 26540
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/HierarchyLegendTests.cs",
+        "sha256": "BEA9C626A2D989DB86025A3E0D693483918A29EA49888CDAF9D6D3E4CAF6FAE5",
+        "bytes": 10704
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/HierarchyMathTests.cs",
+        "sha256": "38AE7E99BB1DD09465C125161F5B25993CBD60554B2A6E377482BE95412D13F9",
+        "bytes": 23864
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/HierarchyProfessionalIntegrationTests.cs",
+        "sha256": "19907CE30042B8A9CD76B04E9E809490413E6EFA1EA997E6E3FB605625E2E302",
+        "bytes": 10805
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/HighContrastChartTests.cs",
+        "sha256": "EB94505D082DCBB9ADA0383178F508A4E9895F593A0A73751FD24A22BF3EE779",
+        "bytes": 3798
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/InRangeLinearProjectionTests.cs",
+        "sha256": "0492F058B828AA39455EB892CB95CC79D3726A1519B7F2BE6EC6445E7177545A",
+        "bytes": 74948
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/IncrementalDataBufferTests.cs",
+        "sha256": "6DC5D48419E21A911C5C53B4411AF3B83831E4ECC65C5BFA9F60C9061B5D5BBB",
+        "bytes": 18945
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/IncrementalSummaryTests.cs",
+        "sha256": "2F2A5CEF266B321EE074A11BE4ED70B8A4E86F178EAE5A070B61267EED41F29A",
+        "bytes": 7028
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/IndexConstructionTests.cs",
+        "sha256": "CBBD524186ADE570A85758A6DC40008C82297C2CD2CB7FCAA0D8300D8D0CBBBB",
+        "bytes": 6395
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/IndexedHitTests.cs",
+        "sha256": "ECA3CB5E9618CFE1C8B5059112D5D8057BC057FFC316ED3F64E19D35BA71B00C",
+        "bytes": 27056
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/InteractionTextCacheTests.cs",
+        "sha256": "91EBFFE7B8E0F0C07BA0435066F61539EB18B15B6AF5328C588B4A23720A6F87",
+        "bytes": 9090
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/KeyboardBrowsingTests.cs",
+        "sha256": "B966CDE6E48FB9D69E0A89D86CE4DC8DB8B38441699F56E93D95BF5211747F7B",
+        "bytes": 9825
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/LayeredInvalidationTests.cs",
+        "sha256": "2FED3C175E2276734654382C78CE689DAA365E3499EDAD299829E66D576FE40E",
+        "bytes": 10923
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/LegendLayoutTests.cs",
+        "sha256": "2CAB3FF3A48403813DBB90504915AA74F0FDE7676D1D4934CD4CDB7F2A495AD1",
+        "bytes": 10912
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/LegendTemplateTests.cs",
+        "sha256": "51E47646876D312587D1C022D1AD7F300A34C849C2FC87D2D799E22AEA10D3FD",
+        "bytes": 14320
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/LineAreaDataTests.cs",
+        "sha256": "378A02593F36646319215DF7BFC21C715B9C6115E51B65226329AC46A2E52986",
+        "bytes": 16117
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/LineAreaGeometryTests.cs",
+        "sha256": "7ED8086C7A3FE5EFBF2C165FAFC618855C890F32042B087457A0EA26B55E097A",
+        "bytes": 20046
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/LineInterpolationTests.cs",
+        "sha256": "5A13D7DB0F0225C72EFAA8C0493C1C8B36D3D63D12BC3688BCFBB80DB0B789B4",
+        "bytes": 15672
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/LineSamplingTests.cs",
+        "sha256": "D0C29476DD2FE82FA2351D57CB638D439F2B29582007F9A7518C7D17198A93EA",
+        "bytes": 16018
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/MapChartTests.cs",
+        "sha256": "512FC2F86224CEA68B3BB321BB2942565EE7D7AEB3AF28EC7B9B58512B554F9C",
+        "bytes": 33470
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/MapLabelContrastTests.cs",
+        "sha256": "799B6A55DF3758492A3769AAC11C3EB9C3E2D76968F90AA4ADB05CFA1A829B25",
+        "bytes": 6922
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/MapMathTests.cs",
+        "sha256": "85F4E65C43696FA1548C436B5136421FD9CE59ACCFAE34D4A3BBC8BE3DA34CDD",
+        "bytes": 29710
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/MapOverlayTests.cs",
+        "sha256": "F5E55FA9807648EC5584309A83624C86EEB3C3D469151C94997B87F82E46B1D7",
+        "bytes": 18025
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/MultiChartSchedulerTests.cs",
+        "sha256": "0F630E06469021CFCCC45610753B00BBB392E6D25E64303AAAAC073240F20089",
+        "bytes": 19891
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/MultivariateTests.cs",
+        "sha256": "762DAF99B530FCD9DDB70A2754288801C58106E250A8AA36668286827542A56E",
+        "bytes": 23439
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/MvvmConsumerView.axaml",
+        "sha256": "CD19845C65CFFB0E296C7B1EEF65004AC822715AACFFE7E4A0413C634CE51BF8",
+        "bytes": 1680
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/OperationalChartTests.cs",
+        "sha256": "AE87722218CDB490206FC787AD4710F1FEF2F0FFC902A1CA00A33582E7BFDDFB",
+        "bytes": 18417
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/OperationalMathTests.cs",
+        "sha256": "3177366FA578A14966F8A3CF3E81D36F669D10B551FA170B2F06009145BF4E22",
+        "bytes": 11989
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ParetoVisibilityCacheTests.cs",
+        "sha256": "F38955CEE2801FE693727D66F9FFB6E166904EFA9E5ADAA27441CD2D8AAF5810",
+        "bytes": 2569
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/PictorialBarTests.cs",
+        "sha256": "DB1B3BF89DAFC3D758158DFA077500B3D8219A7D43476B3329B442E7BD5F1CB7",
+        "bytes": 16435
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/PlotAreaContentTests.cs",
+        "sha256": "03754A4023301C78F000CFA961677AD0EAA553EC905815A58BC5C7192B34D6A7",
+        "bytes": 27233
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/PointSceneCacheTests.cs",
+        "sha256": "E507B2148786355212F047F9525FE8BC33B2D1687F0FABEC76CF476745E12A13",
+        "bytes": 10996
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/PointSeriesGeometryTests.cs",
+        "sha256": "8C141383187DC3BC65AFACBB64D334CAF786DDC83A070C5CBDB766181EB8BEA1",
+        "bytes": 20536
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/PointSpatialHitTests.cs",
+        "sha256": "3FA53CA28E4D7346693160D2CDD5891326BA97DBE2EC9965FC516759A105EFAE",
+        "bytes": 15839
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/PolarAxisPresentationTests.cs",
+        "sha256": "A84F48CA87FE6E99D3A12C764EF971BDF984E4F5A5465AE23EF4E710C0500E32",
+        "bytes": 13401
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/PolarControlTests.cs",
+        "sha256": "1A3B2643DB13569A3342AA453A4654DD6476BD90662A56A6ED2775CB62B870B8",
+        "bytes": 18441
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/PolarDataTests.cs",
+        "sha256": "29473A006C9D464B214296DF931129596E7BDC7EBF4F4F23D3A1575027B31D14",
+        "bytes": 11022
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/PolarGeometryTests.cs",
+        "sha256": "07408F04A42761036CBC75A356A2893B63D2DCE20B33391456D3D57939CF8130",
+        "bytes": 19090
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/PolarTrackballRegressionTests.cs",
+        "sha256": "7635EDA83E6C4B1109CB7C71A0A9E83A22C4EA6E051B1EAD30EDCDA6812AABCA",
+        "bytes": 7674
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ProfessionalFailureRecoveryTests.cs",
+        "sha256": "1DB50C87D699E443D9FFEF219F69825F598754DD099AEA769003E2718E76EB55",
+        "bytes": 2892
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ProfessionalPlotAreaContentTests.cs",
+        "sha256": "6AF11B2242A918B1CAFBBC20366BD7CD590669DED2024F2D23344CC8987E890F",
+        "bytes": 19511
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ProfessionalRangeSelectionTests.cs",
+        "sha256": "02A0DF7719B0B8369C3A0D642A750D201CA2299484E3B24A574339EC43FE60E7",
+        "bytes": 40538
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ProfessionalSynchronizationTests.cs",
+        "sha256": "7F089A4C03BA59B151686981DFB7D49F90A654556EF9AD918837C7967B2D8FB2",
+        "bytes": 28150
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ProfessionalTrackballContrastTests.cs",
+        "sha256": "B5E55E41D98E241CBD929425536231C68AB6807B79AEAFEC2ED69CCDF3154ED0",
+        "bytes": 4821
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ProfessionalTrackballTests.cs",
+        "sha256": "40BB4488D7E30A7ECF439389775F5455767FAEA79F21F6AE3D1FEA5D7DA6E63F",
+        "bytes": 30574
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/RangeSelectorConsumerView.axaml",
+        "sha256": "B5FE44C3DE5D6D20C3AA92DACDC1D36B7907F93C9EC24A46DBC2349F50B4EC30",
+        "bytes": 713
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/RangeSelectorConsumerView.axaml.cs",
+        "sha256": "9BBFED1D2C36A9D3CECFAE8E54E7BFA525E36738A58444AE3D5E18AB59178CEB",
+        "bytes": 631
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/RangeSelectorTests.cs",
+        "sha256": "3421DD76AFE78D8C795A771B8A827D0502487968814AC0FA25998932A3059443",
+        "bytes": 26643
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/RelationChartTests.cs",
+        "sha256": "B3E288C294745745045DEED7AFE9AB7BE9C802B8809AB417690182FC69363BC3",
+        "bytes": 23399
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/RelationGroupLabelTests.cs",
+        "sha256": "63D7BC4D290614032D6539E601A4904533922A551548174A717A3BC5B3225C47",
+        "bytes": 4002
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/RelationMathTests.cs",
+        "sha256": "6D716F379A9229DB3E473A86C58AEB4A2C57AF1888FB1928B3D39F7E2E51C8D3",
+        "bytes": 34863
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/RelationSankeyRenderTests.cs",
+        "sha256": "E86F779D7AB7FF25025F652147075A8E06D94763527C3C8D2880F68F0BCD525D",
+        "bytes": 6076
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/RenderPresentationSafetyTests.cs",
+        "sha256": "922496218CBDD8F7518D25280051976BC7C930E0EBCB6F0888ACE37425FEE8F9",
+        "bytes": 2264
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/RendererEntryPolicyTests.cs",
+        "sha256": "CD86D4CFA723487112B21D53D4F6D7A910BC5CEC5606417F7A285F1B6CC7CF9D",
+        "bytes": 8689
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/RendererIsolationTests.cs",
+        "sha256": "A8D2DA7C4245BF58CB11950F08A463969D28A3646B12DF307D6C53C9C59950B7",
+        "bytes": 5023
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ResourceBudgetTests.cs",
+        "sha256": "495A2532909299D9F50DDBE0B4A3500EB46B2B4F32B646575CA3D3C4F58DBE00",
+        "bytes": 17349
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SamplingIntegrationTests.cs",
+        "sha256": "B8E1B2E4E6DFE9AB667932AADB2124F03701E00FCB326D248E9208CC9FDA51F5",
+        "bytes": 14250
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ScatterBubbleDataTests.cs",
+        "sha256": "862DBFC524CF74F0473025DAA68D47256D50793C0933CC84DE93B447360DD34C",
+        "bytes": 17856
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ScheduleChartTests.cs",
+        "sha256": "27D25415A40615964AE7382E63A3BC76CB51F316732132D564752294261E0DC2",
+        "bytes": 17056
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ScheduleMathTests.cs",
+        "sha256": "DCC70D89F0DA7073DC467B379998DD2812474EC432D6A3C5ADFB21BA5684005D",
+        "bytes": 10113
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SegmentIndexTests.cs",
+        "sha256": "EEC56418EB0383E4723C083C28DB8D91575468E9AC7AD392CB9AEC55380FEABA",
+        "bytes": 15892
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SegmentSceneCacheTests.cs",
+        "sha256": "02BD58CEC6579C6BA5148C0E28296F77449B5FCA489F5A199706591BB47D09D2",
+        "bytes": 6129
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SelectionChangingTests.cs",
+        "sha256": "633B7FE54C4CA93FA1B0B0735935BE9EE4A36F3D72F69DDBED4A14400FC50D6E",
+        "bytes": 12711
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SeriesDrawingLayerCacheTests.cs",
+        "sha256": "DEB5AB7E1757C16CDEA836B350B4C74998CBCA6613E6D283D3C83012B6D504A2",
+        "bytes": 23539
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SeriesSelectionConsumerView.axaml",
+        "sha256": "F876C6AC70E4AAA9FDF5F2DB46439DD3787C602119A5D6D765AC99F9458B36BC",
+        "bytes": 938
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SeriesSelectionConsumerView.axaml.cs",
+        "sha256": "B468104D91E194F2062799C679A28F01F4D35B66DF2188B13D352C53793E1187",
+        "bytes": 1421
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SeriesSelectionTests.cs",
+        "sha256": "65CBEFB135CCEF7BA5BF543462F2595CCFF70C579744DC23B142098A64D90076",
+        "bytes": 25459
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ShapeAnnotationsConsumerView.axaml",
+        "sha256": "92895A3247FF33799DF4D0B07A865522B32024B82C60E08ED134ED380F2B2116",
+        "bytes": 1008
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SharedPresentationFamiliesTests.cs",
+        "sha256": "D1F440D3FFCA70D69792A047EED2599B01F42C42E0874FA0D1CB72D66AD540F0",
+        "bytes": 17738
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SharedPresentationTests.cs",
+        "sha256": "49A9CDB45B87C6BE02F86B5CF58F95CBDFFAFF4D641290445795F2F57BD617F7",
+        "bytes": 31616
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SharedTooltipPresentationTests.cs",
+        "sha256": "B66073F7CD3CBC143B9AB87762BAB83DAD2F3001B2ED6DCE7D1D678385945ED8",
+        "bytes": 36248
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SharedTooltipPresentationView.axaml",
+        "sha256": "4A8DBFF3122A7AACFF701A20C37F0869EF89A75E2D9F2CBEEA8123A1357EA2E2",
+        "bytes": 2229
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SharedTooltipPresentationView.axaml.cs",
+        "sha256": "796FB492F8EF38CBE86AC192D4E4DFAFB3F69BE31D64A147E3F2707701FAE500",
+        "bytes": 1107
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SharedYOracleTests.cs",
+        "sha256": "9116A1300A576DEA18DF547DAA7CBCD3575C7E821E57AFEB5EA746523F0A855F",
+        "bytes": 11846
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SparklineControlTests.cs",
+        "sha256": "BF6648127C2907D0408A10E7696D0C44434B996152AF4CD382CF1907F43CCC90",
+        "bytes": 25392
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SparklineLifecycleTests.cs",
+        "sha256": "ED7BBEB5EA2E6112A47919EADCD0CD0F1E61DB85F1B6EECDA151608BA143CDE3",
+        "bytes": 7227
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/SpatialReadingTests.cs",
+        "sha256": "FD668B7BF7FFB5C1A5325DB57C1195F71617895DE4203B43CFF7DCAE715FB006",
+        "bytes": 14999
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/StatisticsMathTests.cs",
+        "sha256": "27D97B34DBA0917B7CCDE4C505F7C0486949A9A3C67815F27A18C11AA797A3F4",
+        "bytes": 20148
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/StatisticsSeriesTests.cs",
+        "sha256": "7C8DF8CF1071AA0D7FAFCF4F0EC28EFA6DB0D36B0CAE1837C0B2D1DAD20FCAC6",
+        "bytes": 23714
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/StreamingChartTests.cs",
+        "sha256": "5093E8121312A4B091AD03134E562E1C75EB5CA48419AFA1CEA14E15AB9C1091",
+        "bytes": 11500
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/StreamingSchedulerTests.cs",
+        "sha256": "7654646E15FBACC5F4326E0AA3A75DCF69431E03EB095F48FB86D3CBADB61C7C",
+        "bytes": 19719
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/TemplateFeaturesConsumerView.axaml",
+        "sha256": "2C0015EC94239B51E62AEE01718FECF0F056377969BC0B8F59F4B32D853E6957",
+        "bytes": 2245
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/TemplateFeaturesConsumerView.axaml.cs",
+        "sha256": "CD331316482EF22536CA692DEF1998A307F7035CC748A3357F91745C71210EE7",
+        "bytes": 1885
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/TemplatePresentationTests.cs",
+        "sha256": "DD1F784339CE08E410EF4824DE9209052B4ABA74D6424AACF2C999E9303CD3DD",
+        "bytes": 14634
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/TemplatePresentationView.axaml",
+        "sha256": "614567DED6D5A4EF6A2C13761DB920A3294592CC7A7A1AE3D2FB205BFB52E65F",
+        "bytes": 1881
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/TemplatePresentationView.axaml.cs",
+        "sha256": "D408F2EF63F9641C26CB2E3E725A3E2F60165F28228412E798BACDD14605F4FD",
+        "bytes": 595
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/TestApplication.cs",
+        "sha256": "A717DE0C6D5DE6CA3903609C08820D366CAB9929964679F0600DCF402A640704",
+        "bytes": 899
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/ThemeRiverStackTests.cs",
+        "sha256": "1BB9363C51621078B21C420B0DB0EC7EB1528035564B1039669E85CC67FF0104",
+        "bytes": 1996
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/TouchInputTests.cs",
+        "sha256": "8932A4D844707A8958B3357728AB5EC143DAB7FA7FF998B8E3A7C81F8D2DAB6C",
+        "bytes": 38159
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/TrackballConsumerView.axaml",
+        "sha256": "4F2254B0BF1F4398FBCECC6D79A448500C139AF0DCDED12E957155C60B7819B3",
+        "bytes": 3583
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/TrackballConsumerView.axaml.cs",
+        "sha256": "18BAD8149673D5A48CEB6281E0D61E927882A8B37A3E53178D9363E8B1ED1897",
+        "bytes": 2389
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/TrackballPresentationTests.cs",
+        "sha256": "0836926F64D041515B8F5D1D5197F89D53D99B4FB1FC873619FA48D3620F80E4",
+        "bytes": 24501
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/VisibilityIndexTests.cs",
+        "sha256": "165A7D940474EF4063D9D6D417D2CF499935F2960255F44E6F576466FD084FA1",
+        "bytes": 12325
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/VisibleAdvancedSeriesTests.cs",
+        "sha256": "5402B573A49E79838307BDA81772306169E65398DAFAD716D9E071D8737307F2",
+        "bytes": 15204
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/VisibleLegacySeriesTests.cs",
+        "sha256": "B657F59EF95D06FF7447E3794541CD325915CF9C76E291D03AC2F9568AF7DF4C",
+        "bytes": 7974
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/VisibleSelectionTests.cs",
+        "sha256": "44B9B99BB95EC4BBB132BAC1003FE1B7A8113327EFA9C6F476247171C7ACE7DE",
+        "bytes": 15250
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/WheelInputTests.cs",
+        "sha256": "44743D084D702F4DE84462529D8C52F3FAD9171C0620D66F1AC6B4048461F2F5",
+        "bytes": 19909
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/XamlConsumerView.axaml",
+        "sha256": "D6ABA0BEB7DC705BB8DC39F624D211779CED16D83265AEFB9AC8208A306A90BF",
+        "bytes": 866
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/XamlConsumerView.axaml.cs",
+        "sha256": "84993CDB5367BD51F064B32E0BF7D741CB0F3953948793FB84B780089495B9D2",
+        "bytes": 215
+      },
+      {
+        "path": "tests/Charts.Headless.Tests/packages.lock.json",
+        "sha256": "4C3A3FF8669436C19F73C0773C01BC2EE416D39B19D20E49D0BFAB58338E4388",
+        "bytes": 11628
+      }
+    ],
+    "scope": "Charts product/themes/tests/samples/native-consumer/scripts/build inputs; report documentation and unrelated controls are excluded."
+  },
+  "platforms": {
+    "windows": {
+      "samples": {
+        "passed": true,
+        "headlessCounters": {
+          "total": "3191",
+          "executed": "3191",
+          "passed": "3191",
+          "failed": "0",
+          "error": "0",
+          "timeout": "0",
+          "aborted": "0",
+          "inconclusive": "0",
+          "passedButRunAborted": "0",
+          "notRunnable": "0",
+          "notExecuted": "0",
+          "disconnected": "0",
+          "warning": "0",
+          "completed": "0",
+          "inProgress": "0",
+          "pending": "0"
+        },
+        "oracleSelftests": 106,
+        "nativeSampleProcesses": 6,
+        "fontStartupChecksPerProcess": 17,
+        "actualPngFilesValidated": 42,
+        "cases": [
+          {
+            "name": "font-demo-1",
+            "checksPassed": 17,
+            "oldChecksPreserved": 0,
+            "processId": 59252,
+            "raw": {
+              "path": "windows/run-v1/font-demo-1.json",
+              "sha256": "910B1AEA89045CFBF74F11A9E5D5622B74AA91B14327BE319448E2DAD8546EAD",
+              "bytes": 14677
+            },
+            "details": {
+              "path": "windows/run-v1/font-demo-1.font-startup.json",
+              "sha256": "C7E920E049D31BE37D85ADB3CF16E45D71311D66B6183F575376974828928CC7",
+              "bytes": 19606
+            },
+            "glyphPixels": [
+              {
+                "script": "cjk",
+                "differentPixels": 755
+              },
+              {
+                "script": "combining",
+                "differentPixels": 603
+              },
+              {
+                "script": "emoji",
+                "differentPixels": 575
+              },
+              {
+                "script": "arabic",
+                "differentPixels": 411
+              }
+            ],
+            "artifacts": [
+              {
+                "path": "windows/run-v1/font-demo-1-font-startup-window.png",
+                "sha256": "1696CCE11733FE3ABFF9F00D1924C2CB20CEDFC12FDFBD93610802F7BA6637D0",
+                "bytes": 31886
+              },
+              {
+                "path": "windows/run-v1/font-demo-1-font-startup-restored.png",
+                "sha256": "1696CCE11733FE3ABFF9F00D1924C2CB20CEDFC12FDFBD93610802F7BA6637D0",
+                "bytes": 31886
+              },
+              {
+                "path": "windows/run-v1/font-demo-1-font-startup-chart.png",
+                "sha256": "D8C4070043494EC26779866FA32BC87B73E90D5E3A1C4CE2DB266746008135C1",
+                "bytes": 16798
+              },
+              {
+                "path": "windows/run-v1/font-demo-1-font-startup-cjk-hidden.png",
+                "sha256": "CBB2F2D68F4196191896DD77CA085A328BA6A92DB5BDEF31D750EABDC8CB1899",
+                "bytes": 30464
+              },
+              {
+                "path": "windows/run-v1/font-demo-1-font-startup-combining-hidden.png",
+                "sha256": "C769D2076BFACA7398ACD2776163CEFEAC3D2815E98CAD409FB83B03790F6F81",
+                "bytes": 30705
+              },
+              {
+                "path": "windows/run-v1/font-demo-1-font-startup-emoji-hidden.png",
+                "sha256": "BA71A75AC64D5977FDA0691C018DD427C02BC4E5F6550FC84AB287AED71CD8E9",
+                "bytes": 30588
+              },
+              {
+                "path": "windows/run-v1/font-demo-1-font-startup-arabic-hidden.png",
+                "sha256": "8171A8BB9AA56FC999C7897E8667C3A534A64E0B6CB2944CF5A7353769297337",
+                "bytes": 31218
+              }
+            ]
+          },
+          {
+            "name": "font-usage-1",
+            "checksPassed": 18,
+            "oldChecksPreserved": 0,
+            "processId": 36540,
+            "raw": {
+              "path": "windows/run-v1/font-usage-1.json",
+              "sha256": "D86C66E9F081F846C5AD6B8A9C7572A8FC712C19F23A03ED49544ED9D9917D12",
+              "bytes": 2270
+            },
+            "details": {
+              "path": "windows/run-v1/font-usage-1.font-startup.json",
+              "sha256": "8EEAAF3A24AD5541C539A8FDF6DD1DB23AB188A6CCDAF2FAC5CEA80A02943903",
+              "bytes": 19626
+            },
+            "glyphPixels": [
+              {
+                "script": "cjk",
+                "differentPixels": 755
+              },
+              {
+                "script": "combining",
+                "differentPixels": 603
+              },
+              {
+                "script": "emoji",
+                "differentPixels": 575
+              },
+              {
+                "script": "arabic",
+                "differentPixels": 411
+              }
+            ],
+            "artifacts": [
+              {
+                "path": "windows/run-v1/font-usage-1-font-startup-window.png",
+                "sha256": "1696CCE11733FE3ABFF9F00D1924C2CB20CEDFC12FDFBD93610802F7BA6637D0",
+                "bytes": 31886
+              },
+              {
+                "path": "windows/run-v1/font-usage-1-font-startup-restored.png",
+                "sha256": "1696CCE11733FE3ABFF9F00D1924C2CB20CEDFC12FDFBD93610802F7BA6637D0",
+                "bytes": 31886
+              },
+              {
+                "path": "windows/run-v1/font-usage-1-font-startup-chart.png",
+                "sha256": "D8C4070043494EC26779866FA32BC87B73E90D5E3A1C4CE2DB266746008135C1",
+                "bytes": 16798
+              },
+              {
+                "path": "windows/run-v1/font-usage-1-font-startup-cjk-hidden.png",
+                "sha256": "CBB2F2D68F4196191896DD77CA085A328BA6A92DB5BDEF31D750EABDC8CB1899",
+                "bytes": 30464
+              },
+              {
+                "path": "windows/run-v1/font-usage-1-font-startup-combining-hidden.png",
+                "sha256": "C769D2076BFACA7398ACD2776163CEFEAC3D2815E98CAD409FB83B03790F6F81",
+                "bytes": 30705
+              },
+              {
+                "path": "windows/run-v1/font-usage-1-font-startup-emoji-hidden.png",
+                "sha256": "BA71A75AC64D5977FDA0691C018DD427C02BC4E5F6550FC84AB287AED71CD8E9",
+                "bytes": 30588
+              },
+              {
+                "path": "windows/run-v1/font-usage-1-font-startup-arabic-hidden.png",
+                "sha256": "8171A8BB9AA56FC999C7897E8667C3A534A64E0B6CB2944CF5A7353769297337",
+                "bytes": 31218
+              }
+            ]
+          },
+          {
+            "name": "font-demo-2",
+            "checksPassed": 17,
+            "oldChecksPreserved": 0,
+            "processId": 3376,
+            "raw": {
+              "path": "windows/run-v1/font-demo-2.json",
+              "sha256": "52046D8FE24EA257224E41D83C2B303A172273ED901018E176D075B619DC054F",
+              "bytes": 14677
+            },
+            "details": {
+              "path": "windows/run-v1/font-demo-2.font-startup.json",
+              "sha256": "47CCE8B6E0E57C5EE9167B1A3C7C3FFED72932081286E40CB7EB788E497DB4E6",
+              "bytes": 19605
+            },
+            "glyphPixels": [
+              {
+                "script": "cjk",
+                "differentPixels": 755
+              },
+              {
+                "script": "combining",
+                "differentPixels": 603
+              },
+              {
+                "script": "emoji",
+                "differentPixels": 575
+              },
+              {
+                "script": "arabic",
+                "differentPixels": 411
+              }
+            ],
+            "artifacts": [
+              {
+                "path": "windows/run-v1/font-demo-2-font-startup-window.png",
+                "sha256": "1696CCE11733FE3ABFF9F00D1924C2CB20CEDFC12FDFBD93610802F7BA6637D0",
+                "bytes": 31886
+              },
+              {
+                "path": "windows/run-v1/font-demo-2-font-startup-restored.png",
+                "sha256": "1696CCE11733FE3ABFF9F00D1924C2CB20CEDFC12FDFBD93610802F7BA6637D0",
+                "bytes": 31886
+              },
+              {
+                "path": "windows/run-v1/font-demo-2-font-startup-chart.png",
+                "sha256": "D8C4070043494EC26779866FA32BC87B73E90D5E3A1C4CE2DB266746008135C1",
+                "bytes": 16798
+              },
+              {
+                "path": "windows/run-v1/font-demo-2-font-startup-cjk-hidden.png",
+                "sha256": "CBB2F2D68F4196191896DD77CA085A328BA6A92DB5BDEF31D750EABDC8CB1899",
+                "bytes": 30464
+              },
+              {
+                "path": "windows/run-v1/font-demo-2-font-startup-combining-hidden.png",
+                "sha256": "C769D2076BFACA7398ACD2776163CEFEAC3D2815E98CAD409FB83B03790F6F81",
+                "bytes": 30705
+              },
+              {
+                "path": "windows/run-v1/font-demo-2-font-startup-emoji-hidden.png",
+                "sha256": "BA71A75AC64D5977FDA0691C018DD427C02BC4E5F6550FC84AB287AED71CD8E9",
+                "bytes": 30588
+              },
+              {
+                "path": "windows/run-v1/font-demo-2-font-startup-arabic-hidden.png",
+                "sha256": "8171A8BB9AA56FC999C7897E8667C3A534A64E0B6CB2944CF5A7353769297337",
+                "bytes": 31218
+              }
+            ]
+          },
+          {
+            "name": "font-usage-2",
+            "checksPassed": 18,
+            "oldChecksPreserved": 0,
+            "processId": 63916,
+            "raw": {
+              "path": "windows/run-v1/font-usage-2.json",
+              "sha256": "0A59965A6C4ABE14D70D4E15F109F59F455C0CF6F4FC2A3A61BFFF14668B7C0F",
+              "bytes": 2270
+            },
+            "details": {
+              "path": "windows/run-v1/font-usage-2.font-startup.json",
+              "sha256": "E5A9E66FDF3721F2F5BB04474E976F9EAFE25DC603CD0DC892F337A4E920D3EC",
+              "bytes": 19626
+            },
+            "glyphPixels": [
+              {
+                "script": "cjk",
+                "differentPixels": 755
+              },
+              {
+                "script": "combining",
+                "differentPixels": 603
+              },
+              {
+                "script": "emoji",
+                "differentPixels": 575
+              },
+              {
+                "script": "arabic",
+                "differentPixels": 411
+              }
+            ],
+            "artifacts": [
+              {
+                "path": "windows/run-v1/font-usage-2-font-startup-window.png",
+                "sha256": "1696CCE11733FE3ABFF9F00D1924C2CB20CEDFC12FDFBD93610802F7BA6637D0",
+                "bytes": 31886
+              },
+              {
+                "path": "windows/run-v1/font-usage-2-font-startup-restored.png",
+                "sha256": "1696CCE11733FE3ABFF9F00D1924C2CB20CEDFC12FDFBD93610802F7BA6637D0",
+                "bytes": 31886
+              },
+              {
+                "path": "windows/run-v1/font-usage-2-font-startup-chart.png",
+                "sha256": "D8C4070043494EC26779866FA32BC87B73E90D5E3A1C4CE2DB266746008135C1",
+                "bytes": 16798
+              },
+              {
+                "path": "windows/run-v1/font-usage-2-font-startup-cjk-hidden.png",
+                "sha256": "CBB2F2D68F4196191896DD77CA085A328BA6A92DB5BDEF31D750EABDC8CB1899",
+                "bytes": 30464
+              },
+              {
+                "path": "windows/run-v1/font-usage-2-font-startup-combining-hidden.png",
+                "sha256": "C769D2076BFACA7398ACD2776163CEFEAC3D2815E98CAD409FB83B03790F6F81",
+                "bytes": 30705
+              },
+              {
+                "path": "windows/run-v1/font-usage-2-font-startup-emoji-hidden.png",
+                "sha256": "BA71A75AC64D5977FDA0691C018DD427C02BC4E5F6550FC84AB287AED71CD8E9",
+                "bytes": 30588
+              },
+              {
+                "path": "windows/run-v1/font-usage-2-font-startup-arabic-hidden.png",
+                "sha256": "8171A8BB9AA56FC999C7897E8667C3A534A64E0B6CB2944CF5A7353769297337",
+                "bytes": 31218
+              }
+            ]
+          },
+          {
+            "name": "charts-smoke",
+            "checksPassed": 5203,
+            "oldChecksPreserved": 5186,
+            "processId": 19680,
+            "raw": {
+              "path": "windows/run-v1/charts-smoke.json",
+              "sha256": "B207D1E6583DF386C152F2703FE890E7A966F2F30AA6E7D38C5F4E38AC9D80E6",
+              "bytes": 85986172
+            },
+            "details": {
+              "path": "windows/run-v1/charts-smoke.font-startup.json",
+              "sha256": "6A55861C3B2DFE618C3D093172163EB4FD7A46D4D5F00C81F148A62D101C4468",
+              "bytes": 19623
+            },
+            "glyphPixels": [
+              {
+                "script": "cjk",
+                "differentPixels": 755
+              },
+              {
+                "script": "combining",
+                "differentPixels": 603
+              },
+              {
+                "script": "emoji",
+                "differentPixels": 575
+              },
+              {
+                "script": "arabic",
+                "differentPixels": 411
+              }
+            ],
+            "artifacts": [
+              {
+                "path": "windows/run-v1/charts-light-font-startup-window.png",
+                "sha256": "1696CCE11733FE3ABFF9F00D1924C2CB20CEDFC12FDFBD93610802F7BA6637D0",
+                "bytes": 31886
+              },
+              {
+                "path": "windows/run-v1/charts-light-font-startup-restored.png",
+                "sha256": "1696CCE11733FE3ABFF9F00D1924C2CB20CEDFC12FDFBD93610802F7BA6637D0",
+                "bytes": 31886
+              },
+              {
+                "path": "windows/run-v1/charts-light-font-startup-chart.png",
+                "sha256": "D8C4070043494EC26779866FA32BC87B73E90D5E3A1C4CE2DB266746008135C1",
+                "bytes": 16798
+              },
+              {
+                "path": "windows/run-v1/charts-light-font-startup-cjk-hidden.png",
+                "sha256": "CBB2F2D68F4196191896DD77CA085A328BA6A92DB5BDEF31D750EABDC8CB1899",
+                "bytes": 30464
+              },
+              {
+                "path": "windows/run-v1/charts-light-font-startup-combining-hidden.png",
+                "sha256": "C769D2076BFACA7398ACD2776163CEFEAC3D2815E98CAD409FB83B03790F6F81",
+                "bytes": 30705
+              },
+              {
+                "path": "windows/run-v1/charts-light-font-startup-emoji-hidden.png",
+                "sha256": "BA71A75AC64D5977FDA0691C018DD427C02BC4E5F6550FC84AB287AED71CD8E9",
+                "bytes": 30588
+              },
+              {
+                "path": "windows/run-v1/charts-light-font-startup-arabic-hidden.png",
+                "sha256": "8171A8BB9AA56FC999C7897E8667C3A534A64E0B6CB2944CF5A7353769297337",
+                "bytes": 31218
+              }
+            ]
+          },
+          {
+            "name": "charts-usage",
+            "checksPassed": 948,
+            "oldChecksPreserved": 931,
+            "processId": 27788,
+            "raw": {
+              "path": "windows/run-v1/charts-usage.json",
+              "sha256": "91F4B820C52388E8DFF2487E3A3373E9744A9B5956F6CC54816DD97A04B9F4D6",
+              "bytes": 118859
+            },
+            "details": {
+              "path": "windows/run-v1/charts-usage.font-startup.json",
+              "sha256": "B0A28F0C7AD2A0579B6B9F795B7C3640B1CF093EBA6C2A711D6FE553556C89DB",
+              "bytes": 19624
+            },
+            "glyphPixels": [
+              {
+                "script": "cjk",
+                "differentPixels": 755
+              },
+              {
+                "script": "combining",
+                "differentPixels": 603
+              },
+              {
+                "script": "emoji",
+                "differentPixels": 575
+              },
+              {
+                "script": "arabic",
+                "differentPixels": 411
+              }
+            ],
+            "artifacts": [
+              {
+                "path": "windows/run-v1/charts-usage-font-startup-window.png",
+                "sha256": "1696CCE11733FE3ABFF9F00D1924C2CB20CEDFC12FDFBD93610802F7BA6637D0",
+                "bytes": 31886
+              },
+              {
+                "path": "windows/run-v1/charts-usage-font-startup-restored.png",
+                "sha256": "1696CCE11733FE3ABFF9F00D1924C2CB20CEDFC12FDFBD93610802F7BA6637D0",
+                "bytes": 31886
+              },
+              {
+                "path": "windows/run-v1/charts-usage-font-startup-chart.png",
+                "sha256": "D8C4070043494EC26779866FA32BC87B73E90D5E3A1C4CE2DB266746008135C1",
+                "bytes": 16798
+              },
+              {
+                "path": "windows/run-v1/charts-usage-font-startup-cjk-hidden.png",
+                "sha256": "CBB2F2D68F4196191896DD77CA085A328BA6A92DB5BDEF31D750EABDC8CB1899",
+                "bytes": 30464
+              },
+              {
+                "path": "windows/run-v1/charts-usage-font-startup-combining-hidden.png",
+                "sha256": "C769D2076BFACA7398ACD2776163CEFEAC3D2815E98CAD409FB83B03790F6F81",
+                "bytes": 30705
+              },
+              {
+                "path": "windows/run-v1/charts-usage-font-startup-emoji-hidden.png",
+                "sha256": "BA71A75AC64D5977FDA0691C018DD427C02BC4E5F6550FC84AB287AED71CD8E9",
+                "bytes": 30588
+              },
+              {
+                "path": "windows/run-v1/charts-usage-font-startup-arabic-hidden.png",
+                "sha256": "8171A8BB9AA56FC999C7897E8667C3A534A64E0B6CB2944CF5A7353769297337",
+                "bytes": 31218
+              }
+            ]
+          }
+        ],
+        "stageReceipts": {
+          "path": "windows/run-v1/results.json",
+          "sha256": "04E7FD52317ECC04664AAE49AAA364C84116B989CCBC8AA341F3A8AAE8C99536",
+          "bytes": 14368
+        }
+      },
+      "nativeNupkgConsumers": {
+        "passed": true,
+        "result": {
+          "path": "windows/package-native-v1/results.json",
+          "sha256": "63E86D7641905D2D8A335A03914857F9532989DFCF7B875C83B78D67D730DB9B",
+          "bytes": 14497
+        },
+        "package": {
+          "path": "windows/packages-v1/feed/NT.AvaloniaControl.Charts.0.2.0-preview.2.nupkg",
+          "sha256": "12CC2FA9A46E5FC71CA0975661003F0E893E0BF5F0280677A5681D871DC3E21D",
+          "bytes": 945884
+        },
+        "corePayloadSha256": "95201FCD3BDB3A8DA9D765C88AA42CFE005338874134FB58C8F5660914A67CE3",
+        "cases": [
+          {
+            "id": "normal",
+            "passed": true,
+            "nativeWindowValidated": true,
+            "producerChecks": 8,
+            "independentChecks": 15,
+            "raw": {
+              "path": "windows/package-native-v1/cases/normal/evidence/raw.json",
+              "sha256": "3C873349E10E204F5E4EFAE63F28C3F510B05B0890712203E37D8F062D54E939",
+              "bytes": 13057
+            },
+            "oracle": {
+              "path": "windows/package-native-v1/cases/normal/independent-oracle.json",
+              "sha256": "8C52C0DDC16B08345B74FA3E171D491965577D5C80DDE9068B63D861C9527CCD",
+              "bytes": 2072
+            },
+            "privateCacheProof": null
+          },
+          {
+            "id": "idempotent",
+            "passed": true,
+            "nativeWindowValidated": true,
+            "producerChecks": 9,
+            "independentChecks": 15,
+            "raw": {
+              "path": "windows/package-native-v1/cases/idempotent/evidence/raw.json",
+              "sha256": "48402CAF08BF61B863776188C9C2B51B1E4ECAE43FCB5CA6DDA7E5D93C869FC7",
+              "bytes": 13123
+            },
+            "oracle": {
+              "path": "windows/package-native-v1/cases/idempotent/independent-oracle.json",
+              "sha256": "18417E0E43AD914E424F530276FA71AFD06FFA0F9BE7C0108326B6A6BAC920EE",
+              "bytes": 2076
+            },
+            "privateCacheProof": null
+          }
+        ]
+      },
+      "legacyNupkgConsumers": {
+        "passed": true,
+        "result": {
+          "path": "windows/package-headless-v1/20261024T120138268Z-b981f90fff24485c8765b8b34714860a/results.json",
+          "sha256": "6DBA785DEEF3964EDBC27FCDA2D1B7AB650EF8D976E5A28AE2C6D4F6B37C1813",
+          "bytes": 11729
+        },
+        "cases": [
+          {
+            "kind": "function",
+            "checks": 1113,
+            "result": {
+              "path": "windows/package-headless-v1/20261024T120138268Z-b981f90fff24485c8765b8b34714860a/function/consumer-result.json",
+              "sha256": "87BC5C20DFEF464C70C19AE3F23EB216A15A132454D539940E4F6B10D0E3699E",
+              "bytes": 159403
+            }
+          },
+          {
+            "kind": "themes",
+            "checks": 1147,
+            "result": {
+              "path": "windows/package-headless-v1/20261024T120138268Z-b981f90fff24485c8765b8b34714860a/themes/consumer-result.json",
+              "sha256": "5C43C88D506136DC50A9C97B79364C587722F9620C55CBC73030D158E7A56B15",
+              "bytes": 161890
+            }
+          }
+        ]
+      },
+      "manualVisualReview": {
+        "path": "manual-visual-review-windows-v1.json",
+        "sha256": "6DDF56347F8DA0B2CED2AD04571425DD99CB77D4FEE55C4FA80C5DFE64DC4EA5",
+        "bytes": 11155
+      }
+    },
+    "linux": {
+      "samples": {
+        "passed": true,
+        "headlessCounters": {
+          "total": "3191",
+          "executed": "3191",
+          "passed": "3191",
+          "failed": "0",
+          "error": "0",
+          "timeout": "0",
+          "aborted": "0",
+          "inconclusive": "0",
+          "passedButRunAborted": "0",
+          "notRunnable": "0",
+          "notExecuted": "0",
+          "disconnected": "0",
+          "warning": "0",
+          "completed": "0",
+          "inProgress": "0",
+          "pending": "0"
+        },
+        "oracleSelftests": 106,
+        "nativeSampleProcesses": 6,
+        "fontStartupChecksPerProcess": 17,
+        "actualPngFilesValidated": 42,
+        "cases": [
+          {
+            "name": "font-demo-1",
+            "checksPassed": 17,
+            "oldChecksPreserved": 0,
+            "processId": 1947,
+            "raw": {
+              "path": "linux/run-v1/font-demo-1.json",
+              "sha256": "AEFF94A425789218833855436529F53F20AE1886950D9E6058B8CBD416127F68",
+              "bytes": 14395
+            },
+            "details": {
+              "path": "linux/run-v1/font-demo-1.font-startup.json",
+              "sha256": "FA4854661C89973571C52CC593B75FCA4F40F90514318A600AFFC1048E7BBA9C",
+              "bytes": 19062
+            },
+            "glyphPixels": [
+              {
+                "script": "cjk",
+                "differentPixels": 1054
+              },
+              {
+                "script": "combining",
+                "differentPixels": 795
+              },
+              {
+                "script": "emoji",
+                "differentPixels": 549
+              },
+              {
+                "script": "arabic",
+                "differentPixels": 502
+              }
+            ],
+            "artifacts": [
+              {
+                "path": "linux/run-v1/font-demo-1-font-startup-window.png",
+                "sha256": "709BF93F22585427174BDD5D7547C8D189C9FDA4FFF558FD94E472488C1F6A7D",
+                "bytes": 48747
+              },
+              {
+                "path": "linux/run-v1/font-demo-1-font-startup-restored.png",
+                "sha256": "709BF93F22585427174BDD5D7547C8D189C9FDA4FFF558FD94E472488C1F6A7D",
+                "bytes": 48747
+              },
+              {
+                "path": "linux/run-v1/font-demo-1-font-startup-chart.png",
+                "sha256": "4A8B31ED1061B30F52154DBF6C5D494AB6FC2E0E1A92A73289E25BDF05B856E9",
+                "bytes": 20356
+              },
+              {
+                "path": "linux/run-v1/font-demo-1-font-startup-cjk-hidden.png",
+                "sha256": "268E396E4D082B804CBD205DD07FE4354B4B6A0B47C78B91C6FBCFEE51E58FB2",
+                "bytes": 45806
+              },
+              {
+                "path": "linux/run-v1/font-demo-1-font-startup-combining-hidden.png",
+                "sha256": "F7E332ADBFBC064F0A66F7863399BFE26824E114D15392D855AB2C759DB22221",
+                "bytes": 46280
+              },
+              {
+                "path": "linux/run-v1/font-demo-1-font-startup-emoji-hidden.png",
+                "sha256": "2474E95F8EB256B179B01DCCF139CFB46D6891BC9E179827D10DFC5AC9BB3452",
+                "bytes": 46856
+              },
+              {
+                "path": "linux/run-v1/font-demo-1-font-startup-arabic-hidden.png",
+                "sha256": "85921765953B5315398E29326287D29749688566C38ABC45A22780E9E4D3510A",
+                "bytes": 47082
+              }
+            ]
+          },
+          {
+            "name": "font-usage-1",
+            "checksPassed": 18,
+            "oldChecksPreserved": 0,
+            "processId": 2015,
+            "raw": {
+              "path": "linux/run-v1/font-usage-1.json",
+              "sha256": "EE7E89F74399610A86587D138707B4C61FC051760C621DF1DAAC69830483511B",
+              "bytes": 2213
+            },
+            "details": {
+              "path": "linux/run-v1/font-usage-1.font-startup.json",
+              "sha256": "EBFF140FD432756B4773E6D30206C39BA076AEFA78524531960A818AB72474B5",
+              "bytes": 19038
+            },
+            "glyphPixels": [
+              {
+                "script": "cjk",
+                "differentPixels": 1054
+              },
+              {
+                "script": "combining",
+                "differentPixels": 795
+              },
+              {
+                "script": "emoji",
+                "differentPixels": 549
+              },
+              {
+                "script": "arabic",
+                "differentPixels": 502
+              }
+            ],
+            "artifacts": [
+              {
+                "path": "linux/run-v1/font-usage-1-font-startup-window.png",
+                "sha256": "C0289F6D442E8B4A81C7D9E9D8EF5FACEBFB01AD66228AD35B379DB29E2743A5",
+                "bytes": 49022
+              },
+              {
+                "path": "linux/run-v1/font-usage-1-font-startup-restored.png",
+                "sha256": "C0289F6D442E8B4A81C7D9E9D8EF5FACEBFB01AD66228AD35B379DB29E2743A5",
+                "bytes": 49022
+              },
+              {
+                "path": "linux/run-v1/font-usage-1-font-startup-chart.png",
+                "sha256": "FC6665E94DD6E110586408777299C38597FA1D300BCDF2944C7DDB14BC3EB7AF",
+                "bytes": 20123
+              },
+              {
+                "path": "linux/run-v1/font-usage-1-font-startup-cjk-hidden.png",
+                "sha256": "1C270C8FDB823848DE011FC7FECC1CE713EC9471EF5B2537460BBFAAE9F2B880",
+                "bytes": 46147
+              },
+              {
+                "path": "linux/run-v1/font-usage-1-font-startup-combining-hidden.png",
+                "sha256": "9B24BE0414201218B777D58A39D78E4520678EC597AB7A8584030348602AF50D",
+                "bytes": 46613
+              },
+              {
+                "path": "linux/run-v1/font-usage-1-font-startup-emoji-hidden.png",
+                "sha256": "69A1C5D82E5906EEA077896370DDD1DC415E98669B9D7415EB45D4798F7F79FF",
+                "bytes": 47235
+              },
+              {
+                "path": "linux/run-v1/font-usage-1-font-startup-arabic-hidden.png",
+                "sha256": "5AA59E7BACB0CA237AAAC820A1041E6F5F892F1B1F909F87271AE74AD3323101",
+                "bytes": 47461
+              }
+            ]
+          },
+          {
+            "name": "font-demo-2",
+            "checksPassed": 17,
+            "oldChecksPreserved": 0,
+            "processId": 2068,
+            "raw": {
+              "path": "linux/run-v1/font-demo-2.json",
+              "sha256": "D6D086FAA0AD3CDA696C2C7E530884547D18E637BFB9515B36F01E520EC98D3E",
+              "bytes": 14395
+            },
+            "details": {
+              "path": "linux/run-v1/font-demo-2.font-startup.json",
+              "sha256": "301D31A6B650405D02F355722620AA5B3EA3B3014C32E578B21094FFB23B105D",
+              "bytes": 19062
+            },
+            "glyphPixels": [
+              {
+                "script": "cjk",
+                "differentPixels": 1054
+              },
+              {
+                "script": "combining",
+                "differentPixels": 795
+              },
+              {
+                "script": "emoji",
+                "differentPixels": 549
+              },
+              {
+                "script": "arabic",
+                "differentPixels": 502
+              }
+            ],
+            "artifacts": [
+              {
+                "path": "linux/run-v1/font-demo-2-font-startup-window.png",
+                "sha256": "709BF93F22585427174BDD5D7547C8D189C9FDA4FFF558FD94E472488C1F6A7D",
+                "bytes": 48747
+              },
+              {
+                "path": "linux/run-v1/font-demo-2-font-startup-restored.png",
+                "sha256": "709BF93F22585427174BDD5D7547C8D189C9FDA4FFF558FD94E472488C1F6A7D",
+                "bytes": 48747
+              },
+              {
+                "path": "linux/run-v1/font-demo-2-font-startup-chart.png",
+                "sha256": "4A8B31ED1061B30F52154DBF6C5D494AB6FC2E0E1A92A73289E25BDF05B856E9",
+                "bytes": 20356
+              },
+              {
+                "path": "linux/run-v1/font-demo-2-font-startup-cjk-hidden.png",
+                "sha256": "268E396E4D082B804CBD205DD07FE4354B4B6A0B47C78B91C6FBCFEE51E58FB2",
+                "bytes": 45806
+              },
+              {
+                "path": "linux/run-v1/font-demo-2-font-startup-combining-hidden.png",
+                "sha256": "F7E332ADBFBC064F0A66F7863399BFE26824E114D15392D855AB2C759DB22221",
+                "bytes": 46280
+              },
+              {
+                "path": "linux/run-v1/font-demo-2-font-startup-emoji-hidden.png",
+                "sha256": "2474E95F8EB256B179B01DCCF139CFB46D6891BC9E179827D10DFC5AC9BB3452",
+                "bytes": 46856
+              },
+              {
+                "path": "linux/run-v1/font-demo-2-font-startup-arabic-hidden.png",
+                "sha256": "85921765953B5315398E29326287D29749688566C38ABC45A22780E9E4D3510A",
+                "bytes": 47082
+              }
+            ]
+          },
+          {
+            "name": "font-usage-2",
+            "checksPassed": 18,
+            "oldChecksPreserved": 0,
+            "processId": 2121,
+            "raw": {
+              "path": "linux/run-v1/font-usage-2.json",
+              "sha256": "9B097771BC576A7BAF55B0926955CB5EC9901BD5D8444B453F9A9440BA292F20",
+              "bytes": 2213
+            },
+            "details": {
+              "path": "linux/run-v1/font-usage-2.font-startup.json",
+              "sha256": "3FBCC22481B64D4AECA67B0FD1CDD94A98DCB9EB874480A12D8549CA26206C1C",
+              "bytes": 19038
+            },
+            "glyphPixels": [
+              {
+                "script": "cjk",
+                "differentPixels": 1054
+              },
+              {
+                "script": "combining",
+                "differentPixels": 795
+              },
+              {
+                "script": "emoji",
+                "differentPixels": 549
+              },
+              {
+                "script": "arabic",
+                "differentPixels": 502
+              }
+            ],
+            "artifacts": [
+              {
+                "path": "linux/run-v1/font-usage-2-font-startup-window.png",
+                "sha256": "C0289F6D442E8B4A81C7D9E9D8EF5FACEBFB01AD66228AD35B379DB29E2743A5",
+                "bytes": 49022
+              },
+              {
+                "path": "linux/run-v1/font-usage-2-font-startup-restored.png",
+                "sha256": "C0289F6D442E8B4A81C7D9E9D8EF5FACEBFB01AD66228AD35B379DB29E2743A5",
+                "bytes": 49022
+              },
+              {
+                "path": "linux/run-v1/font-usage-2-font-startup-chart.png",
+                "sha256": "FC6665E94DD6E110586408777299C38597FA1D300BCDF2944C7DDB14BC3EB7AF",
+                "bytes": 20123
+              },
+              {
+                "path": "linux/run-v1/font-usage-2-font-startup-cjk-hidden.png",
+                "sha256": "1C270C8FDB823848DE011FC7FECC1CE713EC9471EF5B2537460BBFAAE9F2B880",
+                "bytes": 46147
+              },
+              {
+                "path": "linux/run-v1/font-usage-2-font-startup-combining-hidden.png",
+                "sha256": "9B24BE0414201218B777D58A39D78E4520678EC597AB7A8584030348602AF50D",
+                "bytes": 46613
+              },
+              {
+                "path": "linux/run-v1/font-usage-2-font-startup-emoji-hidden.png",
+                "sha256": "69A1C5D82E5906EEA077896370DDD1DC415E98669B9D7415EB45D4798F7F79FF",
+                "bytes": 47235
+              },
+              {
+                "path": "linux/run-v1/font-usage-2-font-startup-arabic-hidden.png",
+                "sha256": "5AA59E7BACB0CA237AAAC820A1041E6F5F892F1B1F909F87271AE74AD3323101",
+                "bytes": 47461
+              }
+            ]
+          },
+          {
+            "name": "charts-smoke",
+            "checksPassed": 5203,
+            "oldChecksPreserved": 5186,
+            "processId": 2174,
+            "raw": {
+              "path": "linux/run-v1/charts-smoke.json",
+              "sha256": "8540479802C75773C13F6D6EE3AD350CE0B427781F3D26915015F2DFBA0BD8E5",
+              "bytes": 82979754
+            },
+            "details": {
+              "path": "linux/run-v1/charts-smoke.font-startup.json",
+              "sha256": "2B4DE5D1A94B31AAE9187A63B1C9B0AB25262D60EFE17AA716F01888FAE07786",
+              "bytes": 19079
+            },
+            "glyphPixels": [
+              {
+                "script": "cjk",
+                "differentPixels": 1054
+              },
+              {
+                "script": "combining",
+                "differentPixels": 795
+              },
+              {
+                "script": "emoji",
+                "differentPixels": 549
+              },
+              {
+                "script": "arabic",
+                "differentPixels": 502
+              }
+            ],
+            "artifacts": [
+              {
+                "path": "linux/run-v1/charts-light-font-startup-window.png",
+                "sha256": "709BF93F22585427174BDD5D7547C8D189C9FDA4FFF558FD94E472488C1F6A7D",
+                "bytes": 48747
+              },
+              {
+                "path": "linux/run-v1/charts-light-font-startup-restored.png",
+                "sha256": "709BF93F22585427174BDD5D7547C8D189C9FDA4FFF558FD94E472488C1F6A7D",
+                "bytes": 48747
+              },
+              {
+                "path": "linux/run-v1/charts-light-font-startup-chart.png",
+                "sha256": "4A8B31ED1061B30F52154DBF6C5D494AB6FC2E0E1A92A73289E25BDF05B856E9",
+                "bytes": 20356
+              },
+              {
+                "path": "linux/run-v1/charts-light-font-startup-cjk-hidden.png",
+                "sha256": "268E396E4D082B804CBD205DD07FE4354B4B6A0B47C78B91C6FBCFEE51E58FB2",
+                "bytes": 45806
+              },
+              {
+                "path": "linux/run-v1/charts-light-font-startup-combining-hidden.png",
+                "sha256": "F7E332ADBFBC064F0A66F7863399BFE26824E114D15392D855AB2C759DB22221",
+                "bytes": 46280
+              },
+              {
+                "path": "linux/run-v1/charts-light-font-startup-emoji-hidden.png",
+                "sha256": "2474E95F8EB256B179B01DCCF139CFB46D6891BC9E179827D10DFC5AC9BB3452",
+                "bytes": 46856
+              },
+              {
+                "path": "linux/run-v1/charts-light-font-startup-arabic-hidden.png",
+                "sha256": "85921765953B5315398E29326287D29749688566C38ABC45A22780E9E4D3510A",
+                "bytes": 47082
+              }
+            ]
+          },
+          {
+            "name": "charts-usage",
+            "checksPassed": 948,
+            "oldChecksPreserved": 931,
+            "processId": 2240,
+            "raw": {
+              "path": "linux/run-v1/charts-usage.json",
+              "sha256": "C044D3D9B3DABCDC571911669584AE151BC5F3C58B2771367400298F35D24E83",
+              "bytes": 115538
+            },
+            "details": {
+              "path": "linux/run-v1/charts-usage.font-startup.json",
+              "sha256": "63B3225A1BB907122E7C11DDE2AA08B4BD3AEDEB4D2A4ECA720A01F874403649",
+              "bytes": 19036
+            },
+            "glyphPixels": [
+              {
+                "script": "cjk",
+                "differentPixels": 1054
+              },
+              {
+                "script": "combining",
+                "differentPixels": 795
+              },
+              {
+                "script": "emoji",
+                "differentPixels": 549
+              },
+              {
+                "script": "arabic",
+                "differentPixels": 502
+              }
+            ],
+            "artifacts": [
+              {
+                "path": "linux/run-v1/charts-usage-font-startup-window.png",
+                "sha256": "C0289F6D442E8B4A81C7D9E9D8EF5FACEBFB01AD66228AD35B379DB29E2743A5",
+                "bytes": 49022
+              },
+              {
+                "path": "linux/run-v1/charts-usage-font-startup-restored.png",
+                "sha256": "C0289F6D442E8B4A81C7D9E9D8EF5FACEBFB01AD66228AD35B379DB29E2743A5",
+                "bytes": 49022
+              },
+              {
+                "path": "linux/run-v1/charts-usage-font-startup-chart.png",
+                "sha256": "FC6665E94DD6E110586408777299C38597FA1D300BCDF2944C7DDB14BC3EB7AF",
+                "bytes": 20123
+              },
+              {
+                "path": "linux/run-v1/charts-usage-font-startup-cjk-hidden.png",
+                "sha256": "1C270C8FDB823848DE011FC7FECC1CE713EC9471EF5B2537460BBFAAE9F2B880",
+                "bytes": 46147
+              },
+              {
+                "path": "linux/run-v1/charts-usage-font-startup-combining-hidden.png",
+                "sha256": "9B24BE0414201218B777D58A39D78E4520678EC597AB7A8584030348602AF50D",
+                "bytes": 46613
+              },
+              {
+                "path": "linux/run-v1/charts-usage-font-startup-emoji-hidden.png",
+                "sha256": "69A1C5D82E5906EEA077896370DDD1DC415E98669B9D7415EB45D4798F7F79FF",
+                "bytes": 47235
+              },
+              {
+                "path": "linux/run-v1/charts-usage-font-startup-arabic-hidden.png",
+                "sha256": "5AA59E7BACB0CA237AAAC820A1041E6F5F892F1B1F909F87271AE74AD3323101",
+                "bytes": 47461
+              }
+            ]
+          }
+        ],
+        "stageReceipts": {
+          "path": "linux/run-v1/results.json",
+          "sha256": "9F11736E9BA265EA380C8E714A57F074958388E2F6D4CCCCD0B7CB0501539EB5",
+          "bytes": 13803
+        }
+      },
+      "nativeNupkgConsumers": {
+        "passed": true,
+        "result": {
+          "path": "linux/package-native-v1/results.json",
+          "sha256": "6E293CD2E106F3897C3D0F6569CD7560BCA25005A2BA3EB51E93082828898AD7",
+          "bytes": 44662
+        },
+        "package": {
+          "path": "linux/packages-v1/feed/NT.AvaloniaControl.Charts.0.2.0-preview.2.nupkg",
+          "sha256": "1EC34BBEC578544136A318D7F630D6494D80A3688EF07A482B7DF355FB44B790",
+          "bytes": 945875
+        },
+        "corePayloadSha256": "46EB0C1627ECAA120CFD11BD75539C0079F2B687DA40AF91570F00AFCF2CE32C",
+        "cases": [
+          {
+            "id": "normal",
+            "passed": true,
+            "nativeWindowValidated": true,
+            "producerChecks": 8,
+            "independentChecks": 17,
+            "raw": {
+              "path": "linux/package-native-v1/cases/normal/evidence/raw.json",
+              "sha256": "99DAB3FA3F7F23DB9C8DCB35C624E365F8F354E04CA8E8F63E85101BD6438B6E",
+              "bytes": 14012
+            },
+            "oracle": {
+              "path": "linux/package-native-v1/cases/normal/independent-oracle.json",
+              "sha256": "C0360DE233AD283DE9C2B8193C6A5D1C34D81C5DFB6FD1191533CDC8CF1E9E79",
+              "bytes": 2105
+            },
+            "privateCacheProof": {
+              "fontconfigFile": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/normal/fonts.conf",
+              "fontconfigSha256": "8A6B12FA24BABBF8F546044A02C0F0BD5F6C23770943FA8EEF61972FE7CD6BA9",
+              "privateCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/normal/fresh-private-font-cache",
+              "preexistingFiles": 0,
+              "systemCachesPurged": false,
+              "inheritedProjectFontConfigUsed": false
+            }
+          },
+          {
+            "id": "idempotent",
+            "passed": true,
+            "nativeWindowValidated": true,
+            "producerChecks": 9,
+            "independentChecks": 17,
+            "raw": {
+              "path": "linux/package-native-v1/cases/idempotent/evidence/raw.json",
+              "sha256": "2A1D16CF16638D5FE0EB681FE1FE2F8F68A21DD11681EB13B43A2E84DABBF440",
+              "bytes": 14084
+            },
+            "oracle": {
+              "path": "linux/package-native-v1/cases/idempotent/independent-oracle.json",
+              "sha256": "97566B82D4E10D6551474BF69374E12F630AEF18CADEF69156804FF686D92B09",
+              "bytes": 2109
+            },
+            "privateCacheProof": {
+              "fontconfigFile": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/idempotent/fonts.conf",
+              "fontconfigSha256": "5A7359A66126D90073098B1C30CDF03E312ACF19662C873CDE22F6CA3980C87A",
+              "privateCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/idempotent/fresh-private-font-cache",
+              "preexistingFiles": 0,
+              "systemCachesPurged": false,
+              "inheritedProjectFontConfigUsed": false
+            }
+          },
+          {
+            "id": "preloaded-system-api",
+            "passed": true,
+            "nativeWindowValidated": true,
+            "producerChecks": 8,
+            "independentChecks": 18,
+            "raw": {
+              "path": "linux/package-native-v1/cases/preloaded-system-api/evidence/raw.json",
+              "sha256": "8030EC1DF18A48482FFE3517979B4E123FE8070D2EC0E72D09545E427DDD6798",
+              "bytes": 14795
+            },
+            "oracle": {
+              "path": "linux/package-native-v1/cases/preloaded-system-api/independent-oracle.json",
+              "sha256": "36895987DD475638E5F94F6B0FFF297F6BBC3062218A48A9806BBA869B2C194A",
+              "bytes": 2151
+            },
+            "privateCacheProof": {
+              "fontconfigFile": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/preloaded-system-api/fonts.conf",
+              "fontconfigSha256": "A2F6E7579A7ACF634CD49F7D9D07BA1B5401A7D1C62697351B5508F7AE017B7F",
+              "privateCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/preloaded-system-api/fresh-private-font-cache",
+              "preexistingFiles": 0,
+              "systemCachesPurged": false,
+              "inheritedProjectFontConfigUsed": false
+            },
+            "preload": {
+              "purpose": "system-global-control",
+              "path": "/usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.61232.0",
+              "sha256": "B330CA2B82B22FBCE5E1A15DABFEFFDD97E9976C3A3E48A2696628BFD34526D5",
+              "bytes": 1220816,
+              "flags": 258,
+              "handle": "0x5BE56994C300",
+              "actualVersion": "12.3.2",
+              "symbol": "hb_version_string",
+              "symbolAddress": "0x78B3EB30BAF0",
+              "symbolProviderPath": "/usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.61232.0",
+              "symbolProviderSha256": "B330CA2B82B22FBCE5E1A15DABFEFFDD97E9976C3A3E48A2696628BFD34526D5",
+              "qualification": "Controlled process-local test preloading; no LD_PRELOAD or system setting is changed."
+            },
+            "actualBinding": {
+              "status": "Initialized",
+              "packageVersion": "8.3.1.3",
+              "runtimeIdentifier": "linux-x64",
+              "glibcVersion": "2.43",
+              "assetPath": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/consumer/bin/Release/net10.0/runtimes/linux-x64/native/libHarfBuzzSharp.so",
+              "assetSha256": "1D5C3AFEF13545BF34BF8F068B14E25EE619C3B6DEE235C44E260FE61CB24018",
+              "assetBytes": 2808040,
+              "nativeVersion": "8.3.1",
+              "symbolProviderPath": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/consumer/bin/Release/net10.0/runtimes/linux-x64/native/libHarfBuzzSharp.so",
+              "resolverRegistered": true,
+              "resolverObserved": true,
+              "resolverInvocationCount": 21,
+              "resolvedLibraryName": "libHarfBuzzSharp",
+              "deepBindingEnabled": true,
+              "errorCode": null,
+              "errorMessage": null
+            }
+          },
+          {
+            "id": "missing",
+            "passed": true,
+            "nativeWindowValidated": false,
+            "producerChecks": 2,
+            "independentChecks": 9,
+            "raw": {
+              "path": "linux/package-native-v1/cases/missing/evidence/raw.json",
+              "sha256": "53E5F46705B197FC02CEC805D3528A3A9AD405B796299441C8F714D97E61CB3D",
+              "bytes": 5585
+            },
+            "oracle": {
+              "path": "linux/package-native-v1/cases/missing/independent-oracle.json",
+              "sha256": "B613A658205A60F8A192933705C05F413AB076B6039763DE0C7D3AE94CE4560B",
+              "bytes": 1016
+            },
+            "privateCacheProof": {
+              "fontconfigFile": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/missing/fonts.conf",
+              "fontconfigSha256": "406685BF525A2A3A76FF268E2AD7C8409A32DADF8A3B74967A18128819351817",
+              "privateCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/missing/fresh-private-font-cache",
+              "preexistingFiles": 0,
+              "systemCachesPurged": false,
+              "inheritedProjectFontConfigUsed": false
+            }
+          },
+          {
+            "id": "late",
+            "passed": true,
+            "nativeWindowValidated": false,
+            "producerChecks": 3,
+            "independentChecks": 9,
+            "raw": {
+              "path": "linux/package-native-v1/cases/late/evidence/raw.json",
+              "sha256": "EF457D9C2EB38109ACD088047D6BC890563B6A53BB0ED4D8B5B7F04E8A7D6B78",
+              "bytes": 9595
+            },
+            "oracle": {
+              "path": "linux/package-native-v1/cases/late/independent-oracle.json",
+              "sha256": "FEC75F26CE6C4309FDB685723D570E07222D78735977CB82D8C83F3052F8D39F",
+              "bytes": 1013
+            },
+            "privateCacheProof": {
+              "fontconfigFile": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/late/fonts.conf",
+              "fontconfigSha256": "E283F1469B4A6A880BB4D546920B0F25D959DDEF4D9603235F4C0CA317AAE8B7",
+              "privateCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/late/fresh-private-font-cache",
+              "preexistingFiles": 0,
+              "systemCachesPurged": false,
+              "inheritedProjectFontConfigUsed": false
+            }
+          },
+          {
+            "id": "native-loaded",
+            "passed": true,
+            "nativeWindowValidated": false,
+            "producerChecks": 2,
+            "independentChecks": 9,
+            "raw": {
+              "path": "linux/package-native-v1/cases/native-loaded/evidence/raw.json",
+              "sha256": "71E403137095986948D6F070C230075FA9ED543FE16D6FA639502113A3B318A4",
+              "bytes": 5907
+            },
+            "oracle": {
+              "path": "linux/package-native-v1/cases/native-loaded/independent-oracle.json",
+              "sha256": "16626664C0D06152204BA1482287E0C739B035CE633D1788AC77B025166DA569",
+              "bytes": 1022
+            },
+            "privateCacheProof": {
+              "fontconfigFile": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/native-loaded/fonts.conf",
+              "fontconfigSha256": "493B9073F58014070E847AFF51CF7CD25E6D9291D00EE1283DAE970D413526AE",
+              "privateCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/native-loaded/fresh-private-font-cache",
+              "preexistingFiles": 0,
+              "systemCachesPurged": false,
+              "inheritedProjectFontConfigUsed": false
+            }
+          },
+          {
+            "id": "resolver-conflict",
+            "passed": true,
+            "nativeWindowValidated": false,
+            "producerChecks": 3,
+            "independentChecks": 9,
+            "raw": {
+              "path": "linux/package-native-v1/cases/resolver-conflict/evidence/raw.json",
+              "sha256": "6A01BAE747BD450429C27540E609BC7A4A651038A7DF9154A7E31D7004FE4A26",
+              "bytes": 6688
+            },
+            "oracle": {
+              "path": "linux/package-native-v1/cases/resolver-conflict/independent-oracle.json",
+              "sha256": "F71B5D4C8F48689BC0AA9DECA51B4878F4BA6F2752B182CA5FDE7B8161510B55",
+              "bytes": 1026
+            },
+            "privateCacheProof": {
+              "fontconfigFile": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/resolver-conflict/fonts.conf",
+              "fontconfigSha256": "A68179665ACF2E3FCDE9B2F4C9D0A1699F8488D0B81002B20FE0B55C5B5B5C82",
+              "privateCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/resolver-conflict/fresh-private-font-cache",
+              "preexistingFiles": 0,
+              "systemCachesPurged": false,
+              "inheritedProjectFontConfigUsed": false
+            }
+          },
+          {
+            "id": "baseline-system",
+            "passed": null,
+            "diagnosticOnly": true,
+            "exitCode": 134,
+            "terminalRawAvailable": false,
+            "preload": {
+              "purpose": "system-global-control",
+              "path": "/usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.61232.0",
+              "sha256": "B330CA2B82B22FBCE5E1A15DABFEFFDD97E9976C3A3E48A2696628BFD34526D5",
+              "bytes": 1220816,
+              "flags": 258,
+              "handle": "0x5AD1B0200560",
+              "actualVersion": "12.3.2",
+              "symbol": "hb_version_string",
+              "symbolAddress": "0x70AE14083AF0",
+              "symbolProviderPath": "/usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.61232.0",
+              "symbolProviderSha256": "B330CA2B82B22FBCE5E1A15DABFEFFDD97E9976C3A3E48A2696628BFD34526D5",
+              "qualification": "Controlled process-local test preloading; no LD_PRELOAD or system setting is changed."
+            },
+            "privateCacheProof": {
+              "fontconfigFile": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/baseline-system/fonts.conf",
+              "fontconfigSha256": "ABB7AE4D047F62043265B9D46A10718B62A619380B4F7AC5F14BADA8F1A4C6A2",
+              "privateCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-consumer-font-startup-20261024/linux/package-native-v1/cases/baseline-system/fresh-private-font-cache",
+              "preexistingFiles": 0,
+              "systemCachesPurged": false,
+              "inheritedProjectFontConfigUsed": false
+            },
+            "preloadReport": {
+              "path": "linux/package-native-v1/cases/baseline-system/evidence/raw.system-preloaded.json",
+              "sha256": "A977318DC81A002F40AF8D14838919FE17E7F2EA08A0ECF1660BFCA080F8819E",
+              "bytes": 5270
+            },
+            "stderr": {
+              "path": "linux/package-native-v1/processes/case-baseline-system/stderr.log",
+              "sha256": "AD2B75D820ADE3DEB7F5A2FCA85C60BB393158497E88C3E01896864541A69DBD",
+              "bytes": 24
+            }
+          }
+        ]
+      },
+      "legacyNupkgConsumers": {
+        "passed": true,
+        "result": {
+          "path": "linux/package-headless-v1/20261024T120656539Z-1b130f988576452b9d64926a4c5d2d5c/results.json",
+          "sha256": "2BDEEDEE6326152A59AAE4F817AC86A04A49535EE94D67C25BE0A4A30D7D5E24",
+          "bytes": 11233
+        },
+        "cases": [
+          {
+            "kind": "function",
+            "checks": 1113,
+            "result": {
+              "path": "linux/package-headless-v1/20261024T120656539Z-1b130f988576452b9d64926a4c5d2d5c/function/consumer-result.json",
+              "sha256": "26A48D37460FEE5F976AC7708E3E3ACD1D6BCF815EFD5BFAFC877C86187C4E11",
+              "bytes": 155363
+            }
+          },
+          {
+            "kind": "themes",
+            "checks": 1147,
+            "result": {
+              "path": "linux/package-headless-v1/20261024T120656539Z-1b130f988576452b9d64926a4c5d2d5c/themes/consumer-result.json",
+              "sha256": "DD112A7D6F898E529D3494ECC8FADBD1E12E0FF370BEE7EAED53B1789816EC51",
+              "bytes": 157783
+            }
+          }
+        ]
+      },
+      "manualVisualReview": {
+        "path": "manual-visual-review-linux-v1.json",
+        "sha256": "C1A2B6458EA0D10BFDCD585052CE8B252C59FEB167F0B3C18F463AD2D687FAC9",
+        "bytes": 15965
+      }
+    }
+  },
+  "newNativeFontPngs": 99,
+  "ciUploaded": false,
+  "targetUbuntuRealDesktopValidated": false,
+  "arm64Executed": false,
+  "compositorCertified": false,
+  "remainingIssues": [
+    "Ubuntu22.04/24.04 physical desktops, native Wayland and ARM64 are untested.",
+    "Existing Linux llvmpipe GPU failure, physical mixed-DPI/input and compositor qualifications remain open.",
+    "Single-file, trimming, AOT, actual publishing/upgrade combinations and dependency upgrades need separate acceptance.",
+    "Official performance parity, long soak and advanced label/legend layouts remain open.",
+    "Million-point hit tail latency and native UIA/AT-SPI selection bridge remain deferred by user."
+  ]
+}

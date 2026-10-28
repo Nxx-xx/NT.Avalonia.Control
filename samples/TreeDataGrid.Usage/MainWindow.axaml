@@ -13,9 +13,11 @@
       <Button Content="开始编辑" Command="{Binding Editing.BeginEditCommand}" />
       <Button Content="提交" Command="{Binding Editing.CommitEditCommand}" />
       <Button Content="取消" Command="{Binding Editing.CancelEditCommand}" />
+      <CheckBox x:Name="BlockSelection" Content="阻止切换选择" />
     </StackPanel>
 
     <tg:TreeDataGrid Grid.Row="1" ItemsSource="{Binding Items}"
+                     SelectionChanging="OnSelectionChanging" CellValueChanged="OnCellValueChanged"
                      SelectionUnit="Row" SelectionMode="Multiple"
                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                      SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}"
@@ -26,9 +28,10 @@
                      IsThreeStateSort="True">
       <tg:TreeDataGridRowHeaderColumn Header="#" Width="48" IsReadOnly="True" />
       <tg:TreeDataGridTextColumn Header="名称" Width="2*" MinWidth="120"
-                                 Binding="{ReflectionBinding Name}" />
+                                 Binding="{ReflectionBinding Name}" BeginEditGestures="F2,DoubleTap,WhenSelected" />
       <tg:TreeDataGridTextColumn Header="数量" Width="100"
-                                 Binding="{ReflectionBinding Quantity}" />
+                                 Binding="{ReflectionBinding Quantity}" TextAlignment="Right" TextTrimming="None"
+                                 IsTextSearchEnabled="False" AllowTriStateSorting="False" />
       <tg:TreeDataGridCheckBoxColumn Header="启用" Width="90" IsThreeState="True"
                                      Binding="{ReflectionBinding Enabled}" />
     </tg:TreeDataGrid>
@@ -40,6 +43,6 @@
       <TextBlock Text="{Binding Editing.EditSession.ValidationError}"
                  Foreground="Red" VerticalAlignment="Center" />
     </StackPanel>
-    <TextBlock Grid.Row="3" Text="先点击名称或数量单元格，再按 F2、双击或点击开始编辑。" />
+    <TextBlock x:Name="EventStatus" Grid.Row="3" Text="先点击名称或数量单元格，再按 F2、双击或点击开始编辑。勾选后，切换选择不会提交草稿。" />
   </Grid>
 </Window>

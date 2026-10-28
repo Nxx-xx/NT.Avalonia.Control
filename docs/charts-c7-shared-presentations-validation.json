@@ -1,0 +1,3107 @@
+{
+  "schema": "charts-c7-shared-presentations-validation/v1",
+  "createdUtc": "2026-10-23T14:49:21.821843+00:00",
+  "batchPassed": true,
+  "fullNativeRegressionPassed": true,
+  "milestoneComplete": false,
+  "scope": "C7-01 shared professional legend and data-label control templates, Demo/Usage/package integration and software export regression.",
+  "platforms": {
+    "windows": {
+      "status": "complete",
+      "passed": true,
+      "checks": {
+        "six-ordered-software-stages-pass": true,
+        "same-frozen-source-manifest": true,
+        "every-frozen-file-unchanged-before-and-after": true,
+        "all-frozen-platform-files-still-pinned": true,
+        "base-software-contracts-and-input-stability": true,
+        "all-prior-headless-test-cases-retained": true,
+        "full-headless-records-and-summary-agree": true,
+        "new-common-family-and-previous-tooltip-regressions-executed": true,
+        "full-native-Demo-dictionary-matches-summary": true,
+        "native-Usage-all-recorded-bindings-pass": true,
+        "complete-static-control-catalog-and-self-tests": true,
+        "package-hash-NT.AvaloniaControl.Charts": true,
+        "package-hash-NT.AvaloniaControl.Charts.Themes": true,
+        "isolated-function-all-contracts-and-package-identity": true,
+        "isolated-function-source-free-fresh-cache": true,
+        "isolated-function-actual-SDK-pinned": true,
+        "isolated-function-actual-output-core": true,
+        "isolated-themes-all-contracts-and-package-identity": true,
+        "isolated-themes-source-free-fresh-cache": true,
+        "isolated-themes-actual-SDK-pinned": true,
+        "isolated-themes-actual-output-core": true,
+        "isolated-themes-actual-output-theme": true,
+        "both-isolated-consumer-kinds-pass": true,
+        "focused-239-native-presentation-checks": true,
+        "focused-theme-export-lifecycle-probe-order": true,
+        "theme-normal-light-shown-native-window-scope": true,
+        "image-format-theme/normal-light": true,
+        "image-dimensions-theme/normal-light": true,
+        "theme-normal-dark-shown-native-window-scope": true,
+        "image-format-theme/normal-dark": true,
+        "image-dimensions-theme/normal-dark": true,
+        "theme-hc-light-shown-native-window-scope": true,
+        "image-format-theme/hc-light": true,
+        "image-dimensions-theme/hc-light": true,
+        "theme-hc-dark-shown-native-window-scope": true,
+        "image-format-theme/hc-dark": true,
+        "image-dimensions-theme/hc-dark": true,
+        "analysis-four-states-four-codec-paths": true,
+        "image-format-analysis/legacy/sync-png": true,
+        "image-dimensions-analysis/legacy/sync-png": true,
+        "producer-export-contract-analysis/legacy/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/legacy/sync-png": true,
+        "image-format-analysis/legacy/async-png": true,
+        "image-dimensions-analysis/legacy/async-png": true,
+        "producer-export-contract-analysis/legacy/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/legacy/async-png": true,
+        "image-format-analysis/legacy/sync-jpeg": true,
+        "image-dimensions-analysis/legacy/sync-jpeg": true,
+        "producer-export-contract-analysis/legacy/sync-jpeg": true,
+        "image-format-analysis/legacy/async-jpeg": true,
+        "image-dimensions-analysis/legacy/async-jpeg": true,
+        "producer-export-contract-analysis/legacy/async-jpeg": true,
+        "image-format-analysis/label/sync-png": true,
+        "image-dimensions-analysis/label/sync-png": true,
+        "producer-export-contract-analysis/label/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/label/sync-png": true,
+        "image-format-analysis/label/async-png": true,
+        "image-dimensions-analysis/label/async-png": true,
+        "producer-export-contract-analysis/label/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/label/async-png": true,
+        "image-format-analysis/label/sync-jpeg": true,
+        "image-dimensions-analysis/label/sync-jpeg": true,
+        "producer-export-contract-analysis/label/sync-jpeg": true,
+        "image-format-analysis/label/async-jpeg": true,
+        "image-dimensions-analysis/label/async-jpeg": true,
+        "producer-export-contract-analysis/label/async-jpeg": true,
+        "image-format-analysis/legend/sync-png": true,
+        "image-dimensions-analysis/legend/sync-png": true,
+        "producer-export-contract-analysis/legend/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/legend/sync-png": true,
+        "image-format-analysis/legend/async-png": true,
+        "image-dimensions-analysis/legend/async-png": true,
+        "producer-export-contract-analysis/legend/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/legend/async-png": true,
+        "image-format-analysis/legend/sync-jpeg": true,
+        "image-dimensions-analysis/legend/sync-jpeg": true,
+        "producer-export-contract-analysis/legend/sync-jpeg": true,
+        "image-format-analysis/legend/async-jpeg": true,
+        "image-dimensions-analysis/legend/async-jpeg": true,
+        "producer-export-contract-analysis/legend/async-jpeg": true,
+        "image-format-analysis/both/sync-png": true,
+        "image-dimensions-analysis/both/sync-png": true,
+        "producer-export-contract-analysis/both/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/both/sync-png": true,
+        "image-format-analysis/both/async-png": true,
+        "image-dimensions-analysis/both/async-png": true,
+        "producer-export-contract-analysis/both/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/both/async-png": true,
+        "image-format-analysis/both/sync-jpeg": true,
+        "image-dimensions-analysis/both/sync-jpeg": true,
+        "producer-export-contract-analysis/both/sync-jpeg": true,
+        "image-format-analysis/both/async-jpeg": true,
+        "image-dimensions-analysis/both/async-jpeg": true,
+        "producer-export-contract-analysis/both/async-jpeg": true,
+        "independent-same-PNG-codec-sync-async-analysis-legacy": true,
+        "producer-JPEG-sync-async-analysis-legacy": true,
+        "independent-same-PNG-codec-sync-async-analysis-label": true,
+        "producer-JPEG-sync-async-analysis-label": true,
+        "independent-permanent-pixels-differ-analysis-label-sync-png": true,
+        "independent-permanent-pixels-differ-analysis-label-async-png": true,
+        "independent-same-PNG-codec-sync-async-analysis-legend": true,
+        "producer-JPEG-sync-async-analysis-legend": true,
+        "independent-permanent-pixels-differ-analysis-legend-sync-png": true,
+        "independent-permanent-pixels-differ-analysis-legend-async-png": true,
+        "independent-same-PNG-codec-sync-async-analysis-both": true,
+        "producer-JPEG-sync-async-analysis-both": true,
+        "independent-permanent-pixels-differ-analysis-both-sync-png": true,
+        "independent-permanent-pixels-differ-analysis-both-async-png": true,
+        "analysis-separate-legend-label-glyph-probes": true,
+        "image-format-analysis/glyph-label-hidden": true,
+        "image-dimensions-analysis/glyph-label-hidden": true,
+        "image-format-analysis/glyph-label-restored": true,
+        "image-dimensions-analysis/glyph-label-restored": true,
+        "independent-real-TextBlock-glyph-analysis/glyph-label": true,
+        "producer-glyph-counter-consistency-analysis/glyph-label": true,
+        "image-format-analysis/glyph-legend-hidden": true,
+        "image-dimensions-analysis/glyph-legend-hidden": true,
+        "image-format-analysis/glyph-legend-restored": true,
+        "image-dimensions-analysis/glyph-legend-restored": true,
+        "independent-real-TextBlock-glyph-analysis/glyph-legend": true,
+        "producer-glyph-counter-consistency-analysis/glyph-legend": true,
+        "engineering-four-states-four-codec-paths": true,
+        "image-format-engineering/legacy/sync-png": true,
+        "image-dimensions-engineering/legacy/sync-png": true,
+        "producer-export-contract-engineering/legacy/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/legacy/sync-png": true,
+        "image-format-engineering/legacy/async-png": true,
+        "image-dimensions-engineering/legacy/async-png": true,
+        "producer-export-contract-engineering/legacy/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/legacy/async-png": true,
+        "image-format-engineering/legacy/sync-jpeg": true,
+        "image-dimensions-engineering/legacy/sync-jpeg": true,
+        "producer-export-contract-engineering/legacy/sync-jpeg": true,
+        "image-format-engineering/legacy/async-jpeg": true,
+        "image-dimensions-engineering/legacy/async-jpeg": true,
+        "producer-export-contract-engineering/legacy/async-jpeg": true,
+        "image-format-engineering/label/sync-png": true,
+        "image-dimensions-engineering/label/sync-png": true,
+        "producer-export-contract-engineering/label/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/label/sync-png": true,
+        "image-format-engineering/label/async-png": true,
+        "image-dimensions-engineering/label/async-png": true,
+        "producer-export-contract-engineering/label/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/label/async-png": true,
+        "image-format-engineering/label/sync-jpeg": true,
+        "image-dimensions-engineering/label/sync-jpeg": true,
+        "producer-export-contract-engineering/label/sync-jpeg": true,
+        "image-format-engineering/label/async-jpeg": true,
+        "image-dimensions-engineering/label/async-jpeg": true,
+        "producer-export-contract-engineering/label/async-jpeg": true,
+        "image-format-engineering/legend/sync-png": true,
+        "image-dimensions-engineering/legend/sync-png": true,
+        "producer-export-contract-engineering/legend/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/legend/sync-png": true,
+        "image-format-engineering/legend/async-png": true,
+        "image-dimensions-engineering/legend/async-png": true,
+        "producer-export-contract-engineering/legend/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/legend/async-png": true,
+        "image-format-engineering/legend/sync-jpeg": true,
+        "image-dimensions-engineering/legend/sync-jpeg": true,
+        "producer-export-contract-engineering/legend/sync-jpeg": true,
+        "image-format-engineering/legend/async-jpeg": true,
+        "image-dimensions-engineering/legend/async-jpeg": true,
+        "producer-export-contract-engineering/legend/async-jpeg": true,
+        "image-format-engineering/both/sync-png": true,
+        "image-dimensions-engineering/both/sync-png": true,
+        "producer-export-contract-engineering/both/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/both/sync-png": true,
+        "image-format-engineering/both/async-png": true,
+        "image-dimensions-engineering/both/async-png": true,
+        "producer-export-contract-engineering/both/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/both/async-png": true,
+        "image-format-engineering/both/sync-jpeg": true,
+        "image-dimensions-engineering/both/sync-jpeg": true,
+        "producer-export-contract-engineering/both/sync-jpeg": true,
+        "image-format-engineering/both/async-jpeg": true,
+        "image-dimensions-engineering/both/async-jpeg": true,
+        "producer-export-contract-engineering/both/async-jpeg": true,
+        "independent-same-PNG-codec-sync-async-engineering-legacy": true,
+        "producer-JPEG-sync-async-engineering-legacy": true,
+        "independent-same-PNG-codec-sync-async-engineering-label": true,
+        "producer-JPEG-sync-async-engineering-label": true,
+        "independent-permanent-pixels-differ-engineering-label-sync-png": true,
+        "independent-permanent-pixels-differ-engineering-label-async-png": true,
+        "independent-same-PNG-codec-sync-async-engineering-legend": true,
+        "producer-JPEG-sync-async-engineering-legend": true,
+        "independent-permanent-pixels-differ-engineering-legend-sync-png": true,
+        "independent-permanent-pixels-differ-engineering-legend-async-png": true,
+        "independent-same-PNG-codec-sync-async-engineering-both": true,
+        "producer-JPEG-sync-async-engineering-both": true,
+        "independent-permanent-pixels-differ-engineering-both-sync-png": true,
+        "independent-permanent-pixels-differ-engineering-both-async-png": true,
+        "engineering-separate-legend-label-glyph-probes": true,
+        "image-format-engineering/glyph-label-hidden": true,
+        "image-dimensions-engineering/glyph-label-hidden": true,
+        "image-format-engineering/glyph-label-restored": true,
+        "image-dimensions-engineering/glyph-label-restored": true,
+        "independent-real-TextBlock-glyph-engineering/glyph-label": true,
+        "producer-glyph-counter-consistency-engineering/glyph-label": true,
+        "image-format-engineering/glyph-legend-hidden": true,
+        "image-dimensions-engineering/glyph-legend-hidden": true,
+        "image-format-engineering/glyph-legend-restored": true,
+        "image-dimensions-engineering/glyph-legend-restored": true,
+        "independent-real-TextBlock-glyph-engineering/glyph-legend": true,
+        "producer-glyph-counter-consistency-engineering/glyph-legend": true,
+        "four-required-theme-modes": true,
+        "32-exports-eight-glyph-images-four-theme-images": true,
+        "native-export272-attempts3200-guards": true,
+        "independent3232-export-oracle-checks": true,
+        "default-JIT-forcedGC-and-stable-native-inputs": true,
+        "packaged-core-and-themes-match-tested-build": true,
+        "export-executed-module-NT.AvaloniaControl.Charts": true,
+        "actual-host-copy-samples/NT.AvaloniaControl.Demo/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "actual-host-copy-samples/Charts.Usage/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "actual-host-copy-benchmarks/Charts.ExportStability/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "export-executed-module-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-host-copy-samples/NT.AvaloniaControl.Demo/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-host-copy-samples/Charts.Usage/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-host-copy-benchmarks/Charts.ExportStability/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-API-metadata-matches-tested-product": true,
+        "base-and-consumer-SDKs-agree-with-frozen-global-pin": true
+      },
+      "failedChecks": [],
+      "sourceSnapshotFiles": 1929,
+      "sourceDifferences": [],
+      "headless": {
+        "status": "passed",
+        "inputKind": "headless-injection",
+        "total": 2986,
+        "passed": 2986,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "notRun": 0,
+        "result": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-shared-presentations-20261023/windows/run-v3/verification/functional-v1/Charts.Headless.Tests.xml"
+      },
+      "xmlRecount": {
+        "tests": {
+          "total": 2986,
+          "passed": 2986,
+          "failed": 0
+        },
+        "classes": {
+          "SharedPresentationTests": {
+            "total": 38,
+            "passed": 38,
+            "failed": 0
+          },
+          "SharedPresentationFamiliesTests": {
+            "total": 20,
+            "passed": 20,
+            "failed": 0
+          },
+          "SharedTooltipPresentationTests": {
+            "total": 59,
+            "passed": 59,
+            "failed": 0
+          }
+        },
+        "failures": [],
+        "assemblyErrors": 0
+      },
+      "priorBaselineRetention": {
+        "passed": true,
+        "baseline": {
+          "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-tooltips-export-stability-20261023/windows/run-v2/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "B76A019B5F662392374F41BE918E4147F299C8B3B6DD0560CEF619FEF4C75FCD",
+          "bytes": 1706016
+        },
+        "baselineActualTests": 2928,
+        "currentActualTests": 2986,
+        "removedTestNames": [],
+        "addedTestNames": [
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Empty_comparison_label_metadata_does_not_bypass_the_family_label_gate",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Explicit_point_label_families_respect_category_and_value_text_gates(kind: 0)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Explicit_point_label_families_respect_category_and_value_text_gates(kind: 1)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Explicit_point_label_families_respect_category_and_value_text_gates(kind: 2)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Hierarchy_category_keys_keep_original_terminals_when_visual_gap_collapses_their_glyphs",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Hierarchy_legend_preserves_terminal_categories_and_decorative_size_key",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Hierarchy_shared_labels_use_current_terminals_after_collapse_and_drill",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.KPI_templates_preserve_label_value_and_signed_delta_as_separate_readings_of_the_actual_card",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Map_categorical_keys_keep_layers_and_categories_separate_even_when_source_indices_match",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Map_continuous_legend_retains_collapsed_originals_that_determine_its_domain",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Map_continuous_legend_retains_the_layer_range_gradient_and_original_member_domain",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Map_no_data_feature_labels_remain_backgrounds_without_fabricated_label_members",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Mosaic_aggregate_labels_keep_full_original_members_and_do_not_replace_column_headers",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Paired_endpoints_keep_distinct_marks_for_the_same_original_record",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Relation_labels_and_legends_keep_node_and_edge_identity_domains_separate",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Schedule_labels_keep_existing_collision_or_bar_placement_and_original_sources(kind: 0)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Schedule_labels_keep_existing_collision_or_bar_placement_and_original_sources(kind: 1)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Schedule_labels_keep_existing_collision_or_bar_placement_and_original_sources(kind: 2)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Schedule_labels_keep_existing_collision_or_bar_placement_and_original_sources(kind: 3)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Table_templates_replace_cell_data_while_headers_stay_drawn_and_all_cells_share_real_row_identity",
+          "Charts.Headless.Tests.SharedPresentationTests.Business_category_formatters_can_query_both_APIs_without_recursion_or_partial_publication(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Business_category_formatters_can_query_both_APIs_without_recursion_or_partial_publication(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Conditional_null_build_is_retried_once_for_a_new_reading(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Conditional_null_build_is_retried_once_for_a_new_reading(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Export_draws_prepared_permanent_visuals_and_rejects_nested_capture_during_build(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Export_draws_prepared_permanent_visuals_and_rejects_nested_capture_during_build(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Family_context_builders_can_query_both_APIs_without_recursion_or_partial_publication(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Family_context_builders_can_query_both_APIs_without_recursion_or_partial_publication(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Large_labels_remain_above_a_permanent_legend_without_changing_original_anchors(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Large_labels_remain_above_a_permanent_legend_without_changing_original_anchors(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Limits_family_gates_template_replacement_hiding_and_detach_release_owned_subtrees(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Limits_family_gates_template_replacement_hiding_and_detach_release_owned_subtrees(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Measure_and_arrange_failures_cleanup_and_reentrant_replacement_recovers(engineering: False, arrange: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Measure_and_arrange_failures_cleanup_and_reentrant_replacement_recovers(engineering: False, arrange: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Measure_and_arrange_failures_cleanup_and_reentrant_replacement_recovers(engineering: True, arrange: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Measure_and_arrange_failures_cleanup_and_reentrant_replacement_recovers(engineering: True, arrange: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Null_build_suppresses_legacy_labels_and_build_failure_is_quarantined_until_replacement(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Null_build_suppresses_legacy_labels_and_build_failure_is_quarantined_until_replacement(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Permanent_controls_keep_the_legacy_tooltip_in_a_foreground_visual(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Permanent_controls_keep_the_legacy_tooltip_in_a_foreground_visual(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Professional_roots_share_properties_without_changing_Cartesian_series_templates",
+          "Charts.Headless.Tests.SharedPresentationTests.Real_controls_keep_original_members_business_context_resources_and_passive_bounded_layout(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Real_controls_keep_original_members_business_context_resources_and_passive_bounded_layout(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: False, operation: \\\"data-context\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: False, operation: \\\"detach\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: False, operation: \\\"source\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: False, operation: \\\"template\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: True, operation: \\\"data-context\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: True, operation: \\\"detach\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: True, operation: \\\"source\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: True, operation: \\\"template\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_source_changes_during_context_generation_do_not_commit_a_mixed_batch(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_source_changes_during_context_generation_do_not_commit_a_mixed_batch(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Source_INPC_and_replacement_release_old_readings_and_keep_true_identity(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Source_INPC_and_replacement_release_old_readings_and_keep_true_identity(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Stable_hover_and_business_updates_reuse_presentations_without_source_enumeration(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Stable_hover_and_business_updates_reuse_presentations_without_source_enumeration(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Viewport_changes_move_the_reused_label_control_with_its_original_observation"
+        ],
+        "addedTestRecords": 58,
+        "comparison": "Exact xUnit display-name multiset, including every original theory case; no prior test name is silently dropped."
+      },
+      "fullDemoNative": {
+        "total": 4824,
+        "passed": 4824,
+        "failed": 0
+      },
+      "usage": {
+        "total": 885,
+        "passed": 885,
+        "failed": 0
+      },
+      "consumers": {
+        "function": {
+          "passed": true,
+          "checks": {
+            "total": 1067,
+            "passed": 1067,
+            "failed": 0
+          },
+          "coreSha256": "A8C55B09FDE848B57C3E65A5D6798A574C481CD507265141D9005597A812B817",
+          "runtime": "10.0.13",
+          "avaloniaVersion": "12.0.3.0",
+          "freshPackageCache": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-presentations-20261023\\windows\\run-v3\\consumers\\20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00\\function\\packages",
+          "noProjectReferences": true,
+          "actualSdk": "10.0.402",
+          "sdkEvidence": {
+            "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/function-sdk.stdout.log",
+            "sha256": "6D5AB2A4EF35CEEC908F01287257F530B0C0D68F0E84326DF2EBCEA641F9134B",
+            "bytes": 10
+          },
+          "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+        },
+        "themes": {
+          "passed": true,
+          "checks": {
+            "total": 1101,
+            "passed": 1101,
+            "failed": 0
+          },
+          "coreSha256": "A8C55B09FDE848B57C3E65A5D6798A574C481CD507265141D9005597A812B817",
+          "runtime": "10.0.13",
+          "avaloniaVersion": "12.0.3.0",
+          "freshPackageCache": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-presentations-20261023\\windows\\run-v3\\consumers\\20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00\\themes\\packages",
+          "noProjectReferences": true,
+          "actualSdk": "10.0.402",
+          "sdkEvidence": {
+            "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/themes-sdk.stdout.log",
+            "sha256": "6D5AB2A4EF35CEEC908F01287257F530B0C0D68F0E84326DF2EBCEA641F9134B",
+            "bytes": 10
+          },
+          "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+        }
+      },
+      "professionalPresentations": {
+        "checks": {
+          "total": 239,
+          "passed": 239,
+          "failed": 0
+        },
+        "probes": 7,
+        "themeModes": [
+          "normal-light",
+          "normal-dark",
+          "hc-light",
+          "hc-dark"
+        ],
+        "exportArtifacts": 32,
+        "glyphProofs": [
+          {
+            "family": "analysis",
+            "kind": "label",
+            "target": "ProfessionalLabelId",
+            "text": "首项 a",
+            "exportRegion": {
+              "x": 296.878612716763,
+              "y": 55.4913294797688,
+              "width": 45.31791907514451,
+              "height": 11.098265895953757
+            },
+            "independentHidden": {
+              "changedPixels": 117,
+              "pixelRegion": [
+                296,
+                55,
+                47,
+                12
+              ]
+            },
+            "independentRestored": {
+              "changedPixels": 0,
+              "pixelRegion": [
+                296,
+                55,
+                47,
+                12
+              ]
+            },
+            "hiddenReference": {
+              "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-glyph-hidden.png",
+              "sha256": "590C768968D1A44DEF5280A67FFB1453485A74022ACE9E8D90EF88D3EB4A44B0",
+              "bytes": 21623,
+              "kind": "analysis/glyph-label-hidden",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "77F7F121243D25605A1050B56C39EF2B96A6DD3B609E46013196439A4C3572D2",
+              "decodedPremultipliedBgraSha256": "84A5D88805CEAFECF406AF0C03570975D4CDED03ADDD8C2AB9B54895A922710F"
+            },
+            "restoredReference": {
+              "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-glyph-restored.png",
+              "sha256": "63E604700B32C80581FFE85260C471F63EA95F20D918E0CFDDA6E0F5C8BDC2FA",
+              "bytes": 21919,
+              "kind": "analysis/glyph-label-restored",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "C06E9A97679B9D7294A5BA16FAA98DAA31959B670C287602AC1A6CDA99520DEB",
+              "decodedPremultipliedBgraSha256": "DE4FB413F72737DB5DDB2B19F56A22605D891DA8B9AFE0E4B457943983FB9988"
+            }
+          },
+          {
+            "family": "analysis",
+            "kind": "legend",
+            "target": "ProfessionalLegendText",
+            "text": "阶段 A",
+            "exportRegion": {
+              "x": 15.722543352601155,
+              "y": 250.63583815028903,
+              "width": 71.21387283236994,
+              "height": 11.098265895953757
+            },
+            "independentHidden": {
+              "changedPixels": 145,
+              "pixelRegion": [
+                15,
+                250,
+                72,
+                12
+              ]
+            },
+            "independentRestored": {
+              "changedPixels": 0,
+              "pixelRegion": [
+                15,
+                250,
+                72,
+                12
+              ]
+            },
+            "hiddenReference": {
+              "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-glyph-hidden.png",
+              "sha256": "023622796A928B5B83F7C421AF74EEE996F223A3AB1CCE5AA098982F83402923",
+              "bytes": 21532,
+              "kind": "analysis/glyph-legend-hidden",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "DD12D13C0043EEF1094613DF2D84B0A58AC02E131D130956F8C74E3CA51629CF",
+              "decodedPremultipliedBgraSha256": "811A224C1A2E591B47F87E2A0AF0C223D07AF359DFB0C187B746ECEC281F6289"
+            },
+            "restoredReference": {
+              "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-glyph-restored.png",
+              "sha256": "63E604700B32C80581FFE85260C471F63EA95F20D918E0CFDDA6E0F5C8BDC2FA",
+              "bytes": 21919,
+              "kind": "analysis/glyph-legend-restored",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "C06E9A97679B9D7294A5BA16FAA98DAA31959B670C287602AC1A6CDA99520DEB",
+              "decodedPremultipliedBgraSha256": "DE4FB413F72737DB5DDB2B19F56A22605D891DA8B9AFE0E4B457943983FB9988"
+            }
+          },
+          {
+            "family": "engineering",
+            "kind": "label",
+            "target": "ProfessionalLabelId",
+            "text": "首项 a",
+            "exportRegion": {
+              "x": 213.64161849710982,
+              "y": 91.56069364161851,
+              "width": 45.31791907514451,
+              "height": 11.098265895953757
+            },
+            "independentHidden": {
+              "changedPixels": 117,
+              "pixelRegion": [
+                213,
+                91,
+                46,
+                12
+              ]
+            },
+            "independentRestored": {
+              "changedPixels": 0,
+              "pixelRegion": [
+                213,
+                91,
+                46,
+                12
+              ]
+            },
+            "hiddenReference": {
+              "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-glyph-hidden.png",
+              "sha256": "05BB13B1FCCE715924AB9EC0A6BF110F6EC7DD5EF1C7E430624900ECA720AAB0",
+              "bytes": 11908,
+              "kind": "engineering/glyph-label-hidden",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "0DE63CE461AC3E5F91082902C417581FCB04CE940239ADD150B9BE8A811B35E2",
+              "decodedPremultipliedBgraSha256": "61D2DBA173C002CC441F77AE4B255939C45E44B0380DB9418BB41DA158B1259A"
+            },
+            "restoredReference": {
+              "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-glyph-restored.png",
+              "sha256": "36E8FC0C476B1A2A841F6E8979D84D6D246F65BA6A527C341889C673E3B5C63A",
+              "bytes": 12158,
+              "kind": "engineering/glyph-label-restored",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "1F95DC46711D6F53D1D9DC2579C26B96C43DB4140E578837B5CD8CB2154A1F49",
+              "decodedPremultipliedBgraSha256": "6EA3AB62E4179EC989778FBFA2548ED2C8F25295B10F9D9C0CA9DC56734F938B"
+            }
+          },
+          {
+            "family": "engineering",
+            "kind": "legend",
+            "target": "ProfessionalLegendText",
+            "text": "阶段 A",
+            "exportRegion": {
+              "x": 26.820809248554912,
+              "y": 239.53757225433526,
+              "width": 71.21387283236994,
+              "height": 11.098265895953757
+            },
+            "independentHidden": {
+              "changedPixels": 145,
+              "pixelRegion": [
+                26,
+                239,
+                73,
+                12
+              ]
+            },
+            "independentRestored": {
+              "changedPixels": 0,
+              "pixelRegion": [
+                26,
+                239,
+                73,
+                12
+              ]
+            },
+            "hiddenReference": {
+              "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-glyph-hidden.png",
+              "sha256": "90058CD80EC74481C1A3347922D4A747DB13CA694F97807D473E107D6A8918FB",
+              "bytes": 11994,
+              "kind": "engineering/glyph-legend-hidden",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "30B3A2617C4C51980A08E7A8576EB4CE5D524081569060CF50FACAF5A86C1835",
+              "decodedPremultipliedBgraSha256": "0817740FCA818BFC3D2FCFAA88DA2563DE630203A58A92C5F41368FFB6C2E9A6"
+            },
+            "restoredReference": {
+              "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-glyph-restored.png",
+              "sha256": "36E8FC0C476B1A2A841F6E8979D84D6D246F65BA6A527C341889C673E3B5C63A",
+              "bytes": 12158,
+              "kind": "engineering/glyph-legend-restored",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "1F95DC46711D6F53D1D9DC2579C26B96C43DB4140E578837B5CD8CB2154A1F49",
+              "decodedPremultipliedBgraSha256": "6EA3AB62E4179EC989778FBFA2548ED2C8F25295B10F9D9C0CA9DC56734F938B"
+            }
+          }
+        ],
+        "images": [
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-normal-light.png",
+            "sha256": "A86074EC3DCFB1C4865551408323CEFBEDCF1EE2A4FFFDE1F75A721E3337C02D",
+            "bytes": 99190,
+            "kind": "theme/normal-light",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "0035294DA3FC17782F334177B5432F18EF357BE484F677CD3F89240C8F2DDFA8",
+            "decodedPremultipliedBgraSha256": "643B62607AA4EEE5992A2E635266D62D86BD71D128292152EFCCBD2E62658EDD"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-normal-dark.png",
+            "sha256": "4553903BB67996DAB0EA08F9DB061F4C5F4420F0249F78A57514B2B4104901E5",
+            "bytes": 98267,
+            "kind": "theme/normal-dark",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "267E70108535699F9673684013DCD57C0026B91043B678B01035221A05F2E939",
+            "decodedPremultipliedBgraSha256": "E81EF77F9ACF45F2B993C1D99370213532AF5B0E8D2C43111B072102F63B0113"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-hc-light.png",
+            "sha256": "37CDED73F2EA44553FC5C5014ED8FEB392BAE17ADCB27C384F4A220C11DBC4C2",
+            "bytes": 92899,
+            "kind": "theme/hc-light",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "4A7E605CDB8A01BF922A32CAE1780DA75A869D46BFA321E3CB8EC12EDB84C0A8",
+            "decodedPremultipliedBgraSha256": "E1C57CB414F88FB583C5AB900CAF6378FD720E492145625D28CE64823E50D72E"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-hc-dark.png",
+            "sha256": "D7CD88B914E6B7ABFD379E89A37836F4CEE191D9D23AAF1B19AFCB173BD02C06",
+            "bytes": 90701,
+            "kind": "theme/hc-dark",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "1FD12BB23F68076D6C2BD569E163009D03240B42B43973AFF18CC1AEBAB26273",
+            "decodedPremultipliedBgraSha256": "353CF4EEAB07F6F40D867A83CCAC98B3A8C68B6A621D5677C673163208DD1B03"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legacy-sync-png.png",
+            "sha256": "EF993037F3DEA919E0D7207E15E124055B2944BF8E643A5E47701DF82626EEF9",
+            "bytes": 10986,
+            "kind": "analysis/legacy/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "758EB006D0B0B8351E71BBA903ED3A32E1BC49C058662D23C3ECABD618FB551E",
+            "decodedPremultipliedBgraSha256": "3AA9A45D6FCD5D457DFB6B86FE136AAE827E1F50E289BA865DD9A6BFC0161590"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legacy-async-png.png",
+            "sha256": "54CD04C0DD33DC27E011D234AB97A18EFB70AC995CAE95E0A5DFFBA5E6DC8DCA",
+            "bytes": 17214,
+            "kind": "analysis/legacy/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "758EB006D0B0B8351E71BBA903ED3A32E1BC49C058662D23C3ECABD618FB551E",
+            "decodedPremultipliedBgraSha256": "3AA9A45D6FCD5D457DFB6B86FE136AAE827E1F50E289BA865DD9A6BFC0161590"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legacy-sync-jpeg.jpg",
+            "sha256": "585B83038878ED69615C63FF2C0983134E80ADE76617FA792512024D0A806436",
+            "bytes": 23345,
+            "kind": "analysis/legacy/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legacy-async-jpeg.jpg",
+            "sha256": "585B83038878ED69615C63FF2C0983134E80ADE76617FA792512024D0A806436",
+            "bytes": 23345,
+            "kind": "analysis/legacy/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-sync-png.png",
+            "sha256": "DE4A3DD4BAC9609078DEB65B3FF1F20368A03596DAB348A451F316E5658BF336",
+            "bytes": 16327,
+            "kind": "analysis/label/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "ECF7A9C76B067D8B03CEAA77CC643318006B79561A77ABF42360C5E3F06DCEA9",
+            "decodedPremultipliedBgraSha256": "9B7CCE78E053B4E09B001A6CC874EE3CC085B9B3B16D05853A8BA032EAB301CB"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-async-png.png",
+            "sha256": "C7CF5A207DA7030BED9D4D8AE8F3611B686949FFC0259F05FDC4A92CFF116549",
+            "bytes": 21650,
+            "kind": "analysis/label/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "ECF7A9C76B067D8B03CEAA77CC643318006B79561A77ABF42360C5E3F06DCEA9",
+            "decodedPremultipliedBgraSha256": "9B7CCE78E053B4E09B001A6CC874EE3CC085B9B3B16D05853A8BA032EAB301CB"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-sync-jpeg.jpg",
+            "sha256": "294287704C28E23398E15414A7598B0BC17828C8E1250EA55C4B9EF8600CB834",
+            "bytes": 27987,
+            "kind": "analysis/label/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-async-jpeg.jpg",
+            "sha256": "294287704C28E23398E15414A7598B0BC17828C8E1250EA55C4B9EF8600CB834",
+            "bytes": 27987,
+            "kind": "analysis/label/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-sync-png.png",
+            "sha256": "9272C356F951B7100108D86CAFC9372F30B7F33E2D48266F5F95D8C18394AD44",
+            "bytes": 17140,
+            "kind": "analysis/legend/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "52DAC8C03758EB7CF9A881C4CF06C62ECDA12DEED8A42B3BCD9E270D2786CD2E",
+            "decodedPremultipliedBgraSha256": "07588F414D171391928B0293AF819AA30DCF92EF862735213148FAC44EDA5D78"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-async-png.png",
+            "sha256": "DC59E5D3F2D81A81A7FF87645D250532E31380BF5246FFCC6FF6B6D4BF169305",
+            "bytes": 22840,
+            "kind": "analysis/legend/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "52DAC8C03758EB7CF9A881C4CF06C62ECDA12DEED8A42B3BCD9E270D2786CD2E",
+            "decodedPremultipliedBgraSha256": "07588F414D171391928B0293AF819AA30DCF92EF862735213148FAC44EDA5D78"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-sync-jpeg.jpg",
+            "sha256": "C9F39FD028F548FFF7EAC9107C15D55936BED9A08072793853A251C8FBCFCB6B",
+            "bytes": 33106,
+            "kind": "analysis/legend/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-async-jpeg.jpg",
+            "sha256": "C9F39FD028F548FFF7EAC9107C15D55936BED9A08072793853A251C8FBCFCB6B",
+            "bytes": 33106,
+            "kind": "analysis/legend/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-both-sync-png.png",
+            "sha256": "63E604700B32C80581FFE85260C471F63EA95F20D918E0CFDDA6E0F5C8BDC2FA",
+            "bytes": 21919,
+            "kind": "analysis/both/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "C06E9A97679B9D7294A5BA16FAA98DAA31959B670C287602AC1A6CDA99520DEB",
+            "decodedPremultipliedBgraSha256": "DE4FB413F72737DB5DDB2B19F56A22605D891DA8B9AFE0E4B457943983FB9988"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-both-async-png.png",
+            "sha256": "03337060A59F9483192BCA76262CA8CF60F31631AA61704BAA07CCC600DAC6DA",
+            "bytes": 27139,
+            "kind": "analysis/both/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "C06E9A97679B9D7294A5BA16FAA98DAA31959B670C287602AC1A6CDA99520DEB",
+            "decodedPremultipliedBgraSha256": "DE4FB413F72737DB5DDB2B19F56A22605D891DA8B9AFE0E4B457943983FB9988"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-both-sync-jpeg.jpg",
+            "sha256": "FC46D1E081153DC67270209EFAEEECF853F02729764323C054DCA8524F83003D",
+            "bytes": 37171,
+            "kind": "analysis/both/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-both-async-jpeg.jpg",
+            "sha256": "FC46D1E081153DC67270209EFAEEECF853F02729764323C054DCA8524F83003D",
+            "bytes": 37171,
+            "kind": "analysis/both/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-glyph-hidden.png",
+            "sha256": "590C768968D1A44DEF5280A67FFB1453485A74022ACE9E8D90EF88D3EB4A44B0",
+            "bytes": 21623,
+            "kind": "analysis/glyph-label-hidden",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "77F7F121243D25605A1050B56C39EF2B96A6DD3B609E46013196439A4C3572D2",
+            "decodedPremultipliedBgraSha256": "84A5D88805CEAFECF406AF0C03570975D4CDED03ADDD8C2AB9B54895A922710F"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-glyph-restored.png",
+            "sha256": "63E604700B32C80581FFE85260C471F63EA95F20D918E0CFDDA6E0F5C8BDC2FA",
+            "bytes": 21919,
+            "kind": "analysis/glyph-label-restored",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "C06E9A97679B9D7294A5BA16FAA98DAA31959B670C287602AC1A6CDA99520DEB",
+            "decodedPremultipliedBgraSha256": "DE4FB413F72737DB5DDB2B19F56A22605D891DA8B9AFE0E4B457943983FB9988"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-glyph-hidden.png",
+            "sha256": "023622796A928B5B83F7C421AF74EEE996F223A3AB1CCE5AA098982F83402923",
+            "bytes": 21532,
+            "kind": "analysis/glyph-legend-hidden",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "DD12D13C0043EEF1094613DF2D84B0A58AC02E131D130956F8C74E3CA51629CF",
+            "decodedPremultipliedBgraSha256": "811A224C1A2E591B47F87E2A0AF0C223D07AF359DFB0C187B746ECEC281F6289"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-glyph-restored.png",
+            "sha256": "63E604700B32C80581FFE85260C471F63EA95F20D918E0CFDDA6E0F5C8BDC2FA",
+            "bytes": 21919,
+            "kind": "analysis/glyph-legend-restored",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "C06E9A97679B9D7294A5BA16FAA98DAA31959B670C287602AC1A6CDA99520DEB",
+            "decodedPremultipliedBgraSha256": "DE4FB413F72737DB5DDB2B19F56A22605D891DA8B9AFE0E4B457943983FB9988"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legacy-sync-png.png",
+            "sha256": "EDE8A95154A99FB754F6D6C1F32232345480F12A6F81995AA1EE7492E30214F7",
+            "bytes": 3648,
+            "kind": "engineering/legacy/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "60F02B405C34AD0994E7EDCB15481BCCCF82DC88B737C84005ECDA4FCE67B502",
+            "decodedPremultipliedBgraSha256": "369DFA138B403C303166AC12F606308F6C02AAE6E365807C0F53AE462078B448"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legacy-async-png.png",
+            "sha256": "D09A7CBF8C32627451B3CA6275DE6516AB793E2B696264897EC31AAF7B2C769E",
+            "bytes": 10464,
+            "kind": "engineering/legacy/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "60F02B405C34AD0994E7EDCB15481BCCCF82DC88B737C84005ECDA4FCE67B502",
+            "decodedPremultipliedBgraSha256": "369DFA138B403C303166AC12F606308F6C02AAE6E365807C0F53AE462078B448"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legacy-sync-jpeg.jpg",
+            "sha256": "BA9BE7E125903F3742AF3D38EEDE6D08E9412C9516C04F8259F50490F91639E2",
+            "bytes": 15365,
+            "kind": "engineering/legacy/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legacy-async-jpeg.jpg",
+            "sha256": "BA9BE7E125903F3742AF3D38EEDE6D08E9412C9516C04F8259F50490F91639E2",
+            "bytes": 15365,
+            "kind": "engineering/legacy/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-sync-png.png",
+            "sha256": "5483BB3614337D2DE976E4EE126BE6B5379F3666898C192CD75807BF655F3230",
+            "bytes": 7852,
+            "kind": "engineering/label/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "120400EC926AE55237E17E82580411DF5A3B9C47A9B092E0409F40578408F3D2",
+            "decodedPremultipliedBgraSha256": "81EE93016F4CC53F8705ABD37D0A2D6EC2713512B535B319348DB6A807A0FF2E"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-async-png.png",
+            "sha256": "76DD28338AF1CBA72358961F88A000638491AF17E8068E7B230C215B4F043047",
+            "bytes": 13907,
+            "kind": "engineering/label/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "120400EC926AE55237E17E82580411DF5A3B9C47A9B092E0409F40578408F3D2",
+            "decodedPremultipliedBgraSha256": "81EE93016F4CC53F8705ABD37D0A2D6EC2713512B535B319348DB6A807A0FF2E"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-sync-jpeg.jpg",
+            "sha256": "807621E14AE381102CD89428BACBC535C76935A1A2FF65DF632E4BE60F8C84F7",
+            "bytes": 19377,
+            "kind": "engineering/label/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-async-jpeg.jpg",
+            "sha256": "807621E14AE381102CD89428BACBC535C76935A1A2FF65DF632E4BE60F8C84F7",
+            "bytes": 19377,
+            "kind": "engineering/label/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-sync-png.png",
+            "sha256": "7D845CE55FFBBBCFB89C19ECB972B08DC83C34A95996FA42C27B3DD60AD33C5C",
+            "bytes": 8452,
+            "kind": "engineering/legend/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "A2DFD3CE206AE2BBEE4EC114D1E9206CF812E367D35217437973347CB3478FA6",
+            "decodedPremultipliedBgraSha256": "304158BB713554F57C66579953A4D196DD0D041F97D35D1D5AC4F9634122454E"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-async-png.png",
+            "sha256": "622D822382E62D04884D62A1E9E248A621B753B9B2190E15F0A44415A94CDC19",
+            "bytes": 14594,
+            "kind": "engineering/legend/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "A2DFD3CE206AE2BBEE4EC114D1E9206CF812E367D35217437973347CB3478FA6",
+            "decodedPremultipliedBgraSha256": "304158BB713554F57C66579953A4D196DD0D041F97D35D1D5AC4F9634122454E"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-sync-jpeg.jpg",
+            "sha256": "7E5C7F1B98E91C62FABFEC39058DBC0E2A13902480D55EFAA9953DC33C5353B3",
+            "bytes": 20913,
+            "kind": "engineering/legend/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-async-jpeg.jpg",
+            "sha256": "7E5C7F1B98E91C62FABFEC39058DBC0E2A13902480D55EFAA9953DC33C5353B3",
+            "bytes": 20913,
+            "kind": "engineering/legend/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-both-sync-png.png",
+            "sha256": "36E8FC0C476B1A2A841F6E8979D84D6D246F65BA6A527C341889C673E3B5C63A",
+            "bytes": 12158,
+            "kind": "engineering/both/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "1F95DC46711D6F53D1D9DC2579C26B96C43DB4140E578837B5CD8CB2154A1F49",
+            "decodedPremultipliedBgraSha256": "6EA3AB62E4179EC989778FBFA2548ED2C8F25295B10F9D9C0CA9DC56734F938B"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-both-async-png.png",
+            "sha256": "8D1F4C90F00D6AA4EA5CA2C790BAF05A199039D803190910CC77FDD025425DA9",
+            "bytes": 17998,
+            "kind": "engineering/both/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "1F95DC46711D6F53D1D9DC2579C26B96C43DB4140E578837B5CD8CB2154A1F49",
+            "decodedPremultipliedBgraSha256": "6EA3AB62E4179EC989778FBFA2548ED2C8F25295B10F9D9C0CA9DC56734F938B"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-both-sync-jpeg.jpg",
+            "sha256": "1A6D9158013024339D4003407C63437FAB817EC26AE89B9F0187924D4AB3ABC2",
+            "bytes": 24975,
+            "kind": "engineering/both/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-both-async-jpeg.jpg",
+            "sha256": "1A6D9158013024339D4003407C63437FAB817EC26AE89B9F0187924D4AB3ABC2",
+            "bytes": 24975,
+            "kind": "engineering/both/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-glyph-hidden.png",
+            "sha256": "05BB13B1FCCE715924AB9EC0A6BF110F6EC7DD5EF1C7E430624900ECA720AAB0",
+            "bytes": 11908,
+            "kind": "engineering/glyph-label-hidden",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "0DE63CE461AC3E5F91082902C417581FCB04CE940239ADD150B9BE8A811B35E2",
+            "decodedPremultipliedBgraSha256": "61D2DBA173C002CC441F77AE4B255939C45E44B0380DB9418BB41DA158B1259A"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-glyph-restored.png",
+            "sha256": "36E8FC0C476B1A2A841F6E8979D84D6D246F65BA6A527C341889C673E3B5C63A",
+            "bytes": 12158,
+            "kind": "engineering/glyph-label-restored",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "1F95DC46711D6F53D1D9DC2579C26B96C43DB4140E578837B5CD8CB2154A1F49",
+            "decodedPremultipliedBgraSha256": "6EA3AB62E4179EC989778FBFA2548ED2C8F25295B10F9D9C0CA9DC56734F938B"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-glyph-hidden.png",
+            "sha256": "90058CD80EC74481C1A3347922D4A747DB13CA694F97807D473E107D6A8918FB",
+            "bytes": 11994,
+            "kind": "engineering/glyph-legend-hidden",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "30B3A2617C4C51980A08E7A8576EB4CE5D524081569060CF50FACAF5A86C1835",
+            "decodedPremultipliedBgraSha256": "0817740FCA818BFC3D2FCFAA88DA2563DE630203A58A92C5F41368FFB6C2E9A6"
+          },
+          {
+            "path": "windows/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-glyph-restored.png",
+            "sha256": "36E8FC0C476B1A2A841F6E8979D84D6D246F65BA6A527C341889C673E3B5C63A",
+            "bytes": 12158,
+            "kind": "engineering/glyph-legend-restored",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "1F95DC46711D6F53D1D9DC2579C26B96C43DB4140E578837B5CD8CB2154A1F49",
+            "decodedPremultipliedBgraSha256": "6EA3AB62E4179EC989778FBFA2548ED2C8F25295B10F9D9C0CA9DC56734F938B"
+          }
+        ],
+        "pngDecoder": {
+          "path": "D:/Procedure/AvaloniaControl/scripts/charts_png_oracle.py",
+          "sha256": "2C05338338984B1D5C818997AAB22E6C8C34331CEC24C8CED65AAE32503C44FF",
+          "bytes": 12612
+        },
+        "pngScope": "Independent stdlib CRC/structure/dimension decoding, producer pixel-hash linkage, same-codec sync/async equality, legacy differences, and changed/restored TextBlock ROI pixels.",
+        "jpegScope": "Independent SOI/SOF/dimensions/EOI structure only. Same-codec decoded-pixel equality and legacy differences are producer Avalonia observations; no independent JPEG visual quality or cross-codec equality claimed."
+      },
+      "exportStability": {
+        "attempts": 272,
+        "producerGuards": 3200,
+        "independentChecks": 3232,
+        "independentlyDecodedPngs": 240,
+        "forcedCollections": 11861,
+        "collectionsBeginningDuringManagedCapture": 2538,
+        "workerStopped": true,
+        "actualNativeModules": [
+          {
+            "moduleName": "Avalonia.HarfBuzz.dll",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7presentations\\windows-source-v3\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\Avalonia.HarfBuzz.dll",
+            "sha256": "BE71D00740E2E76D8347961AFF32E18D67818971018229FE2AAE643C64DE08DC"
+          },
+          {
+            "moduleName": "Avalonia.Skia.dll",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7presentations\\windows-source-v3\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\Avalonia.Skia.dll",
+            "sha256": "1A76E530C5DB742104D5A5532B11E36AA826D2221FE925978598BB62C1A068FC"
+          },
+          {
+            "moduleName": "SkiaSharp.dll",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7presentations\\windows-source-v3\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\SkiaSharp.dll",
+            "sha256": "A833ABAE87FF3D13FF660B1F9D92027885B90395647479437EB9D262FAD6D4AB"
+          },
+          {
+            "moduleName": "libSkiaSharp.DLL",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7presentations\\windows-source-v3\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\runtimes\\win-x64\\native\\libSkiaSharp.DLL",
+            "sha256": "6D6ECA64EC333DAED78858A637B54C545AA01558204B8E2AE8870692ACADA127"
+          },
+          {
+            "moduleName": "HarfBuzzSharp.dll",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7presentations\\windows-source-v3\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\HarfBuzzSharp.dll",
+            "sha256": "55E72AC23263F8E12484F3435E02EC22FAC9EFF6E6D169BB0A8C246BE6B99D29"
+          },
+          {
+            "moduleName": "libHarfBuzzSharp.DLL",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7presentations\\windows-source-v3\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\runtimes\\win-x64\\native\\libHarfBuzzSharp.DLL",
+            "sha256": "145ADE963EBA427027D5E1381DB5D51A0EF9E98E9FEF9EFBFA6074CA20DA246F"
+          }
+        ],
+        "defaultJitPreserved": true,
+        "runtime": {
+          "os": "Microsoft Windows 10.0.26200",
+          "architecture": "X64",
+          "framework": ".NET 10.0.13",
+          "runtime": "10.0.13",
+          "serverGc": false,
+          "gcLatencyMode": "Interactive",
+          "tieredCompilationEnvironment": null,
+          "comPlusTieredCompilationEnvironment": null,
+          "runtimeConfigPath": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7presentations\\windows-source-v3\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\Charts.ExportStability.runtimeconfig.json",
+          "runtimeConfig": "{\r\n  \"runtimeOptions\": {\r\n    \"tfm\": \"net10.0\",\r\n    \"framework\": {\r\n      \"name\": \"Microsoft.NETCore.App\",\r\n      \"version\": \"10.0.0\"\r\n    },\r\n    \"configProperties\": {\r\n      \"System.Reflection.Metadata.MetadataUpdater.IsSupported\": false,\r\n      \"System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization\": false\r\n    }\r\n  }\r\n}"
+        }
+      },
+      "productAssemblyPins": {
+        "coreSha256": "A8C55B09FDE848B57C3E65A5D6798A574C481CD507265141D9005597A812B817",
+        "themesSha256": "E756F1E8F202AA5A49FA60EB41B7A2635A77E59810CDF6E787D24B1AAF4B0C56",
+        "actualHostCopies": [
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7presentations/windows-source-v3/samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "A8C55B09FDE848B57C3E65A5D6798A574C481CD507265141D9005597A812B817",
+            "bytes": 2244096
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7presentations/windows-source-v3/samples/Charts.Usage/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "A8C55B09FDE848B57C3E65A5D6798A574C481CD507265141D9005597A812B817",
+            "bytes": 2244096
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7presentations/windows-source-v3/benchmarks/Charts.ExportStability/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "A8C55B09FDE848B57C3E65A5D6798A574C481CD507265141D9005597A812B817",
+            "bytes": 2244096
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7presentations/windows-source-v3/samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "E756F1E8F202AA5A49FA60EB41B7A2635A77E59810CDF6E787D24B1AAF4B0C56",
+            "bytes": 25600
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7presentations/windows-source-v3/samples/Charts.Usage/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "E756F1E8F202AA5A49FA60EB41B7A2635A77E59810CDF6E787D24B1AAF4B0C56",
+            "bytes": 25600
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7presentations/windows-source-v3/benchmarks/Charts.ExportStability/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "E756F1E8F202AA5A49FA60EB41B7A2635A77E59810CDF6E787D24B1AAF4B0C56",
+            "bytes": 25600
+          }
+        ]
+      },
+      "api": {
+        "exportedTypes": [
+          500,
+          3
+        ],
+        "totalTypes": 503,
+        "normalizedSurfaceSha256": "51E31BC54B1047CD2F36A1515F889C468B947CB6EF031ABE1699E25C6EA039DA",
+        "metadataOnly": true,
+        "officialCompared": false
+      },
+      "runtime": {
+        "osDescription": "Microsoft Windows 10.0.26200",
+        "osArchitecture": "X64",
+        "processArchitecture": "X64",
+        "baseSdk": "10.0.402",
+        "powershell": "7.6.5",
+        "actualExportFramework": ".NET 10.0.13",
+        "actualExportRuntime": "10.0.13",
+        "avalonia": "12.0.3.0",
+        "qualification": "visible native Windows synthetic window"
+      },
+      "references": [
+        {
+          "path": "windows/run-v3/results.json",
+          "sha256": "57ED8F179C6EEF4F92D9BAFC439031F9E6E7047B888197F075E613C600AA4033",
+          "bytes": 7557
+        },
+        {
+          "path": "windows/run-v3/source-before.json",
+          "sha256": "1DD60DB44CB193F35D4C726149D63E90683CF829C700A424A486F559297746ED",
+          "bytes": 64
+        },
+        {
+          "path": "windows/run-v3/source-after.json",
+          "sha256": "1DD60DB44CB193F35D4C726149D63E90683CF829C700A424A486F559297746ED",
+          "bytes": 64
+        },
+        {
+          "path": "windows/run-v3/verification/functional-v1/results.json",
+          "sha256": "AB59DEDDEA0AE474A8A4AFB8D1F757921C46E0FC7890A9BE943F22007D55E16D",
+          "bytes": 22067
+        },
+        {
+          "path": "windows/run-v3/verification/functional-v1/environment.json",
+          "sha256": "7BE7C14AA7B3D79732008BA862BEF2BC6A0FA35865F812442BCACAC57192F285",
+          "bytes": 8401
+        },
+        {
+          "path": "windows/run-v3/verification/functional-v1/assembly-manifest.json",
+          "sha256": "3F699278C4E65B7482A24D7332BC6296796B7FACF5C34FA3E09A03A67FE051A5",
+          "bytes": 1957
+        },
+        {
+          "path": "windows/run-v3/verification/functional-v1/source-manifest.json",
+          "sha256": "80D09B7C4B3D000EC71CA66900E4B10B29981805B5F7AF3AC53AF88083D3BB0B",
+          "bytes": 323868
+        },
+        {
+          "path": "windows/run-v3/verification/functional-v1/source-manifest-final.json",
+          "sha256": "80D09B7C4B3D000EC71CA66900E4B10B29981805B5F7AF3AC53AF88083D3BB0B",
+          "bytes": 323868
+        },
+        {
+          "path": "windows/run-v3/verification/functional-v1/validated-input-manifest.json",
+          "sha256": "51CE4B906FA409DAE9F7E1B86DEFE2FCB2E322905698D5F314C3FBDEF809FAD7",
+          "bytes": 181120
+        },
+        {
+          "path": "windows/run-v3/verification/functional-v1/evidence-manifest.json",
+          "sha256": "245AFB373EAE24C84781C2887745F053EAD193EFB8B2556930D23C0FDE98E236",
+          "bytes": 227163
+        },
+        {
+          "path": "windows/run-v3/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "9C9F0C232F0820267D7F332AD3D54CFD57B8C41D63F0CBDF2885B60675DBD749",
+          "bytes": 1733197
+        },
+        {
+          "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-tooltips-export-stability-20261023/windows/run-v2/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "B76A019B5F662392374F41BE918E4147F299C8B3B6DD0560CEF619FEF4C75FCD",
+          "bytes": 1706016
+        },
+        {
+          "path": "windows/run-v3/verification/functional-v1/charts-smoke.json",
+          "sha256": "2F62EFC7A7E6160DBA09E11E7E9BC48382A8DABB4F3C6C3A5EABC2675C50E72F",
+          "bytes": 85818014
+        },
+        {
+          "path": "windows/run-v3/verification/functional-v1/charts-usage.json",
+          "sha256": "F7EFA7AC56E1D22BB23B772E2FE15E3CD352485BAB0FDC1ACF5B86B954A9F68C",
+          "bytes": 112761
+        },
+        {
+          "path": "windows/run-v3/catalog.json",
+          "sha256": "DC6F64F46999853B2B4343D9493D3EE8897C018D8C4A75C4D09FA0071F856EA4",
+          "bytes": 54025
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/results.json",
+          "sha256": "D3F3F63F9792D580DA44E3E6ADBCB11EE222238F312D3CAC03FA0B54096BE8CC",
+          "bytes": 13348
+        },
+        {
+          "path": "windows/run-v3/package-feed/NT.AvaloniaControl.Charts.0.2.0-preview.2.nupkg",
+          "sha256": "871D044796241193B77833A4F683B6753C96E8B61E01219BF262E2511EE73E6F",
+          "bytes": 891546
+        },
+        {
+          "path": "windows/run-v3/package-feed/NT.AvaloniaControl.Charts.Themes.0.2.0-preview.2.nupkg",
+          "sha256": "E2813269E190D9008F51872B603402B973A91119E0D63DD155E0A39F258E0DB6",
+          "bytes": 12795
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/function/consumer-result.json",
+          "sha256": "97B5EDF17C0DBA64CA1168A91348E064614B9CCC55FA1D290F5207D763B25BED",
+          "bytes": 155276
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/function/packages.lock.json",
+          "sha256": "F537302051B39BD057800C6BC0847B8A89611000FF78D7A674313B0605276E3B",
+          "bytes": 4501
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/function-sdk.stdout.log",
+          "sha256": "6D5AB2A4EF35CEEC908F01287257F530B0C0D68F0E84326DF2EBCEA641F9134B",
+          "bytes": 10
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/function/global.json",
+          "sha256": "81AE2087DBFB46027FD94748351FB4B1AB24145FBB52544A2822BF128E2E48F1",
+          "bytes": 105
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/function/Consumer.csproj",
+          "sha256": "763C1C82E62DE207406A02B3E3FFFDFCBD9C76BCED83FE6800594908FEB1A431",
+          "bytes": 794
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/function/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+          "sha256": "A8C55B09FDE848B57C3E65A5D6798A574C481CD507265141D9005597A812B817",
+          "bytes": 2244096
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/themes/consumer-result.json",
+          "sha256": "063555D5774D0561FCF2C9BAC2D439F12F16FB0E42332C6D0AE3CE3BC819C60C",
+          "bytes": 157739
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/themes/packages.lock.json",
+          "sha256": "B0DB8BBF01F1D541F4E00A3E43AD63317A1A7EC4A0335CAA7E5EF2318646986F",
+          "bytes": 4839
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/themes-sdk.stdout.log",
+          "sha256": "6D5AB2A4EF35CEEC908F01287257F530B0C0D68F0E84326DF2EBCEA641F9134B",
+          "bytes": 10
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/themes/global.json",
+          "sha256": "81AE2087DBFB46027FD94748351FB4B1AB24145FBB52544A2822BF128E2E48F1",
+          "bytes": 105
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/themes/Consumer.csproj",
+          "sha256": "D426382990E1FECF6B46D7610B65FDD0AF2BEDEC62C033477F574A563D24989A",
+          "bytes": 798
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/themes/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+          "sha256": "A8C55B09FDE848B57C3E65A5D6798A574C481CD507265141D9005597A812B817",
+          "bytes": 2244096
+        },
+        {
+          "path": "windows/run-v3/consumers/20261023T142730390Z-476a53ac588a4a43987d2ff09d840b00/themes/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "E756F1E8F202AA5A49FA60EB41B7A2635A77E59810CDF6E787D24B1AAF4B0C56",
+          "bytes": 25600
+        },
+        {
+          "path": "windows/run-v3/professional-presentation/smoke.json",
+          "sha256": "4285A5CA9DB5F627136D3000B28219AFCEDA7C7466ABAA3256EC24116059E656",
+          "bytes": 440051
+        },
+        {
+          "path": "windows/run-v3/export-stability/results.json",
+          "sha256": "BFA6034CE74F75512E61A68919EEC856F53334452ACA29E63342002B31DD9966",
+          "bytes": 6526
+        },
+        {
+          "path": "windows/run-v3/export-stability/producer/results.json",
+          "sha256": "CA5575D1D165438C694A362AC1756212A2A36E2CE683806A4754BDA9BBD1ED0C",
+          "bytes": 2058209
+        },
+        {
+          "path": "windows/run-v3/export-stability/producer/protocol.json",
+          "sha256": "B15B069CECA239546D2F9AB965E53D99CE6A28BEEAF48D9FC2FCA24C26E7DF56",
+          "bytes": 60245
+        },
+        {
+          "path": "windows/run-v3/export-stability/producer/events.jsonl",
+          "sha256": "6EBB75069E9E8A569A44F01B31FEBCAD711D233DE2ED9E126577536C7E7E3A32",
+          "bytes": 523185
+        },
+        {
+          "path": "windows/run-v3/export-stability/independent-oracle.json",
+          "sha256": "F3E4F62315C2D73BB406C0957844DB8A5D6B8728518DA640DDBD882F61C74E00",
+          "bytes": 463963
+        },
+        {
+          "path": "windows/run-v3/export-stability/source-inputs-before.json",
+          "sha256": "8E19D0FF31A848A74B51791F865FCE5D12464D09D67B8A8A8A132F908B5BF246",
+          "bytes": 51003
+        },
+        {
+          "path": "windows/run-v3/export-stability/source-inputs-after.json",
+          "sha256": "8E19D0FF31A848A74B51791F865FCE5D12464D09D67B8A8A8A132F908B5BF246",
+          "bytes": 51003
+        },
+        {
+          "path": "windows/run-v3/export-stability/host-inputs-before.json",
+          "sha256": "B515AD174C95BC318D29E6B112E87CEAA94D0CC160D551EBD3F382878FAB1C60",
+          "bytes": 13097
+        },
+        {
+          "path": "windows/run-v3/export-stability/host-inputs-after.json",
+          "sha256": "B515AD174C95BC318D29E6B112E87CEAA94D0CC160D551EBD3F382878FAB1C60",
+          "bytes": 13097
+        },
+        {
+          "path": "windows/run-v3/api/baseline.json",
+          "sha256": "3C83C085095C201459CB9A9409A0A55CEEBA4B50AE3939FE58DE1E3CA9F25C88",
+          "bytes": 298770
+        },
+        {
+          "path": "windows/run-v3/api/api.txt",
+          "sha256": "4DBB13000EB1909116304F499973200D3A08F49104A3680396021F1D7F1D052D",
+          "bytes": 1040608
+        },
+        {
+          "path": "windows/run-v3/api/source-manifest.json",
+          "sha256": "90846E92494E2F359D486337AEE61857D675E9C9AA682282E68D55172738675A",
+          "bytes": 111890
+        },
+        {
+          "path": "windows/run-v3/entry-catalog/process.json",
+          "sha256": "5F2B3FE3BC2BAE8866509A4A13471846797CE70331EEBA885A40BE4913B9CAA0",
+          "bytes": 886
+        },
+        {
+          "path": "windows/run-v3/entry-base/process.json",
+          "sha256": "955A6DB0EC4B531C15B4BA10B11D9E28F22CA90DB3504296577A0BA72C306593",
+          "bytes": 1081
+        },
+        {
+          "path": "windows/run-v3/entry-consumers/process.json",
+          "sha256": "FA2141C15C87352333178A6A23EDE1E3893E29A4F705BAC7F0A5DDE71115FCC0",
+          "bytes": 1111
+        },
+        {
+          "path": "windows/run-v3/entry-professional-presentation/process.json",
+          "sha256": "16BA518B91CC1CBD47D33E78FC162FC32A66F896B433EDE5F7AABA0075AA359B",
+          "bytes": 1221
+        },
+        {
+          "path": "windows/run-v3/entry-export-stability/process.json",
+          "sha256": "2152AC10DA8A78D20FAD6F1C7317063CF33FA27E1B48228599CCE39859EC599B",
+          "bytes": 1044
+        },
+        {
+          "path": "windows/run-v3/entry-api/process.json",
+          "sha256": "16C8828E32FFDA3128BDEE968692C24CE168B12851B7AF3C6B39706CDB3FAE01",
+          "bytes": 915
+        }
+      ]
+    },
+    "linux": {
+      "status": "complete",
+      "passed": true,
+      "checks": {
+        "six-ordered-software-stages-pass": true,
+        "same-frozen-source-manifest": true,
+        "every-frozen-file-unchanged-before-and-after": true,
+        "all-frozen-platform-files-still-pinned": true,
+        "base-software-contracts-and-input-stability": true,
+        "all-prior-headless-test-cases-retained": true,
+        "full-headless-records-and-summary-agree": true,
+        "new-common-family-and-previous-tooltip-regressions-executed": true,
+        "full-native-Demo-dictionary-matches-summary": true,
+        "native-Usage-all-recorded-bindings-pass": true,
+        "complete-static-control-catalog-and-self-tests": true,
+        "package-hash-NT.AvaloniaControl.Charts": true,
+        "package-hash-NT.AvaloniaControl.Charts.Themes": true,
+        "isolated-function-all-contracts-and-package-identity": true,
+        "isolated-function-source-free-fresh-cache": true,
+        "isolated-function-actual-SDK-pinned": true,
+        "isolated-function-actual-output-core": true,
+        "isolated-themes-all-contracts-and-package-identity": true,
+        "isolated-themes-source-free-fresh-cache": true,
+        "isolated-themes-actual-SDK-pinned": true,
+        "isolated-themes-actual-output-core": true,
+        "isolated-themes-actual-output-theme": true,
+        "both-isolated-consumer-kinds-pass": true,
+        "focused-239-native-presentation-checks": true,
+        "focused-theme-export-lifecycle-probe-order": true,
+        "theme-normal-light-shown-native-window-scope": true,
+        "image-format-theme/normal-light": true,
+        "image-dimensions-theme/normal-light": true,
+        "theme-normal-dark-shown-native-window-scope": true,
+        "image-format-theme/normal-dark": true,
+        "image-dimensions-theme/normal-dark": true,
+        "theme-hc-light-shown-native-window-scope": true,
+        "image-format-theme/hc-light": true,
+        "image-dimensions-theme/hc-light": true,
+        "theme-hc-dark-shown-native-window-scope": true,
+        "image-format-theme/hc-dark": true,
+        "image-dimensions-theme/hc-dark": true,
+        "analysis-four-states-four-codec-paths": true,
+        "image-format-analysis/legacy/sync-png": true,
+        "image-dimensions-analysis/legacy/sync-png": true,
+        "producer-export-contract-analysis/legacy/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/legacy/sync-png": true,
+        "image-format-analysis/legacy/async-png": true,
+        "image-dimensions-analysis/legacy/async-png": true,
+        "producer-export-contract-analysis/legacy/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/legacy/async-png": true,
+        "image-format-analysis/legacy/sync-jpeg": true,
+        "image-dimensions-analysis/legacy/sync-jpeg": true,
+        "producer-export-contract-analysis/legacy/sync-jpeg": true,
+        "image-format-analysis/legacy/async-jpeg": true,
+        "image-dimensions-analysis/legacy/async-jpeg": true,
+        "producer-export-contract-analysis/legacy/async-jpeg": true,
+        "image-format-analysis/label/sync-png": true,
+        "image-dimensions-analysis/label/sync-png": true,
+        "producer-export-contract-analysis/label/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/label/sync-png": true,
+        "image-format-analysis/label/async-png": true,
+        "image-dimensions-analysis/label/async-png": true,
+        "producer-export-contract-analysis/label/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/label/async-png": true,
+        "image-format-analysis/label/sync-jpeg": true,
+        "image-dimensions-analysis/label/sync-jpeg": true,
+        "producer-export-contract-analysis/label/sync-jpeg": true,
+        "image-format-analysis/label/async-jpeg": true,
+        "image-dimensions-analysis/label/async-jpeg": true,
+        "producer-export-contract-analysis/label/async-jpeg": true,
+        "image-format-analysis/legend/sync-png": true,
+        "image-dimensions-analysis/legend/sync-png": true,
+        "producer-export-contract-analysis/legend/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/legend/sync-png": true,
+        "image-format-analysis/legend/async-png": true,
+        "image-dimensions-analysis/legend/async-png": true,
+        "producer-export-contract-analysis/legend/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/legend/async-png": true,
+        "image-format-analysis/legend/sync-jpeg": true,
+        "image-dimensions-analysis/legend/sync-jpeg": true,
+        "producer-export-contract-analysis/legend/sync-jpeg": true,
+        "image-format-analysis/legend/async-jpeg": true,
+        "image-dimensions-analysis/legend/async-jpeg": true,
+        "producer-export-contract-analysis/legend/async-jpeg": true,
+        "image-format-analysis/both/sync-png": true,
+        "image-dimensions-analysis/both/sync-png": true,
+        "producer-export-contract-analysis/both/sync-png": true,
+        "independent-producer-png-pixel-hash-analysis/both/sync-png": true,
+        "image-format-analysis/both/async-png": true,
+        "image-dimensions-analysis/both/async-png": true,
+        "producer-export-contract-analysis/both/async-png": true,
+        "independent-producer-png-pixel-hash-analysis/both/async-png": true,
+        "image-format-analysis/both/sync-jpeg": true,
+        "image-dimensions-analysis/both/sync-jpeg": true,
+        "producer-export-contract-analysis/both/sync-jpeg": true,
+        "image-format-analysis/both/async-jpeg": true,
+        "image-dimensions-analysis/both/async-jpeg": true,
+        "producer-export-contract-analysis/both/async-jpeg": true,
+        "independent-same-PNG-codec-sync-async-analysis-legacy": true,
+        "producer-JPEG-sync-async-analysis-legacy": true,
+        "independent-same-PNG-codec-sync-async-analysis-label": true,
+        "producer-JPEG-sync-async-analysis-label": true,
+        "independent-permanent-pixels-differ-analysis-label-sync-png": true,
+        "independent-permanent-pixels-differ-analysis-label-async-png": true,
+        "independent-same-PNG-codec-sync-async-analysis-legend": true,
+        "producer-JPEG-sync-async-analysis-legend": true,
+        "independent-permanent-pixels-differ-analysis-legend-sync-png": true,
+        "independent-permanent-pixels-differ-analysis-legend-async-png": true,
+        "independent-same-PNG-codec-sync-async-analysis-both": true,
+        "producer-JPEG-sync-async-analysis-both": true,
+        "independent-permanent-pixels-differ-analysis-both-sync-png": true,
+        "independent-permanent-pixels-differ-analysis-both-async-png": true,
+        "analysis-separate-legend-label-glyph-probes": true,
+        "image-format-analysis/glyph-label-hidden": true,
+        "image-dimensions-analysis/glyph-label-hidden": true,
+        "image-format-analysis/glyph-label-restored": true,
+        "image-dimensions-analysis/glyph-label-restored": true,
+        "independent-real-TextBlock-glyph-analysis/glyph-label": true,
+        "producer-glyph-counter-consistency-analysis/glyph-label": true,
+        "image-format-analysis/glyph-legend-hidden": true,
+        "image-dimensions-analysis/glyph-legend-hidden": true,
+        "image-format-analysis/glyph-legend-restored": true,
+        "image-dimensions-analysis/glyph-legend-restored": true,
+        "independent-real-TextBlock-glyph-analysis/glyph-legend": true,
+        "producer-glyph-counter-consistency-analysis/glyph-legend": true,
+        "engineering-four-states-four-codec-paths": true,
+        "image-format-engineering/legacy/sync-png": true,
+        "image-dimensions-engineering/legacy/sync-png": true,
+        "producer-export-contract-engineering/legacy/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/legacy/sync-png": true,
+        "image-format-engineering/legacy/async-png": true,
+        "image-dimensions-engineering/legacy/async-png": true,
+        "producer-export-contract-engineering/legacy/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/legacy/async-png": true,
+        "image-format-engineering/legacy/sync-jpeg": true,
+        "image-dimensions-engineering/legacy/sync-jpeg": true,
+        "producer-export-contract-engineering/legacy/sync-jpeg": true,
+        "image-format-engineering/legacy/async-jpeg": true,
+        "image-dimensions-engineering/legacy/async-jpeg": true,
+        "producer-export-contract-engineering/legacy/async-jpeg": true,
+        "image-format-engineering/label/sync-png": true,
+        "image-dimensions-engineering/label/sync-png": true,
+        "producer-export-contract-engineering/label/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/label/sync-png": true,
+        "image-format-engineering/label/async-png": true,
+        "image-dimensions-engineering/label/async-png": true,
+        "producer-export-contract-engineering/label/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/label/async-png": true,
+        "image-format-engineering/label/sync-jpeg": true,
+        "image-dimensions-engineering/label/sync-jpeg": true,
+        "producer-export-contract-engineering/label/sync-jpeg": true,
+        "image-format-engineering/label/async-jpeg": true,
+        "image-dimensions-engineering/label/async-jpeg": true,
+        "producer-export-contract-engineering/label/async-jpeg": true,
+        "image-format-engineering/legend/sync-png": true,
+        "image-dimensions-engineering/legend/sync-png": true,
+        "producer-export-contract-engineering/legend/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/legend/sync-png": true,
+        "image-format-engineering/legend/async-png": true,
+        "image-dimensions-engineering/legend/async-png": true,
+        "producer-export-contract-engineering/legend/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/legend/async-png": true,
+        "image-format-engineering/legend/sync-jpeg": true,
+        "image-dimensions-engineering/legend/sync-jpeg": true,
+        "producer-export-contract-engineering/legend/sync-jpeg": true,
+        "image-format-engineering/legend/async-jpeg": true,
+        "image-dimensions-engineering/legend/async-jpeg": true,
+        "producer-export-contract-engineering/legend/async-jpeg": true,
+        "image-format-engineering/both/sync-png": true,
+        "image-dimensions-engineering/both/sync-png": true,
+        "producer-export-contract-engineering/both/sync-png": true,
+        "independent-producer-png-pixel-hash-engineering/both/sync-png": true,
+        "image-format-engineering/both/async-png": true,
+        "image-dimensions-engineering/both/async-png": true,
+        "producer-export-contract-engineering/both/async-png": true,
+        "independent-producer-png-pixel-hash-engineering/both/async-png": true,
+        "image-format-engineering/both/sync-jpeg": true,
+        "image-dimensions-engineering/both/sync-jpeg": true,
+        "producer-export-contract-engineering/both/sync-jpeg": true,
+        "image-format-engineering/both/async-jpeg": true,
+        "image-dimensions-engineering/both/async-jpeg": true,
+        "producer-export-contract-engineering/both/async-jpeg": true,
+        "independent-same-PNG-codec-sync-async-engineering-legacy": true,
+        "producer-JPEG-sync-async-engineering-legacy": true,
+        "independent-same-PNG-codec-sync-async-engineering-label": true,
+        "producer-JPEG-sync-async-engineering-label": true,
+        "independent-permanent-pixels-differ-engineering-label-sync-png": true,
+        "independent-permanent-pixels-differ-engineering-label-async-png": true,
+        "independent-same-PNG-codec-sync-async-engineering-legend": true,
+        "producer-JPEG-sync-async-engineering-legend": true,
+        "independent-permanent-pixels-differ-engineering-legend-sync-png": true,
+        "independent-permanent-pixels-differ-engineering-legend-async-png": true,
+        "independent-same-PNG-codec-sync-async-engineering-both": true,
+        "producer-JPEG-sync-async-engineering-both": true,
+        "independent-permanent-pixels-differ-engineering-both-sync-png": true,
+        "independent-permanent-pixels-differ-engineering-both-async-png": true,
+        "engineering-separate-legend-label-glyph-probes": true,
+        "image-format-engineering/glyph-label-hidden": true,
+        "image-dimensions-engineering/glyph-label-hidden": true,
+        "image-format-engineering/glyph-label-restored": true,
+        "image-dimensions-engineering/glyph-label-restored": true,
+        "independent-real-TextBlock-glyph-engineering/glyph-label": true,
+        "producer-glyph-counter-consistency-engineering/glyph-label": true,
+        "image-format-engineering/glyph-legend-hidden": true,
+        "image-dimensions-engineering/glyph-legend-hidden": true,
+        "image-format-engineering/glyph-legend-restored": true,
+        "image-dimensions-engineering/glyph-legend-restored": true,
+        "independent-real-TextBlock-glyph-engineering/glyph-legend": true,
+        "producer-glyph-counter-consistency-engineering/glyph-legend": true,
+        "four-required-theme-modes": true,
+        "32-exports-eight-glyph-images-four-theme-images": true,
+        "native-export272-attempts3200-guards": true,
+        "independent3232-export-oracle-checks": true,
+        "default-JIT-forcedGC-and-stable-native-inputs": true,
+        "packaged-core-and-themes-match-tested-build": true,
+        "export-executed-module-NT.AvaloniaControl.Charts": true,
+        "actual-host-copy-samples/NT.AvaloniaControl.Demo/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "actual-host-copy-samples/Charts.Usage/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "actual-host-copy-benchmarks/Charts.ExportStability/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "export-executed-module-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-host-copy-samples/NT.AvaloniaControl.Demo/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-host-copy-samples/Charts.Usage/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-host-copy-benchmarks/Charts.ExportStability/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-API-metadata-matches-tested-product": true,
+        "base-and-consumer-SDKs-agree-with-frozen-global-pin": true
+      },
+      "failedChecks": [],
+      "sourceSnapshotFiles": 1929,
+      "sourceDifferences": [],
+      "headless": {
+        "status": "passed",
+        "inputKind": "headless-injection",
+        "total": 2986,
+        "passed": 2986,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "notRun": 0,
+        "result": "../../../../../../c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-shared-presentations-20261023/linux/run-v3/verification/functional-v1/Charts.Headless.Tests.xml"
+      },
+      "xmlRecount": {
+        "tests": {
+          "total": 2986,
+          "passed": 2986,
+          "failed": 0
+        },
+        "classes": {
+          "SharedPresentationTests": {
+            "total": 38,
+            "passed": 38,
+            "failed": 0
+          },
+          "SharedPresentationFamiliesTests": {
+            "total": 20,
+            "passed": 20,
+            "failed": 0
+          },
+          "SharedTooltipPresentationTests": {
+            "total": 59,
+            "passed": 59,
+            "failed": 0
+          }
+        },
+        "failures": [],
+        "assemblyErrors": 0
+      },
+      "priorBaselineRetention": {
+        "passed": true,
+        "baseline": {
+          "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-tooltips-export-stability-20261023/linux/run-v2/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "284E3F254B51BBEB656AC4D8174FA72550369A556F82843F950A315D9814F6E6",
+          "bytes": 1709317
+        },
+        "baselineActualTests": 2928,
+        "currentActualTests": 2986,
+        "removedTestNames": [],
+        "addedTestNames": [
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Empty_comparison_label_metadata_does_not_bypass_the_family_label_gate",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Explicit_point_label_families_respect_category_and_value_text_gates(kind: 0)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Explicit_point_label_families_respect_category_and_value_text_gates(kind: 1)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Explicit_point_label_families_respect_category_and_value_text_gates(kind: 2)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Hierarchy_category_keys_keep_original_terminals_when_visual_gap_collapses_their_glyphs",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Hierarchy_legend_preserves_terminal_categories_and_decorative_size_key",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Hierarchy_shared_labels_use_current_terminals_after_collapse_and_drill",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.KPI_templates_preserve_label_value_and_signed_delta_as_separate_readings_of_the_actual_card",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Map_categorical_keys_keep_layers_and_categories_separate_even_when_source_indices_match",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Map_continuous_legend_retains_collapsed_originals_that_determine_its_domain",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Map_continuous_legend_retains_the_layer_range_gradient_and_original_member_domain",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Map_no_data_feature_labels_remain_backgrounds_without_fabricated_label_members",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Mosaic_aggregate_labels_keep_full_original_members_and_do_not_replace_column_headers",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Paired_endpoints_keep_distinct_marks_for_the_same_original_record",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Relation_labels_and_legends_keep_node_and_edge_identity_domains_separate",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Schedule_labels_keep_existing_collision_or_bar_placement_and_original_sources(kind: 0)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Schedule_labels_keep_existing_collision_or_bar_placement_and_original_sources(kind: 1)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Schedule_labels_keep_existing_collision_or_bar_placement_and_original_sources(kind: 2)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Schedule_labels_keep_existing_collision_or_bar_placement_and_original_sources(kind: 3)",
+          "Charts.Headless.Tests.SharedPresentationFamiliesTests.Table_templates_replace_cell_data_while_headers_stay_drawn_and_all_cells_share_real_row_identity",
+          "Charts.Headless.Tests.SharedPresentationTests.Business_category_formatters_can_query_both_APIs_without_recursion_or_partial_publication(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Business_category_formatters_can_query_both_APIs_without_recursion_or_partial_publication(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Conditional_null_build_is_retried_once_for_a_new_reading(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Conditional_null_build_is_retried_once_for_a_new_reading(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Export_draws_prepared_permanent_visuals_and_rejects_nested_capture_during_build(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Export_draws_prepared_permanent_visuals_and_rejects_nested_capture_during_build(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Family_context_builders_can_query_both_APIs_without_recursion_or_partial_publication(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Family_context_builders_can_query_both_APIs_without_recursion_or_partial_publication(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Large_labels_remain_above_a_permanent_legend_without_changing_original_anchors(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Large_labels_remain_above_a_permanent_legend_without_changing_original_anchors(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Limits_family_gates_template_replacement_hiding_and_detach_release_owned_subtrees(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Limits_family_gates_template_replacement_hiding_and_detach_release_owned_subtrees(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Measure_and_arrange_failures_cleanup_and_reentrant_replacement_recovers(engineering: False, arrange: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Measure_and_arrange_failures_cleanup_and_reentrant_replacement_recovers(engineering: False, arrange: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Measure_and_arrange_failures_cleanup_and_reentrant_replacement_recovers(engineering: True, arrange: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Measure_and_arrange_failures_cleanup_and_reentrant_replacement_recovers(engineering: True, arrange: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Null_build_suppresses_legacy_labels_and_build_failure_is_quarantined_until_replacement(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Null_build_suppresses_legacy_labels_and_build_failure_is_quarantined_until_replacement(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Permanent_controls_keep_the_legacy_tooltip_in_a_foreground_visual(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Permanent_controls_keep_the_legacy_tooltip_in_a_foreground_visual(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Professional_roots_share_properties_without_changing_Cartesian_series_templates",
+          "Charts.Headless.Tests.SharedPresentationTests.Real_controls_keep_original_members_business_context_resources_and_passive_bounded_layout(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Real_controls_keep_original_members_business_context_resources_and_passive_bounded_layout(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: False, operation: \\\"data-context\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: False, operation: \\\"detach\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: False, operation: \\\"source\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: False, operation: \\\"template\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: True, operation: \\\"data-context\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: True, operation: \\\"detach\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: True, operation: \\\"source\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_build_never_publishes_a_stale_control(engineering: True, operation: \\\"template\\\")",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_source_changes_during_context_generation_do_not_commit_a_mixed_batch(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Reentrant_source_changes_during_context_generation_do_not_commit_a_mixed_batch(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Source_INPC_and_replacement_release_old_readings_and_keep_true_identity(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Source_INPC_and_replacement_release_old_readings_and_keep_true_identity(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Stable_hover_and_business_updates_reuse_presentations_without_source_enumeration(engineering: False)",
+          "Charts.Headless.Tests.SharedPresentationTests.Stable_hover_and_business_updates_reuse_presentations_without_source_enumeration(engineering: True)",
+          "Charts.Headless.Tests.SharedPresentationTests.Viewport_changes_move_the_reused_label_control_with_its_original_observation"
+        ],
+        "addedTestRecords": 58,
+        "comparison": "Exact xUnit display-name multiset, including every original theory case; no prior test name is silently dropped."
+      },
+      "fullDemoNative": {
+        "total": 4824,
+        "passed": 4824,
+        "failed": 0
+      },
+      "usage": {
+        "total": 885,
+        "passed": 885,
+        "failed": 0
+      },
+      "consumers": {
+        "function": {
+          "passed": true,
+          "checks": {
+            "total": 1067,
+            "passed": 1067,
+            "failed": 0
+          },
+          "coreSha256": "5A73F2A2B8572AA57E9E4B64AC5D8FDE4570A648CA389EFCFDDA0BC3E12B3165",
+          "runtime": "10.0.13",
+          "avaloniaVersion": "12.0.3.0",
+          "freshPackageCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-shared-presentations-20261023/linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/function/packages",
+          "noProjectReferences": true,
+          "actualSdk": "10.0.402",
+          "sdkEvidence": {
+            "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/function-sdk.stdout.log",
+            "sha256": "44EA2595BC5A7ACABC030531952071226AA70862FD008ED7327D752B39C8513C",
+            "bytes": 9
+          },
+          "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+        },
+        "themes": {
+          "passed": true,
+          "checks": {
+            "total": 1101,
+            "passed": 1101,
+            "failed": 0
+          },
+          "coreSha256": "5A73F2A2B8572AA57E9E4B64AC5D8FDE4570A648CA389EFCFDDA0BC3E12B3165",
+          "runtime": "10.0.13",
+          "avaloniaVersion": "12.0.3.0",
+          "freshPackageCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-shared-presentations-20261023/linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/themes/packages",
+          "noProjectReferences": true,
+          "actualSdk": "10.0.402",
+          "sdkEvidence": {
+            "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/themes-sdk.stdout.log",
+            "sha256": "44EA2595BC5A7ACABC030531952071226AA70862FD008ED7327D752B39C8513C",
+            "bytes": 9
+          },
+          "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+        }
+      },
+      "professionalPresentations": {
+        "checks": {
+          "total": 239,
+          "passed": 239,
+          "failed": 0
+        },
+        "probes": 7,
+        "themeModes": [
+          "normal-light",
+          "normal-dark",
+          "hc-light",
+          "hc-dark"
+        ],
+        "exportArtifacts": 32,
+        "glyphProofs": [
+          {
+            "family": "analysis",
+            "kind": "label",
+            "target": "ProfessionalLabelId",
+            "text": "首项 a",
+            "exportRegion": {
+              "x": 295.9537572254335,
+              "y": 55.4913294797688,
+              "width": 48.092485549132945,
+              "height": 11.098265895953757
+            },
+            "independentHidden": {
+              "changedPixels": 139,
+              "pixelRegion": [
+                295,
+                55,
+                50,
+                12
+              ]
+            },
+            "independentRestored": {
+              "changedPixels": 0,
+              "pixelRegion": [
+                295,
+                55,
+                50,
+                12
+              ]
+            },
+            "hiddenReference": {
+              "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-glyph-hidden.png",
+              "sha256": "F27784F398546AB62801BD11306FA4D15972DA895F8E3814B07E0ABDC3B39279",
+              "bytes": 31023,
+              "kind": "analysis/glyph-label-hidden",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "1B2D4ED312DD8E40A738BA9243AA3BC96688F7FDFAD94543F257544BF0D64AE0",
+              "decodedPremultipliedBgraSha256": "42F966C418B488C9C7117528EACF0F24485975381D8DB6FBE0300978F16C3C5E"
+            },
+            "restoredReference": {
+              "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-glyph-restored.png",
+              "sha256": "7F848A65EFA796588191D2182E390743843C1CEE037E1BA10EEF47136541BC76",
+              "bytes": 31551,
+              "kind": "analysis/glyph-label-restored",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "1D8954359835A59A043460E716B53777C4E1CFB0746B4DA39339F93A220EF44B",
+              "decodedPremultipliedBgraSha256": "7F0BD519140CB39E95D411AA4F32D0D402255AB48599D02230DCBBF8D358B316"
+            }
+          },
+          {
+            "family": "analysis",
+            "kind": "legend",
+            "target": "ProfessionalLegendText",
+            "text": "阶段 A",
+            "exportRegion": {
+              "x": 15.722543352601155,
+              "y": 250.63583815028903,
+              "width": 72.13872832369943,
+              "height": 11.098265895953757
+            },
+            "independentHidden": {
+              "changedPixels": 192,
+              "pixelRegion": [
+                15,
+                250,
+                73,
+                12
+              ]
+            },
+            "independentRestored": {
+              "changedPixels": 0,
+              "pixelRegion": [
+                15,
+                250,
+                73,
+                12
+              ]
+            },
+            "hiddenReference": {
+              "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-glyph-hidden.png",
+              "sha256": "114B2AAE1F20FBA172D9BB8BC2960E470E72801D708F1400CE0DE7BAE5E344C8",
+              "bytes": 30945,
+              "kind": "analysis/glyph-legend-hidden",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "DBAE8E6A9F643B7C95CE2ED3539F71389B529E7686B7F1E454054DE016966B1B",
+              "decodedPremultipliedBgraSha256": "43084928B1EBE580A0CFA3401487A8AF727F380467B993429A162A8B4E114D97"
+            },
+            "restoredReference": {
+              "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-glyph-restored.png",
+              "sha256": "7F848A65EFA796588191D2182E390743843C1CEE037E1BA10EEF47136541BC76",
+              "bytes": 31551,
+              "kind": "analysis/glyph-legend-restored",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "1D8954359835A59A043460E716B53777C4E1CFB0746B4DA39339F93A220EF44B",
+              "decodedPremultipliedBgraSha256": "7F0BD519140CB39E95D411AA4F32D0D402255AB48599D02230DCBBF8D358B316"
+            }
+          },
+          {
+            "family": "engineering",
+            "kind": "label",
+            "target": "ProfessionalLabelId",
+            "text": "首项 a",
+            "exportRegion": {
+              "x": 213.64161849710982,
+              "y": 91.56069364161851,
+              "width": 45.31791907514451,
+              "height": 11.098265895953757
+            },
+            "independentHidden": {
+              "changedPixels": 137,
+              "pixelRegion": [
+                213,
+                91,
+                46,
+                12
+              ]
+            },
+            "independentRestored": {
+              "changedPixels": 0,
+              "pixelRegion": [
+                213,
+                91,
+                46,
+                12
+              ]
+            },
+            "hiddenReference": {
+              "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-glyph-hidden.png",
+              "sha256": "64F907E10CAC085380EE7C54215436C387B2C1126E677C782B305026ECC09CD7",
+              "bytes": 17659,
+              "kind": "engineering/glyph-label-hidden",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "098699F4ABF7987B8E03C691878762078BB22DEAFDF6C68C04210F81F31CEA8F",
+              "decodedPremultipliedBgraSha256": "844D91B772132A9ABDD9B140EBEDB758DF11875783AEF9E97CD8BF29B8700D63"
+            },
+            "restoredReference": {
+              "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-glyph-restored.png",
+              "sha256": "F1A5785FDF0C97382D9D5C593B69BF1036A2887D97B509BEB660F6A71428260F",
+              "bytes": 18165,
+              "kind": "engineering/glyph-label-restored",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "8AEC696C29C2BA3A04ECD4193DBF821C787A2B171D4AF2542AC5E56FFC5D132F",
+              "decodedPremultipliedBgraSha256": "5082310883944F9217B077178BB8254D01B74351339CDDEBF2E46DCE9BEBC972"
+            }
+          },
+          {
+            "family": "engineering",
+            "kind": "legend",
+            "target": "ProfessionalLegendText",
+            "text": "阶段 A",
+            "exportRegion": {
+              "x": 26.820809248554912,
+              "y": 239.53757225433526,
+              "width": 72.13872832369943,
+              "height": 11.098265895953757
+            },
+            "independentHidden": {
+              "changedPixels": 193,
+              "pixelRegion": [
+                26,
+                239,
+                73,
+                12
+              ]
+            },
+            "independentRestored": {
+              "changedPixels": 0,
+              "pixelRegion": [
+                26,
+                239,
+                73,
+                12
+              ]
+            },
+            "hiddenReference": {
+              "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-glyph-hidden.png",
+              "sha256": "14F6FD1B19A6EE1E432FCD685052B8177735233AA1D56D4DE7DF610F32B65C47",
+              "bytes": 17469,
+              "kind": "engineering/glyph-legend-hidden",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "04E0472D29655B658362794D93E9FD7A9C3DF36BC440FA2AC3C2115E9ADF626D",
+              "decodedPremultipliedBgraSha256": "04A96F32CE5F6DE95A40C8186AB6176384723ED57838281F7CD0F6802A660B96"
+            },
+            "restoredReference": {
+              "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-glyph-restored.png",
+              "sha256": "F1A5785FDF0C97382D9D5C593B69BF1036A2887D97B509BEB660F6A71428260F",
+              "bytes": 18165,
+              "kind": "engineering/glyph-legend-restored",
+              "width": 640,
+              "height": 320,
+              "crcAndStructureValidated": true,
+              "decodedStraightRgbaSha256": "8AEC696C29C2BA3A04ECD4193DBF821C787A2B171D4AF2542AC5E56FFC5D132F",
+              "decodedPremultipliedBgraSha256": "5082310883944F9217B077178BB8254D01B74351339CDDEBF2E46DCE9BEBC972"
+            }
+          }
+        ],
+        "images": [
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-normal-light.png",
+            "sha256": "CFF86559B50154B508B9F9C7DDD621C42ACEE1974A6E2A772E81939FE69B22D5",
+            "bytes": 131664,
+            "kind": "theme/normal-light",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "7FEED11C894370CAC1CCC9A1640D25A495A438E48C4839F429EC3856526C2BA2",
+            "decodedPremultipliedBgraSha256": "074A4B7D55F38D00A9928AE60D4AFDEE4672750313B7F302D3788758AAF99709"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-normal-dark.png",
+            "sha256": "DD74D86FC772C4091A2B78D9D2AD5CDD1012573D71EA164912DA7ACF8D4A9682",
+            "bytes": 135533,
+            "kind": "theme/normal-dark",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "4747A42DBD72E03FB811A5B0C71E7FBB34DD0602508C8BCE673F40CFB69EAE8C",
+            "decodedPremultipliedBgraSha256": "5B0161D7179C3820913C946FCDF9DD6249261D8308FA633507B0EB0B173118DF"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-hc-light.png",
+            "sha256": "9BE861AC4CA5D2DD2102EFB57AC5A12D4E3E5B52078A54ECB05EC1417B4CD54C",
+            "bytes": 123601,
+            "kind": "theme/hc-light",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "267FF0096EC481C07D8202E68672ED9D54807265A6D1AD13CB622FA052D22166",
+            "decodedPremultipliedBgraSha256": "1D152BAEE6F660B96E9A07567A35AB09CF6C9D8A077EE0C8C9F5ED60F98FF361"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-hc-dark.png",
+            "sha256": "7B3CA037D910FB3D46D2195368FA69A15AF3125BF9076248479545CE336737C8",
+            "bytes": 129482,
+            "kind": "theme/hc-dark",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "545D0E37F28121DE2A085CB223A42F8CC92933E8E9FAB013DD948F7865D21D33",
+            "decodedPremultipliedBgraSha256": "201BFE76A59613A390803BA7643FABBD0306CB058E54EFF03256B0DE4F7FA8D6"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legacy-sync-png.png",
+            "sha256": "24DD1A6340112830C45585B2C80B0653C1412B435FC0EB47807B13141C2ED3C4",
+            "bytes": 12187,
+            "kind": "analysis/legacy/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "9C09FFB8B3F6F84C5B8332B760F8BE7A42E314B1FBBF7252EAC5E913642B543A",
+            "decodedPremultipliedBgraSha256": "C1A1D9361305BFC7387803D15BF1A5AA13AFA3432085C7F847F1BDDF9C69EC8F"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legacy-async-png.png",
+            "sha256": "E4A1159367AABB11133164ADBE2947DD1C000C521643DA2A19263DFA5DAE3BC0",
+            "bytes": 18724,
+            "kind": "analysis/legacy/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "9C09FFB8B3F6F84C5B8332B760F8BE7A42E314B1FBBF7252EAC5E913642B543A",
+            "decodedPremultipliedBgraSha256": "C1A1D9361305BFC7387803D15BF1A5AA13AFA3432085C7F847F1BDDF9C69EC8F"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legacy-sync-jpeg.jpg",
+            "sha256": "9AA67AD5423825C3370508915760D2FFEFDA6533BAE31A0282C1BA606D56E046",
+            "bytes": 23049,
+            "kind": "analysis/legacy/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legacy-async-jpeg.jpg",
+            "sha256": "9AA67AD5423825C3370508915760D2FFEFDA6533BAE31A0282C1BA606D56E046",
+            "bytes": 23049,
+            "kind": "analysis/legacy/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-sync-png.png",
+            "sha256": "350E554D5D5D0083EB41F6FD4BD8CBE217A7E44801C3DD2BFA00E0E3224C3A24",
+            "bytes": 19680,
+            "kind": "analysis/label/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "DE0C6CE6FB128081C77F031AB9923F9C243848504A9BD7070695FF0BC64148F7",
+            "decodedPremultipliedBgraSha256": "E16EE0EC96E427E5F89721E92676E525CC96F62F6430C391C5B6D54A98DEDC3B"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-async-png.png",
+            "sha256": "D86087279680383FF53F3310F7A930CA2934F98C5D460B128BC5385660141C02",
+            "bytes": 24507,
+            "kind": "analysis/label/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "DE0C6CE6FB128081C77F031AB9923F9C243848504A9BD7070695FF0BC64148F7",
+            "decodedPremultipliedBgraSha256": "E16EE0EC96E427E5F89721E92676E525CC96F62F6430C391C5B6D54A98DEDC3B"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-sync-jpeg.jpg",
+            "sha256": "50E1D557603C25E2A58731A4DFDF5B7A8AD1469CFDF91379AD52E046431B6DCE",
+            "bytes": 27870,
+            "kind": "analysis/label/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-async-jpeg.jpg",
+            "sha256": "50E1D557603C25E2A58731A4DFDF5B7A8AD1469CFDF91379AD52E046431B6DCE",
+            "bytes": 27870,
+            "kind": "analysis/label/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-sync-png.png",
+            "sha256": "F5E407B2CC9B393EAD103EFCF283915712412F44DB98EC5356CC0E6EA60B50B2",
+            "bytes": 24072,
+            "kind": "analysis/legend/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "2D55CDF9D6B2CDD558AA608781C7D9871C96F9A46235A173C87EFBDA07E59084",
+            "decodedPremultipliedBgraSha256": "6EDF982C085F90E2D95E68935EFDA4AC3AB6ACFEDC96CE387E50BC0B5897D23C"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-async-png.png",
+            "sha256": "77A66433DAC92C7AAFF33C9816645F1D3DA3068B2BD62F3417EFE6A881D58B4B",
+            "bytes": 28582,
+            "kind": "analysis/legend/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "2D55CDF9D6B2CDD558AA608781C7D9871C96F9A46235A173C87EFBDA07E59084",
+            "decodedPremultipliedBgraSha256": "6EDF982C085F90E2D95E68935EFDA4AC3AB6ACFEDC96CE387E50BC0B5897D23C"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-sync-jpeg.jpg",
+            "sha256": "6873349FB19962D68E82FB15EBF6B671934D86681DB25A9D68A9B6C488EEB301",
+            "bytes": 32467,
+            "kind": "analysis/legend/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-async-jpeg.jpg",
+            "sha256": "6873349FB19962D68E82FB15EBF6B671934D86681DB25A9D68A9B6C488EEB301",
+            "bytes": 32467,
+            "kind": "analysis/legend/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-both-sync-png.png",
+            "sha256": "7F848A65EFA796588191D2182E390743843C1CEE037E1BA10EEF47136541BC76",
+            "bytes": 31551,
+            "kind": "analysis/both/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "1D8954359835A59A043460E716B53777C4E1CFB0746B4DA39339F93A220EF44B",
+            "decodedPremultipliedBgraSha256": "7F0BD519140CB39E95D411AA4F32D0D402255AB48599D02230DCBBF8D358B316"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-both-async-png.png",
+            "sha256": "F2C341D2B0283782FC9A5276737ED0FC1A746B643A15638731C30C5B782C4CFC",
+            "bytes": 34729,
+            "kind": "analysis/both/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "1D8954359835A59A043460E716B53777C4E1CFB0746B4DA39339F93A220EF44B",
+            "decodedPremultipliedBgraSha256": "7F0BD519140CB39E95D411AA4F32D0D402255AB48599D02230DCBBF8D358B316"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-both-sync-jpeg.jpg",
+            "sha256": "5EC53800A2CF61B8AE6FD663255B0EC122956798A9319D17CAA8E4ECB6E1E4AD",
+            "bytes": 36838,
+            "kind": "analysis/both/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-both-async-jpeg.jpg",
+            "sha256": "5EC53800A2CF61B8AE6FD663255B0EC122956798A9319D17CAA8E4ECB6E1E4AD",
+            "bytes": 36838,
+            "kind": "analysis/both/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-glyph-hidden.png",
+            "sha256": "F27784F398546AB62801BD11306FA4D15972DA895F8E3814B07E0ABDC3B39279",
+            "bytes": 31023,
+            "kind": "analysis/glyph-label-hidden",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "1B2D4ED312DD8E40A738BA9243AA3BC96688F7FDFAD94543F257544BF0D64AE0",
+            "decodedPremultipliedBgraSha256": "42F966C418B488C9C7117528EACF0F24485975381D8DB6FBE0300978F16C3C5E"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-label-glyph-restored.png",
+            "sha256": "7F848A65EFA796588191D2182E390743843C1CEE037E1BA10EEF47136541BC76",
+            "bytes": 31551,
+            "kind": "analysis/glyph-label-restored",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "1D8954359835A59A043460E716B53777C4E1CFB0746B4DA39339F93A220EF44B",
+            "decodedPremultipliedBgraSha256": "7F0BD519140CB39E95D411AA4F32D0D402255AB48599D02230DCBBF8D358B316"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-glyph-hidden.png",
+            "sha256": "114B2AAE1F20FBA172D9BB8BC2960E470E72801D708F1400CE0DE7BAE5E344C8",
+            "bytes": 30945,
+            "kind": "analysis/glyph-legend-hidden",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "DBAE8E6A9F643B7C95CE2ED3539F71389B529E7686B7F1E454054DE016966B1B",
+            "decodedPremultipliedBgraSha256": "43084928B1EBE580A0CFA3401487A8AF727F380467B993429A162A8B4E114D97"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-analysis-legend-glyph-restored.png",
+            "sha256": "7F848A65EFA796588191D2182E390743843C1CEE037E1BA10EEF47136541BC76",
+            "bytes": 31551,
+            "kind": "analysis/glyph-legend-restored",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "1D8954359835A59A043460E716B53777C4E1CFB0746B4DA39339F93A220EF44B",
+            "decodedPremultipliedBgraSha256": "7F0BD519140CB39E95D411AA4F32D0D402255AB48599D02230DCBBF8D358B316"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legacy-sync-png.png",
+            "sha256": "4C57FEFC4A80D089C1EC8DE35A43F2A502554B576AFB75F3598C78564419E00F",
+            "bytes": 4684,
+            "kind": "engineering/legacy/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "0E379126470C73EAC0C41256186221592A92879E59B8FAE4407160D0528EE89F",
+            "decodedPremultipliedBgraSha256": "1E4BC971F3A88274BF215A0037B6467ED00D04F51D8BEEC7A7A1C84E30FBCB15"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legacy-async-png.png",
+            "sha256": "8E848981D34DDD186126166DC614F71BA2137AE20B73D1B0BAEF4A68307A031C",
+            "bytes": 11618,
+            "kind": "engineering/legacy/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "0E379126470C73EAC0C41256186221592A92879E59B8FAE4407160D0528EE89F",
+            "decodedPremultipliedBgraSha256": "1E4BC971F3A88274BF215A0037B6467ED00D04F51D8BEEC7A7A1C84E30FBCB15"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legacy-sync-jpeg.jpg",
+            "sha256": "0FC56CF539D26FAF5047066750CE788BD6628129D2B0B5FEF22BB335AD5CFAD2",
+            "bytes": 15485,
+            "kind": "engineering/legacy/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legacy-async-jpeg.jpg",
+            "sha256": "0FC56CF539D26FAF5047066750CE788BD6628129D2B0B5FEF22BB335AD5CFAD2",
+            "bytes": 15485,
+            "kind": "engineering/legacy/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-sync-png.png",
+            "sha256": "9D04243EAAD9329F4F8F0FB3B68716BA6C99DEE62BAC931A0B9FA203AB01BEF3",
+            "bytes": 11241,
+            "kind": "engineering/label/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "532B5704AEF38E7330109C5B061AA3843592AF22C462D11479352A063852F906",
+            "decodedPremultipliedBgraSha256": "4E5C8BC06AA24E0C56AB4DCA32E0425ABF6C84FC497618DE9E5FFA3221D4453C"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-async-png.png",
+            "sha256": "4D37C4FD373EB93CDDE474C553830F0A983A7CD8D8C2C44246510A87F36FC568",
+            "bytes": 16768,
+            "kind": "engineering/label/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "532B5704AEF38E7330109C5B061AA3843592AF22C462D11479352A063852F906",
+            "decodedPremultipliedBgraSha256": "4E5C8BC06AA24E0C56AB4DCA32E0425ABF6C84FC497618DE9E5FFA3221D4453C"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-sync-jpeg.jpg",
+            "sha256": "6EB757D0F6057520B46BD0E304B7BC538740A2A91C5FCBB62BED8833A5B1F651",
+            "bytes": 19324,
+            "kind": "engineering/label/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-async-jpeg.jpg",
+            "sha256": "6EB757D0F6057520B46BD0E304B7BC538740A2A91C5FCBB62BED8833A5B1F651",
+            "bytes": 19324,
+            "kind": "engineering/label/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-sync-png.png",
+            "sha256": "5662DBEA31EA9C8537E7F2B2DD0247EC4F7035DA92705DC3C0CC584D343F954C",
+            "bytes": 12515,
+            "kind": "engineering/legend/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "C1E77DDB1130693D2ADBE2A67CB8FBDD90801089C998C66088049E1C64646A8A",
+            "decodedPremultipliedBgraSha256": "9174E5061823626B6D6F5D26E1092767BB760BF201173509C7BF087547B1D59A"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-async-png.png",
+            "sha256": "ECD8D7CBA841A0548D163721B02047A4BD85170874CD742CAF1FAF112B14304F",
+            "bytes": 17806,
+            "kind": "engineering/legend/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "C1E77DDB1130693D2ADBE2A67CB8FBDD90801089C998C66088049E1C64646A8A",
+            "decodedPremultipliedBgraSha256": "9174E5061823626B6D6F5D26E1092767BB760BF201173509C7BF087547B1D59A"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-sync-jpeg.jpg",
+            "sha256": "8B0DD7C6460585F532E775B4C15636396EB70FDA980EAE2387D884FCAD2427AB",
+            "bytes": 20865,
+            "kind": "engineering/legend/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-async-jpeg.jpg",
+            "sha256": "8B0DD7C6460585F532E775B4C15636396EB70FDA980EAE2387D884FCAD2427AB",
+            "bytes": 20865,
+            "kind": "engineering/legend/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-both-sync-png.png",
+            "sha256": "F1A5785FDF0C97382D9D5C593B69BF1036A2887D97B509BEB660F6A71428260F",
+            "bytes": 18165,
+            "kind": "engineering/both/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "8AEC696C29C2BA3A04ECD4193DBF821C787A2B171D4AF2542AC5E56FFC5D132F",
+            "decodedPremultipliedBgraSha256": "5082310883944F9217B077178BB8254D01B74351339CDDEBF2E46DCE9BEBC972"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-both-async-png.png",
+            "sha256": "C43BEDD7DA2BDA275EFC14A3B84F34B9A8D8BA3A50F8E355378E5586EE0D116A",
+            "bytes": 22659,
+            "kind": "engineering/both/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "8AEC696C29C2BA3A04ECD4193DBF821C787A2B171D4AF2542AC5E56FFC5D132F",
+            "decodedPremultipliedBgraSha256": "5082310883944F9217B077178BB8254D01B74351339CDDEBF2E46DCE9BEBC972"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-both-sync-jpeg.jpg",
+            "sha256": "3A17EF97B0A80A11793C945ED3259D1AEFCE9278A8C6ADF2C71B32C855838A5C",
+            "bytes": 24827,
+            "kind": "engineering/both/sync-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-both-async-jpeg.jpg",
+            "sha256": "3A17EF97B0A80A11793C945ED3259D1AEFCE9278A8C6ADF2C71B32C855838A5C",
+            "bytes": 24827,
+            "kind": "engineering/both/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentVisualDecodeClaimed": false
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-glyph-hidden.png",
+            "sha256": "64F907E10CAC085380EE7C54215436C387B2C1126E677C782B305026ECC09CD7",
+            "bytes": 17659,
+            "kind": "engineering/glyph-label-hidden",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "098699F4ABF7987B8E03C691878762078BB22DEAFDF6C68C04210F81F31CEA8F",
+            "decodedPremultipliedBgraSha256": "844D91B772132A9ABDD9B140EBEDB758DF11875783AEF9E97CD8BF29B8700D63"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-label-glyph-restored.png",
+            "sha256": "F1A5785FDF0C97382D9D5C593B69BF1036A2887D97B509BEB660F6A71428260F",
+            "bytes": 18165,
+            "kind": "engineering/glyph-label-restored",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "8AEC696C29C2BA3A04ECD4193DBF821C787A2B171D4AF2542AC5E56FFC5D132F",
+            "decodedPremultipliedBgraSha256": "5082310883944F9217B077178BB8254D01B74351339CDDEBF2E46DCE9BEBC972"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-glyph-hidden.png",
+            "sha256": "14F6FD1B19A6EE1E432FCD685052B8177735233AA1D56D4DE7DF610F32B65C47",
+            "bytes": 17469,
+            "kind": "engineering/glyph-legend-hidden",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "04E0472D29655B658362794D93E9FD7A9C3DF36BC440FA2AC3C2115E9ADF626D",
+            "decodedPremultipliedBgraSha256": "04A96F32CE5F6DE95A40C8186AB6176384723ED57838281F7CD0F6802A660B96"
+          },
+          {
+            "path": "linux/run-v3/professional-presentation/tooltip-professional-presentations-engineering-legend-glyph-restored.png",
+            "sha256": "F1A5785FDF0C97382D9D5C593B69BF1036A2887D97B509BEB660F6A71428260F",
+            "bytes": 18165,
+            "kind": "engineering/glyph-legend-restored",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "8AEC696C29C2BA3A04ECD4193DBF821C787A2B171D4AF2542AC5E56FFC5D132F",
+            "decodedPremultipliedBgraSha256": "5082310883944F9217B077178BB8254D01B74351339CDDEBF2E46DCE9BEBC972"
+          }
+        ],
+        "pngDecoder": {
+          "path": "D:/Procedure/AvaloniaControl/scripts/charts_png_oracle.py",
+          "sha256": "2C05338338984B1D5C818997AAB22E6C8C34331CEC24C8CED65AAE32503C44FF",
+          "bytes": 12612
+        },
+        "pngScope": "Independent stdlib CRC/structure/dimension decoding, producer pixel-hash linkage, same-codec sync/async equality, legacy differences, and changed/restored TextBlock ROI pixels.",
+        "jpegScope": "Independent SOI/SOF/dimensions/EOI structure only. Same-codec decoded-pixel equality and legacy differences are producer Avalonia observations; no independent JPEG visual quality or cross-codec equality claimed."
+      },
+      "exportStability": {
+        "attempts": 272,
+        "producerGuards": 3200,
+        "independentChecks": 3232,
+        "independentlyDecodedPngs": 240,
+        "forcedCollections": 13509,
+        "collectionsBeginningDuringManagedCapture": 2269,
+        "workerStopped": true,
+        "actualNativeModules": [
+          {
+            "moduleName": "libHarfBuzzSharp.so",
+            "fileName": "/mnt/d/Procedure/AvaloniaControl/artifacts/c7presentations/linux-source-v3/benchmarks/Charts.ExportStability/bin/Release/net10.0/runtimes/linux-x64/native/libHarfBuzzSharp.so",
+            "sha256": "1D5C3AFEF13545BF34BF8F068B14E25EE619C3B6DEE235C44E260FE61CB24018"
+          },
+          {
+            "moduleName": "libSkiaSharp.so",
+            "fileName": "/mnt/d/Procedure/AvaloniaControl/artifacts/c7presentations/linux-source-v3/benchmarks/Charts.ExportStability/bin/Release/net10.0/runtimes/linux-x64/native/libSkiaSharp.so",
+            "sha256": "77924699617FD9C8E04127C4CA797279DB041E6161AFCBDC44B371D9D81B1675"
+          }
+        ],
+        "defaultJitPreserved": true,
+        "runtime": {
+          "os": "Ubuntu 26.04 LTS",
+          "architecture": "X64",
+          "framework": ".NET 10.0.13",
+          "runtime": "10.0.13",
+          "serverGc": false,
+          "gcLatencyMode": "Interactive",
+          "tieredCompilationEnvironment": null,
+          "comPlusTieredCompilationEnvironment": null,
+          "runtimeConfigPath": "/mnt/d/Procedure/AvaloniaControl/artifacts/c7presentations/linux-source-v3/benchmarks/Charts.ExportStability/bin/Release/net10.0/Charts.ExportStability.runtimeconfig.json",
+          "runtimeConfig": "{\n  \"runtimeOptions\": {\n    \"tfm\": \"net10.0\",\n    \"framework\": {\n      \"name\": \"Microsoft.NETCore.App\",\n      \"version\": \"10.0.0\"\n    },\n    \"configProperties\": {\n      \"System.Reflection.Metadata.MetadataUpdater.IsSupported\": false,\n      \"System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization\": false\n    }\n  }\n}"
+        }
+      },
+      "productAssemblyPins": {
+        "coreSha256": "5A73F2A2B8572AA57E9E4B64AC5D8FDE4570A648CA389EFCFDDA0BC3E12B3165",
+        "themesSha256": "498B72A5681E0295BEB2E2E70EB435868B3ECE5EC7D6146E5187CFA7D5388645",
+        "actualHostCopies": [
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7presentations/linux-source-v3/samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "5A73F2A2B8572AA57E9E4B64AC5D8FDE4570A648CA389EFCFDDA0BC3E12B3165",
+            "bytes": 2244096
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7presentations/linux-source-v3/samples/Charts.Usage/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "5A73F2A2B8572AA57E9E4B64AC5D8FDE4570A648CA389EFCFDDA0BC3E12B3165",
+            "bytes": 2244096
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7presentations/linux-source-v3/benchmarks/Charts.ExportStability/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "5A73F2A2B8572AA57E9E4B64AC5D8FDE4570A648CA389EFCFDDA0BC3E12B3165",
+            "bytes": 2244096
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7presentations/linux-source-v3/samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "498B72A5681E0295BEB2E2E70EB435868B3ECE5EC7D6146E5187CFA7D5388645",
+            "bytes": 25600
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7presentations/linux-source-v3/samples/Charts.Usage/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "498B72A5681E0295BEB2E2E70EB435868B3ECE5EC7D6146E5187CFA7D5388645",
+            "bytes": 25600
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7presentations/linux-source-v3/benchmarks/Charts.ExportStability/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "498B72A5681E0295BEB2E2E70EB435868B3ECE5EC7D6146E5187CFA7D5388645",
+            "bytes": 25600
+          }
+        ]
+      },
+      "api": {
+        "exportedTypes": [
+          500,
+          3
+        ],
+        "totalTypes": 503,
+        "normalizedSurfaceSha256": "51E31BC54B1047CD2F36A1515F889C468B947CB6EF031ABE1699E25C6EA039DA",
+        "metadataOnly": true,
+        "officialCompared": false
+      },
+      "runtime": {
+        "osDescription": "Ubuntu 26.04 LTS",
+        "osArchitecture": "X64",
+        "processArchitecture": "X64",
+        "baseSdk": "10.0.402",
+        "powershell": "7.6.5",
+        "actualExportFramework": ".NET 10.0.13",
+        "actualExportRuntime": "10.0.13",
+        "avalonia": "12.0.3.0",
+        "qualification": "WSL2/WSLg XWayland native X11 synthetic window"
+      },
+      "references": [
+        {
+          "path": "linux/run-v3/results.json",
+          "sha256": "19A2F229B621BB2DD88757458816E5B5A39387B344D0F77852939E008077C75B",
+          "bytes": 7274
+        },
+        {
+          "path": "linux/run-v3/source-before.json",
+          "sha256": "1A20DF6530BD5E826BC403E8DA49BA4A231675DE2248C548695E0CED69B51FE7",
+          "bytes": 59
+        },
+        {
+          "path": "linux/run-v3/source-after.json",
+          "sha256": "1A20DF6530BD5E826BC403E8DA49BA4A231675DE2248C548695E0CED69B51FE7",
+          "bytes": 59
+        },
+        {
+          "path": "linux/run-v3/verification/functional-v1/results.json",
+          "sha256": "5A868E3786615502EE6B257EEBBDF8037BD4D3D034B865B6CDA873FB80811CAC",
+          "bytes": 24237
+        },
+        {
+          "path": "linux/run-v3/verification/functional-v1/environment.json",
+          "sha256": "1118BACBE09B8B9D76731CE8B56BFBF78977F8899A6B7CF87D7EFDFC8532A4E1",
+          "bytes": 8394
+        },
+        {
+          "path": "linux/run-v3/verification/functional-v1/assembly-manifest.json",
+          "sha256": "86A09B8A57DD99C272F8106C449BA3303AFF0733F134E180C370EB9F3B5E27A2",
+          "bytes": 1907
+        },
+        {
+          "path": "linux/run-v3/verification/functional-v1/source-manifest.json",
+          "sha256": "88B782034273EF9D0B25034A4F031CF3C7A712F0A9C5BDB72A5D31598A0D087D",
+          "bytes": 316150
+        },
+        {
+          "path": "linux/run-v3/verification/functional-v1/source-manifest-final.json",
+          "sha256": "88B782034273EF9D0B25034A4F031CF3C7A712F0A9C5BDB72A5D31598A0D087D",
+          "bytes": 316150
+        },
+        {
+          "path": "linux/run-v3/verification/functional-v1/validated-input-manifest.json",
+          "sha256": "30330BADC9C799C5F552DD7D4102E9C295D4C18DF41606C6A1A55C7FDEC86A1C",
+          "bytes": 176974
+        },
+        {
+          "path": "linux/run-v3/verification/functional-v1/evidence-manifest.json",
+          "sha256": "C6EAFC6727EBDC3461F40B947AFE614ADCE47983B41E76D6C0A93E72263CCFB1",
+          "bytes": 221407
+        },
+        {
+          "path": "linux/run-v3/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "52BD603CF6A79B148AF4A1CD11D3DA143A34B357CE0FDAB58BEFBFB4A3450900",
+          "bytes": 1736555
+        },
+        {
+          "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-tooltips-export-stability-20261023/linux/run-v2/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "284E3F254B51BBEB656AC4D8174FA72550369A556F82843F950A315D9814F6E6",
+          "bytes": 1709317
+        },
+        {
+          "path": "linux/run-v3/verification/functional-v1/charts-smoke.json",
+          "sha256": "E504FF294C601509E794D48D91AD5195329595128579CAE48219377E1B135F73",
+          "bytes": 82814992
+        },
+        {
+          "path": "linux/run-v3/verification/functional-v1/charts-usage.json",
+          "sha256": "571C113D6E602716ECFA7834D2FBF180B450586BF237599F9836813CAB17EAE3",
+          "bytes": 109539
+        },
+        {
+          "path": "linux/run-v3/catalog.json",
+          "sha256": "C91A4F40F6D56D13103CCBA7F50F1B2B9920984A2A05A2BDBC097D793299363F",
+          "bytes": 52751
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/results.json",
+          "sha256": "4AE657A1EF5AFB6BEC7575EB4F8D620EA7DBF488093E8F59F8FBAA2DBED75681",
+          "bytes": 12762
+        },
+        {
+          "path": "linux/run-v3/package-feed/NT.AvaloniaControl.Charts.0.2.0-preview.2.nupkg",
+          "sha256": "C1F64D31D2CFCDA7428F77FCE76B8D4E27C48EEE9BE899FEF83FF8F65FBC7225",
+          "bytes": 891540
+        },
+        {
+          "path": "linux/run-v3/package-feed/NT.AvaloniaControl.Charts.Themes.0.2.0-preview.2.nupkg",
+          "sha256": "B91CB8B882EA86C407A617541169BD701FDCF0B77C77A3D28F858BC7AC43D92E",
+          "bytes": 12784
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/function/consumer-result.json",
+          "sha256": "0F4FFB5BB74DECE7A5CA1E9ED5B10D7FB20DE75468AD29D2778A7D17DA574272",
+          "bytes": 151236
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/function/packages.lock.json",
+          "sha256": "2838C06FEB0F753757969BE41704488049C4C0F9BAA54D9648108E5C97229255",
+          "bytes": 4387
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/function-sdk.stdout.log",
+          "sha256": "44EA2595BC5A7ACABC030531952071226AA70862FD008ED7327D752B39C8513C",
+          "bytes": 9
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/function/global.json",
+          "sha256": "81AE2087DBFB46027FD94748351FB4B1AB24145FBB52544A2822BF128E2E48F1",
+          "bytes": 105
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/function/Consumer.csproj",
+          "sha256": "CE37BA26E727751F3D6444DA9FE47F1916711B070087403F745C88D880099ACE",
+          "bytes": 793
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/function/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+          "sha256": "5A73F2A2B8572AA57E9E4B64AC5D8FDE4570A648CA389EFCFDDA0BC3E12B3165",
+          "bytes": 2244096
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/themes/consumer-result.json",
+          "sha256": "292DE5F5AEE96E3FE3E3844A7E131584749B45F4F4EB2AC669CCDE19C55CFC25",
+          "bytes": 153689
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/themes/packages.lock.json",
+          "sha256": "ACDC38E02A0ED3780B785808ABD4C884D8983FA2CA89245DD99953CC6456A99F",
+          "bytes": 4717
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/themes-sdk.stdout.log",
+          "sha256": "44EA2595BC5A7ACABC030531952071226AA70862FD008ED7327D752B39C8513C",
+          "bytes": 9
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/themes/global.json",
+          "sha256": "81AE2087DBFB46027FD94748351FB4B1AB24145FBB52544A2822BF128E2E48F1",
+          "bytes": 105
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/themes/Consumer.csproj",
+          "sha256": "1DE40474E3ACBA04B486F8A14808C29E5B9BB7A8754BA6059017AE98F4A4DF33",
+          "bytes": 797
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/themes/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+          "sha256": "5A73F2A2B8572AA57E9E4B64AC5D8FDE4570A648CA389EFCFDDA0BC3E12B3165",
+          "bytes": 2244096
+        },
+        {
+          "path": "linux/run-v3/consumers/20261023T144142342Z-b5975c0731fa4a48ab10614f30f9844e/themes/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+          "sha256": "498B72A5681E0295BEB2E2E70EB435868B3ECE5EC7D6146E5187CFA7D5388645",
+          "bytes": 25600
+        },
+        {
+          "path": "linux/run-v3/professional-presentation/smoke.json",
+          "sha256": "A4F501E9B441C6A48102E2A0704FA3BDE3BDAAD125E3FCE569FB360ABBCA3F7E",
+          "bytes": 426477
+        },
+        {
+          "path": "linux/run-v3/export-stability/results.json",
+          "sha256": "497EBCA667310400D52B70EEBF27FA925339BB3D6296135011F9FD9BE9D50EA1",
+          "bytes": 6236
+        },
+        {
+          "path": "linux/run-v3/export-stability/producer/results.json",
+          "sha256": "F19486B7A5370F8D121ADDD8776EC6F570247631483C473AE3D50B0D940DACC6",
+          "bytes": 1968107
+        },
+        {
+          "path": "linux/run-v3/export-stability/producer/protocol.json",
+          "sha256": "118D93788BD058255AB2AEFA5163D94B9F726C31E4275A747E8923F312C6BF51",
+          "bytes": 58688
+        },
+        {
+          "path": "linux/run-v3/export-stability/producer/events.jsonl",
+          "sha256": "4D14B21304777EE353E965837686F3D61F90F965886BA2F696DC17049F99DF5A",
+          "bytes": 508253
+        },
+        {
+          "path": "linux/run-v3/export-stability/independent-oracle.json",
+          "sha256": "0DAA062122E5992FEF410C448AE01AE0C596B20FF09555FF2811F9B5A2A6C477",
+          "bytes": 447397
+        },
+        {
+          "path": "linux/run-v3/export-stability/source-inputs-before.json",
+          "sha256": "5E0D9E1AC7CBAE240FE2AFE146D627312A9A69C69268EE7A9AE15AD2CE16414E",
+          "bytes": 49606
+        },
+        {
+          "path": "linux/run-v3/export-stability/source-inputs-after.json",
+          "sha256": "5E0D9E1AC7CBAE240FE2AFE146D627312A9A69C69268EE7A9AE15AD2CE16414E",
+          "bytes": 49606
+        },
+        {
+          "path": "linux/run-v3/export-stability/host-inputs-before.json",
+          "sha256": "77AA6D47938A9ADE4C0DC21FE5D8B5EA3FE95457B995277B7350DBE02CE73A04",
+          "bytes": 12700
+        },
+        {
+          "path": "linux/run-v3/export-stability/host-inputs-after.json",
+          "sha256": "77AA6D47938A9ADE4C0DC21FE5D8B5EA3FE95457B995277B7350DBE02CE73A04",
+          "bytes": 12700
+        },
+        {
+          "path": "linux/run-v3/api/baseline.json",
+          "sha256": "3B4493B23D564CEF5B495BD21317DC95E793722A7C90A6572007BB6B4C5A3604",
+          "bytes": 296590
+        },
+        {
+          "path": "linux/run-v3/api/api.txt",
+          "sha256": "9FC815D6D0632FA534BC9429DC5F9A062ECE9AFE8F03769E8E1B8DB8C04E35EE",
+          "bytes": 1040608
+        },
+        {
+          "path": "linux/run-v3/api/source-manifest.json",
+          "sha256": "A3FC09F017798843DCE766C306D2E9C8674E23729D9C90BB33984E241252C78C",
+          "bytes": 111651
+        },
+        {
+          "path": "linux/run-v3/entry-catalog/process.json",
+          "sha256": "5E552064F567FA26B22E7354184078A5A4C3C8001B7D352A321B831F76A4170A",
+          "bytes": 825
+        },
+        {
+          "path": "linux/run-v3/entry-base/process.json",
+          "sha256": "9A58DD1802495753543A76D6938386E613FE4D2F2D95F9010A7EF7EFE432C953",
+          "bytes": 1086
+        },
+        {
+          "path": "linux/run-v3/entry-consumers/process.json",
+          "sha256": "D17E81A26BBEDFF30D882FE4B5D6698433DFB6B1C2A6E217121AF09EE30E4ACC",
+          "bytes": 1058
+        },
+        {
+          "path": "linux/run-v3/entry-professional-presentation/process.json",
+          "sha256": "A232245D14A47AFE7A8258A8D2FD44789ABF760BF337357483F8CBE7A33FB8B2",
+          "bytes": 1169
+        },
+        {
+          "path": "linux/run-v3/entry-export-stability/process.json",
+          "sha256": "7381E5A1D5A684BB3C641251A3B5D0816FF55272E4100D5F7B9CE2645CCF62FF",
+          "bytes": 976
+        },
+        {
+          "path": "linux/run-v3/entry-api/process.json",
+          "sha256": "39D1F614300114CA7E269711B13B77BF033E8CD3DC64ADFDD0481C08322B354E",
+          "bytes": 874
+        }
+      ]
+    }
+  },
+  "pendingPlatforms": [],
+  "aggregationErrors": [],
+  "apiSurfacesMatchAcrossPlatforms": true,
+  "currentWorkspace": {
+    "checkedSnapshotFiles": 1929,
+    "chartRelevantBuildInputs": 600,
+    "chartProductTestUsageHarnessInputsMatchFrozenCandidate": true,
+    "chartRelevantDifferences": [],
+    "newRelevantInputsAbsentFromSnapshot": [],
+    "reportDocumentationDifferences": [
+      "docs/charts-c7-shared-presentations.md",
+      "docs/charts-official-alignment.md",
+      "docs/charts-platform-matrix.json",
+      "docs/treedatagrid-accessibility.md",
+      "docs/treedatagrid-alignment-a0-status.md",
+      "docs/treedatagrid-alignment-a5-status.md",
+      "docs/treedatagrid-feature-alignment-plan.md",
+      "docs/treedatagrid-next-development-plan.md",
+      "docs/treedatagrid-performance-p6.md",
+      "docs/treedatagrid-release-readiness.md",
+      "samples/Charts.Usage/README.md"
+    ],
+    "unrelatedDifferences": [
+      ".github/workflows/treedatagrid-native.yml",
+      "scripts/Test-PackageConsumer.ps1",
+      "scripts/Test-TreeDataGridFunctionConsumer.ps1",
+      "scripts/Test-TreeDataGridNative.ps1"
+    ],
+    "qualificationScope": "All frozen files are verified independently in both platform source copies. Current repository matching is restricted to chart build/test/Usage/Demo Charts/harness inputs; documentation and unrelated changes are reported separately."
+  },
+  "qualification": {
+    "physicalInputValidated": false,
+    "compositorPresentCaptured": false,
+    "linuxDistributionCertified": false,
+    "officialRuntimeCompared": false,
+    "performanceParityMeasured": false,
+    "remoteCiExecuted": false,
+    "eightHourSoakCompleted": false,
+    "nativeUIAOrAtSpiSelectedItemBridgeCertified": false,
+    "windowsNativeSynthetic": true,
+    "linuxWslgNativeSynthetic": true
+  },
+  "dotnetExecutedByCollector": false,
+  "frozenSourceAmendment": {
+    "status": "complete",
+    "passed": true,
+    "v1ToV2MetadataCorrection": {
+      "passed": true,
+      "changedPaths": [
+        "docs/charts-c7-integration-matrix.json"
+      ],
+      "beforeSource": {
+        "path": "source-snapshot-v1.json",
+        "sha256": "DB69D6FFBDBFD33B11B1035CA76D38E4CBCA9E9692EA582172C066AC7238AEB2",
+        "bytes": 372956
+      },
+      "afterSource": {
+        "path": "source-snapshot-v2.json",
+        "sha256": "8A40CE00FE4F023265271A4ED4E904D3C1E26F561C2CB329C6E6BC47A2F119B2",
+        "bytes": 373851
+      },
+      "preservedWindowsFailure": {
+        "path": "windows/run-v1/results.json",
+        "sha256": "7CDFE64A87388292F5732FD1FB4DB58CDA853A764D6738247BE13307D96D991F",
+        "bytes": 1713
+      },
+      "runtimeTestsExecuted": false,
+      "reason": "V1 stopped at the static catalog because four schedule controls became partial classes. V2 changes only their exact catalog declaration anchors; no product, Demo, test or harness change."
+    },
+    "v2ToV3ProductCorrection": {
+      "status": "complete",
+      "passed": true,
+      "changedPaths": [
+        "src/NT.AvaloniaControl.Charts/AnalysisChartBase.SharedPresentation.cs",
+        "src/NT.AvaloniaControl.Charts/AnalysisChartBase.TooltipPresentation.cs",
+        "src/NT.AvaloniaControl.Charts/ChartDataPresentationPresenter.cs",
+        "src/NT.AvaloniaControl.Charts/EngineeringChartBase.SharedPresentation.cs",
+        "src/NT.AvaloniaControl.Charts/EngineeringChartBase.TooltipPresentation.cs",
+        "tests/Charts.Headless.Tests/SharedPresentationTests.cs"
+      ],
+      "allowedChangedPaths": [
+        "src/NT.AvaloniaControl.Charts/AnalysisChartBase.SharedPresentation.cs",
+        "src/NT.AvaloniaControl.Charts/AnalysisChartBase.TooltipPresentation.cs",
+        "src/NT.AvaloniaControl.Charts/ChartDataPresentationPresenter.cs",
+        "src/NT.AvaloniaControl.Charts/EngineeringChartBase.SharedPresentation.cs",
+        "src/NT.AvaloniaControl.Charts/EngineeringChartBase.TooltipPresentation.cs",
+        "tests/Charts.Headless.Tests/SharedPresentationTests.cs"
+      ],
+      "manifestParentAndAmendmentHashesMatch": true,
+      "beforeSource": {
+        "path": "source-snapshot-v2.json",
+        "sha256": "8A40CE00FE4F023265271A4ED4E904D3C1E26F561C2CB329C6E6BC47A2F119B2",
+        "bytes": 373851
+      },
+      "preservedWindowsFailure": {
+        "path": "windows/run-v2/results.json",
+        "sha256": "51E10179E9073894F4F6AA984F95EBC221799F6AC5603AF769D24C124FDBA7D7",
+        "bytes": 2929
+      },
+      "preservedBaseFailure": {
+        "path": "windows/run-v2/verification/functional-v1/results.json",
+        "sha256": "97F11985FC2F79FF522D56215C45BF9A1BC2F89CF3D0743568151C6AE4CB9C01",
+        "bytes": 10689
+      },
+      "preservedFullXml": {
+        "path": "windows/run-v2/verification/functional-v1/Charts.Headless.Tests.xml",
+        "sha256": "13B7C4CC4836C7C29C2235FBDA496369FED31DF3D86BCB848F0DFB548D2EC88A",
+        "bytes": 1730477
+      },
+      "headlessXmlRecount": {
+        "tests": {
+          "total": 2979,
+          "passed": 2977,
+          "failed": 2
+        },
+        "classes": {
+          "SharedPresentationTests": {
+            "total": 31,
+            "passed": 29,
+            "failed": 2
+          },
+          "SharedPresentationFamiliesTests": {
+            "total": 20,
+            "passed": 20,
+            "failed": 0
+          },
+          "SharedTooltipPresentationTests": {
+            "total": 59,
+            "passed": 59,
+            "failed": 0
+          }
+        },
+        "failures": [
+          {
+            "name": "Charts.Headless.Tests.SharedPresentationTests.Large_labels_remain_above_a_permanent_legend_without_changing_original_anchors(engineering: False)",
+            "type": "Charts.Headless.Tests.SharedPresentationTests",
+            "method": "Large_labels_remain_above_a_permanent_legend_without_changing_original_anchors",
+            "result": "Fail",
+            "failure": "Assert.True() Failure\nExpected: True\nActual:   False   at Charts.Headless.Tests.SharedPresentationTests.Large_labels_remain_above_a_permanent_legend_without_changing_original_anchors(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\artifacts\\c7presentations\\windows-source-v2\\tests\\Charts.Headless.Tests\\SharedPresentationTests.cs:line 181\n   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)"
+          },
+          {
+            "name": "Charts.Headless.Tests.SharedPresentationTests.Large_labels_remain_above_a_permanent_legend_without_changing_original_anchors(engineering: True)",
+            "type": "Charts.Headless.Tests.SharedPresentationTests",
+            "method": "Large_labels_remain_above_a_permanent_legend_without_changing_original_anchors",
+            "result": "Fail",
+            "failure": "Assert.True() Failure\nExpected: True\nActual:   False   at Charts.Headless.Tests.SharedPresentationTests.Large_labels_remain_above_a_permanent_legend_without_changing_original_anchors(Boolean engineering) in D:\\Procedure\\AvaloniaControl\\artifacts\\c7presentations\\windows-source-v2\\tests\\Charts.Headless.Tests\\SharedPresentationTests.cs:line 181\n   at InvokeStub_SharedPresentationTests.Large_labels_remain_above_a_permanent_legend_without_changing_original_anchors(Object, Span`1)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)"
+          }
+        ],
+        "assemblyErrors": 0
+      },
+      "nativeDemoExecutedInV2": false,
+      "reason": "V2 full headless regression exposed two label/legend collision failures: a changed ItemLayer.Placement with unchanged full-chart arrange bounds could skip child arrangement. V3 invalidates arrangement on placement changes and adds the viewport regression test. It also guards context-generation reentry in both professional roots, including export callbacks. V2 runtime failure remains preserved; only the six specified C# files may change.",
+      "developmentDiagnostic": {
+        "scope": "Pre-freeze diagnosis and focused contracts; formal frozen full runs remain required.",
+        "focusedActualXml": {
+          "tests": {
+            "total": 117,
+            "passed": 117,
+            "failed": 0
+          },
+          "classes": {
+            "SharedPresentationTests": {
+              "total": 38,
+              "passed": 38,
+              "failed": 0
+            },
+            "SharedPresentationFamiliesTests": {
+              "total": 20,
+              "passed": 20,
+              "failed": 0
+            },
+            "SharedTooltipPresentationTests": {
+              "total": 59,
+              "passed": 59,
+              "failed": 0
+            }
+          },
+          "failures": [],
+          "assemblyErrors": 0
+        },
+        "allSixChangedSourceHashesMatchFinalCandidate": true,
+        "references": [
+          {
+            "path": "windows/label-layout-development-v3/layout-diagnostics.json",
+            "sha256": "F2A90A8DB03FA2113CB9FFFB1A04B6C2D2F532233916450462A72EE808754752",
+            "bytes": 2021
+          },
+          {
+            "path": "windows/label-layout-development-v3/tests.xml",
+            "sha256": "7E72958F9D3F45CC78E9F2418F5E3FFB0C7904CB71098FFF5A0A97C083FE3B46",
+            "bytes": 63233
+          },
+          {
+            "path": "windows/label-layout-development-v3/tests.log",
+            "sha256": "BFCF6B3BAF82407EDF7F5F1DB094A7B63E43DB5153C89F442B5915FECC40FE38",
+            "bytes": 356
+          },
+          {
+            "path": "windows/label-layout-development-v3/build.log",
+            "sha256": "40543EDB2697A1E33E292089D274FDAB0BE8AB6352B73AB885001A9E82D42A96",
+            "bytes": 518
+          }
+        ]
+      }
+    }
+  },
+  "references": [
+    {
+      "path": "source-snapshot-v3.json",
+      "sha256": "E1506D980F78035E304AD7F08F0C064F3E214BB86A38CE9924EA16E7A1F6FB60",
+      "bytes": 374631
+    },
+    {
+      "path": "Collect-C7PresentationsValidation-v1.py",
+      "sha256": "54DC79F96D218BECF8FC8AAFCB9ED883ADA76287F3550D76E74DE4DFF784A0C3",
+      "bytes": 38977
+    },
+    {
+      "path": "D:/Procedure/AvaloniaControl/scripts/charts_png_oracle.py",
+      "sha256": "2C05338338984B1D5C818997AAB22E6C8C34331CEC24C8CED65AAE32503C44FF",
+      "bytes": 12612
+    },
+    {
+      "path": "D:/Procedure/AvaloniaControl/scripts/charts_export_stability_oracle.py",
+      "sha256": "F1986F0CD9346DD1F1AE0A03BCBB151D9C13171CEAAEBCA30A46AF1ABC726C14",
+      "bytes": 19168
+    }
+  ],
+  "remainingIssues": [
+    "Remaining C7-01 templates/interaction integration outside the professional legend/data-label scope remain open.",
+    "Official licensed runtime and functional/performance parity acceptance remain pending.",
+    "Physical Windows/Linux input and compositor evidence, distribution certification, native accessibility selected-item bridging, remote CI and eight-hour soak remain pending.",
+    "Million-point hit-test tail latency remains deferred by user direction; forced-GC export stress is not a throughput or latency benchmark.",
+    "Independent PNG checks prove raster differences and template glyph ROI pixels, not semantic screenshot review of every chart or independent JPEG visual quality."
+  ]
+}

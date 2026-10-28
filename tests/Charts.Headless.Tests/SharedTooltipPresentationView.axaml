@@ -1,0 +1,41 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:charts="using:NT.AvaloniaControl.Charts"
+             xmlns:local="using:Charts.Headless.Tests"
+             x:Class="Charts.Headless.Tests.SharedTooltipPresentationView"
+             x:DataType="local:SharedTooltipPresentationModel">
+  <UserControl.Resources>
+    <SolidColorBrush x:Key="SharedTooltipBrush" Color="Green" />
+    <DataTemplate x:Key="SharedTooltip" x:DataType="charts:ChartDataTooltipContext">
+      <Border Name="SharedCompiledContent" Background="{DynamicResource SharedTooltipBrush}">
+        <StackPanel>
+          <ContentControl Content="{Binding BusinessDataContext}">
+            <ContentControl.ContentTemplate>
+              <DataTemplate x:DataType="local:SharedTooltipPresentationModel">
+                <TextBlock Name="SharedBusinessTitle" Text="{Binding Title}" />
+              </DataTemplate>
+            </ContentControl.ContentTemplate>
+          </ContentControl>
+          <TextBlock Name="SharedReadingText" Text="{Binding Text}" />
+          <ItemsControl ItemsSource="{Binding Members}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate x:DataType="charts:ChartDataPoint">
+                <ContentControl Content="{Binding Item}">
+                  <ContentControl.ContentTemplate>
+                    <DataTemplate x:DataType="local:SharedTooltipRow">
+                      <TextBlock Classes="OriginalMember" Text="{Binding Label}" />
+                    </DataTemplate>
+                  </ContentControl.ContentTemplate>
+                </ContentControl>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+  </UserControl.Resources>
+  <Grid ColumnDefinitions="*,*">
+    <charts:MosaicChart Name="Engineering" ItemsSource="{Binding Records}" TooltipContentTemplate="{StaticResource SharedTooltip}" />
+    <charts:FunnelChart Name="Analysis" Grid.Column="1" ItemsSource="{Binding Records}" CategoryPath="Label" ValuePath="Value" IdPath="Id" TooltipContentTemplate="{StaticResource SharedTooltip}" />
+  </Grid>
+</UserControl>

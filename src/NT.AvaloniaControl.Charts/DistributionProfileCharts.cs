@@ -103,7 +103,7 @@ public sealed class ViolinPlot : DistributionProfileChartBase
                 var hi = Math.Clamp(1 - ValueFraction(profile.Summary.UpperWhisker, layout), 0, 1);
                 Decorations.Add((Line([Normalized(center, hi, plot), Normalized(center, lo, plot)]), Foreground, 1));
             }
-            Label(profile.Label, Normalized(center, 1, plot) + new Vector(0, 12), Math.Max(1, plot.Width / layout.GroupCount - 4));
+            DataLabel(marks[^1], profile.Label, Normalized(center, 1, plot) + new Vector(0, 12), Math.Max(1, plot.Width / layout.GroupCount - 4));
         }
         return marks;
     }
@@ -183,7 +183,7 @@ public sealed class RidgelineChart : DistributionProfileChartBase
             Decorations.Add((Line([Normalized(0, baseline, plot), Normalized(1, baseline, plot)]), GridLineBrush, 1));
             if (ShowQuartiles && height > 0) foreach (var value in Quartiles(profile))
             { var x = ValueFraction(value, layout); if (x is >= 0 and <= 1) Decorations.Add((Line([Normalized(x, baseline, plot), Normalized(x, baseline - height * .22, plot)]), Foreground, value == profile.Summary.Median ? 2 : 1)); }
-            Label(profile.Label, Normalized(.08, baseline, plot) + new Vector(0, 9), Math.Max(1, plot.Width * .16));
+            DataLabel(marks[^1], profile.Label, Normalized(.08, baseline, plot) + new Vector(0, 9), Math.Max(1, plot.Width * .16));
         }
         return marks;
     }
@@ -209,7 +209,7 @@ public sealed class RidgelineChart : DistributionProfileChartBase
                 marks.Add(Mark(source, new PolylineGeometry(polygon, true), BrushAt(profile.SourceIndex), position, "profile", peak.Y, $"{profile.Source.Label}: precomputed density; {profile.Points.Count} knots; peak {ValueText(peak.Y)}"));
             }
             Decorations.Add((Line([Normalized(0, baseline, plot), Normalized(1, baseline, plot)]), GridLineBrush, 1));
-            Label(profile.Source.Label, Normalized(.08, baseline, plot) + new Vector(0, 9), Math.Max(1, plot.Width * .16));
+            DataLabel(marks[^1], profile.Source.Label, Normalized(.08, baseline, plot) + new Vector(0, 9), Math.Max(1, plot.Width * .16));
         }
         return marks;
     }

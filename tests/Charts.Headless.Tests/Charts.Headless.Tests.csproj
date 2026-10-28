@@ -3,5 +3,6 @@
     <PackageReference Include="Avalonia.Headless.XUnit" />
     <PackageReference Include="Avalonia.Themes.Fluent" />
     <ProjectReference Include="../../src/NT.AvaloniaControl.Charts.Themes/NT.AvaloniaControl.Charts.Themes.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Charts.Skia/NT.AvaloniaControl.Charts.Skia.csproj" />
   </ItemGroup>
 </Project>

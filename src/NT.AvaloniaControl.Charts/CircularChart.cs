@@ -310,8 +310,8 @@ public sealed partial class CircularChart : ChartBase
         else if (e.Key is Key.Space or Key.Enter && _keyboardSlice is { } current) { SelectSlice(current, true, ChartSelectionChangeReason.Keyboard); e.Handled = true; }
         else if (e.Key == Key.Escape) { ClearSelection(); _hovered = _keyboardSlice = null; e.Handled = true; }
     }
-    private FormattedText Text(string text, double? size = null) => new(text, CultureInfo.CurrentCulture, FlowDirection.LeftToRight,
-        new Typeface(FontFamily, FontStyle, FontWeight), size ?? FontSize, Foreground ?? Brushes.Black);
+    private FormattedText Text(string text, double? size = null, IBrush? brush = null) => new(text, CultureInfo.CurrentCulture, FlowDirection.LeftToRight,
+        new Typeface(FontFamily, FontStyle, FontWeight), size ?? FontSize, brush ?? Foreground ?? Brushes.Black);
     private sealed class CircularCenterHost : Control
     {
         private Control? _child;

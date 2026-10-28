@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <!-- This standalone pinned diagnostic inspects native leases/platform identity. -->
+    <AvaloniaAccessUnstablePrivateApis>true</AvaloniaAccessUnstablePrivateApis>
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);AVA3001</WarningsNotAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <RuntimeHostConfigurationOption Include="System.Runtime.TieredCompilation" Value="false" />
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Charts.Themes/NT.AvaloniaControl.Charts.Themes.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Charts.Skia/NT.AvaloniaControl.Charts.Skia.csproj" />
+    <Compile Include="../Charts.Benchmarks/DatasetFactory.cs" Link="DatasetFactory.cs" />
+  </ItemGroup>
+</Project>

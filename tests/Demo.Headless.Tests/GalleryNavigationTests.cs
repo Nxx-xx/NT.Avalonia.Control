@@ -72,7 +72,7 @@ public sealed class GalleryNavigationTests
                 }
                 window.NavigateBack();
             }
-            Assert.Equal(36, visited);
+            Assert.Equal(42, visited);
         }
         finally { window.Close(); }
     }

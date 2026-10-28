@@ -14,6 +14,8 @@ public enum TreeDataGridGridLinesVisibility
 
 public partial class TreeDataGrid
 {
+    public static readonly StyledProperty<bool> ShowColumnHeadersProperty =
+        AvaloniaProperty.Register<TreeDataGrid, bool>(nameof(ShowColumnHeaders), true);
     public static readonly StyledProperty<TreeDataGridGridLinesVisibility> GridLinesVisibilityProperty =
         AvaloniaProperty.Register<TreeDataGrid, TreeDataGridGridLinesVisibility>(nameof(GridLinesVisibility), TreeDataGridGridLinesVisibility.All,
             validate: value => Enum.IsDefined(value));
@@ -25,6 +27,18 @@ public partial class TreeDataGrid
     static TreeDataGrid()
     {
         GridLinesVisibilityProperty.Changed.AddClassHandler<TreeDataGrid>((grid, _) => grid.UpdateGridLines());
+        ShowColumnHeadersProperty.Changed.AddClassHandler<TreeDataGrid>((grid, _) => grid.UpdateColumnHeaderVisibility());
+    }
+
+    /// <summary>Shows the column header region. Custom templates should bind the visibility of their header region to this property.</summary>
+    public bool ShowColumnHeaders { get => GetValue(ShowColumnHeadersProperty); set => SetValue(ShowColumnHeadersProperty, value); }
+
+    private void UpdateColumnHeaderVisibility()
+    {
+        ColumnOperationVersion++;
+        CancelColumnReorder();
+        _headers?.RefreshColumns();
+        NotifyAutomationStateChanged();
     }
 
     /// <summary>Controls cell grid lines through theme pseudo classes; custom cell themes may choose their own appearance.</summary>

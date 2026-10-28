@@ -209,6 +209,14 @@
           "StbImageWriteSharp": "[1.16.7, )"
         }
       },
+      "nt.avaloniacontrol.charts.skia": {
+        "type": "Project",
+        "dependencies": {
+          "Avalonia": "[12.0.3, 12.0.3]",
+          "Avalonia.Skia": "[12.0.3, 12.0.3]",
+          "NT.AvaloniaControl.Charts": "[0.2.0-preview.2, )"
+        }
+      },
       "nt.avaloniacontrol.charts.themes": {
         "type": "Project",
         "dependencies": {

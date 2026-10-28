@@ -14,6 +14,75 @@ namespace TreeDataGrid.Headless.Tests;
 
 public sealed class AutomationTests
 {
+    [AvaloniaTheory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public void RealizedCellParentsFollowCurrentRowAcrossRecyclingAndSourceRetirement(bool customFactory)
+    {
+        using var source = new FlatTreeDataGridSource<Item>(Enumerable.Range(0, 500).Select(i => new Item("Row " + i, i)).ToArray());
+        var grid = Create(source);
+        if (customFactory) grid.ElementFactory = new ParentProbeFactory();
+        var window = Show(grid);
+        try
+        {
+            var peer = Peer(grid);
+            for (var step = 0; step < 12; step++)
+            {
+                grid.RowsPresenter!.Offset = new Vector(step % 2 * 140, step * 401);
+                window.UpdateLayout();
+                foreach (var row in peer.GetChildren().Where(p => p.GetClassName() == nameof(TreeDataGridRowPresenter)))
+                    foreach (var cell in row.GetChildren()) Assert.Same(row, cell.GetParent());
+            }
+            var retiredCells = grid.RowsPresenter!.RealizedRows.SelectMany(r => r.RealizedCells)
+                .Select(c => ControlAutomationPeer.CreatePeerForElement(c)!).ToArray();
+            grid.Source = null;
+            window.UpdateLayout();
+            Assert.All(retiredCells, cell => Assert.Null(cell.GetParent()));
+        }
+        finally { window.Close(); }
+    }
+
+    private sealed class ParentProbeFactory : TreeDataGridElementFactory;
+
+    [AvaloniaFact]
+    public void RowSelectionPatternCanBeProbedFromWindowsBridgeThread()
+    {
+        using var source = new FlatTreeDataGridSource<Item>([new("row", 1)]);
+        var grid = Create(source);
+        var window = Show(grid);
+        try
+        {
+            var row = Assert.Single(Peer(grid).GetChildren(), p => p.GetClassName() == nameof(TreeDataGridRowPresenter));
+            Assert.Null(BridgeProbe(row));
+            grid.SelectionUnit = TreeDataGridSelectionUnit.Row;
+            Assert.NotNull(BridgeProbe(row));
+            grid.SelectionUnit = TreeDataGridSelectionUnit.Cell;
+            Assert.Null(BridgeProbe(row));
+            grid.Source = null;
+            Assert.Null(BridgeProbe(row));
+        }
+        finally { window.Close(); }
+    }
+
+    private static ISelectionItemProvider? BridgeProbe(AutomationPeer peer)
+    {
+        var completion = new TaskCompletionSource<ISelectionItemProvider?>();
+        using (ExecutionContext.SuppressFlow())
+            new Thread(() =>
+            {
+                try { completion.SetResult(peer.GetProvider<ISelectionItemProvider>()); }
+                catch (Exception error) { completion.SetException(error); }
+            }) { IsBackground = true }.Start();
+        var deadline = DateTime.UtcNow.AddSeconds(5);
+        while (!completion.Task.IsCompleted && DateTime.UtcNow < deadline)
+        {
+            Avalonia.Threading.Dispatcher.UIThread.RunJobs();
+            Thread.Sleep(1);
+        }
+        Assert.True(completion.Task.IsCompleted, "Windows bridge provider probe did not complete.");
+        return completion.Task.GetAwaiter().GetResult();
+    }
+
     [AvaloniaFact]
     public void AutomationTreeUsesVisibleColumnIndicesAndStableHeaderIdentities()
     {

@@ -58,6 +58,9 @@ public abstract partial class ChartSeries : StyledElement
     public EmptyPointMode EmptyPointMode { get => GetValue(EmptyPointModeProperty); set => SetValue(EmptyPointModeProperty, value); }
     /// <summary>Source/mapping revision; collection and item changes are tracked while a Changed owner is subscribed.</summary>
     public long SourceVersion => _sourceVersion;
+    // Histories may span scene replacements only when one live owner controls
+    // their admission and release budget. Multi-chart series keep local plans.
+    internal bool CanShareRenderingGeometryHistory => (_changed?.GetInvocationList().Length ?? 0) == 1;
     // Accepted computed coordinates may change without a source/mapping revision.
     internal long PublishedSnapshotRevision { get; private set; }
     public bool IsUpdateSuspended => _deferDepth > 0;
@@ -129,6 +132,7 @@ public abstract partial class ChartSeries : StyledElement
             if (version != SourceVersion) throw new ChartDataMappingException("source changed while mapping; retry");
             return _cachedSnapshot = result;
         }
+        if (CanUseMappedColumns()) return _cachedSnapshot = CreateMappedColumnsSnapshot(version);
         var entries = _entries.ToArray();
         var points = new ChartDataPoint[entries.Length];
         var issues = new List<ChartDataIssue>();
@@ -375,10 +379,28 @@ public abstract partial class ChartSeries : StyledElement
         if (_changed is null || !UsesOwnMappingSource) return;
         if (_bufferState is not null) { ObserveBufferedItems(_bufferState.Slices, true); return; }
         string?[] paths = [CategoryPath, ValuePath, IdPath, HighPath, LowPath, WeightPath, (this as WaterfallSeries)?.TotalPath, (this as IChartPointSeries)?.SizePath, (this as IChartPointSeries)?.ColorPath, (this as CircularSeries)?.ColorPath, (this as PolarSeries)?.ColorPath];
-        foreach (var entry in _entries.Where(entry => entry.Item is not null && !entry.Item.GetType().IsValueType))
-            foreach (var path in this is AnalysisSeries analytical ? paths.Concat(analytical.ExtraPaths) : this is StatisticalSeries statistical ? paths.Concat(statistical.ExtraPaths) : this is FinancialSeries financial ? paths.Concat(financial.ExtraPaths) : paths)
+        var allPaths = (this is AnalysisSeries analytical ? paths.Concat(analytical.ExtraPaths) : this is StatisticalSeries statistical ? paths.Concat(statistical.ExtraPaths) : this is FinancialSeries financial ? paths.Concat(financial.ExtraPaths) : paths)
+            .Where(path => !string.IsNullOrWhiteSpace(path)).Distinct(StringComparer.Ordinal).ToArray();
+        var plans = new Dictionary<Type, string?[]>();
+        Type? previousType = null;
+        string?[] childPaths = [];
+        foreach (var entry in _entries)
+        {
+            var item = entry.Item;
+            if (item is null) continue;
+            var type = item.GetType();
+            if (item is INotifyPropertyChanged root && _observedProperties.Add(root)) root.PropertyChanged += ItemChanged;
+            if (type != previousType)
+            {
+                if (!plans.TryGetValue(type, out var plannedPaths))
+                    plans.Add(type, plannedPaths = allPaths.Where(path => ChartDataAccessor.MayHaveObservableDescendants(type, path!)).ToArray());
+                childPaths = plannedPaths;
+                previousType = type;
+            }
+            foreach (var path in childPaths)
                 foreach (var owner in ChartDataAccessor.Owners(entry.Item, path))
                     if (owner is INotifyPropertyChanged observable && _observedProperties.Add(observable)) observable.PropertyChanged += ItemChanged;
+        }
     }
     private void ItemsChanged(object? sender, NotifyCollectionChangedEventArgs args)
     {
@@ -458,10 +480,10 @@ public abstract partial class ChartSeries : StyledElement
         }
         finally { _notifyingChanged = false; }
     }
-    private sealed class Entry(object? item, object? identity = null)
+    private readonly struct Entry(object? item, object? identity = null)
     {
         public object? Item { get; } = item;
-        public object Identity { get; } = identity ?? new();
+        public object Identity { get; } = identity ?? (item is not null && !item.GetType().IsValueType ? item : new());
     }
     private sealed class UpdateScope(ChartSeries owner) : IDisposable
     {

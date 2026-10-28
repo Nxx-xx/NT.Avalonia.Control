@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Acceptance requirements template. Actual statuses and hashes are resolved into each A6 run directory; this file alone is not execution evidence.",
+  "capabilities": { "nativeGridTablePattern": "NotImplemented", "opaqueCompiledBindingSafeWriteback": "OpenA3.1" },
+  "requirements": [
+    { "id": "controls", "kind": "automated", "requiredFor": ["local", "windows", "windows-kylin"], "status": "NotRun", "evidence": null },
+    { "id": "performance", "kind": "automated", "requiredFor": ["local", "windows", "windows-kylin"], "status": "NotRun", "evidence": null },
+    { "id": "retention", "kind": "automated", "requiredFor": ["local", "windows", "windows-kylin"], "status": "NotRun", "evidence": null },
+    { "id": "packages", "kind": "automated", "requiredFor": ["local", "windows", "windows-kylin"], "status": "NotRun", "evidence": null },
+    { "id": "native-published", "kind": "automated", "requiredFor": ["local", "windows", "windows-kylin"], "status": "NotRun", "evidence": null },
+    { "id": "windows-ime", "kind": "physical", "requiredFor": ["windows", "windows-kylin"], "status": "NotRun", "evidence": null },
+    { "id": "windows-drag", "kind": "physical", "requiredFor": ["windows", "windows-kylin"], "status": "NotRun", "evidence": null },
+    { "id": "windows-clipboard-focus", "kind": "physical", "requiredFor": ["windows", "windows-kylin"], "status": "NotRun", "evidence": null },
+    { "id": "windows-font-dpi", "kind": "physical", "requiredFor": ["windows", "windows-kylin"], "status": "NotRun", "evidence": null },
+    { "id": "windows-screenreader", "kind": "physical", "requiredFor": ["windows", "windows-kylin"], "status": "NotRun", "evidence": null },
+    { "id": "windows-clean-deployment", "kind": "physical", "requiredFor": ["windows", "windows-kylin"], "status": "NotRun", "evidence": null },
+    { "id": "windows-native-performance", "kind": "physical", "requiredFor": ["windows", "windows-kylin"], "status": "NotRun", "evidence": null },
+    { "id": "windows-ci", "kind": "ci", "requiredFor": ["windows", "windows-kylin"], "status": "NotRun", "evidence": null },
+    { "id": "kylin-desktop", "kind": "physical", "requiredFor": ["windows-kylin"], "status": "EnvironmentUnavailable", "evidence": null }
+  ]
+}

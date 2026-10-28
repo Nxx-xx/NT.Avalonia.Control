@@ -1,0 +1,740 @@
+{
+  "schema": "charts-platform-acceptance-contract/v1",
+  "hostSchema": "charts-platform-acceptance/v1",
+  "scope": "Fixed representative desktop/culture/resize/original-identity/raster protocol; not the complete official chart matrix or physical-device certification.",
+  "requiredHostCheckKeys": [
+    "native-visible-window",
+    "observed-native-backend",
+    "native-render-surface-observed",
+    "software-request-observed-on-native-surface",
+    "gpu-context-request-observed-on-native-surface",
+    "requested-native-scale-observed",
+    "current-culture-matches-request",
+    "suite-has-positive-coverage"
+  ],
+  "requiredCheckKeys": [
+    "analysis-export-fixed-pixels-and-sync-async",
+    "analysis-permanent-selection-real-raster-difference",
+    "analysis-permanent-template-real-raster-difference",
+    "analysis-permanent-template-restored-exact",
+    "analysis-transient-trackball-excluded",
+    "culture-RTL-direction-contract",
+    "culture-decimal-separator",
+    "culture-process-name",
+    "culture-utc-dates-dpi120-fixed-export-pixels",
+    "culture-utc-dates-dpi120-sync-async-same-frame",
+    "culture-utc-dates-dpi144-fixed-export-pixels",
+    "culture-utc-dates-dpi144-sync-async-same-frame",
+    "culture-utc-dates-dpi192-fixed-export-pixels",
+    "culture-utc-dates-dpi192-sync-async-same-frame",
+    "culture-utc-dates-dpi96-fixed-export-pixels",
+    "culture-utc-dates-dpi96-sync-async-same-frame",
+    "culture-utc-dates-window-raster-actual-scale-dimensions",
+    "dates-UTC-fixed-original-domain",
+    "dates-UTC-formatted-data-labels",
+    "dates-current-frame-original-hit",
+    "desktop-main-actual-window-client-valid",
+    "desktop-main-dpi120-fixed-export-pixels",
+    "desktop-main-dpi120-sync-async-same-frame",
+    "desktop-main-dpi144-fixed-export-pixels",
+    "desktop-main-dpi144-sync-async-same-frame",
+    "desktop-main-dpi192-fixed-export-pixels",
+    "desktop-main-dpi192-sync-async-same-frame",
+    "desktop-main-dpi96-fixed-export-pixels",
+    "desktop-main-dpi96-sync-async-same-frame",
+    "desktop-main-log-coordinate-independent",
+    "desktop-main-log-roundtrip",
+    "desktop-main-named-log-projection",
+    "desktop-main-native-scale-finite-positive",
+    "desktop-main-original-B-hit",
+    "desktop-main-plot-positive-contained",
+    "desktop-main-primary-projection-independent-coordinate",
+    "desktop-main-template-current-plot",
+    "desktop-main-window-raster-actual-scale-dimensions",
+    "desktop-restored-actual-window-client-valid",
+    "desktop-restored-dpi120-fixed-export-pixels",
+    "desktop-restored-dpi120-sync-async-same-frame",
+    "desktop-restored-dpi144-fixed-export-pixels",
+    "desktop-restored-dpi144-sync-async-same-frame",
+    "desktop-restored-dpi192-fixed-export-pixels",
+    "desktop-restored-dpi192-sync-async-same-frame",
+    "desktop-restored-dpi96-fixed-export-pixels",
+    "desktop-restored-dpi96-sync-async-same-frame",
+    "desktop-restored-log-coordinate-independent",
+    "desktop-restored-log-roundtrip",
+    "desktop-restored-named-log-projection",
+    "desktop-restored-native-scale-finite-positive",
+    "desktop-restored-original-B-hit",
+    "desktop-restored-plot-positive-contained",
+    "desktop-restored-primary-projection-independent-coordinate",
+    "desktop-restored-template-current-plot",
+    "desktop-restored-window-raster-actual-scale-dimensions",
+    "desktop-small-actual-window-client-valid",
+    "desktop-small-dpi120-fixed-export-pixels",
+    "desktop-small-dpi120-sync-async-same-frame",
+    "desktop-small-dpi144-fixed-export-pixels",
+    "desktop-small-dpi144-sync-async-same-frame",
+    "desktop-small-dpi192-fixed-export-pixels",
+    "desktop-small-dpi192-sync-async-same-frame",
+    "desktop-small-dpi96-fixed-export-pixels",
+    "desktop-small-dpi96-sync-async-same-frame",
+    "desktop-small-log-coordinate-independent",
+    "desktop-small-log-roundtrip",
+    "desktop-small-named-log-projection",
+    "desktop-small-native-scale-finite-positive",
+    "desktop-small-original-B-hit",
+    "desktop-small-plot-positive-contained",
+    "desktop-small-primary-projection-independent-coordinate",
+    "desktop-small-template-current-plot",
+    "desktop-small-window-raster-actual-scale-dimensions",
+    "engineering-export-fixed-pixels-and-sync-async",
+    "engineering-permanent-selection-real-raster-difference",
+    "engineering-permanent-template-real-raster-difference",
+    "engineering-permanent-template-restored-exact",
+    "engineering-transient-trackball-excluded",
+    "native-resize-restored-client-actually-changed",
+    "native-resize-small-client-actually-changed",
+    "native-unicode-export-path",
+    "professional-actual-template-frames",
+    "professional-funnel-four-real-originals",
+    "professional-funnel-original-hit",
+    "professional-layout-projection-native-contract",
+    "professional-mosaic-complete-original-members",
+    "professional-mosaic-hit-original-members",
+    "professional-mosaic-real-aggregation",
+    "professional-selected-original-objects",
+    "professional-selected-trackball-window-raster-actual-scale-dimensions",
+    "professional-trackball-original-members",
+    "rtl-glyph-explicit-rtl-baseline-window-raster-actual-scale-dimensions",
+    "rtl-glyph-explicit-rtl-current-original-identities",
+    "rtl-glyph-explicit-rtl-export-glyph-lower-stem-left",
+    "rtl-glyph-explicit-rtl-label-hidden-window-raster-actual-scale-dimensions",
+    "rtl-glyph-explicit-rtl-label-restored-window-raster-actual-scale-dimensions",
+    "rtl-glyph-explicit-rtl-native-glyph-lower-stem-left",
+    "rtl-glyph-explicit-rtl-off-centre-window-axis-order",
+    "rtl-glyph-explicit-rtl-only-label-restores-exact-raster",
+    "rtl-glyph-explicit-rtl-public-inherited-direction",
+    "rtl-glyph-inherited-rtl-baseline-window-raster-actual-scale-dimensions",
+    "rtl-glyph-inherited-rtl-current-original-identities",
+    "rtl-glyph-inherited-rtl-export-glyph-lower-stem-left",
+    "rtl-glyph-inherited-rtl-label-hidden-window-raster-actual-scale-dimensions",
+    "rtl-glyph-inherited-rtl-label-restored-window-raster-actual-scale-dimensions",
+    "rtl-glyph-inherited-rtl-native-glyph-lower-stem-left",
+    "rtl-glyph-inherited-rtl-off-centre-window-axis-order",
+    "rtl-glyph-inherited-rtl-only-label-restores-exact-raster",
+    "rtl-glyph-inherited-rtl-public-inherited-direction",
+    "rtl-glyph-runtime-switch-ltr-before-window-raster-actual-scale-dimensions",
+    "rtl-glyph-runtime-switch-rtl-baseline-window-raster-actual-scale-dimensions",
+    "rtl-glyph-runtime-switch-rtl-current-original-identities",
+    "rtl-glyph-runtime-switch-rtl-export-glyph-lower-stem-left",
+    "rtl-glyph-runtime-switch-rtl-label-hidden-window-raster-actual-scale-dimensions",
+    "rtl-glyph-runtime-switch-rtl-label-restored-window-raster-actual-scale-dimensions",
+    "rtl-glyph-runtime-switch-rtl-native-glyph-lower-stem-left",
+    "rtl-glyph-runtime-switch-rtl-off-centre-window-axis-order",
+    "rtl-glyph-runtime-switch-rtl-only-label-restores-exact-raster",
+    "rtl-glyph-runtime-switch-rtl-public-inherited-direction"
+  ],
+  "deterministicSceneProtocol": true,
+  "logicalDisplayProtocol": true,
+  "minimumRasterPairs": {
+    "pngEqualPairs": 25,
+    "pngDifferentPairs": 7
+  },
+  "minimumGlyphProofs": 2,
+  "expectedArtifacts": [
+    {
+      "name": "analysis-glyph-baseline.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "analysis-glyph-hidden.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "analysis-glyph-restored.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "analysis-selected-active-async.jpg",
+      "kind": "jpeg",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "analysis-selected-active-async.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "analysis-selected-active.jpg",
+      "kind": "jpeg",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "analysis-selected-active.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "analysis-selected-no-transient.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "analysis-unselected.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "culture-utc-dates-dpi120-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "culture-utc-dates-dpi120-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "culture-utc-dates-dpi144-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "culture-utc-dates-dpi144-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "culture-utc-dates-dpi192-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "culture-utc-dates-dpi192-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "culture-utc-dates-dpi96-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "culture-utc-dates-dpi96-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-main-dpi120-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-main-dpi120-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-main-dpi144-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-main-dpi144-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-main-dpi192-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-main-dpi192-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-main-dpi96-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-main-dpi96-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-restored-dpi120-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-restored-dpi120-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-restored-dpi144-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-restored-dpi144-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-restored-dpi192-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-restored-dpi192-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-restored-dpi96-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-restored-dpi96-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-small-dpi120-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-small-dpi120-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-small-dpi144-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-small-dpi144-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-small-dpi192-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-small-dpi192-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-small-dpi96-async.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "desktop-small-dpi96-sync.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "engineering-glyph-baseline.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "engineering-glyph-hidden.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "engineering-glyph-restored.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "engineering-selected-active-async.jpg",
+      "kind": "jpeg",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "engineering-selected-active-async.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "engineering-selected-active.jpg",
+      "kind": "jpeg",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "engineering-selected-active.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "engineering-selected-no-transient.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "engineering-unselected.png",
+      "kind": "png",
+      "width": 800,
+      "height": 480
+    },
+    {
+      "name": "raster-window-culture-utc-dates.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-desktop-main.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-desktop-restored.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-desktop-small.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-professional-selected-trackball.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-rtl-glyph-explicit-rtl-baseline.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-rtl-glyph-explicit-rtl-label-hidden.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-rtl-glyph-explicit-rtl-label-restored.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-rtl-glyph-inherited-rtl-baseline.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-rtl-glyph-inherited-rtl-label-hidden.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-rtl-glyph-inherited-rtl-label-restored.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-rtl-glyph-runtime-switch-ltr-before.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-rtl-glyph-runtime-switch-rtl-baseline.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-rtl-glyph-runtime-switch-rtl-label-hidden.png",
+      "kind": "png"
+    },
+    {
+      "name": "raster-window-rtl-glyph-runtime-switch-rtl-label-restored.png",
+      "kind": "png"
+    },
+    {
+      "name": "rtl-glyph-explicit-rtl-chart-export.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "rtl-glyph-inherited-rtl-chart-export.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "rtl-glyph-runtime-switch-rtl-chart-export.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    },
+    {
+      "name": "图表-é-é-😀.png",
+      "kind": "png",
+      "width": 720,
+      "height": 360
+    }
+  ],
+  "rasterProtocol": {
+    "pngEqualPairs": [
+      {
+        "firstPath": "desktop-main-dpi96-sync.png",
+        "secondPath": "desktop-main-dpi96-async.png",
+        "purpose": "desktop-main-dpi96/same-current-frame"
+      },
+      {
+        "firstPath": "desktop-main-dpi120-sync.png",
+        "secondPath": "desktop-main-dpi120-async.png",
+        "purpose": "desktop-main-dpi120/same-current-frame"
+      },
+      {
+        "firstPath": "desktop-main-dpi144-sync.png",
+        "secondPath": "desktop-main-dpi144-async.png",
+        "purpose": "desktop-main-dpi144/same-current-frame"
+      },
+      {
+        "firstPath": "desktop-main-dpi192-sync.png",
+        "secondPath": "desktop-main-dpi192-async.png",
+        "purpose": "desktop-main-dpi192/same-current-frame"
+      },
+      {
+        "firstPath": "desktop-small-dpi96-sync.png",
+        "secondPath": "desktop-small-dpi96-async.png",
+        "purpose": "desktop-small-dpi96/same-current-frame"
+      },
+      {
+        "firstPath": "desktop-small-dpi120-sync.png",
+        "secondPath": "desktop-small-dpi120-async.png",
+        "purpose": "desktop-small-dpi120/same-current-frame"
+      },
+      {
+        "firstPath": "desktop-small-dpi144-sync.png",
+        "secondPath": "desktop-small-dpi144-async.png",
+        "purpose": "desktop-small-dpi144/same-current-frame"
+      },
+      {
+        "firstPath": "desktop-small-dpi192-sync.png",
+        "secondPath": "desktop-small-dpi192-async.png",
+        "purpose": "desktop-small-dpi192/same-current-frame"
+      },
+      {
+        "firstPath": "desktop-restored-dpi96-sync.png",
+        "secondPath": "desktop-restored-dpi96-async.png",
+        "purpose": "desktop-restored-dpi96/same-current-frame"
+      },
+      {
+        "firstPath": "desktop-restored-dpi120-sync.png",
+        "secondPath": "desktop-restored-dpi120-async.png",
+        "purpose": "desktop-restored-dpi120/same-current-frame"
+      },
+      {
+        "firstPath": "desktop-restored-dpi144-sync.png",
+        "secondPath": "desktop-restored-dpi144-async.png",
+        "purpose": "desktop-restored-dpi144/same-current-frame"
+      },
+      {
+        "firstPath": "desktop-restored-dpi192-sync.png",
+        "secondPath": "desktop-restored-dpi192-async.png",
+        "purpose": "desktop-restored-dpi192/same-current-frame"
+      },
+      {
+        "firstPath": "culture-utc-dates-dpi96-sync.png",
+        "secondPath": "culture-utc-dates-dpi96-async.png",
+        "purpose": "culture-utc-dates-dpi96/same-current-frame"
+      },
+      {
+        "firstPath": "culture-utc-dates-dpi120-sync.png",
+        "secondPath": "culture-utc-dates-dpi120-async.png",
+        "purpose": "culture-utc-dates-dpi120/same-current-frame"
+      },
+      {
+        "firstPath": "culture-utc-dates-dpi144-sync.png",
+        "secondPath": "culture-utc-dates-dpi144-async.png",
+        "purpose": "culture-utc-dates-dpi144/same-current-frame"
+      },
+      {
+        "firstPath": "culture-utc-dates-dpi192-sync.png",
+        "secondPath": "culture-utc-dates-dpi192-async.png",
+        "purpose": "culture-utc-dates-dpi192/same-current-frame"
+      },
+      {
+        "firstPath": "analysis-selected-active.png",
+        "secondPath": "analysis-selected-active-async.png",
+        "purpose": "analysis/png-sync-async"
+      },
+      {
+        "firstPath": "analysis-selected-active.png",
+        "secondPath": "analysis-selected-no-transient.png",
+        "purpose": "analysis/active-transient-excluded"
+      },
+      {
+        "firstPath": "analysis-glyph-baseline.png",
+        "secondPath": "analysis-glyph-restored.png",
+        "purpose": "analysis/permanent-template-restores"
+      },
+      {
+        "firstPath": "engineering-selected-active.png",
+        "secondPath": "engineering-selected-active-async.png",
+        "purpose": "engineering/png-sync-async"
+      },
+      {
+        "firstPath": "engineering-selected-active.png",
+        "secondPath": "engineering-selected-no-transient.png",
+        "purpose": "engineering/active-transient-excluded"
+      },
+      {
+        "firstPath": "engineering-glyph-baseline.png",
+        "secondPath": "engineering-glyph-restored.png",
+        "purpose": "engineering/permanent-template-restores"
+      },
+      {
+        "firstPath": "raster-window-rtl-glyph-explicit-rtl-baseline.png",
+        "secondPath": "raster-window-rtl-glyph-explicit-rtl-label-restored.png",
+        "purpose": "rtl-glyph-explicit-rtl/default-label-restored"
+      },
+      {
+        "firstPath": "raster-window-rtl-glyph-inherited-rtl-baseline.png",
+        "secondPath": "raster-window-rtl-glyph-inherited-rtl-label-restored.png",
+        "purpose": "rtl-glyph-inherited-rtl/default-label-restored"
+      },
+      {
+        "firstPath": "raster-window-rtl-glyph-runtime-switch-rtl-baseline.png",
+        "secondPath": "raster-window-rtl-glyph-runtime-switch-rtl-label-restored.png",
+        "purpose": "rtl-glyph-runtime-switch-rtl/default-label-restored"
+      }
+    ],
+    "pngDifferentPairs": [
+      {
+        "firstPath": "analysis-glyph-baseline.png",
+        "secondPath": "analysis-glyph-hidden.png",
+        "purpose": "analysis/permanent-template-draws"
+      },
+      {
+        "firstPath": "analysis-selected-no-transient.png",
+        "secondPath": "analysis-unselected.png",
+        "purpose": "analysis/permanent-selection-draws"
+      },
+      {
+        "firstPath": "engineering-glyph-baseline.png",
+        "secondPath": "engineering-glyph-hidden.png",
+        "purpose": "engineering/permanent-template-draws"
+      },
+      {
+        "firstPath": "engineering-selected-no-transient.png",
+        "secondPath": "engineering-unselected.png",
+        "purpose": "engineering/permanent-selection-draws"
+      },
+      {
+        "firstPath": "raster-window-rtl-glyph-explicit-rtl-baseline.png",
+        "secondPath": "raster-window-rtl-glyph-explicit-rtl-label-hidden.png",
+        "purpose": "rtl-glyph-explicit-rtl/actual-default-label-draws"
+      },
+      {
+        "firstPath": "raster-window-rtl-glyph-inherited-rtl-baseline.png",
+        "secondPath": "raster-window-rtl-glyph-inherited-rtl-label-hidden.png",
+        "purpose": "rtl-glyph-inherited-rtl/actual-default-label-draws"
+      },
+      {
+        "firstPath": "raster-window-rtl-glyph-runtime-switch-rtl-baseline.png",
+        "secondPath": "raster-window-rtl-glyph-runtime-switch-rtl-label-hidden.png",
+        "purpose": "rtl-glyph-runtime-switch-rtl/actual-default-label-draws"
+      }
+    ],
+    "glyphProofs": [
+      {
+        "baselinePath": "analysis-glyph-baseline.png",
+        "hiddenPath": "analysis-glyph-hidden.png",
+        "restoredPath": "analysis-glyph-restored.png",
+        "purpose": "analysis/actual-TextBlock-glyphs"
+      },
+      {
+        "baselinePath": "engineering-glyph-baseline.png",
+        "hiddenPath": "engineering-glyph-hidden.png",
+        "restoredPath": "engineering-glyph-restored.png",
+        "purpose": "engineering/actual-TextBlock-glyphs"
+      }
+    ]
+  },
+  "requireTemplateTextOpacityIsolation": true,
+  "glyphOrientationProtocol": {
+    "names": [
+      "explicit-rtl",
+      "inherited-rtl",
+      "runtime-switch-rtl"
+    ],
+    "scope": "actual Cartesian default data label and same-font native TextBlock reference",
+    "proofs": {
+      "explicit-rtl": {
+        "baselinePath": "raster-window-rtl-glyph-explicit-rtl-baseline.png",
+        "hiddenPath": "raster-window-rtl-glyph-explicit-rtl-label-hidden.png",
+        "restoredPath": "raster-window-rtl-glyph-explicit-rtl-label-restored.png",
+        "exportPath": "rtl-glyph-explicit-rtl-chart-export.png"
+      },
+      "inherited-rtl": {
+        "baselinePath": "raster-window-rtl-glyph-inherited-rtl-baseline.png",
+        "hiddenPath": "raster-window-rtl-glyph-inherited-rtl-label-hidden.png",
+        "restoredPath": "raster-window-rtl-glyph-inherited-rtl-label-restored.png",
+        "exportPath": "rtl-glyph-inherited-rtl-chart-export.png"
+      },
+      "runtime-switch-rtl": {
+        "baselinePath": "raster-window-rtl-glyph-runtime-switch-rtl-baseline.png",
+        "hiddenPath": "raster-window-rtl-glyph-runtime-switch-rtl-label-hidden.png",
+        "restoredPath": "raster-window-rtl-glyph-runtime-switch-rtl-label-restored.png",
+        "exportPath": "rtl-glyph-runtime-switch-rtl-chart-export.png",
+        "beforeRuntimeChangePath": "raster-window-rtl-glyph-runtime-switch-ltr-before.png"
+      }
+    }
+  }
+}

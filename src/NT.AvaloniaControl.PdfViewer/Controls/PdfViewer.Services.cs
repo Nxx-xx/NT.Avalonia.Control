@@ -41,4 +41,22 @@ public partial class PdfViewer
         await stream.CopyToAsync(buffer, token);
         return PdfDocumentSource.FromBytes(buffer.ToArray(), file.Name);
     }
+
+    private async Task<string?> PickSavePathAsync(CancellationToken token)
+    {
+        var suggested = string.IsNullOrWhiteSpace(DocumentName) ? "Document.pdf" : DocumentName;
+        if (FileDialogService is { } service)
+            return service.CanSave ? await service.GetSavePathAsync(suggested, token) : null;
+        var storage = TopLevel.GetTopLevel(this)?.StorageProvider;
+        if (storage?.CanSave != true) return null;
+        using var file = await storage.SaveFilePickerAsync(new FilePickerSaveOptions
+        {
+            Title = PdfViewerStrings.SaveAsText, SuggestedFileName = suggested, DefaultExtension = "pdf", ShowOverwritePrompt = true,
+            FileTypeChoices = [new FilePickerFileType(PdfViewerStrings.FileDialogPdfFileType) { Patterns = ["*.pdf"] }],
+        });
+        token.ThrowIfCancellationRequested();
+        // Structural saves require a local path for same-directory atomic replacement.
+        if (file is null) return null;
+        return file.TryGetLocalPath() ?? throw new NotSupportedException("A local file target is required. Use SaveAsync(Stream) for non-local storage.");
+    }
 }

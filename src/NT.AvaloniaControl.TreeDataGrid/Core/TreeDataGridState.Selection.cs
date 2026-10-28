@@ -8,9 +8,7 @@ public sealed partial class TreeDataGridState
     private readonly HashSet<NodeId> _cellRows = [];
     private readonly HashSet<ColumnId> _cellColumns = [];
     private ColumnId[] _columns = [];
-    private int _notificationDepth;
     private bool _selectionPending;
-    private bool _notificationPending;
     private bool _suspended;
     private bool _disposeWhenCallbackFinishes;
     private NodeId? _columnlessCurrentNode;
@@ -19,6 +17,8 @@ public sealed partial class TreeDataGridState
     {
         VerifyAccess();
         if (_columns.SequenceEqual(columns)) return;
+        AbortSelectionDraft();
+        var previousSelection = CaptureSelection();
         var previous = _columns;
         var current = CurrentCell;
         if (current is { } cell && !columns.Contains(cell.Column))
@@ -42,25 +42,36 @@ public sealed partial class TreeDataGridState
         if (EditSession is { } edit && !columns.Contains(edit.Cell.Column))
         { edit.ValueWriter = null; EditSession = null; }
         removed |= ReconcileCellSelection();
+        PrepareForcedSelectionChange(previousSelection, TreeDataGridSelectionChangeReason.ColumnsChanged);
         NotifyChanged(selection: removed);
     }
     internal void CancelOwnedEdit()
     {
-        if (!_committing) { CancelEdit(); return; }
-        if (EditSession is { } edit) { edit.ValueWriter = null; EditSession = null; _pendingChanged = true; }
+        VerifyAccess();
+        if (EditSession is { } edit) { edit.ValueWriter = null; EditSession = null; NotifyChanged(); }
     }
     internal void ReleaseOwner()
     {
-        if (!_committing) { Dispose(); return; }
+        IsSelectionOwnerCurrent = () => false;
+        if (!_committing && !_selecting) { Dispose(); return; }
         _source.ProjectionChanged -= OnProjectionChanged;
-        Changed = null; SelectionChanged = null;
+        Changed = null; SelectionChanged = null; SelectionChanging = null; SelectionChangeCompleted = null;
         _disposeWhenCallbackFinishes = true;
     }
     private TreeDataGridSelectionMode _selectionMode = TreeDataGridSelectionMode.Multiple;
     public TreeDataGridSelectionMode SelectionMode
     {
         get => _selectionMode;
-        set { VerifyMutation(); if (_selectionMode == value) return; _selectionMode = value; ClearSelection(); }
+        set { VerifyMutation(); SetSelectionModeForOwner(value); }
+    }
+    internal void SetSelectionModeForOwner(TreeDataGridSelectionMode value)
+    {
+        VerifyAccess(); if (_selectionMode == value) return;
+        AbortSelectionDraft();
+        var previous = CaptureSelection(); _selectionMode = value; _selectionRevision++;
+        _selected.Clear(); _cellRows.Clear(); _cellColumns.Clear(); SelectionAnchor = null;
+        PrepareForcedSelectionChange(previous, TreeDataGridSelectionChangeReason.SelectionModeChanged);
+        NotifyChanged(selection: _selectionCompletion is not null);
     }
     public CellAddress? SelectionAnchor { get; private set; }
     public IEnumerable<CellAddress> SelectedCells
@@ -73,16 +84,24 @@ public sealed partial class TreeDataGridState
     {
         VerifyMutation(); ArgumentNullException.ThrowIfNull(columns);
         if (columns.Any(x => x.Value <= 0) || columns.Distinct().Count() != columns.Count) throw new ArgumentException("Column identities must be allocated and unique.", nameof(columns));
-        using (DeferSelectionNotifications())
+        AbortSelectionDraft();
+        var previous = CaptureSelection();
+        foreach (var old in _columns.Except(columns).ToArray())
         {
-            foreach (var old in _columns.Except(columns).ToArray()) RemoveColumn(old);
-            _columns = columns.ToArray();
-            if (ReconcileCellSelection()) NotifyChanged(selection: true);
+            if (EditSession?.Cell.Column == old) { EditSession.ValueWriter = null; EditSession = null; }
+            if (CurrentCell?.Column == old) CurrentCell = null;
+            if (SelectionAnchor?.Column == old) SelectionAnchor = null;
+            _cellColumns.Remove(old);
         }
+        _columns = columns.ToArray();
+        if (_cellColumns.Count == 0) _cellRows.Clear();
+        ReconcileCellSelection();
+        PrepareForcedSelectionChange(previous, TreeDataGridSelectionChangeReason.ColumnsChanged);
+        NotifyChanged(selection: _selectionCompletion is not null);
     }
     public void SelectCell(CellAddress cell, bool extend = false)
     {
-        VerifyMutation(); ValidateCell(cell);
+        using var transaction = BeginSelectionMutation(); ValidateCell(cell);
         if (extend && SelectionMode == TreeDataGridSelectionMode.Multiple && SelectionAnchor is { } anchor)
         { SelectCellRange(anchor, cell, _columns); return; }
         _selected.Clear(); _cellRows.Clear(); _cellColumns.Clear();
@@ -92,7 +111,7 @@ public sealed partial class TreeDataGridState
     }
     public void SelectCellRange(CellAddress anchor, CellAddress end, IReadOnlyList<ColumnId> columns)
     {
-        VerifyMutation(); ValidateCell(anchor); ValidateCell(end); ArgumentNullException.ThrowIfNull(columns);
+        using var transaction = BeginSelectionMutation(); ValidateCell(anchor); ValidateCell(end); ArgumentNullException.ThrowIfNull(columns);
         if (columns.Any(x => x.Value <= 0) || columns.Distinct().Count() != columns.Count) throw new ArgumentException("Column identities must be allocated and unique.", nameof(columns));
         if (SelectionMode == TreeDataGridSelectionMode.Single) { SelectCell(end); return; }
         var a = Array.IndexOf(columns.ToArray(), anchor.Column); var b = Array.IndexOf(columns.ToArray(), end.Column);
@@ -107,7 +126,7 @@ public sealed partial class TreeDataGridState
     }
     public void SelectRowRange(NodeId anchor, NodeId end)
     {
-        VerifyMutation();
+        using var transaction = BeginSelectionMutation();
         var first = _source.GetViewIndex(anchor); var last = _source.GetViewIndex(end);
         if (first < 0 || last < 0) throw new ArgumentException("Range nodes must be visible.");
         if (SelectionMode == TreeDataGridSelectionMode.Single) { Select(end); return; }
@@ -117,13 +136,14 @@ public sealed partial class TreeDataGridState
     }
     public void ToggleSelection(NodeId node)
     {
-        VerifyMutation(); if (!_source.TryGetRow(node, out _)) throw new ArgumentException("Unknown node.", nameof(node));
+        using var transaction = BeginSelectionMutation(); if (!_source.TryGetRow(node, out _)) throw new ArgumentException("Unknown node.", nameof(node));
         if (SelectionMode == TreeDataGridSelectionMode.Single) { Select(node); return; }
         _cellRows.Clear(); _cellColumns.Clear();
         if (!_selected.Remove(node)) _selected.Add(node);
         NotifyChanged(selection: true);
     }
-    public IDisposable DeferSelectionNotifications() { VerifyMutation(); ++_notificationDepth; return new SelectionScope(this); }
+    /// <summary>Collects selection operations into one cancellable transaction at the outermost scope's disposal.</summary>
+    public IDisposable DeferSelectionNotifications() => BeginSelectionMutation();
     public bool CommitEdit() => CommitEdit(EditSession?.Value ?? (EditSession is null ? throw new InvalidOperationException("No edit is active.") : null));
     internal void SetValidationError(string error) { if (EditSession is { } edit) { edit.ValidationError = error; NotifyChanged(); } }
     internal void Suspend()
@@ -159,21 +179,16 @@ public sealed partial class TreeDataGridState
     }
     private void NotifyChanged(bool selection = false)
     {
+        if (_selectionDraftDepth > 0) { _draftNotificationPending = true; return; }
         if (_committing) { _pendingChanged = true; _selectionPending |= selection; return; }
-        _notificationPending = true; _selectionPending |= selection;
-        if (_notificationDepth != 0) return;
+        _selectionPending |= selection;
+        var completion = _selectionCompletion; _selectionCompletion = null;
         var selectionChanged = _selectionPending;
-        _selectionPending = _notificationPending = false;
-        if (selectionChanged) SelectionChanged?.Invoke(this, EventArgs.Empty);
-        Changed?.Invoke(this, EventArgs.Empty);
-    }
-    private sealed class SelectionScope(TreeDataGridState owner) : IDisposable
-    {
-        private TreeDataGridState? _owner = owner;
-        public void Dispose()
-        {
-            if (_owner is not { } current) return; current.VerifyMutation(); _owner = null;
-            if (--current._notificationDepth == 0 && current._notificationPending) current.NotifyChanged();
-        }
+        _selectionPending = false;
+        List<Exception>? errors = null;
+        TreeDataGridEventDispatch.Invoke(Changed, this, EventArgs.Empty, ref errors);
+        if (selectionChanged) TreeDataGridEventDispatch.Invoke(SelectionChanged, this, completion ?? (EventArgs)EventArgs.Empty, ref errors);
+        if (completion is not null) TreeDataGridEventDispatch.Invoke(SelectionChangeCompleted, this, completion, ref errors);
+        TreeDataGridEventDispatch.Throw(errors);
     }
 }

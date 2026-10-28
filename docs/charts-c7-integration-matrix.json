@@ -1,0 +1,4017 @@
+{
+  "schemaVersion": 1,
+  "updatedOn": "2026-10-23",
+  "milestone": "C7-01",
+  "validationLevel": "static-traceability",
+  "runtimeQualification": {
+    "windows": "not-asserted",
+    "linux": "not-asserted"
+  },
+  "scope": {
+    "inventory": "Every public non-abstract C# class transitively deriving from ChartBase in the core Charts project. Controls and aliases are separate rows; series and configuration objects are not counted as independent controls.",
+    "officialMapping": "Intended feature-family IDs from docs/charts-official-alignment.md. These links do not claim equal public API, defaults, numerical behavior, performance or native-platform qualification.",
+    "sourceAnchors": "Each anchor is an exact trimmed source line; lineAtCatalogUpdate is informational and may shift. Direct means the concrete type is referenced, not that the reference was executed.",
+    "packageConsumer": "Shared Usage source is copied by scripts/Test-ChartsPackageConsumer.ps1 and called by its independent driver. Actual package/hash/cache/runtime evidence remains in each milestone validation report.",
+    "sharedCapabilities": "C7 integration tests and platform runs must separately establish shared theme, template, interaction, export and lifetime behavior. This catalog does not infer these from a control appearing in a family sample."
+  },
+  "adjunctsOutsideChartBaseInventory": [
+    {
+      "name": "FinancialChart",
+      "source": "src/NT.AvaloniaControl.Charts/FinancialChart.cs",
+      "reason": "Decorator host around CartesianChart; its Financial-specific behavior remains in FinancialSeriesTests/FinancialMathTests, Demo/Usage Financial examples and FN01."
+    },
+    {
+      "name": "ChartRangeSelector",
+      "source": "src/NT.AvaloniaControl.Charts/ChartRangeSelector.cs",
+      "reason": "Separate Control; RangeSelectorTests, Demo SelectionRange and UsageRangeSelector cover the Cartesian connector. It is not a generic connector for every specialist family."
+    }
+  ],
+  "openSharedScope": [
+    {
+      "id": "C7-OFFICIAL-PARITY",
+      "status": "open",
+      "reason": "Official row-family correspondence is not full API/visual/runtime parity. AK15 Stream graph correspondence and AN16 RSI/MACD remain separately unresolved."
+    },
+    {
+      "id": "C7-SHARED-PROFESSIONAL-FEATURES",
+      "status": "open",
+      "reason": "Cartesian Trackball, axis annotations, plot content, legend/data-label templates, range selector and view synchronization must not be inferred for every specialist family."
+    },
+    {
+      "id": "C7-PLATFORM-QUALIFICATION",
+      "status": "open",
+      "reason": "Windows/Linux physical input, native accessibility, actual desktop present, official performance comparison, 8-hour stability and release configurations remain separate C7 acceptance items."
+    }
+  ],
+  "controls": [
+    {
+      "name": "BeeswarmChart",
+      "family": "C5Completion",
+      "baseType": "CategoricalDistributionChartBase",
+      "officialMatrixIds": [
+        "ST01"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/CategoricalDistributionCharts.cs",
+        "anchor": "public class BeeswarmChart : CategoricalDistributionChartBase",
+        "lineAtCatalogUpdate": 176
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "BeeswarmChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/CategoricalDistributionTests.cs",
+            "anchor": "CategoricalDistributionChartBase chart = strip ? new StripPlot() : new BeeswarmChart();",
+            "lineAtCatalogUpdate": 134
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "BeeswarmChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C5Completion.cs",
+            "anchor": "\"beeswarm\" => new BeeswarmChart { ItemsSource = points, MarkerSize = 8, Jitter = .36 },",
+            "lineAtCatalogUpdate": 59
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "BeeswarmChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:BeeswarmChart x:Name=\"UsageC5Beeswarm\" Grid.Row=\"0\" Grid.Column=\"0\" Height=\"260\" Title=\"Beeswarm · 原始样本\" ItemsSource=\"{Binding C5Samples}\" IdPath=\"Id\" LabelPath=\"Name\" ValuePath=\"Amount\" CategoryPath=\"Group\" PointRadius=\"{Binding C5PointRadius}\" JitterAmount=\"{Binding C5Jitter}\" ShowCategoryLabels=\"{Binding C5Labels}\" ShowMeanLine=\"{Binding C5Mean}\" SelectedIndex=\"{Binding C5SwarmSelected, Mode=TwoWay}\" />",
+            "lineAtCatalogUpdate": 1063
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "foreach (var check in window.VerifyBindings()) checks[check.Key] = check.Value;",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC5CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "BeeswarmPlotChart",
+      "family": "C5Completion",
+      "baseType": "BeeswarmChart",
+      "officialMatrixIds": [
+        "ST01"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/CategoricalDistributionCharts.cs",
+        "anchor": "public sealed class BeeswarmPlotChart : BeeswarmChart { }",
+        "lineAtCatalogUpdate": 184
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "BeeswarmPlotChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/CategoricalDistributionTests.cs",
+            "anchor": "Assert.IsAssignableFrom<BeeswarmChart>(new BeeswarmPlotChart());",
+            "lineAtCatalogUpdate": 168
+          }
+        ]
+      },
+      "demo": {
+        "status": "inherited",
+        "symbol": "BeeswarmChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C5Completion.cs",
+            "anchor": "\"beeswarm\" => new BeeswarmChart { ItemsSource = points, MarkerSize = 8, Jitter = .36 },",
+            "lineAtCatalogUpdate": 59
+          }
+        ],
+        "gap": "No direct BeeswarmPlotChart reference in demo; the inherited BeeswarmChart example does not separately qualify this concrete type."
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "BeeswarmPlotChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:BeeswarmPlotChart x:Name=\"UsageC7Swarm\" Grid.Row=\"3\" Height=\"250\" Title=\"蜂群\" ItemsSource=\"{Binding C5Samples}\" ValuePath=\"Amount\" CategoryPath=\"Group\" LabelPath=\"Name\" IdPath=\"Id\" SelectedIndex=\"{Binding C5SwarmSelected, Mode=TwoWay}\" HighContrastMode=\"{Binding C7Contrast}\" />",
+            "lineAtCatalogUpdate": 1090
+          },
+          {
+            "path": "samples/Charts.Usage/MainWindow.C7Integration.cs",
+            "anchor": "var swarm = (BeeswarmPlotChart)charts[6]; var strip = (StripPlotChart)charts[7];",
+            "lineAtCatalogUpdate": 21
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml",
+          "samples/Charts.Usage/MainWindow.C7Integration.cs"
+        ],
+        "driverAnchor": "foreach (var check in window.VerifyBindings()) checks[check.Key] = check.Value;",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC7IntegrationBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "BubbleCloudChart",
+      "family": "Hierarchy",
+      "baseType": "HierarchyChartBase",
+      "officialMatrixIds": [
+        "BC02"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/BubbleCloudChart.cs",
+        "anchor": "public sealed class BubbleCloudChart : HierarchyChartBase",
+        "lineAtCatalogUpdate": 4
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "BubbleCloudChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/HierarchyChartTests.cs",
+            "anchor": "var chart = new BubbleCloudChart { ItemsSource = rows }; using var host = new Host(chart); chart.SelectedIndex = 1;",
+            "lineAtCatalogUpdate": 52
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "BubbleCloudChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Hierarchy.cs",
+            "anchor": "new OrganizationChart { Title = \"Organization · 组织连线与折叠\" }, new BubbleCloudChart { Title = \"Bubble cloud · 无轴面积气泡\" },",
+            "lineAtCatalogUpdate": 26
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "BubbleCloudChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:BubbleCloudChart x:Name=\"UsageHierarchyCloud\" GroupPath=\"Group\" ShowLegend=\"True\" Grid.Row=\"1\" Grid.Column=\"1\" Title=\"Bubble cloud\" Height=\"260\" ItemsSource=\"{Binding HierarchyRecords}\" ChildrenPath=\"Nodes\" ValuePath=\"Weight\" LabelPath=\"Name\" IdPath=\"Id\" ShowLabels=\"{Binding HierarchyLabels}\" MaximumVisibleDepth=\"{Binding HierarchyDepth}\" ReduceMotion=\"{Binding HierarchyReduceMotion}\" AnimationTriggers=\"All\" />",
+            "lineAtCatalogUpdate": 960
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyHierarchy(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyHierarchyBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "BulletChart",
+      "family": "C6Completion",
+      "baseType": "OperationalChartBase",
+      "officialMatrixIds": [
+        "AK01"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalSummaryCharts.cs",
+        "anchor": "public sealed class BulletChart : OperationalChartBase",
+        "lineAtCatalogUpdate": 8
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "BulletChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/OperationalChartTests.cs",
+            "anchor": "var ranges = new ObservableCollection<double> { 30, 60, 100 }; var chart = new BulletChart { Value = 25, Target = 75, MinValue = 0, MaxValue = 100, Ranges = ranges, Label = \"Revenue\" }; using var host = new Host(chart); var row = Assert.Single(chart.Layout); Assert.Equal(.25, row.Position); Assert.Equal(.75, row.TargetPosition); Assert.Same(chart, Assert.Single(chart.GetMarks()).Members[0].Item); ranges[0] = 40; Assert.Equal(.4, chart.Layout[0].Boundaries[0]); chart.SelectedIndex = 0; chart.Value = 50; Assert.Same(chart, chart.SelectedPoint!.Members[0].Item); var actual = new BulletPoint(\"record\", 90, 80); chart.ItemsSource = new[] { actual }; Assert.Equal(90, Assert.Single(chart.Layout).Source.Value); Assert.Same(actual, Assert.Single(chart.GetMarks()).Members[0].Item); chart.ItemsSource = Array.Empty<BulletPoint>(); Assert.Empty(chart.GetMarks());",
+            "lineAtCatalogUpdate": 50
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "BulletChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"bullet\" => new BulletChart { ItemsSource = new[] { new BulletPoint(\"b\", 25, 75, 0, 100, [40, 70, 100], \"B\") } },",
+            "lineAtCatalogUpdate": 33
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "BulletChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:BulletChart x:Name=\"UsageC6Bullet\" Grid.Row=\"2\" Grid.Column=\"0\" Height=\"240\" Title=\"Bullet\" Value=\"{Binding C6Headline.Amount}\" Target=\"{Binding C6Headline.Goal}\" MinValue=\"0\" MaxValue=\"100\" Ranges=\"{Binding C6BulletRanges}\" Label=\"Revenue\" />",
+            "lineAtCatalogUpdate": 1015
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "BumpChart",
+      "family": "C6Completion",
+      "baseType": "OperationalRankingChartBase",
+      "officialMatrixIds": [
+        "AK02"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalRankingCharts.cs",
+        "anchor": "public sealed class BumpChart : OperationalRankingChartBase { protected override bool IsSlope => false; }",
+        "lineAtCatalogUpdate": 42
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "BumpChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/OperationalChartTests.cs",
+            "anchor": "var chart = new BumpChart { ItemsSource = new[] { new RankingPoint(\"a0\", \"a\", 0, 5), new RankingPoint(\"b1\", \"b\", 1, 2), new RankingPoint(\"a2\", \"a\", 2, 3) } }; using var host = new Host(chart); Assert.Equal(3, chart.GetMarks().Count); Assert.Equal(3, chart.Ranking!.Periods.Count); Assert.All(chart.GetMarks(), mark => Assert.Single(mark.Members));",
+            "lineAtCatalogUpdate": 35
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "BumpChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"bump\" => new BumpChart { ItemsSource = ranks },",
+            "lineAtCatalogUpdate": 40
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "BumpChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:BumpChart x:Name=\"UsageC6Bump\" Grid.Row=\"5\" Grid.Column=\"1\" Height=\"240\" Title=\"Bump\" ItemsSource=\"{Binding C6Ranks}\" IdPath=\"Id\" LabelPath=\"Name\" ValuePath=\"Amount\" EntityPath=\"Entity\" PeriodPath=\"Period\" />",
+            "lineAtCatalogUpdate": 1022
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "CalendarHeatmapChart",
+      "family": "C6Completion",
+      "baseType": "OperationalChartBase",
+      "officialMatrixIds": [
+        "AK03"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalGridCharts.cs",
+        "anchor": "public sealed class CalendarHeatmapChart : OperationalChartBase",
+        "lineAtCatalogUpdate": 8
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "CalendarHeatmapChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/OperationalChartTests.cs",
+            "anchor": "var item = new CalendarPoint(\"zero\", new(2024, 2, 29), 0); var chart = new CalendarHeatmapChart { ItemsSource = new[] { item }, StartDate = new(2024, 2, 26), EndDate = new(2024, 3, 3) }; using var host = new Host(chart); var mark = Assert.Single(chart.GetMarks()); Assert.Same(item, mark.Members[0].Item); var missing = new Point(chart.PlotArea.Center.X, chart.PlotArea.Top + chart.PlotArea.Height / 14); Assert.Null(chart.HitTest(missing)); Assert.Same(item, chart.HitTest(mark.Position)!.Members[0].Item);",
+            "lineAtCatalogUpdate": 30
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "CalendarHeatmapChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"calendar\" => new CalendarHeatmapChart { StartDate = new(2026, 1, 5), EndDate = new(2026, 1, 18), FirstDayOfWeek = DayOfWeek.Monday, ItemsSource = new[] { new CalendarPoint(\"c-a\", new(2026, 1, 5), 1), new CalendarPoint(\"c-b\", new(2026, 1, 8), 2), new CalendarPoint(\"c-c\", new(2026, 1, 18), 4) } },",
+            "lineAtCatalogUpdate": 35
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "CalendarHeatmapChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:CalendarHeatmapChart x:Name=\"UsageC6Calendar\" Grid.Row=\"3\" Grid.Column=\"0\" Height=\"240\" Title=\"Calendar\" ItemsSource=\"{Binding C6Calendar}\" IdPath=\"Id\" LabelPath=\"Name\" DatePath=\"Day\" ValuePath=\"Amount\" FirstDayOfWeek=\"Monday\" />",
+            "lineAtCatalogUpdate": 1017
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "CarpetPlot",
+      "family": "Engineering",
+      "baseType": "EngineeringChartBase",
+      "officialMatrixIds": [
+        "EN01"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/CarpetPlot.cs",
+        "anchor": "public sealed class CarpetPlot : EngineeringChartBase",
+        "lineAtCatalogUpdate": 6
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "CarpetPlot",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/EngineeringChartTests.cs",
+            "anchor": "var chart = new CarpetPlot { ItemsSource = points, CarpetOffset = .5 };",
+            "lineAtCatalogUpdate": 60
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "CarpetPlot",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Engineering.cs",
+            "anchor": "var carpet = new CarpetPlot { Title = \"Carpet · A / B 参数网格\", Height = 285, ItemsSource = EngineeringCarpetRows() };",
+            "lineAtCatalogUpdate": 18
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "CarpetPlot",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:CarpetPlot x:Name=\"UsageEngineeringCarpet\" Height=\"270\" Title=\"Carpet · 曲面温度\" ItemsSource=\"{Binding EngineeringCarpetRecords}\" APath=\"ParameterA\" BPath=\"ParameterB\" YPath=\"Temperature\" IdPath=\"Id\" LabelPath=\"Id\" Offset=\"{Binding EngineeringCarpetOffset}\" />",
+            "lineAtCatalogUpdate": 920
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyEngineering(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyEngineeringBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "CartesianChart",
+      "family": "Cartesian",
+      "baseType": "ChartBase",
+      "officialMatrixIds": [
+        "CT01",
+        "CT02",
+        "CT03",
+        "CT04",
+        "CT05",
+        "CT06",
+        "CT07",
+        "CT08",
+        "CT09",
+        "CT10",
+        "CT11",
+        "CT12",
+        "CT13",
+        "CT14",
+        "CT15",
+        "CT16",
+        "CT17",
+        "CT18",
+        "CT19",
+        "CT20",
+        "CT21",
+        "BC01",
+        "ST02",
+        "ST04",
+        "ST05",
+        "AK08",
+        "FN02",
+        "FN03",
+        "FN04",
+        "FN05",
+        "FN06",
+        "FN07",
+        "FN08",
+        "AN01",
+        "AN02",
+        "AN03",
+        "AN04",
+        "AN05",
+        "AN06",
+        "AN07",
+        "AN08",
+        "AN09",
+        "AN10",
+        "AN11",
+        "AN12",
+        "AN13",
+        "AN14",
+        "AN15"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/CartesianChart.cs",
+        "anchor": "public sealed partial class CartesianChart : ChartBase",
+        "lineAtCatalogUpdate": 15
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "CartesianChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/ChartRenderingTests.cs",
+            "anchor": "var first = new CartesianChart();",
+            "lineAtCatalogUpdate": 21
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "CartesianChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Accessibility.cs",
+            "anchor": "var chart = register ? CreateAdvancedChart(\"AccessibilityChart\") : new CartesianChart { Name = \"AccessibilityChart\" };",
+            "lineAtCatalogUpdate": 27
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "CartesianChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:CartesianChart x:Name=\"BoundSeriesChart\" Title=\"ViewModel 系列集合\"",
+            "lineAtCatalogUpdate": 174
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "foreach (var check in window.VerifyBindings()) checks[check.Key] = check.Value;",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyLineAreaBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "ChordDiagramChart",
+      "family": "Relations",
+      "baseType": "RelationsChartBase",
+      "officialMatrixIds": [
+        "HF03"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/ChordDiagramChart.cs",
+        "anchor": "public sealed class ChordDiagramChart : RelationsChartBase",
+        "lineAtCatalogUpdate": 6
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "ChordDiagramChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/RelationChartTests.cs",
+            "anchor": "private static RelationsChartBase Make(int mode) => mode switch { 0 => new SankeyChart(), 1 => new SankeyChart { Mode = RelationSankeyMode.Alluvial }, 2 => new NetworkChart { Mode = RelationNetworkMode.Circular }, 3 => new NetworkChart { Mode = RelationNetworkMode.ForceDirected }, 4 => new NetworkChart { Mode = RelationNetworkMode.Arc }, 5 => new ChordDiagramChart(), 6 => new FlowChart(), 7 => new FlowChart { Mode = RelationFlowMode.Explicit }, _ => new FlowChart { Mode = RelationFlowMode.Mindmap } };",
+            "lineAtCatalogUpdate": 198
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "ChordDiagramChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Relations.cs",
+            "anchor": "\"arc\" => new NetworkChart { Mode = RelationNetworkMode.Arc }, \"chord\" => new ChordDiagramChart(),",
+            "lineAtCatalogUpdate": 24
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "ChordDiagramChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:ChordDiagramChart x:Name=\"UsageRelationChord\" Grid.Row=\"2\" Grid.Column=\"1\" Title=\"Chord\" Height=\"250\"  ItemsSource=\"{Binding RelationNodes}\" EdgesSource=\"{Binding RelationEdges}\" IdPath=\"Id\" LabelPath=\"Name\" NodeWeightPath=\"Metric\" GroupPath=\"Category\" ShapePath=\"Shape\" StagePath=\"Stage\" WidthPath=\"Width\" HeightPath=\"Height\" SourcePath=\"From\" TargetPath=\"To\" WeightPath=\"Amount\" EdgeIdPath=\"Id\" EdgeLabelPath=\"Name\" ShowLabels=\"{Binding RelationsLabels}\" />",
+            "lineAtCatalogUpdate": 976
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyRelations(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyRelationsBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "CirclePackingChart",
+      "family": "Hierarchy",
+      "baseType": "HierarchyChartBase",
+      "officialMatrixIds": [
+        "HF04"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/CirclePackingChart.cs",
+        "anchor": "public sealed class CirclePackingChart : HierarchyChartBase",
+        "lineAtCatalogUpdate": 4
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "CirclePackingChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/HierarchyChartTests.cs",
+            "anchor": "var first = new Node(\"first\", 0, new Node(\"a\", 1)); var chart = new CirclePackingChart { ItemsSource = new[] { first } }; using var host = new Host(chart); chart.Collapse(first); _ = chart.GetMarks();",
+            "lineAtCatalogUpdate": 188
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "CirclePackingChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Hierarchy.cs",
+            "anchor": "new PackedBubbleChart { Title = \"Packed bubble · 紧凑打包\" }, new CirclePackingChart { Title = \"Circle packing · 圆形层级嵌套\" },",
+            "lineAtCatalogUpdate": 27
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "CirclePackingChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:CirclePackingChart x:Name=\"UsageHierarchyCircles\" Grid.Row=\"2\" Grid.Column=\"1\" Title=\"Circle packing\" Height=\"260\" ItemsSource=\"{Binding HierarchyRecords}\" ChildrenPath=\"Nodes\" ValuePath=\"Weight\" LabelPath=\"Name\" IdPath=\"Id\" ShowLabels=\"{Binding HierarchyLabels}\" MaximumVisibleDepth=\"{Binding HierarchyDepth}\" ReduceMotion=\"{Binding HierarchyReduceMotion}\" AnimationTriggers=\"All\" />",
+            "lineAtCatalogUpdate": 962
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyHierarchy(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyHierarchyBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "CircularChart",
+      "family": "Circular",
+      "baseType": "ChartBase",
+      "officialMatrixIds": [
+        "CC01",
+        "CC02",
+        "CC03"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/CircularChart.cs",
+        "anchor": "public sealed partial class CircularChart : ChartBase",
+        "lineAtCatalogUpdate": 17
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "CircularChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/CircularControlTests.cs",
+            "anchor": "var chart = new CircularChart { ShowLegend = false, ShowDataLabels = false, AnimationTriggers = ChartAnimationTriggers.None };",
+            "lineAtCatalogUpdate": 254
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "CircularChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Circular.cs",
+            "anchor": "CircularChart Chart(string name, string title) => new()",
+            "lineAtCatalogUpdate": 24
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "CircularChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:CircularChart x:Name=\"UsageCircularPieChart\" Height=\"300\" Title=\"饼图 · 业务标签与负值策略\" ShowLegend=\"True\" ShowDataLabels=\"{Binding CircularLabels}\" LabelPosition=\"Outside\" SelectionMode=\"Multiple\" ReduceMotion=\"{Binding CircularReduceMotion}\" IsAnimationPaused=\"{Binding CircularPaused}\" AnimationTriggers=\"All\" AnimationDuration=\"0:0:0.6\">",
+            "lineAtCatalogUpdate": 577
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyCircular(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyCircularBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "CircularGaugeChart",
+      "family": "GaugeMicro",
+      "baseType": "GaugeBase",
+      "officialMatrixIds": [
+        "GG01"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/GaugeCircular.cs",
+        "anchor": "public class CircularGaugeChart : GaugeBase",
+        "lineAtCatalogUpdate": 7
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "CircularGaugeChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/GaugeControlTests.cs",
+            "anchor": "var chart = new CircularGaugeChart { Minimum = -double.MaxValue, Maximum = double.MaxValue, Value = 0 };",
+            "lineAtCatalogUpdate": 43
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "CircularGaugeChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.GaugeMicro.cs",
+            "anchor": "var circular = new CircularGaugeChart { Name = \"CircularGaugeExample\", Title = \"圆形仪表 · 270° 刻度\", Value = 68, TargetValue = 80, RangesSource = ranges };",
+            "lineAtCatalogUpdate": 51
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "CircularGaugeChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:CircularGaugeChart x:Name=\"UsageCircularGauge\" Grid.Row=\"0\" Grid.Column=\"0\" Height=\"250\" Title=\"圆形仪表 · 270°\" Minimum=\"{Binding GaugeMinimum}\" Maximum=\"{Binding GaugeMaximum}\" Value=\"{Binding GaugeValue}\" TargetValue=\"{Binding GaugeTarget}\" RangesSource=\"{Binding GaugeRanges}\" />",
+            "lineAtCatalogUpdate": 663
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyGaugeMicro(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyGaugeMicroBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "ContourPlot",
+      "family": "C5Completion",
+      "baseType": "ComparisonChartBase",
+      "officialMatrixIds": [
+        "ST03"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/ContourPlot.cs",
+        "anchor": "public sealed class ContourPlot : ComparisonChartBase",
+        "lineAtCatalogUpdate": 7
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "ContourPlot",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/ContourTests.cs",
+            "anchor": "var source = Cell(0, 1, 2, 1); var chart = new ContourPlot { ItemsSource = source, Levels = new[] { 1d } }; using var host = new Host(chart);",
+            "lineAtCatalogUpdate": 150
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "ContourPlot",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C5Completion.cs",
+            "anchor": "\"contour\" => new ContourPlot { ItemsSource = new ObservableCollection<C5ContourRow> { new(\"grid-00\", 0, 0, 0), new(\"grid-10\", 1, 0, 1), new(\"grid-11\", 1, 1, 2), new(\"grid-01\", 0, 1, 1) }, Levels = [1d], ShowFill = true, ShowLines = true },",
+            "lineAtCatalogUpdate": 61
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "ContourPlot",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:ContourPlot x:Name=\"UsageC5Contour\" Grid.Row=\"2\" Grid.Column=\"0\" Height=\"260\" Title=\"Contour · 可观察网格和级别\" ItemsSource=\"{Binding C5Grid}\" IdPath=\"Id\" XPath=\"East\" YPath=\"North\" ValuePath=\"Reading\" Levels=\"{Binding C5Levels}\" SelectedIndex=\"{Binding C5ContourSelected, Mode=TwoWay}\" />",
+            "lineAtCatalogUpdate": 1067
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "foreach (var check in window.VerifyBindings()) checks[check.Key] = check.Value;",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC5CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "DendrogramChart",
+      "family": "C6Completion",
+      "baseType": "HierarchyChartBase",
+      "officialMatrixIds": [
+        "HF05"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/DendrogramChart.cs",
+        "anchor": "public sealed class DendrogramChart : HierarchyChartBase",
+        "lineAtCatalogUpdate": 8
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "DendrogramChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/AdditionalHierarchyChartTests.cs",
+            "anchor": "foreach (var chart in new HierarchyChartBase[] { new DendrogramChart(), new IndentedTreeChart(), new RadialTreeChart() })",
+            "lineAtCatalogUpdate": 138
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "DendrogramChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"dendrogram\" => new DendrogramChart { ItemsSource = new[] { root } },",
+            "lineAtCatalogUpdate": 46
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "DendrogramChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:DendrogramChart x:Name=\"UsageC6Dendrogram\" Grid.Row=\"9\" Grid.Column=\"1\" Height=\"240\" Title=\"Dendrogram\" ItemsSource=\"{Binding C6Roots}\" IdPath=\"Id\" LabelPath=\"Name\" ChildrenPath=\"Branches\" DistancePath=\"Distance\" ReduceMotion=\"True\" />",
+            "lineAtCatalogUpdate": 1030
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "DivergingBarChart",
+      "family": "AdvancedComparison",
+      "baseType": "ComparisonChartBase",
+      "officialMatrixIds": [
+        "CP01"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/DivergingBarChart.cs",
+        "anchor": "public sealed class DivergingBarChart : ComparisonChartBase",
+        "lineAtCatalogUpdate": 9
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "DivergingBarChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/AdvancedComparisonChartTests.cs",
+            "anchor": "var chart = new DivergingBarChart { ItemsSource = values, ShowLabels = false, ShowValues = false };",
+            "lineAtCatalogUpdate": 20
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "DivergingBarChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.AdvancedComparison.cs",
+            "anchor": "var diverging = new DivergingBarChart { Title = \"Diverging · 中心基线与正负差异\", Height = 260, ItemsSource = values };",
+            "lineAtCatalogUpdate": 19
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "DivergingBarChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:DivergingBarChart x:Name=\"UsageAdvancedDiverging\" Height=\"270\" Title=\"发散 · 业务盈亏\" ItemsSource=\"{Binding AdvancedSignedRecords}\" ValuePath=\"Amount\" IdPath=\"Id\" LabelPath=\"Name\" Baseline=\"{Binding AdvancedBaseline}\" Orientation=\"{Binding AdvancedOrientation}\" Sort=\"{Binding AdvancedSort}\" ShowLabels=\"{Binding AdvancedShowLabels}\" />",
+            "lineAtCatalogUpdate": 942
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyAdvancedComparison(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyAdvancedComparisonBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "DumbbellChart",
+      "family": "AdvancedComparison",
+      "baseType": "ComparisonChartBase",
+      "officialMatrixIds": [
+        "CP02"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/DumbbellChart.cs",
+        "anchor": "public sealed class DumbbellChart : ComparisonChartBase",
+        "lineAtCatalogUpdate": 9
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "DumbbellChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/AdvancedComparisonChartTests.cs",
+            "anchor": "var chart = new DumbbellChart { ItemsSource = rows, LowValuePath = \"Value.First\", HighValuePath = \"Value.Second\", LabelPath = \"Id\", IdPath = \"Id\" };",
+            "lineAtCatalogUpdate": 51
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "DumbbellChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.AdvancedComparison.cs",
+            "anchor": "var dumbbell = new DumbbellChart { Title = \"Dumbbell · 计划与实际\", Height = 260, ItemsSource = ComparisonDemoPairs(), MarkerSize = 12 };",
+            "lineAtCatalogUpdate": 20
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "DumbbellChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:DumbbellChart x:Name=\"UsageAdvancedDumbbell\" Grid.Column=\"1\" Height=\"270\" Title=\"哑铃 · 变更前后\" ItemsSource=\"{Binding AdvancedPairRecords}\" LowValuePath=\"Before\" HighValuePath=\"After\" IdPath=\"Id\" LabelPath=\"Name\" Orientation=\"{Binding AdvancedOrientation}\" Sort=\"{Binding AdvancedSort}\" SelectedIndex=\"{Binding AdvancedSelectedIndex, Mode=TwoWay}\" ShowLabels=\"{Binding AdvancedShowLabels}\" />",
+            "lineAtCatalogUpdate": 943
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyAdvancedComparison(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyAdvancedComparisonBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "EventTimelineChart",
+      "family": "C6Completion",
+      "baseType": "ScheduleChartBase",
+      "officialMatrixIds": [
+        "SC08"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/EventTimelineChart.cs",
+        "anchor": "public sealed partial class EventTimelineChart : ScheduleChartBase",
+        "lineAtCatalogUpdate": 9
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "EventTimelineChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/ScheduleChartTests.cs",
+            "anchor": "ScheduleChartBase chart = mode == 2 ? new EventTimelineChart() : new SpiralTimelineChart(); chart.ItemsSource = new[] { new ScheduleEvent(\"a\", Day(0)), new ScheduleEvent(\"b\", Day(2)), new ScheduleEvent(\"m\", Day(5)) }; return chart;",
+            "lineAtCatalogUpdate": 136
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "EventTimelineChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"event\" => new EventTimelineChart { ItemsSource = events, VisibleStart = C6Start, VisibleEnd = C6Start.AddDays(5) },",
+            "lineAtCatalogUpdate": 31
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "EventTimelineChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:EventTimelineChart x:Name=\"UsageC6Event\" Grid.Row=\"1\" Grid.Column=\"0\" Height=\"240\" Title=\"Event\" ItemsSource=\"{Binding C6Events}\" IdPath=\"Id\" LabelPath=\"Name\" DatePath=\"When\" ValuePath=\"Intensity\" DescriptionPath=\"Details\" />",
+            "lineAtCatalogUpdate": 1013
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "FlameGraph",
+      "family": "C6Completion",
+      "baseType": "HierarchyChartBase",
+      "officialMatrixIds": [
+        "HF06"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/FlameGraph.cs",
+        "anchor": "public sealed class FlameGraph : HierarchyChartBase",
+        "lineAtCatalogUpdate": 6
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "FlameGraph",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/AdditionalHierarchyChartTests.cs",
+            "anchor": "var flame = new FlameGraph { ItemsSource = rows }; using var flameHost = new Host(flame); Assert.Equal(10, flame.GetMarks()[0].Value); Assert.Equal(10, flame.GetMarks()[0].Members[0].Weight); Assert.Contains(\"self 2\", flame.GetMarks()[0].TooltipText!);",
+            "lineAtCatalogUpdate": 160
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "FlameGraph",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"flame\" => new FlameGraph { ItemsSource = new[] { root } },",
+            "lineAtCatalogUpdate": 44
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "FlameGraph",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:FlameGraph x:Name=\"UsageC6Flame\" Grid.Row=\"8\" Grid.Column=\"0\" Height=\"240\" Title=\"Flame\" ItemsSource=\"{Binding C6Roots}\" IdPath=\"Id\" LabelPath=\"Name\" ChildrenPath=\"Branches\" ValuePath=\"Cost\" ReduceMotion=\"True\" />",
+            "lineAtCatalogUpdate": 1027
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "FlowChart",
+      "family": "Relations",
+      "baseType": "RelationsChartBase",
+      "officialMatrixIds": [
+        "HF07",
+        "HF11",
+        "HF14"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/FlowChart.cs",
+        "anchor": "public sealed class FlowChart : RelationsChartBase",
+        "lineAtCatalogUpdate": 6
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "FlowChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/RelationChartTests.cs",
+            "anchor": "var payload = new MutablePayload(3); var chart = new FlowChart { Mode = RelationFlowMode.Explicit, ItemsSource = new[] { new MappedNode(\"a\", .25, .4, .14, .1, 3, 4, RelationNodeShape.Diamond), new MappedNode(\"b\", .75, .6, .2, .12, 7, 2, RelationNodeShape.Ellipse) },",
+            "lineAtCatalogUpdate": 69
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "FlowChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Relations.cs",
+            "anchor": "\"flow\" => new FlowChart { Mode = RelationFlowMode.Explicit }, \"process\" => new FlowChart { Mode = RelationFlowMode.Process },",
+            "lineAtCatalogUpdate": 25
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "FlowChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:FlowChart x:Name=\"UsageRelationFlow\" Grid.Row=\"3\" Grid.Column=\"0\" Title=\"Flow\" Height=\"250\" Mode=\"Explicit\" XPath=\"X\" YPath=\"Y\" SelectedIndex=\"{Binding RelationsSelectedIndex, Mode=TwoWay}\" ItemsSource=\"{Binding RelationNodes}\" EdgesSource=\"{Binding RelationEdges}\" IdPath=\"Id\" LabelPath=\"Name\" NodeWeightPath=\"Metric\" GroupPath=\"Category\" ShapePath=\"Shape\" StagePath=\"Stage\" WidthPath=\"Width\" HeightPath=\"Height\" SourcePath=\"From\" TargetPath=\"To\" WeightPath=\"Amount\" EdgeIdPath=\"Id\" EdgeLabelPath=\"Name\" ShowLabels=\"{Binding RelationsLabels}\" />",
+            "lineAtCatalogUpdate": 977
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyRelations(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyRelationsBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "FunnelChart",
+      "family": "Analysis",
+      "baseType": "AnalysisChartBase",
+      "officialMatrixIds": [
+        "AK04"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/FunnelChart.cs",
+        "anchor": "public sealed class FunnelChart : AnalysisChartBase",
+        "lineAtCatalogUpdate": 9
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "FunnelChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/FunnelPyramidTests.cs",
+            "anchor": "var funnel = new FunnelChart(); var pyramid = new PyramidChart();",
+            "lineAtCatalogUpdate": 15
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "FunnelChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Analysis.cs",
+            "anchor": "var funnel = new FunnelChart { Name = \"FunnelExample\", ItemsSource = rows, CategoryPath = \"Category\", ValuePath = \"Value\", IdPath = \"Id\", Height = 250, Padding = new Thickness(10), NeckWidth = .2 };",
+            "lineAtCatalogUpdate": 23
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "FunnelChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:FunnelChart x:Name=\"UsageAnalysisFunnel\" Grid.Row=\"0\" Grid.Column=\"0\" Height=\"250\" Title=\"漏斗 · 源顺序与颈宽\" ItemsSource=\"{Binding AnalysisRecords}\" CategoryPath=\"Category\" ValuePath=\"Value\" IdPath=\"Id\" SegmentGap=\"{Binding AnalysisGap}\" NeckWidth=\"{Binding AnalysisNeck}\" ShowLabels=\"{Binding AnalysisLabels}\" ShowValues=\"{Binding AnalysisLabels}\" IsSelectionEnabled=\"{Binding AnalysisSelection}\" SelectedIndex=\"{Binding AnalysisSelectedIndex, Mode=TwoWay}\" />",
+            "lineAtCatalogUpdate": 696
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyAnalysis(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyAnalysisBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "GanttChart",
+      "family": "C6Completion",
+      "baseType": "ScheduleChartBase",
+      "officialMatrixIds": [
+        "SC01"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/GanttChart.cs",
+        "anchor": "public sealed partial class GanttChart : ScheduleChartBase",
+        "lineAtCatalogUpdate": 8
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "GanttChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/ScheduleChartTests.cs",
+            "anchor": "var original = new object(); using var chart = new GanttChart { ItemsSource = new[] { new ScheduleTask(\"a\", Day(0), Day(2), 50, Source: original), new ScheduleTask(\"b\", Day(2), Day(4), 75, Dependencies: [new(\"a\"), new(\"a\", ScheduleDependencyType.StartStart), new(\"a\", ScheduleDependencyType.FinishFinish), new(\"a\", ScheduleDependencyType.StartFinish)]), new ScheduleTask(\"m\", Day(5), Day(5)) } }; using var host = new Host(chart);",
+            "lineAtCatalogUpdate": 36
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "GanttChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"gantt\" => new GanttChart { ItemsSource = new[] { new ScheduleTask(\"t-a\", C6Start, C6Start.AddDays(2), 25, \"Alpha\", \"A\"), new ScheduleTask(\"t-b\", C6Start.AddDays(1), C6Start.AddDays(3), 50, \"Beta\", \"B\", Dependencies: [new(\"t-a\", ScheduleDependencyType.StartStart, TimeSpan.FromDays(1))]), new ScheduleTask(\"t-m\", C6Start.AddDays(4), C6Start.AddDays(4), 0, \"Alpha\", \"M\") }, VisibleStart = C6Start, VisibleEnd = C6Start.AddDays(5) },",
+            "lineAtCatalogUpdate": 29
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "GanttChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:GanttChart x:Name=\"UsageC6Gantt\" Grid.Row=\"0\" Grid.Column=\"0\" Height=\"240\" Title=\"Gantt\" ItemsSource=\"{Binding C6Tasks}\" IdPath=\"Id\" LabelPath=\"Name\" StartPath=\"Open\" EndPath=\"Close\" ProgressPath=\"Complete\" DependenciesPath=\"Links\" LanePath=\"Team\" SelectedIndex=\"{Binding C6SelectedIndex, Mode=TwoWay}\" />",
+            "lineAtCatalogUpdate": 1011
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "GaugeChart",
+      "family": "GaugeMicro",
+      "baseType": "CircularGaugeChart",
+      "officialMatrixIds": [
+        "GG02"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/GaugeCircular.cs",
+        "anchor": "public sealed class GaugeChart : CircularGaugeChart",
+        "lineAtCatalogUpdate": 53
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "GaugeChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/GaugeControlTests.cs",
+            "anchor": "var semi = Plain(new GaugeChart()); using (var host = new Host(semi))",
+            "lineAtCatalogUpdate": 122
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "GaugeChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.GaugeMicro.cs",
+            "anchor": "var semicircle = new GaugeChart { Name = \"SemiGaugeExample\", Title = \"半圆仪表 · 区间与指针\", Value = 68, TargetValue = 80, RangesSource = ranges };",
+            "lineAtCatalogUpdate": 53
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "GaugeChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:GaugeChart x:Name=\"UsageSemiGauge\" Grid.Row=\"0\" Grid.Column=\"1\" Height=\"250\" Title=\"半圆仪表 · 区间\" Minimum=\"{Binding GaugeMinimum}\" Maximum=\"{Binding GaugeMaximum}\" Value=\"{Binding GaugeValue}\" TargetValue=\"{Binding GaugeTarget}\" RangesSource=\"{Binding GaugeRanges}\" />",
+            "lineAtCatalogUpdate": 664
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyGaugeMicro(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyGaugeMicroBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "GradientRingChart",
+      "family": "GaugeMicro",
+      "baseType": "GaugeBase",
+      "officialMatrixIds": [
+        "GG03"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/GaugeGradientRing.cs",
+        "anchor": "public sealed class GradientRingChart : GaugeBase",
+        "lineAtCatalogUpdate": 9
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "GradientRingChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/GaugeControlTests.cs",
+            "anchor": "_ => new GradientRingChart { StartAngle = 0, ShowLabels = false }",
+            "lineAtCatalogUpdate": 96
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "GradientRingChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.GaugeMicro.cs",
+            "anchor": "var gradient = new GradientRingChart { Name = \"GradientRingExample\", Title = \"多环仪表 · 独立数值\", ValuesSource = rings };",
+            "lineAtCatalogUpdate": 55
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "GradientRingChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:GradientRingChart x:Name=\"UsageGradientRing\" Grid.Row=\"1\" Grid.Column=\"0\" Height=\"250\" Title=\"多环仪表 · 独立业务值\" Minimum=\"{Binding GaugeMinimum}\" Maximum=\"{Binding GaugeMaximum}\" Value=\"{Binding GaugeValue}\" TargetValue=\"{Binding GaugeTarget}\" ValuesSource=\"{Binding GaugeRings}\" />",
+            "lineAtCatalogUpdate": 665
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyGaugeMicro(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyGaugeMicroBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "HeatmapChart",
+      "family": "Analysis",
+      "baseType": "AnalysisChartBase",
+      "officialMatrixIds": [
+        "AK05"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/HeatmapChart.cs",
+        "anchor": "public sealed class HeatmapChart : AnalysisChartBase",
+        "lineAtCatalogUpdate": 10
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "HeatmapChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/HeatmapTests.cs",
+            "anchor": "var chart = new HeatmapChart();",
+            "lineAtCatalogUpdate": 17
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "HeatmapChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Analysis.cs",
+            "anchor": "var heatmap = new HeatmapChart { Name = \"HeatmapExample\", ItemsSource = cells, RowPath = \"Row\", ColumnPath = \"Column\", ValuePath = \"Value\", IdPath = \"Id\", Height = 250, Padding = new Thickness(10), Minimum = 0, Maximum = 100, LowColor = Color.Parse(\"#DDEBFF\"), HighColor = Color.Parse(\"#2455B5\"), MissingBrush = Brush(\"#559AA7B8\") };",
+            "lineAtCatalogUpdate": 26
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "HeatmapChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:HeatmapChart x:Name=\"UsageAnalysisHeatmap\" Grid.Row=\"1\" Grid.Column=\"0\" Height=\"250\" Title=\"Heatmap · 离散行列\" ItemsSource=\"{Binding AnalysisCells}\" RowPath=\"Row\" ColumnPath=\"Column\" ValuePath=\"Value\" IdPath=\"Id\" Minimum=\"0\" Maximum=\"100\" CellGap=\"{Binding AnalysisGap}\" LowColor=\"#DDEBFF\" HighColor=\"#2455B5\" MissingBrush=\"#559AA7B8\" ShowLabels=\"{Binding AnalysisLabels}\" ShowValues=\"{Binding AnalysisLabels}\" IsSelectionEnabled=\"{Binding AnalysisSelection}\" />",
+            "lineAtCatalogUpdate": 698
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyAnalysis(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyAnalysisBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "HexbinChart",
+      "family": "Engineering",
+      "baseType": "EngineeringChartBase",
+      "officialMatrixIds": [
+        "EN02"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/HexbinChart.cs",
+        "anchor": "public sealed class HexbinChart : EngineeringChartBase",
+        "lineAtCatalogUpdate": 7
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "HexbinChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/EngineeringChartTests.cs",
+            "anchor": "var chart = new HexbinChart { ItemsSource = points, Aggregation = aggregation, HexRadius = 18 };",
+            "lineAtCatalogUpdate": 80
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "HexbinChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Engineering.cs",
+            "anchor": "var hex = new HexbinChart { Title = \"Hexbin · 原始成员密度\", Height = 285, ItemsSource = cloud };",
+            "lineAtCatalogUpdate": 20
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "HexbinChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:HexbinChart x:Name=\"UsageEngineeringHexbin\" Grid.Column=\"1\" Height=\"270\" Title=\"Hexbin · 传感器负荷\" ItemsSource=\"{Binding EngineeringHexRecords}\" XPath=\"Easting\" YPath=\"Northing\" ValuePath=\"Load\" IdPath=\"Id\" LabelPath=\"Id\" BinRadius=\"{Binding EngineeringHexRadius}\" Aggregation=\"{Binding EngineeringHexAggregation}\" />",
+            "lineAtCatalogUpdate": 921
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyEngineering(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyEngineeringBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "IcicleChart",
+      "family": "C6Completion",
+      "baseType": "HierarchyChartBase",
+      "officialMatrixIds": [
+        "HF09"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/IcicleChart.cs",
+        "anchor": "public sealed class IcicleChart : HierarchyChartBase",
+        "lineAtCatalogUpdate": 7
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "IcicleChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/AdditionalHierarchyChartTests.cs",
+            "anchor": "var icicle = new IcicleChart { ItemsSource = rows, Gap = 0 }; using var host = new Host(icicle); Assert.True(icicle.GetMarks()[0].Position.Y < icicle.GetMarks()[1].Position.Y);",
+            "lineAtCatalogUpdate": 158
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "IcicleChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"icicle\" => new IcicleChart { ItemsSource = new[] { root } },",
+            "lineAtCatalogUpdate": 45
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "IcicleChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:IcicleChart x:Name=\"UsageC6Icicle\" Grid.Row=\"7\" Grid.Column=\"1\" Height=\"240\" Title=\"Icicle\" ItemsSource=\"{Binding C6Roots}\" IdPath=\"Id\" LabelPath=\"Name\" ChildrenPath=\"Branches\" ValuePath=\"Cost\" ReduceMotion=\"True\" />",
+            "lineAtCatalogUpdate": 1026
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "IndentedTreeChart",
+      "family": "C6Completion",
+      "baseType": "HierarchyChartBase",
+      "officialMatrixIds": [
+        "HF10"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/IndentedTreeChart.cs",
+        "anchor": "public sealed class IndentedTreeChart : HierarchyChartBase",
+        "lineAtCatalogUpdate": 7
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "IndentedTreeChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/AdditionalHierarchyChartTests.cs",
+            "anchor": "foreach (var chart in new HierarchyChartBase[] { new DendrogramChart(), new IndentedTreeChart(), new RadialTreeChart() })",
+            "lineAtCatalogUpdate": 138
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "IndentedTreeChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"indented\" => new IndentedTreeChart { ItemsSource = new[] { root }, IndentSize = 20 },",
+            "lineAtCatalogUpdate": 47
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "IndentedTreeChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:IndentedTreeChart x:Name=\"UsageC6Indented\" Grid.Row=\"8\" Grid.Column=\"1\" Height=\"240\" Title=\"Indented\" ItemsSource=\"{Binding C6Roots}\" IdPath=\"Id\" LabelPath=\"Name\" ChildrenPath=\"Branches\" ValuePath=\"Cost\" ReduceMotion=\"True\" />",
+            "lineAtCatalogUpdate": 1028
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "KpiCard",
+      "family": "C6Completion",
+      "baseType": "KpiCardChart",
+      "officialMatrixIds": [
+        "AK06"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalSummaryCharts.cs",
+        "anchor": "public sealed class KpiCard : KpiCardChart { public KpiCard() => Value = 0; }",
+        "lineAtCatalogUpdate": 98
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "KpiCard",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/OperationalChartTests.cs",
+            "anchor": "var trend = new ObservableCollection<double> { 80, 100, 120 }; var chart = new KpiCard { Value = 120, Previous = 100, Delta = 12.5, Unit = \"$\", Subtitle = \"monthly\", SparklineData = trend }; using var host = new Host(chart); var row = Assert.Single(chart.Layout); Assert.True(row.IsExplicitDelta); Assert.Equal(.125, row.DisplayDelta); Assert.Equal(20, row.Change); Assert.Equal(.2, row.RelativeChange); Assert.Same(chart, Assert.Single(chart.GetMarks()).Members[0].Item); trend.Add(140); Assert.Equal(4, chart.Layout[0].Trend.Count); chart.DeltaType = OperationalDeltaType.Absolute; Assert.Equal(12.5, chart.Layout[0].DisplayDelta); chart.Delta = null; Assert.False(chart.Layout[0].IsExplicitDelta); Assert.Equal(20, chart.Layout[0].DisplayDelta); chart.Previous = 0; chart.DeltaType = OperationalDeltaType.Percentage; Assert.Null(chart.Layout[0].DisplayDelta); chart.ItemsSource = new[] { new KpiPoint(\"raw\", 30, 20) }; Assert.Equal(.5, chart.Layout[0].DisplayDelta); chart.ItemsSource = Array.Empty<KpiPoint>(); Assert.Empty(chart.GetMarks());",
+            "lineAtCatalogUpdate": 61
+          }
+        ]
+      },
+      "demo": {
+        "status": "inherited",
+        "symbol": "KpiCardChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"kpi\" => new KpiCardChart { ItemsSource = new[] { new KpiPoint(\"k\", 120, 100, [80, 100, 120], \"K\") } },",
+            "lineAtCatalogUpdate": 34
+          }
+        ],
+        "gap": "No direct KpiCard reference in demo; the inherited KpiCardChart example does not separately qualify this concrete type."
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "KpiCard",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:KpiCard x:Name=\"UsageC6Kpi\" Grid.Row=\"2\" Grid.Column=\"1\" Height=\"240\" Title=\"Kpi\" Value=\"{Binding C6Headline.Amount}\" Previous=\"{Binding C6Headline.Prior}\" Delta=\"12.5\" DeltaType=\"Percentage\" SparklineData=\"{Binding C6Trend}\" Unit=\"$\" Subtitle=\"vs last month\" Label=\"Revenue\" />",
+            "lineAtCatalogUpdate": 1016
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "KpiCardChart",
+      "family": "C6Completion",
+      "baseType": "OperationalChartBase",
+      "officialMatrixIds": [
+        "AK06"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalSummaryCharts.cs",
+        "anchor": "public class KpiCardChart : OperationalChartBase",
+        "lineAtCatalogUpdate": 41
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "KpiCardChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/OperationalChartTests.cs",
+            "anchor": "1 => new KpiCardChart { ItemsSource = new[] { new KpiPoint(\"k\", 15, 10, new[] { 1d, 3, 2 }, \"Orders\") } },",
+            "lineAtCatalogUpdate": 101
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "KpiCardChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"kpi\" => new KpiCardChart { ItemsSource = new[] { new KpiPoint(\"k\", 120, 100, [80, 100, 120], \"K\") } },",
+            "lineAtCatalogUpdate": 34
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "KpiCardChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.C6Completion.cs",
+            "anchor": "var bullet = Chart<BulletChart>(\"Bullet\"); var kpi = Chart<KpiCardChart>(\"Kpi\"); var waffle = Chart<WaffleChart>(\"Waffle\"); var table = Chart<TableChart>(\"Table\"); var calendar = Chart<CalendarHeatmapChart>(\"Calendar\"); var words = Chart<WordCloudChart>(\"Words\"); var bump = Chart<BumpChart>(\"Bump\"); var slope = Chart<SlopeChart>(\"Slope\"); var parliament = Chart<ParliamentChart>(\"Parliament\"); var river = Chart<ThemeRiverChart>(\"River\");",
+            "lineAtCatalogUpdate": 29
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.C6Completion.cs"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "LinearGaugeChart",
+      "family": "GaugeMicro",
+      "baseType": "GaugeBase",
+      "officialMatrixIds": [
+        "GG04"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/GaugeLinear.cs",
+        "anchor": "public sealed class LinearGaugeChart : GaugeBase",
+        "lineAtCatalogUpdate": 8
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "LinearGaugeChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/GaugeControlTests.cs",
+            "anchor": "1 => new LinearGaugeChart { ShowNeedle = false },",
+            "lineAtCatalogUpdate": 94
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "LinearGaugeChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.GaugeMicro.cs",
+            "anchor": "var linear = new LinearGaugeChart { Name = \"LinearGaugeExample\", Title = \"线性仪表 · 水平 / 垂直\", Value = 68, TargetValue = 80, RangesSource = ranges };",
+            "lineAtCatalogUpdate": 57
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "LinearGaugeChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:LinearGaugeChart x:Name=\"UsageLinearGauge\" Grid.Row=\"1\" Grid.Column=\"1\" Height=\"250\" Title=\"线性仪表 · 方向绑定\" Minimum=\"{Binding GaugeMinimum}\" Maximum=\"{Binding GaugeMaximum}\" Value=\"{Binding GaugeValue}\" TargetValue=\"{Binding GaugeTarget}\" RangesSource=\"{Binding GaugeRanges}\" Orientation=\"{Binding GaugeOrientation}\" />",
+            "lineAtCatalogUpdate": 666
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyGaugeMicro(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyGaugeMicroBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "LiquidFillGaugeChart",
+      "family": "GaugeMicro",
+      "baseType": "GaugeBase",
+      "officialMatrixIds": [
+        "GG05"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/GaugeLiquidFill.cs",
+        "anchor": "public sealed class LiquidFillGaugeChart : GaugeBase",
+        "lineAtCatalogUpdate": 12
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "LiquidFillGaugeChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/GaugeControlTests.cs",
+            "anchor": "2 => new LiquidFillGaugeChart { Shape = GaugeLiquidShape.Rectangle, WaveAmplitude = 0 },",
+            "lineAtCatalogUpdate": 95
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "LiquidFillGaugeChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.GaugeMicro.cs",
+            "anchor": "var liquid = new LiquidFillGaugeChart { Name = \"LiquidGaugeExample\", Title = \"液体仪表 · 静态波形\", Value = 68, TargetValue = 80, WavePhase = .25, IsWaveAnimationEnabled = false };",
+            "lineAtCatalogUpdate": 59
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "LiquidFillGaugeChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:LiquidFillGaugeChart x:Name=\"UsageLiquidGauge\" Grid.Row=\"2\" Grid.Column=\"0\" Height=\"250\" Title=\"液体仪表 · 动态效果绑定\" Minimum=\"{Binding GaugeMinimum}\" Maximum=\"{Binding GaugeMaximum}\" Value=\"{Binding GaugeValue}\" TargetValue=\"{Binding GaugeTarget}\" Shape=\"{Binding GaugeLiquidShape}\" IsWaveAnimationEnabled=\"{Binding GaugeWave}\" ReduceMotion=\"{Binding GaugeReduceMotion}\" IsPaused=\"{Binding GaugePaused}\" />",
+            "lineAtCatalogUpdate": 667
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyGaugeMicro(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyGaugeMicroBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "MatrixChart",
+      "family": "C6Completion",
+      "baseType": "OperationalMatrixChartBase",
+      "officialMatrixIds": [
+        "AK07"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalGridCharts.cs",
+        "anchor": "public sealed class MatrixChart : OperationalMatrixChartBase { protected override bool IsTable => false; }",
+        "lineAtCatalogUpdate": 92
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "MatrixChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/OperationalChartTests.cs",
+            "anchor": "3 => new MatrixChart { ItemsSource = new[] { new MatrixPoint(\"m\", \"Row\", \"Column\", 1) } },",
+            "lineAtCatalogUpdate": 103
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "MatrixChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"matrix\" => new MatrixChart { ItemsSource = cells },",
+            "lineAtCatalogUpdate": 36
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "MatrixChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:MatrixChart x:Name=\"UsageC6Matrix\" Grid.Row=\"3\" Grid.Column=\"1\" Height=\"240\" Title=\"Matrix\" ItemsSource=\"{Binding C6Matrix}\" IdPath=\"Id\" LabelPath=\"Name\" RowPath=\"Row\" ColumnPath=\"Column\" ValuePath=\"Amount\" />",
+            "lineAtCatalogUpdate": 1018
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "MekkoChart",
+      "family": "AdvancedComparison",
+      "baseType": "ComparisonChartBase",
+      "officialMatrixIds": [
+        "CP03"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/MekkoChart.cs",
+        "anchor": "public sealed class MekkoChart : ComparisonChartBase",
+        "lineAtCatalogUpdate": 9
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "MekkoChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/AdvancedComparisonChartTests.cs",
+            "anchor": "var chart = new MekkoChart { ItemsSource = new[] { a, b }, ColumnGap = 4 };",
+            "lineAtCatalogUpdate": 106
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "MekkoChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.AdvancedComparison.cs",
+            "anchor": "var mekko = new MekkoChart { Title = \"Mekko · 市场宽度 × 内部份额\", Height = 260, ItemsSource = ComparisonDemoColumns(), ColumnGap = 4 };",
+            "lineAtCatalogUpdate": 25
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "MekkoChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:MekkoChart x:Name=\"UsageAdvancedMekko\" Grid.Row=\"1\" Height=\"290\" Title=\"Mekko · 渠道占比\" ItemsSource=\"{Binding AdvancedMekkoRecords}\" WidthPath=\"Weight\" SegmentsPath=\"Parts\" SegmentValuePath=\"Amount\" SegmentLabelPath=\"Name\" SegmentIdPath=\"Id\" IdPath=\"Id\" LabelPath=\"Name\" ColumnGap=\"{Binding AdvancedColumnGap}\" ShowLabels=\"{Binding AdvancedShowLabels}\" />",
+            "lineAtCatalogUpdate": 944
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyAdvancedComparison(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyAdvancedComparisonBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "MirrorBarChart",
+      "family": "AdvancedComparison",
+      "baseType": "PairedBarChartBase",
+      "officialMatrixIds": [
+        "CP04"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/MirrorBarChart.cs",
+        "anchor": "public sealed class MirrorBarChart : PairedBarChartBase { }",
+        "lineAtCatalogUpdate": 78
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "MirrorBarChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/AdvancedComparisonChartTests.cs",
+            "anchor": "PairedBarChartBase chart = kind switch { 0 => new MirrorBarChart(), 1 => new PopulationPyramidChart(), _ => new TornadoChart() };",
+            "lineAtCatalogUpdate": 73
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "MirrorBarChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.AdvancedComparison.cs",
+            "anchor": "var mirror = new MirrorBarChart { Title = \"Mirror · 两侧共用尺度\", Height = 260, ItemsSource = ComparisonDemoPairs(), LeftTitle = \"西部\", RightTitle = \"东部\" };",
+            "lineAtCatalogUpdate": 21
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "MirrorBarChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:MirrorBarChart x:Name=\"UsageAdvancedMirror\" Grid.Row=\"1\" Grid.Column=\"1\" Height=\"290\" Title=\"镜像 · 前后对比\" ItemsSource=\"{Binding AdvancedPairRecords}\" LeftValuePath=\"Before\" RightValuePath=\"After\" LeftTitle=\"前\" RightTitle=\"后\" IdPath=\"Id\" LabelPath=\"Name\" CenterGap=\"{Binding AdvancedCenterGap}\" Sort=\"{Binding AdvancedSort}\" ShowLabels=\"{Binding AdvancedShowLabels}\" />",
+            "lineAtCatalogUpdate": 945
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyAdvancedComparison(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyAdvancedComparisonBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "MosaicChart",
+      "family": "C5Completion",
+      "baseType": "OperationalChartBase",
+      "officialMatrixIds": [
+        "ST06"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/MultivariateCharts.cs",
+        "anchor": "public sealed class MosaicChart : OperationalChartBase",
+        "lineAtCatalogUpdate": 10
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "MosaicChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/MultivariateTests.cs",
+            "anchor": "var source = new ObservableCollection<MosaicRow> { a, b, c }; var chart = new MosaicChart { ItemsSource = source, ShowLabels = false };",
+            "lineAtCatalogUpdate": 117
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "MosaicChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C5Completion.cs",
+            "anchor": "\"mosaic\" => new MosaicChart { ItemsSource = new ObservableCollection<C5MosaicRow> { new(\"m-ax1\", \"A\", \"X\", 1), new(\"m-ax2\", \"A\", \"X\", 1), new(\"m-ay\", \"A\", \"Y\", 2), new(\"m-bx\", \"B\", \"X\", 1), new(\"m-by\", \"B\", \"Y\", 3) }, CellGap = 0 },",
+            "lineAtCatalogUpdate": 62
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "MosaicChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:MosaicChart x:Name=\"UsageC5Mosaic\" Grid.Row=\"2\" Grid.Column=\"1\" Height=\"260\" Title=\"Mosaic · 重复列联项保留来源\" ItemsSource=\"{Binding C5Mosaic}\" ShowLabels=\"{Binding C5Labels}\" SelectedIndex=\"{Binding C5MosaicSelected, Mode=TwoWay}\" />",
+            "lineAtCatalogUpdate": 1068
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "foreach (var check in window.VerifyBindings()) checks[check.Key] = check.Value;",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC5CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "NetworkChart",
+      "family": "Relations",
+      "baseType": "RelationsChartBase",
+      "officialMatrixIds": [
+        "HF02",
+        "HF08",
+        "HF12"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/NetworkChart.cs",
+        "anchor": "public sealed class NetworkChart : RelationsChartBase",
+        "lineAtCatalogUpdate": 6
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "NetworkChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/RelationChartTests.cs",
+            "anchor": "var chart = new NetworkChart { ItemsSource = new[] { new GraphNode(\"a\"), new GraphNode(\"b\") }, EdgesSource = rows };",
+            "lineAtCatalogUpdate": 48
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "NetworkChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Relations.cs",
+            "anchor": "\"network\" => new NetworkChart { Mode = RelationNetworkMode.Circular },",
+            "lineAtCatalogUpdate": 22
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "NetworkChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:NetworkChart x:Name=\"UsageRelationNetwork\" Grid.Row=\"1\" Grid.Column=\"0\" Title=\"Network\" Height=\"250\" Mode=\"Circular\" ItemsSource=\"{Binding RelationNodes}\" EdgesSource=\"{Binding RelationEdges}\" IdPath=\"Id\" LabelPath=\"Name\" NodeWeightPath=\"Metric\" GroupPath=\"Category\" ShapePath=\"Shape\" StagePath=\"Stage\" WidthPath=\"Width\" HeightPath=\"Height\" SourcePath=\"From\" TargetPath=\"To\" WeightPath=\"Amount\" EdgeIdPath=\"Id\" EdgeLabelPath=\"Name\" ShowLabels=\"{Binding RelationsLabels}\" />",
+            "lineAtCatalogUpdate": 973
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyRelations(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyRelationsBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "OrganizationChart",
+      "family": "Hierarchy",
+      "baseType": "HierarchyChartBase",
+      "officialMatrixIds": [
+        "HF13"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/OrganizationChart.cs",
+        "anchor": "public sealed class OrganizationChart : HierarchyChartBase",
+        "lineAtCatalogUpdate": 8
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "OrganizationChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/HierarchyChartTests.cs",
+            "anchor": "var chart = new OrganizationChart { ItemsSource = new[] { new HierarchyNode(children: new[] { new HierarchyNode(1), new HierarchyNode(2) }) }, Gap = 0 };",
+            "lineAtCatalogUpdate": 92
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "OrganizationChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Hierarchy.cs",
+            "anchor": "new OrganizationChart { Title = \"Organization · 组织连线与折叠\" }, new BubbleCloudChart { Title = \"Bubble cloud · 无轴面积气泡\" },",
+            "lineAtCatalogUpdate": 26
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "OrganizationChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:OrganizationChart x:Name=\"UsageHierarchyTree\" Grid.Row=\"1\" Grid.Column=\"0\" Title=\"Organization\" Height=\"260\" ItemsSource=\"{Binding HierarchyRecords}\" ChildrenPath=\"Nodes\" ValuePath=\"Weight\" LabelPath=\"Name\" IdPath=\"Id\" SelectedIndex=\"{Binding HierarchySelectedIndex, Mode=TwoWay}\" ShowLabels=\"{Binding HierarchyLabels}\" MaximumVisibleDepth=\"{Binding HierarchyDepth}\" ReduceMotion=\"{Binding HierarchyReduceMotion}\" AnimationTriggers=\"All\" />",
+            "lineAtCatalogUpdate": 959
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyHierarchy(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyHierarchyBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "PackedBubbleChart",
+      "family": "Hierarchy",
+      "baseType": "HierarchyChartBase",
+      "officialMatrixIds": [
+        "BC03"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/PackedBubbleChart.cs",
+        "anchor": "public sealed class PackedBubbleChart : HierarchyChartBase",
+        "lineAtCatalogUpdate": 4
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "PackedBubbleChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/HierarchyChartTests.cs",
+            "anchor": "var chart = new PackedBubbleChart { ItemsSource = rows, IdPath = \"Id\", AnimationTimeProvider = clock, AnimationTriggers = ChartAnimationTriggers.Data, AnimationDuration = TimeSpan.FromSeconds(1), AnimationEasing = null };",
+            "lineAtCatalogUpdate": 147
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "PackedBubbleChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Hierarchy.cs",
+            "anchor": "new PackedBubbleChart { Title = \"Packed bubble · 紧凑打包\" }, new CirclePackingChart { Title = \"Circle packing · 圆形层级嵌套\" },",
+            "lineAtCatalogUpdate": 27
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "PackedBubbleChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:PackedBubbleChart x:Name=\"UsageHierarchyPacked\" GroupPath=\"Group\" ShowLegend=\"True\" Grid.Row=\"2\" Grid.Column=\"0\" Title=\"Packed bubble\" Height=\"260\" ItemsSource=\"{Binding HierarchyRecords}\" ChildrenPath=\"Nodes\" ValuePath=\"Weight\" LabelPath=\"Name\" IdPath=\"Id\" ShowLabels=\"{Binding HierarchyLabels}\" MaximumVisibleDepth=\"{Binding HierarchyDepth}\" ReduceMotion=\"{Binding HierarchyReduceMotion}\" AnimationTriggers=\"All\" />",
+            "lineAtCatalogUpdate": 961
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyHierarchy(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyHierarchyBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "ParallelCoordinatesChart",
+      "family": "C5Completion",
+      "baseType": "ComparisonChartBase",
+      "officialMatrixIds": [
+        "ST07"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/MultivariateCharts.cs",
+        "anchor": "public sealed class ParallelCoordinatesChart : ComparisonChartBase",
+        "lineAtCatalogUpdate": 58
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "ParallelCoordinatesChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/MultivariateTests.cs",
+            "anchor": "var chart = new ParallelCoordinatesChart { ItemsSource = new[] { row }, ShowLabels = false, ShowValues = false };",
+            "lineAtCatalogUpdate": 131
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "ParallelCoordinatesChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C5Completion.cs",
+            "anchor": "var chart = new ParallelCoordinatesChart { ItemsSource = new ObservableCollection<C5ParallelRow> { new(\"parallel-a\", 0, 5, 10), new(\"parallel-b\", 10, 5, 0), new(\"parallel-gap\", 2, double.NaN, 8) } };",
+            "lineAtCatalogUpdate": 74
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "ParallelCoordinatesChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:ParallelCoordinatesChart x:Name=\"UsageC5Parallel\" Grid.Row=\"3\" Grid.ColumnSpan=\"2\" Height=\"260\" Title=\"Parallel · 可观察坐标轴和原始行\" ItemsSource=\"{Binding C5Parallel}\" Axes=\"{Binding C5ParallelAxes}\" ShowLabels=\"{Binding C5Labels}\" SelectedIndex=\"{Binding C5ParallelSelected, Mode=TwoWay}\" />",
+            "lineAtCatalogUpdate": 1069
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "foreach (var check in window.VerifyBindings()) checks[check.Key] = check.Value;",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC5CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "ParliamentChart",
+      "family": "C6Completion",
+      "baseType": "OperationalChartBase",
+      "officialMatrixIds": [
+        "CP05"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalSummaryCharts.cs",
+        "anchor": "public sealed class ParliamentChart : OperationalChartBase",
+        "lineAtCatalogUpdate": 131
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "ParliamentChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/OperationalChartTests.cs",
+            "anchor": "9 => new ParliamentChart { Rows = 2, ItemsSource = new[] { new ParliamentParty(\"p\", 10, \"Party\") } },",
+            "lineAtCatalogUpdate": 109
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "ParliamentChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"parliament\" => new ParliamentChart { Rows = 2, InnerRadiusFactor = .5, ItemsSource = new[] { new ParliamentParty(\"pa\", 1, \"A\"), new ParliamentParty(\"pb\", 3, \"B\") } },",
+            "lineAtCatalogUpdate": 42
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "ParliamentChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:ParliamentChart x:Name=\"UsageC6Parliament\" Grid.Row=\"6\" Grid.Column=\"1\" Height=\"240\" Title=\"Parliament\" ItemsSource=\"{Binding C6Parties}\" IdPath=\"Id\" LabelPath=\"Name\" ValuePath=\"Amount\" Rows=\"3\" />",
+            "lineAtCatalogUpdate": 1024
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "PolarChart",
+      "family": "Polar",
+      "baseType": "ChartBase",
+      "officialMatrixIds": [
+        "RD01",
+        "RD03",
+        "RD04",
+        "RD05",
+        "RD06"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/PolarChart.cs",
+        "anchor": "public partial class PolarChart : ChartBase",
+        "lineAtCatalogUpdate": 17
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "PolarChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/PolarControlTests.cs",
+            "anchor": "var chart = new PolarChart { Width = 700, Height = 520, Padding = new(0), ShowLegend = false, ShowAxisLabels = false, ShowGridLines = false, AxisBrush = null, RadialAxis = new NumericAxis { Minimum = 0, Maximum = 100 } };",
+            "lineAtCatalogUpdate": 220
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "PolarChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Polar.cs",
+            "anchor": "PolarChart result = radar ? new RadarChart() : new PolarChart();",
+            "lineAtCatalogUpdate": 24
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "PolarChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:PolarChart x:Name=\"UsagePolarLineChart\" Grid.Column=\"0\" Grid.Row=\"0\" Height=\"310\" Padding=\"4\" Title=\"极坐标线 · 源顺序\" ShowLegend=\"True\" ShowDataLabels=\"{Binding PolarLabels}\" AngleUnit=\"{Binding PolarUnit}\" StartAngle=\"{Binding PolarStartAngle}\" SweepAngle=\"{Binding PolarSweep}\" Clockwise=\"{Binding PolarClockwise}\" SelectionMode=\"Multiple\" GridShape=\"{Binding PolarGrid}\" SelectedPoint=\"{Binding PolarSelectedPoint, Mode=TwoWay}\">",
+            "lineAtCatalogUpdate": 607
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyPolar(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyPolarBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "PopulationPyramidChart",
+      "family": "AdvancedComparison",
+      "baseType": "PairedBarChartBase",
+      "officialMatrixIds": [
+        "CP06"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/PopulationPyramidChart.cs",
+        "anchor": "public sealed class PopulationPyramidChart : PairedBarChartBase",
+        "lineAtCatalogUpdate": 7
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "PopulationPyramidChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/AdvancedComparisonChartTests.cs",
+            "anchor": "PairedBarChartBase chart = kind switch { 0 => new MirrorBarChart(), 1 => new PopulationPyramidChart(), _ => new TornadoChart() };",
+            "lineAtCatalogUpdate": 73
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "PopulationPyramidChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.AdvancedComparison.cs",
+            "anchor": "var population = new PopulationPyramidChart { Title = \"Population · 按输入年龄段排列\", Height = 260,",
+            "lineAtCatalogUpdate": 22
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "PopulationPyramidChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:PopulationPyramidChart x:Name=\"UsageAdvancedPopulation\" Grid.Row=\"2\" Height=\"290\" Title=\"人口 · 区域两组\" ItemsSource=\"{Binding AdvancedPairRecords}\" MaleValuePath=\"Before\" FemaleValuePath=\"After\" AgeLabelPath=\"Name\" IdPath=\"Id\" CenterGap=\"{Binding AdvancedCenterGap}\" ShowLabels=\"{Binding AdvancedShowLabels}\" />",
+            "lineAtCatalogUpdate": 946
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyAdvancedComparison(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyAdvancedComparisonBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "ProgressDonutChart",
+      "family": "GaugeMicro",
+      "baseType": "GaugeBase",
+      "officialMatrixIds": [
+        "GG06"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/GaugeCircular.cs",
+        "anchor": "public sealed class ProgressDonutChart : GaugeBase",
+        "lineAtCatalogUpdate": 71
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "ProgressDonutChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/GaugeControlTests.cs",
+            "anchor": "var chart = new ProgressDonutChart { Value = value, TargetValue = 125 };",
+            "lineAtCatalogUpdate": 22
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "ProgressDonutChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.GaugeMicro.cs",
+            "anchor": "var progress = new ProgressDonutChart { Name = \"ProgressDonutExample\", Title = \"进度环 · 目标与边界\", Value = 68, TargetValue = 80 };",
+            "lineAtCatalogUpdate": 61
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "ProgressDonutChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:ProgressDonutChart x:Name=\"UsageProgressDonut\" Grid.Row=\"2\" Grid.Column=\"1\" Height=\"250\" Title=\"进度环 · 目标与边界\" Minimum=\"{Binding GaugeMinimum}\" Maximum=\"{Binding GaugeMaximum}\" Value=\"{Binding GaugeValue}\" TargetValue=\"{Binding GaugeTarget}\"  />",
+            "lineAtCatalogUpdate": 668
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyGaugeMicro(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyGaugeMicroBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "PyramidChart",
+      "family": "Analysis",
+      "baseType": "AnalysisChartBase",
+      "officialMatrixIds": [
+        "AK09"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/PyramidChart.cs",
+        "anchor": "public sealed class PyramidChart : AnalysisChartBase",
+        "lineAtCatalogUpdate": 8
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "PyramidChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/FunnelPyramidTests.cs",
+            "anchor": "var funnel = new FunnelChart(); var pyramid = new PyramidChart();",
+            "lineAtCatalogUpdate": 15
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "PyramidChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Analysis.cs",
+            "anchor": "var pyramid = new PyramidChart { Name = \"PyramidExample\", ItemsSource = rows, CategoryPath = \"Category\", ValuePath = \"Value\", IdPath = \"Id\", Height = 250, Padding = new Thickness(10) };",
+            "lineAtCatalogUpdate": 24
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "PyramidChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:PyramidChart x:Name=\"UsageAnalysisPyramid\" Grid.Row=\"0\" Grid.Column=\"1\" Height=\"250\" Title=\"金字塔 · 正值面积占比\" ItemsSource=\"{Binding AnalysisRecords}\" CategoryPath=\"Category\" ValuePath=\"Value\" IdPath=\"Id\" SegmentGap=\"{Binding AnalysisGap}\" ShowLabels=\"{Binding AnalysisLabels}\" ShowValues=\"{Binding AnalysisLabels}\" IsSelectionEnabled=\"{Binding AnalysisSelection}\" />",
+            "lineAtCatalogUpdate": 697
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyAnalysis(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyAnalysisBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "RadarChart",
+      "family": "Polar",
+      "baseType": "PolarChart",
+      "officialMatrixIds": [
+        "RD02"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/PolarChart.cs",
+        "anchor": "public sealed class RadarChart : PolarChart",
+        "lineAtCatalogUpdate": 235
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "RadarChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/C7SharedThemeTests.cs",
+            "anchor": "3 => new RadarChart(), 4 => new CircularChart(), 5 => new LinearGaugeChart(), _ => new SparklineChart(),",
+            "lineAtCatalogUpdate": 105
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "RadarChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C7Integration.cs",
+            "anchor": "var radar = new RadarChart",
+            "lineAtCatalogUpdate": 43
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "RadarChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:RadarChart x:Name=\"UsageRadarChart\" Grid.Column=\"1\" Grid.Row=\"1\" Height=\"310\" Padding=\"4\" Title=\"雷达 · 共享类别\" ShowLegend=\"True\" ShowDataLabels=\"{Binding PolarLabels}\" AngleUnit=\"{Binding PolarUnit}\" StartAngle=\"{Binding PolarStartAngle}\" SweepAngle=\"{Binding PolarSweep}\" Clockwise=\"{Binding PolarClockwise}\" SelectionMode=\"Multiple\"  >",
+            "lineAtCatalogUpdate": 622
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyPolar(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyPolarBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "RadialTreeChart",
+      "family": "C6Completion",
+      "baseType": "HierarchyChartBase",
+      "officialMatrixIds": [
+        "HF15"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/RadialTreeChart.cs",
+        "anchor": "public sealed class RadialTreeChart : HierarchyChartBase",
+        "lineAtCatalogUpdate": 7
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "RadialTreeChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/AdditionalHierarchyChartTests.cs",
+            "anchor": "foreach (var chart in new HierarchyChartBase[] { new DendrogramChart(), new IndentedTreeChart(), new RadialTreeChart() })",
+            "lineAtCatalogUpdate": 138
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "RadialTreeChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"radial\" => new RadialTreeChart { ItemsSource = new[] { root }, StartAngle = -90, SweepAngle = 360 },",
+            "lineAtCatalogUpdate": 48
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "RadialTreeChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:RadialTreeChart x:Name=\"UsageC6Radial\" Grid.Row=\"9\" Grid.Column=\"0\" Height=\"240\" Title=\"Radial\" ItemsSource=\"{Binding C6Roots}\" IdPath=\"Id\" LabelPath=\"Name\" ChildrenPath=\"Branches\" ValuePath=\"Cost\" ReduceMotion=\"True\" />",
+            "lineAtCatalogUpdate": 1029
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "RidgelineChart",
+      "family": "C5Completion",
+      "baseType": "DistributionProfileChartBase",
+      "officialMatrixIds": [
+        "ST08"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/DistributionProfileCharts.cs",
+        "anchor": "public sealed class RidgelineChart : DistributionProfileChartBase",
+        "lineAtCatalogUpdate": 118
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "RidgelineChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/DistributionProfileTests.cs",
+            "anchor": "DistributionProfileChartBase chart = ridge ? new RidgelineChart() : new ViolinPlot(); chart.ItemsSource = rows;",
+            "lineAtCatalogUpdate": 118
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "RidgelineChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C5Completion.cs",
+            "anchor": "\"ridgeline\" => new RidgelineChart { ItemsSource = profiles, SampleCount = 65, Bandwidth = .5, Minimum = -2, Maximum = 2, ProfileWidth = 1, Overlap = 0 },",
+            "lineAtCatalogUpdate": 65
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "RidgelineChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:RidgelineChart x:Name=\"UsageC5Ridge\" Grid.Row=\"1\" Grid.Column=\"1\" Height=\"260\" Title=\"Ridgeline · Typed samples\" ItemsSource=\"{Binding C5Ridges}\" SampleCount=\"48\" Bandwidth=\"{Binding C5Bandwidth}\" ShowLabels=\"{Binding C5Labels}\" SelectedIndex=\"{Binding C5RidgeSelected, Mode=TwoWay}\" />",
+            "lineAtCatalogUpdate": 1066
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "foreach (var check in window.VerifyBindings()) checks[check.Key] = check.Value;",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC5CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "SankeyChart",
+      "family": "Relations",
+      "baseType": "RelationsChartBase",
+      "officialMatrixIds": [
+        "HF01",
+        "HF16"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/SankeyChart.cs",
+        "anchor": "public sealed class SankeyChart : RelationsChartBase",
+        "lineAtCatalogUpdate": 6
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "SankeyChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/RelationChartTests.cs",
+            "anchor": "var chart = new SankeyChart { ItemsSource = new[] { new GraphNode(\"a\"), new GraphNode(\"b\") }, EdgesSource = edges }; using var host = new Host(chart);",
+            "lineAtCatalogUpdate": 59
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "SankeyChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Relations.cs",
+            "anchor": "\"sankey\" => new SankeyChart(), \"alluvial\" => new SankeyChart { Mode = RelationSankeyMode.Alluvial },",
+            "lineAtCatalogUpdate": 21
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "SankeyChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:SankeyChart x:Name=\"UsageRelationSankey\" Grid.Row=\"0\" Grid.Column=\"0\" Title=\"Sankey\" Height=\"250\"  ItemsSource=\"{Binding RelationNodes}\" EdgesSource=\"{Binding RelationEdges}\" IdPath=\"Id\" LabelPath=\"Name\" NodeWeightPath=\"Metric\" GroupPath=\"Category\" ShapePath=\"Shape\" StagePath=\"Stage\" WidthPath=\"Width\" HeightPath=\"Height\" SourcePath=\"From\" TargetPath=\"To\" WeightPath=\"Amount\" EdgeIdPath=\"Id\" EdgeLabelPath=\"Name\" ShowLabels=\"{Binding RelationsLabels}\" />",
+            "lineAtCatalogUpdate": 971
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyRelations(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyRelationsBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "SeatMap",
+      "family": "Maps",
+      "baseType": "ShapeMap",
+      "officialMatrixIds": [
+        "MP04"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/ShapeMap.cs",
+        "anchor": "public sealed partial class SeatMap : ShapeMap",
+        "lineAtCatalogUpdate": 138
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "SeatMap",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/MapChartTests.cs",
+            "anchor": "ShapeMap map = mode == 4 ? new SeatMap() : new ShapeMap { IsGeographic = false }; map.FeaturesSource = Features(); map.ShowLegend = false; map.ShowLabels = false;",
+            "lineAtCatalogUpdate": 297
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "SeatMap",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Maps.cs",
+            "anchor": "var seat = new SeatMap { Title = \"Seat · 平面坐标与业务状态选择\", Height = overview ? 300 : 320, ShowLabels = false, ShowLegend = false };",
+            "lineAtCatalogUpdate": 63
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "SeatMap",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:SeatMap x:Name=\"UsageMapSeat\" Grid.Row=\"2\" Grid.ColumnSpan=\"2\" Height=\"260\" Title=\"Seat · 平面坐标及逐项业务画刷\" FeaturesSource=\"{Binding MapFeatures}\" ShowLabels=\"{Binding MapLabels}\" ShowLegend=\"False\">",
+            "lineAtCatalogUpdate": 1000
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyMaps(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyMapBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "ShapeMap",
+      "family": "Maps",
+      "baseType": "EngineeringChartBase",
+      "officialMatrixIds": [
+        "MP01",
+        "MP02",
+        "MP03",
+        "MP05"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/ShapeMap.cs",
+        "anchor": "public partial class ShapeMap : EngineeringChartBase, IDisposable",
+        "lineAtCatalogUpdate": 33
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "ShapeMap",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/MapChartTests.cs",
+            "anchor": "ShapeMap map = mode == 4 ? new SeatMap() : new ShapeMap { IsGeographic = false }; map.FeaturesSource = Features(); map.ShowLegend = false; map.ShowLabels = false;",
+            "lineAtCatalogUpdate": 297
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "ShapeMap",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Maps.cs",
+            "anchor": "var map = new ShapeMap { GeoJson = OfflineWorldJson.Value, TopologyRule = MapTopologyRule.EvenOdd, Title = title, Height = overview ? 300 : 320, ShowLabels = false };",
+            "lineAtCatalogUpdate": 48
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "ShapeMap",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:ShapeMap x:Name=\"UsageMapShape\" Grid.Row=\"0\" Grid.Column=\"0\" Height=\"260\" Title=\"Shape · 原始区域和空洞\" FeaturesSource=\"{Binding MapFeatures}\" Projection=\"{Binding MapProjection}\" ShowLabels=\"{Binding MapLabels}\" SelectedIndex=\"{Binding MapSelectedIndex, Mode=TwoWay}\">",
+            "lineAtCatalogUpdate": 988
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyMaps(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyMapBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "SlopeChart",
+      "family": "C6Completion",
+      "baseType": "OperationalRankingChartBase",
+      "officialMatrixIds": [
+        "AK10"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalRankingCharts.cs",
+        "anchor": "public sealed class SlopeChart : OperationalRankingChartBase { protected override bool IsSlope => true; }",
+        "lineAtCatalogUpdate": 44
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "SlopeChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/OperationalChartTests.cs",
+            "anchor": "8 => new SlopeChart { ItemsSource = new[] { new RankingPoint(\"s0\", \"A\", 0, 1), new RankingPoint(\"s1\", \"A\", 1, 2) } },",
+            "lineAtCatalogUpdate": 108
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "SlopeChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"slope\" => new SlopeChart { ItemsSource = ranks },",
+            "lineAtCatalogUpdate": 41
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "SlopeChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:SlopeChart x:Name=\"UsageC6Slope\" Grid.Row=\"6\" Grid.Column=\"0\" Height=\"240\" Title=\"Slope\" ItemsSource=\"{Binding C6Slopes}\" IdPath=\"Id\" LabelPath=\"Name\" ValuePath=\"Amount\" EntityPath=\"Entity\" PeriodPath=\"Period\" />",
+            "lineAtCatalogUpdate": 1023
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "SmithChart",
+      "family": "Engineering",
+      "baseType": "EngineeringChartBase",
+      "officialMatrixIds": [
+        "EN03"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/SmithChart.cs",
+        "anchor": "public sealed class SmithChart : EngineeringChartBase",
+        "lineAtCatalogUpdate": 6
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "SmithChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/EngineeringChartTests.cs",
+            "anchor": "var chart = new SmithChart { ItemsSource = new[] { original }, ReferenceImpedance = z0, Quantity = quantity };",
+            "lineAtCatalogUpdate": 22
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "SmithChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Engineering.cs",
+            "anchor": "var smith = new SmithChart { Title = \"Smith · 阻抗 Ω\", Height = 285, ItemsSource = impedance };",
+            "lineAtCatalogUpdate": 22
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "SmithChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:SmithChart x:Name=\"UsageEngineeringSmith\" Grid.Row=\"1\" Height=\"285\" Title=\"Smith · 天线阻抗 Ω\" ItemsSource=\"{Binding EngineeringSmithRecords}\" ResistancePath=\"Resistance\" ReactancePath=\"Reactance\" IdPath=\"Id\" LabelPath=\"Id\" ReferenceImpedance=\"{Binding EngineeringReferenceImpedance}\" SelectedIndex=\"{Binding EngineeringSelectedIndex, Mode=TwoWay}\" />",
+            "lineAtCatalogUpdate": 922
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyEngineering(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyEngineeringBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "SparklineChart",
+      "family": "GaugeMicro",
+      "baseType": "ChartBase",
+      "officialMatrixIds": [
+        "SC02",
+        "SC03",
+        "SC04",
+        "SC05"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/SparklineChart.cs",
+        "anchor": "public sealed partial class SparklineChart : ChartBase",
+        "lineAtCatalogUpdate": 30
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "SparklineChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/SparklineControlTests.cs",
+            "anchor": "var chart = new SparklineChart();",
+            "lineAtCatalogUpdate": 18
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "SparklineChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.GaugeMicro.cs",
+            "anchor": "var sparklines = Enum.GetValues<SparklineType>().Select(type => new SparklineChart { Name = \"Sparkline\" + type + \"Example\", SparklineType = type, Height = 150, Padding = new Thickness(12), ItemsSource = rows, ValuePath = nameof(MicroDemoRow.Value), IdPath = nameof(MicroDemoRow.Id), LineBrush = Blue, AreaFill = Brush(\"#554385F4\"), BarBrush = Blue, WinBrush = Teal, LossBrush = Brush(\"#D7256A\"), ShowMarkers = true, ShowFirstLast = true, ShowMinMax = true, ShowBaseline = true }).ToArray();",
+            "lineAtCatalogUpdate": 69
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "SparklineChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:SparklineChart x:Name=\"UsageMicroLine\" SparklineType=\"Line\" Height=\"150\" ItemsSource=\"{Binding MicroRecords}\" ValuePath=\"Value\" CategoryPath=\"Label\" IdPath=\"Id\" ShowMarkers=\"True\" ShowFirstLast=\"True\" ShowMinMax=\"True\" ShowBaseline=\"True\" />",
+            "lineAtCatalogUpdate": 670
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyGaugeMicro(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyGaugeMicroBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "SpiralTimelineChart",
+      "family": "C6Completion",
+      "baseType": "ScheduleChartBase",
+      "officialMatrixIds": [
+        "SC06"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/SpiralTimelineChart.cs",
+        "anchor": "public sealed partial class SpiralTimelineChart : ScheduleChartBase",
+        "lineAtCatalogUpdate": 7
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "SpiralTimelineChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/ScheduleChartTests.cs",
+            "anchor": "var rows = new ObservableCollection<ScheduleEvent> { new(\"later\", Day(4)), new(\"earlier\", Day(0)), new(\"middle\", Day(2)) }; using var chart = new SpiralTimelineChart { ItemsSource = rows, Period = TimeSpan.FromDays(2) }; using var host = new Host(chart);",
+            "lineAtCatalogUpdate": 112
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "SpiralTimelineChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"spiral\" => new SpiralTimelineChart { ItemsSource = events, VisibleStart = C6Start, VisibleEnd = C6Start.AddDays(5), Turns = 1, InnerRadius = 30, MarkerSize = 10 },",
+            "lineAtCatalogUpdate": 32
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "SpiralTimelineChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:SpiralTimelineChart x:Name=\"UsageC6Spiral\" Grid.Row=\"1\" Grid.Column=\"1\" Height=\"240\" Title=\"Spiral\" ItemsSource=\"{Binding C6Events}\" IdPath=\"Id\" LabelPath=\"Name\" DatePath=\"When\" ValuePath=\"Intensity\" Turns=\"2\" InnerRadius=\"15\" />",
+            "lineAtCatalogUpdate": 1014
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "StripPlot",
+      "family": "C5Completion",
+      "baseType": "CategoricalDistributionChartBase",
+      "officialMatrixIds": [
+        "ST09"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/CategoricalDistributionCharts.cs",
+        "anchor": "public class StripPlot : CategoricalDistributionChartBase",
+        "lineAtCatalogUpdate": 180
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "StripPlot",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/CategoricalDistributionTests.cs",
+            "anchor": "CategoricalDistributionChartBase chart = strip ? new StripPlot() : new BeeswarmChart();",
+            "lineAtCatalogUpdate": 134
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "StripPlot",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C5Completion.cs",
+            "anchor": "\"strip\" => new StripPlot { ItemsSource = points, MarkerSize = 8, Jitter = 0, JitterSeed = 17 },",
+            "lineAtCatalogUpdate": 60
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "StripPlot",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:StripPlot x:Name=\"UsageC5Strip\" Grid.Row=\"0\" Grid.Column=\"1\" Height=\"260\" Title=\"Strip · 确定性 Jitter\" ItemsSource=\"{Binding C5Samples}\" IdPath=\"Id\" LabelPath=\"Name\" ValuePath=\"Amount\" CategoryPath=\"Group\" PointRadius=\"{Binding C5PointRadius}\" JitterAmount=\"{Binding C5Jitter}\" JitterSeed=\"17\" ShowCategoryLabels=\"{Binding C5Labels}\" ShowMeanLine=\"{Binding C5Mean}\" SelectedIndex=\"{Binding C5StripSelected, Mode=TwoWay}\" />",
+            "lineAtCatalogUpdate": 1064
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "foreach (var check in window.VerifyBindings()) checks[check.Key] = check.Value;",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC5CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "StripPlotChart",
+      "family": "C5Completion",
+      "baseType": "StripPlot",
+      "officialMatrixIds": [
+        "ST09"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/CategoricalDistributionCharts.cs",
+        "anchor": "public sealed class StripPlotChart : StripPlot { }",
+        "lineAtCatalogUpdate": 186
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "StripPlotChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/CategoricalDistributionTests.cs",
+            "anchor": "var chart = new StripPlotChart { ItemsSource = new[] { new CategoricalSample(\"a\", \"A\", 2) }, Fill = Brushes.Red, Stroke = Brushes.Blue, StrokeThickness = 3, ShowMeanLine = false, ShowAxes = false };",
+            "lineAtCatalogUpdate": 159
+          }
+        ]
+      },
+      "demo": {
+        "status": "inherited",
+        "symbol": "StripPlot",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C5Completion.cs",
+            "anchor": "\"strip\" => new StripPlot { ItemsSource = points, MarkerSize = 8, Jitter = 0, JitterSeed = 17 },",
+            "lineAtCatalogUpdate": 60
+          }
+        ],
+        "gap": "No direct StripPlotChart reference in demo; the inherited StripPlot example does not separately qualify this concrete type."
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "StripPlotChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:StripPlotChart x:Name=\"UsageC7Strip\" Grid.Row=\"3\" Grid.Column=\"1\" Height=\"250\" Title=\"抖动散点\" ItemsSource=\"{Binding C5Samples}\" ValuePath=\"Amount\" CategoryPath=\"Group\" LabelPath=\"Name\" IdPath=\"Id\" HighContrastMode=\"{Binding C7Contrast}\" />",
+            "lineAtCatalogUpdate": 1091
+          },
+          {
+            "path": "samples/Charts.Usage/MainWindow.C7Integration.cs",
+            "anchor": "var swarm = (BeeswarmPlotChart)charts[6]; var strip = (StripPlotChart)charts[7];",
+            "lineAtCatalogUpdate": 21
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml",
+          "samples/Charts.Usage/MainWindow.C7Integration.cs"
+        ],
+        "driverAnchor": "foreach (var check in window.VerifyBindings()) checks[check.Key] = check.Value;",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC7IntegrationBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "SunburstChart",
+      "family": "Hierarchy",
+      "baseType": "HierarchyChartBase",
+      "officialMatrixIds": [
+        "HF17"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/SunburstChart.cs",
+        "anchor": "public sealed class SunburstChart : HierarchyChartBase",
+        "lineAtCatalogUpdate": 6
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "SunburstChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/HierarchyChartTests.cs",
+            "anchor": "var chart = new SunburstChart { ItemsSource = new[] { new HierarchyNode(1, label: \"a\", id: \"a\"), new HierarchyNode(1, label: \"b\", id: \"b\") }, InnerRadius = .2, SweepAngle = 180, Gap = 0, StartAngle = 0 };",
+            "lineAtCatalogUpdate": 83
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "SunburstChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Hierarchy.cs",
+            "anchor": "new TreemapChart { Title = \"Treemap · 叶节点面积合计\" }, new SunburstChart { Title = \"Sunburst · 层级扇环\" },",
+            "lineAtCatalogUpdate": 25
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "SunburstChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:SunburstChart x:Name=\"UsageHierarchySunburst\" Grid.Row=\"0\" Grid.Column=\"1\" Title=\"Sunburst\" Height=\"260\" ItemsSource=\"{Binding HierarchyRecords}\" ChildrenPath=\"Nodes\" ValuePath=\"Weight\" LabelPath=\"Name\" IdPath=\"Id\" ShowLabels=\"{Binding HierarchyLabels}\" MaximumVisibleDepth=\"{Binding HierarchyDepth}\" ReduceMotion=\"{Binding HierarchyReduceMotion}\" AnimationTriggers=\"All\" />",
+            "lineAtCatalogUpdate": 958
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyHierarchy(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyHierarchyBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "SwimlaneChart",
+      "family": "C6Completion",
+      "baseType": "ScheduleChartBase",
+      "officialMatrixIds": [
+        "SC07"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/SwimlaneChart.cs",
+        "anchor": "public sealed partial class SwimlaneChart : ScheduleChartBase",
+        "lineAtCatalogUpdate": 7
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "SwimlaneChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/ScheduleChartTests.cs",
+            "anchor": "if (mode == 1) return new SwimlaneChart { ItemsSource = new[] { new ScheduleSpan(\"a\", 0, 3, \"one\"), new ScheduleSpan(\"b\", 1, 4, \"one\"), new ScheduleSpan(\"m\", 3, 5, \"two\") } };",
+            "lineAtCatalogUpdate": 135
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "SwimlaneChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"swimlane\" => new SwimlaneChart { ItemsSource = new[] { new ScheduleSpan(\"s-a\", 0, 4, \"Alpha\", \"A\"), new ScheduleSpan(\"s-b\", 2, 6, \"Alpha\", \"B\"), new ScheduleSpan(\"s-c\", 6, 8, \"Alpha\", \"C\"), new ScheduleSpan(\"s-d\", 1, 5, \"Beta\", \"D\") }, Minimum = 0, Maximum = 10 },",
+            "lineAtCatalogUpdate": 30
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "SwimlaneChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:SwimlaneChart x:Name=\"UsageC6Swimlane\" Grid.Row=\"0\" Grid.Column=\"1\" Height=\"240\" Title=\"Swimlane\" ItemsSource=\"{Binding C6Spans}\" IdPath=\"Id\" LabelPath=\"Name\" StartPath=\"Open\" EndPath=\"Close\" LanePath=\"Resource\" />",
+            "lineAtCatalogUpdate": 1012
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "TableChart",
+      "family": "C6Completion",
+      "baseType": "OperationalMatrixChartBase",
+      "officialMatrixIds": [
+        "AK11"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalGridCharts.cs",
+        "anchor": "public sealed partial class TableChart : OperationalMatrixChartBase { protected override bool IsTable => true; }",
+        "lineAtCatalogUpdate": 94
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "TableChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/OperationalChartTests.cs",
+            "anchor": "var row = new Row(\"a\", 3); var columns = new ObservableCollection<OperationalTableColumn> { new(\"Amount\", \"Amount\") { Id = \"amount\", Format = \"0.0\", Minimum = 0, Maximum = 10 }, new(\"Name\", \"Name\") { Id = \"name\", UseColorScale = false } }; var chart = new TableChart { ItemsSource = new[] { row }, Columns = columns, IdPath = \"Key\", LabelPath = \"Name\" }; using var host = new Host(chart); Assert.Null(chart.Matrix); Assert.Equal(2, chart.Cells.Count); Assert.Equal(\"3.0\", chart.Cells[0].DisplayText); Assert.Equal(\"a\", chart.Cells[1].DisplayText); Assert.Null(chart.Cells[1].NumericValue); Assert.All(chart.GetMarks(), m => Assert.Same(row, m.Members[0].Item)); chart.SelectedIndex = 0; row.Amount = 5; Assert.Equal(5, chart.Cells[0].NumericValue); Assert.Same(row, chart.SelectedPoint!.Members[0].Item); columns.Move(0, 1); Assert.Same(row, chart.SelectedPoint!.Members[0].Item); Assert.Equal(\"amount\", chart.Cells[chart.SelectedPoint.Index].ColumnId); columns[1].Format = \"0.00\"; Assert.Equal(\"5.00\", chart.Cells[1].DisplayText); columns.RemoveAt(1); Assert.Null(chart.SelectedPoint); host.Detach(); Assert.Equal(0, row.Subscribers); host.Attach(); Assert.True(row.Subscribers > 0); var dictionary = new OperationalTableRow(\"dictionary\", new Dictionary<string, object?> { [\"enabled\"] = false }); chart.Columns = new[] { new OperationalTableColumn(\"Enabled\", \"enabled\") }; chart.IdPath = \"Id\"; chart.ItemsSource = new[] { dictionary }; Assert.False(Assert.IsType<bool>(chart.GetMarks()[0].Members[0].Value)); Assert.Equal(0, chart.Cells[0].NumericValue); Assert.Same(dictionary, chart.Cells[0].Source);",
+            "lineAtCatalogUpdate": 66
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "TableChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"table\" => new TableChart { ItemsSource = cells },",
+            "lineAtCatalogUpdate": 37
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "TableChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:TableChart x:Name=\"UsageC6Table\" Grid.Row=\"4\" Grid.Column=\"0\" Height=\"240\" Title=\"Table\" ItemsSource=\"{Binding C6TableRows}\" Columns=\"{Binding C6Columns}\" IdPath=\"Id\" LabelPath=\"Name\" />",
+            "lineAtCatalogUpdate": 1019
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "TernaryChart",
+      "family": "Engineering",
+      "baseType": "EngineeringChartBase",
+      "officialMatrixIds": [
+        "EN04"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/TernaryChart.cs",
+        "anchor": "public sealed class TernaryChart : EngineeringChartBase",
+        "lineAtCatalogUpdate": 6
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "TernaryChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/EngineeringChartTests.cs",
+            "anchor": "var chart = new TernaryChart { ItemsSource = source, ALabel = \"water\", BLabel = \"oil\", CLabel = \"solids\" };",
+            "lineAtCatalogUpdate": 44
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "TernaryChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Engineering.cs",
+            "anchor": "var ternary = new TernaryChart { Title = \"Ternary · 配比归一化\", Height = 285, ALabel = \"组分 A\", BLabel = \"组分 B\", CLabel = \"组分 C\",",
+            "lineAtCatalogUpdate": 25
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "TernaryChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:TernaryChart x:Name=\"UsageEngineeringTernary\" Grid.Row=\"1\" Grid.Column=\"1\" Height=\"285\" Title=\"Ternary · 土壤组分\" ItemsSource=\"{Binding EngineeringMixtureRecords}\" APath=\"Sand\" BPath=\"Clay\" CPath=\"Silt\" ALabel=\"砂\" BLabel=\"黏土\" CLabel=\"粉土\" IdPath=\"Id\" LabelPath=\"Id\" />",
+            "lineAtCatalogUpdate": 923
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyEngineering(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyEngineeringBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "ThemeRiverChart",
+      "family": "C6Completion",
+      "baseType": "OperationalChartBase",
+      "officialMatrixIds": [
+        "AK12"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalRankingCharts.cs",
+        "anchor": "public sealed class ThemeRiverChart : OperationalChartBase",
+        "lineAtCatalogUpdate": 47
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "ThemeRiverChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/OperationalChartTests.cs",
+            "anchor": "ThemeRiverPoint[] source = [new(\"a0\", \"a\", 0, 1), new(\"a1\", \"a\", 1, 3), new(\"b0\", \"b\", 0, 4), new(\"b1\", \"b\", 1, 2)]; var chart = new ThemeRiverChart { ItemsSource = source }; using var host = new Host(chart); var a = chart.GetMarks()[0]; Assert.Equal(new[] { 0, 1 }, a.Members.Select(x => x.SourceIndex)); Assert.Same(source[0], a.Members[0].Item); Assert.Same(source[1], a.Members[1].Item); chart.SelectedIndex = 0; chart.Baseline = OperationalRiverBaseline.Zero; Assert.Same(source[0], chart.SelectedPoint!.Members[0].Item); Assert.Equal(0, chart.River!.Bands[0].Lower[0].Y);",
+            "lineAtCatalogUpdate": 45
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "ThemeRiverChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"river\" => new ThemeRiverChart { RowPath = \"Stream\", ColumnPath = \"Slot\", ItemsSource = new[] { new ThemeRiverPoint(\"a-x\", \"A\", \"X\", 1), new ThemeRiverPoint(\"a-y\", \"A\", \"Y\", 2), new ThemeRiverPoint(\"a-z\", \"A\", \"Z\", 3), new ThemeRiverPoint(\"b-x\", \"B\", \"X\", 3), new ThemeRiverPoint(\"b-y\", \"B\", \"Y\", 2), new ThemeRiverPoint(\"b-z\", \"B\", \"Z\", 1) } },",
+            "lineAtCatalogUpdate": 43
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "ThemeRiverChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:ThemeRiverChart x:Name=\"UsageC6River\" Grid.Row=\"7\" Grid.Column=\"0\" Height=\"240\" Title=\"River\" ItemsSource=\"{Binding C6River}\" IdPath=\"Id\" LabelPath=\"Name\" ValuePath=\"Amount\" RowPath=\"Row\" ColumnPath=\"Column\" />",
+            "lineAtCatalogUpdate": 1025
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "TornadoChart",
+      "family": "AdvancedComparison",
+      "baseType": "PairedBarChartBase",
+      "officialMatrixIds": [
+        "CP07"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/TornadoChart.cs",
+        "anchor": "public sealed class TornadoChart : PairedBarChartBase",
+        "lineAtCatalogUpdate": 4
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "TornadoChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/AdvancedComparisonChartTests.cs",
+            "anchor": "PairedBarChartBase chart = kind switch { 0 => new MirrorBarChart(), 1 => new PopulationPyramidChart(), _ => new TornadoChart() };",
+            "lineAtCatalogUpdate": 73
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "TornadoChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.AdvancedComparison.cs",
+            "anchor": "var tornado = new TornadoChart { Title = \"Tornado · 按双侧总影响稳定排序\", Height = 260, ItemsSource = ComparisonDemoPairs(), LeftTitle = \"下行情景\", RightTitle = \"上行情景\" };",
+            "lineAtCatalogUpdate": 24
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "TornadoChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:TornadoChart x:Name=\"UsageAdvancedTornado\" Grid.Row=\"2\" Grid.Column=\"1\" Height=\"290\" Title=\"龙卷风 · 按总跨度排序\" ItemsSource=\"{Binding AdvancedPairRecords}\" LeftValuePath=\"Before\" RightValuePath=\"After\" IdPath=\"Id\" LabelPath=\"Name\" CenterGap=\"{Binding AdvancedCenterGap}\" ShowLabels=\"{Binding AdvancedShowLabels}\" />",
+            "lineAtCatalogUpdate": 947
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyAdvancedComparison(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyAdvancedComparisonBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "TreemapChart",
+      "family": "Hierarchy",
+      "baseType": "HierarchyChartBase",
+      "officialMatrixIds": [
+        "HF18"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/TreemapChart.cs",
+        "anchor": "public sealed class TreemapChart : HierarchyChartBase",
+        "lineAtCatalogUpdate": 6
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "TreemapChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/HierarchyChartTests.cs",
+            "anchor": "var chart = new TreemapChart { ItemsSource = new[] { root }, ValuePath = \"Payload.Amount\", ChildrenPath = \"Parts\", IdPath = \"Key\", LabelPath = \"Caption\" };",
+            "lineAtCatalogUpdate": 75
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "TreemapChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Hierarchy.cs",
+            "anchor": "new TreemapChart { Title = \"Treemap · 叶节点面积合计\" }, new SunburstChart { Title = \"Sunburst · 层级扇环\" },",
+            "lineAtCatalogUpdate": 25
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "TreemapChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:TreemapChart x:Name=\"UsageHierarchyTreemap\" Grid.Row=\"0\" Grid.Column=\"0\" Title=\"Treemap\" Height=\"260\" ItemsSource=\"{Binding HierarchyRecords}\" ChildrenPath=\"Nodes\" ValuePath=\"Weight\" LabelPath=\"Name\" IdPath=\"Id\" ShowLabels=\"{Binding HierarchyLabels}\" MaximumVisibleDepth=\"{Binding HierarchyDepth}\" ReduceMotion=\"{Binding HierarchyReduceMotion}\" AnimationTriggers=\"All\" />",
+            "lineAtCatalogUpdate": 957
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyHierarchy(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyHierarchyBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "VennDiagramChart",
+      "family": "AdvancedComparison",
+      "baseType": "ComparisonChartBase",
+      "officialMatrixIds": [
+        "CP08"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/VennDiagramChart.cs",
+        "anchor": "public sealed class VennDiagramChart : ComparisonChartBase",
+        "lineAtCatalogUpdate": 10
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "VennDiagramChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/AdvancedComparisonChartTests.cs",
+            "anchor": "var chart = new VennDiagramChart { SetCount = 2, ItemsSource = rows };",
+            "lineAtCatalogUpdate": 142
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "VennDiagramChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.AdvancedComparison.cs",
+            "anchor": "var venn2 = new VennDiagramChart { Title = \"Venn · 两集合解析交集\", Height = 260, SetCount = 2,",
+            "lineAtCatalogUpdate": 26
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "VennDiagramChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:VennDiagramChart x:Name=\"UsageAdvancedVenn\" Grid.Row=\"3\" Grid.ColumnSpan=\"2\" Height=\"350\" Title=\"Venn · 渠道覆盖\" ItemsSource=\"{Binding AdvancedVennRecords}\" SetsPath=\"Sets\" MaskPath=\"{Binding AdvancedMaskPath}\" ValuePath=\"Amount\" NamePath=\"Name\" SetCount=\"2\" SetNames=\"{Binding AdvancedSetNames}\" IdPath=\"Id\" ShowLabels=\"{Binding AdvancedShowLabels}\" />",
+            "lineAtCatalogUpdate": 948
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyAdvancedComparison(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyAdvancedComparisonBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "ViolinPlot",
+      "family": "C5Completion",
+      "baseType": "DistributionProfileChartBase",
+      "officialMatrixIds": [
+        "ST10"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/DistributionProfileCharts.cs",
+        "anchor": "public sealed class ViolinPlot : DistributionProfileChartBase",
+        "lineAtCatalogUpdate": 68
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "ViolinPlot",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/DistributionProfileTests.cs",
+            "anchor": "DistributionProfileChartBase chart = ridge ? new RidgelineChart() : new ViolinPlot(); chart.ItemsSource = rows;",
+            "lineAtCatalogUpdate": 118
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "ViolinPlot",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C5Completion.cs",
+            "anchor": "\"violin\" => new ViolinPlot { ItemsSource = profiles, SampleCount = 65, Bandwidth = .5, Minimum = -2, Maximum = 2, ProfileWidth = .8 },",
+            "lineAtCatalogUpdate": 64
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "ViolinPlot",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:ViolinPlot x:Name=\"UsageC5Violin\" Grid.Row=\"1\" Grid.Column=\"0\" Height=\"260\" Title=\"Violin · 自定义样本路径\" ItemsSource=\"{Binding C5Profiles}\" IdPath=\"Id\" LabelPath=\"Name\" SamplesPath=\"Observations\" SampleCount=\"48\" Bandwidth=\"{Binding C5Bandwidth}\" ShowLabels=\"{Binding C5Labels}\" SelectedIndex=\"{Binding C5ViolinSelected, Mode=TwoWay}\" />",
+            "lineAtCatalogUpdate": 1065
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "foreach (var check in window.VerifyBindings()) checks[check.Key] = check.Value;",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC5CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "WaffleChart",
+      "family": "C6Completion",
+      "baseType": "OperationalChartBase",
+      "officialMatrixIds": [
+        "AK13"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/OperationalSummaryCharts.cs",
+        "anchor": "public sealed class WaffleChart : OperationalChartBase",
+        "lineAtCatalogUpdate": 101
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "WaffleChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/OperationalChartTests.cs",
+            "anchor": "var first = new Row(\"a\", 3); var second = new Row(\"b\", 2); var source = new ObservableCollection<Row> { first, second }; var model = new Model { Items = source }; var chart = new WaffleChart { DataContext = model, ValuePath = \"Amount\", IdPath = \"Key\", LabelPath = \"Name\" }; chart.Bind(EngineeringChartBase.ItemsSourceProperty, new Binding(nameof(Model.Items))); chart.Bind(EngineeringChartBase.SelectedIndexProperty, new Binding(nameof(Model.Selected)) { Mode = BindingMode.TwoWay }); using var host = new Host(chart); Assert.True(first.Subscribers > 0); Assert.Equal(60, chart.Allocation[0].Units); chart.SelectedIndex = 0; Assert.Equal(0, model.Selected); first.Amount = 1; Assert.Equal(33, chart.Allocation[0].Units); source.Move(0, 1); Assert.Same(first, chart.SelectedPoint!.Members[0].Item); Assert.Equal(1, chart.SelectedPoint.Members[0].SourceIndex); source.Remove(first); Assert.Null(chart.SelectedPoint); Assert.Equal(0, first.Subscribers); var replacement = new Row(\"c\", 8); model.Items = new ObservableCollection<Row> { replacement }; Assert.Single(chart.Allocation); Assert.Equal(0, second.Subscribers); Assert.True(replacement.Subscribers > 0); host.Detach(); Assert.Equal(0, replacement.Subscribers); host.Attach(); Assert.True(replacement.Subscribers > 0); replacement.Amount = double.NaN; Assert.Empty(chart.GetMarks()); Assert.NotNull(chart.DataError); replacement.Amount = 7; Assert.NotEmpty(chart.GetMarks()); Assert.Null(chart.DataError);",
+            "lineAtCatalogUpdate": 25
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "WaffleChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"waffle\" => new WaffleChart { Rows = 4, Columns = 4, ItemsSource = new[] { new WafflePoint(\"w-a\", 1, \"A\"), new WafflePoint(\"w-b\", 3, \"B\") } },",
+            "lineAtCatalogUpdate": 38
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "WaffleChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:WaffleChart x:Name=\"UsageC6Waffle\" Grid.Row=\"4\" Grid.Column=\"1\" Height=\"240\" Title=\"Waffle\" Value=\"{Binding C6Headline.Amount}\" MaxValue=\"100\" Rows=\"10\" Columns=\"10\" Label=\"Completion\" FilledBrush=\"#1598B6\" EmptyBrush=\"#99A3AF\" />",
+            "lineAtCatalogUpdate": 1020
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "WindRoseChart",
+      "family": "Engineering",
+      "baseType": "EngineeringChartBase",
+      "officialMatrixIds": [
+        "EN05"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/WindRoseChart.cs",
+        "anchor": "public sealed class WindRoseChart : EngineeringChartBase",
+        "lineAtCatalogUpdate": 7
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "WindRoseChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/EngineeringChartTests.cs",
+            "anchor": "var chart = new WindRoseChart { ItemsSource = points, SectorCount = 4, SpeedUpperBounds = new double[] { 3, 6 } };",
+            "lineAtCatalogUpdate": 98
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "WindRoseChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.Engineering.cs",
+            "anchor": "var wind = new WindRoseChart { Title = \"Wind Rose · 方向 / 速度 / 频数\", Height = 285, ItemsSource = EngineeringWindRows(), SpeedUpperBounds = new double[] { 3, 6 }, SectorCount = 8 };",
+            "lineAtCatalogUpdate": 27
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "WindRoseChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:WindRoseChart x:Name=\"UsageEngineeringWind\" Grid.Row=\"2\" Grid.ColumnSpan=\"2\" Height=\"310\" Title=\"Wind rose · 风向与速度频率\" ItemsSource=\"{Binding EngineeringWindRecords}\" DirectionPath=\"Direction\" SpeedPath=\"Speed\" FrequencyPath=\"Frequency\" IdPath=\"Id\" LabelPath=\"Id\" SectorCount=\"{Binding EngineeringSectorCount}\" SpeedUpperBounds=\"{Binding EngineeringSpeedBounds}\" />",
+            "lineAtCatalogUpdate": 924
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyEngineering(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyEngineeringBindings(checks);"
+        }
+      }
+    },
+    {
+      "name": "WordCloudChart",
+      "family": "C6Completion",
+      "baseType": "OperationalChartBase",
+      "officialMatrixIds": [
+        "AK14"
+      ],
+      "source": {
+        "path": "src/NT.AvaloniaControl.Charts/WordCloudChart.cs",
+        "anchor": "public sealed class WordCloudChart : OperationalChartBase",
+        "lineAtCatalogUpdate": 8
+      },
+      "tests": {
+        "status": "direct",
+        "symbol": "WordCloudChart",
+        "references": [
+          {
+            "path": "tests/Charts.Headless.Tests/OperationalChartTests.cs",
+            "anchor": "var chart = new WordCloudChart { ItemsSource = new[] { new WordPoint(\"a\", \"Avalonia\", 8), new WordPoint(\"b\", \"数据\", 4), new WordPoint(\"c\", \"Linux\", 3), new WordPoint(\"d\", \"Windows\", 2) }, MinFontSize = 12, MaxFontSize = 35 }; using var host = new Host(chart); Assert.Null(chart.DataError); var words = chart.Words!; Assert.NotEmpty(words.Words); Assert.Equal(4, words.Words.Count + words.OmittedIndices.Count); for (var i = 0; i < words.Words.Count; i++) for (var j = i + 1; j < words.Words.Count; j++) { var a = words.Words[i]; var b = words.Words[j]; Assert.False(new Rect(a.X, a.Y, a.Width, a.Height).Intersects(new(b.X, b.Y, b.Width, b.Height))); }",
+            "lineAtCatalogUpdate": 40
+          }
+        ]
+      },
+      "demo": {
+        "status": "direct",
+        "symbol": "WordCloudChart",
+        "references": [
+          {
+            "path": "samples/NT.AvaloniaControl.Demo/Pages/Charts/ChartsPage.C6Completion.cs",
+            "anchor": "\"word\" => new WordCloudChart { MinFontSize = 12, MaxFontSize = 24, ItemsSource = new[] { new WordPoint(\"word-a\", \"Alpha\", 4), new WordPoint(\"word-b\", \"Beta\", 1), new WordPoint(\"word-zero\", \"Zero\", 0) } },",
+            "lineAtCatalogUpdate": 39
+          }
+        ]
+      },
+      "usage": {
+        "status": "direct",
+        "symbol": "WordCloudChart",
+        "references": [
+          {
+            "path": "samples/Charts.Usage/MainWindow.axaml",
+            "anchor": "<charts:WordCloudChart x:Name=\"UsageC6Words\" Grid.Row=\"5\" Grid.Column=\"0\" Height=\"240\" Title=\"Words\" ItemsSource=\"{Binding C6Words}\" IdPath=\"Id\" TextPath=\"Name\" ValuePath=\"Amount\" MinFontSize=\"12\" MaxFontSize=\"24\" />",
+            "lineAtCatalogUpdate": 1021
+          }
+        ]
+      },
+      "packageConsumer": {
+        "status": "shared-usage-source",
+        "usageSources": [
+          "samples/Charts.Usage/MainWindow.axaml"
+        ],
+        "driverAnchor": "VerifyC6Completion(window, checks, diagnostics);",
+        "usageVerificationCall": {
+          "path": "samples/Charts.Usage/MainWindow.axaml.cs",
+          "anchor": "VerifyC6CompletionBindings(checks);"
+        }
+      }
+    }
+  ],
+  "ciTraceability": {
+    "job": {
+      "path": ".github/workflows/charts.yml",
+      "anchor": "integration-catalog:"
+    },
+    "execution": {
+      "path": ".github/workflows/charts.yml",
+      "anchor": "run: python scripts/verify_charts_integration_matrix.py --self-test --output artifacts/charts-integration-ci/catalog.json"
+    },
+    "failureEvidence": {
+      "path": ".github/workflows/charts.yml",
+      "anchor": "path: artifacts/charts-integration-ci/**"
+    }
+  }
+}

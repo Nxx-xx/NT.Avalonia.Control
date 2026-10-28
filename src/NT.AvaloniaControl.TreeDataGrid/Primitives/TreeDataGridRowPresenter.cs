@@ -14,6 +14,9 @@ public sealed class TreeDataGridRowPresenter : Panel
     private TreeDataGrid? _owner;
     private double _horizontalOffset;
     private DropAdorner? _dropAdorner;
+    private ElementFactorySession? _elementSession;
+    private bool _prepared, _clearing;
+    private long _generation;
     public TreeDataGridRowPresenter() => ClipToBounds = true;
     public TreeDataGridRow? Row { get; private set; }
     public int RowIndex { get; private set; } = -1;
@@ -25,41 +28,121 @@ public sealed class TreeDataGridRowPresenter : Panel
     internal void Prepare(TreeDataGrid owner, TreeDataGridRow row, int index)
     {
         Clear();
+        SetIdentity(owner, row, index);
+    }
+    private void SetIdentity(TreeDataGrid owner, TreeDataGridRow row, int index)
+    {
+        _elementSession = owner.FactorySession;
         _owner = owner;
         Row = row;
         RowIndex = index;
         DataContext = row.Model;
     }
-    internal void Clear()
+    internal bool PrepareForScrollReuse(TreeDataGridRowsPresenter presenter, long generation, TreeDataGrid owner,
+        TreeDataGridSource source, TreeDataGridRow row, int index, ElementFactorySession session)
     {
-        SetDropIndicator(null);
-        foreach (var index in _cells.Keys.ToArray()) RecycleCell(index);
-        DataContext = null;
-        Row = null;
-        RowIndex = -1;
-        _layout = null;
-        _owner = null;
+        Clear(retainHosts: true);
+        if (!presenter.IsReuseCurrent(generation, owner, source, session)) return false;
+        SetIdentity(owner, row, index);
+        return true;
+    }
+    internal void NotifyPrepared()
+    {
+        var generation = _generation;
+        var owner = _owner!;
+        if (!_elementSession!.Prepare(this, owner.Source, Row, RowIndex, null, -1) || generation != _generation) return;
+        _prepared = true;
+        owner.NotifyRowPrepared(this);
+    }
+    internal void Clear() => Clear(retainHosts: false);
+    internal void ClearForReuse() => Clear(retainHosts: true);
+    private void Clear(bool retainHosts)
+    {
+        if (_clearing) return;
+        _clearing = true; _generation++;
+        List<Exception>? errors = null;
+        try
+        {
+            if (_prepared)
+            {
+                _prepared = false;
+                try { _owner?.NotifyRowClearing(this); } catch (Exception error) { (errors ??= []).Add(error); }
+            }
+            try { _elementSession?.Clear(this); } catch (Exception error) { (errors ??= []).Add(error); }
+            SetDropIndicator(null);
+            foreach (var index in _cells.Keys.ToArray())
+                try { RecycleCell(index, retainHost: retainHosts); } catch (Exception error) { (errors ??= []).Add(error); }
+        }
+        finally
+        {
+            Row = null; RowIndex = -1; _layout = null; _owner = null;
+            try { DataContext = null; } finally { _clearing = false; }
+        }
+        if (!retainHosts) try { DetachPooledHosts(); } catch (Exception error) { (errors ??= []).Add(error); }
+        TreeDataGridEventDispatch.Throw(errors);
+    }
+    internal void DetachFactory() => _elementSession = null;
+    internal ElementFactorySession ElementSession => _elementSession!;
+    internal void ReleaseFactory() => _elementSession!.Discard(this);
+    internal void ReleaseElements()
+    {
+        List<Exception>? errors = null;
+        while (_pool.TryPop(out var cell))
+        {
+            try { Children.Remove(cell); } catch (Exception error) { (errors ??= []).Add(error); }
+            try { _elementSession!.Discard(cell); } catch (Exception error) { (errors ??= []).Add(error); }
+        }
+        TreeDataGridEventDispatch.Throw(errors);
     }
     internal void SetLayout(TreeDataGridLayout layout, double horizontalOffset, double viewportWidth)
+    {
+        try { SetLayoutCore(layout, horizontalOffset, viewportWidth); }
+        finally { DetachPooledHosts(); }
+    }
+    private void SetLayoutCore(TreeDataGridLayout layout, double horizontalOffset, double viewportWidth)
     {
         _layout = layout;
         _horizontalOffset = horizontalOffset;
         if (_owner is { } owner && Row is { } row)
         {
+            var generation = _generation;
+            var session = _elementSession!;
             var visible = layout.GetVisibleColumns(horizontalOffset, viewportWidth).ToHashSet();
             foreach (var index in _cells.Keys.Where(x => !visible.Contains(x) || x >= layout.ColumnCount ||
-                !ReferenceEquals(_cells[x].Column, layout.Columns[x])).ToArray()) RecycleCell(index);
+                !ReferenceEquals(_cells[x].Column, layout.Columns[x])).ToArray()) RecycleCell(index, retainHost: session.CanRetainHosts);
+            if (generation != _generation || !session.IsCurrent) return;
             foreach (var index in visible)
                 if (!_cells.ContainsKey(index))
                 {
-                    if (!_pool.TryPop(out var cell)) { cell = new TreeDataGridCellPresenter(); owner.RowsPresenter?.NotifyCellCreated(); }
+                    if (!_pool.TryPop(out var cell)) { cell = session.Create<TreeDataGridCellPresenter>(TreeDataGridElementKind.Cell); owner.RowsPresenter?.NotifyCellCreated(); }
                     else owner.RowsPresenter?.NotifyCellRecycled();
+                    if (generation != _generation || !session.IsCurrent) { session.Discard(cell); return; }
                     _cells.Add(index, cell);
-                    Children.Add(cell);
-                    cell.Prepare(owner, row, RowIndex, layout.Columns[index], index);
-                    if (!ReferenceEquals(Row, row) || !ReferenceEquals(_owner, owner)) return;
+                    try
+                    {
+                        var retainedHost = ReferenceEquals(cell.Parent, this);
+                        if (!retainedHost) Children.Add(cell);
+                        if (generation != _generation) return;
+                        cell.Prepare(owner, row, RowIndex, layout.Columns[index], index);
+                        // Rebinding an attached host must discard its old measurement lifetime.
+                        if (retainedHost) cell.InvalidateRecycledMeasure(owner.AutoRowHeight);
+                    }
+                    catch
+                    {
+                        if (_cells.TryGetValue(index, out var failed) && ReferenceEquals(failed, cell)) RecycleCell(index, canPool: false);
+                        InvalidateMeasure();
+                        throw;
+                    }
+                    if (generation != _generation || !ReferenceEquals(Row, row) || !ReferenceEquals(_owner, owner)) return;
                 }
-            while (_pool.Count > 2) _pool.Pop();
+            List<Exception>? errors = null;
+            while (_pool.Count > 2)
+            {
+                var spare = _pool.Pop();
+                try { Children.Remove(spare); } catch (Exception error) { (errors ??= []).Add(error); }
+                try { session.Discard(spare); } catch (Exception error) { (errors ??= []).Add(error); }
+            }
+            TreeDataGridEventDispatch.Throw(errors);
         }
         InvalidateMeasure();
         InvalidateArrange();
@@ -128,12 +211,37 @@ public sealed class TreeDataGridRowPresenter : Panel
             }
         }
     }
-    private void RecycleCell(int index)
+    private void DetachPooledHosts()
+    {
+        var attached = false;
+        foreach (var cell in _pool) if (ReferenceEquals(cell.Parent, this)) { attached = true; break; }
+        if (!attached) return;
+        List<Exception>? errors = null;
+        foreach (var cell in _pool.ToArray())
+            if (ReferenceEquals(cell.Parent, this))
+                try { Children.Remove(cell); } catch (Exception error) { (errors ??= []).Add(error); }
+        TreeDataGridEventDispatch.Throw(errors);
+    }
+    private void RecycleCell(int index, bool canPool = true, bool retainHost = false)
     {
         if (!_cells.Remove(index, out var cell)) return;
-        Children.Remove(cell);
-        cell.Clear();
-        _pool.Push(cell);
+        var session = _elementSession!; var generation = _generation;
+        List<Exception>? errors = null;
+        try { cell.Clear(); } catch (Exception error) { (errors ??= []).Add(error); }
+        // Only a synchronous default-factory row rebind may keep cleared hosts attached. Custom
+        // factories still observe fully detached Recycle callbacks. Unused hosts detach in finally.
+        if (!retainHost || !session.CanRetainHosts || errors is not null || generation != _generation)
+            try { Children.Remove(cell); } catch (Exception error) { (errors ??= []).Add(error); }
+        try
+        {
+            if (session.Recycle(cell, canPool && errors is null && generation == _generation))
+            {
+                if (generation == _generation && session.IsCurrent) _pool.Push(cell);
+                else session.Discard(cell);
+            }
+        }
+        catch (Exception error) { (errors ??= []).Add(error); }
+        TreeDataGridEventDispatch.Throw(errors);
     }
     internal static void ArrangeCell(Control cell, TreeDataGridLayout layout, int column, double offset, Size size)
     {

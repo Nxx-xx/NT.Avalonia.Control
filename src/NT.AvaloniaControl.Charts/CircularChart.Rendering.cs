@@ -94,7 +94,9 @@ public sealed partial class CircularChart
         {
             if (LabelConnectorBrush is { } brush && LabelConnectorThickness > 0)
                 for (var index = 1; index < label.Connector.Count; index++) context.DrawLine(new Pen(brush, LabelConnectorThickness), label.Connector[index - 1], label.Connector[index]);
-            var text = Text(label.Text); text.MaxTextWidth = Math.Max(1, label.Bounds.Width); text.MaxLineCount = 1; text.Trimming = TextTrimming.CharacterEllipsis;
+            var labelBrush = LabelPosition == CircularLabelPosition.Inside
+                ? ChartLabelContrast.OnFill(label.Slice.Fill, Foreground ?? Brushes.Black) : Foreground;
+            var text = Text(label.Text, brush: labelBrush); text.MaxTextWidth = Math.Max(1, label.Bounds.Width); text.MaxLineCount = 1; text.Trimming = TextTrimming.CharacterEllipsis;
             context.DrawText(text, label.Bounds.TopLeft);
         }
         var hole = scene.Where(s => s.IsVisible && !s.IsExiting).Select(s => s.InnerRadius).DefaultIfEmpty(0).Min();

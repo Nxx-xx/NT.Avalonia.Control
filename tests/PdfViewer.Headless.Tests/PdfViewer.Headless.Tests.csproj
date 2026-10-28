@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
+    <None Include="../../benchmarks/PdfViewer.P0/Fixtures/P0AnnotationCjk.ttf" Link="P0Font.ttf" CopyToOutputDirectory="PreserveNewest" />
     <Compile Include="../PdfViewer.Core.Tests/ContractFixture.cs" Link="ContractFixture.cs" />
     <PackageReference Include="Avalonia.Headless.XUnit" />
     <PackageReference Include="Avalonia.Themes.Fluent" />

@@ -155,13 +155,13 @@ public abstract partial class RelationsChartBase
             }
         foreach (var (mark, item) in _painted)
         {
-            if (item.Key.Kind == RelationElementKind.Node && ShowLabels && item.Label is { } nodeLabel)
+            if (!UsesDataLabelTemplate && item.Key.Kind == RelationElementKind.Node && ShowLabels && item.Label is { } nodeLabel)
             {
                 var maxWidth = item.NodeBounds.Width > 0 ? Math.Max(1, item.NodeBounds.Width - 4) : Math.Max(16, mark.Bounds.Width);
                 using var nodeClip = context.PushGeometryClip(mark.Geometry); DrawLabel(context, nodeLabel, mark.Position, maxWidth);
             }
             if (item.Key.Kind != RelationElementKind.Edge) continue;
-            if (ShowEdgeLabels && item.Label is { } edgeLabel) DrawLabel(context, edgeLabel, mark.Position, 120);
+            if (!UsesDataLabelTemplate && ShowEdgeLabels && item.Label is { } edgeLabel) DrawLabel(context, edgeLabel, mark.Position, 120);
         }
     }
     private void DrawGroupLabel(DrawingContext context, string text, Rect group, Rect visible, Rect plot)

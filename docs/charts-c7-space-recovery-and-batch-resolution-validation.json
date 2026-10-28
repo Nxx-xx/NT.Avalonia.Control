@@ -1,0 +1,1531 @@
+{
+  "schema": "charts-c703-space-recovery-and-batch-validation/v1",
+  "createdUtc": "2026-10-25T14:44:24.265993+00:00",
+  "passed": true,
+  "scope": "Cleanup/restore metadata, retained paired summary and test receipt validation. No new formal campaign or independent full raw/corpus replay.",
+  "cleanup": {
+    "deletedDirectories": 703,
+    "failedDirectories": 0,
+    "dDriveRecoveredBytes": 41759989760,
+    "cDriveDeletedByThisBatch": false,
+    "receipt": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-backlog-optimization-20261025\\space-recovery-v1\\historical-build-result.json",
+      "bytes": 89093,
+      "sha256": "82F1EFD0CFE8B3F6CAFCE692E747398E61BC17BEC18B208EC4F76F1B10946DC7"
+    },
+    "mapping": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-backlog-optimization-20261025\\space-recovery-v1\\historical-project-assemblies.json",
+      "bytes": 7026703,
+      "sha256": "FE8808E4F1F1A9586729F9346163C6FA2F608D909341686B4F5BD67B9135401C"
+    },
+    "archive": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-backlog-optimization-20261025\\space-recovery-v1\\historical-project-assemblies.zip",
+      "bytes": 227376785,
+      "sha256": "14B41706DD7653670A2D1741F89CC618F38E577CA4870BEBEA91D608D7FB7992"
+    }
+  },
+  "decision": {
+    "schema": "charts-c703-batch-resolution-decision/v1",
+    "createdUtc": "2026-10-25T14:38:38.5632848+00:00",
+    "decision": "rejected-no-stable-cross-platform-benefit",
+    "productSourceRestored": true,
+    "relativePath": "src/NT.AvaloniaControl.Charts.Skia/ChartNativeCircleOperation.cs",
+    "primary": "D:\\Procedure\\AvaloniaControl\\src\\NT.AvaloniaControl.Charts.Skia\\ChartNativeCircleOperation.cs",
+    "beforeSha256": "6EBC723496E5FAF9DDF2D15727EF9860F4307E0CE3F6E77CA7FFE42E2B3CF708",
+    "afterSha256": "FCF9634080F9A0B3E734F658CC39C9CAEC611A3F7CEEB0B1A7965AD67E25BFB4",
+    "baselineSource": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7-backlog\\windows-source-v3\\src\\NT.AvaloniaControl.Charts.Skia\\ChartNativeCircleOperation.cs",
+    "preservedCandidateSource": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7-batch-resolution\\windows-source-v1\\src\\NT.AvaloniaControl.Charts.Skia\\ChartNativeCircleOperation.cs",
+    "pairedSummaries": [
+      "windows/paired-summary-10s-v1.json",
+      "linux/paired-summary-10s-v1.json"
+    ],
+    "focusedTestsPassed": 60,
+    "fidelityImagesPerPlatform": 232,
+    "formalCampaignRun": false,
+    "c703Completed": false,
+    "reason": "Windows measured duration regressed in two of three pairs and raster P95 in two of three. Linux raster P95 improved modestly, insufficient to claim original 30-second backlog solved. Preserve all evidence and B8 formal status."
+  },
+  "restoredProductSource": {
+    "path": "D:\\Procedure\\AvaloniaControl\\src\\NT.AvaloniaControl.Charts.Skia\\ChartNativeCircleOperation.cs",
+    "bytes": 22720,
+    "sha256": "FCF9634080F9A0B3E734F658CC39C9CAEC611A3F7CEEB0B1A7965AD67E25BFB4"
+  },
+  "restoredFocusedTests": {
+    "total": 60,
+    "passed": 60,
+    "failed": 0,
+    "receipt": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-batch-resolution-20261025\\restored-focused-v2\\supervisor\\process.json",
+      "bytes": 1240,
+      "sha256": "A168E3E94CD214FF1ACA2DB1C0D89D53F64268FC9C948F13F35E0BEFCD43C3BB"
+    },
+    "trx": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-batch-resolution-20261025\\restored-focused-v2\\tests\\results.trx",
+      "bytes": 92396,
+      "sha256": "6CA147540248FC86DD55CC0D6BF5562758437AF124E35CFD5B54CCD4E6837539"
+    },
+    "initialFailedAttempt": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-batch-resolution-20261025\\restored-focused-v1\\supervisor\\process.json",
+      "bytes": 1185,
+      "sha256": "F395D23D58C340057C5F2517F76703CD7221D318F222E3C2B749613CD551640D"
+    }
+  },
+  "platforms": {
+    "windows": {
+      "summary": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-batch-resolution-20261025\\windows\\paired-summary-10s-v1.json",
+        "bytes": 69087,
+        "sha256": "07C4BFE6D8CC8AB0BA88808A8D1911256358B1AECF5E1D9C765ED8853CE323DA"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "order": [
+            "baseline",
+            "candidate"
+          ],
+          "baseline": {
+            "planned": 600,
+            "completed": 600,
+            "pending": 0,
+            "actualDurationMs": 13436.3268,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 600,
+                "p50": 0.0677,
+                "p95": 0.2684,
+                "p99": 0.2974,
+                "minimum": 0.0015,
+                "maximum": 3.9067
+              },
+              "prepareMs": {
+                "count": 600,
+                "p50": 0.1662,
+                "p95": 2.3156,
+                "p99": 4.9787,
+                "minimum": 0.0023,
+                "maximum": 13.9359
+              },
+              "recordMs": {
+                "count": 600,
+                "p50": 3.7486,
+                "p95": 26.2589,
+                "p99": 32.3759,
+                "minimum": 0.9632,
+                "maximum": 38.0021
+              },
+              "controlledRasterMs": {
+                "count": 600,
+                "p50": 5.195,
+                "p95": 21.3771,
+                "p99": 23.4751,
+                "minimum": 4.2472,
+                "maximum": 34.4799
+              },
+              "hitMs": {
+                "count": 600,
+                "p50": 0.0144,
+                "p95": 0.0203,
+                "p99": 0.0242,
+                "minimum": 0.0059,
+                "maximum": 0.1776
+              },
+              "requestToControlledRasterMs": {
+                "count": 600,
+                "p50": 9.8134,
+                "p95": 48.581,
+                "p99": 54.5303,
+                "minimum": 5.5085,
+                "maximum": 61.4919
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 600,
+                "p50": 2179.2617,
+                "p95": 4300.6901,
+                "p99": 4448.1221,
+                "minimum": 5.7257,
+                "maximum": 4484.6027
+              },
+              "queueLatenessMs": {
+                "count": 600,
+                "p50": 2160.4894,
+                "p95": 4284.9939,
+                "p99": 4431.7478,
+                "minimum": 0.0028,
+                "maximum": 4468.8902
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 600,
+                "p50": 17048,
+                "p95": 417776,
+                "p99": 417776,
+                "minimum": 304,
+                "maximum": 417776
+              },
+              "prepareAllocatedBytes": {
+                "count": 600,
+                "p50": 100056,
+                "p95": 1554520,
+                "p99": 1554960,
+                "minimum": 48,
+                "maximum": 1575896
+              },
+              "recordAllocatedBytes": {
+                "count": 600,
+                "p50": 1950432,
+                "p95": 10150432,
+                "p99": 10393152,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 600,
+                "p50": 6120,
+                "p95": 14648,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 90096
+              },
+              "hitAllocatedBytes": {
+                "count": 600,
+                "p50": 344,
+                "p95": 424,
+                "p99": 424,
+                "minimum": 344,
+                "maximum": 848
+              }
+            }
+          },
+          "candidate": {
+            "planned": 600,
+            "completed": 600,
+            "pending": 0,
+            "actualDurationMs": 13716.0112,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 600,
+                "p50": 0.0708,
+                "p95": 0.2683,
+                "p99": 0.3561,
+                "minimum": 0.0015,
+                "maximum": 3.5259
+              },
+              "prepareMs": {
+                "count": 600,
+                "p50": 0.171,
+                "p95": 2.318,
+                "p99": 4.29,
+                "minimum": 0.0023,
+                "maximum": 14.0271
+              },
+              "recordMs": {
+                "count": 600,
+                "p50": 3.4285,
+                "p95": 25.4549,
+                "p99": 31.3051,
+                "minimum": 1.0415,
+                "maximum": 33.2119
+              },
+              "controlledRasterMs": {
+                "count": 600,
+                "p50": 5.7466,
+                "p95": 22.1395,
+                "p99": 25.8856,
+                "minimum": 4.5318,
+                "maximum": 36.774
+              },
+              "hitMs": {
+                "count": 600,
+                "p50": 0.0159,
+                "p95": 0.0207,
+                "p99": 0.0249,
+                "minimum": 0.0058,
+                "maximum": 0.0474
+              },
+              "requestToControlledRasterMs": {
+                "count": 600,
+                "p50": 10.4074,
+                "p95": 48.0608,
+                "p99": 51.6231,
+                "minimum": 5.8418,
+                "maximum": 57.8065
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 600,
+                "p50": 2417.9421,
+                "p95": 4536.774,
+                "p99": 4681.5222,
+                "minimum": 6.1065,
+                "maximum": 4719.1362
+              },
+              "queueLatenessMs": {
+                "count": 600,
+                "p50": 2402.1686,
+                "p95": 4522.2618,
+                "p99": 4666.9121,
+                "minimum": 0.0038,
+                "maximum": 4707.9726
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 600,
+                "p50": 17048,
+                "p95": 417776,
+                "p99": 417776,
+                "minimum": 304,
+                "maximum": 417776
+              },
+              "prepareAllocatedBytes": {
+                "count": 600,
+                "p50": 100056,
+                "p95": 1554520,
+                "p99": 1555096,
+                "minimum": 48,
+                "maximum": 1575104
+              },
+              "recordAllocatedBytes": {
+                "count": 600,
+                "p50": 1950432,
+                "p95": 10150424,
+                "p99": 10393192,
+                "minimum": 1948624,
+                "maximum": 10408128
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 600,
+                "p50": 6120,
+                "p95": 14120,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 95328
+              },
+              "hitAllocatedBytes": {
+                "count": 600,
+                "p50": 344,
+                "p95": 424,
+                "p99": 424,
+                "minimum": 344,
+                "maximum": 848
+              }
+            }
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "candidate",
+            "baseline"
+          ],
+          "baseline": {
+            "planned": 600,
+            "completed": 600,
+            "pending": 0,
+            "actualDurationMs": 13304.8185,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 600,
+                "p50": 0.0687,
+                "p95": 0.2625,
+                "p99": 0.2999,
+                "minimum": 0.0018,
+                "maximum": 12.413
+              },
+              "prepareMs": {
+                "count": 600,
+                "p50": 0.1652,
+                "p95": 2.3458,
+                "p99": 5.6464,
+                "minimum": 0.0025,
+                "maximum": 15.5245
+              },
+              "recordMs": {
+                "count": 600,
+                "p50": 3.3544,
+                "p95": 26.3369,
+                "p99": 31.4405,
+                "minimum": 1.0159,
+                "maximum": 32.9064
+              },
+              "controlledRasterMs": {
+                "count": 600,
+                "p50": 5.0918,
+                "p95": 21.0878,
+                "p99": 22.1613,
+                "minimum": 4.2915,
+                "maximum": 23.6525
+              },
+              "hitMs": {
+                "count": 600,
+                "p50": 0.0135,
+                "p95": 0.0201,
+                "p99": 0.0241,
+                "minimum": 0.0053,
+                "maximum": 0.2342
+              },
+              "requestToControlledRasterMs": {
+                "count": 600,
+                "p50": 9.3998,
+                "p95": 46.9486,
+                "p99": 53.1451,
+                "minimum": 5.5874,
+                "maximum": 59.1227
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 600,
+                "p50": 2158.2178,
+                "p95": 4161.8277,
+                "p99": 4306.1552,
+                "minimum": 5.9959,
+                "maximum": 4344.9441
+              },
+              "queueLatenessMs": {
+                "count": 600,
+                "p50": 2137.7658,
+                "p95": 4146.6465,
+                "p99": 4289.6668,
+                "minimum": 0.0043,
+                "maximum": 4329.3447
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 600,
+                "p50": 17048,
+                "p95": 417776,
+                "p99": 417776,
+                "minimum": 304,
+                "maximum": 417776
+              },
+              "prepareAllocatedBytes": {
+                "count": 600,
+                "p50": 100056,
+                "p95": 1554520,
+                "p99": 1554960,
+                "minimum": 48,
+                "maximum": 1575456
+              },
+              "recordAllocatedBytes": {
+                "count": 600,
+                "p50": 1950432,
+                "p95": 10150416,
+                "p99": 10393160,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 600,
+                "p50": 6120,
+                "p95": 14344,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 89576
+              },
+              "hitAllocatedBytes": {
+                "count": 600,
+                "p50": 344,
+                "p95": 424,
+                "p99": 424,
+                "minimum": 344,
+                "maximum": 848
+              }
+            }
+          },
+          "candidate": {
+            "planned": 600,
+            "completed": 600,
+            "pending": 0,
+            "actualDurationMs": 13483.7182,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 600,
+                "p50": 0.0734,
+                "p95": 0.2738,
+                "p99": 0.3477,
+                "minimum": 0.0016,
+                "maximum": 12.5612
+              },
+              "prepareMs": {
+                "count": 600,
+                "p50": 0.1701,
+                "p95": 2.395,
+                "p99": 3.3158,
+                "minimum": 0.0028,
+                "maximum": 9.2404
+              },
+              "recordMs": {
+                "count": 600,
+                "p50": 3.5671,
+                "p95": 27.205,
+                "p99": 31.3816,
+                "minimum": 1.0541,
+                "maximum": 32.8416
+              },
+              "controlledRasterMs": {
+                "count": 600,
+                "p50": 5.3622,
+                "p95": 21.58,
+                "p99": 23.5841,
+                "minimum": 4.5805,
+                "maximum": 30.9187
+              },
+              "hitMs": {
+                "count": 600,
+                "p50": 0.0145,
+                "p95": 0.021,
+                "p99": 0.0234,
+                "minimum": 0.0058,
+                "maximum": 0.0287
+              },
+              "requestToControlledRasterMs": {
+                "count": 600,
+                "p50": 9.9414,
+                "p95": 47.7054,
+                "p99": 51.9667,
+                "minimum": 5.9903,
+                "maximum": 57.9497
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 600,
+                "p50": 2290.6554,
+                "p95": 4303.4505,
+                "p99": 4446.7809,
+                "minimum": 6.2953,
+                "maximum": 4475.8994
+              },
+              "queueLatenessMs": {
+                "count": 600,
+                "p50": 2268.9613,
+                "p95": 4287.3009,
+                "p99": 4430.3328,
+                "minimum": 0.0043,
+                "maximum": 4460.3923
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 600,
+                "p50": 17048,
+                "p95": 417776,
+                "p99": 417776,
+                "minimum": 304,
+                "maximum": 417776
+              },
+              "prepareAllocatedBytes": {
+                "count": 600,
+                "p50": 100056,
+                "p95": 1554520,
+                "p99": 1555096,
+                "minimum": 48,
+                "maximum": 1575104
+              },
+              "recordAllocatedBytes": {
+                "count": 600,
+                "p50": 1950432,
+                "p95": 10150432,
+                "p99": 10393152,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 600,
+                "p50": 6120,
+                "p95": 15144,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 93680
+              },
+              "hitAllocatedBytes": {
+                "count": 600,
+                "p50": 344,
+                "p95": 424,
+                "p99": 424,
+                "minimum": 344,
+                "maximum": 848
+              }
+            }
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "baseline",
+            "candidate"
+          ],
+          "baseline": {
+            "planned": 600,
+            "completed": 600,
+            "pending": 0,
+            "actualDurationMs": 13366.4875,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 600,
+                "p50": 0.069,
+                "p95": 0.2654,
+                "p99": 0.2929,
+                "minimum": 0.0015,
+                "maximum": 0.6485
+              },
+              "prepareMs": {
+                "count": 600,
+                "p50": 0.1659,
+                "p95": 2.3327,
+                "p99": 4.063,
+                "minimum": 0.0022,
+                "maximum": 15.035
+              },
+              "recordMs": {
+                "count": 600,
+                "p50": 3.7975,
+                "p95": 25.1046,
+                "p99": 31.2298,
+                "minimum": 1.0059,
+                "maximum": 32.5015
+              },
+              "controlledRasterMs": {
+                "count": 600,
+                "p50": 5.1679,
+                "p95": 21.3801,
+                "p99": 22.7973,
+                "minimum": 4.4029,
+                "maximum": 26.4685
+              },
+              "hitMs": {
+                "count": 600,
+                "p50": 0.014,
+                "p95": 0.0199,
+                "p99": 0.0216,
+                "minimum": 0.0053,
+                "maximum": 0.0336
+              },
+              "requestToControlledRasterMs": {
+                "count": 600,
+                "p50": 9.7168,
+                "p95": 47.0971,
+                "p99": 51.3766,
+                "minimum": 5.6893,
+                "maximum": 54.4797
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 600,
+                "p50": 2171.8597,
+                "p95": 4192.4325,
+                "p99": 4340.4496,
+                "minimum": 5.7372,
+                "maximum": 4370.2332
+              },
+              "queueLatenessMs": {
+                "count": 600,
+                "p50": 2156.7877,
+                "p95": 4176.1954,
+                "p99": 4323.9815,
+                "minimum": 0.0027,
+                "maximum": 4359.9589
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 600,
+                "p50": 17048,
+                "p95": 417776,
+                "p99": 417776,
+                "minimum": 304,
+                "maximum": 417776
+              },
+              "prepareAllocatedBytes": {
+                "count": 600,
+                "p50": 100056,
+                "p95": 1554520,
+                "p99": 1554960,
+                "minimum": 48,
+                "maximum": 1574152
+              },
+              "recordAllocatedBytes": {
+                "count": 600,
+                "p50": 1950432,
+                "p95": 10150432,
+                "p99": 10393120,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 600,
+                "p50": 6120,
+                "p95": 14792,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 89648
+              },
+              "hitAllocatedBytes": {
+                "count": 600,
+                "p50": 344,
+                "p95": 424,
+                "p99": 424,
+                "minimum": 344,
+                "maximum": 848
+              }
+            }
+          },
+          "candidate": {
+            "planned": 600,
+            "completed": 600,
+            "pending": 0,
+            "actualDurationMs": 13291.1522,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 600,
+                "p50": 0.069,
+                "p95": 0.2614,
+                "p99": 0.2925,
+                "minimum": 0.0016,
+                "maximum": 7.2158
+              },
+              "prepareMs": {
+                "count": 600,
+                "p50": 0.1665,
+                "p95": 2.3443,
+                "p99": 3.6516,
+                "minimum": 0.0024,
+                "maximum": 14.2151
+              },
+              "recordMs": {
+                "count": 600,
+                "p50": 3.4386,
+                "p95": 26.7181,
+                "p99": 30.8579,
+                "minimum": 0.9993,
+                "maximum": 34.4261
+              },
+              "controlledRasterMs": {
+                "count": 600,
+                "p50": 5.2298,
+                "p95": 21.0559,
+                "p99": 22.3041,
+                "minimum": 4.3832,
+                "maximum": 24.5307
+              },
+              "hitMs": {
+                "count": 600,
+                "p50": 0.0145,
+                "p95": 0.0201,
+                "p99": 0.024,
+                "minimum": 0.0056,
+                "maximum": 0.1525
+              },
+              "requestToControlledRasterMs": {
+                "count": 600,
+                "p50": 9.6532,
+                "p95": 48.0687,
+                "p99": 51.7886,
+                "minimum": 5.6453,
+                "maximum": 57.7346
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 600,
+                "p50": 2165.1826,
+                "p95": 4131.8108,
+                "p99": 4279.5097,
+                "minimum": 5.7405,
+                "maximum": 4317.2076
+              },
+              "queueLatenessMs": {
+                "count": 600,
+                "p50": 2140.9131,
+                "p95": 4117.4925,
+                "p99": 4263.0347,
+                "minimum": 0.0034,
+                "maximum": 4301.8071
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 600,
+                "p50": 17048,
+                "p95": 417776,
+                "p99": 417776,
+                "minimum": 304,
+                "maximum": 417776
+              },
+              "prepareAllocatedBytes": {
+                "count": 600,
+                "p50": 100056,
+                "p95": 1554520,
+                "p99": 1555384,
+                "minimum": 48,
+                "maximum": 1576104
+              },
+              "recordAllocatedBytes": {
+                "count": 600,
+                "p50": 1950432,
+                "p95": 10150424,
+                "p99": 10393152,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 600,
+                "p50": 6120,
+                "p95": 14912,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 95416
+              },
+              "hitAllocatedBytes": {
+                "count": 600,
+                "p50": 344,
+                "p95": 424,
+                "p99": 424,
+                "minimum": 344,
+                "maximum": 848
+              }
+            }
+          }
+        }
+      ],
+      "fidelity": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-batch-resolution-20261025\\windows\\fidelity-run-v1.json",
+        "bytes": 10549,
+        "sha256": "8F20F9791E731F132875D4730981DB3A3E15D17BF0897F677D295417EBF67A93"
+      },
+      "fidelityImages": 232
+    },
+    "linux": {
+      "summary": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-batch-resolution-20261025\\linux\\paired-summary-10s-v1.json",
+        "bytes": 70071,
+        "sha256": "807A3CEB375653830B67E53A74280A0888FF8DA08AE5131B78212B0A2B3E8269"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "order": [
+            "baseline",
+            "candidate"
+          ],
+          "baseline": {
+            "planned": 600,
+            "completed": 600,
+            "pending": 0,
+            "actualDurationMs": 15854.125808,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 600,
+                "p50": 0.035142,
+                "p95": 0.276925,
+                "p99": 0.337099,
+                "minimum": 0.002016,
+                "maximum": 0.450015
+              },
+              "prepareMs": {
+                "count": 600,
+                "p50": 0.08355,
+                "p95": 1.064193,
+                "p99": 4.058345,
+                "minimum": 0.002726,
+                "maximum": 11.788451
+              },
+              "recordMs": {
+                "count": 600,
+                "p50": 4.914184,
+                "p95": 24.155935,
+                "p99": 29.810518,
+                "minimum": 1.036364,
+                "maximum": 32.551805
+              },
+              "controlledRasterMs": {
+                "count": 600,
+                "p50": 6.856963,
+                "p95": 29.07226,
+                "p99": 31.066501,
+                "minimum": 5.05629,
+                "maximum": 40.759435
+              },
+              "hitMs": {
+                "count": 600,
+                "p50": 0.01906,
+                "p95": 0.02784,
+                "p99": 0.039585,
+                "minimum": 0.008707,
+                "maximum": 0.11579
+              },
+              "requestToControlledRasterMs": {
+                "count": 600,
+                "p50": 12.467482,
+                "p95": 53.139797,
+                "p99": 59.090955,
+                "minimum": 6.436844,
+                "maximum": 65.508052
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 600,
+                "p50": 3188.217434,
+                "p95": 6290.131721,
+                "p99": 6389.069235,
+                "minimum": 6.478349,
+                "maximum": 6425.628506
+              },
+              "queueLatenessMs": {
+                "count": 600,
+                "p50": 3172.24855,
+                "p95": 6278.501492,
+                "p99": 6372.844507,
+                "minimum": 0.003471,
+                "maximum": 6410.359716
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 600,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 600,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424312,
+                "minimum": 48,
+                "maximum": 1424680
+              },
+              "recordAllocatedBytes": {
+                "count": 600,
+                "p50": 1950432,
+                "p95": 10150424,
+                "p99": 10393192,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 600,
+                "p50": 6120,
+                "p95": 15176,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 95080
+              },
+              "hitAllocatedBytes": {
+                "count": 600,
+                "p50": 344,
+                "p95": 424,
+                "p99": 688,
+                "minimum": 344,
+                "maximum": 688
+              }
+            }
+          },
+          "candidate": {
+            "planned": 600,
+            "completed": 600,
+            "pending": 0,
+            "actualDurationMs": 15483.563007,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 600,
+                "p50": 0.034106,
+                "p95": 0.27059,
+                "p99": 0.328082,
+                "minimum": 0.001918,
+                "maximum": 3.561349
+              },
+              "prepareMs": {
+                "count": 600,
+                "p50": 0.081352,
+                "p95": 0.997487,
+                "p99": 1.301227,
+                "minimum": 0.002522,
+                "maximum": 11.680576
+              },
+              "recordMs": {
+                "count": 600,
+                "p50": 5.110569,
+                "p95": 23.692127,
+                "p99": 29.329644,
+                "minimum": 0.987808,
+                "maximum": 32.818412
+              },
+              "controlledRasterMs": {
+                "count": 600,
+                "p50": 6.421125,
+                "p95": 28.425492,
+                "p99": 30.029222,
+                "minimum": 5.035902,
+                "maximum": 37.608252
+              },
+              "hitMs": {
+                "count": 600,
+                "p50": 0.019493,
+                "p95": 0.026448,
+                "p99": 0.034133,
+                "minimum": 0.007324,
+                "maximum": 0.042768
+              },
+              "requestToControlledRasterMs": {
+                "count": 600,
+                "p50": 12.150791,
+                "p95": 51.483506,
+                "p99": 57.86434,
+                "minimum": 6.314246,
+                "maximum": 65.795955
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 600,
+                "p50": 3194.649386,
+                "p95": 6126.071493,
+                "p99": 6265.939721,
+                "minimum": 6.75315,
+                "maximum": 6299.116293
+              },
+              "queueLatenessMs": {
+                "count": 600,
+                "p50": 3170.524493,
+                "p95": 6111.11105,
+                "p99": 6250.070614,
+                "minimum": 0.006168,
+                "maximum": 6284.383646
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 600,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 600,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424312,
+                "minimum": 48,
+                "maximum": 1424416
+              },
+              "recordAllocatedBytes": {
+                "count": 600,
+                "p50": 1950432,
+                "p95": 10150424,
+                "p99": 10393136,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 600,
+                "p50": 6120,
+                "p95": 15256,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 94880
+              },
+              "hitAllocatedBytes": {
+                "count": 600,
+                "p50": 344,
+                "p95": 424,
+                "p99": 688,
+                "minimum": 344,
+                "maximum": 688
+              }
+            }
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "candidate",
+            "baseline"
+          ],
+          "baseline": {
+            "planned": 600,
+            "completed": 600,
+            "pending": 0,
+            "actualDurationMs": 15517.440022,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 600,
+                "p50": 0.033866,
+                "p95": 0.267672,
+                "p99": 0.327567,
+                "minimum": 0.001947,
+                "maximum": 13.051738
+              },
+              "prepareMs": {
+                "count": 600,
+                "p50": 0.079918,
+                "p95": 1.045477,
+                "p99": 1.209767,
+                "minimum": 0.002209,
+                "maximum": 4.030737
+              },
+              "recordMs": {
+                "count": 600,
+                "p50": 5.563883,
+                "p95": 22.995834,
+                "p99": 28.187116,
+                "minimum": 0.989251,
+                "maximum": 32.276512
+              },
+              "controlledRasterMs": {
+                "count": 600,
+                "p50": 6.54361,
+                "p95": 28.973761,
+                "p99": 31.055524,
+                "minimum": 5.21872,
+                "maximum": 38.345945
+              },
+              "hitMs": {
+                "count": 600,
+                "p50": 0.018909,
+                "p95": 0.026616,
+                "p99": 0.040929,
+                "minimum": 0.008132,
+                "maximum": 0.727182
+              },
+              "requestToControlledRasterMs": {
+                "count": 600,
+                "p50": 12.219947,
+                "p95": 52.331173,
+                "p99": 56.949158,
+                "minimum": 6.351696,
+                "maximum": 65.709486
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 600,
+                "p50": 3163.962784,
+                "p95": 6143.992115,
+                "p99": 6275.846442,
+                "minimum": 6.652922,
+                "maximum": 6311.837931
+              },
+              "queueLatenessMs": {
+                "count": 600,
+                "p50": 3147.496277,
+                "p95": 6128.128717,
+                "p99": 6259.728013,
+                "minimum": 0.004076,
+                "maximum": 6296.610635
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 600,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 600,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424312,
+                "minimum": 48,
+                "maximum": 1424416
+              },
+              "recordAllocatedBytes": {
+                "count": 600,
+                "p50": 1950440,
+                "p95": 10150432,
+                "p99": 10393176,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 600,
+                "p50": 6120,
+                "p95": 14872,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 92288
+              },
+              "hitAllocatedBytes": {
+                "count": 600,
+                "p50": 344,
+                "p95": 424,
+                "p99": 688,
+                "minimum": 344,
+                "maximum": 5552
+              }
+            }
+          },
+          "candidate": {
+            "planned": 600,
+            "completed": 600,
+            "pending": 0,
+            "actualDurationMs": 15521.860745,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 600,
+                "p50": 0.033861,
+                "p95": 0.264299,
+                "p99": 0.300426,
+                "minimum": 0.002055,
+                "maximum": 3.880085
+              },
+              "prepareMs": {
+                "count": 600,
+                "p50": 0.081394,
+                "p95": 0.983069,
+                "p99": 3.132965,
+                "minimum": 0.002473,
+                "maximum": 14.020318
+              },
+              "recordMs": {
+                "count": 600,
+                "p50": 5.321826,
+                "p95": 23.608523,
+                "p99": 30.019759,
+                "minimum": 0.98648,
+                "maximum": 33.115667
+              },
+              "controlledRasterMs": {
+                "count": 600,
+                "p50": 6.424373,
+                "p95": 28.738835,
+                "p99": 29.912958,
+                "minimum": 5.010087,
+                "maximum": 42.23791
+              },
+              "hitMs": {
+                "count": 600,
+                "p50": 0.019255,
+                "p95": 0.025709,
+                "p99": 0.032606,
+                "minimum": 0.008307,
+                "maximum": 0.448883
+              },
+              "requestToControlledRasterMs": {
+                "count": 600,
+                "p50": 12.221504,
+                "p95": 51.890572,
+                "p99": 58.461643,
+                "minimum": 6.286748,
+                "maximum": 61.920528
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 600,
+                "p50": 3104.305026,
+                "p95": 6121.875702,
+                "p99": 6241.389132,
+                "minimum": 6.546785,
+                "maximum": 6269.466537
+              },
+              "queueLatenessMs": {
+                "count": 600,
+                "p50": 3087.358105,
+                "p95": 6106.66915,
+                "p99": 6225.452654,
+                "minimum": 0.002637,
+                "maximum": 6256.31361
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 600,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 600,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424312,
+                "minimum": 48,
+                "maximum": 1424416
+              },
+              "recordAllocatedBytes": {
+                "count": 600,
+                "p50": 1950432,
+                "p95": 10150424,
+                "p99": 10393120,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 600,
+                "p50": 6120,
+                "p95": 14984,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 95184
+              },
+              "hitAllocatedBytes": {
+                "count": 600,
+                "p50": 344,
+                "p95": 424,
+                "p99": 688,
+                "minimum": 344,
+                "maximum": 688
+              }
+            }
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "baseline",
+            "candidate"
+          ],
+          "baseline": {
+            "planned": 600,
+            "completed": 600,
+            "pending": 0,
+            "actualDurationMs": 15615.520651,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 600,
+                "p50": 0.035777,
+                "p95": 0.264997,
+                "p99": 0.308125,
+                "minimum": 0.001935,
+                "maximum": 12.44207
+              },
+              "prepareMs": {
+                "count": 600,
+                "p50": 0.085672,
+                "p95": 1.043744,
+                "p99": 3.123766,
+                "minimum": 0.002625,
+                "maximum": 13.54553
+              },
+              "recordMs": {
+                "count": 600,
+                "p50": 5.252243,
+                "p95": 25.398578,
+                "p99": 30.512202,
+                "minimum": 0.993396,
+                "maximum": 36.851335
+              },
+              "controlledRasterMs": {
+                "count": 600,
+                "p50": 6.306104,
+                "p95": 28.997125,
+                "p99": 32.23209,
+                "minimum": 5.034972,
+                "maximum": 43.211972
+              },
+              "hitMs": {
+                "count": 600,
+                "p50": 0.019546,
+                "p95": 0.02733,
+                "p99": 0.035627,
+                "minimum": 0.00833,
+                "maximum": 0.051669
+              },
+              "requestToControlledRasterMs": {
+                "count": 600,
+                "p50": 12.265961,
+                "p95": 52.92894,
+                "p99": 58.546145,
+                "minimum": 6.472872,
+                "maximum": 72.271159
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 600,
+                "p50": 3235.991542,
+                "p95": 6218.77135,
+                "p99": 6356.317423,
+                "minimum": 6.594941,
+                "maximum": 6387.761913
+              },
+              "queueLatenessMs": {
+                "count": 600,
+                "p50": 3211.470053,
+                "p95": 6204.718292,
+                "p99": 6340.082197,
+                "minimum": 0.00245,
+                "maximum": 6372.626209
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 600,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 600,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424312,
+                "minimum": 48,
+                "maximum": 1424416
+              },
+              "recordAllocatedBytes": {
+                "count": 600,
+                "p50": 1950432,
+                "p95": 10150432,
+                "p99": 10393192,
+                "minimum": 1948624,
+                "maximum": 10412904
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 600,
+                "p50": 6120,
+                "p95": 15112,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 95504
+              },
+              "hitAllocatedBytes": {
+                "count": 600,
+                "p50": 344,
+                "p95": 424,
+                "p99": 688,
+                "minimum": 344,
+                "maximum": 688
+              }
+            }
+          },
+          "candidate": {
+            "planned": 600,
+            "completed": 600,
+            "pending": 0,
+            "actualDurationMs": 15463.05108,
+            "metrics": {
+              "sourceApplyMs": {
+                "count": 600,
+                "p50": 0.034644,
+                "p95": 0.264048,
+                "p99": 0.31574,
+                "minimum": 0.001942,
+                "maximum": 4.575942
+              },
+              "prepareMs": {
+                "count": 600,
+                "p50": 0.082203,
+                "p95": 1.011855,
+                "p99": 3.224592,
+                "minimum": 0.00236,
+                "maximum": 12.204994
+              },
+              "recordMs": {
+                "count": 600,
+                "p50": 4.768467,
+                "p95": 24.547283,
+                "p99": 29.154387,
+                "minimum": 0.976217,
+                "maximum": 32.666219
+              },
+              "controlledRasterMs": {
+                "count": 600,
+                "p50": 6.156737,
+                "p95": 28.511905,
+                "p99": 29.263688,
+                "minimum": 5.086797,
+                "maximum": 31.619555
+              },
+              "hitMs": {
+                "count": 600,
+                "p50": 0.018892,
+                "p95": 0.0253,
+                "p99": 0.029866,
+                "minimum": 0.008874,
+                "maximum": 0.044126
+              },
+              "requestToControlledRasterMs": {
+                "count": 600,
+                "p50": 11.464599,
+                "p95": 52.589779,
+                "p99": 59.06815,
+                "minimum": 6.342566,
+                "maximum": 64.025496
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 600,
+                "p50": 3194.82326,
+                "p95": 6124.524938,
+                "p99": 6257.022424,
+                "minimum": 6.723349,
+                "maximum": 6293.640873
+              },
+              "queueLatenessMs": {
+                "count": 600,
+                "p50": 3178.223539,
+                "p95": 6109.303011,
+                "p99": 6242.651243,
+                "minimum": 0.003933,
+                "maximum": 6278.581784
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 600,
+                "p50": 1712,
+                "p95": 402896,
+                "p99": 402896,
+                "minimum": 304,
+                "maximum": 402896
+              },
+              "prepareAllocatedBytes": {
+                "count": 600,
+                "p50": 14088,
+                "p95": 1424048,
+                "p99": 1424312,
+                "minimum": 48,
+                "maximum": 1424416
+              },
+              "recordAllocatedBytes": {
+                "count": 600,
+                "p50": 1950432,
+                "p95": 10150424,
+                "p99": 10393200,
+                "minimum": 1948624,
+                "maximum": 10408080
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 600,
+                "p50": 6120,
+                "p95": 14912,
+                "p99": 87408,
+                "minimum": 6120,
+                "maximum": 92440
+              },
+              "hitAllocatedBytes": {
+                "count": 600,
+                "p50": 344,
+                "p95": 424,
+                "p99": 688,
+                "minimum": 344,
+                "maximum": 688
+              }
+            }
+          }
+        }
+      ],
+      "fidelity": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-batch-resolution-20261025\\linux\\fidelity-run-v1.json",
+        "bytes": 10112,
+        "sha256": "C00AB13F2354AFB7142261652A844F9794C54DAA06F933B742F47B83387FB4C6"
+      },
+      "fidelityImages": 232
+    }
+  },
+  "immutableInputs": [
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\charts-c7-performance-protocol.json",
+      "bytes": 5350,
+      "sha256": "7E633452EA83F4A9342C68093FE597DFB0CF4B18491D21660DE70EBE73EC5463"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\charts_c7_performance_oracle.py",
+      "bytes": 55377,
+      "sha256": "888F4A287BD71FB5BE6035E974B9902618F321CE9666544B1B72FB0F99175E41"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\charts-performance-budgets.json",
+      "bytes": 1812,
+      "sha256": "3E7149E6C4538993CBFEBAD2542E154DC8EBEBD06A72259EF345B3E3A07DEEA2"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\scripts\\charts-ci-performance-policy.json",
+      "bytes": 3055,
+      "sha256": "CF6832A53E21E078C554F51194D93541F0B093AFF1C67D7E031EC177B8E87377"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\charts-c7-backlog-optimization-validation.json",
+      "bytes": 326888,
+      "sha256": "F622EAAE380BED6230B14310812C0CFC37EF006C8DBE165A3FADC9FE1241C2C5"
+    },
+    {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\charts-c7-performance-optimization-validation.json",
+      "bytes": 82314,
+      "sha256": "CFA515BBD3A4BE0EC6FE65C4D92822F87F612CE8F767A0E132AAF2C09B99C963"
+    }
+  ],
+  "c703Complete": false,
+  "officialReference": {
+    "status": "blocked-reference",
+    "measurements": null,
+    "ratios": null
+  },
+  "formalResultStillB8": true,
+  "physicalHardwareValidated": false
+}

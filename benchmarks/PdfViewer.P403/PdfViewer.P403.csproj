@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/NT.AvaloniaControl.PdfViewer/NT.AvaloniaControl.PdfViewer.csproj" />
+    <Compile Include="../../tests/PdfViewer.Core.Tests/PdfFixture.cs" Link="PdfFixture.cs" />
+    <None Include="../PdfViewer.P0/Fixtures/P0AnnotationCjk.ttf" Link="P0Font.ttf" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

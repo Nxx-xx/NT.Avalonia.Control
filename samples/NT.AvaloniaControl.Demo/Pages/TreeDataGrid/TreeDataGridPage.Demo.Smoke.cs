@@ -1,10 +1,12 @@
 using System.Runtime.InteropServices;
 using System.Text.Json;
 using Avalonia;
+using Avalonia.Automation;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
+using Avalonia.Media;
 using Avalonia.VisualTree;
 using NT.AvaloniaControl.TreeDataGrid;
 using NT.AvaloniaControl.Demo.Pages.TreeDataGrid.Mvvm;
@@ -28,8 +30,9 @@ internal sealed partial class TreeDataGridPage
             await Task.Delay(250);
             checks["nativeWindowCreated"] = _hostWindow.TryGetPlatformHandle() is { Handle: not 0 };
             var shell = (MainWindow)_hostWindow;
-            var navigation = DemoFind<ListBox>(shell, "ControlNavigation");
-            checks["treePageInitiallySelected"] = shell.SelectedPageId == "treedatagrid" && navigation.SelectedIndex == 1
+            var navigation = DemoFind<WrapPanel>(shell, "Breadcrumbs");
+            checks["treePageInitiallySelected"] = shell.SelectedPageId == "treedatagrid" && shell.NavigationPath.SequenceEqual(new[] { "TreeDataGrid" })
+                && navigation.Children.OfType<Button>().Any(button => Equals(button.Content, "TreeDataGrid"))
                 && shell.GetVisualDescendants().Contains(this);
             var modes = _modeTabs.ItemsSource!.Cast<TabItem>().ToArray();
             checks["parallelModeTabs"] = modes.Length == 2 && Equals(modes[0].Header, "普通模式") && Equals(modes[1].Header, "MVVM 模式");
@@ -70,22 +73,23 @@ internal sealed partial class TreeDataGridPage
             if (imagePath is not null) DemoCapture(imagePath, "mvvm", images);
             var normalSource = _source;
             var mvvmSource = boundGrid.Source;
-            var treeNavigationItem = navigation.SelectedItem;
-            shell.SelectPage("overview");
+            var treeNavigationPath = shell.NavigationPath.ToArray();
+            DemoPressButton(DemoFind<Button>(shell, "NavigateBack"));
             await Task.Delay(100);
             _hostWindow.UpdateLayout();
-            checks["overviewNavigationHidesTreePage"] = shell.SelectedPageId == "overview" && navigation.SelectedIndex == 0
+            checks["overviewNavigationHidesTreePage"] = shell.SelectedPageId == "overview" && shell.NavigationPath.Count == 0
                 && !shell.GetVisualDescendants().Contains(this);
             checks["pageStatusTimerStopsOnOverview"] = !_timer.IsEnabled;
             if (imagePath is not null) DemoCapture(imagePath, "overview", images);
-            var openTreeButton = shell.GetVisualDescendants().OfType<Button>()
-                .Single(button => Equals(button.Content, "打开 TreeDataGrid"));
-            DemoPressButton(openTreeButton);
+            checks["overviewContainsTreeGalleryEntry"] = shell.GetVisualDescendants().OfType<Button>()
+                .Any(button => button.Classes.Contains("gallery-card") && AutomationProperties.GetName(button) == "TreeDataGrid");
+            // Smoke mode opens the retained tabbed page; gallery entries open the public example directories.
+            shell.SelectPage("treedatagrid");
             await Task.Delay(100);
             _hostWindow.UpdateLayout();
-            checks["overviewButtonNavigatesAndSyncsSidebar"] = shell.SelectedPageId == "treedatagrid"
-                && ReferenceEquals(treeNavigationItem, navigation.SelectedItem) && shell.GetVisualDescendants().Contains(this);
-            checks["treeNavigationRestoresSamePageAndSources"] = shell.SelectedPageId == "treedatagrid" && navigation.SelectedIndex == 1
+            checks["treePageSelectionRestoresBreadcrumbs"] = shell.SelectedPageId == "treedatagrid"
+                && shell.NavigationPath.SequenceEqual(treeNavigationPath) && navigation.Children.OfType<Button>().Any(button => Equals(button.Content, "TreeDataGrid"));
+            checks["treeNavigationRestoresSamePageAndSources"] = shell.SelectedPageId == "treedatagrid" && shell.NavigationPath.SequenceEqual(treeNavigationPath)
                 && shell.GetVisualDescendants().Contains(this) && _modeTabs.SelectedIndex == 1
                 && ReferenceEquals(normalSource, _source) && ReferenceEquals(mvvmSource, boundGrid.Source)
                 && ReferenceEquals(vm, _mvvmView.DataContext);
@@ -97,23 +101,23 @@ internal sealed partial class TreeDataGridPage
             var initialTheme = _hostWindow.ActualThemeVariant;
             var requestedTheme = _hostWindow.RequestedThemeVariant;
             var themeButton = DemoFind<Button>(shell, "ThemeToggleButton");
-            var sidebar = navigation.GetVisualAncestors().OfType<DockPanel>().First();
+            var navigationChrome = navigation.GetVisualAncestors().OfType<Grid>().First();
             DemoPressButton(themeButton);
             var themeWait = await DemoWaitForAsync(() => !Equals(_hostWindow.ActualThemeVariant, initialTheme)
                 && Equals(ActualThemeVariant, _hostWindow.ActualThemeVariant)
                 && Equals(_mvvmView.ActualThemeVariant, _hostWindow.ActualThemeVariant)
                 && Equals(boundGrid.ActualThemeVariant, _hostWindow.ActualThemeVariant)
                 && Equals(navigation.ActualThemeVariant, _hostWindow.ActualThemeVariant)
-                && Equals(sidebar.ActualThemeVariant, _hostWindow.ActualThemeVariant));
+                && Equals(navigationChrome.ActualThemeVariant, _hostWindow.ActualThemeVariant));
             _hostWindow.UpdateLayout();
             checks["themeButtonChangesHostTheme"] = themeWait.Satisfied && !Equals(_hostWindow.ActualThemeVariant, initialTheme);
-            checks["pageMvvmAndSidebarFollowHostTheme"] = Equals(ActualThemeVariant, _hostWindow.ActualThemeVariant)
+            checks["pageMvvmAndBreadcrumbsFollowHostTheme"] = Equals(ActualThemeVariant, _hostWindow.ActualThemeVariant)
                 && Equals(_mvvmView.ActualThemeVariant, _hostWindow.ActualThemeVariant)
                 && Equals(boundGrid.ActualThemeVariant, _hostWindow.ActualThemeVariant)
                 && Equals(navigation.ActualThemeVariant, _hostWindow.ActualThemeVariant)
-                && Equals(sidebar.ActualThemeVariant, _hostWindow.ActualThemeVariant);
+                && Equals(navigationChrome.ActualThemeVariant, _hostWindow.ActualThemeVariant);
             checks["themeChangePreservesPageSourcesAndDraft"] = shell.SelectedPageId == "treedatagrid"
-                && shell.GetVisualDescendants().Contains(this) && ReferenceEquals(treeNavigationItem, navigation.SelectedItem)
+                && shell.GetVisualDescendants().Contains(this) && shell.NavigationPath.SequenceEqual(treeNavigationPath)
                 && ReferenceEquals(normalSource, _source) && ReferenceEquals(mvvmSource, boundGrid.Source)
                 && ReferenceEquals(vm, _mvvmView.DataContext) && ReferenceEquals(session, boundGrid.State.EditSession)
                 && vm.Editing.IsEditing && DemoFind<TextBox>(_mvvmView, "DraftEditor").Text == "63"
@@ -132,9 +136,9 @@ internal sealed partial class TreeDataGridPage
             _modeTabs.SelectedIndex = 0;
             await Task.Delay(80);
 
-            checks["declaredScenarioOptions"] = _scenarioChoices.Count == 14 && _scenarioChoices.Select(choice => choice.Id).SequenceEqual(new[]
+            checks["declaredScenarioOptions"] = _scenarioChoices.Count == 19 && _scenarioChoices.Select(choice => choice.Id).SequenceEqual(new[]
             {
-                "editing", "tree", "lazy-tree", "columns", "visibility", "appearance", "rowmoving", "nestedbindings", "flat", "wide",
+                "editing", "tree", "lazy-tree", "columns", "column-options", "selection-events", "visibility", "appearance", "rowmoving", "rowdrag-batch", "nestedbindings", "binding-writeback", "element-factory", "flat", "wide",
                 "template-buttons", "template-colors", "template-clock", "template-composite",
             });
             foreach (var choice in _scenarioChoices.ToArray())
@@ -142,6 +146,14 @@ internal sealed partial class TreeDataGridPage
                 await DemoSelectScenarioAsync(choice.Id);
                 checks[$"scenarioSelectable:{choice.Id}"] = ReferenceEquals(_scenarioPicker.SelectedItem, choice) && _source!.Rows.Count > 0
                     && _grid.RowsPresenter?.RealizedRowCount > 0;
+                if (choice.Id == "columns")
+                {
+                    var nameText = (TextBlock)_grid.RowsPresenter!.RealizedRows[1].RealizedCells.Single(cell => cell.ColumnIndex == 1).Content!;
+                    checks["textColumnAlignmentAndTrimming"] = nameText.TextAlignment == TextAlignment.Center
+                        && ReferenceEquals(nameText.TextTrimming, TextTrimming.WordEllipsis)
+                        && nameText.TextLayout.TextLines[0].Start > 0;
+                    if (imagePath is not null) DemoCapture(imagePath, "columns", images);
+                }
                 if (!choice.Id.StartsWith("template-", StringComparison.Ordinal)) continue;
                 checks[$"templateControlsRendered:{choice.Id}"] = _source is FlatTreeDataGridSource<TemplateDemoItem> && _source.Rows.Count == 24
                     && _grid.IsReadOnly && _grid.GetVisualDescendants().OfType<TreeDataGridCellPresenter>()
@@ -174,13 +186,18 @@ internal sealed partial class TreeDataGridPage
                 snapshots.Add(Snapshot(choice.Id));
                 if (imagePath is not null) DemoCapture(imagePath, choice.Id, images);
             }
+            await RunColumnOptionsDemoSmokeAsync(checks, snapshots, imagePath, images);
+            await RunSelectionEventsDemoSmokeAsync(checks, snapshots, imagePath, images);
+            await RunBindingWritebackDemoSmokeAsync(checks, snapshots, imagePath, images);
             await RunP6DemoSmokeAsync(checks, snapshots, imagePath, images);
             await RunRowMoveDemoSmokeAsync(checks, snapshots, imagePath, images);
+            await RunBatchMoveDemoSmokeAsync(checks, snapshots, imagePath, images);
+            await RunElementFactoryDemoSmokeAsync(checks, snapshots, imagePath, images);
             await DemoSelectScenarioAsync("editing");
             checks["editingLayoutRestored"] = _grid.RowHeight == 28 && !_grid.IsReadOnly && !_grid.AutoRowHeight && _grid.RowHeightSelector is null
                 && _source is FlatTreeDataGridSource<EditingItem> && _templateClockItems is null && _templateClockTimer?.IsEnabled != true
                 && _grid.GridLinesVisibility == TreeDataGridGridLinesVisibility.All && Equals(_grid.EmptyContent, "暂无数据") && _grid.EmptyContentTemplate is null
-                && !_grid.CanUserReorderColumns && !_grid.CanUserMoveRows;
+                && !_grid.CanUserReorderColumns && !_grid.CanUserMoveRows && _grid.ShowColumnHeaders;
         }
         catch (Exception exception) { error = exception.ToString(); }
 
@@ -198,7 +215,7 @@ internal sealed partial class TreeDataGridPage
                 Checks = checks, Snapshots = snapshots, ImageOutputs = images, Error = error,
                 ImageCaptureKind = "Avalonia RenderTargetBitmap offscreen native Window rendering; not a desktop screenshot.",
                 NativeImeValidated = false, KylinValidated = false,
-                Notes = "Unified native Demo uses its actual control navigation, tabs, scenario selector, template controls, Flyout, bindings and routed button Enter input. Physical keyboard, IME and desktop pixels are not automated.",
+                Notes = "Unified native Demo uses breadcrumbs, the actual back button, retained smoke-page selection, tabs, scenario selector, template controls, Flyout, bindings and routed button Enter input. Gallery entry presence is checked; directory navigation has separate tests. Physical keyboard, IME and desktop pixels are not automated.",
             }, new JsonSerializerOptions { WriteIndented = true }));
         }
         finally

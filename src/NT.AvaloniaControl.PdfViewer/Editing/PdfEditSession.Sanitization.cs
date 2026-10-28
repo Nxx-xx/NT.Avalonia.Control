@@ -7,8 +7,9 @@ public sealed partial class PdfEditSession
 {
     /// <summary>
     /// Removes hidden/non-page data using an explicit policy and commits only after structural and
-    /// native reopen checks. Removes annotation/form appearances as well as their stored values.
-    /// The operation is a complete rewrite; signed and encrypted input is refused at session open.
+    /// native reopen checks. Removes annotation/form appearances as well as their stored values,
+    /// clears session user bookmarks, and records one undo entry. The operation is a complete
+    /// rewrite; signed and encrypted input is refused at session open.
     /// </summary>
     public Task<PdfSanitizationResult> SanitizeAsync(PdfHiddenInformationPolicy policy,
         CancellationToken cancellationToken = default) => SanitizeCoreAsync([], policy, cancellationToken);
@@ -41,6 +42,7 @@ public sealed partial class PdfEditSession
     {
         if (policy != PdfHiddenInformationPolicy.RemoveAllNonPageData)
             throw new ArgumentOutOfRangeException(nameof(policy), "An explicit supported hidden-information removal policy is required.");
+        ThrowIfInTransaction();
         await _gate.WaitAsync(token).ConfigureAwait(false);
         try
         {
@@ -71,8 +73,11 @@ public sealed partial class PdfEditSession
             var outputHash = Convert.ToHexString(SHA256.HashData(candidate));
             token.ThrowIfCancellationRequested();
             EnsureUsable();
-            _bytes = candidate;
-            var revision = Interlocked.Increment(ref _revision);
+            // The policy removes bookmarks; the session overlay follows it and stays out of undo history.
+            CommitContent(candidate);
+            _bookmarks = [];
+            UpdateBookmarkDirty();
+            var revision = Interlocked.Read(ref _revision);
             return new PdfSanitizationResult(revision, PageCount, regions.Count, policy, inputHash, outputHash);
         }
         finally { _gate.Release(); }

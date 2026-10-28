@@ -25,7 +25,7 @@ public sealed record PdfDocumentMetadata(string Title, string Author, string Sub
     string Creator, string Producer, string CreationDate, string ModificationDate, int? FileVersion,
     int SignatureCount);
 
-public enum PdfCapabilityUnavailableReason { None, NoDocument, Busy, Disposed, HostDisabled, DocumentPermission, ReadOnly, NotImplemented }
+public enum PdfCapabilityUnavailableReason { None, NoDocument, Busy, Disposed, HostDisabled, DocumentPermission, ReadOnly, NotImplemented, UnsupportedDocument }
 
 /// <summary>Implementation support and current permission are separate; CanExecute requires both.</summary>
 public sealed record PdfCapability(bool IsImplemented, bool IsAllowed, PdfCapabilityUnavailableReason Reason)
@@ -71,7 +71,7 @@ public sealed record PdfDocumentCapabilities(PdfCapability Read, PdfCapability S
     }
 }
 
-public enum PdfErrorKind { Unknown, FileAccess, InvalidDocument, PasswordRequiredOrIncorrect, UnsupportedSecurity, PageContent, NativeRuntime, PermissionDenied, UnsupportedOperation, Canceled, Disposed }
+public enum PdfErrorKind { Unknown, FileAccess, InvalidDocument, PasswordRequiredOrIncorrect, UnsupportedSecurity, PageContent, NativeRuntime, PermissionDenied, UnsupportedOperation, Canceled, Disposed, SaveConflict, SaveDurabilityUncertain }
 
 /// <summary>Stable error classification; the original exception remains available for diagnostics.</summary>
 public sealed record PdfError(PdfErrorKind Kind, string Message, uint? NativeErrorCode, Exception Exception)
@@ -82,6 +82,8 @@ public sealed record PdfError(PdfErrorKind Kind, string Message, uint? NativeErr
         var native = exception as PdfDocumentException;
         var kind = exception switch
         {
+            PdfSaveConflictException => PdfErrorKind.SaveConflict,
+            PdfSaveDurabilityException => PdfErrorKind.SaveDurabilityUncertain,
             PdfDocumentException pdf => pdf.Kind,
             OperationCanceledException => PdfErrorKind.Canceled,
             ObjectDisposedException => PdfErrorKind.Disposed,

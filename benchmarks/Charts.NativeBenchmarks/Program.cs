@@ -29,6 +29,17 @@ internal static class Program
     [STAThread]
     public static int Main(string[] args)
     {
+#if C7_PERFORMANCE_DRIVER
+        if (args.Contains("--c7-alpha-mask-experiment", StringComparer.Ordinal)) return C7AlphaMaskExperiment.Run(args);
+        if (args.Contains("--c7-picture-paint-experiment", StringComparer.Ordinal)) return C7PicturePaintExperiment.Run(args);
+        if (args.Contains("--c7-fast-circle-paint-experiment", StringComparer.Ordinal)) return C7FastCirclePaintExperiment.Run(args);
+        if (args.Contains("--c7-unit-ring-experiment", StringComparer.Ordinal)) return C7UnitRingExperiment.Run(args);
+        if (args.Contains("--c7-native-geometry-experiment", StringComparer.Ordinal)) return C7NativeGeometryExperiment.Run(args);
+        if (args.Contains("--c7-drawing-brush-experiment", StringComparer.Ordinal)) return C7DrawingBrushExperiment.Run(args);
+        if (args.Contains("--c7-circle-paint-experiment", StringComparer.Ordinal)) return C7CirclePaintExperiment.Run(args);
+        if (args.Contains("--c7-raster-fidelity", StringComparer.Ordinal)) return C7RasterFidelityProgram.Run(args);
+        if (args.Contains("--c7-performance", StringComparer.Ordinal)) return C7PerformanceProgram.Run(args);
+#endif
         Driver? driver = null;
         try
         {

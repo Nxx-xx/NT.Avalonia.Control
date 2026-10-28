@@ -49,6 +49,9 @@ public sealed partial class CartesianChart : ChartBase
     private ChartScene? _scene;
     private bool _rendering;
     private bool _sceneStatePending;
+    private ChartScene? _publishedSceneState;
+    private bool _sceneStatePublished;
+    private long _sceneStatePublicationRevision;
 
     static CartesianChart()
     {
@@ -263,6 +266,7 @@ public sealed partial class CartesianChart : ChartBase
             // A view model may keep the series alive after detach/removal. Retire
             // presentation-only geometry without mutating earlier recordings.
             CartesianSeriesRenderer.ReleaseBarGeometry(old);
+            ClearCircleHistory(old);
             old.Changed -= OnDataChanged;
             _observedSeries.Remove(old);
             _observedVersions.Remove(old);
@@ -337,6 +341,9 @@ public sealed partial class CartesianChart : ChartBase
         BackgroundLayoutInvalidated();
         AnimationSceneInvalidated();
         _scene = null;
+        _publishedSceneState = null;
+        _sceneStatePublished = false;
+        _sceneStatePublicationRevision++;
         ReleaseSeriesDrawingCache();
         ReleaseSegmentCaches();
         ReleaseInteractionCaches();
@@ -544,6 +551,8 @@ public sealed partial class CartesianChart : ChartBase
 
     private void PublishSceneState(ChartScene? scene)
     {
+        if (_sceneStatePublished && ReferenceEquals(_publishedSceneState, scene)) return;
+        if (!ReferenceEquals(_scene, scene)) return;
         if (_rendering)
         {
             if (!_sceneStatePending)
@@ -553,11 +562,23 @@ public sealed partial class CartesianChart : ChartBase
             }
             return;
         }
+        var revision = _sceneStatePublicationRevision;
         SetAndRaise(VisibleRangeProperty, ref _visibleRange, scene?.Range);
+        if (revision != _sceneStatePublicationRevision || !ReferenceEquals(_scene, scene)) return;
         SetAndRaise(PlotAreaProperty, ref _plotArea, scene?.Plot ?? default);
+        if (revision != _sceneStatePublicationRevision || !ReferenceEquals(_scene, scene)) return;
         if (scene is not null && ReferenceEquals(_scene, scene)) UpdateSelectionFromScene(scene);
+        if (revision != _sceneStatePublicationRevision || !ReferenceEquals(_scene, scene)) return;
         NotifyAutomationStateChanged();
+        if (revision != _sceneStatePublicationRevision || !ReferenceEquals(_scene, scene)) return;
         NotifyViewSynchronizationChanged();
+        // Callbacks may replace the source, viewport or animation frame. Only a
+        // fully published current scene may suppress subsequent cached reads.
+        if (revision != _sceneStatePublicationRevision || !ReferenceEquals(_scene, scene)) return;
+        _publishedSceneState = scene;
+        // Extension axes may carry live transforms without publishing a new
+        // scene object; retain their existing reconcile-on-read behavior.
+        _sceneStatePublished = scene is null || scene.Scales.Values.All(static scale => scale.HasStandardTransform);
     }
 
     private sealed class RenderingScope : IDisposable

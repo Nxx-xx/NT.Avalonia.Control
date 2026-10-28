@@ -170,7 +170,12 @@ public sealed class EditingTests
             var annotation = await edit.AddFreeTextAsync(0, Bounds, "中文 ABC", Font(), 18, TestToken);
             await edit.SaveAsync(path, TestToken);
             Assert.False(edit.IsDirty);
-            Assert.Equal(new[] { path }, Directory.GetFiles(directory));
+            Assert.Equal(new[] { path }, Directory.GetFiles(directory).Where(file => !Path.GetFileName(file).StartsWith(".nt-pdf-save-", StringComparison.Ordinal)));
+            // Coordination inodes survive saves to avoid splitting cooperating Unix writers.
+            // They contain no document data and are separate from temporary transactions.
+            var coordination = Assert.Single(Directory.GetFiles(directory, ".nt-pdf-save-*.lock"));
+            Assert.Equal(0, new FileInfo(coordination).Length);
+            Assert.Empty(Directory.GetDirectories(directory));
             await using var reopened = await PdfEditSession.OpenAsync(await File.ReadAllBytesAsync(path, TestToken), TestToken);
             Assert.Equal(annotation, Assert.Single(await reopened.GetFreeTextAnnotationsAsync(0, TestToken)));
         }

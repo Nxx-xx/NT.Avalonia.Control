@@ -45,8 +45,8 @@ public sealed class DivergingBarChart : ComparisonChartBase
             var geometry = Orientation == Orientation.Horizontal ? Rectangle(low, top, span, height, plot) : Rectangle(top, 1 - low - span, height, span, plot);
             var position = Orientation == Orientation.Horizontal ? Normalized((row.Start + row.End) / 2, row.Y, plot) : Normalized(row.Y, 1 - (row.Start + row.End) / 2, plot);
             marks.Add(Mark(source, geometry, row.Value < 0 ? NegativeBrush ?? BrushAt(1) : PositiveBrush ?? BrushAt(0), position, "bar", value, $"{row.Label}: {ValueText(value)} (baseline {ValueText(Baseline)})"));
-            Label(row.Label, ApplyViewport(Orientation == Orientation.Horizontal ? new(plot.Left + 34, plot.Top + plot.Height * row.Y) : new(plot.Left + plot.Width * row.Y, plot.Bottom + 12), plot), 64);
-            NumberLabel(value, position, Math.Max(16, Orientation == Orientation.Horizontal ? geometry.Bounds.Width - 4 : 60));
+            DataLabel(marks[^1], row.Label, ApplyViewport(Orientation == Orientation.Horizontal ? new(plot.Left + 34, plot.Top + plot.Height * row.Y) : new(plot.Left + plot.Width * row.Y, plot.Bottom + 12), plot), 64);
+            DataNumberLabel(marks[^1], value, position, Math.Max(16, Orientation == Orientation.Horizontal ? geometry.Bounds.Width - 4 : 60));
         }
         return marks;
     }

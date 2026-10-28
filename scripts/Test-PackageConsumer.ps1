@@ -1,8 +1,14 @@
-param([switch]$NoPack, [ValidateSet('All', 'TreeDataGrid', 'VirtualKeyboard', 'Markdown', 'PdfViewer')][string]$Control = 'All')
+param([switch]$NoPack, [ValidateSet('All', 'TreeDataGrid', 'VirtualKeyboard', 'Markdown', 'PdfViewer')][string]$Control = 'All', [string]$DependencyFeed)
 $ErrorActionPreference = 'Stop'
 $repoRoot = Split-Path $PSScriptRoot -Parent
 Push-Location $repoRoot
 try {
+    if ($DependencyFeed) {
+        if ($Control -ne 'TreeDataGrid') { throw 'DependencyFeed currently supports Control=TreeDataGrid only.' }
+        $DependencyFeed = [IO.Path]::GetFullPath($DependencyFeed)
+        if (-not (Test-Path -LiteralPath $DependencyFeed -PathType Container)) { throw 'DependencyFeed must be an existing local directory.' }
+        if (@(Get-ChildItem -LiteralPath $DependencyFeed -Recurse -Filter 'nt.avaloniacontrol.treedatagrid*.nupkg').Count) { throw 'DependencyFeed must contain dependencies only; product packages come from artifacts/packages.' }
+    }
     $feed = Join-Path $repoRoot 'artifacts/packages'
     $buildProperties = [xml](Get-Content -LiteralPath (Join-Path $repoRoot 'Directory.Build.props') -Raw)
     $packageVersion = [string]$buildProperties.Project.PropertyGroup.Version
@@ -291,12 +297,16 @@ public sealed class ConsumerViewModel : INotifyPropertyChanged
     $packageCache = Join-Path $consumer '.packages'
     $escapedFeed = [System.Security.SecurityElement]::Escape($feed)
     $config = Join-Path $consumer 'NuGet.Config'
-    "<configuration><packageSources><clear /><add key=`"local-preview`" value=`"$escapedFeed`" /><add key=`"nuget.org`" value=`"https://api.nuget.org/v3/index.json`" /></packageSources></configuration>" |
+    $dependencySource = if ($DependencyFeed) { '<add key="dependencies" value="' + [System.Security.SecurityElement]::Escape($DependencyFeed) + '" />' } else { '<add key="nuget.org" value="https://api.nuget.org/v3/index.json" />' }
+    "<configuration><packageSources><clear /><add key=`"local-preview`" value=`"$escapedFeed`" />$dependencySource</packageSources></configuration>" |
         Set-Content -LiteralPath $config -Encoding utf8
     dotnet restore (Join-Path $consumer 'Consumer.csproj') --packages $packageCache --configfile $config
     if ($LASTEXITCODE -ne 0) { throw 'Independent package restore failed.' }
     dotnet run --project (Join-Path $consumer 'Consumer.csproj') -c Release --no-restore
     if ($LASTEXITCODE -ne 0) { throw 'Independent package consumer failed.' }
+    [ordered]@{ passed=$true; timestampUtc=[DateTimeOffset]::UtcNow; consumer=$consumer; restoreMode=$(if($DependencyFeed){'IsolatedOfflineCache'}else{'IsolatedNetworkCache'}); dependencyFeed=$DependencyFeed; packages=@('NT.AvaloniaControl.TreeDataGrid','NT.AvaloniaControl.TreeDataGrid.Themes' | ForEach-Object { $packagePath=Join-Path $feed ("$_.$packageVersion.nupkg"); [ordered]@{path=$packagePath;sha256=(Get-FileHash -LiteralPath $packagePath).Hash} }) } |
+        ConvertTo-Json -Depth 4 | Set-Content -LiteralPath (Join-Path $consumer 'package-consumption.json') -Encoding utf8
+    Set-Content -LiteralPath (Join-Path $repoRoot 'artifacts/treedatagrid-theme-consumer-path.txt') -Value $consumer -Encoding utf8
     }
     if ($Control -in 'All', 'VirtualKeyboard') {
         & (Join-Path $PSScriptRoot 'Test-VirtualKeyboardPackageConsumer.ps1')

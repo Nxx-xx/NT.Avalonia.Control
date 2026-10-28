@@ -1,0 +1,46 @@
+{
+  "schema": "charts-preview-release-scope/v1",
+  "frozenDate": "2026-10-27",
+  "releaseVersion": "0.2.0-preview.3",
+  "intent": "Prepare a private-trial preview; public publishing is a separate explicit action.",
+  "packages": ["NT.AvaloniaControl.Charts", "NT.AvaloniaControl.Charts.Themes", "NT.AvaloniaControl.Charts.Skia"],
+  "dependencies": {"targetFramework": "net10.0", "sdk": "10.0.402", "avalonia": "12.0.3", "skiaAdapterAvaloniaRange": "[12.0.3]"},
+  "deployment": {"jit": true, "frameworkDependentDirectory": true, "singleFileQualified": false, "trimmingQualified": false, "nativeAotQualified": false, "arm64Qualified": false},
+  "platforms": {
+    "windows-x64": {"role": "primary preview", "qualification": "current native desktop software environment; exact execution metadata required"},
+    "linux-x64": {"role": "preview", "qualification": "current WSLg/X11 software environment; Ubuntu 22.04/24.04 physical certification deferred"}
+  },
+  "releaseGates": {
+    "lockedRestoreAndAudit": true,
+    "chartsFullRegression": true,
+    "threePackagesPerPlatform": true,
+    "freshCacheCoreAndThemesConsumers": true,
+    "freshCacheDesktopConsumersCoreThemesSkia": true,
+    "normalLinuxEarlyFontStartup": true,
+    "pngJpegCancellationFailureAndOriginalHit": true,
+    "lifecycleCyclesPerPlatform": 100,
+    "soakSecondsPerPlatform": 28800,
+    "soakRunsSerial": true,
+    "noForcedGcOrCacheClearDuringSoak": true,
+    "steadyMemoryGrowthAllowance": {"minimumBytes": 33554432, "baselineFraction": 0.05},
+    "source": "Memory growth allowance retained from charts-performance-budgets.json; preview workload is reported separately from original formal performance tracks.",
+    "unexpectedExceptions": 0,
+    "incorrectOriginalDataHits": 0,
+    "silentDroppedAcceptedSamples": 0,
+    "releaseEvidenceAndKnownLimitations": true
+  },
+  "deferred": [
+    "official feature comparison (user decision 2026-10-27)",
+    "official performance comparison and parity claims",
+    "dense scatter fixed-load optimization and SDK extensions",
+    "advanced category legend commands, dense Trackball layout and universal label avoidance",
+    "precise lasso/path selection and complete advanced professional integration",
+    "physical Ubuntu 22.04/24.04, hardware GPU and physical touch certification",
+    "million-point hit tail and native UIA/AT-SPI selected-item bridge",
+    "present and formal peak-memory qualification"
+  ],
+  "existingPerformanceProtocolChanged": false,
+  "originalC7MilestoneComplete": false,
+  "publicDistributionLicense": "undecided; third-party notices are not a license grant for this project",
+  "publicPushAuthorized": false
+}

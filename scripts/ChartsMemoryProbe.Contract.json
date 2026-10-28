@@ -1,0 +1,63 @@
+{
+  "schema": "charts-memory-probe-contract/v1",
+  "qualification": "Three-pair AB/BA/AB same-OS sampled-memory diagnostic. Does not replace the original C7 protocol, oracle, endpoints, present or peak-memory qualifications.",
+  "hostCli": ["--mode empty|full", "--output NEW_HOST_DIR", "--control-dir CONTROL_DIR", "--run-token GUID_N"],
+  "samplerCli": ["--ready-file HOST_DIR/ready.json", "--control-dir CONTROL_DIR", "--output NEW_SAMPLER_DIR", "--interval-ms 20", "--smaps-interval-ms 100", "--timeout-seconds 90"],
+  "oracleCli": ["--campaign campaign.json", "--output NEW_ORACLE_JSON"],
+  "hostEnvelope": {
+    "schema": "charts-memory-probe/v1",
+    "runToken": "GUID_N",
+    "mode": "empty|full",
+    "processId": "integer",
+    "processStartedUtc": "Process.StartTime.ToUniversalTime().ToString(O), preserved exactly",
+    "windowsCreationFileTimeUtc": "decimal string or null",
+    "linuxProcStartTicks": "integer field22 from /proc/pid/stat or null",
+    "linuxBootId": "string or null",
+    "stopwatchFrequency": "integer",
+    "payload": "file-specific object"
+  },
+  "controlEnvelope": {
+    "runToken": "same GUID_N",
+    "processId": "same integer",
+    "processStartedUtc": "same exact string",
+    "status": "ready|completed|release"
+  },
+  "receiptIdentityPolicy": {
+    "schemaVersion": "charts-memory-process-v2",
+    "processStartedUtc": "Original parent .NET observation; never overwritten with the child's value.",
+    "parentObservedProcessStartedUtc": "Exact duplicate of the original parent processStartedUtc observation.",
+    "canonicalProcessStartedUtc": "For the host only, the child's unmodified ready UTC string, assigned only after exact launch/ready/native identity equality; null for sampler receipts.",
+    "hostReadyIdentityValidated": "True only for a host whose launch observation, ready observation and ready payload match exact PID and all native identity fields.",
+    "nativeIdentityAtLaunch": "Captured immediately after process start, before reading the parent .NET UTC start observation.",
+    "nativeIdentityAtReady": "Fresh native observation before accepting host ready; null for sampler receipts.",
+    "nativeIdentityFields": ["processId", "windowsCreationFileTimeUtc", "linuxProcStartTicks", "linuxBootId", "readStartedUtc", "readFinishedUtc", "readStartQpc", "readEndQpc", "qpcFrequency"],
+    "windows": "Require exact PID and creation FILETIME equality across launch/ready/payload; parent and canonical child UTC must also be exactly equal.",
+    "linux": "Require exact PID, /proc/stat field22 start ticks and boot ID across launch/ready/payload. Parent/child .NET UTC conversions are retained independently and are not compared with tolerance or rounding."
+  },
+  "sequence": [
+    "host initializes matching empty chart, line series, axes, fonts, native software surface and RTB; writes host/ready.json before DatasetFactory/source construction",
+    "sampler checks native process identity; opens evidence and obtains first process sample (also Linux smaps sample); atomic control/sampler-ready.json status=ready",
+    "host validates sampler-ready; records samplerReadyObservedQpc then workStart; generation -> sourceApply -> prepare -> record -> controlledRaster -> hit",
+    "host records managed endpoints and guards, writes host/work-complete.json, retaining source/chart/RTB roots and holding the process open",
+    "sampler reads work-complete and takes terminal process sample plus Linux smaps sample; flushes evidence/result.json then atomic control/sampler-complete.json status=completed",
+    "runner waits for successful sampler exit then writes control/release.json status=release",
+    "host validates both controls, writes host/raw.json and exits; runner retains both process receipts"
+  ],
+  "hostReadyPayload": ["readyQpc", "readyUtc", "environment"],
+  "matchedEnvironment": ["os", "architecture", "runtime", "backend", "windowDips", "renderScaling", "renderer", "surface", "culture", "tieredCompilation", "gcServer", "gcLatency", "fontFamily", "fontSize", "fontProbes", "chartDips", "rasterPixels", "dpi", "fixedXAxis", "fixedYAxis", "samplingMode", "strokeThickness", "markerSize", "showMarkers", "showLegend", "showGridLines", "showDataLabels", "animationTriggers", "seriesCount", "sources"],
+  "environmentPathFieldsNotCompared": ["fontconfigFile"],
+  "fixedXAxis": [-1, 1000000],
+  "fixedYAxis": [-2, 194],
+  "workCompletePayload": ["status", "samplerReadyObservedQpc", "workStartQpc", "workEndQpc", "workStartUtc", "workEndUtc", "phases", "managed", "inputCount", "primitiveCount", "sampling", "hitPassed", "datasetManifest", "rawInputRetained", "originalPointValueBytes", "allFinitePointsInsideAxes", "sourceGeneratedAfterSamplerReady", "emptySourceNoGeneration", "nativeBytes", "gpuBytes", "qualification"],
+  "phases": ["generation", "sourceApply", "prepare", "record", "controlledRaster", "hit"],
+  "phaseFields": ["name", "startQpc", "endQpc", "startUtc", "endUtc", "uiThreadAllocatedBytes"],
+  "managedFields": ["phase", "startQpc", "endQpc", "utc", "estimatedManagedBytes", "totalAllocatedBytes", "lastGcIndex", "lastGcGeneration", "lastGcHeapSizeBytes", "lastGcFragmentedBytes", "lastGcTotalCommittedBytes", "collections", "qualification"],
+  "managedPhases": ["before-generation", "after-generation", "after-sourceApply", "after-prepare", "after-record", "after-controlledRaster", "after-hit", "after-work"],
+  "samplingFields": ["requestedMode", "isApplied", "sourceCount", "visibleCount", "renderedCount", "figureCount", "pixelBucketCount", "renderScale", "pixelWidth", "fallbackReason"],
+  "fullGuards": {"inputCount": 1000000, "requestedMode": "MinMax", "isApplied": true, "sourceCount": 1000000, "hitPassed": true, "allFinitePointsInsideAxes": true, "sourceGeneratedAfterSamplerReady": true, "emptySourceNoGeneration": false, "rawInputRetained": true, "originalPointValueBytes": 16000000, "datasetId": "S1M-L", "datasetInputPointCount": 1000000},
+  "emptyGuards": {"inputCount": 0, "requestedMode": "MinMax", "isApplied": false, "sourceCount": 0, "hitPassed": true, "allFinitePointsInsideAxes": true, "sourceGeneratedAfterSamplerReady": true, "emptySourceNoGeneration": true, "rawInputRetained": false, "originalPointValueBytes": 0, "datasetManifest": null},
+  "rawPayload": ["status", "error", "phases", "managed", "finishedQpc", "finishedUtc"],
+  "campaign": {"schema": "charts-memory-campaign/v1", "diagnosticOnly": true, "pairOrder": [["empty", "full"], ["full", "empty"], ["empty", "full"]], "nominalIncrementBytes": 536870912, "runFields": ["pairIndex", "position", "mode", "runToken", "host", "sampler", "control", "hostReceipt", "samplerReceipt", "passed", "error"]},
+  "pathContract": "Campaign run paths are relative to campaign.json parent; host and sampler denote directories. All attempts, errors, timeout evidence and stdout/stderr receipts are retained. No automatic retry.",
+  "measurementContract": "Windows current private commit and working set at 20ms; Linux status RSS/HWM at 20ms and smaps RSS/PSS/private-resident/swap at 100ms. Keep measurement kinds separate. Use same-kind matched pair maxObserved(full)-maxObserved(empty) without clipping negative deltas. Source allocation and managed evidence remain included in full process totals. No forced GC, accurate-native subtraction, GPU, instantaneous-peak or original C7 timing claim."
+}

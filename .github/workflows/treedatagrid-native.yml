@@ -1,21 +1,29 @@
 name: treedatagrid-native
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 jobs:
   windows-native:
     runs-on: windows-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
         with:
           global-json-file: global.json
-      - name: Probe native window and run three TreeDataGrid checks
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run A6 controls, profiles, package consumers and published native checks
         shell: pwsh
-        run: ./scripts/Test-TreeDataGridNative.ps1 -OutputDirectory artifacts/platform/treedatagrid-ci
+        run: ./scripts/Test-TreeDataGridAlignment.ps1 -OutputDirectory artifacts/platform/treedatagrid-ci
       - name: Preserve results, environment and rendered images
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: treedatagrid-windows-native
-          path: artifacts/platform/treedatagrid-ci
+          path: |
+            artifacts/platform/treedatagrid-ci/*.json
+            artifacts/platform/treedatagrid-ci/*.xml
+            artifacts/platform/treedatagrid-ci/*.log
+            artifacts/platform/treedatagrid-ci/profiles
+            artifacts/platform/treedatagrid-ci/native
           if-no-files-found: error

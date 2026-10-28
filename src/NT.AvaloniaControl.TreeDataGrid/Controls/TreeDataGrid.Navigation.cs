@@ -25,7 +25,7 @@ public partial class TreeDataGrid
         }
         // Expansion callbacks can replace the control's source, columns or selection.
         if (destination is not { } id || !ReferenceEquals(Source, source) || GetColumnIndex(current.Column) < 0 || source.GetViewIndex(id) < 0) return;
-        SelectAddress(new CellAddress(id, current.Column), extend: false, toggle: false);
+        if (!SelectAddress(new CellAddress(id, current.Column), extend: false, toggle: false, TreeDataGridSelectionChangeReason.Keyboard)) return;
         RowsPresenter?.ScrollIntoView(id);
         BringColumnIntoView(current.Column);
     }

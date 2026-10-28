@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pdfviewer-perf-record-1.0",
+  "title": "PdfViewer raw performance record (schema 1.0)",
+  "description": "One corpus x scenario x iteration. Field groups follow docs/pdfviewer-performance-plan.md section 9. Null means the measurement was not available; a reason belongs in notes. No field is ever filled with a simulated value.",
+  "type": "object",
+  "required": ["schemaVersion", "runId", "iteration", "implementation", "corpusId", "scenarioId", "status", "qualityStatus", "referenceAvailability", "environment", "conditions", "metrics", "samples", "measurement"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "runId": { "type": "string" },
+    "iteration": { "type": "integer", "minimum": 1 },
+    "implementation": { "const": "rt" },
+    "commit": { "type": ["string", "null"] },
+    "isDirty": { "type": "boolean" },
+    "sourceManifestSha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+    "productAssemblySha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+    "nativeLibrarySha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+    "corpusId": { "type": "string" },
+    "corpusSha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+    "scenarioId": {
+      "type": "string",
+      "enum": [
+        "open-first-screen",
+        "jump-page-cached",
+        "jump-page-uncached",
+        "scroll-continuous",
+        "search-first-hit",
+        "search-full-document",
+        "cancel-queued",
+        "cancel-native-render",
+        "close-release",
+        "open-close-cycles"
+      ]
+    },
+    "status": { "enum": ["ok", "error", "timeout", "canceled", "completed-before-cancel"] },
+    "statusDetail": { "type": ["string", "null"] },
+    "qualityStatus": { "enum": ["not-run-no-golden", "ok", "degraded"] },
+    "referenceAvailability": { "const": "blocked-reference" },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "os": { "type": "string" },
+        "desktopSession": { "type": ["string", "null"] },
+        "graphicsBackend": { "type": ["string", "null"] },
+        "machineProfileId": { "type": ["string", "null"] },
+        "cpuCount": { "type": "integer" },
+        "memoryBytes": { "type": "integer" },
+        "wsl": { "type": "boolean" },
+        "runtimeVersions": { "type": "object", "additionalProperties": { "type": ["string", "null"] } }
+      }
+    },
+    "conditions": {
+      "type": "object",
+      "properties": {
+        "processCache": { "enum": ["new-process", "in-process"] },
+        "fileCache": { "type": "string" },
+        "viewerCount": { "type": "integer" },
+        "viewportDip": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+        "renderScale": { "type": "number" },
+        "targetRasterPx": { "type": ["array", "null"], "items": { "type": "integer" } },
+        "qualityProfileId": { "type": ["string", "null"] },
+        "warmup": { "type": ["string", "null"] }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "description": "Per-iteration scalar metrics; null when the measurement is unavailable for this iteration.",
+      "additionalProperties": { "type": ["number", "null"] }
+    },
+    "samples": {
+      "type": "object",
+      "description": "Series sampled within one iteration (pooled across iterations by the aggregator).",
+      "additionalProperties": { "type": "array", "items": { "type": "number" } }
+    },
+    "measurement": {
+      "type": "object",
+      "properties": {
+        "clock": { "const": "monotonic-stopwatch" },
+        "presentMethod": { "type": ["string", "null"], "description": "composition-batch-rendered when measured; null when no compositor answered." },
+        "presentUnavailableReason": { "type": ["string", "null"] },
+        "scanOutVerified": { "const": false }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "properties": {
+        "actualRasterPx": { "type": ["array", "null"], "items": { "type": "integer" } },
+        "degradationReason": { "type": ["string", "null"] },
+        "ssimStatus": { "enum": ["not-run-no-golden", "ok", "degraded"] },
+        "roiResults": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": { "type": "string" },
+          "path": { "type": ["string", "null"] },
+          "sha256": { "type": ["string", "null"] },
+          "detail": { "type": ["string", "null"] }
+        },
+        "required": ["kind"]
+      }
+    },
+    "notes": {
+      "type": "object",
+      "description": "Human-readable reasons for nulls and measurement-method qualifications.",
+      "additionalProperties": { "type": ["string", "null"] }
+    }
+  }
+}

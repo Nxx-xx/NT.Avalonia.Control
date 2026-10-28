@@ -32,37 +32,49 @@ P0 已落地受限 FreeText 生产写入和静态 TrueType 自动子集。每次
 | 关闭/切换 | P1 同步入口立即失效会话并请求释放，租约结束后异步 close / unpin | 忙队列 UI 心跳及重入测试通过；DisposeAsync / CloseDocumentAsync 等真实释放，完整延迟分位数仍未测；PERF06 |
 | 页面缓存 | 固定 96MiB，仅统计最终页面位图 | 未覆盖输入、暂存、上传副本、文字与缩略图；PERF07、PERF16 |
 | 画质 | P3-03 起上限与官方同口径且可配置（`MaxRenderDimension` 8192/边、`MaxRenderPixels` 30MP、DPI clamp 1～`MaxRenderScale`），分层渲染（预览 / 全质量）目标光栅不降级取胜 | 旧 4096/4MP/DPI 1～2 状态已关闭；比较速度仍须先记录实际 raster 尺寸；PERF08 阅读侧已交付，同机对照归 PERF03 |
-| 布局 | 缩放、旋转、宽度变化时生成全部页面 Rect | 大页数与连续 resize 有 O(N) 分配；PERF09 |
-| 搜索绘制 | 每个可见页扫描全部搜索结果 | 命中量增加时重复扫描；搜索全部完成才返回；PERF10 |
-| 文本选择 | 按 24 页缓存；指针更新时生成完整跨页选中文本 | 长选区可能重复提取与淘汰；PERF11 |
+| 布局 | P3-04 起签名不变跳过重建、仅宽度变化水平居中（与全量重建逐像素一致），`RowIndexOf` O(1)、`RowAt` 二分 | 旧「任一输入变化即全量 O(N) 重建」状态已关闭；混合页尺寸 / 旋转 / 2000 行查找由布局契约单测锁定；PERF09 阅读侧已交付，桌面测量归 PERF01 / P3-05 |
+| 搜索绘制 | P3-04 起命中按页分桶索引，绘制只扫可见页命中 | 旧「每可见页扫全部结果」状态已关闭；增量发布 / 取消 / 截断提示沿用 P2 搜索契约；PERF10 阅读侧已交付 |
+| 文本选择 | P3-04 起字符命中 Y 带索引、拖选只维护区间 + 合并预览文本、复制时完整提取 | 旧「每指针移动全量 MinBy + 完整提取」状态已关闭；25 / 120 / 1005 页正反向选区、取消与无迟到落地已验证；PERF11 阅读侧已交付 |
 | 缩略图 | 最多 12 个 pending、64 张缓存，P1 已进入低优先级队列 | 按字节预算、方向预取与规模观测仍归 PERF12 |
 | 多 viewer | 每实例有自己的缓存，共用串行队列和任务类公平规则 | 进程总预算、按实例轮转和完整可见性优先策略仍归 PERF13 |
 
 审计涉及 `src/NT.AvaloniaControl.PdfViewer/PdfDocument.cs`、`Interop/PdfiumRuntime.cs`、`Controls/PdfDocumentPresenter.cs`、`Controls/PdfPageLayout.cs`、`Controls/PdfViewer.Document.cs` 与 `Controls/PdfViewer.Interaction.cs`。实施前应重新确认对应代码，避免按本表误改已经演进的实现。
 
+### P3-05 实测瓶颈记录（2026-10-23，Windows + Linux WSL 内部回归）
+
+以下是 harness 实测发现（自身结果，门槛均为工程初始值待校准；来源 `docs/validation/pdfviewer-performance/windows-2026-10-23.md` / `linux-2026-10-23.md`），不是静态审计：
+
+| 项目 | 实测 | 影响与计划 |
+| --- | --- | --- |
+| 跳页 settle 下限 | jump-page-cached p95 = 161.5ms（Win）/ 151.4ms（Linux），Linux 侧 30 样本几乎精确贴住 150ms | `GoToPage` → `WaitForIdleAsync` 路径被 `SettleDelayDefault` 150ms 计时器结构性垫底；跳页直达 / 导航路径缩短 settle 归 PERF05 / PERF09 调优；门槛 100ms 在此语义下达不到，待校准 |
+| 帧节奏尾部 | frameIntervalMs p50 ≈ 33ms（Win，强制 commit 节拍）/ ≈ 21ms（Linux WSLg），p95 35～41ms、p99 37～49ms | harness 以 forced-commit 采样合成批，不是 vsync 锁定扫描输出（`scanOutVerified=false`）；真实 FPS 需扫描输出验证（PERF17 / P9）；门槛 20ms/33.3ms 待校准 |
+| 私有字节增量噪声 | open-close-cycles delta p95 = 25.8MB not-met（Win）/ 10.3MB met（Linux）；Win 样本 min 为负、p50 8.8MB，跨进程基线离散 | 10 进程 × 100 开关的留存增长含每进程基线噪声，缓存两端确认清空（~5.6KB）；门槛基线归 PERF03 校准后再定，长稳归 PERF20 |
+| 首屏 present 与提交差 | firstPageSubmitted p50 ≈ 91ms（Win）→ presented p50 ≈ 231ms，present 段占首屏大头 | UI 提交到合成批渲染完成约 130～140ms（含首帧合成器初始化）；进一步拆解归 PERF17 |
+| Linux privateBytes 口径 | Linux 基线 p50 ≈ 501MiB vs Windows ≈ 131MiB | `Process` 私有字节在 WSLg / .NET 上构成不同；跨平台只比较增量与趋势，不比较绝对值 |
+
 ## 3. 工作项、依赖与交付
 
 | 编号 | 工作项与完成定义 | 主阶段 / 依赖 |
 | --- | --- | --- |
-| PERF01 | 指标契约与埋点：输入读取、打开解析、队列等待、原生执行、解码完成、位图上传、首次真实呈现、布局、搜索、取消、释放分别计时；记录 monotonic 时间与关联 ID，不把 `LoadDocumentAsync` 返回当作首屏 | P0 定义协议并保留已有后端计时；P1 / P3 补完整埋点；各项测量前固定对应定义 |
+| PERF01 | 指标契约与埋点：输入读取、打开解析、队列等待、原生执行、解码完成、位图上传、首次真实呈现、布局、搜索、取消、释放分别计时；记录 monotonic 时间与关联 ID，不把 `LoadDocumentAsync` 返回当作首屏 | P0 定义协议并保留已有后端计时；P1 / P3 补完整埋点（P3-05 已交付 `PdfPerformance*` 飞行记录契约与 10 场景埋点，Windows / Linux 内部回归已按固定定义出具结果；产品侧永不写 present mark）；各项测量前固定对应定义 |
 | PERF02 | 建立分层语料 manifest，记录 SHA-256、来源/许可、页数、大小、内容标签、预期行为、golden 版本；公开与私有脱敏语料分开 | P0 初始真实 / 合成语料与操作边界；P3 / P9 补生产规模、压力和异常样本；依赖 PERF01 场景定义 |
-| PERF03 | 固定官方版本、合法参考宿主和同机同画质协议；输出可运行/被阻塞场景列表；记录自身初始目标、对标倍率和例外，取得有效参考条件后冻结可执行对照配置 | P0 协议与参考可用性清单；P3 执行对照及校准，P9 最终复验；依赖 PERF01～02 |
+| PERF03 | 固定官方版本、合法参考宿主和同机同画质协议；输出可运行/被阻塞场景列表；记录自身初始目标、对标倍率和例外，取得有效参考条件后冻结可执行对照配置 | P0 协议与参考可用性清单；P3-05 已出具自身结果并保持 `blocked-reference`（每条 raw 记录带 `referenceAvailability`，报告禁止"已对标 / 更快"表述）；同机官方 A/B 待合法参考宿主、门槛校准未做；P9 最终复验；依赖 PERF01～02 |
 | PERF04 | 文档数据源：文件随机读或文件映射 PoC、可寻址流、不可寻址流临时文件策略；明确源所有权、生命周期、取消、临时文件回收；保留 byte[] 独立副本语义并避免路径加载重复复制 | P0 记录当前副本风险；P1 数据源 PoC / 底座，P3 调优；依赖 PERF06 |
 | PERF05 | 全局串行 scheduler：可见页/交互优先，搜索/缩略图后台，任务去重、过期淘汰、viewer 公平轮转、队列长度上限；验证 progressive 安全点与重入限制；先支持取消过期低优先级工作，再考虑安全的时间片暂停 | P0 固定串行与取消约束；P1 方案验证和实现，P3 调优；依赖 PERF01 |
 | PERF06 | 异步关闭与句柄 lease：UI 状态清理不等待 gate；取消后后台安全完成原生资源回收；打开/关闭/切换/卸载模板/detach/dispose 都禁止迟到结果覆盖新状态；保持向后兼容的 Dispose 契约 | P1；依赖 PERF05 的队列生命周期 |
 | PERF07 | 按字节与总预算管理缓存：正文、预取、缩略图、文本、暂存、编辑历史分开记账；预取与保留窗口形成迟滞；提供预算/窗口配置与只读诊断；明确预算是硬上限、软上限还是含在途余量 | P1 契约，P3 实现；依赖 PERF05～06 |
 | PERF08 | 画质与 HiDPI：在预算允许时覆盖官方 8192/30MP 上限与可配置 MaxRenderScale；可见页高清、预取低清、停滚升级、缩放复用旧图；高倍率降级显式记录；跨屏 DPI 后失效正确 | P2 基础，P3 优化（P3-03 已交付阅读侧：8192/30MP 可配置硬顶、可见高清 / 预取低清 / 停滚升级 / 缩放复用旧图、`DegradedPageCount` 显式记账、跨屏 DPI 失效重光栅；同机对照与指标记录归 PERF03 / P3-05）；依赖 PERF07、PERF17 |
-| PERF09 | 大文档布局：预计算页尺寸/前缀高度/最大宽度，滚动定位保持 O(log N)，避免无变化时重建；连续 resize/缩放合并；降低 O(N) 分配并保持滚动锚点、混合页尺寸、旋转坐标正确 | P2，P3；依赖 PERF01、完整阅读布局契约 |
-| PERF10 | 搜索：按页索引命中与高亮，仅绘制可见命中；增量发布首个结果/进度，支持取消和结果截断提示；背景搜索不饿死正文；可复用文本索引须计入 budget 并在编辑后失效 | P2，P3；依赖 PERF05、PERF07、PERF09 |
-| PERF11 | 文本与跨页选择：字节预算/LRU、命中空间索引、拖动只更新区间与可见高亮，节流生成预览，复制时完整提取；验证超过 24 页、100 页、1000 页选区的取消、反向选择与文本正确性 | P2，P3；依赖 PERF05、PERF07、PERF09 |
+| PERF09 | 大文档布局：预计算页尺寸/前缀高度/最大宽度，滚动定位保持 O(log N)，避免无变化时重建；连续 resize/缩放合并；降低 O(N) 分配并保持滚动锚点、混合页尺寸、旋转坐标正确 | P2，P3（P3-04 已交付阅读侧：签名跳过 / 仅宽度水平居中合并 / 行索引 O(1)+二分，居中与全量重建逐像素一致、2000 混合行查找锁定；桌面测量归 PERF01 / P3-05）；依赖 PERF01、完整阅读布局契约 |
+| PERF10 | 搜索：按页索引命中与高亮，仅绘制可见命中；增量发布首个结果/进度，支持取消和结果截断提示；背景搜索不饿死正文；可复用文本索引须计入 budget 并在编辑后失效 | P2，P3（P3-04 已交付阅读侧：按页分桶索引 + 可见高亮只扫可见命中；增量发布 / 取消 / 截断提示沿用 P2 搜索契约；可复用文本索引的 budget 计入与编辑后失效归 PERF14）；依赖 PERF05、PERF07、PERF09 |
+| PERF11 | 文本与跨页选择：字节预算/LRU、命中空间索引、拖动只更新区间与可见高亮，节流生成预览，复制时完整提取；验证超过 24 页、100 页、1000 页选区的取消、反向选择与文本正确性 | P2，P3（P3-04 已交付阅读侧：字符命中 Y 带索引、拖选区间 + 合并预览 + 复制完整提取，25 / 120 / 1005 页正反向与取消 / 无迟到落地已验证；文本字节预算 / LRU 沿用 P3-02 `TextCacheBudget`）；依赖 PERF05、PERF07、PERF09 |
 | PERF12 | 缩略图统一调度：侧栏隐藏立即取消，按滚动方向预取，字节预算淘汰，旧代结果不可回写；高页数列表保持虚拟化，批注/旋转变化正确失效 | P2，P3；依赖 PERF05、PERF07 |
 | PERF13 | 多 viewer：2/4 实例公平性、总缓存预算、前台/后台优先级、隐藏暂停、一个 viewer dispose 不阻塞另一个；记录各 viewer 队列等待和最长无进展时段 | P1 契约，P3 验收；依赖 PERF05～07 |
 | PERF14 | 文档修改与缓存版本：页/文档 revision 纳入渲染和文本索引键；批注、表单、redact、undo/redo、保存重载采用局部或明确全量失效；事件批量合并，避免每笔输入全页重渲染 | P4～P7；依赖 PERF07～12 与编辑模型 |
-| PERF15 | 保存与历史预算：记录序列化时间、保存峰值、原生/托管副本；undo 记录数与字节同时受控；redact 全文快照独立预算，超过阈值有明确策略；表单输入可合并撤销，保存不得长期占用 UI | P4，P6，P7；依赖 PERF04～07 |
-| PERF16 | 资源审计：managed heap、native/private memory、RSS/working set、缓存、暂存、句柄、临时文件与可获取的 GPU 数据同时记录；分析“缓存稳定但进程持续增长”；不以强制 GC 隐藏正常运行压力 | P0 保留已有进程采样及未测清单；P3 实现完整审计，P9 全功能验收；依赖 PERF01、PERF06～07 |
-| PERF17 | 真实桌面呈现与图像质量 harness：独立记录解码完成、UI 提交、compositor/render 完成、可验证的实际 present；用截图/平台 profiler/必要的视频核验区分；输出质量对齐证据 | P0 固定测量边界和方案；P3 实现 / 验收，P9 全功能复验；依赖 PERF01～03 |
+| PERF15 | 保存与历史预算：记录序列化时间、保存峰值、原生/托管副本；undo 记录数与字节同时受控；redact 全文快照独立预算，超过阈值有明确策略；表单输入可合并撤销，保存不得长期占用 UI | P4-01 已交付会话侧：undo 记录数与字节同时受控（`UndoLimit` 步数 + `HistoryByteLimit` 字节双限、调低即裁剪、最新条目保留、`HistoryBytes` 记账、新编辑清 redo）；序列化时间 / 保存峰值与保存流程归 P4-02；redact 全文快照独立预算与表单合并撤销归 P6、P7；依赖 PERF04～07 |
+| PERF16 | 资源审计：managed heap、native/private memory、RSS/working set、缓存、暂存、句柄、临时文件与可获取的 GPU 数据同时记录；分析“缓存稳定但进程持续增长”；不以强制 GC 隐藏正常运行压力 | P0 保留已有进程采样及未测清单；P3-05 已交付 `PdfResourceSample`（接 `PdfViewerCacheStatistics`，采样不强制 GC）与 open-close-cycles 增量测量（PDFium 内部堆不可测保持声明）；P9 全功能验收；依赖 PERF01、PERF06～07 |
+| PERF17 | 真实桌面呈现与图像质量 harness：独立记录解码完成、UI 提交、compositor/render 完成、可验证的实际 present；用截图/平台 profiler/必要的视频核验区分；输出质量对齐证据 | P0 固定测量边界和方案；P3-05 已交付 present 探针与首屏链路拆分（`composition-batch-rendered`，`scanOutVerified=false`，真实窗口；SSIM 金样、扫描输出 / 视频核验未做）；P9 全功能复验；依赖 PERF01～03 |
 | PERF18 | Windows/Linux 真机矩阵：相同语料、同质量、各平台独立统计；Windows DPI/跨屏，Linux X11 与 Wayland 会话/XWayland、字体、输入、剪贴板、GPU/软件渲染与原生依赖；原生 Wayland 仅另行升级试验；WSL 结果只作补充 | P1 底座，P3 调优，P8 平台服务，P9 发布；依赖 PERF17 |
-| PERF19 | 可复现 benchmark 工具链：runner、场景脚本、raw JSON schema、聚合器、baseline compare、CI 轻量回归、发布报告；阈值版本化，失败保留原始记录/截图/trace | P0 骨架，P3 自动化，P9 发布；依赖 PERF01～03 |
+| PERF19 | 可复现 benchmark 工具链：runner、场景脚本、raw JSON schema、聚合器、baseline compare、CI 轻量回归、发布报告；阈值版本化，失败保留原始记录/截图/trace | P0 骨架，P3-05 已交付自动化（`PdfViewer.Benchmarks` new-process worker + nearest-rank 聚合 + raw JSON Schema + 语料 manifest SHA-256 + `compare-baseline` 自身基线比较 + `Test-PdfViewerPerformance` 统一入口 + Win/Linux 脚本；失败保留 raw + stdout/stderr stub）；CI 轻量回归未接入、阈值版本化随门槛校准；P9 发布；依赖 PERF01～03 |
 | PERF20 | 8 小时长稳、100 轮开关、交替取消与 2/4 viewer 混合负载；保存/undo/表单/redact 完成后全量重跑；发布阻断项清零，例外必须有语料 ID、风险、原因与负责人 | P3 早期压力，P4～P8 增量，P9 最终；依赖 PERF06、PERF13～19 |
 
 性能专项估算为 **25～41 人日**，分摊建议如下。包含正常的实现、审查、指标迭代与性能专项验证，不包含全部阅读/批注/表单/redact 功能本身的实现。

@@ -154,6 +154,11 @@ internal sealed partial class ChartsPage : UserControl, IDemoPage
         foreach (var chart in _mapCharts) chart.Dispose();
         foreach (var chart in _c6Charts.OfType<IDisposable>()) chart.Dispose();
         DisposeC5CompletionExamples();
+        _c7IntegrationBoard?.Dispose();
+        _professionalTooltipBoard?.Dispose();
+        _professionalPresentationBoard?.Dispose();
+        _professionalLinkingBoard?.Dispose();
+        _professionalPlotTrackballBoard?.Dispose();
         _selectionRangeBoard?.Group.Dispose();
         _inputGesturesBoard?.Dispose();
         _annotationCompletionBoard?.Dispose();

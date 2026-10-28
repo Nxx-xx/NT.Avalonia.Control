@@ -25,8 +25,6 @@ public partial class TreeDataGrid
             var currentColumn = State?.CurrentCell?.Column;
             column = currentColumn is { } current && GetColumnIndex(current) >= 0 ? current : VisibleColumns.FirstOrDefault()?.Id;
             if (column is null) return false;
-            if (State?.EditSession is { } edit && edit.Cell != new CellAddress(node, column.Value)
-                && !CommitEdit()) return false;
         }
 
         bool TargetIsCurrent() => ReferenceEquals(Source, source) && ReferenceEquals(RowsPresenter, presenter) && _attached
@@ -57,13 +55,11 @@ public partial class TreeDataGrid
         var version = source.Version;
         presenter.EnsureCurrentLayout();
         if (!TargetIsCurrent() || source.Version != version || presenter.Layout is null) return false;
+        if (select && !SelectAddress(new CellAddress(node, column!.Value), extend: false, toggle: false)) return false;
+        if (!TargetIsCurrent()) return false;
         if (!presenter.ScrollIntoView(node)) return false;
-        if (!TargetIsCurrent() || source.Version != version) return false;
-        if (!select) return true;
-        SelectAddress(new CellAddress(node, column!.Value), extend: false, toggle: false);
-        if (!TargetIsCurrent() || source.Version != version) return false;
-        BringColumnIntoView(column.Value);
-        return TargetIsCurrent() && source.Version == version;
+        if (column is { } selectedColumn) BringColumnIntoView(selectedColumn);
+        return TargetIsCurrent();
     }
 
     /// <summary>

@@ -104,7 +104,7 @@ public sealed partial class TreeDataGridCellPresenter
         {
             editor.PropertyChanged -= EditorPropertyChanged;
             editor.DataContext = null;
-            if (editor is ContentPresenter presenter) { presenter.Content = null; presenter.ContentTemplate = null; presenter.UpdateChild(); }
+            if (editor is ContentPresenter presenter) { presenter.ContentTemplate = null; presenter.Content = null; presenter.UpdateChild(); }
         }
         _editor = null; _editorSession = null;
         PseudoClasses.Set(":editing", false); PseudoClasses.Set(":invalid", false);

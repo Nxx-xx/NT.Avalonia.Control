@@ -170,7 +170,13 @@ internal sealed partial class CartesianSeriesRenderer(ChartLegendSymbol symbol, 
                             : RenderCartesianLine(path, context.Data, coordinates, new CartesianProjector(projection))
                 : RenderCustomLine(path, context.Data, coordinates, new CustomProjector(context.Projection));
         if (visible.IsFull) ChartVisibilityQuery.RecordProjected(ChartDataExtrema.For(context.Data).Count);
-        if (segments > 0) drawing.DrawGeometry(null, new Pen(context.Brush, Size(context.Series.StrokeThickness)), geometry);
+        if (segments > 0)
+        {
+            drawing.DrawGeometry(null, new Pen(context.Brush, Size(context.Series.StrokeThickness)), geometry);
+            // Immediate native backends can pass only the path handle to a long
+            // unmanaged draw. Keep its owning geometry alive until that draw returns.
+            GC.KeepAlive(geometry);
+        }
     }
 
     // Value-type adapters give the built-in projection a direct call without relying on

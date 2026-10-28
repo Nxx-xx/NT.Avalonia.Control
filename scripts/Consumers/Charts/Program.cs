@@ -25,6 +25,9 @@ namespace Charts.Usage;
 internal static class Program
 {
     internal static string[] Arguments => [];
+    // The native samples record this before platform setup. This consumer uses
+    // the mock headless backend and deliberately does not initialize native text.
+    internal static object? NativeTextBeforeUi { get; } = null;
 
     [STAThread]
     public static int Main(string[] args)

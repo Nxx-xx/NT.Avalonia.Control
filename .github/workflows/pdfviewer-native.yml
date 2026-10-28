@@ -40,6 +40,25 @@ jobs:
           dotnet restore src/NT.AvaloniaControl.PdfViewer.Themes/NT.AvaloniaControl.PdfViewer.Themes.csproj --locked-mode --disable-parallel -m:1 -nr:false
           if ($LASTEXITCODE -ne 0) { throw 'Themes locked restore failed.' }
           ./scripts/Test-PdfViewerPackageConsumer.ps1
+      - name: Save conflict, fault injection and owned-process crash recovery
+        shell: pwsh
+        run: |
+          dotnet restore benchmarks/PdfViewer.P403/PdfViewer.P403.csproj --locked-mode --disable-parallel -m:1 -nr:false
+          if ($LASTEXITCODE -ne 0) { throw 'P4-03 locked restore failed.' }
+          dotnet build benchmarks/PdfViewer.P403/PdfViewer.P403.csproj -c Release --no-restore -m:1 -nr:false
+          if ($LASTEXITCODE -ne 0) { throw 'P4-03 build failed.' }
+          $python = if ($IsWindows) { 'python' } else { 'python3' }
+          & $python scripts/pdfviewer/verify_save_faults.py --app benchmarks/PdfViewer.P403/bin/Release/net10.0/PdfViewer.P403.dll --output artifacts/pdfviewer-save-faults/${{ runner.os }}
+          if ($LASTEXITCODE -ne 0) { throw 'P4-03 save fault / recovery validation failed.' }
+          & $python scripts/pdfviewer/test_save_races.py --app benchmarks/PdfViewer.P403/bin/Release/net10.0/PdfViewer.P403.dll --output artifacts/pdfviewer-save-races/${{ runner.os }}
+          if ($LASTEXITCODE -ne 0) { throw 'P4-03 non-cooperating writer validation failed.' }
+      - name: Ubuntu real ENOSPC on an isolated bounded ext4 image
+        if: runner.os == 'Linux'
+        run: >-
+          sudo unshare --mount --propagation private python3 scripts/pdfviewer/test_storage_linux.py
+          --app "$PWD/benchmarks/PdfViewer.P403/bin/Release/net10.0/PdfViewer.P403.dll"
+          --dotnet "$(command -v dotnet)" --uid "$(id -u)"
+          --output "$PWD/artifacts/pdfviewer-save-storage/Linux"
       - name: Preserve success and failure evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -56,6 +75,12 @@ jobs:
             artifacts/pdfviewer-native/**/*.log
             artifacts/pdfviewer-native/**/*.xml
             artifacts/pdfviewer-native/**/*.png
+            artifacts/pdfviewer-save-faults/**
+            artifacts/pdfviewer-save-races/**
+            artifacts/pdfviewer-save-storage/**/*.json
+            artifacts/pdfviewer-save-storage/**/*.log
+            artifacts/pdfviewer-save-storage/**/*.pdf
+            artifacts/pdfviewer-save-storage/**/*.gz
             artifacts/pdfviewer-package-consumer-results.json
             artifacts/consumer/**/result.json
             artifacts/consumer/**/consumer-result.json

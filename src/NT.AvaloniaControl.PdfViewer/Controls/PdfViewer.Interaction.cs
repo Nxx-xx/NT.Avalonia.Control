@@ -10,6 +10,8 @@ public partial class PdfViewer
 {
     private CancellationTokenSource? _searchCancellation;
     private long _searchVersion;
+    private long _navigationVersion;
+    internal Task PendingContentFit { get; private set; } = Task.CompletedTask;
     private int? _pendingNavigationPage;
     private int? _navigationPage;
     private Vector? _navigationOffset;
@@ -41,6 +43,7 @@ public partial class PdfViewer
     /// </summary>
     private readonly record struct LinkTarget(Point XAnchor, Point YAnchor, AxisPin X, AxisPin Y)
     {
+        internal Vector? RetainedOffset { get; init; }
         internal static LinkTarget Both(Point position, AxisPin x, AxisPin y) => new(position, position, x, y);
     }
 
@@ -116,6 +119,7 @@ public partial class PdfViewer
         VerifyAccess();
         ArgumentNullException.ThrowIfNull(position);
         if (_disposed || !HasDocument || PageCount == 0 || _scroll is null || _presenter is null) return;
+        ++_navigationVersion;
         var index = Math.Clamp(position.PageIndex, 0, PageCount - 1);
         _fitting = true;
         try
@@ -135,12 +139,20 @@ public partial class PdfViewer
     {
         VerifyAccess();
         if (_disposed || !HasDocument) return;
+        GoToPageCore(pageNumber, ++_navigationVersion);
+    }
+
+    private void GoToPageCore(int pageNumber, long navigationVersion)
+    {
+        if (_disposed || !HasDocument || navigationVersion != _navigationVersion) return;
         pageNumber = Math.Clamp(pageNumber, 1, PageCount);
         SetCurrentPage(pageNumber);
+        if (_disposed || !HasDocument || navigationVersion != _navigationVersion) return;
         // Non-continuous modes display only the active page or spread.
         if (PageDisplayMode is PdfPageDisplayMode.SinglePage or PdfPageDisplayMode.TwoPage)
             _presenter?.RebuildLayout();
         RecomputeFit();
+        if (_disposed || !HasDocument || navigationVersion != _navigationVersion) return;
         _navigationPage = pageNumber - 1;
         _pendingNavigationPage = pageNumber - 1;
         _pendingSearchTarget = null;
@@ -182,6 +194,13 @@ public partial class PdfViewer
             // edge, and content-box fits center the viewport on the box.
             var xAnchor = _presenter.GetAnchorPosition(index, target.XAnchor);
             var yAnchor = _presenter.GetAnchorPosition(index, target.YAnchor);
+            // GoToPage and zoom/layout may already have moved the viewport. A
+            // partially specified XYZ destination keeps the pre-navigation axis.
+            if (target.RetainedOffset is { } retained)
+            {
+                if (target.X == AxisPin.Keep) x = retained.X;
+                if (target.Y == AxisPin.Keep) y = retained.Y;
+            }
             if (target.X != AxisPin.Keep) x = target.X switch
             {
                 AxisPin.Edge => Math.Max(0, xAnchor.X),
@@ -293,6 +312,7 @@ public partial class PdfViewer
         ArgumentNullException.ThrowIfNull(destination);
         if (_disposed || !HasDocument) return;
         if (destination.PageIndex < 0 || destination.PageIndex >= PageCount) return;
+        var retainedOffset = _scroll?.Offset;
         LinkTarget? target = null;
         switch (destination.Fit)
         {
@@ -304,7 +324,8 @@ public partial class PdfViewer
             case PdfDestinationFit.FitBV:
                 // Content-box fits need the page's content bounds; complete when they arrive.
                 GoToPage(destination.PageIndex + 1);
-                Observe(ApplyContentFitAsync(destination));
+                PendingContentFit = ApplyContentFitAsync(destination, _navigationVersion);
+                Observe(PendingContentFit);
                 return;
             case PdfDestinationFit.FitH:
                 FitWidth();
@@ -334,25 +355,30 @@ public partial class PdfViewer
             // /XYZ with a single coordinate keeps the other axis where it is.
             var hasLeft = destination.Left is { } leftValue && double.IsFinite(leftValue);
             var hasTop = destination.Top is { } topValue && double.IsFinite(topValue);
-            if (hasLeft || hasTop)
+            if (hasLeft || hasTop || destination.Fit == PdfDestinationFit.Xyz)
                 target = LinkTarget.Both(new Point(destination.Left ?? 0, destination.Top ?? 0),
                     hasLeft ? AxisPin.Near : AxisPin.Keep, hasTop ? AxisPin.Near : AxisPin.Keep);
         }
         if (target is { } placement)
+        {
+            if (destination.Fit == PdfDestinationFit.Xyz)
+                placement = placement with { RetainedOffset = retainedOffset };
             ApplyNavigationTarget(destination.PageIndex, placement);
+        }
     }
 
     // /FitB, /FitBH, /FitBV: fit the page's content box (the page box when the page has no
     // content). The box is fetched asynchronously, so navigation completes when it arrives;
     // a replaced document or disposal drops the pending placement.
-    private async Task ApplyContentFitAsync(PdfLinkDestination destination)
+    private async Task ApplyContentFitAsync(PdfLinkDestination destination, long navigationVersion)
     {
         if (_disposed || _document is not { } document) return;
         Rect? content = null;
         try { content = await document.GetPageContentBoundsAsync(destination.PageIndex); }
         catch (OperationCanceledException) { return; }
         catch (PdfDocumentException) { } // An unreadable box falls back to the page box below.
-        if (_disposed || !ReferenceEquals(document, _document) || PageCount == 0 || destination.PageIndex >= PageCount)
+        if (_disposed || !ReferenceEquals(document, _document) || navigationVersion != _navigationVersion ||
+            PageCount == 0 || destination.PageIndex >= PageCount)
             return;
         var page = document.Pages[destination.PageIndex];
         var box = content ?? new Rect(0, 0, page.Width, page.Height);
@@ -368,11 +394,22 @@ public partial class PdfViewer
             target = new LinkTarget(target.XAnchor, new Point(center.X, top), AxisPin.Center, AxisPin.Edge);
         if (destination.Fit == PdfDestinationFit.FitBV && destination.Left is { } left && double.IsFinite(left))
             target = new LinkTarget(new Point(left, center.Y), target.YAnchor, AxisPin.Edge, AxisPin.Center);
-        SetCurrentValue(ZoomModeProperty, PdfZoomMode.Manual);
-        ZoomToFitBox(box,
-            fitWidth: destination.Fit != PdfDestinationFit.FitBV,
-            fitHeight: destination.Fit != PdfDestinationFit.FitBH);
-        GoToPage(destination.PageIndex + 1);
+        // These are updates within this request. Suppress the ordinary zoom-mode
+        // handler's GoToPage so it cannot invalidate the fit as a new request.
+        var wasFitting = _fitting;
+        _fitting = true;
+        try
+        {
+            SetCurrentValue(ZoomModeProperty, PdfZoomMode.Manual);
+            if (navigationVersion != _navigationVersion || !ReferenceEquals(document, _document) || _disposed) return;
+            ZoomToFitBox(box,
+                fitWidth: destination.Fit != PdfDestinationFit.FitBV,
+                fitHeight: destination.Fit != PdfDestinationFit.FitBH);
+        }
+        finally { _fitting = wasFitting; }
+        if (navigationVersion != _navigationVersion || !ReferenceEquals(document, _document) || _disposed) return;
+        GoToPageCore(destination.PageIndex + 1, navigationVersion);
+        if (navigationVersion != _navigationVersion || !ReferenceEquals(document, _document) || _disposed) return;
         ApplyNavigationTarget(destination.PageIndex, target);
     }
 
@@ -688,6 +725,18 @@ public partial class PdfViewer
         }
         // Text-entry controls keep their own keys (caret movement, in-control copy, activation).
         if (e.Source is TextBox or NumericUpDown or Button or ToggleButton or CheckBox or MenuItem) return;
+        if (command && e.Key == Key.S)
+        {
+            var save = e.KeyModifiers.HasFlag(KeyModifiers.Shift) ? SaveAsCommand : SaveCommand;
+            if (save.CanExecute(null)) { save.Execute(null); e.Handled = true; }
+            return;
+        }
+        if (command && e.Key is Key.Z or Key.Y)
+        {
+            var history = e.Key == Key.Y || e.KeyModifiers.HasFlag(KeyModifiers.Shift) ? RedoCommand : UndoCommand;
+            if (history.CanExecute(null)) { history.Execute(null); e.Handled = true; }
+            return;
+        }
         if (command && e.Key == Key.C) { Observe(CopySelectionToClipboardAsync()); e.Handled = true; }
         else if (command && e.Key == Key.A) { Observe(SelectAllAsync()); e.Handled = true; }
         else if (command && e.Key is Key.Add or Key.OemPlus) { ZoomIn(); e.Handled = true; }

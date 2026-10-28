@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([switch]$NoPack, [string]$Feed, [string]$OutputRoot = 'artifacts/charts-consumer', [int]$TimeoutSeconds = 600)
+param([switch]$NoPack, [string]$Feed, [string]$OutputRoot = 'artifacts/charts-consumer', [int]$TimeoutSeconds = 600, [string]$PackageVersion)
 $ErrorActionPreference = 'Stop'
 $chartsRepo = [IO.Path]::GetFullPath((Split-Path $PSScriptRoot -Parent))
 $chartsRunId = [DateTimeOffset]::UtcNow.ToString('yyyyMMddTHHmmssfffZ') + '-' + [guid]::NewGuid().ToString('N')
@@ -11,6 +11,8 @@ $chartsProcesses = [Collections.Generic.List[object]]::new()
 $chartsResults = [Collections.Generic.List[object]]::new()
 $chartsPassed = $false
 $chartsFailure = $null
+$chartsPackages = @()
+$chartsSourcesUnchanged = $false
 
 function Invoke-ChartsConsumerProcess([string]$Name, [string[]]$Arguments, [string]$WorkingDirectory, [hashtable]$ChildEnvironment = @{}) {
     $info = [Diagnostics.ProcessStartInfo]::new()
@@ -42,13 +44,13 @@ Push-Location $chartsRepo
 try {
     $chartsSourceManifest = Get-ChartsConsumerSources
     $chartsSourceManifest | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $chartsOutput 'source-manifest.json') -Encoding utf8
-    $chartsVersion = [string]([xml](Get-Content Directory.Build.props -Raw)).Project.PropertyGroup.Version
+    $chartsVersion = if ($PackageVersion) { $PackageVersion } else { [string]([xml](Get-Content Directory.Build.props -Raw)).Project.PropertyGroup.Version }
     $chartsAvaloniaVersion = [string](([xml](Get-Content Directory.Packages.props -Raw)).Project.ItemGroup.PackageVersion | Where-Object Include -eq 'Avalonia').Version
     $chartsFeed = if ($Feed) { [IO.Path]::GetFullPath($Feed) } elseif ($NoPack) { Join-Path $chartsRepo 'artifacts/packages' } else { Join-Path $chartsOutput 'feed' }
     if (-not $NoPack) {
         New-Item -ItemType Directory -Path $chartsFeed -Force | Out-Null
         foreach ($project in @('NT.AvaloniaControl.Charts', 'NT.AvaloniaControl.Charts.Themes')) {
-            Invoke-ChartsConsumerProcess "pack-$project" @('pack', "src/$project/$project.csproj", '-c', 'Release', '--no-build', '--no-restore', '--disable-build-servers', '-m:1', '-p:UseSharedCompilation=false', '-o', $chartsFeed) $chartsRepo
+            Invoke-ChartsConsumerProcess "pack-$project" @('pack', "src/$project/$project.csproj", '-c', 'Release', '--no-build', '--no-restore', '--disable-build-servers', '-m:1', '-p:UseSharedCompilation=false', "-p:Version=$chartsVersion", '-o', $chartsFeed) $chartsRepo
         }
     }
     $chartsPackages = @('NT.AvaloniaControl.Charts', 'NT.AvaloniaControl.Charts.Themes') | ForEach-Object {
@@ -70,17 +72,19 @@ try {
         # Stop repository build settings, central versions and ambient package caches.
         '<Project />' | Set-Content -LiteralPath (Join-Path $consumer 'Directory.Build.props') -Encoding utf8
         '<Project />' | Set-Content -LiteralPath (Join-Path $consumer 'Directory.Build.targets') -Encoding utf8
+        Copy-Item -LiteralPath (Join-Path $chartsRepo 'global.json') -Destination (Join-Path $consumer 'global.json')
         '<Project />' | Set-Content -LiteralPath (Join-Path $consumer 'Directory.Packages.props') -Encoding utf8
         $packageId = if ($kind -eq 'themes') { 'NT.AvaloniaControl.Charts.Themes' } else { 'NT.AvaloniaControl.Charts' }
         $symbol = if ($kind -eq 'themes') { 'CHARTS_THEME_CONSUMER' } else { 'CHARTS_FUNCTION_CONSUMER' }
         (Get-Content -LiteralPath (Join-Path $PSScriptRoot 'Consumers/Charts/Consumer.csproj.template') -Raw).Replace('__PRODUCT_PACKAGE__', $packageId).Replace('__PRODUCT_VERSION__', $chartsVersion).Replace('__AVALONIA_VERSION__', $chartsAvaloniaVersion).Replace('__CONSUMER_SYMBOL__', $symbol) | Set-Content -LiteralPath (Join-Path $consumer 'Consumer.csproj') -Encoding utf8
         Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'Consumers/Charts/Program.cs') -Destination (Join-Path $consumer 'Program.cs')
-        foreach ($source in @('MainWindow.axaml', 'MainWindow.axaml.cs', 'MainWindow.BarComparison.cs', 'MainWindow.ScatterBubble.cs', 'MainWindow.Circular.cs', 'MainWindow.Polar.cs', 'MainWindow.GaugeMicro.cs', 'MainWindow.Analysis.cs', 'MainWindow.Statistics.cs', 'MainWindow.Financial.cs', 'MainWindow.TechnicalTrends.cs', 'MainWindow.Engineering.cs', 'MainWindow.AdvancedComparison.cs', 'MainWindow.Hierarchy.cs', 'MainWindow.Relations.cs', 'MainWindow.Maps.cs', 'MainWindow.C6Completion.cs', 'MainWindow.C5Completion.cs', 'MainWindow.LevelOfDetail.cs', 'MainWindow.EfficientHit.cs', 'MainWindow.IncrementalStreaming.cs', 'MainWindow.RenderResources.cs', 'MainWindow.MultiChart.cs', 'ChartUsageViewModel.cs', 'ChartUsageViewModel.BarComparison.cs', 'ChartUsageViewModel.ScatterBubble.cs', 'ChartUsageViewModel.Circular.cs', 'ChartUsageViewModel.Polar.cs', 'ChartUsageViewModel.GaugeMicro.cs', 'ChartUsageViewModel.Analysis.cs', 'ChartUsageViewModel.Statistics.cs', 'ChartUsageViewModel.Financial.cs', 'ChartUsageViewModel.TechnicalTrends.cs', 'ChartUsageViewModel.Engineering.cs', 'ChartUsageViewModel.AdvancedComparison.cs', 'ChartUsageViewModel.Hierarchy.cs', 'ChartUsageViewModel.Relations.cs', 'ChartUsageViewModel.Maps.cs', 'ChartUsageViewModel.C6Completion.cs', 'ChartUsageViewModel.C5Completion.cs', 'ChartUsageViewModel.LevelOfDetail.cs', 'ChartUsageViewModel.EfficientHit.cs', 'ChartUsageViewModel.IncrementalStreaming.cs', 'ChartUsageViewModel.RenderResources.cs', 'ChartUsageViewModel.MultiChart.cs')) { Copy-Item -LiteralPath (Join-Path $chartsRepo "samples/Charts.Usage/$source") -Destination (Join-Path $consumer $source) }
+        foreach ($source in @('MainWindow.axaml', 'MainWindow.axaml.cs', 'MainWindow.FontStartup.cs', 'FontStartupScene.cs', 'MainWindow.BarComparison.cs', 'MainWindow.ScatterBubble.cs', 'MainWindow.Circular.cs', 'MainWindow.Polar.cs', 'MainWindow.GaugeMicro.cs', 'MainWindow.Analysis.cs', 'MainWindow.Statistics.cs', 'MainWindow.Financial.cs', 'MainWindow.TechnicalTrends.cs', 'MainWindow.Engineering.cs', 'MainWindow.AdvancedComparison.cs', 'MainWindow.Hierarchy.cs', 'MainWindow.Relations.cs', 'MainWindow.Maps.cs', 'MainWindow.C6Completion.cs', 'MainWindow.C5Completion.cs', 'MainWindow.C7Integration.cs', 'MainWindow.ProfessionalTooltips.cs', 'MainWindow.ProfessionalPresentations.cs', 'MainWindow.ProfessionalPlotTrackball.cs', 'MainWindow.ProfessionalLinking.cs', 'MainWindow.LevelOfDetail.cs', 'MainWindow.EfficientHit.cs', 'MainWindow.IncrementalStreaming.cs', 'MainWindow.RenderResources.cs', 'MainWindow.MultiChart.cs', 'ChartUsageViewModel.cs', 'ChartUsageViewModel.BarComparison.cs', 'ChartUsageViewModel.ScatterBubble.cs', 'ChartUsageViewModel.Circular.cs', 'ChartUsageViewModel.Polar.cs', 'ChartUsageViewModel.GaugeMicro.cs', 'ChartUsageViewModel.Analysis.cs', 'ChartUsageViewModel.Statistics.cs', 'ChartUsageViewModel.Financial.cs', 'ChartUsageViewModel.TechnicalTrends.cs', 'ChartUsageViewModel.Engineering.cs', 'ChartUsageViewModel.AdvancedComparison.cs', 'ChartUsageViewModel.Hierarchy.cs', 'ChartUsageViewModel.Relations.cs', 'ChartUsageViewModel.Maps.cs', 'ChartUsageViewModel.C6Completion.cs', 'ChartUsageViewModel.C5Completion.cs', 'ChartUsageViewModel.C7Integration.cs', 'ChartUsageViewModel.ProfessionalTooltips.cs', 'ChartUsageViewModel.ProfessionalPresentations.cs', 'ChartUsageViewModel.ProfessionalPlotTrackball.cs', 'ChartUsageViewModel.ProfessionalLinking.cs', 'ChartUsageViewModel.LevelOfDetail.cs', 'ChartUsageViewModel.EfficientHit.cs', 'ChartUsageViewModel.IncrementalStreaming.cs', 'ChartUsageViewModel.RenderResources.cs', 'ChartUsageViewModel.MultiChart.cs')) { Copy-Item -LiteralPath (Join-Path $chartsRepo "samples/Charts.Usage/$source") -Destination (Join-Path $consumer $source) }
         $escapedFeed = [Security.SecurityElement]::Escape($chartsFeed)
         "<configuration><packageSources><clear /><add key='local' value='$escapedFeed' /><add key='nuget.org' value='https://api.nuget.org/v3/index.json' /></packageSources><fallbackPackageFolders><clear /></fallbackPackageFolders></configuration>" | Set-Content -LiteralPath (Join-Path $consumer 'NuGet.Config') -Encoding utf8
         $packages = Join-Path $consumer 'packages'
         $childEnvironment = @{ NUGET_PACKAGES = $packages; NUGET_HTTP_CACHE_PATH = (Join-Path $consumer 'http-cache'); DOTNET_CLI_HOME = (Join-Path $consumer 'dotnet-home'); DOTNET_SKIP_FIRST_TIME_EXPERIENCE = '1' }
         if (Test-Path -LiteralPath $packages) { throw 'Each consumer must begin with a fresh package directory.' }
+        Invoke-ChartsConsumerProcess "$kind-sdk" @('--version') $consumer $childEnvironment
         Invoke-ChartsConsumerProcess "$kind-restore" @('restore', 'Consumer.csproj', '--configfile', 'NuGet.Config', '--packages', $packages, '--disable-parallel', '--disable-build-servers', '-m:1', '-p:UseSharedCompilation=false') $consumer $childEnvironment
         Invoke-ChartsConsumerProcess "$kind-locked-restore" @('restore', 'Consumer.csproj', '--locked-mode', '--configfile', 'NuGet.Config', '--packages', $packages, '--disable-parallel', '--disable-build-servers', '-m:1', '-p:UseSharedCompilation=false') $consumer $childEnvironment
         Invoke-ChartsConsumerProcess "$kind-build" @('build', 'Consumer.csproj', '-c', 'Release', '--no-restore', '--disable-build-servers', '-m:1', '-p:UseSharedCompilation=false') $consumer $childEnvironment

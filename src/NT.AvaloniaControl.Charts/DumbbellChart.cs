@@ -51,9 +51,9 @@ public sealed class DumbbellChart : ComparisonChartBase
                 if (MarkerSize <= 0) continue;
                 var geometry = new EllipseGeometry(new Rect(end.Item1.X - MarkerSize * Zoom / 2, end.Item1.Y - MarkerSize * Zoom / 2, MarkerSize * Zoom, MarkerSize * Zoom));
                 marks.Add(Mark(source, geometry, end.Item4, end.Item1, end.Item3, end.Item2, $"{row.Label} {end.Item3}: {ValueText(end.Item2)}; Δ {ValueText(row.Second - row.First)}"));
-                NumberLabel(end.Item2, new(end.Item1.X, end.Item1.Y - MarkerSize * Zoom / 2 - 9), 64);
+                DataNumberLabel(marks[^1], end.Item2, new(end.Item1.X, end.Item1.Y - MarkerSize * Zoom / 2 - 9), 64);
             }
-            Label(row.Label, ApplyViewport(Orientation == Orientation.Horizontal ? new(plot.Left + 30, plot.Top + plot.Height * row.Y + 14) : new(plot.Left + plot.Width * row.Y, plot.Bottom + 12), plot), 64);
+            if (MarkerSize > 0 && marks.Count > 0) DataLabel(marks[^1], row.Label, ApplyViewport(Orientation == Orientation.Horizontal ? new(plot.Left + 30, plot.Top + plot.Height * row.Y + 14) : new(plot.Left + plot.Width * row.Y, plot.Bottom + 12), plot), 64);
         }
         return marks;
     }

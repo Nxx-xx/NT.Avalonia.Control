@@ -79,6 +79,7 @@ public abstract partial class AnalysisChartBase : ChartBase
     public ChartPointHit? SelectedPoint { get { _ = GetMarks(); return _selected; } }
     public override void ResetViewport()
     {
+        ClearProfessionalTrackball(); ClearDataSelection();
         if (_rendering)
         {
             _resetRequested = true; _followSelected = false; SetActive(null); QueueMarkState(); return;
@@ -117,9 +118,10 @@ public abstract partial class AnalysisChartBase : ChartBase
         // Queries made by paint callbacks retain this frame's immutable mark array.
         // A subsequent UI job can build the next source revision and publish it safely.
         if (_building || _rendering) return _marks;
-        if (!_attached) _dirty = true;
+        if (!_attached && _permanentExportDepth == 0) _dirty = true;
         EnsureMarks();
         PublishMarkState();
+        if (!_dirty) RefreshDataSelection();
         return _marks;
     }
     private void EnsureMarks()
@@ -129,7 +131,7 @@ public abstract partial class AnalysisChartBase : ChartBase
         try
         {
             var revision = _revision; _dirty = false;
-            _plot = GetPlotArea(_size.Width > 0 && _size.Height > 0 ? _size : Bounds.Size);
+            _plot = ReserveSharedLegendArea(GetPlotArea(_size.Width > 0 && _size.Height > 0 ? _size : Bounds.Size));
             var result = BuildMarks(Series.CreateSnapshot(), _plot).ToArray();
             _marks = Array.AsReadOnly(result);
             _stateDirty = true;
@@ -233,11 +235,38 @@ public abstract partial class AnalysisChartBase : ChartBase
         }
         return geometry.FillContains(point);
     }
-    protected override Size MeasureOverride(Size availableSize) => new(double.IsFinite(availableSize.Width) ? Math.Min(400, availableSize.Width) : 400, double.IsFinite(availableSize.Height) ? Math.Min(280, availableSize.Height) : 280);
-    protected override Size ArrangeOverride(Size finalSize) { if (_size != finalSize) { _size = finalSize; InvalidateAnalysis(); } return base.ArrangeOverride(finalSize); }
+    protected override Size MeasureOverride(Size availableSize)
+    {
+        var desired = new Size(double.IsFinite(availableSize.Width) ? Math.Min(400, availableSize.Width) : 400, double.IsFinite(availableSize.Height) ? Math.Min(280, availableSize.Height) : 280);
+        MeasureProfessionalPlotAreaContent(new(double.IsFinite(availableSize.Width) ? availableSize.Width : desired.Width, double.IsFinite(availableSize.Height) ? availableSize.Height : desired.Height));
+        _dataTooltip?.Measure(new(double.IsFinite(availableSize.Width) ? availableSize.Width : desired.Width, double.IsFinite(availableSize.Height) ? availableSize.Height : desired.Height));
+        MeasurePermanentPresentations(new(double.IsFinite(availableSize.Width) ? availableSize.Width : desired.Width, double.IsFinite(availableSize.Height) ? availableSize.Height : desired.Height));
+        MeasureProfessionalTrackball(new(double.IsFinite(availableSize.Width) ? availableSize.Width : desired.Width, double.IsFinite(availableSize.Height) ? availableSize.Height : desired.Height));
+        MeasureDataSelection(new(double.IsFinite(availableSize.Width) ? availableSize.Width : desired.Width, double.IsFinite(availableSize.Height) ? availableSize.Height : desired.Height));
+        return desired;
+    }
+    protected override Size ArrangeOverride(Size finalSize)
+    { if (_size != finalSize) { _size = finalSize; InvalidateAnalysis(); } var arranged = base.ArrangeOverride(finalSize); ArrangeProfessionalPlotAreaContent(finalSize); _dataTooltip?.Arrange(finalSize); ArrangePermanentPresentations(finalSize); ArrangeProfessionalLegacyTooltip(finalSize); ArrangeProfessionalTrackball(finalSize); ArrangeDataSelection(finalSize); return arranged; }
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
     {
         base.OnPropertyChanged(change);
+        DataSynchronizationPropertyChanged(change);
+        if (DataSelectionPropertyChanged(change)) return;
+        if (change.Property == ItemsSourceProperty || change.Property == IdPathProperty || change.Property == CategoryPathProperty || change.Property == ValuePathProperty)
+            InvalidateDataSelection();
+        // Input containment/focus changes do not alter the family data or view.
+        // Any actual style change raises its own property notification.
+        if (change.Property == IsPointerOverProperty || change.Property == IsFocusedProperty || change.Property == IsKeyboardFocusWithinProperty)
+        { InvalidateVisual(); return; }
+        if (TrackballPropertyChanged(change))
+        {
+            if (change.Property == TrackballModeProperty) { RefreshDataTooltip(); RefreshProfessionalLegacyTooltip(); }
+            return;
+        }
+        if (PlotAreaContentPropertyChanged(change)) { RefreshProfessionalLegacyTooltip(); return; }
+        RefreshProfessionalLegacyTooltip();
+        if (PermanentPresentationPropertyChanged(change)) return;
+        if (DataTooltipPropertyChanged(change)) return;
         if (change.Property == ActivePointProperty || change.Property == SelectedPointProperty) return;
         if (change.Property == ItemsSourceProperty) Series.ItemsSource = ItemsSource;
         else if (change.Property == CategoryPathProperty) Series.CategoryPath = CategoryPath;
@@ -254,11 +283,12 @@ public abstract partial class AnalysisChartBase : ChartBase
     }
     protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
     {
-        var revision = ++_attachmentRevision; _attached = true; InvalidateAnalysis(); base.OnAttachedToVisualTree(e);
-        if (_attached && revision == _attachmentRevision) SynchronizeSeries();
+        var revision = ++_attachmentRevision; _attached = true; RefreshDataSynchronizationMembership(); InvalidateAnalysis(); base.OnAttachedToVisualTree(e);
+        if (_attached && revision == _attachmentRevision) { _dataTooltip?.Attached(); _dataLegend?.Attached(); _dataLabels?.Attached(); ProfessionalPlotAreaContentAttached(); AttachedProfessionalTrackball(); }
+        if (_attached && revision == _attachmentRevision) { DataSelectionAttached(); SynchronizeSeries(); }
     }
     protected override void OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs e)
-    { ++_attachmentRevision; _attached = false; SetActive(null); SynchronizeSeries(); base.OnDetachedFromVisualTree(e); InvalidateAnalysis(); }
+    { ++_attachmentRevision; _attached = false; RefreshDataSynchronizationMembership(); DataSelectionDetached(); ProfessionalPlotAreaContentDetached(); DetachedProfessionalTrackball(); _dataTooltip?.Detached(); _dataLegend?.Detached(); _dataLabels?.Detached(); ReleaseProfessionalLegacyTooltip(); SetActive(null); SynchronizeSeries(); base.OnDetachedFromVisualTree(e); InvalidateAnalysis(); }
     private void SynchronizeSeries()
     {
         _pending = true; if (_syncing) return; _syncing = true;
@@ -292,7 +322,7 @@ public abstract partial class AnalysisChartBase : ChartBase
     private void SeriesChanged(object? sender, EventArgs e) { _followSelected = _selected is not null; InvalidateAnalysis(); }
     protected void InvalidateAnalysis()
     {
-        _dirty = true; _revision++;
+        _dirty = true; _revision++; InvalidateDataSelection(); _dataTooltip?.InvalidateReading(); InvalidatePermanentPresentations(); InvalidateProfessionalPlotAreaContent(); InvalidateProfessionalTrackball();
         if (!_rendering) { InvalidateVisual(); return; }
         if (_queued) return; _queued = true;
         Dispatcher.UIThread.Post(() => { _queued = false; InvalidateVisual(); });
@@ -303,8 +333,8 @@ public abstract partial class AnalysisChartBase : ChartBase
         SetAndRaise(ActivePointProperty, ref _active, hit);
     }
     private void SetSelected(ChartPointHit? hit) => SetAndRaise(SelectedPointProperty, ref _selected, hit);
-    protected override void OnPointerMoved(PointerEventArgs e) { base.OnPointerMoved(e); SetActive(HitTest(e.GetPosition(this))); InvalidateVisual(); }
-    protected override void OnPointerExited(PointerEventArgs e) { base.OnPointerExited(e); SetActive(null); InvalidateVisual(); }
+    protected override void OnPointerMoved(PointerEventArgs e) { base.OnPointerMoved(e); var position = e.GetPosition(this); SetActive(HitTest(position)); UpdateProfessionalTrackball(position); InvalidateVisual(); }
+    protected override void OnPointerExited(PointerEventArgs e) { base.OnPointerExited(e); ClearProfessionalTrackball(); SetActive(null); InvalidateVisual(); }
     protected override void OnPointerPressed(PointerPressedEventArgs e)
     {
         base.OnPointerPressed(e); if (!e.GetCurrentPoint(this).Properties.IsLeftButtonPressed) return;
@@ -312,19 +342,19 @@ public abstract partial class AnalysisChartBase : ChartBase
         var revision = _revision; var attachmentRevision = _attachmentRevision;
         SetActive(hit); Focus();
         if (revision != _revision || attachmentRevision != _attachmentRevision) { _ = GetMarks(); return; }
-        if (IsSelectionEnabled) SetCurrentValue(SelectedIndexProperty, hit?.Index == SelectedIndex ? -1 : hit?.Index ?? -1);
-        InvalidateVisual();
+        if (IsSelectionEnabled) ApplySingleDataSelection(() => SetCurrentValue(SelectedIndexProperty, hit?.Index == SelectedIndex ? -1 : hit?.Index ?? -1));
+        UpdateProfessionalTrackball(e.GetPosition(this)); InvalidateVisual();
     }
     protected override void OnKeyDown(KeyEventArgs e)
     {
         base.OnKeyDown(e);
         if (e.Key == Key.Escape) { ResetViewport(); e.Handled = true; return; }
-        if (e.Key is Key.Enter or Key.Space && IsSelectionEnabled) { _ = GetMarks(); SetCurrentValue(SelectedIndexProperty, _active?.Index ?? -1); e.Handled = true; return; }
+        if (e.Key is Key.Enter or Key.Space && IsSelectionEnabled) { _ = GetMarks(); ApplySingleDataSelection(() => SetCurrentValue(SelectedIndexProperty, _active?.Index ?? -1)); e.Handled = true; return; }
         if (e.Key is not (Key.Left or Key.Right or Key.Up or Key.Down or Key.Home or Key.End)) return;
         var marks = GetMarks().Where(m => m.IsVisible && m.Fill is not null).ToArray(); if (marks.Length == 0) return;
         var index = Array.FindIndex(marks, m => m.Data.SourceIndex == _active?.Index);
         index = e.Key switch { Key.Home => 0, Key.End => marks.Length - 1, Key.Left or Key.Up => index < 0 ? marks.Length - 1 : (index + marks.Length - 1) % marks.Length, _ => (index + 1) % marks.Length };
-        SetActive(Hit(marks[index])); e.Handled = true; InvalidateVisual();
+        SetActive(Hit(marks[index])); if (_active is { } keyboardHit) UpdateProfessionalTrackball(keyboardHit.Position); e.Handled = true; InvalidateVisual();
     }
     public sealed override void Render(DrawingContext context)
     {
@@ -332,7 +362,7 @@ public abstract partial class AnalysisChartBase : ChartBase
         _rendering = true;
         try
         {
-            if (!_attached) _dirty = true;
+            if (!_attached && _permanentExportDepth == 0) _dirty = true;
             EnsureMarks();
             if (_stateDirty) QueueMarkState();
             var marks = _marks;
@@ -350,17 +380,18 @@ public abstract partial class AnalysisChartBase : ChartBase
             if (!string.IsNullOrEmpty(Title)) DrawLabel(context, Title, new(Bounds.Width / 2, Padding.Top + 8 + FontSize * .8), Math.Max(0, Bounds.Width - Padding.Left - Padding.Right - 16));
             foreach (var mark in marks.Where(m => m.IsVisible))
             {
-                if (!ShowLabels && !ShowValues) continue;
+                if (UsesDataLabelTemplate || !ShowLabels && !ShowValues) continue;
                 var label = mark.Label ?? string.Join(" · ", new[] { ShowLabels ? Convert.ToString(mark.Data.Category, CultureInfo.CurrentCulture) : null, ShowValues ? FormatValue(mark.Data.Point.Y) : null }.Where(s => !string.IsNullOrEmpty(s)));
-                if (mark.Bounds.Height >= FontSize * 1.2) DrawLabel(context, label, mark.LabelPosition, Math.Max(0, mark.Bounds.Width - 4), mark.LabelBrush);
+                if (mark.Bounds.Height >= FontSize * 1.2) DrawLabel(context, label, mark.LabelPosition, Math.Max(0, mark.Bounds.Width - 4),
+                    mark.LabelBrush ?? ChartLabelContrast.OnFill(mark.Fill, Foreground ?? Brushes.Gray));
             }
             DrawDecorations(context, marks);
-            if (IsTooltipEnabled && active is { } hit)
+            if (!SuppressTransientTooltip && IsTooltipEnabled && active is { } hit)
             {
                 var mark = marks.FirstOrDefault(m => m.Data.SourceIndex == hit.Index);
                 DrawLabel(context, mark?.TooltipText ?? $"{mark?.Data.Category}: {FormatValue(hit.Point.Y)}", new(Bounds.Width / 2, Math.Max(FontSize, Bounds.Height - FontSize)), Math.Max(0, Bounds.Width - 16));
             }
         }
-        finally { _rendering = false; if (_stateDirty || _dirty) QueueMarkState(); }
+        finally { _rendering = false; if (_stateDirty || _dirty) QueueMarkState(); DataTooltipRenderFinished(); PermanentPresentationRenderFinished(); ProfessionalPlotAreaContentRenderFinished(); ProfessionalTrackballRenderFinished(); DataSelectionRenderFinished(); }
     }
 }

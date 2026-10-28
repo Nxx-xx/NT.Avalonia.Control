@@ -4,7 +4,7 @@ using Avalonia.Media;
 namespace NT.AvaloniaControl.Charts;
 
 /// <summary>Numeric resource intervals with optimal stable overlap tracks.</summary>
-public sealed class SwimlaneChart : ScheduleChartBase
+public sealed partial class SwimlaneChart : ScheduleChartBase
 {
     public static readonly StyledProperty<double> LaneHeightProperty = AvaloniaProperty.Register<SwimlaneChart, double>(nameof(LaneHeight), 80, validate: v => double.IsFinite(v) && v >= 4 && v <= 4096);
     public static readonly StyledProperty<double> TaskHeightProperty = AvaloniaProperty.Register<SwimlaneChart, double>(nameof(TaskHeight), 30, validate: v => double.IsFinite(v) && v >= 1 && v <= 4096);
@@ -71,7 +71,7 @@ public sealed class SwimlaneChart : ScheduleChartBase
     protected override IReadOnlyList<EngineeringGridLine> BuildGridLines(Rect plot)
     { var lines = new List<EngineeringGridLine>(); for (var i = 0; i <= 4; i++) { var x = ApplyViewport(new(plot.Left + i * plot.Width / 4, plot.Top), plot).X; lines.Add(new(Line([new(x, plot.Top), new(x, plot.Bottom)]), F(Interpolate(_minimum, _maximum, i / 4d)), new(x, plot.Bottom + 12))); } return lines; }
     protected override void RenderAnnotations(DrawingContext context, Rect plot)
-    { if (!ShowLabels) return; using var clip = context.PushClip(plot); foreach (var (mark, label) in _labels) DrawLabel(context, label, mark.Position, Math.Max(0, mark.Bounds.Width - 4)); }
+    { if (!ShowLabels || UsesDataLabelTemplate) return; using var clip = context.PushClip(plot); foreach (var (mark, label) in _labels) DrawLabel(context, label, mark.Position, Math.Max(0, mark.Bounds.Width - 4)); }
     protected override bool ContainsMark(EngineeringMarkInfo mark, Point point)
     {
         var bounds = mark.Bounds; if (!bounds.Contains(point)) return false; var rx = Math.Min(TaskCornerRadius * Zoom, bounds.Width / 2); var ry = Math.Min(TaskCornerRadius * Zoom, bounds.Height / 2);

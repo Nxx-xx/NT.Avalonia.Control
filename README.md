@@ -46,6 +46,8 @@
 | Charts | [控件说明](src/NT.AvaloniaControl.Charts/README.md) | [开发计划](docs/charts-development-plan.md) |
 | PdfViewer | [使用说明](docs/pdfviewer-usage.md) | [开发计划](docs/pdfviewer-development-plan.md) |
 
+Charts 已单独冻结 **0.2.0-preview.3** 候选；其本地包、双平台验证和已知限制见[预览版收尾](docs/charts-preview-release.md)，接入步骤见[本地包接入](docs/charts-preview-quickstart.md)。整个控件库的统一版本仍按上文记录。
+
 ## 构建与运行
 
 ```powershell

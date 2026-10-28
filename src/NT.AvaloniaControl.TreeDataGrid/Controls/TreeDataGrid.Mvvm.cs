@@ -235,12 +235,17 @@ public partial class TreeDataGrid
                 var state = _state; var source = Source;
                 if (state is not null && source is not null)
                 {
+                    // Two-way output setters may redirect a completed selection. Leave their input
+                    // queued until the state closes its current transaction, preserving the binding.
+                    if (state.IsSelecting && (_selectionInput is not null || _hasCurrentInput))
+                    { _mvvmRefreshPending = true; break; }
                     if (_selectionInput is { } input) { _selectionInput = null; _selectionInputFromSource = false; ApplyMvvmSelection(state, source, input.Property, input.Value); }
                     if (!ReferenceEquals(state, _state) || !ReferenceEquals(source, Source)) { _mvvmRefreshPending = true; continue; }
                     if (_hasCurrentInput)
                     {
                         var cell = _currentInput; _hasCurrentInput = false;
-                        if (cell is null || source.GetViewIndex(cell.Value.Node) >= 0 && GetColumnIndex(cell.Value.Column) >= 0) state.SetCurrentCell(cell);
+                        if (cell is null || source.GetViewIndex(cell.Value.Node) >= 0 && GetColumnIndex(cell.Value.Column) >= 0)
+                            state.RunSelection(TreeDataGridSelectionChangeReason.Binding, () => state.SetCurrentCell(cell));
                         else if (Columns.Count == 0) { _currentInput = cell; _hasCurrentInput = true; }
                         else state.SetCurrentCell(null);
                     }
@@ -250,12 +255,16 @@ public partial class TreeDataGrid
                 {
                     PublishEmptyMvvmSelection();
                 }
-                SetAndRaise(EditSessionProperty, ref _mvvmEditSession, _state?.EditSession);
-                SetAndRaise(IsEditingProperty, ref _isEditing, _mvvmEditSession is not null);
-                UpdateEditCommands();
+                PublishMvvmEditState();
             }
         }
         finally { _mvvmSynchronizing = false; }
+    }
+    private void PublishMvvmEditState()
+    {
+        SetAndRaise(EditSessionProperty, ref _mvvmEditSession, _state?.EditSession);
+        SetAndRaise(IsEditingProperty, ref _isEditing, _mvvmEditSession is not null);
+        UpdateEditCommands();
     }
     private void ApplyMvvmSelection(TreeDataGridState state, TreeDataGridSource source, AvaloniaProperty property, object? value)
     {
@@ -276,12 +285,12 @@ public partial class TreeDataGrid
                 if (SelectionMode == TreeDataGridSelectionMode.Single && nodes.Count > 0) break;
             }
         }
-        _primarySelectedNode = nodes.Count > 0 ? nodes[0] : null;
-        using (state.DeferSelectionNotifications())
+        var accepted = state.RunSelection(TreeDataGridSelectionChangeReason.Binding, () =>
         {
             state.ClearSelection();
             foreach (var selectedNode in nodes) state.Select(selectedNode, additive: true);
-        }
+        });
+        if (accepted) _primarySelectedNode = nodes.Count > 0 ? nodes[0] : null;
     }
     private void PublishMvvmSelection(TreeDataGridState state, TreeDataGridSource source)
     {

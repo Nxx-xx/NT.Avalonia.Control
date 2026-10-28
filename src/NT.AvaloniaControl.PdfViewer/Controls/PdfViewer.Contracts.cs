@@ -168,7 +168,7 @@ public partial class PdfViewer
         var unavailable = _disposed ? PdfCapabilityUnavailableReason.Disposed : IsLoading ? PdfCapabilityUnavailableReason.Busy
             : _document is null ? PdfCapabilityUnavailableReason.NoDocument : PdfCapabilityUnavailableReason.None;
         SetAndRaise(CapabilitiesProperty, ref _contractCapabilities, PdfDocumentCapabilities.Create(_contractPermissions,
-            unavailable, AllowCopy, AllowSearch, IsReadOnly, AllowAnnotations, AllowForms, AllowPrinting));
+            unavailable, AllowCopy, AllowSearch, IsReadOnly, AllowAnnotations, AllowForms, AllowPrinting) with { Save = ViewerSaveCapability });
         var state = _disposed ? PdfViewerDocumentState.Disposed : IsLoading ? PdfViewerDocumentState.Loading
             : _document is not null ? PdfViewerDocumentState.Ready : _contractError is not null ? PdfViewerDocumentState.Error : PdfViewerDocumentState.Empty;
         var stateChanged = state != _contractState;

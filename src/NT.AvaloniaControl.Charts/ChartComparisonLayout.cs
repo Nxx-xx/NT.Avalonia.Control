@@ -72,14 +72,16 @@ internal sealed class ChartComparisonLayout
         _stem = signature.Kind is ChartComparisonKind.Lollipop or ChartComparisonKind.Variance;
         _variance = signature.Kind == ChartComparisonKind.Variance;
         var candidates = signature.Kind is null ? LegacyCandidates(context) : ChartComparisonGeometry.VisibleCandidates(context);
-        var entries = new List<Entry>(candidates.Count);
+        var entries = candidates.Count == 0 ? Array.Empty<Entry>() : new Entry[candidates.Count];
+        var count = 0;
         foreach (var ordinal in candidates)
         {
             var valid = signature.Kind is null ? TryCreateLegacy(context, ordinal, out var shape)
                 : ChartComparisonGeometry.TryCreate(context, ordinal, out shape);
-            if (valid) entries.Add(new(ordinal, shape));
+            if (valid) entries[count++] = new(ordinal, shape);
         }
-        _entries = entries.ToArray();
+        if (count != entries.Length) Array.Resize(ref entries, count);
+        _entries = entries;
         Interlocked.Increment(ref _buildCount);
     }
 

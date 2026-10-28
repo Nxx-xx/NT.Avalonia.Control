@@ -27,9 +27,13 @@ public sealed partial class CartesianChart
             _seriesDrawingScene = scene;
         }
         using var plotClip = drawing.PushClip(scene.Plot);
+        foreach (var series in _observedSeries)
+            if (!scene.Snapshots.Any(snapshot => ReferenceEquals(snapshot.Series, series))) ClearCircleHistory(series);
         foreach (var snapshot in scene.Snapshots)
         {
             var renderer = snapshot.Series.Renderer;
+            if (renderer is not (CartesianSeriesRenderer or ChartLineSeriesRenderer) || !snapshot.Series.CanShareRenderingGeometryHistory)
+                ClearCircleHistory(snapshot.Series);
             var opacity = GetSeriesSelectionOpacity(snapshot.Series);
             using var selectionOpacity = opacity < 1 ? (IDisposable)drawing.PushOpacity(opacity) : null;
             using var geometryClip = renderer is not ChartComparisonSeriesRenderer && snapshot.BreakClip is { } clip
@@ -40,12 +44,14 @@ public sealed partial class CartesianChart
             // original geometry. Do not replace the screen's retained plan.
             if (!ReferenceEquals(renderContext, snapshot.Context))
             {
+                ClearCircleHistory(snapshot.Series);
                 renderer.Render(drawing, renderContext);
                 continue;
             }
 
             if (ResourceCacheBudgetBytes == 0)
             {
+                ClearCircleHistory(snapshot.Series);
                 _resourceCacheMisses++; _resourceBypasses++;
                 renderer.Render(drawing, snapshot.Context!);
                 continue;
@@ -58,9 +64,13 @@ public sealed partial class CartesianChart
                 renderer is not (CartesianSeriesRenderer or ChartLineSeriesRenderer or
                 ChartComparisonSeriesRenderer or ChartPointSeriesRenderer or PictorialBarRenderer or ChartStatisticalSeriesRenderer or ChartFinancialSeriesRenderer))
             {
+                ClearCircleHistory(snapshot.Series);
                 renderer.Render(drawing, snapshot.Context!);
                 continue;
             }
+            if (_seriesDrawings.TryGetValue(snapshot, out var previous) &&
+                !HasCircleHistoryReservation(snapshot.Series, previous))
+                ClearCircleHistory(snapshot.Series);
             if (!_seriesDrawings.TryGetValue(snapshot, out var retained))
             {
                 _seriesDrawingBuildCount++;
@@ -70,15 +80,32 @@ public sealed partial class CartesianChart
                 // A renderer or paint callback can invalidate a scene reentrantly.
                 // The local drawing remains valid, but must not repopulate retired caches.
                 if (ReferenceEquals(_seriesDrawingScene, scene) && ReferenceEquals(_scene, scene) &&
-                    TryRetainResource(ResourceCacheKind.SeriesDrawing, snapshot, retained.EstimatedBytes,
-                        () => _seriesDrawings.Remove(snapshot)))
+                    TryRetainCircleHistory(snapshot.Series, retained) &&
+                    TryRetainResource(ResourceCacheKind.SeriesDrawing, snapshot,
+                        retained.EstimatedBytes - retained.SharedCircleHistoryBytes,
+                        () => _seriesDrawings.Remove(snapshot)) &&
+                    HasCircleHistoryReservation(snapshot.Series, retained))
                     _seriesDrawings[snapshot] = retained;
+                else
+                {
+                    // Admission can evict the just-reserved history through
+                    // either the local or process-wide budget. Never retain a
+                    // plan whose shared payload is no longer charged.
+                    if (_resourceEntries.TryGetValue(new(ResourceCacheKind.SeriesDrawing, snapshot), out var entry))
+                        RemoveResourceEntry(entry, false);
+                    ClearCircleHistory(snapshot.Series);
+                }
             }
-            else TouchResource(ResourceCacheKind.SeriesDrawing, snapshot);
+            else
+            {
+                TouchResource(ResourceCacheKind.SeriesDrawing, snapshot);
+                if (retained.SharedCircleHistoryBytes > 0) TouchResource(ResourceCacheKind.CircleHistory, snapshot.Series);
+            }
             _seriesDrawingReplayCount++;
             retained.Draw(drawing);
         }
     }
+
 }
 
 internal abstract class ChartRetainedSeriesDrawing
@@ -86,6 +113,10 @@ internal abstract class ChartRetainedSeriesDrawing
     // Logical model-1 payload weights. Native geometry/font/GPU allocation is
     // opaque and is not represented as a measured process-memory bound.
     internal abstract long EstimatedBytes { get; }
+    // Shared histories have an independent, stable per-series budget entry.
+    // EstimatedBytes remains the complete payload weight for direct callers.
+    internal virtual long SharedCircleHistoryBytes => 0;
+    internal virtual bool SharedCircleHistoryActive => true;
     public abstract void Draw(DrawingContext drawing);
 
     internal static long EstimateLinearGeometry(ChartSeriesRenderContext context)
@@ -130,6 +161,8 @@ internal abstract class ChartRetainedSeriesDrawing
     internal sealed class Composite(ChartRetainedSeriesDrawing first, ChartRetainedSeriesDrawing second) : ChartRetainedSeriesDrawing
     {
         internal override long EstimatedBytes => 128L + first.EstimatedBytes + second.EstimatedBytes;
+        internal override long SharedCircleHistoryBytes => first.SharedCircleHistoryBytes + second.SharedCircleHistoryBytes;
+        internal override bool SharedCircleHistoryActive => first.SharedCircleHistoryActive && second.SharedCircleHistoryActive;
         public override void Draw(DrawingContext drawing) { first.Draw(drawing); second.Draw(drawing); }
     }
 }

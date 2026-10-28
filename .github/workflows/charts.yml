@@ -1,9 +1,9 @@
 name: charts-contracts-native-and-performance
 on:
   push:
-    paths: ['src/NT.AvaloniaControl.Charts*/**', 'benchmarks/Charts*/**', 'tests/Charts.Headless.Tests/**', 'samples/Charts.Usage/**', 'samples/NT.AvaloniaControl.Demo/**', 'scripts/*Charts*', 'scripts/*charts*', 'scripts/Tests/*Charts*', 'scripts/Tests/*charts*', 'scripts/charts-ci-performance-policy.json', 'scripts/Consumers/Charts/**', '.github/workflows/charts.yml', 'docs/charts-platform-matrix.json', 'Directory.*.props', 'global.json', 'NuGet.Config']
+    paths: ['src/NT.AvaloniaControl.Charts*/**', 'benchmarks/Charts*/**', 'tests/Charts.Headless.Tests/**', 'samples/Charts.Usage/**', 'samples/NT.AvaloniaControl.Demo/**', 'scripts/*Charts*', 'scripts/*charts*', 'scripts/Tests/*Charts*', 'scripts/Tests/*charts*', 'scripts/charts-ci-performance-policy.json', 'scripts/Consumers/Charts/**', '.github/workflows/charts.yml', 'docs/charts-platform-matrix.json', 'docs/charts-c7-integration-matrix.json', 'docs/charts-official-alignment.md', 'Directory.*.props', 'global.json', 'NuGet.Config']
   pull_request:
-    paths: ['src/NT.AvaloniaControl.Charts*/**', 'benchmarks/Charts*/**', 'tests/Charts.Headless.Tests/**', 'samples/Charts.Usage/**', 'samples/NT.AvaloniaControl.Demo/**', 'scripts/*Charts*', 'scripts/*charts*', 'scripts/Tests/*Charts*', 'scripts/Tests/*charts*', 'scripts/charts-ci-performance-policy.json', 'scripts/Consumers/Charts/**', '.github/workflows/charts.yml', 'docs/charts-platform-matrix.json', 'Directory.*.props', 'global.json', 'NuGet.Config']
+    paths: ['src/NT.AvaloniaControl.Charts*/**', 'benchmarks/Charts*/**', 'tests/Charts.Headless.Tests/**', 'samples/Charts.Usage/**', 'samples/NT.AvaloniaControl.Demo/**', 'scripts/*Charts*', 'scripts/*charts*', 'scripts/Tests/*Charts*', 'scripts/Tests/*charts*', 'scripts/charts-ci-performance-policy.json', 'scripts/Consumers/Charts/**', '.github/workflows/charts.yml', 'docs/charts-platform-matrix.json', 'docs/charts-c7-integration-matrix.json', 'docs/charts-official-alignment.md', 'Directory.*.props', 'global.json', 'NuGet.Config']
   schedule:
     - cron: '17 2 * * 1'
   workflow_dispatch:
@@ -16,6 +16,68 @@ on:
 permissions:
   contents: read
 jobs:
+  integration-catalog:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Complete chart catalog and traceability mutation guards
+        run: python scripts/verify_charts_integration_matrix.py --self-test --output artifacts/charts-integration-ci/catalog.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: charts-integration-catalog-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/charts-integration-ci/**
+          if-no-files-found: error
+  export-stability:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2025, ubuntu-24.04]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Provision Linux native export window dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb libx11-6 libice6 libsm6 libfontconfig1 libfreetype6 libgl1 libegl1 libxcb1 fonts-dejavu-core
+      - name: Independent export PNG and protocol mutation contracts
+        shell: pwsh
+        run: |
+          [IO.Directory]::CreateDirectory('artifacts/charts-export-stability-ci') | Out-Null
+          python -m unittest discover -s scripts/Tests -p 'test_charts_export_stability_oracle.py' -v 2>&1 | Tee-Object -FilePath artifacts/charts-export-stability-ci/oracle-tests.log
+          if ($LASTEXITCODE -ne 0) { throw 'Export oracle mutation contracts failed.' }
+      - name: Windows default-JIT original export with concurrent forced GC
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: ./scripts/Test-ChartsExportStability.ps1 -NativeMode DesktopSynthetic -Rounds 16 -OutputDirectory "artifacts/charts-export-stability-ci/run-${{ github.run_id }}-${{ github.run_attempt }}"
+      - name: Linux default-JIT original export with concurrent forced GC
+        if: runner.os == 'Linux'
+        shell: pwsh
+        run: ./scripts/Test-ChartsExportStability.ps1 -NativeMode XvfbSynthetic -Rounds 16 -OutputDirectory "artifacts/charts-export-stability-ci/run-${{ github.run_id }}-${{ github.run_attempt }}"
+      - name: Preserve export failures, starts without ends, images and independent oracle
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: charts-export-stability-${{ matrix.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/charts-export-stability-ci/**
+          if-no-files-found: error
+          retention-days: 30
   performance-guard:
     env:
       PYTHONDONTWRITEBYTECODE: '1'
@@ -52,6 +114,9 @@ jobs:
       - name: Independent raw mechanism and PNG oracle unit contracts
         shell: pwsh
         run: python -m unittest discover -s scripts/Tests -p 'test_charts_*.py' -v
+      - name: Native profile parser identity and window contracts
+        shell: pwsh
+        run: python scripts/test_charts_c7_native_profile.py
       - name: Process supervision and CI contracts
         shell: pwsh
         run: ./scripts/Tests/Test-ChartsPerformanceGate.Tests.ps1 -OutputDirectory "artifacts/charts-performance-ci/orchestrator-tests-${{ github.run_id }}-${{ github.run_attempt }}"

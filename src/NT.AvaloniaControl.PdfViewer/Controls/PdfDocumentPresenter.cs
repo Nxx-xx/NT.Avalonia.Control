@@ -26,6 +26,8 @@ public sealed class PdfDocumentPresenter : Control
     private static readonly TimeSpan SettleDelayDefault = TimeSpan.FromMilliseconds(150);
     private static readonly Cursor s_linkCursor = new(StandardCursorType.Hand);
     private static readonly Cursor s_defaultCursor = new(StandardCursorType.Arrow);
+    /// <summary>Stable empty page list so a document-less rebuild keeps its build signature.</summary>
+    private static readonly PdfPageInfo[] s_noPages = [];
     private readonly PdfPageLayout _layout = new();
     private readonly Dictionary<int, CachedPage> _cache = [];
     private readonly Dictionary<int, CachedText> _text = [];
@@ -37,7 +39,14 @@ public sealed class PdfDocumentPresenter : Control
     private CancellationTokenSource _lifetime = new();
     private CancellationTokenSource? _renderCancellation;
     private CancellationTokenSource? _selectionCancellation;
+    private CancellationTokenSource? _selectionTextBuild;
     private Task _renderTask = Task.CompletedTask;
+    private Task _selectionTextTask = Task.CompletedTask;
+    private bool _selectionTextDirty;
+    private bool _selectionTextRunning;
+    private long _selectionTextVersion;
+    private IReadOnlyList<PdfSearchResult>? _searchSource;
+    private Dictionary<int, (int Index, PdfSearchResult Result)[]> _searchIndex = [];
     private string _renderKey = "";
     private Rect _viewport = new(0, 0, 800, 600);
     private long _stamp;
@@ -119,6 +128,7 @@ public sealed class PdfDocumentPresenter : Control
         _dragging = false;
         _selectionTimer.Stop();
         _selectionCancellation?.Cancel();
+        CancelSelectionText();
         ++_selectionVersion;
         _anchor = _focus = null;
         _capturedPointer?.Capture(null);
@@ -242,6 +252,7 @@ public sealed class PdfDocumentPresenter : Control
         ResetSettleState();
         _selectionTimer.Stop();
         _selectionCancellation?.Cancel();
+        CancelSelectionText();
         ++_selectionVersion;
         _dragging = false;
         _pinching = false;
@@ -276,14 +287,26 @@ public sealed class PdfDocumentPresenter : Control
             foreach (var page in _cache.Values) page.Bitmap.Dispose();
             _cache.Clear();
         }
-        // Zoom / fit / rotation / width changes with pages on screen are a burst: keep the
-        // cached bitmaps as stretched previews until the geometry settles.
-        MarkInteracting();
-        _layout.Build(_document?.Pages ?? [], Owner?.ZoomLevel ?? 1, rotation, _viewport.Width,
+        var layoutStarted = PdfPerformanceSession.Now;
+        var built = _layout.Build(_document?.Pages ?? s_noPages, Owner?.ZoomLevel ?? 1, rotation, _viewport.Width,
             Owner?.PageDisplayMode ?? PdfPageDisplayMode.Continuous, Math.Max(0, (Owner?.CurrentPage ?? 1) - 1),
             Owner?.ShowCoverPage ?? true);
-        _renderKey = "";
-        InvalidateMeasure();
+        if (PdfPerformanceSession.Current is { } layoutPerf)
+            layoutPerf.Record(layoutPerf.NextCorrelationId("layout"), PdfPerformanceStage.LayoutBuild,
+                layoutStarted, PdfPerformanceSession.Now);
+        if (built != PdfPageLayout.BuildResult.Unchanged)
+        {
+            if (built == PdfPageLayout.BuildResult.Rebuilt)
+            {
+                // Zoom / fit / rotation / mode changes with pages on screen are a burst: keep the
+                // cached bitmaps as stretched previews until the geometry settles. A pure recenter
+                // keeps the raster targets and fills at the normal quality.
+                MarkInteracting();
+                _renderKey = "";
+            }
+            InvalidateMeasure();
+        }
+        // Even unchanged geometry can hide different rows under a moved viewport.
         RefreshScaling();
         ScheduleRendering();
         InvalidateVisual();
@@ -329,26 +352,41 @@ public sealed class PdfDocumentPresenter : Control
                 if (Owner is { } owner)
                 {
                     using var clip = context.PushClip(bounds);
-                    for (var resultIndex = 0; resultIndex < owner.SearchResults.Count; resultIndex++)
+                    EnsureSearchIndex(owner);
+                    if (_searchIndex.TryGetValue(i, out var hits))
                     {
-                        var result = owner.SearchResults[resultIndex];
-                        if (result.PageIndex != i) continue;
-                        var brush = resultIndex == owner.CurrentSearchResultIndex
-                            ? new SolidColorBrush(Color.FromArgb(155, 255, 155, 30))
-                            : new SolidColorBrush(Color.FromArgb(100, 255, 225, 30));
-                        foreach (var rect in result.Bounds)
-                            context.DrawRectangle(brush, null, _layout.ToDisplay(i, rect, _document.Pages[i]));
+                        foreach (var (resultIndex, result) in hits)
+                        {
+                            var brush = resultIndex == owner.CurrentSearchResultIndex
+                                ? new SolidColorBrush(Color.FromArgb(155, 255, 155, 30))
+                                : new SolidColorBrush(Color.FromArgb(100, 255, 225, 30));
+                            foreach (var rect in result.Bounds)
+                                context.DrawRectangle(brush, null, _layout.ToDisplay(i, rect, _document.Pages[i]));
+                        }
                     }
                     if (SelectionRange is { } range && _text.TryGetValue(i, out var text))
                     {
                         var brush = new SolidColorBrush(Color.FromArgb(100, 45, 125, 245));
+                        // Interior pages of a multi-page selection are entirely selected; skip
+                        // the per-character range probe for them.
+                        var wholePage = i > range.Start.Page && i < range.End.Page;
                         foreach (var character in text.Text.Characters)
-                            if (InRange(i, character.Index, range))
+                            if (wholePage || InRange(i, character.Index, range))
                                 context.DrawRectangle(brush, null, _layout.ToDisplay(i, character.Bounds, _document.Pages[i]));
                     }
                 }
             }
         }
+    }
+
+    // The search result list is republished as a new array per batch; rebuild the per-page
+    // buckets only when the published snapshot actually changed.
+    private void EnsureSearchIndex(PdfViewer owner)
+    {
+        var source = owner.SearchResults;
+        if (ReferenceEquals(_searchSource, source)) return;
+        _searchSource = source;
+        _searchIndex = PdfSearchPageIndex.Build(source);
     }
 
     private void ScheduleRendering()
@@ -425,15 +463,29 @@ public sealed class PdfDocumentPresenter : Control
                     existing.Stamp = ++_stamp;
                     continue;
                 }
-                var decoded = await document.RenderAsync(request.Index, request.Width, request.Height, rotation, token);
+                // PERF01/PERF17: one correlation id per page fill groups its decode, upload and
+                // submit spans. Decode complete, UI submit and compositor render stay distinct —
+                // the compositor step is only ever recorded by a present harness outside the product.
+                var correlationId = PdfPerformanceSession.Current is { } pagePerf ? pagePerf.NextCorrelationId("page") : "";
+                var decoded = await document.RenderForDisplayAsync(request.Index, request.Width, request.Height, rotation, token, correlationId);
                 token.ThrowIfCancellationRequested();
                 if (!ReferenceEquals(document, _document)) return;
+                if (PdfPerformanceSession.Current is { } decodePerf)
+                    decodePerf.Mark(PdfPerformanceSession.FirstPageDecodedMark, correlationId);
+                var uploadStarted = PdfPerformanceSession.Now;
                 var bitmap = CreateBitmap(decoded);
+                var uploadFinished = PdfPerformanceSession.Now;
                 if (_cache.Remove(request.Index, out var previous)) previous.Bitmap.Dispose();
                 _cache[request.Index] = new CachedPage(bitmap, request.Width, request.Height, ++_stamp, request.Preview, request.Degraded);
                 RenderedPageCount++;
                 TrimPageCache(requests, request.Index);
                 InvalidateVisual();
+                if (correlationId.Length != 0 && PdfPerformanceSession.Current is { } submitPerf)
+                {
+                    submitPerf.Record(correlationId, PdfPerformanceStage.BitmapUpload, uploadStarted, uploadFinished);
+                    submitPerf.Record(correlationId, PdfPerformanceStage.UiSubmit, uploadFinished, PdfPerformanceSession.Now);
+                    submitPerf.Mark(PdfPerformanceSession.FirstPageSubmittedMark, correlationId);
+                }
             }
         }
         catch (OperationCanceledException) { }
@@ -528,16 +580,19 @@ public sealed class PdfDocumentPresenter : Control
 
     internal async Task WaitForIdleAsync(CancellationToken token)
     {
-        Task task;
+        Task render;
+        Task selection;
         do
         {
             // A still-running scroll / zoom burst ends with a full-quality upgrade pass;
             // waiting only for the current pass would report preview rasters as final.
             while (_interacting) await _settled.Task.WaitAsync(token);
-            task = _renderTask;
-            await task.WaitAsync(token);
+            render = _renderTask;
+            selection = _selectionTextTask;
+            await render.WaitAsync(token);
+            await selection.WaitAsync(token);
         }
-        while (_interacting || !ReferenceEquals(task, _renderTask));
+        while (_interacting || !ReferenceEquals(render, _renderTask) || !ReferenceEquals(selection, _selectionTextTask));
     }
 
     internal int PageAt(double y) => _layout.PageAt(y);
@@ -586,6 +641,7 @@ public sealed class PdfDocumentPresenter : Control
         _dragging = true;
         _lastPointerViewport = point - _viewport.Position;
         var version = ++_selectionVersion;
+        CancelSelectionText();
         _anchor = _focus = null;
         Owner.SetSelectedText("");
         Owner.SetSelectionRangeState(false);
@@ -676,17 +732,65 @@ public sealed class PdfDocumentPresenter : Control
         {
             var next = await HitAsync(point, token);
             if (version != _selectionVersion || next is null || token.IsCancellationRequested) return;
+            // The drag maintains only the interval; the selected text is a coalesced preview
+            // rebuilt at most one at a time and completed for real at copy time.
             _focus = next;
+            Owner?.SetSelectionRangeState(SelectionRange is not null);
             InvalidateVisual();
-            var selected = await GetSelectedTextAsync(token);
-            if (version == _selectionVersion && !token.IsCancellationRequested)
-            {
-                Owner?.SetSelectedText(selected);
-                Owner?.SetSelectionRangeState(SelectionRange is not null);
-            }
+            QueueSelectionText(version);
         }
         catch (OperationCanceledException) { }
         catch (Exception error) { if (!token.IsCancellationRequested) Owner?.ReportError(error); }
+    }
+
+    // Every move only marks the interval dirty and cancels the in-flight preview build; a
+    // single runner drains the marks, so a drag never stacks one full extract per event.
+    private void QueueSelectionText(long version)
+    {
+        _selectionTextDirty = true;
+        _selectionTextVersion = version;
+        _selectionTextBuild?.Cancel();
+        if (_selectionTextRunning) return;
+        _selectionTextTask = RunSelectionTextAsync();
+    }
+
+    /// <summary>Stops any pending or in-flight preview rebuild; the next move queues a new one.</summary>
+    private void CancelSelectionText()
+    {
+        _selectionTextDirty = false;
+        _selectionTextBuild?.Cancel();
+    }
+
+    private async Task RunSelectionTextAsync()
+    {
+        if (_selectionTextRunning) return;
+        _selectionTextRunning = true;
+        try
+        {
+            while (_selectionTextDirty)
+            {
+                _selectionTextDirty = false;
+                var version = _selectionTextVersion;
+                _selectionTextBuild?.Cancel();
+                _selectionTextBuild?.Dispose();
+                _selectionTextBuild = CancellationTokenSource.CreateLinkedTokenSource(_lifetime.Token);
+                var token = _selectionTextBuild.Token;
+                try
+                {
+                    var selected = await GetSelectedTextAsync(token);
+                    // A newer gesture (press / clear / pinch) owns the text now; never land late.
+                    if (version == _selectionVersion && !token.IsCancellationRequested)
+                        Owner?.SetSelectedText(selected);
+                }
+                catch (OperationCanceledException) { }
+            }
+        }
+        finally
+        {
+            _selectionTextRunning = false;
+            // A move marked the interval dirty while the running flag still held; pick it up.
+            if (_selectionTextDirty) _selectionTextTask = RunSelectionTextAsync();
+        }
     }
 
     private async Task<TextPosition?> HitAsync(Point point, CancellationToken token)
@@ -697,32 +801,25 @@ public sealed class PdfDocumentPresenter : Control
         var pagePoint = _layout.ToPage(pageIndex, point, document.Pages[pageIndex]);
         var text = await GetTextAsync(pageIndex, token);
         token.ThrowIfCancellationRequested();
-        var character = text.Characters.Where(c => c.Bounds.Width > 0 && c.Bounds.Height > 0)
-            .MinBy(c => Distance(c.Bounds, pagePoint));
-        return character is null ? null : new TextPosition(pageIndex, character.Index);
+        var character = text.HitIndex.FindNearest(pagePoint);
+        return character < 0 ? null : new TextPosition(pageIndex, character);
     }
 
-    private static double Distance(Rect rect, Point point)
-    {
-        var x = Math.Max(0, Math.Max(rect.Left - point.X, point.X - rect.Right));
-        var y = Math.Max(0, Math.Max(rect.Top - point.Y, point.Y - rect.Bottom));
-        return x * x + y * y;
-    }
-
-    private async Task<PdfTextPage> GetTextAsync(int page, CancellationToken token)
+    private async Task<CachedText> GetTextAsync(int page, CancellationToken token)
     {
         if (_text.TryGetValue(page, out var cached))
         {
             cached.Stamp = ++_textStamp;
-            return cached.Text;
+            return cached;
         }
         var document = _document ?? throw new OperationCanceledException(token);
         var text = await document.GetTextAsync(page, token);
         token.ThrowIfCancellationRequested();
         if (!ReferenceEquals(document, _document)) throw new OperationCanceledException(token);
-        _text[page] = new CachedText(text, PdfCacheGovernor.EstimateTextBytes(text), ++_textStamp);
+        var entry = new CachedText(text, PdfCacheGovernor.EstimateTextBytes(text), ++_textStamp);
+        _text[page] = entry;
         TrimTextCache(page);
-        return text;
+        return entry;
     }
 
     private (TextPosition Start, TextPosition End)? SelectionRange => _anchor is { } a && _focus is { } b
@@ -742,7 +839,7 @@ public sealed class PdfDocumentPresenter : Control
         {
             var text = await GetTextAsync(page, linked.Token);
             if (page > range.Start.Page) builder.AppendLine();
-            foreach (var character in text.Characters)
+            foreach (var character in text.Text.Characters)
                 if (InRange(page, character.Index, range)) builder.Append(character.Text);
         }
         return builder.ToString();
@@ -753,13 +850,14 @@ public sealed class PdfDocumentPresenter : Control
         if (_document is null || Owner?.CanSelectText != true) return;
         var page = Owner.CurrentPage - 1;
         var version = ++_selectionVersion;
+        CancelSelectionText();
         try
         {
-            var text = await GetTextAsync(page, _lifetime.Token);
-            if (version != _selectionVersion || text.Characters.Count == 0) return;
-            _anchor = new TextPosition(page, text.Characters[0].Index);
-            _focus = new TextPosition(page, text.Characters[^1].Index);
-            Owner.SetSelectedText(text.Text);
+            var entry = await GetTextAsync(page, _lifetime.Token);
+            if (version != _selectionVersion || entry.Text.Characters.Count == 0) return;
+            _anchor = new TextPosition(page, entry.Text.Characters[0].Index);
+            _focus = new TextPosition(page, entry.Text.Characters[^1].Index);
+            Owner.SetSelectedText(entry.Text.Text);
             Owner.SetSelectionRangeState(true);
             InvalidateVisual();
         }
@@ -771,6 +869,7 @@ public sealed class PdfDocumentPresenter : Control
     {
         ++_selectionVersion;
         _selectionCancellation?.Cancel();
+        CancelSelectionText();
         _selectionTimer.Stop();
         _dragging = false;
         _capturedPointer?.Capture(null);
@@ -796,11 +895,21 @@ public sealed class PdfDocumentPresenter : Control
         internal bool Degraded { get; } = degraded;
     }
 
-    private sealed class CachedText(PdfTextPage text, long bytes, long stamp)
+    private sealed class CachedText
     {
-        internal PdfTextPage Text { get; } = text;
-        internal long Bytes { get; } = bytes;
-        internal long Stamp { get; set; } = stamp;
+        internal CachedText(PdfTextPage text, long bytes, long stamp)
+        {
+            Text = text;
+            Bytes = bytes;
+            Stamp = stamp;
+            HitIndex = new PdfCharacterHitIndex(text.Characters);
+        }
+
+        internal PdfTextPage Text { get; }
+        internal long Bytes { get; }
+        internal long Stamp { get; set; }
+        /// <summary>Nearest-character index over the page text; built once per cached page.</summary>
+        internal PdfCharacterHitIndex HitIndex { get; }
     }
 
     private readonly record struct TextPosition(int Page, int Character) : IComparable<TextPosition>

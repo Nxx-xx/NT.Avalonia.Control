@@ -1,0 +1,1883 @@
+{
+  "schema": "charts-c703-self-performance-validation/v1",
+  "createdUtc": "2026-10-24T17:58:43.798337+00:00",
+  "collector": {
+    "path": "Collect-Optimization.py",
+    "bytes": 24556,
+    "sha256": "FD8AB3C375A5DE77E263EB110F3FEB20723BBACD80318BBE10530B3134AFD0BC"
+  },
+  "selfMeasurementEvidenceComplete": true,
+  "allWorkloadsPassed": false,
+  "absoluteHitGatesPassed": true,
+  "milestoneComplete": false,
+  "sourceSnapshot": {
+    "path": "source-snapshot-v4.json",
+    "bytes": 399882,
+    "sha256": "27B000CD8A07F0F5D90CECC9ACA546E0C40FF232961EF3F6BF816CBEA675B138"
+  },
+  "frozenInputs": {
+    "manifest": {
+      "path": "source-snapshot-v4.json",
+      "bytes": 399882,
+      "sha256": "27B000CD8A07F0F5D90CECC9ACA546E0C40FF232961EF3F6BF816CBEA675B138"
+    },
+    "sourceFilesPerCopy": 2068,
+    "copiesVerified": 2,
+    "roots": [
+      "D:\\Procedure\\AvaloniaControl\\artifacts\\c7-optimization\\windows-source-v4",
+      "D:\\Procedure\\AvaloniaControl\\artifacts\\c7-optimization\\linux-source-v4"
+    ],
+    "allListedFrozenFilesMatchedManifest": true,
+    "sameInputDigestsInWindowsAndLinuxCopies": true,
+    "parentManifest": {
+      "path": "source-snapshot-v3.json",
+      "bytes": 400131,
+      "sha256": "C8995B3D06E31AC98C5D6AC3FDDE8FFCE89962543F6208124201839EFD644586"
+    },
+    "amendments": [
+      {
+        "path": "tests/Charts.Headless.Tests/IncrementalDataBufferTests.cs",
+        "before": "6DC5D48419E21A911C5C53B4411AF3B83831E4ECC65C5BFA9F60C9061B5D5BBB",
+        "after": "0E48BB26BDF5C95F3B0DF9D9EEE96D6205A40D5A1B3190AD3B99722508A59E55"
+      }
+    ],
+    "immutableProtocolBudgetsOracleAndUnitTest": {
+      "scripts/charts-c7-performance-protocol.json": {
+        "sha256": "7E633452EA83F4A9342C68093FE597DFB0CF4B18491D21660DE70EBE73EC5463",
+        "unchangedInCurrentRepositoryAndBothFrozenCopies": true
+      },
+      "docs/charts-performance-budgets.json": {
+        "sha256": "3E7149E6C4538993CBFEBAD2542E154DC8EBEBD06A72259EF345B3E3A07DEEA2",
+        "unchangedInCurrentRepositoryAndBothFrozenCopies": true
+      },
+      "scripts/charts_c7_performance_oracle.py": {
+        "sha256": "888F4A287BD71FB5BE6035E974B9902618F321CE9666544B1B72FB0F99175E41",
+        "unchangedInCurrentRepositoryAndBothFrozenCopies": true
+      },
+      "scripts/Tests/test_charts_c7_performance_oracle.py": {
+        "sha256": "9119056D3EC61A03A48F6F8804B2DDBACE93B48F691B5898362CA17B6E3C374D",
+        "unchangedInCurrentRepositoryAndBothFrozenCopies": true
+      }
+    }
+  },
+  "baseline": {
+    "sourceSnapshot": {
+      "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-performance-comparison-20261024/source-snapshot-v2.json",
+      "bytes": 398817,
+      "sha256": "88669F223D20FCFAD57D113EAA0EC098B3243422693C423D07B8D8DA80370317"
+    },
+    "validation": {
+      "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-performance-comparison-20261024/validation-final.json",
+      "bytes": 788435,
+      "sha256": "D05C0F4D22EC12E9DE315602A5141E58D8A582F5737137617943676690135E2A"
+    },
+    "documentedSourceSnapshotSha256": "88669F223D20FCFAD57D113EAA0EC098B3243422693C423D07B8D8DA80370317",
+    "documentedValidationSha256": "D05C0F4D22EC12E9DE315602A5141E58D8A582F5737137617943676690135E2A",
+    "formalVersion": "formal-v2",
+    "unchanged": true
+  },
+  "compactComparison": {
+    "path": "comparison-finalv4.json",
+    "bytes": 675550,
+    "sha256": "08E154E011C1A94BA5270923DC3FD6B3BB087F6CF307B74B56CCC35DC5F725B0"
+  },
+  "protocol": {
+    "path": "scripts/charts-c7-performance-protocol.json",
+    "sha256": "7E633452EA83F4A9342C68093FE597DFB0CF4B18491D21660DE70EBE73EC5463"
+  },
+  "platforms": {
+    "windows": {
+      "officialReference": {
+        "status": "blocked-reference",
+        "availability": {
+          "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-performance-comparison-20261024/windows/reference-v1/result.json",
+          "bytes": 2508,
+          "sha256": "253F730646D617EB1154A4ED03F4CA0B606628473583072DD5456071C86FC33F"
+        },
+        "referenceValue": null,
+        "ratio": null
+      },
+      "formalControlledRaster": {
+        "execution": {
+          "path": "windows/formal-v4/results.json",
+          "bytes": 159323,
+          "sha256": "0B64D805428390CE528C19CA290EAB857F3232A5AAD3381B0ED6C8B29E0C3246"
+        },
+        "campaign": {
+          "path": "windows/formal-v4/campaign.json",
+          "bytes": 18309,
+          "sha256": "C7035465764B42AB5100EC7ABB5B776B9E1FD9618205B3958E971A0DFD41B2EE"
+        },
+        "independentOracle": {
+          "path": "windows/formal-v4/oracle.json",
+          "bytes": 336813,
+          "sha256": "68E9D181CF72835E260BCEB44C1AEBDC076AD196A32F537939699A77A4E98E53"
+        },
+        "protocolSha256": "7E633452EA83F4A9342C68093FE597DFB0CF4B18491D21660DE70EBE73EC5463",
+        "sourceBefore": {
+          "path": "windows/formal-v4/source-before.json",
+          "bytes": 55630,
+          "sha256": "172E84DB1BBD9913DD1A1E10F566BDB612A4DDA4FE1D09CC0CCB4F42ED20C42E"
+        },
+        "sourceAfter": {
+          "path": "windows/formal-v4/source-after.json",
+          "bytes": 55630,
+          "sha256": "172E84DB1BBD9913DD1A1E10F566BDB612A4DDA4FE1D09CC0CCB4F42ED20C42E"
+        },
+        "sourceInputsUnchanged": true,
+        "actualArchivedAssemblies": {
+          "manifest": {
+            "path": "windows/formal-v4/measured-assemblies.json",
+            "bytes": 1384,
+            "sha256": "04446C45149E2D70575C4CB755617F09C08B44F9536A0DEDE9966371F274A234"
+          },
+          "actualFilesVerified": 6,
+          "files": [
+            {
+              "name": "Charts.NativeBenchmarks.dll",
+              "path": "measured-assemblies/Charts.NativeBenchmarks.dll",
+              "sha256": "5875E6CD4ED4710E0FF4D7E81639973F8A37536EA6FB3BA36ECE1CCC3C085B93",
+              "bytes": 227328
+            },
+            {
+              "name": "Charts.NativeBenchmarks.runtimeconfig.json",
+              "path": "measured-assemblies/Charts.NativeBenchmarks.runtimeconfig.json",
+              "sha256": "00061A24F24E3F3BF9003E948FF87F7451AA89C84C99193D000756937E015C83",
+              "bytes": 392
+            },
+            {
+              "name": "Charts.NativeBenchmarks.deps.json",
+              "path": "measured-assemblies/Charts.NativeBenchmarks.deps.json",
+              "sha256": "38D59B6386637FB28471B84E592DAB9E0AE46B8D0877B0CC5DC5C307E1B0674F",
+              "bytes": 24995
+            },
+            {
+              "name": "NT.AvaloniaControl.Charts.dll",
+              "path": "measured-assemblies/NT.AvaloniaControl.Charts.dll",
+              "sha256": "35F8EBE9EBB73515F4D97E2916738E72D441C52A16A736DD9F2D8FF9B04E8A58",
+              "bytes": 2386432
+            },
+            {
+              "name": "NT.AvaloniaControl.Charts.Themes.dll",
+              "path": "measured-assemblies/NT.AvaloniaControl.Charts.Themes.dll",
+              "sha256": "657857D17DDEC4E81D6C7A270E232BCF378205786237DB025FFD43EBF2D3FBFF",
+              "bytes": 25600
+            },
+            {
+              "name": "Avalonia.Base.dll",
+              "path": "measured-assemblies/Avalonia.Base.dll",
+              "sha256": "6F9C3E0C4F1D1842657163363AF99E770807005E639D3A3F944DB27F3E7D6FE3",
+              "bytes": 2259456
+            }
+          ],
+          "harnessSha256": "5875E6CD4ED4710E0FF4D7E81639973F8A37536EA6FB3BA36ECE1CCC3C085B93",
+          "chartsSha256": "35F8EBE9EBB73515F4D97E2916738E72D441C52A16A736DD9F2D8FF9B04E8A58"
+        },
+        "evidenceIntegrityPassed": true,
+        "workloadSchedulesPassed": false,
+        "absoluteHitGatesPassed": true,
+        "formalMeasurementProtocolCompleted": false,
+        "executionPassed": false,
+        "failedNativeProcesses": [
+          {
+            "id": "interaction-1",
+            "exitCode": 1,
+            "timedOut": false,
+            "terminalRawPresent": true
+          },
+          {
+            "id": "interaction-2",
+            "exitCode": 1,
+            "timedOut": false,
+            "terminalRawPresent": true
+          },
+          {
+            "id": "interaction-3",
+            "exitCode": 1,
+            "timedOut": false,
+            "terminalRawPresent": true
+          },
+          {
+            "id": "interaction-4",
+            "exitCode": 1,
+            "timedOut": false,
+            "terminalRawPresent": true
+          },
+          {
+            "id": "interaction-5",
+            "exitCode": 1,
+            "timedOut": false,
+            "terminalRawPresent": true
+          }
+        ],
+        "processes": 107,
+        "tracks": {
+          "S10-L-exact": {
+            "independentProcesses": 5,
+            "workloadSchedulesPassed": true,
+            "statisticsQualification": "Full fixed workload",
+            "absoluteHitGateStatus": "passed",
+            "observedPooledMetrics": {
+              "sourceApplyMs": {
+                "count": 9000,
+                "p50": 3.1584,
+                "p95": 4.4116,
+                "p99": 7.3396,
+                "maximum": 13.1579,
+                "minimum": 0.0009,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareMs": {
+                "count": 9000,
+                "p50": 3.585,
+                "p95": 5.6617,
+                "p99": 9.5851,
+                "maximum": 17.2832,
+                "minimum": 0.2436,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordMs": {
+                "count": 9000,
+                "p50": 0.3507,
+                "p95": 2.1148,
+                "p99": 2.663,
+                "maximum": 7.5086,
+                "minimum": 0.0768,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterMs": {
+                "count": 9000,
+                "p50": 1.6468,
+                "p95": 7.748,
+                "p99": 8.2621,
+                "maximum": 14.2771,
+                "minimum": 1.1756,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitMs": {
+                "count": 9000,
+                "p50": 0.1404,
+                "p95": 0.1699,
+                "p99": 3.0241,
+                "maximum": 7.2827,
+                "minimum": 0.1189,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "requestToControlledRasterMs": {
+                "count": 9000,
+                "p50": 8.8355,
+                "p95": 17.2167,
+                "p99": 20.7351,
+                "maximum": 29.8281,
+                "minimum": 7.0568,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 9000,
+                "p50": 204568,
+                "p95": 605296,
+                "p99": 605520,
+                "maximum": 933080,
+                "minimum": 304,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareAllocatedBytes": {
+                "count": 9000,
+                "p50": 502328,
+                "p95": 1912200,
+                "p99": 1912824,
+                "maximum": 2246408,
+                "minimum": 304512,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordAllocatedBytes": {
+                "count": 9000,
+                "p50": 118328,
+                "p95": 124832,
+                "p99": 125096,
+                "maximum": 144880,
+                "minimum": 113128,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 9000,
+                "p50": 5824,
+                "p95": 5992,
+                "p99": 6544,
+                "maximum": 13704,
+                "minimum": 5640,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitAllocatedBytes": {
+                "count": 9000,
+                "p50": 152624,
+                "p95": 152704,
+                "p99": 152920,
+                "maximum": 153184,
+                "minimum": 152576,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 9000,
+                "p50": 9.2051,
+                "p95": 17.6202,
+                "p99": 21.4097,
+                "maximum": 33.5315,
+                "minimum": 7.0611,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "queueLatenessMs": {
+                "count": 9000,
+                "p50": 0.0079,
+                "p95": 3.2365,
+                "p99": 7.8137,
+                "maximum": 21.0479,
+                "minimum": 0.0018,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              }
+            },
+            "framePipelineStatus": "unmeasured",
+            "presentStatus": "blocked-present",
+            "officialRatio": null,
+            "referenceStatus": "blocked-reference"
+          },
+          "S10-S-exact": {
+            "independentProcesses": 5,
+            "workloadSchedulesPassed": false,
+            "statisticsQualification": "Observed completed samples from a partial/failed workload; not a full-workload pass.",
+            "absoluteHitGateStatus": "passed",
+            "observedPooledMetrics": {
+              "sourceApplyMs": {
+                "count": 5214,
+                "p50": 3.1778,
+                "p95": 4.527,
+                "p99": 7.8176,
+                "maximum": 20.7966,
+                "minimum": 0.0014,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareMs": {
+                "count": 5214,
+                "p50": 3.6151,
+                "p95": 6.4656,
+                "p99": 11.5337,
+                "maximum": 18.7201,
+                "minimum": 0.2679,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordMs": {
+                "count": 5214,
+                "p50": 5.9292,
+                "p95": 31.857,
+                "p99": 37.1939,
+                "maximum": 50.196,
+                "minimum": 0.9331,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterMs": {
+                "count": 5214,
+                "p50": 5.3415,
+                "p95": 44.4536,
+                "p99": 50.7832,
+                "maximum": 73.8176,
+                "minimum": 4.3704,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitMs": {
+                "count": 5214,
+                "p50": 0.1553,
+                "p95": 0.1955,
+                "p99": 5.1061,
+                "maximum": 13.6987,
+                "minimum": 0.132,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "requestToControlledRasterMs": {
+                "count": 5214,
+                "p50": 19.4618,
+                "p95": 78.784,
+                "p99": 87.6637,
+                "maximum": 120.4257,
+                "minimum": 11.9322,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 5214,
+                "p50": 204568,
+                "p95": 605296,
+                "p99": 605520,
+                "maximum": 933304,
+                "minimum": 304,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareAllocatedBytes": {
+                "count": 5214,
+                "p50": 506392,
+                "p95": 1916360,
+                "p99": 1916800,
+                "maximum": 2244568,
+                "minimum": 305696,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordAllocatedBytes": {
+                "count": 5214,
+                "p50": 1949896,
+                "p95": 12712208,
+                "p99": 12712472,
+                "maximum": 12727200,
+                "minimum": 1947736,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 5214,
+                "p50": 6184,
+                "p95": 8936,
+                "p99": 13640,
+                "maximum": 14528,
+                "minimum": 6000,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitAllocatedBytes": {
+                "count": 5214,
+                "p50": 154368,
+                "p95": 154464,
+                "p99": 154600,
+                "maximum": 154944,
+                "minimum": 153168,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 5214,
+                "p50": 13829.0725,
+                "p95": 27507.0195,
+                "p99": 27780.4314,
+                "maximum": 28390.3407,
+                "minimum": 12.3297,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "queueLatenessMs": {
+                "count": 5214,
+                "p50": 13813.649,
+                "p95": 27491.7775,
+                "p99": 27765.4088,
+                "maximum": 28376.1536,
+                "minimum": 0.0021,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              }
+            },
+            "framePipelineStatus": "unmeasured",
+            "presentStatus": "blocked-present",
+            "officialRatio": null,
+            "referenceStatus": "blocked-reference"
+          },
+          "S10-B-exact": {
+            "independentProcesses": 5,
+            "workloadSchedulesPassed": false,
+            "statisticsQualification": "Observed completed samples from a partial/failed workload; not a full-workload pass.",
+            "absoluteHitGateStatus": "passed",
+            "observedPooledMetrics": {
+              "sourceApplyMs": {
+                "count": 8437,
+                "p50": 5.9937,
+                "p95": 8.2665,
+                "p99": 11.4372,
+                "maximum": 28.7559,
+                "minimum": 0.0012,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareMs": {
+                "count": 8437,
+                "p50": 7.9464,
+                "p95": 12.9291,
+                "p99": 19.7929,
+                "maximum": 32.7461,
+                "minimum": 0.5165,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordMs": {
+                "count": 8437,
+                "p50": 5.6388,
+                "p95": 25.5631,
+                "p99": 34.5091,
+                "maximum": 51.2854,
+                "minimum": 0.8749,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterMs": {
+                "count": 8437,
+                "p50": 1.5089,
+                "p95": 4.6559,
+                "p99": 5.3401,
+                "maximum": 22.1342,
+                "minimum": 0.7065,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitMs": {
+                "count": 8437,
+                "p50": 0.3979,
+                "p95": 2.9002,
+                "p99": 11.1541,
+                "maximum": 19.8987,
+                "minimum": 0.2621,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "requestToControlledRasterMs": {
+                "count": 8437,
+                "p50": 18.5056,
+                "p95": 41.3572,
+                "p99": 58.1004,
+                "maximum": 79.0798,
+                "minimum": 6.8239,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 8437,
+                "p50": 403568,
+                "p95": 842656,
+                "p99": 843104,
+                "maximum": 1170440,
+                "minimum": 304,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareAllocatedBytes": {
+                "count": 8437,
+                "p50": 1401584,
+                "p95": 3268808,
+                "p99": 3272896,
+                "maximum": 3604080,
+                "minimum": 596160,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordAllocatedBytes": {
+                "count": 8437,
+                "p50": 1972992,
+                "p95": 18905576,
+                "p99": 18906000,
+                "maximum": 18907736,
+                "minimum": 1947760,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 8437,
+                "p50": 4944,
+                "p95": 4952,
+                "p99": 10024,
+                "maximum": 13128,
+                "minimum": 4592,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitAllocatedBytes": {
+                "count": 8437,
+                "p50": 364648,
+                "p95": 1116672,
+                "p99": 1116976,
+                "maximum": 1118720,
+                "minimum": 298400,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 8437,
+                "p50": 8083.8305,
+                "p95": 15827.8627,
+                "p99": 16705.1936,
+                "maximum": 17171.768,
+                "minimum": 19.065,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "queueLatenessMs": {
+                "count": 8437,
+                "p50": 8057.4205,
+                "p95": 15799.7049,
+                "p99": 16684.0163,
+                "maximum": 17122.8918,
+                "minimum": 0.0049,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              }
+            },
+            "framePipelineStatus": "unmeasured",
+            "presentStatus": "blocked-present",
+            "officialRatio": null,
+            "referenceStatus": "blocked-reference"
+          },
+          "S100-L-minmax": {
+            "independentProcesses": 5,
+            "workloadSchedulesPassed": true,
+            "statisticsQualification": "Full fixed workload",
+            "absoluteHitGateStatus": "passed",
+            "observedPooledMetrics": {
+              "sourceApplyMs": {
+                "count": 9000,
+                "p50": 3.1791,
+                "p95": 5.7369,
+                "p99": 15.047,
+                "maximum": 30.676,
+                "minimum": 0.0007,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareMs": {
+                "count": 9000,
+                "p50": 3.6173,
+                "p95": 21.2462,
+                "p99": 29.3171,
+                "maximum": 37.6171,
+                "minimum": 0.2393,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordMs": {
+                "count": 9000,
+                "p50": 1.1805,
+                "p95": 4.0999,
+                "p99": 9.3496,
+                "maximum": 30.6904,
+                "minimum": 0.08,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterMs": {
+                "count": 9000,
+                "p50": 4.2584,
+                "p95": 7.8506,
+                "p99": 8.3351,
+                "maximum": 17.2322,
+                "minimum": 3.4652,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitMs": {
+                "count": 9000,
+                "p50": 0.1445,
+                "p95": 0.1968,
+                "p99": 8.527,
+                "maximum": 15.3754,
+                "minimum": 0.1207,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "requestToControlledRasterMs": {
+                "count": 9000,
+                "p50": 12.1617,
+                "p95": 39.0216,
+                "p99": 46.5769,
+                "maximum": 56.5874,
+                "minimum": 7.3022,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 9000,
+                "p50": 204584,
+                "p95": 4205296,
+                "p99": 4205520,
+                "maximum": 4533304,
+                "minimum": 304,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareAllocatedBytes": {
+                "count": 9000,
+                "p50": 502432,
+                "p95": 14683304,
+                "p99": 14684016,
+                "maximum": 15015656,
+                "minimum": 304608,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordAllocatedBytes": {
+                "count": 9000,
+                "p50": 173952,
+                "p95": 251232,
+                "p99": 251656,
+                "maximum": 257064,
+                "minimum": 119512,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 9000,
+                "p50": 5824,
+                "p95": 6000,
+                "p99": 6552,
+                "maximum": 13632,
+                "minimum": 5640,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitAllocatedBytes": {
+                "count": 9000,
+                "p50": 152672,
+                "p95": 152752,
+                "p99": 152984,
+                "maximum": 153032,
+                "minimum": 152624,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 9000,
+                "p50": 101.3199,
+                "p95": 227.4654,
+                "p99": 264.5372,
+                "maximum": 339.4673,
+                "minimum": 7.4629,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "queueLatenessMs": {
+                "count": 9000,
+                "p50": 86.7376,
+                "p95": 212.3477,
+                "p99": 250.7571,
+                "maximum": 323.8998,
+                "minimum": 0.0015,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              }
+            },
+            "framePipelineStatus": "unmeasured",
+            "presentStatus": "blocked-present",
+            "officialRatio": null,
+            "referenceStatus": "blocked-reference"
+          }
+        },
+        "firstUse": {
+          "independentFormalProcesses": 100,
+          "observedNonCalibrationProcesses": 100,
+          "calibrationsExcluded": 2,
+          "controlledRasterMs": {
+            "count": 100,
+            "p50": 1092.6195,
+            "p95": 1130.7928,
+            "p99": 1138.7495,
+            "maximum": 1153.7729,
+            "minimum": 1062.34,
+            "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+            "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+          },
+          "nominalSoftwareDiagnosticBudgetMs": 3000,
+          "nominalDiagnosticTargetMet": true,
+          "formalFirstUsableToRenderGate": "unmeasured-not-the-controlled-raster-boundary",
+          "millionPointHitTailStatus": "deferred-by-user"
+        },
+        "scope": "Native software controlled raster and original-data query observations; no compositor present, hardware qualification, actual peak-memory SLA or licensed parity."
+      },
+      "baselineFormalControlledRaster": {
+        "independentOracle": {
+          "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-performance-comparison-20261024/windows/formal-v2/oracle.json",
+          "bytes": 342270,
+          "sha256": "8289C7C6B06523C32A6DFD4F005202FDD000D91504A727E1DB3A7E8684356A2D"
+        },
+        "actualArchivedAssemblies": {
+          "manifest": {
+            "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-performance-comparison-20261024/windows/formal-v2/measured-assemblies.json",
+            "bytes": 1384,
+            "sha256": "958EFED61F2B332A4EAD3A7476B587FA2824C1667D2C549F94B40036F60CE36B"
+          },
+          "actualFilesVerified": 6,
+          "files": [
+            {
+              "name": "Charts.NativeBenchmarks.dll",
+              "path": "measured-assemblies/Charts.NativeBenchmarks.dll",
+              "sha256": "41F5742B856A20F9BD584ECFB227432BA19F6962A8E0AA5E1A035A22EDF0668A",
+              "bytes": 191488
+            },
+            {
+              "name": "Charts.NativeBenchmarks.runtimeconfig.json",
+              "path": "measured-assemblies/Charts.NativeBenchmarks.runtimeconfig.json",
+              "sha256": "00061A24F24E3F3BF9003E948FF87F7451AA89C84C99193D000756937E015C83",
+              "bytes": 392
+            },
+            {
+              "name": "Charts.NativeBenchmarks.deps.json",
+              "path": "measured-assemblies/Charts.NativeBenchmarks.deps.json",
+              "sha256": "38D59B6386637FB28471B84E592DAB9E0AE46B8D0877B0CC5DC5C307E1B0674F",
+              "bytes": 24995
+            },
+            {
+              "name": "NT.AvaloniaControl.Charts.dll",
+              "path": "measured-assemblies/NT.AvaloniaControl.Charts.dll",
+              "sha256": "1358F639B03914B9E017C78D4AE797CD8B037B1D404F477CB3023933A31207C5",
+              "bytes": 2377728
+            },
+            {
+              "name": "NT.AvaloniaControl.Charts.Themes.dll",
+              "path": "measured-assemblies/NT.AvaloniaControl.Charts.Themes.dll",
+              "sha256": "5EA911B93E97689188F1F14DBDF41C8531DCF495431A886625925E6AFA2CD14F",
+              "bytes": 25600
+            },
+            {
+              "name": "Avalonia.Base.dll",
+              "path": "measured-assemblies/Avalonia.Base.dll",
+              "sha256": "6F9C3E0C4F1D1842657163363AF99E770807005E639D3A3F944DB27F3E7D6FE3",
+              "bytes": 2259456
+            }
+          ],
+          "harnessSha256": "41F5742B856A20F9BD584ECFB227432BA19F6962A8E0AA5E1A035A22EDF0668A",
+          "chartsSha256": "1358F639B03914B9E017C78D4AE797CD8B037B1D404F477CB3023933A31207C5"
+        }
+      },
+      "headlessRegression": {
+        "process": {
+          "path": "windows/full-tests-v2/supervisor/process.json",
+          "bytes": 1030,
+          "sha256": "246E94FB090013F1425AEF4DE897764616EEABB7A9EBAE1DC70AA13E720990A0"
+        },
+        "trx": {
+          "path": "windows/full-tests-v2/results/full-v2.trx",
+          "bytes": 4748098,
+          "sha256": "2EB73ADA4FB148AF9294BD59513140E6891CB13C748013FECC1B5306492738C6"
+        },
+        "passed": true,
+        "outcome": "Completed",
+        "counters": {
+          "total": 3207,
+          "executed": 3207,
+          "passed": 3207,
+          "failed": 0,
+          "error": 0,
+          "timeout": 0,
+          "aborted": 0,
+          "inconclusive": 0,
+          "passedButRunAborted": 0,
+          "notRunnable": 0,
+          "notExecuted": 0,
+          "disconnected": 0,
+          "warning": 0,
+          "completed": 0,
+          "inProgress": 0,
+          "pending": 0
+        },
+        "workingDirectory": "D:\\Procedure\\AvaloniaControl",
+        "qualification": "Headless regression evidence; separate from timed native performance.",
+        "additionalV4AllocationFixture": {
+          "process": {
+            "path": "windows/allocation-fixture-v4/supervisor/process.json",
+            "bytes": 900,
+            "sha256": "78EBC8DCC426AECF8E8287B81FF2525ECC889B55B9B1779B2EA8CA63C2D8331B"
+          },
+          "stdout": {
+            "path": "windows/allocation-fixture-v4/supervisor/stdout.log",
+            "bytes": 861,
+            "sha256": "D3CBF9F8ED4EC4574CEA45D867697D782A38F9802F915A85D61F18B6FA58EC26"
+          },
+          "passed": true,
+          "passedTests": 1,
+          "qualification": "Additional source-v4 allocation-measurement fixture check after the earlier Windows full suite. Fixture change moves setup allocation outside the measured traversal; no product budget relaxation."
+        },
+        "provenanceQualification": "Windows full-tests-v2 is the retained earlier 3207-test receipt after native-pen optimization removal; source-v4 changes only the allocation measurement fixture from v3, tested separately here. A full-v4 Windows suite is not claimed."
+      },
+      "rasterFidelity": {
+        "comparison": {
+          "path": "windows/fidelity-finalv4.json",
+          "bytes": 59481,
+          "sha256": "67E9B36BC70A4FCAD2E8D32C3A990286F2FDD1EC3E2976F4BB049DF5EB0D3B29"
+        },
+        "baselineManifest": {
+          "path": "windows/fidelity-baseline-v4/images/fidelity.json",
+          "bytes": 39884,
+          "sha256": "2E5A8718C08B9A81AD6D34A69AE2561C4B82195B07D8B4DFB872F9BC9A67FFEC"
+        },
+        "candidateManifest": {
+          "path": "windows/fidelity-candidate-v4/images/fidelity.json",
+          "bytes": 39812,
+          "sha256": "8D67BE2254A91B5B46101767AE12603BCE538571A48C62F4725D2282C54AC3F2"
+        },
+        "passed": true,
+        "images": 168,
+        "decodedPixelsIdentical": 168,
+        "encodedIdentical": 168,
+        "actualPngHashesVerified": 336,
+        "baselineChartsSha256": "1358F639B03914B9E017C78D4AE797CD8B037B1D404F477CB3023933A31207C5",
+        "candidateChartsSha256": "35F8EBE9EBB73515F4D97E2916738E72D441C52A16A736DD9F2D8FF9B04E8A58",
+        "sameHarnessSha256": "5875E6CD4ED4710E0FF4D7E81639973F8A37536EA6FB3BA36ECE1CCC3C085B93",
+        "platform": "windows",
+        "qualification": "Same OS, 96/144 DPI, all declared pixels exact with no tolerance. Collector rehashes files and preserves the independent decoded-pixel comparison; no new PNG decode or performance qualification."
+      },
+      "compactComparisonPlatformKey": "platforms.windows",
+      "frozenSourceRoot": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7-optimization\\windows-source-v4",
+      "originalCorpusFidelity": {
+        "comparison": {
+          "path": "windows/corpus-fidelity-finalv4.json",
+          "bytes": 40929,
+          "sha256": "C43BDB6F64EC500BED736E8BF8BFA800F2F52B9156B4AF2AD0B3D6604EB6FD96"
+        },
+        "images": 120,
+        "encodedBytesIdentical": 120,
+        "passed": true,
+        "qualification": "Same-OS baseline/candidate first-state PNGs from all 5 interaction replicas and 100 first-use replicas. Same corpus/revision/viewport. Exact pixel equality, no tolerance; no cross-OS comparison or timing pooling."
+      }
+    },
+    "linux": {
+      "officialReference": {
+        "status": "blocked-reference",
+        "availability": {
+          "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-performance-comparison-20261024/linux/reference-v1/result.json",
+          "bytes": 2425,
+          "sha256": "59F8702D15C4655C6CF9F651F15F20587EB0CDB3DEDC284758338DD10180144C"
+        },
+        "referenceValue": null,
+        "ratio": null
+      },
+      "formalControlledRaster": {
+        "execution": {
+          "path": "linux/formal-v4/results.json",
+          "bytes": 152582,
+          "sha256": "903ABAFE7612973BDF85A96E54561F08ABADD94D2559F12B633B3F1DA2D3724E"
+        },
+        "campaign": {
+          "path": "linux/formal-v4/campaign.json",
+          "bytes": 17630,
+          "sha256": "19E914162E76527CBD0AD3E079E414D9983066F78102CBC05383047CF83D869D"
+        },
+        "independentOracle": {
+          "path": "linux/formal-v4/oracle.json",
+          "bytes": 337307,
+          "sha256": "870BE8215999DD218DD5A4A528C6DE3F32F1CD55A5529460984A6DAA9CC3D4A1"
+        },
+        "protocolSha256": "7E633452EA83F4A9342C68093FE597DFB0CF4B18491D21660DE70EBE73EC5463",
+        "sourceBefore": {
+          "path": "linux/formal-v4/source-before.json",
+          "bytes": 54113,
+          "sha256": "2384A0DC323A699E7D9D6293E49CD91835D58CD0BC46ECDB3D4F3802BE5BEAED"
+        },
+        "sourceAfter": {
+          "path": "linux/formal-v4/source-after.json",
+          "bytes": 54113,
+          "sha256": "2384A0DC323A699E7D9D6293E49CD91835D58CD0BC46ECDB3D4F3802BE5BEAED"
+        },
+        "sourceInputsUnchanged": true,
+        "actualArchivedAssemblies": {
+          "manifest": {
+            "path": "linux/formal-v4/measured-assemblies.json",
+            "bytes": 1346,
+            "sha256": "8D66E1441AA771DA6A96863B6E356221774D21FAA95A3A0FEB457A685DBDDEBF"
+          },
+          "actualFilesVerified": 6,
+          "files": [
+            {
+              "name": "Charts.NativeBenchmarks.dll",
+              "path": "measured-assemblies/Charts.NativeBenchmarks.dll",
+              "sha256": "40BA52F1DA8EE8A7E7DCDF8426DCF184BA4F70125B57776CD84E2CDFA7B2F3BD",
+              "bytes": 227328
+            },
+            {
+              "name": "Charts.NativeBenchmarks.runtimeconfig.json",
+              "path": "measured-assemblies/Charts.NativeBenchmarks.runtimeconfig.json",
+              "sha256": "ED6E5AA4DA7BECB3A7550664863B9349BEA8472987D122C8AB063F622F7A483B",
+              "bytes": 379
+            },
+            {
+              "name": "Charts.NativeBenchmarks.deps.json",
+              "path": "measured-assemblies/Charts.NativeBenchmarks.deps.json",
+              "sha256": "FD352AA0AB0FF36F022C182A371DC8E4A10CDB52EFB2C0289F61EEA56EC71BC6",
+              "bytes": 24295
+            },
+            {
+              "name": "NT.AvaloniaControl.Charts.dll",
+              "path": "measured-assemblies/NT.AvaloniaControl.Charts.dll",
+              "sha256": "B738C2D3E304A1EEC21DFEFE82679D820865952BE3FF3B6CE1739F3889132CF0",
+              "bytes": 2386432
+            },
+            {
+              "name": "NT.AvaloniaControl.Charts.Themes.dll",
+              "path": "measured-assemblies/NT.AvaloniaControl.Charts.Themes.dll",
+              "sha256": "65C7A1ECF135420330B2CF083A579D617D512EC33F3B47079B46B363A8570649",
+              "bytes": 25600
+            },
+            {
+              "name": "Avalonia.Base.dll",
+              "path": "measured-assemblies/Avalonia.Base.dll",
+              "sha256": "6F9C3E0C4F1D1842657163363AF99E770807005E639D3A3F944DB27F3E7D6FE3",
+              "bytes": 2259456
+            }
+          ],
+          "harnessSha256": "40BA52F1DA8EE8A7E7DCDF8426DCF184BA4F70125B57776CD84E2CDFA7B2F3BD",
+          "chartsSha256": "B738C2D3E304A1EEC21DFEFE82679D820865952BE3FF3B6CE1739F3889132CF0"
+        },
+        "evidenceIntegrityPassed": true,
+        "workloadSchedulesPassed": false,
+        "absoluteHitGatesPassed": true,
+        "formalMeasurementProtocolCompleted": false,
+        "executionPassed": false,
+        "failedNativeProcesses": [
+          {
+            "id": "interaction-1",
+            "exitCode": 1,
+            "timedOut": false,
+            "terminalRawPresent": true
+          },
+          {
+            "id": "interaction-2",
+            "exitCode": 1,
+            "timedOut": false,
+            "terminalRawPresent": true
+          },
+          {
+            "id": "interaction-3",
+            "exitCode": 1,
+            "timedOut": false,
+            "terminalRawPresent": true
+          },
+          {
+            "id": "interaction-4",
+            "exitCode": 1,
+            "timedOut": false,
+            "terminalRawPresent": true
+          },
+          {
+            "id": "interaction-5",
+            "exitCode": 1,
+            "timedOut": false,
+            "terminalRawPresent": true
+          }
+        ],
+        "processes": 107,
+        "tracks": {
+          "S10-L-exact": {
+            "independentProcesses": 5,
+            "workloadSchedulesPassed": true,
+            "statisticsQualification": "Full fixed workload",
+            "absoluteHitGateStatus": "passed",
+            "observedPooledMetrics": {
+              "sourceApplyMs": {
+                "count": 9000,
+                "p50": 0.048671,
+                "p95": 0.29803,
+                "p99": 0.451649,
+                "maximum": 7.14946,
+                "minimum": 0.00167,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareMs": {
+                "count": 9000,
+                "p50": 0.112055,
+                "p95": 1.105087,
+                "p99": 3.137312,
+                "maximum": 7.865056,
+                "minimum": 0.00241,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordMs": {
+                "count": 9000,
+                "p50": 0.381939,
+                "p95": 2.123006,
+                "p99": 2.851486,
+                "maximum": 7.31197,
+                "minimum": 0.087041,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterMs": {
+                "count": 9000,
+                "p50": 2.91114,
+                "p95": 8.704933,
+                "p99": 9.838302,
+                "maximum": 18.690838,
+                "minimum": 1.453538,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitMs": {
+                "count": 9000,
+                "p50": 0.012362,
+                "p95": 0.019283,
+                "p99": 0.027831,
+                "maximum": 2.162785,
+                "minimum": 0.005087,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "requestToControlledRasterMs": {
+                "count": 9000,
+                "p50": 4.538541,
+                "p95": 10.948123,
+                "p99": 12.74464,
+                "maximum": 19.088198,
+                "minimum": 1.902468,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 9000,
+                "p50": 1104,
+                "p95": 402288,
+                "p99": 402288,
+                "maximum": 402768,
+                "minimum": 304,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareAllocatedBytes": {
+                "count": 9000,
+                "p50": 13528,
+                "p95": 1423392,
+                "p99": 1423656,
+                "maximum": 1428440,
+                "minimum": 144,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordAllocatedBytes": {
+                "count": 9000,
+                "p50": 118328,
+                "p95": 124832,
+                "p99": 125096,
+                "maximum": 144880,
+                "minimum": 113312,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 9000,
+                "p50": 5992,
+                "p95": 6000,
+                "p99": 10952,
+                "maximum": 14320,
+                "minimum": 5640,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitAllocatedBytes": {
+                "count": 9000,
+                "p50": 392,
+                "p95": 472,
+                "p99": 736,
+                "maximum": 7752,
+                "minimum": 392,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 9000,
+                "p50": 5.992948,
+                "p95": 11.507184,
+                "p99": 14.568367,
+                "maximum": 33.89305,
+                "minimum": 1.915996,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "queueLatenessMs": {
+                "count": 9000,
+                "p50": 0.102102,
+                "p95": 2.974163,
+                "p99": 3.422713,
+                "maximum": 28.654973,
+                "minimum": 0.00238,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              }
+            },
+            "framePipelineStatus": "unmeasured",
+            "presentStatus": "blocked-present",
+            "officialRatio": null,
+            "referenceStatus": "blocked-reference"
+          },
+          "S10-S-exact": {
+            "independentProcesses": 5,
+            "workloadSchedulesPassed": false,
+            "statisticsQualification": "Observed completed samples from a partial/failed workload; not a full-workload pass.",
+            "absoluteHitGateStatus": "passed",
+            "observedPooledMetrics": {
+              "sourceApplyMs": {
+                "count": 5545,
+                "p50": 0.028851,
+                "p95": 0.26383,
+                "p99": 0.305883,
+                "maximum": 8.247072,
+                "minimum": 0.001759,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareMs": {
+                "count": 5545,
+                "p50": 0.078415,
+                "p95": 1.006782,
+                "p99": 2.021489,
+                "maximum": 11.629716,
+                "minimum": 0.002712,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordMs": {
+                "count": 5545,
+                "p50": 6.281314,
+                "p95": 34.531435,
+                "p99": 39.959442,
+                "maximum": 51.706311,
+                "minimum": 0.922259,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterMs": {
+                "count": 5545,
+                "p50": 6.839613,
+                "p95": 49.498106,
+                "p99": 51.921015,
+                "maximum": 67.765109,
+                "minimum": 4.940392,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitMs": {
+                "count": 5545,
+                "p50": 0.020357,
+                "p95": 0.026968,
+                "p99": 0.034298,
+                "maximum": 12.55068,
+                "minimum": 0.006932,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "requestToControlledRasterMs": {
+                "count": 5545,
+                "p50": 12.999169,
+                "p95": 82.794535,
+                "p99": 89.01358,
+                "maximum": 101.851722,
+                "minimum": 6.05359,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 5545,
+                "p50": 1104,
+                "p95": 402288,
+                "p99": 402288,
+                "maximum": 402288,
+                "minimum": 304,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareAllocatedBytes": {
+                "count": 5545,
+                "p50": 14072,
+                "p95": 1424032,
+                "p99": 1424296,
+                "maximum": 1431112,
+                "minimum": 144,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordAllocatedBytes": {
+                "count": 5545,
+                "p50": 1949896,
+                "p95": 12558528,
+                "p99": 12712472,
+                "maximum": 12727240,
+                "minimum": 1947736,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 5545,
+                "p50": 6184,
+                "p95": 8056,
+                "p99": 12968,
+                "maximum": 14512,
+                "minimum": 6000,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitAllocatedBytes": {
+                "count": 5545,
+                "p50": 392,
+                "p95": 472,
+                "p99": 736,
+                "maximum": 896,
+                "minimum": 392,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 5545,
+                "p50": 12970.839073,
+                "p95": 25531.451547,
+                "p99": 25983.033777,
+                "maximum": 26604.037849,
+                "minimum": 6.194963,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "queueLatenessMs": {
+                "count": 5545,
+                "p50": 12949.764132,
+                "p95": 25504.682447,
+                "p99": 25942.315776,
+                "maximum": 26530.460752,
+                "minimum": 0.002274,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              }
+            },
+            "framePipelineStatus": "unmeasured",
+            "presentStatus": "blocked-present",
+            "officialRatio": null,
+            "referenceStatus": "blocked-reference"
+          },
+          "S10-B-exact": {
+            "independentProcesses": 5,
+            "workloadSchedulesPassed": true,
+            "statisticsQualification": "Full fixed workload",
+            "absoluteHitGateStatus": "passed",
+            "observedPooledMetrics": {
+              "sourceApplyMs": {
+                "count": 9000,
+                "p50": 0.024658,
+                "p95": 0.240341,
+                "p99": 0.365843,
+                "maximum": 13.729136,
+                "minimum": 0.001315,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareMs": {
+                "count": 9000,
+                "p50": 0.79114,
+                "p95": 2.537491,
+                "p99": 6.793656,
+                "maximum": 17.239184,
+                "minimum": 0.002472,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordMs": {
+                "count": 9000,
+                "p50": 5.289509,
+                "p95": 27.345948,
+                "p99": 38.659749,
+                "maximum": 50.382391,
+                "minimum": 0.879827,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterMs": {
+                "count": 9000,
+                "p50": 1.65354,
+                "p95": 8.350813,
+                "p99": 9.304964,
+                "maximum": 20.980966,
+                "minimum": 0.868476,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitMs": {
+                "count": 9000,
+                "p50": 0.15467,
+                "p95": 2.44737,
+                "p99": 2.851407,
+                "maximum": 17.499547,
+                "minimum": 0.011517,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "requestToControlledRasterMs": {
+                "count": 9000,
+                "p50": 9.623245,
+                "p95": 36.135346,
+                "p99": 49.628536,
+                "maximum": 61.019566,
+                "minimum": 2.533509,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 9000,
+                "p50": 1184,
+                "p95": 404264,
+                "p99": 404264,
+                "maximum": 404272,
+                "minimum": 304,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareAllocatedBytes": {
+                "count": 9000,
+                "p50": 436792,
+                "p95": 2303784,
+                "p99": 2304224,
+                "maximum": 2305736,
+                "minimum": 144,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordAllocatedBytes": {
+                "count": 9000,
+                "p50": 1963400,
+                "p95": 18905400,
+                "p99": 18905904,
+                "maximum": 18911952,
+                "minimum": 1947576,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 9000,
+                "p50": 4944,
+                "p95": 6504,
+                "p99": 11800,
+                "maximum": 13088,
+                "minimum": 4592,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitAllocatedBytes": {
+                "count": 9000,
+                "p50": 66592,
+                "p95": 818616,
+                "p99": 818920,
+                "maximum": 818920,
+                "minimum": 392,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 9000,
+                "p50": 976.076839,
+                "p95": 1764.480893,
+                "p99": 1999.521867,
+                "maximum": 2203.333196,
+                "minimum": 2.828857,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "queueLatenessMs": {
+                "count": 9000,
+                "p50": 961.078942,
+                "p95": 1750.241319,
+                "p99": 1983.649717,
+                "maximum": 2190.340319,
+                "minimum": 0.003257,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              }
+            },
+            "framePipelineStatus": "unmeasured",
+            "presentStatus": "blocked-present",
+            "officialRatio": null,
+            "referenceStatus": "blocked-reference"
+          },
+          "S100-L-minmax": {
+            "independentProcesses": 5,
+            "workloadSchedulesPassed": true,
+            "statisticsQualification": "Full fixed workload",
+            "absoluteHitGateStatus": "passed",
+            "observedPooledMetrics": {
+              "sourceApplyMs": {
+                "count": 9000,
+                "p50": 0.03222,
+                "p95": 2.30701,
+                "p99": 13.077453,
+                "maximum": 29.293454,
+                "minimum": 0.001353,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareMs": {
+                "count": 9000,
+                "p50": 0.082515,
+                "p95": 21.64291,
+                "p99": 28.191728,
+                "maximum": 46.70039,
+                "minimum": 0.002058,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordMs": {
+                "count": 9000,
+                "p50": 1.185026,
+                "p95": 4.150546,
+                "p99": 15.810829,
+                "maximum": 22.854971,
+                "minimum": 0.084711,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterMs": {
+                "count": 9000,
+                "p50": 5.825572,
+                "p95": 11.89211,
+                "p99": 12.590492,
+                "maximum": 28.310757,
+                "minimum": 3.856929,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitMs": {
+                "count": 9000,
+                "p50": 0.019643,
+                "p95": 0.027945,
+                "p99": 0.035301,
+                "maximum": 0.264397,
+                "minimum": 0.006536,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "requestToControlledRasterMs": {
+                "count": 9000,
+                "p50": 11.144456,
+                "p95": 36.747212,
+                "p99": 48.070971,
+                "maximum": 67.102658,
+                "minimum": 5.045634,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "sourceApplyAllocatedBytes": {
+                "count": 9000,
+                "p50": 1104,
+                "p95": 4002288,
+                "p99": 4002288,
+                "maximum": 4009704,
+                "minimum": 304,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "prepareAllocatedBytes": {
+                "count": 9000,
+                "p50": 13536,
+                "p95": 14193960,
+                "p99": 14194336,
+                "maximum": 14202096,
+                "minimum": 144,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "recordAllocatedBytes": {
+                "count": 9000,
+                "p50": 173848,
+                "p95": 251400,
+                "p99": 251544,
+                "maximum": 256768,
+                "minimum": 119512,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "controlledRasterAllocatedBytes": {
+                "count": 9000,
+                "p50": 5824,
+                "p95": 6000,
+                "p99": 8392,
+                "maximum": 13960,
+                "minimum": 5640,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "hitAllocatedBytes": {
+                "count": 9000,
+                "p50": 392,
+                "p95": 472,
+                "p99": 472,
+                "maximum": 896,
+                "minimum": 392,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "scheduledToControlledRasterMs": {
+                "count": 9000,
+                "p50": 15.475769,
+                "p95": 47.162832,
+                "p99": 61.490566,
+                "maximum": 167.287316,
+                "minimum": 5.253679,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              },
+              "queueLatenessMs": {
+                "count": 9000,
+                "p50": 2.680642,
+                "p95": 31.626695,
+                "p99": 45.85809,
+                "maximum": 152.02775,
+                "minimum": 0.002474,
+                "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+                "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+              }
+            },
+            "framePipelineStatus": "unmeasured",
+            "presentStatus": "blocked-present",
+            "officialRatio": null,
+            "referenceStatus": "blocked-reference"
+          }
+        },
+        "firstUse": {
+          "independentFormalProcesses": 100,
+          "observedNonCalibrationProcesses": 100,
+          "calibrationsExcluded": 2,
+          "controlledRasterMs": {
+            "count": 100,
+            "p50": 1236.162638,
+            "p95": 1292.219544,
+            "p99": 1390.755772,
+            "maximum": 1440.085748,
+            "minimum": 1203.84511,
+            "percentileMethod": "nearest-rank-ceil(p*N)-one-based",
+            "qualification": "Observed samples; p99 is descriptive, not a tail-latency SLA."
+          },
+          "nominalSoftwareDiagnosticBudgetMs": 3000,
+          "nominalDiagnosticTargetMet": true,
+          "formalFirstUsableToRenderGate": "unmeasured-not-the-controlled-raster-boundary",
+          "millionPointHitTailStatus": "deferred-by-user"
+        },
+        "scope": "Native software controlled raster and original-data query observations; no compositor present, hardware qualification, actual peak-memory SLA or licensed parity."
+      },
+      "baselineFormalControlledRaster": {
+        "independentOracle": {
+          "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-performance-comparison-20261024/linux/formal-v2/oracle.json",
+          "bytes": 342420,
+          "sha256": "609C24CD9B30B8A6CEE606746E90CACE2AB01CF5CD2A45B668A870FE5D2F2953"
+        },
+        "actualArchivedAssemblies": {
+          "manifest": {
+            "path": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-performance-comparison-20261024/linux/formal-v2/measured-assemblies.json",
+            "bytes": 1346,
+            "sha256": "A02B10CF8FDB399BD88BCC9391E3D3525CFDA7D6D61A5E579746F270EAECE8F1"
+          },
+          "actualFilesVerified": 6,
+          "files": [
+            {
+              "name": "Charts.NativeBenchmarks.dll",
+              "path": "measured-assemblies/Charts.NativeBenchmarks.dll",
+              "sha256": "7AC324E83F04A1748198727706ABDC0EB454D1FE2B30A96CFA32040FE9BDECC0",
+              "bytes": 191488
+            },
+            {
+              "name": "Charts.NativeBenchmarks.runtimeconfig.json",
+              "path": "measured-assemblies/Charts.NativeBenchmarks.runtimeconfig.json",
+              "sha256": "ED6E5AA4DA7BECB3A7550664863B9349BEA8472987D122C8AB063F622F7A483B",
+              "bytes": 379
+            },
+            {
+              "name": "Charts.NativeBenchmarks.deps.json",
+              "path": "measured-assemblies/Charts.NativeBenchmarks.deps.json",
+              "sha256": "FD352AA0AB0FF36F022C182A371DC8E4A10CDB52EFB2C0289F61EEA56EC71BC6",
+              "bytes": 24295
+            },
+            {
+              "name": "NT.AvaloniaControl.Charts.dll",
+              "path": "measured-assemblies/NT.AvaloniaControl.Charts.dll",
+              "sha256": "8F125C78B818E56C86581AE9B8ECB5EF79E27488FF98DC1C677BB0040FB99959",
+              "bytes": 2377728
+            },
+            {
+              "name": "NT.AvaloniaControl.Charts.Themes.dll",
+              "path": "measured-assemblies/NT.AvaloniaControl.Charts.Themes.dll",
+              "sha256": "52C81EFF5FDD752A5DDEF39FAFE4CF002A1A66F9A8F2D33A2B285905BC263905",
+              "bytes": 25600
+            },
+            {
+              "name": "Avalonia.Base.dll",
+              "path": "measured-assemblies/Avalonia.Base.dll",
+              "sha256": "6F9C3E0C4F1D1842657163363AF99E770807005E639D3A3F944DB27F3E7D6FE3",
+              "bytes": 2259456
+            }
+          ],
+          "harnessSha256": "7AC324E83F04A1748198727706ABDC0EB454D1FE2B30A96CFA32040FE9BDECC0",
+          "chartsSha256": "8F125C78B818E56C86581AE9B8ECB5EF79E27488FF98DC1C677BB0040FB99959"
+        }
+      },
+      "headlessRegression": {
+        "process": {
+          "path": "linux/full-tests-v4/supervisor/process.json",
+          "bytes": 1043,
+          "sha256": "E5A2835E533EE94B0E7643A175A6EC1F5AA1C3354299A4F28949DF52FDF43E11"
+        },
+        "trx": {
+          "path": "linux/full-tests-v4/results/full-v4.trx",
+          "bytes": 5023898,
+          "sha256": "5ABB3B027A34D52AF3EC9F85B3F1ADB854339CAE7CD5ECDAEFC400C02CE8354E"
+        },
+        "passed": true,
+        "outcome": "Completed",
+        "counters": {
+          "total": 3207,
+          "executed": 3207,
+          "passed": 3207,
+          "failed": 0,
+          "error": 0,
+          "timeout": 0,
+          "aborted": 0,
+          "inconclusive": 0,
+          "passedButRunAborted": 0,
+          "notRunnable": 0,
+          "notExecuted": 0,
+          "disconnected": 0,
+          "warning": 0,
+          "completed": 0,
+          "inProgress": 0,
+          "pending": 0
+        },
+        "workingDirectory": "/mnt/d/Procedure/AvaloniaControl/artifacts/c7-optimization/linux-source-v4",
+        "qualification": "Headless regression evidence; separate from timed native performance."
+      },
+      "rasterFidelity": {
+        "comparison": {
+          "path": "linux/fidelity-finalv4.json",
+          "bytes": 59453,
+          "sha256": "61466A162D891A7E80BE59A313EB9D9F24D13344A60A6F3856832DB392683A3D"
+        },
+        "baselineManifest": {
+          "path": "linux/fidelity-baseline-v4/images/fidelity.json",
+          "bytes": 39483,
+          "sha256": "1D728E70CF6AB9D76539EF2E6A2FC80D352EBF55B2BBADF069B9D04E1F0C9795"
+        },
+        "candidateManifest": {
+          "path": "linux/fidelity-candidate-v4/images/fidelity.json",
+          "bytes": 39343,
+          "sha256": "512B5C24B1C31D543A0243568F36E736B844E7B84ADB133A9047C951C4909312"
+        },
+        "passed": true,
+        "images": 168,
+        "decodedPixelsIdentical": 168,
+        "encodedIdentical": 168,
+        "actualPngHashesVerified": 336,
+        "baselineChartsSha256": "8F125C78B818E56C86581AE9B8ECB5EF79E27488FF98DC1C677BB0040FB99959",
+        "candidateChartsSha256": "B738C2D3E304A1EEC21DFEFE82679D820865952BE3FF3B6CE1739F3889132CF0",
+        "sameHarnessSha256": "40BA52F1DA8EE8A7E7DCDF8426DCF184BA4F70125B57776CD84E2CDFA7B2F3BD",
+        "platform": "linux",
+        "qualification": "Same OS, 96/144 DPI, all declared pixels exact with no tolerance. Collector rehashes files and preserves the independent decoded-pixel comparison; no new PNG decode or performance qualification."
+      },
+      "compactComparisonPlatformKey": "platforms.linux",
+      "frozenSourceRoot": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7-optimization\\linux-source-v4",
+      "originalCorpusFidelity": {
+        "comparison": {
+          "path": "linux/corpus-fidelity-finalv4.json",
+          "bytes": 40927,
+          "sha256": "C8702A524FED12389DFE7EB0FC8B8C9064A9CC7B81952EB8E24D3D323165E29A"
+        },
+        "images": 120,
+        "encodedBytesIdentical": 120,
+        "passed": true,
+        "qualification": "Same-OS baseline/candidate first-state PNGs from all 5 interaction replicas and 100 first-use replicas. Same corpus/revision/viewport. Exact pixel equality, no tolerance; no cross-OS comparison or timing pooling."
+      }
+    }
+  },
+  "rasterFidelityImagesTotal": 336,
+  "officialComparison": {
+    "status": "blocked-reference",
+    "reference": null,
+    "ratio": null
+  },
+  "formalFrameOrPresentSlaPassed": null,
+  "actualPeakPrivateMemorySlaPassed": null,
+  "physicalHardwareValidated": false,
+  "remoteCiExecuted": false,
+  "newCiUploadEnabled": false,
+  "userDecisions": {
+    "hardware": "Physical desktops, hardware GPU and physical touch remain deferred.",
+    "officialLicense": "No license; own measurements and blocked official reference remain separate."
+  },
+  "remainingIssues": [
+    "Any failed fixed-slot workload and its pending/partial samples remain failed in this receipt and compact comparison.",
+    "Official licensed adapter and 1.25 comparisons remain blocked; no reference value or ratio is invented.",
+    "Controlled raster and record are not composition/framePipeline/present; formal frame and present SLA remain unmeasured.",
+    "Whole-process endpoints are not actual peak private/native/GPU memory, long-soak or hardware qualification.",
+    "Physical Ubuntu 22.04/24.04 desktop/GPU/touch verification is deferred; WSLg is not physical certification.",
+    "Million-point hit-tail optimization and native UIA/AT-SPI selection bridge remain deferred."
+  ],
+  "collectionReceipt": {
+    "path": "validation-finalv4.json",
+    "bytes": 76797,
+    "sha256": "40A7210CD2ABADC488B0D3F3F857E9020DCF216BAE53B8F044F412E03C034407"
+  },
+  "originalCorpusFidelityImagesTotal": 240,
+  "exactByteIdenticalImagesTotal": 576,
+  "rejectedCircleMerge": {
+    "acceptedForProduction": false,
+    "independentDecode": {
+      "path": "windows/circle-experiment-v1/independent-rejection.json",
+      "bytes": 665,
+      "sha256": "D0F6FC6926A7E27DA82EACA1D290B57B07B4460D9104664C16CC494F6AA9C674"
+    },
+    "producer": {
+      "path": "windows/circle-experiment-v1/images/circle-paint-experiment.json",
+      "bytes": 626868,
+      "sha256": "66D0A6FEF83DCBF26C5F4DF0D714D44EB83AB182C94C8A3987E0CC682D1412F8"
+    },
+    "caseComparisons": 3072,
+    "qualification": "Untimed negative quality experiment; any pixel difference rejects replacement."
+  },
+  "allocationDiagnostic": {
+    "trace": {
+      "path": "windows/scatter-trace-v1/trace.nettrace",
+      "bytes": 57319870,
+      "sha256": "C6A81B7C1E70C6CE96BCE6D594D4927C4103C2AF9C63219CC6FA1386215D8BA5"
+    },
+    "analysis": {
+      "path": "windows/scatter-trace-v1/analysis.json",
+      "bytes": 428885,
+      "sha256": "1FE2E384D2C804C87A7343E1C1B84AB593EA8E9D654572F8B1AA95A97FB83434"
+    },
+    "qualification": "Statistical EventPipe observation, reported loss 0; traced timings excluded from formal measurements."
+  },
+  "preservedWrapperFailure": {
+    "execution": {
+      "path": "linux/regression-v4-supervisor/process.json",
+      "bytes": 836,
+      "sha256": "7E96022C3778E5643B4B9777A89869C66D11B1ACC35059CF6A345183EEEF6475"
+    },
+    "failedHelper": {
+      "path": "Run-LinuxRegression.ps1",
+      "bytes": 2656,
+      "sha256": "F0517D6813895D20DA6CBAE78335231F89E9906351AAB1B05142D61982815DA0"
+    },
+    "recoveryHelper": {
+      "path": "Run-LinuxBaseline.ps1",
+      "bytes": 1672,
+      "sha256": "77A93653D7DE83C1A2A601B951D31052F5CB1EF4B4EBCA271476ACCC6E475F9D"
+    },
+    "recovery": {
+      "path": "linux/baseline-v4-supervisor/process.json",
+      "bytes": 778,
+      "sha256": "330BE93AF9F370415F1C721E29ADF27964151E6745739C84733625F19BB0E1D7"
+    },
+    "reason": "Wrong historical formal-v4 archive path; corrected through a fresh host-v5 using actual formal-v2. Not a native timing sample."
+  },
+  "additionalImmutablePolicy": {
+    "path": "scripts/charts-ci-performance-policy.json",
+    "sha256": "CF6832A53E21E078C554F51194D93541F0B093AFF1C67D7E031EC177B8E87377"
+  }
+}

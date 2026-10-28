@@ -48,3 +48,10 @@ public enum PdfFontEmbeddingMode
 
 /// <summary>A session-owned FreeText annotation identified by its persisted PDF /NM.</summary>
 public sealed record PdfFreeTextAnnotation(Guid Id, int PageIndex, PdfEditRectangle Bounds, string Text);
+
+/// <summary>
+/// A user bookmark persisted with the edited PDF. Bookmarks follow rules separate from content
+/// undo history: they never enter or roll back with it, they set the session dirty, and they are
+/// injected into the saved / exported output under a private catalog entry.
+/// </summary>
+public sealed record PdfEditUserBookmark(Guid Id, string Title, int PageIndex, PdfUserBookmarkFlags Flags);

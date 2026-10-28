@@ -62,7 +62,7 @@ public partial class TreeDataGrid
 
     internal bool BeginColumnReorder(TreeDataGridColumn column, IPointer pointer, Point position)
     {
-        if (!CanUserReorderColumns || !column.CanUserReorder || _columnDrag is not null) return false;
+        if (!ShowColumnHeaders || !CanUserReorderColumns || !column.CanUserReorder || _columnDrag is not null) return false;
         var snapshot = CaptureColumnOrder();
         var displayIndex = Array.IndexOf(snapshot.Visible, column);
         if (displayIndex < 0) return false;

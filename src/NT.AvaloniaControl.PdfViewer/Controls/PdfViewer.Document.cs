@@ -24,6 +24,7 @@ public partial class PdfViewer
     private readonly HashSet<Task> _pendingLoads = [];
     private readonly HashSet<Task> _documentReleases = [];
     private Task? _disposeCompletion;
+    private PdfDocument.StreamSource? _streamSource;
     // The failed load a password prompt can retry: same open channel, name and source, with a
     // new password. The channel re-opens the source on every attempt (files observe current
     // contents), which is what "same read" means for reopenable sources.
@@ -39,13 +40,14 @@ public partial class PdfViewer
             Path.GetFileName(path), path, password ?? Password, cancellationToken);
     }
 
-    /// <summary>Copies from the stream's current position. The caller retains ownership of the stream.</summary>
+    /// <summary>Captures from the current position once, including password retries. The caller retains ownership of the stream.</summary>
     public Task LoadDocumentAsync(Stream stream, string? password = null, CancellationToken cancellationToken = default)
     {
         VerifyAccess();
         ArgumentNullException.ThrowIfNull(stream);
         SetDocumentSourceInternally(null);
-        return LoadCoreAsync((tokenPassword, token) => PdfDocument.LoadAsync(stream, tokenPassword, leaveOpen: true, token),
+        var source = new PdfDocument.StreamSource(stream);
+        return LoadCoreAsync(source.OpenAsync,
             PdfViewerStrings.DefaultDocumentName, null, password ?? Password, cancellationToken);
     }
 
@@ -64,22 +66,37 @@ public partial class PdfViewer
         // Register before any bindable state/event is published: a handler can dispose us synchronously.
         var completion = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
         _pendingLoads.Add(completion.Task);
-        CompleteRegisteredLoadAsync(completion, open, name, source, password, cancellationToken, attemptedDocumentSource);
+        var change = BeginDocumentChange(cancellationToken);
+        CompleteRegisteredLoadAsync(completion, open, name, source, password, change.Token, attemptedDocumentSource, change.Version);
         return completion.Task;
     }
 
     private async void CompleteRegisteredLoadAsync(TaskCompletionSource completion,
         Func<string?, CancellationToken, Task<PdfDocument>> open, string name, string? source, string? password, CancellationToken token,
-        PdfDocumentSource? attemptedDocumentSource)
+        PdfDocumentSource? attemptedDocumentSource, long changeRequest)
     {
         try
         {
+            if (!await ConfirmDocumentChangeAsync(PdfDocumentChangeReason.Replace, changeRequest, token))
+            {
+                if (changeRequest == _changeRequestVersion)
+                {
+                    SetSourceInternally(_savePath);
+                    SetDocumentSourceInternally(_activeDocumentSource);
+                }
+                (open.Target as PdfDocument.StreamSource)?.Dispose();
+                throw new OperationCanceledException(new CancellationToken(true));
+            }
             await LoadCoreImplementationAsync(open, name, source, password, token, attemptedDocumentSource);
             completion.TrySetResult();
         }
         catch (OperationCanceledException error) { completion.TrySetCanceled(error.CancellationToken); }
         catch (Exception error) { completion.TrySetException(error); }
-        finally { _pendingLoads.Remove(completion.Task); }
+        finally
+        {
+            if (open.Target is PdfDocument.StreamSource owned && !ReferenceEquals(owned, _streamSource)) owned.Dispose();
+            _pendingLoads.Remove(completion.Task);
+        }
     }
 
     private async Task LoadCoreImplementationAsync(Func<string?, CancellationToken, Task<PdfDocument>> open, string name, string? source,
@@ -96,6 +113,12 @@ public partial class PdfViewer
         _loadCancellation?.Dispose();
         _loadCancellation = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
         var token = _loadCancellation.Token;
+        var streamSource = open.Target as PdfDocument.StreamSource;
+        if (!ReferenceEquals(_streamSource, streamSource))
+        {
+            _streamSource?.Dispose();
+            _streamSource = streamSource;
+        }
         PdfDocument? loaded = null;
         try
         {
@@ -120,6 +143,9 @@ public partial class PdfViewer
             _document = loaded;
             var document = loaded;
             loaded = null;
+            _activeDocumentSource = attemptedDocumentSource;
+            SetAndRaise(SavePathProperty, ref _savePath, source is null ? null : Path.GetFullPath(source));
+            EnsureCurrentLoad();
             SetAndRaise(PageCountProperty, ref _pageCount, _document.Pages.Count);
             EnsureCurrentLoad();
             CoerceValue(CurrentPageProperty);
@@ -158,7 +184,8 @@ public partial class PdfViewer
                 LoadError?.Invoke(this, EventArgs.Empty);
                 RaiseContractLoadFailed(error, attemptedDocumentSource);
                 // Password failures keep the load inputs so the built-in prompt can retry them.
-                if (error is PdfDocumentException { Kind: PdfErrorKind.PasswordRequiredOrIncorrect } && IsPasswordPromptEnabled)
+                if (version == _loadVersion && !_disposed &&
+                    error is PdfDocumentException { Kind: PdfErrorKind.PasswordRequiredOrIncorrect } && IsPasswordPromptEnabled)
                 {
                     _passwordRetry = (open, name, source, attemptedDocumentSource);
                     SetAndRaise(IsPasswordPromptVisibleProperty, ref _isPasswordPromptVisible, true);
@@ -179,11 +206,18 @@ public partial class PdfViewer
                     UpdateStatus();
                     RefreshContractState();
                 }
+                if (version == _loadVersion && _passwordRetry is null) ReleaseStreamSource();
             }
         }
         if (version == _loadVersion && !_disposed)
         {
             ResetPasswordPrompt();
+            if (!IsReadOnly && CanWriteDocument)
+            {
+                try { await EnableEditingAsync(token); }
+                catch (Exception error) when (error is NotSupportedException or InvalidDataException) { /* Reading remains available for unsupported editing structures. */ }
+            }
+            EnsureCurrentLoad();
             DocumentLoaded?.Invoke(this, EventArgs.Empty);
             if (!string.IsNullOrWhiteSpace(SearchQuery)) Observe(SearchAsync(SearchQuery));
         }
@@ -261,6 +295,12 @@ public partial class PdfViewer
         HidePasswordPrompt();
     }
 
+    private void ReleaseStreamSource()
+    {
+        _streamSource?.Dispose();
+        _streamSource = null;
+    }
+
     private void PasswordBoxKeyDown(object? sender, KeyEventArgs e)
     {
         if (e.Key == Key.Enter) { SubmitPassword(_passwordBox?.Text); e.Handled = true; }
@@ -271,8 +311,21 @@ public partial class PdfViewer
     {
         VerifyAccess();
         if (_disposed) return;
+        if (IsDirty || !_editTail.IsCompleted) Observe(RequestCloseDocumentAsync());
+        else
+        {
+            BeginDocumentChange(CancellationToken.None);
+            CloseDocumentCore();
+        }
+    }
+
+    private void CloseDocumentCore()
+    {
+        VerifyAccess();
+        if (_disposed) return;
         var version = ++_loadVersion;
         _loadCancellation?.Cancel();
+        ReleaseStreamSource();
         ResetPasswordPrompt();
         ClearDocument();
         if (version != _loadVersion || _disposed) return;
@@ -292,11 +345,23 @@ public partial class PdfViewer
     }
 
     /// <summary>Clears the current UI immediately, then waits for its canceled loads and native releases.</summary>
-    public Task CloseDocumentAsync()
+    public async Task CloseDocumentAsync()
     {
         VerifyAccess();
-        CloseDocument();
-        return AwaitDocumentReleasesAsync(_pendingLoads.ToArray());
+        // PERF01: the Release span is the UI-visible close latency; awaiting the returned task
+        // additionally covers the asynchronous native teardown (see the Release work items).
+        if (PdfPerformanceSession.Current is { } perf)
+        {
+            perf.Mark(PdfPerformanceSession.CloseRequestedMark);
+            var closeStarted = PdfPerformanceSession.Now;
+            await RequestCloseDocumentAsync();
+            perf.Record(perf.NextCorrelationId("close"), PdfPerformanceStage.Release, closeStarted, PdfPerformanceSession.Now);
+        }
+        else
+        {
+            await RequestCloseDocumentAsync();
+        }
+        await AwaitDocumentReleasesAsync(_pendingLoads.ToArray());
     }
 
     private void RetireDocument(PdfDocument? document)
@@ -319,6 +384,8 @@ public partial class PdfViewer
 
     private void ClearDocument()
     {
+        ++_navigationVersion;
+        PendingContentFit = Task.CompletedTask;
         var version = _loadVersion;
         _searchTimer.Stop();
         _searchCancellation?.Cancel();
@@ -330,6 +397,8 @@ public partial class PdfViewer
         var old = _document;
         _document = null;
         RetireDocument(old);
+        ResetEditing();
+        if (version != _loadVersion || _disposed) return;
         foreach (var thumbnail in _thumbnails) thumbnail.Image = null;
         foreach (var cached in _thumbnailCache.Values) cached.Bitmap.Dispose();
         _thumbnailCache.Clear();
@@ -472,7 +541,11 @@ public partial class PdfViewer
     {
         VerifyAccess();
         if (_disposed) return;
-        CloseDocument();
+        var disposeStarted = PdfPerformanceSession.Now;
+        if (PdfPerformanceSession.Current is { } perf)
+            perf.Mark(PdfPerformanceSession.CloseRequestedMark);
+        BeginDocumentChange(CancellationToken.None);
+        CloseDocumentCore();
         _disposed = true;
         PdfCacheGovernor.Unregister(this);
         _loadCancellation?.Cancel();
@@ -481,11 +554,19 @@ public partial class PdfViewer
         DisconnectTemplate();
         DisconnectVisibilityAncestors();
         _searchTimer.Stop();
+        _autoSaveTimer.Stop();
+        _changeRequestCancellation?.Cancel();
+        _changeRequestCancellation?.Dispose();
         _loadCancellation?.Dispose();
         _searchCancellation?.Dispose();
         _documentCancellation.Cancel();
         _documentCancellation.Dispose();
         GC.SuppressFinalize(this);
+        // PERF01: UI-side dispose latency; native teardown continues asynchronously and is
+        // recorded through the Release work items of the scheduler.
+        if (PdfPerformanceSession.Current is { } releasePerf)
+            releasePerf.Record(releasePerf.NextCorrelationId("close"), PdfPerformanceStage.Release,
+                disposeStarted, PdfPerformanceSession.Now);
     }
 
     /// <summary>Begins disposal on the UI thread and asynchronously waits for all owned native documents.</summary>

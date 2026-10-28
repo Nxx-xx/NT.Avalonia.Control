@@ -94,11 +94,16 @@ public abstract partial class TreeDataGridSource<TModel> where TModel : class
 
     private PreparedProjection PrepareProjection(List<Node> roots, ProjectionConfiguration configuration)
     {
-        var nodes = new Dictionary<NodeId, Node>();
-        var allRows = new Dictionary<NodeId, TreeDataGridRow>();
-        var paths = new Dictionary<IndexPath, NodeId>();
-        var viewIndices = new Dictionary<NodeId, int>();
-        var rows = new List<TreeDataGridRow>();
+        // These are new transactional maps, not mutations of the published snapshot. Counting the
+        // already validated graph avoids repeated large backing-array allocations during edits.
+        // Do not invoke a filter to count: predicates still run exactly once per occurrence below.
+        var (nodeCount, visibleCount) = CountProjectionNodes(roots, visible: true);
+        if (configuration.Filter is not null) visibleCount = 0;
+        var nodes = new Dictionary<NodeId, Node>(nodeCount);
+        var allRows = new Dictionary<NodeId, TreeDataGridRow>(nodeCount);
+        var paths = new Dictionary<IndexPath, NodeId>(nodeCount);
+        var viewIndices = new Dictionary<NodeId, int>(visibleCount);
+        var rows = new List<TreeDataGridRow>(visibleCount);
         _projecting = true;
         _projectionInvalidated = false;
         try
@@ -128,6 +133,20 @@ public abstract partial class TreeDataGridSource<TModel> where TModel : class
             return new PreparedProjection(roots, nodes, allRows, paths, viewIndices, rows.AsReadOnly(), configuration);
         }
         finally { _projecting = false; }
+    }
+
+    private static (int Total, int Visible) CountProjectionNodes(List<Node> roots, bool visible)
+    {
+        var total = roots.Count;
+        var shown = visible ? roots.Count : 0;
+        foreach (var node in roots)
+        {
+            if (node.Children.Count == 0) continue;
+            var descendants = CountProjectionNodes(node.Children, visible && node.IsExpanded);
+            total = checked(total + descendants.Total);
+            shown = checked(shown + descendants.Visible);
+        }
+        return (total, shown);
     }
 
     private static IEnumerable<Node> OrderSiblings(List<Node> nodes, ProjectionConfiguration configuration)

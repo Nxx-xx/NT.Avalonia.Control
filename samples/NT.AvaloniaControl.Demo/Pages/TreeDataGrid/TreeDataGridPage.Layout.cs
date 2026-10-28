@@ -13,6 +13,8 @@ internal sealed partial class TreeDataGridPage
     private readonly ComboBox _frozenColumns = new() { Width = 150, ItemsSource = new[] { "不冻结列", "冻结首列", "冻结前两列" } };
     private readonly ComboBox _rowHeightMode = new() { Width = 180, ItemsSource = new[] { "固定行高", "按内容自动行高", "每七行增加行高" } };
     private readonly CheckBox _threeStateSort = new() { Content = "排序可回到原顺序" };
+    private readonly CheckBox _showHeaders = new() { Name = "ShowColumnHeadersToggle", Content = "显示列头", IsChecked = true };
+    private readonly TextBox _prefixSearch = new() { Name = "PrefixSearchText", Width = 160, PlaceholderText = "输入前缀定位…" };
     private readonly List<DemoScenarioChoice> _scenarioChoices = [];
     private Mvvm.MvvmView _mvvmView = null!;
     private TabControl _modeTabs = null!;
@@ -70,10 +72,15 @@ internal sealed partial class TreeDataGridPage
         AddScenario("tree", "树结构与节点增删", "点击名称前的箭头展开部门。下面的操作可以批量展开，或向第一个部门添加、删除成员。", ShowTree);
         AddScenario("lazy-tree", "按需加载树", "展开唯一的分组时才创建三个子节点。再次展开不会重复加载。", ShowLazyTree);
         AddScenario("columns", "列宽与自动换行", "比较文本、三态勾选和标签模板列。拖动列头右侧调宽；选择“按内容自动行高”查看完整换行说明。", ShowColumnTypes);
+        AddScenario("column-options", "每列交互与搜索", "名称选中后单击或 F2 编辑，数量可单击编辑且只作两态排序。输入“模板搜索定位示例”定位到说明列；布局选项可隐藏列头。", ShowColumnOptionsScenario);
+        AddScenario("selection-events", "选择事务与单元格事件", "取消选择请求时保留草稿、选区和滚动位置；查看编辑及模型值变化，以及滚动时单元格准备与清理。", ShowSelectionEventsScenario);
         AddScenario("visibility", "列显隐与冻结", "勾选要显示的列，观察冻结边界、当前单元格和选区；隐藏编辑列会丢弃草稿。", ShowVisibilityScenario);
         AddScenario("appearance", "网格线与空内容", "切换四种网格线，比较空源与筛选为空；试用自定义文字或带操作按钮的空内容。", ShowAppearanceScenario);
         AddScenario("rowmoving", "行与树节点移动", "拖动行号可在同组排序或移入其它组；按钮提供相同请求，编辑校验和取消请求会阻止移动。", ShowRowMovingScenario);
+        AddScenario("rowdrag-batch", "拖放事件与批量移动", "从整行拖动多个已选节点，体验 RowDrop 取消、ItemsSource 事务集合和选择身份恢复。", ShowBatchMoveScenario);
         AddScenario("nestedbindings", "嵌套绑定与类型化写回", "替换状态对象或子集合，清空后恢复引用；名称和数量以编译绑定显示，草稿校验成功后调用明确的类型化 setter。", ShowNestedBindingScenario);
+        AddScenario("binding-writeback", "受控编译绑定与转换", "体验编译绑定适配器、ConvertBack 与嵌套目标保护；数量输入“数量 42”，校验成功后才写入一次。", ShowBindingWritebackScenario);
+        AddScenario("element-factory", "元素工厂与容器回收", "切换行、单元格和列头工厂，观察订阅清理、容器释放和编辑草稿保留。", ShowElementFactoryScenario);
         AddScenario("flat", "大数据 · 10 万行", "纵向滚动观察大数据表格。可在“布局选项”冻结列或改变行高，在“诊断与输入测试”查看容器复用。", () => ShowFlat(20));
         AddScenario("wide", "横向滚动 · 100 列", "向右滚动查看更多指标，冻结前两列后，编号和名称会一直留在左侧。", () => ShowFlat(100));
         AddScenario("template-buttons", "自定义列模板 · 按钮", "直接点击单元格里的按钮，体验行内操作和数据反馈。无需进入文本编辑。", () => ShowTemplateScenario(TemplateDemoKind.Buttons));
@@ -111,8 +118,11 @@ internal sealed partial class TreeDataGridPage
         AddButton(filters, "筛选", ApplyFilter, "按名称包含文字和数量下限筛选当前数据。", "ApplyFilterButton");
         AddButton(filters, "清除筛选", ClearFilter, "显示全部记录，不清除已有排序。");
         AddButton(filters, "恢复原顺序", () => { _source?.ClearSort(); _lastAction.Text = "排序已清除，恢复原始数据顺序。"; }, "清除列排序，按原始数据顺序显示。");
+        filters.Children.Add(_prefixSearch);
+        AddButton(filters, "定位前缀", LocateSearchPrefix, "在允许搜索的可见列中按前缀定位，不过滤数据。", "LocatePrefixButton");
         _filterTools = ToolGroup("筛选与排序", "点击列头切换升序、降序；筛选只改变当前显示的数据。", filters);
         _p6Tools = CreateP6Tools();
+        _a2Tools = CreateSelectionEventTools();
 
         _frozenColumns.SelectionChanged += (_, _) =>
         {
@@ -137,11 +147,13 @@ internal sealed partial class TreeDataGridPage
         layoutOptions.Children.Add(new TextBlock { Text = "行高", VerticalAlignment = VerticalAlignment.Center });
         layoutOptions.Children.Add(_rowHeightMode);
         layoutOptions.Children.Add(_threeStateSort);
+        _showHeaders.IsCheckedChanged += (_, _) => { if (!_synchronizingOptions) _grid.ShowColumnHeaders = _showHeaders.IsChecked == true; };
+        layoutOptions.Children.Add(_showHeaders);
         var layoutExpander = new Expander { Header = "布局选项 · 冻结列、行高与排序循环", Content = layoutOptions, HorizontalAlignment = HorizontalAlignment.Stretch };
         var header = new StackPanel
         {
             Spacing = 10, Margin = new Thickness(0, 10, 0, 12),
-            Children = { scenarioHeader, _editingTools, _treeTools, _filterTools, _p6Tools, layoutExpander },
+            Children = { scenarioHeader, _editingTools, _treeTools, _filterTools, _p6Tools, _a2Tools, layoutExpander },
         };
 
         var diagnostics = new StackPanel { Spacing = 8, Children = { _status } };
@@ -179,6 +191,7 @@ internal sealed partial class TreeDataGridPage
     private void RunScenario(DemoScenarioChoice choice)
     {
         _grid.CancelEdit();
+        _grid.ElementFactory = null;
         ClearNestedBindingScenario();
         _p6ScenarioId = null;
         _appearanceItems = null;
@@ -188,6 +201,13 @@ internal sealed partial class TreeDataGridPage
         _grid.EmptyContentTemplate = null;
         _grid.CanUserReorderColumns = false;
         _grid.CanUserMoveRows = false;
+        _grid.RowDragHandle = TreeDataGridRowDragHandle.RowHeader;
+        _grid.ShowColumnHeaders = true;
+        _a1Scenario = false;
+        _a2Scenario = false;
+        _cancelSelection.IsChecked = false;
+        _a2ActiveCells.Clear();
+        _prefixSearch.Text = "";
         if (_customTemplate) ToggleApplicationTemplate();
         _grid.RowHeight = 28;
         _grid.IsReadOnly = false;
@@ -205,7 +225,7 @@ internal sealed partial class TreeDataGridPage
         var editing = _source is FlatTreeDataGridSource<EditingItem>;
         var tree = _source is HierarchicalTreeDataGridSource<DemoItem>;
         var templates = _source is FlatTreeDataGridSource<TemplateDemoItem>;
-        var choiceId = _p6ScenarioId ?? (editing ? "editing" : tree ? (_scenario.StartsWith("按需加载", StringComparison.Ordinal) ? "lazy-tree" : "tree")
+        var choiceId = _a2Scenario ? "selection-events" : _a1Scenario ? "column-options" : _p6ScenarioId ?? (editing ? "editing" : tree ? (_scenario.StartsWith("按需加载", StringComparison.Ordinal) ? "lazy-tree" : "tree")
             : templates ? (_scenarioPicker.SelectedItem as DemoScenarioChoice)?.Id
             : _grid.Columns.Count == 5 ? "columns" : _grid.Columns.Count == 100 ? "wide" : "flat");
         _synchronizingOptions = true;
@@ -214,15 +234,17 @@ internal sealed partial class TreeDataGridPage
             var choice = _scenarioChoices.FirstOrDefault(item => item.Id == choiceId);
             if (choice is not null) _scenarioPicker.SelectedItem = choice;
             _scenarioDescription.Text = choice?.Description ?? _scenario;
-            _editingTools.IsVisible = editing;
+            _editingTools.IsVisible = editing && _p6ScenarioId != "element-factory";
+            _a2Tools.IsVisible = _a2Scenario;
             _treeTools.IsVisible = tree;
-            _filterTools.IsVisible = !templates && _p6ScenarioId != "nestedbindings";
+            _filterTools.IsVisible = !templates && _p6ScenarioId is not ("nestedbindings" or "binding-writeback" or "element-factory");
             _minimumQuantity.IsVisible = editing;
             _frozenColumns.SelectedIndex = Math.Min(2, _grid.FrozenColumnCount);
             _rowHeightMode.SelectedIndex = _grid.AutoRowHeight ? 1 : _grid.RowHeightSelector is not null ? 2 : 0;
             _rowHeightMode.IsEnabled = !templates;
             ToolTip.SetTip(_rowHeightMode, templates ? "控件模板示例已设置适合组合控件的行高。" : "固定行高、自动换行行高，或每七行增加高度。");
             _threeStateSort.IsChecked = _grid.IsThreeStateSort;
+            _showHeaders.IsChecked = _grid.ShowColumnHeaders;
             RefreshP6Options();
         }
         finally { _synchronizingOptions = false; }

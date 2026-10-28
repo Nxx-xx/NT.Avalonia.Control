@@ -69,12 +69,15 @@ internal sealed partial class TreeDataGridPage
         AddButton(dataActions, "重新填充数据", RestoreAppearanceData, "恢复 32 条示例记录并清除筛选。", "RestoreAppearanceDataButton");
         _appearanceTools = new StackPanel { Spacing = 6, Children = { appearance, dataActions } };
         _rowMoveTools = CreateRowMoveTools();
+        _batchMoveTools = CreateBatchMoveTools();
         _nestedBindingTools = CreateNestedBindingTools();
+        _bindingWritebackTools = CreateBindingWritebackTools();
+        _elementFactoryTools = CreateElementFactoryTools();
         return new Expander
         {
             Name = "P6Options", Header = "列显示、外观与数据操作", IsExpanded = true,
             HorizontalAlignment = HorizontalAlignment.Stretch,
-            Content = new StackPanel { Spacing = 8, Children = { columns, _appearanceTools, _rowMoveTools, _nestedBindingTools } },
+            Content = new StackPanel { Spacing = 8, Children = { columns, _appearanceTools, _rowMoveTools, _batchMoveTools, _nestedBindingTools, _bindingWritebackTools, _elementFactoryTools } },
         };
     }
 
@@ -149,7 +152,10 @@ internal sealed partial class TreeDataGridPage
         _p6Tools.IsVisible = _p6ScenarioId is not null;
         _appearanceTools.IsVisible = _p6ScenarioId == "appearance";
         _rowMoveTools.IsVisible = _p6ScenarioId == "rowmoving";
+        _batchMoveTools.IsVisible = _p6ScenarioId == "rowdrag-batch";
         _nestedBindingTools.IsVisible = _p6ScenarioId == "nestedbindings";
+        _bindingWritebackTools.IsVisible = _p6ScenarioId == "binding-writeback";
+        _elementFactoryTools.IsVisible = _p6ScenarioId == "element-factory";
         if (_p6ScenarioId is null) return;
         RefreshColumnVisibilityOptions();
         _gridLinesMode.SelectedIndex = (int)_grid.GridLinesVisibility;

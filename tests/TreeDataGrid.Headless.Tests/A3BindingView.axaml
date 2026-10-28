@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TreeDataGrid.Headless.Tests"
+             xmlns:tg="clr-namespace:NT.AvaloniaControl.TreeDataGrid;assembly=NT.AvaloniaControl.TreeDataGrid"
+             x:Class="TreeDataGrid.Headless.Tests.A3BindingView" x:DataType="local:A3Row">
+  <UserControl.Resources><local:A3Converter x:Key="AmountConverter" /></UserControl.Resources>
+  <tg:TreeDataGrid x:Name="BindingGrid">
+    <tg:TreeDataGridHierarchicalExpanderColumn Header="Name" Width="180"
+        ChildrenBinding="{tg:TreeDataGridBindingAdapter Path=Hierarchy.Children, Binding={CompiledBinding Hierarchy.Children}}"
+        HasChildrenBinding="{tg:TreeDataGridBindingAdapter Path=Hierarchy.HasChildren, Binding={CompiledBinding Hierarchy.HasChildren}}"
+        IsExpandedBinding="{tg:TreeDataGridBindingAdapter Path=Hierarchy.Expanded, Binding={CompiledBinding Hierarchy.Expanded, Mode=TwoWay}}">
+      <tg:TreeDataGridTextColumn Binding="{tg:TreeDataGridBindingAdapter Path=Name, Binding={CompiledBinding Name}}" />
+    </tg:TreeDataGridHierarchicalExpanderColumn>
+    <tg:TreeDataGridTextColumn Header="Quantity" Width="120"
+        Binding="{tg:TreeDataGridBindingAdapter Path=Quantity, Binding={CompiledBinding Quantity}}" />
+    <tg:TreeDataGridTextColumn Header="Amount" Width="140"
+        Binding="{tg:TreeDataGridBindingAdapter Path=Amount, Binding={CompiledBinding Amount, Converter={StaticResource AmountConverter}, ConverterCulture={x:Static local:A3Converter.French}, ConverterParameter=units}}" />
+    <tg:TreeDataGridTextColumn Header="Nested" Width="140"
+        Binding="{tg:TreeDataGridBindingAdapter Path=Detail.Name, Binding={CompiledBinding Detail.Name}}" />
+  </tg:TreeDataGrid>
+</UserControl>

@@ -41,7 +41,8 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
         PageLabels = Array.AsReadOnly(pageLabels);
         Bookmarks = bookmarks;
         _lifetime = new PdfDocumentLifetime(ReleaseNativeResources,
-            release => PdfiumRuntime.RunAsync(() => { release(); return true; }, CancellationToken.None));
+            release => PdfiumRuntime.RunAsync(() => { release(); return true; }, CancellationToken.None,
+                stage: PdfPerformanceStage.Release));
     }
 
     /// <summary>The immutable page sizes, available without calling native code.</summary>
@@ -61,8 +62,12 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
         if (bytes.Length == 0)
             throw new PdfDocumentException(PdfViewerStrings.ErrorEmptyDocument, 3);
 
+        var correlationId = BeginLoad();
+        var readStarted = PdfPerformanceSession.Now;
         var ownedBytes = (byte[])bytes.Clone();
-        return LoadOwnedAsync(ownedBytes, password, cancellationToken);
+        if (correlationId.Length != 0 && PdfPerformanceSession.Current is { } session)
+            session.Record(correlationId, PdfPerformanceStage.InputRead, readStarted, PdfPerformanceSession.Now);
+        return CompleteLoadAsync(LoadOwnedAsync(ownedBytes, password, cancellationToken, correlationId), correlationId);
     }
 
     /// <summary>
@@ -77,9 +82,12 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(path);
         cancellationToken.ThrowIfCancellationRequested();
-        // Open outside the native gate; only PDFium calls are serialized.
+        // Open outside the native gate; only PDFium calls are serialized. Random-access loads
+        // read blocks on demand, so there is no up-front input read to time; PERF01 InputRead
+        // is deliberately absent for this path rather than recorded as zero.
+        var correlationId = BeginLoad();
         var input = PdfFileInput.OpenFile(Path.GetFullPath(path));
-        return LoadInputAsync(input, password, cancellationToken);
+        return CompleteLoadAsync(LoadInputAsync(input, password, cancellationToken, correlationId), correlationId);
     }
 
     /// <summary>
@@ -93,6 +101,7 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
         CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(stream);
+        var correlationId = BeginLoad();
         try
         {
             cancellationToken.ThrowIfCancellationRequested();
@@ -110,6 +119,7 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
                 else if (remaining <= int.MaxValue)
                 {
                     // One exact-size buffer instead of a growing MemoryStream plus ToArray copy.
+                    var readStarted = PdfPerformanceSession.Now;
                     var owned = GC.AllocateUninitializedArray<byte>((int)remaining);
                     try
                     {
@@ -120,14 +130,17 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
                         // Length claimed more than the stream delivers; never load a partial mix.
                         throw new PdfDocumentException(PdfViewerStrings.ErrorLoadInvalid, 3);
                     }
-                    return await LoadOwnedAsync(owned, password, cancellationToken).ConfigureAwait(false);
+                    RecordInputRead(correlationId, readStarted);
+                    return await CompleteLoadAsync(LoadOwnedAsync(owned, password, cancellationToken, correlationId), correlationId).ConfigureAwait(false);
                 }
             }
 
             // Non-addressable input: stage to an owned temp file and load with random access.
             // An empty stream surfaces as the same empty-document error as the memory path.
+            var stageStarted = PdfPerformanceSession.Now;
             var input = await PdfFileInput.StageStreamAsync(stream, cancellationToken).ConfigureAwait(false);
-            return await LoadInputAsync(input, password, cancellationToken).ConfigureAwait(false);
+            RecordInputRead(correlationId, stageStarted);
+            return await CompleteLoadAsync(LoadInputAsync(input, password, cancellationToken, correlationId), correlationId).ConfigureAwait(false);
         }
         finally
         {
@@ -136,7 +149,33 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
         }
     }
 
-    private static Task<PdfDocument> LoadOwnedAsync(byte[] bytes, string? password, CancellationToken cancellationToken)
+    // PERF01 plumbing: load entry marks the monotonic origin for first-screen derivations and
+    // mints one correlation id that groups the input read, open parse and its queue wait.
+    // LoadReturn is marked only when a document actually comes back; it is never a first screen.
+    private static string BeginLoad()
+    {
+        if (PdfPerformanceSession.Current is not { } session) return "";
+        var correlationId = session.NextCorrelationId("open");
+        session.Mark(PdfPerformanceSession.LoadStartMark, correlationId);
+        return correlationId;
+    }
+
+    private static void RecordInputRead(string correlationId, long startedAt)
+    {
+        if (correlationId.Length != 0 && PdfPerformanceSession.Current is { } session)
+            session.Record(correlationId, PdfPerformanceStage.InputRead, startedAt, PdfPerformanceSession.Now);
+    }
+
+    private static async Task<PdfDocument> CompleteLoadAsync(Task<PdfDocument> loading, string correlationId)
+    {
+        var document = await loading.ConfigureAwait(false);
+        if (correlationId.Length != 0 && PdfPerformanceSession.Current is { } session)
+            session.Mark(PdfPerformanceSession.LoadReturnMark, correlationId);
+        return document;
+    }
+
+    private static Task<PdfDocument> LoadOwnedAsync(byte[] bytes, string? password, CancellationToken cancellationToken,
+        string correlationId = "")
     {
         return PdfiumRuntime.RunAsync(() =>
         {
@@ -162,11 +201,11 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
                 }
                 throw;
             }
-        }, cancellationToken);
+        }, cancellationToken, stage: PdfPerformanceStage.OpenParse, correlationId: correlationId);
     }
 
     private static async Task<PdfDocument> LoadInputAsync(PdfFileInput input, string? password,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken, string correlationId = "")
     {
         try
         {
@@ -185,7 +224,7 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
                     PdfiumNative.FPDF_CloseDocument(handle);
                     throw;
                 }
-            }, cancellationToken).ConfigureAwait(false);
+            }, cancellationToken, stage: PdfPerformanceStage.OpenParse, correlationId: correlationId).ConfigureAwait(false);
         }
         catch
         {
@@ -257,9 +296,16 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
         int rotation = 0, CancellationToken cancellationToken = default) =>
         RenderCoreAsync(pageIndex, pixelWidth, pixelHeight, rotation, cancellationToken, PdfiumWorkPriority.Thumbnail);
 
+    /// <summary>Display-path render that shares the presenter's correlation id across the
+    /// decode, bitmap upload and UI submit spans of one page fill.</summary>
+    internal Task<PdfRenderedPage> RenderForDisplayAsync(int pageIndex, int pixelWidth, int pixelHeight, int rotation,
+        CancellationToken cancellationToken, string correlationId) =>
+        RenderCoreAsync(pageIndex, pixelWidth, pixelHeight, rotation, cancellationToken, PdfiumWorkPriority.Foreground,
+            correlationId: correlationId);
+
     private Task<PdfRenderedPage> RenderCoreAsync(int pageIndex, int pixelWidth, int pixelHeight, int rotation,
         CancellationToken cancellationToken, PdfiumWorkPriority priority,
-        (int X, int Y, int Width, int Height)? region = null)
+        (int X, int Y, int Width, int Height)? region = null, string correlationId = "")
     {
         ValidatePage(pageIndex);
         if (pixelWidth is <= 0 or > 16384)
@@ -273,7 +319,10 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
         var outputWidth = region?.Width ?? pixelWidth;
         var outputHeight = region?.Height ?? pixelHeight;
 
-        return RunDocumentAsync(token =>
+        if (correlationId.Length == 0 && PdfPerformanceSession.Current is { } perf)
+            correlationId = perf.NextCorrelationId("render");
+        var startedAt = PdfPerformanceSession.Now;
+        var rendering = RunDocumentAsync(token =>
         {
             var page = LoadPage(pageIndex);
             var bitmap = IntPtr.Zero;
@@ -334,7 +383,19 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
                     pixelPin.Free();
                 PdfiumNative.FPDF_ClosePage(page);
             }
-        }, cancellationToken, priority);
+        }, cancellationToken, priority, PdfPerformanceStage.NativeExec, correlationId);
+        return RecordDecodeCompleteAsync(rendering, correlationId, startedAt);
+    }
+
+    // PERF01: DecodeComplete ends when the caller holds the pixels. The span covers the whole
+    // render call (its QueueWait / NativeExec spans share the correlation id for the split).
+    private static async Task<PdfRenderedPage> RecordDecodeCompleteAsync(Task<PdfRenderedPage> rendering,
+        string correlationId, long startedAt)
+    {
+        var page = await rendering.ConfigureAwait(false);
+        if (correlationId.Length != 0 && PdfPerformanceSession.Current is { } session)
+            session.Record(correlationId, PdfPerformanceStage.DecodeComplete, startedAt, PdfPerformanceSession.Now);
+        return page;
     }
 
     /// <summary>
@@ -469,6 +530,9 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
 
         var queryBytes = Encoding.Unicode.GetBytes(query + '\0');
         nuint flags = (nuint)((matchCase ? 1 : 0) | (wholeWord ? 2 : 0));
+        // PERF01: one correlation id per search so each page's queue-wait / native spans and
+        // the harness's first-hit timing describe the same operation.
+        var correlationId = PdfPerformanceSession.Current is { } perf ? perf.NextCorrelationId("search") : "";
         var total = 0;
         for (var pageIndex = 0; pageIndex < Pages.Count && total < maxResults; pageIndex++)
         {
@@ -479,7 +543,7 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
             // can make progress during a long document-wide search.
             var pageResults = await RunDocumentAsync(
                 token => SearchPage(index, queryBytes, flags, remaining, token), cancellationToken,
-                PdfiumWorkPriority.Search).ConfigureAwait(false);
+                PdfiumWorkPriority.Search, PdfPerformanceStage.Search, correlationId).ConfigureAwait(false);
             total += pageResults.Count;
             yield return new PdfSearchPageResult(pageIndex, pageResults.AsReadOnly());
             if (total >= maxResults)
@@ -665,7 +729,8 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
     }
 
     private async Task<T> RunDocumentAsync<T>(Func<CancellationToken, T> operation, CancellationToken cancellationToken,
-        PdfiumWorkPriority priority = PdfiumWorkPriority.Foreground)
+        PdfiumWorkPriority priority = PdfiumWorkPriority.Foreground,
+        PdfPerformanceStage stage = PdfPerformanceStage.NativeExec, string correlationId = "")
     {
         // Once the external file diverged from the snapshot, PDFium's parsed objects may already
         // mix versions, so every content operation fails cleanly until the document is reloaded.
@@ -674,7 +739,8 @@ public sealed partial class PdfDocument : IDisposable, IAsyncDisposable
         using var linkedCancellation = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, _lifetime.DisposeToken);
         try
         {
-            var result = await PdfiumRuntime.RunAsync(() => operation(linkedCancellation.Token), linkedCancellation.Token, priority)
+            var result = await PdfiumRuntime.RunAsync(() => operation(linkedCancellation.Token), linkedCancellation.Token,
+                    priority, stage, correlationId)
                 .ConfigureAwait(false);
             EnsureInputIntact();
             return result;

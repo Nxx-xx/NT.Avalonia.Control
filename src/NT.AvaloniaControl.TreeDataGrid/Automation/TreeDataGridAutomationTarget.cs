@@ -6,7 +6,7 @@ using Avalonia.Controls;
 
 namespace NT.AvaloniaControl.TreeDataGrid;
 
-internal sealed class TreeDataGridAutomationTarget(TreeDataGrid grid, TreeDataGridSource source, NodeId node, ColumnId? column)
+internal sealed class TreeDataGridAutomationTarget(TreeDataGrid grid, TreeDataGridSource source, NodeId node, ColumnId? column, TreeDataGridCellPresenter? realizedCell = null)
 {
     public TreeDataGrid Grid { get; } = grid;
     public TreeDataGridSource Source { get; } = source;
@@ -21,8 +21,9 @@ internal sealed class TreeDataGridAutomationTarget(TreeDataGrid grid, TreeDataGr
     public bool IsSelected => Row is not null && (ColumnId is null || Column is not null) && Grid.State is { } state && (ColumnId is null || Grid.SelectionUnit == TreeDataGridSelectionUnit.Row
         ? state.SelectedNodes.Contains(Node) : state.IsCellSelected(Address));
     public string AutomationId => ColumnId is { } id ? $"TreeDataGrid.Cell.{Node.Value}.{id.Value}" : $"TreeDataGrid.Row.{Node.Value}";
-    public TreeDataGridCellPresenter? RealizedCell => Grid.RowsPresenter?.RealizedRows.SelectMany(row => row.RealizedCells)
-        .FirstOrDefault(cell => cell.Row?.Id == Node && cell.Column?.Id == ColumnId);
+    public TreeDataGridCellPresenter? RealizedCell => realizedCell is { } current && ReferenceEquals(current.GridOwner, Grid)
+        && current.Row?.Id == Node && current.Column?.Id == ColumnId ? current :
+        Grid.RowsPresenter?.RealizedRows.SelectMany(row => row.RealizedCells).FirstOrDefault(cell => cell.Row?.Id == Node && cell.Column?.Id == ColumnId);
     public TreeDataGridRowPresenter? RealizedRow => Grid.RowsPresenter?.RealizedRows.FirstOrDefault(row => row.Row?.Id == Node);
     public Control? RealizedControl => ColumnId is null ? RealizedRow : RealizedCell;
     public ExpandCollapseState ExpandState => Row is not { HasChildren: true } row ? ExpandCollapseState.LeafNode :
@@ -75,35 +76,39 @@ internal sealed class TreeDataGridAutomationTarget(TreeDataGrid grid, TreeDataGr
         var destination = ColumnId ?? Grid.VisibleColumns.FirstOrDefault()?.Id;
         if (destination is not { } id) throw new InvalidOperationException("There are no visible columns to focus.");
         var address = new CellAddress(Node, id);
-        if (Grid.State?.EditSession is { } edit && edit.Cell != address && !Grid.CommitEdit()) throw new InvalidOperationException("The current edit must be valid before moving focus.");
+        var state = Grid.State;
+        if (state is null || !state.RunSelection(TreeDataGridSelectionChangeReason.Automation, () => state.SetCurrentCell(address))) return;
         EnsureVisible();
-        Grid.State?.SetCurrentCell(address);
         BringIntoView();
         Grid.Focus();
     }
     public void Select(bool additive)
     {
         EnsureVisible();
-        if (Grid.State?.EditSession is not null && !Grid.CommitEdit()) throw new InvalidOperationException("The current edit must be valid before changing selection.");
-        EnsureVisible();
         var state = Grid.State ?? throw new InvalidOperationException("The automation source changed.");
-        if (ColumnId is null || Grid.SelectionUnit == TreeDataGridSelectionUnit.Row) state.Select(Node, additive);
-        else state.SelectCell(Address, extend: additive);
+        state.RunSelection(TreeDataGridSelectionChangeReason.Automation, () =>
+        {
+            if (ColumnId is null || Grid.SelectionUnit == TreeDataGridSelectionUnit.Row) state.Select(Node, additive);
+            else state.SelectCell(Address, extend: additive);
+        });
     }
     public void RemoveFromSelection()
     {
         EnsureVisible();
         if (!IsSelected || Grid.State is not { } state) return;
-        if (ColumnId is null || Grid.SelectionUnit == TreeDataGridSelectionUnit.Row)
+        state.RunSelection(TreeDataGridSelectionChangeReason.Automation, () =>
         {
-            if (Grid.SelectionMode == TreeDataGridSelectionMode.Multiple) state.ToggleSelection(Node);
-            else state.ClearSelection();
-        }
-        else
-        {
-            if (state.SelectedCells.Take(2).Count() > 1) throw new InvalidOperationException("Removing one cell would split the rectangular selection.");
-            state.ClearSelection();
-        }
+            if (ColumnId is null || Grid.SelectionUnit == TreeDataGridSelectionUnit.Row)
+            {
+                if (Grid.SelectionMode == TreeDataGridSelectionMode.Multiple) state.ToggleSelection(Node);
+                else state.ClearSelection();
+            }
+            else
+            {
+                if (state.SelectedCells.Take(2).Count() > 1) throw new InvalidOperationException("Removing one cell would split the rectangular selection.");
+                state.ClearSelection();
+            }
+        });
     }
     public void Expand(bool expanded)
     {

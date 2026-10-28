@@ -1,0 +1,1716 @@
+{
+  "schema": "charts-c7-tooltip-export-validation/v1",
+  "createdUtc": "2026-10-23T12:37:41.744979+00:00",
+  "batchPassed": true,
+  "fullNativeRegressionPassed": true,
+  "milestoneComplete": false,
+  "scope": "C7-01 continuation: shared professional Tooltip presentation plus exact export geometry lifetime repair and automated software stability gate.",
+  "platforms": {
+    "windows": {
+      "status": "complete",
+      "passed": true,
+      "checks": {
+        "six-ordered-platform-stages-pass": true,
+        "same-frozen-source-snapshot": true,
+        "all1881-frozen-inputs-pass-before-and-after": true,
+        "all-frozen-platform-files-still-match": true,
+        "base-software-only-contract-scope-passes": true,
+        "2928-headless-contracts-pass": true,
+        "4585-full-native-Demo-checks-pass": true,
+        "865-native-Usage-bindings-pass": true,
+        "68-static-control-traces-and-selftests-pass": true,
+        "package-NT.AvaloniaControl.Charts-hash": true,
+        "package-NT.AvaloniaControl.Charts.Themes-hash": true,
+        "isolated-function-consumer-contracts": true,
+        "isolated-function-no-source-project-reference": true,
+        "isolated-themes-consumer-contracts": true,
+        "isolated-themes-no-source-project-reference": true,
+        "both-isolated-consumer-kinds-pass": true,
+        "150-focused-checks-and7-probes": true,
+        "theme-normal-light-native-handle": true,
+        "png-dimensions-theme-normal-light": true,
+        "theme-normal-dark-native-handle": true,
+        "png-dimensions-theme-normal-dark": true,
+        "theme-hc-light-native-handle": true,
+        "png-dimensions-theme-hc-light": true,
+        "theme-hc-dark-native-handle": true,
+        "png-dimensions-theme-hc-dark": true,
+        "tooltip-analysis-all18-format-state-contracts": true,
+        "png-dimensions-analysis/disabled/sync-png": true,
+        "png-dimensions-analysis/disabled/async-png": true,
+        "jpeg-header-dimensions-analysis/disabled/async-jpeg": true,
+        "png-dimensions-analysis/legacy/sync-png": true,
+        "png-dimensions-analysis/legacy/async-png": true,
+        "jpeg-header-dimensions-analysis/legacy/async-jpeg": true,
+        "png-dimensions-analysis/template/sync-png": true,
+        "png-dimensions-analysis/template/async-png": true,
+        "jpeg-header-dimensions-analysis/template/async-jpeg": true,
+        "tooltip-engineering-all18-format-state-contracts": true,
+        "png-dimensions-engineering/disabled/sync-png": true,
+        "png-dimensions-engineering/disabled/async-png": true,
+        "jpeg-header-dimensions-engineering/disabled/async-jpeg": true,
+        "png-dimensions-engineering/legacy/sync-png": true,
+        "png-dimensions-engineering/legacy/async-png": true,
+        "jpeg-header-dimensions-engineering/legacy/async-jpeg": true,
+        "png-dimensions-engineering/template/sync-png": true,
+        "png-dimensions-engineering/template/async-png": true,
+        "jpeg-header-dimensions-engineering/template/async-jpeg": true,
+        "four-required-theme-modes": true,
+        "18-tooltip-export-artifacts": true,
+        "independent-analysis-sync-png-tooltip-excluded": true,
+        "independent-analysis-async-png-tooltip-excluded": true,
+        "independent-engineering-sync-png-tooltip-excluded": true,
+        "independent-engineering-async-png-tooltip-excluded": true,
+        "native-export272-and3200-producer-guards": true,
+        "independent3232-export-checks-pass": true,
+        "default-JIT-forcedGC-with-stable-inputs": true,
+        "packaged-core-and-themes-match-tested-product": true,
+        "export-executed-NT.AvaloniaControl.Charts-matches-base": true,
+        "actual-copy-samples/NT.AvaloniaControl.Demo/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "actual-copy-samples/Charts.Usage/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "actual-copy-benchmarks/Charts.ExportStability/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "export-executed-NT.AvaloniaControl.Charts.Themes-matches-base": true,
+        "actual-copy-samples/NT.AvaloniaControl.Demo/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-copy-samples/Charts.Usage/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-copy-benchmarks/Charts.ExportStability/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-API497-plus3-types": true
+      },
+      "failedChecks": [],
+      "sourceSnapshotFiles": 1881,
+      "sourceBefore": {
+        "files": 1881,
+        "differences": [],
+        "passed": true
+      },
+      "sourceAfter": {
+        "files": 1881,
+        "differences": [],
+        "passed": true
+      },
+      "sourceFilesStillPinned": true,
+      "sourceDifferences": [],
+      "stages": [
+        {
+          "id": "catalog",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "receipt": {
+            "path": "windows/run-v2/entry-catalog/process.json",
+            "sha256": "5E3FDA2760070CC9D36C674511745A7DE953A3634F0562CF283D8B3331545CA9",
+            "bytes": 894
+          }
+        },
+        {
+          "id": "base",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "receipt": {
+            "path": "windows/run-v2/entry-base/process.json",
+            "sha256": "207F8D2E307408602E8B0A2CC2663A89B70773DA22BDAB7775B2EB926188EFFA",
+            "bytes": 1089
+          }
+        },
+        {
+          "id": "consumers",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "receipt": {
+            "path": "windows/run-v2/entry-consumers/process.json",
+            "sha256": "86E0A866E6B1D3F6416484EA64FD618D83FC462446829C5930F08E6E723F8B93",
+            "bytes": 1124
+          }
+        },
+        {
+          "id": "professional-tooltip",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "receipt": {
+            "path": "windows/run-v2/entry-professional-tooltip/process.json",
+            "sha256": "72EDB9AFC2EBA969F79B977CDF86F81B7E7247F1F50D05FB51C3A1D467CA595F",
+            "bytes": 1214
+          }
+        },
+        {
+          "id": "export-stability",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "receipt": {
+            "path": "windows/run-v2/entry-export-stability/process.json",
+            "sha256": "552D3EF7B93A3A8D2696C0E50DF4C40EA49DA13D71E51EFB7078B6C91EFFE73A",
+            "bytes": 1052
+          }
+        },
+        {
+          "id": "api",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "receipt": {
+            "path": "windows/run-v2/entry-api/process.json",
+            "sha256": "F59BFB8F3FA5D51C165433C4AE2671AE97D41D17338DC894A7DF740C31367ACC",
+            "bytes": 923
+          }
+        }
+      ],
+      "headless": {
+        "status": "passed",
+        "inputKind": "headless-injection",
+        "total": 2928,
+        "passed": 2928,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "notRun": 0,
+        "result": "C:/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-tooltips-export-stability-20261023/windows/run-v2/verification/functional-v1/Charts.Headless.Tests.xml"
+      },
+      "fullDemoNative": {
+        "total": 4585,
+        "passed": 4585,
+        "failed": 0
+      },
+      "usage": {
+        "total": 865,
+        "passed": 865,
+        "failed": 0
+      },
+      "consumers": {
+        "function": {
+          "passed": true,
+          "checks": {
+            "total": 1047,
+            "passed": 1047,
+            "failed": 0
+          },
+          "coreSha256": "21DB88B13C9179921482D02BFD11E2FD325B7F2D2A57B8666FBB90236D4C566A",
+          "runtime": "10.0.13",
+          "avaloniaVersion": "12.0.3.0",
+          "freshPackageCache": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-tooltips-export-stability-20261023\\windows\\run-v2\\consumers\\20261023T121419756Z-a2519025abf14d35afaa0b8010265fac\\function\\packages",
+          "noProjectReferences": true,
+          "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+        },
+        "themes": {
+          "passed": true,
+          "checks": {
+            "total": 1081,
+            "passed": 1081,
+            "failed": 0
+          },
+          "coreSha256": "21DB88B13C9179921482D02BFD11E2FD325B7F2D2A57B8666FBB90236D4C566A",
+          "runtime": "10.0.13",
+          "avaloniaVersion": "12.0.3.0",
+          "freshPackageCache": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-tooltips-export-stability-20261023\\windows\\run-v2\\consumers\\20261023T121419756Z-a2519025abf14d35afaa0b8010265fac\\themes\\packages",
+          "noProjectReferences": true,
+          "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+        }
+      },
+      "professionalTooltip": {
+        "checks": {
+          "total": 150,
+          "passed": 150,
+          "failed": 0
+        },
+        "probes": 7,
+        "themeModes": [
+          "normal-light",
+          "normal-dark",
+          "hc-light",
+          "hc-dark"
+        ],
+        "tooltipExportArtifacts": 18,
+        "images": [
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-normal-light.png",
+            "sha256": "FFFC3863841712F6B3687C18E2415EC11334C2CDC90F8E28DEFAE80F6BCA9575",
+            "bytes": 87863,
+            "kind": "theme-normal-light",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "605A31B93B2E2AE3C74BB2728786BAAD64C2856A0F1D631FBA5D6D4702C644EB"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-normal-dark.png",
+            "sha256": "8A1FF3061DDBCBA49682E2CF1504424E77A81E329C4EFCA38796091FD8F05D86",
+            "bytes": 87324,
+            "kind": "theme-normal-dark",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "993A61B53375D47AB6613DFF649161B2520E32B0625ECBDD119B284F0F730019"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-hc-light.png",
+            "sha256": "5BF828565266249570BDD86C8FBEC21CB14026C927B1BB7F847D518117777070",
+            "bytes": 81806,
+            "kind": "theme-hc-light",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "AC44E280E78508981CD7CF531E20A02A25865E47C4CFB9B91D40776BF13F0354"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-hc-dark.png",
+            "sha256": "8E5F1C9913173B01AC08446FB3FEF2A23E83CCA4FD82BD76024FF37965B09E13",
+            "bytes": 80397,
+            "kind": "theme-hc-dark",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "A451601B8C445F7D3E9B9FF91CA3747BA0320A2BED2278D25CF75A8AC5353907"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-disabled-sync-png.png",
+            "sha256": "F935EEE37EC9A0427C623CC80A14F26A507EBBB95355496BF387296CBD916AD2",
+            "bytes": 8963,
+            "kind": "analysis/disabled/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "749405446E5CB6BACA56BB7241E691D6AB29E080B32C876A552FE09FF592951B"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-disabled-async-png.png",
+            "sha256": "10F9F3EB2937A6A058BAF5432DD7689058DE5A637CE7553FC05D61302A4B7B0E",
+            "bytes": 14989,
+            "kind": "analysis/disabled/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "749405446E5CB6BACA56BB7241E691D6AB29E080B32C876A552FE09FF592951B"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-disabled-async-jpeg.jpg",
+            "sha256": "4744FB4BD44D7875EEA09A70DF62703C48C86A46AC2EA4553739FEC19ECF3740",
+            "bytes": 19416,
+            "kind": "analysis/disabled/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentJpegVisualQualityClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-legacy-sync-png.png",
+            "sha256": "F935EEE37EC9A0427C623CC80A14F26A507EBBB95355496BF387296CBD916AD2",
+            "bytes": 8963,
+            "kind": "analysis/legacy/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "749405446E5CB6BACA56BB7241E691D6AB29E080B32C876A552FE09FF592951B"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-legacy-async-png.png",
+            "sha256": "10F9F3EB2937A6A058BAF5432DD7689058DE5A637CE7553FC05D61302A4B7B0E",
+            "bytes": 14989,
+            "kind": "analysis/legacy/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "749405446E5CB6BACA56BB7241E691D6AB29E080B32C876A552FE09FF592951B"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-legacy-async-jpeg.jpg",
+            "sha256": "4744FB4BD44D7875EEA09A70DF62703C48C86A46AC2EA4553739FEC19ECF3740",
+            "bytes": 19416,
+            "kind": "analysis/legacy/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentJpegVisualQualityClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-template-sync-png.png",
+            "sha256": "F935EEE37EC9A0427C623CC80A14F26A507EBBB95355496BF387296CBD916AD2",
+            "bytes": 8963,
+            "kind": "analysis/template/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "749405446E5CB6BACA56BB7241E691D6AB29E080B32C876A552FE09FF592951B"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-template-async-png.png",
+            "sha256": "10F9F3EB2937A6A058BAF5432DD7689058DE5A637CE7553FC05D61302A4B7B0E",
+            "bytes": 14989,
+            "kind": "analysis/template/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "749405446E5CB6BACA56BB7241E691D6AB29E080B32C876A552FE09FF592951B"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-template-async-jpeg.jpg",
+            "sha256": "4744FB4BD44D7875EEA09A70DF62703C48C86A46AC2EA4553739FEC19ECF3740",
+            "bytes": 19416,
+            "kind": "analysis/template/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentJpegVisualQualityClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-disabled-sync-png.png",
+            "sha256": "D5D6C0CD3D8D689CBF948717C4F1E54AF8999A914780CB8139851FEF137C005B",
+            "bytes": 1807,
+            "kind": "engineering/disabled/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D504786BCDCF294A8B90D60A0EC0B6155E549A5CC478B320C602A823E89092D9"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-disabled-async-png.png",
+            "sha256": "16CEAF39734EF99A4D7AD8ADDE078114051DD75EC931D99127053D0E769574BC",
+            "bytes": 8563,
+            "kind": "engineering/disabled/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D504786BCDCF294A8B90D60A0EC0B6155E549A5CC478B320C602A823E89092D9"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-disabled-async-jpeg.jpg",
+            "sha256": "3E77F994E6556ACCE5ABAA1770F4B8466E66C15C8D9C4830AC9714C71466F2C0",
+            "bytes": 12033,
+            "kind": "engineering/disabled/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentJpegVisualQualityClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-legacy-sync-png.png",
+            "sha256": "D5D6C0CD3D8D689CBF948717C4F1E54AF8999A914780CB8139851FEF137C005B",
+            "bytes": 1807,
+            "kind": "engineering/legacy/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D504786BCDCF294A8B90D60A0EC0B6155E549A5CC478B320C602A823E89092D9"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-legacy-async-png.png",
+            "sha256": "16CEAF39734EF99A4D7AD8ADDE078114051DD75EC931D99127053D0E769574BC",
+            "bytes": 8563,
+            "kind": "engineering/legacy/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D504786BCDCF294A8B90D60A0EC0B6155E549A5CC478B320C602A823E89092D9"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-legacy-async-jpeg.jpg",
+            "sha256": "3E77F994E6556ACCE5ABAA1770F4B8466E66C15C8D9C4830AC9714C71466F2C0",
+            "bytes": 12033,
+            "kind": "engineering/legacy/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentJpegVisualQualityClaimed": false
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-template-sync-png.png",
+            "sha256": "D5D6C0CD3D8D689CBF948717C4F1E54AF8999A914780CB8139851FEF137C005B",
+            "bytes": 1807,
+            "kind": "engineering/template/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D504786BCDCF294A8B90D60A0EC0B6155E549A5CC478B320C602A823E89092D9"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-template-async-png.png",
+            "sha256": "16CEAF39734EF99A4D7AD8ADDE078114051DD75EC931D99127053D0E769574BC",
+            "bytes": 8563,
+            "kind": "engineering/template/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D504786BCDCF294A8B90D60A0EC0B6155E549A5CC478B320C602A823E89092D9"
+          },
+          {
+            "path": "windows/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-template-async-jpeg.jpg",
+            "sha256": "3E77F994E6556ACCE5ABAA1770F4B8466E66C15C8D9C4830AC9714C71466F2C0",
+            "bytes": 12033,
+            "kind": "engineering/template/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentJpegVisualQualityClaimed": false
+          }
+        ],
+        "pngDecoder": {
+          "path": "D:/Procedure/AvaloniaControl/scripts/charts_png_oracle.py",
+          "sha256": "2C05338338984B1D5C818997AAB22E6C8C34331CEC24C8CED65AAE32503C44FF",
+          "bytes": 12612
+        },
+        "pngVisualScope": "CRC, dimensions, hash and same-format disabled/legacy/template pixel equality; routed synthetic input and RenderTargetBitmap only."
+      },
+      "exportStability": {
+        "attempts": 272,
+        "producerGuards": 3200,
+        "images": 256,
+        "independentChecks": 3232,
+        "independentlyDecodedPngs": 240,
+        "uniquePngDecodes": 11,
+        "forcedCollections": 12171,
+        "collectionsBeginningDuringManagedCapture": 2587,
+        "workerStopped": true,
+        "defaultJitPreserved": true,
+        "runtime": {
+          "os": "Microsoft Windows 10.0.26200",
+          "architecture": "X64",
+          "framework": ".NET 10.0.13",
+          "runtime": "10.0.13",
+          "serverGc": false,
+          "gcLatencyMode": "Interactive",
+          "tieredCompilationEnvironment": null,
+          "comPlusTieredCompilationEnvironment": null,
+          "runtimeConfigPath": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7tooltipstability\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\Charts.ExportStability.runtimeconfig.json",
+          "runtimeConfig": "{\r\n  \"runtimeOptions\": {\r\n    \"tfm\": \"net10.0\",\r\n    \"framework\": {\r\n      \"name\": \"Microsoft.NETCore.App\",\r\n      \"version\": \"10.0.0\"\r\n    },\r\n    \"configProperties\": {\r\n      \"System.Reflection.Metadata.MetadataUpdater.IsSupported\": false,\r\n      \"System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization\": false\r\n    }\r\n  }\r\n}"
+        },
+        "actualNativeModules": [
+          {
+            "moduleName": "Avalonia.HarfBuzz.dll",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7tooltipstability\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\Avalonia.HarfBuzz.dll",
+            "sha256": "BE71D00740E2E76D8347961AFF32E18D67818971018229FE2AAE643C64DE08DC"
+          },
+          {
+            "moduleName": "Avalonia.Skia.dll",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7tooltipstability\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\Avalonia.Skia.dll",
+            "sha256": "1A76E530C5DB742104D5A5532B11E36AA826D2221FE925978598BB62C1A068FC"
+          },
+          {
+            "moduleName": "SkiaSharp.dll",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7tooltipstability\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\SkiaSharp.dll",
+            "sha256": "A833ABAE87FF3D13FF660B1F9D92027885B90395647479437EB9D262FAD6D4AB"
+          },
+          {
+            "moduleName": "libSkiaSharp.DLL",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7tooltipstability\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\runtimes\\win-x64\\native\\libSkiaSharp.DLL",
+            "sha256": "6D6ECA64EC333DAED78858A637B54C545AA01558204B8E2AE8870692ACADA127"
+          },
+          {
+            "moduleName": "HarfBuzzSharp.dll",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7tooltipstability\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\HarfBuzzSharp.dll",
+            "sha256": "55E72AC23263F8E12484F3435E02EC22FAC9EFF6E6D169BB0A8C246BE6B99D29"
+          },
+          {
+            "moduleName": "libHarfBuzzSharp.DLL",
+            "fileName": "D:\\Procedure\\AvaloniaControl\\artifacts\\c7tooltipstability\\windows-source-v2\\benchmarks\\Charts.ExportStability\\bin\\Release\\net10.0\\runtimes\\win-x64\\native\\libHarfBuzzSharp.DLL",
+            "sha256": "145ADE963EBA427027D5E1381DB5D51A0EF9E98E9FEF9EFBFA6074CA20DA246F"
+          }
+        ],
+        "exactNativeCallOverlapProved": false,
+        "tier1PromotionIndependentlyProved": false
+      },
+      "productAssemblyPins": {
+        "coreSha256": "21DB88B13C9179921482D02BFD11E2FD325B7F2D2A57B8666FBB90236D4C566A",
+        "themesSha256": "CFE7DBAC4BCD31B05CD5AD4551A06030D4D2787384CD6D8AA7800756002FE58B",
+        "actualHostCopies": [
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7tooltipstability/windows-source-v2/samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "21DB88B13C9179921482D02BFD11E2FD325B7F2D2A57B8666FBB90236D4C566A",
+            "bytes": 2174464
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7tooltipstability/windows-source-v2/samples/Charts.Usage/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "21DB88B13C9179921482D02BFD11E2FD325B7F2D2A57B8666FBB90236D4C566A",
+            "bytes": 2174464
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7tooltipstability/windows-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "21DB88B13C9179921482D02BFD11E2FD325B7F2D2A57B8666FBB90236D4C566A",
+            "bytes": 2174464
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7tooltipstability/windows-source-v2/samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "CFE7DBAC4BCD31B05CD5AD4551A06030D4D2787384CD6D8AA7800756002FE58B",
+            "bytes": 25600
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7tooltipstability/windows-source-v2/samples/Charts.Usage/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "CFE7DBAC4BCD31B05CD5AD4551A06030D4D2787384CD6D8AA7800756002FE58B",
+            "bytes": 25600
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7tooltipstability/windows-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "CFE7DBAC4BCD31B05CD5AD4551A06030D4D2787384CD6D8AA7800756002FE58B",
+            "bytes": 25600
+          }
+        ]
+      },
+      "api": {
+        "coreTypes": 497,
+        "themesTypes": 3,
+        "totalTypes": 500,
+        "normalizedSurfaceSha256": "10E9500CE8D5569BB2AC2424D66FEA2A9E88BBED61EE41D2C9DEC85E90C8A6E3",
+        "metadataOnly": true,
+        "officialCompared": false
+      },
+      "runtime": {
+        "osDescription": "Microsoft Windows 10.0.26200",
+        "osArchitecture": "X64",
+        "processArchitecture": "X64",
+        "baseSdk": "10.0.402",
+        "powershell": "7.6.5",
+        "actualExportFramework": ".NET 10.0.13",
+        "actualExportRuntime": "10.0.13",
+        "avalonia": "12.0.3.0",
+        "consumerSdkPinnedToBaseSdkClaimed": false,
+        "linuxQualification": "visible native Windows synthetic window; marketing OS release not inferred from kernel 10.0"
+      },
+      "references": [
+        {
+          "path": "windows/run-v2/results.json",
+          "sha256": "2AEECBA020CE68A049DC2DB30BA3EE3BE53A0D075BB2159BAE225DA3D5794BAD",
+          "bytes": 7590
+        },
+        {
+          "path": "windows/run-v2/source-before.json",
+          "sha256": "FFE5AFE62A5785E59C334C644D104BB179AD2D20F6133FB2B7CA3A076F449297",
+          "bytes": 64
+        },
+        {
+          "path": "windows/run-v2/source-after.json",
+          "sha256": "FFE5AFE62A5785E59C334C644D104BB179AD2D20F6133FB2B7CA3A076F449297",
+          "bytes": 64
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/results.json",
+          "sha256": "196267342DAD89113C3F7B5F45829D12EE706D91E6C326378A804CE9F143D5F7",
+          "bytes": 22411
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/environment.json",
+          "sha256": "67B8822EB6B197D512468BC7274076E4E0786335D8D8760FD3B239B97ED1336A",
+          "bytes": 8404
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/assembly-manifest.json",
+          "sha256": "C6CEC1934FA1F5497888905120DCB9FD454F8DEE385D372F5E90483931B1D176",
+          "bytes": 1957
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/source-manifest.json",
+          "sha256": "0305A6CF6764D2B011D22B4B89BB55BEFDD990C97215726BEF4F6B6E149A8A75",
+          "bytes": 315527
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/source-manifest-final.json",
+          "sha256": "0305A6CF6764D2B011D22B4B89BB55BEFDD990C97215726BEF4F6B6E149A8A75",
+          "bytes": 315527
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/validated-input-manifest.json",
+          "sha256": "0F4D48D66AF9B094E95DBFED71B07AAABE16B323D4FD092A5F918B2445686613",
+          "bytes": 175639
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/evidence-manifest.json",
+          "sha256": "71F4DA8DA7D7DCA506A6C96F02F465EF6B9672D53673DF6A8CCA0D17D9CF5BC5",
+          "bytes": 218364
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "B76A019B5F662392374F41BE918E4147F299C8B3B6DD0560CEF619FEF4C75FCD",
+          "bytes": 1706016
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/charts-smoke.json",
+          "sha256": "09A8A893C883186D3876C5E996607329D67107B5316D1EE71A776BFC6C5DBE4E",
+          "bytes": 85398073
+        },
+        {
+          "path": "windows/run-v2/verification/functional-v1/charts-usage.json",
+          "sha256": "721E65502F1AA29DB68FBBA49FDF153EE88FF8E9AECE034F8541300316BAAFCD",
+          "bytes": 110699
+        },
+        {
+          "path": "windows/run-v2/catalog.json",
+          "sha256": "AABAD58EEA0905F2EA5289BD29F833F1981133CD3DC7744BC082045B2146A43B",
+          "bytes": 52181
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T121419756Z-a2519025abf14d35afaa0b8010265fac/results.json",
+          "sha256": "1C8C2AD52E943673013B5030976E0B00A86F4E0E4163E5F6D41B16EFDA458E39",
+          "bytes": 12438
+        },
+        {
+          "path": "windows/run-v2/package-feed/NT.AvaloniaControl.Charts.0.2.0-preview.2.nupkg",
+          "sha256": "A965AE9961CDA146914AAB56DE5208CAE77E22980D243E1B470B6EE6C18DC39E",
+          "bytes": 864406
+        },
+        {
+          "path": "windows/run-v2/package-feed/NT.AvaloniaControl.Charts.Themes.0.2.0-preview.2.nupkg",
+          "sha256": "3F90244F424DA10C3EB63E93B8B8028C6E045DE5CB1C9C6A261A812B67A75414",
+          "bytes": 12518
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T121419756Z-a2519025abf14d35afaa0b8010265fac/function/consumer-result.json",
+          "sha256": "6E3CFCAA05B44E0E895BAC33DC7D64B8C126DBFCD82EEC70D4723E72CCAD1D07",
+          "bytes": 153650
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T121419756Z-a2519025abf14d35afaa0b8010265fac/function/packages.lock.json",
+          "sha256": "D596DD75390B77B32C151D126C9005B721F7AD20A1E7531BC2F42C55A80358D0",
+          "bytes": 4501
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T121419756Z-a2519025abf14d35afaa0b8010265fac/themes/consumer-result.json",
+          "sha256": "E0BC262F1712794E05EFE21A369E0AC675829562415227485BBBA81F53B1CA8A",
+          "bytes": 156117
+        },
+        {
+          "path": "windows/run-v2/consumers/20261023T121419756Z-a2519025abf14d35afaa0b8010265fac/themes/packages.lock.json",
+          "sha256": "69D740A3F548BE38211495FEEF5197A15004F2B39B03242BB296B301A4898DA6",
+          "bytes": 4839
+        },
+        {
+          "path": "windows/run-v2/professional-tooltip/smoke.json",
+          "sha256": "A32E4758FF78E2EBD522FD497CBB7CC03898C479511D619DBE5A7309E84F594C",
+          "bytes": 101113
+        },
+        {
+          "path": "windows/run-v2/export-stability/results.json",
+          "sha256": "4C822FDFD8EBD5A62D311270BC5E2ABD80F5E9033C53CED3450DA00F8E5CB3DE",
+          "bytes": 6558
+        },
+        {
+          "path": "windows/run-v2/export-stability/producer/results.json",
+          "sha256": "24619403CAB53530071CB9B97C64C17E3AA4D08BC68244417C9C95BC2B5594E9",
+          "bytes": 2059624
+        },
+        {
+          "path": "windows/run-v2/export-stability/producer/protocol.json",
+          "sha256": "BC77A99EB84AF0F7DB1D82D98A70D2F907FA166E30967BE5A136913CAD073E43",
+          "bytes": 58102
+        },
+        {
+          "path": "windows/run-v2/export-stability/producer/events.jsonl",
+          "sha256": "7523ECC4ABA3B7323502CEE8B4209616F4152E82A785261E488EC881D7136FBA",
+          "bytes": 524563
+        },
+        {
+          "path": "windows/run-v2/export-stability/independent-oracle.json",
+          "sha256": "F3E4F62315C2D73BB406C0957844DB8A5D6B8728518DA640DDBD882F61C74E00",
+          "bytes": 463963
+        },
+        {
+          "path": "windows/run-v2/export-stability/source-inputs-before.json",
+          "sha256": "1C1C0EDDBBA87848BBDB72F6DEC43121A10E05108967768CC5A0C82D3DDD6377",
+          "bytes": 49037
+        },
+        {
+          "path": "windows/run-v2/export-stability/source-inputs-after.json",
+          "sha256": "1C1C0EDDBBA87848BBDB72F6DEC43121A10E05108967768CC5A0C82D3DDD6377",
+          "bytes": 49037
+        },
+        {
+          "path": "windows/run-v2/export-stability/host-inputs-before.json",
+          "sha256": "D9B22CB1B5D0790E6F41497B6EBE910AEA7DD088F793C196F5ECF1C0441AD582",
+          "bytes": 13097
+        },
+        {
+          "path": "windows/run-v2/export-stability/host-inputs-after.json",
+          "sha256": "D9B22CB1B5D0790E6F41497B6EBE910AEA7DD088F793C196F5ECF1C0441AD582",
+          "bytes": 13097
+        },
+        {
+          "path": "windows/run-v2/api/baseline.json",
+          "sha256": "AAFD87DD56E6361985485CB2A1A97E006D13C813A70B3AEAC2775D99B08C0134",
+          "bytes": 289269
+        },
+        {
+          "path": "windows/run-v2/api/api.txt",
+          "sha256": "BEDA3E9ABDCBF2387999412A8A506E729C0C45F0C695314526983836CD5EFFF4",
+          "bytes": 1026184
+        },
+        {
+          "path": "windows/run-v2/api/source-manifest.json",
+          "sha256": "E4AF6523DED84F0E94EA8BA21B07FBDC3D939FD45FB93D3D92EF9EE3B5D0B2F6",
+          "bytes": 108670
+        },
+        {
+          "path": "windows/run-v2/entry-catalog/process.json",
+          "sha256": "5E3FDA2760070CC9D36C674511745A7DE953A3634F0562CF283D8B3331545CA9",
+          "bytes": 894
+        },
+        {
+          "path": "windows/run-v2/entry-base/process.json",
+          "sha256": "207F8D2E307408602E8B0A2CC2663A89B70773DA22BDAB7775B2EB926188EFFA",
+          "bytes": 1089
+        },
+        {
+          "path": "windows/run-v2/entry-consumers/process.json",
+          "sha256": "86E0A866E6B1D3F6416484EA64FD618D83FC462446829C5930F08E6E723F8B93",
+          "bytes": 1124
+        },
+        {
+          "path": "windows/run-v2/entry-professional-tooltip/process.json",
+          "sha256": "72EDB9AFC2EBA969F79B977CDF86F81B7E7247F1F50D05FB51C3A1D467CA595F",
+          "bytes": 1214
+        },
+        {
+          "path": "windows/run-v2/entry-export-stability/process.json",
+          "sha256": "552D3EF7B93A3A8D2696C0E50DF4C40EA49DA13D71E51EFB7078B6C91EFFE73A",
+          "bytes": 1052
+        },
+        {
+          "path": "windows/run-v2/entry-api/process.json",
+          "sha256": "F59BFB8F3FA5D51C165433C4AE2671AE97D41D17338DC894A7DF740C31367ACC",
+          "bytes": 923
+        }
+      ]
+    },
+    "linux": {
+      "status": "complete",
+      "passed": true,
+      "checks": {
+        "six-ordered-platform-stages-pass": true,
+        "same-frozen-source-snapshot": true,
+        "all1881-frozen-inputs-pass-before-and-after": true,
+        "all-frozen-platform-files-still-match": true,
+        "base-software-only-contract-scope-passes": true,
+        "2928-headless-contracts-pass": true,
+        "4585-full-native-Demo-checks-pass": true,
+        "865-native-Usage-bindings-pass": true,
+        "68-static-control-traces-and-selftests-pass": true,
+        "package-NT.AvaloniaControl.Charts-hash": true,
+        "package-NT.AvaloniaControl.Charts.Themes-hash": true,
+        "isolated-function-consumer-contracts": true,
+        "isolated-function-no-source-project-reference": true,
+        "isolated-themes-consumer-contracts": true,
+        "isolated-themes-no-source-project-reference": true,
+        "both-isolated-consumer-kinds-pass": true,
+        "150-focused-checks-and7-probes": true,
+        "theme-normal-light-native-handle": true,
+        "png-dimensions-theme-normal-light": true,
+        "theme-normal-dark-native-handle": true,
+        "png-dimensions-theme-normal-dark": true,
+        "theme-hc-light-native-handle": true,
+        "png-dimensions-theme-hc-light": true,
+        "theme-hc-dark-native-handle": true,
+        "png-dimensions-theme-hc-dark": true,
+        "tooltip-analysis-all18-format-state-contracts": true,
+        "png-dimensions-analysis/disabled/sync-png": true,
+        "png-dimensions-analysis/disabled/async-png": true,
+        "jpeg-header-dimensions-analysis/disabled/async-jpeg": true,
+        "png-dimensions-analysis/legacy/sync-png": true,
+        "png-dimensions-analysis/legacy/async-png": true,
+        "jpeg-header-dimensions-analysis/legacy/async-jpeg": true,
+        "png-dimensions-analysis/template/sync-png": true,
+        "png-dimensions-analysis/template/async-png": true,
+        "jpeg-header-dimensions-analysis/template/async-jpeg": true,
+        "tooltip-engineering-all18-format-state-contracts": true,
+        "png-dimensions-engineering/disabled/sync-png": true,
+        "png-dimensions-engineering/disabled/async-png": true,
+        "jpeg-header-dimensions-engineering/disabled/async-jpeg": true,
+        "png-dimensions-engineering/legacy/sync-png": true,
+        "png-dimensions-engineering/legacy/async-png": true,
+        "jpeg-header-dimensions-engineering/legacy/async-jpeg": true,
+        "png-dimensions-engineering/template/sync-png": true,
+        "png-dimensions-engineering/template/async-png": true,
+        "jpeg-header-dimensions-engineering/template/async-jpeg": true,
+        "four-required-theme-modes": true,
+        "18-tooltip-export-artifacts": true,
+        "independent-analysis-sync-png-tooltip-excluded": true,
+        "independent-analysis-async-png-tooltip-excluded": true,
+        "independent-engineering-sync-png-tooltip-excluded": true,
+        "independent-engineering-async-png-tooltip-excluded": true,
+        "native-export272-and3200-producer-guards": true,
+        "independent3232-export-checks-pass": true,
+        "default-JIT-forcedGC-with-stable-inputs": true,
+        "packaged-core-and-themes-match-tested-product": true,
+        "export-executed-NT.AvaloniaControl.Charts-matches-base": true,
+        "actual-copy-samples/NT.AvaloniaControl.Demo/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "actual-copy-samples/Charts.Usage/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "actual-copy-benchmarks/Charts.ExportStability/bin/Release/net10.0-NT.AvaloniaControl.Charts": true,
+        "export-executed-NT.AvaloniaControl.Charts.Themes-matches-base": true,
+        "actual-copy-samples/NT.AvaloniaControl.Demo/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-copy-samples/Charts.Usage/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-copy-benchmarks/Charts.ExportStability/bin/Release/net10.0-NT.AvaloniaControl.Charts.Themes": true,
+        "actual-API497-plus3-types": true
+      },
+      "failedChecks": [],
+      "sourceSnapshotFiles": 1881,
+      "sourceBefore": {
+        "files": 1881,
+        "differences": [],
+        "passed": true
+      },
+      "sourceAfter": {
+        "files": 1881,
+        "differences": [],
+        "passed": true
+      },
+      "sourceFilesStillPinned": true,
+      "sourceDifferences": [],
+      "stages": [
+        {
+          "id": "catalog",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "receipt": {
+            "path": "linux/run-v2/entry-catalog/process.json",
+            "sha256": "955073A8E13A4984BF8FBFB28DA0DC7E94723185347EB6C33C840BBE83147B7B",
+            "bytes": 833
+          }
+        },
+        {
+          "id": "base",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "receipt": {
+            "path": "linux/run-v2/entry-base/process.json",
+            "sha256": "D51F32B49A1D4318FA30B7B742CB8C14ED5329BE6314B8187BACFA2D411183D8",
+            "bytes": 1094
+          }
+        },
+        {
+          "id": "consumers",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "receipt": {
+            "path": "linux/run-v2/entry-consumers/process.json",
+            "sha256": "9147F9CA28D98D0DF07CDDC1269AB8B50CE9468F634CC9445801EB67BEDED36A",
+            "bytes": 1072
+          }
+        },
+        {
+          "id": "professional-tooltip",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "receipt": {
+            "path": "linux/run-v2/entry-professional-tooltip/process.json",
+            "sha256": "1090122CD2788CBA18CD9D0D9C816C0FE375A5FE2046BD902F5F74BE23D5F8E3",
+            "bytes": 1163
+          }
+        },
+        {
+          "id": "export-stability",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "receipt": {
+            "path": "linux/run-v2/entry-export-stability/process.json",
+            "sha256": "17AEADC500B708174F63D101F9781F554B54F556A67D45B710D6B3FF8D198CAA",
+            "bytes": 985
+          }
+        },
+        {
+          "id": "api",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "receipt": {
+            "path": "linux/run-v2/entry-api/process.json",
+            "sha256": "FBC186819D8920E86DE5C8CDE5B558F114E3062C5A6245A98DA8669AC2C03195",
+            "bytes": 883
+          }
+        }
+      ],
+      "headless": {
+        "status": "passed",
+        "inputKind": "headless-injection",
+        "total": 2928,
+        "passed": 2928,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "notRun": 0,
+        "result": "../../../../../../c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-tooltips-export-stability-20261023/linux/run-v2/verification/functional-v1/Charts.Headless.Tests.xml"
+      },
+      "fullDemoNative": {
+        "total": 4585,
+        "passed": 4585,
+        "failed": 0
+      },
+      "usage": {
+        "total": 865,
+        "passed": 865,
+        "failed": 0
+      },
+      "consumers": {
+        "function": {
+          "passed": true,
+          "checks": {
+            "total": 1047,
+            "passed": 1047,
+            "failed": 0
+          },
+          "coreSha256": "1902D8518F1DA4CEF88F1E235A59F3DBAD343AEBBD81AFC55BE35B7051605881",
+          "runtime": "10.0.13",
+          "avaloniaVersion": "12.0.3.0",
+          "freshPackageCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-tooltips-export-stability-20261023/linux/run-v2/consumers/20261023T122920256Z-4a8a4af5ec984bbd8196cb88bb2a100c/function/packages",
+          "noProjectReferences": true,
+          "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+        },
+        "themes": {
+          "passed": true,
+          "checks": {
+            "total": 1081,
+            "passed": 1081,
+            "failed": 0
+          },
+          "coreSha256": "1902D8518F1DA4CEF88F1E235A59F3DBAD343AEBBD81AFC55BE35B7051605881",
+          "runtime": "10.0.13",
+          "avaloniaVersion": "12.0.3.0",
+          "freshPackageCache": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-tooltips-export-stability-20261023/linux/run-v2/consumers/20261023T122920256Z-4a8a4af5ec984bbd8196cb88bb2a100c/themes/packages",
+          "noProjectReferences": true,
+          "evidenceKind": "headless-compiled-axaml-mvvm-package-contracts"
+        }
+      },
+      "professionalTooltip": {
+        "checks": {
+          "total": 150,
+          "passed": 150,
+          "failed": 0
+        },
+        "probes": 7,
+        "themeModes": [
+          "normal-light",
+          "normal-dark",
+          "hc-light",
+          "hc-dark"
+        ],
+        "tooltipExportArtifacts": 18,
+        "images": [
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-normal-light.png",
+            "sha256": "32C7102107DCC2042BFC3EA90E41F30F4BAB6FB90DFD572E814E1B2CF78EAAB8",
+            "bytes": 125529,
+            "kind": "theme-normal-light",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "72CE7715BE6201C7366558F94B65A1B867EC7341B8104C26226C2C140196B188"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-normal-dark.png",
+            "sha256": "33475DBBF0F295F53F2691E3DEAB7B9048B60546A1AC5282B74305714AF8B7EF",
+            "bytes": 130294,
+            "kind": "theme-normal-dark",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "B976E692105319F3697EA80121D5FA8926F1502F7F497F5D901A6AB874234F11"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-hc-light.png",
+            "sha256": "803A97083BF4D772C02BE3F7E10953AA2B325F36127FDA67106AAF20DF34EF09",
+            "bytes": 116117,
+            "kind": "theme-hc-light",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D1FBCC22A26538BE8AD047EA90592AF49BDAE5883574062CEE48177614F9D865"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-hc-dark.png",
+            "sha256": "5424C9C72F5B8BFAD0254D3FA64663B512DAB685D6CE03DCF3EDD67C1CF1ACDF",
+            "bytes": 121465,
+            "kind": "theme-hc-dark",
+            "width": 1440,
+            "height": 900,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D8894E7CE93391905D5B7D424B78A3385C88227F87684D2B2F7410BB4431B718"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-disabled-sync-png.png",
+            "sha256": "F935EEE37EC9A0427C623CC80A14F26A507EBBB95355496BF387296CBD916AD2",
+            "bytes": 8963,
+            "kind": "analysis/disabled/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "749405446E5CB6BACA56BB7241E691D6AB29E080B32C876A552FE09FF592951B"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-disabled-async-png.png",
+            "sha256": "10F9F3EB2937A6A058BAF5432DD7689058DE5A637CE7553FC05D61302A4B7B0E",
+            "bytes": 14989,
+            "kind": "analysis/disabled/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "749405446E5CB6BACA56BB7241E691D6AB29E080B32C876A552FE09FF592951B"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-disabled-async-jpeg.jpg",
+            "sha256": "4744FB4BD44D7875EEA09A70DF62703C48C86A46AC2EA4553739FEC19ECF3740",
+            "bytes": 19416,
+            "kind": "analysis/disabled/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentJpegVisualQualityClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-legacy-sync-png.png",
+            "sha256": "F935EEE37EC9A0427C623CC80A14F26A507EBBB95355496BF387296CBD916AD2",
+            "bytes": 8963,
+            "kind": "analysis/legacy/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "749405446E5CB6BACA56BB7241E691D6AB29E080B32C876A552FE09FF592951B"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-legacy-async-png.png",
+            "sha256": "10F9F3EB2937A6A058BAF5432DD7689058DE5A637CE7553FC05D61302A4B7B0E",
+            "bytes": 14989,
+            "kind": "analysis/legacy/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "749405446E5CB6BACA56BB7241E691D6AB29E080B32C876A552FE09FF592951B"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-legacy-async-jpeg.jpg",
+            "sha256": "4744FB4BD44D7875EEA09A70DF62703C48C86A46AC2EA4553739FEC19ECF3740",
+            "bytes": 19416,
+            "kind": "analysis/legacy/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentJpegVisualQualityClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-template-sync-png.png",
+            "sha256": "F935EEE37EC9A0427C623CC80A14F26A507EBBB95355496BF387296CBD916AD2",
+            "bytes": 8963,
+            "kind": "analysis/template/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "749405446E5CB6BACA56BB7241E691D6AB29E080B32C876A552FE09FF592951B"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-template-async-png.png",
+            "sha256": "10F9F3EB2937A6A058BAF5432DD7689058DE5A637CE7553FC05D61302A4B7B0E",
+            "bytes": 14989,
+            "kind": "analysis/template/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "749405446E5CB6BACA56BB7241E691D6AB29E080B32C876A552FE09FF592951B"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-analysis-template-async-jpeg.jpg",
+            "sha256": "4744FB4BD44D7875EEA09A70DF62703C48C86A46AC2EA4553739FEC19ECF3740",
+            "bytes": 19416,
+            "kind": "analysis/template/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentJpegVisualQualityClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-disabled-sync-png.png",
+            "sha256": "D5D6C0CD3D8D689CBF948717C4F1E54AF8999A914780CB8139851FEF137C005B",
+            "bytes": 1807,
+            "kind": "engineering/disabled/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D504786BCDCF294A8B90D60A0EC0B6155E549A5CC478B320C602A823E89092D9"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-disabled-async-png.png",
+            "sha256": "16CEAF39734EF99A4D7AD8ADDE078114051DD75EC931D99127053D0E769574BC",
+            "bytes": 8563,
+            "kind": "engineering/disabled/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D504786BCDCF294A8B90D60A0EC0B6155E549A5CC478B320C602A823E89092D9"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-disabled-async-jpeg.jpg",
+            "sha256": "3E77F994E6556ACCE5ABAA1770F4B8466E66C15C8D9C4830AC9714C71466F2C0",
+            "bytes": 12033,
+            "kind": "engineering/disabled/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentJpegVisualQualityClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-legacy-sync-png.png",
+            "sha256": "D5D6C0CD3D8D689CBF948717C4F1E54AF8999A914780CB8139851FEF137C005B",
+            "bytes": 1807,
+            "kind": "engineering/legacy/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D504786BCDCF294A8B90D60A0EC0B6155E549A5CC478B320C602A823E89092D9"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-legacy-async-png.png",
+            "sha256": "16CEAF39734EF99A4D7AD8ADDE078114051DD75EC931D99127053D0E769574BC",
+            "bytes": 8563,
+            "kind": "engineering/legacy/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D504786BCDCF294A8B90D60A0EC0B6155E549A5CC478B320C602A823E89092D9"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-legacy-async-jpeg.jpg",
+            "sha256": "3E77F994E6556ACCE5ABAA1770F4B8466E66C15C8D9C4830AC9714C71466F2C0",
+            "bytes": 12033,
+            "kind": "engineering/legacy/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentJpegVisualQualityClaimed": false
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-template-sync-png.png",
+            "sha256": "D5D6C0CD3D8D689CBF948717C4F1E54AF8999A914780CB8139851FEF137C005B",
+            "bytes": 1807,
+            "kind": "engineering/template/sync-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D504786BCDCF294A8B90D60A0EC0B6155E549A5CC478B320C602A823E89092D9"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-template-async-png.png",
+            "sha256": "16CEAF39734EF99A4D7AD8ADDE078114051DD75EC931D99127053D0E769574BC",
+            "bytes": 8563,
+            "kind": "engineering/template/async-png",
+            "width": 640,
+            "height": 320,
+            "crcAndStructureValidated": true,
+            "decodedStraightRgbaSha256": "D504786BCDCF294A8B90D60A0EC0B6155E549A5CC478B320C602A823E89092D9"
+          },
+          {
+            "path": "linux/run-v2/professional-tooltip/tooltip-professional-tooltips-engineering-template-async-jpeg.jpg",
+            "sha256": "3E77F994E6556ACCE5ABAA1770F4B8466E66C15C8D9C4830AC9714C71466F2C0",
+            "bytes": 12033,
+            "kind": "engineering/template/async-jpeg",
+            "width": 640,
+            "height": 320,
+            "independentJpegVisualQualityClaimed": false
+          }
+        ],
+        "pngDecoder": {
+          "path": "D:/Procedure/AvaloniaControl/scripts/charts_png_oracle.py",
+          "sha256": "2C05338338984B1D5C818997AAB22E6C8C34331CEC24C8CED65AAE32503C44FF",
+          "bytes": 12612
+        },
+        "pngVisualScope": "CRC, dimensions, hash and same-format disabled/legacy/template pixel equality; routed synthetic input and RenderTargetBitmap only."
+      },
+      "exportStability": {
+        "attempts": 272,
+        "producerGuards": 3200,
+        "images": 256,
+        "independentChecks": 3232,
+        "independentlyDecodedPngs": 240,
+        "uniquePngDecodes": 11,
+        "forcedCollections": 14006,
+        "collectionsBeginningDuringManagedCapture": 2278,
+        "workerStopped": true,
+        "defaultJitPreserved": true,
+        "runtime": {
+          "os": "Ubuntu 26.04 LTS",
+          "architecture": "X64",
+          "framework": ".NET 10.0.13",
+          "runtime": "10.0.13",
+          "serverGc": false,
+          "gcLatencyMode": "Interactive",
+          "tieredCompilationEnvironment": null,
+          "comPlusTieredCompilationEnvironment": null,
+          "runtimeConfigPath": "/mnt/d/Procedure/AvaloniaControl/artifacts/c7tooltipstability/linux-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/Charts.ExportStability.runtimeconfig.json",
+          "runtimeConfig": "{\n  \"runtimeOptions\": {\n    \"tfm\": \"net10.0\",\n    \"framework\": {\n      \"name\": \"Microsoft.NETCore.App\",\n      \"version\": \"10.0.0\"\n    },\n    \"configProperties\": {\n      \"System.Reflection.Metadata.MetadataUpdater.IsSupported\": false,\n      \"System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization\": false\n    }\n  }\n}"
+        },
+        "actualNativeModules": [
+          {
+            "moduleName": "libHarfBuzzSharp.so",
+            "fileName": "/mnt/d/Procedure/AvaloniaControl/artifacts/c7tooltipstability/linux-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/runtimes/linux-x64/native/libHarfBuzzSharp.so",
+            "sha256": "1D5C3AFEF13545BF34BF8F068B14E25EE619C3B6DEE235C44E260FE61CB24018"
+          },
+          {
+            "moduleName": "libSkiaSharp.so",
+            "fileName": "/mnt/d/Procedure/AvaloniaControl/artifacts/c7tooltipstability/linux-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/runtimes/linux-x64/native/libSkiaSharp.so",
+            "sha256": "77924699617FD9C8E04127C4CA797279DB041E6161AFCBDC44B371D9D81B1675"
+          }
+        ],
+        "exactNativeCallOverlapProved": false,
+        "tier1PromotionIndependentlyProved": false
+      },
+      "productAssemblyPins": {
+        "coreSha256": "1902D8518F1DA4CEF88F1E235A59F3DBAD343AEBBD81AFC55BE35B7051605881",
+        "themesSha256": "F448F13D6EAD55D4BE69A779F37EBB8F35B33DA790FCE8C49E45F3E1C4D2195A",
+        "actualHostCopies": [
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7tooltipstability/linux-source-v2/samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "1902D8518F1DA4CEF88F1E235A59F3DBAD343AEBBD81AFC55BE35B7051605881",
+            "bytes": 2174464
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7tooltipstability/linux-source-v2/samples/Charts.Usage/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "1902D8518F1DA4CEF88F1E235A59F3DBAD343AEBBD81AFC55BE35B7051605881",
+            "bytes": 2174464
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7tooltipstability/linux-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/NT.AvaloniaControl.Charts.dll",
+            "sha256": "1902D8518F1DA4CEF88F1E235A59F3DBAD343AEBBD81AFC55BE35B7051605881",
+            "bytes": 2174464
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7tooltipstability/linux-source-v2/samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "F448F13D6EAD55D4BE69A779F37EBB8F35B33DA790FCE8C49E45F3E1C4D2195A",
+            "bytes": 25600
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7tooltipstability/linux-source-v2/samples/Charts.Usage/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "F448F13D6EAD55D4BE69A779F37EBB8F35B33DA790FCE8C49E45F3E1C4D2195A",
+            "bytes": 25600
+          },
+          {
+            "path": "D:/Procedure/AvaloniaControl/artifacts/c7tooltipstability/linux-source-v2/benchmarks/Charts.ExportStability/bin/Release/net10.0/NT.AvaloniaControl.Charts.Themes.dll",
+            "sha256": "F448F13D6EAD55D4BE69A779F37EBB8F35B33DA790FCE8C49E45F3E1C4D2195A",
+            "bytes": 25600
+          }
+        ]
+      },
+      "api": {
+        "coreTypes": 497,
+        "themesTypes": 3,
+        "totalTypes": 500,
+        "normalizedSurfaceSha256": "10E9500CE8D5569BB2AC2424D66FEA2A9E88BBED61EE41D2C9DEC85E90C8A6E3",
+        "metadataOnly": true,
+        "officialCompared": false
+      },
+      "runtime": {
+        "osDescription": "Ubuntu 26.04 LTS",
+        "osArchitecture": "X64",
+        "processArchitecture": "X64",
+        "baseSdk": "10.0.402",
+        "powershell": "7.6.5",
+        "actualExportFramework": ".NET 10.0.13",
+        "actualExportRuntime": "10.0.13",
+        "avalonia": "12.0.3.0",
+        "consumerSdkPinnedToBaseSdkClaimed": false,
+        "linuxQualification": "WSL2/WSLg XWayland native X11 synthetic window; distribution/physical desktop certification pending"
+      },
+      "references": [
+        {
+          "path": "linux/run-v2/results.json",
+          "sha256": "7F932EC8B7EE7ACA95CD7FB0B11BA1AC2B63993507F5DB0DAB95E27857B0DE23",
+          "bytes": 7311
+        },
+        {
+          "path": "linux/run-v2/source-before.json",
+          "sha256": "A4C0DAB6FDE182AF99ABA349566B8BCF4A35599A54AB3BEFF6BAC45E988B111B",
+          "bytes": 59
+        },
+        {
+          "path": "linux/run-v2/source-after.json",
+          "sha256": "A4C0DAB6FDE182AF99ABA349566B8BCF4A35599A54AB3BEFF6BAC45E988B111B",
+          "bytes": 59
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/results.json",
+          "sha256": "DEC6C2199C01434B5ED63DCDD294560E421315507515BE4317A17020F3E0EB4D",
+          "bytes": 24606
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/environment.json",
+          "sha256": "AD0BD0813E50F263916FC5F072F2957E5C0712B667C39753998A81A5981DDBBB",
+          "bytes": 8402
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/assembly-manifest.json",
+          "sha256": "3FD262BE800841A42544FDDF625DBEB44A92E7C5DFB109CE34B34515D132D287",
+          "bytes": 1907
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/source-manifest.json",
+          "sha256": "C7B869EDFF2A0ABDFA01478D63A45ED6800BE5E13DF4B65D84AF001887F5E0DB",
+          "bytes": 308001
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/source-manifest-final.json",
+          "sha256": "C7B869EDFF2A0ABDFA01478D63A45ED6800BE5E13DF4B65D84AF001887F5E0DB",
+          "bytes": 308001
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/validated-input-manifest.json",
+          "sha256": "07A90DFFA29CC63A177AAE7717B6B7B1E950C84A2CADECA9DB4C1E923079A733",
+          "bytes": 171613
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/evidence-manifest.json",
+          "sha256": "54F8D665F19971EA680C23DEEA326B4325FBC3B5ED16F37F9562E28709E05690",
+          "bytes": 212822
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/Charts.Headless.Tests.xml",
+          "sha256": "284E3F254B51BBEB656AC4D8174FA72550369A556F82843F950A315D9814F6E6",
+          "bytes": 1709317
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/charts-smoke.json",
+          "sha256": "A7BE8274F49AB22F83DD1546B67D3F7382F0605F753580062AB6EFA676A9C198",
+          "bytes": 82408453
+        },
+        {
+          "path": "linux/run-v2/verification/functional-v1/charts-usage.json",
+          "sha256": "17F683796C32387FB8C000EF564CB3118C479FB37798CEDECC1010BDDD0A526E",
+          "bytes": 107512
+        },
+        {
+          "path": "linux/run-v2/catalog.json",
+          "sha256": "65495F27D00A9FCD18C1B84B6A02F853327D7490DDA52781319AD869797EB146",
+          "bytes": 50947
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T122920256Z-4a8a4af5ec984bbd8196cb88bb2a100c/results.json",
+          "sha256": "54EC820FF31D46B77A674C7159FD96901CD2C1B2BD6AE74FF5EABE17FB811402",
+          "bytes": 11898
+        },
+        {
+          "path": "linux/run-v2/package-feed/NT.AvaloniaControl.Charts.0.2.0-preview.2.nupkg",
+          "sha256": "E7C607A1E640BBE490B7EE1A4D21B9A0D3603B055CEF87E23347991C4E3A731B",
+          "bytes": 864403
+        },
+        {
+          "path": "linux/run-v2/package-feed/NT.AvaloniaControl.Charts.Themes.0.2.0-preview.2.nupkg",
+          "sha256": "0766C207B8A6F062D46C2D6470BB5232AA9C2AC32928BC8C98D3472468B61A5F",
+          "bytes": 12503
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T122920256Z-4a8a4af5ec984bbd8196cb88bb2a100c/function/consumer-result.json",
+          "sha256": "852855387F7F9FCFC99C2A4722DE0B61E6B8770ADD1A9576213F64E008D1ADCC",
+          "bytes": 149641
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T122920256Z-4a8a4af5ec984bbd8196cb88bb2a100c/function/packages.lock.json",
+          "sha256": "862B653CBDB18D38B337DCA2E831B3E05E82A7C49BE2019200A36C5D61EBAAC8",
+          "bytes": 4387
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T122920256Z-4a8a4af5ec984bbd8196cb88bb2a100c/themes/consumer-result.json",
+          "sha256": "7B790F908C3BA7C76112E14E3FC6EDEFC5AA169278B6D8AB37B7E8E3B775C182",
+          "bytes": 152083
+        },
+        {
+          "path": "linux/run-v2/consumers/20261023T122920256Z-4a8a4af5ec984bbd8196cb88bb2a100c/themes/packages.lock.json",
+          "sha256": "CB1EEA15FFBF1780AD4D1CC909B6DA035F20381D2A12792A5ECC6CD46126AC47",
+          "bytes": 4717
+        },
+        {
+          "path": "linux/run-v2/professional-tooltip/smoke.json",
+          "sha256": "794E3E7447FD6B44FAF017B3389C9F69E5036059A25478D641DFA0E10972EF1D",
+          "bytes": 98144
+        },
+        {
+          "path": "linux/run-v2/export-stability/results.json",
+          "sha256": "371B2AA7E6CA93647C17B737E2A26868824E9978E8401362EC364671492A1CB7",
+          "bytes": 6273
+        },
+        {
+          "path": "linux/run-v2/export-stability/producer/results.json",
+          "sha256": "F6D2AD2AC563A2FE69DF78EF45993AEFC4842A8995795420BBB730D60D2BC445",
+          "bytes": 1969500
+        },
+        {
+          "path": "linux/run-v2/export-stability/producer/protocol.json",
+          "sha256": "D88219A186F27D93931AE5F30FEA42E4E4F3EE64335578926FBBED6C700420C5",
+          "bytes": 56595
+        },
+        {
+          "path": "linux/run-v2/export-stability/producer/events.jsonl",
+          "sha256": "95C3C0713A806555E883932D66064DFC603FA8589CBDEC47D20D8CE5EC97D389",
+          "bytes": 509636
+        },
+        {
+          "path": "linux/run-v2/export-stability/independent-oracle.json",
+          "sha256": "0DAA062122E5992FEF410C448AE01AE0C596B20FF09555FF2811F9B5A2A6C477",
+          "bytes": 447397
+        },
+        {
+          "path": "linux/run-v2/export-stability/source-inputs-before.json",
+          "sha256": "100DBA532C13AFED55C9476BB704EF224F4A442777D76215441E7631C0C52D87",
+          "bytes": 47690
+        },
+        {
+          "path": "linux/run-v2/export-stability/source-inputs-after.json",
+          "sha256": "100DBA532C13AFED55C9476BB704EF224F4A442777D76215441E7631C0C52D87",
+          "bytes": 47690
+        },
+        {
+          "path": "linux/run-v2/export-stability/host-inputs-before.json",
+          "sha256": "6A89224879225FA257811656D5879666A87F4FE70E15409690A1FE0B03F88759",
+          "bytes": 12700
+        },
+        {
+          "path": "linux/run-v2/export-stability/host-inputs-after.json",
+          "sha256": "6A89224879225FA257811656D5879666A87F4FE70E15409690A1FE0B03F88759",
+          "bytes": 12700
+        },
+        {
+          "path": "linux/run-v2/api/baseline.json",
+          "sha256": "03664B15C0CBF2BC4DF4AE8745B32F8E63D038292231B05BECC44F276F28B5DC",
+          "bytes": 287384
+        },
+        {
+          "path": "linux/run-v2/api/api.txt",
+          "sha256": "96DAF657D6B7DF5DA264136743FAD7BC028A1F7E81789D63B695F9C174360E61",
+          "bytes": 1026184
+        },
+        {
+          "path": "linux/run-v2/api/source-manifest.json",
+          "sha256": "8D020F82E3D5FBABB486976CFE9246182E3BBC4A23E74F59B041B7C8322D5D03",
+          "bytes": 108431
+        },
+        {
+          "path": "linux/run-v2/entry-catalog/process.json",
+          "sha256": "955073A8E13A4984BF8FBFB28DA0DC7E94723185347EB6C33C840BBE83147B7B",
+          "bytes": 833
+        },
+        {
+          "path": "linux/run-v2/entry-base/process.json",
+          "sha256": "D51F32B49A1D4318FA30B7B742CB8C14ED5329BE6314B8187BACFA2D411183D8",
+          "bytes": 1094
+        },
+        {
+          "path": "linux/run-v2/entry-consumers/process.json",
+          "sha256": "9147F9CA28D98D0DF07CDDC1269AB8B50CE9468F634CC9445801EB67BEDED36A",
+          "bytes": 1072
+        },
+        {
+          "path": "linux/run-v2/entry-professional-tooltip/process.json",
+          "sha256": "1090122CD2788CBA18CD9D0D9C816C0FE375A5FE2046BD902F5F74BE23D5F8E3",
+          "bytes": 1163
+        },
+        {
+          "path": "linux/run-v2/entry-export-stability/process.json",
+          "sha256": "17AEADC500B708174F63D101F9781F554B54F556A67D45B710D6B3FF8D198CAA",
+          "bytes": 985
+        },
+        {
+          "path": "linux/run-v2/entry-api/process.json",
+          "sha256": "FBC186819D8920E86DE5C8CDE5B558F114E3062C5A6245A98DA8669AC2C03195",
+          "bytes": 883
+        }
+      ]
+    }
+  },
+  "pendingPlatforms": [],
+  "aggregationErrors": [],
+  "apiSurfacesMatchAcrossPlatforms": true,
+  "currentWorkspace": {
+    "checkedSnapshotFiles": 1881,
+    "chartRelevantBuildInputs": 584,
+    "chartProductTestUsageHarnessInputsMatchFrozenCandidate": true,
+    "chartRelevantDifferences": [],
+    "newRelevantInputsAbsentFromSnapshot": [],
+    "reportDocumentationDifferences": [
+      "docs/charts-c7-integration.md",
+      "docs/charts-development-plan.md",
+      "docs/charts-official-alignment.md",
+      "docs/charts-performance-platform-plan.md",
+      "docs/public-api.txt",
+      "docs/treedatagrid-alignment-a0-status.md",
+      "docs/treedatagrid-alignment-a2-status.md",
+      "docs/treedatagrid-binding-support.md",
+      "docs/treedatagrid-feature-alignment-plan.md",
+      "docs/treedatagrid-next-development-plan.md",
+      "docs/treedatagrid-usage.md"
+    ],
+    "unrelatedDifferences": [
+      "benchmarks/PdfViewer.Benchmarks/Program.cs",
+      "samples/NT.AvaloniaControl.Demo/Pages/TreeDataGrid/TreeDataGridPage.Demo.Smoke.cs",
+      "samples/NT.AvaloniaControl.Demo/Pages/TreeDataGrid/TreeDataGridPage.Gallery.cs",
+      "samples/NT.AvaloniaControl.Demo/Pages/TreeDataGrid/TreeDataGridPage.Layout.cs",
+      "samples/NT.AvaloniaControl.Demo/Pages/TreeDataGrid/TreeDataGridPage.P6.cs",
+      "scripts/Test-PdfViewerPerformance.ps1",
+      "scripts/Test-TreeDataGridFunctionConsumer.ps1",
+      "scripts/pdfviewer/benchmark.ps1",
+      "scripts/pdfviewer/benchmark.sh",
+      "src/NT.AvaloniaControl.TreeDataGrid/Controls/TreeDataGrid.Interaction.cs",
+      "src/NT.AvaloniaControl.TreeDataGrid/Controls/TreeDataGrid.ItemsSourceAdapter.cs",
+      "src/NT.AvaloniaControl.TreeDataGrid/Controls/TreeDataGridBinding.cs",
+      "src/NT.AvaloniaControl.TreeDataGrid/Controls/TreeDataGridColumn.BindingEditing.cs",
+      "src/NT.AvaloniaControl.TreeDataGrid/Controls/TreeDataGridColumn.Editing.cs",
+      "src/NT.AvaloniaControl.TreeDataGrid/Controls/TreeDataGridModelPath.cs",
+      "src/NT.AvaloniaControl.TreeDataGrid/Core/TreeDataGridRowMoveCollection.cs",
+      "src/NT.AvaloniaControl.TreeDataGrid/Core/TreeDataGridSource.RowMove.cs",
+      "src/NT.AvaloniaControl.TreeDataGrid/Core/TreeDataGridState.cs",
+      "tests/TreeDataGrid.Headless.Tests/A3BindingView.axaml.cs",
+      "tests/TreeDataGrid.Headless.Tests/BindingWritebackTests.cs"
+    ],
+    "qualificationScope": "Frozen platform copies verify all 1881 entries. Current root qualification covers chart build/test/Usage/Demo Charts/harness inputs only; README/report and unrelated changes are listed separately."
+  },
+  "controlledAB": {
+    "reference": {
+      "path": "export-stability-ab-evidence-v1.json",
+      "sha256": "83012009F6C093246A4B508A3FE68B1F301633570DD2F945CE95D9925A66B343",
+      "bytes": 15448
+    },
+    "targetedEvidenceConsistent": true,
+    "allLinkedRawReferencesRevalidated": true,
+    "linkedRawPinDifferences": [],
+    "oldAccessViolation": "0xC0000005",
+    "oldCompletedAttempts": 83,
+    "fixedCompletedAttempts": 272,
+    "fixedProducerGuards": 3200,
+    "fixedIndependentChecks": 3232,
+    "sameProducerHost": true,
+    "onlyCoreDllReplaced": true,
+    "onlyTwoKeepAliveFencesChanged": true
+  },
+  "oracleMutationTests": {
+    "schema": "charts-export-oracle-mutation-tests/v2",
+    "passed": true,
+    "exitCode": 0,
+    "expectedTests": 17,
+    "utc": "2026-10-23T12:09:50.877000+00:00",
+    "command": [
+      "D:/Python/Python312/python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/Tests",
+      "-p",
+      "test_charts_export_stability_oracle.py",
+      "-v"
+    ],
+    "log": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-tooltips-export-stability-20261023\\oracle-mutation-tests-v2.log",
+    "logSha256": "7FA13B9D2AD2F053E6340F542D350E62156510736A2ABD18677F4FE1A44DC172",
+    "oracleSha256": "F1986F0CD9346DD1F1AE0A03BCBB151D9C13171CEAAEBCA30A46AF1ABC726C14",
+    "testSha256": "E588DEE0A1860DA84D77501FC7F7145AE9960FBA25F9066E9D6D10CEAF4A14DF",
+    "newSummaryArrayCases": [
+      "valid complete list",
+      "missing",
+      "null",
+      "object",
+      "empty",
+      "truncated",
+      "extra"
+    ],
+    "dotnetExecuted": false,
+    "actualLogAndFrozenOracleAndTestHashesMatch": true
+  },
+  "preservedFailures": {
+    "windowsFormalV1": {
+      "path": "windows/run-v1/results.json",
+      "sha256": "84AAD6BA8F1D992BF045466697B8D27927CD4F52A5C12F83E7C4D167CC40DC81",
+      "bytes": 2940
+    },
+    "windowsFormalV1NotDiscarded": true,
+    "oldNativeAvPins": {
+      "path": "baseline-warm-failure-pins-v1.json",
+      "sha256": "26249A941BAC3C98D3CB66395D0AD3342823958A8743C3362BAE65D4FA8ACDF6",
+      "bytes": 64895
+    },
+    "all170OldCrashPinsRevalidated": true,
+    "oldCrashPinDifferences": [],
+    "firstFenceRestoreFailure": {
+      "path": "windows/fixed-fence-run-v1/results.json",
+      "sha256": "815FA9B03ECE600643C9BB1F38AAE634394E98F1DB4C3B03C3B9374EE549CC0E",
+      "bytes": 50802
+    },
+    "formalV1Policy": "V1 failed frozen Demo build included a concurrent PDF smoke import issue (CS0103 ElementComposition, 0 warnings/1 error), before headless/native runtime tests. V2 includes an explicit source-snapshot amendment; V1 is not represented as a Charts runtime pass."
+  },
+  "qualification": {
+    "windowsNativeSynthetic": true,
+    "linuxWslgNativeSynthetic": true,
+    "physicalInputValidated": false,
+    "compositorPresentCaptured": false,
+    "linuxDistributionOrPhysicalDesktopCertified": false,
+    "officialRuntimeCompared": false,
+    "performanceParityMeasured": false,
+    "remoteCiExecuted": false,
+    "eightHourSoakCompleted": false,
+    "nativeUIAOrAtSpiSelectedItemBridgeCertified": false
+  },
+  "references": [
+    {
+      "path": "source-snapshot-v2.json",
+      "sha256": "D9FAC82F5D193CA3297DF13B1469A84229806A3BCB41CA72B3AC2741C580269E",
+      "bytes": 365466
+    },
+    {
+      "path": "source-snapshot-v1.json",
+      "sha256": "EF40338F29F03B78501EAC8F1067A2676287C977F76A202A68129753A5E3F9C9",
+      "bytes": 363282
+    },
+    {
+      "path": "export-stability-ab-evidence-v1.json",
+      "sha256": "83012009F6C093246A4B508A3FE68B1F301633570DD2F945CE95D9925A66B343",
+      "bytes": 15448
+    },
+    {
+      "path": "baseline-warm-failure-pins-v1.json",
+      "sha256": "26249A941BAC3C98D3CB66395D0AD3342823958A8743C3362BAE65D4FA8ACDF6",
+      "bytes": 64895
+    },
+    {
+      "path": "oracle-mutation-tests-v2.json",
+      "sha256": "7249D32BC9D91EF5B5006D6F8D97E43AE60C89A949E207AB290DB751C4DBDBCA",
+      "bytes": 1001
+    },
+    {
+      "path": "oracle-mutation-tests-v2.log",
+      "sha256": "7FA13B9D2AD2F053E6340F542D350E62156510736A2ABD18677F4FE1A44DC172",
+      "bytes": 3170
+    },
+    {
+      "path": "Collect-C7TooltipValidation-v1.py",
+      "sha256": "EE465717DAF519C7D1C5B93E8015EC538B8968EF8CB79527301EBE3753D0144F",
+      "bytes": 24634
+    },
+    {
+      "path": "windows/run-v1/results.json",
+      "sha256": "84AAD6BA8F1D992BF045466697B8D27927CD4F52A5C12F83E7C4D167CC40DC81",
+      "bytes": 2940
+    }
+  ],
+  "remainingIssues": [
+    "Official runtime comparison and license-dependent functional/performance acceptance remain pending.",
+    "Physical Windows/Linux input, touch/trackpad and compositor screenshots require platform/hardware validation.",
+    "Linux distribution/native desktop qualification, UIA/AT-SPI selected-item bridge specialization, eight-hour soak and remote CI execution remain pending.",
+    "Million-point hit-test tail latency is deferred by user direction; this forced-GC export stress is not a throughput or latency benchmark.",
+    "Exact-export PNG oracle checks extrema/gaps and original identity contracts; it does not independently count all native path vertices or prove Tier1/native-call GC overlap."
+  ],
+  "dotnetExecutedByCollector": false,
+  "postValidationFormatting": {
+    "schema": "c7-post-validation-formatting/v1",
+    "utc": "2026-10-23T12:43:12.757984+00:00",
+    "sourceInputCount": 584,
+    "byteIdenticalInputs": 582,
+    "formattingOnlyInputs": [
+      {
+        "path": "src/NT.AvaloniaControl.Charts/AnalysisChartBase.cs",
+        "testedSnapshotSha256": "2695E1BB7F039FD66FA5FB63E2CE294F8C16A897960136897AEA909F4A9ED730",
+        "finalWorkspaceSha256": "EA9111937BC9A3AD84A7645FE0C02E6DE90F5BF6E0FD4607BA0B4C19B0D10FAC",
+        "canonicalUtf8TextSha256": "2695E1BB7F039FD66FA5FB63E2CE294F8C16A897960136897AEA909F4A9ED730",
+        "canonicalTextIdentical": true,
+        "change": "Restore pre-existing tracked CRLF line endings; no source token changes."
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/AnalysisChartBase.Export.cs",
+        "testedSnapshotSha256": "5F6303BC1C35E5203FC2FE7EDE50D975F95702089906A762945E8A02405AE135",
+        "finalWorkspaceSha256": "2BD72231846B025DD705441E760362FAE76DC0051826CA2FF0C049E3FF64D087",
+        "canonicalUtf8TextSha256": "5F6303BC1C35E5203FC2FE7EDE50D975F95702089906A762945E8A02405AE135",
+        "canonicalTextIdentical": true,
+        "change": "Restore pre-existing tracked CRLF line endings; no source token changes."
+      }
+    ],
+    "unexpectedBuildInputDifferences": [],
+    "allCurrentChartInputsEquivalentToTestedSnapshot": true,
+    "dotnetRerun": false,
+    "reason": "Line-ending-only formatting; canonical source bytes independently equal the tested source. Raw tested snapshots and validation-final.json remain immutable.",
+    "receipt": {
+      "path": "post-validation-formatting-v1.json",
+      "sha256": "51ED834139EAD4B7C038CECB1D32802FDAEFB2E85AC67686FC1436F19DFC2A5C"
+    },
+    "originalFrozenValidationSha256": "E129DAE9689DAE61C1FD9FE838C66801E274793784D4CA87233E5B78FB71A144"
+  }
+}

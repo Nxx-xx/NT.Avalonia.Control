@@ -21,13 +21,63 @@ internal sealed class BenchmarkRunner(BenchmarkOptions options)
             report.Datasets.Add(dataset.Manifest);
             report.DatasetPreparation.Add(new(0, creation));
             var allValid = dataset.Points.SelectMany(points => points).Where(DatasetFactory.IsValid).ToArray();
+            var yMinimum = Math.Min(0, allValid.Min(point => point.Y)) - 1;
+            var yMaximum = allValid.Max(point => point.Y) + 1;
+            if (definition.RealtimePoc)
+            {
+                // Fixed extents must contain every revision that will be queried.
+                // Initial-only Y bounds can exclude later appended values and spikes.
+                // This prepass is outside sample timing and is separately reported;
+                // future point arrays are discarded and normal revision generation
+                // below remains measured independently rather than reused here.
+                var plannedRevisions = options.Warmups + options.Samples;
+                var boundManifests = new List<DatasetManifest> { dataset.Manifest };
+                var boundsTiming = Measure(() =>
+                {
+                    for (var revision = 1; revision < plannedRevisions; revision++)
+                    {
+                        CheckDeadline(scenarioStart);
+                        var boundsDataset = DatasetFactory.Create(definition, revision);
+                        boundManifests.Add(boundsDataset.Manifest);
+                        foreach (var points in boundsDataset.Points)
+                            foreach (var point in points)
+                                if (DatasetFactory.IsValid(point))
+                                {
+                                    yMinimum = Math.Min(yMinimum, Math.Min(0, point.Y) - 1);
+                                    yMaximum = Math.Max(yMaximum, point.Y + 1);
+                                }
+                    }
+                });
+                report.AxisPreparation = new
+                {
+                    policy = "bounded-revision-union-fixed-extents-v1",
+                    plannedRevisionCount = plannedRevisions,
+                    revisions = boundManifests.Select(manifest => new
+                    {
+                        manifest.Revision, manifest.Sha256, manifest.InputPointCount,
+                        manifest.ValidPointCount, manifest.SeriesSha256,
+                    }).ToArray(),
+                    futureRevisionGenerationAndRangeScan = boundsTiming,
+                    initialGenerationTiming = "datasetPreparation revision 0",
+                    initialRangeScanIncludedInPrepassTiming = false,
+                    futurePointArraysRetained = false,
+                    sampleDatasetsReusedFromPrepass = false,
+                    axisBounds = new
+                    {
+                        xMinimum = allValid.Min(point => point.X) - 1,
+                        xMaximum = allValid.Max(point => point.X) + plannedRevisions * 25 + 1,
+                        yMinimum, yMaximum,
+                    },
+                    qualification = "The fixed Y extent differs from the initial-only C0 fixture. Prepass time/allocations remain visible and process memory is not adjusted to subtract them. This is bounded replacement POC, not paced streaming or performance parity.",
+                };
+            }
             var chart = new CartesianChart
             {
                 Width = 1200, Height = 650, ShowLegend = false, ShowGridLines = true, FontSize = 12,
                 XAxis = new ChartAxis { Minimum = allValid.Min(point => point.X) - 1,
                     Maximum = allValid.Max(point => point.X) + (definition.RealtimePoc ? (options.Samples + options.Warmups) * 25 + 1 : 1), DesiredTickCount = 6 },
-                YAxis = new ChartAxis { Minimum = Math.Min(0, allValid.Min(point => point.Y)) - 1,
-                    Maximum = allValid.Max(point => point.Y) + 1, DesiredTickCount = 6 },
+                YAxis = new ChartAxis { Minimum = yMinimum,
+                    Maximum = yMaximum, DesiredTickCount = 6 },
             };
             for (var index = 0; index < definition.SeriesCount; index++)
             {

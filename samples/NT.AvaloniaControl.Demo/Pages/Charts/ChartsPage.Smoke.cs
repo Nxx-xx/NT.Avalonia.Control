@@ -34,7 +34,36 @@ internal sealed partial class ChartsPage
         string? error = null;
         try
         {
-            if (args.Contains("--charts-animation-only", StringComparer.Ordinal))
+            await RunFontStartupSmokeAsync(checks, image);
+            if (args.Contains("--charts-font-startup-only", StringComparer.Ordinal))
+            {
+                // The same normal Program entry initialized fonts before any UI.
+            }
+            else if (args.Contains("--charts-professional-linking-only", StringComparer.Ordinal))
+            {
+                await RunProfessionalLinkingSmokeAsync(checks, image);
+            }
+            else if (args.Contains("--charts-professional-plot-trackball-only", StringComparer.Ordinal))
+            {
+                await RunProfessionalPlotTrackballSmokeAsync(checks, image);
+            }
+            else if (args.Contains("--charts-professional-presentations-only", StringComparer.Ordinal))
+            {
+                await RunProfessionalPresentationSmokeAsync(checks, image);
+            }
+            else if (args.Contains("--charts-professional-tooltips-only", StringComparer.Ordinal))
+            {
+                await RunProfessionalTooltipSmokeAsync(checks, image);
+            }
+            else if (args.Contains("--charts-layout-only", StringComparer.Ordinal))
+            {
+                await RunResponsiveLayoutSmokeAsync(checks);
+            }
+            else if (args.Contains("--charts-c7-integration-only", StringComparer.Ordinal))
+            {
+                await RunC7IntegrationSmokeAsync(checks, image);
+            }
+            else if (args.Contains("--charts-animation-only", StringComparer.Ordinal))
             {
                 await RunAnimationSmokeAsync(checks, image);
             }
@@ -189,13 +218,7 @@ internal sealed partial class ChartsPage
                 foreach (var chart in AllCharts) chart.ViewportChanged -= ViewportChanged;
             }
 
-            var originalWidth = _hostWindow.Width;
-            _hostWindow.Width = 1080;
-            await SmokeFlushAsync();
-            checks["窄窗口纵向排列"] = !_threeColumns && _barCard.Bounds.Top > _lineCard.Bounds.Top && _scatterCard.Bounds.Top > _barCard.Bounds.Top && AllCharts.All(chart => chart.Bounds.Width > 250);
-            _hostWindow.Width = originalWidth;
-            await SmokeFlushAsync();
-            checks["宽窗口三列排列"] = _threeColumns && _barCard.Bounds.Left > _lineCard.Bounds.Left && _scatterCard.Bounds.Left > _barCard.Bounds.Left;
+            await RunResponsiveLayoutSmokeAsync(checks);
 
             if (_hostWindow is MainWindow mainWindow)
             {
@@ -257,6 +280,11 @@ internal sealed partial class ChartsPage
             await RunMapsSmokeAsync(checks, image);
             await RunC6CompletionSmokeAsync(checks, image);
             await RunC5CompletionSmokeAsync(checks, image);
+            await RunC7IntegrationSmokeAsync(checks, image);
+            await RunProfessionalTooltipSmokeAsync(checks, image);
+            await RunProfessionalPresentationSmokeAsync(checks, image);
+            await RunProfessionalPlotTrackballSmokeAsync(checks, image);
+            await RunProfessionalLinkingSmokeAsync(checks, image);
             }
         }
         catch (Exception exception) { error = exception.ToString(); }
@@ -269,7 +297,7 @@ internal sealed partial class ChartsPage
             File.WriteAllText(fullOutput, JsonSerializer.Serialize(new
             {
                 通过 = passed,
-                验证范围 = args.Contains("--charts-c5-completion-only", StringComparer.Ordinal) ? "c5-completion-only" : args.Contains("--charts-c6-only", StringComparer.Ordinal) ? "c6-main-completion-only" : args.Contains("--charts-comparison-only", StringComparer.Ordinal) ? "advanced-comparison-only" : args.Contains("--charts-engineering-only", StringComparer.Ordinal) ? "engineering-projections-only" : args.Contains("--charts-technical-only", StringComparer.Ordinal) ? "technical-trends-only" : args.Contains("--charts-financial-only", StringComparer.Ordinal) ? "financial-prices-only" : args.Contains("--charts-statistics-only", StringComparer.Ordinal) ? "statistics-only" : args.Contains("--charts-multichart-only", StringComparer.Ordinal) ? "multi-chart-only" : args.Contains("--charts-resources-only", StringComparer.Ordinal) ? "render-resource-only" : args.Contains("--charts-streaming-only", StringComparer.Ordinal) ? "incremental-streaming-only" : args.Contains("--charts-hit-only", StringComparer.Ordinal) ? "efficient-hit-only" : args.Contains("--charts-lod-only", StringComparer.Ordinal) ? "level-of-detail-only" : "complete-charts-demo",
+                验证范围 = args.Contains("--charts-professional-linking-only", StringComparer.Ordinal) ? "professional-linking-only" : args.Contains("--charts-professional-plot-trackball-only", StringComparer.Ordinal) ? "professional-plot-trackball-only" : args.Contains("--charts-professional-presentations-only", StringComparer.Ordinal) ? "professional-presentations-only" : args.Contains("--charts-professional-tooltips-only", StringComparer.Ordinal) ? "professional-tooltips-only" : args.Contains("--charts-layout-only", StringComparer.Ordinal) ? "responsive-layout-only" : args.Contains("--charts-c7-integration-only", StringComparer.Ordinal) ? "c7-integration-only" : args.Contains("--charts-c5-completion-only", StringComparer.Ordinal) ? "c5-completion-only" : args.Contains("--charts-c6-only", StringComparer.Ordinal) ? "c6-main-completion-only" : args.Contains("--charts-comparison-only", StringComparer.Ordinal) ? "advanced-comparison-only" : args.Contains("--charts-engineering-only", StringComparer.Ordinal) ? "engineering-projections-only" : args.Contains("--charts-technical-only", StringComparer.Ordinal) ? "technical-trends-only" : args.Contains("--charts-financial-only", StringComparer.Ordinal) ? "financial-prices-only" : args.Contains("--charts-statistics-only", StringComparer.Ordinal) ? "statistics-only" : args.Contains("--charts-multichart-only", StringComparer.Ordinal) ? "multi-chart-only" : args.Contains("--charts-resources-only", StringComparer.Ordinal) ? "render-resource-only" : args.Contains("--charts-streaming-only", StringComparer.Ordinal) ? "incremental-streaming-only" : args.Contains("--charts-hit-only", StringComparer.Ordinal) ? "efficient-hit-only" : args.Contains("--charts-lod-only", StringComparer.Ordinal) ? "level-of-detail-only" : "complete-charts-demo",
                 时间UTC = DateTimeOffset.UtcNow,
                 平台 = RuntimeInformation.OSDescription,
                 运行时 = Environment.Version.ToString(),
@@ -278,6 +306,7 @@ internal sealed partial class ChartsPage
                 窗口高DIP = _hostWindow.ClientSize.Height,
                 缩放 = _hostWindow.RenderScaling,
                 检查 = checks,
+                responsiveLayoutProbes = _responsiveLayoutProbes,
                 错误 = error,
                 亮色图片 = image,
                 暗色图片 = darkImage,
@@ -335,6 +364,11 @@ internal sealed partial class ChartsPage
                 mapProbes = _mapProbes, mapAsyncEvidence = _mapAsyncEvidence,
                 c6Probes = _c6Probes,
                 c5Probes = _c5CompletionProbes,
+                c7IntegrationProbes = _c7IntegrationProbes,
+                professionalTooltipProbes = _professionalTooltipProbes,
+                professionalPresentationProbes = _professionalPresentationProbes,
+                professionalPlotTrackballProbes = _professionalPlotTrackballProbes,
+                professionalLinkingProbes = _professionalLinkingProbes,
                 输入完整性亮色图片 = _inputGesturesEvidence.FirstOrDefault()?.PageImage,
                 输入完整性暗色图片 = _inputGesturesEvidence.LastOrDefault()?.PageImage,
                 选择范围亮色图片 = _selectionRangeEvidence.FirstOrDefault()?.PageImage,

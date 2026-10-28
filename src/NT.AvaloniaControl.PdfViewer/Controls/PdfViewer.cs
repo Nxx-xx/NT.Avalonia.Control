@@ -194,6 +194,7 @@ public partial class PdfViewer : TemplatedControl, IDisposable, IAsyncDisposable
         _searchTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(300) };
         _searchTimer.Tick += (_, _) => { _searchTimer.Stop(); Observe(SearchAsync(SearchQuery)); };
         InitializeContractCommands();
+        InitializeEditing();
         PdfCacheGovernor.Register(this);
     }
 
@@ -341,6 +342,29 @@ public partial class PdfViewer : TemplatedControl, IDisposable, IAsyncDisposable
         }
     }
 
+    /// <summary>
+    /// Captures a PERF16 resource-audit sample: process memory and handle counters together
+    /// with this viewer's cache accounting and any staged input copy. The managed heap reading
+    /// never forces a collection, so normal running pressure stays visible.
+    /// </summary>
+    public PdfResourceSample CaptureResourceSample(long? gpuBytes = null)
+    {
+        long? stagedBytes = null;
+        if (_document?.StagedTempPath is { } stagedPath)
+        {
+            try
+            {
+                stagedBytes = new FileInfo(stagedPath).Length;
+            }
+            catch (IOException)
+            {
+            }
+        }
+        return PdfPerformanceSession.Current is { } session
+            ? session.SampleResources(CacheStatistics, stagedBytes, gpuBytes)
+            : PdfResourceSample.Capture(CacheStatistics, stagedBytes, gpuBytes);
+    }
+
     /// <summary>Sum of every live viewer's budgeted pools (page + thumbnail + text); settable once per process.</summary>
     public static long GlobalCacheBudget
     {
@@ -426,6 +450,13 @@ public partial class PdfViewer : TemplatedControl, IDisposable, IAsyncDisposable
         if (_displayModeBox is not null) _displayModeBox.SelectionChanged += DisplayModeChanged;
         Hook("PART_Open", () => Observe(OpenDocumentAsync()));
         Hook("PART_Close", CloseDocument);
+        Hook("PART_Save", () => Observe(SaveAsync()));
+        Hook("PART_SaveAs", () => Observe(SaveAsAsync()));
+        Hook("PART_Undo", () => Observe(UndoAsync()));
+        Hook("PART_Redo", () => Observe(RedoAsync()));
+        Hook("PART_UnsavedSave", () => RespondToUnsavedChanges(PdfUnsavedChangesDecision.Save));
+        Hook("PART_UnsavedDiscard", () => RespondToUnsavedChanges(PdfUnsavedChangesDecision.Discard));
+        Hook("PART_UnsavedCancel", () => RespondToUnsavedChanges(PdfUnsavedChangesDecision.Cancel));
         Hook("PART_PreviousPage", PreviousPage);
         Hook("PART_NextPage", NextPage);
         Hook("PART_ZoomIn", ZoomIn);
@@ -622,6 +653,13 @@ public partial class PdfViewer : TemplatedControl, IDisposable, IAsyncDisposable
         }
         else if (change.Property == SidebarPlacementProperty || change.Property == SidebarPresentationProperty) UpdateSidebarLayout();
         HandleContractPropertyChanged(change);
+        if (change.Property == AutoSaveProperty || change.Property == AutoSaveIntervalProperty || change.Property == IsReadOnlyProperty)
+        {
+            RefreshEditingState();
+            ScheduleAutoSave();
+            if (change.Property == IsReadOnlyProperty && CanWriteDocument && _editSession is null)
+                Observe(EnableEditingAsync());
+        }
         if (change.Property == AllowCopyProperty || change.Property == AllowTextSelectionProperty)
         {
             if (!CanSelectText) _presenter?.ClearSelection();
@@ -692,6 +730,8 @@ public partial class PdfViewer : TemplatedControl, IDisposable, IAsyncDisposable
             var command = button.Name switch
             {
                 "PART_Open" => OpenCommand, "PART_Close" => CloseCommand,
+                "PART_Save" => SaveCommand, "PART_SaveAs" => SaveAsCommand,
+                "PART_Undo" => UndoCommand, "PART_Redo" => RedoCommand,
                 "PART_PreviousPage" => PreviousPageCommand, "PART_NextPage" => NextPageCommand,
                 "PART_ZoomIn" => ZoomInCommand, "PART_ZoomOut" => ZoomOutCommand,
                 "PART_FitWidth" => FitWidthCommand, "PART_FitPage" => FitPageCommand,
@@ -832,7 +872,10 @@ public partial class PdfViewer : TemplatedControl, IDisposable, IAsyncDisposable
 
     private void PageNumberChanged(object? sender, NumericUpDownValueChangedEventArgs e)
     {
-        if (!_updatingParts && e.NewValue is { } page) GoToPage((int)page);
+        // The two-way Value binding echoes viewer-driven CurrentPage updates back through
+        // PART_PageNumber; _updatingCurrent marks that fan-out, and navigating for it would
+        // yank a free-scrolled viewport to the current page's top.
+        if (!_updatingParts && !_updatingCurrent && e.NewValue is { } page) GoToPage((int)page);
     }
     private void ThumbnailSelected(object? sender, SelectionChangedEventArgs e)
     {

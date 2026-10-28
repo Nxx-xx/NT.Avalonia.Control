@@ -91,6 +91,7 @@ internal interface IChartSnapshotData
     ChartDataValue GetValue(int index);
     ChartDataPoint GetPoint(int index);
     bool TryFindIdentity(object identity, bool valueEquality, out int ordinal);
+    bool TryFindExistingIdentity(object identity, bool valueEquality, out int ordinal) { ordinal = -1; return false; }
     bool TryGetSummary(out ChartSnapshotSummary summary) { summary = default; return false; }
 }
 
@@ -215,7 +216,7 @@ public sealed record ChartDataSnapshot
     // N-entry identity/source-index dictionary merely to resolve a virtual child.
     internal bool TryFindExistingIdentity(object? identity, out ChartDataPoint point, bool valueEquality = false)
     {
-        if (identity is not null && _data is ArraySnapshotData array && array.TryFindExistingIdentity(identity, valueEquality, out var ordinal))
+        if (identity is not null && _data.TryFindExistingIdentity(identity, valueEquality, out var ordinal))
         { point = GetPoint(ordinal); return true; }
         point = default;
         return false;
@@ -330,7 +331,7 @@ public sealed record ChartDataSnapshot
                 return lookup.TryGetValue(identity, out ordinal);
             }
         }
-        internal bool TryFindExistingIdentity(object identity, bool valueEquality, out int ordinal)
+        public bool TryFindExistingIdentity(object identity, bool valueEquality, out int ordinal)
         {
             lock (_identityLock)
             {

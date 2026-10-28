@@ -20,3 +20,6 @@ dotnet run --project samples/PdfViewer.Usage -- "D:\Documents\example.pdf"
 - **导出**：`ExportPageCommand` 调用 `ExportPageImageAsync` 按 144 DPI 导出当前页 PNG 到临时目录并报告路径与字节数。
 
 示例同时保留 `AllowCopy` / `AllowSearch` 宿主策略勾选、`CloseCommand`、`DocumentState` 与密码绑定。验证状态见[状态记录](../../docs/pdfviewer-status.md)。
+# P4-02 保存接入
+
+本示例以 `IsReadOnly=false` 加载受支持 PDF，提供保存、另存为、自动保存、撤销 / 重做命令绑定。修改用户书签后可保存并重开回读；字节 / 流来源先另存为才有 AutoSave 目标。窗口关闭先等待 `RequestCloseDocumentAsync`，保存失败或取消时保留窗口。批注编辑 UI 仍属后续阶段，宿主可通过 `ExecuteEditAsync` 调用已支持的 FreeText 事务。完整边界见[验证与契约](../../docs/pdfviewer-p4-02-validation.md)。

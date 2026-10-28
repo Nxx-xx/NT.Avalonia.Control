@@ -6,6 +6,73 @@
         x:CompileBindings="True" Title="Charts · AXAML / MVVM 接入"
         Width="1140" Height="900" MinWidth="850" MinHeight="650">
   <Window.Resources>
+    <DataTemplate x:Key="ProfessionalPlotTemplate" x:DataType="charts:ChartDataPlotAreaContext">
+      <Border Name="UsageProfessionalPlotBody" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="5,3" Margin="5" MaxWidth="265" Background="{DynamicResource ChartTooltipBackgroundBrush}">
+        <StackPanel Spacing="2">
+          <TextBlock Name="UsageProfessionalPlotCaption" Text="{Binding Content}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+          <ContentControl Content="{Binding DataContext}">
+            <ContentControl.ContentTemplate><DataTemplate x:DataType="vm:ChartUsageViewModel"><TextBlock Name="UsageProfessionalPlotHeading" Text="{Binding ProfessionalOverlayHeading}" FontSize="10" TextTrimming="CharacterEllipsis" /></DataTemplate></ContentControl.ContentTemplate>
+          </ContentControl>
+          <TextBlock Text="{Binding VisibleLayoutBounds, StringFormat='可见布局：{0}'}" FontSize="10" TextTrimming="CharacterEllipsis" />
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="ProfessionalTrackTemplate" x:DataType="charts:ChartDataTrackballContext">
+      <Border Name="UsageProfessionalTrackBody" MaxWidth="245" Padding="3">
+        <StackPanel Spacing="2">
+          <ContentControl Content="{Binding BusinessDataContext}">
+            <ContentControl.ContentTemplate><DataTemplate x:DataType="vm:ChartUsageViewModel"><TextBlock Name="UsageProfessionalTrackHeading" Text="{Binding ProfessionalOverlayHeading}" FontWeight="SemiBold" FontSize="10" TextTrimming="CharacterEllipsis" /></DataTemplate></ContentControl.ContentTemplate>
+          </ContentControl>
+          <TextBlock Name="UsageProfessionalTrackCount" Text="{Binding Readings.Count, StringFormat='切片读数：{0}'}" FontSize="10" />
+          <TextBlock Name="UsageProfessionalTrackMembers" Text="{Binding Readings[0].Members.Count, StringFormat='首读数来源：{0}'}" FontSize="10" />
+          <TextBlock Name="UsageProfessionalTrackId" Text="{Binding Readings[0].Members[0].StableId, StringFormat='首项：{0}'}" FontSize="10" />
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="ProfessionalLegendTemplate" x:DataType="charts:ChartDataLegendItemContext">
+      <Border Name="UsageSharedLegendBody" Padding="4,2" MaxWidth="210">
+        <StackPanel Spacing="2">
+          <StackPanel Orientation="Horizontal" Spacing="6">
+            <Border Width="10" Height="10" Background="{Binding Brush}" />
+            <TextBlock Name="UsageSharedLegendText" Text="{Binding Text}" TextTrimming="CharacterEllipsis" />
+          </StackPanel>
+          <TextBlock Name="UsageSharedLegendCount" Text="{Binding Members.Count, StringFormat='原始成员：{0}'}" FontSize="10" />
+          <ContentControl Content="{Binding BusinessDataContext}">
+            <ContentControl.ContentTemplate>
+              <DataTemplate x:DataType="vm:ChartUsageViewModel">
+                <TextBlock Name="UsageSharedLegendHeading" Text="{Binding ProfessionalHeading}" FontSize="10" TextTrimming="CharacterEllipsis" />
+              </DataTemplate>
+            </ContentControl.ContentTemplate>
+          </ContentControl>
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="ProfessionalDataLabelTemplate" x:DataType="charts:ChartDataLabelItemContext">
+      <Border Name="UsageSharedLabelBody" MaxWidth="148" Padding="4,2" CornerRadius="3" Background="{DynamicResource ChartTooltipBackgroundBrush}">
+        <StackPanel Spacing="2">
+          <TextBlock Name="UsageSharedLabelText" Text="{Binding Text}" TextTrimming="CharacterEllipsis" />
+          <TextBlock Name="UsageSharedLabelCount" Text="{Binding Members.Count, StringFormat='来源 {0} 项'}" FontSize="10" />
+          <TextBlock Name="UsageSharedLabelId" Text="{Binding Members[0].StableId, StringFormat='首项：{0}'}" FontSize="10" />
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="ProfessionalTooltipTemplate" x:DataType="charts:ChartDataTooltipContext">
+      <Border Name="UsageProfessionalTooltipBody" MaxWidth="280">
+        <StackPanel Spacing="3">
+          <ContentControl Content="{Binding BusinessDataContext}">
+            <ContentControl.ContentTemplate>
+              <DataTemplate x:DataType="vm:ChartUsageViewModel">
+                <TextBlock Name="UsageProfessionalBusinessTitle" Text="{Binding C7TooltipTitle}" FontWeight="SemiBold" TextWrapping="Wrap" />
+              </DataTemplate>
+            </ContentControl.ContentTemplate>
+          </ContentControl>
+          <TextBlock Text="{Binding Text}" TextWrapping="Wrap" />
+          <TextBlock Name="UsageProfessionalMemberCount" Text="{Binding Members.Count, StringFormat='原始成员：{0}'}" />
+          <TextBlock Name="UsageProfessionalFirstId" Text="{Binding Members[0].StableId, StringFormat='首项：{0}'}" />
+          <TextBlock Text="{Binding Members[0].SourceIndex, StringFormat='原始源索引：{0}'}" />
+        </StackPanel>
+      </Border>
+    </DataTemplate>
     <DataTemplate x:Key="ScatterBubbleTooltip" x:DataType="charts:ChartTooltipContext">
       <StackPanel Spacing="3">
         <TextBlock Text="{Binding Primary.Series.Title}" FontWeight="SemiBold" />
@@ -153,7 +220,7 @@
     </DataTemplate>
   </Window.Resources>
   <ScrollViewer HorizontalScrollBarVisibility="Disabled">
-  <Grid Margin="22" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="12">
+  <Grid Margin="22" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="12">
     <StackPanel Spacing="5">
       <TextBlock Text="Charts · 真实业务对象绑定" FontSize="24" FontWeight="SemiBold" />
       <TextBlock Text="修改属性、追加数据或替换系列集合；滚轮缩放、左键拖动，重置后查看全部数据。" TextWrapping="Wrap" Opacity="0.7" />
@@ -1067,6 +1134,84 @@
           <charts:ContourPlot x:Name="UsageC5Contour" Grid.Row="2" Grid.Column="0" Height="260" Title="Contour · 可观察网格和级别" ItemsSource="{Binding C5Grid}" IdPath="Id" XPath="East" YPath="North" ValuePath="Reading" Levels="{Binding C5Levels}" SelectedIndex="{Binding C5ContourSelected, Mode=TwoWay}" />
           <charts:MosaicChart x:Name="UsageC5Mosaic" Grid.Row="2" Grid.Column="1" Height="260" Title="Mosaic · 重复列联项保留来源" ItemsSource="{Binding C5Mosaic}" ShowLabels="{Binding C5Labels}" SelectedIndex="{Binding C5MosaicSelected, Mode=TwoWay}" />
           <charts:ParallelCoordinatesChart x:Name="UsageC5Parallel" Grid.Row="3" Grid.ColumnSpan="2" Height="260" Title="Parallel · 可观察坐标轴和原始行" ItemsSource="{Binding C5Parallel}" Axes="{Binding C5ParallelAxes}" ShowLabels="{Binding C5Labels}" SelectedIndex="{Binding C5ParallelSelected, Mode=TwoWay}" />
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="C7IntegrationExamples" Grid.Row="36" Header="C7 集成 · 跨图族主题与原始数据身份" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <WrapPanel><TextBlock Text="全部图族的高对比预设" VerticalAlignment="Center" Margin="0,0,12,0" /><ComboBox x:Name="UsageC7Contrast" ItemsSource="{Binding AccessibilityContrasts}" SelectedItem="{Binding C7Contrast, Mode=TwoWay}" /><Button Content="切换应用明暗主题" Click="ToggleTheme" Margin="12,0,0,0" /></WrapPanel>
+        <TextBlock Text="同一 ViewModel 属性绑定七个主题根，切换主题保留数据和选择。局部自定义笔刷仍优先；仅功能包由应用提供样式。" TextWrapping="Wrap" />
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="10">
+          <charts:CartesianChart x:Name="UsageC7Cartesian" Height="250" HighContrastMode="{Binding C7Contrast}">
+            <charts:CartesianChart.Series><charts:LineSeries Title="趋势" ItemsSource="{Binding LineAreaLinePoints}" /></charts:CartesianChart.Series>
+          </charts:CartesianChart>
+          <charts:RadarChart x:Name="UsageC7Radar" Grid.Column="1" Height="250" Title="雷达" HighContrastMode="{Binding C7Contrast}">
+            <charts:PolarChart.Series><charts:RadarSeries Title="质量" ItemsSource="{Binding RadarRecords}" CategoryPath="Label" ValuePath="Value" IdPath="Id" /></charts:PolarChart.Series>
+          </charts:RadarChart>
+          <charts:CircularChart x:Name="UsageC7Circular" Grid.Row="1" Height="250" Title="组成" HighContrastMode="{Binding C7Contrast}">
+            <charts:CircularChart.Series><charts:PieSeries Title="份额" ItemsSource="{Binding CircularRecords}" CategoryPath="Label" ValuePath="Value" IdPath="Id" /></charts:CircularChart.Series>
+          </charts:CircularChart>
+          <charts:LinearGaugeChart x:Name="UsageC7Gauge" Grid.Row="1" Grid.Column="1" Height="250" Title="进度" Value="{Binding GaugeValue}" HighContrastMode="{Binding C7Contrast}" />
+          <charts:SparklineChart x:Name="UsageC7Spark" Grid.Row="2" Height="250" ItemsSource="{Binding MicroRecords}" ValuePath="Value" CategoryPath="Label" IdPath="Id" ShowMarkers="True" HighContrastMode="{Binding C7Contrast}" />
+          <charts:FunnelChart x:Name="UsageC7Funnel" Grid.Row="2" Grid.Column="1" Height="250" Title="漏斗" ItemsSource="{Binding AnalysisRecords}" CategoryPath="Category" ValuePath="Value" IdPath="Id" HighContrastMode="{Binding C7Contrast}" />
+          <charts:BeeswarmPlotChart x:Name="UsageC7Swarm" Grid.Row="3" Height="250" Title="蜂群" ItemsSource="{Binding C5Samples}" ValuePath="Amount" CategoryPath="Group" LabelPath="Name" IdPath="Id" SelectedIndex="{Binding C5SwarmSelected, Mode=TwoWay}" HighContrastMode="{Binding C7Contrast}" />
+          <charts:StripPlotChart x:Name="UsageC7Strip" Grid.Row="3" Grid.Column="1" Height="250" Title="抖动散点" ItemsSource="{Binding C5Samples}" ValuePath="Amount" CategoryPath="Group" LabelPath="Name" IdPath="Id" HighContrastMode="{Binding C7Contrast}" />
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="ProfessionalTooltipExamples" Grid.Row="37" Header="C7 专业图族 · 共享业务 Tooltip 控件模板" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <TextBlock Text="悬停查看真实原始记录，Mosaic 聚合保留两条来源。模板只显示数量和首项，不展开整个大数据集合；同步及异步导出排除临时读数。" TextWrapping="Wrap" />
+        <WrapPanel>
+          <Button Content="切换模板 / 默认读数" Command="{Binding C7TooltipToggleTemplateCommand}" Margin="0,0,8,0" />
+          <Button Content="更新来源和业务标题" Command="{Binding C7TooltipUpdateCommand}" Margin="0,0,8,0" />
+          <Button Content="替换数据源" Command="{Binding C7TooltipReplaceCommand}" Margin="0,0,8,0" />
+          <CheckBox Content="启用 Tooltip" IsChecked="{Binding C7ProfessionalTooltipsEnabled}" />
+        </WrapPanel>
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+          <charts:FunnelChart x:Name="UsageProfessionalFunnel" Height="300" Title="单项原始业务" ItemsSource="{Binding C7TooltipRows}" CategoryPath="Label" ValuePath="Value" IdPath="Id" TooltipContentTemplate="{Binding C7ProfessionalTemplate}" IsTooltipEnabled="{Binding C7ProfessionalTooltipsEnabled}" HighContrastMode="{Binding C7Contrast}" />
+          <charts:MosaicChart x:Name="UsageProfessionalMosaic" Grid.Column="1" Height="300" Title="聚合仍保留全部来源" ItemsSource="{Binding C7TooltipRows}" ColumnPath="Column" RowPath="Row" ValuePath="Value" IdPath="Id" LabelPath="Label" TooltipContentTemplate="{Binding C7ProfessionalTemplate}" IsTooltipEnabled="{Binding C7ProfessionalTooltipsEnabled}" SelectedIndex="{Binding C7TooltipSelection, Mode=TwoWay}" HighContrastMode="{Binding C7Contrast}" />
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="ProfessionalPresentationExamples" Grid.Row="38" Header="专业图族 · 共享图例与数据标签模板" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8" Margin="0,8,0,0">
+        <TextBlock Text="模板通过编译绑定读取完整原始成员和业务 VM；只显示有界字段。永久图例和标签参与同步/异步导出。" TextWrapping="Wrap" />
+        <WrapPanel>
+          <Button Content="切换图例模板" Command="{Binding ProfessionalToggleLegendCommand}" Margin="0,0,8,0" />
+          <Button Content="切换标签模板" Command="{Binding ProfessionalToggleLabelCommand}" Margin="0,0,8,0" />
+          <Button Content="更新值和业务标题" Command="{Binding ProfessionalUpdateCommand}" Margin="0,0,8,0" />
+          <Button Content="替换数据源" Command="{Binding ProfessionalReplaceCommand}" />
+        </WrapPanel>
+        <WrapPanel>
+          <TextBlock Text="最多图例 / 标签：" VerticalAlignment="Center" />
+          <NumericUpDown Value="{Binding ProfessionalLegendLimit}" Minimum="0" Maximum="16" Width="80" Margin="0,0,8,0" />
+          <NumericUpDown Value="{Binding ProfessionalLabelLimit}" Minimum="0" Maximum="16" Width="80" />
+        </WrapPanel>
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+          <charts:FunnelChart x:Name="UsageSharedFunnel" Height="420" Title="单个原始观测" ItemsSource="{Binding ProfessionalRows}" CategoryPath="Label" ValuePath="Value" IdPath="Id" LegendItemTemplate="{Binding ProfessionalLegend}" DataLabelTemplate="{Binding ProfessionalLabel}" MaxLegendItems="{Binding ProfessionalLegendLimit}" MaxDataLabels="{Binding ProfessionalLabelLimit}" HighContrastMode="{Binding C7Contrast}" />
+          <charts:MosaicChart x:Name="UsageSharedMosaic" Grid.Column="1" Height="420" Title="聚合成员 [0, 2]" ItemsSource="{Binding ProfessionalRows}" ColumnPath="Column" RowPath="Row" ValuePath="Value" IdPath="Id" LabelPath="Label" LegendItemTemplate="{Binding ProfessionalLegend}" DataLabelTemplate="{Binding ProfessionalLabel}" MaxLegendItems="{Binding ProfessionalLegendLimit}" MaxDataLabels="{Binding ProfessionalLabelLimit}" SelectedIndex="{Binding ProfessionalSelection, Mode=TwoWay}" HighContrastMode="{Binding C7Contrast}" />
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="ProfessionalPlotTrackballExamples" Grid.Row="39" Header="专业图族 · 绘图区内容与 Trackball" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8" Margin="0,8,0,0">
+        <TextBlock Text="业务模板通过编译绑定读取真实布局和原始成员。绘图区使用家族布局归一化投影；Trackball 是显示空间切片，保留聚合成员。永久内容进入导出，临时读数排除。" TextWrapping="Wrap" />
+        <WrapPanel><Button Content="切换永久绘图区" Command="{Binding ProfessionalPlotToggleCommand}" Margin="0,0,8,0" /><Button Content="切换 Trackball" Command="{Binding ProfessionalTrackToggleCommand}" Margin="0,0,8,0" /><Button Content="分组 / 浮动读数" Command="{Binding ProfessionalTrackDisplayCommand}" Margin="0,0,8,0" /><Button Content="更新值和标题" Command="{Binding ProfessionalOverlayUpdateCommand}" Margin="0,0,8,0" /><Button Content="替换来源" Command="{Binding ProfessionalOverlayReplaceCommand}" /></WrapPanel>
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+          <charts:FunnelChart x:Name="UsagePlotTrackFunnel" Height="350" Title="单个原始阶段" ItemsSource="{Binding ProfessionalOverlayRows}" CategoryPath="Label" ValuePath="Value" IdPath="Id" PlotAreaContent="{Binding ProfessionalPlotContent}" PlotAreaContentTemplate="{Binding ProfessionalPlotTemplate}" TrackballMode="{Binding ProfessionalTrackMode}" TrackballDisplayMode="{Binding ProfessionalTrackDisplay}" TrackballContentTemplate="{Binding ProfessionalTrackTemplate}" MaxTrackballReadings="{Binding ProfessionalTrackLimit}" IsTooltipEnabled="False" HighContrastMode="{Binding C7Contrast}" />
+          <charts:MosaicChart x:Name="UsagePlotTrackMosaic" Grid.Column="1" Height="350" Title="聚合完整成员 [0, 2]" ItemsSource="{Binding ProfessionalOverlayRows}" ColumnPath="Column" RowPath="Row" ValuePath="Value" IdPath="Id" LabelPath="Label" PlotAreaContent="{Binding ProfessionalPlotContent}" PlotAreaContentTemplate="{Binding ProfessionalPlotTemplate}" TrackballMode="{Binding ProfessionalTrackMode}" TrackballDisplayMode="{Binding ProfessionalTrackDisplay}" TrackballContentTemplate="{Binding ProfessionalTrackTemplate}" MaxTrackballReadings="{Binding ProfessionalTrackLimit}" SelectedIndex="{Binding ProfessionalOverlaySelection, Mode=TwoWay}" IsTooltipEnabled="False" HighContrastMode="{Binding C7Contrast}" />
+        </Grid>
+      </StackPanel>
+    </Expander>
+    <Expander x:Name="ProfessionalLinkingExamples" Grid.Row="40" Header="专业图族 · 范围选择和业务 ID 联动" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8" Margin="0,8,0,0">
+        <TextBlock Text="独立的 TwoWay 选择绑定通过业务 ID 双向联动。范围条按 Mosaic 本地绘图区比例选中完整原始成员；漏斗不接收不相容的原始坐标。" TextWrapping="Wrap" />
+        <WrapPanel><Button Content="选择业务 A" Command="{Binding ProfessionalLinkSelectCommand}" Margin="0,0,8,0" /><Button Content="清除业务选择和范围" Command="{Binding ProfessionalLinkClearCommand}" Margin="0,0,8,0" /><Button Content="替换原始来源" Command="{Binding ProfessionalLinkReplaceCommand}" /></WrapPanel>
+        <charts:ChartDataRangeSelector x:Name="UsageProfessionalRange" EngineeringChart="{Binding #UsageLinkMosaic}" Range="{Binding ProfessionalLinkSelectorRange, Mode=TwoWay}" Axis="X" Height="38" />
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+          <charts:FunnelChart x:Name="UsageLinkFunnel" Height="350" Title="单项来源 · 独立选择绑定" ItemsSource="{Binding ProfessionalLinkRows}" CategoryPath="Label" ValuePath="Value" IdPath="Id" SelectedDataKeys="{Binding ProfessionalLinkAnalysisKeys, Mode=TwoWay}" PlotAreaContent="业务 ID 联动" PlotAreaContentTemplate="{Binding ProfessionalPlotTemplate}" TrackballMode="Vertical" TrackballContentTemplate="{Binding ProfessionalTrackTemplate}" LegendItemTemplate="{Binding ProfessionalLegend}" DataLabelTemplate="{Binding ProfessionalLabel}" MaxLegendItems="4" MaxDataLabels="4" HighContrastMode="{Binding C7Contrast}" />
+          <charts:MosaicChart x:Name="UsageLinkMosaic" Grid.Column="1" Height="350" Title="聚合完整成员 · 本地范围" ItemsSource="{Binding ProfessionalLinkRows}" ColumnPath="Column" RowPath="Row" ValuePath="Value" IdPath="Id" LabelPath="Label" SelectedDataKeys="{Binding ProfessionalLinkEngineeringKeys, Mode=TwoWay}" DataSelectionRange="{Binding ProfessionalLinkRange, Mode=TwoWay}" PlotAreaContent="本地比例范围" PlotAreaContentTemplate="{Binding ProfessionalPlotTemplate}" TrackballMode="Vertical" TrackballContentTemplate="{Binding ProfessionalTrackTemplate}" LegendItemTemplate="{Binding ProfessionalLegend}" DataLabelTemplate="{Binding ProfessionalLabel}" MaxLegendItems="4" MaxDataLabels="4" HighContrastMode="{Binding C7Contrast}" />
         </Grid>
       </StackPanel>
     </Expander>

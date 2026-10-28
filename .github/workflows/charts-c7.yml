@@ -1,0 +1,126 @@
+name: charts-c7-manual-formal-performance
+# Opt-in only; charts.yml push/PR/C4 behavior remains unchanged.
+on:
+  workflow_dispatch:
+    inputs:
+      run_formal:
+        description: 'Run original C7 software formal gate: 107 processes per OS; official reference stays blocked.'
+        type: boolean
+        default: false
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: charts-c7-formal-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  c7-contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      CHARTS_TEST_TEMP_ROOT: ${{ github.workspace }}/artifacts/charts-c7-ci/contracts/generated
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Require formal and standalone memory source tools
+        shell: pwsh
+        run: |
+          [IO.Directory]::CreateDirectory('artifacts/charts-c7-ci/contracts') | Out-Null
+          $requiredPaths = @('scripts/Invoke-ChartsC7Ci.ps1', 'scripts/charts_c7_ci_evidence.py', 'scripts/Tests/test_charts_c7_ci_evidence.py', 'scripts/Invoke-ChartsMemoryProbe.ps1', 'scripts/ChartsMemoryProbe.Contract.json', 'scripts/charts_memory_sampler.py', 'scripts/charts_memory_oracle.py', 'scripts/Tests/test_charts_memory_sampling.py', 'scripts/Tests/test_charts_c7_performance_oracle.py')
+          $missingPaths = @($requiredPaths | Where-Object { -not (Test-Path -LiteralPath $_ -PathType Leaf) })
+          [ordered]@{ schema = 'charts-c7-ci-source-check/v1'; checkedUtc = [DateTimeOffset]::UtcNow.ToString('O'); requiredPaths = $requiredPaths; missingPaths = $missingPaths; passed = $missingPaths.Count -eq 0 } | ConvertTo-Json -Depth 5 | Set-Content artifacts/charts-c7-ci/contracts/source-check.json -Encoding utf8
+          if ($missingPaths.Count -gt 0) { throw "Required C7 tool/contract is missing: $($missingPaths -join ', ')" }
+      - name: Python-only CI evidence, memory and original oracle mutation contracts
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $failedSuites = @()
+          foreach ($pattern in @('test_charts_c7_ci_evidence.py', 'test_charts_memory_sampling.py', 'test_charts_c7_performance_oracle.py')) {
+            python -m unittest discover -s scripts/Tests -p $pattern -v 2>&1 | Tee-Object -FilePath "artifacts/charts-c7-ci/contracts/$pattern.log"
+            if ($LASTEXITCODE -ne 0) { $failedSuites += $pattern }
+          }
+          if ($failedSuites.Count -gt 0) { throw "Python synthetic contracts failed: $($failedSuites -join ', ')" }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: charts-c7-contracts-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/charts-c7-ci/contracts/**
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 30
+  c7-formal:
+    needs: c7-contracts
+    if: github.event_name == 'workflow_dispatch' && inputs.run_formal
+    strategy:
+      fail-fast: false
+      matrix:
+        # Existing charts.yml runner labels/action major versions, not a latest-version claim.
+        os: [windows-2025, ubuntu-24.04]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 120
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      CHARTS_TEST_TEMP_ROOT: ${{ github.workspace }}/artifacts/charts-c7-ci/oracle-tests-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Start evidence before provisioning
+        shell: pwsh
+        run: |
+          [IO.Directory]::CreateDirectory('artifacts/charts-c7-ci') | Out-Null
+          [ordered]@{ runId = '${{ github.run_id }}'; runAttempt = '${{ github.run_attempt }}'; commit = '${{ github.sha }}'; runnerOs = '${{ runner.os }}'; imageOs = $env:ImageOS; imageVersion = $env:ImageVersion; officialReference = 'blocked-reference'; physicalHardwareQualified = $false } | ConvertTo-Json | Set-Content artifacts/charts-c7-ci/job-context.json -Encoding utf8
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Provision Linux X11/software/native fonts and original enumerator
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update 2>&1 | tee artifacts/charts-c7-ci/linux-provision-update.log
+          sudo apt-get install -y xvfb xauth ripgrep libx11-6 libice6 libsm6 libfontconfig1 libfreetype6 libgl1 libegl1 libxcb1 fonts-dejavu-core 2>&1 | tee artifacts/charts-c7-ci/linux-provision-install.log
+      - name: Ensure Windows original file enumerator
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          if (-not (Get-Command rg -ErrorAction SilentlyContinue)) {
+            if (-not (Get-Command choco -ErrorAction SilentlyContinue)) { throw 'Original C7 requires rg; no supported installer is available.' }
+            choco install ripgrep --yes --no-progress 2>&1 | Tee-Object -FilePath artifacts/charts-c7-ci/windows-ripgrep-install.log
+            if ($LASTEXITCODE -ne 0) { throw 'Original rg prerequisite installation failed.' }
+          }
+          rg --version | Set-Content artifacts/charts-c7-ci/rg-version.txt -Encoding utf8
+          if ($LASTEXITCODE -ne 0) { throw 'Original rg prerequisite failed.' }
+      - name: Windows hosted software original C7 formal gate
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: ./scripts/Invoke-ChartsC7Ci.ps1 -NativeMode HostedWindowsSoftware -OutputDirectory 'artifacts/charts-c7-ci/run-${{ github.run_id }}-${{ github.run_attempt }}'
+      - name: Linux Xvfb software original C7 formal gate
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          set -euo pipefail
+          export LIBGL_ALWAYS_SOFTWARE=1
+          export CHARTS_DISPLAY_KIND=xvfb
+          unset WAYLAND_DISPLAY
+          xvfb-run -a -s '-screen 0 1600x1200x24 -nolisten tcp' pwsh -NoLogo -NoProfile -File ./scripts/Invoke-ChartsC7Ci.ps1 -NativeMode XvfbSoftware -FontDirectory /usr/share/fonts/truetype/dejavu -OutputDirectory 'artifacts/charts-c7-ci/run-${{ github.run_id }}-${{ github.run_attempt }}' -PythonExecutable python3
+      - name: Preserve failed and successful raw/native evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charts-c7-formal-${{ matrix.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/charts-c7-ci/**
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 30
+          compression-level: 1

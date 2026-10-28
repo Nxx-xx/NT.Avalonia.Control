@@ -8,6 +8,18 @@ namespace NT.AvaloniaControl.PdfViewer;
 /// </summary>
 public static class PdfViewerStrings
 {
+    public static string ErrorSaveConflict { get; set; } = "保存目标已被外部修改或删除。请重新加载，或另存到其他文件。";
+    public static string ErrorPublishedSaveConflict { get; set; } = "提交时检测到并发修改，已保留保存快照和被替换版本。请查看恢复记录并选择需要的版本。";
+    public static string ErrorSaveDurabilityUncertain { get; set; } = "保存的提交或耐久确认未完成，已保留恢复快照。请恢复存储连接后检查恢复记录。";
+    public static string SaveText { get; set; } = "保存";
+    public static string SaveAsText { get; set; } = "另存为";
+    public static string UndoText { get; set; } = "撤销";
+    public static string RedoText { get; set; } = "重做";
+    public static string UnsavedChangesTitle { get; set; } = "文档有未保存的修改";
+    public static string UnsavedChangesMessage { get; set; } = "保存修改后继续，或放弃本次修改。取消将保留当前文档。";
+    public static string DiscardChangesText { get; set; } = "放弃修改";
+    public static string CancelChangesText { get; set; } = "取消";
+    public static string DirtyText { get; set; } = "未保存";
     // Toolbar, menus, tooltips and accessibility names.
     /// <summary>Open button label and accessibility name.</summary>
     public static string OpenText { get; set; } = "打开 PDF";

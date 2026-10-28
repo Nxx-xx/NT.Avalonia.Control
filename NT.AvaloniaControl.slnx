@@ -3,6 +3,7 @@
     <Project Path="src/NT.AvaloniaControl.PdfViewer/NT.AvaloniaControl.PdfViewer.csproj" />
     <Project Path="src/NT.AvaloniaControl.PdfViewer.Themes/NT.AvaloniaControl.PdfViewer.Themes.csproj" />
     <Project Path="src/NT.AvaloniaControl.Charts/NT.AvaloniaControl.Charts.csproj" />
+    <Project Path="src/NT.AvaloniaControl.Charts.Skia/NT.AvaloniaControl.Charts.Skia.csproj" />
     <Project Path="src/NT.AvaloniaControl.Charts.Themes/NT.AvaloniaControl.Charts.Themes.csproj" />
     <Project Path="src/NT.AvaloniaControl.Markdown/NT.AvaloniaControl.Markdown.csproj" />
     <Project Path="src/NT.AvaloniaControl.Markdown.Themes/NT.AvaloniaControl.Markdown.Themes.csproj" />
@@ -38,9 +39,14 @@
     <Project Path="tests/VirtualKeyboard.Themes.Tests/VirtualKeyboard.Themes.Tests.csproj" />
   </Folder>
   <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/PdfViewer.P403/PdfViewer.P403.csproj" />
     <Project Path="benchmarks/Charts.Benchmarks/Charts.Benchmarks.csproj" />
     <Project Path="benchmarks/Charts.NativeBenchmarks/Charts.NativeBenchmarks.csproj" />
+    <Project Path="benchmarks/Charts.MemoryProbe/Charts.MemoryProbe.csproj" />
+    <Project Path="benchmarks/Charts.ExportStability/Charts.ExportStability.csproj" />
+    <Project Path="benchmarks/Charts.PlatformAcceptance/Charts.PlatformAcceptance.csproj" />
     <Project Path="benchmarks/PdfViewer.P0/PdfViewer.P0.csproj" />
+    <Project Path="benchmarks/PdfViewer.Benchmarks/PdfViewer.Benchmarks.csproj" />
     <Project Path="benchmarks/Markdown.Benchmarks/Markdown.Benchmarks.csproj" />
     <Project Path="benchmarks/Markdown.Benchmarks/NativeHost/Markdown.NativeBenchmarks.csproj" />
     <Project Path="benchmarks/TreeDataGrid.Benchmarks/TreeDataGrid.Benchmarks.csproj" />

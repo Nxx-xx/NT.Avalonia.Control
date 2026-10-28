@@ -1,8 +1,52 @@
 # PdfViewer 桌面控件状态
 
-最新验证日期：**2026-10-23，P3-03 批次（第十三批：同画质分层、质量上限与分块可行性）**；上一轮为 2026-10-22 P3-02 批次（第十二批）。使用 .NET SDK 10.0.402、.NET 10、Avalonia 12.0.3，包版本遵循仓库的 `0.2.0-preview.2`。
+最新验证日期：**2026-10-25，P4-03 真实存储、最终竞争与耐久协议**；SDK 10.0.402、Avalonia 12.0.3，包版本 `0.2.0-preview.2`。
 
-P2 已交付完整阅读扩展：单页 / 连续 / 双页连续 / 双页四种页面布局，双页的封面单独 / 奇数页配对规则（`ShowCoverPage`）与按跨页步进的翻页；文档 `/PageLabels` 页标签（`PageLabels` / `CurrentPageLabel`，无标签回退页码）；页内链接提取与完整内部目的地（/XYZ 位置、缩放、拟合类型与 Fit 族视图参数）导航，URI / 文件 / 不支持动作一律不打开，`LinkActivated` 供宿主拦截，目录项同样携带完整目的地；会话内用户书签（标题 / 页 / 粗斜标志，与文档目录分开建模，默认模板新增「书签」页签与工具栏按钮）；触摸双指捏合缩放与固定优先级的快捷键契约（含 Ctrl+0/1/2/3、方向键 / 空格翻页）。接入见[使用说明](pdfviewer-usage.md)。用户书签的 PDF 持久化按 G2 退出条件留待 P4。
+本批接入原路径完整内容指纹和 typed 冲突，拒绝同长度 / 同 mtime 的外部改写、替换与删除，保留外部文件及 Dirty，AutoSave 暂停；新增私有同目录保存事务、跨进程协作锁及显式扫描 / 恢复 / 丢弃 API。恢复会重新核对目标、候选身份和 PDF，不重放不完整、冲突、无效或越界事务。保存提交后的清理失败不假装回滚成功文件。
+
+Windows / Ubuntu 26.04 WSL 同 IL 均 **Core 189/189、Headless 138/138**，新增正式回归 **16** 项；原生后端各 **11/11**、窗口各 **40/40**。故障 / 受控崩溃矩阵 **68 + 72** 项通过，分别使用 80 / 85 个 owned 子进程；双包全新缓存 **125 + 128 = 253** 项通过。独立 pypdf 重开 / AP / 字体 / 书签核验和 Poppler 渲染 **60** 份有效输出，另有 **6** 个损坏 PDF 负对照。详见[P4-03 验证](pdfviewer-p4-03-validation.md)及[机器记录](validation/pdfviewer-p4-03-20261025.json)。
+
+以上为首轮历史结果。当前新增真实 NTFS / ext4 满盘、SMB tree 断连、NFS 三秒断连重连和 Linux VM 三点断电恢复；v2 事务保留独立输出及实际被置换版本，Linux 增加目录 fsync，公开 PublishedConflict / DurabilityPending 和控件耐久失败状态。Windows / Linux Core 195、Headless 140，独立进程竞争各 24 检查，双包 261 项、独立 PDF 解析 318 份 / 不同内容渲染 86 份；最新细项以[存储专项](pdfviewer-p4-03-storage-validation.md)和[机器记录](validation/pdfviewer-p4-03-storage-20261025.json)为准。Windows VM 掉电按用户要求延期；永久 NFS 失联隔离、物理介质耐久、完整元数据、目标实机和 G4 继续开放。
+
+## P4-02 交付历史（2026-10-25）
+
+
+P4-02 已接入控件的原路径保存、另存为、流保存 / 自有字节导出、AutoSave、防抖串行提交、Undo/Redo、Dirty 与可等待的未保存修改确认。默认主题、Usage 和统一 Demo 已接线。写入限定 `IsReadOnly=false` 的未加密、未签名且至多 256 MiB 的受支持 PDF；默认纯阅读路径不增加编辑快照。书签随控件保存持久化，在可写会话重开回读，且不进入内容撤销历史。
+
+最终 Windows / Ubuntu 26.04 WSL 同 IL 均 **Core 176/176、Headless 135/135**，新增 **22** 项控件回归；两平台原生后端各 **11/11**、窗口各 **35/35**（新增 13 项 P4-02）；双包全新缓存消费者 **120/120 + 123/123 = 243/243**。Usage / 统一 Demo Release 零警告、零错误，最终 Demo 阅读 smoke 全部通过；独立 pypdf / Poppler 验证六份保存输出的实际 AP / 字体 / 书签与两平台像素。详见[P4-02 验证](pdfviewer-p4-02-validation.md)和[机器记录](validation/pdfviewer-p4-02-20261025.json)。
+
+P4-02 功能接线已交付；保存性能峰值、大文件时延、P4-03 冲突 / 崩溃恢复、P4-04 加密 / 签名和 P4-05 完整外部兼容矩阵仍开放，G4 未关闭。Ubuntu 本次是 WSL 同 IL / Linux 原生库与 Xvfb 窗口验证；Ubuntu 24.04 hosted CI、麒麟 / ARM64 实机、系统文件选择器实际操作与物理输入尚未验收。
+
+## 六处问题修复历史（2026-10-24）
+
+
+本轮修复独立审查复现的 6 个问题：撤销后分支编辑误判干净、清理后撤销丢书签却误判干净、书签恢复保存集合后仍脏、旧异步 FitB 请求覆盖新导航、XYZ 单轴跳转重置另一轴、流加载密码重试读到流尾。正式新增 16 个回归用例：Core 8 个（含暂存生命周期），Headless 8 个；Windows 与 Ubuntu 26.04 WSL 同 IL 执行均为 **Core 176/176、Headless 113/113**。独立原生窗口、双包及六场景重放的最终结果见[修复记录](pdfviewer-six-fixes-20261024.md)和[机器记录](validation/pdfviewer-six-fixes-20261024.json)。
+
+Ubuntu 本轮为同一程序集在 WSL 中调用 Linux 原生库的回归，没有执行 Linux 源码构建、物理输入或 Ubuntu 24.04 hosted CI。当时 P4 控件接线尚未完成；最新接线结果见上方 P4-02。P3 性能与官方对照保持开放；下面计数为各自版本的历史证据。
+
+P2 已交付完整阅读扩展：单页 / 连续 / 双页连续 / 双页四种页面布局，双页的封面单独 / 奇数页配对规则（`ShowCoverPage`）与按跨页步进的翻页；文档 `/PageLabels` 页标签（`PageLabels` / `CurrentPageLabel`，无标签回退页码）；页内链接提取与完整内部目的地（/XYZ 位置、缩放、拟合类型与 Fit 族视图参数）导航，URI / 文件 / 不支持动作一律不打开，`LinkActivated` 供宿主拦截，目录项同样携带完整目的地；会话内用户书签（标题 / 页 / 粗斜标志，与文档目录分开建模，默认模板新增「书签」页签与工具栏按钮）；触摸双指捏合缩放与固定优先级的快捷键契约（含 Ctrl+0/1/2/3、方向键 / 空格翻页）。接入见[使用说明](pdfviewer-usage.md)。用户书签的 PDF 持久化与回读已在 P4-01 于编辑会话侧交付，控件保存接线已由 P4-02 交付，范围见本页最新批次。
+
+## P4-01 批次（2026-10-24，第十六批：有界撤销历史、统一编辑事务与用户书签 PDF 持久化）
+
+P4-01 的三条线——有界 Undo/Redo、统一编辑事务、用户书签 PDF 持久化与回读——已实现并验证；dirty 判定升级为内容状态身份 + 书签叠加层：
+
+- **有界撤销历史（F28）**：内容编辑（FreeText、净化、红删）各记一条历史，`UndoAsync` / `RedoAsync` / `CanUndo` / `CanRedo` / `UndoCount` / `RedoCount` / `HistoryBytes`；`UndoLimit`（每栈条目数，默认 100，钳 ≥1）与 `HistoryByteLimit`（留存快照字节，默认 64 MiB，钳 ≥64 KiB）双限，调低即裁剪，**最新一条撤销记录永远保留**（字节可因此超出单条预算，显式文档化）；新编辑清空 redo；undo / redo 计入修订号；空历史 undo / redo 抛 `InvalidOperationException` 且会话不变。快照按字节状态身份（`stateId`）记账，undo 回到保存点即恢复该身份。
+- **统一编辑事务**：`ExecuteTransactionAsync(Func<CancellationToken, Task>, CancellationToken)` 把整组编辑合并为**一条**历史记录；失败或取消全量回滚字节、修订与 dirty（事务内提交的中间编辑一并回退，历史栈不动）；事务未产生变化不记历史、不清 redo；嵌套事务、事务内 undo / redo、保存与书签修改一律拒绝（`InvalidOperationException`，事务作用域经 AsyncLocal 门语义，外部并发调用正常排队等待）。事务体不得启动回调会话的并行工作（文档注释明确）。
+- **用户书签单独规则（F13 / F28）**：`PdfEditUserBookmark` record 与 `SetUserBookmarksAsync` / `GetUserBookmarksAsync`。书签写入私有 catalog 块 `/NTUserBookmarks`（其他阅读器按规范忽略未知键）：开档时**剥离**进会话叠加层（快照与历史永远不含书签）、导出 / 保存时**注入**并经原生重开校验，重开即回读。书签不进撤销历史、undo / redo 永不回滚；修改计入修订与 dirty，相同集合 no-op；净化 / 红删成功时按策略清空会话书签（该清空同样不进历史）。校验：ID 非空且唯一、标题 1–512 UTF-16 码元且无 null、页索引零基在界内、标志仅 None / Bold / Italic；损坏 / 越界的持久化块开档抛 `InvalidDataException`，不静默丢弃。
+- **Dirty 契约（F08）**：`IsDirty` 由修订号比较改为内容状态身份 + 书签脏标志——编辑、撤销到保存点（干净）、redo 离开保存点（脏）、保存失败保留、书签集变化 / 恢复全部有测试锁定；`SaveAsync` 成功同时清除两侧。
+- **输出确定性（本批实测缺陷）**：注入输出曾因 PDFsharp 6.2.4 每次结构化保存都在 `PrepareForSave` 里无条件以全新 `PdfMetadata` 替换 catalog `/Metadata`（DocumentID / InstanceID 取每次打开的随机 Guid，锁定版本源码已核对）而逐次不同——两次 Export 字节不一，包消费者 `p4UndoBackToSavedStateIsClean` 实测抓住。修复：会话按状态**缓存注入输出**（`CommitContent` / undo / redo / 书签变更 / 事务回滚 / Dispose 全部失效）——同一状态的重复导出与保存**字节一致**；跨会话 / 跨序列化趟次的字节复现按 PDFsharp 行为保持诚实声明（README 与类注释明确），不在静默中假装可复现。书签语义比较（内容 + 书签集 + dirty）覆盖跨趟次场景。
+
+新增公共 API：`PdfEditUserBookmark`、`PdfEditSession.UndoLimit` / `HistoryByteLimit` / `UndoCount` / `RedoCount` / `HistoryBytes` / `CanUndo` / `CanRedo` / `UndoAsync` / `RedoAsync` / `ExecuteTransactionAsync` / `GetUserBookmarksAsync` / `SetUserBookmarksAsync`、常量 `DefaultUndoLimit` / `DefaultHistoryByteLimit` / `MinimumHistoryByteLimit`。行为变化：净化 / 红删现在各记一条撤销历史并清空会话书签；`IsDirty` 语义按状态身份（undo 到保存点即干净）；书签随导出 / 保存注入输出且同状态输出字节一致。原 FreeText / 保存 / 导出契约与既有 API 不变。
+
+| 本批执行（Windows 11 x64 26200，.NET 10.0.13，Avalonia 12.0.3） | 结果 | 说明 |
+| --- | --- | --- |
+| PdfViewer.Core.Tests | **168/168** | 含 27 项新增：`P4UndoRedoTests` 18 项（往返字节 / 批注 / dirty、新编辑清 redo、更新撤销回前文本、步数淘汰、字节预算淘汰留最新、降限即裁剪与钳制、跨流 / 文件保存点 dirty、undo / redo 计修订、空历史与预取消、撤销恢复渲染外观、事务分组 / 失败回滚 / 无变化不记 / 嵌套拒绝 / 事务内禁止 undo / 保存 / 书签 / 降限、净化与红删各记历史且 undo 复原）+ `P4BookmarkPersistenceTests` 9 项（导出重开往返含 PDFium 重开、文件保存回读、书签跨 undo / redo 存活且不进历史、同集合 no-op 与保存点 dirty、输入校验全家族、开档剥离、10 类损坏块拒绝、手写有效块回读、同状态输出字节一致） |
+| PdfViewer.Headless.Tests | **105/105** | 与上批同数复跑通过（本批无控件面改动） |
+| PdfViewer 范围 Release 构建 | **零警告、零错误** | 功能包 / Themes / Core / Headless / PdfViewer.Usage；全解决方案与统一 Demo 构建被并行 Charts 会话 WIP（`HierarchyChartBase.cs`）挡住，与 PdfViewer 无关 |
+| 统一 Demo 原生 `--pdf-smoke` | 未在本批添加 P4 检查 | 按用户指示本批暂不添加 Demo smoke 的 P4 项；上批 68/68 记录保持为历史证据，不混作本批结果 |
+| 两个全新缓存 NuGet 消费者（功能包 / Themes） | **108/108 + 111/111 = 219/219** | 重打包的实际 nupkg、无源码项目引用；原 93 / 96 项全保留，各新增 15 项 `p4*`；`artifacts/consumer/` 下 `result.json` |
+
+控件级保存流程、AutoSave 与「书签不加入批注撤销历史」的完整闭环归 P4-02；P5–P7 各编辑类型接入同一事务与历史，表单合并连续输入归 P6；崩溃恢复 / 故障注入归 P4-03，签名与加密策略归 P4-04，结构检查与双引擎回读归 P4-05。PERF15 的历史预算记账已随本批落地（步数 + 字节双限即时裁剪），序列化时间 / 保存峰值归 P4-02。
 
 ## P2 Windows 验证结果（2026-10-20）
 
@@ -193,6 +237,55 @@ WP7 的可自动化部分（布局 × 旋转 × 混合页尺寸 × DPI 的定位
 
 **P2 冻结（WP8）**：上述源码 / DLL / 包 / 测试 / 原生证据即 P2 收口绑定，WP1–7 的产品与文档落点见本文件对应批次。G2 逐条判定与「自动化门槛具备证据、待外部验收（Ubuntu 24.04 CI 远端 run、IME / IBus·Fcitx5 / 触摸触控板实机）闭合后终判」的结论见[开发计划](pdfviewer-development-plan.md)P2 首轮实施节；官方矩阵阅读面状态列已同步（[对齐矩阵](pdfviewer-official-alignment.md)）。
 
+## P3-05 批次（2026-10-23，第十五批：性能指标记录、资源审计与内部回归）
+
+P3-05 的四条线——飞行记录契约与完整埋点、资源审计、真实呈现探针、可复现 benchmark 工具链——已实现，内部回归（Windows + Linux WSL 补充 + 软件渲染子集）已出具结果；同机官方 A/B 对照按诚实规则保持 `blocked-reference`：
+
+- **飞行记录契约（PERF01）**：公开 `PdfPerformanceSession`（进程级 ambient，`Begin` / `Record` / `NextCorrelationId` / `SampleResources` / `Totals`）、`PdfPerformanceStage`（InputRead / OpenParse / QueueWait / NativeExec / DecodeComplete / BitmapUpload / LayoutBuild / Search / CancelObserved / Release / UiSubmit / CompositorRendered）、`PdfPerformanceSpan` / `PdfPerformanceMark`（monotonic 起止 + 关联 ID，mark 名进程内唯一）。milestone 常量区分 `LoadStart` / `LoadReturn` / `FirstPageDecoded` / `FirstPageSubmitted` 与 **harness-only** 的 `FirstPagePresented` / `CloseRequested`：**产品代码永不写 present mark**（消费者与 smoke 双重锁定），`RenderAsync` 返回从未记作首屏。会话为进程级飞行记录器，Core 套件以 `[assembly: CollectionBehavior(DisableTestParallelization = true)]` 串行执行（子秒级，避免并行测试污染开放会话；关联 ID 前缀语义，不按绝对序号断言）。
+- **资源审计（PERF16）**：`PdfPerformanceResourceSample`（managed heap / allocated、private bytes、working set、句柄、暂存输入、可得 GPU 字节）可并入 `PdfViewerCacheStatistics`（预算 / 跟踪字节、页面 / 缩略图 / 文本 / 解码中间数组在途与峰值），`CaptureResourceSample` 直接入当前会话；采样**不强制 GC**。open-close-cycles 场景以 100 循环（warm 20、GC 后取样）测留存增长。PDFium 内部堆不可测保持诚实声明。
+- **真实呈现探针（PERF17）**：`PresentProbe` 以 `ElementComposition.GetElementVisual(window)?.Compositor` → `RequestCompositionBatchCommitAsync().Rendered` 记录 present 潜伏，方法名 `composition-batch-rendered`、`scanOutVerified=false`——**不是扫描输出/物理呈现**，headless 与合成批渲染均不能证明真实 FPS。Demo `--pdf-smoke` 在真实窗口（1440×900）实测 composition present 并记录 `perfPresentMethod` / `perfPresentUnavailableReason`。
+- **benchmark 工具链（PERF19）**：`benchmarks/PdfViewer.Benchmarks`（入 `NT.AvaloniaControl.slnx`）——每个 语料×场景×迭代 一个 worker 进程（诚实 process-cache `new-process`），父进程以 **nearest-rank**（不插值，<20 样本不出 p99）聚合；raw 记录带 JSON Schema（`benchmarks/pdfviewer/schema/perf-record.schema.json`）、语料 manifest SHA-256、`referenceAvailability: blocked-reference`、`qualityStatus: not-run-no-golden`；超时 / 崩溃保留 stdout+stderr stub 记录。10 场景（open-first-screen、jump-page-cached / uncached、scroll-continuous、search-first-hit / full-document、cancel-queued / native-render、close-release、open-close-cycles）× 3 语料（S0 2 页 / S1 20 页 / S2 1000 页，fixture 生成、真实哈希）。入口：`scripts/Test-PdfViewerPerformance.ps1`（统一，门槛表单一判定、仅测量失败非零退出）、`scripts/pdfviewer/benchmark.ps1|sh`（Linux 无显示时 Xvfb 兜底并标注）、`compare-baseline.ps1`（仅自身历史基线）。`--rendering-mode software` 强制 Win32/X11 软件渲染以供 G3 渲染方式拆分。门槛判定全部标注「工程初始门槛（待校准）」，信息性输出。
+- **内部回归结果（原始记录见 [Windows](validation/pdfviewer-performance/windows-2026-10-23.md) / [Linux](validation/pdfviewer-performance/linux-2026-10-23.md)）**：Windows `windows-2026-10-23` 280/280 ok（firstScreenMs p50 231.4 / p95 354.8；search-full p95 68.7ms；cancel-queued p95 3.0ms；closeUiMs p95 8.2ms）；软件渲染子集 `windows-2026-10-23-soft` 90/90 ok；Linux WSL 补充 `linux-2026-10-23` 280/280 ok（firstScreenMs p50 185.7 / p95 348.4）。not-met 共 3 类结构性门槛：jump-page-cached 被 150ms settle 计时器垫底（门槛 100ms）、frame pacing 强制 commit 节拍（`scanOutVerified=false` 不读作 FPS）、open-close 私有字节增量跨进程噪声（Win p95 25.8MB / Linux 10.3MB）——详见[性能计划](pdfviewer-performance-plan.md)P3-05 实测瓶颈表。Linux 为 WSL2 + WSLg 会话**补充结果，非 Linux 实机**。
+- **记录缺陷（本批发现并修复）**：`FindNativeLibrarySha` 曾跨 RID 取首个同名文件，两平台 run-env 的 `nativeLibrarySha256` 误指 win-arm64 二进制；实际加载 win-x64 `04100c03…` / linux-x64 `b0361f8b…` 已独立校验并在两份验证记录中声明；修复后按当前 RID 匹配记录（`windows-2026-10-23-soft` 已按修复版记录）。指标不受影响。
+- **脚本修复**：`dotnet build --locked-mode` 被 SDK 10 拒绝（MSB1001），改为 `-p:RestoreLockedMode=true`；`Test-PdfViewerPerformance.ps1` 对 `-Scenarios a,b,c` 的 PowerShell 数组绑定改为规范化逗号列表（此前会零场景匹配）。
+
+行为变化：新增公共 API `PdfPerformanceSession`、`PdfPerformanceStage`、`PdfPerformanceSpan`、`PdfPerformanceMark`、`PdfPerformanceResourceSample` 及 milestone 常量（`PdfPerformanceMarks`）；`CaptureResourceSample` 挂在现有 `PdfViewerCacheStatistics` 之上，不改既有阅读行为。产品渲染路径不写 present mark 的约定由 smoke / 消费者检查锁定。
+
+| 本批执行（Windows 11 x64 26200，.NET 10.0.13，Avalonia 12.0.3） | 结果 | 说明 |
+| --- | --- | --- |
+| PdfViewer.Core.Tests | **141/141** | 含 6 项新增 `PdfPerformanceTests`（session 记账 / 单例生命周期、队列等待与执行拆分含取消、加载 input→parse→返回 mark 链、渲染搜索释放关联 ID、资源采样跨生命周期可读）；并行关闭后 3 连绿 + 收尾复跑 |
+| PdfViewer.Headless.Tests | **105/105** | 含 3 项新增 `P3PerformanceTests`（首屏 stage 链不声称 present、搜索首命中可由 span 测量、关闭 Release 与资源采样接缓存） |
+| PdfViewer 全范围 Release 构建 | **零警告、零错误** | 产品 / Themes / Core / Headless / Benchmarks / PdfViewer.Usage / 统一 Demo；全解决方案构建在收尾时被工作区 TreeDataGrid WIP 的 CS0841（`TreeDataGridSource.Generic.cs`，非本批改动）挡住，与 PdfViewer 无关 |
+| 统一 Demo 原生 `--pdf-smoke` | **68/68 检查** | 新增 4 项 `perf*`：perfFirstScreenStageChain、perfProductNeverClaimsPresent、perfCompositionPresentObserved（真实窗口 composition batch）、perfResourceSampleJoinsCache；机器记录 `artifacts/platform/pdfviewer.json` |
+| 两个全新缓存 NuGet 消费者 | **93/93 + 96/96 = 189/189** | 各含 5 项 `p3Performance*`（loadChainMarks / stageSpans / productNeverClaimsPresent / resourceSampleJoinsCache / markNamesUnique），累计 18 项 `p3*`；`artifacts/consumer/` 下 `result.json` |
+| Windows 性能内部回归 | **280/280 ok** | `windows-2026-10-23`，10 场景 × 30/10 迭代，threshold 表见验证记录 |
+| Windows 软件渲染子集 | **90/90 ok** | `windows-2026-10-23-soft`，`--rendering-mode software` |
+| Linux WSL 补充回归 | **280/280 ok** | `linux-2026-10-23`，WSL2 Ubuntu 26.04 + WSLg，非实机 |
+
+同机官方 A/B 对照保持 `blocked-reference`（无合法参考宿主，取得后按 PERF03 冻结配置执行）；门槛待校准；SSIM 金样与扫描输出验证归 PERF17 / P9；Linux 实机 / hosted run / 麒麟目标设备归 PERF18 / P8。G3 判定见[开发计划](pdfviewer-development-plan.md)P3 节：内部测量门槛具备证据，不提前关闭。
+
+## P3-04 批次（2026-10-23，第十四批：长文档布局索引、搜索按页索引与拖选区间）
+
+P3-04 的四条线——长文档布局索引与 Resize 合并、搜索按页索引与可见高亮、字符命中空间索引、拖选只维护区间——已实现并验证；等距命中平局、居中几何、行查找语义逐项与旧实现对拍锁定：
+
+- **布局索引与 Resize 合并（PERF09）**：`PdfPageLayout.Build` 以签名（页列表引用、缩放、旋转、模式、封面、有效当前页——连续模式恒 0）判定返回 `BuildResult`：签名不变 **`Unchanged`** 跳过全部重建（连 `InvalidateMeasure` 都不发，仅刷新缩放 / 调度渲染 / 重绘移动后的视口）；仅宽度变化 **`Recentered`**——水平重排每行到与全量重建**逐像素一致**（单测锁定），垂直几何不动，只发 `InvalidateMeasure`（不进渲染突发）；签名变化才 **`Rebuilt`**（清空渲染键 + 保留缩放 / 旋转突发的预览语义）。行查找 O(1)/O(log N)：`RowIndexOf` 走行首页映射 O(1)（行首页外保持旧 `FindIndex` 的 -1 语义），`RowAt(y)` 行顶二分（保留旧中点规则），`PageAt` / `PageIndexAt` / `RowsBetween` 全部复用；2000 混合行单测锁定查找一致性与远端查找。滚动定位 O(log N) 由此保持；连续 resize / 缩放合并由签名跳过覆盖（同签名重复构建零分配）。
+- **搜索按页索引与可见高亮（PERF10）**：`PdfSearchPageIndex.Build` 把搜索结果按页分桶并保留全局序号（单测锁定分桶保序），presenter 只在结果数组引用变化（每次搜索批量发布新数组）时重建桶；高亮绘制只走可见页的桶，整页在选区内的页跳过逐命中范围检查——不再每个可见页线性扫描全部结果。增量发布首结果 / 进度、取消与截断提示沿用 P2 搜索契约。
+- **字符命中空间索引（PERF11）**：`PdfCharacterHitIndex` 以 12pt Y 带分桶（跨界字符登记全部触及的带），`FindNearest` 自查询带向外走 0,±1,±2… 并以平方距离界严格 `>` 早退（保留等距平局），平局取列表位置（与旧 `MinBy` 首个最小值逐点一致）。密集云 2000 随机探针（含带边界 / 角点）与旧全量扫描对拍通过；零尺寸边界跳过、跨带、重叠、稀疏远点各有锁定。
+- **拖选只维护区间（PERF11）**：每次指针移动 = 带索引命中 + 更新焦点 + `SetSelectionRangeState` + 立即 `InvalidateVisual`（可见高亮跟随指针）+ **合并**的选中文本构建（单 runner、逐轮版本守卫、finally 重查重启，手势中 `SelectedText` 持续更新——测试以手势中断言锁定）；完整文本在复制时构造的路径不变。清除 / 新按下 / 中止拖选立即 `CancelSelectionText()`，取消的提取**永不迟到落地**（400 页拖选中途 `ClearSelection` 后 `SelectedText` 保持空，再选仍正确）；捏合 / 清除契约由版本递增兜底。`WaitForIdleAsync` 同时等待渲染任务与选中文本构建任务。
+- **产品修复（本批实测缺陷）**：主题模板 `PART_PageNumber.Value` 与 `CurrentPage` 双向绑定，滚动 / 导航驱动的 `SetCurrentPage` 会经绑定回推 `NumericUpDown.ValueChanged` → `PageNumberChanged` → `GoToPage`，下一次布局把自由滚动的视口拽回当前页顶（长文档测试实测 offset 910.9 被改写为 553.3 = `page.Y − Gap`，既有测试因目标点恰好仍可见而一直被掩盖）。`PageNumberChanged` 现同样检查 `_updatingCurrent`：查看器自身驱动的当前页变化不再二次导航；用户输入页码与宿主直设 `CurrentPage` 行为不变。
+
+行为变化：布局构建从「任一输入变化即全量重建」改为「签名不变跳过 / 仅宽度变化水平居中 / 变化才重建」；搜索高亮从「每可见页扫全部结果」改为按页桶只扫可见命中；字符命中从「每指针移动全量 MinBy」改为带索引查找；拖选预览从「每移动完整提取」改为合并构建（复制仍完整提取）。公共选择 / 复制契约（`SelectedText` 异步解析后更新、跨页 `Environment.NewLine` 连接、`IsTextSelected` / `ClearSelection` 语义）不变。
+
+| 本批执行（Windows 11 x64 26200，.NET 10.0.13，Avalonia 12.0.3） | 结果 | 说明 |
+| --- | --- | --- |
+| PdfViewer.Core.Tests | **135/135** | 含 13 项新增：P3LayoutIndexTests 7 项（签名跳过与逐输入重建、连续模式忽略 / 离散模式跟随当前页、仅宽度居中不动垂直几何、居中与全量重建逐像素一致、2000 行查找一致性、双页行命中两侧成员、搜索分页分桶保全局序）+ P3CharacterHitIndexTests 6 项（空 / 零尺寸、等距平局取列表位置、重叠取列表位置、跨带可命中、稀疏远点、密集云 2000 探针对拍） |
+| PdfViewer.Headless.Tests | **102/102** | 含 8 项新增（P3LongDocumentTests）：25 / 120 / 1005 页跨度 × 正 / 反向拖选共 6 组的区间与文本正确性（手势中预览更新 + 剪贴板全文比对）、400 页拖选中途清除取消挂起提取且无迟到落地（复选仍正确）、300 页远跳 + 窗口宽度 resize 后布局查找一致（X 重排、Y / 宽不变） |
+| 全解决方案 Release 构建 | **零警告、零错误** | `NT.AvaloniaControl.slnx` |
+| 统一 Demo 原生 `--pdf-smoke` | **64/64 检查** | 新增 2 项：searchResultsPageOrdered（搜索结果 `PageIndex` 非降）、selectionSurvivesViewportResize（全选后侧栏 208→320 宽，`IsTextSelected` 与 `SelectedText` 不变） |
+| 两个全新缓存 NuGet 消费者 | **88/88 + 91/91 = 179/179** | 重打包 + 全新缓存，原 86 / 89 项全保留，各含 2 项新 `p3*`（p3SearchResultsPageOrdered、p3SelectionSurvivesViewportResize，累计 13 项 `p3*`）；`artifacts/consumer/` 下 `result.json` |
+
+无新增公共 API：`PdfPageLayout.BuildResult`、`PdfCharacterHitIndex`、`PdfSearchPageIndex` 均为内部结构。长文档优化的完整指标记录与同机官方对照归 P3-05；搜索可复用文本索引的编辑后失效归 PERF14。
+
 ## P3-03 批次（2026-10-23，第十三批：同画质分层、质量上限与分块可行性）
 
 P3-03 的四条线——可配置 DPI / 解码上限对齐官方、预取低清 / 可见高清分层、停滚高清与缩放预览、分块渲染可行性证明——已实现并验证；不以低分辨率取胜，任何低于目标的光栅都显式记账：
@@ -285,10 +378,11 @@ P0 最后一次真实语料轮补入 6 份 / 314 页出版 PDF，冻结来源 / 
 - PDFium 后端支持 typed 本地文件 / 自有字节 / 可重开流工厂及旧式字节、流、密码加载，真实页面渲染、Unicode 文字坐标、搜索和分层目录。全进程原生调用按 `4:2:1` 加权轮转串行执行，搜索逐页让出；排队取消及时完成，正在执行的原生调用只支持安全点协作取消，不承诺强制中断或硬时延。
 - `PdfDocument.Metadata` / `Permissions` / `Capabilities` 为加载快照；控件同名状态结合文档、宿主开关和实际实现能力动态更新。`IsReadOnly` 默认开启但不影响阅读、搜索和获准的复制；低层 `GetTextAsync` 对原生权限禁止复制的 user 文档明确拒绝。全许可 user / owner 无法辨别时返回 `UserOrOwner`，不猜认证身份。元数据单字段最多 1 MiB，签名计数仅表示存在，不验证信任。
 - 保留 `Source`、旧加载方法、`DocumentLoaded`、`LoadError` 和原始 `ErrorCode`，新增 typed 来源、错误分类、`DocumentLoadFailed`、`DocumentStateChanged` / `DocumentSessionId` 及打开 / 导航 / 搜索 / 复制命令。`Dispose()` 发起非阻塞释放，`DisposeAsync()` / `CloseDocumentAsync()` 等待原生释放完成；取消、替换与事件内重入不能发布旧文档。
-- `IPdfFileDialogService.OpenAsync` 已接入打开流程，未注入时使用 Avalonia StorageProvider；保存路径、打印和分享接口仅固定后续宿主边界，适配器 `IsAvailable` 不解锁未实现的控件能力。
+- `IPdfFileDialogService.OpenAsync` 已接入打开流程，未注入时使用 Avalonia StorageProvider；P4-02 已接入保存路径服务与 StorageProvider 后备；打印和分享仍为后续边界，服务可用不解锁未实现能力。
 - 桌面阅读控件支持本地文件打开、单页 / 连续 / 双页连续 / 双页布局（`PageDisplayMode`，双页含封面单独 / 奇数页配对规则 `ShowCoverPage`，双页翻页按跨页步进）、页码与 `/PageLabels` 页标签、缩略图、目录、缩放（含 `ActualSize`、可配置上下限 / 步长）与适配宽度 / 整页 / 高度、90° 旋转、搜索定位、跨页拖选及复制。
 - 页内链接注释提取（`PdfDocument.GetLinksAsync`）与完整内部目的地（/XYZ 位置、缩放、拟合类型与 Fit 族视图参数）导航；目录项携带完整 `Destination`。URI / 文件 / 不支持动作一律不由控件打开，`LinkActivated` 事件供宿主拦截，`Handled` 可取消默认导航。
-- 会话内用户书签（`UserBookmarks`：添加 / 删除 / 重命名 / 粗斜标志 / 清空与命令，与文档目录分开建模），默认主题新增「书签」页签；关闭 / 替换文档自动清空，PDF 持久化留 P4。
+- 会话内用户书签（`UserBookmarks`：添加 / 删除 / 重命名 / 粗斜标志 / 清空与命令，与文档目录分开建模），默认主题新增「书签」页签；关闭 / 替换文档自动清空。编辑会话侧 PDF 持久化与回读已由 P4-01 交付（私有 catalog 块、不进撤销历史、undo / redo 不回滚）；控件保存接线已由 P4-02 交付，范围见本页最新批次。
+- 编辑会话有界撤销历史与统一事务（P4-01）：`UndoAsync` / `RedoAsync` / `CanUndo` / `CanRedo` / `UndoCount` / `RedoCount` / `HistoryBytes`，`UndoLimit`（步数）与 `HistoryByteLimit`（字节）双限即时裁剪、最新条目保留、新编辑清 redo；`ExecuteTransactionAsync` 分组单条历史、失败全量回滚；`IsDirty` 按内容状态身份 + 书签叠加层，撤销到保存点即干净、保存失败保留；净化 / 红删各记一条历史并按策略清空会话书签。
 - 触摸双指捏合以捏合中心缩放（Avalonia `Pinch` 手势），拖动为原生滚动；快捷键优先级固定并有契约测试（搜索框匹配键 → 全局打开 / 聚焦搜索 → 文字输入保留自身按键 → 阅读器快捷键）。
 - 可见页面和邻近页调度，页面位图缓存预算 96 MiB，单页约 400 万像素上限；低缩放同屏多页时按总预算分配分辨率。缩略图最多保留 64 张。
 - 缩放和旋转保持视口中心对应的 PDF 物理位置；末页和混合尺寸导航等待布局更新，避免使用旧滚动范围。

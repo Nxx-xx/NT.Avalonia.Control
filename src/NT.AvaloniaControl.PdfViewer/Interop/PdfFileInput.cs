@@ -69,6 +69,22 @@ internal sealed class PdfFileInput : IDisposable
     /// <summary>Total bytes GetBlock has served; random access keeps this far below Length.</summary>
     internal long BytesServed => Interlocked.Read(ref _bytesServed);
 
+    internal byte[] ReadSnapshot(CancellationToken token)
+    {
+        if (_length > 256L * 1024 * 1024) throw new NotSupportedException("Editing input exceeds 256 MiB.");
+        var handle = _handle ?? throw new ObjectDisposedException(nameof(PdfFileInput));
+        var bytes = GC.AllocateUninitializedArray<byte>((int)_length);
+        var offset = 0;
+        while (offset < bytes.Length)
+        {
+            token.ThrowIfCancellationRequested();
+            var read = RandomAccess.Read(handle, bytes.AsSpan(offset, Math.Min(MaxSegmentBytes, bytes.Length - offset)), offset);
+            if (read == 0) throw new IOException("The PDF input changed while preparing editing.");
+            offset += read;
+        }
+        return bytes;
+    }
+
     /// <summary>
     /// Number of block requests that had to be zero-filled because the file was truncated or
     /// became unreadable after open. Non-zero means the snapshot no longer matches the bytes

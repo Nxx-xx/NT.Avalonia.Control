@@ -126,7 +126,8 @@
                     BorderThickness="{TemplateBinding BorderThickness}">
               <Grid RowDefinitions="Auto,*" ClipToBounds="True">
                 <Border Background="{DynamicResource TreeDataGridHeaderBackgroundBrush}"
-                        BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0,0,0,1">
+                        BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0,0,0,1"
+                        IsVisible="{TemplateBinding ShowColumnHeaders}">
                   <tg:TreeDataGridColumnHeadersPresenter Name="PART_ColumnHeadersPresenter" Height="28" />
                 </Border>
                 <ScrollViewer Name="PART_ScrollViewer" Grid.Row="1"

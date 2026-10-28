@@ -260,7 +260,7 @@ public sealed class NestedHierarchyBindingTests
     }
 
     [AvaloniaFact]
-    public void OneWay_and_converter_bindings_require_explicit_writers_for_staged_edits()
+    public void OneWay_is_readonly_and_a_oneway_converter_can_fail_commit_before_using_explicit_accessors()
     {
         var root = new Model("root");
         using var source = new FlatTreeDataGridSource<Model>([root]);
@@ -273,7 +273,10 @@ public sealed class NestedHierarchyBindingTests
         grid.Columns.Add(oneWay);
         grid.Columns.Add(converter);
         Assert.False(grid.BeginEdit(new(source.Rows[0].Id, oneWay.Id)));
-        Assert.False(grid.BeginEdit(new(source.Rows[0].Id, converter.Id)));
+        Assert.True(grid.BeginEdit(new(source.Rows[0].Id, converter.Id)));
+        Assert.Equal("display root", grid.State!.EditSession!.Value);
+        Assert.False(grid.CommitEdit()); Assert.Equal("root", root.Name);
+        grid.CancelEdit();
         converter.SetValueAccessors<Model, string>(item => item.Name, (item, value) => item.Name = value);
         Assert.True(grid.BeginEdit(new(source.Rows[0].Id, converter.Id)));
         Assert.Equal("root", grid.State!.EditSession!.Value);

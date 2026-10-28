@@ -1,6 +1,8 @@
 using System.ComponentModel;
 using Avalonia;
 using Avalonia.Input;
+using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
 using Avalonia.VisualTree;
@@ -41,6 +43,9 @@ public partial class TreeDataGrid
 
     /// <summary>Requests a same-control move. The active edit commits before the model transaction.</summary>
     public TreeDataGridRowMoveResult TryMoveRow(NodeId node, NodeId target, TreeDataGridRowDropPosition position)
+        => TryMoveRowCore(node, target, position, selectMoved: false);
+
+    private TreeDataGridRowMoveResult TryMoveRowCore(NodeId node, NodeId target, TreeDataGridRowDropPosition position, bool selectMoved)
     {
         VerifyAccess();
         if (_rowMoving || !CanUserMoveRows) return new(TreeDataGridRowMoveStatus.Rejected);
@@ -50,18 +55,18 @@ public partial class TreeDataGrid
             return new(TreeDataGridRowMoveStatus.Rejected);
         var state = State;
         var current = state?.CurrentCell;
-        var selected = state?.SelectedNodes.Contains(node) == true || state?.SelectedCells.Any(cell => cell.Node == node) == true;
+        var operation = ColumnOperationVersion;
+        var selected = selectMoved || state?.SelectedNodes.Contains(node) == true || state?.SelectedCells.Any(cell => cell.Node == node) == true;
         TreeDataGridRowMoveResult result;
         using var movingScope = new RowMoveScope(this);
         try
         {
             if (!CommitEdit()) result = new(IsMoveTargetCurrent(source, row!, destination!)
                 ? TreeDataGridRowMoveStatus.ValidationFailed : TreeDataGridRowMoveStatus.Stale);
-            else if (!CanUserMoveRows || !IsMoveTargetCurrent(source, row!, destination!)) result = new(TreeDataGridRowMoveStatus.Stale);
+            else if (!CanUserMoveRows || ColumnOperationVersion != operation || !IsMoveTargetCurrent(source, row!, destination!)) result = new(TreeDataGridRowMoveStatus.Stale);
             else
             {
                 var version = source.Version;
-                var operation = ColumnOperationVersion;
                 var request = new TreeDataGridRowMoveRequestedEventArgs(source, row!, destination!, position, version);
                 if (RowMoveRequested is { } handlers)
                     foreach (EventHandler<TreeDataGridRowMoveRequestedEventArgs> handler in handlers.GetInvocationList())
@@ -79,7 +84,8 @@ public partial class TreeDataGrid
                         }
                         if (request.Cancel || request.Handled) break;
                     }
-                if (request.Cancel) result = new(TreeDataGridRowMoveStatus.Cancelled);
+                if (request.Handled && request.Result is { IsCommitted: true } committedResult) result = committedResult;
+                else if (request.Cancel) result = new(TreeDataGridRowMoveStatus.Cancelled);
                 else if (request.Handled) result = request.Result ?? new(TreeDataGridRowMoveStatus.HandlerFailed,
                     Error: new InvalidOperationException("A handled row move must supply its transaction result."));
                 else if (!CanUserMoveRows || !ReferenceEquals(Source, source) || source.Version != version || ColumnOperationVersion != operation || !IsMoveTargetCurrent(source, row!, destination!))
@@ -90,7 +96,7 @@ public partial class TreeDataGrid
         catch (Exception error) { result = new(TreeDataGridRowMoveStatus.HandlerFailed, Error: error); }
         try
         {
-        if (result.IsCommitted && ReferenceEquals(Source, source) && result.NodeId is { } moved && source.GetViewIndex(moved) >= 0 &&
+        if (result.IsCommitted && ReferenceEquals(Source, source) && ColumnOperationVersion == operation && result.NodeId is { } moved && source.GetViewIndex(moved) >= 0 &&
             (selected || current?.Node == node))
         {
             var columns = VisibleColumns;
@@ -133,7 +139,6 @@ public partial class TreeDataGrid
 
     private void InitializeRowMoving()
     {
-        AddHandler(PointerPressedEvent, RowMovePointerPressed, RoutingStrategies.Tunnel, handledEventsToo: true);
         AddHandler(PointerMovedEvent, RowMovePointerMoved, RoutingStrategies.Tunnel, handledEventsToo: true);
         AddHandler(PointerReleasedEvent, RowMovePointerReleased, RoutingStrategies.Tunnel, handledEventsToo: true);
         AddHandler(PointerCaptureLostEvent, (_, e) => { if (ReferenceEquals(e.Source, this)) CancelRowDrag(); }, handledEventsToo: true);
@@ -141,24 +146,45 @@ public partial class TreeDataGrid
 
     private void RowMovePointerPressed(object? sender, PointerPressedEventArgs e)
     {
-        if (e.Handled || !CanUserMoveRows || IsColumnReordering || !e.GetCurrentPoint(this).Properties.IsLeftButtonPressed || e.Source is not Visual visual) return;
+        if (e.Handled || !CanUserMoveRows || _rowMoving || IsColumnReordering || e.KeyModifiers != KeyModifiers.None
+            || !e.GetCurrentPoint(this).Properties.IsLeftButtonPressed || e.Source is not Visual visual) return;
         var cell = visual.GetSelfAndVisualAncestors().OfType<TreeDataGridCellPresenter>().FirstOrDefault();
-        if (cell?.Row is not { } row || cell.Column is not TreeDataGridRowHeaderColumn || Source is not { } source) return;
-        _rowPointerDrag = new(source, source.Version, ColumnOperationVersion, row, e.Pointer, e.GetPosition(this));
+        if (cell?.Row is not { } row || cell.Column is null || Source is not { } source
+            || !ReferenceEquals(cell.GetVisualAncestors().OfType<TreeDataGrid>().FirstOrDefault(), this)) return;
+        if (cell.Column is not TreeDataGridRowHeaderColumn && (RowDragHandle != TreeDataGridRowDragHandle.WholeRow
+            || SelectionUnit != TreeDataGridSelectionUnit.Row)) return;
+        if (visual.GetSelfAndVisualAncestors().TakeWhile(ancestor => !ReferenceEquals(ancestor, cell))
+            .Any(ancestor => ancestor is Button or Thumb or TextBox || ancestor is InputElement { Focusable: true })) return;
+        var selection = State?.SelectedNodes;
+        var selected = SelectionUnit == TreeDataGridSelectionUnit.Row && selection?.Contains(row.Id) == true;
+        var rows = RowMoveNormalization.Rows(source, selected ? selection!.ToArray() : [row.Id]);
+        if (rows is not { Length: > 0 }) return;
+        var preserve = selected && selection!.Count > 1;
+        _rowPointerDrag = new(source, source.Version, ColumnOperationVersion, row, rows, preserve,
+            new(row.Id, cell.Column.Id), e.Pointer, e.GetPosition(this), RowDragHandle, e);
+        // Defer the click until release: a drag cancelled by RowDrop must not commit an old edit on press.
+        e.Handled = true;
     }
 
     private bool IsRowDragCurrent(RowPointerDrag drag) => CanUserMoveRows && ReferenceEquals(Source, drag.Source) &&
-        drag.Source.Version == drag.Version && ColumnOperationVersion == drag.Operation && drag.Source.TryGetRow(drag.Row.Id, out var row) && row!.ModelIndex == drag.Row.ModelIndex;
+        drag.Source.Version == drag.Version && ColumnOperationVersion == drag.Operation && RowDragHandle == drag.Handle
+        && drag.Rows.All(original => drag.Source.TryGetRow(original.Id, out var row) && row!.ModelIndex == original.ModelIndex
+            && ReferenceEquals(row.Model, original.Model));
 
     private void RowMovePointerMoved(object? sender, PointerEventArgs e)
     {
+        if (_raisingRowDragEvent) return;
         if (_rowPointerDrag is not { } drag || !ReferenceEquals(e.Pointer, drag.Pointer)) return;
         if (!IsRowDragCurrent(drag)) { CancelRowDrag(); return; }
         var point = e.GetPosition(this);
         if (!drag.Started)
         {
             if (Math.Abs(point.X - drag.Start.X) < 5 && Math.Abs(point.Y - drag.Start.Y) < 5) return;
+            Focus();
+            if (!ReferenceEquals(_rowPointerDrag, drag) || !IsRowDragCurrent(drag)) { CancelRowDrag(); return; }
             drag.Started = true; e.Pointer.Capture(this);
+            if (!RaiseRowDrag(drag, RowDragStartedEvent) || !ReferenceEquals(_rowPointerDrag, drag) || !IsRowDragCurrent(drag))
+            { CancelRowDrag(); return; }
             _rowDragTimer ??= new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(40) };
             _rowDragTimer.Tick -= RowDragTick; _rowDragTimer.Tick += RowDragTick; _rowDragTimer.Start();
         }
@@ -180,8 +206,12 @@ public partial class TreeDataGrid
             var top = presenter!.Layout!.GetRowTop(cell.RowIndex) - presenter.Offset.Y;
             var fraction = (local!.Value.Y - top) / presenter.Layout.GetRowHeight(cell.RowIndex);
             position = fraction < 0.25 ? TreeDataGridRowDropPosition.Before : fraction > 0.75 ? TreeDataGridRowDropPosition.After : TreeDataGridRowDropPosition.Inside;
-            if (IsValidRowDrop(drag.Row, row!, position)) target = cell.NodeId;
+            if (drag.Rows.All(moving => IsValidRowDrop(moving, row!, position))) target = cell.NodeId;
         }
+        var targetRow = target is { } targetId && drag.Source.TryGetRow(targetId, out var candidate) ? candidate : null;
+        var allowed = RaiseRowDrag(drag, RowDragOverEvent, targetRow, position);
+        if (!ReferenceEquals(_rowPointerDrag, drag) || !IsRowDragCurrent(drag)) { CancelRowDrag(); return; }
+        if (!allowed) target = null;
         if (target != drag.Target || position != drag.DropPosition) drag.HoverStarted = DateTime.UtcNow;
         drag.Target = target; drag.DropPosition = position;
         RefreshRowDragVisual();
@@ -204,7 +234,7 @@ public partial class TreeDataGrid
             var path = row.ModelIndex;
             drag.Source.SetExpanded(target, true);
             if (!ReferenceEquals(Source, drag.Source) || !drag.Source.TryGetRow(target, out var current) || current!.ModelIndex != path ||
-                !drag.Source.TryGetRow(drag.Row.Id, out var moving) || moving!.ModelIndex != drag.Row.ModelIndex) { CancelRowDrag(); return; }
+                drag.Rows.Any(moving => !drag.Source.TryGetRow(moving.Id, out var currentMoving) || currentMoving!.ModelIndex != moving.ModelIndex)) { CancelRowDrag(); return; }
             drag.Version = drag.Source.Version;
             drag.HoverStarted = DateTime.UtcNow;
             UpdateRowDrag(drag.Position);
@@ -213,13 +243,26 @@ public partial class TreeDataGrid
 
     private void RowMovePointerReleased(object? sender, PointerReleasedEventArgs e)
     {
+        if (_raisingRowDragEvent) { CancelRowDrag(); return; }
         if (_rowPointerDrag is not { } drag || !ReferenceEquals(e.Pointer, drag.Pointer)) return;
-        if (!drag.Started) { _rowPointerDrag = null; return; }
+        if (!drag.Started)
+        {
+            var current = IsRowDragCurrent(drag); CancelRowDrag();
+            var pressed = (drag.Press.Source as Visual)?.GetSelfAndVisualAncestors().OfType<TreeDataGridCellPresenter>().FirstOrDefault();
+            if (current && pressed?.Row?.Id == drag.PressedCell.Node && pressed.Column?.Id == drag.PressedCell.Column)
+                InteractionPointerPressed(this, drag.Press);
+            return;
+        }
         UpdateRowDrag(e.GetPosition(this));
         var valid = ReferenceEquals(_rowPointerDrag, drag) && IsRowDragCurrent(drag) && drag.Target is not null;
         CancelRowDrag();
-        if (valid) TryMoveRow(drag.Row.Id, drag.Target!.Value, drag.DropPosition);
         e.Handled = true;
+        if (valid && drag.Source.TryGetRow(drag.Target!.Value, out var target)
+            && RaiseRowDrag(drag, RowDropEvent, target, drag.DropPosition) && IsRowDragCurrent(drag))
+        {
+            if (drag.PreserveSelection || drag.Rows.Length > 1) TryMoveRows(drag.Rows.Select(row => row.Id).ToArray(), drag.Target.Value, drag.DropPosition);
+            else TryMoveRowCore(drag.Row.Id, drag.Target.Value, drag.DropPosition, selectMoved: true);
+        }
     }
 
     private void CancelRowDrag()
@@ -236,12 +279,18 @@ public partial class TreeDataGrid
             row.SetDropIndicator(_rowPointerDrag is { Started: true } drag && row.Row?.Id == drag.Target ? drag.DropPosition : null);
     }
 
-    private sealed class RowPointerDrag(TreeDataGridSource source, long version, long operation, TreeDataGridRow row, IPointer pointer, Point start)
+    private sealed class RowPointerDrag(TreeDataGridSource source, long version, long operation, TreeDataGridRow row,
+        TreeDataGridRow[] rows, bool preserveSelection, CellAddress pressedCell, IPointer pointer, Point start, TreeDataGridRowDragHandle handle, PointerPressedEventArgs press)
     {
         public TreeDataGridSource Source { get; } = source;
         public long Version { get; set; } = version;
         public long Operation { get; } = operation;
         public TreeDataGridRow Row { get; } = row;
+        public TreeDataGridRow[] Rows { get; } = rows;
+        public bool PreserveSelection { get; } = preserveSelection;
+        public CellAddress PressedCell { get; } = pressedCell;
+        public TreeDataGridRowDragHandle Handle { get; } = handle;
+        public PointerPressedEventArgs Press { get; } = press;
         public IPointer Pointer { get; } = pointer;
         public Point Start { get; } = start;
         public Point Position { get; set; }

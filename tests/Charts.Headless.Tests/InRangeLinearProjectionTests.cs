@@ -119,10 +119,49 @@ public sealed class InRangeLinearProjectionTests
     }
 
     [AvaloniaTheory]
+    [InlineData(false, false)]
+    [InlineData(false, true)]
+    [InlineData(true, false)]
+    [InlineData(true, true)]
+    public void Bound_coordinate_columns_use_the_proven_projection_without_changing_bits_geometry_or_metadata(bool inverseX, bool inverseY)
+    {
+        // Include non-monotonic source order, duplicate X, extrema and signed zero.
+        ChartPoint[] points = [new(-0d, 0), new(3, -1), new(2, 3), new(2, 1), new(4, 4)];
+        var rows = points.Select(point => new Row(point.X, point.Y)).ToArray();
+        var series = new LineSeries
+        {
+            ItemsSource = rows, CategoryPath = nameof(Row.X), ValuePath = nameof(Row.Y),
+            MarkerSize = 0, Stroke = Brushes.Red,
+        };
+        var data = series.CreateSnapshot();
+        Assert.Equal(points.Length, data.Coordinates.Length);
+        ChartDataIndex.For(data);
+        var x = ChartScale.CreateForView(new NumericAxis { IsInversed = inverseX }, 0, 4);
+        var y = ChartScale.CreateForView(new NumericAxis { IsInversed = inverseY }, -1, 4);
+        var general = new CartesianChart.CartesianProjection(Plot, x, y);
+        var candidate = new CartesianChart.CartesianProjection(Plot, x, y, data);
+        Assert.True(candidate.TryGetLinearProjection(data, out var linear));
+        Assert.False(candidate.TryGetGappedLinearProjection(data, out _));
+        for (var index = 0; index < points.Length; index++)
+        {
+            AssertPointBits(general.Project(points[index]), linear.Project(points[index]));
+            AssertPointBits(general.Project(points[index]), candidate.Project(data.GetValue(index).Point));
+            var point = data.Points[index];
+            Assert.Equal(index, point.SourceIndex);
+            Assert.Same(rows[index], point.Item);
+            Assert.Same(rows[index], point.StableId);
+            Assert.Equal(rows[index].X, point.Category);
+            Assert.Equal(rows[index].Y, point.Value);
+            AssertPointBits(new Point(points[index].X, points[index].Y), new Point(point.Point.X, point.Point.Y));
+        }
+        var context = new ChartSeriesRenderContext(series, data, candidate, Brushes.Red);
+        AssertDrawingGeometry(Draw(context with { Projection = new ForwardProjection(general) }), Draw(context));
+    }
+
+    [AvaloniaTheory]
     [InlineData("empty")]
     [InlineData("all-invalid")]
     [InlineData("numeric-source")]
-    [InlineData("mapped-source")]
     [InlineData("overlay")]
     [InlineData("outside-view")]
     [InlineData("break")]
@@ -153,11 +192,6 @@ public sealed class InRangeLinearProjectionTests
             case "saturation-boundary": plot = new Rect(999_999, 30, 1, 250); break;
         }
         if (scenario == "numeric-source") series.ItemsSource = new double[] { 1, 2, 3 };
-        else if (scenario == "mapped-source")
-        {
-            series.CategoryPath = nameof(Row.X); series.ValuePath = nameof(Row.Y);
-            series.ItemsSource = points.Select(point => new Row(point.X, point.Y)).ToArray();
-        }
         else series.ItemsSource = points;
         var data = series.CreateSnapshot();
         if (scenario == "overlay")

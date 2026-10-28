@@ -4,7 +4,7 @@ using Avalonia.Media;
 namespace NT.AvaloniaControl.Charts;
 
 /// <summary>Archimedean chronological spiral with optional explicit period and original event identity.</summary>
-public sealed class SpiralTimelineChart : ScheduleChartBase
+public sealed partial class SpiralTimelineChart : ScheduleChartBase
 {
     public static readonly StyledProperty<double> TurnsProperty = AvaloniaProperty.Register<SpiralTimelineChart, double>(nameof(Turns), 3, validate: v => double.IsFinite(v) && v > 0 && v <= 64);
     public static readonly StyledProperty<double> InnerRadiusProperty = AvaloniaProperty.Register<SpiralTimelineChart, double>(nameof(InnerRadius), 30, validate: v => double.IsFinite(v) && v >= 0 && v <= 4096);
@@ -40,6 +40,6 @@ public sealed class SpiralTimelineChart : ScheduleChartBase
         LastQueryVisitedNodes = _layout.Points.Count; return marks;
     }
     protected override void RenderUnderlay(DrawingContext context, Rect plot) { if (_spiral is { } spiral) context.DrawGeometry(null, new Pen(GridLineBrush ?? Foreground ?? Brushes.Gray, 1), spiral); }
-    protected override void RenderAnnotations(DrawingContext context, Rect plot) { if (!ShowLabels) return; using var clip = context.PushClip(plot); foreach (var (p, label) in _labels) DrawLabel(context, label, new(p.X, p.Y - MarkerSize - FontSize / 2), 96); }
+    protected override void RenderAnnotations(DrawingContext context, Rect plot) { if (!ShowLabels || UsesDataLabelTemplate) return; using var clip = context.PushClip(plot); foreach (var (p, label) in _labels) DrawLabel(context, label, new(p.X, p.Y - MarkerSize - FontSize / 2), 96); }
     protected override void ClearScheduleGeometry() { _layout = null; _spiral = null; _labels.Clear(); }
 }

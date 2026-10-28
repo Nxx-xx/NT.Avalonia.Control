@@ -6,6 +6,7 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Controls.Templates;
 using Avalonia.Data;
 using Avalonia.Input;
+using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Controls.Metadata;
@@ -29,8 +30,15 @@ public sealed class TreeDataGridColumnHeader : ContentControl
     private TreeDataGridSource? _pressedSource;
     private Point _pressPosition;
     private IPointer? _pressedPointer;
+    private IPointer? _resizePointer;
     private long _pressOperationVersion;
     private long? _pressSourceVersion;
+    private ElementFactorySession? _elementSession;
+    private long _generation;
+    private bool _clearing;
+    internal ElementFactorySession ElementSession => _elementSession!;
+    internal void DetachFactory() => _elementSession = null;
+    internal void AttachFactory(ElementFactorySession session) => _elementSession = session;
     static TreeDataGridColumnHeader()
     {
         PaddingProperty.OverrideDefaultValue<TreeDataGridColumnHeader>(new Thickness(8, 3));
@@ -53,31 +61,70 @@ public sealed class TreeDataGridColumnHeader : ContentControl
     protected override AutomationPeer OnCreateAutomationPeer() => new TreeDataGridColumnHeaderAutomationPeer(this);
     internal void Prepare(TreeDataGrid owner, TreeDataGridColumn column)
     {
-        if (!ReferenceEquals(_owner, owner) || !ReferenceEquals(Column, column)) ClearPress();
+        var fresh = !ReferenceEquals(_owner, owner) || !ReferenceEquals(Column, column);
+        if (fresh) { ClearPress(); CancelResize(); }
+        var generation = _generation; var source = owner.Source;
+        _elementSession ??= owner.FactorySession;
         _owner = owner;
         Column = column;
         Content = column.Header;
         Theme = owner.ColumnHeaderTheme;
         UpdateThumb();
         UpdateSortState();
+        if (fresh && generation == _generation)
+            _elementSession.Prepare(this, source, null, -1, column, owner.GetColumnIndex(column.Id));
     }
     internal void Clear()
     {
-        ClearPress();
-        _owner = null; Column = null; Content = null;
-        SetReorderIndicator(false, false, false);
-        UpdateThumb(); UpdateSortState();
+        if (_clearing) return;
+        _clearing = true; _generation++;
+        List<Exception>? errors = null;
+        try
+        {
+            try { _elementSession?.Clear(this); } catch (Exception error) { (errors ??= []).Add(error); }
+            try { ClearPress(); CancelResize(); } catch (Exception error) { (errors ??= []).Add(error); }
+            _owner = null; Column = null;
+            try { Content = null; ClearValue(DataContextProperty); } catch (Exception error) { (errors ??= []).Add(error); }
+            SetReorderIndicator(false, false, false);
+            UpdateThumb(); UpdateSortState();
+        }
+        finally { _clearing = false; }
+        TreeDataGridEventDispatch.Throw(errors);
     }
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
     {
         ClearPress();
-        if (_thumb is not null) _thumb.DragDelta -= Resize;
+        CancelResize();
+        if (_thumb is not null)
+        {
+            _thumb.DragDelta -= Resize;
+            _thumb.RemoveHandler(PointerPressedEvent, ResizePressed);
+        }
         base.OnApplyTemplate(e);
         _thumb = e.NameScope.Find<Thumb>("PART_ResizeThumb");
-        if (_thumb is not null) _thumb.DragDelta += Resize;
+        if (_thumb is not null)
+        {
+            _thumb.DragDelta += Resize;
+            _thumb.AddHandler(PointerPressedEvent, ResizePressed, RoutingStrategies.Tunnel, handledEventsToo: true);
+        }
         UpdateThumb();
     }
-    private void UpdateThumb() { if (_thumb is not null) _thumb.IsVisible = _owner?.CanUserResizeColumns == true && Column?.CanUserResize == true; }
+    private void UpdateThumb()
+    {
+        var allowed = _owner is { ShowColumnHeaders: true, CanUserResizeColumns: true } && Column?.CanUserResize == true;
+        if (!allowed) CancelResize();
+        if (_thumb is not null) _thumb.IsVisible = allowed;
+    }
+    private void ResizePressed(object? sender, PointerPressedEventArgs e)
+    {
+        if (e.GetCurrentPoint(this).Properties.IsLeftButtonPressed) _resizePointer = e.Pointer;
+    }
+    private void CancelResize()
+    {
+        var pointer = _resizePointer;
+        _resizePointer = null;
+        if (_thumb is not null && ReferenceEquals(pointer?.Captured, _thumb)) pointer.Capture(null);
+    }
     private void UpdateSortState()
     {
         var direction = Column is { } column && _owner?.Source is { } source && source.SortColumn == column.Id
@@ -92,7 +139,7 @@ public sealed class TreeDataGridColumnHeader : ContentControl
     protected override void OnPointerPressed(PointerPressedEventArgs e)
     {
         base.OnPointerPressed(e);
-        if (!e.GetCurrentPoint(this).Properties.IsLeftButtonPressed || _owner is not { } owner || Column is not { } column ||
+        if (!e.GetCurrentPoint(this).Properties.IsLeftButtonPressed || _owner is not { ShowColumnHeaders: true } owner || Column is not { } column ||
             !(owner.CanUserSortColumns && column.CanUserSort || owner.CanUserReorderColumns && column.CanUserReorder)) return;
         if (e.Source is Visual visual && (ReferenceEquals(visual, _thumb) || visual.GetVisualAncestors().Any(parent => ReferenceEquals(parent, _thumb)))) return;
         _pressedColumn = Column;
@@ -145,7 +192,7 @@ public sealed class TreeDataGridColumnHeader : ContentControl
             if (active) e.Handled = true;
             return;
         }
-        if (e.Key is Key.Enter or Key.Space && _owner?.CanUserSortColumns == true && Column is { CanUserSort: true } column)
+        if (e.Key is Key.Enter or Key.Space && _owner is { ShowColumnHeaders: true, CanUserSortColumns: true } && Column is { CanUserSort: true } column)
         { _owner.ToggleColumnSort(column); e.Handled = true; }
     }
     private void ClearPress()
@@ -162,7 +209,7 @@ public sealed class TreeDataGridColumnHeader : ContentControl
     }
     private void Resize(object? sender, VectorEventArgs e)
     {
-        if (_owner?.CanUserResizeColumns != true || Column is not { CanUserResize: true } column) return;
+        if (_owner is not { ShowColumnHeaders: true, CanUserResizeColumns: true } || Column is not { CanUserResize: true } column) return;
         var current = column.Width.IsAbsolute ? column.Width.Value : Bounds.Width;
         var width = Math.Clamp(current + e.Vector.X, column.MinWidth, column.MaxWidth);
         column.Width = new GridLength(width);

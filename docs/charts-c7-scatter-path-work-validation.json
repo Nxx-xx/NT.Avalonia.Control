@@ -1,0 +1,480 @@
+{
+  "schema": "charts-c703-scatter-path-work-validation/v2",
+  "updatedDate": "2026-10-27",
+  "status": "rejected-at-exact-pixel-gate",
+  "milestoneComplete": false,
+  "productOptimizationAccepted": false,
+  "productFilesChanged": false,
+  "currentProduct": "B18",
+  "currentPerformanceEvidence": "c7RecordAllocations",
+  "originalProtocolAndGatesChanged": false,
+  "newOriginalFormalRun": false,
+  "productFullTestsRun": false,
+  "product232FidelityRun": false,
+  "performanceMeasurements": null,
+  "originalRenderEntryUnchanged": true,
+  "pointIdentityOrSamplingChanged": false,
+  "fixture": {
+    "kind": "native component rejection, not current chart window/full formal",
+    "source": "unchanged C0 S10-S generator",
+    "pointCount": 10000,
+    "canvasPixels": [
+      1200,
+      650
+    ],
+    "colorType": "BGRA8888",
+    "alphaType": "Premul",
+    "radius": 2,
+    "strokeThickness": 2,
+    "fillAndStroke": "opaque #155CC1",
+    "edgeAntialias": true,
+    "clipAntialias": false,
+    "plot": [
+      77.212890625,
+      20,
+      1100.787109375,
+      581.0390625
+    ],
+    "actualBaseline": "B18 CirclePlan.GetFastShapes; original absolute fill[i], outline[i] paths",
+    "finalCasesAttemptedPerPlatform": 3,
+    "plannedCasesPerCandidate": 24,
+    "stopRule": "one actual differing pixel rejects that candidate; final probe stops that candidate after first mismatch"
+  },
+  "independentAudit": {
+    "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\independent-audit-v2.json",
+    "bytes": 147138,
+    "sha256": "5BD6C166ED207809C938948917CC9F561415340520CDDDB6AFE6244ED3104675"
+  },
+  "independentCheckCount": 394,
+  "verifiedProductSourceFiles": 294,
+  "platforms": {
+    "windows": {
+      "receipt": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\v4\\probe-process\\process.json",
+        "bytes": 1018,
+        "sha256": "4BE076C19D4567F57172FE6A8A3EBDF2B1C4BCD9B5B89248C2262BD43F63EE3D"
+      },
+      "raw": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\v4\\result\\result.json",
+        "bytes": 9095,
+        "sha256": "9571C8B911919DEF5B29B0315C53F3E0E923D3CFE15A76D9140710F2C25C76ED"
+      },
+      "environment": {
+        "os": "Microsoft Windows 10.0.26200",
+        "runtime": ".NET 10.0.13",
+        "frequency": 10000000
+      },
+      "dataset": {
+        "id": "S10-S",
+        "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+        "distribution": "uniform-fixed-grid-candidate",
+        "seedHex": "1020304050607082",
+        "sha256": "F5B6A6EFE192E19A45668E7BBCA650A01A17F8F45C0E8B63742C8E5A4FA48304",
+        "inputPointCount": 10000,
+        "validPointCount": 10000,
+        "seriesPointCounts": [
+          10000
+        ],
+        "seriesSha256": [
+          "F122AB26CE1318E0B63748598656BB2FD80DA4AEBC5E7FAA1EB8162CFA996039"
+        ],
+        "monotonicX": true,
+        "containsGaps": false,
+        "realtimePoc": false,
+        "revision": 0,
+        "markerSize": 4,
+        "downsampling": "none-current-runtime",
+        "pendingScope": [
+          "complete-C4-corpus",
+          "quality-golden",
+          "physical-input",
+          "native-frame-present",
+          "official-reference"
+        ]
+      },
+      "rows": [
+        {
+          "mode": "outer-exact-contour",
+          "changedPixels": 47676,
+          "maximumChannelDelta": 3,
+          "firstPixel": 24099,
+          "candidateCommands": 10000,
+          "pointCount": 10000,
+          "original": {
+            "file": {
+              "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\v4\\result\\outer-exact-contour-c0-10k-fixture-False-baseline.png",
+              "bytes": 626670,
+              "sha256": "37F521866ED439942C33247D6873D3588E95BB42D7720871978880A189ACF957"
+            },
+            "pixelSha256": "48E3D051B802F092E50FFE6F5A60828203B930ED6DCB0DC5D88766B6976E3AF1"
+          },
+          "candidate": {
+            "file": {
+              "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\v4\\result\\outer-exact-contour-c0-10k-fixture-False-candidate.png",
+              "bytes": 570595,
+              "sha256": "77F4BA99B8D91682A1D955954CF69D52848470EFAAB5CFB6767C2F94DAE52F9C"
+            },
+            "pixelSha256": "BC289C1652197CF508B727AC872D9436606283ED05480190694CE53ABB11CCBA"
+          },
+          "accepted": false
+        },
+        {
+          "mode": "disjoint-path-batches",
+          "changedPixels": 161990,
+          "maximumChannelDelta": 64,
+          "firstPixel": 24096,
+          "candidateCommands": 3026,
+          "pointCount": 10000,
+          "original": {
+            "file": {
+              "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\v4\\result\\disjoint-path-batches-c0-10k-fixture-False-baseline.png",
+              "bytes": 626670,
+              "sha256": "37F521866ED439942C33247D6873D3588E95BB42D7720871978880A189ACF957"
+            },
+            "pixelSha256": "48E3D051B802F092E50FFE6F5A60828203B930ED6DCB0DC5D88766B6976E3AF1"
+          },
+          "candidate": {
+            "file": {
+              "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\v4\\result\\disjoint-path-batches-c0-10k-fixture-False-candidate.png",
+              "bytes": 785624,
+              "sha256": "7F30D5DADBCB7038B46F846B408AA29A2ACEFF968FA8C55776D9135B4F560269"
+            },
+            "pixelSha256": "55B5B1AE1C8B37102868749A8F179FEE4AB02832047F15CBB6ECEE192A4CDAC6"
+          },
+          "accepted": false
+        },
+        {
+          "mode": "winding-same-color-union",
+          "changedPixels": 47676,
+          "maximumChannelDelta": 3,
+          "firstPixel": 24099,
+          "candidateCommands": 10000,
+          "pointCount": 10000,
+          "original": {
+            "file": {
+              "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\v4\\result\\winding-same-color-union-c0-10k-fixture-False-baseline.png",
+              "bytes": 626670,
+              "sha256": "37F521866ED439942C33247D6873D3588E95BB42D7720871978880A189ACF957"
+            },
+            "pixelSha256": "48E3D051B802F092E50FFE6F5A60828203B930ED6DCB0DC5D88766B6976E3AF1"
+          },
+          "candidate": {
+            "file": {
+              "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\v4\\result\\winding-same-color-union-c0-10k-fixture-False-candidate.png",
+              "bytes": 570595,
+              "sha256": "77F4BA99B8D91682A1D955954CF69D52848470EFAAB5CFB6767C2F94DAE52F9C"
+            },
+            "pixelSha256": "BC289C1652197CF508B727AC872D9436606283ED05480190694CE53ABB11CCBA"
+          },
+          "accepted": false
+        }
+      ],
+      "nativeModules": [
+        {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\runtime-v4\\SkiaSharp.dll",
+          "bytes": 490016,
+          "sha256": "A833ABAE87FF3D13FF660B1F9D92027885B90395647479437EB9D262FAD6D4AB"
+        },
+        {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\runtime-v4\\NT.AvaloniaControl.Charts.Skia.dll",
+          "bytes": 37376,
+          "sha256": "AAC0426EEB8097F30F48D6235652E5911E795D147669A0073725B4EF5A9D2640"
+        },
+        {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\runtime-v4\\Avalonia.Skia.dll",
+          "bytes": 123904,
+          "sha256": "1A76E530C5DB742104D5A5532B11E36AA826D2221FE925978598BB62C1A068FC"
+        },
+        {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\runtime-v4\\runtimes\\win-x64\\native\\libSkiaSharp.DLL",
+          "bytes": 11628576,
+          "sha256": "6D6ECA64EC333DAED78858A637B54C545AA01558204B8E2AE8870692ACADA127"
+        }
+      ]
+    },
+    "linux": {
+      "receipt": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\linux\\v5\\probe-process\\process.json",
+        "bytes": 983,
+        "sha256": "A99138C1D42BBA00D70DD039FA0E41BE555643177BB0493002F8E394CC4310D2"
+      },
+      "raw": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\linux\\v5\\result\\result.json",
+        "bytes": 7899,
+        "sha256": "88531176D30CD0686625FD698D981AA52DFF91817503C2243D417533855EBB25"
+      },
+      "environment": {
+        "os": "Ubuntu 26.04 LTS",
+        "runtime": ".NET 10.0.13",
+        "frequency": 1000000000
+      },
+      "dataset": {
+        "id": "S10-S",
+        "generatorVersion": "charts-c0-fixed-integer-xorshift64star-v1",
+        "distribution": "uniform-fixed-grid-candidate",
+        "seedHex": "1020304050607082",
+        "sha256": "F5B6A6EFE192E19A45668E7BBCA650A01A17F8F45C0E8B63742C8E5A4FA48304",
+        "inputPointCount": 10000,
+        "validPointCount": 10000,
+        "seriesPointCounts": [
+          10000
+        ],
+        "seriesSha256": [
+          "F122AB26CE1318E0B63748598656BB2FD80DA4AEBC5E7FAA1EB8162CFA996039"
+        ],
+        "monotonicX": true,
+        "containsGaps": false,
+        "realtimePoc": false,
+        "revision": 0,
+        "markerSize": 4,
+        "downsampling": "none-current-runtime",
+        "pendingScope": [
+          "complete-C4-corpus",
+          "quality-golden",
+          "physical-input",
+          "native-frame-present",
+          "official-reference"
+        ]
+      },
+      "rows": [
+        {
+          "mode": "outer-exact-contour",
+          "changedPixels": 47676,
+          "maximumChannelDelta": 3,
+          "firstPixel": 24099,
+          "candidateCommands": 10000,
+          "pointCount": 10000,
+          "original": {
+            "file": {
+              "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-scatter-path-work-20261027/linux/v5/result/outer-exact-contour-c0-10k-fixture-False-baseline.png",
+              "bytes": 626670,
+              "sha256": "37F521866ED439942C33247D6873D3588E95BB42D7720871978880A189ACF957"
+            },
+            "pixelSha256": "48E3D051B802F092E50FFE6F5A60828203B930ED6DCB0DC5D88766B6976E3AF1"
+          },
+          "candidate": {
+            "file": {
+              "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-scatter-path-work-20261027/linux/v5/result/outer-exact-contour-c0-10k-fixture-False-candidate.png",
+              "bytes": 570595,
+              "sha256": "77F4BA99B8D91682A1D955954CF69D52848470EFAAB5CFB6767C2F94DAE52F9C"
+            },
+            "pixelSha256": "BC289C1652197CF508B727AC872D9436606283ED05480190694CE53ABB11CCBA"
+          },
+          "accepted": false
+        },
+        {
+          "mode": "disjoint-path-batches",
+          "changedPixels": 161990,
+          "maximumChannelDelta": 64,
+          "firstPixel": 24096,
+          "candidateCommands": 3026,
+          "pointCount": 10000,
+          "original": {
+            "file": {
+              "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-scatter-path-work-20261027/linux/v5/result/disjoint-path-batches-c0-10k-fixture-False-baseline.png",
+              "bytes": 626670,
+              "sha256": "37F521866ED439942C33247D6873D3588E95BB42D7720871978880A189ACF957"
+            },
+            "pixelSha256": "48E3D051B802F092E50FFE6F5A60828203B930ED6DCB0DC5D88766B6976E3AF1"
+          },
+          "candidate": {
+            "file": {
+              "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-scatter-path-work-20261027/linux/v5/result/disjoint-path-batches-c0-10k-fixture-False-candidate.png",
+              "bytes": 785624,
+              "sha256": "7F30D5DADBCB7038B46F846B408AA29A2ACEFF968FA8C55776D9135B4F560269"
+            },
+            "pixelSha256": "55B5B1AE1C8B37102868749A8F179FEE4AB02832047F15CBB6ECEE192A4CDAC6"
+          },
+          "accepted": false
+        },
+        {
+          "mode": "winding-same-color-union",
+          "changedPixels": 47676,
+          "maximumChannelDelta": 3,
+          "firstPixel": 24099,
+          "candidateCommands": 10000,
+          "pointCount": 10000,
+          "original": {
+            "file": {
+              "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-scatter-path-work-20261027/linux/v5/result/winding-same-color-union-c0-10k-fixture-False-baseline.png",
+              "bytes": 626670,
+              "sha256": "37F521866ED439942C33247D6873D3588E95BB42D7720871978880A189ACF957"
+            },
+            "pixelSha256": "48E3D051B802F092E50FFE6F5A60828203B930ED6DCB0DC5D88766B6976E3AF1"
+          },
+          "candidate": {
+            "file": {
+              "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-scatter-path-work-20261027/linux/v5/result/winding-same-color-union-c0-10k-fixture-False-candidate.png",
+              "bytes": 570595,
+              "sha256": "77F4BA99B8D91682A1D955954CF69D52848470EFAAB5CFB6767C2F94DAE52F9C"
+            },
+            "pixelSha256": "BC289C1652197CF508B727AC872D9436606283ED05480190694CE53ABB11CCBA"
+          },
+          "accepted": false
+        }
+      ],
+      "nativeModules": [
+        {
+          "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-scatter-path-work-20261027/runtime-linux-v5/runtimes/linux-x64/native/libSkiaSharp.so",
+          "bytes": 11170296,
+          "sha256": "77924699617FD9C8E04127C4CA797279DB041E6161AFCBDC44B371D9D81B1675"
+        }
+      ]
+    }
+  },
+  "finalSource": {
+    "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\probe\\Program.cs",
+    "bytes": 13754,
+    "sha256": "95E9365E56C5927C27DAD363BB76DD9FCD7FBE2AFEF3CC77C3B5EA914E86FCB4"
+  },
+  "generator": {
+    "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\probe\\DatasetFactory.cs",
+    "bytes": 5350,
+    "sha256": "AA01C49D8C471317A7D455151135D24CFB59E7F892D4E4AF27365C1377349812"
+  },
+  "compilerReceipt": {
+    "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\offline-build-v4\\compiler\\process.json",
+    "bytes": 928,
+    "sha256": "727BAD46CBE1684A7CFF6089A1B1918631E4D45EAF5F113DD38F47CF14994D2D"
+  },
+  "compileMode": "isolated SDK 10.0.402 csc with previously audited unchanged locked dependencies; not a product/project build",
+  "compileWarning": "CS2023: /noconfig ignored when supplied inside response file; actual compiler exit0, all input references explicit",
+  "priorSuccessfulLockedRestore": {
+    "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\v2\\locked-restore\\process.json",
+    "bytes": 927,
+    "sha256": "5D7A0009B26BFB59291FE24A266D8E39C818CCD694FB90ABDE30B49E436DE1E8"
+  },
+  "preservedFailures": [
+    {
+      "kind": "v1 stop-loop scope",
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\v1",
+      "detail": "first failed candidate continued remaining two clip variants; six actual Windows comparisons retained; final probe stops at first"
+    },
+    {
+      "kind": "v2 compile",
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\v2",
+      "detail": "wrong public method spelling ReverseAddPath; corrected to observed AddPathReverse"
+    },
+    {
+      "kind": "v3 restore",
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\v3",
+      "detail": "NU1900 vulnerability feed unreachable inside sandbox; not a performance sample"
+    },
+    {
+      "kind": "approval timeouts",
+      "detail": "two network restore/build approval reviews timed out before process launch; offline compilation completed instead; no vulnerability audit switch was disabled"
+    },
+    {
+      "kind": "Linux v4 startup",
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\linux\\v4",
+      "detail": "Windows host lacked Linux native Skia; no cases ran; v5 uses existing Linux B18 host and same compiled probe"
+    },
+    {
+      "kind": "SDK proxy probe v1 compile",
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\target-decorator-build-v1",
+      "detail": "Missing inherited IReadableBitmapImpl members; v2 forwards all public members and reaches actual InvalidCastException. Metadata inspector's null-declaring-type repair source retained separately."
+    }
+  ],
+  "officialReference": {
+    "status": "blocked-reference",
+    "measurements": null,
+    "ratios": null
+  },
+  "present": null,
+  "formalPeakMemory": null,
+  "physicalHardwareQualified": false,
+  "deferredByUser": [
+    "physical Ubuntu 22.04/24.04",
+    "hardware GPU",
+    "physical touch",
+    "million-point hit tail",
+    "native UIA/AT-SPI selection bridge"
+  ],
+  "remaining": [
+    "original fixed-load scatter debt and tail variation",
+    "safe public recording/native raster optimization with stable end-to-end benefit"
+  ],
+  "targetOwnershipDecorator": {
+    "status": "plain-public-bitmap-proxy-rejected",
+    "audit": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\target-decorator-independent-audit-v1.json",
+      "bytes": 8064,
+      "sha256": "A63AE3B6310AE5B9B5097F51E858A9EF9D0F64991944A71888BD6BC57B3C6069"
+    },
+    "platforms": {
+      "windows": {
+        "receipt": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\target-decorator-v2\\process\\process.json",
+          "bytes": 1543,
+          "sha256": "D31ABE9D54F64B9D54D7B149EF19BE9B8C259784ABB58F779566DC33352F3999"
+        },
+        "raw": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\target-decorator-v2\\result\\result.json",
+          "bytes": 2589,
+          "sha256": "0372A3B5B2ACA05E7728AB49579C0D8438410BADF30A03971BA14261F935328C"
+        },
+        "source": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\target-decorator-v2\\result\\source.png",
+          "bytes": 95,
+          "sha256": "A2CD62E99D4BD43D248F0F19B5394BBF1DA38DC03528BD0CDF99CC2817D12FE4"
+        },
+        "target": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\windows\\target-decorator-v2\\result\\target.png",
+          "bytes": 114,
+          "sha256": "3332B1353D24B94BFB79A8AFB535825EAFFC54D4078C8A4FBA45FD2B6445C0C4"
+        },
+        "environment": {
+          "os": "Microsoft Windows 10.0.26200",
+          "runtime": ".NET 10.0.13"
+        },
+        "originalBitmapDrawSucceeded": true,
+        "proxyContextForwardingSucceeded": true,
+        "proxyBitmapDrawSucceeded": false,
+        "failureType": "System.InvalidCastException"
+      },
+      "linux": {
+        "receipt": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\linux\\target-decorator-v2\\process\\process.json",
+          "bytes": 1478,
+          "sha256": "53F093EA8256A701D75EBB52BBACF33619EFE3C164C816647FFD112030CD4226"
+        },
+        "raw": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\linux\\target-decorator-v2\\result\\result.json",
+          "bytes": 2492,
+          "sha256": "B11B18D0CBC7FE72C2F351AF350B62AD7C56B194261E4DE54BCB26664BB76EF2"
+        },
+        "source": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\linux\\target-decorator-v2\\result\\source.png",
+          "bytes": 95,
+          "sha256": "A2CD62E99D4BD43D248F0F19B5394BBF1DA38DC03528BD0CDF99CC2817D12FE4"
+        },
+        "target": {
+          "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-path-work-20261027\\linux\\target-decorator-v2\\result\\target.png",
+          "bytes": 114,
+          "sha256": "3332B1353D24B94BFB79A8AFB535825EAFFC54D4078C8A4FBA45FD2B6445C0C4"
+        },
+        "environment": {
+          "os": "Ubuntu 26.04 LTS",
+          "runtime": ".NET 10.0.13"
+        },
+        "originalBitmapDrawSucceeded": true,
+        "proxyContextForwardingSucceeded": true,
+        "proxyBitmapDrawSucceeded": false,
+        "failureType": "System.InvalidCastException"
+      }
+    },
+    "productOptimizationAccepted": false,
+    "renderEntryChanged": false,
+    "findings": [
+      "Native RenderTargetBitmapImpl directly constructs and calls internal FramebufferRenderTarget",
+      "Skia DrawBitmap casts IBitmapImpl to internal IDrawableBitmapImpl",
+      "Public IRenderTargetBitmapImpl proxy forwards context creation but fails subsequent bitmap draw on both OS"
+    ],
+    "minimumSdkExtensionReview": [
+      "Keep original native bitmap identity, expose an optional context-creation hook or backend feature",
+      "Expose actual active writable raster target plus format/color-space/origin/stride, lifetime and exclusive-access contract",
+      "Fail closed for unknown layers, unqualified GPU/color formats and unsupported runtimes"
+    ],
+    "scope": "This concrete decorator route is rejected; no claim that all automatic acceleration is impossible"
+  }
+}

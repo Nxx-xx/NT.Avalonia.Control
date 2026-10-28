@@ -6,7 +6,7 @@ namespace NT.AvaloniaControl.Charts;
 
 public sealed record ScheduleEventLabel(object Id, string Text, Rect Bounds, Point Anchor, bool IsVisible);
 /// <summary>Chronological UTC events with horizontal/vertical orientation and bounded collision-free labels.</summary>
-public sealed class EventTimelineChart : ScheduleChartBase
+public sealed partial class EventTimelineChart : ScheduleChartBase
 {
     public static readonly StyledProperty<Orientation> OrientationProperty = AvaloniaProperty.Register<EventTimelineChart, Orientation>(nameof(Orientation), Orientation.Horizontal, validate: Enum.IsDefined);
     public static readonly StyledProperty<double> StrokeThicknessProperty = AvaloniaProperty.Register<EventTimelineChart, double>(nameof(StrokeThickness), 2, validate: v => double.IsFinite(v) && v >= 0 && v <= 1024);
@@ -51,7 +51,7 @@ public sealed class EventTimelineChart : ScheduleChartBase
     protected override void RenderUnderlay(DrawingContext context, Rect plot)
     { var pen = new Pen(GridLineBrush ?? Foreground ?? Brushes.Gray, StrokeThickness); if (Orientation == Orientation.Horizontal) { var y = ApplyViewport(plot.Center, plot).Y; context.DrawLine(pen, new(plot.Left, y), new(plot.Right, y)); } else { var x = ApplyViewport(plot.Center, plot).X; context.DrawLine(pen, new(x, plot.Top), new(x, plot.Bottom)); } }
     protected override void RenderAnnotations(DrawingContext context, Rect plot)
-    { if (!ShowLabels) return; using var clip = context.PushClip(plot); foreach (var label in _labels.Where(l => l.IsVisible)) { context.DrawLine(new Pen(Foreground ?? Brushes.Gray, .7), label.Anchor, label.Bounds.Center); DrawLabel(context, label.Text, label.Bounds.Center, label.Bounds.Width); } }
+    { if (!ShowLabels) return; using var clip = context.PushClip(plot); foreach (var label in _labels.Where(l => l.IsVisible)) { context.DrawLine(new Pen(Foreground ?? Brushes.Gray, .7), label.Anchor, label.Bounds.Center); if (!UsesDataLabelTemplate) DrawLabel(context, label.Text, label.Bounds.Center, label.Bounds.Width); } }
     protected override void ClearScheduleGeometry() { _labels = []; }
     private sealed class LabelGrid(double rowHeight)
     {

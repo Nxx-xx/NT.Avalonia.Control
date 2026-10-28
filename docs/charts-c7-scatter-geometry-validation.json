@@ -1,0 +1,3207 @@
+{
+  "schema": "charts-c703-scatter-geometry-investigation/v1",
+  "updatedDate": "2026-10-27",
+  "milestoneComplete": false,
+  "newProductOptimizationAccepted": false,
+  "chartProductDrawingChanged": false,
+  "keepExistingRenderCalls": true,
+  "originalProtocolAndGatesChanged": false,
+  "latestOriginalFormal": {
+    "key": "c7RecordAllocations",
+    "report": "docs/charts-c7-record-allocations.md",
+    "validation": {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\charts-c7-record-allocations-validation.json",
+      "bytes": 834088,
+      "sha256": "E9D2CCEAA4341CA74E6DDA2E487D92B062A51DD470BF44C78967F78C5B13A5FE"
+    },
+    "newOriginalFormalRunThisBatch": false,
+    "processesPerPlatform": 107,
+    "scatterPending": {
+      "windows": 161,
+      "linux": 1040
+    },
+    "barPending": {
+      "windows": 0,
+      "linux": 0
+    }
+  },
+  "fixedOriginalInputs": {
+    "scripts/charts-c7-performance-protocol.json": {
+      "path": "scripts/charts-c7-performance-protocol.json",
+      "bytes": 5350,
+      "sha256": "7E633452EA83F4A9342C68093FE597DFB0CF4B18491D21660DE70EBE73EC5463"
+    },
+    "scripts/charts_c7_performance_oracle.py": {
+      "path": "scripts/charts_c7_performance_oracle.py",
+      "bytes": 55377,
+      "sha256": "888F4A287BD71FB5BE6035E974B9902618F321CE9666544B1B72FB0F99175E41"
+    },
+    "scripts/Tests/test_charts_c7_performance_oracle.py": {
+      "path": "scripts/Tests/test_charts_c7_performance_oracle.py",
+      "bytes": 21216,
+      "sha256": "9119056D3EC61A03A48F6F8804B2DDBACE93B48F691B5898362CA17B6E3C374D"
+    },
+    "docs/charts-performance-budgets.json": {
+      "path": "docs/charts-performance-budgets.json",
+      "bytes": 1812,
+      "sha256": "3E7149E6C4538993CBFEBAD2542E154DC8EBEBD06A72259EF345B3E3A07DEEA2"
+    },
+    "scripts/charts-ci-performance-policy.json": {
+      "path": "scripts/charts-ci-performance-policy.json",
+      "bytes": 3055,
+      "sha256": "CF6832A53E21E078C554F51194D93541F0B093AFF1C67D7E031EC177B8E87377"
+    }
+  },
+  "backlogAnalysis": {
+    "sourceScope": "B18 record-allocations-20261026 Windows/Linux formal-v2 only",
+    "measurementBoundaries": {
+      "wall": "All contribution sums use actual disjoint tick interval durations, never sums of P95. Per-request wall + pre-request idle-eligible gap + due gap + phase-tail exactly reconciles schedule elapsed.",
+      "allocations": "Named synchronous current-UI-thread stage allocation observations only; hit uses the HitTestPoint timing. Counts/identity/driver/native/render-thread allocations are not observed here. Sums are a partial allocation observation, not total request/process allocation.",
+      "record": "Record interval includes new DrawingGroup + chart.Render + recursive Leaves(group) primitive counting. This raw evidence cannot separate chart work from Leaves measurement overhead.",
+      "hit": "Timed hit is HitTestPoint only. Query preparation, source identity validation and Counts are in residual inside request, not folded into timed hit.",
+      "postHit": "hitEnd-to-end includes identity validation, query-result construction, Counts, guard and timing bookkeeping; not an isolated Counts timer.",
+      "dueGap": "request - max(previous end, scheduled), including Emit JSONL, Background dispatcher scheduling, background rendering/other activity and delay/spin overshoot. It is outside chart operation timings and cannot be attributed solely to controllable chart production work.",
+      "queue": "Arrival lateness and finish debt are queue state, not disjoint wall work. Do not sum lateness and call it CPU time. Signed per-request debt deltas telescope to final recorded-request debt; negative narrow requests can repay dense debt.",
+      "slotIntent": "Source replacement inherits previous viewport; measured index0 inherits warmup's final narrow range. Classification uses actual range and actual point counts, not action or modulo alone.",
+      "missing": "Unattempted planned requests have no timing/allocation observations. Their intention counts are descriptive only, not imputed measured costs.",
+      "causality": "Current B18 within-campaign accounting identifies expensive intervals, not a proof that eliminating one method will improve independent formal results. No B17 comparison or rejected native candidate result is used."
+    },
+    "newFormalPerformanceEvidence": null,
+    "platforms": {
+      "windows": {
+        "measuredPlanned": 9000,
+        "measuredAttempted": 8839,
+        "measuredPending": 161,
+        "sourceApplyPlusPrepareSeconds": 2.2450178000000003,
+        "sourceApplyPlusPrepareShareOfRequestWall": 0.011088032294352677,
+        "denseNetDebtSeconds": 102.1226437,
+        "smallNetDebtSeconds": -32.7369166,
+        "allMeasured": {
+          "attempted": 8839,
+          "completed": 8839,
+          "requestWallSeconds": 202.4721556,
+          "requestMeanMs": 22.906681253535467,
+          "requestP95MsDescriptiveOnly": 51.7776,
+          "stageSeconds": {
+            "sourceApply": 0.5398994,
+            "prepare": 1.7051184000000001,
+            "record": 81.3585652,
+            "controlledRaster": 118.3804613,
+            "hit": 0.13627099999999998
+          },
+          "stageMeanMs": {
+            "sourceApply": 0.06108150243240186,
+            "prepare": 0.19290851906324247,
+            "record": 9.204498834709808,
+            "controlledRaster": 13.392969940038466,
+            "hit": 0.01541701549949089
+          },
+          "stageObservedAllocationBytes": {
+            "sourceApply": 364558224,
+            "prepare": 1318856080,
+            "record": 51445437664,
+            "controlledRaster": 98321568,
+            "hit": 3139320
+          },
+          "stageObservedMeanAllocationBytes": {
+            "sourceApply": 41244.283742504806,
+            "prepare": 149208.7430704831,
+            "record": 5820278.047742957,
+            "controlledRaster": 11123.607647923973,
+            "hit": 355.16687408077837
+          },
+          "unattributedInsideRequestSeconds": 0.3518403,
+          "postTimedHitToEndSeconds": 0.1602105,
+          "preRequestDueGapSeconds": 9.21709,
+          "preRequestIdleEligibleSeconds": 5.0131481,
+          "netQueueDebtDeltaSeconds": 69.3857271,
+          "signedServiceMinusSlotBudgetSeconds": 55.155489,
+          "visibleCounts": {
+            "1012": 79,
+            "1024": 4134,
+            "1025": 468,
+            "10000": 4158
+          },
+          "renderedCounts": {
+            "1012": 79,
+            "1024": 4134,
+            "1025": 468,
+            "10000": 4158
+          },
+          "primitiveCounts": {
+            "1033": 1248,
+            "1034": 3433,
+            "10033": 4158
+          }
+        }
+      },
+      "linux": {
+        "measuredPlanned": 9000,
+        "measuredAttempted": 7960,
+        "measuredPending": 1040,
+        "sourceApplyPlusPrepareSeconds": 2.401002898,
+        "sourceApplyPlusPrepareShareOfRequestWall": 0.011466083192715582,
+        "denseNetDebtSeconds": 114.79330627599998,
+        "smallNetDebtSeconds": -22.273905509,
+        "allMeasured": {
+          "attempted": 7960,
+          "completed": 7960,
+          "requestWallSeconds": 209.400442823,
+          "requestMeanMs": 26.30658829434673,
+          "requestP95MsDescriptiveOnly": 55.737907,
+          "stageSeconds": {
+            "sourceApply": 0.5939263090000001,
+            "prepare": 1.807076589,
+            "record": 73.843427927,
+            "controlledRaster": 132.530784682,
+            "hit": 0.17034744699999999
+          },
+          "stageMeanMs": {
+            "sourceApply": 0.07461385791457287,
+            "prepare": 0.22701967198492462,
+            "record": 9.276812553643216,
+            "controlledRaster": 16.64959606557789,
+            "hit": 0.021400433040201002
+          },
+          "stageObservedAllocationBytes": {
+            "sourceApply": 329469440,
+            "prepare": 1191703808,
+            "record": 46416685544,
+            "controlledRaster": 89884072,
+            "hit": 2827768
+          },
+          "stageObservedMeanAllocationBytes": {
+            "sourceApply": 41390.633165829146,
+            "prepare": 149711.5336683417,
+            "record": 5831241.902512562,
+            "controlledRaster": 11291.968844221106,
+            "hit": 355.2472361809045
+          },
+          "unattributedInsideRequestSeconds": 0.454879869,
+          "postTimedHitToEndSeconds": 0.225567916,
+          "preRequestDueGapSeconds": 11.936072269,
+          "preRequestIdleEligibleSeconds": 3.8495523400000002,
+          "netQueueDebtDeltaSeconds": 92.519400767,
+          "signedServiceMinusSlotBudgetSeconds": 76.733776158,
+          "visibleCounts": {
+            "1012": 75,
+            "1024": 3150,
+            "1025": 980,
+            "10000": 3755
+          },
+          "renderedCounts": {
+            "1012": 75,
+            "1024": 3150,
+            "1025": 980,
+            "10000": 3755
+          },
+          "primitiveCounts": {
+            "1033": 980,
+            "1034": 3225,
+            "10033": 3755
+          }
+        }
+      }
+    }
+  },
+  "sharedNativeGeometry": {
+    "decision": "rejected-and-restored",
+    "productIntegrated": false,
+    "stableBothPlatforms": false,
+    "diagnosticOnly": true,
+    "warmupSeconds": 10,
+    "measureSeconds": 30,
+    "pairsPerPlatform": 3,
+    "noCrossPairPooling": true,
+    "platforms": {
+      "windows": {
+        "evidenceQualified": true,
+        "nativeExit1Count": 5,
+        "testPassedCount": 3275,
+        "strictPixelPairsPassed": 232,
+        "absoluteHitGatePassed": true,
+        "allNativeWorkloadsPassed": false,
+        "pairs": [
+          {
+            "pair": 1,
+            "order": [
+              "baseline",
+              "candidate"
+            ],
+            "evidenceQualified": true,
+            "sameStateMatched": {
+              "allMeasured": {
+                "count": 0,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  }
+                }
+              },
+              "denseMeasured": {
+                "count": 0,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  }
+                }
+              },
+              "smallMeasured": {
+                "count": 0,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  }
+                }
+              },
+              "denseSourceReplacement": {
+                "count": 0,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  }
+                }
+              },
+              "full10000SourceReplacement": {
+                "count": 0,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": null,
+                    "candidateP95": null,
+                    "candidateMinusBaselineP95": null,
+                    "relativeChangePercent": null,
+                    "perIndexDeltaP95": null
+                  }
+                }
+              }
+            },
+            "runs": {
+              "baseline": {
+                "producerPassed": false,
+                "launcherPassed": false,
+                "processIdentity": {
+                  "processId": 49532,
+                  "processStartedUtc": "2026-10-27T01:34:49.2585017Z"
+                },
+                "phases": {
+                  "warmup": {
+                    "planned": 600,
+                    "attempted": 488,
+                    "completed": 488,
+                    "failed": 0,
+                    "pending": 112,
+                    "actualDurationMs": 25010.4006,
+                    "plannedDurationMs": 10000.0,
+                    "drainMs": 15010.4006,
+                    "rasterCompletionsAtPlannedEnd": 210,
+                    "requestCompletionsAtPlannedEnd": 210,
+                    "rasterDebtAtPlannedEnd": 390,
+                    "requestDebtAtPlannedEnd": 390,
+                    "workloadPassed": false,
+                    "successfulSamples": 488,
+                    "failedOperations": []
+                  },
+                  "measured": {
+                    "planned": 1800,
+                    "attempted": 897,
+                    "completed": 897,
+                    "failed": 0,
+                    "pending": 903,
+                    "actualDurationMs": 45052.9007,
+                    "plannedDurationMs": 30000.0,
+                    "drainMs": 15052.9007,
+                    "rasterCompletionsAtPlannedEnd": 632,
+                    "requestCompletionsAtPlannedEnd": 632,
+                    "rasterDebtAtPlannedEnd": 1168,
+                    "requestDebtAtPlannedEnd": 1168,
+                    "workloadPassed": false,
+                    "successfulSamples": 897,
+                    "failedOperations": []
+                  }
+                }
+              },
+              "candidate": {
+                "producerPassed": false,
+                "launcherPassed": false,
+                "processIdentity": {
+                  "processId": 42420,
+                  "processStartedUtc": "2026-10-27T01:36:03.8773588Z"
+                },
+                "phases": {
+                  "warmup": {
+                    "planned": 600,
+                    "attempted": 600,
+                    "completed": 600,
+                    "failed": 0,
+                    "pending": 0,
+                    "actualDurationMs": 24958.2756,
+                    "plannedDurationMs": 10000.0,
+                    "drainMs": 14958.2756,
+                    "rasterCompletionsAtPlannedEnd": 235,
+                    "requestCompletionsAtPlannedEnd": 235,
+                    "rasterDebtAtPlannedEnd": 365,
+                    "requestDebtAtPlannedEnd": 365,
+                    "workloadPassed": true,
+                    "successfulSamples": 600,
+                    "failedOperations": []
+                  },
+                  "measured": {
+                    "planned": 1800,
+                    "attempted": 915,
+                    "completed": 915,
+                    "failed": 0,
+                    "pending": 885,
+                    "actualDurationMs": 45042.9424,
+                    "plannedDurationMs": 30000.0,
+                    "drainMs": 15042.9424,
+                    "rasterCompletionsAtPlannedEnd": 641,
+                    "requestCompletionsAtPlannedEnd": 641,
+                    "rasterDebtAtPlannedEnd": 1159,
+                    "requestDebtAtPlannedEnd": 1159,
+                    "workloadPassed": false,
+                    "successfulSamples": 915,
+                    "failedOperations": []
+                  }
+                }
+              }
+            },
+            "sameStateMismatchCount": 897,
+            "baselineOnlyCompletedCount": 0,
+            "candidateOnlyCompletedCount": 18
+          },
+          {
+            "pair": 2,
+            "order": [
+              "candidate",
+              "baseline"
+            ],
+            "evidenceQualified": true,
+            "sameStateMatched": {
+              "allMeasured": {
+                "count": 1613,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 56.9049,
+                    "candidateP95": 56.3069,
+                    "candidateMinusBaselineP95": -0.597999999999999,
+                    "relativeChangePercent": -1.0508761108445828,
+                    "perIndexDeltaP95": 17.355799999999995
+                  },
+                  "recordMs": {
+                    "baselineP95": 30.5901,
+                    "candidateP95": 27.5357,
+                    "candidateMinusBaselineP95": -3.054400000000001,
+                    "relativeChangePercent": -9.984929764858569,
+                    "perIndexDeltaP95": 12.6394
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 33.8748,
+                    "candidateP95": 33.5274,
+                    "candidateMinusBaselineP95": -0.3474000000000004,
+                    "relativeChangePercent": -1.0255411102058178,
+                    "perIndexDeltaP95": 8.238100000000003
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 56.5021,
+                    "candidateP95": 56.1811,
+                    "candidateMinusBaselineP95": -0.32099999999999795,
+                    "relativeChangePercent": -0.5681204769380217,
+                    "perIndexDeltaP95": 17.34599999999999
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393120,
+                    "candidateP95": 10393224,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.0010006619763843773,
+                    "perIndexDeltaP95": 152
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 17409.8754,
+                    "candidateP95": 17093.5961,
+                    "candidateMinusBaselineP95": -316.27930000000197,
+                    "relativeChangePercent": -1.8166660744740422,
+                    "perIndexDeltaP95": -2.9168000000000003
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 17384.5116,
+                    "candidateP95": 17066.3679,
+                    "candidateMinusBaselineP95": -318.14370000000054,
+                    "relativeChangePercent": -1.830041057926531,
+                    "perIndexDeltaP95": -0.0472
+                  }
+                }
+              },
+              "denseMeasured": {
+                "count": 772,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 63.5555,
+                    "candidateP95": 60.2861,
+                    "candidateMinusBaselineP95": -3.2694000000000045,
+                    "relativeChangePercent": -5.144165335808867,
+                    "perIndexDeltaP95": 22.0961
+                  },
+                  "recordMs": {
+                    "baselineP95": 33.0757,
+                    "candidateP95": 30.1216,
+                    "candidateMinusBaselineP95": -2.954099999999997,
+                    "relativeChangePercent": -8.931330251513943,
+                    "perIndexDeltaP95": 16.6942
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 36.5103,
+                    "candidateP95": 35.8593,
+                    "candidateMinusBaselineP95": -0.6510000000000034,
+                    "relativeChangePercent": -1.7830584793880175,
+                    "perIndexDeltaP95": 11.621400000000001
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 63.5392,
+                    "candidateP95": 59.7108,
+                    "candidateMinusBaselineP95": -3.828400000000002,
+                    "relativeChangePercent": -6.025256849315071,
+                    "perIndexDeltaP95": 22.0957
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393120,
+                    "candidateP95": 10393224,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.0010006619763843773,
+                    "perIndexDeltaP95": 152
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 17431.985,
+                    "candidateP95": 17163.5332,
+                    "candidateMinusBaselineP95": -268.4517999999989,
+                    "relativeChangePercent": -1.5399955885689376,
+                    "perIndexDeltaP95": -200.8209999999999
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 17384.5116,
+                    "candidateP95": 17118.2026,
+                    "candidateMinusBaselineP95": -266.3090000000011,
+                    "relativeChangePercent": -1.5318750743621758,
+                    "perIndexDeltaP95": -201.11089999999967
+                  }
+                }
+              },
+              "smallMeasured": {
+                "count": 841,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 15.2622,
+                    "candidateP95": 14.8778,
+                    "candidateMinusBaselineP95": -0.3843999999999994,
+                    "relativeChangePercent": -2.518640825044878,
+                    "perIndexDeltaP95": 6.335100000000001
+                  },
+                  "recordMs": {
+                    "baselineP95": 6.9156,
+                    "candidateP95": 6.7847,
+                    "candidateMinusBaselineP95": -0.13090000000000046,
+                    "relativeChangePercent": -1.892822025565395,
+                    "perIndexDeltaP95": 4.848800000000001
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 8.9183,
+                    "candidateP95": 8.7264,
+                    "candidateMinusBaselineP95": -0.1919000000000004,
+                    "relativeChangePercent": -2.1517553793884527,
+                    "perIndexDeltaP95": 3.287000000000001
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 14.6057,
+                    "candidateP95": 14.2843,
+                    "candidateMinusBaselineP95": -0.3214000000000006,
+                    "relativeChangePercent": -2.200510759498008,
+                    "perIndexDeltaP95": 6.3404
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 1953640,
+                    "candidateP95": 1955440,
+                    "candidateMinusBaselineP95": 1800,
+                    "relativeChangePercent": 0.09213570565713233,
+                    "perIndexDeltaP95": 8
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 17388.8363,
+                    "candidateP95": 17060.7411,
+                    "candidateMinusBaselineP95": -328.09519999999975,
+                    "relativeChangePercent": -1.88681516312854,
+                    "perIndexDeltaP95": -0.40720000000000134
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 17383.0247,
+                    "candidateP95": 17050.3358,
+                    "candidateMinusBaselineP95": -332.688900000001,
+                    "relativeChangePercent": -1.9138723308608137,
+                    "perIndexDeltaP95": 0.0037
+                  }
+                }
+              },
+              "denseSourceReplacement": {
+                "count": 77,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 61.3575,
+                    "candidateP95": 60.7929,
+                    "candidateMinusBaselineP95": -0.5645999999999987,
+                    "relativeChangePercent": -0.9201809069795847,
+                    "perIndexDeltaP95": 23.149900000000002
+                  },
+                  "recordMs": {
+                    "baselineP95": 33.945,
+                    "candidateP95": 32.5904,
+                    "candidateMinusBaselineP95": -1.3545999999999978,
+                    "relativeChangePercent": -3.990572985712175,
+                    "perIndexDeltaP95": 16.999699999999997
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 34.5898,
+                    "candidateP95": 34.259,
+                    "candidateMinusBaselineP95": -0.33079999999999643,
+                    "relativeChangePercent": -0.9563512943121858,
+                    "perIndexDeltaP95": 11.827700000000004
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 59.7338,
+                    "candidateP95": 59.230500000000006,
+                    "candidateMinusBaselineP95": -0.5032999999999959,
+                    "relativeChangePercent": -0.842571542409818,
+                    "perIndexDeltaP95": 22.761399999999995
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393544,
+                    "candidateP95": 10393648,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.001000621154824572,
+                    "perIndexDeltaP95": 528
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 17563.6903,
+                    "candidateP95": 17343.5059,
+                    "candidateMinusBaselineP95": -220.18439999999828,
+                    "relativeChangePercent": -1.2536340384002234,
+                    "perIndexDeltaP95": -202.98239999999998
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 17512.6503,
+                    "candidateP95": 17310.7192,
+                    "candidateMinusBaselineP95": -201.9311000000016,
+                    "relativeChangePercent": -1.1530584836722377,
+                    "perIndexDeltaP95": -201.11089999999967
+                  }
+                }
+              },
+              "full10000SourceReplacement": {
+                "count": 77,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 61.3575,
+                    "candidateP95": 60.7929,
+                    "candidateMinusBaselineP95": -0.5645999999999987,
+                    "relativeChangePercent": -0.9201809069795847,
+                    "perIndexDeltaP95": 23.149900000000002
+                  },
+                  "recordMs": {
+                    "baselineP95": 33.945,
+                    "candidateP95": 32.5904,
+                    "candidateMinusBaselineP95": -1.3545999999999978,
+                    "relativeChangePercent": -3.990572985712175,
+                    "perIndexDeltaP95": 16.999699999999997
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 34.5898,
+                    "candidateP95": 34.259,
+                    "candidateMinusBaselineP95": -0.33079999999999643,
+                    "relativeChangePercent": -0.9563512943121858,
+                    "perIndexDeltaP95": 11.827700000000004
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 59.7338,
+                    "candidateP95": 59.230500000000006,
+                    "candidateMinusBaselineP95": -0.5032999999999959,
+                    "relativeChangePercent": -0.842571542409818,
+                    "perIndexDeltaP95": 22.761399999999995
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393544,
+                    "candidateP95": 10393648,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.001000621154824572,
+                    "perIndexDeltaP95": 528
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 17563.6903,
+                    "candidateP95": 17343.5059,
+                    "candidateMinusBaselineP95": -220.18439999999828,
+                    "relativeChangePercent": -1.2536340384002234,
+                    "perIndexDeltaP95": -202.98239999999998
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 17512.6503,
+                    "candidateP95": 17310.7192,
+                    "candidateMinusBaselineP95": -201.9311000000016,
+                    "relativeChangePercent": -1.1530584836722377,
+                    "perIndexDeltaP95": -201.11089999999967
+                  }
+                }
+              }
+            },
+            "runs": {
+              "baseline": {
+                "producerPassed": false,
+                "launcherPassed": false,
+                "processIdentity": {
+                  "processId": 78048,
+                  "processStartedUtc": "2026-10-27T01:38:21.3771847Z"
+                },
+                "phases": {
+                  "warmup": {
+                    "planned": 600,
+                    "attempted": 600,
+                    "completed": 600,
+                    "failed": 0,
+                    "pending": 0,
+                    "actualDurationMs": 18119.9884,
+                    "plannedDurationMs": 10000.0,
+                    "drainMs": 8119.9884,
+                    "rasterCompletionsAtPlannedEnd": 337,
+                    "requestCompletionsAtPlannedEnd": 337,
+                    "rasterDebtAtPlannedEnd": 263,
+                    "requestDebtAtPlannedEnd": 263,
+                    "workloadPassed": true,
+                    "successfulSamples": 600,
+                    "failedOperations": []
+                  },
+                  "measured": {
+                    "planned": 1800,
+                    "attempted": 1613,
+                    "completed": 1613,
+                    "failed": 0,
+                    "pending": 187,
+                    "actualDurationMs": 45008.4423,
+                    "plannedDurationMs": 30000.0,
+                    "drainMs": 15008.4423,
+                    "rasterCompletionsAtPlannedEnd": 1074,
+                    "requestCompletionsAtPlannedEnd": 1074,
+                    "rasterDebtAtPlannedEnd": 726,
+                    "requestDebtAtPlannedEnd": 726,
+                    "workloadPassed": false,
+                    "successfulSamples": 1613,
+                    "failedOperations": []
+                  }
+                }
+              },
+              "candidate": {
+                "producerPassed": false,
+                "launcherPassed": false,
+                "processIdentity": {
+                  "processId": 44048,
+                  "processStartedUtc": "2026-10-27T01:37:17.970393Z"
+                },
+                "phases": {
+                  "warmup": {
+                    "planned": 600,
+                    "attempted": 600,
+                    "completed": 600,
+                    "failed": 0,
+                    "pending": 0,
+                    "actualDurationMs": 14723.5466,
+                    "plannedDurationMs": 10000.0,
+                    "drainMs": 4723.5466,
+                    "rasterCompletionsAtPlannedEnd": 402,
+                    "requestCompletionsAtPlannedEnd": 402,
+                    "rasterDebtAtPlannedEnd": 198,
+                    "requestDebtAtPlannedEnd": 198,
+                    "workloadPassed": true,
+                    "successfulSamples": 600,
+                    "failedOperations": []
+                  },
+                  "measured": {
+                    "planned": 1800,
+                    "attempted": 1618,
+                    "completed": 1618,
+                    "failed": 0,
+                    "pending": 182,
+                    "actualDurationMs": 45008.232,
+                    "plannedDurationMs": 30000.0,
+                    "drainMs": 15008.232,
+                    "rasterCompletionsAtPlannedEnd": 1102,
+                    "requestCompletionsAtPlannedEnd": 1102,
+                    "rasterDebtAtPlannedEnd": 698,
+                    "requestDebtAtPlannedEnd": 698,
+                    "workloadPassed": false,
+                    "successfulSamples": 1618,
+                    "failedOperations": []
+                  }
+                }
+              }
+            },
+            "sameStateMismatchCount": 0,
+            "baselineOnlyCompletedCount": 0,
+            "candidateOnlyCompletedCount": 5
+          },
+          {
+            "pair": 3,
+            "order": [
+              "baseline",
+              "candidate"
+            ],
+            "evidenceQualified": true,
+            "sameStateMatched": {
+              "allMeasured": {
+                "count": 1048,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 47.5781,
+                    "candidateP95": 93.5252,
+                    "candidateMinusBaselineP95": 45.9471,
+                    "relativeChangePercent": 96.57195222171545,
+                    "perIndexDeltaP95": 58.8841
+                  },
+                  "recordMs": {
+                    "baselineP95": 27.2332,
+                    "candidateP95": 46.2985,
+                    "candidateMinusBaselineP95": 19.065299999999997,
+                    "relativeChangePercent": 70.00756429652041,
+                    "perIndexDeltaP95": 31.287099999999995
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 21.1376,
+                    "candidateP95": 48.427,
+                    "candidateMinusBaselineP95": 27.2894,
+                    "relativeChangePercent": 129.1035879191583,
+                    "perIndexDeltaP95": 28.367099999999997
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 47.053200000000004,
+                    "candidateP95": 92.9465,
+                    "candidateMinusBaselineP95": 45.893299999999996,
+                    "relativeChangePercent": 97.53491792269175,
+                    "perIndexDeltaP95": 58.86540000000001
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10158264,
+                    "candidateP95": 10151616,
+                    "candidateMinusBaselineP95": -6648,
+                    "relativeChangePercent": -0.0654442530731629,
+                    "perIndexDeltaP95": 144
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 7279.7002,
+                    "candidateP95": 27400.8747,
+                    "candidateMinusBaselineP95": 20121.1745,
+                    "relativeChangePercent": 276.4011421789046,
+                    "perIndexDeltaP95": 20093.6967
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 7264.3768,
+                    "candidateP95": 27384.5884,
+                    "candidateMinusBaselineP95": 20120.211600000002,
+                    "relativeChangePercent": 276.9709247460842,
+                    "perIndexDeltaP95": 20080.8105
+                  }
+                }
+              },
+              "denseMeasured": {
+                "count": 480,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 50.3372,
+                    "candidateP95": 99.3254,
+                    "candidateMinusBaselineP95": 48.9882,
+                    "relativeChangePercent": 97.32007342482298,
+                    "perIndexDeltaP95": 64.16709999999999
+                  },
+                  "recordMs": {
+                    "baselineP95": 30.3611,
+                    "candidateP95": 50.5211,
+                    "candidateMinusBaselineP95": 20.159999999999997,
+                    "relativeChangePercent": 66.40075623083483,
+                    "perIndexDeltaP95": 36.850500000000004
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 22.0325,
+                    "candidateP95": 51.4797,
+                    "candidateMinusBaselineP95": 29.447200000000002,
+                    "relativeChangePercent": 133.65346646998753,
+                    "perIndexDeltaP95": 31.8579
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 50.184799999999996,
+                    "candidateP95": 98.7397,
+                    "candidateMinusBaselineP95": 48.5549,
+                    "relativeChangePercent": 96.7522038545536,
+                    "perIndexDeltaP95": 64.1665
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393120,
+                    "candidateP95": 10393224,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.0010006619763843773,
+                    "perIndexDeltaP95": 152
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 7076.3581,
+                    "candidateP95": 25669.5462,
+                    "candidateMinusBaselineP95": 18593.1881,
+                    "relativeChangePercent": 262.75080821588153,
+                    "perIndexDeltaP95": 18593.1881
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 7042.0738,
+                    "candidateP95": 25598.6909,
+                    "candidateMinusBaselineP95": 18556.617100000003,
+                    "relativeChangePercent": 263.5106877181549,
+                    "perIndexDeltaP95": 18556.617100000003
+                  }
+                }
+              },
+              "smallMeasured": {
+                "count": 568,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 11.332,
+                    "candidateP95": 22.4963,
+                    "candidateMinusBaselineP95": 11.1643,
+                    "relativeChangePercent": 98.52012001411931,
+                    "perIndexDeltaP95": 15.652800000000001
+                  },
+                  "recordMs": {
+                    "baselineP95": 5.8689,
+                    "candidateP95": 10.7175,
+                    "candidateMinusBaselineP95": 4.848599999999999,
+                    "relativeChangePercent": 82.6151408270715,
+                    "perIndexDeltaP95": 9.3597
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 5.5825,
+                    "candidateP95": 11.8439,
+                    "candidateMinusBaselineP95": 6.2614,
+                    "relativeChangePercent": 112.16121809225258,
+                    "perIndexDeltaP95": 7.0535000000000005
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 10.950700000000001,
+                    "candidateP95": 21.9459,
+                    "candidateMinusBaselineP95": 10.9952,
+                    "relativeChangePercent": 100.40636671628296,
+                    "perIndexDeltaP95": 15.4785
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 1953640,
+                    "candidateP95": 1955440,
+                    "candidateMinusBaselineP95": 1800,
+                    "relativeChangePercent": 0.09213570565713233,
+                    "perIndexDeltaP95": 8
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 7355.3624,
+                    "candidateP95": 27447.7568,
+                    "candidateMinusBaselineP95": 20092.394399999997,
+                    "relativeChangePercent": 273.1666137891451,
+                    "perIndexDeltaP95": 20360.1981
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 7349.6362,
+                    "candidateP95": 27396.0324,
+                    "candidateMinusBaselineP95": 20046.3962,
+                    "relativeChangePercent": 272.75358472845227,
+                    "perIndexDeltaP95": 20305.7127
+                  }
+                }
+              },
+              "denseSourceReplacement": {
+                "count": 48,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 53.6711,
+                    "candidateP95": 119.0153,
+                    "candidateMinusBaselineP95": 65.3442,
+                    "relativeChangePercent": 121.74932132935602,
+                    "perIndexDeltaP95": 85.3319
+                  },
+                  "recordMs": {
+                    "baselineP95": 31.298,
+                    "candidateP95": 57.6368,
+                    "candidateMinusBaselineP95": 26.338800000000003,
+                    "relativeChangePercent": 84.15489807655442,
+                    "perIndexDeltaP95": 47.1953
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 22.521,
+                    "candidateP95": 51.4513,
+                    "candidateMinusBaselineP95": 28.930300000000003,
+                    "relativeChangePercent": 128.459215842991,
+                    "perIndexDeltaP95": 30.283100000000005
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 51.5424,
+                    "candidateP95": 116.7347,
+                    "candidateMinusBaselineP95": 65.1923,
+                    "relativeChangePercent": 126.48285683243311,
+                    "perIndexDeltaP95": 84.08359999999999
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393544,
+                    "candidateP95": 10393648,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.001000621154824572,
+                    "perIndexDeltaP95": 176
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 7179.9284,
+                    "candidateP95": 25924.9491,
+                    "candidateMinusBaselineP95": 18745.0207,
+                    "relativeChangePercent": 261.07531518002327,
+                    "perIndexDeltaP95": 18745.0207
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 7130.2229,
+                    "candidateP95": 25844.8191,
+                    "candidateMinusBaselineP95": 18714.5962,
+                    "relativeChangePercent": 262.46859968431005,
+                    "perIndexDeltaP95": 18714.5962
+                  }
+                }
+              },
+              "full10000SourceReplacement": {
+                "count": 48,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 53.6711,
+                    "candidateP95": 119.0153,
+                    "candidateMinusBaselineP95": 65.3442,
+                    "relativeChangePercent": 121.74932132935602,
+                    "perIndexDeltaP95": 85.3319
+                  },
+                  "recordMs": {
+                    "baselineP95": 31.298,
+                    "candidateP95": 57.6368,
+                    "candidateMinusBaselineP95": 26.338800000000003,
+                    "relativeChangePercent": 84.15489807655442,
+                    "perIndexDeltaP95": 47.1953
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 22.521,
+                    "candidateP95": 51.4513,
+                    "candidateMinusBaselineP95": 28.930300000000003,
+                    "relativeChangePercent": 128.459215842991,
+                    "perIndexDeltaP95": 30.283100000000005
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 51.5424,
+                    "candidateP95": 116.7347,
+                    "candidateMinusBaselineP95": 65.1923,
+                    "relativeChangePercent": 126.48285683243311,
+                    "perIndexDeltaP95": 84.08359999999999
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393544,
+                    "candidateP95": 10393648,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.001000621154824572,
+                    "perIndexDeltaP95": 176
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 7179.9284,
+                    "candidateP95": 25924.9491,
+                    "candidateMinusBaselineP95": 18745.0207,
+                    "relativeChangePercent": 261.07531518002327,
+                    "perIndexDeltaP95": 18745.0207
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 7130.2229,
+                    "candidateP95": 25844.8191,
+                    "candidateMinusBaselineP95": 18714.5962,
+                    "relativeChangePercent": 262.46859968431005,
+                    "perIndexDeltaP95": 18714.5962
+                  }
+                }
+              }
+            },
+            "runs": {
+              "baseline": {
+                "producerPassed": true,
+                "launcherPassed": true,
+                "processIdentity": {
+                  "processId": 19532,
+                  "processStartedUtc": "2026-10-27T01:39:28.3049481Z"
+                },
+                "phases": {
+                  "warmup": {
+                    "planned": 600,
+                    "attempted": 600,
+                    "completed": 600,
+                    "failed": 0,
+                    "pending": 0,
+                    "actualDurationMs": 13112.9542,
+                    "plannedDurationMs": 10000.0,
+                    "drainMs": 3112.9542,
+                    "rasterCompletionsAtPlannedEnd": 423,
+                    "requestCompletionsAtPlannedEnd": 423,
+                    "rasterDebtAtPlannedEnd": 177,
+                    "requestDebtAtPlannedEnd": 177,
+                    "workloadPassed": true,
+                    "successfulSamples": 600,
+                    "failedOperations": []
+                  },
+                  "measured": {
+                    "planned": 1800,
+                    "attempted": 1800,
+                    "completed": 1800,
+                    "failed": 0,
+                    "pending": 0,
+                    "actualDurationMs": 41096.9428,
+                    "plannedDurationMs": 30000.0,
+                    "drainMs": 11096.9428,
+                    "rasterCompletionsAtPlannedEnd": 1314,
+                    "requestCompletionsAtPlannedEnd": 1314,
+                    "rasterDebtAtPlannedEnd": 486,
+                    "requestDebtAtPlannedEnd": 486,
+                    "workloadPassed": true,
+                    "successfulSamples": 1800,
+                    "failedOperations": []
+                  }
+                }
+              },
+              "candidate": {
+                "producerPassed": false,
+                "launcherPassed": false,
+                "processIdentity": {
+                  "processId": 76296,
+                  "processStartedUtc": "2026-10-27T01:40:26.0336959Z"
+                },
+                "phases": {
+                  "warmup": {
+                    "planned": 600,
+                    "attempted": 600,
+                    "completed": 600,
+                    "failed": 0,
+                    "pending": 0,
+                    "actualDurationMs": 14175.8867,
+                    "plannedDurationMs": 10000.0,
+                    "drainMs": 4175.8867,
+                    "rasterCompletionsAtPlannedEnd": 418,
+                    "requestCompletionsAtPlannedEnd": 418,
+                    "rasterDebtAtPlannedEnd": 182,
+                    "requestDebtAtPlannedEnd": 182,
+                    "workloadPassed": true,
+                    "successfulSamples": 600,
+                    "failedOperations": []
+                  },
+                  "measured": {
+                    "planned": 1800,
+                    "attempted": 1048,
+                    "completed": 1048,
+                    "failed": 0,
+                    "pending": 752,
+                    "actualDurationMs": 45023.4464,
+                    "plannedDurationMs": 30000.0,
+                    "drainMs": 15023.4464,
+                    "rasterCompletionsAtPlannedEnd": 709,
+                    "requestCompletionsAtPlannedEnd": 709,
+                    "rasterDebtAtPlannedEnd": 1091,
+                    "requestDebtAtPlannedEnd": 1091,
+                    "workloadPassed": false,
+                    "successfulSamples": 1048,
+                    "failedOperations": []
+                  }
+                }
+              }
+            },
+            "sameStateMismatchCount": 0,
+            "baselineOnlyCompletedCount": 752,
+            "candidateOnlyCompletedCount": 0
+          }
+        ]
+      },
+      "linux": {
+        "evidenceQualified": true,
+        "nativeExit1Count": 6,
+        "testPassedCount": 3275,
+        "strictPixelPairsPassed": 232,
+        "absoluteHitGatePassed": true,
+        "allNativeWorkloadsPassed": false,
+        "pairs": [
+          {
+            "pair": 1,
+            "order": [
+              "baseline",
+              "candidate"
+            ],
+            "evidenceQualified": true,
+            "sameStateMatched": {
+              "allMeasured": {
+                "count": 1568,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 53.855137,
+                    "candidateP95": 54.311705,
+                    "candidateMinusBaselineP95": 0.4565680000000043,
+                    "relativeChangePercent": 0.8477705664364095,
+                    "perIndexDeltaP95": 13.542183000000001
+                  },
+                  "recordMs": {
+                    "baselineP95": 25.67156,
+                    "candidateP95": 24.118541,
+                    "candidateMinusBaselineP95": -1.553018999999999,
+                    "relativeChangePercent": -6.049570030025441,
+                    "perIndexDeltaP95": 10.816419999999999
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 28.936894,
+                    "candidateP95": 31.272741,
+                    "candidateMinusBaselineP95": 2.335847000000001,
+                    "relativeChangePercent": 8.072210514369653,
+                    "perIndexDeltaP95": 4.634730000000001
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 53.734711000000004,
+                    "candidateP95": 53.954096,
+                    "candidateMinusBaselineP95": 0.2193849999999955,
+                    "relativeChangePercent": 0.40827427172725556,
+                    "perIndexDeltaP95": 13.286086000000005
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393120,
+                    "candidateP95": 10393224,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.0010006619763843773,
+                    "perIndexDeltaP95": 152
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 16692.075695,
+                    "candidateP95": 19073.013998,
+                    "candidateMinusBaselineP95": 2380.938302999999,
+                    "relativeChangePercent": 14.263883932141486,
+                    "perIndexDeltaP95": 2374.5324729999993
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 16677.429168,
+                    "candidateP95": 19058.524758,
+                    "candidateMinusBaselineP95": 2381.095590000001,
+                    "relativeChangePercent": 14.277353937552641,
+                    "perIndexDeltaP95": 2374.7093819999973
+                  }
+                }
+              },
+              "denseMeasured": {
+                "count": 727,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 56.348659,
+                    "candidateP95": 58.242645,
+                    "candidateMinusBaselineP95": 1.8939860000000053,
+                    "relativeChangePercent": 3.361190902519979,
+                    "perIndexDeltaP95": 16.603437
+                  },
+                  "recordMs": {
+                    "baselineP95": 28.325394,
+                    "candidateP95": 26.230945,
+                    "candidateMinusBaselineP95": -2.094449000000001,
+                    "relativeChangePercent": -7.394244895587334,
+                    "perIndexDeltaP95": 13.052382999999999
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 29.746548,
+                    "candidateP95": 35.537251,
+                    "candidateMinusBaselineP95": 5.790702999999997,
+                    "relativeChangePercent": 19.466806703083655,
+                    "perIndexDeltaP95": 7.6492030000000035
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 56.052627,
+                    "candidateP95": 57.373335,
+                    "candidateMinusBaselineP95": 1.3207079999999962,
+                    "relativeChangePercent": 2.3561928685340585,
+                    "perIndexDeltaP95": 16.597879
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393120,
+                    "candidateP95": 10393224,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.0010006619763843773,
+                    "perIndexDeltaP95": 160
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 16226.15078,
+                    "candidateP95": 18633.688382,
+                    "candidateMinusBaselineP95": 2407.5376020000003,
+                    "relativeChangePercent": 14.837392026256028,
+                    "perIndexDeltaP95": 2366.108088000001
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 16180.96994,
+                    "candidateP95": 18591.128998,
+                    "candidateMinusBaselineP95": 2410.1590579999993,
+                    "relativeChangePercent": 14.895022158356467,
+                    "perIndexDeltaP95": 2366.4506979999987
+                  }
+                }
+              },
+              "smallMeasured": {
+                "count": 841,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 15.031735,
+                    "candidateP95": 15.914522,
+                    "candidateMinusBaselineP95": 0.8827870000000004,
+                    "relativeChangePercent": 5.872821733485858,
+                    "perIndexDeltaP95": 7.671866
+                  },
+                  "recordMs": {
+                    "baselineP95": 7.812132,
+                    "candidateP95": 8.663515,
+                    "candidateMinusBaselineP95": 0.8513830000000002,
+                    "relativeChangePercent": 10.89821574955467,
+                    "perIndexDeltaP95": 6.630419000000001
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 7.282207,
+                    "candidateP95": 8.366082,
+                    "candidateMinusBaselineP95": 1.0838750000000008,
+                    "relativeChangePercent": 14.883880669692592,
+                    "perIndexDeltaP95": 2.5358199999999993
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 14.136347,
+                    "candidateP95": 15.508171,
+                    "candidateMinusBaselineP95": 1.3718240000000002,
+                    "relativeChangePercent": 9.704232642280218,
+                    "perIndexDeltaP95": 7.616166999999999
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 1955432,
+                    "candidateP95": 1955440,
+                    "candidateMinusBaselineP95": 8,
+                    "relativeChangePercent": 0.00040911675783151754,
+                    "perIndexDeltaP95": 32
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 16846.070306,
+                    "candidateP95": 19214.890972,
+                    "candidateMinusBaselineP95": 2368.8206659999996,
+                    "relativeChangePercent": 14.061562269251041,
+                    "perIndexDeltaP95": 2377.905209999999
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 16839.211653,
+                    "candidateP95": 19206.095616,
+                    "candidateMinusBaselineP95": 2366.883963,
+                    "relativeChangePercent": 14.055788428660357,
+                    "perIndexDeltaP95": 2378.0916829999987
+                  }
+                }
+              },
+              "denseSourceReplacement": {
+                "count": 72,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 61.237748,
+                    "candidateP95": 60.248409,
+                    "candidateMinusBaselineP95": -0.9893390000000011,
+                    "relativeChangePercent": -1.615570513794859,
+                    "perIndexDeltaP95": 16.109322000000006
+                  },
+                  "recordMs": {
+                    "baselineP95": 30.551157,
+                    "candidateP95": 28.233988,
+                    "candidateMinusBaselineP95": -2.317169,
+                    "relativeChangePercent": -7.584553999051492,
+                    "perIndexDeltaP95": 11.333428
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 30.774273,
+                    "candidateP95": 35.209776,
+                    "candidateMinusBaselineP95": 4.435502999999997,
+                    "relativeChangePercent": 14.41302285191269,
+                    "perIndexDeltaP95": 6.467561999999997
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 58.321211000000005,
+                    "candidateP95": 58.596894999999996,
+                    "candidateMinusBaselineP95": 0.27568399999999116,
+                    "relativeChangePercent": 0.4726993751895706,
+                    "perIndexDeltaP95": 15.45630700000001
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393384,
+                    "candidateP95": 10393528,
+                    "candidateMinusBaselineP95": 144,
+                    "relativeChangePercent": 0.0013854967737168182,
+                    "perIndexDeltaP95": 160
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 16196.201449,
+                    "candidateP95": 18605.62822,
+                    "candidateMinusBaselineP95": 2409.4267709999986,
+                    "relativeChangePercent": 14.8764929763748,
+                    "perIndexDeltaP95": 2365.9193140000025
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 16151.583214,
+                    "candidateP95": 18562.797656,
+                    "candidateMinusBaselineP95": 2411.2144419999986,
+                    "relativeChangePercent": 14.928656900395909,
+                    "perIndexDeltaP95": 2363.9785269999993
+                  }
+                }
+              },
+              "full10000SourceReplacement": {
+                "count": 72,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 61.237748,
+                    "candidateP95": 60.248409,
+                    "candidateMinusBaselineP95": -0.9893390000000011,
+                    "relativeChangePercent": -1.615570513794859,
+                    "perIndexDeltaP95": 16.109322000000006
+                  },
+                  "recordMs": {
+                    "baselineP95": 30.551157,
+                    "candidateP95": 28.233988,
+                    "candidateMinusBaselineP95": -2.317169,
+                    "relativeChangePercent": -7.584553999051492,
+                    "perIndexDeltaP95": 11.333428
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 30.774273,
+                    "candidateP95": 35.209776,
+                    "candidateMinusBaselineP95": 4.435502999999997,
+                    "relativeChangePercent": 14.41302285191269,
+                    "perIndexDeltaP95": 6.467561999999997
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 58.321211000000005,
+                    "candidateP95": 58.596894999999996,
+                    "candidateMinusBaselineP95": 0.27568399999999116,
+                    "relativeChangePercent": 0.4726993751895706,
+                    "perIndexDeltaP95": 15.45630700000001
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393384,
+                    "candidateP95": 10393528,
+                    "candidateMinusBaselineP95": 144,
+                    "relativeChangePercent": 0.0013854967737168182,
+                    "perIndexDeltaP95": 160
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 16196.201449,
+                    "candidateP95": 18605.62822,
+                    "candidateMinusBaselineP95": 2409.4267709999986,
+                    "relativeChangePercent": 14.8764929763748,
+                    "perIndexDeltaP95": 2365.9193140000025
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 16151.583214,
+                    "candidateP95": 18562.797656,
+                    "candidateMinusBaselineP95": 2411.2144419999986,
+                    "relativeChangePercent": 14.928656900395909,
+                    "perIndexDeltaP95": 2363.9785269999993
+                  }
+                }
+              }
+            },
+            "runs": {
+              "baseline": {
+                "producerPassed": false,
+                "launcherPassed": false,
+                "processIdentity": {
+                  "processId": 465,
+                  "processStartedUtc": "2026-10-27T01:43:10.4524874Z"
+                },
+                "phases": {
+                  "warmup": {
+                    "planned": 600,
+                    "attempted": 600,
+                    "completed": 600,
+                    "failed": 0,
+                    "pending": 0,
+                    "actualDurationMs": 15416.897685,
+                    "plannedDurationMs": 10000.0,
+                    "drainMs": 5416.897685,
+                    "rasterCompletionsAtPlannedEnd": 387,
+                    "requestCompletionsAtPlannedEnd": 387,
+                    "rasterDebtAtPlannedEnd": 213,
+                    "requestDebtAtPlannedEnd": 213,
+                    "workloadPassed": true,
+                    "successfulSamples": 600,
+                    "failedOperations": []
+                  },
+                  "measured": {
+                    "planned": 1800,
+                    "attempted": 1618,
+                    "completed": 1618,
+                    "failed": 0,
+                    "pending": 182,
+                    "actualDurationMs": 45033.631224,
+                    "plannedDurationMs": 30000.0,
+                    "drainMs": 15033.631224,
+                    "rasterCompletionsAtPlannedEnd": 1106,
+                    "requestCompletionsAtPlannedEnd": 1106,
+                    "rasterDebtAtPlannedEnd": 694,
+                    "requestDebtAtPlannedEnd": 694,
+                    "workloadPassed": false,
+                    "successfulSamples": 1618,
+                    "failedOperations": []
+                  }
+                }
+              },
+              "candidate": {
+                "producerPassed": false,
+                "launcherPassed": false,
+                "processIdentity": {
+                  "processId": 520,
+                  "processStartedUtc": "2026-10-27T01:44:20.8442736Z"
+                },
+                "phases": {
+                  "warmup": {
+                    "planned": 600,
+                    "attempted": 600,
+                    "completed": 600,
+                    "failed": 0,
+                    "pending": 0,
+                    "actualDurationMs": 15759.888729,
+                    "plannedDurationMs": 10000.0,
+                    "drainMs": 5759.888729,
+                    "rasterCompletionsAtPlannedEnd": 382,
+                    "requestCompletionsAtPlannedEnd": 382,
+                    "rasterDebtAtPlannedEnd": 218,
+                    "requestDebtAtPlannedEnd": 218,
+                    "workloadPassed": true,
+                    "successfulSamples": 600,
+                    "failedOperations": []
+                  },
+                  "measured": {
+                    "planned": 1800,
+                    "attempted": 1568,
+                    "completed": 1568,
+                    "failed": 0,
+                    "pending": 232,
+                    "actualDurationMs": 45013.143942,
+                    "plannedDurationMs": 30000.0,
+                    "drainMs": 15013.143942,
+                    "rasterCompletionsAtPlannedEnd": 1004,
+                    "requestCompletionsAtPlannedEnd": 1004,
+                    "rasterDebtAtPlannedEnd": 796,
+                    "requestDebtAtPlannedEnd": 796,
+                    "workloadPassed": false,
+                    "successfulSamples": 1568,
+                    "failedOperations": []
+                  }
+                }
+              }
+            },
+            "sameStateMismatchCount": 0,
+            "baselineOnlyCompletedCount": 50,
+            "candidateOnlyCompletedCount": 0
+          },
+          {
+            "pair": 2,
+            "order": [
+              "candidate",
+              "baseline"
+            ],
+            "evidenceQualified": true,
+            "sameStateMatched": {
+              "allMeasured": {
+                "count": 1586,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 55.171806,
+                    "candidateP95": 52.807455,
+                    "candidateMinusBaselineP95": -2.364350999999999,
+                    "relativeChangePercent": -4.285433396905657,
+                    "perIndexDeltaP95": 9.699751
+                  },
+                  "recordMs": {
+                    "baselineP95": 26.772462,
+                    "candidateP95": 24.199577,
+                    "candidateMinusBaselineP95": -2.5728849999999994,
+                    "relativeChangePercent": -9.610191995043262,
+                    "perIndexDeltaP95": 9.392119000000001
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 30.112791,
+                    "candidateP95": 29.413797,
+                    "candidateMinusBaselineP95": -0.6989940000000026,
+                    "relativeChangePercent": -2.321252785900857,
+                    "perIndexDeltaP95": 1.832053000000002
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 55.075913,
+                    "candidateP95": 52.519693000000004,
+                    "candidateMinusBaselineP95": -2.556219999999996,
+                    "relativeChangePercent": -4.64126668222458,
+                    "perIndexDeltaP95": 9.696466999999998
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393120,
+                    "candidateP95": 10393224,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.0010006619763843773,
+                    "perIndexDeltaP95": 152
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 18226.866451,
+                    "candidateP95": 17025.940072,
+                    "candidateMinusBaselineP95": -1200.9263790000005,
+                    "relativeChangePercent": -6.588770385894349,
+                    "perIndexDeltaP95": -0.25322899999999926
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 18212.566898,
+                    "candidateP95": 17002.547851,
+                    "candidateMinusBaselineP95": -1210.0190470000016,
+                    "relativeChangePercent": -6.643868784541727,
+                    "perIndexDeltaP95": -0.006055
+                  }
+                }
+              },
+              "denseMeasured": {
+                "count": 745,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 58.455858,
+                    "candidateP95": 54.618028,
+                    "candidateMinusBaselineP95": -3.8378299999999967,
+                    "relativeChangePercent": -6.56534713766411,
+                    "perIndexDeltaP95": 11.941305
+                  },
+                  "recordMs": {
+                    "baselineP95": 29.151856,
+                    "candidateP95": 25.420789,
+                    "candidateMinusBaselineP95": -3.7310669999999995,
+                    "relativeChangePercent": -12.798728835652863,
+                    "perIndexDeltaP95": 11.321153
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 31.043742,
+                    "candidateP95": 30.157288,
+                    "candidateMinusBaselineP95": -0.8864540000000005,
+                    "relativeChangePercent": -2.8554998298852,
+                    "perIndexDeltaP95": 2.193427
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 58.257275,
+                    "candidateP95": 54.023026,
+                    "candidateMinusBaselineP95": -4.234248999999998,
+                    "relativeChangePercent": -7.268189251900297,
+                    "perIndexDeltaP95": 11.940711999999998
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393120,
+                    "candidateP95": 10393224,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.0010006619763843773,
+                    "perIndexDeltaP95": 160
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 18015.733547,
+                    "candidateP95": 16839.600358,
+                    "candidateMinusBaselineP95": -1176.1331890000001,
+                    "relativeChangePercent": -6.528366918458622,
+                    "perIndexDeltaP95": -54.6767789999999
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 17969.972327,
+                    "candidateP95": 16799.478173,
+                    "candidateMinusBaselineP95": -1170.494154,
+                    "relativeChangePercent": -6.5136113328417595,
+                    "perIndexDeltaP95": -54.58745199999976
+                  }
+                }
+              },
+              "smallMeasured": {
+                "count": 841,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 15.647035,
+                    "candidateP95": 14.189209,
+                    "candidateMinusBaselineP95": -1.4578260000000007,
+                    "relativeChangePercent": -9.316947268284379,
+                    "perIndexDeltaP95": 6.075884
+                  },
+                  "recordMs": {
+                    "baselineP95": 7.731462,
+                    "candidateP95": 7.869996,
+                    "candidateMinusBaselineP95": 0.13853400000000082,
+                    "relativeChangePercent": 1.7918215209490886,
+                    "perIndexDeltaP95": 5.657468
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 7.452422,
+                    "candidateP95": 7.255235,
+                    "candidateMinusBaselineP95": -0.19718700000000045,
+                    "relativeChangePercent": -2.645945170576766,
+                    "perIndexDeltaP95": 1.2881599999999995
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 14.676687000000001,
+                    "candidateP95": 13.712569,
+                    "candidateMinusBaselineP95": -0.9641180000000009,
+                    "relativeChangePercent": -6.569043817586358,
+                    "perIndexDeltaP95": 6.038644
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 1955432,
+                    "candidateP95": 1955440,
+                    "candidateMinusBaselineP95": 8,
+                    "relativeChangePercent": 0.00040911675783151754,
+                    "perIndexDeltaP95": 48
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 18309.217233,
+                    "candidateP95": 17116.930421,
+                    "candidateMinusBaselineP95": -1192.2868119999985,
+                    "relativeChangePercent": -6.5119485821111756,
+                    "perIndexDeltaP95": 1.4992230000000006
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 18302.07402,
+                    "candidateP95": 17110.095471,
+                    "candidateMinusBaselineP95": -1191.9785489999995,
+                    "relativeChangePercent": -6.512805858491438,
+                    "perIndexDeltaP95": 0.444223
+                  }
+                }
+              },
+              "denseSourceReplacement": {
+                "count": 74,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 65.11669,
+                    "candidateP95": 60.134916,
+                    "candidateMinusBaselineP95": -4.981774000000009,
+                    "relativeChangePercent": -7.650533219670729,
+                    "perIndexDeltaP95": 12.210237999999997
+                  },
+                  "recordMs": {
+                    "baselineP95": 31.847342,
+                    "candidateP95": 27.046686,
+                    "candidateMinusBaselineP95": -4.800656,
+                    "relativeChangePercent": -15.07396127438202,
+                    "perIndexDeltaP95": 11.102957
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 32.05052,
+                    "candidateP95": 29.688187,
+                    "candidateMinusBaselineP95": -2.3623329999999996,
+                    "relativeChangePercent": -7.370654204674369,
+                    "perIndexDeltaP95": 0.39393300000000053
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 60.711187,
+                    "candidateP95": 55.876356,
+                    "candidateMinusBaselineP95": -4.834831000000001,
+                    "relativeChangePercent": -7.963657505164577,
+                    "perIndexDeltaP95": 12.156928
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393384,
+                    "candidateP95": 10393488,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.00100063655879548,
+                    "perIndexDeltaP95": 368
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 18138.944314,
+                    "candidateP95": 16903.123991,
+                    "candidateMinusBaselineP95": -1235.820323,
+                    "relativeChangePercent": -6.81307744048902,
+                    "perIndexDeltaP95": -57.52782399999978
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 18093.133516,
+                    "candidateP95": 16862.452424,
+                    "candidateMinusBaselineP95": -1230.6810920000025,
+                    "relativeChangePercent": -6.801923452959072,
+                    "perIndexDeltaP95": -51.10737400000016
+                  }
+                }
+              },
+              "full10000SourceReplacement": {
+                "count": 74,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 65.11669,
+                    "candidateP95": 60.134916,
+                    "candidateMinusBaselineP95": -4.981774000000009,
+                    "relativeChangePercent": -7.650533219670729,
+                    "perIndexDeltaP95": 12.210237999999997
+                  },
+                  "recordMs": {
+                    "baselineP95": 31.847342,
+                    "candidateP95": 27.046686,
+                    "candidateMinusBaselineP95": -4.800656,
+                    "relativeChangePercent": -15.07396127438202,
+                    "perIndexDeltaP95": 11.102957
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 32.05052,
+                    "candidateP95": 29.688187,
+                    "candidateMinusBaselineP95": -2.3623329999999996,
+                    "relativeChangePercent": -7.370654204674369,
+                    "perIndexDeltaP95": 0.39393300000000053
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 60.711187,
+                    "candidateP95": 55.876356,
+                    "candidateMinusBaselineP95": -4.834831000000001,
+                    "relativeChangePercent": -7.963657505164577,
+                    "perIndexDeltaP95": 12.156928
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393384,
+                    "candidateP95": 10393488,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.00100063655879548,
+                    "perIndexDeltaP95": 368
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 18138.944314,
+                    "candidateP95": 16903.123991,
+                    "candidateMinusBaselineP95": -1235.820323,
+                    "relativeChangePercent": -6.81307744048902,
+                    "perIndexDeltaP95": -57.52782399999978
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 18093.133516,
+                    "candidateP95": 16862.452424,
+                    "candidateMinusBaselineP95": -1230.6810920000025,
+                    "relativeChangePercent": -6.801923452959072,
+                    "perIndexDeltaP95": -51.10737400000016
+                  }
+                }
+              }
+            },
+            "runs": {
+              "baseline": {
+                "producerPassed": false,
+                "launcherPassed": false,
+                "processIdentity": {
+                  "processId": 586,
+                  "processStartedUtc": "2026-10-27T01:46:41.4020333Z"
+                },
+                "phases": {
+                  "warmup": {
+                    "planned": 600,
+                    "attempted": 600,
+                    "completed": 600,
+                    "failed": 0,
+                    "pending": 0,
+                    "actualDurationMs": 16277.357391,
+                    "plannedDurationMs": 10000.0,
+                    "drainMs": 6277.357391,
+                    "rasterCompletionsAtPlannedEnd": 380,
+                    "requestCompletionsAtPlannedEnd": 380,
+                    "rasterDebtAtPlannedEnd": 220,
+                    "requestDebtAtPlannedEnd": 220,
+                    "workloadPassed": true,
+                    "successfulSamples": 600,
+                    "failedOperations": []
+                  },
+                  "measured": {
+                    "planned": 1800,
+                    "attempted": 1586,
+                    "completed": 1586,
+                    "failed": 0,
+                    "pending": 214,
+                    "actualDurationMs": 45028.21993,
+                    "plannedDurationMs": 30000.0,
+                    "drainMs": 15028.21993,
+                    "rasterCompletionsAtPlannedEnd": 1082,
+                    "requestCompletionsAtPlannedEnd": 1082,
+                    "rasterDebtAtPlannedEnd": 718,
+                    "requestDebtAtPlannedEnd": 718,
+                    "workloadPassed": false,
+                    "successfulSamples": 1586,
+                    "failedOperations": []
+                  }
+                }
+              },
+              "candidate": {
+                "producerPassed": false,
+                "launcherPassed": false,
+                "processIdentity": {
+                  "processId": 554,
+                  "processStartedUtc": "2026-10-27T01:45:31.2046911Z"
+                },
+                "phases": {
+                  "warmup": {
+                    "planned": 600,
+                    "attempted": 600,
+                    "completed": 600,
+                    "failed": 0,
+                    "pending": 0,
+                    "actualDurationMs": 15708.115031,
+                    "plannedDurationMs": 10000.0,
+                    "drainMs": 5708.115031,
+                    "rasterCompletionsAtPlannedEnd": 383,
+                    "requestCompletionsAtPlannedEnd": 383,
+                    "rasterDebtAtPlannedEnd": 217,
+                    "requestDebtAtPlannedEnd": 217,
+                    "workloadPassed": true,
+                    "successfulSamples": 600,
+                    "failedOperations": []
+                  },
+                  "measured": {
+                    "planned": 1800,
+                    "attempted": 1611,
+                    "completed": 1611,
+                    "failed": 0,
+                    "pending": 189,
+                    "actualDurationMs": 45007.731135,
+                    "plannedDurationMs": 30000.0,
+                    "drainMs": 15007.731135,
+                    "rasterCompletionsAtPlannedEnd": 1102,
+                    "requestCompletionsAtPlannedEnd": 1102,
+                    "rasterDebtAtPlannedEnd": 698,
+                    "requestDebtAtPlannedEnd": 698,
+                    "workloadPassed": false,
+                    "successfulSamples": 1611,
+                    "failedOperations": []
+                  }
+                }
+              }
+            },
+            "sameStateMismatchCount": 0,
+            "baselineOnlyCompletedCount": 0,
+            "candidateOnlyCompletedCount": 25
+          },
+          {
+            "pair": 3,
+            "order": [
+              "baseline",
+              "candidate"
+            ],
+            "evidenceQualified": true,
+            "sameStateMatched": {
+              "allMeasured": {
+                "count": 1561,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 56.081211,
+                    "candidateP95": 52.571756,
+                    "candidateMinusBaselineP95": -3.5094550000000027,
+                    "relativeChangePercent": -6.257808876488068,
+                    "perIndexDeltaP95": 10.300843999999998
+                  },
+                  "recordMs": {
+                    "baselineP95": 26.61216,
+                    "candidateP95": 24.070707,
+                    "candidateMinusBaselineP95": -2.5414530000000006,
+                    "relativeChangePercent": -9.549968886403812,
+                    "perIndexDeltaP95": 9.424398
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 30.387539,
+                    "candidateP95": 29.807563,
+                    "candidateMinusBaselineP95": -0.579976000000002,
+                    "relativeChangePercent": -1.908598126356998,
+                    "perIndexDeltaP95": 2.256373
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 55.742808,
+                    "candidateP95": 52.399303,
+                    "candidateMinusBaselineP95": -3.3435049999999933,
+                    "relativeChangePercent": -5.998092166436957,
+                    "perIndexDeltaP95": 10.303279000000003
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10151816,
+                    "candidateP95": 10154440,
+                    "candidateMinusBaselineP95": 2624,
+                    "relativeChangePercent": 0.02584759219434237,
+                    "perIndexDeltaP95": 152
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 18870.317996,
+                    "candidateP95": 19340.262616,
+                    "candidateMinusBaselineP95": 469.9446199999984,
+                    "relativeChangePercent": 2.490390570522521,
+                    "perIndexDeltaP95": 497.97273999999743
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 18855.066489,
+                    "candidateP95": 19325.010479,
+                    "candidateMinusBaselineP95": 469.94398999999976,
+                    "relativeChangePercent": 2.4924016591199183,
+                    "perIndexDeltaP95": 497.4847860000009
+                  }
+                }
+              },
+              "denseMeasured": {
+                "count": 720,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 59.411138,
+                    "candidateP95": 54.542541,
+                    "candidateMinusBaselineP95": -4.868597000000001,
+                    "relativeChangePercent": -8.194754660313022,
+                    "perIndexDeltaP95": 12.447474999999997
+                  },
+                  "recordMs": {
+                    "baselineP95": 29.703768,
+                    "candidateP95": 25.261299,
+                    "candidateMinusBaselineP95": -4.442468999999999,
+                    "relativeChangePercent": -14.95591064406374,
+                    "perIndexDeltaP95": 11.136035
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 32.606758,
+                    "candidateP95": 30.596228,
+                    "candidateMinusBaselineP95": -2.0105299999999993,
+                    "relativeChangePercent": -6.16599172478294,
+                    "perIndexDeltaP95": 2.727256999999998
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 59.017300000000006,
+                    "candidateP95": 54.128363,
+                    "candidateMinusBaselineP95": -4.888937000000006,
+                    "relativeChangePercent": -8.283904888905465,
+                    "perIndexDeltaP95": 12.563583000000001
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393120,
+                    "candidateP95": 10393224,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.0010006619763843773,
+                    "perIndexDeltaP95": 152
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 18207.91295,
+                    "candidateP95": 18591.023875,
+                    "candidateMinusBaselineP95": 383.1109249999972,
+                    "relativeChangePercent": 2.1040902713674123,
+                    "perIndexDeltaP95": 359.65843699999823
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 18165.406286,
+                    "candidateP95": 18549.022769,
+                    "candidateMinusBaselineP95": 383.61648299999797,
+                    "relativeChangePercent": 2.1117968789701638,
+                    "perIndexDeltaP95": 359.4018619999988
+                  }
+                }
+              },
+              "smallMeasured": {
+                "count": 841,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 15.973449,
+                    "candidateP95": 14.270406,
+                    "candidateMinusBaselineP95": -1.703043000000001,
+                    "relativeChangePercent": -10.66171119336845,
+                    "perIndexDeltaP95": 6.454153
+                  },
+                  "recordMs": {
+                    "baselineP95": 8.814284,
+                    "candidateP95": 7.307226,
+                    "candidateMinusBaselineP95": -1.5070580000000007,
+                    "relativeChangePercent": -17.09790608063004,
+                    "perIndexDeltaP95": 5.8221549999999995
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 7.722922,
+                    "candidateP95": 7.500843,
+                    "candidateMinusBaselineP95": -0.22207899999999992,
+                    "relativeChangePercent": -2.875582583897648,
+                    "perIndexDeltaP95": 1.620476
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 15.323193,
+                    "candidateP95": 13.780217,
+                    "candidateMinusBaselineP95": -1.5429759999999995,
+                    "relativeChangePercent": -10.069546210114298,
+                    "perIndexDeltaP95": 6.464527
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 1955432,
+                    "candidateP95": 1955440,
+                    "candidateMinusBaselineP95": 8,
+                    "relativeChangePercent": 0.00040911675783151754,
+                    "perIndexDeltaP95": 16
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 18998.423974,
+                    "candidateP95": 19520.993941,
+                    "candidateMinusBaselineP95": 522.5699669999995,
+                    "relativeChangePercent": 2.750596405865847,
+                    "perIndexDeltaP95": 512.5046010000005
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 18990.305338,
+                    "candidateP95": 19511.276968,
+                    "candidateMinusBaselineP95": 520.97163,
+                    "relativeChangePercent": 2.7433557319245674,
+                    "perIndexDeltaP95": 512.7001260000034
+                  }
+                }
+              },
+              "denseSourceReplacement": {
+                "count": 72,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 64.453452,
+                    "candidateP95": 58.025059,
+                    "candidateMinusBaselineP95": -6.428393,
+                    "relativeChangePercent": -9.973698538287755,
+                    "perIndexDeltaP95": 10.512531000000003
+                  },
+                  "recordMs": {
+                    "baselineP95": 31.08439,
+                    "candidateP95": 26.998612,
+                    "candidateMinusBaselineP95": -4.085777999999998,
+                    "relativeChangePercent": -13.144147271347444,
+                    "perIndexDeltaP95": 11.091834000000002
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 34.483553,
+                    "candidateP95": 30.804528,
+                    "candidateMinusBaselineP95": -3.6790249999999993,
+                    "relativeChangePercent": -10.66892671993515,
+                    "perIndexDeltaP95": 2.103984999999998
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 62.275227,
+                    "candidateP95": 56.72995,
+                    "candidateMinusBaselineP95": -5.545276999999999,
+                    "relativeChangePercent": -8.904466939959928,
+                    "perIndexDeltaP95": 10.317248
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393384,
+                    "candidateP95": 10393488,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.00100063655879548,
+                    "perIndexDeltaP95": 320
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 18395.425152,
+                    "candidateP95": 18774.470597,
+                    "candidateMinusBaselineP95": 379.04544499999975,
+                    "relativeChangePercent": 2.0605419111978986,
+                    "perIndexDeltaP95": 368.2347929999996
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 18351.707392,
+                    "candidateP95": 18723.331226,
+                    "candidateMinusBaselineP95": 371.62383399999817,
+                    "relativeChangePercent": 2.0250095866393276,
+                    "perIndexDeltaP95": 364.3043399999988
+                  }
+                }
+              },
+              "full10000SourceReplacement": {
+                "count": 72,
+                "metrics": {
+                  "requestToControlledRasterMs": {
+                    "baselineP95": 64.453452,
+                    "candidateP95": 58.025059,
+                    "candidateMinusBaselineP95": -6.428393,
+                    "relativeChangePercent": -9.973698538287755,
+                    "perIndexDeltaP95": 10.512531000000003
+                  },
+                  "recordMs": {
+                    "baselineP95": 31.08439,
+                    "candidateP95": 26.998612,
+                    "candidateMinusBaselineP95": -4.085777999999998,
+                    "relativeChangePercent": -13.144147271347444,
+                    "perIndexDeltaP95": 11.091834000000002
+                  },
+                  "controlledRasterMs": {
+                    "baselineP95": 34.483553,
+                    "candidateP95": 30.804528,
+                    "candidateMinusBaselineP95": -3.6790249999999993,
+                    "relativeChangePercent": -10.66892671993515,
+                    "perIndexDeltaP95": 2.103984999999998
+                  },
+                  "recordAndRasterWorkMs": {
+                    "baselineP95": 62.275227,
+                    "candidateP95": 56.72995,
+                    "candidateMinusBaselineP95": -5.545276999999999,
+                    "relativeChangePercent": -8.904466939959928,
+                    "perIndexDeltaP95": 10.317248
+                  },
+                  "recordAllocatedBytes": {
+                    "baselineP95": 10393384,
+                    "candidateP95": 10393488,
+                    "candidateMinusBaselineP95": 104,
+                    "relativeChangePercent": 0.00100063655879548,
+                    "perIndexDeltaP95": 320
+                  },
+                  "scheduledToControlledRasterMs": {
+                    "baselineP95": 18395.425152,
+                    "candidateP95": 18774.470597,
+                    "candidateMinusBaselineP95": 379.04544499999975,
+                    "relativeChangePercent": 2.0605419111978986,
+                    "perIndexDeltaP95": 368.2347929999996
+                  },
+                  "queueLatenessMs": {
+                    "baselineP95": 18351.707392,
+                    "candidateP95": 18723.331226,
+                    "candidateMinusBaselineP95": 371.62383399999817,
+                    "relativeChangePercent": 2.0250095866393276,
+                    "perIndexDeltaP95": 364.3043399999988
+                  }
+                }
+              }
+            },
+            "runs": {
+              "baseline": {
+                "producerPassed": false,
+                "launcherPassed": false,
+                "processIdentity": {
+                  "processId": 611,
+                  "processStartedUtc": "2026-10-27T01:47:52.0156059Z"
+                },
+                "phases": {
+                  "warmup": {
+                    "planned": 600,
+                    "attempted": 600,
+                    "completed": 600,
+                    "failed": 0,
+                    "pending": 0,
+                    "actualDurationMs": 16300.471075,
+                    "plannedDurationMs": 10000.0,
+                    "drainMs": 6300.471075,
+                    "rasterCompletionsAtPlannedEnd": 379,
+                    "requestCompletionsAtPlannedEnd": 379,
+                    "rasterDebtAtPlannedEnd": 221,
+                    "requestDebtAtPlannedEnd": 221,
+                    "workloadPassed": true,
+                    "successfulSamples": 600,
+                    "failedOperations": []
+                  },
+                  "measured": {
+                    "planned": 1800,
+                    "attempted": 1572,
+                    "completed": 1572,
+                    "failed": 0,
+                    "pending": 228,
+                    "actualDurationMs": 45039.556739,
+                    "plannedDurationMs": 30000.0,
+                    "drainMs": 15039.556739,
+                    "rasterCompletionsAtPlannedEnd": 996,
+                    "requestCompletionsAtPlannedEnd": 996,
+                    "rasterDebtAtPlannedEnd": 804,
+                    "requestDebtAtPlannedEnd": 804,
+                    "workloadPassed": false,
+                    "successfulSamples": 1572,
+                    "failedOperations": []
+                  }
+                }
+              },
+              "candidate": {
+                "producerPassed": false,
+                "launcherPassed": false,
+                "processIdentity": {
+                  "processId": 673,
+                  "processStartedUtc": "2026-10-27T01:49:02.8041958Z"
+                },
+                "phases": {
+                  "warmup": {
+                    "planned": 600,
+                    "attempted": 600,
+                    "completed": 600,
+                    "failed": 0,
+                    "pending": 0,
+                    "actualDurationMs": 16016.66101,
+                    "plannedDurationMs": 10000.0,
+                    "drainMs": 6016.66101,
+                    "rasterCompletionsAtPlannedEnd": 377,
+                    "requestCompletionsAtPlannedEnd": 377,
+                    "rasterDebtAtPlannedEnd": 223,
+                    "requestDebtAtPlannedEnd": 223,
+                    "workloadPassed": true,
+                    "successfulSamples": 600,
+                    "failedOperations": []
+                  },
+                  "measured": {
+                    "planned": 1800,
+                    "attempted": 1561,
+                    "completed": 1561,
+                    "failed": 0,
+                    "pending": 239,
+                    "actualDurationMs": 45010.375758,
+                    "plannedDurationMs": 30000.0,
+                    "drainMs": 15010.375758,
+                    "rasterCompletionsAtPlannedEnd": 1001,
+                    "requestCompletionsAtPlannedEnd": 1001,
+                    "rasterDebtAtPlannedEnd": 799,
+                    "requestDebtAtPlannedEnd": 799,
+                    "workloadPassed": false,
+                    "successfulSamples": 1561,
+                    "failedOperations": []
+                  }
+                }
+              }
+            },
+            "sameStateMismatchCount": 0,
+            "baselineOnlyCompletedCount": 11,
+            "candidateOnlyCompletedCount": 0
+          }
+        ]
+      }
+    },
+    "independentAuditPassed": true,
+    "restoredProductFiles": [
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartNativeCircleBackend.cs",
+        "bytes": 1481,
+        "sha256": "6F65C260CD7E0066D103758C6F4257AD9B5646630C9278821D080DB7679C1C75"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts/ChartSeriesRenderer.Retained.cs",
+        "bytes": 18204,
+        "sha256": "9313460711336ED7541CD039C46E7A164352058FF73B7A6E1F5F0D564532F85D"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Skia/ChartNativeCircleOperation.cs",
+        "bytes": 22720,
+        "sha256": "FCF9634080F9A0B3E734F658CC39C9CAEC611A3F7CEEB0B1A7965AD67E25BFB4"
+      },
+      {
+        "path": "src/NT.AvaloniaControl.Charts.Skia/ChartSkiaRenderingExtensions.cs",
+        "bytes": 4155,
+        "sha256": "24E3C27AD847D1523F9108ECD9DFCEB3F0AA7C540768CC9F3978D21171600BA6"
+      }
+    ],
+    "archivedCandidateTest": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\candidate-source-v2\\tests\\Charts.Headless.Tests\\SharedNativeRecordingTests.cs",
+      "bytes": 23676,
+      "sha256": "88E56FEB6FA881DB42146800ABE67FEEA7C835E192148808A03480743155912B"
+    },
+    "frozenSourceFormalClosureReady": false,
+    "frozenSourceMissingFormalInput": "docs/charts-performance-budgets.json",
+    "frozenSourceQualification": "Original diagnostic source-v2 is preserved. It was not used for a new 107-process formal campaign; any warranted future formal campaign requires a new closure with the unchanged original budget document."
+  },
+  "restoredStateFocusedTests": {
+    "platform": "windows",
+    "filter": "FullyQualifiedName~NativeCircleOperationTests",
+    "passed": 29,
+    "total": 29,
+    "testAssemblyRebuiltByThisCheck": false,
+    "qualification": "Actual --no-build focused-test receipt/TRX. Source restoration is proven separately by four exact hashes; this check is not a new full product/platform qualification."
+  },
+  "ovalFill": {
+    "productIntegrated": false,
+    "phase1": {
+      "windows": {
+        "passed": true,
+        "actualPixelCases": 123,
+        "reportedExactCases": 123,
+        "reportedDifferentCases": 0,
+        "coordinateQualificationPassed": true,
+        "executedAssembliesMatchB18": true,
+        "nativeIdentityReportedConsistent": true,
+        "probeSourceAndLockUnchanged": true,
+        "frozenDependencyBinsUnchanged": true,
+        "timingExecuted": false,
+        "independentlyDecodedPixels": false,
+        "qualification": "Actual host-reported BGRA comparisons and fixed case/command/hash invariants with physical PNG presence/file fingerprints. PNGs are not independently decoded by this brief tool. Raw report/schema/values remain untouched; no missing case is counted as success."
+      },
+      "linux": {
+        "passed": true,
+        "actualPixelCases": 123,
+        "reportedExactCases": 123,
+        "reportedDifferentCases": 0,
+        "coordinateQualificationPassed": true,
+        "executedAssembliesMatchB18": true,
+        "nativeIdentityReportedConsistent": true,
+        "probeSourceAndLockUnchanged": true,
+        "frozenDependencyBinsUnchanged": true,
+        "timingExecuted": false,
+        "independentlyDecodedPixels": false,
+        "qualification": "Actual host-reported BGRA comparisons and fixed case/command/hash invariants with physical PNG presence/file fingerprints. PNGs are not independently decoded by this brief tool. Raw report/schema/values remain untouched; no missing case is counted as success."
+      }
+    },
+    "n10": {
+      "supplied": true,
+      "timingExecuted": true,
+      "qualifiedForPublication": true,
+      "productIntegrated": false,
+      "stableBothPlatformsInThisProbe": false,
+      "originalC7PerformanceQualified": false,
+      "platforms": {
+        "windows": {
+          "summary": {
+            "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\summary-final-v1.json",
+            "bytes": 11753,
+            "sha256": "69E54AF7E2FE765C188C93629C3E039EB66586A2DD3DB421CA4F5A01D907229A"
+          },
+          "campaign": {
+            "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\campaign.json",
+            "bytes": 16284,
+            "sha256": "D104088D17E861B385053A42D15B468CF22D2F126B922C185F04904ADBCE9326"
+          },
+          "evidenceValid": true,
+          "allThreePairsNetImprove": false,
+          "observations": [
+            {
+              "id": "pair-1-direct",
+              "pair": 1,
+              "mode": "direct",
+              "passed": true,
+              "groups": 53,
+              "draws": 530,
+              "netPerDrawMs": 18.903645283018868,
+              "preparePerDrawMs": 2.69811320754717e-05,
+              "drawOnlyPerDrawMs": 18.90361283018868,
+              "retirePerDrawMs": 5.4716981132075475e-06,
+              "accountedAllocatedBytes": 0,
+              "initialPathPreparation": {
+                "milliseconds": 65.1754,
+                "managedAllocatedBytes": 7897288,
+                "count": 10000
+              },
+              "receipt": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-1-direct\\supervisor\\process.json",
+                "bytes": 1159,
+                "sha256": "626D51A45CB9CADF87B457FDA3A1C44D70321F76D9D2848F27BEA953DDB29467"
+              },
+              "raw": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-1-direct\\run\\oval-fill-probe.json",
+                "bytes": 239791,
+                "sha256": "32387C9E7FED2F1E0B1EB82762305C51051A8BD3AFDA077DC0572D322B03ED9A"
+              },
+              "drawJsonl": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-1-direct\\run\\draw-windows.jsonl",
+                "bytes": 132141,
+                "sha256": "0A46A4F20812CA9DD8797AF5DCAF826A92648EC53655E65557584E3092EDE74E"
+              }
+            },
+            {
+              "id": "pair-1-ovalfill",
+              "pair": 1,
+              "mode": "ovalfill",
+              "passed": true,
+              "groups": 43,
+              "draws": 430,
+              "netPerDrawMs": 23.086688604651165,
+              "preparePerDrawMs": 0.07155813953488371,
+              "drawOnlyPerDrawMs": 23.015124418604653,
+              "retirePerDrawMs": 6.046511627906976e-06,
+              "accountedAllocatedBytes": 6883096,
+              "initialPathPreparation": {
+                "milliseconds": 64.2672,
+                "managedAllocatedBytes": 7897288,
+                "count": 10000
+              },
+              "receipt": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-1-ovalfill\\supervisor\\process.json",
+                "bytes": 1165,
+                "sha256": "306D6EAE3DA2E75D335B2DC772ADED4D3F1E1783C7FA38D3A4C849C62FB381DC"
+              },
+              "raw": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-1-ovalfill\\run\\oval-fill-probe.json",
+                "bytes": 236864,
+                "sha256": "81D4EFAB2874F5D22D1190D330E1A13A778E5E5B52C600329865B38B678B67D1"
+              },
+              "drawJsonl": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-1-ovalfill\\run\\draw-windows.jsonl",
+                "bytes": 111049,
+                "sha256": "B11F3EB57E78902680C1111B672623742AAD4D96D0DF47744D9068F1F330072B"
+              }
+            },
+            {
+              "id": "pair-2-ovalfill",
+              "pair": 2,
+              "mode": "ovalfill",
+              "passed": true,
+              "groups": 44,
+              "draws": 440,
+              "netPerDrawMs": 23.135991818181818,
+              "preparePerDrawMs": 0.037474090909090915,
+              "drawOnlyPerDrawMs": 23.09851477272727,
+              "retirePerDrawMs": 2.954545454545455e-06,
+              "accountedAllocatedBytes": 7043168,
+              "initialPathPreparation": {
+                "milliseconds": 63.1555,
+                "managedAllocatedBytes": 7897288,
+                "count": 10000
+              },
+              "receipt": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-2-ovalfill\\supervisor\\process.json",
+                "bytes": 1165,
+                "sha256": "6D521A2967E12363FDEA76B34FDFC5A794D72E0B79A7747989B3E6627F29949B"
+              },
+              "raw": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-2-ovalfill\\run\\oval-fill-probe.json",
+                "bytes": 237280,
+                "sha256": "05DDB4E4B96E259DD101D9C80EE1721450AEF37BB32B3747F387228440F2DAD6"
+              },
+              "drawJsonl": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-2-ovalfill\\run\\draw-windows.jsonl",
+                "bytes": 113154,
+                "sha256": "E624824C317BF39FB8390A9198BD5A12C06109D6072F9C628113B9233D1D357C"
+              }
+            },
+            {
+              "id": "pair-2-direct",
+              "pair": 2,
+              "mode": "direct",
+              "passed": true,
+              "groups": 48,
+              "draws": 480,
+              "netPerDrawMs": 20.998093541666663,
+              "preparePerDrawMs": 3.5e-05,
+              "drawOnlyPerDrawMs": 20.99805520833333,
+              "retirePerDrawMs": 3.3333333333333333e-06,
+              "accountedAllocatedBytes": 0,
+              "initialPathPreparation": {
+                "milliseconds": 62.1152,
+                "managedAllocatedBytes": 7897288,
+                "count": 10000
+              },
+              "receipt": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-2-direct\\supervisor\\process.json",
+                "bytes": 1159,
+                "sha256": "F36A940E886736FAB4342B171E2EF4125B498FFF72D806D852A04C0EC2679226"
+              },
+              "raw": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-2-direct\\run\\oval-fill-probe.json",
+                "bytes": 237995,
+                "sha256": "F6251B188FF6906141A17D7F59896D69794A80EA1DF28D18D0F0E9B2199E54C6"
+              },
+              "drawJsonl": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-2-direct\\run\\draw-windows.jsonl",
+                "bytes": 121601,
+                "sha256": "8EEDF1BAEC46F7FA6F47772A3857527A7FBFB879B4A1AA8B446828A16C5EF1F1"
+              }
+            },
+            {
+              "id": "pair-3-direct",
+              "pair": 3,
+              "mode": "direct",
+              "passed": true,
+              "groups": 25,
+              "draws": 250,
+              "netPerDrawMs": 40.716731200000005,
+              "preparePerDrawMs": 3.28e-05,
+              "drawOnlyPerDrawMs": 40.716696400000004,
+              "retirePerDrawMs": 2e-06,
+              "accountedAllocatedBytes": 0,
+              "initialPathPreparation": {
+                "milliseconds": 63.1911,
+                "managedAllocatedBytes": 7897288,
+                "count": 10000
+              },
+              "receipt": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-3-direct\\supervisor\\process.json",
+                "bytes": 1159,
+                "sha256": "E84CC00AE71CD1F68AFE727FEDBF7B6D9880D40819714C7BAB479C9E4AA46481"
+              },
+              "raw": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-3-direct\\run\\oval-fill-probe.json",
+                "bytes": 230002,
+                "sha256": "495A87E2D5008603CC32CE9088B01751918DC1AB77FF8062B4D693F5750DD976"
+              },
+              "drawJsonl": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-3-direct\\run\\draw-windows.jsonl",
+                "bytes": 73098,
+                "sha256": "F224B7507C20E26379FAB3A14AEF9C04E3E70F4A7DC711C7E7B263F79E0CA810"
+              }
+            },
+            {
+              "id": "pair-3-ovalfill",
+              "pair": 3,
+              "mode": "ovalfill",
+              "passed": true,
+              "groups": 41,
+              "draws": 410,
+              "netPerDrawMs": 24.362180731707316,
+              "preparePerDrawMs": 0.04039682926829268,
+              "drawOnlyPerDrawMs": 24.321783170731706,
+              "retirePerDrawMs": 7.317073170731708e-07,
+              "accountedAllocatedBytes": 6562952,
+              "initialPathPreparation": {
+                "milliseconds": 61.0207,
+                "managedAllocatedBytes": 7897288,
+                "count": 10000
+              },
+              "receipt": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-3-ovalfill\\supervisor\\process.json",
+                "bytes": 1165,
+                "sha256": "09050AF5E409038F1C57F7553F0ECDEB68ADE4B031A3C26BBDF15372D9486461"
+              },
+              "raw": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-3-ovalfill\\run\\oval-fill-probe.json",
+                "bytes": 235966,
+                "sha256": "B547327ACF643FC27067C815BC8189221F97D037FAE21A908B2817312CECE57F"
+              },
+              "drawJsonl": {
+                "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\timing-v2\\runs\\pair-3-ovalfill\\run\\draw-windows.jsonl",
+                "bytes": 106823,
+                "sha256": "298917109AE455AE688C26275FD5BD5F1E6473191AC29E991B979B9D23388DC7"
+              }
+            }
+          ],
+          "pairs": [
+            {
+              "pair": 1,
+              "complete": true,
+              "directNetPerDrawMs": 18.903645283018868,
+              "ovalFillNetPerDrawMs": 23.086688604651165,
+              "changePercent": 22.128236427446723
+            },
+            {
+              "pair": 2,
+              "complete": true,
+              "directNetPerDrawMs": 20.998093541666663,
+              "ovalFillNetPerDrawMs": 23.135991818181818,
+              "changePercent": 10.181392288175628
+            },
+            {
+              "pair": 3,
+              "complete": true,
+              "directNetPerDrawMs": 40.716731200000005,
+              "ovalFillNetPerDrawMs": 24.362180731707316,
+              "changePercent": -40.16665873289133
+            }
+          ],
+          "qualification": "Private standalone N10 native diagnostic only. Cost is fresh bounds preparation +10 draws+retirement divided by10. No pooled P95, original C7 load, product integration or official/present/memory acceptance."
+        },
+        "linux": {
+          "summary": {
+            "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\linux\\timing-v2\\summary-final-v1.json",
+            "bytes": 11532,
+            "sha256": "221C877B336CD784740EC45EC1D369246F49B71A03F4BD765F6C482E0CEA5EAF"
+          },
+          "campaign": {
+            "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/campaign.json",
+            "bytes": 15609,
+            "sha256": "9D913E8F1E10A7E7CBF8AA778DF7417F6F44E687FAF8133E2836EC7F454F7461"
+          },
+          "evidenceValid": true,
+          "allThreePairsNetImprove": false,
+          "observations": [
+            {
+              "id": "pair-1-direct",
+              "pair": 1,
+              "mode": "direct",
+              "passed": true,
+              "groups": 36,
+              "draws": 360,
+              "netPerDrawMs": 28.15963999722222,
+              "preparePerDrawMs": 3.297222222222222e-05,
+              "drawOnlyPerDrawMs": 28.159603277777776,
+              "retirePerDrawMs": 3.747222222222222e-06,
+              "accountedAllocatedBytes": 0,
+              "initialPathPreparation": {
+                "milliseconds": 66.105529,
+                "managedAllocatedBytes": 7910312,
+                "count": 10000
+              },
+              "receipt": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-1-direct/supervisor/process.json",
+                "bytes": 1097,
+                "sha256": "D99F19ED31363B23F5C12BCDA12AA0B5A932F9C15B6A0E6189EE1F53191EA937"
+              },
+              "raw": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-1-direct/run/oval-fill-probe.json",
+                "bytes": 223393,
+                "sha256": "AA9FCD0989874FE019145AE29F8B2A82C6E988E760B27B86A4666FB0AE7E3D96"
+              },
+              "drawJsonl": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-1-direct/run/draw-windows.jsonl",
+                "bytes": 96747,
+                "sha256": "6C5E849BEE699CA7A437F26F095889E7FC9A9DC075D19EE83EEF35DD9D6C37AF"
+              }
+            },
+            {
+              "id": "pair-1-ovalfill",
+              "pair": 1,
+              "mode": "ovalfill",
+              "passed": true,
+              "groups": 36,
+              "draws": 360,
+              "netPerDrawMs": 27.96876499722222,
+              "preparePerDrawMs": 0.03220002777777778,
+              "drawOnlyPerDrawMs": 27.936562244444445,
+              "retirePerDrawMs": 2.725e-06,
+              "accountedAllocatedBytes": 5762592,
+              "initialPathPreparation": {
+                "milliseconds": 65.741986,
+                "managedAllocatedBytes": 7910312,
+                "count": 10000
+              },
+              "receipt": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-1-ovalfill/supervisor/process.json",
+                "bytes": 1103,
+                "sha256": "1304F66DAA31ACA31BC6213D80F856B79F3148F1C7AA1EF62452A2F2FA179612"
+              },
+              "raw": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-1-ovalfill/run/oval-fill-probe.json",
+                "bytes": 223935,
+                "sha256": "90A75E3BCCE3E3C943425450FBAF328DA5F2A9F4B54D9A72D2C052C5712558CF"
+              },
+              "drawJsonl": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-1-ovalfill/run/draw-windows.jsonl",
+                "bytes": 96755,
+                "sha256": "9DCD3130280DA86FAB40C203F106510CE26C035A778FD6E309758B1731DF06A6"
+              }
+            },
+            {
+              "id": "pair-2-ovalfill",
+              "pair": 2,
+              "mode": "ovalfill",
+              "passed": true,
+              "groups": 35,
+              "draws": 350,
+              "netPerDrawMs": 28.652690351428575,
+              "preparePerDrawMs": 0.03325011428571428,
+              "drawOnlyPerDrawMs": 28.619437071428575,
+              "retirePerDrawMs": 3.165714285714286e-06,
+              "accountedAllocatedBytes": 5602520,
+              "initialPathPreparation": {
+                "milliseconds": 64.290453,
+                "managedAllocatedBytes": 7910312,
+                "count": 10000
+              },
+              "receipt": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-2-ovalfill/supervisor/process.json",
+                "bytes": 1103,
+                "sha256": "3860CCE3BFFE146092DEF7C0F0868DD6B2EC491C783B7279DA48420D08DB189E"
+              },
+              "raw": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-2-ovalfill/run/oval-fill-probe.json",
+                "bytes": 223574,
+                "sha256": "1E2F51E1385A8354AB091B1A6D9155F2BF9AF8165A980E31ADC0569A3CEB6C9F"
+              },
+              "drawJsonl": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-2-ovalfill/run/draw-windows.jsonl",
+                "bytes": 94637,
+                "sha256": "8788A6C283803800611A02BE08310562880EDBEC6874F5C4D3ECA82085001548"
+              }
+            },
+            {
+              "id": "pair-2-direct",
+              "pair": 2,
+              "mode": "direct",
+              "passed": true,
+              "groups": 36,
+              "draws": 360,
+              "netPerDrawMs": 28.285558225000003,
+              "preparePerDrawMs": 4.0405555555555556e-05,
+              "drawOnlyPerDrawMs": 28.285514233333334,
+              "retirePerDrawMs": 3.5861111111111113e-06,
+              "accountedAllocatedBytes": 0,
+              "initialPathPreparation": {
+                "milliseconds": 62.437793,
+                "managedAllocatedBytes": 7910312,
+                "count": 10000
+              },
+              "receipt": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-2-direct/supervisor/process.json",
+                "bytes": 1097,
+                "sha256": "8F500CC6D721BAA6FE40334D48B00C8163895C53B489405ACD4ED7F8E57A8A83"
+              },
+              "raw": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-2-direct/run/oval-fill-probe.json",
+                "bytes": 223384,
+                "sha256": "85B2241C550CFE78F1F45642EF438E519BA15941443C8481E65EA204B3B28DF6"
+              },
+              "drawJsonl": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-2-direct/run/draw-windows.jsonl",
+                "bytes": 96752,
+                "sha256": "6E29E177210C04A0B599834EA7BC5D590B6E0C124C0E5893EA194393A456FF40"
+              }
+            },
+            {
+              "id": "pair-3-direct",
+              "pair": 3,
+              "mode": "direct",
+              "passed": true,
+              "groups": 36,
+              "draws": 360,
+              "netPerDrawMs": 28.154704158333335,
+              "preparePerDrawMs": 3.8422222222222224e-05,
+              "drawOnlyPerDrawMs": 28.154661319444443,
+              "retirePerDrawMs": 4.416666666666667e-06,
+              "accountedAllocatedBytes": 0,
+              "initialPathPreparation": {
+                "milliseconds": 78.978029,
+                "managedAllocatedBytes": 7910312,
+                "count": 10000
+              },
+              "receipt": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-3-direct/supervisor/process.json",
+                "bytes": 1097,
+                "sha256": "4ADC21856FB961E7C443567AD1C79C8B9A589D7BE12AFD16BF873A092B51026C"
+              },
+              "raw": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-3-direct/run/oval-fill-probe.json",
+                "bytes": 223485,
+                "sha256": "4845506D178FFED107BB97201B17E7DE7E58A36E389C57DE34F705441AAC478D"
+              },
+              "drawJsonl": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-3-direct/run/draw-windows.jsonl",
+                "bytes": 96757,
+                "sha256": "201A469EC4E312FD789D18E678E099E0A7719BFD9B34257F02ED98C55A1A83EE"
+              }
+            },
+            {
+              "id": "pair-3-ovalfill",
+              "pair": 3,
+              "mode": "ovalfill",
+              "passed": true,
+              "groups": 35,
+              "draws": 350,
+              "netPerDrawMs": 28.872167468571423,
+              "preparePerDrawMs": 0.034730022857142856,
+              "drawOnlyPerDrawMs": 28.83743470285714,
+              "retirePerDrawMs": 2.742857142857143e-06,
+              "accountedAllocatedBytes": 5602520,
+              "initialPathPreparation": {
+                "milliseconds": 74.746721,
+                "managedAllocatedBytes": 7910312,
+                "count": 10000
+              },
+              "receipt": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-3-ovalfill/supervisor/process.json",
+                "bytes": 1103,
+                "sha256": "D70894FADA062CA914499A090F64DFCE616E7E9DAAFCE1AEF93F7A34412F5DD2"
+              },
+              "raw": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-3-ovalfill/run/oval-fill-probe.json",
+                "bytes": 223549,
+                "sha256": "A199F611989D686438C8A100DECE68FA53AEF8C830299A8C92CD8E06EF989389"
+              },
+              "drawJsonl": {
+                "path": "/mnt/c/Users/a4472/.codex/visualizations/2026/10/15/01a13d4a-978f-77e1-8173-9dc5ed8f6a20/charts-c7-oval-fill-20261027/linux/timing-v2/runs/pair-3-ovalfill/run/draw-windows.jsonl",
+                "bytes": 94635,
+                "sha256": "3530F0B8B82526B9B471A06890FFAE1CE293F77904BA350D576960B58B58D6CF"
+              }
+            }
+          ],
+          "pairs": [
+            {
+              "pair": 1,
+              "complete": true,
+              "directNetPerDrawMs": 28.15963999722222,
+              "ovalFillNetPerDrawMs": 27.96876499722222,
+              "changePercent": -0.677831818939556
+            },
+            {
+              "pair": 2,
+              "complete": true,
+              "directNetPerDrawMs": 28.285558225000003,
+              "ovalFillNetPerDrawMs": 28.652690351428575,
+              "changePercent": 1.2979490222826406
+            },
+            {
+              "pair": 3,
+              "complete": true,
+              "directNetPerDrawMs": 28.154704158333335,
+              "ovalFillNetPerDrawMs": 28.872167468571423,
+              "changePercent": 2.548289288366501
+            }
+          ],
+          "qualification": "Private standalone N10 native diagnostic only. Cost is fresh bounds preparation +10 draws+retirement divided by10. No pooled P95, original C7 load, product integration or official/present/memory acceptance."
+        }
+      },
+      "independentAuditPassed": true,
+      "independentAudit": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\timing-independent-audit-v1.json",
+        "bytes": 471204,
+        "sha256": "E9F637E892A161FE3CAE58292CBA30C0D1081B40177131614D3F83E0F373AA0D"
+      },
+      "independentBrief": {
+        "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\timing-independent-brief-v1.json",
+        "bytes": 5772,
+        "sha256": "9A8945392DA90CE5B94DC9EA250A4C4ADE77DA835C8A4C443981FD60F9DD2E6C"
+      },
+      "independentProcessCount": 12,
+      "encodedPngPairsVerified": 1476,
+      "independentlyDecodedPixels": false,
+      "markdownLines": [
+        "双端各三对 AB/BA/AB 新进程、每进程10秒 N10 诊断；同一计时二进制在每个进程先完成123组保真。每组重新准备并验证 Bounds 表，准备+10次绘制+退休成本全部计入，再除实际draw数；冷路径创建另列raw，清屏、读回、PNG与驱动记录不在该绘制计时内。不能将此数值当成原 C7 端到端请求或真实present。",
+        "",
+        "| 平台/对 | direct 净 ms/draw | oval fill 净 ms/draw | 变化 |",
+        "| --- | ---: | ---: | ---: |",
+        "| windows/1 | 18.903645 | 23.086689 | +22.128% |",
+        "| windows/2 | 20.998094 | 23.135992 | +10.181% |",
+        "| windows/3 | 40.716731 | 24.362181 | -40.167% |",
+        "| linux/1 | 28.159640 | 27.968765 | -0.678% |",
+        "| linux/2 | 28.285558 | 28.652690 | +1.298% |",
+        "| linux/3 | 28.154704 | 28.872167 | +2.548% |",
+        "",
+        "两平台六对没有全部显示净收益，不能据此接入产品；保留全部实际结果，继续维持 B18 产品基线。",
+        "独立审计重算12进程、1476组案例和各组净成本；2952张实际PNG逐对文件字节相同，未运行独立PNG解码，不将此写成新增独立解码资格。旧summary与最终campaign指纹版本均保留，最终汇总另写新文件。",
+        "独立探针与原C7负载的比较单位、准备生命周期和画布条件不同，不池化、不外推提速比例；本轮产品接纳=false、formal/official/present/peak资格保持null。"
+      ]
+    }
+  },
+  "officialReference": {
+    "status": "blocked-reference",
+    "measurements": null,
+    "ratios": null
+  },
+  "nextUnimplementedCandidate": {
+    "implemented": false,
+    "target": "small scenes below 2048 points: conditional/lazy native-plan preparation",
+    "currentObservedPath": "Core small-scene drawing does not invoke native CreateFrame, but still constructs CirclePlan with bounds scanning and Pen snapshot work.",
+    "requiredContracts": [
+      "native plan reserve/admission semantics",
+      "bounded shared history and retirement",
+      "old frame ownership",
+      "same public recording/live brush contracts",
+      "same point identity/order/AA/budget"
+    ],
+    "qualification": "Investigation only. No implementation, gain, source acceptance or new performance qualification is claimed."
+  },
+  "present": null,
+  "formalPeakMemory": null,
+  "nativeBytes": null,
+  "gpuBytes": null,
+  "physicalHardwareQualified": false,
+  "deferredByUser": [
+    "Ubuntu 22.04/24.04 physical machines",
+    "hardware GPU",
+    "physical touch",
+    "million-point hit tail latency",
+    "native UIA/AT-SPI selected-item bridge"
+  ],
+  "evidenceReferences": {
+    "acceptedB18": {
+      "path": "D:\\Procedure\\AvaloniaControl\\docs\\charts-c7-record-allocations-validation.json",
+      "bytes": 834088,
+      "sha256": "E9D2CCEAA4341CA74E6DDA2E487D92B062A51DD470BF44C78967F78C5B13A5FE"
+    },
+    "backlogSummary": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-backlog-analysis-20261027\\summary-v1.json",
+      "bytes": 89463,
+      "sha256": "EE7869E123436F9BF88FA8731C5CFE7462777EF0838B80643E576954E871E2DB"
+    },
+    "backlogIndependentVerification": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-backlog-analysis-20261027\\verification-v1.json",
+      "bytes": 2234,
+      "sha256": "158703B2C441D0B048B944BEAFFACD9F3EA3DC04960A2378FF2CE629B5C4C7C9"
+    },
+    "backlogQueueBoundary": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-backlog-analysis-20261027\\queue-boundary-v1.json",
+      "bytes": 4291,
+      "sha256": "95E5D87B7D10FA3F308952040844E1918CCBC2C246E0A038BFA87DB6F8421A48"
+    },
+    "sharedNativeQaAudit": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\independent-qa-review-v1.json",
+      "bytes": 66037,
+      "sha256": "4EA3D46EA46A9A0DBC8232E62EFBCF717FABA5BCB1F0AE4BBE106EBD894BA5F1"
+    },
+    "sharedNativePairedAudit": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\independent-paired-audit-v1.json",
+      "bytes": 181632,
+      "sha256": "25D3FB2335A8D6815AC08C6F6CCC49489364250948901E872D12D58A7B7EA67E"
+    },
+    "rollbackApplied": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\rollback-applied-v1.json",
+      "bytes": 1402,
+      "sha256": "FE20162B17F8FE0F83C4C35070DE6697DEBFD785BA9A37AA3BA31258A45FA60A"
+    },
+    "rollbackBaselineB18Proof": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\rollback-baseline-b18-proof-v1.json",
+      "bytes": 864,
+      "sha256": "4C7AA98C94A669193D7FE05259BD1E05A5C9F4D215F3A40C607D8192FABD3D81"
+    },
+    "rollbackIndependentAudit": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\rollback-independent-v1.json",
+      "bytes": 8086,
+      "sha256": "F3B29F30285CEEB2677295EF46AF961026AD03AC48A46842F6D67F41D203FB53"
+    },
+    "candidateSourceArchive": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\rollback-manifest-v1.json",
+      "bytes": 9357,
+      "sha256": "C4D6B81237B20022588ECF0C57AA0EFCEA1A1B49FDEBEC16279ADDEE1F37B557"
+    },
+    "rollbackFocusedTestsReceipt": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\windows\\rollback-tests-v2\\supervisor\\process.json",
+      "bytes": 1024,
+      "sha256": "98F5617F91498637B8F2C667446913BC8F5AEA1729E1BA69A42CCCA094C5AF3D"
+    },
+    "rollbackFocusedTestsTrx": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\windows\\rollback-tests-v2\\tests\\rollback.trx",
+      "bytes": 46929,
+      "sha256": "0ECB672695960D6CD7B42C577543053A2A26B61C7B7B0C0B918A1784F365236B"
+    },
+    "preservedSandboxTestHostAbortTrx": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\windows\\rollback-tests-v1\\rollback.trx",
+      "bytes": 1530,
+      "sha256": "808C6411F4DC919EA58BD294F982079FCDA9003ECC119F6F8E66E71E7681EB80"
+    },
+    "windowsSharedNativePairedSummary": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\windows\\paired-summary-30s-v2.json",
+      "bytes": 1111623,
+      "sha256": "C89B28EB50B9B464555D9F796582EF4BFE6D833227B8AE5924EBBD4AB7DD0491"
+    },
+    "windowsOvalPhase1": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\windows\\phase1-v1\\summary.json",
+      "bytes": 115960,
+      "sha256": "EB306F405CA6313F10EAD5FE831F6B3B624A0C8E15D5DC85D0C476FDA09B8573"
+    },
+    "linuxSharedNativePairedSummary": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\linux\\paired-summary-30s-v2.json",
+      "bytes": 1201509,
+      "sha256": "BF807C7DDBB27413AE30C8BEC0D9D670A73D2CFCD82DEAC3601293D3661B5DBA"
+    },
+    "linuxOvalPhase1": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-oval-fill-20261027\\linux\\phase1-v1\\summary.json",
+      "bytes": 113118,
+      "sha256": "6E83CF5306319BACA368148E28D395AE9D5174DACA675D5FD9923F357CA6F736"
+    },
+    "summaryBuilderContracts": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\summary-helper-synthetic-cases-v3.json",
+      "bytes": 1839,
+      "sha256": "9E5F0D6E811509261DE43927EE1C2E6C54A02DB1F0755C80B89A10E7E2E3BBFB"
+    },
+    "publisherSource": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\Publish-ScatterWork.py",
+      "bytes": 39560,
+      "sha256": "3CF1F661C02CFBB1FBC353C16629C5D6E09265F51BFC031EA399C383B238080A"
+    },
+    "preservedWindowsSummaryHelperRejection": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\windows\\paired-summary-30s-v1.json",
+      "bytes": 1110081,
+      "sha256": "9A5A256C7974C9D8EBA9CE48BF1DF86CBAB8A8256FE80489D68E85EB479BB17B"
+    },
+    "preservedSyntheticTempPathRejection": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-shared-native-geometry-20261027\\summary-helper-synthetic-rejection-v1.json",
+      "bytes": 1573,
+      "sha256": "6ABF8E534296C0994F8061D1E89F425041A88267486F0830F9D83FE00D971EBE"
+    },
+    "preservedBacklogAnalysisAttempt1": {
+      "path": "C:\\Users\\a4472\\.codex\\visualizations\\2026\\10\\15\\01a13d4a-978f-77e1-8173-9dc5ed8f6a20\\charts-c7-scatter-backlog-analysis-20261027\\analysis-run-v1.log",
+      "bytes": 1042,
+      "sha256": "E66DB3073334534411FCB24346576B1D522AA65408B92910A477688FBB1AD3F2"
+    }
+  }
+}

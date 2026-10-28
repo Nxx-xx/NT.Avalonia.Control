@@ -10,6 +10,7 @@ using Avalonia.Data;
 using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Media;
+using Avalonia.VisualTree;
 
 namespace NT.AvaloniaControl.TreeDataGrid;
 
@@ -27,6 +28,11 @@ public sealed partial class TreeDataGridCellPresenter : ContentControl
     private TreeDataGridColumn? _displayColumn;
     private int _rowIndex;
     private long _generation;
+    private bool _prepared;
+    private bool _clearing;
+    private ElementFactorySession? _elementSession;
+    internal void DetachFactory() => _elementSession = null;
+    internal long Generation => _generation;
 
     static TreeDataGridCellPresenter()
     {
@@ -47,12 +53,18 @@ public sealed partial class TreeDataGridCellPresenter : ContentControl
     public int ColumnIndex { get; private set; } = -1;
     public object? Value => GetValue(ValueProperty);
     internal TreeDataGrid? GridOwner => _owner;
+    // The default display is represented by the cell's Name/Value providers.
+    // Editors and application-provided content keep their complete visual tree.
+    internal bool IsPlainAutomationText => IsPlainAutomationContent(Content);
+    internal bool IsPlainAutomationContent(object? content) => content is null || _display is TextBlock && ReferenceEquals(content, _display);
     protected override AutomationPeer OnCreateAutomationPeer() => new TreeDataGridCellPresenterAutomationPeer(this);
 
     internal void Prepare(TreeDataGrid owner, TreeDataGridRow row, int rowIndex, TreeDataGridColumn column, int columnIndex)
     {
         Clear();
         var generation = _generation;
+        var source = owner.Source;
+        _elementSession = owner.FactorySession;
         _owner = owner;
         Row = row;
         _rowIndex = rowIndex;
@@ -99,30 +111,81 @@ public sealed partial class TreeDataGridCellPresenter : ContentControl
         if (_generation != generation) return;
         UpdateDisplay();
         ApplyInteractionState();
+        if (_generation != generation || !owner.TrackCell(this, rowIndex) || _generation != generation) return;
+        try
+        {
+            if (!_elementSession.Prepare(this, source, row, rowIndex, column, columnIndex) || _generation != generation) return;
+            _prepared = true;
+            owner.NotifyCellPrepared(this);
+        }
+        catch (Exception error)
+        {
+            List<Exception>? errors = [error];
+            if (_generation == generation) try { Clear(); } catch (Exception clearingError) { errors.Add(clearingError); }
+            TreeDataGridEventDispatch.Throw(errors);
+        }
     }
     internal void Clear()
     {
+        if (_clearing) return;
+        _clearing = true;
         _generation++;
-        ClearEditor();
-        _binding?.Dispose();
-        _binding = null;
-        _owner = null;
-        ApplyGridLines();
-        Row = null;
-        Column = null;
-        ColumnIndex = -1;
-        _displayColumn = null;
-        ClearValue(ValueProperty);
-        DataContext = null;
-        if (_display is ContentPresenter presenter) { presenter.Content = null; presenter.ContentTemplate = null; presenter.UpdateChild(); }
-        if (_display is TextBlock text) text.Text = null;
-        Content = null;
-        _expanderLayout?.Children.Clear();
+        List<Exception>? errors = null;
+        try
+        {
+            try
+            {
+                if (_prepared) { _prepared = false; _owner?.NotifyCellClearing(this); }
+                else _owner?.UntrackCell(this);
+            }
+            catch (Exception error) { (errors ??= []).Add(error); }
+            try { _elementSession?.Clear(this); } catch (Exception error) { (errors ??= []).Add(error); }
+        }
+        finally
+        {
+            try
+            {
+                // Clearing observers see the old visual and bindings. Detach content afterwards,
+                // before nulling model values, so user templates are not rebuilt with a null model.
+                Content = null;
+                _expanderLayout?.Children.Clear();
+                try { ClearEditor(); } catch (Exception error) { (errors ??= []).Add(error); }
+                try { _binding?.Dispose(); } catch (Exception error) { (errors ??= []).Add(error); }
+                _binding = null;
+                _owner = null;
+                ApplyGridLines();
+                Row = null;
+                Column = null;
+                ColumnIndex = -1;
+                _displayColumn = null;
+                ClearValue(ValueProperty);
+                DataContext = null;
+                if (_display is ContentPresenter presenter) { presenter.ContentTemplate = null; presenter.Content = null; presenter.UpdateChild(); }
+                if (_display is TextBlock text) text.Text = null;
+            }
+            finally { _clearing = false; }
+        }
+        TreeDataGridEventDispatch.Throw(errors);
     }
     internal double MeasureNaturalWidth()
     {
         Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
         return DesiredSize.Width;
+    }
+    internal void InvalidateRecycledMeasure(bool autoHeight)
+    {
+        // Invalidating only the ContentControl can leave a valid Grid/Border inside
+        // its template returning the previous lifetime's DesiredSize on the first
+        // measure. That transient height must never enter the row's maximum cache.
+        // Detachment previously invalidated this whole chain, including user content.
+        if (autoHeight) InvalidateSubtree(this);
+        else InvalidateMeasure();
+
+        static void InvalidateSubtree(Visual visual)
+        {
+            foreach (var child in visual.GetVisualChildren()) InvalidateSubtree(child);
+            if (visual is Control control) control.InvalidateMeasure();
+        }
     }
     internal void ApplyGridLines()
     {
@@ -133,7 +196,11 @@ public sealed partial class TreeDataGridCellPresenter : ContentControl
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
     {
         base.OnPropertyChanged(change);
-        if (change.Property == ValueProperty) UpdateDisplay();
+        if (change.Property == ValueProperty)
+        {
+            UpdateDisplay();
+            if (_prepared && !_clearing) _owner?.ObserveCellValue(this);
+        }
     }
     private void EnsureDisplay()
     {
@@ -149,7 +216,12 @@ public sealed partial class TreeDataGridCellPresenter : ContentControl
             };
         }
         if (_display is TextBlock text)
-            text.TextWrapping = (_displayColumn as TreeDataGridTextColumn)?.TextWrapping ?? TextWrapping.NoWrap;
+        {
+            var textColumn = _displayColumn as TreeDataGridTextColumn;
+            text.TextWrapping = textColumn?.TextWrapping ?? TextWrapping.NoWrap;
+            text.TextAlignment = textColumn?.TextAlignment ?? TextAlignment.Left;
+            text.TextTrimming = textColumn?.TextTrimming ?? TextTrimming.CharacterEllipsis;
+        }
         if (_display is CheckBox check) check.IsThreeState = ((TreeDataGridCheckBoxColumn)_displayColumn).IsThreeState;
         if (_display is ContentPresenter presenter) presenter.ContentTemplate = ((TreeDataGridTemplateColumn)_displayColumn).CellTemplate;
     }

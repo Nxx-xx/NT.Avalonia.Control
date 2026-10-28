@@ -57,10 +57,16 @@ A4 首版允许冻结区内部和滚动区内部重排，跨冻结边界落点�
 - `SetValueAccessors<TModel,TValue>` 为 compiled 显示提供显式暂存写回。自动 ReflectionBinding 写回捕获开始编辑时的目标引用；中间对象或绑定更换后拒绝旧草稿写入，取消后可以重新开始。
 - `CanUserMoveRows = false`；启用后 `TryMoveRow` 返回明确结果。同父精确 ObservableCollection 的 Move 或受控集合保留 NodeId；跨父只有 `TreeDataGridRowMoveCollection<T>` 的双存储原子提交适配，返回新身份并恢复合理的选择。
 - `RowMoveRequested` 按注册顺序路由，在 Cancel 或 Handled 后停止，应用处理器须提供 Result。`RowMoveCompleted` 通知全部观察者并聚合错误；回调期间拒绝重入。提交后观察者失败仍报告已提交，不能据错误再次盲目移动。
-- ItemsSource 的集合擦除适配器没有默认移动路径，使用请求处理器；默认 typed 适配通过显式 Source 接入。
+- A4 功能补齐后，ItemsSource 擦除适配器支持原精确 ObservableCollection 的同父单节点移动，以及原事务集合的单个/批量移动。新增拖放事件与批量契约见[拖放与批量移动支持表](treedatagrid-row-move-support.md)；不支持的集合继续交由应用请求处理器。
 - `AddRange` 仅新增于受控集合。枚举/分配/验证完成后替换存储，再发一次范围 Add；准备失败不写入。存储通知期间 IsRefreshDeferred 为 true，Source.Refresh 排队并在通知完成后收敛，避免重复应用索引变更。
 - Source、列集合、冻结边界与模板在请求期间变化会使默认移动失效；模板属性一经更换即失效，不等待下一次 ApplyTemplate。
 - 专用自动化 peer 提供固定版本公开的选择、值、展开、滚动与逻辑身份定位；原生 Grid/Table pattern 和真实读屏支持仍未完成。默认值与模板部件由契约测试及源码声明验证，签名快照不能代替行为冻结。
+
+## A5 元素工厂补充
+
+`ElementFactory` 默认 null，继承公开 `TreeDataGridElementFactory` 定制三角色宿主的创建和寿命。保留原 sealed presenter/header 类型与模板部件契约，功能包不依赖主题。池属于表格和工厂会话；工厂仅返回新的标准宿主，不能自行返回旧池对象。正常单元格顺序为核心准备 → 工厂 Prepare → A2 Prepared；A2 Clearing → 工厂 Clear → 核心解绑/脱离父级 → Recycle → 可选池化或 Release。Prepare 回调内换源/工厂的延迟清理例外、异常规则和应用订阅责任见[完整契约](treedatagrid-element-factory.md)。
+
+运行时换工厂重新实现容器，保留同一有效逻辑草稿与身份，不调用业务 writer。自定义模板仍须保留内容、编辑、命中与状态语义。默认主题、应用局部模板、无主题包消费者及逻辑自动化 provider 共同验证；真实平台验收仍归 A6。
 
 ## 契约验证场景
 

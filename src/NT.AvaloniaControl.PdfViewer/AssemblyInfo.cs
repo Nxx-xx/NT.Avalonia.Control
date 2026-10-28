@@ -6,3 +6,4 @@ using Avalonia.Metadata;
 [assembly: InternalsVisibleTo("PdfViewer.Core.Tests")]
 [assembly: InternalsVisibleTo("PdfViewer.Headless.Tests")]
 [assembly: InternalsVisibleTo("PdfViewer.Themes.Tests")]
+[assembly: InternalsVisibleTo("PdfViewer.P403")]

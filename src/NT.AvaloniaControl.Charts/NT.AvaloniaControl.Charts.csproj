@@ -4,13 +4,14 @@
     <PackageId>NT.AvaloniaControl.Charts</PackageId>
     <AssemblyName>NT.AvaloniaControl.Charts</AssemblyName>
     <RootNamespace>NT.AvaloniaControl.Charts</RootNamespace>
-    <Description>Independent Cartesian line, bar and scatter charts for Avalonia.</Description>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>Preview Cartesian, statistical, financial, hierarchy, relationship, geographic and dashboard charts for Avalonia.</Description>
+    <PackageReadmeFile>PACKAGE-README.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" />
     <PackageReference Include="StbImageWriteSharp" />
     <None Update="README.md" Pack="true" PackagePath="/README.md" />
+    <None Update="PACKAGE-README.md" Pack="true" PackagePath="/PACKAGE-README.md" />
     <None Update="THIRD-PARTY-NOTICES.md" Pack="true" PackagePath="/THIRD-PARTY-NOTICES.md" />
   </ItemGroup>
 </Project>

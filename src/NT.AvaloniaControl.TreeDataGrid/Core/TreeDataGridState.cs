@@ -28,6 +28,7 @@ public sealed class TreeDataGridEditSession : INotifyPropertyChanged
     public string? ValidationError { get => _validationError; internal set { if (_validationError == value) return; _validationError = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ValidationError))); } }
     public event PropertyChangedEventHandler? PropertyChanged;
     internal void SetValue(object? value) { _value = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Value))); }
+    internal TreeDataGridColumn.EditAccess? BindingAccess { get; set; }
     internal object Model { get; }
     internal Action<object, object?> Writer { get; }
     internal Func<object?, string?>? Validator { get; }
@@ -68,10 +69,13 @@ public sealed partial class TreeDataGridState : IDisposable
     public TreeDataGridEditSession? EditSession { get; private set; }
     public event EventHandler? Changed;
     internal event EventHandler? ProjectionReconciled;
+    internal Func<TreeDataGridEditSession, IDisposable>? ObserveEditWrite { get; set; }
+    internal Action<TreeDataGridEditSession, object?>? EditCommitted { get; set; }
+    internal long EditWriteVersion { get; private set; }
 
     public void Select(NodeId node, bool additive = false)
     {
-        VerifyMutation();
+        using var transaction = BeginSelectionMutation();
         if (!_source.TryGetRow(node, out _))
             throw new ArgumentException("The node does not belong to this source.", nameof(node));
         if (!additive && _selected.Count == 1 && _selected.Contains(node) && _cellRows.Count == 0) return;
@@ -83,7 +87,7 @@ public sealed partial class TreeDataGridState : IDisposable
 
     public void ClearSelection()
     {
-        VerifyMutation();
+        using var transaction = BeginSelectionMutation();
         if (_selected.Count == 0 && _cellRows.Count == 0) return;
         _selected.Clear();
         _cellRows.Clear(); _cellColumns.Clear(); SelectionAnchor = null;
@@ -92,7 +96,7 @@ public sealed partial class TreeDataGridState : IDisposable
 
     public void SetCurrentCell(CellAddress? cell)
     {
-        VerifyMutation();
+        using var transaction = BeginSelectionMutation();
         if (cell is { } address) ValidateCell(address);
         if (CurrentCell == cell) return;
         CurrentCell = cell;
@@ -101,6 +105,15 @@ public sealed partial class TreeDataGridState : IDisposable
 
     public void BeginEdit(CellAddress cell, Func<object, object?> reader, Action<object, object?> writer,
         Func<object?, string?>? validator = null)
+        => BeginEditCore(cell, reader, writer, validator, null, null);
+
+    internal void BeginBindingEdit(CellAddress cell, TreeDataGridColumn.EditAccess access, Func<object?, string?>? validator)
+    {
+        BeginEditCore(cell, access.ReadOriginal, access.Write, validator, access.CreateDraft, access);
+    }
+
+    private void BeginEditCore(CellAddress cell, Func<object, object?> reader, Action<object, object?> writer,
+        Func<object?, string?>? validator, Func<object?, object?>? createDraft, TreeDataGridColumn.EditAccess? bindingAccess)
     {
         VerifyMutation();
         ArgumentNullException.ThrowIfNull(reader);
@@ -108,14 +121,19 @@ public sealed partial class TreeDataGridState : IDisposable
         VerifyProjectionIsCurrent();
         if (EditSession is not null)
             throw new InvalidOperationException("Commit or cancel the active edit before starting another.");
+        SetCurrentCell(cell);
+        if (_disposed || CurrentCell != cell) return;
         var row = ValidateCell(cell);
         _committing = true;
         try
         {
             var original = reader(row.Model);
+            var draft = createDraft is null ? original : createDraft(original);
             VerifyProjectionIsCurrent();
             ValidateCell(cell); // User callbacks can change the underlying collection.
             EditSession = new TreeDataGridEditSession(cell, row.Model, original, writer, validator);
+            EditSession.BindingAccess = bindingAccess;
+            EditSession.SetValue(draft);
             EditSession.ValueWriter = StageEdit;
             CurrentCell = cell;
             _pendingChanged = true;
@@ -129,7 +147,7 @@ public sealed partial class TreeDataGridState : IDisposable
     /// </summary>
     public bool CommitEdit(object? value)
     {
-        VerifyMutation();
+        VerifyMutation(allowSelectionCommit: true);
         VerifyProjectionIsCurrent();
         var edit = EditSession ?? throw new InvalidOperationException("No edit is active.");
         var success = false;
@@ -149,25 +167,42 @@ public sealed partial class TreeDataGridState : IDisposable
             _pendingChanged = true;
             if (error is null)
             {
-                using (_source.DeferRefresh())
+                using var observation = ObserveEditWrite?.Invoke(edit);
+                var committed = EditCommitted;
+                var written = false;
+                List<Exception>? errors = null;
+                try
                 {
-                    edit.Writer(edit.Model, value);
-                    if (_disposeWhenCallbackFinishes)
+                    using (_source.DeferRefresh())
                     {
+                        edit.Writer(edit.Model, value);
+                        EditWriteVersion++;
+                        written = true;
+                        // Plain POCO writers need a refresh too. The deferral coalesces notifying writers.
+                        if (!_disposeWhenCallbackFinishes) _source.Refresh();
                         edit.ValueWriter = null;
                         EditSession = null;
-                        return false;
                     }
-                    // Plain POCO writers need a refresh too. The deferral coalesces notifying writers.
-                    _source.Refresh();
-                    edit.ValueWriter = null;
-                    EditSession = null;
                 }
-                success = true;
+                catch (Exception writeFailure) { (errors ??= []).Add(writeFailure); }
+                // Projection or clearing observers can throw after the writer has succeeded.
+                // The commit notification must still run once and must never become a validation failure.
+                if (written)
+                    try { committed?.Invoke(edit, value); } catch (Exception notificationFailure) { (errors ??= []).Add(notificationFailure); }
+                success = written && !_disposeWhenCallbackFinishes;
+                TreeDataGridEventDispatch.Throw(errors);
             }
         }
         finally { FinishCallback(); }
         return success;
+    }
+
+    internal object? ConvertOwnedEdit(Func<object?> convert)
+    {
+        VerifyMutation(allowSelectionCommit: true);
+        _committing = true;
+        try { return convert(); }
+        finally { FinishCallback(); }
     }
 
     public void CancelEdit()
@@ -183,11 +218,15 @@ public sealed partial class TreeDataGridState : IDisposable
     public void RemoveColumn(ColumnId column)
     {
         VerifyMutation();
+        AbortSelectionDraft();
+        var previous = CaptureSelection();
         var changed = false;
         if (EditSession?.Cell.Column == column) { EditSession.ValueWriter = null; EditSession = null; changed = true; }
         if (CurrentCell?.Column == column) { CurrentCell = null; changed = true; }
         if (_cellColumns.Remove(column)) { changed = true; if (_cellColumns.Count == 0) _cellRows.Clear(); }
+        _columns = _columns.Where(id => id != column).ToArray();
         if (SelectionAnchor?.Column == column) SelectionAnchor = null;
+        PrepareForcedSelectionChange(previous, TreeDataGridSelectionChangeReason.ColumnsChanged);
         if (changed) NotifyChanged(selection: true);
     }
 
@@ -204,12 +243,23 @@ public sealed partial class TreeDataGridState : IDisposable
         Changed = null;
         ProjectionReconciled = null;
         SelectionChanged = null;
+        SelectionChanging = null;
+        SelectionChangeCompleted = null;
+        CommitSelectionEdit = null;
+        IsSelectionOwnerCurrent = null;
+        SelectionOwnerVersion = null;
+        ValidateSelectionTarget = null;
+        ObserveEditWrite = null;
+        EditCommitted = null;
+        SelectionTransactionFinished = null;
         _disposed = true;
     }
 
     private void OnProjectionChanged(object? sender, ProjectionChangedEventArgs args)
     {
         VerifyAccess();
+        AbortSelectionDraft();
+        var previous = CaptureSelection();
         var changed = _selected.RemoveWhere(id => !_source.TryGetRow(id, out _)) != 0;
         var selectionChanged = changed;
         if (EditSession is { } edit && _source.GetViewIndex(edit.Cell.Node) < 0)
@@ -239,6 +289,7 @@ public sealed partial class TreeDataGridState : IDisposable
         selectionChanged |= ReconcileCellSelection();
         changed |= selectionChanged;
         if (SelectionAnchor is { } anchor && !_source.TryGetRow(anchor.Node, out _)) SelectionAnchor = null;
+        PrepareForcedSelectionChange(previous, TreeDataGridSelectionChangeReason.ProjectionChanged);
         if (changed)
         {
             NotifyChanged(selection: selectionChanged);
@@ -262,9 +313,11 @@ public sealed partial class TreeDataGridState : IDisposable
             throw new InvalidOperationException("TreeDataGrid state must be accessed on its creating thread.");
     }
 
-    private void VerifyMutation()
+    private void VerifyMutation(bool allowSelectionCommit = false)
     {
         VerifyAccess();
+        if (_selecting && !(allowSelectionCommit && _selectionCommitting))
+            throw new InvalidOperationException("Selection cannot be reentered from a selection callback.");
         if (_committing)
             throw new InvalidOperationException("State cannot be changed from an edit reader, validator or writer callback.");
     }

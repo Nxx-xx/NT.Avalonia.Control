@@ -1,9 +1,9 @@
-param([string]$OutputDirectory = 'artifacts/platform/treedatagrid-p6', [switch]$NoBuild)
+param([string]$OutputDirectory = 'artifacts/platform/treedatagrid-p6', [switch]$NoBuild, [string]$ApplicationPath)
 $ErrorActionPreference = 'Stop'
 $repoRoot = Split-Path $PSScriptRoot -Parent
 Push-Location $repoRoot
 try {
-    $outputRoot = [IO.Path]::GetFullPath((Join-Path $repoRoot $OutputDirectory))
+    $outputRoot = if ([IO.Path]::IsPathRooted($OutputDirectory)) { [IO.Path]::GetFullPath($OutputDirectory) } else { [IO.Path]::GetFullPath((Join-Path $repoRoot $OutputDirectory)) }
     New-Item -ItemType Directory -Path $outputRoot -Force | Out-Null
     $windows = [Runtime.InteropServices.RuntimeInformation]::IsOSPlatform([Runtime.InteropServices.OSPlatform]::Windows)
     $capabilities = [ordered]@{
@@ -25,7 +25,10 @@ try {
         if ($LASTEXITCODE -ne 0) { throw 'Native check build failed.' }
     }
     & (Join-Path $PSScriptRoot 'Collect-Platform.ps1') -OutputPath (Join-Path $outputRoot 'environment.json')
-    $dll = Join-Path $repoRoot 'samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Demo.dll'
+    $dll = if ($ApplicationPath) { [IO.Path]::GetFullPath($ApplicationPath) } else { Join-Path $repoRoot 'samples/NT.AvaloniaControl.Demo/bin/Release/net10.0/NT.AvaloniaControl.Demo.dll' }
+    if (-not (Test-Path -LiteralPath $dll -PathType Leaf)) { throw "Native application DLL is missing: $dll" }
+    [ordered]@{ ApplicationPath=$dll; Sha256=(Get-FileHash -LiteralPath $dll).Hash; PublishedInput=[bool]$ApplicationPath } |
+        ConvertTo-Json | Set-Content -LiteralPath (Join-Path $outputRoot 'application-input.json') -Encoding utf8
     foreach ($scenario in @(@{Name='demo';Flag='--demo-smoke'}, @{Name='mvvm';Flag='--mvvm-smoke'}, @{Name='regression';Flag='--smoke'})) {
         $json = Join-Path $outputRoot ($scenario.Name + '.json')
         $png = Join-Path $outputRoot ($scenario.Name + '.png')

@@ -2,11 +2,21 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(EnableC7Performance)' == 'true'">
+    <DefineConstants>$(DefineConstants);C7_PERFORMANCE_DRIVER</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(EnableC7Performance)' != 'true'">
+    <Compile Remove="C7*.cs" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(EnableC7Performance)' == 'true'">
+    <Compile Include="../Charts.Benchmarks/DatasetFactory.cs" Link="C7SharedDatasetFactory.cs" />
+  </ItemGroup>
   <ItemGroup>
     <!-- Keep the measured protocol independent of asynchronous tiered-JIT promotion. -->
     <RuntimeHostConfigurationOption Include="System.Runtime.TieredCompilation" Value="false" />
     <PackageReference Include="Avalonia.Desktop" />
     <PackageReference Include="Avalonia.Themes.Fluent" />
     <ProjectReference Include="../../src/NT.AvaloniaControl.Charts.Themes/NT.AvaloniaControl.Charts.Themes.csproj" />
+    <ProjectReference Include="../../src/NT.AvaloniaControl.Charts.Skia/NT.AvaloniaControl.Charts.Skia.csproj" />
   </ItemGroup>
 </Project>

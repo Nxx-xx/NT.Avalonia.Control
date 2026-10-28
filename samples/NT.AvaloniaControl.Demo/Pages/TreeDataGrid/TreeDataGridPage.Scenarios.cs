@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
+using Avalonia.Data;
 using Avalonia.Media;
 using NT.AvaloniaControl.TreeDataGrid;
 using GridControl = NT.AvaloniaControl.TreeDataGrid.TreeDataGrid;
@@ -21,7 +22,7 @@ internal sealed partial class TreeDataGridPage
             InnerColumn = new TreeDataGridTextColumn { ValueGetter = model => ((DemoItem)model).Name },
         });
         _grid.Columns.Add(new TreeDataGridCheckBoxColumn { Header = "三态展示", Width = new GridLength(100), IsThreeState = true, ValueGetter = model => ((DemoItem)model).Enabled });
-        _grid.Columns.Add(new TreeDataGridTextColumn { Header = "编号（Auto）", Width = GridLength.Auto, MaxWidth = 200, ValueGetter = model => ((DemoItem)model).Id, StringFormat = "{0:N0}" });
+        _grid.Columns.Add(new TreeDataGridTextColumn { Header = "编号（Auto）", Width = GridLength.Auto, MaxWidth = 200, ValueGetter = model => ((DemoItem)model).Id, StringFormat = "{0:N0}", TextAlignment = TextAlignment.Right, TextTrimming = TextTrimming.None });
         _grid.Columns.Add(CreateBadgeColumn());
         _grid.Columns.Add(new TreeDataGridTextColumn { Header = "说明（2*）", Width = new GridLength(2, GridUnitType.Star), MinWidth = 220, ValueGetter = model => ((DemoItem)model).Description });
     }
@@ -48,17 +49,17 @@ internal sealed partial class TreeDataGridPage
         _grid.AutoRowHeight = false;
         _grid.Columns.Clear();
         _grid.Columns.Add(new TreeDataGridRowHeaderColumn { Header = "行号", Width = new GridLength(64), CanUserSort = false });
-        _grid.Columns.Add(new TreeDataGridTextColumn { Header = "名称（Auto）", Width = GridLength.Auto, MinWidth = 120, MaxWidth = 280, ValueGetter = model => ((DemoItem)model).Name });
+        _grid.Columns.Add(new TreeDataGridTextColumn { Header = "名称（Auto / 居中）", Width = GridLength.Auto, MinWidth = 120, MaxWidth = 180, ValueGetter = model => ((DemoItem)model).Name, TextAlignment = TextAlignment.Center, TextTrimming = TextTrimming.WordEllipsis });
         _grid.Columns.Add(new TreeDataGridCheckBoxColumn { Header = "三态展示", Width = new GridLength(100), IsThreeState = true, ValueGetter = model => ((DemoItem)model).Enabled });
         _grid.Columns.Add(CreateBadgeColumn());
         _grid.Columns.Add(new TreeDataGridTextColumn
         {
             Header = "换行说明（2*）", Width = new GridLength(2, GridUnitType.Star), MinWidth = 180,
-            TextWrapping = TextWrapping.Wrap, ValueGetter = model => ((DemoItem)model).Description,
+            TextWrapping = TextWrapping.Wrap, TextTrimming = TextTrimming.None, ValueGetter = model => ((DemoItem)model).Description,
         });
         var items = Enumerable.Range(0, 64).Select(i => new DemoItem(i, i % 8 == 0 ? $"较长的中文名称样例 {i:00}" : $"记录 {i:00}")).ToArray();
         SetSource(new FlatTreeDataGridSource<DemoItem>(items), "64 行 · 文本 / 三态 / 模板 / 行号 · Auto / Star");
-        _lastAction.Text = "此场景的复选框只展示数据；使用“编辑 / 验证样例”体验可编辑列。拖动列头右侧边缘调宽。";
+        _lastAction.Text = "名称居中并按词省略，说明换行且不显示省略号；拖动列头边缘可观察变化。使用“编辑 / 验证样例”体验编辑。";
     }
 
     private HierarchicalTreeDataGridSource<DemoItem> CreateTreeSource(ObservableCollection<DemoItem> roots)
@@ -132,7 +133,7 @@ internal sealed partial class TreeDataGridPage
     private static FuncControlTemplate<GridControl> CreateApplicationTemplate() => new((_, scope) =>
     {
         var rows = new TreeDataGridRowsPresenter();
-        var headers = new TreeDataGridColumnHeadersPresenter { Height = 30 };
+        var headers = new TreeDataGridColumnHeadersPresenter { Height = 30, [!IsVisibleProperty] = new TemplateBinding(GridControl.ShowColumnHeadersProperty) };
         var scroll = new ScrollViewer
         {
             Content = rows,

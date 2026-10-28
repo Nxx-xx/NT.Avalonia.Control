@@ -17,8 +17,10 @@ public static class ChartContrastPalettes
 
 public sealed partial class CartesianChart
 {
-    public static readonly StyledProperty<ChartHighContrastMode> HighContrastModeProperty =
-        AvaloniaProperty.Register<CartesianChart, ChartHighContrastMode>(nameof(HighContrastMode), validate: Enum.IsDefined);
+    // Keep the original Cartesian field and CLR accessors for existing compiled consumers.
+    // Both entry points identify the same styled property, registered on the shared base.
+    public new static readonly StyledProperty<ChartHighContrastMode> HighContrastModeProperty =
+        ChartBase.HighContrastModeProperty.AddOwner<CartesianChart>();
     /// <summary>Explicit opt-in contrast preset supplied by ChartsTheme or application styles. Does not probe OS preferences or replace local custom styles.</summary>
-    public ChartHighContrastMode HighContrastMode { get => GetValue(HighContrastModeProperty); set => SetValue(HighContrastModeProperty, value); }
+    public new ChartHighContrastMode HighContrastMode { get => GetValue(HighContrastModeProperty); set => SetValue(HighContrastModeProperty, value); }
 }
