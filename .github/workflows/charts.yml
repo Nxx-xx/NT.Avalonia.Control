@@ -140,6 +140,14 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+      - name: Install ripgrep (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          choco install ripgrep --yes --no-progress
+          if ($LASTEXITCODE -ne 0) { throw 'ripgrep installation failed' }
+          rg --version
+          if ($LASTEXITCODE -ne 0) { throw 'ripgrep is unavailable' }
       - uses: actions/setup-dotnet@v4
         with:
           global-json-file: global.json
@@ -167,7 +175,9 @@ jobs:
       - name: Provision CI-only native dependencies and fixed font family
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb libx11-6 libice6 libsm6 libfontconfig1 libfreetype6 libgl1 libegl1 libxcb1 fonts-noto-cjk
+          sudo apt-get install -y ripgrep xvfb libx11-6 libice6 libsm6 libfontconfig1 libfreetype6 libgl1 libegl1 libxcb1 fonts-noto-cjk
+      - name: Verify ripgrep availability
+        run: rg --version
       - name: Linux headless contracts
         run: bash ./scripts/Verify-Charts-Linux.sh --mode headless -IncludeC1
       - name: Xvfb native programmatic smoke (separate from a real desktop)

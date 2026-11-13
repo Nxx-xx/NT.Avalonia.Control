@@ -52,6 +52,9 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'P4-03 save fault / recovery validation failed.' }
           & $python scripts/pdfviewer/test_save_races.py --app benchmarks/PdfViewer.P403/bin/Release/net10.0/PdfViewer.P403.dll --output artifacts/pdfviewer-save-races/${{ runner.os }}
           if ($LASTEXITCODE -ne 0) { throw 'P4-03 non-cooperating writer validation failed.' }
+      - name: Storage output setup regression contracts (unprivileged)
+        if: runner.os == 'Linux'
+        run: python3 -m unittest discover -s scripts/Tests -p test_pdf_storage_output.py -v
       - name: Ubuntu real ENOSPC on an isolated bounded ext4 image
         if: runner.os == 'Linux'
         run: >-

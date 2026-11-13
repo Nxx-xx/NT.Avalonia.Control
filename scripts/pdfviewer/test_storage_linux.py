@@ -1,11 +1,11 @@
 """Run as root in a PRIVATE mount namespace. Fill only this script's 64 MiB loop image."""
 import argparse, errno, hashlib, json, os, pwd, shutil, subprocess, tempfile, time
 from pathlib import Path
-from storage_evidence import require_space,compress_images
+from storage_evidence import prepare_output,compress_images
 p=argparse.ArgumentParser();p.add_argument('--app',required=True);p.add_argument('--output',required=True);p.add_argument('--dotnet',default='/home/nxx/.dotnet/dotnet');p.add_argument('--uid',type=int,default=1000);a=p.parse_args()
 identity=pwd.getpwuid(a.uid);assert a.uid!=0
 assert os.geteuid()==0
-root=Path(a.output).resolve();assert not root.exists();require_space(root.parent);root.mkdir(parents=True)
+root=prepare_output(a.output)
 app=Path(a.app).resolve();mount=Path(tempfile.mkdtemp(prefix='pdf-p403-loop-'));image=root/'owned-ext4.raw';checks=[];processes=[];mounted=False
 def read(p):return json.loads(Path(p).read_text())
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest().upper()

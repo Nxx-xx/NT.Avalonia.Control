@@ -6,6 +6,16 @@ def require_space(parent,minimum=512*1024*1024):
     available=shutil.disk_usage(parent).free
     if available<minimum:raise OSError(f'Reserve at least {minimum} bytes before isolated image tests; available={available}')
 
+def prepare_output(output):
+    """Create a fresh evidence root only after checking its existing parent volume."""
+    root = Path(output).resolve()
+    if root.exists():
+        raise FileExistsError(f'Evidence output already exists: {root}')
+    root.parent.mkdir(parents=True, exist_ok=True)
+    require_space(root.parent)
+    root.mkdir()  # Exclusive creation also rejects concurrent/repeated runs.
+    return root
+
 def compress_images(root):
     root=Path(root).resolve();records=[]
     for path in sorted(root.rglob('*.raw')):

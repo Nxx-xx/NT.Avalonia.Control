@@ -3,11 +3,26 @@ on: [push, pull_request]
 jobs:
   verify:
     strategy:
+      fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+      - name: Install ripgrep (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          choco install ripgrep --yes --no-progress
+          if ($LASTEXITCODE -ne 0) { throw 'ripgrep installation failed' }
+          rg --version
+          if ($LASTEXITCODE -ne 0) { throw 'ripgrep is unavailable' }
+      - name: Install ripgrep (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ripgrep
+          rg --version
       - uses: actions/setup-dotnet@v4
         with:
           global-json-file: global.json
