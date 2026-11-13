@@ -178,6 +178,8 @@ public sealed class VirtualKeyboardScope : IDisposable
     {
         if (e.Property != Visual.IsVisibleProperty && e.Property != InputElement.IsEnabledProperty
             && e.Property != InputElement.IsEffectivelyEnabledProperty && e.Property != TextBox.IsReadOnlyProperty
+            // Activated can precede IsActive=true. Reconcile once the actual eligibility state changes.
+            && e.Property != Window.IsActiveProperty
             && e.Property != IsEnabledProperty && e.Property != InputPurposeProperty) return;
         if (_updating && ReferenceEquals(sender, _keyboard) && e.Property == Visual.IsVisibleProperty) return;
         Refresh();
