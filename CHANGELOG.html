@@ -32,7 +32,8 @@
   <nav class="nav-scroll" id="navigation" aria-label="变更记录">
     <a class="home-link" href="#home"><span aria-hidden="true">⌂</span><span>首页 · 使用说明</span></a>
     <div class="nav-heading">提交记录 / 最新优先</div>
-    <a class="record-link" href="#commit-343f1bb78792d85c656df41de049e2b65a748964"><span class="nav-date">2026-11-13 · 最新</span><span>重新实现虚拟键盘 M1/M2 并完成本轮验证</span><code>343f1bb7</code></a>
+    <a class="record-link" href="#commit-e779fc9de658aeb043af5c02fc861ce0ebeca84f"><span class="nav-date">2026-11-13 · 最新</span><span>修复初始焦点早于窗口激活时键盘未显示</span><code>e779fc9d</code></a>
+<a class="record-link" href="#commit-343f1bb78792d85c656df41de049e2b65a748964"><span class="nav-date">2026-11-13</span><span>重新实现虚拟键盘 M1/M2 并完成本轮验证</span><code>343f1bb7</code></a>
 <a class="record-link" href="#commit-1e5b8168d396c001f9cf7770c4ffc44c17511252"><span class="nav-date">2026-11-13</span><span>从可靠远端基线恢复开发约定</span><code>1e5b8168</code></a>
 <a class="record-link" href="#commit-eba78b958e1c59400fcd1902dc9c80cc7b0eb62d"><span class="nav-date">2026-11-13</span><span>启用本地提交与离线变更日志，整理虚拟键盘开发计划</span><code>eba78b95</code></a>
     <p class="nav-no-results" id="nav-no-results" hidden>没有匹配的记录</p>
@@ -48,7 +49,7 @@
     <p class="search-status" id="search-status" role="status" aria-live="polite" aria-atomic="true"></p>
   </form>
   <div class="panel" id="home">
-    <section class="hero" aria-labelledby="home-title"><div><div class="eyebrow">CHANGELOG / 使用指南</div><h1 id="home-title">每一次修改，都有记录可查。</h1><p>这里是 NT.Avalonia.Control 的功能变更档案。用它查看每次修改的具体内容、完成时间、验证情况，以及对应的 Git 提交编号。</p></div><div class="hero-stats"><div><strong>3</strong><span>条已记录的功能更新</span></div><div><strong class="last-date">2026-11-13</strong><span>最近更新日期</span></div></div></section>
+    <section class="hero" aria-labelledby="home-title"><div><div class="eyebrow">CHANGELOG / 使用指南</div><h1 id="home-title">每一次修改，都有记录可查。</h1><p>这里是 NT.Avalonia.Control 的功能变更档案。用它查看每次修改的具体内容、完成时间、验证情况，以及对应的 Git 提交编号。</p></div><div class="hero-stats"><div><strong>4</strong><span>条已记录的功能更新</span></div><div><strong class="last-date">2026-11-13</strong><span>最近更新日期</span></div></div></section>
     <section class="guide" aria-labelledby="guide-title">
       <h2 id="guide-title">这个网页怎么用</h2>
       <dl>
@@ -60,12 +61,21 @@
       <p class="guide-note">此页面支持离线阅读。记录随已完成的修改同步更新，具体提交方式以本项目协作规则为准；尚未提交的工作区修改不会被列为已完成更新。</p>
     </section>
     <div class="section-head"><h2>更新记录</h2><span>点击查看内容、时间与提交编号</span></div>
-    <section class="updates" aria-label="更新记录"><a class="update-card" href="#commit-343f1bb78792d85c656df41de049e2b65a748964"><div class="update-meta"><time datetime="2026-11-13T11:56:54+08:00">2026-11-13 11:56:54 +08:00</time><span class="badge">最新记录</span></div><h3>重新实现虚拟键盘 M1/M2 并完成本轮验证</h3><p>从可靠远端基线重做可选窗口 Scope，支持焦点/触摸/手动显隐、关闭抑制、生命周期清理、显式 Target 接管、重入与多窗口保护。</p><span class="read-more">查看修改详情 <span aria-hidden="true">↗</span></span></a>
+    <section class="updates" aria-label="更新记录"><a class="update-card" href="#commit-e779fc9de658aeb043af5c02fc861ce0ebeca84f"><div class="update-meta"><time datetime="2026-11-13T14:18:26+08:00">2026-11-13 14:18:26 +08:00</time><span class="badge">最新记录</span></div><h3>修复初始焦点早于窗口激活时键盘未显示</h3><p>原生日志与失败回归确认 Activated 事件发生时 IsActive 尚为 false，随后属性变为 true 未触发 Scope 刷新；在既有生命周期监听中加入 Window.IsActiveProperty。</p><span class="read-more">查看修改详情 <span aria-hidden="true">↗</span></span></a>
+<a class="update-card" href="#commit-343f1bb78792d85c656df41de049e2b65a748964"><div class="update-meta"><time datetime="2026-11-13T11:56:54+08:00">2026-11-13 11:56:54 +08:00</time></div><h3>重新实现虚拟键盘 M1/M2 并完成本轮验证</h3><p>从可靠远端基线重做可选窗口 Scope，支持焦点/触摸/手动显隐、关闭抑制、生命周期清理、显式 Target 接管、重入与多窗口保护。</p><span class="read-more">查看修改详情 <span aria-hidden="true">↗</span></span></a>
 <a class="update-card" href="#commit-1e5b8168d396c001f9cf7770c4ffc44c17511252"><div class="update-meta"><time datetime="2026-11-13T11:50:21+08:00">2026-11-13 11:50:21 +08:00</time></div><h3>从可靠远端基线恢复开发约定</h3><p>从远端 <code>9e626da290d7299a03bbc31976de4e111d50b003</code> 重新克隆完整历史，从保留的开发前快照恢复已批准的 AGENTS、本地提交规则、开发计划和离线变更日志工具。此前丢失的 M1/M2 提交未冒充恢复，本轮将重新实现。</p><span class="read-more">查看修改详情 <span aria-hidden="true">↗</span></span></a>
 <a class="update-card" href="#commit-eba78b958e1c59400fcd1902dc9c80cc7b0eb62d"><div class="update-meta"><time datetime="2026-11-13T09:51:31+08:00">2026-11-13 09:51:31 +08:00</time></div><h3>启用本地提交与离线变更日志，整理虚拟键盘开发计划</h3><p>在本仓库启用任务完成后的自动本地提交规则，保留其他任务改动；不自动推送、部署或改写历史。</p><span class="read-more">查看修改详情 <span aria-hidden="true">↗</span></span></a></section>
     <p class="search-empty" id="search-empty" hidden>没有找到匹配的记录。请尝试更短的关键词、减少关键词数量，或清除搜索查看全部记录。</p>
     <p class="footer-note">记录从协作规则建立开始，之前的历史尚未整理。每条记录对应功能提交；用于同步记录的文档提交不重复列出。本地代码记录不代表现场已部署。</p>
   </div>
+<article class="release panel" id="commit-e779fc9de658aeb043af5c02fc861ce0ebeca84f" aria-labelledby="title-commit-e779fc9de658aeb043af5c02fc861ce0ebeca84f">
+<a class="back" href="#home">← 返回首页</a><div class="eyebrow">CHANGE RECORD / 功能变更</div><h1 id="title-commit-e779fc9de658aeb043af5c02fc861ce0ebeca84f">修复初始焦点早于窗口激活时键盘未显示</h1>
+<div class="release-times"><p><span>修改完成</span><time datetime="2026-11-13T14:18:26+08:00">2026-11-13 14:18:26 +08:00</time></p><p><span>功能提交</span><time datetime="2026-11-13T14:18:26+08:00">2026-11-13 14:18:26 +08:00</time></p></div>
+<div class="commit-box"><span>Git 提交编号</span><code>e779fc9de658aeb043af5c02fc861ce0ebeca84f</code></div>
+<section class="detail-section"><h2>修改了哪些功能</h2><ul><li>原生日志与失败回归确认 Activated 事件发生时 IsActive 尚为 false，随后属性变为 true 未触发 Scope 刷新；在既有生命周期监听中加入 Window.IsActiveProperty。</li><li>新增4项公开API启动回归，覆盖自动显示、Manual/OnTouch不误开与激活前Close抑制；保存原因与验证记录。临时Demo探针已移除。</li></ul></section>
+<section class="detail-section"><h2>验证结果</h2><p>旧版启动主回归失败，修复后Headless81 / Core32 / Themes19全通过。Usage最终构建0警告/错误；云端X11原生无点击启动自动显示、首击输入、隐藏/重开成功，日志无异常；Git空白检查通过。</p></section>
+<section class="detail-section"><h2>兼容性与部署说明</h2><p>不改公开API、焦点或显隐契约，不引入定时延迟。字体回退问题与本缺陷分开，本次仅使用进程级已有字体配置。未验证Windows/真实触控/DPI/IME/屏幕阅读器；仅本地提交，未推送。</p></section>
+</article>
 <article class="release panel" id="commit-343f1bb78792d85c656df41de049e2b65a748964" aria-labelledby="title-commit-343f1bb78792d85c656df41de049e2b65a748964">
 <a class="back" href="#home">← 返回首页</a><div class="eyebrow">CHANGE RECORD / 功能变更</div><h1 id="title-commit-343f1bb78792d85c656df41de049e2b65a748964">重新实现虚拟键盘 M1/M2 并完成本轮验证</h1>
 <div class="release-times"><p><span>修改完成</span><time datetime="2026-11-13T11:56:54+08:00">2026-11-13 11:56:54 +08:00</time></p><p><span>功能提交</span><time datetime="2026-11-13T11:56:54+08:00">2026-11-13 11:56:54 +08:00</time></p></div>
@@ -110,6 +120,17 @@
 此映射补充只更新日志说明及离线 HTML，不改变控件代码；不代表部署或真机验收完成。
 
 ## 正式记录
+
+### 2026-11-13 — 修复初始焦点早于窗口激活时键盘未显示
+
+- 修改完成时间：2026-11-13 14:18:26 +08:00
+- 功能提交时间：2026-11-13 14:18:26 +08:00
+- 功能提交：`e779fc9de658aeb043af5c02fc861ce0ebeca84f`
+- 修改内容：
+  - 原生日志与失败回归确认 Activated 事件发生时 IsActive 尚为 false，随后属性变为 true 未触发 Scope 刷新；在既有生命周期监听中加入 Window.IsActiveProperty。
+  - 新增4项公开API启动回归，覆盖自动显示、Manual/OnTouch不误开与激活前Close抑制；保存原因与验证记录。临时Demo探针已移除。
+- 验证：旧版启动主回归失败，修复后Headless81 / Core32 / Themes19全通过。Usage最终构建0警告/错误；云端X11原生无点击启动自动显示、首击输入、隐藏/重开成功，日志无异常；Git空白检查通过。
+- 兼容性 / 部署注意事项：不改公开API、焦点或显隐契约，不引入定时延迟。字体回退问题与本缺陷分开，本次仅使用进程级已有字体配置。未验证Windows/真实触控/DPI/IME/屏幕阅读器；仅本地提交，未推送。
 
 ### 2026-11-13 — 重新实现虚拟键盘 M1/M2 并完成本轮验证
 
