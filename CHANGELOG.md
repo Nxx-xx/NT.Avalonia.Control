@@ -23,6 +23,20 @@
 
 ## 正式记录
 
+### 2026-11-13 — 稳定 CI 线程与多图夹具并保留原生输入诊断
+
+- 修改完成时间：2026-11-13 16:23:34 +08:00
+- 功能提交时间：2026-11-13 16:23:34 +08:00
+- 功能提交：`f9a11cba9f37f897fc480283cab16bd9047c02dd`
+- 修改内容：
+  - TreeDataGrid 跨线程回归使用专用 Thread、有界 Join 与线程身份验证，保留所有异常断言并验证集合未被修改。
+  - 四处 Charts platform artifact 上传排除 NuGet HTTP/package 缓存，保留日志、结果、锁文件、图像与来源证据。
+  - MultiChart 原生测试固定内容尺寸，等待同一布局代连续稳定；保留尺寸、发布、像素和身份断言，记录初始 bounds。
+  - 为尚未确认原因的 Windows hover/export 失败新增观察性事件与导出前后状态记录，不屏蔽原生输入、不放宽断言。
+  - 最小提取既有无障碍延期 continuation 为 internal 方法，使回调重入测试不依赖自动 Render 时序；真实 Background 队列与弱引用保持不变。新增详细原因及验证文档。
+- 验证：TreeDataGrid Release 153/153；跨线程独跑5/5；最终 Charts Headless 全量3267/3267；无障碍聚焦8/8及callback独跑5/5；最终Demo Release编译0错误、1条既有AVA3001警告。工作流YAML解析、四组actions/glob缓存排除与证据保留夹具、Git空白检查通过。
+- 兼容性 / 部署注意事项：无public API变化，未改变控件输入或导出行为。未修改的Pending_scene队列测试已观察到单跑失败，最终全量通过不等于所有测试完全稳定；Windows native hover/export八项仅补诊断，尚未确认修复。未执行Windows原生、GitHub artifact真实上传或Actions重跑。仅本地提交、未推送；完整bundle另行校验并保存Library。
+
 ### 2026-11-13 — 修复 CI ripgrep 依赖与 PDF 存储证据目录初始化
 
 - 修改完成时间：2026-11-13 15:23:53 +08:00
