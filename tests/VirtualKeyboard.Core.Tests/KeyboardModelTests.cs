@@ -67,6 +67,37 @@ public sealed class KeyboardModelTests
             Assert.DoesNotContain("using Avalonia", File.ReadAllText(file));
         Assert.DoesNotContain(typeof(VirtualKeyboardKey).Assembly.GetReferencedAssemblies(), assembly => assembly.Name == "NT.AvaloniaControl.VirtualKeyboard.Themes");
     }
+    [Theory]
+    [InlineData(VirtualKeyboardLayout.Email)]
+    [InlineData(VirtualKeyboardLayout.Url)]
+    [InlineData(VirtualKeyboardLayout.Phone)]
+    public void ConvenienceLayoutsHaveStableUniqueImmutableKeysAndIgnoreNumericOptions(VirtualKeyboardLayout layout)
+    {
+        var rows = KeyboardLayouts.Create(layout, false, false);
+        Assert.Same(rows, KeyboardLayouts.Create(layout, true, true));
+        var keys = rows.SelectMany(row => row.Keys).ToArray();
+        Assert.Equal(keys.Length, keys.Select(key => key.Id).Distinct().Count());
+        Assert.All(keys, key => Assert.True(key.Width > 0 && double.IsFinite(key.Width)));
+        Assert.All(keys.Where(key => key.Text is not null), key => Assert.All(key.Text!, c => Assert.InRange((int)c, 32, 126)));
+        Assert.Contains(keys, key => key.Kind == VirtualKeyboardKeyKind.Return);
+        Assert.Contains(keys, key => key.Kind == VirtualKeyboardKeyKind.Tab);
+        Assert.Throws<NotSupportedException>(() => ((IList<VirtualKeyboardKey>)rows[0].Keys).Clear());
+    }
+
+    [Theory]
+    [InlineData(VirtualKeyboardLayout.Email, "EmailAt", "@")]
+    [InlineData(VirtualKeyboardLayout.Email, "EmailCom", ".com")]
+    [InlineData(VirtualKeyboardLayout.Url, "UrlScheme", "https://")]
+    [InlineData(VirtualKeyboardLayout.Phone, "+", "+")]
+    public void ConvenienceKeysDoNotChangeWithShiftOrCaps(VirtualKeyboardLayout layout, string id, string text)
+    {
+        var key = KeyboardLayouts.Create(layout, false, false).SelectMany(row => row.Keys).Single(key => key.Id == id);
+        var state = new KeyboardState();
+        Assert.Equal(text, state.ResolveText(key));
+        state.ToggleShift(); state.ToggleCapsLock();
+        Assert.Equal(text, state.ResolveText(key));
+    }
+
     private static VirtualKeyboardKey Find(string id) => KeyboardLayouts.English.SelectMany(row => row.Keys).Single(key => key.Id == id);
     private static string FindRoot()
     {

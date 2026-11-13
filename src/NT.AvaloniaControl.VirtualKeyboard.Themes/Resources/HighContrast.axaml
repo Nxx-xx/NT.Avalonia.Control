@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Explicit host override, not automatic OS high contrast detection. -->
+  <SolidColorBrush x:Key="VirtualKeyboardBackgroundBrush">#000000</SolidColorBrush>
+  <SolidColorBrush x:Key="VirtualKeyboardForegroundBrush">#FFFFFF</SolidColorBrush>
+  <SolidColorBrush x:Key="VirtualKeyboardBorderBrush">#FFFFFF</SolidColorBrush>
+  <SolidColorBrush x:Key="VirtualKeyboardKeyBackgroundBrush">#000000</SolidColorBrush>
+  <SolidColorBrush x:Key="VirtualKeyboardKeyHoverBrush">#303030</SolidColorBrush>
+  <SolidColorBrush x:Key="VirtualKeyboardKeyPressedBrush">#505050</SolidColorBrush>
+  <SolidColorBrush x:Key="VirtualKeyboardKeyLockedBrush">#FFFF00</SolidColorBrush>
+  <SolidColorBrush x:Key="VirtualKeyboardKeyLockedForegroundBrush">#000000</SolidColorBrush>
+  <SolidColorBrush x:Key="VirtualKeyboardKeyDisabledBrush">#000000</SolidColorBrush>
+  <SolidColorBrush x:Key="VirtualKeyboardKeyDisabledForegroundBrush">#A0A0A0</SolidColorBrush>
+</ResourceDictionary>

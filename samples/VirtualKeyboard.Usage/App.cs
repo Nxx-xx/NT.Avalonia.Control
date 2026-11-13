@@ -20,7 +20,9 @@ public sealed class App : Application
         {
             if (Program.Arguments.Any(argument => argument is "--keyboard-smoke" or "--keyboard-benchmark"))
                 desktop.ShutdownMode = ShutdownMode.OnExplicitShutdown;
-            desktop.MainWindow = new MainWindow { DataContext = new InputViewModel() };
+            desktop.MainWindow = Program.Arguments.Contains("--keyboard-auto", StringComparer.Ordinal)
+                ? new AutoKeyboardWindow()
+                : new MainWindow { DataContext = new InputViewModel() };
         }
         base.OnFrameworkInitializationCompleted();
     }

@@ -29,6 +29,20 @@ NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboard : Avalonia.Controls.Primitive
   Property: System.String TemplateDiagnostic [get=public, set=none]
   Property: System.TimeSpan RepeatDelay [get=public, set=public]
   Property: System.TimeSpan RepeatInterval [get=public, set=public]
+NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardDisplayMode : System.Enum [abstract=False, sealed=True]
+  Field: Int32 value__
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardDisplayMode Manual = 0
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardDisplayMode OnFocus = 1
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardDisplayMode OnTouch = 2
+NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardInputPurpose : System.Enum [abstract=False, sealed=True]
+  Field: Int32 value__
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardInputPurpose Decimal = 3
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardInputPurpose Default = 0
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardInputPurpose Email = 4
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardInputPurpose Integer = 2
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardInputPurpose Phone = 6
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardInputPurpose Text = 1
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardInputPurpose Url = 5
 NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKey : System.Object [abstract=False, sealed=True]
   Property: Boolean IsRepeatable [get=public, set=none]
   Property: Double Width [get=public, set=none]
@@ -70,8 +84,11 @@ NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind : System.Enum [abstrac
   Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKeyKind Tab = 11
 NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardLayout : System.Enum [abstract=False, sealed=True]
   Field: Int32 value__
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardLayout Email = 2
   Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardLayout English = 1
   Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardLayout Numeric = 0
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardLayout Phone = 4
+  Field: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardLayout Url = 3
 NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardRow : System.Object [abstract=False, sealed=True]
   Property: System.Collections.Generic.IReadOnlyList`1[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardKey] Keys [get=public, set=none]
 NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardRowPanel : Avalonia.Controls.Panel [abstract=False, sealed=False]
@@ -80,6 +97,18 @@ NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardRowPanel : Avalonia.Controls.P
   Method: Avalonia.Size ArrangeOverride(Avalonia.Size) [protected, abstract=False, virtual=True]
   Method: Avalonia.Size MeasureOverride(Avalonia.Size) [protected, abstract=False, virtual=True]
   Property: Double Spacing [get=public, set=public]
+NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardScope : System.Object [abstract=False, sealed=True]
+  Constructor: Void .ctor(Avalonia.Controls.Window, NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboard, NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardDisplayMode) [public, abstract=False, virtual=False]
+  Field: Avalonia.AttachedProperty`1[NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardInputPurpose] InputPurposeProperty
+  Field: Avalonia.AttachedProperty`1[System.Boolean] IsEnabledProperty
+  Method: Boolean GetIsEnabled(Avalonia.Controls.TextBox) [public, abstract=False, virtual=False]
+  Method: Boolean Open() [public, abstract=False, virtual=False]
+  Method: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardInputPurpose GetInputPurpose(Avalonia.Controls.TextBox) [public, abstract=False, virtual=False]
+  Method: Void Close() [public, abstract=False, virtual=False]
+  Method: Void Dispose() [public, abstract=False, virtual=True]
+  Method: Void SetInputPurpose(Avalonia.Controls.TextBox, NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardInputPurpose) [public, abstract=False, virtual=False]
+  Method: Void SetIsEnabled(Avalonia.Controls.TextBox, Boolean) [public, abstract=False, virtual=False]
+  Property: NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardDisplayMode DisplayMode [get=public, set=public]
 NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboardTargetEventArgs : System.EventArgs [abstract=False, sealed=True]
   Constructor: Void .ctor(Avalonia.Input.IInputElement) [public, abstract=False, virtual=False]
   Property: Avalonia.Input.IInputElement Target [get=public, set=none]

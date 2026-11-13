@@ -1,0 +1,51 @@
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Threading;
+using Avalonia.Markup.Xaml.Styling;
+using NT.AvaloniaControl.VirtualKeyboard;
+using KeyboardControl = NT.AvaloniaControl.VirtualKeyboard.VirtualKeyboard;
+
+namespace KeyboardPackageConsumer;
+
+internal static class ScopeChecks
+{
+    public static void Run(Window window, TextBox editor, KeyboardControl keyboard, bool defaultTheme)
+    {
+        if (defaultTheme)
+        {
+            keyboard.Resources.MergedDictionaries.Add(new ResourceInclude(new Uri("avares://NT.AvaloniaControl.VirtualKeyboard.Themes/"))
+            {
+                Source = new Uri("avares://NT.AvaloniaControl.VirtualKeyboard.Themes/Resources/HighContrast.axaml"),
+            });
+            window.UpdateLayout();
+        }
+        keyboard.ClearValue(KeyboardControl.TargetProperty);
+        using var scope = new VirtualKeyboardScope(window, keyboard);
+        foreach (var purpose in new[] { VirtualKeyboardInputPurpose.Email, VirtualKeyboardInputPurpose.Url, VirtualKeyboardInputPurpose.Phone })
+        {
+            var before = editor.Text;
+            VirtualKeyboardScope.SetInputPurpose(editor, purpose);
+            Dispatcher.UIThread.RunJobs();
+            window.UpdateLayout();
+            if (!ReferenceEquals(keyboard.Target, editor) || !keyboard.IsVisible || !keyboard.IsInputAvailable)
+                throw new InvalidOperationException("Packaged scope did not acquire the editor.");
+            if (editor.Text != before || keyboard.Rows.Count == 0)
+                throw new InvalidOperationException("Packaged purpose modified text or produced an empty layout.");
+            var expected = purpose switch
+            {
+                VirtualKeyboardInputPurpose.Email => VirtualKeyboardLayout.Email,
+                VirtualKeyboardInputPurpose.Url => VirtualKeyboardLayout.Url,
+                _ => VirtualKeyboardLayout.Phone,
+            };
+            if (keyboard.Layout != expected) throw new InvalidOperationException("Packaged purpose mapping failed.");
+        }
+        scope.Close();
+        if (keyboard.Target is not null || keyboard.IsVisible)
+            throw new InvalidOperationException("Packaged scope close failed.");
+        if (!scope.Open()) throw new InvalidOperationException("Packaged scope reopen failed.");
+        scope.Dispose();
+        if (keyboard.Target is not null || keyboard.IsVisible)
+            throw new InvalidOperationException("Packaged scope disposal retained the editor.");
+        Console.WriteLine("PASS: packaged scope, purpose layouts, close/reopen and disposal.");
+    }
+}

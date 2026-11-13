@@ -202,6 +202,8 @@ public sealed class ThemeContractTests
     }
 
     [AvaloniaTheory]
+    [InlineData(320)]
+    [InlineData(400)]
     [InlineData(560)]
     [InlineData(760)]
     [InlineData(960)]
@@ -224,7 +226,7 @@ public sealed class ThemeContractTests
                     var current = controls[i].TranslatePoint(default, panel)!.Value.X;
                     Assert.True(current >= previous + 4.9, $"Keys overlap at host width {width}: previous={previous}, current={current}");
                 }
-                Assert.All(controls, button => { Assert.True(button.Bounds.Width >= 32); Assert.True(button.Bounds.Height >= 44); });
+                Assert.All(controls, button => { Assert.True(button.Bounds.Width >= 44); Assert.True(button.Bounds.Height >= 44); });
             }
             var scroll = keyboard.GetVisualDescendants().OfType<ScrollViewer>().Single(control => control.Name == "PART_KeyboardScrollViewer");
             Assert.True(scroll.Extent.Width >= scroll.Viewport.Width);
@@ -238,6 +240,93 @@ public sealed class ThemeContractTests
             Tap(window, Find(keyboard, "Backspace"));
             Assert.True(editor.Text == "A", $"Text={editor.Text}; point={buttonPoint}; hit={window.InputHitTest(buttonPoint)}; Extent={scroll.Extent}; Viewport={scroll.Viewport}; Offset={scroll.Offset}; Client={window.ClientSize}");
             Assert.True(editor.IsFocused);
+        }
+        finally { window.Close(); }
+    }
+
+    [AvaloniaFact]
+    public void OptInHighContrastPaletteAndTouchSizeOverridesPreserveInput()
+    {
+        var keyboard = new KeyboardControl();
+        var editor = new TextBox();
+        var window = Show(keyboard, editor);
+        try
+        {
+            var palette = new Avalonia.Markup.Xaml.Styling.ResourceInclude(new Uri("avares://NT.AvaloniaControl.VirtualKeyboard.Themes/"))
+            {
+                Source = new Uri("avares://NT.AvaloniaControl.VirtualKeyboard.Themes/Resources/HighContrast.axaml"),
+            };
+            keyboard.Resources.MergedDictionaries.Add(palette);
+            window.UpdateLayout();
+            Assert.Equal(Colors.Black, Assert.IsAssignableFrom<ISolidColorBrush>(keyboard.Background).Color);
+            Assert.Equal(Colors.White, Assert.IsAssignableFrom<ISolidColorBrush>(Find(keyboard, "a").Foreground).Color);
+            Tap(window, Find(keyboard, "CapsLock"));
+            Assert.Equal(Colors.Yellow, Assert.IsAssignableFrom<ISolidColorBrush>(Find(keyboard, "CapsLock").Background).Color);
+            keyboard.Resources["VirtualKeyboardKeyMinWidth"] = 56d;
+            keyboard.Resources["VirtualKeyboardKeyMinHeight"] = 60d;
+            keyboard.Resources["VirtualKeyboardKeySpacing"] = 8d;
+            keyboard.Resources["VirtualKeyboardFontSize"] = 24d;
+            window.UpdateLayout();
+            Assert.All(Buttons(keyboard), button =>
+            {
+                Assert.True(button.Bounds.Width >= 56);
+                Assert.True(button.Bounds.Height >= 60);
+                Assert.Equal(24d, button.FontSize);
+            });
+            Tap(window, Find(keyboard, "a"));
+            Assert.Equal("A", editor.Text);
+            Assert.True(editor.IsFocused);
+            keyboard.Resources.MergedDictionaries.Remove(palette);
+            window.RequestedThemeVariant = ThemeVariant.Dark;
+            window.UpdateLayout();
+            Assert.NotEqual(Colors.Black, Assert.IsAssignableFrom<ISolidColorBrush>(keyboard.Background).Color);
+            Assert.Same(editor, keyboard.Target);
+        }
+        finally { window.Close(); }
+    }
+
+    [AvaloniaTheory]
+    [InlineData(VirtualKeyboardLayout.English)]
+    [InlineData(VirtualKeyboardLayout.Numeric)]
+    [InlineData(VirtualKeyboardLayout.Email)]
+    [InlineData(VirtualKeyboardLayout.Url)]
+    [InlineData(VirtualKeyboardLayout.Phone)]
+    public void DockedKeyboardLeavesScrollableEditorViewport(VirtualKeyboardLayout layout)
+    {
+        var keyboard = new KeyboardControl { Layout = layout };
+        var editor = new TextBox();
+        var viewport = new ScrollViewer
+        {
+            Content = new StackPanel { Children = { new Border { Height = 600 }, editor } },
+        };
+        var panel = new DockPanel();
+        DockPanel.SetDock(keyboard, Dock.Bottom);
+        panel.Children.Add(keyboard);
+        panel.Children.Add(viewport);
+        var window = new Window { Width = 400, Height = 700, Content = panel };
+        try
+        {
+            window.Show();
+            window.UpdateLayout();
+            Dispatcher.UIThread.RunJobs();
+            Assert.True(editor.Focus());
+            keyboard.Target = editor;
+            editor.BringIntoView();
+            Dispatcher.UIThread.RunJobs();
+            window.UpdateLayout();
+            Assert.True(viewport.Bounds.Height > editor.Bounds.Height);
+            Assert.True(viewport.Offset.Y > 0);
+            var position = editor.TranslatePoint(default, viewport)!.Value;
+            Assert.True(position.Y >= -1 && position.Y + editor.Bounds.Height <= viewport.Bounds.Height + 1);
+            Assert.All(Buttons(keyboard), button => Assert.True(button.Bounds.Height >= 44));
+            Assert.Equal(keyboard.Rows.Sum(row => row.Keys.Count), Buttons(keyboard).Count());
+            foreach (var button in Buttons(keyboard))
+            {
+                var label = button.GetVisualDescendants().OfType<TextBlock>().Single();
+                label.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+                Assert.True(button.Bounds.Width >= label.DesiredSize.Width + button.Padding.Left + button.Padding.Right,
+                    $"Label clipped for {button.Key!.Id}: button={button.Bounds}, label={label.DesiredSize}");
+            }
         }
         finally { window.Close(); }
     }

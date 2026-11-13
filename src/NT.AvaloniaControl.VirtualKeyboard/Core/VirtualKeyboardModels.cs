@@ -1,7 +1,7 @@
 namespace NT.AvaloniaControl.VirtualKeyboard;
 
 /// <summary>The built-in ASCII keyboard layouts.</summary>
-public enum VirtualKeyboardLayout { Numeric, English }
+public enum VirtualKeyboardLayout { Numeric, English, Email, Url, Phone }
 
 /// <summary>An application-local text or editing action.</summary>
 public enum VirtualKeyboardKeyKind
@@ -39,7 +39,15 @@ public sealed class VirtualKeyboardRow
 internal static class KeyboardLayouts
 {
     internal static IReadOnlyList<VirtualKeyboardRow> Create(VirtualKeyboardLayout layout, bool decimalPoint, bool negativeSign) =>
-        layout == VirtualKeyboardLayout.Numeric ? Numeric(decimalPoint, negativeSign) : English;
+        layout switch
+        {
+            VirtualKeyboardLayout.Numeric => Numeric(decimalPoint, negativeSign),
+            VirtualKeyboardLayout.English => English,
+            VirtualKeyboardLayout.Email => Email,
+            VirtualKeyboardLayout.Url => Url,
+            VirtualKeyboardLayout.Phone => Phone,
+            _ => throw new ArgumentOutOfRangeException(nameof(layout)),
+        };
 
     private static VirtualKeyboardKey Character(string value, string? shifted = null, double width = 1, string? label = null) =>
         new(value == " " ? "Space" : value, VirtualKeyboardKeyKind.Character, label ?? value, value, shifted, width);
@@ -63,6 +71,33 @@ internal static class KeyboardLayouts
         new VirtualKeyboardRow(Action(VirtualKeyboardKeyKind.Home), Action(VirtualKeyboardKeyKind.Left, "←"),
             Character(" ", width: 7, label: "Space"), Action(VirtualKeyboardKeyKind.Right, "→"),
             Action(VirtualKeyboardKeyKind.End), Action(VirtualKeyboardKeyKind.SelectAll, "Select All", 2))
+    });
+
+    // Convenience rows keep all English editing/ASCII keys and never validate or normalize text.
+    private static VirtualKeyboardKey Shortcut(string id, string text) =>
+        new(id, VirtualKeyboardKeyKind.Character, text, text);
+
+    private static IReadOnlyList<VirtualKeyboardRow> WithShortcuts(params VirtualKeyboardKey[] keys) =>
+        Array.AsReadOnly(English.Take(English.Count - 1)
+            .Append(new VirtualKeyboardRow(keys)).Append(English[^1]).ToArray());
+
+    internal static readonly IReadOnlyList<VirtualKeyboardRow> Email = WithShortcuts(
+        Shortcut("EmailAt", "@"), Shortcut("EmailDot", "."), Shortcut("EmailUnderscore", "_"),
+        Shortcut("EmailPlus", "+"), Shortcut("EmailCom", ".com"));
+
+    internal static readonly IReadOnlyList<VirtualKeyboardRow> Url = WithShortcuts(
+        Shortcut("UrlScheme", "https://"), Shortcut("UrlWww", "www."), Shortcut("UrlSlash", "/"),
+        Shortcut("UrlColon", ":"), Shortcut("UrlDot", "."), Shortcut("UrlCom", ".com"));
+
+    internal static readonly IReadOnlyList<VirtualKeyboardRow> Phone = Array.AsReadOnly(new[]
+    {
+        new VirtualKeyboardRow(Character("1"), Character("2"), Character("3"), Action(VirtualKeyboardKeyKind.Backspace)),
+        new VirtualKeyboardRow(Character("4"), Character("5"), Character("6"), Action(VirtualKeyboardKeyKind.Delete)),
+        new VirtualKeyboardRow(Character("7"), Character("8"), Character("9"), Action(VirtualKeyboardKeyKind.Tab)),
+        new VirtualKeyboardRow(Character("+"), Character("0"), Character("#"), Action(VirtualKeyboardKeyKind.Return, "Enter")),
+        new VirtualKeyboardRow(Character("*"), Character("-"), Character("("), Character(")"), Character(" ", label: "Space")),
+        new VirtualKeyboardRow(Action(VirtualKeyboardKeyKind.Home), Action(VirtualKeyboardKeyKind.Left, "←"),
+            Action(VirtualKeyboardKeyKind.Right, "→"), Action(VirtualKeyboardKeyKind.End), Action(VirtualKeyboardKeyKind.SelectAll, "Select All"))
     });
 
     private static IReadOnlyList<VirtualKeyboardRow> Numeric(bool decimalPoint, bool negativeSign)

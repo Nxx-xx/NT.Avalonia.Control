@@ -17,3 +17,7 @@ var keyboard = new VirtualKeyboard { Target = editor, Layout = VirtualKeyboardLa
 Only the focused, editable TextBox in the same active Window accepts input. Target changes, layout changes, lost focus, disabled/hidden ancestors, window deactivation, template changes and unload invalidate an old press/repeat session. Enter and Tab either use the TextBox's accepted native action or raise target-only `ReturnRequested` / `NextRequested` host requests.
 
 The first version inputs ASCII. Existing Unicode text is edited using native TextBox boundaries. Finish or cancel system IME composition before using virtual keys; simultaneous IME composition is outside the supported contract. Passwords use the target's own masking without a keyboard preview or text diagnostics. Physical touch, platform IME, DPI and Linux/Kylin acceptance require separate device testing.
+
+## Optional automatic window scope
+
+`VirtualKeyboardScope` provides opt-in Manual/OnFocus/OnTouch display and focus tracking. Keep the existing explicit Target path when no scope is needed. Do not bind Target concurrently with a scope. Dispose on page deactivation. See `docs/virtualkeyboard-scope.md` for the lifecycle and password boundaries, input purposes and automatic demo.
