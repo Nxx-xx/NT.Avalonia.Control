@@ -21,6 +21,15 @@
 - 本地 `e779fc9de658aeb043af5c02fc861ce0ebeca84f` → GitHub `951fbe4422abce9f59be903e3e39d16df6957012`
 - 本地 `ae99639cd891e95c4d0325e510fd36b4a6ef8b87` → GitHub `74e555ed1cf72491e0ffd7e4c302b53febbceac6`
 
+### CI 后续修复与队列夹具的追加映射
+
+本次按原顺序重建以下四个提交，各自 tree 与原备份完全一致。原本地编号、提交时间和“未推送”措辞保留为历史记录，不代表远端的新编号、时间或当前发布状态。此处不宣称新一轮 Actions 已通过；Windows 原生问题只观察，不在本轮修改。
+
+- 本地 `f9a11cba9f37f897fc480283cab16bd9047c02dd` → GitHub `4a50d234b47e382fd331d545ded0dce554d9fba3`
+- 本地 `75ce52f5551707ad75ff34c048d4c4466d754e42` → GitHub `ecf7883be63a41ac20930f6e650e3d71f6cbdcff`
+- 本地 `38df76bf66ba0bc7609a1db49e04a717ca8b73f3` → GitHub `938cc56de039d023fa31da30fba519479fb8fb1a`
+- 本地 `ebb87999797cd86510e142854260b8b0cbf628ca` → GitHub `07723a3995c56b4aaad1be43afa4dcc6a6c07a14`
+
 ## 正式记录
 
 ### 2026-11-13 — 消除无障碍待发布通知队列测试的单跑竞态
@@ -33,7 +42,7 @@
   - 明确验证控件可见、附着、调度活跃、失效后pending和宿主释放；仍由真实Dispatcher队列投递，保留原unavailable及恢复断言，未改成直接Flush或放宽断言。
   - 其余用例保持普通Window，未修改生产源码、公开API、全局服务或调度优先级；新增原因与验证文档。
 - 验证：修前目标单跑失败；修后单独重复10/10、整类8/8、最终Charts Headless Release全量3267/3267通过（0失败、0跳过，1分49秒）。测试工程编译及Git空白检查通过。
-- 兼容性 / 部署注意事项：仅测试夹具与文档变化，解决上一轮明确保留的单跑竞态。按用户最新要求，本轮不处理Windows原生问题。仅本地提交、未推送，未触发新的GitHub Actions；完整bundle另行校验并保存Library。
+- 兼容性 / 部署注意事项：此处为原本地提交时的记录；对应 GitHub 重建提交 938cc56de039d023fa31da30fba519479fb8fb1a，tree 一致，创建时间不同。仅测试夹具与文档变化，解决上一轮明确保留的单跑竞态。按用户最新要求，本轮不处理Windows原生问题。仅本地提交、未推送，未触发新的GitHub Actions；完整bundle另行校验并保存Library。
 
 ### 2026-11-13 — 稳定 CI 线程与多图夹具并保留原生输入诊断
 
@@ -47,7 +56,7 @@
   - 为尚未确认原因的 Windows hover/export 失败新增观察性事件与导出前后状态记录，不屏蔽原生输入、不放宽断言。
   - 最小提取既有无障碍延期 continuation 为 internal 方法，使回调重入测试不依赖自动 Render 时序；真实 Background 队列与弱引用保持不变。新增详细原因及验证文档。
 - 验证：TreeDataGrid Release 153/153；跨线程独跑5/5；最终 Charts Headless 全量3267/3267；无障碍聚焦8/8及callback独跑5/5；最终Demo Release编译0错误、1条既有AVA3001警告。工作流YAML解析、四组actions/glob缓存排除与证据保留夹具、Git空白检查通过。
-- 兼容性 / 部署注意事项：无public API变化，未改变控件输入或导出行为。未修改的Pending_scene队列测试已观察到单跑失败，最终全量通过不等于所有测试完全稳定；Windows native hover/export八项仅补诊断，尚未确认修复。未执行Windows原生、GitHub artifact真实上传或Actions重跑。仅本地提交、未推送；完整bundle另行校验并保存Library。
+- 兼容性 / 部署注意事项：此处为原本地提交时的记录；对应 GitHub 重建提交 4a50d234b47e382fd331d545ded0dce554d9fba3，tree 一致，创建时间不同。无public API变化，未改变控件输入或导出行为。未修改的Pending_scene队列测试已观察到单跑失败，最终全量通过不等于所有测试完全稳定；Windows native hover/export八项仅补诊断，尚未确认修复。未执行Windows原生、GitHub artifact真实上传或Actions重跑。仅本地提交、未推送；完整bundle另行校验并保存Library。
 
 ### 2026-11-13 — 修复 CI ripgrep 依赖与 PDF 存储证据目录初始化
 
