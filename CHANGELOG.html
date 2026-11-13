@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>NT.Avalonia.Control · 功能与更新</title>
+<style>
+:root{--ink:#1e3040;--muted:#637582;--line:#dde5e8;--paper:#f5f7f8;--accent:#17695f;--nav:#152f3b}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 "Segoe UI","Microsoft YaHei",sans-serif}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible{outline:3px solid #edb960;outline-offset:4px}button{font:inherit}code{font-family:Consolas,monospace;font-size:.9em;overflow-wrap:anywhere}p{margin:0 0 16px}h1,h2,h3{line-height:1.35}h1{font-size:40px;letter-spacing:-1px;margin:14px 0 20px}h2{font-size:22px;margin:0}h3{font-size:17px;margin:0 0 10px}
+.skip{position:absolute;left:310px;top:-60px;background:white;padding:10px;z-index:20}.skip:focus{top:8px}.sidebar{position:fixed;inset:0 auto 0 0;width:282px;background:var(--nav);color:#d9e4e8;display:flex;flex-direction:column;padding:30px 20px;z-index:10}.brand{display:flex;gap:13px;align-items:center;padding:0 10px 28px}.brand-mark{width:42px;height:42px;display:grid;place-items:center;border:1px solid #729596;border-radius:12px;color:#bde3d6;font-weight:700;font-size:20px}.brand strong{display:block;color:white;letter-spacing:2px;font-size:19px}.brand small{color:#a0b6bf;font-size:12px}.nav-scroll{overflow:auto;flex:1;min-height:0}.home-link{display:flex;gap:12px;align-items:center;padding:13px 15px;border-radius:9px;font-weight:600}.home-link span:first-child{font-size:21px}.nav-heading{margin:28px 15px 12px;color:#a0b6bf;font-size:11px;letter-spacing:2px}.record-link{display:flex;flex-direction:column;gap:5px;border-radius:9px;margin-bottom:8px;padding:14px 15px;font-size:13px;border:1px solid transparent}.record-link code{font-size:11px;color:#a9c2c8}.nav-date{font-size:11px;color:#a9c2c8}.sidebar a:hover{background:#23424e}.sidebar a[aria-current="page"]{background:#294b52;border-color:#557771;color:white}.sidebar-footer{border-top:1px solid #34505b;padding:20px 10px 0;margin-top:20px;color:#a0b6bf;font-size:11px}.sidebar-footer a{display:inline-block;margin-top:8px;text-decoration:underline}.empty-nav{font-size:13px;margin:20px;color:#a0b6bf}
+.main{margin-left:282px;max-width:1480px;padding:34px 52px 60px}.topbar{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:36px;color:var(--muted);font-size:12px;letter-spacing:1px}.local-dot:before{content:"";display:inline-block;width:6px;height:6px;background:#408578;border-radius:50%;margin-right:8px}.eyebrow{color:var(--accent);font-size:11px;font-weight:700;letter-spacing:2px}.hero{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:40px;align-items:center;padding:12px 0 36px}.hero p{color:var(--muted);max-width:620px}.hero-stats{padding-left:28px;border-left:1px solid var(--line)}.hero-stats strong{display:block;font-size:42px;line-height:1.2;font-weight:500}.hero-stats span{color:var(--muted);font-size:12px}.hero-stats .last-date{font-size:18px;margin-top:20px}.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:15px;margin:12px 0 20px}.section-head span{font-size:12px;color:var(--muted)}.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:42px}.feature{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;min-height:182px}.feature .number{display:inline-block;font-size:11px;color:var(--accent);letter-spacing:1px;margin-bottom:18px}.feature p{color:var(--muted);font-size:13px;margin:0}.feature:first-child{border-top:3px solid var(--accent);padding-top:20px}.updates{display:grid;gap:14px}.update-card{display:block;background:white;border:1px solid var(--line);border-radius:12px;padding:24px 28px;transition:border-color .15s}.update-card:hover{border-color:var(--accent)}.update-meta{display:flex;align-items:center;gap:14px;color:var(--muted);font-size:12px;margin-bottom:12px}.badge{color:var(--accent);background:#e6f2ed;padding:3px 9px;border-radius:5px;font-size:11px}.update-card p{font-size:14px;color:var(--muted);margin-bottom:14px}.read-more{font-size:12px;font-weight:600;color:var(--accent)}.read-more span{padding-left:8px}.footer-note{margin-top:30px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:20px}.empty{color:var(--muted);padding:24px;border:1px dashed var(--line);border-radius:12px}
+.release{background:white;border:1px solid var(--line);border-radius:14px;padding:36px 42px;scroll-margin-top:24px;margin-bottom:24px}.back{display:inline-block;margin-bottom:34px;font-size:13px;color:var(--accent)}.release h1{font-size:30px;max-width:850px}.release-times{display:flex;flex-wrap:wrap;gap:10px 32px;margin:24px 0}.release-times p{margin:0;font-size:13px}.release-times span{display:block;color:var(--muted);font-size:11px;margin-bottom:5px}.commit-box{background:#f1f5f5;border-radius:8px;padding:16px 20px;display:flex;flex-direction:column;gap:5px;font-size:13px}.commit-box span{color:var(--muted);font-size:11px}.detail-section{margin-top:30px}.detail-section h2{font-size:18px;margin-bottom:14px}.detail-section p,.detail-section li{font-size:14px;line-height:1.9}.detail-section ul{padding-left:21px}.detail-section li{padding-left:5px;margin-bottom:10px}.detail-section code{background:#eef2f4;border-radius:3px;padding:2px 4px}.mobile-toggle{display:none}.panel[hidden]{display:none!important}
+@media(min-width:1600px){.main{margin-right:auto;padding-left:70px;padding-right:70px}}
+@media(max-width:1100px){.main{padding:28px;margin-left:250px}.sidebar{width:250px}.features{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr 150px;gap:20px}h1{font-size:34px}}
+@media(max-width:720px){.sidebar{position:static;width:auto;padding:18px 20px}.brand{padding:0}.brand-mark{width:34px;height:34px}.brand strong{font-size:16px}.mobile-toggle{display:block;margin-left:auto;color:white;background:transparent;border:1px solid #64818a;border-radius:7px;padding:6px 12px}.nav-scroll{max-height:300px;margin-top:18px}.sidebar:not(.open) .nav-scroll,.sidebar-footer{display:none}.main{margin:0;padding:22px}.topbar{margin-bottom:24px;font-size:10px}.hero{grid-template-columns:1fr;padding-bottom:24px}.hero-stats{display:flex;gap:24px;border-left:0;border-top:1px solid var(--line);padding:18px 0 0}.hero-stats strong{font-size:28px}.hero-stats .last-date{margin-top:0;font-size:20px}.features{gap:12px}.feature{padding:18px;min-height:190px}.feature:first-child{padding-top:16px}.section-head{align-items:flex-start}.section-head span{max-width:140px;text-align:right}.release{padding:24px 20px}.release h1{font-size:26px}.update-card{padding:22px}.update-meta{flex-wrap:wrap}h1{font-size:30px}}
+@media(max-width:390px){.features{grid-template-columns:1fr}.feature{min-height:0}}
+@media print{.sidebar,.topbar,.back,.skip{display:none}.main{margin:0;padding:0;max-width:none}.panel[hidden]{display:block!important}.release{break-before:page;border:0}.features{grid-template-columns:repeat(3,1fr)}body{background:white}.footer-note{display:none}}
+.guide{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;margin-bottom:32px}.guide dl{margin:20px 0}.guide dl>div{display:grid;grid-template-columns:112px 1fr;gap:18px;padding:12px 0}.guide dt{font-weight:600;color:var(--accent)}.guide dd{margin:0;color:var(--muted);font-size:14px}.guide a{text-decoration:underline;text-underline-offset:3px;color:var(--accent)}.guide-note{font-size:12px;color:var(--muted);margin:12px 0 0}.raw-markdown{white-space:pre-wrap;overflow-wrap:anywhere;background:#f1f5f5;border:1px solid var(--line);border-radius:8px;padding:24px;font:13px/1.9 Consolas,"Microsoft YaHei",monospace}.raw-markdown::selection{background:#c8e6dc}
+@media(max-width:720px){.guide dl>div{grid-template-columns:1fr;gap:4px}.raw-markdown{padding:14px}.sidebar.open .sidebar-footer{display:block}}
+</style>
+<style>
+[hidden]{display:none!important}.record-search{margin:0 0 30px;padding:20px 24px;background:white;border:1px solid var(--line);border-radius:12px}.record-search label{display:block;font-weight:600;font-size:14px;margin-bottom:10px}.search-row{display:flex;gap:10px}.search-row input{flex:1;min-width:0;width:100%;border:1px solid #b9c8ce;border-radius:7px;padding:11px 13px;font:14px "Segoe UI","Microsoft YaHei",sans-serif;color:var(--ink);background:#fbfcfc}.search-row input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.search-row button{border:1px solid var(--line);border-radius:7px;background:#f1f5f5;color:var(--ink);padding:8px 15px;cursor:pointer}.search-row button:disabled{opacity:.5;cursor:default}.search-help{color:var(--muted);font-size:12px;margin:10px 0 0}.search-status{color:var(--accent);font-size:12px;margin:6px 0 0}.search-empty{background:white;border:1px dashed var(--line);border-radius:10px;padding:28px;color:var(--muted)}.nav-no-results{padding:10px 15px;font-size:12px;color:#a0b6bf}
+@media(max-width:720px){.record-search{padding:18px}.search-row button{padding:8px 12px}}
+@media print{.record-search{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳到主要内容</a>
+<aside class="sidebar" aria-label="功能与版本导航">
+  <div class="brand"><div class="brand-mark" aria-hidden="true">↗</div><div><strong>NT.Avalonia.Control</strong><small>功能与更新 · PROJECT NOTES</small></div><button class="mobile-toggle" type="button" aria-expanded="false" aria-controls="navigation">导航</button></div>
+  <nav class="nav-scroll" id="navigation" aria-label="变更记录">
+    <a class="home-link" href="#home"><span aria-hidden="true">⌂</span><span>首页 · 使用说明</span></a>
+    <div class="nav-heading">提交记录 / 最新优先</div>
+    <a class="record-link" href="#commit-eba78b958e1c59400fcd1902dc9c80cc7b0eb62d"><span class="nav-date">2026-11-13 · 最新</span><span>启用本地提交与离线变更日志，整理虚拟键盘开发计划</span><code>eba78b95</code></a>
+    <p class="nav-no-results" id="nav-no-results" hidden>没有匹配的记录</p>
+  </nav>
+  <div class="sidebar-footer">记录时区：Asia/Shanghai<br>本地代码记录 · 不代表现场已部署<br><a href="#source">查看 Markdown 原始记录 →</a></div>
+</aside>
+<main class="main" id="content" tabindex="-1">
+  <header class="topbar"><span>NT.Avalonia.Control / 项目功能与变更档案</span><span class="local-dot">离线可用</span></header>
+  <form class="record-search" role="search" aria-label="搜索变更记录" hidden>
+    <label for="record-query">搜索变更记录</label>
+    <div class="search-row"><input id="record-query" type="search" placeholder="输入功能、关键词、日期或 Git 编号" autocomplete="off" aria-describedby="search-help search-status"><button id="clear-search" type="button" disabled>清除</button></div>
+    <p class="search-help" id="search-help">搜索已收录记录的标题与全文，支持部分提交编号；多个关键词用空格分隔，需同时匹配。</p>
+    <p class="search-status" id="search-status" role="status" aria-live="polite" aria-atomic="true"></p>
+  </form>
+  <div class="panel" id="home">
+    <section class="hero" aria-labelledby="home-title"><div><div class="eyebrow">CHANGELOG / 使用指南</div><h1 id="home-title">每一次修改，都有记录可查。</h1><p>这里是 NT.Avalonia.Control 的功能变更档案。用它查看每次修改的具体内容、完成时间、验证情况，以及对应的 Git 提交编号。</p></div><div class="hero-stats"><div><strong>1</strong><span>条已记录的功能更新</span></div><div><strong class="last-date">2026-11-13</strong><span>最近更新日期</span></div></div></section>
+    <section class="guide" aria-labelledby="guide-title">
+      <h2 id="guide-title">这个网页怎么用</h2>
+      <dl>
+        <div><dt>浏览更新</dt><dd>点击左侧提交记录，或下方的更新标题，打开完整详情。记录按提交时间排序，最新的排在第一位。</dd></div>
+        <div><dt>快速搜索</dt><dd>在上方输入关键词、日期或 Git 编号即可筛选，结果仍按最新优先排列。点击结果可打开详情，清除搜索可恢复全部记录。</dd></div>
+        <div><dt>追溯修改</dt><dd>详情包含修改了哪些功能、修改完成时间、Git 提交时间、完整提交编号，以及验证结果和部署注意事项。</dd></div>
+        <div><dt>查看原始记录</dt><dd>点击「<a href="#source">查看 Markdown 原始记录</a>」，即可在本页查看对应的文本内容，无需跳转或额外软件。</dd></div>
+      </dl>
+      <p class="guide-note">此页面支持离线阅读。记录随已完成的修改同步更新，具体提交方式以本项目协作规则为准；尚未提交的工作区修改不会被列为已完成更新。</p>
+    </section>
+    <div class="section-head"><h2>更新记录</h2><span>点击查看内容、时间与提交编号</span></div>
+    <section class="updates" aria-label="更新记录"><a class="update-card" href="#commit-eba78b958e1c59400fcd1902dc9c80cc7b0eb62d"><div class="update-meta"><time datetime="2026-11-13T09:51:31+08:00">2026-11-13 09:51:31 +08:00</time><span class="badge">最新记录</span></div><h3>启用本地提交与离线变更日志，整理虚拟键盘开发计划</h3><p>在本仓库启用任务完成后的自动本地提交规则，保留其他任务改动；不自动推送、部署或改写历史。</p><span class="read-more">查看修改详情 <span aria-hidden="true">↗</span></span></a></section>
+    <p class="search-empty" id="search-empty" hidden>没有找到匹配的记录。请尝试更短的关键词、减少关键词数量，或清除搜索查看全部记录。</p>
+    <p class="footer-note">记录从协作规则建立开始，之前的历史尚未整理。每条记录对应功能提交；用于同步记录的文档提交不重复列出。本地代码记录不代表现场已部署。</p>
+  </div>
+<article class="release panel" id="commit-eba78b958e1c59400fcd1902dc9c80cc7b0eb62d" aria-labelledby="title-commit-eba78b958e1c59400fcd1902dc9c80cc7b0eb62d">
+<a class="back" href="#home">← 返回首页</a><div class="eyebrow">CHANGE RECORD / 功能变更</div><h1 id="title-commit-eba78b958e1c59400fcd1902dc9c80cc7b0eb62d">启用本地提交与离线变更日志，整理虚拟键盘开发计划</h1>
+<div class="release-times"><p><span>修改完成</span><time datetime="2026-11-13T09:51:31+08:00">2026-11-13 09:51:31 +08:00</time></p><p><span>功能提交</span><time datetime="2026-11-13T09:51:31+08:00">2026-11-13 09:51:31 +08:00</time></p></div>
+<div class="commit-box"><span>Git 提交编号</span><code>eba78b958e1c59400fcd1902dc9c80cc7b0eb62d</code></div>
+<section class="detail-section"><h2>修改了哪些功能</h2><ul><li>在本仓库启用任务完成后的自动本地提交规则，保留其他任务改动；不自动推送、部署或改写历史。</li><li>建立 Markdown 记录源、可搜索的离线 HTML、生成器和兼容跳转入口；时区设为 Asia/Shanghai。</li><li>新增虚拟键盘 M0–M4 开发计划，明确当前能力、拟议 API、验收与安全边界；未实现计划中的新控件功能。</li><li>将复制到项目中的工具文件统一为 LF 换行，原始传输文件的 SHA256 校验通过。</li></ul></section>
+<section class="detail-section"><h2>验证结果</h2><p>技能自带 2 项 Node 测试通过；生成器语法、HTML 内嵌脚本语法、搜索控件与 Markdown 嵌入、无远程资源静态检查通过；HTML 与 Markdown 同步检查、Git diff 空白检查通过。未执行 Avalonia 构建或控件测试。云浏览器不允许 file:// 协议，未验证双击离线文件的实际界面交互。</p></section>
+<section class="detail-section"><h2>兼容性与部署说明</h2><p>生成需 Git 与 Node.js 18+；不需 npm 依赖或后台监视器。仅本地提交，未推送远程。根目录 CHANGELOG.html 为阅读入口，未来新任务遵循 AGENTS.md 中本项目规则。</p></section>
+</article>
+  <article class="release panel" id="source" aria-labelledby="source-title">
+    <a class="back" href="#home">← 返回首页</a><div class="eyebrow">MARKDOWN / 原始记录</div>
+    <h1 id="source-title">Markdown 原始记录</h1><p>以下是生成当前网页时的 CHANGELOG.md 全文，可直接阅读或选中复制。</p>
+    <pre class="raw-markdown"># 项目功能变更记录
+
+浏览器阅读版：[打开变更档案](CHANGELOG.html)。本文件是记录源；项目名称和时区见 changelog.config.json。
+时间使用配置时区及实际 UTC 偏移，记录按最新优先排列。本地提交不代表已部署；日志同步提交不重复记为功能更新。
+
+## 正式记录
+
+### 2026-11-13 — 启用本地提交与离线变更日志，整理虚拟键盘开发计划
+
+- 修改完成时间：2026-11-13 09:51:31 +08:00
+- 功能提交时间：2026-11-13 09:51:31 +08:00
+- 功能提交：`eba78b958e1c59400fcd1902dc9c80cc7b0eb62d`
+- 修改内容：
+  - 在本仓库启用任务完成后的自动本地提交规则，保留其他任务改动；不自动推送、部署或改写历史。
+  - 建立 Markdown 记录源、可搜索的离线 HTML、生成器和兼容跳转入口；时区设为 Asia/Shanghai。
+  - 新增虚拟键盘 M0–M4 开发计划，明确当前能力、拟议 API、验收与安全边界；未实现计划中的新控件功能。
+  - 将复制到项目中的工具文件统一为 LF 换行，原始传输文件的 SHA256 校验通过。
+- 验证：技能自带 2 项 Node 测试通过；生成器语法、HTML 内嵌脚本语法、搜索控件与 Markdown 嵌入、无远程资源静态检查通过；HTML 与 Markdown 同步检查、Git diff 空白检查通过。未执行 Avalonia 构建或控件测试。云浏览器不允许 file:// 协议，未验证双击离线文件的实际界面交互。
+- 兼容性 / 部署注意事项：生成需 Git 与 Node.js 18+；不需 npm 依赖或后台监视器。仅本地提交，未推送远程。根目录 CHANGELOG.html 为阅读入口，未来新任务遵循 AGENTS.md 中本项目规则。
+
+&lt;!-- 条目模板：复制到正式记录区顶部，替换内容；保留字段名称。
+
+### YYYY-MM-DD — 功能标题
+
+- 修改完成时间：YYYY-MM-DD HH:mm:ss +HH:mm
+- 功能提交时间：YYYY-MM-DD HH:mm:ss +HH:mm
+- 功能提交：`完整 Git SHA`
+- 修改内容：
+  - 描述具体变化。
+- 验证：实际执行的检查及结果。
+- 兼容性 / 部署注意事项：无，或具体说明。
+
+偏移量可以为正或负，按项目时区在事件发生时的实际偏移填写。
+--&gt;
+</pre>
+  </article>
+  <noscript><p>JavaScript 未启用，页面仍可通过导航定位并阅读全部记录。</p></noscript>
+</main>
+<script>
+(() => {
+  const projectName = document.querySelector('.brand strong').textContent;
+  const panels = [...document.querySelectorAll('.panel')];
+  const links = [...document.querySelectorAll('.sidebar a[href^="#"]')];
+  const sidebar = document.querySelector('.sidebar');
+  const toggle = document.querySelector('.mobile-toggle');
+  const searchForm = document.querySelector('.record-search');
+  const queryInput = document.querySelector('#record-query');
+  const clearSearch = document.querySelector('#clear-search');
+  const searchStatus = document.querySelector('#search-status');
+  const normalize = value => value.normalize('NFKC').toLowerCase().replace(/\s+/g, ' ').trim();
+  // Reuse existing rendered details: no duplicated search payload in the HTML.
+  const searchEntries = [...document.querySelectorAll('.release[id^="commit-"]')].map(detail => ({
+    id: detail.id,
+    text: normalize(detail.textContent),
+    card: document.querySelector(`.update-card[href="#${detail.id}"]`),
+    nav: document.querySelector(`.record-link[href="#${detail.id}"]`)
+  }));
+  function filterRecords() {
+    const query = normalize(queryInput.value);
+    const words = query ? query.split(' ') : [];
+    let count = 0;
+    searchEntries.forEach(entry => {
+      const match = words.every(word => entry.text.includes(word));
+      entry.card.hidden = !match;
+      entry.nav.hidden = !match;
+      if (match) count++;
+    });
+    clearSearch.disabled = queryInput.value.length === 0;
+    searchStatus.textContent = query ? `找到 ${count} 条，共 ${searchEntries.length} 条记录 · 最新优先` : `共 ${searchEntries.length} 条记录 · 最新优先`;
+    document.querySelector('#search-empty').hidden = !query || count > 0;
+    document.querySelector('#nav-no-results').hidden = !query || count > 0;
+    document.querySelector('#home .hero').hidden = Boolean(query);
+    document.querySelector('#home .guide').hidden = Boolean(query);
+  }
+  function showResults() {
+    filterRecords();
+    if (location.hash !== '#home') location.hash = 'home';
+  }
+  searchForm.addEventListener('submit', event => { event.preventDefault(); showResults(); });
+  queryInput.addEventListener('input', showResults);
+  clearSearch.addEventListener('click', () => { queryInput.value = ''; showResults(); queryInput.focus(); });
+  searchForm.hidden = false;
+  filterRecords();
+  function route() {
+    const id = location.hash.slice(1) || 'home';
+    const selected = panels.find(panel => panel.id === id) || panels[0];
+    panels.forEach(panel => { panel.hidden = panel !== selected; });
+    links.forEach(link => {
+      if (link.hash === `#${selected.id}`) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+    document.title = `${selected.querySelector('h1').textContent} · ${projectName}`;
+    sidebar.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    window.scrollTo(0, 0);
+  }
+  toggle.addEventListener('click', () => {
+    const open = sidebar.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+</body>
+</html>
