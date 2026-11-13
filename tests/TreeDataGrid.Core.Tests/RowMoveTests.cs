@@ -190,16 +190,35 @@ public sealed class RowMoveTests
     }
 
     [Fact]
-    public async Task Row_collection_enforces_creating_thread_for_reads_writes_and_enumeration()
+    public void Row_collection_enforces_creating_thread_for_reads_writes_and_enumeration()
     {
+        var ownerThreadId = Environment.CurrentManagedThreadId;
         var items = new TreeDataGridRowMoveCollection<Item> { new("a") };
-        var enumerator = items.GetEnumerator();
-        await Task.Run(() =>
+        using var enumerator = items.GetEnumerator();
+        var workerThreadId = ownerThreadId;
+        Exception? workerFailure = null;
+        // Task.Run can reuse the creating pool thread after an async test yields.
+        // A dedicated thread makes the cross-thread contract deterministic.
+        var worker = new Thread(() =>
         {
-            Assert.Throws<InvalidOperationException>(() => _ = items.Count);
-            Assert.Throws<InvalidOperationException>(() => items.Add(new("b")));
-            Assert.Throws<InvalidOperationException>(() => enumerator.MoveNext());
-        }, TestContext.Current.CancellationToken);
+            try
+            {
+                workerThreadId = Environment.CurrentManagedThreadId;
+                Assert.Throws<InvalidOperationException>(() => _ = items.Count);
+                Assert.Throws<InvalidOperationException>(() => items.Add(new("b")));
+                Assert.Throws<InvalidOperationException>(() => enumerator.MoveNext());
+            }
+            catch (Exception exception) { workerFailure = exception; }
+        }) { IsBackground = true };
+        worker.Start();
+        Assert.True(worker.Join(TimeSpan.FromSeconds(10)), "Cross-thread access checks did not finish.");
+        Assert.NotEqual(ownerThreadId, workerThreadId);
+        Assert.Null(workerFailure);
+        Assert.Equal("a", Assert.Single(items).Name);
+        using var ownerEnumerator = items.GetEnumerator();
+        Assert.True(ownerEnumerator.MoveNext());
+        Assert.Equal("a", ownerEnumerator.Current.Name);
+        Assert.False(ownerEnumerator.MoveNext());
     }
 
     [Fact]

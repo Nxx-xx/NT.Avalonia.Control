@@ -173,6 +173,7 @@ internal sealed partial class ChartsPage
         FlushControlTemplateWindow(window); _ = RouteProfessionalReading(chart, window, 0);
         var options = new ChartExportOptions { PixelSize = new PixelSize(640, 320), Background = window.Background, JpegQuality = 90 };
         var artifacts = new List<object>(); var baselines = new Dictionary<string, string>();
+        using var inputEvidence = new ChartSmokeInputEvidence(chart);
         foreach (var state in new[] { "disabled", "legacy", "template" })
         {
             SetProfessionalTooltipEnabled(chart, state != "disabled");
@@ -186,23 +187,25 @@ internal sealed partial class ChartsPage
             foreach (var format in new[] { "sync-png", "async-png", "async-jpeg" })
             {
                 var path = image($"{kind}-{state}-{format}", format.EndsWith("jpeg", StringComparison.Ordinal) ? "jpg" : "png");
+                var beforeExport = inputEvidence.Snapshot(state + "-" + format + "-before-export");
                 var saved = format switch
                 {
                     "sync-png" => chart is EngineeringChartBase engineering ? engineering.TryExportPng(path, options) : ((AnalysisChartBase)chart).TryExportPng(path, options),
                     "async-png" => chart is EngineeringChartBase engineering ? await engineering.TryExportPngAsync(path, options) : await ((AnalysisChartBase)chart).TryExportPngAsync(path, options),
                     _ => chart is EngineeringChartBase engineering ? await engineering.TryExportJpegAsync(path, options) : await ((AnalysisChartBase)chart).TryExportJpegAsync(path, options),
                 };
+                var afterExport = inputEvidence.Snapshot(state + "-" + format + "-after-export");
                 using var bitmap = new Bitmap(path); var raster = ReadShapePixels(bitmap); var hash = Convert.ToHexString(SHA256.HashData(raster.Pixels));
                 if (state == "disabled") baselines[format] = hash;
                 var same = baselines[format] == hash;
                 Check(state + "-" + format + "-excludes-transient-content", saved && bitmap.PixelSize == options.PixelSize && same);
                 Check(state + "-" + format + "-retains-source-identity", ProfessionalActiveSourceIdentity(chart, board.Model) && (state != "template" || ProfessionalSourceIdentity(chart, board.Model)));
-                artifacts.Add(new { state, format, path, saved, width = bitmap.PixelSize.Width, height = bitmap.PixelSize.Height, decodedBgraSha256 = hash, disabledBaselineBgraSha256 = baselines[format], identicalToDisabledTooltip = same });
+                artifacts.Add(new { state, format, beforeExport, afterExport, path, saved, width = bitmap.PixelSize.Width, height = bitmap.PixelSize.Height, decodedBgraSha256 = hash, disabledBaselineBgraSha256 = baselines[format], identicalToDisabledTooltip = same });
             }
         }
         SetProfessionalTooltipEnabled(chart, true); SetProfessionalTemplate(chart, board.Templates[chart]); FlushControlTemplateWindow(window);
         _professionalTooltipProbes.Add(new { schema = "professional-tooltip-native/v1", phase = "export", kind,
             comparison = "Each format compares decoded pixels with the same chart, active data mark and its tooltip disabled; no cross-codec equality is assumed.",
-            artifacts, physicalInputValidated = false, performanceMeasured = false });
+            artifacts, inputEvidence = inputEvidence.Events, physicalInputValidated = false, performanceMeasured = false });
     }
 }

@@ -200,14 +200,18 @@ internal sealed partial class ChartsPage
 
     private static TooltipPointerRouteEvidence HoverTemplateChart(CartesianChart chart, Window window, Point point)
     {
+        using var evidence = new ChartSmokeInputEvidence(chart);
         using var pointer = new Pointer(Pointer.GetNextFreeId(), PointerType.Mouse, true);
+        evidence.Snapshot("before-synthetic-move");
         var target = chart.TranslatePoint(point, window) ?? throw new InvalidOperationException("提示卡数据点无法转换窗口坐标。");
         var routed = new PointerEventArgs(InputElement.PointerMovedEvent, chart, pointer, window, target, 1, default, KeyModifiers.None);
         var before = routed.GetPosition(chart);
         chart.RaiseEvent(routed);
         var after = routed.GetPosition(chart);
+        evidence.Snapshot("after-synthetic-move-before-dispatch");
         Dispatcher.UIThread.RunJobs(); window.UpdateLayout();
-        return new(point, target, before, after);
+        evidence.Snapshot("after-dispatch-and-layout");
+        return new(point, target, before, after, pointer.Id, evidence.Events);
     }
     private static Border? FindTemplateCard(CartesianChart chart) => chart.GetVisualDescendants().OfType<Border>().SingleOrDefault(control => control.Name == "BusinessTooltipCard");
     private static ShapeRaster TemplateChartRaster(CartesianChart chart)
@@ -238,7 +242,7 @@ internal sealed partial class ChartsPage
 
     private sealed record TooltipHitIdentity(string? SeriesTitle, int SourceIndex, ChartPoint Point, Point Position, string? StableId, string? StableIdType,
         bool IsExpectedResponseRecord, bool IsExpectedVolumeRecord);
-    private sealed record TooltipPointerRouteEvidence(Point RequestedChartLocal, Point SuppliedWindowLocal, Point EventPositionBeforeRouting, Point EventPositionAfterRouting);
+    private sealed record TooltipPointerRouteEvidence(Point RequestedChartLocal, Point SuppliedWindowLocal, Point EventPositionBeforeRouting, Point EventPositionAfterRouting, int SyntheticPointerId, List<object> InputEvidence);
     private sealed record TooltipIdentityEvidence(Point RoutedAnchor, Point? ContextAnchor, TooltipPointerRouteEvidence PointerRoute, Rect PlotArea, bool NativeWindow, bool ContextPresent, int HitCount,
         bool PrimaryIsResponseRecord, bool EventPositionStableDuringRouting, bool AnchorMatchesRoutedPosition, bool VolumeItemMatchesOriginal, bool VolumePointMatchesOriginal, bool VolumeStableIdMatches, List<TooltipHitIdentity> Hits);
     private sealed record TooltipDirectionPixels(string Direction, Point ActualPrimaryPosition, Point IndependentlyProjectedPosition, bool PositionMatchesProjection,

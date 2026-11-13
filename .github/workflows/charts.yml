@@ -158,7 +158,12 @@ jobs:
         if: always()
         with:
           name: charts-windows-native-${{ github.run_id }}-${{ github.run_attempt }}
-          path: artifacts/charts-platform/**
+          # Evidence belongs in the artifact; isolated NuGet caches do not.
+          # HTTP cache keys contain colons, which upload-artifact rejects.
+          path: |
+            artifacts/charts-platform/**
+            !artifacts/charts-platform/**/http-cache/**
+            !artifacts/charts-platform/**/packages/**
           if-no-files-found: error
   linux:
     strategy:
@@ -186,7 +191,12 @@ jobs:
         if: always()
         with:
           name: charts-${{ matrix.os }}-${{ github.run_id }}-${{ github.run_attempt }}
-          path: artifacts/charts-platform/**
+          # Evidence belongs in the artifact; isolated NuGet caches do not.
+          # HTTP cache keys contain colons, which upload-artifact rejects.
+          path: |
+            artifacts/charts-platform/**
+            !artifacts/charts-platform/**/http-cache/**
+            !artifacts/charts-platform/**/packages/**
           if-no-files-found: error
   windows-desktop:
     if: github.event_name == 'workflow_dispatch' && inputs.desktop_target == 'windows'
@@ -201,7 +211,12 @@ jobs:
         if: always()
         with:
           name: charts-windows-desktop-${{ github.run_id }}-${{ github.run_attempt }}
-          path: artifacts/charts-platform/**
+          # Evidence belongs in the artifact; isolated NuGet caches do not.
+          # HTTP cache keys contain colons, which upload-artifact rejects.
+          path: |
+            artifacts/charts-platform/**
+            !artifacts/charts-platform/**/http-cache/**
+            !artifacts/charts-platform/**/packages/**
           if-no-files-found: error
   linux-desktop:
     if: github.event_name == 'workflow_dispatch' && inputs.desktop_target == 'linux'
@@ -215,5 +230,10 @@ jobs:
         if: always()
         with:
           name: charts-linux-desktop-${{ github.run_id }}-${{ github.run_attempt }}
-          path: artifacts/charts-platform/**
+          # Evidence belongs in the artifact; isolated NuGet caches do not.
+          # HTTP cache keys contain colons, which upload-artifact rejects.
+          path: |
+            artifacts/charts-platform/**
+            !artifacts/charts-platform/**/http-cache/**
+            !artifacts/charts-platform/**/packages/**
           if-no-files-found: error

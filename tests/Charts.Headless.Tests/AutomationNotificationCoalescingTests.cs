@@ -103,7 +103,7 @@ public sealed class AutomationNotificationCoalescingTests
     }
 
     [AvaloniaFact]
-    public void Deferred_availability_callback_can_publish_a_scene_and_still_announce_restoration()
+    public void Availability_flush_callback_can_publish_a_scene_and_still_announce_restoration()
     {
         using var host = new Fixture();
         var point = host.Peer.GetPointPeer(host.Series, 0)!;
@@ -119,7 +119,13 @@ public sealed class AutomationNotificationCoalescingTests
             _ = host.Chart.PlotArea;
         };
         host.Chart.Viewport = new(10, 90, 0, 100);
-        Dispatcher.UIThread.RunJobs();
+        Assert.Null(point.CurrentPoint);
+        Assert.True(host.Chart.AccessibilitySummary.IsLayoutPending);
+        Assert.Empty(values);
+        // Exercise the exact deferred callback while the scene is pending.
+        // RunJobs may legally render first and coalesce away unavailability;
+        // the separate Pending_scene test covers actual dispatcher delivery.
+        host.Peer.FlushPendingNotification();
         Assert.True(published);
         Assert.Contains("unavailable", values);
         Assert.Contains("Y=2.0", values[^1]);

@@ -187,15 +187,19 @@ public sealed class ChartAutomationPeer : ControlAutomationPeer, IValueProvider,
         Avalonia.Threading.Dispatcher.UIThread.Post(() =>
         {
             if (!weak.TryGetTarget(out var peer)) return;
-            peer._pendingNotificationPosted = false;
-            if (peer._pendingNotificationWanted)
-            {
-                // Keep the owner's reentrant notification loop: a native event
-                // handler may synchronously request and publish a fresh scene.
-                peer._flushPendingNotificationRequested = true;
-                peer._chart.NotifyAutomationStateChanged();
-            }
+            peer.FlushPendingNotification();
         }, Avalonia.Threading.DispatcherPriority.Background);
+    }
+
+    // Shared by the posted continuation and friend-assembly callback tests.
+    // Scheduling/coalescing stays above; this method preserves the owner's
+    // reentrant notification loop when a listener publishes a new scene.
+    internal void FlushPendingNotification()
+    {
+        _pendingNotificationPosted = false;
+        if (!_pendingNotificationWanted) return;
+        _flushPendingNotificationRequested = true;
+        _chart.NotifyAutomationStateChanged();
     }
 }
 

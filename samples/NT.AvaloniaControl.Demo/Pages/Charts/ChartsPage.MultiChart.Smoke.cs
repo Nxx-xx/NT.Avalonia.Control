@@ -17,11 +17,16 @@ internal sealed partial class ChartsPage
             void Check(string name, bool value) => checks[$"MULTICHART-{label}-{name}"] = value;
             string Image(string name) => Path.Combine(Path.GetDirectoryName(baseImage)!, Path.GetFileNameWithoutExtension(baseImage) + $"-multichart-{label}-{name}.png");
             using var board = CreateMultiChartBoard(); var chart = board.Charts[0];
+            // Native hosts can clamp a requested Window.Width to the desktop work area.
+            // Keep the six-chart fixture at its intended DIP width, even on a smaller
+            // hosted runner, rather than weakening the per-plot size contract.
+            board.View.Width = 1200;
             var window = new Window { Title = "Charts · 多图与后台布局", Width = 1280, Height = 1000, RequestedThemeVariant = theme,
                 Background = Brush(label == "dark" ? "#111722" : "#F8FAFC"), Foreground = Brush(label == "dark" ? "#EAF0FB" : "#172238"), Content = new Border { Padding = new Thickness(20), Child = board.View } };
             try
             {
-                window.Show(_hostWindow); await Task.Delay(80); FlushControlTemplateWindow(window); await board.RefreshAsync(); FlushControlTemplateWindow(window);
+                window.Show(_hostWindow); await Task.Delay(80); FlushControlTemplateWindow(window); await board.RefreshAsync(); await AwaitMultiChartPublicationAsync(board, window);
+                var initialBounds = board.Charts.Select(item => new { bounds = item.Bounds, plot = item.PlotArea }).ToArray();
                 var initial = board.Charts.Select(item => item.GetBackgroundLayoutInfo()).ToArray(); var schedule = board.Charts.Select(item => item.GetWorkSchedulingInfo()).ToArray();
                 Check("six-native-charts-attached-and-active", window.TryGetPlatformHandle() is { Handle: not 0 } && board.Charts.All(item => item.PlotArea.Width > 250 && item.Bounds.Height >= 240) && schedule.All(item => item.IsActive));
                 Check("six-numeric-layouts-published-without-failure", initial.All(item => !item.IsBusy && item.CompletedCount > 0 && item.FailedCount == 0 && item.PublishedVertexCount > 0));
@@ -36,7 +41,7 @@ internal sealed partial class ChartsPage
                 chart.UseBackgroundLayout = false; FlushControlTemplateWindow(window); var synchronousImage = Image("synchronous"); var synchronousRaster = CaptureControlTemplateRaster(chart, synchronousImage);
                 var syncChanges = CountControlTemplateExactChanges(backgroundRaster, synchronousRaster, new Rect(0, 0, chart.Bounds.Width, chart.Bounds.Height));
                 Check("background-and-synchronous-raster-exact", syncChanges == 0);
-                chart.UseBackgroundLayout = true; await chart.PrepareBackgroundLayoutAsync(); await board.RetargetAsync(); FlushControlTemplateWindow(window);
+                chart.UseBackgroundLayout = true; await chart.PrepareBackgroundLayoutAsync(); await board.RetargetAsync(); await AwaitMultiChartPublicationAsync(board, window);
                 var retargeted = board.Charts.Select(item => item.GetBackgroundLayoutInfo()).ToArray();
                 Check("latest-revision-is-three-and-all-layouts-finished", board.Revision == 3 && retargeted.All(item => !item.IsBusy && item.FailedCount == 0 && item.PublishedVertexCount > 0));
                 Check("latest-raw-data-keeps-business-identity", board.Charts.Select((item, s) => item.Series[0].CreateSnapshot().Points.Select((point, q) => point.SourceIndex == q && point.Item is MultiChartRow row && row.Id == $"multi-{s}-v3-{q}" && Equals(point.StableId, row.Id) && point.Point == new ChartPoint(q, 15 + s * 3 + q % 37 * .8 + 12)).All(value => value)).All(value => value));
@@ -49,21 +54,59 @@ internal sealed partial class ChartsPage
                 Check("hidden-ancestor-deactivates-all-charts", hidden.All(item => !item.IsActive) && board.Charts.All(item => !item.GetWorkSchedulingInfo().RefreshPending));
                 Check("hidden-does-not-publish-new-layout", hiddenResults.All(value => !value) && board.Charts.Select((item, i) => item.GetBackgroundLayoutInfo().CompletedCount == hiddenCompleted[i] && !item.GetBackgroundLayoutInfo().IsBusy).All(value => value));
                 var hiddenImage = Image("hidden"); SaveWindow(hiddenImage);
-                board.Grid.IsVisible = true; FlushControlTemplateWindow(window); await board.RefreshAsync(); FlushControlTemplateWindow(window);
+                board.Grid.IsVisible = true; FlushControlTemplateWindow(window); await board.RefreshAsync(); await AwaitMultiChartPublicationAsync(board, window);
                 Check("show-restores-current-layout-and-scheduling", board.Charts.All(item => item.GetWorkSchedulingInfo().IsActive && !item.GetBackgroundLayoutInfo().IsBusy));
                 board.View.Children.Remove(board.Grid); FlushControlTemplateWindow(window);
                 Check("unload-deactivates-and-releases-local-cache", board.Charts.All(item => !item.GetWorkSchedulingInfo().IsActive && !item.GetBackgroundLayoutInfo().IsBusy && item.GetResourceCacheInfo().EstimatedBytes == 0));
-                board.View.Children.Add(board.Grid); FlushControlTemplateWindow(window); await board.RefreshAsync(); FlushControlTemplateWindow(window);
+                board.View.Children.Add(board.Grid); FlushControlTemplateWindow(window); await board.RefreshAsync(); await AwaitMultiChartPublicationAsync(board, window);
                 Check("reattach-publishes-current-version", board.Charts.All(item => item.GetWorkSchedulingInfo().IsActive && item.GetBackgroundLayoutInfo().PublishedVertexCount > 0));
                 board.SetProcessBudget(1024 * 1024, 8 * 1024 * 1024, 8); await board.RefreshAsync(); var limited = ChartWorkScheduler.GetBudgetInfo();
                 Check("shared-logical-cache-and-job-budgets-bound", limited.EstimatedResourceCacheBytes <= limited.ResourceCacheBudgetBytes && limited.EstimatedBackgroundPayloadBytes <= limited.BackgroundPayloadBudgetBytes && limited.ReservedBackgroundJobs <= limited.MaximumBackgroundJobs && !limited.NativeMemoryIncluded && !limited.SharedIndexCachesIncluded);
                 board.RefreshStatus(); var overviewImage = Image("overview"); SaveWindow(overviewImage);
                 var final = board.Charts.Select(item => new { scheduling = item.GetWorkSchedulingInfo(), layout = item.GetBackgroundLayoutInfo(), resources = item.GetResourceCacheInfo() }).ToArray();
-                _multiChartEvidence.Add(new { theme = label, initial, schedule, requestsBefore, queued, dispatched, retargeted, hidden, hiddenResults, limited, final, backgroundImage, synchronousImage, latestImage, latestSyncImage, hiddenImage, overviewImage, syncChanges, latestChanges, revision = board.Revision, plot = chart.PlotArea, range = chart.VisibleRange, chartWidth = chart.Bounds.Width, chartHeight = chart.Bounds.Height,
+                _multiChartEvidence.Add(new { theme = label, initialBounds, initial, schedule, requestsBefore, queued, dispatched, retargeted, hidden, hiddenResults, limited, final, backgroundImage, synchronousImage, latestImage, latestSyncImage, hiddenImage, overviewImage, syncChanges, latestChanges, revision = board.Revision, plot = chart.PlotArea, range = chart.VisibleRange, chartWidth = chart.Bounds.Width, chartHeight = chart.Bounds.Height,
                     originalRows = board.Charts.Select((item, s) => item.Series[0].CreateSnapshot().Points.Select(point => new { series = s, index = point.SourceIndex, id = point.StableId, x = point.Point.X, y = point.Point.Y }).ToArray()).ToArray(), physicalInputValidated = false, performanceMeasured = false, physicalDesktopQualified = false });
             }
             finally { window.Close(); }
             void SaveWindow(string path) { using var bitmap = new RenderTargetBitmap(new PixelSize((int)Math.Ceiling(window.ClientSize.Width), (int)Math.Ceiling(window.ClientSize.Height)), new Vector(96, 96)); bitmap.Render(window); bitmap.Save(path); }
         }
     }
+
+    private static async Task AwaitMultiChartPublicationAsync(MultiChartBoard board, Window window)
+    {
+        // RefreshStatus and native layout can invalidate the scene after a worker
+        // completes. Observe the final arranged generation, not a fixed delay or
+        // the completion of an earlier generation.
+        using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(10));
+        var stablePasses = 0;
+        long[]? lastSettledGenerations = null;
+        while (!timeout.IsCancellationRequested)
+        {
+            FlushControlTemplateWindow(window);
+            var generations = board.Charts.Select(chart => chart.GetBackgroundLayoutInfo().Generation).ToArray();
+            try
+            {
+                await Task.WhenAll(board.Charts.Select(chart => chart.PrepareBackgroundLayoutAsync(timeout.Token))).WaitAsync(timeout.Token);
+            }
+            catch (OperationCanceledException) when (timeout.IsCancellationRequested) { break; }
+            FlushControlTemplateWindow(window);
+            var settled = board.Charts.Select((chart, index) =>
+            {
+                var layout = chart.GetBackgroundLayoutInfo();
+                return layout.Generation == generations[index] && !layout.IsBusy &&
+                    layout.CompletedCount > 0 && layout.PublishedVertexCount > 0 &&
+                    chart.GetWorkSchedulingInfo().IsActive && !chart.GetWorkSchedulingInfo().RefreshPending;
+            }).All(value => value);
+            stablePasses = settled
+                ? lastSettledGenerations is not null && generations.SequenceEqual(lastSettledGenerations) ? stablePasses + 1 : 1
+                : 0;
+            lastSettledGenerations = settled ? generations : null;
+            if (stablePasses >= 2) return;
+            // Yield for pending native events, but completion is state-based.
+            await Task.Delay(1);
+        }
+        var states = string.Join("; ", board.Charts.Select(chart => $"{chart.Name}: {chart.GetBackgroundLayoutInfo()} / {chart.GetWorkSchedulingInfo()}"));
+        throw new TimeoutException("Six-chart fixture did not settle at its current layout generation: " + states);
+    }
+
 }
