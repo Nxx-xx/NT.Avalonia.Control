@@ -3,8 +3,12 @@ using Avalonia.Automation;
 using Avalonia.Automation.Peers;
 using Avalonia.Automation.Provider;
 using Avalonia.Controls;
+using Avalonia.Controls.Embedding;
+using Avalonia.Controls.Embedding.Offscreen;
+using Avalonia.Input;
 using Avalonia.Headless.XUnit;
 using Avalonia.Media;
+using Avalonia.Platform.Surfaces;
 using Avalonia.Threading;
 using NT.AvaloniaControl.Charts;
 
@@ -46,11 +50,20 @@ public sealed class AutomationNotificationCoalescingTests
     [AvaloniaFact]
     public void Pending_scene_still_announces_unavailable_if_no_scene_is_published_in_the_dispatcher_turn()
     {
-        using var host = new Fixture();
+        // This scenario requires an attached, visible chart without an automatic
+        // render publishing the scene before the Background notification. Pause
+        // only this embeddable root, using its public rendering lifecycle.
+        using var host = new Fixture(automaticRendering: false);
+        Assert.True(host.Chart.IsEffectivelyVisible);
+        Assert.True(host.Chart.GetWorkSchedulingInfo().IsActive);
+        Assert.NotNull(TopLevel.GetTopLevel(host.Chart));
         var point = host.Peer.GetPointPeer(host.Series, 0)!;
+        Assert.NotNull(point.CurrentPoint);
         var values = new List<string>();
         point.PropertyChanged += (_, args) => { if (args.Property == ValuePatternIdentifiers.ValueProperty) values.Add((string)args.NewValue!); };
         host.Chart.Viewport = new(10, 90, 0, 100);
+        Assert.True(host.Chart.AccessibilitySummary.IsLayoutPending);
+        Assert.Null(point.CurrentPoint);
         Assert.Empty(values);
         Dispatcher.UIThread.RunJobs();
         Assert.Contains("unavailable", values);
@@ -207,16 +220,48 @@ public sealed class AutomationNotificationCoalescingTests
             ItemsSource = Enumerable.Range(0, 150).Select(index => new Row(index.ToString(), index, index % 10 + 2)).ToArray(),
         };
         public ChartAutomationPeer Peer { get; }
-        private Window Window { get; }
-        public Fixture()
+        private TopLevel Root { get; }
+        private AutomationTopLevelImpl? OffscreenPlatform { get; }
+        public Fixture(bool automaticRendering = true)
         {
             Chart.Series.Add(Series);
-            Window = new Window { Width = 800, Height = 600, Content = Chart };
-            Window.Show(); Window.UpdateLayout(); Dispatcher.UIThread.RunJobs(); _ = Chart.PlotArea;
+            if (automaticRendering)
+            {
+                var window = new Window { Width = 800, Height = 600, Content = Chart };
+                Root = window;
+                window.Show();
+            }
+            else
+            {
+                OffscreenPlatform = new AutomationTopLevelImpl { ClientSize = new Size(800, 600) };
+                var root = new EmbeddableControlRoot(OffscreenPlatform) { Width = 800, Height = 600, Content = Chart };
+                Root = root;
+                root.Prepare();
+                root.StopRendering();
+            }
+            Root.UpdateLayout(); Dispatcher.UIThread.RunJobs(); _ = Chart.PlotArea;
             using (var drawing = new DrawingGroup().Open()) Chart.Render(drawing);
             Dispatcher.UIThread.RunJobs();
             Peer = Assert.IsType<ChartAutomationPeer>(ControlAutomationPeer.CreatePeerForElement(Chart));
         }
-        public void Dispose() => Window.Close();
+        public void Dispose()
+        {
+            if (Root is Window window) window.Close();
+            else
+            {
+                ((EmbeddableControlRoot)Root).Dispose();
+                Assert.True(OffscreenPlatform!.IsDisposed);
+            }
+        }
     }
+
+    // Public offscreen hosting API, scoped to the one automation fixture. No
+    // native surface/input is needed; unexpected mouse use fails explicitly.
+    private sealed class AutomationTopLevelImpl : OffscreenTopLevelImplBase
+    {
+        public override IPlatformRenderSurface[] Surfaces => [];
+        public override IMouseDevice MouseDevice =>
+            throw new NotSupportedException("The automation-only fixture has no native mouse input.");
+    }
+
 }
