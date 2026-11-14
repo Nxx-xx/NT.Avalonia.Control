@@ -11,8 +11,13 @@ using NT.AvaloniaControl.Charts;
 namespace Charts.Headless.Tests;
 
 /// <summary>Public data guarantees that must survive an internal compact representation.</summary>
-public sealed class CompactDataTests
+public sealed class CompactDataTests(ITestOutputHelper output)
 {
+    private void WriteAllocationMeasurement(string stage, int count, long allocated)
+    {
+        output.WriteLine($"Allocation measurement: stage={stage}; bytes={allocated}; count={count}; thread={Environment.CurrentManagedThreadId}; uiThread={Avalonia.Threading.Dispatcher.UIThread.CheckAccess()}; context={SynchronizationContext.Current?.GetType().FullName ?? "<null>"}; runtime={System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription}; os={System.Runtime.InteropServices.RuntimeInformation.OSDescription}; architecture={System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture}; serverGC={System.Runtime.GCSettings.IsServerGC}; tieredCompilation={Environment.GetEnvironmentVariable("DOTNET_TieredCompilation") ?? "<default>"}; tieredPGO={Environment.GetEnvironmentVariable("DOTNET_TieredPGO") ?? "<default>"}");
+    }
+
     [AvaloniaFact]
     public void Direct_coordinate_memory_is_immutable_and_only_exposed_for_unmodified_point_gaps()
     {
@@ -43,6 +48,7 @@ public sealed class CompactDataTests
         var sum = 0d;
         for (var index = 0; index < snapshot.Count; index++) sum += snapshot.GetValue(index).Point.Y;
         var allocated = GC.GetAllocatedBytesForCurrentThread() - before;
+        WriteAllocationMeasurement("coordinate-traversal", snapshot.Count, allocated);
         Assert.Equal(50_015_000, sum);
         Assert.True(allocated < 1024, $"Coordinate traversal allocated {allocated} bytes.");
 
@@ -50,6 +56,7 @@ public sealed class CompactDataTests
         var found = snapshot.TryGetPoint(9_999, out var candidate);
         var missing = snapshot.TryGetPoint(10_000, out _);
         allocated = GC.GetAllocatedBytesForCurrentThread() - before;
+        WriteAllocationMeasurement("single-candidate-lookup", snapshot.Count, allocated);
         Assert.True(found);
         Assert.False(missing);
         Assert.Equal(new ChartPoint(9_999, 10_001), candidate.Point);
