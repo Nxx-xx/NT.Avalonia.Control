@@ -82,7 +82,7 @@
 <div class="commit-box"><span>Git 提交编号</span><code>1ca8751a548169baa88882c7103081b92171f40c</code></div>
 <section class="detail-section"><h2>修改了哪些功能</h2><ul><li>TreeDataGrid 自动化成功后显式退出 0，防止已接受的人工验收 pending 退出码 2 泄漏；pending 证据和严格门禁不变。</li><li>LOD/HIT 原生合成输入先等待布局和刷新稳定，保留原业务身份断言并检查悬停前后几何一致；新增位置和宽度变化回归。</li><li>Analysis 导出排除瞬态悬停强调边框，不改变实时活动点或持久选择；新增修前失败、修后通过的绘图回归。</li><li>新增 Windows 原始 artifact、根因、验证范围文档，未删除或放宽原像素、身份与验收断言。</li></ul></section>
 <section class="detail-section"><h2>验证结果</h2><p>Linux PowerShell 7.5.4 实测 closeout 12/12、acceptance 8/8；移除退出修复的对照真实复现退出 2。Charts 聚焦 62/62；最终 Headless Release 全量 3270/3270，0 失败、0 跳过（2 分 12 秒）；Demo Release 编译 0 错误、1 条既有 AVA3001 警告。Git 空白检查（保留既有 CRLF）通过。</p></section>
-<section class="detail-section"><h2>兼容性与部署说明</h2><p>基于远端 935c52e；无公共 API 变化。Windows 原生 smoke、真实设备验收与新 Actions 尚未运行，不能把 Linux 验证当成 Windows 全绿。仅本地提交，未推送；完整 Git bundle 另行校验并保存 Library。</p></section>
+<section class="detail-section"><h2>兼容性与部署说明</h2><p>此处为原本地提交时的记录；对应 GitHub 重建提交 50706db3201962ebd1d3dd09727c3b32e383ed06，tree 一致，创建时间不同。基于远端 935c52e；无公共 API 变化。Windows 原生 smoke、真实设备验收与新 Actions 尚未运行，不能把 Linux 验证当成 Windows 全绿。仅本地提交，未推送；完整 Git bundle 另行校验并保存 Library。</p></section>
 </article>
 <article class="release panel" id="commit-38df76bf66ba0bc7609a1db49e04a717ca8b73f3" aria-labelledby="title-commit-38df76bf66ba0bc7609a1db49e04a717ca8b73f3">
 <a class="back" href="#home">← 返回首页</a><div class="eyebrow">CHANGE RECORD / 功能变更</div><h1 id="title-commit-38df76bf66ba0bc7609a1db49e04a717ca8b73f3">消除无障碍待发布通知队列测试的单跑竞态</h1>
@@ -175,6 +175,13 @@
 - 本地 `38df76bf66ba0bc7609a1db49e04a717ca8b73f3` → GitHub `938cc56de039d023fa31da30fba519479fb8fb1a`
 - 本地 `ebb87999797cd86510e142854260b8b0cbf628ca` → GitHub `07723a3995c56b4aaad1be43afa4dcc6a6c07a14`
 
+### Windows 验证修复的追加映射
+
+本次按原顺序重建以下两个提交，各自 tree 与原备份完全一致。原本地编号、提交时间和“未推送”措辞保留为历史记录，不代表远端的新编号、时间或当前发布状态。新 Actions 结果需另行核实，不以此前 Linux 验证代替 Windows 原生验收。
+
+- 本地 `1ca8751a548169baa88882c7103081b92171f40c` → GitHub `50706db3201962ebd1d3dd09727c3b32e383ed06`
+- 本地 `2bf8b710cce81e3345e8c9af7acc6aed9a7b2ade` → GitHub `9b2df50d43d9b6268662c5b1d40f24b86475a868`
+
 ## 正式记录
 
 ### 2026-11-13 — 修复 Windows 验证退出码、悬停夹具和导出强调边框
@@ -188,7 +195,7 @@
   - Analysis 导出排除瞬态悬停强调边框，不改变实时活动点或持久选择；新增修前失败、修后通过的绘图回归。
   - 新增 Windows 原始 artifact、根因、验证范围文档，未删除或放宽原像素、身份与验收断言。
 - 验证：Linux PowerShell 7.5.4 实测 closeout 12/12、acceptance 8/8；移除退出修复的对照真实复现退出 2。Charts 聚焦 62/62；最终 Headless Release 全量 3270/3270，0 失败、0 跳过（2 分 12 秒）；Demo Release 编译 0 错误、1 条既有 AVA3001 警告。Git 空白检查（保留既有 CRLF）通过。
-- 兼容性 / 部署注意事项：基于远端 935c52e；无公共 API 变化。Windows 原生 smoke、真实设备验收与新 Actions 尚未运行，不能把 Linux 验证当成 Windows 全绿。仅本地提交，未推送；完整 Git bundle 另行校验并保存 Library。
+- 兼容性 / 部署注意事项：此处为原本地提交时的记录；对应 GitHub 重建提交 50706db3201962ebd1d3dd09727c3b32e383ed06，tree 一致，创建时间不同。基于远端 935c52e；无公共 API 变化。Windows 原生 smoke、真实设备验收与新 Actions 尚未运行，不能把 Linux 验证当成 Windows 全绿。仅本地提交，未推送；完整 Git bundle 另行校验并保存 Library。
 
 ### 2026-11-13 — 消除无障碍待发布通知队列测试的单跑竞态
 
