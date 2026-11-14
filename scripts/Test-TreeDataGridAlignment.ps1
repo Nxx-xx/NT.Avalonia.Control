@@ -144,3 +144,9 @@ finally {
         ConvertTo-Json -Depth 7 | Set-Content -LiteralPath (Join-Path $a6Output 'results.json') -Encoding utf8
     try { Write-TreeDataGridValidationSummary -OutputDirectory $a6Output } finally { Pop-Location }
 }
+
+# The release profiles deliberately return 2 while physical evidence is pending.
+# Only reach this point after every automated step and evidence write succeeded;
+# do not let GitHub Actions' pwsh wrapper reuse that accepted native exit code.
+# The acceptance-*.json reports remain Pending (not Passed).
+exit 0

@@ -31,6 +31,7 @@ internal sealed partial class ChartsPage
             try
             {
                 window.Show(_hostWindow); await Task.Delay(80); FlushControlTemplateWindow(window); board.Refresh();
+                await AwaitHitFixtureLayoutAsync(window, chart);
                 var native = window.TryGetPlatformHandle() is { Handle: not 0 };
                 var overview = chart.GetSamplingInfo(series);
                 Check("native-layout-and-explicit-opt-in", native && chart.PlotArea.Width > 700 && chart.PlotArea.Height > 200 && series.SamplingMode == ChartSamplingMode.MinMax && !series.ShowMarkers && series.MarkerSize == 0);
@@ -49,7 +50,11 @@ internal sealed partial class ChartsPage
                 var rawPosition = Project(rawIndex, rows[rawIndex].Y);
                 var rawHit = chart.HitTestPoint(rawPosition, .1);
                 Check("overview-hit-returns-original-non-extreme-record", rawHit is { Index: rawIndex } && ReferenceEquals(rawHit.Item, rows[rawIndex]) && Equals(rawHit.StableId, rows[rawIndex].Id) && rawHit.Point == new ChartPoint(rawIndex, rows[rawIndex].Y));
+                await AwaitHitFixtureLayoutAsync(window, chart);
+                rawPosition = Project(rawIndex, rows[rawIndex].Y);
+                var hoverBounds = chart.Bounds;
                 var hoverRoute = HoverTemplateChart(chart, window, rawPosition);
+                Check("routed-hover-retains-settled-layout", chart.Bounds == hoverBounds);
                 var hovered = chart.HoveredPoint; var tooltipIds = chart.GetVisualDescendants().OfType<TextBlock>().Where(text => text.Name == "LevelOfDetailTooltipId").Select(text => text.Text).ToArray();
                 // Native event positions are quantized by the platform. Hundreds
                 // of source samples can occupy one pixel; use the actual routed

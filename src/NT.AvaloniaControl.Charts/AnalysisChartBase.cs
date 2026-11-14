@@ -366,7 +366,9 @@ public abstract partial class AnalysisChartBase : ChartBase
             EnsureMarks();
             if (_stateDirty) QueueMarkState();
             var marks = _marks;
-            var active = _active is null ? null : FindIdentity(_active);
+            // Hover emphasis is transient just like the tooltip itself. Keep the live
+            // reading intact, but do not let pointer timing change exported pixels.
+            var active = _dataTooltipExportDepth != 0 || _active is null ? null : FindIdentity(_active);
             var selected = ResolveSelected();
             base.Render(context);
             using var clip = context.PushClip(new Rect(Bounds.Size));

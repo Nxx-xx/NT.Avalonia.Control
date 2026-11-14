@@ -26,6 +26,7 @@ internal sealed partial class ChartsPage
             {
                 window.Show(_hostWindow); await Task.Delay(80); FlushControlTemplateWindow(window); board.Refresh();
                 var points = board.Points; var dense = board.Dense; var bars = board.Bars; var rows = board.GetRows();
+                await AwaitHitFixtureLayoutAsync(window, points, dense, bars);
                 Check("native-layout", window.TryGetPlatformHandle() is { Handle: not 0 } && points.PlotArea.Width > 250 && dense.PlotArea.Width > 250 && bars.PlotArea.Width > 700);
                 var overlapping = points.HitTestPoint(Project(points, 2, 2), .001);
                 Check("overlap-keeps-later-series-and-later-original-record", Identity(overlapping, board.Last, 1, board.LastRows[1]));
@@ -39,7 +40,10 @@ internal sealed partial class ChartsPage
                 var overlapInk = raster.Count(TemplatePixelRect(overlapRegion), Color.Parse("#19A798"), 24);
                 var rightInk = raster.Count(TemplatePixelRect(rightRegion), Color.Parse("#F2A33A"), 24);
                 Check("point-and-multi-axis-original-markers-visible", overlapInk >= 20 && rightInk >= 20);
+                await AwaitHitFixtureLayoutAsync(window, points, dense, bars);
+                var hoverBounds = points.Bounds;
                 var pointRoute = HoverTemplateChart(points, window, Project(points, 2, 2));
+                Check("routed-hover-retains-settled-layout", points.Bounds == hoverBounds);
                 var pointExpected = Nearest(points, pointRoute.EventPositionAfterRouting, [ (board.First, board.FirstRows, 0, 10), (board.Last, board.LastRows, 0, 10), (board.AxisSeries, board.AxisRows, 0, 1000) ]);
                 var pointIds = points.GetVisualDescendants().OfType<TextBlock>().Where(t => t.Name == "EfficientHitTooltipId").Select(t => t.Text).ToArray();
                 Check("routed-overlap-tooltip-matches-independent-original-scan", Identity(points.HoveredPoint, pointExpected.Series, pointExpected.Index, pointExpected.Row) && pointIds.Contains(pointExpected.Row.Id));

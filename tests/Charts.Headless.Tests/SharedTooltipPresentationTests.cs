@@ -276,6 +276,36 @@ public sealed class SharedTooltipPresentationTests
     }
 
     [AvaloniaFact]
+    public void Analysis_export_excludes_hover_emphasis_but_preserves_persistent_selection()
+    {
+        var chart = (AnalysisChartBase)Create(false, new[]
+        {
+            new SharedTooltipRow("a", "First", 3, "R", "C"),
+            new SharedTooltipRow("b", "Second", 2, "R", "C")
+        });
+        HideLabels(chart);
+        using var host = new Host(chart);
+        host.Move(0);
+        Assert.Equal(0, chart.ActivePoint?.Index);
+        Assert.Contains(Shapes(Record(chart)), shape => shape.Pen is not null);
+        Assert.DoesNotContain(Shapes(RecordExport(chart)), shape => shape.Pen is not null);
+        Assert.Equal(0, chart.ActivePoint?.Index); // Capture must not mutate live interaction.
+
+        chart.SelectedIndex = 1;
+        host.Drain();
+        var selected = Assert.Single(Shapes(RecordExport(chart)), shape => shape.Pen is not null);
+        var selectedBounds = selected.Geometry!.Bounds;
+        host.Move(1);
+        var moved = Assert.Single(Shapes(RecordExport(chart)), shape => shape.Pen is not null);
+        Assert.Equal(selectedBounds, moved.Geometry!.Bounds);
+        Assert.Equal(1, chart.SelectedIndex);
+        chart.SelectedIndex = -1;
+        host.Drain();
+        Assert.DoesNotContain(Shapes(RecordExport(chart)), shape => shape.Pen is not null);
+        Assert.NotNull(chart.ActivePoint);
+    }
+
+    [AvaloniaFact]
     public void Disposing_a_professional_map_immediately_releases_its_active_template_context()
     {
         using var map = new SeatMap

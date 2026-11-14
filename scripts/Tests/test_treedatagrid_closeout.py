@@ -38,6 +38,54 @@ class CloseoutTests(unittest.TestCase):
         self.assertEqual(0, result.returncode, result.stdout + result.stderr)
         return result.stdout
 
+    def test_alignment_exit_contract_under_github_pwsh_wrapper(self):
+        if not shutil.which("pwsh"):
+            self.skipTest("PowerShell 7 required")
+        # Run the actual acceptance/finalization tail, not a second implementation
+        # of its exit handling. Earlier costly build/native stages are out of scope.
+        source = (SCRIPTS / "Test-TreeDataGridAlignment.ps1").read_text(encoding="utf-8")
+        tail = source[source.index("    Invoke-A6Step 'acceptance-gates' {"):]
+        for local, release, should_pass in ((0, 2, True), (1, 2, False),
+                                           (2, 2, False), (0, 1, False), (0, 0, False)):
+            with self.subTest(local=local, release=release):
+                script = self.root / "alignment-tail.ps1"
+                setup = "\n".join([
+                    "$ErrorActionPreference='Stop'",
+                    "$a6Output=" + ps_literal(self.root),
+                    "$a6Repo=$a6Output; $a6MatrixPath='unused-matrix.json'",
+                    "$a6Started=[DateTimeOffset]::UtcNow; $a6Passed=$false; $a6Error=$null",
+                    "$a6SourcesUnchanged=$true; $a6OldProfile=$env:TREE_DATAGRID_A6_OUTPUT_DIRECTORY",
+                    "$a6Steps=[Collections.Generic.List[object]]::new(); $a6Tests=[Collections.Generic.List[object]]::new()",
+                    "function Invoke-A6Step($Name, [scriptblock]$Action) { & $Action }",
+                    "function Assert-A6Exit($Name) { if ($LASTEXITCODE -ne 0) { throw \"$Name failed with exit $LASTEXITCODE\" } }",
+                    "function Write-TreeDataGridValidationSummary { param($OutputDirectory) }",
+                    # A real child process supplies LASTEXITCODE as the validator does.
+                    "function python { $scope=$args[[array]::IndexOf($args,'--scope')+1]; "
+                    + "$code=if($scope -eq 'local'){" + str(local) + "}else{" + str(release) + "}; "
+                    + "& " + ps_literal(sys.executable) + " -c \"import sys; sys.exit($code)\" }",
+                    "Push-Location $a6Repo",
+                    "try {",
+                ])
+                script.write_text(setup + "\n" + tail, encoding="utf-8")
+                # Same terminal exit-code propagation used by Actions' pwsh shell.
+                wrapper = "$ErrorActionPreference='Stop'; & " + ps_literal(script) + "; "
+                wrapper += "if (Test-Path variable:LASTEXITCODE) { exit $LASTEXITCODE }"
+                result = subprocess.run(["pwsh", "-NoProfile", "-Command", wrapper],
+                                        text=True, encoding="utf-8", capture_output=True)
+                self.assertEqual(should_pass, result.returncode == 0, result.stdout + result.stderr)
+                evidence = exporter.read(self.root / "results.json")
+                self.assertEqual(should_pass, evidence["passed"])
+                if should_pass:
+                    self.assertIn("Pending", evidence["platformAcceptance"])
+                    # Reproduce the pre-fix wrapper leak: an accepted native 2
+                    # must become a failed job when the explicit success exit is absent.
+                    self.assertTrue(tail.rstrip().endswith("exit 0"))
+                    script.write_text(setup + "\n" + tail.rstrip()[:-len("exit 0")], encoding="utf-8")
+                    before = subprocess.run(["pwsh", "-NoProfile", "-Command", wrapper],
+                                            text=True, encoding="utf-8", capture_output=True)
+                    self.assertEqual(2, before.returncode, before.stdout + before.stderr)
+                    self.assertTrue(exporter.read(self.root / "results.json")["passed"])
+
     def test_space_budget_deduplicates_volume_and_records_allowance(self):
         path = ps_literal(self.root)
         result = json.loads(self.powershell("Get-TreeDataGridDiskBudget -Paths @(" + path + "," + path + ") -EstimatedBytes 1 -ReserveBytes 0 | ConvertTo-Json -Depth 8"))
