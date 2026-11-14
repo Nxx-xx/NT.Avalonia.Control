@@ -1,5 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Layout;
+using Avalonia.VisualTree;
 using NT.AvaloniaControl.Charts;
 
 namespace NT.AvaloniaControl.Demo.Pages.Charts;
@@ -17,6 +19,16 @@ internal sealed partial class ChartsPage
         var stablePasses = 0;
         while (!timeout.IsCancellationRequested)
         {
+            // Cached validity alone is insufficient: rendering an attached subtree
+            // or native size coercion can leave a valid but stale ancestor layout.
+            // Exercise the same measure invalidation that installing tooltip content
+            // will cause, before projecting/routing any pointer coordinates.
+            foreach (var layout in charts.SelectMany(chart => chart.GetVisualAncestors()
+                .OfType<Layoutable>().Prepend(chart)).Distinct())
+            {
+                layout.InvalidateMeasure();
+                layout.InvalidateArrange();
+            }
             FlushControlTemplateWindow(window);
             var geometry = charts.SelectMany(chart => new[] { chart.Bounds, chart.PlotArea }).ToArray();
             var ready = window.IsMeasureValid && window.IsArrangeValid && charts.All(chart =>
