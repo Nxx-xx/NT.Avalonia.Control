@@ -86,6 +86,7 @@ internal sealed class PdfiumWorkScheduler
         private readonly PdfPerformanceStage _stage;
         private readonly string _correlationId;
         private readonly long _enqueuedAt;
+        private readonly PdfPerformanceSession? _session;
         private readonly TaskCompletionSource<T> _completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
         private readonly object _registrationSync = new();
         private CancellationTokenRegistration _registration;
@@ -98,6 +99,8 @@ internal sealed class PdfiumWorkScheduler
             _stage = stage;
             _correlationId = correlationId;
             _enqueuedAt = PdfPerformanceSession.Now;
+            // A queued item belongs to its admission session, never a later global session.
+            _session = PdfPerformanceSession.Current;
             if (token.CanBeCanceled)
             {
                 // A canceled token may invoke its callback synchronously inside registration.
@@ -124,10 +127,10 @@ internal sealed class PdfiumWorkScheduler
                 UnregisterCancellation();
                 // PERF01: a dropped queue item still reports where cancellation was observed;
                 // the zero-length span is the observation instant on the monotonic clock.
-                if (PdfPerformanceSession.Current is { } session)
+                if (_session is { } session)
                 {
                     var observed = PdfPerformanceSession.Now;
-                    session.Record(_correlationId, PdfPerformanceStage.CancelObserved, observed, observed);
+                    session.TryRecord(_correlationId, PdfPerformanceStage.CancelObserved, observed, observed);
                 }
                 _completion.TrySetCanceled(_token);
             }
@@ -151,36 +154,50 @@ internal sealed class PdfiumWorkScheduler
                 return;
             }
             var startedAt = PdfPerformanceSession.Now;
-            if (PdfPerformanceSession.Current is { } sessionAtStart)
-                sessionAtStart.Record(_correlationId, PdfPerformanceStage.QueueWait, _enqueuedAt, startedAt);
+            if (_session is { } sessionAtStart)
+                sessionAtStart.TryRecord(_correlationId, PdfPerformanceStage.QueueWait, _enqueuedAt, startedAt);
+            T result = default!;
+            Exception? failure = null;
+            CancellationToken canceledToken = default;
+            var wasCanceled = false;
             try
             {
                 _token.ThrowIfCancellationRequested();
                 var operation = Interlocked.Exchange(ref _operation, null)!;
-                _completion.TrySetResult(operation());
+                result = operation();
             }
             catch (OperationCanceledException exception) when (exception.CancellationToken.IsCancellationRequested)
             {
-                if (PdfPerformanceSession.Current is { } canceled)
+                if (_session is { } canceled)
                 {
                     var observed = PdfPerformanceSession.Now;
-                    canceled.Record(_correlationId, PdfPerformanceStage.CancelObserved, observed, observed);
+                    canceled.TryRecord(_correlationId, PdfPerformanceStage.CancelObserved, observed, observed);
                 }
-                _completion.TrySetCanceled(exception.CancellationToken);
+                wasCanceled = true;
+                canceledToken = exception.CancellationToken;
             }
             catch (Exception exception)
             {
-                _completion.TrySetException(exception);
+                failure = exception;
             }
             finally
             {
                 var finishedAt = PdfPerformanceSession.Now;
-                if (PdfPerformanceSession.Current is { } sessionAtEnd)
-                    sessionAtEnd.Record(_correlationId, _stage, startedAt, finishedAt);
+                if (_session is { } sessionAtEnd)
+                    sessionAtEnd.TryRecord(_correlationId, _stage, startedAt, finishedAt);
                 Interlocked.Exchange(ref _state, 2);
                 Interlocked.Exchange(ref _operation, null);
                 UnregisterCancellation();
             }
+            // Async continuations can run on another thread as soon as a Task completes.
+            // Publish only after the span and worker cleanup so awaiters see a complete
+            // execution record (including DisposeAsync's Release span).
+            if (wasCanceled)
+                _completion.TrySetCanceled(canceledToken);
+            else if (failure is not null)
+                _completion.TrySetException(failure);
+            else
+                _completion.TrySetResult(result);
         }
     }
 }

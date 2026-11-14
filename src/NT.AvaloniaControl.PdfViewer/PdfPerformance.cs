@@ -201,13 +201,24 @@ public sealed class PdfPerformanceSession : IDisposable
     /// <summary>Records one span. Zero-length spans mark point observations such as cancellation.</summary>
     public void Record(string correlationId, PdfPerformanceStage stage, long startTimestamp, long endTimestamp)
     {
+        ObjectDisposedException.ThrowIf(!TryRecord(correlationId, stage, startTimestamp, endTimestamp), this);
+    }
+
+    /// <summary>
+    /// Scheduler work can outlive its admission session. Atomically record while it is
+    /// open, or discard late instrumentation without faulting the work or its worker.
+    /// Public Record retains its strict disposed-session contract.
+    /// </summary>
+    internal bool TryRecord(string correlationId, PdfPerformanceStage stage, long startTimestamp, long endTimestamp)
+    {
         ArgumentException.ThrowIfNullOrWhiteSpace(correlationId);
         if (endTimestamp < startTimestamp)
             throw new ArgumentOutOfRangeException(nameof(endTimestamp), "Span end must not precede its start.");
         lock (_gate)
         {
-            ThrowIfDisposed();
+            if (_disposed) return false;
             _spans.Add(new PdfPerformanceSpan(correlationId, stage, startTimestamp, endTimestamp));
+            return true;
         }
     }
 
