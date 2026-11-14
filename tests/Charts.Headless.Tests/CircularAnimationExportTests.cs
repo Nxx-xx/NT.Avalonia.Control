@@ -238,18 +238,38 @@ public sealed class CircularAnimationExportTests(ITestOutputHelper output)
     }
 
     [AvaloniaTheory]
-    [InlineData(false)]
-    [InlineData(true)]
-    public void Easing_pause_resume_cannot_reenter_the_frame_updater_or_overwrite_paused_state(bool resume)
+    [InlineData(false, false)]
+    [InlineData(true, false)]
+    [InlineData(false, true)]
+    [InlineData(true, true)]
+    public void Easing_pause_resume_cannot_reenter_the_frame_updater_or_overwrite_paused_state(bool resume, bool renderNextFrame)
     {
-        using var host = new Host(); var calls = 0;
-        host.Chart.AnimationEasing = new CallbackEasing(() => { if (++calls != 1) return; host.Chart.PauseAnimations(); if (resume) host.Chart.ResumeAnimations(); });
-        host.Chart.AnimationTriggers = ChartAnimationTriggers.Entrance; host.Chart.ReplayEntranceAnimation(); host.Drain(); host.Advance(500);
-        Assert.Equal(1, calls);
+        using var host = new Host();
+        var calls = 0; var depth = 0; var maxDepth = 0; var callsAfterMutation = 0;
+        host.Chart.AnimationEasing = new CallbackEasing(() =>
+        {
+            depth++; maxDepth = Math.Max(maxDepth, depth);
+            try
+            {
+                if (++calls != 1) return;
+                host.Chart.PauseAnimations();
+                if (resume) host.Chart.ResumeAnimations();
+                callsAfterMutation = calls;
+            }
+            finally { depth--; }
+        });
+        host.Chart.AnimationTriggers = ChartAnimationTriggers.Entrance;
+        host.Chart.ReplayEntranceAnimation(); host.Drain(); host.Advance(500);
+        // A resumed animation may legitimately receive another compositor frame.
+        // Count nested callbacks, not all callbacks across dispatcher drains.
+        if (renderNextFrame) { Avalonia.Headless.AvaloniaHeadlessPlatform.ForceRenderTimerTick(2); host.Drain(); }
+        Assert.True(calls >= 1);
+        Assert.Equal(1, maxDepth);
+        Assert.Equal(1, callsAfterMutation);
+        if (!resume) Assert.Equal(1, calls);
         Assert.Equal(resume ? ChartAnimationState.Running : ChartAnimationState.Paused, host.Chart.AnimationState);
         Assert.Equal(!resume, host.Chart.IsAnimationPaused);
     }
-
     [AvaloniaFact]
     public void Running_state_observer_pauses_the_already_published_zero_progress_frame()
     {
